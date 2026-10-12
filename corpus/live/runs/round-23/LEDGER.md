@@ -1,0 +1,7 @@
+# Round 23 — bare PUSH4 negative control
+
+Fixture `.shokunin/revenger/corpus/fixtures/evm-r23/fixture.raw` is seven bytes `63 c0 ff ee 00 50 00`, SHA-256 `8047ddff11234c2d36bd134cfb4aec669efa3ff89ed35a922552d44ebfe22f5a`. `PUSH4 c0ffee00` at offset 0/immediate 1–4 is followed by `POP` at 5 and `STOP` at 6; no `EQ`, `JUMPI` or destination. Truth manifest in `corpus/fixtures/evm-r23/truth.json`. This is an authored negative control, not representative contract code.
+
+`npx -y rea-agents@6.4.0 inspect-evm-interface <absolute fixture.raw> raw --format json` exited 0; saved Evidence `ev_296e7ed723c7356b1cfbeee5dadc11283e5efe74535d544114ebf3b692f77201`, empty stderr. Artifact and decoded bytecode SHA/size equal fixture raw identity. `raw_result.functions=[]` and normalized `functions=[]`; `discovery_completeness=unknown`, `runtime_execution=not-performed`. Relative to authored truth, 0 false selector promotions out of one bare PUSH4 in this single fixture. r22 positive fixture remains two reported selector/destination pairs; these are separate inputs, not a sensitivity/specificity population.
+
+OBSERVATION: no interface candidate was reported for this exact no-dispatch byte sequence. INFERENCE: REA did not promote this bare constant under this invocation. UNKNOWN: performance on other non-dispatch constants, actual callable interfaces, deployment/runtime/ABI meaning; an empty static result does not prove general absence of callable dispatch. No execution/chain lookup.

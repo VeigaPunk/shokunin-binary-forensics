@@ -1,0 +1,13 @@
+{
+  "raw_sha256": "8047ddff11234c2d36bd134cfb4aec669efa3ff89ed35a922552d44ebfe22f5a",
+  "size": 7,
+  "push4_opcode_offset": 0,
+  "push4_immediate": "c0ffee00",
+  "opcodes": [
+    "PUSH4",
+    "POP",
+    "STOP"
+  ],
+  "comparison_or_jump": false,
+  "note": "Inert negative fixture; no dispatch syntax, execution or ABI claim."
+}
