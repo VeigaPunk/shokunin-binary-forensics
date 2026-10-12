@@ -1,0 +1,6 @@
+# Round 1 lesson — native provider gap
+
+- REA CLI `npx -y rea-agents@6.4.0` acquired successfully without installing unrelated engines. CLI `analyze <fixture> --format json` returned `provider_unavailable` (`.shokunin/revenger/corpus/live/runs/20261012T163909Z/native-analyze.json`): Ghidra `not_configured`, Hopper `executable_missing`, IDA `not_configured`.
+- Provider-neutral `inspect-artifact` produced Evidence IDs `ev_dd509246a007f8e57b150678116da8895e0bea842093bb56aca525f1b886ab2c` and nested inventory `ev_ad931089830ba05c0b3d7b1b3b9021826963bd5e66bd5638cfd23c50489309a8` for the fixture's ELF/hash/size/root inventory, but it explicitly leaves `open_binary` unexplored.
+- The behavioral scoring rubric in `corpus/live/runs/round-1/wave/truth-score.md` separates metadata precision from behavior: behavior precision N/A, recall 0/6 because no native session opened. Never call this recovered behavior, and do not label uninspected atoms false findings.
+- Next falsifiable move: a separately declared axis move to score an available target-free route (e.g. `inspect_binary_layout` only if its caller-supplied pwntools prerequisite exists) or run native session when operator supplies a supported Ghidra/IDA/Hopper provider. No implicit provider installation.
