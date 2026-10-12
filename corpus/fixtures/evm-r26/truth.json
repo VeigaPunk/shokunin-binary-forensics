@@ -1,0 +1,11 @@
+{
+  "sha256": "ebe2d6757a7acd4c5b9de82441f66e70561350267114e445a2d6b8d037f8e97d",
+  "size": 19,
+  "parent_fixture": "../evm-r25/fixture.raw",
+  "changed_offset": 14,
+  "before_byte": "10",
+  "after_byte": "11",
+  "entry_stop_offset": 0,
+  "jumpdest_offset": 17,
+  "note": "One-byte correction of r25 stale jump target; static fixture, no execution."
+}
