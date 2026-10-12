@@ -1,0 +1,20 @@
+{
+  "source_binary_sha256": "f5ba069764ac66d5baa20224b0698a713823f45947a3364b67cfcb3f584897d0",
+  "archive_sha256": "857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e",
+  "archive_size": 2964,
+  "members": [
+    {
+      "path": "bin/checksum",
+      "size": 16160,
+      "sha256": "f5ba069764ac66d5baa20224b0698a713823f45947a3364b67cfcb3f584897d0",
+      "compressed_size": 2668
+    },
+    {
+      "path": "README.txt",
+      "size": 84,
+      "sha256": "7d8f6a8de39432f4119f0139c5ef5970c84c23520cfe6b40d19a3653081804d3",
+      "compressed_size": 78
+    }
+  ],
+  "build": "Python zipfile.ZipFile(mode=w, compression=ZIP_DEFLATED, compresslevel=9); write checksum as bin/checksum; writestr README.txt as stated"
+}
