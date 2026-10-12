@@ -1,0 +1,19 @@
+{
+  "format": "pe32",
+  "machine": 332,
+  "size": 1024,
+  "sha256": "523e6dc1b8cc2b48a636ce3cb93736ce46d4c8d58c594d8d8dd2ed72ca2640bb",
+  "resource_data_directory_file_offset": 200,
+  "resource_directory_rva": 8192,
+  "resource_directory_file_offset": 512,
+  "resource_directory_bytes": 103,
+  "type_id": 10,
+  "name_id": 1,
+  "language_id": 1033,
+  "payload_file_offset": 600,
+  "payload_bytes": 15,
+  "payload_ascii": "REV-R27-PAYLOAD",
+  "payload_sha256": "0346b578bdfe68866acea157268520567a5d6e96a28ab8a95835569921f088aa",
+  "relation": "one reported RT_RCDATA name 1 language 1033 maps to the authored payload bytes",
+  "construction": "hand-built PE32, one .rsrc section, one ID resource; no compiler, no execution"
+}
