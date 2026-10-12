@@ -1,0 +1,22 @@
+{
+  "sha256": "94c1790f966b78a9a5cc61bdc9ad4b805aaea6989e37773f66ff433deeb1dbe2",
+  "size": 34,
+  "encoding": "raw",
+  "branches": [
+    {
+      "selector": "aaaaaaaa",
+      "push4_opcode_offset": 7,
+      "selector_immediate_offset": 8,
+      "push1_operand_offset": 14,
+      "destination_offset": 30
+    },
+    {
+      "selector": "bbbbbbbb",
+      "push4_opcode_offset": 17,
+      "selector_immediate_offset": 18,
+      "push1_operand_offset": 24,
+      "destination_offset": 32
+    }
+  ],
+  "note": "Inert bytecode with two dispatch-like branches, no ABI/runtime claim."
+}
