@@ -1,0 +1,5 @@
+# Round 17 — JavaScript source-recovery provider refusal
+
+Command: `npx -y rea-agents@6.4.0 recover-javascript-sources <absolute authored r3 index.js> <absolute absent round-17/recovered> --extraction-mode structural --rewrite-level minimal --format json` exited **1**, saved `recovery.json`, stderr empty. REA returned `capability_unavailable`, `unsupported_provider`, `details.provider_id=wakaru`, `details.operation=recover_javascript_sources`; remediation asks for caller-provided absolute `REA_WAKARU_COMMAND` pointing to compatible Wakaru Linux x64. REA did **not** install a provider. No recovered directory, files, manifest or Evidence ID was returned. Do not rerun identical request or install Wakaru under this brief.
+
+OBSERVATION: this invocation cannot use `recover_javascript_sources` without caller-supplied Wakaru. INFERENCE: source-recovery coverage remains blocked on this host/tool setup. UNKNOWN: how the tool would recover the authored file, byte equality or source mapping if a suitable provider were supplied. Do not substitute r3 static analysis as a recovery result; no JS execution.
