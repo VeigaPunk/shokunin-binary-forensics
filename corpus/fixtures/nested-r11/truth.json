@@ -1,0 +1,21 @@
+{
+  "outer_sha256": "e1019438fe540d611b8f44207ae858d9347ac4a1784fde8aedf835760198481c",
+  "outer_size": 3198,
+  "inner_sha256": "857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e",
+  "inner_size": 2964,
+  "members": [
+    {
+      "path": "payload/inner.zip",
+      "size": 2964,
+      "compressed_size": 2905,
+      "sha256": "857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e"
+    },
+    {
+      "path": "marker.txt",
+      "size": 68,
+      "compressed_size": 65,
+      "sha256": "b8437294700e7425956f92569127ebed5ac6b679be96fa52ee4b903711917095"
+    }
+  ],
+  "marker_literal": "outer-only marker; inner archive is data until selected separately.\n"
+}
