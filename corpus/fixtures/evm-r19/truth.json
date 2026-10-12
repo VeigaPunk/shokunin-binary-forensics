@@ -1,0 +1,11 @@
+{
+  "carrier_sha256": "294e6fd2e041d5bea0558a26c1e399eddccf71bc0d279d398a4c0e915517b827",
+  "decoded_sha256": "d1086bce32141782858674721977939681534320ece338f455dad57b40c0e723",
+  "decoded_size": 18,
+  "encoding": "hex",
+  "selector_push4": "deadbeef",
+  "push4_opcode_offset": 6,
+  "selector_immediate_offset": 7,
+  "selector_immediate_length": 4,
+  "note": "Inert authored bytecode, no ABI signature claim or execution; dispatch-like comparison only."
+}
