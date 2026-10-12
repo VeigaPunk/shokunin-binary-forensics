@@ -1,0 +1,1 @@
+{"error":"Analysis failed","code":"artifact_operation_failed","category":"execution_failure","message":"Artifact path collision: same.txt","retryable":false,"remediation":{"action":"Artifact path collision: same.txt"},"details":{"operation":"inspect_artifact","reason":"path","detail":"Artifact path collision: same.txt"}}

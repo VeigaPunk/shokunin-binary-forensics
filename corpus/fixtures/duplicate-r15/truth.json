@@ -1,0 +1,31 @@
+{
+  "archive_sha256": "6cad12035be32a28223307744d4fd4b4998a275462821b70b5855528bb753ddf",
+  "archive_size": 357,
+  "members": [
+    {
+      "ordinal": 0,
+      "path": "same.txt",
+      "size": 17,
+      "compressed_size": 19,
+      "crc32": "def64bf3",
+      "sha256": "7cad0d5665be7b1f1c29e4c6e2ce70c57c03e32e3bee20c4d09eb3b8115520fa"
+    },
+    {
+      "ordinal": 1,
+      "path": "same.txt",
+      "size": 18,
+      "compressed_size": 20,
+      "crc32": "29e6da2f",
+      "sha256": "0f2c2afb6ab1dc3fb6bb36fb58e520d2a3557a688e9cbbea82836b5d37c1097a"
+    },
+    {
+      "ordinal": 2,
+      "path": "marker.txt",
+      "size": 14,
+      "compressed_size": 16,
+      "crc32": "cbeb881c",
+      "sha256": "764be4e93ae36094345b79dcea5fd2934487d63a541c311fce14f52408ee3420"
+    }
+  ],
+  "build": "Python zipfile; ZIP_DEFLATED level 9; ZipInfo timestamp 2026-10-12 00:00:00; Unix mode 100644; bytes listed in README.md"
+}
