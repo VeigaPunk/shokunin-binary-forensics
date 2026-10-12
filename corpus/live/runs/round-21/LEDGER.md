@@ -1,0 +1,7 @@
+# Round 21 — raw EVM bytecode carrier
+
+`fixture.raw` contains 18 bytes exactly equal to decoded `corpus/fixtures/evm-r19/fixture.hex`: SHA-256 `d1086bce32141782858674721977939681534320ece338f455dad57b40c0e723`. Hex *carrier* itself is a distinct 39-byte text file with SHA-256 `294e6fd2e041d5bea0558a26c1e399eddccf71bc0d279d398a4c0e915517b827`. Raw truth in `corpus/fixtures/evm-r21/truth.json`.
+
+`npx -y rea-agents@6.4.0 inspect-evm-interface <absolute fixture.raw> raw --format json` exited 0; `inspection.json` Evidence `ev_4810eda7b540fbf2d4265c0f9deb3886dc009945cb77276b980f5502112cfc85`, stderr empty. REA explicit `encoding=raw`: artifact and decoded bytecode both 18 bytes/SHA `d1086bce32141782858674721977939681534320ece338f455dad57b40c0e723`. One inferred `0xdeadbeef` candidate with destination offset 16, matching hex-carrier Evidence `ev_0ad0097eb137ff9196b29ac3fb6109d8f72ee0761e2655fa1fca594295cf6f42` on selector/destination. `PUSH4` opcode offset 6 and immediate 7–10 are fixture truth, not REA location fields.
+
+OBSERVATION: raw and hex carrier paths yield matching decoded bytes and one REA selector candidate. INFERENCE: `dispatch=abi`, inferred arguments/mutability and selector meaning are upstream candidates, not verified ABI. UNKNOWN: deployment authenticity, hardfork, complete discovery, runtime behavior. No execution/chain lookup. Count 1/1 raw carrier identity and selector candidate against authored truth, not independent confirmation of semantics or new selector discovery.

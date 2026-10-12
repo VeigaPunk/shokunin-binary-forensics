@@ -1,0 +1,8 @@
+{
+  "raw_sha256": "d1086bce32141782858674721977939681534320ece338f455dad57b40c0e723",
+  "raw_bytes": 18,
+  "source_hex_fixture": "../evm-r19/fixture.hex",
+  "selector": "deadbeef",
+  "destination_offset": 16,
+  "note": "Raw bytes are byte-identical to r19 decoded hex; no execution."
+}
