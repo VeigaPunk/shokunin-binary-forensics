@@ -1,0 +1,7 @@
+# Round 24 — PUSH32 immediate-data negative control
+
+Fixture `.shokunin/revenger/corpus/fixtures/evm-r24/fixture.raw` is 35 bytes, SHA-256 recorded in `corpus/fixtures/evm-r24/truth.json`. `PUSH32` opcode `0x7f` at offset 0 consumes offsets 1–32 as immediate data. The r19 dispatch-looking nine bytes `63 deadbeef 14 60 10 57` occupy offsets **1–9 within that immediate**. Actual subsequent instructions: `POP` at 33 and `STOP` at 34. There is no executable `PUSH4`, `EQ` or `JUMPI` in this instruction stream. This is a locally authored syntax negative, not an executed contract.
+
+`npx -y rea-agents@6.4.0 inspect-evm-interface <absolute fixture.raw> raw --format json` exited 0; saved Evidence `ev_50d5ffb1fdbd17c4896409ca4cc8b20d7ed344ef4011029bea4aa474b7f0ab9e`, stderr empty. Saved artifact/decoded SHA and size match raw fixture; both raw and normalized `functions=[]`, `discovery_completeness=unknown`, `runtime_execution=not-performed`. This one result has zero false promotions of an immediate-data decoy; no claim about general scanner correctness or deployed behavior.
+
+OBSERVATION: r24 returned no candidate for opcode-looking immediate data; r19 genuine authored standalone dispatch pattern produced `0xdeadbeef` candidate, r23 standalone bare PUSH4 produced none. INFERENCE: this invocation did not interpret the embedded bytes as executable dispatch. UNKNOWN: other immediate layouts, detector coverage generally, ABI semantics, deployment and runtime. No EVM execution or chain lookup.

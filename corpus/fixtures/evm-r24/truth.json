@@ -1,0 +1,17 @@
+{
+  "sha256": "b69834e0ef786e3c001b2c833c8c0388acc017de14d06110cfa85d4948685d93",
+  "size": 35,
+  "instruction_stream": [
+    "PUSH32 at 0 with immediate bytes 1..32",
+    "POP at 33",
+    "STOP at 34"
+  ],
+  "embedded_pattern_hex": "63deadbeef14601057",
+  "embedded_pattern_offsets": [
+    1,
+    9
+  ],
+  "executable_push4_count": 0,
+  "comparison_or_jump_instruction": false,
+  "note": "All opcode-looking bytes lie inside PUSH32 immediate; no execution/chain."
+}
