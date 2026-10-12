@@ -1,0 +1,12 @@
+{
+  "sha256": "2d87a4e203ebf590beab57cf7318ccf93c92035d7929d0bc16e6850433f5e8f7",
+  "size": 19,
+  "entry_stop_offset": 0,
+  "push4_opcode_offset": 7,
+  "selector_immediate_offset": 8,
+  "selector": "deadbeef",
+  "encoded_jump_operand": 16,
+  "jumpdest_byte_offset": 17,
+  "jump_target_valid": false,
+  "note": "Copied r19 decoded bytes shifted by one behind entry STOP; stale operand points to STOP 16, not JUMPDEST 17. No runtime reachability claim."
+}
