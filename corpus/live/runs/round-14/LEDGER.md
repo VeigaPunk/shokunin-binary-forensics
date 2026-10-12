@@ -1,0 +1,13 @@
+# Round 14 — focused static semantic capture trace
+
+Command: `npx -y rea-agents@6.4.0 trace-javascript-semantics .shokunin/revenger/corpus/live/runs/round-14/trace-request.json --format json` (exit 0; output `trace.json`, stderr empty). Request embeds the complete saved r3 parent Evidence rather than rerunning analysis. Parent `ev_4a93276c886da96f0b37c490e395dc0761ac32225dd7297c600a51ce100c1c7e`, semantic graph `jsrg_d3800a8f3bb6b38d4226b8c19d7e9c346efa3f9ee2819bd98685e32612451159`. Trace `ev_53329396d6fe4843b89806ef1ed98b6db8358ec91c41c733d617ea846b995a8a`.
+
+Seed exact `render` function node `jsrg_node_c82112b8b59795d1f05fc48493bb107894622416db870b070178f03477857337` (authored `index.js` lines 3–6), `backward-provenance` constrained to `allowed_relations=["captures"]`. REA reports `found`, one seed, 4 nodes, 3 resolved `captures` relations, one function, one module, zero relevant unknowns, **partial coverage**. No generic containment edge. The three relation IDs are retained from saved parent semantic graph.
+
+| class | bounded finding | Evidence |
+|---|---|---|
+| OBSERVATION of REA static trace | `render` captures `checksum` reference (`index.js:5:30–38`), `defaultInput` (`index.js:3:24–36`), and `rot13` reference (`index.js:4:22–27`); relation IDs respectively `jsrg_relation_1a66ba8b210514fdab873ae0a568fff2c3650f3c719d7aa80458b6cd5432ea38`, `jsrg_relation_21bf34cca25ad033c2a7c1b8200a6fd73dd70c9830fa4dd00238b4486f648d3c`, `jsrg_relation_490f58971b190a1decbcdbeac1f86f00bcc8b8dcec229a1e4d4d4a26bee67350`. All three source token references appear in authored `corpus/fixtures/js-r3/index.js`. | Trace `ev_53329396d6fe4843b89806ef1ed98b6db8358ec91c41c733d617ea846b995a8a`, parent `ev_4a93276c886da96f0b37c490e395dc0761ac32225dd7297c600a51ce100c1c7e` |
+| INFERENCE | Static captures imply lexical dependencies in this authored function, not actual calls, runtime values or checksum behavior. | Same Evidence and source truth. |
+| UNKNOWN | Whether `render` runs, captured values at runtime, cross-module invocation paths, other semantic families with partial/unknown coverage. | Trace `coverage.status=partial` and parent semantic graph `coverage.status=unknown`. |
+
+Score: focused semantic capture provenance 3/3 source-backed references, zero mismatches in this bounded set; this is not recall over all behavior or semantic families. Distinct from r9 application-graph `imports` trace: now a semantic graph `captures` relation is navigated with the explicit seed/filter. Limits: saved parent application semantic graph global coverage remains unknown; per-trace coverage partial despite zero relevant unknowns.
