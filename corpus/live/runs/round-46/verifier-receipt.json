@@ -1,0 +1,5 @@
+{
+  "command": "python3 /home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/verify_multi_icon_states.py",
+  "exit_code": 0,
+  "stdout": "PASS: 4/4 two-image states, 3/3 exact one-byte deltas, first link stable, forged second match REJECTED\n"
+}
