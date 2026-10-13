@@ -1,0 +1,67 @@
+{
+  "source_fixture": "../pe-r55/fixture.exe",
+  "source_sha256": "41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b",
+  "sha256": "99bebcf14c462075e63d6504c97a45267063f33e05f215c1235f89d666b5c0f3",
+  "size": 1536,
+  "construction": "PE32+ rebuild of r55 resource tree plus one new top-level named type key 'REVTEST' (kind=name at type level) holding a numeric name-id 1 / lang 1033 leaf with 23 opaque bytes. Root gains named_entries=1, id_entries stays 2; all interior offsets re-laid; r55 icon/group payloads byte-identical. No execution.",
+  "resource_directory": {
+    "rva": 8192,
+    "file_offset": 512,
+    "bytes": 320
+  },
+  "named_type": {
+    "value": "REVTEST",
+    "utf16le_hex": "5200450056005400450053005400",
+    "location": [
+      812,
+      828
+    ]
+  },
+  "group_name": {
+    "value": "A😀B!",
+    "utf16le_hex": "41003dd800de42002100",
+    "location": [
+      800,
+      812
+    ]
+  },
+  "resources": [
+    {
+      "type_name": "REVTEST",
+      "name_id": 1,
+      "language_id": 1033,
+      "payload_offset": 968,
+      "payload_bytes": 23,
+      "sha256": "d069b3846e5c7185f65263b6ca4e7a81670214b038f38805ed355f6c55191da6"
+    },
+    {
+      "type_id": 3,
+      "name_id": 1,
+      "language_id": 1033,
+      "payload_offset": 832,
+      "payload_bytes": 48,
+      "sha256": "d7aaca7bc7951c9249a7798838189374fa953d3def03aebb375ee731768e5003"
+    },
+    {
+      "type_id": 3,
+      "name_id": 2,
+      "language_id": 1033,
+      "payload_offset": 880,
+      "payload_bytes": 48,
+      "sha256": "2f503cace29956c75acd5356de2f8fa98485b01edd654daf0f81a739b44c82ae"
+    },
+    {
+      "type_id": 14,
+      "name_id": null,
+      "language_id": 1033,
+      "payload_offset": 928,
+      "payload_bytes": 34,
+      "sha256": "45eb70319667352d8bfea3249f7fb30166c6835d2cf564b5ec303bf2d716c17a"
+    }
+  ],
+  "ordered_group_icon_ids": [
+    1,
+    2
+  ],
+  "expected": "static inspect_pe_resources enumerates 4 leaves incl. named-type 'REVTEST' leaf byte-exact; icon-group ordered links intact; no false link onto the named-type leaf; no PE execution"
+}
