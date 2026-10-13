@@ -1,0 +1,64 @@
+{
+  "construction": "Copy committed pe-r33 fixture; replace exactly five UTF-16LE code units at offsets [738,748) with A😀B! including valid surrogate pair; preserve length field, resource tree, header and both payloads; no compiler or execution",
+  "source_fixture_sha256": "997089c388e1e3a686f736bcd459288ea4422f86c50ec45ad1cb4ca05c876cc8",
+  "sha256": "28182338af9da23b7dc0d6c1b64b325bb635a25f8b336c1d278884ffa88f2e85",
+  "size": 1024,
+  "name": {
+    "value": "A😀B!",
+    "utf16le_hex": "41003dd800de42002100",
+    "length_utf16_code_units": 5,
+    "length_field_offset": 736,
+    "utf16_bytes_offset": 738,
+    "name_entry_offset": 552
+  },
+  "changed_offsets": [
+    {
+      "offset": 738,
+      "before": 67,
+      "after": 65
+    },
+    {
+      "offset": 740,
+      "before": 65,
+      "after": 61
+    },
+    {
+      "offset": 741,
+      "before": 0,
+      "after": 216
+    },
+    {
+      "offset": 742,
+      "before": 70,
+      "after": 0
+    },
+    {
+      "offset": 743,
+      "before": 0,
+      "after": 222
+    },
+    {
+      "offset": 744,
+      "before": 201,
+      "after": 66
+    }
+  ],
+  "resources": [
+    {
+      "type_id": 10,
+      "name": "A😀B!",
+      "language_id": 1036,
+      "payload_file_offset": 672,
+      "payload_bytes": 15,
+      "payload_sha256": "071db9bf3f85c6f8a41884653e2f08a2346af9ce522e2574851e286e5c192229"
+    },
+    {
+      "type_id": 10,
+      "name_id": 3,
+      "language_id": 1033,
+      "payload_file_offset": 704,
+      "payload_bytes": 15,
+      "payload_sha256": "cc29ca16da56975bf9fb034fbc010e377076ada5df6395622c8ffd9fed19f67e"
+    }
+  ]
+}
