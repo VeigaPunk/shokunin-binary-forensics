@@ -1,0 +1,16 @@
+{
+  "construction": "exact copy of pe-r27 fixture.exe, one byte at offset 600 changed from 0x52 to 0x53; hand-built PE32, no compiler or execution",
+  "baseline_sha256": "523e6dc1b8cc2b48a636ce3cb93736ce46d4c8d58c594d8d8dd2ed72ca2640bb",
+  "sha256": "9e1815a37778fc4aaf828f6d22d8c5154e9126614dda2f445768bf35d6ad1034",
+  "size": 1024,
+  "changed_offset": 600,
+  "before_byte": 82,
+  "after_byte": 83,
+  "resource_type_id": 10,
+  "resource_name_id": 1,
+  "resource_language_id": 1033,
+  "payload_file_offset": 600,
+  "payload_bytes": 15,
+  "payload_ascii": "SEV-R27-PAYLOAD",
+  "payload_sha256": "071db9bf3f85c6f8a41884653e2f08a2346af9ce522e2574851e286e5c192229"
+}
