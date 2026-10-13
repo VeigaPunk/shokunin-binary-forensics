@@ -1,0 +1,37 @@
+{
+  "source_fixture": "../pe-r41/fixture.exe",
+  "source_sha256": "501584bd0fd439d8c0e904394adb575a9d94a71f151c2ff6389c4053ba36394c",
+  "sha256": "9297adec215ef401538dad04f06e249a41d3747e14b996a837164a2dde3d070d",
+  "size": 1024,
+  "changed_offsets": [
+    220,
+    580,
+    582,
+    584,
+    587,
+    736,
+    738,
+    740,
+    741,
+    743,
+    744,
+    746
+  ],
+  "construction": "PE32+ r41 with RT_GROUP_ICON named-entry count at directory568 updated named1/id0, name key at584 points to string at736, interval length240. Icon/group payloads unchanged. No execution.",
+  "name": {
+    "value": "A😀B!",
+    "utf16le_hex": "41003dd800de42002100",
+    "length_location": [
+      736,
+      748
+    ]
+  },
+  "expected_icon_relation": {
+    "resource_id": 1,
+    "candidates": [
+      0
+    ],
+    "same_language": 0,
+    "size_matches": true
+  }
+}
