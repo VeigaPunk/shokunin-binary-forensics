@@ -1,0 +1,14 @@
+{
+  "source_fixture": "../pe-r52/fixture.exe",
+  "source_sha256": "9297adec215ef401538dad04f06e249a41d3747e14b996a837164a2dde3d070d",
+  "sha256": "9802fb978930d7539f9fd2e64b25d2e7de3895c9988d8118c0cd3bdc2ab65b5e",
+  "size": 1024,
+  "changed_offsets": [
+    850
+  ],
+  "mutation": "Unicode named group image ID1→2 at offset850; name and RT_ICON ID1 unchanged, static only",
+  "expected_group_name": "A😀B!",
+  "expected_candidates": [],
+  "expected_same_language": null,
+  "expected_size_matches": null
+}
