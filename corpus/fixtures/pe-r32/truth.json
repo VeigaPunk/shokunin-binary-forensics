@@ -1,0 +1,37 @@
+{
+  "construction": "Copy pe-r31 fixture; expand .rsrc virtual size and resource directory size 208\u2192240; replace first type-directory numeric name key 2 with high-bit string pointer relative offset 224, change type-directory counts to named=1/id=1, write length-prefixed UTF-16LE ALPHA at file offset 736; preserve both data entries and payloads; no compiler, no execution",
+  "source_fixture_sha256": "714369ff1bfcd2e04a5f6c32f938778b38c6c455ae6a019b51e6c2d702510b47",
+  "sha256": "5169ac55c0b145b41c58b72848f694111c325d2c084266ef9d6c8763ce99adbd",
+  "size": 1024,
+  "resource_directory": {
+    "rva": 8192,
+    "offset": 512,
+    "size": 240,
+    "section_virtual_size": 240
+  },
+  "name": {
+    "value": "ALPHA",
+    "length_utf16_code_units": 5,
+    "length_field_offset": 736,
+    "utf16_bytes_offset": 738,
+    "name_entry_offset": 552
+  },
+  "resources": [
+    {
+      "type_id": 10,
+      "name": "ALPHA",
+      "language_id": 1036,
+      "payload_file_offset": 672,
+      "payload_bytes": 15,
+      "payload_sha256": "071db9bf3f85c6f8a41884653e2f08a2346af9ce522e2574851e286e5c192229"
+    },
+    {
+      "type_id": 10,
+      "name_id": 3,
+      "language_id": 1033,
+      "payload_file_offset": 704,
+      "payload_bytes": 15,
+      "payload_sha256": "cc29ca16da56975bf9fb034fbc010e377076ada5df6395622c8ffd9fed19f67e"
+    }
+  ]
+}

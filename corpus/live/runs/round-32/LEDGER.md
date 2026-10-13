@@ -1,0 +1,15 @@
+# Round 32 — PE UTF-16 resource-name static inspection
+
+Fixture: `corpus/fixtures/pe-r32/fixture.exe`, SHA-256 `5169ac55c0b145b41c58b72848f694111c325d2c084266ef9d6c8763ce99adbd`; construction, exact modified offsets and payload digests in `corpus/fixtures/pe-r32/truth.json`. Static only; no execution, compiler, native provider, or unrelated installation.
+
+## Producer
+`npx -y rea-agents@6.4.0 inspect-pe-resources /home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r32/fixture.exe --format json` exited 0 (stdout SHA-256 `b4db104ee05d9c5fc60dfb1ca9d999fe54b93e5a0e9f682eb662e0e70a997fd7`); invocation receipt in `producer-receipt.json`. REA saved response `inspection.json` Evidence `ev_dcc2411a94ff88169c18f1db3d70ad0792bbccb059dec89bec0df3a578ef653d`. Receipt was recorded locally; saved REA JSON alone does not authenticate shell exit status.
+
+## Source-scored comparison
+- OBSERVATION: fixture bytes carry type ID 10, name `ALPHA` as five UTF-16LE units at offset 738 preceded by length 5 at offset 736, with name entry offset 552 and preserved numeric name 3. `truth.json` documents authored layout; raw-byte validation by `pe32-independent-review` is recorded in `reviewer.md`.
+- OBSERVATION: Evidence `ev_dcc2411a94ff88169c18f1db3d70ad0792bbccb059dec89bec0df3a578ef653d` reports resource `(10, ALPHA, 1036, 672, 15, 071db9bf3f85c6f8a41884653e2f08a2346af9ce522e2574851e286e5c192229)` and `(10, 3, 1033, 704, 15, cc29ca16da56975bf9fb034fbc010e377076ada5df6395622c8ffd9fed19f67e)` with four directories, five examined entries and `complete` status. Comparing six-field tuple sets to fixture truth gave `True`, two reported and two expected: provisional precision 2/2, recall 2/2; name location `(736,12)` agrees with authored encoding.
+- INFERENCE: static REA PE resource inventory distinguishes one string name from one numeric name in this fixture, with distinct language and payload identities. Non-author `pe32-independent-review` independently decoded fixture bytes without using `truth.json` and compared all source locations/digests to Evidence; reviewer PASS 2/2 precision and 2/2 recall in `reviewer.md`. The reviewer reproducer ran locally with exit 0 and final line `PASS: two independently decoded leaves; all identity/location/digest fields match`.
+- UNKNOWN: general parser correctness, Windows loader acceptance, language fallback, opaque payload semantics, runtime behavior and original native disassembler readiness.
+
+## Construction control
+Relative to r31 fixture, exactly 12 byte offsets changed: `[204, 320, 548, 550, 552, 555, 736, 738, 740, 742, 744, 746]`. Header directory size at 204 and section virtual size at 320 both become 240; the type-directory count fields at 548/550 become named=1/id=1; first resource name key at 552 becomes high-bit offset 224 relative to resource base 512; length-prefixed `ALPHA` starts at 736. Original payload bytes and both payload SHA-256 values are unchanged. This is a single new named-resource case, not broad parser fuzzing.
