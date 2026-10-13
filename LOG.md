@@ -719,3 +719,10 @@ paused by operator 2026-10-12, round 26 closed, no round 27.
 - Author `reports/round-59/r59-author.md` (host: devin): fixture `corpus/fixtures/pe-r59d/fixture.exe` (1536B, sha `99bebcf14c46…`) first authored NAMED resource-type key `REVTEST`; `inspect-pe-resources` → `ev_8efa2368e77f…`; verify.py exit0 (22 checks + 3/3 forged rejected). Coverage improved claim; depth/calibration unchanged; halted calibration axis untouched.
 - Non-author `reports/round-59/r59-devin-verifier.md`: deterministic rebuild byte-identical; own spec-derived byte oracle agrees (8/8 dirs — author said 7/7, correction adopted); REA rerun reproduces `ev_8efa2368e77f…` on same path; 3 forge-check mutants all rejected; resolved author UNKNOWN (name bounds-checked → `invalid_format`). DISCOVERED: `evidence_id` is path-sensitive (same bytes elsewhere → `ev_50038b96…`) — `ev = f(content, path, params)`.
 - Per-axis verdict: coverage **improved**; depth **unchanged**; calibration **unchanged** (halted, operator ruling still pending). Admit; work commit then report-last; no push/merge.
+
+## 2026-10-13 — HOURS.md ledger opened
+
+- Operator seed per PROTOCOL.md §Craft-hours: shonen→shokunin now requires
+  ≥10,000 verified craft-hours AND the SHONEN gate. Ledger starts at 0;
+  instrumented rounds accrue collective in-domain lane-minutes.
+- Evidence: fleet commit; PROTOCOL.md §Craft-hours.
