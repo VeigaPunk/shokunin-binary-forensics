@@ -1,0 +1,26 @@
+{
+  "source_fixture": "../pe-r42/fixture.exe",
+  "source_sha256": "3ab5008b436eb4facd3966767a507fa4b1625160532585a09a6af2f752b38941",
+  "sha256": "146bdde3ec3ce9f23b75b31f7a9d2fc0cbc8826f2a5d239a83fd82694f4c31a2",
+  "size": 1536,
+  "changed_offsets": [
+    928
+  ],
+  "mutation": "second RT_GROUP_ICON image resource ID 2\u21923 at offset 928, first image ID1 and RT_ICON resources ID1/2 unchanged; no execution",
+  "expected_images": [
+    {
+      "id": 1,
+      "candidate": [
+        0
+      ],
+      "same_language": 0,
+      "size_matches": true
+    },
+    {
+      "id": 3,
+      "candidate": [],
+      "same_language": null,
+      "size_matches": null
+    }
+  ]
+}
