@@ -1,0 +1,215 @@
+{
+  "evidence_id": "ev_50a1273217e51aa8f8f1c204f759582b840dfb8a455e8758ca2f1ba413db90bc",
+  "subject": {
+    "name": "fixture.exe",
+    "digest": {
+      "sha256": "997089c388e1e3a686f736bcd459288ea4422f86c50ec45ad1cb4ca05c876cc8"
+    },
+    "format": "pe",
+    "architecture": null,
+    "local_path": "/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r33/fixture.exe"
+  },
+  "provider": {
+    "id": "rea-pe-resources",
+    "name": "REA PE resource parser",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_pe_resources",
+  "parameters": {
+    "path": "/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r33/fixture.exe",
+    "max_file_bytes": 67108864,
+    "max_entries": 4096
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "artifact": {
+      "path": "/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r33/fixture.exe",
+      "sha256": "997089c388e1e3a686f736bcd459288ea4422f86c50ec45ad1cb4ca05c876cc8",
+      "bytes": 1024
+    },
+    "format": "pe32",
+    "machine": 332,
+    "directory": {
+      "rva": 8192,
+      "location": {
+        "offset": 512,
+        "bytes": 240
+      },
+      "data_directory_location": {
+        "offset": 200,
+        "bytes": 8
+      }
+    },
+    "directories": [
+      {
+        "location": {
+          "offset": 512,
+          "bytes": 24
+        },
+        "characteristics": 0,
+        "timestamp": 0,
+        "major_version": 0,
+        "minor_version": 0,
+        "named_entries": 0,
+        "id_entries": 1
+      },
+      {
+        "location": {
+          "offset": 536,
+          "bytes": 32
+        },
+        "characteristics": 0,
+        "timestamp": 0,
+        "major_version": 0,
+        "minor_version": 0,
+        "named_entries": 1,
+        "id_entries": 1
+      },
+      {
+        "location": {
+          "offset": 568,
+          "bytes": 24
+        },
+        "characteristics": 0,
+        "timestamp": 0,
+        "major_version": 0,
+        "minor_version": 0,
+        "named_entries": 0,
+        "id_entries": 1
+      },
+      {
+        "location": {
+          "offset": 592,
+          "bytes": 24
+        },
+        "characteristics": 0,
+        "timestamp": 0,
+        "major_version": 0,
+        "minor_version": 0,
+        "named_entries": 0,
+        "id_entries": 1
+      }
+    ],
+    "resources": [
+      {
+        "index": 0,
+        "type": {
+          "kind": "id",
+          "id": 10
+        },
+        "name": {
+          "kind": "name",
+          "name": "CAFÉ!",
+          "utf16le_hex": "430041004600c9002100",
+          "location": {
+            "offset": 736,
+            "bytes": 12
+          }
+        },
+        "language": {
+          "kind": "id",
+          "id": 1036
+        },
+        "entry_locations": [
+          {
+            "offset": 528,
+            "bytes": 8
+          },
+          {
+            "offset": 552,
+            "bytes": 8
+          },
+          {
+            "offset": 584,
+            "bytes": 8
+          }
+        ],
+        "data_entry_location": {
+          "offset": 616,
+          "bytes": 16
+        },
+        "code_page": 0,
+        "reserved": 0,
+        "payload": {
+          "rva": 8352,
+          "location": {
+            "offset": 672,
+            "bytes": 15
+          },
+          "sha256": "071db9bf3f85c6f8a41884653e2f08a2346af9ce522e2574851e286e5c192229"
+        }
+      },
+      {
+        "index": 1,
+        "type": {
+          "kind": "id",
+          "id": 10
+        },
+        "name": {
+          "kind": "id",
+          "id": 3
+        },
+        "language": {
+          "kind": "id",
+          "id": 1033
+        },
+        "entry_locations": [
+          {
+            "offset": 528,
+            "bytes": 8
+          },
+          {
+            "offset": 560,
+            "bytes": 8
+          },
+          {
+            "offset": 608,
+            "bytes": 8
+          }
+        ],
+        "data_entry_location": {
+          "offset": 632,
+          "bytes": 16
+        },
+        "code_page": 0,
+        "reserved": 0,
+        "payload": {
+          "rva": 8384,
+          "location": {
+            "offset": 704,
+            "bytes": 15
+          },
+          "sha256": "cc29ca16da56975bf9fb034fbc010e377076ada5df6395622c8ffd9fed19f67e"
+        }
+      }
+    ],
+    "icon_groups": [],
+    "coverage": {
+      "status": "complete",
+      "examined_entries": 5,
+      "resources": 2
+    },
+    "limitations": [
+      "Static PE32/PE32+ type/name/language resource inventory; payloads other than RT_GROUP_ICON remain opaque.",
+      "Icon candidates are resource-table relationships. Language fallback, image decoding and actual shell/window loading are not observed.",
+      "Exact shared byte ranges are retained; non-identical overlapping resource structures or payloads are rejected."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Static PE32/PE32+ type/name/language resource inventory; payloads other than RT_GROUP_ICON remain opaque.",
+    "Icon candidates are resource-table relationships. Language fallback, image decoding and actual shell/window loading are not observed.",
+    "Exact shared byte ranges are retained; non-identical overlapping resource structures or payloads are rejected."
+  ],
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r33/fixture.exe"
+    }
+  ],
+  "evidence_links": []
+}

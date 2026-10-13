@@ -1,0 +1,7 @@
+{
+  "command": "npx -y rea-agents@6.4.0 inspect-pe-resources \"/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r33/fixture.exe\" --format json",
+  "exit_code": 0,
+  "output_sha256": "e2fb27da43d64a27443a639c55221e503619c1a9c7327b9a9c4eb5f9fbc1b64d",
+  "output_captured": "inspection.json",
+  "stderr_separation": "not captured separately; output is combined"
+}

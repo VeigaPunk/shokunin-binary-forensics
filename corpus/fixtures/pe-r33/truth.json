@@ -1,0 +1,59 @@
+{
+  "construction": "Copy committed pe-r32 fixture; replace exactly five UTF-16LE resource-name code units at offsets [738,748) with CAFÉ!; preserve length field, resource tree, header, both payloads; no compiler or execution",
+  "source_fixture_sha256": "5169ac55c0b145b41c58b72848f694111c325d2c084266ef9d6c8763ce99adbd",
+  "sha256": "997089c388e1e3a686f736bcd459288ea4422f86c50ec45ad1cb4ca05c876cc8",
+  "size": 1024,
+  "name": {
+    "value": "CAFÉ!",
+    "utf16le_hex": "430041004600c9002100",
+    "length_utf16_code_units": 5,
+    "length_field_offset": 736,
+    "utf16_bytes_offset": 738,
+    "name_entry_offset": 552
+  },
+  "changed_offsets": [
+    {
+      "offset": 738,
+      "before": 65,
+      "after": 67
+    },
+    {
+      "offset": 740,
+      "before": 76,
+      "after": 65
+    },
+    {
+      "offset": 742,
+      "before": 80,
+      "after": 70
+    },
+    {
+      "offset": 744,
+      "before": 72,
+      "after": 201
+    },
+    {
+      "offset": 746,
+      "before": 65,
+      "after": 33
+    }
+  ],
+  "resources": [
+    {
+      "type_id": 10,
+      "name": "CAFÉ!",
+      "language_id": 1036,
+      "payload_file_offset": 672,
+      "payload_bytes": 15,
+      "payload_sha256": "071db9bf3f85c6f8a41884653e2f08a2346af9ce522e2574851e286e5c192229"
+    },
+    {
+      "type_id": 10,
+      "name_id": 3,
+      "language_id": 1033,
+      "payload_file_offset": 704,
+      "payload_bytes": 15,
+      "payload_sha256": "cc29ca16da56975bf9fb034fbc010e377076ada5df6395622c8ffd9fed19f67e"
+    }
+  ]
+}
