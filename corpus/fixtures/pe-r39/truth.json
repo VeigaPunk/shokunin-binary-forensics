@@ -1,0 +1,17 @@
+{
+  "source_fixture": "../pe-r36/fixture.exe",
+  "source_sha256": "a10b1289edc59df08ccc9a3b6cf1e81f803a8041fa414fc1c6375a1d017eca96",
+  "sha256": "73432e0ce2524e12970bb0155d478214736bf97e0a173a5a87b7d5aeb810ed97",
+  "size": 1024,
+  "changed_offsets": [
+    608
+  ],
+  "mutation": "RT_ICON language 1033->1036 at resource entry key offset 608; group language 1033 and image ID1/size48 intact; no execution",
+  "expected_static": {
+    "candidate_resource_indices": [
+      0
+    ],
+    "same_language_resource_index": null,
+    "size_matches": null
+  }
+}
