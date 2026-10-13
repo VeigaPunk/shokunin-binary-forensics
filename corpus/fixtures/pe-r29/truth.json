@@ -1,0 +1,15 @@
+{
+  "construction": "exact copy of pe-r28 fixture.exe, sole byte offset 576 0x09\u21920x0c; hand-built PE32, no compiler or execution",
+  "baseline_sha256": "9e1815a37778fc4aaf828f6d22d8c5154e9126614dda2f445768bf35d6ad1034",
+  "sha256": "6cb7c33709d67f4f7e8c138d28451581c12d94af7e01afb345e97e5adb3853f5",
+  "size": 1024,
+  "changed_offset": 576,
+  "before_byte": 9,
+  "after_byte": 12,
+  "resource_type_id": 10,
+  "resource_name_id": 1,
+  "resource_language_id": 1036,
+  "payload_file_offset": 600,
+  "payload_bytes": 15,
+  "payload_sha256": "071db9bf3f85c6f8a41884653e2f08a2346af9ce522e2574851e286e5c192229"
+}
