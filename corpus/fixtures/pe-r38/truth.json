@@ -1,0 +1,17 @@
+{
+  "source_fixture": "../pe-r36/fixture.exe",
+  "source_sha256": "a10b1289edc59df08ccc9a3b6cf1e81f803a8041fa414fc1c6375a1d017eca96",
+  "sha256": "bf6cd6935ced0d3942d80dd2e1d834e4df4c2207113dbbe7a8877a063f20d6ed",
+  "size": 1024,
+  "changed_offsets": [
+    846
+  ],
+  "mutation": "group declared image size 48 -> 47, RT_ICON ID 1 and payload 48 bytes unchanged; no execution",
+  "expected_static": {
+    "candidate_resource_indices": [
+      0
+    ],
+    "same_language_resource_index": 0,
+    "size_matches": false
+  }
+}
