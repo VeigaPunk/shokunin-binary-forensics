@@ -1,0 +1,5 @@
+{
+  "command": "python3 /home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/verify_icon_states.py",
+  "exit_code": 0,
+  "output": "PASS: 4/4 source-decoded states, 3/3 one-byte deltas, one forged candidate REJECTED\n"
+}
