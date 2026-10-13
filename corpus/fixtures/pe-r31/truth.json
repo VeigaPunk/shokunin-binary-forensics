@@ -1,0 +1,44 @@
+{
+  "construction": "copied pe-r30 PE32 header; expanded resource section virtual size and data-directory size to 208; rewrote resource section with one RT_RCDATA type, two numeric names and separate language directories/data entries; no compiler; no execution",
+  "source_fixture_sha256": "b94d840aa7eb952474b30260bc70e092fb1db832b0aa1bc393936d8dc4ce661a",
+  "sha256": "714369ff1bfcd2e04a5f6c32f938778b38c6c455ae6a019b51e6c2d702510b47",
+  "size": 1024,
+  "directory": {
+    "rva": 8192,
+    "file_offset": 512,
+    "size": 208,
+    "section_virtual_size": 208
+  },
+  "resources": [
+    {
+      "type_id": 10,
+      "name_id": 2,
+      "language_id": 1036,
+      "entry_offsets": [
+        528,
+        552,
+        584
+      ],
+      "data_entry_offset": 616,
+      "payload_file_offset": 672,
+      "payload_bytes": 15,
+      "payload_sha256": "071db9bf3f85c6f8a41884653e2f08a2346af9ce522e2574851e286e5c192229",
+      "payload_hex": "5345562d5232372d5041594c4f4144"
+    },
+    {
+      "type_id": 10,
+      "name_id": 3,
+      "language_id": 1033,
+      "entry_offsets": [
+        528,
+        560,
+        608
+      ],
+      "data_entry_offset": 632,
+      "payload_file_offset": 704,
+      "payload_bytes": 15,
+      "payload_sha256": "cc29ca16da56975bf9fb034fbc010e377076ada5df6395622c8ffd9fed19f67e",
+      "payload_hex": "414c542d5233312d5041594c4f4144"
+    }
+  ]
+}
