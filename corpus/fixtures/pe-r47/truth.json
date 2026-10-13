@@ -1,0 +1,57 @@
+{
+  "source_fixture": "../pe-r42/fixture.exe",
+  "source_sha256": "3ab5008b436eb4facd3966767a507fa4b1625160532585a09a6af2f752b38941",
+  "sha256": "cc02c78b44883f2217b7a8f82fa6fafc990ae6d0ca71f0eab8a3fbc4f2ba44ba",
+  "size": 1536,
+  "construction": "PE32+ resource tree: RT_ICON ID1 has languages 1033 and1036 with separate 48-byte payloads; group RT_GROUP_ICON ID1/lang1036 has one image ID1 size48. No PE execution.",
+  "changed_offsets": [
+    558,
+    568,
+    572,
+    575,
+    614,
+    624,
+    625,
+    628,
+    664,
+    708,
+    900,
+    916,
+    917,
+    920,
+    922,
+    924,
+    928
+  ],
+  "resources": [
+    {
+      "type_id": 3,
+      "name_id": 1,
+      "language_id": 1033,
+      "payload_offset": 768,
+      "bytes": 48,
+      "sha256": "d7aaca7bc7951c9249a7798838189374fa953d3def03aebb375ee731768e5003"
+    },
+    {
+      "type_id": 3,
+      "name_id": 1,
+      "language_id": 1036,
+      "payload_offset": 832,
+      "bytes": 48,
+      "sha256": "2f503cace29956c75acd5356de2f8fa98485b01edd654daf0f81a739b44c82ae"
+    },
+    {
+      "type_id": 14,
+      "name_id": 1,
+      "language_id": 1036,
+      "payload_offset": 896,
+      "bytes": 20,
+      "sha256": "cc3745185dc1ae877dff5b3561df1162b7487fe78af6761a85649989979a3d01"
+    }
+  ],
+  "expected_candidates": [
+    0,
+    1
+  ],
+  "expected_same_language_index": 1
+}
