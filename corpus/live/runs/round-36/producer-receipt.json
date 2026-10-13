@@ -1,0 +1,8 @@
+{
+  "command": "npx -y rea-agents@6.4.0 inspect-pe-resources \"/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r36/fixture.exe\" --format json > \"/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/live/runs/round-36/inspection.raw.json\" 2> \"/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/live/runs/round-36/inspection.stderr\"",
+  "exit_code": 0,
+  "raw_output_sha256": "a4fe8d6dafa78d422b5ab934333c89757c98b8b6d59a0a377cfc5ea2eafbbaf2",
+  "raw_output_bytes": 3969,
+  "fixture_sha256": "a10b1289edc59df08ccc9a3b6cf1e81f803a8041fa414fc1c6375a1d017eca96",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
