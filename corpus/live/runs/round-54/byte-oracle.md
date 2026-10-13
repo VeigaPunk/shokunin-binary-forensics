@@ -1,0 +1,23 @@
+# Round 54 independent byte oracle
+
+## OBSERVATION
+
+- Independent input: read the supplied fixture bytes only (no execution and no REA producer rerun). `fixture.exe` is 1,024 bytes; SHA-256 is `3c5a50e5cf3e4242b228a228e4ac0e58d413b3851538210e280d7bd50b9e64b7`.
+- PE header checks: bytes `0:2` are `MZ`; `e_lfanew` at `0x3c` is `0x40`; bytes at `0x40` are `50 45 00 00`; COFF machine at `0x44` is `0x8664`; optional-header magic at `0x58` is `0x20b` (PE32+). Resource data-directory entry at `0xd8` is RVA `0x2000`, size `0xf0`. The single `.rsrc` section header at `0x148` maps RVA `0x2000` to file offset `0x200` (section virtual size `0x190`, raw size `0x200`); thus resource RVAs map to raw offsets by subtracting `0x2000` and adding `0x200` for this range.
+- Resource root directory at file offset `0x200` has 2 ID entries. Entry at `0x210` is type ID 3 (RT_ICON), whose ID-1 name directory is at `0x220`; entry at `0x218` is type ID 14 (RT_GROUP_ICON), whose named-entry directory is at `0x238`. RT_ICON name ID 1 is at `0x230`, followed by language ID 1033 (`0x0409`) at `0x260`; its data entry is at `0x280` (RVA `0x2100`, size 48), and payload is at file offset `0x300` (48 bytes). The group’s named entry is at `0x248`, followed by language ID 1033 at `0x278`; its sole data entry is at `0x290` (RVA `0x2140`, size 20), and payload is at file offset `0x340` (20 bytes). These are the only two resource leaves.
+- The group-name directory entry at `0x248` has its high-bit name-string flag and points to `0x2e0`. At `0x2e0`, the UTF-16 code-unit count is 5 and following bytes are `41 00 3d d8 00 de 42 00 21 00`, decoding to `A😀B!` (including the surrogate pair for 😀).
+- The RT_GROUP_ICON payload at `0x340` starts with reserved=0, type=1, count=1. Its one 14-byte entry at `0x346` is width=1, height=1, color-count=0, reserved=0, planes=1, bit-count=32, declared byte size=47, resource ID=1. The only RT_ICON resource is ID 1, language 1033, data size 48. The group entry therefore links to that icon resource, with candidate index 0 / same-language index 0, but its declared size (47) does not equal actual payload size (48).
+- Actual RT_ICON payload bytes at `0x300..0x32f` are `28 00 00 00 01 00 00 00 02 00 00 00 01 00 20 00 00 00 00 00 04 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 20 80 e0 ff 00 00 00 00` (SHA-256 `d7aaca7bc7951c9249a7798838189374fa953d3def03aebb375ee731768e5003`). The group payload at `0x340..0x353` is `00 00 01 00 01 00 01 01 00 00 01 00 20 00 2f 00 00 00 01 00` (SHA-256 `8ba4474bfc0b4b9f569f3ee752d44f0f4b741b662064b9b413667e4150db4977`).
+- Compared complete files byte-for-byte with supplied r52 fixture: both are 1,024 bytes; exactly one differing byte, offset 846 (`0x34e`), r52=`0x30` and r54=`0x2f`. This is the low byte of the group entry’s declared size field at `0x34e`; upper bytes remain zero. The RT_ICON payload at `0x300..0x32f` is unchanged; the group payload differs only at that byte. r52 group size was 48, r54 is 47. Hashes: r52 `9297adec215ef401538dad04f06e249a41d3747e14b996a837164a2dde3d070d`; r54 as above.
+
+## INFERENCE
+
+- R54 is independently consistent with a single-byte mutation of the r52 icon-group size field, reducing the declared size from 48 to 47 while preserving the 48-byte image resource and all other bytes. This makes the group-to-icon link resolvable by ID/language but makes the declared-versus-actual size check false.
+- These observations independently agree with the supplied `truth.json` for source digest, changed offset, Unicode name, and link/size expectation. The truth file was used only as a comparison after byte-level decoding, not as the basis for parsing.
+- Cross-check: saved REA evidence `ev_f015502b774219fa3491150c7c2ac1c592c0c099227642d43b4962e555920d24` (`inspect_pe_resources`, matching r54 SHA-256) reports PE32+, the same two resource records, name, group link, 47-byte declaration, candidate 0 and size mismatch. It corroborates the byte observations; the conclusion above does not depend on the REA parser result.
+
+## UNKNOWN / LIMITATIONS
+
+- Static bytes do not establish whether any program loads, displays, or rejects this resource at runtime, nor whether the malformed declared size has a particular application-level effect.
+- The icon payload was not rendered or semantically validated as an image; its bytes, length, digest, and resource linkage were inspected only. No claim is made about visual appearance or asset rights.
+- Address translation was checked against the supplied PE section mapping for this resource range; this is not a general PE validity, loader-compatibility, or full-file structural audit.

@@ -1,0 +1,20 @@
+{
+  "source_fixture": "../pe-r52/fixture.exe",
+  "source_sha256": "9297adec215ef401538dad04f06e249a41d3747e14b996a837164a2dde3d070d",
+  "sha256": "3c5a50e5cf3e4242b228a228e4ac0e58d413b3851538210e280d7bd50b9e64b7",
+  "size": 1024,
+  "changed_offsets": [
+    846
+  ],
+  "mutation": "RT_GROUP_ICON image declared_bytes 48\u219247 at 846, leave PE32+ Unicode name A\ud83d\ude00B!, icon ID1, language1033 and actual 48-byte payload intact; static only",
+  "expected_name": "A\ud83d\ude00B!",
+  "expected_resource_indices": [
+    0,
+    1
+  ],
+  "expected_candidates": [
+    0
+  ],
+  "expected_same_language": 0,
+  "expected_size_matches": false
+}

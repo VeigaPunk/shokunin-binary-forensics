@@ -1,0 +1,7 @@
+{
+  "command": "npx -y rea-agents@6.4.0 inspect-pe-resources /home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r54/fixture.exe --json",
+  "exit_code": 0,
+  "stdout_sha256": "78f4755643cfd59e42aa6a9f9c8ed1f674d00f87398ce1980cfb3f564d509ecc",
+  "fixture_sha256": "3c5a50e5cf3e4242b228a228e4ac0e58d413b3851538210e280d7bd50b9e64b7",
+  "evidence_id": "ev_f015502b774219fa3491150c7c2ac1c592c0c099227642d43b4962e555920d24"
+}
