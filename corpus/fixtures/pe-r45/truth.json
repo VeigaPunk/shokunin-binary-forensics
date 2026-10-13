@@ -1,0 +1,28 @@
+{
+  "source_fixture": "../pe-r42/fixture.exe",
+  "source_sha256": "3ab5008b436eb4facd3966767a507fa4b1625160532585a09a6af2f752b38941",
+  "sha256": "1d526ab14ba29a133cafd720395920b0067d8d00c40a5e1216e097272c176669",
+  "size": 1536,
+  "changed_offsets": [
+    640
+  ],
+  "mutation": "second RT_ICON leaf language 1033\u21921036 at offset640; group and first icon language1033, both IDs and payloads intact; static only",
+  "expected_images": [
+    {
+      "id": 1,
+      "candidate": [
+        0
+      ],
+      "same_language": 0,
+      "size_matches": true
+    },
+    {
+      "id": 2,
+      "candidate": [
+        1
+      ],
+      "same_language": null,
+      "size_matches": null
+    }
+  ]
+}
