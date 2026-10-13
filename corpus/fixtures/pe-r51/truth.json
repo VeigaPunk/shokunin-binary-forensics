@@ -1,0 +1,18 @@
+{
+  "pe32_resource_source": "../pe-r34/fixture.exe",
+  "pe32_resource_source_sha256": "28182338af9da23b7dc0d6c1b64b325bb635a25f8b336c1d278884ffa88f2e85",
+  "pe32plus_header_source": "../pe-r41/fixture.exe",
+  "pe32plus_header_source_sha256": "501584bd0fd439d8c0e904394adb575a9d94a71f151c2ff6389c4053ba36394c",
+  "sha256": "c890961ecfa1602b943ffbcbc03aa46af3d257effbf5eaa66483d0df6d0e32cf",
+  "size": 1024,
+  "resource_region_sha256": "4c9d1ac70f076859f835143d222b9b69c960401e51920eb6e1f2312622a807db",
+  "construction": "PE32+ AMD64 header from pe-r41 with PE32+ resource directory size corrected from 160 to 240 bytes; resource bytes [512:1024] copied unchanged from pe-r34; no execution",
+  "name": {
+    "value": "A😀B!",
+    "utf16le_hex": "41003dd800de42002100",
+    "length_field_offset": 736,
+    "utf16_offset": 738
+  },
+  "expected_resources": 2,
+  "resource_directory_bytes": 240
+}
