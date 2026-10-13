@@ -1,0 +1,28 @@
+{
+  "source_fixture": "../pe-r42/fixture.exe",
+  "source_sha256": "3ab5008b436eb4facd3966767a507fa4b1625160532585a09a6af2f752b38941",
+  "sha256": "bb2680c1ceaa3ce6e4921e078e2548f06f164d9598da2bff6c895890b73bc5fb",
+  "size": 1536,
+  "changed_offsets": [
+    924
+  ],
+  "mutation": "second group image declared size48\u219247 offset924, both icon IDs/payloads unchanged; static only",
+  "expected_images": [
+    {
+      "id": 1,
+      "candidate": [
+        0
+      ],
+      "same_language": 0,
+      "size_matches": true
+    },
+    {
+      "id": 2,
+      "candidate": [
+        1
+      ],
+      "same_language": 1,
+      "size_matches": false
+    }
+  ]
+}
