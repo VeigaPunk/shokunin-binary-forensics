@@ -1,0 +1,66 @@
+{
+  "construction": "Static PE32 derived from pe-r34; copy named resource A😀B! language directory to offset 768, add language 1041 branch at 792, retain numeric-name 3 original language directory, new data entry 864 and distinct payload 896. No execution or compiler.",
+  "source_fixture_sha256": "28182338af9da23b7dc0d6c1b64b325bb635a25f8b336c1d278884ffa88f2e85",
+  "sha256": "372cca0e0e1a3510ff4ccf862b2351e6970bb559feb5fb6a30416d34331930f8",
+  "size": 1024,
+  "changed_offsets": [
+    204,
+    205,
+    320,
+    321,
+    556,
+    557,
+    782,
+    784,
+    785,
+    788,
+    792,
+    793,
+    796,
+    797,
+    864,
+    865,
+    868,
+    896,
+    897,
+    898,
+    899,
+    900,
+    901,
+    902,
+    903,
+    904,
+    905,
+    906,
+    907,
+    908,
+    909,
+    910
+  ],
+  "resources": [
+    {
+      "type_id": 10,
+      "name": "A😀B!",
+      "language_id": 1036,
+      "payload_file_offset": 672,
+      "payload_bytes": 15,
+      "payload_sha256": "071db9bf3f85c6f8a41884653e2f08a2346af9ce522e2574851e286e5c192229"
+    },
+    {
+      "type_id": 10,
+      "name": "A😀B!",
+      "language_id": 1041,
+      "payload_file_offset": 896,
+      "payload_bytes": 15,
+      "payload_sha256": "cba2d0e3f4bb58475ef4f760dbc917210e84f90c73a27a8026eba7ef7229821e"
+    },
+    {
+      "type_id": 10,
+      "name_id": 3,
+      "language_id": 1033,
+      "payload_file_offset": 704,
+      "payload_bytes": 15,
+      "payload_sha256": "cc29ca16da56975bf9fb034fbc010e377076ada5df6395622c8ffd9fed19f67e"
+    }
+  ]
+}
