@@ -1,0 +1,26 @@
+{
+  "source_fixture": "../pe-r55/fixture.exe",
+  "source_sha256": "41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b",
+  "sha256": "911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b",
+  "size": 1536,
+  "changed_offsets": [
+    928
+  ],
+  "mutation": "second RT_GROUP_ICON image resource ID 2→3 at offset 928; Unicode group name A😀B!, both icon leaves and first image unchanged; no execution",
+  "expected_images": [
+    {
+      "id": 1,
+      "candidate": [
+        0
+      ],
+      "same_language": 0,
+      "size_matches": true
+    },
+    {
+      "id": 3,
+      "candidate": [],
+      "same_language": null,
+      "size_matches": null
+    }
+  ]
+}
