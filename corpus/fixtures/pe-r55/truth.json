@@ -1,0 +1,80 @@
+{
+  "source_fixture": "../pe-r42/fixture.exe",
+  "source_sha256": "3ab5008b436eb4facd3966767a507fa4b1625160532585a09a6af2f752b38941",
+  "sha256": "41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b",
+  "size": 1536,
+  "changed_offsets": [
+    220,
+    588,
+    590,
+    592,
+    595,
+    736,
+    738,
+    740,
+    741,
+    743,
+    744,
+    746
+  ],
+  "construction": "PE32+ r42 resource tree, named group entry count at 588/590 changed to 1/0, name key at592 points to UTF-16 A😀B! at736, declared directory bytes208→240. Icon and group payloads identical. No execution.",
+  "resource_directory": {
+    "rva": 8192,
+    "file_offset": 512,
+    "bytes": 240
+  },
+  "group_name": {
+    "value": "A😀B!",
+    "utf16le_hex": "41003dd800de42002100",
+    "location": [
+      736,
+      748
+    ]
+  },
+  "resources": [
+    {
+      "type_id": 3,
+      "name_id": 1,
+      "language_id": 1033,
+      "payload_offset": 768,
+      "payload_bytes": 48,
+      "sha256": "d7aaca7bc7951c9249a7798838189374fa953d3def03aebb375ee731768e5003"
+    },
+    {
+      "type_id": 3,
+      "name_id": 2,
+      "language_id": 1033,
+      "payload_offset": 832,
+      "payload_bytes": 48,
+      "sha256": "2f503cace29956c75acd5356de2f8fa98485b01edd654daf0f81a739b44c82ae"
+    },
+    {
+      "type_id": 14,
+      "name_id": null,
+      "language_id": 1033,
+      "payload_offset": 896,
+      "payload_bytes": 34,
+      "sha256": "45eb70319667352d8bfea3249f7fb30166c6835d2cf564b5ec303bf2d716c17a"
+    }
+  ],
+  "ordered_group_icon_ids": [
+    1,
+    2
+  ],
+  "expected_candidate_resource_indices": [
+    [
+      0
+    ],
+    [
+      1
+    ]
+  ],
+  "expected_same_language_indices": [
+    0,
+    1
+  ],
+  "expected_size_matches": [
+    true,
+    true
+  ]
+}
