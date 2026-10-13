@@ -1,0 +1,42 @@
+{
+  "source_fixture": "../pe-r41/fixture.exe",
+  "source_sha256": "501584bd0fd439d8c0e904394adb575a9d94a71f151c2ff6389c4053ba36394c",
+  "sha256": "3ab5008b436eb4facd3966767a507fa4b1625160532585a09a6af2f752b38941",
+  "size": 1536,
+  "construction": "PE32+ AMD64 static .rsrc section 1024 raw bytes; resource directory RVA 0x2000 / file offset 512 / 208 bytes; root types 3 and 14; two RT_ICON ID1/ID2 language1033 leaves and group ID1/language1033 with ordered ID1 then ID2 images. No PE execution.",
+  "resource_directory": {
+    "rva": 8192,
+    "file_offset": 512,
+    "bytes": 208
+  },
+  "resources": [
+    {
+      "type_id": 3,
+      "name_id": 1,
+      "language_id": 1033,
+      "payload_offset": 768,
+      "payload_bytes": 48,
+      "sha256": "d7aaca7bc7951c9249a7798838189374fa953d3def03aebb375ee731768e5003"
+    },
+    {
+      "type_id": 3,
+      "name_id": 2,
+      "language_id": 1033,
+      "payload_offset": 832,
+      "payload_bytes": 48,
+      "sha256": "2f503cace29956c75acd5356de2f8fa98485b01edd654daf0f81a739b44c82ae"
+    },
+    {
+      "type_id": 14,
+      "name_id": 1,
+      "language_id": 1033,
+      "payload_offset": 896,
+      "payload_bytes": 34,
+      "sha256": "45eb70319667352d8bfea3249f7fb30166c6835d2cf564b5ec303bf2d716c17a"
+    }
+  ],
+  "ordered_group_icon_ids": [
+    1,
+    2
+  ]
+}
