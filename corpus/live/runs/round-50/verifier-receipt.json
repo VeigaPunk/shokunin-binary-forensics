@@ -1,0 +1,5 @@
+{
+  "command": "python3 /home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/verify_icon_languages.py",
+  "exit_code": 0,
+  "stdout": "PASS: 3/3 group-language states, 2/2 exact one-byte deltas, two icon candidates retained, forged selection REJECTED\n"
+}
