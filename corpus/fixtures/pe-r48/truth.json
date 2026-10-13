@@ -1,0 +1,16 @@
+{
+  "source_fixture": "../pe-r47/fixture.exe",
+  "source_sha256": "cc02c78b44883f2217b7a8f82fa6fafc990ae6d0ca71f0eab8a3fbc4f2ba44ba",
+  "sha256": "dc6483a985f12dbc0da4122db64565ed76c14a5e76ea8758658b4a54c35bc129",
+  "size": 1536,
+  "changed_offsets": [
+    664
+  ],
+  "mutation": "group language 1036\u21921041 at offset664; two same-ID icon candidates languages1033/1036 unchanged; no execution",
+  "expected_candidates": [
+    0,
+    1
+  ],
+  "expected_same_language": null,
+  "expected_size_matches": null
+}
