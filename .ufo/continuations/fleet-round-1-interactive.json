@@ -1,0 +1,142 @@
+{
+  "schema": "revenger-shokunin-interactive-continuation-v1",
+  "lane": "revenger",
+  "round_namespace": "current-fleet",
+  "round": 1,
+  "status": "blocked-unadmitted",
+  "verified_completed_rounds_added": 0,
+  "verified_completed_rounds_total": null,
+  "verified_total_reason": "Imported historical r1-r60 has not been individually re-adjudicated into a verified aggregate; a launch counter is not a completion count.",
+  "operator_minimum_round_target": 100,
+  "in_session_round_loop": false,
+  "fresh_session_required_for_continuation": true,
+  "next_session_round": 1,
+  "next_round_after_admission": 2,
+  "new_l1_spawned_by_this_session": false,
+  "mission": {
+    "run_id": "shk-revenger-interactive-20261015T050057Z",
+    "session_id": "shk-revenger-interactive-20261015T050057Z",
+    "mission_id": "m_d2a263bbc4d0446287a8bf351b35943f",
+    "pane_id": "%15",
+    "left_open": true,
+    "complete_invoked": false,
+    "native_transcript_bodies_read_or_committed": false
+  },
+  "commits": {
+    "baseline": "286033c5f2b1683fb538e86e15667709bb49b054",
+    "inherited_work": "7c3ce197341b0babe0046b1d9cbb59f1ba43f54e",
+    "owned_evidence_integration": "522b89ea8ee61fd5690e53bdd333f8c22911ea65",
+    "identity": "revenger-shokunin <revenger@shokunin.local>",
+    "pushed": false
+  },
+  "report": ".ufo/reports/round-1/revenger.md",
+  "wwkd_plan": ".ufo/plans/fleet-round-1-interactive-wwkd.md",
+  "wave": {
+    "spec": ".ufo/waves/fleet-round-1-interactive/audit-spec.json",
+    "canonical_plan_exit_code": 0,
+    "pure_canonical_renderer_exit_code": 0,
+    "planned_members": 32,
+    "dispatched_members_this_session": 0,
+    "registry_persisted": false,
+    "rendered_payload": ".ufo/waves/fleet-round-1-interactive/rendered-undispatched.json",
+    "old_batch": "reports/round-1/batch-receipt.json",
+    "old_batch_is_current_contract_completion": false,
+    "judgment": "none; unjudged advisory wave was held before dispatch"
+  },
+  "acceptance": {
+    "evidence": ".ufo/waves/fleet-round-1-interactive/local-acceptance.json",
+    "command": "python3 -B reports/round-1/replay_scenarios.py",
+    "baseline_named_cli_exit_code": 1,
+    "baseline_finding": "AssertionError: r55 artifact",
+    "runner_exit_code": 0,
+    "verdict_lines": [
+      "POSITIVES met=3/3",
+      "EXPECTED_REJECTIONS met=6/6",
+      "INPUTS met=9/9 (SHA-256 unchanged before/after)",
+      "VERIFIER_SCRIPT met=1/1 (unchanged)",
+      "CLEANUP met=1/1 (removed)",
+      "RESULT PASS exit=0"
+    ],
+    "source_revision_and_nine_inputs_hash_bound": true,
+    "scope": "Authored r55-r57 saved normalized records and checked historical identities; not historical producer authentication or arbitrary PE correctness.",
+    "coverage_evidence": ".ufo/waves/fleet-round-1-interactive/coverage-remeasurement.json",
+    "coverage_before_after": "4/8 -> 4/8 fixed selected saved-record families; both census exits 0"
+  },
+  "axes": {
+    "calibration": "improved (local bounded replay only; admission blocked)",
+    "coverage": "unchanged",
+    "depth": "unchanged (historical guardrail)",
+    "operability": "unchanged (unassigned; no double-counted gain)",
+    "freshness": "unchanged (unassigned; no producer refresh)",
+    "adjacency": "unchanged (unassigned; ownership retained)"
+  },
+  "learning": {
+    "expansion": "unchanged",
+    "quality": "improved (saved-ledger re-verification only)",
+    "discernment": "unchanged (outside admit/reject spot-check absent)",
+    "lesson": "corpus/lessons/round-1.md",
+    "knowledge_entries_admitted": 0
+  },
+  "blocker": {
+    "finding_id": "required_role_alias_binding_missing",
+    "assessment_process_exit_code": 2,
+    "assessment": ".ufo/waves/fleet-round-1-interactive/routing-assessment-run.json",
+    "matrix": ".ufo/waves/fleet-round-1-interactive/routing-contract.json",
+    "expected_bindings": {
+      "reviewer": "@m_grok",
+      "critic": "@m_grok",
+      "sentinel": "@m_grok",
+      "scribe": "@m_composer",
+      "connector": "@m_antigravity"
+    },
+    "observed_bindings": {
+      "reviewer": "@m_mid",
+      "critic": "@m_strong",
+      "sentinel": "@m_mid",
+      "scribe": "@m_fast",
+      "connector": "@m_mid"
+    },
+    "connector_required_fallback": "@m_zfl",
+    "route_network_health": "not probed",
+    "unblock_owner": "operator/integrator; no global mutation or new overlay authorized to this lane",
+    "unblock_action": "Establish the required existing global taxonomy-role aliases and connector fallback. Then authorize a fresh interactive L1 continuation of the same fleet round 1; revalidate the saved 32-scope spec against live routing, use one complete native batch from the new canonical payload, integrate while specialists run, and rerun local acceptance. Never silently substitute generic routes, duplicate the old batch or advance the round counter before admission."
+  },
+  "debt": [
+    {
+      "name": "lane-contract-files-and-gate-registry-absent",
+      "paths": ["SKILL.md", "AGENTS.md", "corpus/QUALITY.md", "corpus/README.md"],
+      "unblock": "Separately declare a sourced owned-file contract-restoration move, register permanent gates with real verdict/self-test interfaces, and obtain an outside sample of at least one admit and one reject. No promotion or conformant registry claim before that evidence."
+    },
+    {
+      "name": "unchecked-evidence-envelope-paths",
+      "evidence": "reports/round-1/reviewer.md:39",
+      "unblock": "A separately declared falsifiable future criterion must specify whether parameters.path, locations and other envelope metadata belong in the byte-derived verifier's contract. Do not silently expand this repair."
+    },
+    {
+      "name": "other-ledger-relocation-failures",
+      "paths": ["corpus/verify_icon_languages.py", "corpus/verify_multi_icon_states.py"],
+      "unblock": "Only after current-round admission, choose the lowest LIVE axis and declare a new before/after falsifier for one ledger. Existing known failures are not confirmations of new work."
+    },
+    {
+      "name": "historical-r59-malformed-name-refusal-falsified",
+      "evidence": "LOG.md:707-721",
+      "unblock": "Operator ruling or a newly declared criterion; do not rerun the identical producer or recast observed success as the predicted refusal."
+    }
+  ],
+  "receipt": {
+    "applicable_completion_receipt_minted": false,
+    "validated": false,
+    "reason": "Required authorized width-32 dispatch and round admission are absent. No applicable completion receipt was fabricated or substituted with a plan, report or local gate pass."
+  },
+  "safety": {
+    "only_owned_repository_written": true,
+    "shared_ledgers_updated": false,
+    "global_configs_changed": false,
+    "sibling_or_substrate_writes": false,
+    "external_live_target_research": false,
+    "producer_or_target_executed": false,
+    "temporary_acceptance_trees_removed": true,
+    "saturated": false,
+    "three_consecutive_blocked_rounds_claimed": false
+  }
+}
