@@ -39,3 +39,20 @@ The output establishes bounded saved-record consistency, not authenticated
 producer origin, a new REA analysis, PE execution, or general parser correctness.
 The separate multi-image and language-ledger relocation failures remain outside
 this repair. Round evidence and counting commands live in `reports/round-1/`.
+
+Run the isolated relocation/tamper acceptance battery with:
+
+```sh
+python3 -B reports/round-1/replay_scenarios.py
+```
+
+It exercises the real verifier in three cwd/path contexts and six individually
+forged saved-record copies, checking that original inputs remain unchanged.
+Exit 0 means this bounded battery passed; it does not admit a training round.
+The current interactive continuation has a validated, undispatched 32-scope
+audit plan but missing required global route bindings. See
+`.ufo/waves/fleet-round-1-interactive/routing-assessment-run.json` and
+`SCORECARD.md`'s interactive-continuation section before advancing a round.
+Permanent gate-registry and corpus-bar files remain named debt, not implied
+by this command's existence. No native judgment or completion receipt is
+claimed by these replay commands.

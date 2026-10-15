@@ -1,4 +1,127 @@
-# revenger scorecard — mint
+# revenger scorecard — fleet round-1
+
+Active mission axes: coverage + calibration. The imported record below had no
+numeric rubric. These are newly declared, bounded 0–10 proxies, not mastery
+scores or scalar round verdicts. Calibration was lowest before this move.
+
+| axis / criterion | before → after score | evidence / command | measured commits | last change |
+|---|---|---|---|---|
+| calibration — selected saved-ledger runnability | 2.5 → 5.0 (`10 × 1/4 → 10 × 2/4`) | C below; `reports/round-1/measurements.json`; named r55–r57 verifier changes exit 1 → 0 | before `286033c5f2b1683fb538e86e15667709bb49b054`; after `7c3ce197341b0babe0046b1d9cbb59f1ba43f54e` | fleet round-1 |
+| coverage — selected-family record presence | 5.0 → 5.0 (`10 × 4/8` both) | F below; same frozen measurements; existing native-static, JavaScript, archive, EVM records | same before/after commits | fleet round-1 initialization; unchanged |
+
+**Verdicts:** calibration **improved** only for this saved-ledger repeatability
+criterion; coverage **unchanged**. Historical depth is **unchanged**, not an
+active scoring axis. No new producer, route, parser policy or runtime claim.
+The two proxies tie after this move; that is not saturation.
+
+**Rubric boundaries.** C counts the four existing cross-record PE state scripts
+enumerated in its `names` set. Its broader 7/10 → 8/10 census overlaps that
+subset, not a second independent competence gain. The language and numeric
+multi-image verifiers still fail at their original artifact-path assertions.
+F uses eight fixed selected families, including already-recorded EVM. The
+inherited 3/7 = 4.29 omitted EVM; correcting the taxonomy is not coverage growth.
+Record presence does not authenticate historical producer success/readiness.
+Only the named ledger receives the additional relocation/tamper acceptance.
+
+**Counting commands.** Both were executed from isolated corpus snapshots made
+with `git archive --format=tar <measured-commit> corpus`; outputs and exact
+command strings are committed in `reports/round-1/measurements.json` and
+`reports/round-1/counting-commands.json`. The census probe exits 0 even when
+constituent verifiers fail; inspect every printed exit code.
+
+C — selected calibration and broader replay census:
+
+```sh
+python3 -B -c 'import pathlib,subprocess,sys
+ps=sorted(pathlib.Path("corpus").glob("verify_*.py"))
+rows=[(p.name,subprocess.run([sys.executable,"-B",str(p),"--self-test"],capture_output=True,text=True)) for p in ps]
+for name,r in rows: print(name,"exit="+str(r.returncode),(r.stdout+r.stderr).splitlines()[-1])
+names={"verify_icon_states.py","verify_multi_icon_states.py","verify_icon_languages.py","verify_named_multi_icon_states.py"}
+ok=sum(r.returncode==0 for name,r in rows if name in names)
+print("CALIBRATION",ok,"/",len(names),"score=",10*ok/len(names))
+print("REPLAY",sum(r.returncode==0 for _,r in rows),"/",len(rows))'
+```
+
+F — selected-family saved-record presence:
+
+```sh
+python3 -B -c 'import collections,json,pathlib
+c=collections.Counter()
+for p in sorted(pathlib.Path("corpus/live/runs").rglob("*.json")):
+ try: x=json.loads(p.read_bytes())
+ except (ValueError,UnicodeError): continue
+ if isinstance(x,dict) and x.get("evidence_id") and x.get("normalized_result") is not None: c[x.get("operation","unknown")]+=1
+families={"native-static":{"inspect_pe_resources"},"managed":{"inspect_managed_artifact"},"javascript":{"analyze_javascript_application"},"android":{"inspect_android_package"},"archives":{"inventory_artifact","inspect_artifact"},"firmware":{"inspect_firmware_regions"},"browser-runtime":{"inspect_web_page","capture_browser_scenario","observe_web_session"},"evm":{"inspect_evm_interface"}}
+present=[k for k,v in families.items() if v.intersection(c)]
+print(json.dumps(c,sort_keys=True)); print("COVERAGE",len(present),"/",len(families),"score=",10*len(present)/len(families),"families=",present)'
+```
+
+planned: next move, calibration repeatability — isolate the existing
+`verify_icon_languages.py` artifact-path failure with unchanged saved inputs;
+declare its own falsifier before changing it. At the current 5.0/5.0 tie this
+claim is more directly falsifiable than acquiring an unprobed producer family.
+No additional verifier is changed in fleet round-1.
+
+retired: historical depth scoring, wrong-fit for this dispatch's
+coverage+calibration assignment, not saturation; findings remain below.
+Calibration's historical r59 malformed-name validity/refusal criterion remains
+**halted and falsified** (`LOG.md:707-721`). The newly declared repeatability
+criterion neither resumes nor regrades it.
+
+## Interactive continuation — fleet round-1 remains unadmitted
+
+This section supersedes the earlier **planned** next move, not the imported
+history or the bounded local improvement. The predecessor's nine-role batch
+(`reports/round-1/batch-receipt.json`) is preserved historical dispatch evidence;
+it does not satisfy the current operator's validated width-32 contract.
+No completed round is added by this continuation.
+
+| axis | current verdict | freshly exercised evidence and boundary |
+|---|---|---|
+| calibration — selected saved-ledger repeatability | **improved**, local behavior only; admission blocked | Baseline `286033c5f2b1683fb538e86e15667709bb49b054`: named verifier exit 1, `AssertionError: r55 artifact`. Work `7c3ce197341b0babe0046b1d9cbb59f1ba43f54e`: real CLI passes in 3/3 contexts and rejects 6/6 isolated forgeries; 9/9 original inputs byte-identical. `.ufo/waves/fleet-round-1-interactive/local-acceptance.json` contains full verdicts, commands, exits and revision hashes. The broader inherited 1/4 → 2/4 proxy is not re-counted here by retrying unrelated known failures. |
+| coverage — fixed selected-family record presence | **unchanged** | Fresh isolated-archive runs at both commits: `COVERAGE 4 / 8 score= 5.0 families= ['native-static', 'javascript', 'archives', 'evm']`, exit 0 each. Exact command/output: `.ufo/waves/fleet-round-1-interactive/coverage-remeasurement.json`. Record presence is not producer authentication/readiness. |
+| depth — historical guardrail, not active scoring | **unchanged** | No new REA producer, code semantics, image decode or PE runtime claim. Same r55–r57 evidence and independently pinned fixture hashes. |
+| operability — not an assigned scoring axis | **unchanged** | Portable replay is counted only under the declared calibration criterion, not as a second gain. Missing contract files/registry remain named debt below. |
+| freshness — not an assigned scoring axis | **unchanged** | Saved-record consistency rechecked; historical producer/native readiness not re-probed or refreshed. |
+| adjacency — not an assigned scoring axis | **unchanged** | Scope remains saved PE evidence; route repair and shared-ledger integration are reported to their owners, not absorbed. |
+
+Learning trends: expansion **unchanged** (no knowledge entry admitted);
+quality **improved** only for the re-verified saved-ledger replay;
+discernment **unchanged** (no non-author admit-and-reject spot-check).
+`corpus/lessons/round-1.md` records the gate decisions and missing outside check.
+
+The canonical validator accepted exactly 32 distinct scopes, exit 0, and its
+pure canonical renderer succeeded, exit 0. The executed operator-route
+assessment exits 2 (`could-not-evaluate`): reviewer/sentinel → `@m_mid`,
+critic → `@m_strong`, scribe → `@m_fast`, connector → `@m_mid`, rather than the
+required audit `@m_grok`, content `@m_composer`, and connector
+`@m_antigravity` with `@m_zfl` fallback. No seats were dispatched and no
+registry was persisted. `.ufo/waves/fleet-round-1-interactive/routing-assessment-run.json`
+and `routing-contract.json` carry exact commands, verdicts and bindings.
+
+**planned:** keep fleet round-1 open. Operator-owned global route bindings must
+first satisfy that matrix; a fresh interactive L1 continuation revalidates the
+same 32-scope spec and dispatches its complete canonical payload once, without
+overlays or model pins. Reuse landed work/evidence; do not advance to the
+language-ledger move or loop rounds in this session. At-least-100 remains a
+fresh-session objective, not a count established here.
+
+**Named debt:** `SKILL.md`, `AGENTS.md`, `corpus/QUALITY.md`, and
+`corpus/README.md` are absent in this lane (explicit read/glob sweep).
+An authorized owned-file contract-restoration move must reconstruct sourced
+instructions, register any permanent gate with its real verdict/self-test
+interface, and obtain a non-author admit/reject spot-check. Do not promote or
+call the local acceptance runner protocol-conformant while that registry/bar
+is absent. This continuation admits no new knowledge under a nonexistent bar.
+Inherited language/multi-image relocation failures remain separate future
+claims; unchecked Evidence envelope path fields remain a bounded verifier
+limitation (`reports/round-1/reviewer.md:39`), not silently repaired scope.
+
+
+## Imported scorecard — historical, not current
+
+The following unmeasured table and planned/retired statements describe imported
+training history; the current rubric, plan and retirement decisions are above.
 
 Owned axes: depth, coverage, calibration. Scores remain unassigned without a
 quality rubric; a row count is a measurement, not a score or verdict.

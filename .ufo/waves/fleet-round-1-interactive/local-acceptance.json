@@ -1,0 +1,71 @@
+{
+  "baseline_commit": "286033c5f2b1683fb538e86e15667709bb49b054",
+  "work_commit": "7c3ce197341b0babe0046b1d9cbb59f1ba43f54e",
+  "input_revision_bindings": {
+    "corpus/verify_named_multi_icon_states.py": {
+      "baseline_sha256": "30c542e47a30e5c2b2e87abdc50a9d90f026731bc47487ac99f5d1b06e52ddb7",
+      "work_commit_sha256": "b62441d5e1fa9ce15be61686f6b0e0fe7b879d3aca3cb898edcd0c29894093a3",
+      "current_sha256": "b62441d5e1fa9ce15be61686f6b0e0fe7b879d3aca3cb898edcd0c29894093a3"
+    },
+    "corpus/fixtures/pe-r55/fixture.exe": {
+      "baseline_sha256": "41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b",
+      "work_commit_sha256": "41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b",
+      "current_sha256": "41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b"
+    },
+    "corpus/live/runs/round-55/inspection.raw.json": {
+      "baseline_sha256": "54ffdeab7108895404efa01edb400c9bc32c36c4f85540babed2f5241137f860",
+      "work_commit_sha256": "54ffdeab7108895404efa01edb400c9bc32c36c4f85540babed2f5241137f860",
+      "current_sha256": "54ffdeab7108895404efa01edb400c9bc32c36c4f85540babed2f5241137f860"
+    },
+    "corpus/live/runs/round-55/receipt.json": {
+      "baseline_sha256": "1fffb03106c649cb2b1cdb92925347764d8e5546704986e67f57ae44b4bb9733",
+      "work_commit_sha256": "1fffb03106c649cb2b1cdb92925347764d8e5546704986e67f57ae44b4bb9733",
+      "current_sha256": "1fffb03106c649cb2b1cdb92925347764d8e5546704986e67f57ae44b4bb9733"
+    },
+    "corpus/fixtures/pe-r56/fixture.exe": {
+      "baseline_sha256": "911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b",
+      "work_commit_sha256": "911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b",
+      "current_sha256": "911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b"
+    },
+    "corpus/live/runs/round-56/inspection.raw.json": {
+      "baseline_sha256": "59a95f9db16633b337fd058a6d1509c95687445af02d63bb3156309f1811bbe6",
+      "work_commit_sha256": "59a95f9db16633b337fd058a6d1509c95687445af02d63bb3156309f1811bbe6",
+      "current_sha256": "59a95f9db16633b337fd058a6d1509c95687445af02d63bb3156309f1811bbe6"
+    },
+    "corpus/live/runs/round-56/receipt.json": {
+      "baseline_sha256": "1b2bcfe2323219b069b33c64259c9e052a26ef9264cb46b9c4d707ae164066ee",
+      "work_commit_sha256": "1b2bcfe2323219b069b33c64259c9e052a26ef9264cb46b9c4d707ae164066ee",
+      "current_sha256": "1b2bcfe2323219b069b33c64259c9e052a26ef9264cb46b9c4d707ae164066ee"
+    },
+    "corpus/fixtures/pe-r57/fixture.exe": {
+      "baseline_sha256": "71d11fba01d4daa040e04e649a70c39bcdb475ce2e0a2801f6171a325db0494d",
+      "work_commit_sha256": "71d11fba01d4daa040e04e649a70c39bcdb475ce2e0a2801f6171a325db0494d",
+      "current_sha256": "71d11fba01d4daa040e04e649a70c39bcdb475ce2e0a2801f6171a325db0494d"
+    },
+    "corpus/live/runs/round-57/inspection.raw.json": {
+      "baseline_sha256": "5c915ebdc4c79a6d98e3b9f374e6e2e67168a1c5b391487ac80bd8e199d34fc8",
+      "work_commit_sha256": "5c915ebdc4c79a6d98e3b9f374e6e2e67168a1c5b391487ac80bd8e199d34fc8",
+      "current_sha256": "5c915ebdc4c79a6d98e3b9f374e6e2e67168a1c5b391487ac80bd8e199d34fc8"
+    },
+    "corpus/live/runs/round-57/receipt.json": {
+      "baseline_sha256": "ee2ec2875ebeeaa75c54acad671fcb488562051eeb3e17cb62d8a9338be67a91",
+      "work_commit_sha256": "ee2ec2875ebeeaa75c54acad671fcb488562051eeb3e17cb62d8a9338be67a91",
+      "current_sha256": "ee2ec2875ebeeaa75c54acad671fcb488562051eeb3e17cb62d8a9338be67a91"
+    }
+  },
+  "before": {
+    "command": "python3 -B corpus/verify_named_multi_icon_states.py (isolated baseline git archive)",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/revenger-r1-before-31975lro/corpus/verify_named_multi_icon_states.py\", line 97, in <module>\n    if __name__=='__main__': main()\n                             ~~~~^^\n  File \"/tmp/revenger-r1-before-31975lro/corpus/verify_named_multi_icon_states.py\", line 75, in main\n    rows={r:check(r) for r in EXPECT}; base=rows[55][0]\n            ~~~~~^^^\n  File \"/tmp/revenger-r1-before-31975lro/corpus/verify_named_multi_icon_states.py\", line 67, in check\n    req(report['normalized_result']['artifact']==dict(path=str(fixture),sha256=digest,bytes=len(d)),f'r{r} artifact')\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/revenger-r1-before-31975lro/corpus/verify_named_multi_icon_states.py\", line 12, in req\n    if not ok: raise AssertionError(msg)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: r55 artifact\n"
+  },
+  "after": {
+    "command": "python3 -B reports/round-1/replay_scenarios.py",
+    "exit_code": 0,
+    "stdout": "{\"corpus\": \"/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus\", \"event\": \"corpus-snapshot\", \"inputs_note\": \"inputs = 3 fixture + 3 inspection.raw.json + 3 receipt.json\", \"phase\": \"before\", \"sha256\": {\"fixtures/pe-r55/fixture.exe\": \"41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b\", \"fixtures/pe-r56/fixture.exe\": \"911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b\", \"fixtures/pe-r57/fixture.exe\": \"71d11fba01d4daa040e04e649a70c39bcdb475ce2e0a2801f6171a325db0494d\", \"live/runs/round-55/inspection.raw.json\": \"54ffdeab7108895404efa01edb400c9bc32c36c4f85540babed2f5241137f860\", \"live/runs/round-55/receipt.json\": \"1fffb03106c649cb2b1cdb92925347764d8e5546704986e67f57ae44b4bb9733\", \"live/runs/round-56/inspection.raw.json\": \"59a95f9db16633b337fd058a6d1509c95687445af02d63bb3156309f1811bbe6\", \"live/runs/round-56/receipt.json\": \"1b2bcfe2323219b069b33c64259c9e052a26ef9264cb46b9c4d707ae164066ee\", \"live/runs/round-57/inspection.raw.json\": \"5c915ebdc4c79a6d98e3b9f374e6e2e67168a1c5b391487ac80bd8e199d34fc8\", \"live/runs/round-57/receipt.json\": \"ee2ec2875ebeeaa75c54acad671fcb488562051eeb3e17cb62d8a9338be67a91\", \"verify_named_multi_icon_states.py\": \"b62441d5e1fa9ce15be61686f6b0e0fe7b879d3aca3cb898edcd0c29894093a3\"}}\n{\"cwd\": \"/home/vgpnk/Projects/shokunin/revenger-shokunin\", \"diag\": \"PASS: 139 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.\", \"event\": \"scenario\", \"exit\": 0, \"expect\": \"exit 0 and stdout line starting PASS:\", \"id\": \"P1\", \"kind\": \"positive\", \"met\": true, \"script\": \"corpus/verify_named_multi_icon_states.py\", \"shape\": \"lane-root-cli\", \"title\": \"P1 lane-root CLI\"}\n{\"cwd\": \"/tmp/shokunin-replay-r1-wl2x46p6/unrelated-cwd\", \"diag\": \"PASS: 139 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.\", \"event\": \"scenario\", \"exit\": 0, \"expect\": \"exit 0 and stdout line starting PASS:\", \"id\": \"P2\", \"kind\": \"positive\", \"met\": true, \"script\": \"/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/verify_named_multi_icon_states.py\", \"shape\": \"unrelated-cwd\", \"title\": \"P2 unrelated CWD\"}\n{\"cwd\": \"/tmp/shokunin-replay-r1-wl2x46p6/isolated-P3-spaces-nonascii-replay 快照 ünïcode ✓\", \"diag\": \"PASS: 139 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.\", \"event\": \"scenario\", \"exit\": 0, \"expect\": \"exit 0 and stdout line starting PASS:\", \"id\": \"P3\", \"kind\": \"positive\", \"met\": true, \"script\": \"corpus/verify_named_multi_icon_states.py\", \"shape\": \"spaces-nonascii-copy\", \"title\": \"P3 minimal copy under spaces+non-ASCII path\"}\n{\"cwd\": \"/tmp/shokunin-replay-r1-wl2x46p6/isolated-N1-forged-artifact-path\", \"diag\": \"AssertionError: r55 artifact\", \"event\": \"scenario\", \"exit\": 1, \"expect\": \"exit 1 and stderr line 'AssertionError: r55 artifact'\", \"forgery\": {\"evidence_id_unchanged\": true, \"forged\": \"inspection.raw.json\", \"receipt_diff\": [\"stdout_sha256\"], \"report_diff\": [\"normalized_result.artifact.path\"], \"round\": 55, \"stdout_sha256_regenerated_only\": true}, \"id\": \"N1\", \"kind\": \"expected-rejection\", \"met\": true, \"round\": 55, \"script\": \"corpus/verify_named_multi_icon_states.py\", \"shape\": \"isolated-copy\", \"title\": \"N1 forged historical artifact path relabeled to relocated copy\"}\n{\"cwd\": \"/tmp/shokunin-replay-r1-wl2x46p6/isolated-N2-forged-receipt-command\", \"diag\": \"AssertionError: r55 receipt\", \"event\": \"scenario\", \"exit\": 1, \"expect\": \"exit 1 and stderr line 'AssertionError: r55 receipt'\", \"forgery\": {\"evidence_id_unchanged\": true, \"forged\": \"receipt.json\", \"raw_untouched\": true, \"receipt_diff\": [\"command\"], \"round\": 55, \"stdout_sha256_regenerated_only\": false}, \"id\": \"N2\", \"kind\": \"expected-rejection\", \"met\": true, \"round\": 55, \"script\": \"corpus/verify_named_multi_icon_states.py\", \"shape\": \"isolated-copy\", \"title\": \"N2 forged receipt command relabeled to relocated copy\"}\n{\"cwd\": \"/tmp/shokunin-replay-r1-wl2x46p6/isolated-N3-second-candidate\", \"diag\": \"AssertionError: r56 normalized result\", \"event\": \"scenario\", \"exit\": 1, \"expect\": \"exit 1 and stderr line 'AssertionError: r56 normalized result'\", \"forgery\": {\"evidence_id_unchanged\": true, \"forged\": \"inspection.raw.json\", \"receipt_diff\": [\"stdout_sha256\"], \"report_diff\": [\"normalized_result.icon_groups[0].images[1].candidate_resource_indices\"], \"round\": 56, \"stdout_sha256_regenerated_only\": true}, \"id\": \"N3\", \"kind\": \"expected-rejection\", \"met\": true, \"round\": 56, \"script\": \"corpus/verify_named_multi_icon_states.py\", \"shape\": \"isolated-copy\", \"title\": \"N3 second-candidate claim r56\"}\n{\"cwd\": \"/tmp/shokunin-replay-r1-wl2x46p6/isolated-N4-size-match\", \"diag\": \"AssertionError: r57 normalized result\", \"event\": \"scenario\", \"exit\": 1, \"expect\": \"exit 1 and stderr line 'AssertionError: r57 normalized result'\", \"forgery\": {\"evidence_id_unchanged\": true, \"forged\": \"inspection.raw.json\", \"receipt_diff\": [\"stdout_sha256\"], \"report_diff\": [\"normalized_result.icon_groups[0].images[1].size_matches\"], \"round\": 57, \"stdout_sha256_regenerated_only\": true}, \"id\": \"N4\", \"kind\": \"expected-rejection\", \"met\": true, \"round\": 57, \"script\": \"corpus/verify_named_multi_icon_states.py\", \"shape\": \"isolated-copy\", \"title\": \"N4 size-match claim r57\"}\n{\"cwd\": \"/tmp/shokunin-replay-r1-wl2x46p6/isolated-N5-unicode-name-location\", \"diag\": \"AssertionError: r55 normalized result\", \"event\": \"scenario\", \"exit\": 1, \"expect\": \"exit 1 and stderr line 'AssertionError: r55 normalized result'\", \"forgery\": {\"evidence_id_unchanged\": true, \"forged\": \"inspection.raw.json\", \"receipt_diff\": [\"stdout_sha256\"], \"report_diff\": [\"normalized_result.resources[2].name.location.offset\"], \"round\": 55, \"stdout_sha256_regenerated_only\": true}, \"id\": \"N5\", \"kind\": \"expected-rejection\", \"met\": true, \"round\": 55, \"script\": \"corpus/verify_named_multi_icon_states.py\", \"shape\": \"isolated-copy\", \"title\": \"N5 Unicode name location claim r55\"}\n{\"cwd\": \"/tmp/shokunin-replay-r1-wl2x46p6/isolated-N6-ancestor-entry-location\", \"diag\": \"AssertionError: r55 normalized result\", \"event\": \"scenario\", \"exit\": 1, \"expect\": \"exit 1 and stderr line 'AssertionError: r55 normalized result'\", \"forgery\": {\"evidence_id_unchanged\": true, \"forged\": \"inspection.raw.json\", \"receipt_diff\": [\"stdout_sha256\"], \"report_diff\": [\"normalized_result.resources[2].entry_locations[0].offset\"], \"round\": 55, \"stdout_sha256_regenerated_only\": true}, \"id\": \"N6\", \"kind\": \"expected-rejection\", \"met\": true, \"round\": 55, \"script\": \"corpus/verify_named_multi_icon_states.py\", \"shape\": \"isolated-copy\", \"title\": \"N6 ancestor entry location claim r55\"}\n{\"action\": \"removed\", \"event\": \"cleanup\", \"met\": true}\n{\"corpus\": \"/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus\", \"event\": \"corpus-snapshot\", \"phase\": \"after\", \"sha256\": {\"fixtures/pe-r55/fixture.exe\": \"41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b\", \"fixtures/pe-r56/fixture.exe\": \"911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b\", \"fixtures/pe-r57/fixture.exe\": \"71d11fba01d4daa040e04e649a70c39bcdb475ce2e0a2801f6171a325db0494d\", \"live/runs/round-55/inspection.raw.json\": \"54ffdeab7108895404efa01edb400c9bc32c36c4f85540babed2f5241137f860\", \"live/runs/round-55/receipt.json\": \"1fffb03106c649cb2b1cdb92925347764d8e5546704986e67f57ae44b4bb9733\", \"live/runs/round-56/inspection.raw.json\": \"59a95f9db16633b337fd058a6d1509c95687445af02d63bb3156309f1811bbe6\", \"live/runs/round-56/receipt.json\": \"1b2bcfe2323219b069b33c64259c9e052a26ef9264cb46b9c4d707ae164066ee\", \"live/runs/round-57/inspection.raw.json\": \"5c915ebdc4c79a6d98e3b9f374e6e2e67168a1c5b391487ac80bd8e199d34fc8\", \"live/runs/round-57/receipt.json\": \"ee2ec2875ebeeaa75c54acad671fcb488562051eeb3e17cb62d8a9338be67a91\", \"verify_named_multi_icon_states.py\": \"b62441d5e1fa9ce15be61686f6b0e0fe7b879d3aca3cb898edcd0c29894093a3\"}}\nPOSITIVES met=3/3\nEXPECTED_REJECTIONS met=6/6\nINPUTS met=9/9 (SHA-256 unchanged before/after)\nVERIFIER_SCRIPT met=1/1 (unchanged)\nCLEANUP met=1/1 (removed)\n{\"all_acceptance_met\": true, \"cleanup\": true, \"event\": \"summary\", \"exit\": 0, \"expected_rejections\": {\"met\": 6, \"total\": 6}, \"inputs_unchanged\": {\"met\": 9, \"total\": 9}, \"positives\": {\"met\": 3, \"total\": 3}, \"verifier_unchanged\": true}\nRESULT PASS exit=0\n",
+    "stderr": ""
+  },
+  "after_revision_matched": true,
+  "original_inputs_match_baseline": true,
+  "scope": "Actual named PE saved-ledger CLI only; isolated forgeries are acceptance fixtures, not REA producer execution."
+}

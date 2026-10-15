@@ -1,8 +1,12 @@
-# SHONEN — probation (bounded evidence review, 2026-10-12)
+# revenger-shokunin — Promotion checklist
 
-- [x] Real decision tables/error patterns/checklists with cited sources. Verified by non-author `revenger-promotion-review` in `corpus/live/runs/promotion-review-r5.md` against `corpus/knowledge/2026-10-12-rea-readiness-checklist.md` and the r1 provider refusal. Dated host probes are not permanent availability claims.
-- [x] End-to-end domain task executed and logged; non-author verifier required. Verified **only for the fixture-scoped provider-neutral ZIP inventory and static JavaScript investigation** by `revenger-r1-r3-independent-reviewer` (`corpus/live/runs/review-r1-r3.md`) and `revenger-promotion-review` (`corpus/live/runs/promotion-review-r5.md`). R2 inventory Evidence `ev_cc681c2a03da4e9901275c1425fb1f726cca78bbdbec3defb13b6a0ac8ad156b`; r3 static Evidence `ev_4a93276c886da96f0b37c490e395dc0761ac32225dd7297c600a51ce100c1c7e`. This box does **not** assert r1 native session, runtime behavior or unknown third-party target analysis.
-- [x] Instructions executable without oral context **for fixture recreation and saved-result verification on this host/toolchain**. Non-author `fixture-replay-review` rebuilt ELF and ZIP byte-identically and ran the verifier; receipt `corpus/live/runs/round-5-review.md`, independently assessed by `revenger-promotion-review` in `corpus/live/runs/promotion-review-r5.md`. No independent REA producer replay or portable build asserted.
-- [x] No cross-domain bleed; PROVINCE remains accurate for reviewed rounds 1–5. Named verifier `revenger-promotion-review` checked round contents/paths in `corpus/live/runs/promotion-review-r5.md`; earlier non-author `revenger-r1-r3-independent-reviewer` covered rounds 1–3. This is a historical check, not a future guarantee.
+Promotion to shokunin requires all of:
 
-These are evidence checks, not a rank promotion. The original native `analyze` call returned `provider_unavailable` (`corpus/live/runs/20261012T163909Z/native-analyze.json`), so native readiness is **not** established. `SHONEN.md` stays in place pending operator-owned roster/promotion decision; no `MANIFEST.json` edit or global harness rank change is implied.
+- [ ] SKILL.md contains real decision tables, error patterns, checklists, cited sources
+  `SKILL.md` is absent. Historical checks in `corpus/live/runs/promotion-review-r5.md` covered narrower corpus instructions, not the current canonical SKILL.md requirement; no fresh verifier.
+- [~] At least one end-to-end domain task executed and logged in LOG.md
+  Author-side fixture-scoped saved PE ledger replay only: `LOG.md:731-737`, `reports/round-1/measurements.json`, work commit `7c3ce197341b0babe0046b1d9cbb59f1ba43f54e`; no producer rerun, target execution or native readiness.
+- [~] Instructions executable by an agent without oral context
+  `README.md:24-41` gives the exercised lane-root CLI; `reports/round-1/measurements.json` records replay from an isolated committed corpus snapshot. No independent outside instruction verifier in this round.
+- [~] No cross-domain bleed (PROVINCE.md still accurate)
+  Author-side scope repair at `PROVINCE.md:25-30` and sibling-overlap scan `reports/round-1/connector.md`; same-lane L2 reports do not grant promotion or outside-discernment authority.

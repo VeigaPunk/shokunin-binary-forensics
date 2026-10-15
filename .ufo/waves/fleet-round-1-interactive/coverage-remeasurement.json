@@ -1,0 +1,16 @@
+{
+  "286033c5f2b1683fb538e86e15667709bb49b054": {
+    "command": "python3 -B -c 'import collections,json,pathlib\nc=collections.Counter()\nfor p in sorted(pathlib.Path(\"corpus/live/runs\").rglob(\"*.json\")):\n try: x=json.loads(p.read_bytes())\n except (ValueError,UnicodeError): continue\n if isinstance(x,dict) and x.get(\"evidence_id\") and x.get(\"normalized_result\") is not None: c[x.get(\"operation\",\"unknown\")]+=1\nfamilies={\"native-static\":{\"inspect_pe_resources\"},\"managed\":{\"inspect_managed_artifact\"},\"javascript\":{\"analyze_javascript_application\"},\"android\":{\"inspect_android_package\"},\"archives\":{\"inventory_artifact\",\"inspect_artifact\"},\"firmware\":{\"inspect_firmware_regions\"},\"browser-runtime\":{\"inspect_web_page\",\"capture_browser_scenario\",\"observe_web_session\"},\"evm\":{\"inspect_evm_interface\"}}\npresent=[k for k,v in families.items() if v.intersection(c)]\nprint(json.dumps(c,sort_keys=True)); print(\"COVERAGE\",len(present),\"/\",len(families),\"score=\",10*len(present)/len(families),\"families=\",present)'",
+    "exit_code": 0,
+    "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"extract_artifact\": 2, \"inspect_analysis_view\": 1, \"inspect_artifact\": 4, \"inspect_evm_interface\": 7, \"inspect_pe_resources\": 30, \"trace_application_feature\": 2, \"trace_javascript_semantics\": 2}\nCOVERAGE 4 / 8 score= 5.0 families= ['native-static', 'javascript', 'archives', 'evm']\n",
+    "stderr": "",
+    "scope": "isolated committed corpus snapshot; saved record presence only"
+  },
+  "7c3ce197341b0babe0046b1d9cbb59f1ba43f54e": {
+    "command": "python3 -B -c 'import collections,json,pathlib\nc=collections.Counter()\nfor p in sorted(pathlib.Path(\"corpus/live/runs\").rglob(\"*.json\")):\n try: x=json.loads(p.read_bytes())\n except (ValueError,UnicodeError): continue\n if isinstance(x,dict) and x.get(\"evidence_id\") and x.get(\"normalized_result\") is not None: c[x.get(\"operation\",\"unknown\")]+=1\nfamilies={\"native-static\":{\"inspect_pe_resources\"},\"managed\":{\"inspect_managed_artifact\"},\"javascript\":{\"analyze_javascript_application\"},\"android\":{\"inspect_android_package\"},\"archives\":{\"inventory_artifact\",\"inspect_artifact\"},\"firmware\":{\"inspect_firmware_regions\"},\"browser-runtime\":{\"inspect_web_page\",\"capture_browser_scenario\",\"observe_web_session\"},\"evm\":{\"inspect_evm_interface\"}}\npresent=[k for k,v in families.items() if v.intersection(c)]\nprint(json.dumps(c,sort_keys=True)); print(\"COVERAGE\",len(present),\"/\",len(families),\"score=\",10*len(present)/len(families),\"families=\",present)'",
+    "exit_code": 0,
+    "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"extract_artifact\": 2, \"inspect_analysis_view\": 1, \"inspect_artifact\": 4, \"inspect_evm_interface\": 7, \"inspect_pe_resources\": 30, \"trace_application_feature\": 2, \"trace_javascript_semantics\": 2}\nCOVERAGE 4 / 8 score= 5.0 families= ['native-static', 'javascript', 'archives', 'evm']\n",
+    "stderr": "",
+    "scope": "isolated committed corpus snapshot; saved record presence only"
+  }
+}

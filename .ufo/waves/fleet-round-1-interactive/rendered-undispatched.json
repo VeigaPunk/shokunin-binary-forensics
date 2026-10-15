@@ -1,0 +1,613 @@
+{
+  "schema": "ufo-swarm-wave-dispatch-v1",
+  "wave": "revenger-r1-interactive-audit",
+  "policy": {
+    "source": "config",
+    "maxLanes": 32,
+    "minLanes": 16,
+    "waveMinLanes": 16,
+    "waveMaxLanes": 32,
+    "declaredMaxLanes": 32,
+    "hardCeiling": 100,
+    "rampBatchSize": 5,
+    "rampIntervalMs": 700,
+    "globalRunnerCeiling": 1056
+  },
+  "counts": {
+    "spawn": 32,
+    "resume": 0,
+    "total": 32
+  },
+  "registry": {
+    "schema": "ufo-swarm-registry-v1",
+    "path": ".ufo/waves/fleet-round-1-interactive/reviews/swarm-registry.json",
+    "reportDir": ".ufo/waves/fleet-round-1-interactive/reviews",
+    "members": {
+      "PeHeader55": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "PeDirectories55": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "PeUnicode55": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "PePayloads55": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "PeGroup55": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "PeMissing56": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "PeSize57": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayLocalReads": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayArtifactPin": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayCommandPin": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayReceipt55": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayReceipt56": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayReceipt57": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayEnvelopeLimits": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayWholeNormalized": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayBuiltinMutants": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ScenarioLaneRoot": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ScenarioForeignCwd": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ScenarioUnicodeCopy": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ScenarioArtifactForgery": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ScenarioCommandForgery": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ScenarioCandidateForgery": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ScenarioSizeForgery": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ScenarioNameLocationForgery": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ScenarioEntryLocationForgery": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ScenarioIsolationSafety": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "sentinel",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "InputPreservationLedger": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayScoreCalibration": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayCoverageTaxonomy": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayHistoryErrata": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayContinuationContract": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      },
+      "ReplayCrossAxisConnector": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "connector",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Validate the inherited named PE ledger replay without broadening its claim"
+      }
+    }
+  },
+  "compaction": {
+    "applied": false,
+    "mechanism": null,
+    "reason": null,
+    "savedBytes": 0,
+    "payloadBytesBefore": 0,
+    "payloadBytesAfter": 0
+  },
+  "routePreflight": {
+    "schema": "ufo-route-preflight-v1",
+    "config": {
+      "path": "/home/vgpnk/.omp/agent/config.yml",
+      "sha256": "08788ddcbbb48180b987e6f54b517af294c85cacceb07bdd594843a53e668dcc"
+    },
+    "concentration": {
+      "families": 3,
+      "largestFamilyLanes": 19,
+      "pinnedLanes": 32,
+      "singleFamily": false
+    },
+    "unpinned": [],
+    "status": "unprobed",
+    "pings": 0,
+    "families": [
+      {
+        "alias": "m_mid",
+        "hops": [
+          "alibaba-token-plan/qwen3.8-flash:high",
+          "charm-hyper/qwen3.8-flash:high"
+        ],
+        "roles": [
+          "connector",
+          "reviewer",
+          "sentinel"
+        ],
+        "lanes": 19,
+        "status": "unprobed"
+      },
+      {
+        "alias": "m_strong",
+        "hops": [
+          "openai-codex/gpt-6.1-sol:high",
+          "devin/gpt-6-1-sol:high"
+        ],
+        "roles": [
+          "critic"
+        ],
+        "lanes": 12,
+        "status": "unprobed"
+      },
+      {
+        "alias": "m_fast",
+        "hops": [
+          "alibaba-token-plan/deepseek-v4.1-flash:max",
+          "opencode-go/deepseek-v4.1-flash:max",
+          "devin/deepseek-v4-1-flash:max",
+          "charm-hyper/deepseek-v4.1-flash:max"
+        ],
+        "roles": [
+          "scribe"
+        ],
+        "lanes": 1,
+        "status": "unprobed"
+      }
+    ]
+  },
+  "taskCall": {
+    "context": "# Goal\nAdvisory audit of the inherited fleet round-1 saved PE ledger replay, baseline 286033c5f2b1683fb538e86e15667709bb49b054, work commit 7c3ce197341b0babe0046b1d9cbb59f1ba43f54e. Sole L1 owns integration and admission.\n# Contract\nOnly writable repository: /home/vgpnk/Projects/shokunin/revenger-shokunin. Each member may write only its assigned report. All implementation, SCORECARD, LOG, other reports, substrates, shared ledgers, configs and siblings are read-only. No commits, pushes, producer calls, package acquisition, external research, target execution, native session bodies, secrets or environment values. No delegation or background jobs. Skip every build, lint, test, formatter and smoke command mid-flight; L1 runs acceptance after integration. Distinguish static observations, inference and unknown; report exact source paths, bounded conclusions, risks, and an executable acceptance proposal, not invented outcomes. Existing author-side L2 evidence is not an independent spot-check. Native Rust judgment is not requested or implied. Historical r59 malformed-name refusal remains falsified/halted. Read only the assigned scope and directly relevant inputs.\n# Routing prerequisite\nDo not dispatch this payload unless existing global authority realizes content @m_composer, audit/review/scout/critic @m_grok, connector @m_antigravity with @m_zfl fallback. Do not edit routes or silently substitute.\n# Shared inputs\ncorpus/verify_named_multi_icon_states.py; corpus/fixtures/pe-r55 through pe-r57/fixture.exe; corpus/live/runs/round-55 through round-57/inspection.raw.json and receipt.json; reports/round-1/replay_scenarios.py. Relative paths are inside the sole writable repository.",
+    "tasks": [
+      {
+        "name": "PeHeader55",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only r55 PE32+ header and section-to-file mapping against decoder lines 16-26: machine, optional-header size, resource RVA/length, raw-section containment. Derive values independently from bytes; identify which assertions bound the authored fixture and which generic PE claims remain unsupported.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/PeHeader55.md"
+      },
+      {
+        "name": "PeDirectories55",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only r55 resource-directory traversal against decoder lines 27-44: named/ID entry counts, directory lengths, cycle ancestry, three-level leaf shape, entry offsets. Independently enumerate directory paths and report exact byte locations and any unsupported malformed-tree claim.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/PeDirectories55.md"
+      },
+      {
+        "name": "PeUnicode55",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only the r55 supplementary-plane group-name identity: UTF-16LE length prefix, surrogate pair, spelling A😀B!, raw hex, location offset736/12. Compare byte-derived key with normalized resources[2].name and explain why this does not rehabilitate r59 malformed-name refusal.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/PeUnicode55.md"
+      },
+      {
+        "name": "PePayloads55",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only the three r55 payload data entries: independent RVA translation, declared ranges, code pages/reserved values, SHA-256 from bytes, and correspondence to saved normalized resources. Separate opaque payload integrity from image decoding.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/PePayloads55.md"
+      },
+      {
+        "name": "PeGroup55",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only the valid r55 two-image RT_GROUP_ICON payload and ordered candidate links: header, 14-byte records, IDs1/2, candidate indices0/1, same-language match and declared-vs-actual sizes. Derive relations without using saved JSON as expected truth.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/PeGroup55.md"
+      },
+      {
+        "name": "PeMissing56",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only r55-to-r56 selective missing-ID control: independently derive the sole byte928 02-to-03 change, verify preserved Unicode and all payloads, and derive first-link retention versus absent second candidate/null same-language/null size. Identify false-link risks.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/PeMissing56.md"
+      },
+      {
+        "name": "PeSize57",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only r55-to-r57 selective size control: independently derive sole byte924 30-to-2f change, preserved IDs/payloads/name, and derive retained candidates with second size_matches false. Explain the boundary between a size relation and image validity.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/PeSize57.md"
+      },
+      {
+        "name": "ReplayLocalReads",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only local-read ownership in the changed verifier: trace ROOT, fixture reads, report/receipt reads and HIST uses through check/main/compare_normalized. Determine whether any historical-root filesystem access or cwd-dependent input lookup remains; no filesystem probes outside the lane.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayLocalReads.md"
+      },
+      {
+        "name": "ReplayArtifactPin",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nAudit only normalized_result.artifact.path expected identity: compare baseline and work constructor, independent HIST authority in brief/LOG versus saved field, exact path equality, and relocated-path laundering. Assess whether expected values can be controlled by the data under test.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayArtifactPin.md"
+      },
+      {
+        "name": "ReplayCommandPin",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nAudit only receipt.command identity after cutover: historical path interpolation, package version/subcommand/format spelling, agreement for r55-r57, and rejection mechanism for a relocated command. Do not execute npx or claim producer authenticity.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayCommandPin.md"
+      },
+      {
+        "name": "ReplayReceipt55",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only r55 receipt internal consistency: fixture/evidence/exit/duration fields and SHA-256 of complete raw stdout bytes. Enumerate checked and unchecked receipt properties and distinguish consistency from producer authentication.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayReceipt55.md"
+      },
+      {
+        "name": "ReplayReceipt56",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only r56 receipt and the missing-link record's identity: pinned EID, fixture digest, full raw stdout digest, operation and subject digest. Check whether the missing-link control could be accepted under another record's identity; cite exact conditions.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayReceipt56.md"
+      },
+      {
+        "name": "ReplayReceipt57",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only r57 receipt and size-mismatch record identity: pinned EID/digests, raw-byte hashing versus reserialized JSON, and command/duration checks. Determine what byte-preserving receipt checks establish and which origin facts remain unknown.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayReceipt57.md"
+      },
+      {
+        "name": "ReplayEnvelopeLimits",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nAudit only saved Evidence envelope fields not covered by normalized-result equality: parameters.path, locations paths, subject/operation and ancillary metadata. Inventory which can change without rejection from static code, and propose a separate future criterion without editing scope or claiming rejection now.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayEnvelopeLimits.md"
+      },
+      {
+        "name": "ReplayWholeNormalized",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only complete normalized-dictionary equality before/after the HIST cutover: enumerate expected top-level keys, directories/resources/icon_groups/coverage/limitations and whether any field was dropped, copied from saved output, or weakened. Preserve authored-fixture scope.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayWholeNormalized.md"
+      },
+      {
+        "name": "ReplayBuiltinMutants",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nAudit only main's two in-memory forged-claim controls and their new HIST arguments: positive-before-negative ordering, non-noop mutation, expected normalized-result assertion and possible unrelated-rejection masking. Do not run mutations; propose observable L1 checks.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayBuiltinMutants.md"
+      },
+      {
+        "name": "ScenarioLaneRoot",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only acceptance scenario P1 lane-root CLI: script/cwd resolution, actual subprocess invocation, success predicate, timeout and diagnostic extraction. Determine whether it exercises the shipped verifier rather than imports, mocks or an alternate implementation.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ScenarioLaneRoot.md"
+      },
+      {
+        "name": "ScenarioForeignCwd",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only P2 unrelated-CWD scenario: distinguish absolute script path from cwd, confirm local files resolve from __file__, and identify whether prior shell state could accidentally provide the historical tree. Propose the exact L1 observable for cwd independence.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ScenarioForeignCwd.md"
+      },
+      {
+        "name": "ScenarioUnicodeCopy",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only P3 minimal copied corpus under spaces/non-ASCII: completeness of staged files, Unicode path handling without shell interpolation, script preservation and historical identity invariance. Identify ways a copy might pass without reading copied inputs.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ScenarioUnicodeCopy.md"
+      },
+      {
+        "name": "ScenarioArtifactForgery",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nAudit only N1 normalized artifact-path forgery: declared single-field diff, unmodified EID, rehashed raw stdout receipt, positive counterpart and expected r55 artifact refusal. Assess whether failure can be attributed to historical-identity checking rather than raw hash mismatch.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ScenarioArtifactForgery.md"
+      },
+      {
+        "name": "ScenarioCommandForgery",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nAudit only N2 receipt-command forgery: original command precondition, relocated path substitution, exact changed-field ledger and raw stdout unchanged. Assess the exit1/r55 receipt oracle and whether incidental changes could hide a weakened command check.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ScenarioCommandForgery.md"
+      },
+      {
+        "name": "ScenarioCandidateForgery",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nAudit only N3 r56 second-candidate forgery: mutation from [] to [1], single-field evidence, receipt stdout rehash, unchanged fixture and expected full-normalized refusal. Evaluate preservation of the valid first link and missing-link semantics.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ScenarioCandidateForgery.md"
+      },
+      {
+        "name": "ScenarioSizeForgery",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nAudit only N4 r57 second size_matches forgery: false-to-true mutation, exact nested path, no fixture change, rehashed receipt and expected normalized-result finding. Assess whether an independent consumer-visible size assertion is being exercised.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ScenarioSizeForgery.md"
+      },
+      {
+        "name": "ScenarioNameLocationForgery",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nAudit only N5 Unicode-name location forgery: offset736-to-700 while length/name/hex stay unchanged, exact diff check, rehashed stdout and byte-derived expected location. Determine whether the decoder derives location independently rather than echoing saved data.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ScenarioNameLocationForgery.md"
+      },
+      {
+        "name": "ScenarioEntryLocationForgery",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nAudit only N6 ancestor-entry location forgery: offset536-to-520 at resources[2].entry_locations[0], exact diff check and rehashed stdout. Trace how decoder constructs ancestor locations and whether this protects the saved named resource's route.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ScenarioEntryLocationForgery.md"
+      },
+      {
+        "name": "ScenarioIsolationSafety",
+        "agent": "sentinel",
+        "task": "/skill:godspeed\n\nAudit only acceptance-runner filesystem and subprocess safety: temp-tree creation/deletion, no original input writes, timeout/error paths, --keep-temp implications and cleanup verdict. No execution; flag any possibility of out-of-scope write or secret/session capture.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ScenarioIsolationSafety.md"
+      },
+      {
+        "name": "InputPreservationLedger",
+        "agent": "scribe",
+        "task": "/skill:godspeed\n\nProduce only an advisory preservation ledger from the already saved input-ledger files and r55-r57 source pointers: required nine input paths plus verifier pin, which baseline hashes need L1 remeasurement, and how to avoid treating rewritten/rehashed evidence as preserved history. No code changes or gate execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/InputPreservationLedger.md"
+      },
+      {
+        "name": "ReplayScoreCalibration",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nAudit only calibration proxy arithmetic and interpretation in SCORECARD/current brief: exact four-script set, 1/4-to-2/4 scope, overlap with 7/10-to-8/10 census, selected-script self-test flag behavior, and measurement-commit binding. Flag unsupported general mastery or admission implications.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayScoreCalibration.md"
+      },
+      {
+        "name": "ReplayCoverageTaxonomy",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only coverage's fixed eight-family saved-record-presence taxonomy: inspect recorded operation names and F counting command, EVM's inherited omission, 4/8 constancy and difference between record presence and producer readiness. Do not acquire new family evidence or rerun known failed gates.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayCoverageTaxonomy.md"
+      },
+      {
+        "name": "ReplayHistoryErrata",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nAudit only chronology and append-only obligations: imported r59 falsification/halt, r60 distinct coverage move, new fleet round1 versus launch count, existing work commit and unlanded reports. Identify which claims must remain historical/debt rather than rewritten as contemporary passes.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayHistoryErrata.md"
+      },
+      {
+        "name": "ReplayContinuationContract",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nAudit only fresh-session continuation and completion prerequisites against current dispatch: exact round identity, required width32 evidence, no in-session round loop, applicable receipt and report durability, no-push scope, and honest unavailable-route handling. Return concrete closure blockers, not a completion verdict.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayContinuationContract.md"
+      },
+      {
+        "name": "ReplayCrossAxisConnector",
+        "agent": "connector",
+        "task": "/skill:godspeed\n\nConnect only this round's local-vs-historical identity split to calibration and coverage boundaries: synthesize how immutable provenance plus relocatable reads affects forgeries and reproducibility; identify one compatible lesson and one bounded counterexample using unchecked envelope fields. Keep r59 policy halted; no extra implementation or new axis claim.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Validate the inherited named PE ledger replay without broadening its claim\n\nReport: write your scoped findings to .ufo/waves/fleet-round-1-interactive/reviews/ReplayCrossAxisConnector.md"
+      }
+    ]
+  },
+  "resumeSends": [],
+  "note": "Issue exactly one batched task call with taskCall ({context, tasks}); never split a wave into multiple task calls (one-swarm-per-wave). Then one hub send per resumeSends entry: hub send --to <entry.resume> --message <entry.message> (entry.name is bookkeeping, not a hub field)."
+}

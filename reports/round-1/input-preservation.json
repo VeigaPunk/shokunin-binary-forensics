@@ -1,0 +1,72 @@
+{
+  "baseline_commit": "286033c5f2b1683fb538e86e15667709bb49b054",
+  "work_commit": "7c3ce197341b0babe0046b1d9cbb59f1ba43f54e",
+  "rows": [
+    {
+      "path": "corpus/fixtures/pe-r55/fixture.exe",
+      "sha256": "41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b",
+      "bytes": 1536,
+      "unchanged_from_baseline_and_work_commit": true,
+      "matches_ledger_pin": true
+    },
+    {
+      "path": "corpus/fixtures/pe-r56/fixture.exe",
+      "sha256": "911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b",
+      "bytes": 1536,
+      "unchanged_from_baseline_and_work_commit": true,
+      "matches_ledger_pin": true
+    },
+    {
+      "path": "corpus/fixtures/pe-r57/fixture.exe",
+      "sha256": "71d11fba01d4daa040e04e649a70c39bcdb475ce2e0a2801f6171a325db0494d",
+      "bytes": 1536,
+      "unchanged_from_baseline_and_work_commit": true,
+      "matches_ledger_pin": true
+    },
+    {
+      "path": "corpus/live/runs/round-55/inspection.raw.json",
+      "sha256": "54ffdeab7108895404efa01edb400c9bc32c36c4f85540babed2f5241137f860",
+      "bytes": 4850,
+      "unchanged_from_baseline_and_work_commit": true,
+      "matches_ledger_pin": true
+    },
+    {
+      "path": "corpus/live/runs/round-56/inspection.raw.json",
+      "sha256": "59a95f9db16633b337fd058a6d1509c95687445af02d63bb3156309f1811bbe6",
+      "bytes": 4852,
+      "unchanged_from_baseline_and_work_commit": true,
+      "matches_ledger_pin": true
+    },
+    {
+      "path": "corpus/live/runs/round-57/inspection.raw.json",
+      "sha256": "5c915ebdc4c79a6d98e3b9f374e6e2e67168a1c5b391487ac80bd8e199d34fc8",
+      "bytes": 4851,
+      "unchanged_from_baseline_and_work_commit": true,
+      "matches_ledger_pin": true
+    },
+    {
+      "path": "corpus/live/runs/round-55/receipt.json",
+      "sha256": "1fffb03106c649cb2b1cdb92925347764d8e5546704986e67f57ae44b4bb9733",
+      "bytes": 495,
+      "unchanged_from_baseline_and_work_commit": true,
+      "matches_ledger_pin": true
+    },
+    {
+      "path": "corpus/live/runs/round-56/receipt.json",
+      "sha256": "1b2bcfe2323219b069b33c64259c9e052a26ef9264cb46b9c4d707ae164066ee",
+      "bytes": 495,
+      "unchanged_from_baseline_and_work_commit": true,
+      "matches_ledger_pin": true
+    },
+    {
+      "path": "corpus/live/runs/round-57/receipt.json",
+      "sha256": "ee2ec2875ebeeaa75c54acad671fcb488562051eeb3e17cb62d8a9338be67a91",
+      "bytes": 495,
+      "unchanged_from_baseline_and_work_commit": true,
+      "matches_ledger_pin": true
+    }
+  ],
+  "inputs_unchanged": 9,
+  "total_inputs": 9,
+  "method": "Byte equality: current nine inputs == git show <baseline>:<path> == git show <work>:<path>, plus independently pinned SHA256 and length from input-ledger.json."
+}

@@ -1,0 +1,15 @@
+{
+  "command_argv": [
+    "python3",
+    "-B",
+    "-c",
+    "import json,pathlib,sys\nrecord=json.loads(pathlib.Path('.ufo/waves/fleet-round-1-interactive/wave-plan-run.json').read_text())\nplan=json.loads(record['stdout'])\nrequired={'reviewer':'@m_grok','critic':'@m_grok','sentinel':'@m_grok','scribe':'@m_composer','connector':'@m_antigravity'}\nactual={role:'@'+family['alias'] for family in plan['routePreflight']['families'] for role in family['roles']}\nmissing=[(role,want,actual.get(role)) for role,want in required.items() if actual.get(role)!=want]\nfor role,want,got in missing: print(f'MISSING_BINDING role={role} required={want} observed={got}')\ncode=2 if missing else 0\nprint(f'ROUTING_CONTRACT {\"BLOCKED\" if missing else \"BOUND\"} finding={\"required_role_alias_binding_missing\" if missing else \"none\"} planned={plan[\"counts\"][\"total\"]} dispatched=0 exit={code}')\nsys.exit(code)\n"
+  ],
+  "cwd": "lane root",
+  "input": ".ufo/waves/fleet-round-1-interactive/wave-plan-run.json",
+  "expected_aliases": "current operator dispatch contract",
+  "exit_code": 2,
+  "stdout": "MISSING_BINDING role=reviewer required=@m_grok observed=@m_mid\nMISSING_BINDING role=critic required=@m_grok observed=@m_strong\nMISSING_BINDING role=sentinel required=@m_grok observed=@m_mid\nMISSING_BINDING role=scribe required=@m_composer observed=@m_fast\nMISSING_BINDING role=connector required=@m_antigravity observed=@m_mid\nROUTING_CONTRACT BLOCKED finding=required_role_alias_binding_missing planned=32 dispatched=0 exit=2\n",
+  "stderr": "",
+  "scope": "A reproducible evaluation of canonical recorded route resolution, not a network health probe or native judgment."
+}

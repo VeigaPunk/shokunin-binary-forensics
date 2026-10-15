@@ -1,0 +1,107 @@
+{
+  "artifact": "reports/round-1/input-ledger.json",
+  "lane": "fleet round-1 input ledger for saved-record replay of r55-r57 named multi-icon PE verifier",
+  "fleet_round": "round-1",
+  "historical_round_note": "r55-r57 are imported historical records; not renumbered as fleet rounds.",
+  "boundary": {
+    "measured_date": "2026-10-15",
+    "lane_root": "/home/vgpnk/Projects/shokunin/revenger-shokunin",
+    "local_corpus_root": "/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus",
+    "pinned_historical_corpus_root": "/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus",
+    "pinned_historical_source": "reports/round-1/brief.md (independent declaration, not extracted from any record under test)",
+    "head_commit_at_measurement": "286033c5f2b1683fb538e86e15667709bb49b054",
+    "baseline_commit": "286033c5f2b1683fb538e86e15667709bb49b054",
+    "observed_baseline_failure": "python3 -B corpus/verify_named_multi_icon_states.py exit 1, AssertionError: r55 artifact (corpus/verify_named_multi_icon_states.py line 67 compares the saved normalized_result artifact against the local path; saved records carry the pinned historical root instead)"
+  },
+  "method": {
+    "performed": "Read-only census: SHA256 and byte length of the exact nine inputs, JSON field extraction from saved records, raw byte diff of fixture pairs.",
+    "not_performed": "No test, build, lint, formatter, CLI verifier acceptance run, producer call, engine install, or PE execution. No input file was opened for writing; git status of corpus/ was clean before and after the census."
+  },
+  "inputs": [
+    {"role": "fixture", "round": 55, "relative_path": "corpus/fixtures/pe-r55/fixture.exe", "bytes": 1536, "sha256": "41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b"},
+    {"role": "fixture", "round": 56, "relative_path": "corpus/fixtures/pe-r56/fixture.exe", "bytes": 1536, "sha256": "911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b"},
+    {"role": "fixture", "round": 57, "relative_path": "corpus/fixtures/pe-r57/fixture.exe", "bytes": 1536, "sha256": "71d11fba01d4daa040e04e649a70c39bcdb475ce2e0a2801f6171a325db0494d"},
+    {"role": "inspection", "round": 55, "relative_path": "corpus/live/runs/round-55/inspection.raw.json", "bytes": 4850, "sha256": "54ffdeab7108895404efa01edb400c9bc32c36c4f85540babed2f5241137f860"},
+    {"role": "inspection", "round": 56, "relative_path": "corpus/live/runs/round-56/inspection.raw.json", "bytes": 4852, "sha256": "59a95f9db16633b337fd058a6d1509c95687445af02d63bb3156309f1811bbe6"},
+    {"role": "inspection", "round": 57, "relative_path": "corpus/live/runs/round-57/inspection.raw.json", "bytes": 4851, "sha256": "5c915ebdc4c79a6d98e3b9f374e6e2e67168a1c5b391487ac80bd8e199d34fc8"},
+    {"role": "receipt", "round": 55, "relative_path": "corpus/live/runs/round-55/receipt.json", "bytes": 495, "sha256": "1fffb03106c649cb2b1cdb92925347764d8e5546704986e67f57ae44b4bb9733"},
+    {"role": "receipt", "round": 56, "relative_path": "corpus/live/runs/round-56/receipt.json", "bytes": 495, "sha256": "1b2bcfe2323219b069b33c64259c9e052a26ef9264cb46b9c4d707ae164066ee"},
+    {"role": "receipt", "round": 57, "relative_path": "corpus/live/runs/round-57/receipt.json", "bytes": 495, "sha256": "ee2ec2875ebeeaa75c54acad671fcb488562051eeb3e17cb62d8a9338be67a91"}
+  ],
+  "rounds": {
+    "55": {
+      "historical_artifact_path": "/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r55/fixture.exe",
+      "expected_receipt_command_saved_verbatim": "npx -y rea-agents@6.4.0 inspect-pe-resources /home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r55/fixture.exe --format json",
+      "subject_digest_sha256": "41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b",
+      "evidence_id": "ev_db785aec4caaa20630a96a8a3b250ff3aae9c0fa454ff36abe4415725fa22e79",
+      "receipt_fields": {"stdout_sha256": "54ffdeab7108895404efa01edb400c9bc32c36c4f85540babed2f5241137f860", "fixture_sha256": "41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b", "evidence_id": "ev_db785aec4caaa20630a96a8a3b250ff3aae9c0fa454ff36abe4415725fa22e79", "exit_code": 0, "duration_seconds": 0.6324599130020943},
+      "distinguishing_observation": "Fully-resolved control: second RT_GROUP_ICON image declares resource_id 2 with candidate [1], same-language resource index 1, declared_bytes 48 equal to the RT_ICON payload length, size_matches true.",
+      "icon_group_image2_state": {"resource_id": 2, "candidate_resource_indices": [1], "same_language_resource_index": 1, "size_matches": true, "declared_bytes": 48},
+      "rt_group_icon_payload_sha256": "45eb70319667352d8bfea3249f7fb30166c6835d2cf564b5ec303bf2d716c17a",
+      "one_byte_delta_vs_r55": null
+    },
+    "56": {
+      "historical_artifact_path": "/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r56/fixture.exe",
+      "expected_receipt_command_saved_verbatim": "npx -y rea-agents@6.4.0 inspect-pe-resources /home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r56/fixture.exe --format json",
+      "subject_digest_sha256": "911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b",
+      "evidence_id": "ev_44be7fd71ca9e8028e71b2714bea44597bd8b25ee83922003747e03fd231342a",
+      "receipt_fields": {"stdout_sha256": "59a95f9db16633b337fd058a6d1509c95687445af02d63bb3156309f1811bbe6", "fixture_sha256": "911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b", "evidence_id": "ev_44be7fd71ca9e8028e71b2714bea44597bd8b25ee83922003747e03fd231342a", "exit_code": 0, "duration_seconds": 0.6219461870205123},
+      "distinguishing_observation": "Unresolved resource id: second group image declares resource_id 3; no RT_ICON name 3 exists, so candidate_resource_indices empty, same_language_resource_index null, size_matches null. Fixture differs from r55 by exactly one byte at offset 928 (group image resource_id low byte 2 to 3).",
+      "icon_group_image2_state": {"resource_id": 3, "candidate_resource_indices": [], "same_language_resource_index": null, "size_matches": null, "declared_bytes": 48},
+      "rt_group_icon_payload_sha256": "672ad226768046a16b55dbcae6b0ee050e68e08e72b5089bf658593f549a4c4d",
+      "one_byte_delta_vs_r55": {"offset": 928, "from": 2, "to": 3}
+    },
+    "57": {
+      "historical_artifact_path": "/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r57/fixture.exe",
+      "expected_receipt_command_saved_verbatim": "npx -y rea-agents@6.4.0 inspect-pe-resources /home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r57/fixture.exe --format json",
+      "subject_digest_sha256": "71d11fba01d4daa040e04e649a70c39bcdb475ce2e0a2801f6171a325db0494d",
+      "evidence_id": "ev_068eb9b682385b760251b6d23ba70680ec57b0e55b95ce242921a3f021e1cd07",
+      "receipt_fields": {"stdout_sha256": "5c915ebdc4c79a6d98e3b9f374e6e2e67168a1c5b391487ac80bd8e199d34fc8", "fixture_sha256": "71d11fba01d4daa040e04e649a70c39bcdb475ce2e0a2801f6171a325db0494d", "evidence_id": "ev_068eb9b682385b760251b6d23ba70680ec57b0e55b95ce242921a3f021e1cd07", "exit_code": 0, "duration_seconds": 0.6663579299929552},
+      "distinguishing_observation": "Declared-size mismatch: second group image resolves resource_id 2 to candidate [1] with same-language index 1, but declared_bytes 47 does not equal the RT_ICON payload length 48, size_matches false. Fixture differs from r55 by exactly one byte at offset 924 (group image declared_bytes low byte 48 to 47).",
+      "icon_group_image2_state": {"resource_id": 2, "candidate_resource_indices": [1], "same_language_resource_index": 1, "size_matches": false, "declared_bytes": 47},
+      "rt_group_icon_payload_sha256": "78dc9a7dd2d08db459b2bf22958f72fd2d105b56f8c0a28e232a1864a299169c",
+      "one_byte_delta_vs_r55": {"offset": 924, "from": 48, "to": 47}
+    }
+  },
+  "shared_observations": {
+    "rt_icon_payload_sha256_all_rounds": ["d7aaca7bc7951c9249a7798838189374fa953d3def03aebb375ee731768e5003", "2f503cace29956c75acd5356de2f8fa98485b01edd654daf0f81a739b44c82ae"],
+    "named_group_resource": {"type_id": 14, "name": "A😀B!", "utf16le_hex": "41003dd800de42002100", "name_location": {"offset": 736, "bytes": 12}, "language_id": 1033},
+    "operation_all_rounds": "inspect_pe_resources",
+    "provider": {"id": "rea-pe-resources", "name": "REA PE resource parser", "version": "1"},
+    "format": "pe32-plus",
+    "machine": 34404,
+    "coverage": {"status": "complete", "examined_entries": 8, "resources": 3}
+  },
+  "cross_checks_observed": [
+    "receipt.stdout_sha256 == SHA256 of the local inspection.raw.json bytes for all three rounds.",
+    "receipt.fixture_sha256 == SHA256 of the local fixture.exe bytes == inspection.subject.digest.sha256 == inspection.normalized_result.artifact.sha256 for all three rounds; artifact.bytes 1536 == local fixture length.",
+    "receipt.evidence_id == inspection.evidence_id for all three rounds.",
+    "Within each inspection record, the same historical artifact path appears verbatim in subject.local_path, parameters.path, normalized_result.artifact.path and locations[0].path; each such path equals the independently pinned historical corpus root plus the fixtures/pe-r{N}/fixture.exe suffix.",
+    "Each saved receipt command equals the pattern 'npx -y rea-agents@6.4.0 inspect-pe-resources <historical artifact path> --format json' exactly.",
+    "Fixture raw-byte diffs: r55 vs r56 exactly one differing byte at offset 928 (2 to 3); r55 vs r57 exactly one differing byte at offset 924 (48 to 47); all three files length 1536. The differing offsets fall inside the 14-byte RT_GROUP_ICON record fields resource_id and declared_bytes respectively, matching the saved normalized_result states.",
+    "The pinned EXPECT digests/evidence IDs in corpus/verify_named_multi_icon_states.py line 56 match the ledger values above; the saved-record route in that script derives the expected artifact path from the local checkout (line 67 check named 'r55 artifact'), which is the observed baseline failure."
+  ],
+  "authentication_status": {
+    "claimed": "none",
+    "saved_record_self_description": "Each inspection carries confidence 'observed' and authority 'shipped-artifact'; these are saved fields inside the data under replay, not independent producer authentication.",
+    "live_producer_equivalence": "unknown - producer was not rerun and the saved receipt command was not executed; replay validates byte-identity and internal consistency of saved records only.",
+    "no_unobserved_claims": "Every value in this ledger was read from the nine local input files, the pinned historical root, or lane baseline documents."
+  },
+  "replay": {
+    "count_hash_command": "python3 -B -c 'import hashlib,pathlib; [print(hashlib.sha256((q:=pathlib.Path(p)).read_bytes()).hexdigest(), q.stat().st_size, p) for p in [\"corpus/fixtures/pe-r55/fixture.exe\",\"corpus/fixtures/pe-r56/fixture.exe\",\"corpus/fixtures/pe-r57/fixture.exe\",\"corpus/live/runs/round-55/inspection.raw.json\",\"corpus/live/runs/round-56/inspection.raw.json\",\"corpus/live/runs/round-57/inspection.raw.json\",\"corpus/live/runs/round-55/receipt.json\",\"corpus/live/runs/round-56/receipt.json\",\"corpus/live/runs/round-57/receipt.json\"]]' | tee /tmp/input-ledger.sha; wc -l < /tmp/input-ledger.sha",
+    "run_from": "lane root or any copied corpus root; relative paths only, so the command also works from inside a corpus directory copy with the corpus/ prefix removed",
+    "expected_row_count": 9,
+    "expected_rows": [
+      "41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b 1536 corpus/fixtures/pe-r55/fixture.exe",
+      "911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b 1536 corpus/fixtures/pe-r56/fixture.exe",
+      "71d11fba01d4daa040e04e649a70c39bcdb475ce2e0a2801f6171a325db0494d 1536 corpus/fixtures/pe-r57/fixture.exe",
+      "54ffdeab7108895404efa01edb400c9bc32c36c4f85540babed2f5241137f860 4850 corpus/live/runs/round-55/inspection.raw.json",
+      "59a95f9db16633b337fd058a6d1509c95687445af02d63bb3156309f1811bbe6 4852 corpus/live/runs/round-56/inspection.raw.json",
+      "5c915ebdc4c79a6d98e3b9f374e6e2e67168a1c5b391487ac80bd8e199d34fc8 4851 corpus/live/runs/round-57/inspection.raw.json",
+      "1fffb03106c649cb2b1cdb92925347764d8e5546704986e67f57ae44b4bb9733 495 corpus/live/runs/round-55/receipt.json",
+      "1b2bcfe2323219b069b33c64259c9e052a26ef9264cb46b9c4d707ae164066ee 495 corpus/live/runs/round-56/receipt.json",
+      "ee2ec2875ebeeaa75c54acad671fcb488562051eeb3e17cb62d8a9338be67a91 495 corpus/live/runs/round-57/receipt.json"
+    ],
+    "identity_boundary_rule": "Replay must compare each saved embedded historical path against the independently pinned historical corpus root (boundary.pinned_historical_corpus_root); it must never copy an expected path out of the field under test, and it must recompute the receipt command from the saved historical path by the recorded pattern rather than trust the command string alone."
+  }
+}

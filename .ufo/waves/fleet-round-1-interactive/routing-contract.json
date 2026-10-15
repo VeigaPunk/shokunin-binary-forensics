@@ -1,0 +1,51 @@
+{
+  "verdict": "could-not-evaluate",
+  "finding_id": "required_role_alias_binding_missing",
+  "exit_code": 2,
+  "canonical_plan_exit_code": 0,
+  "canonical_render_exit_code": 0,
+  "planned_lanes": 32,
+  "dispatched_lanes": 0,
+  "registry_persisted": false,
+  "route_network_probed": false,
+  "global_config_sha256": "08788ddcbbb48180b987e6f54b517af294c85cacceb07bdd594843a53e668dcc",
+  "mismatches": [
+    {
+      "role": "reviewer",
+      "required": "@m_grok",
+      "observed": "@m_mid",
+      "lanes": 17
+    },
+    {
+      "role": "critic",
+      "required": "@m_grok",
+      "observed": "@m_strong",
+      "lanes": 12
+    },
+    {
+      "role": "sentinel",
+      "required": "@m_grok",
+      "observed": "@m_mid",
+      "lanes": 1
+    },
+    {
+      "role": "scribe",
+      "required": "@m_composer",
+      "observed": "@m_fast",
+      "lanes": 1
+    },
+    {
+      "role": "connector",
+      "required": "@m_antigravity",
+      "observed": "@m_mid",
+      "lanes": 1
+    }
+  ],
+  "connector_required_fallback": "@m_zfl",
+  "fallback_status": "unprovable until connector has the required primary binding",
+  "render_mode": "canonical exported planToDispatchPayload; no run/registry side effects in the read-only UFO checkout",
+  "unblock": "Operator owns existing global task.agentModelOverrides bindings. Bind the listed roles to required aliases and connector authorized fallback, then revalidate this unchanged 32-scope spec in a fresh interactive continuation of fleet round 1. No overlay or route substitution by this lane.",
+  "verdict_lines": [
+    "ROUTING_CONTRACT BLOCKED finding=required_role_alias_binding_missing planned=32 dispatched=0 exit=2"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "compared_to": "inherited-input-shapes.json",
+  "before_round_record_append": true,
+  "paths": {
+    "SCORECARD.md": true,
+    "SHONEN.md": true,
+    "reports/round-1/baseline.txt": true,
+    "reports/round-1/batch-receipt.json": true,
+    "reports/round-1/brief.md": true,
+    "reports/round-1/connector.md": true,
+    "reports/round-1/counting-commands.json": true,
+    "reports/round-1/critic.md": true,
+    "reports/round-1/dispatch.json": true,
+    "reports/round-1/implementation.md": true,
+    "reports/round-1/input-ledger.json": true,
+    "reports/round-1/input-ledger.md": true,
+    "reports/round-1/input-preservation.json": true,
+    "reports/round-1/measured-before.json": true,
+    "reports/round-1/measurements.json": true,
+    "reports/round-1/planner.md": true,
+    "reports/round-1/replay_scenarios.py": true,
+    "reports/round-1/reviewer.md": true,
+    "reports/round-1/scenarios.md": true,
+    "reports/round-1/scout.md": true,
+    "reports/round-1/scribe.md": true
+  },
+  "all_unchanged": true
+}
