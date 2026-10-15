@@ -1,0 +1,36 @@
+Round: fleet round-1; imported historical r1-r60 records are not renumbered.
+Measured lane commit: 286033c5f2b1683fb538e86e15667709bb49b054
+
+Command (lane root):
+python3 -B corpus/verify_named_multi_icon_states.py
+Observed exit: 1
+Last diagnostic: AssertionError: r55 artifact
+Cause: current file location is compared with the historical producer path in unchanged saved Evidence.
+
+Counting command (lane root):
+python3 -B -c 'import pathlib,subprocess,sys; ps=sorted(pathlib.Path("corpus").glob("verify_*.py")); rows=[(p.name,subprocess.run([sys.executable,"-B",str(p),"--self-test"],capture_output=True,text=True)) for p in ps]; [print(name,"exit="+str(r.returncode),(r.stdout+r.stderr).splitlines()[-1]) for name,r in rows]; print("REPLAY",sum(r.returncode==0 for _,r in rows),"/",len(rows))'
+Observed:
+verify_evm_evidence.py exit=0 NEGATIVE REJECTED candidate destination mismatch
+verify_icon_languages.py exit=1 AssertionError: r47: artifact
+verify_icon_states.py exit=0 PASS: 4/4 source-decoded states, 3/3 one-byte deltas, one forged candidate REJECTED
+verify_js_graph_delta.py exit=0 NEGATIVE REJECTED saved graph disagrees with source truth
+verify_multi_icon_states.py exit=1 AssertionError: r42: artifact
+verify_named_multi_icon_states.py exit=1 AssertionError: r55 artifact
+verify_pe_resources.py exit=0 NEGATIVE REJECTED payload relation mismatch
+verify_saved_evidence.py exit=0 NEGATIVE JS REJECTED: JS: wrong package-main mapping
+verify_semantic_trace.py exit=0 NEGATIVE REJECTED relation differs from source parent
+verify_shape_evidence.py exit=0 NEGATIVE REJECTED changed-property evidence mismatch
+REPLAY 7 / 10
+
+Saved-record route census command (lane root):
+python3 -B -c 'import collections,json,pathlib; c=collections.Counter(); paths=sorted(pathlib.Path("corpus/live/runs").rglob("*.json"));
+for p in paths:
+ try: x=json.loads(p.read_bytes())
+ except (ValueError,UnicodeError): continue
+ if isinstance(x,dict) and x.get("evidence_id") and x.get("normalized_result") is not None: c[x.get("operation","unknown")]+=1
+print(json.dumps(c,sort_keys=True)); families={"native-static":{"inspect_pe_resources"},"managed":{"inspect_managed_artifact"},"javascript":{"analyze_javascript_application"},"android":{"inspect_android_package"},"archives":{"inventory_artifact","inspect_artifact"},"firmware":{"inspect_firmware_regions"},"browser-runtime":{"inspect_web_page","capture_browser_scenario","observe_web_session"}}; present=[k for k,v in families.items() if v.intersection(c)]; print("COVERAGE",len(present),"/",len(families),"score=",round(10*len(present)/len(families),2),"families=",present)'
+Observed:
+{"analyze_javascript_application": 6, "compare_application_versions": 1, "compare_javascript_export_shapes": 3, "extract_artifact": 2, "inspect_analysis_view": 1, "inspect_artifact": 4, "inspect_evm_interface": 7, "inspect_pe_resources": 30, "trace_application_feature": 2, "trace_javascript_semantics": 2}
+COVERAGE 3 / 7 score= 4.29 families= ['native-static', 'javascript', 'archives']
+
+Scope: saved static record presence only; not authentication or current producer/runtime availability.

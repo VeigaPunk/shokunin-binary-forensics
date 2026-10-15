@@ -20,3 +20,22 @@ Protocol: append-only corpus; every claim separates observation /
 inference / unknown; rounds are non-author-verified. See the fleet
 [README](https://github.com/VeigaPunk/shokunin#readme) for how a lane
 learns.
+
+## Saved named-icon ledger replay
+
+From this lane's repository root:
+
+```sh
+python3 -B corpus/verify_named_multi_icon_states.py
+```
+
+This checks the authored r55–r57 PE32+ fixtures against their saved normalized
+results, exact byte deltas, pinned Evidence IDs, and receipt command/hash.
+`ROOT` locates the current corpus; `HIST` pins the original producer path as
+recorded identity only. Moving this checkout must not change `HIST`, rewrite
+saved records, or require the historical directory to exist.
+
+The output establishes bounded saved-record consistency, not authenticated
+producer origin, a new REA analysis, PE execution, or general parser correctness.
+The separate multi-image and language-ledger relocation failures remain outside
+this repair. Round evidence and counting commands live in `reports/round-1/`.

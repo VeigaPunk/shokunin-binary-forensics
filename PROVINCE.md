@@ -22,4 +22,9 @@ publishing reversed code; asset rights claims (art-east-asian-design);
 harness/evidence auditing (harness-integrity, gate-evidence, rlm-dispatch);
 game mechanics verification (game-dev-2d); narrative canon (lore).
 
-Only writes `.shokunin/revenger/**` and its own reports.
+Writes only this `revenger-shokunin/` repository, its fleet report at
+`../.ufo/reports/round-<N>/revenger.md`, and append-only L0 questions.
+Domain source checkouts and sibling repositories remain read-only.
+Historical `.shokunin/revenger/**` paths identify imported evidence, not the
+current write scope. The r55–r57 replay repair checks this domain's saved
+PE evidence ledger; it does not take ownership of generic harness gates.

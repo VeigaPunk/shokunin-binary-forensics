@@ -5,6 +5,8 @@ from hashlib import sha256
 from struct import unpack_from
 import copy, json
 ROOT=Path(__file__).resolve().parent
+# Historical producer corpus; identity for saved artifact paths/receipt commands only, never read through it.
+HIST=Path('/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus')
 N=0
 def req(ok,msg):
  global N
@@ -54,19 +56,19 @@ def decode(d):
   groups.append(dict(resource_index=x['index'],images=images))
  return dict(format='pe32-plus',machine=machine,directory=dict(rva=rva,location=dict(offset=start,bytes=size),data_directory_location=dict(offset=dd,bytes=8)),directories=dirs,resources=resources,icon_groups=groups,coverage=dict(status='complete',examined_entries=sum(x['named_entries']+x['id_entries'] for x in dirs),resources=len(resources)))
 EXPECT={55:('41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b','ev_db785aec4caaa20630a96a8a3b250ff3aae9c0fa454ff36abe4415725fa22e79'),56:('911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b','ev_44be7fd71ca9e8028e71b2714bea44597bd8b25ee83922003747e03fd231342a'),57:('71d11fba01d4daa040e04e649a70c39bcdb475ce2e0a2801f6171a325db0494d','ev_068eb9b682385b760251b6d23ba70680ec57b0e55b95ce242921a3f021e1cd07')}
-def compare_normalized(actual,tree,fixture,digest,length,r):
- expected=dict(artifact=dict(path=str(fixture),sha256=digest,bytes=length),**tree,limitations=[
+def compare_normalized(actual,tree,hist,digest,length,r):
+ expected=dict(artifact=dict(path=str(hist),sha256=digest,bytes=length),**tree,limitations=[
   'Static PE32/PE32+ type/name/language resource inventory; payloads other than RT_GROUP_ICON remain opaque.',
   'Icon candidates are resource-table relationships. Language fallback, image decoding and actual shell/window loading are not observed.',
   'Exact shared byte ranges are retained; non-identical overlapping resource structures or payloads are rejected.'
  ])
  req(actual==expected,f'r{r} normalized result')
 def check(r):
- digest,eid=EXPECT[r]; folder=ROOT/f'live/runs/round-{r}'; fixture=ROOT/f'fixtures/pe-r{r}/fixture.exe'; d=fixture.read_bytes(); raw=(folder/'inspection.raw.json').read_bytes(); report=json.loads(raw); receipt=json.loads((folder/'receipt.json').read_text()); tree=decode(d)
+ digest,eid=EXPECT[r]; folder=ROOT/f'live/runs/round-{r}'; fixture=ROOT/f'fixtures/pe-r{r}/fixture.exe'; hist=HIST/f'fixtures/pe-r{r}/fixture.exe'; d=fixture.read_bytes(); raw=(folder/'inspection.raw.json').read_bytes(); report=json.loads(raw); receipt=json.loads((folder/'receipt.json').read_text()); tree=decode(d)
  req(len(d)==1536 and H(d)==digest,f'r{r} digest'); req(report['evidence_id']==eid and report['operation']=='inspect_pe_resources',f'r{r} Evidence ID'); req(report['subject']['digest']['sha256']==digest,f'r{r} subject')
- req(report['normalized_result']['artifact']==dict(path=str(fixture),sha256=digest,bytes=len(d)),f'r{r} artifact')
- compare_normalized(report['normalized_result'],tree,fixture,digest,len(d),r)
- command=f'npx -y rea-agents@6.4.0 inspect-pe-resources {fixture} --format json'
+ req(report['normalized_result']['artifact']==dict(path=str(hist),sha256=digest,bytes=len(d)),f'r{r} artifact')
+ compare_normalized(report['normalized_result'],tree,hist,digest,len(d),r)
+ command=f'npx -y rea-agents@6.4.0 inspect-pe-resources {hist} --format json'
  req(receipt['command']==command and receipt['exit_code']==0 and receipt['fixture_sha256']==digest and receipt['evidence_id']==eid and receipt['stdout_sha256']==H(raw) and isinstance(receipt['duration_seconds'],(float,int)) and receipt['duration_seconds']>=0,f'r{r} receipt')
  req(len(tree['icon_groups'])==1 and tree['icon_groups'][0]['resource_index']==2 and len(tree['icon_groups'][0]['images'])==2,f'r{r} group shape')
  req(tree['resources'][2]['name']=={'kind':'name','name':'A😀B!','utf16le_hex':'41003dd800de42002100','location':{'offset':736,'bytes':12}},f'r{r} exact UTF-16 name')
@@ -89,7 +91,7 @@ def main():
   else: im['size_matches']=True
   req(forged['normalized_result']!=rows[r][1]['normalized_result'],f'r{r} mutation no-op')
   try:
-   compare_normalized(forged['normalized_result'],rows[r][2],ROOT/f'fixtures/pe-r{r}/fixture.exe',EXPECT[r][0],len(rows[r][0]),r)
+   compare_normalized(forged['normalized_result'],rows[r][2],HIST/f'fixtures/pe-r{r}/fixture.exe',EXPECT[r][0],len(rows[r][0]),r)
   except AssertionError as error:
    req(str(error)==f'r{r} normalized result',f'r{r} unexpected rejection: {error}')
   else: raise AssertionError(f'r{r} forged claim accepted')

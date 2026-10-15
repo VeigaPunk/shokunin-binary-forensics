@@ -1,0 +1,16 @@
+{
+  "round": 1,
+  "commit": "286033c5f2b1683fb538e86e15667709bb49b054",
+  "method": "git archive --format=tar <commit> corpus extracted into an isolated temporary directory; replay and fixed-eight-family counting commands run from that directory with Python 3.14.7. Temporary snapshot removed afterward.",
+  "replay": {
+    "exit_code": 0,
+    "stdout": "verify_evm_evidence.py exit=0 NEGATIVE REJECTED candidate destination mismatch\nverify_icon_languages.py exit=1 AssertionError: r47: artifact\nverify_icon_states.py exit=0 PASS: 4/4 source-decoded states, 3/3 one-byte deltas, one forged candidate REJECTED\nverify_js_graph_delta.py exit=0 NEGATIVE REJECTED saved graph disagrees with source truth\nverify_multi_icon_states.py exit=1 AssertionError: r42: artifact\nverify_named_multi_icon_states.py exit=1 AssertionError: r55 artifact\nverify_pe_resources.py exit=0 NEGATIVE REJECTED payload relation mismatch\nverify_saved_evidence.py exit=0 NEGATIVE JS REJECTED: JS: wrong package-main mapping\nverify_semantic_trace.py exit=0 NEGATIVE REJECTED relation differs from source parent\nverify_shape_evidence.py exit=0 NEGATIVE REJECTED changed-property evidence mismatch\nCALIBRATION 1 / 4 score= 2.5\nREPLAY 7 / 10\n",
+    "stderr": ""
+  },
+  "coverage": {
+    "exit_code": 0,
+    "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"extract_artifact\": 2, \"inspect_analysis_view\": 1, \"inspect_artifact\": 4, \"inspect_evm_interface\": 7, \"inspect_pe_resources\": 30, \"trace_application_feature\": 2, \"trace_javascript_semantics\": 2}\nCOVERAGE 4 / 8 score= 5.0 families= ['native-static', 'javascript', 'archives', 'evm']\n",
+    "stderr": ""
+  },
+  "limitations": "The census probe exits zero even when constituent verifiers fail; inspect their exit codes. Calibration counts this fixed four-script subset, not overall competence. Coverage counts presence in this eight-family taxonomy, not authentication, execution or readiness. Counting commands are copied into the final SCORECARD/report."
+}

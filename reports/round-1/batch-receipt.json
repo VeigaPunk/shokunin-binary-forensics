@@ -1,0 +1,22 @@
+{
+  "round": 1,
+  "call_surface": "functions.task (OMP shokunin AgentSwarm host binding)",
+  "observed_calls": 1,
+  "observed_spawn_count": 9,
+  "routing_authority": "/home/vgpnk/.omp/agent/config.yml:318-332",
+  "routing": "Taxonomy roles only; no model parameters or route mutation. Concrete serving models are not exposed by spawn receipt.",
+  "inherited_dispatch": "reports/round-1/dispatch.json is retained as intent; this file records the live dispatch receipt, not a second batch.",
+  "members": [
+    {"name":"ReplayPlanner","job":"ReplayPlanner","agent":"planner"},
+    {"name":"ReplayConnector","job":"ReplayConnector","agent":"connector"},
+    {"name":"ReplayImplementation","job":"ReplayImplementation","agent":"executor"},
+    {"name":"ReplayScenarios","job":"ReplayScenarios","agent":"executor"},
+    {"name":"ReplayInputLedger","job":"ReplayInputLedger","agent":"executor"},
+    {"name":"ReplayScribe","job":"ReplayScribe","agent":"scribe"},
+    {"name":"ReplayScout","job":"ReplayScout","agent":"scout"},
+    {"name":"ReplayReviewer","job":"ReplayReviewer","agent":"reviewer"},
+    {"name":"ReplayCritic","job":"ReplayCritic","agent":"critic"}
+  ],
+  "independence": "All nine are author-side L2 evidence only; none grants promotion or an outside discernment spot-check.",
+  "dispatch_shape": "Heterogeneous single-writer shokunin batch, using normal native delegation per swarm skill; not the uniform-item UFO validator wave, whose taxonomy excludes the required planner seat."
+}

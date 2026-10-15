@@ -1,0 +1,22 @@
+{
+  "round": 1,
+  "surface": "OMP task host mapping for one shokunin AgentSwarm batch",
+  "batch_calls": 1,
+  "routing_authority": "/home/vgpnk/.omp/agent/config.yml:318-332",
+  "routing_policy": "Taxonomy agent roles only; host-selected models. No model parameter or route mutation.",
+  "runtime_model_identity": "Not exposed in task spawn receipt; no concrete-model claim.",
+  "baseline_commit": "286033c5f2b1683fb538e86e15667709bb49b054",
+  "members": [
+    {"name":"ReplayPlanner","agent":"planner","job":"ReplayPlanner","output":"reports/round-1/planner.md"},
+    {"name":"ReplayConnector","agent":"connector","job":"ReplayConnector","output":"reports/round-1/connector.md"},
+    {"name":"ReplayImplementation","agent":"executor","job":"ReplayImplementation","output":"reports/round-1/implementation.md"},
+    {"name":"ReplayScenarios","agent":"executor","job":"ReplayScenarios","output":"reports/round-1/scenarios.md"},
+    {"name":"ReplayInputLedger","agent":"executor","job":"ReplayInputLedger","output":"reports/round-1/input-ledger.md"},
+    {"name":"ReplayScribe","agent":"scribe","job":"ReplayScribe","output":"reports/round-1/scribe.md"},
+    {"name":"ReplayScout","agent":"scout","job":"ReplayScout","output":"reports/round-1/scout.md"},
+    {"name":"ReplayReviewer","agent":"reviewer","job":"ReplayReviewer","output":"reports/round-1/reviewer.md"},
+    {"name":"ReplayCritic","agent":"critic","job":"ReplayCritic","output":"reports/round-1/critic.md"}
+  ],
+  "independence": "Author-side L2 evidence only; no promotion or outside-discernment authority.",
+  "batch_shape": "Heterogeneous single-writer shokunin native delegation, not a uniform-item UFO validator wave. Required planner is not a permitted UFO swarm-wave role."
+}
