@@ -762,3 +762,10 @@ RESULT PASS exit=0
 - Operator rollout per the 2026-10-16 fleet amendment (fleet-root `84bade0`): the missing `SCORECARD.md` contract fields were appended as additive scaffolds at the end of `SCORECARD.md`; all pre-existing content is preserved byte-for-byte.
 - Already present as a real section: `axes` (the fleet round-1 axis table with scores, evidence pointers and last-change rounds). Absent as sections: `capabilities`, `saturation`, `planned`, `retired` — `planned:`/`retired:` existed only as unheaded prose label lines (`SCORECARD.md:59,65,135,136`), so all four scaffolds were added.
 - No axis claim was made and no score moved by this change. No capability enters the repertoire table (a row requires a round demonstrating it running), and no saturation line or stagnation window is asserted here.
+
+## 2026-10-17 — repository README
+
+- **Trigger.** Root `README.md` led with the shared lane stub, including a `SKILL.md` bullet, then the r55–r57 replay commands. `ls` shows no root `SKILL.md`. `LOG.md` already records that absence as contract debt.
+- **Evidence.** Domain, refusals, and write scope are `PROVINCE.md`. `corpus/verify_named_multi_icon_states.py` sets `ROOT` to the corpus directory and `HIST` to `/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus`. `reports/round-1/replay_scenarios.py` and `.ufo/waves/fleet-round-1-interactive/routing-assessment-run.json` exist. The replay commands and their limits are carried forward from `git show HEAD:README.md`.
+- **Action.** Replaced `README.md`, keeping those two commands and the bounds on what a green run establishes. No corpus file was edited. No Devin wiki URL was present.
+- **Outcome.** No axis claim; no score moved. The replay commands were not re-executed in this change.
