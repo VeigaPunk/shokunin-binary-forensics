@@ -762,3 +762,16 @@ RESULT PASS exit=0
 - Operator rollout per the 2026-10-16 fleet amendment (fleet-root `84bade0`): the missing `SCORECARD.md` contract fields were appended as additive scaffolds at the end of `SCORECARD.md`; all pre-existing content is preserved byte-for-byte.
 - Already present as a real section: `axes` (the fleet round-1 axis table with scores, evidence pointers and last-change rounds). Absent as sections: `capabilities`, `saturation`, `planned`, `retired` — `planned:`/`retired:` existed only as unheaded prose label lines (`SCORECARD.md:59,65,135,136`), so all four scaffolds were added.
 - No axis claim was made and no score moved by this change. No capability enters the repertoire table (a row requires a round demonstrating it running), and no saturation line or stagnation window is asserted here.
+
+## 2026-10-17 — root README
+
+Motivating evidence: the previous root README was the shared lane template
+plus the r55–r57 replay commands. Those commands are kept
+(`python3 -B corpus/verify_named_multi_icon_states.py` and
+`python3 -B reports/round-1/replay_scenarios.py`), now at `README.md:37-70`.
+`SHONEN.md` cited `README.md:24-41` for that CLI; the citation was updated
+to the new span and still marked `[~]`. Root `SKILL.md` remains absent, as
+`SHONEN.md` already records. The interactive-continuation pointer now names
+the `SCORECARD.md` heading that exists ("Interactive continuation — fleet
+round-1 remains unadmitted") and the routing-assessment JSON that is in
+tree. No Devin wiki URL was present; none was added.

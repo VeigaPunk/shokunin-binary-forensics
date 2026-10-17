@@ -1,25 +1,38 @@
 # shokunin-binary-forensics
 
-A **shokunin lane** — an expert agent for one domain, minted and trained
-under the [shokunin skill](https://github.com/VeigaPunk/shokunin).
+Reverse engineering of shipped artifacts, under an evidence-ledger
+discipline.
 
-**Domain:** Reverse engineering of shipped artifacts under the evidence-ledger discipline — byte-oracle fixtures, Evidence IDs, forged-claim rejection controls.
+Lane id: **revenger-shokunin**. Rank: **shonen**. [`SHONEN.md`](SHONEN.md)
+records that root `SKILL.md` is absent, and that the replay below is an
+author-side fixture scope, not a promotion. There is no root `SKILL.md`
+in this checkout. Decision tables live in `corpus/knowledge/` and
+`corpus/lessons/`.
 
-## What's here
+Fleet: [shokunin](https://github.com/VeigaPunk/shokunin). The live REA
+surface map is maintained by
+[shokunin-reverse-engineering](https://github.com/VeigaPunk/shokunin-reverse-engineering)
+(kaidoku). This lane keeps the evidence ledger: observation, inference,
+and unknown, each citing an Evidence ID.
 
-- `SKILL.md` — the distilled expertise: decision tables, error patterns,
-  checklists (absent on lanes still in shonen seed form — see `corpus/`)
-- `PROVINCE.md` — the owned domain boundary and refusals
-- `corpus/` — the craft record: `knowledge/` (sourced, verifiable),
-  `lessons/` (per-round), `QUALITY.md` (the admission bar)
-- `LOG.md` — the round-by-round audit trail · `SCORECARD.md` — axis
-  verdicts · `SHONEN.md` — promotion checklist (deleted on promotion)
-- `reports/` — verifier and adjudicator reports
+## The question
 
-Protocol: append-only corpus; every claim separates observation /
-inference / unknown; rounds are non-author-verified. See the fleet
-[README](https://github.com/VeigaPunk/shokunin#readme) for how a lane
-learns.
+> Which bytes support this conclusion, which Evidence ID points at them,
+> and which saved record still matches those bytes?
+
+Owned families, from `PROVINCE.md`: native binaries, managed assemblies,
+Electron and JavaScript packages, Android APKs, archives, firmware, and
+browser or Electron runtime evidence. Every conclusion separates
+observation, inference, and unknown.
+
+## Boundary
+
+Live-target execution stays inside the declared target and lifecycle.
+DRM circumvention, publishing reversed code, asset-rights claims, harness
+auditing, game-mechanics verification, and narrative canon are outside
+this province. Writes stay in this repository. Sibling repositories and
+domain source checkouts are read-only. Historical `.shokunin/revenger/**`
+paths identify imported evidence. They are not the current write scope.
 
 ## Saved named-icon ledger replay
 
@@ -29,30 +42,47 @@ From this lane's repository root:
 python3 -B corpus/verify_named_multi_icon_states.py
 ```
 
-This checks the authored r55–r57 PE32+ fixtures against their saved normalized
-results, exact byte deltas, pinned Evidence IDs, and receipt command/hash.
-`ROOT` locates the current corpus; `HIST` pins the original producer path as
-recorded identity only. Moving this checkout must not change `HIST`, rewrite
-saved records, or require the historical directory to exist.
+This checks the authored r55–r57 PE32+ fixtures against their saved
+normalized results, exact byte deltas, pinned Evidence IDs, and receipt
+command/hash. `ROOT` locates the current corpus; `HIST` pins the original
+producer path as recorded identity only. Moving this checkout must not
+change `HIST`, rewrite saved records, or require the historical directory
+to exist.
 
 The output establishes bounded saved-record consistency, not authenticated
-producer origin, a new REA analysis, PE execution, or general parser correctness.
-The separate multi-image and language-ledger relocation failures remain outside
-this repair. Round evidence and counting commands live in `reports/round-1/`.
+producer origin, a new REA analysis, PE execution, or general parser
+correctness. The separate multi-image and language-ledger relocation
+failures remain outside this repair. Round evidence and counting commands
+live in `reports/round-1/`.
 
-Run the isolated relocation/tamper acceptance battery with:
+Run the isolated relocation and tamper acceptance battery with:
 
 ```sh
 python3 -B reports/round-1/replay_scenarios.py
 ```
 
-It exercises the real verifier in three cwd/path contexts and six individually
-forged saved-record copies, checking that original inputs remain unchanged.
-Exit 0 means this bounded battery passed; it does not admit a training round.
-The current interactive continuation has a validated, undispatched 32-scope
-audit plan but missing required global route bindings. See
+It exercises the real verifier in three cwd/path contexts and six
+individually forged saved-record copies, checking that original inputs
+remain unchanged. Exit 0 means this bounded battery passed. It does not
+admit a training round. Before treating a replay as a round, read
 `.ufo/waves/fleet-round-1-interactive/routing-assessment-run.json` and
-`SCORECARD.md`'s interactive-continuation section before advancing a round.
-Permanent gate-registry and corpus-bar files remain named debt, not implied
-by this command's existence. No native judgment or completion receipt is
-claimed by these replay commands.
+`SCORECARD.md` under "Interactive continuation — fleet round-1 remains
+unadmitted".
+
+Sibling verifiers in `corpus/` cover narrower saved ledgers
+(`verify_saved_evidence.py`, `verify_pe_resources.py`,
+`verify_icon_states.py`, `verify_icon_languages.py`,
+`verify_evm_evidence.py`, `verify_js_graph_delta.py`,
+`verify_semantic_trace.py`, `verify_shape_evidence.py`,
+`verify_multi_icon_states.py`). Each one is a bounded replay of its own
+fixtures. None of them is a general parser proof.
+
+## Map
+
+| Path | What it is |
+|---|---|
+| [`PROVINCE.md`](PROVINCE.md) | owned artifact families and write scope |
+| [`corpus/knowledge/`](corpus/knowledge/) | sourced ledger notes |
+| [`corpus/fixtures/`](corpus/fixtures/) | authored fixtures, including the checksum and duplicate sets |
+| [`reports/`](reports/) | verifier measurements |
+| [`SHONEN.md`](SHONEN.md), [`SCORECARD.md`](SCORECARD.md), [`LOG.md`](LOG.md) | probation, verdicts, audit trail |
