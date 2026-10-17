@@ -762,3 +762,17 @@ RESULT PASS exit=0
 - Operator rollout per the 2026-10-16 fleet amendment (fleet-root `84bade0`): the missing `SCORECARD.md` contract fields were appended as additive scaffolds at the end of `SCORECARD.md`; all pre-existing content is preserved byte-for-byte.
 - Already present as a real section: `axes` (the fleet round-1 axis table with scores, evidence pointers and last-change rounds). Absent as sections: `capabilities`, `saturation`, `planned`, `retired` — `planned:`/`retired:` existed only as unheaded prose label lines (`SCORECARD.md:59,65,135,136`), so all four scaffolds were added.
 - No axis claim was made and no score moved by this change. No capability enters the repertoire table (a row requires a round demonstrating it running), and no saturation line or stagnation window is asserted here.
+
+## 2026-10-17 — README: replace the shared shonen template
+
+Operator request: make the README a useful front door. Evidence:
+
+- The previous `README.md` was the shared 23-line shonen-lane template
+  (identical across the 2026-10 public remotes except for the Domain
+  line, plus this lane's extra command section when one existed).
+- Replacement text restates `PROVINCE.md`, existing command blocks, and
+  file-tree facts from `ls` of this checkout. No new craft claim.
+- Devin wiki URLs were not added or rewritten. The only verified fleet
+  wiki link remains the fleet-root line in `VeigaPunk/shokunin`.
+
+Not a craft round. No axis claim.
