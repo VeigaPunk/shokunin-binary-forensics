@@ -762,3 +762,16 @@ RESULT PASS exit=0
 - Operator rollout per the 2026-10-16 fleet amendment (fleet-root `84bade0`): the missing `SCORECARD.md` contract fields were appended as additive scaffolds at the end of `SCORECARD.md`; all pre-existing content is preserved byte-for-byte.
 - Already present as a real section: `axes` (the fleet round-1 axis table with scores, evidence pointers and last-change rounds). Absent as sections: `capabilities`, `saturation`, `planned`, `retired` — `planned:`/`retired:` existed only as unheaded prose label lines (`SCORECARD.md:59,65,135,136`), so all four scaffolds were added.
 - No axis claim was made and no score moved by this change. No capability enters the repertoire table (a row requires a round demonstrating it running), and no saturation line or stagnation window is asserted here.
+
+## 2026-10-17 — first-class README (not a craft round)
+
+**Evidence.** This repository either had no root `README.md` or only the
+generic 22-line lane stub (`A **shokunin lane** — an expert agent for one
+domain…`). A new agent landing here had to reconstruct the province from
+`PROVINCE.md`, `SKILL.md` (when present), the directory listing, and
+`LOG.md`. Wrote `README.md` from those sources: owned domain and refusals
+from `PROVINCE.md`, start-here commands from files that exist in-tree
+(`tools/`, `scripts/`, `verifiers/`, `corpus/`), and fleet links to
+`VeigaPunk/shokunin`. No axis claim. No Devin wiki URL was added or
+rewritten (the only in-tree Devin wiki link remains the fleet-root
+`README.md` line).
