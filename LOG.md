@@ -762,3 +762,24 @@ RESULT PASS exit=0
 - Operator rollout per the 2026-10-16 fleet amendment (fleet-root `84bade0`): the missing `SCORECARD.md` contract fields were appended as additive scaffolds at the end of `SCORECARD.md`; all pre-existing content is preserved byte-for-byte.
 - Already present as a real section: `axes` (the fleet round-1 axis table with scores, evidence pointers and last-change rounds). Absent as sections: `capabilities`, `saturation`, `planned`, `retired` — `planned:`/`retired:` existed only as unheaded prose label lines (`SCORECARD.md:59,65,135,136`), so all four scaffolds were added.
 - No axis claim was made and no score moved by this change. No capability enters the repertoire table (a row requires a round demonstrating it running), and no saturation line or stagnation window is asserted here.
+
+## 2026-10-17 — root README as the public door (not a craft round)
+
+**Trigger.** GitHub landing pages for this lane were a missing or thin
+template README (`ls README.md` at repo root before this commit). A
+stranger could not name the domain question, the refusals, or the gate
+command without oral context. Operator request: make the READMEs of every
+shokunin repo in this workspace the public door, without touching Devin
+wiki links.
+
+**Action.** Wrote `README.md` from in-repo sources only: `PROVINCE.md`,
+`SKILL.md` (when present), the gate/tool headers whose `--help`/`--selftest`
+flags were executed or grepped in this session, and the fleet
+[README](https://github.com/VeigaPunk/shokunin#readme) contract. No corpus
+knowledge claim was admitted; this is a map, not a round. Any
+`app.devin.ai/org/veigapunk/wiki/...` link already present was left
+verbatim (shokunin fleet root only, as of this workspace).
+
+**Outcome.** A cold reader can find the province, the question this lane
+answers, the refusals, and at least one runnable gate. No axis score
+moved. No `SHONEN.md` box is self-checked.
