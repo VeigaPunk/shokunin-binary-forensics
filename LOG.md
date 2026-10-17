@@ -762,3 +762,21 @@ RESULT PASS exit=0
 - Operator rollout per the 2026-10-16 fleet amendment (fleet-root `84bade0`): the missing `SCORECARD.md` contract fields were appended as additive scaffolds at the end of `SCORECARD.md`; all pre-existing content is preserved byte-for-byte.
 - Already present as a real section: `axes` (the fleet round-1 axis table with scores, evidence pointers and last-change rounds). Absent as sections: `capabilities`, `saturation`, `planned`, `retired` — `planned:`/`retired:` existed only as unheaded prose label lines (`SCORECARD.md:59,65,135,136`), so all four scaffolds were added.
 - No axis claim was made and no score moved by this change. No capability enters the repertoire table (a row requires a round demonstrating it running), and no saturation line or stagnation window is asserted here.
+
+## 2026-10-17 — root README (front door; not a craft round)
+
+Operator request: make every shokunin-repo README amazing, and do not
+alter Devin wiki links. Evidence that motivated this change:
+
+- this repo either had no root `README.md`, or carried the generic
+  "A **shokunin lane** … What's here" template / a thinner front door
+- `PROVINCE.md` and (where present) `SKILL.md` already named the domain,
+  refusals, and in-repo gates; the GitHub front door did not
+- Devin wiki URL pattern is the existing fleet line in
+  `VeigaPunk/shokunin` README (`app.devin.ai/org/veigapunk/wiki/…`)
+  and `VeigaPunk/ufo-fsd-alpha`; the fleet overview link is preserved
+  byte-identical in the fleet-root README
+
+This commit writes or rewrites `README.md` from those sourced files and
+the commands/paths named in it. No axis claim, no score moved, no corpus
+admission, no protocol change.
