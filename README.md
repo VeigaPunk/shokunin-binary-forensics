@@ -5,6 +5,8 @@ under the [shokunin skill](https://github.com/VeigaPunk/shokunin).
 
 **Domain:** Reverse engineering of shipped artifacts under the evidence-ledger discipline — byte-oracle fixtures, Evidence IDs, forged-claim rejection controls.
 
+**Wiki:** [Devin wiki](https://app.devin.ai/org/veigapunk/wiki/VeigaPunk/shokunin-binary-forensics?branch=main)
+
 ## What's here
 
 - `SKILL.md` — the distilled expertise: decision tables, error patterns,
