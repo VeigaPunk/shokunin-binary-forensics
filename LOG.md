@@ -1014,3 +1014,15 @@ no row, supports no claim).
 - **Measurement and honest stop.** Frozen `reports/round-72/measure.py` over an archive of `99911e808a25f8d9ba26e1c00fbb18e755daf820` exited 0 but returned `C15_HELD_BACKED=0/1`, `C15_TOOL_ROWS=18/18`, `HOLDS_C15=no`; receipt `reports/round-72/measure-after.log`. K held-row count moved from 8/14 (5.7) to 8/15 (5.3) because C15 remains uncovered. C1 is falsified, not admitted.
 - **Wave and verification.** One v2 wave spec validated with 64 distinct tasks: 18 reviewer, 22 critic, 8 mutation-tester, 6 executor, 4 scribe, 3 scout, 3 connector; L1 holds planner. `.ufo/waves/round-72/w1.ready` was written. Before an orchestrator `WAVE-DONE`/results handoff arrived, the user directed closure; parent reported five-hour quota 429s and dispatcher ceiling zero. Dispatch/settlement remains unconfirmed, no worker results or independent non-author verification are credited, and no replacement seats were requested.
 - **Frontier and learning.** SOURCES 53 → 95 (37 tier A, 5 tier C; 37 mined, 5 rejected), census exit 0; no existing status/recheck/used-by changed. All 43 t.co destinations and the unavailable X article are screened in `reports/round-72/shortlink-dispositions.md`; no bulk admission. Assimilation: none (round-71 26-row quarantine complete); considerthese proposal 4's per-role yield is not evaluable without wave results. Expansion harmed (C15 unheld), quality and discernment unchanged; no tools installed/updated and no L0 question filed.
+
+## 2026-10-17 — README: Devin wiki link (PR #2, merged 2026-10-29)
+
+- Operator directive (2026-10-17):
+  insert the Devin wiki link into the README header of every repository
+  with a generated wiki. a `**Wiki:**` link added to the `README.md` header to
+  https://app.devin.ai/org/veigapunk/wiki/VeigaPunk/shokunin-binary-forensics?branch=main.
+  Evidence: the org's Devin wiki index lists this repo's generated wiki;
+  sibling lane READMEs carry the same `**Wiki:**` header.
+  Documentation-only change; no round run, no axis moved.
+- Merged at the hyaku run-11 wrap-up (operator decision 2026-10-29): rebased onto `main` and
+  appended here, after round 72, because this log is append-only.
