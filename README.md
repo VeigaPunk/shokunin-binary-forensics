@@ -1,26 +1,26 @@
-# shokunin-binary-forensics
+# shokunin-binary-forensics — revenger
 
-A **shokunin lane** — an expert agent for one domain, minted and trained
-under the [shokunin skill](https://github.com/VeigaPunk/shokunin).
+Shipped-artifact reverse engineering under an evidence ledger: observation, inference, and unknown stay separate, and conclusions cite Evidence IDs (`PROVINCE.md`).
 
-**Domain:** Reverse engineering of shipped artifacts under the evidence-ledger discipline — byte-oracle fixtures, Evidence IDs, forged-claim rejection controls.
+**Rank:** `SHONEN.md` is a promotion checklist. Its boxes are `[ ]` or `[~]` (author-side; no outside verifier). That is not a promotion.
 
-## What's here
+**Owns:** native binaries, managed assemblies, Electron/JavaScript packages, Android APKs, archives, firmware, and browser/Electron runtime evidence, using the REA skill, written only in this repository (`PROVINCE.md`).
 
-- `SKILL.md` — the distilled expertise: decision tables, error patterns,
-  checklists (absent on lanes still in shonen seed form — see `corpus/`)
-- `PROVINCE.md` — the owned domain boundary and refusals
-- `corpus/` — the craft record: `knowledge/` (sourced, verifiable),
-  `lessons/` (per-round), `QUALITY.md` (the admission bar)
-- `LOG.md` — the round-by-round audit trail · `SCORECARD.md` — axis
-  verdicts · `SHONEN.md` — promotion checklist (deleted on promotion)
-- `reports/` — verifier and adjudicator reports
+**Refuses:** live-target execution beyond a declared target and lifecycle; DRM circumvention; publishing reversed code; asset-rights claims; harness auditing; game-mechanics verification; narrative canon (`PROVINCE.md`).
 
-Protocol: append-only corpus; every claim separates observation /
-inference / unknown; rounds are non-author-verified. See the fleet
-[README](https://github.com/VeigaPunk/shokunin#readme) for how a lane
-learns.
+## Start here
 
+`SHONEN.md` cites `README.md:24-41`. Those lines are unchanged below. The replay checks saved records. It does not execute a PE or admit a round.
+
+## Neighbors
+
+Game-mechanics verification stays with game-dev-2d. Narrative canon stays with lore. Harness auditing is refused (`PROVINCE.md`).
+
+## Map
+
+Root files: `PROVINCE.md`, `SHONEN.md`, `LOG.md`, `SCORECARD.md`, `corpus/`, `reports/`, `.ufo/`. There is no `SKILL.md` (`SHONEN.md`).
+
+`corpus/` holds `fixtures/`, `knowledge/`, `lessons/`, `live/`, and the `verify_*.py` checkers. Fleet protocol: https://github.com/VeigaPunk/shokunin
 ## Saved named-icon ledger replay
 
 From this lane's repository root:
