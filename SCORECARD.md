@@ -134,3 +134,23 @@ quality rubric; a row count is a measurement, not a score or verdict.
 
 planned: r60 (devin) named resource-type key `REVTEST` fixture verified non-author — coverage improved; evidence_id confirmed path-sensitive (content+path+params); r36 static icon-group relation independently reviewed; r35 same-name two-language static resource independently reviewed; r34 valid surrogate-pair PE name independently reviewed; r33 non-ASCII PE name identity independently reviewed; r32 named-resource PE identity independently reviewed; r31 two-resource PE identity independently reviewed; r30 PE name-ID control independently reviewed; r29 PE language-ID control independently reviewed; r28 PE one-byte payload control independently reviewed; r27 PE resource route reviewed; paused by operator after r26 (that pause line remains in LOG; this dispatch superseded it for round 27 only); r25 entry-STOP control rejected as confounded; r24 immediate-decoy negative reviewed; r23 bare-PUSH4 negative control reviewed; r22 two-branch EVM fixture reviewed; r21 raw carrier route reviewed; r20 EVM saved-proof reviewed; r19 EVM fixture route reviewed; r18 bounded alias trace reviewed; source recovery halted after r17 Wakaru requirement; r16 semantic saved-proof reviewed; duplicate-name occurrence coverage halted after r15 path collision; r14 bounded semantic capture trace reviewed; r13 saved-shape verifier independently reviewed (`corpus/live/runs/round-13/reviewer.md`); native session blocked until caller-supplied provider. Next claim must specify a distinct route and truth oracle.
 retired: none.
+
+## Capabilities
+
+| Capability | What it can now do | Evidence pointer | First-working round |
+|---|---|---|---|
+| — none yet — | | | |
+
+Rows enter only through a round that demonstrates the capability running (`AXES.md` §Capabilities); none enter through this rollout.
+
+## Saturation
+
+The lane's saturation line and stagnation window N are to be declared by the lane on its next round per `AXES.md` §The stagnation nudge; not asserted by this conformance change.
+
+## Planned
+
+Populated by the lane at each round start per the `SCORECARD.md` contract; no entries declared by this rollout.
+
+## Retired
+
+- none retired; record with justification when an axis is retired.
