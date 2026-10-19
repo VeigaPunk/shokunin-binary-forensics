@@ -131,3 +131,17 @@ Critic's sampled re-opens S004, S009, S011: quotes verbatim, tiers honest.
 | M20 | L1 gate applied Q08 to the values (re-derived and correct) instead of to the entry, so hard-coded constants and prose-cited counts passed | `.ufo/waves/kaika-r1/critic-post.md:9-12` | Q11 | the entry itself must carry each derivation; Q11 supersedes Q08 |
 
 Mistake classes now 20; captured by a criterion 18; `none` 2 — same command as above.
+
+## Post-review fixes (orchestrator adjudication, 2026-10-19)
+
+Appended; rows above are not rewritten.
+
+- SOURCES `recheck` changes, in place per contract rule 2 (census `validate` flagged E09, because rejected rows still need a date or cadence):
+  - S008 `recheck` `—` → `on-release`. The flip condition depends on a successor RFC or BCP superseding RFC 3227.
+  - S012 `recheck` `—` → `180d`. The flip condition depends on the article gaining a resource-tree section.
+- Q11 applied to the four admitted entries: each now ends with an appended `## Provenance (Q11, appended 2026-10-19)` block. The block carries the command for every stated value and that command's observed output, including the web quotes re-matched by `curl` against S003–S006 and S010. Diffs are pure appends; `git diff | grep -c '^-[^-]'` returned 0 per entry.
+- M14 pointer correction. The row cites `SCORECARD.md:9,20-21`, which is off by one and was stale after this round.
+  - At `8bbcb4e` the failing-ledger sentence is `SCORECARD.md:19-20` ("The language and numeric multi-image verifiers still fail at their original artifact-path assertions"). `:9` is the r55 1/4 → 2/4 row.
+  - Both lines describe the pre-C1 state, superseded by the kaika axes table (`SCORECARD.md:121-144`, `19b3174`).
+  - Corrected evidence for M14: `reports/round-1/baseline.txt:14,17-18`; `SCORECARD.md:9,19-20` at `8bbcb4e`.
+- C3 measure label, per adjudication: the freshness proxy counts **stored assertions re-verified** (flagged or confirmed against the live host). It does not count unique-fact currency.

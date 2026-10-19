@@ -112,3 +112,74 @@ Falsifiable claims.
 | Q08 | pass | Both r35 digests carry the `recheck:` command and its full output; the Evidence-field list cites `reviewer-oracle.md:56-58`. |
 | Q09 | pass | This entry is the digest-scope claim itself: hash equality asserted only for exact hashed bytes; origin/completeness/custody explicitly excluded (claims 1-3). |
 | Q10 | pass | Scope is bounded to saved-record fixity in this lane plus acquisition-verification scope as §8 states it; no universal provenance claim is made. |
+
+## Provenance (Q11, appended 2026-10-19)
+
+Appended after orchestrator review; nothing above is rewritten. Each stated
+value is derived by the command below, run from the lane root at `35b2e8b`
+(lane HEAD `19b3174` for the corpus), with its observed output.
+
+- r35 saved-file digest vs receipt-reported digest (exit 0):
+
+  ```sh
+  sha256sum corpus/live/runs/round-35/inspection.json; python3 -c "import json; print(json.load(open('corpus/live/runs/round-35/producer-receipt.json'))['output_sha256'])"
+  ```
+
+  ```text
+  74a45d0c7e25027090a0dfbad27f132dea14cf6b1b8cb447317f8174a7d02e4a  corpus/live/runs/round-35/inspection.json
+  8c8d96db863e0f32b816d526fca3d1df04fb60e0ece5f166781dfc6ccd8988e2
+  ```
+
+- r35 raw output not retained (exit 0):
+
+  ```sh
+  ls corpus/live/runs/round-35/
+  ```
+
+  ```text
+  attempt-invalid.json
+  inspection.json
+  LEDGER.md
+  producer-receipt.json
+  reviewer.md
+  reviewer-verify.py
+  ```
+
+- receipt fields checked by the replay (claim 4) (exit 0):
+
+  ```sh
+  grep -c "receipt\['command'\]" corpus/verify_icon_languages.py corpus/verify_multi_icon_states.py corpus/verify_named_multi_icon_states.py; sed -n 56,58p .ufo/waves/kaika-r1/reviewer-oracle.md | cut -c1-120
+  ```
+
+  ```text
+  corpus/verify_icon_languages.py:1
+  corpus/verify_multi_icon_states.py:1
+  corpus/verify_named_multi_icon_states.py:1
+  - icon: file identity L124, evidence L125, subject L126, artifact L127, every decoded field L129, coverage L131, candida
+  - icon cross-row: exact one-byte delta L149, intact icons L150, three distinct selections L151.
+  - multi: fixture digest L127, Evidence identity L128, subject digest L129, artifact L130, every decoded key L132, covera
+  ```
+
+- FIPS 180-4 quotes (S006) (exit 0):
+
+  ```sh
+  curl -sL 'https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf' | pdftotext -layout - - | tr -s ' \n' ' ' | grep -oE 'Any change to a message will, with a very high probability, result in a different message digest|may be adopted and used by non-Federal Government organizations' | sort -u
+  ```
+
+  ```text
+  Any change to a message will, with a very high probability, result in a different message digest
+  may be adopted and used by non-Federal Government organizations
+  ```
+
+- SWGDE 17-F-002-2.1 quotes (S005) (exit 0):
+
+  ```sh
+  curl -sL 'https://swgde.org/wp-content/uploads/2025/09/2025-08-05-Best-Practices-for-Computer-Forensic-Acquisitions-17-F-002-2.1.pdf' | pdftotext -layout - - | tr -s ' \n' ' ' | grep -oE 'might not verify all data as read from the subject media|Hash value\(s\) of the acquired data|Errors encountered during acquisition|NIST-approved hash algorithm' | sort -u
+  ```
+
+  ```text
+  Errors encountered during acquisition
+  Hash value(s) of the acquired data
+  might not verify all data as read from the subject media
+  NIST-approved hash algorithm
+  ```

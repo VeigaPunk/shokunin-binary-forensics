@@ -115,3 +115,80 @@ then reads length 5 and code units `41003d0000de42002100` = `<0041 003D DE00
 | Q08 | pass | every count/offset carries its command; `DE00` role (low surrogate) cites D73, not memory |
 | Q09 | pass | the Evidence ID and stdout SHA-256 are cited only for the saved bytes; no producer-origin or rerun claim |
 | Q10 | pass | observation scoped to provider/operation/version/fixture; other malformations and parsers left unknown |
+
+## Provenance (Q11, appended 2026-10-19)
+
+Appended after orchestrator review; nothing above is rewritten. Each stated
+value is derived by the command below, run from the lane root at `35b2e8b`
+(lane HEAD `19b3174` for the corpus), with its observed output.
+
+- fixture identity (exit 0):
+
+  ```sh
+  sha256sum corpus/fixtures/pe-r59/fixture.exe corpus/fixtures/pe-r55/fixture.exe
+  ```
+
+  ```text
+  2d294161e9eebd965919aad91065e5335e693199a17d95533f6c6c8fc751e6a0  corpus/fixtures/pe-r59/fixture.exe
+  41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b  corpus/fixtures/pe-r55/fixture.exe
+  ```
+
+- byte diff r55→r59 (exit 0):
+
+  ```sh
+  python3 -c "a=open('corpus/fixtures/pe-r55/fixture.exe','rb').read();b=open('corpus/fixtures/pe-r59/fixture.exe','rb').read();print(len(a),len(b),[(i,hex(a[i]),hex(b[i])) for i in range(len(a)) if a[i]!=b[i]])"
+  ```
+
+  ```text
+  1536 1536 [(741, '0xd8', '0x0')]
+  ```
+
+- code units r59 and r55 (exit 0):
+
+  ```sh
+  python3 -c "import struct
+  for f in ('pe-r59','pe-r55'):
+   b=open('corpus/fixtures/%s/fixture.exe'%f,'rb').read(); print(f,struct.unpack_from('<H',b,736)[0],['%04X'%u for u in struct.unpack_from('<5H',b,738)])"
+  ```
+
+  ```text
+  pe-r59 5 ['0041', '003D', 'DE00', '0042', '0021']
+  pe-r55 5 ['0041', 'D83D', 'DE00', '0042', '0021']
+  ```
+
+- interpreter and decode modes (manual reproduction) (exit 0):
+
+  ```sh
+  python3 --version; python3 -c "h=bytes.fromhex('41003d0000de42002100')
+  try: h.decode('utf-16-le')
+  except UnicodeDecodeError as e: print('strict:',e)
+  print('surrogatepass:',repr(h.decode('utf-16-le','surrogatepass')))"
+  ```
+
+  ```text
+  Python 3.14.7
+  strict: 'utf-16-le' codec can't decode bytes in position 4-5: illegal encoding
+  surrogatepass: 'A=\ude00B!'
+  ```
+
+- saved r59 record (obs. 3) (exit 0):
+
+  ```sh
+  sha256sum corpus/live/runs/round-59/inspection.stdout.json; python3 -c "import json;d=json.load(open('corpus/live/runs/round-59/inspection.stdout.json'));r=d['normalized_result'];n=r['resources'][2]['name'];print(d['operation'],d['evidence_id'],repr(n['name']),n['utf16le_hex'],r['coverage'])"; python3 -c "import json;r=json.load(open('corpus/live/runs/round-59/receipt.json'));print({k:r[k] for k in ('command','exit_code') if k in r})" 2>&1 | tail -1
+  ```
+
+  ```text
+  bf7922dbda2bc2dd817eaa13652f04e19c10ed8701feab5790a8703d55f22c0f  corpus/live/runs/round-59/inspection.stdout.json
+  inspect_pe_resources ev_8ab30e10bf3d0e73c44c831c9cbb1839d1117db21379e163085ab9d8fec0f8db 'A=\ude00B!' 41003d0000de42002100 {'status': 'complete', 'examined_entries': 8, 'resources': 3}
+  {'command': 'npx -y rea-agents@6.4.0 inspect-pe-resources /home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus/fixtures/pe-r59/fixture.exe --format json', 'exit_code': 0}
+  ```
+
+- Unicode D91 quote (S010) (exit 0):
+
+  ```sh
+  curl -sL https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-3/ | python3 -c "import sys,re,html;t=re.sub(r'\\s+',' ',html.unescape(re.sub(r'<[^>]+>',' ',sys.stdin.read())));i=t.find('isolated UTF-16 code units');print(t[i:i+70])"
+  ```
+
+  ```text
+  isolated UTF-16 code units in the range D800 16 ..DFFF 16 are ill-form
+  ```

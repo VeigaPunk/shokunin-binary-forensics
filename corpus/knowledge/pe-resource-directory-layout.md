@@ -168,3 +168,98 @@ walk(base, 0)
 | Q08 | pass | all counts/offsets carry their command; `examined_entries=8` re-derived as 2+2+1+1+1+1 table entries |
 | Q09 | pass | digest cited only for the bytes it hashes; no origin/authenticity claim for the saved record |
 | Q10 | pass | claims scoped to this fixture family, PE32+, static layout; cross-family behavior left unknown |
+
+## Provenance (Q11, appended 2026-10-19)
+
+Appended after orchestrator review; nothing above is rewritten. Each stated
+value is derived by the command below, run from the lane root at `35b2e8b`
+(lane HEAD `19b3174` for the corpus), with its observed output.
+
+- fixture identity (exit 0):
+
+  ```sh
+  sha256sum corpus/fixtures/pe-r55/fixture.exe; stat -c %s corpus/fixtures/pe-r55/fixture.exe
+  ```
+
+  ```text
+  41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b  corpus/fixtures/pe-r55/fixture.exe
+  1536
+  ```
+
+- header-derived resource directory and .rsrc base (obs. 1) (exit 0):
+
+  ```sh
+  python3 -c "import struct;b=open('corpus/fixtures/pe-r55/fixture.exe','rb').read();e=struct.unpack_from('<I',b,0x3c)[0];o=e+24;m=struct.unpack_from('<H',b,o)[0];d=o+(112 if m==0x20b else 96)+16;r=struct.unpack_from('<II',b,d);s=o+struct.unpack_from('<H',b,e+20)[0];print(e,b[e:e+4],hex(m),d,r,b[s:s+8].rstrip(b'\\0'),struct.unpack_from('<IIII',b,s+8))"
+  ```
+
+  ```text
+  64 b'PE\x00\x00' 0x20b 216 (8192, 240) b'.rsrc' (1024, 8192, 1024, 512)
+  ```
+
+- tables, entries, string, data entries and paths (obs. 2-6) (exit 0):
+
+  ```sh
+  awk '/^```python/{f=1;next} /^```/{f=0} f' corpus/knowledge/pe-resource-directory-layout.md | python3 -
+  ```
+
+  ```text
+  resource dir rva=8192 size=240 file_base=512
+  dir@file512 named=0 ids=2
+    e0@file528: ID=3 -> child 0x80000020
+    dir@file544 named=0 ids=2
+      e0@file560: ID=1 -> child 0x80000058
+      dir@file600 named=0 ids=1
+        e0@file616: ID=1033 -> child 0x000000a0
+          data@file672: rva=8448 size=48 cp=0 res=0
+      e1@file568: ID=2 -> child 0x80000070
+      dir@file624 named=0 ids=1
+        e0@file640: ID=1033 -> child 0x000000b0
+          data@file688: rva=8512 size=48 cp=0 res=0
+    e1@file536: ID=14 -> child 0x80000040
+    dir@file576 named=1 ids=0
+      e0@file592: STR@file736 len=5 raw=41003dd800de42002100 -> child 0x80000088
+      dir@file648 named=0 ids=1
+        e0@file664: ID=1033 -> child 0x000000c0
+          data@file704: rva=8576 size=34 cp=0 res=0
+  ```
+
+- raw entry words at 592, 596, 620 (obs. 3) (exit 0):
+
+  ```sh
+  python3 -c "import struct;b=open('corpus/fixtures/pe-r55/fixture.exe','rb').read();print([hex(struct.unpack_from('<I',b,o)[0]) for o in (592,596,620)])"
+  ```
+
+  ```text
+  ['0x800000e0', '0x80000088', '0xa0']
+  ```
+
+- name string decode (obs. 4) (exit 0):
+
+  ```sh
+  python3 -c "import struct;b=open('corpus/fixtures/pe-r55/fixture.exe','rb').read();n=struct.unpack_from('<H',b,736)[0];r=b[738:738+2*n];print(n,r.hex(),r.decode('utf-16-le'),2+2*n)"
+  ```
+
+  ```text
+  5 41003dd800de42002100 A😀B! 12
+  ```
+
+- payload digest at file 768 (obs. 5) (exit 0):
+
+  ```sh
+  python3 -c "import hashlib;b=open('corpus/fixtures/pe-r55/fixture.exe','rb').read();print(hashlib.sha256(b[768:816]).hexdigest())"
+  ```
+
+  ```text
+  d7aaca7bc7951c9249a7798838189374fa953d3def03aebb375ee731768e5003
+  ```
+
+- saved-record cross-check (obs. 7) (exit 0):
+
+  ```sh
+  sha256sum corpus/live/runs/round-59/inspection.stdout.json; python3 -c "import json;d=json.load(open('corpus/live/runs/round-59/inspection.stdout.json'));r=d['normalized_result'];print(d['evidence_id'],[(x['location']['offset'],x['named_entries'],x['id_entries']) for x in r['directories']],[x['data_entry_location']['offset'] for x in r['resources']],r['coverage'])"
+  ```
+
+  ```text
+  bf7922dbda2bc2dd817eaa13652f04e19c10ed8701feab5790a8703d55f22c0f  corpus/live/runs/round-59/inspection.stdout.json
+  ev_8ab30e10bf3d0e73c44c831c9cbb1839d1117db21379e163085ab9d8fec0f8db [(512, 0, 2), (544, 0, 2), (600, 0, 1), (624, 0, 1), (576, 1, 0), (648, 0, 1)] [672, 688, 704] {'status': 'complete', 'examined_entries': 8, 'resources': 3}
+  ```

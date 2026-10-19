@@ -109,3 +109,65 @@ Falsifiable claims (each falsifiable: a single counterexample — a ledger claim
 | Q08 | pass | r7 0/1 carries its command over the saved `comparison.json` (15 items, 0 naming `checksum`); r8 1/1 carries `python3 -B corpus/verify_js_graph_delta.py --self-test` → `POSITIVE saved parent graphs: removed checksum 1/1; …` then `NEGATIVE REJECTED …`, exit 0 (L1 re-run 2026-10-19) |
 | Q09 | n/a | Entry makes no digest or receipt claim; that surface is C13. |
 | Q10 | pass | Every claim is scoped to named function + version + fixture family; product-wide and cross-version generalization is explicitly rejected (claim 3, Unknown). |
+
+## Provenance (Q11, appended 2026-10-19)
+
+Appended after orchestrator review; nothing above is rewritten. Each stated
+value is derived by the command below, run from the lane root at `35b2e8b`
+(lane HEAD `19b3174` for the corpus), with its observed output.
+
+- r7 explicit detection 0/1 from saved tool output (exit 0):
+
+  ```sh
+  python3 -c "import json; it=json.load(open('corpus/live/runs/round-7/comparison.json'))['normalized_result']['items']; print(len(it), sum('checksum' in json.dumps(i) for i in it))"
+  ```
+
+  ```text
+  15 0
+  ```
+
+- r7 tool identity (exit 0):
+
+  ```sh
+  python3 -c "import json;d=json.load(open('corpus/live/runs/round-7/comparison.json'));print(d['operation'],d['evidence_id'],d['provider']['id'])"
+  ```
+
+  ```text
+  compare_application_versions ev_5e4b17c1db1a06126558586f188b8eae81117c4d4bdf43d2278aefcd945f1a78 rea-javascript-application-workflows
+  ```
+
+- r8 analyst-side verifier 1/1 (exit 0):
+
+  ```sh
+  python3 -B corpus/verify_js_graph_delta.py --self-test; echo exit=$?
+  ```
+
+  ```text
+  POSITIVE saved parent graphs: removed checksum 1/1; stable rot13 and package-main; static inference only
+  NEGATIVE REJECTED saved graph disagrees with source truth
+  exit=0
+  ```
+
+- SWGDE 18-Q-001-2.1 quotes (S003) (exit 0):
+
+  ```sh
+  curl -sL 'https://www.swgde.org/wp-content/uploads/2024/04/2024-03-07-SWGDE-Minimum-Requirements-for-Testing-Tools-Used-in-Digital-and-Multimedia-Forensics-18-Q-001-2.1.pdf' | pdftotext -layout - - | tr -s ' \n' ' ' | grep -oE 'bases its testing baseline recommendations on the function of the tool, not on the tool origin|Testing is not necessarily pass/fail|adopted from another competent organization|Lab created datasets can be targeted|Before the tool is placed in service and after major update or revision' | sort -u
+  ```
+
+  ```text
+  adopted from another competent organization
+  bases its testing baseline recommendations on the function of the tool, not on the tool origin
+  Before the tool is placed in service and after major update or revision
+  Lab created datasets can be targeted
+  Testing is not necessarily pass/fail
+  ```
+
+- CFTT methodology quote (S004) (exit 0):
+
+  ```sh
+  curl -sL https://www.nist.gov/itl/csd/secure-systems-and-applications/computer-forensics-tool-testing-program-cftt/cftt-general-0 | python3 -c "import sys,re,html;t=re.sub(r'\\s+',' ',html.unescape(re.sub(r'<[^>]+>',' ',sys.stdin.read())));print(re.findall(r'The testing methodology developed by NIST is functionality driven',t)[:1])"
+  ```
+
+  ```text
+  ['The testing methodology developed by NIST is functionality driven']
+  ```
