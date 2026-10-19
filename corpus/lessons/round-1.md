@@ -57,3 +57,77 @@ criterion. Before this section, 0 classes were captured by any criterion
 
 Classes 19; captured by a criterion 17; `none` 2 (M03, M16 — process rules).
 Count: `awk -F'|' '/^\| M[0-9]+ /{n++; if ($5 ~ /none/) z++} END{print n, n-z, z}' corpus/lessons/round-1.md`.
+
+## Gate — kaika continuation (2026-10-19)
+
+Bar: `corpus/QUALITY.md` Q01–Q10 (committed before any entry landed, `a7acc20`).
+Map statuses used for expansion eligibility are those frozen at `a7acc20`.
+
+### Sources opened this round (contract rule 1)
+
+Access date 2026-10-19 for every row. Quotes ≤25 words, verbatim.
+
+- S001 `.ufo/waves/kaika-r1/scout-freshness.md` — own-work; table row 7: "server key `rea`, package `rea-agents@6.5.0`".
+- S002 `~/.agents/skills/reverse-engineer-anything/SKILL.md` — frontmatter: `version: "42"`, `tool_count: 207`; line 37: "`npx -y rea-agents@6.7.0 doctor --client codex --json`".
+- S003 https://www.swgde.org/wp-content/uploads/2024/04/2024-03-07-SWGDE-Minimum-Requirements-for-Testing-Tools-Used-in-Digital-and-Multimedia-Forensics-18-Q-001-2.1.pdf — §4 General Discussion: "This document bases its testing baseline recommendations on the function of the tool, not on the tool origin."
+- S004 https://www.nist.gov/itl/csd/secure-systems-and-applications/computer-forensics-tool-testing-program-cftt/cftt-general-0 — "Methodology Overview", first paragraph: "The testing methodology developed by NIST is functionality driven."
+- S005 https://swgde.org/wp-content/uploads/2025/09/2025-08-05-Best-Practices-for-Computer-Forensic-Acquisitions-17-F-002-2.1.pdf — §8 Verification and Preview: "The process of verification might not verify all data as read from the subject media."
+- S006 https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf — Announcement §3 Explanation: "This Standard specifies secure hash algorithms - SHA-1, SHA-224, SHA-256, SHA-384, SHA-512, SHA-512/224 and SHA-512/256 -".
+- S007 https://www.dhs.gov/science-and-technology/nist-cftt-reports — body under "CFTT Reports": "Reports, organized by tool category, can be accessed and downloaded via the links below."
+- S008 https://www.rfc-editor.org/rfc/rfc3227.txt — Abstract: "The purpose of this document is to provide System Administrators with guidelines on the collection and archiving of evidence".
+- S009 https://learn.microsoft.com/en-us/windows/win32/debug/pe-format — "The .rsrc Section": "Resources are indexed by a multiple-level binary-sorted tree structure."
+- S010 https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-3/ — §3.9.2, under D91: "isolated UTF-16 code units in the range D800..DFFF are ill-formed."
+- S011 https://docs.python.org/3/library/codecs.html — Error Handlers table, surrogatepass row: "Allow encoding and decoding surrogate code point (U+D800 - U+DFFF) as normal code point."
+- S012 https://en.wikipedia.org/wiki/Portable_Executable — lede: "The PE format supports storing the data required to load and start an operating system process".
+- S013 `corpus/live/runs/round-59/inspection.stdout.json` — own-work; `normalized_result.resources[2].name`: `"name": "A=\ude00B!"`, `utf16le_hex` `41003d0000de42002100`.
+- S014 `LOG.md:99` — own-work: "`items[]` does not explicitly identify removed named `checksum` import".
+
+Openers: S003–S008 L2 `ExecForensicKnowledge`; S009–S012 L2 `ExecFormatKnowledge`;
+S001 L2 `RevScout`; S002, S013, S014 L1. L1 re-opened S003, S005, S006 and S010 and
+re-matched the quotes above against the fetched text. Row status changes old→new: none
+(every row is new).
+
+### Admission decisions
+
+| candidate | map row (status at `a7acc20`) | decision | criteria |
+|---|---|---|---|
+| `knowledge/pe-resource-directory-layout.md` | C01 (uncovered) | **admit** | Q01 S009/S010/S013; Q02 headers; Q03/Q06/Q08 `## Reproduce` re-run by L1, output matches; Q05/Q07 n/a with reason |
+| `knowledge/utf16-unpaired-surrogates-in-resource-names.md` | C11 (uncovered) | **admit after correction** | L1 gate caught a Q08 failure: the code units were stated as `<0041 003D 0000 DE00 0021>`; bytes give `<0041 003D DE00 0042 0021>` (command now in the entry). Corrected before admission |
+| `knowledge/tool-validation-by-function-and-version.md` | C12 (partial) | **admit after correction** | L1 gate caught a Q01/Q08 anchor error: the function-of-the-tool quote is SWGDE §4, not §2 (re-opened PDF). Corrected; §5.3.3 named in the inference |
+| `knowledge/digest-scope-versus-provenance.md` | C13 (partial) | **admit after correction** | L1 gate caught a Q08 misstatement: the hash≠origin rejection is a gate decision, not one of the six replay forgeries. Corrected |
+| ART candidate `custody-transfer-ledger` (fleet `.ufo/waves/kaika-w1/revenger-art.md:53-60`) | none (frontier, adjacent) | **reject** | Q10: physical custody-transfer records are adjacent to this province's shipped-artifact ledgers; kept on `README.md` `## Frontier`; flip: a lane ledger needs transfer records |
+| ART candidate `reproducible-finding-ledger` (ISO/IEC 27042 abstract, `revenger-art.md:80-87`) | C10 (partial) | **reject** | Q01: the only source is a catalog abstract and iso.org returned HTTP 403 this round; nothing tier A opened |
+| ART candidate `long-term-fixity-evidence-records` (RFC 4998, `revenger-art.md:89-96`) | C13 (partial) | **reject** | Q01: RFC 4998 was not opened this round; the dossier itself says admit only if long-term archival is a lane need, and none is shown |
+| universal rule "evidence ids are f(content, path, params)" (`LOG.md:720`) | C10 (partial) | **reject** | Q10: one family's observation; kaidoku adjudicated identity family-scoped (fleet `MANIFEST.json:2782`). Correction appended to `LOG.md` |
+
+Admitted 4 (2 on uncovered rows, 2 on partial rows); rejected 4.
+Count: `awk -F'|' '/^\| `knowledge|^\| ART|^\| universal/ {d=$4; if (d ~ /admit/) a++; else if (d ~ /reject/) r++} END{print a, r}' corpus/lessons/round-1.md`.
+
+### Outside spot-check
+
+Not performed in-round. The reviewer and critic L2s are the lane, not outside
+discernment (`LEARNING.md` §Discernment is checked from outside). The
+orchestrator's non-author spot-check (≥1 admit, ≥1 reject, ≥3 SOURCES rows
+re-opened) is pending; discernment stays `unchanged` until it lands.
+
+### Post-landing re-gate (critic L2 `RevCritic2-2`, `.ufo/waves/kaika-r1/critic-post.md`)
+
+The lane's critic recommended demoting all four admits: every stated value was
+true when re-derived, but four entries did not carry the derivation itself
+(Q06/Q08). L1 agreed and fixed each before commit, then re-gated:
+
+- C01 — `## Reproduce` hard-coded data-directory offset 216 and `.rsrc` base 512 → now derived from `e_lfanew`, optional-header magic and the section table; output re-run and matching.
+- C11 — "differs at exactly offset 741" lacked its diff → full-file byte-diff command added (`1536 1536 [(741, '0xd8', '0x0')]`); the Python decode is labeled a manual reproduction on 3.14.7, separate from the cited 3.15.0 docs.
+- C12 — the r7 0/1 score was cited to LOG prose → command over the saved `comparison.json` added (`15 0`); r8 1/1 cites the verifier's own output line.
+- C13 — `recheck:` replayed r55–r57, not r35 → r35-specific re-hash plus receipt read; the receipt value is labeled receipt-reported; claim 3 marked a case-scoped inference and its gate source registered as S015 (`teaches` quote: lesson `:16` "these checks establish internal consistency only; no producer was called").
+
+Re-gate: 4 admitted, 4 rejected (the critic agreed with all four rejects).
+Critic's sampled re-opens S004, S009, S011: quotes verbatim, tiers honest.
+
+### Mistake learned in this gate
+
+| id | class | evidence | captured-by | fix |
+|---|---|---|---|---|
+| M20 | L1 gate applied Q08 to the values (re-derived and correct) instead of to the entry, so hard-coded constants and prose-cited counts passed | `.ufo/waves/kaika-r1/critic-post.md:9-12` | Q11 | the entry itself must carry each derivation; Q11 supersedes Q08 |
+
+Mistake classes now 20; captured by a criterion 18; `none` 2 — same command as above.

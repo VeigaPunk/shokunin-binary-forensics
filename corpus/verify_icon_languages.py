@@ -6,6 +6,8 @@ import copy
 import json
 
 root = Path(__file__).resolve().parent
+# Historical producer corpus; identity for saved artifact paths/receipt commands only, never read through it.
+HIST=Path('/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus')
 def H(data): return sha256(data).hexdigest()
 def require(ok, why):
     if not ok: raise AssertionError(why)
@@ -116,6 +118,7 @@ EXPECTED = {
 def check(r):
     expected_hash,eid,_,group_language,selected=EXPECTED[r]
     fixture=root/f'fixtures/pe-r{r}/fixture.exe'
+    hist=HIST/f'fixtures/pe-r{r}/fixture.exe'
     data=fixture.read_bytes()
     decoded=decode(data)
     raw_bytes=(root/f'live/runs/round-{r}/inspection.raw.json').read_bytes()
@@ -124,7 +127,7 @@ def check(r):
     require(len(data)==1536 and H(data)==expected_hash,f'r{r}: file identity')
     require(record['evidence_id']==eid and record['operation']=='inspect_pe_resources',f'r{r}: evidence')
     require(record['subject']['digest']['sha256']==expected_hash,f'r{r}: subject')
-    require(record['normalized_result']['artifact']==dict(path=str(fixture),sha256=expected_hash,bytes=1536),f'r{r}: artifact')
+    require(record['normalized_result']['artifact']==dict(path=str(hist),sha256=expected_hash,bytes=1536),f'r{r}: artifact')
     for field,val in decoded.items():
         require(record['normalized_result'][field]==val,f'r{r}: {field}')
     resources=decoded['resources']
@@ -138,7 +141,8 @@ def check(r):
     require(image['resource_id']==1 and image['declared_bytes']==48 and image['candidate_resource_indices']==[0,1],f'r{r}: candidates')
     require(image['same_language_resource_index']==selected and image['size_matches']==(True if selected is not None else None),f'r{r}: selection')
     require(receipt['exit_code']==0 and receipt['fixture_sha256']==expected_hash and receipt['evidence_id']==eid
-            and receipt['stdout_sha256']==H(raw_bytes),f'r{r}: receipt')
+            and receipt['stdout_sha256']==H(raw_bytes)
+            and receipt['command']==f'npx -y rea-agents@6.4.0 inspect-pe-resources {hist} --format json',f'r{r}: receipt')
     return data,record,decoded
 
 def main():

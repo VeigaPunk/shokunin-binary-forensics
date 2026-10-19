@@ -20,6 +20,7 @@ writes). Source tiers are defined in `corpus/SOURCES.md` and are not restated he
 | Q08 | Every count, identifier and offset role is re-derived by command from its source record; a non-author byte-derived value supersedes author prose. | a count lacks its command, or an identifier or role label comes from memory | M08, M09, M10 |
 | Q09 | A digest or receipt is claimed only for the exact bytes it hashed. It does not establish producer origin, acquisition completeness or authenticity. Saved records stay byte-preserved. | a hash match is offered as proof of origin, completeness or a valid interpretation | M11, M13 |
 | Q10 | A finding is scoped to the observed family, operation, version and input. Cross-lane contested scope is reported, not absorbed. | one family's observation is stated as a universal | M15 |
+| Q11 | Supersedes Q08. Each count, identifier, offset and digest in an entry carries, inside the entry, the command that derives it from the primary record (bytes, saved tool output) and that command's output. Constants such as header offsets are derived, not assumed. A value cited only to prose is labeled recorded, not re-derived. | a value is correct when re-derived but the entry carries no derivation, or a recorded value is presented as re-derived | M08, M09, M10, M20 |
 
 ## Admission procedure
 

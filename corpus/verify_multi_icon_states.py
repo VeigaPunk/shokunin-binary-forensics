@@ -6,6 +6,8 @@ import copy
 import json
 
 root = Path(__file__).resolve().parent
+# Historical producer corpus; identity for saved artifact paths/receipt commands only, never read through it.
+HIST = Path('/home/vgpnk/Projects/prymeagnt/revenger/.shokunin/revenger/corpus')
 def H(data): return sha256(data).hexdigest()
 def require(ok, why):
     if not ok: raise AssertionError(why)
@@ -119,6 +121,7 @@ EXPECTED = {
 def check(round_id):
     expected_hash, evidence_id, _, expected_state = EXPECTED[round_id]
     fixture = root / f'fixtures/pe-r{round_id}/fixture.exe'
+    hist = HIST / f'fixtures/pe-r{round_id}/fixture.exe'
     raw_bytes = (root / f'live/runs/round-{round_id}/inspection.raw.json').read_bytes()
     report = json.loads(raw_bytes)
     receipt = json.loads((root / f'live/runs/round-{round_id}/producer-receipt.json').read_text())
@@ -127,7 +130,7 @@ def check(round_id):
     require(len(data)==1536 and H(data)==expected_hash, f'r{round_id}: fixture digest')
     require(report['evidence_id']==evidence_id and report['operation']=='inspect_pe_resources', f'r{round_id}: Evidence identity')
     require(report['subject']['digest']['sha256']==expected_hash, f'r{round_id}: subject digest')
-    require(report['normalized_result']['artifact']==dict(path=str(fixture),sha256=expected_hash,bytes=len(data)), f'r{round_id}: artifact')
+    require(report['normalized_result']['artifact']==dict(path=str(hist),sha256=expected_hash,bytes=len(data)), f'r{round_id}: artifact')
     for key, expected in decoded.items():
         require(report['normalized_result'][key]==expected, f'r{round_id}: {key}')
     require(decoded['coverage']==dict(status='complete',examined_entries=8,resources=3), f'r{round_id}: coverage')
@@ -136,7 +139,8 @@ def check(round_id):
     state=tuple((im['resource_id'],im['declared_bytes'],tuple(im['candidate_resource_indices']),
                  im['same_language_resource_index'],im['size_matches']) for im in groups[0]['images'])
     require(state==expected_state, f'r{round_id}: state')
-    require(receipt['exit_code']==0 and receipt['fixture_sha256']==expected_hash and
+    command = f'npx -y rea-agents@6.4.0 inspect-pe-resources {hist} --format json'
+    require(receipt['command']==command and receipt['exit_code']==0 and receipt['fixture_sha256']==expected_hash and
             receipt['evidence_id']==evidence_id and receipt['stdout_sha256']==H(raw_bytes), f'r{round_id}: receipt')
     return data, report, decoded, state
 
