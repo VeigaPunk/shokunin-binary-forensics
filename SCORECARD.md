@@ -118,6 +118,31 @@ claims; unchecked Evidence envelope path fields remain a bounded verifier
 limitation (`reports/round-1/reviewer.md:39`), not silently repaired scope.
 
 
+## Fleet round-1 kaika continuation — axes (2026-10-19, current)
+
+Supersedes the "planned" and "named debt" lines above for the items it lands
+(`QUALITY.md` and the corpus `README.md` now exist; `SKILL.md` and `AGENTS.md`
+are still absent). Earlier rows stay as recorded history (`:9`, `:19-20`, `:63`
+describe the 2026-10-15 state). Measured from isolated `git archive`
+snapshots of `8bbcb4e` (before) and `35b2e8b` (after) unless noted.
+
+| axis / criterion | before → after | counting command | measured commits | verdict (pending non-author verification) |
+|---|---|---|---|---|
+| calibration — selected saved-ledger runnability | 5.0 → **10.0** (`CALIBRATION 2/4 → 4/4`; `REPLAY 8/10 → 10/10`, descriptive only) | C (`:32-43`) | `8bbcb4e` → `35b2e8b` | improved |
+| coverage — selected-family record presence (F) | 5.0 → 5.0 (`COVERAGE 4/8` both) | F (`:45-57`) | `8bbcb4e` → `35b2e8b` | unchanged |
+| coverage — knowledge-map ground (K), split from coverage this round | 0.0 → **2.9** (held rows 0/14 → 4/14; admitted entries on rows frozen uncovered/partial at `a7acc20`: 0 → 4, split 2 uncovered + 2 partial) | `grep -cE '^\| C[0-9]+ .*\| held \|$' corpus/README.md` (at `a7acc20` via `git show`); expansion script in `LOG.md` kaika entry / report | `a7acc20` → `35b2e8b` | improved |
+| freshness — knowledge re-verification currency (adopted this round) | previously unscored; base text vs the live host 4.4 (8 of 18 facts hold, 10 stale and unflagged) → **10.0** (18/18 hold or flagged with current value) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/{seed.md,2026-10-12-rea-readiness-checklist.md}`; probes in `.ufo/waves/kaika-r1/scout-freshness.md` | `8bbcb4e` → `35b2e8b` | improved |
+| depth (historical guardrail, retired) | unchanged | — | — | unchanged |
+| adjacency (not owned) | unchanged; the kaidoku/revenger overlap (tsukuroi ADJ-06) is reported, not absorbed | `.ufo/waves/kaika-r1/connector.md` | — | unchanged |
+
+Split reason (AXES.md §Working the axes): F counts saved REA record families
+and cannot see sourced knowledge; K counts map rows held by gated, sourced
+entries. Neither replaces the other. Freshness is adopted because 10 of 18
+recorded host facts had silently drifted (`MISSION.md:49-51`, evidence-backed
+axis addition). Correction to `:135`: "evidence_id confirmed path-sensitive
+(content+path+params)" holds only for this lane's `inspect-pe-resources`
+family. It is not a universal rule (fleet `MANIFEST.json:2782`; `LOG.md` kaika entry).
+
 ## Imported scorecard — historical, not current
 
 The following unmeasured table and planned/retired statements describe imported
@@ -139,17 +164,21 @@ retired: none.
 
 | Capability | What it can now do | Evidence pointer | First-working round |
 |---|---|---|---|
-| — none yet — | | | |
+| sources-curation | Keep a contract-v1 `corpus/SOURCES.md` registry of opened sources (scoped tiers, append-only rows, study paths, a search log, kept rejects) whose seven census commands all run clean | `corpus/SOURCES.md` at `35b2e8b`; census: 15 rows, malformed 0, `A=14 C=1`, `mined=12 queued=1 rejected=2`, duplicate/enum/missing-path checks print nothing (fleet `.ufo/waves/kaika/SOURCES-CONTRACT-v1.md` §Census) | fleet round-1 (kaika continuation) |
 
-Rows enter only through a round that demonstrates the capability running (`AXES.md` §Capabilities); none enter through this rollout.
+Rows enter only through a round that demonstrates the capability running (`AXES.md` §Capabilities).
 
 ## Saturation
 
-The lane's saturation line and stagnation window N are to be declared by the lane on its next round per `AXES.md` §The stagnation nudge; not asserted by this conformance change.
+Saturation line **7.0** on every owned axis/criterion; stagnation window **N = 3** rounds (declared fleet round-1 kaika continuation; proposal `.ufo/waves/kaika-r1/planner.md` §Saturation). The nudge does not apply now: coverage criteria sit at 5.0 and 2.9, and a capability entered this round.
 
 ## Planned
 
-Populated by the lane at each round start per the `SCORECARD.md` contract; no entries declared by this rollout.
+Next round (declared fleet round-1 kaika continuation):
+
+1. **coverage — record families (F)**: author an inert known-truth firmware fixture and run REA `inspect_firmware_regions` on it (host binwalk 3.1.0 and unblob 26.6.4 match REA's stated 3.1.x/26.6.x). F goes 4/8 → 5/8 only if the saved record carries `evidence_id` and `normalized_result` and agrees with the byte oracle.
+2. **calibration**: add an in-script forged-receipt-command rejection to `verify_icon_languages.py` and `verify_multi_icon_states.py`, so the surviving mutant `b` (`.ufo/waves/kaika-r1/mutation-post.md`) is killed by the script's own run.
+3. **coverage — knowledge map (K)**, alternative to 1: re-gate `seed.md` and the readiness checklist against `QUALITY.md` Q01–Q11, or admit a sourced entry on C04/C09 (uncovered).
 
 ## Retired
 
