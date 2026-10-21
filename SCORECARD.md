@@ -214,6 +214,14 @@ in `verify_named_multi_icon_states.py` and `verify_icon_states.py` stay outside
 the claim. Holds: saved records and fixtures byte-identical
 (`git diff --stat cf02419 0b6ddf0 -- corpus/live corpus/fixtures` empty).
 
+Re-measured by the session-3 replacement L1 on
+`0597e5336fd67654c974fcb05f73353f44d868b9` (C09 entry and lesson M25
+corrected): values identical (`reports/round-61/measure-after.log`, appended
+section). C1's pre-registered "survives the wave-2 attacks" conjunct is unmet:
+the falsify wave's 65 seats died with the host session before reporting
+(`.ufo/waves/round-61/falsify/dead-seats.json`); the K row's verdict rests on
+the non-author closure.
+
 Capabilities: none added (C2 strengthens existing verifiers; the entries are
 knowledge, not a new capability).
 
