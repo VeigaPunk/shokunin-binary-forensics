@@ -85,8 +85,9 @@ Values come from the `## Reproduce` output below.
 - `corpus/verify_evm_evidence.py` reads r19 only, and its own run detects none
   of 37 single-conjunct deletions (round-61 `MutantEvmVerifier.md`), so under
   Q13 it is not credited as a guard; all seven fixtures rest on this entry's
-  walk. `corpus/fixtures/evm-r24/truth.json` lists embedded-pattern offsets
-  `[1, 9]`; the bytes contain the pattern only at 1 (fixture left unchanged).
+  walk. `corpus/fixtures/evm-r24/truth.json` `embedded_pattern_offsets`
+  `[1, 9]` is the inclusive byte span of the one 9-byte pattern occurrence
+  (offsets 1–9, authoring note `LOG.md:289`), consistent with the bytes.
 
 ## Cross-lane contest (Q10)
 

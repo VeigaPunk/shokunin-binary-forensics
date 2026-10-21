@@ -1,0 +1,668 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r61-falsify",
+  "createdAt": "2026-10-21T16:08:32.653Z",
+  "updatedAt": "2026-10-21T16:08:55.897Z",
+  "reportDir": ".ufo/waves/round-61/falsify",
+  "members": {
+    "ReopenS016": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReopenS016",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "ReopenS017": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReopenS017",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "ReopenS018": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReopenS018",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "ReopenS019": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReopenS019",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "ReopenS020": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReopenS020",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "ReopenS021": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReopenS021",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "ReopenS022": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReopenS022",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "ReopenS023": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReopenS023",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "ReopenS024": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReopenS024",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "ReopenS025": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReopenS025",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "ReopenS026": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReopenS026",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "ReopenS027": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReopenS027",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmOpcodeTruth": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmOpcodeTruth",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmR19R21Candidates": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmR19R21Candidates",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmR22Candidates": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmR22Candidates",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmR23Empty": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmR23Empty",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmR24Decoy": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmR24Decoy",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmR25R26Negatives": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmR25R26Negatives",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmFlagsDigests": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmFlagsDigests",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmSelectorsAuthored": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmSelectorsAuthored",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmUnknownsRules": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmUnknownsRules",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmLimitationsQ13": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmLimitationsQ13",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmCrossLane": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmCrossLane",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmReproduceRerun": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmReproduceRerun",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmQualityTable": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmQualityTable",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "EvmVersionClaims": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.EvmVersionClaims",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "JsSourceFacts": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.JsSourceFacts",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "JsNamedEdges": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.JsNamedEdges",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "JsDeltaAndCompare": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.JsDeltaAndCompare",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "JsEntrypointEdge": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.JsEntrypointEdge",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "JsLabelsExports": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.JsLabelsExports",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "JsDestructuringInference": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.JsDestructuringInference",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "JsResolutionInference": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.JsResolutionInference",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "JsLimitationsQ13": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.JsLimitationsQ13",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "JsCrossLane": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.JsCrossLane",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "JsReproduceRerun": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.JsReproduceRerun",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "JsQualityTable": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.JsQualityTable",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "C2ProbeRerun": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.C2ProbeRerun",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "C2IndependentMutantB": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.C2IndependentMutantB",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "C2ControlDeletion": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.C2ControlDeletion",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "C2Kaika12OnNew": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.C2Kaika12OnNew",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "C2DiffReview": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.C2DiffReview",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "C2SafetyCriteria": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.C2SafetyCriteria",
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "C2PassLineQuotes": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.C2PassLineQuotes",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "C2AxisCritic": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.C2AxisCritic",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "CountK": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.CountK",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "CountCensus": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.CountCensus",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "CountFFreshness": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.CountFFreshness",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "CountInputIdentity": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.CountInputIdentity",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "AuditQ12Q13": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.AuditQ12Q13",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "AuditGateRejects": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.AuditGateRejects",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "AuditMistakes": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.AuditMistakes",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "AuditReadme": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.AuditReadme",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "AuditAmendments": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.AuditAmendments",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "AuditSourcesContract": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.AuditSourcesContract",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "AuditMisroot": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.AuditMisroot",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "AuditR24Truth": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.AuditR24Truth",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "AuditScorecard": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.AuditScorecard",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "AuditLog": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.AuditLog",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "CriticSeparabilityPost": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.CriticSeparabilityPost",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "CriticTrendVerdicts": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.CriticTrendVerdicts",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "ConnectorKaidokuPost": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ConnectorKaidokuPost",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "ConnectorKasegiPost": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ConnectorKasegiPost",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "AuditSearchLogPaths": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.AuditSearchLogPaths",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    },
+    "C2OtherConjunctsScope": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.C2OtherConjunctsScope",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Falsify C1 entries/sources and C2 control on the landed tree"
+    }
+  }
+}

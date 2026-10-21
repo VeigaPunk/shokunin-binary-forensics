@@ -1,0 +1,541 @@
+{
+ "wave": "revenger-r61-falsify",
+ "milestone": "Falsify C1 entries/sources and C2 control on the landed tree",
+ "reportDir": ".ufo/waves/round-61/falsify",
+ "axes": [
+  "coverage",
+  "calibration"
+ ],
+ "context": "# Goal\nFALSIFY wave, revenger round 61 ONLY (hyaku campaign; attempt 1; never work any other round). Lane repo /home/vgpnk/Projects/shokunin/revenger-shokunin (binary forensics / reverse engineering of shipped artifacts with an evidence-ledger discipline; jj-colocated; branch main). L1 coordinator and sole integration owner: CloseChousa26 (reused idle agent; Main spawn job-capped). Landed state to attack: 6e89c249bfa57891d97706286807bb78ea594e3c (work landing 0b6ddf07f33184baf901dd807ddc72a95f4010c1; claim base cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97). Read /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-61/claims.md (claims + amendments A1/A2), /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-61/measure-before.log and measure-after.log, /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md, /home/vgpnk/Projects/shokunin/revenger-shokunin/SCORECARD.md section 'Round 61 (hyaku)'.\nClaims under attack: C1 coverage K — two admitted entries /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md (row C09) and /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md (row C04); K_HELD_BACKED 4/14 -> 6/14; new SOURCES rows S016-S027 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md; QUALITY Q12/Q13 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/QUALITY.md. C2 calibration — in-script forged-receipt-command control in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/verify_icon_languages.py and /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/verify_multi_icon_states.py; C2_RECEIPT_B_KILLED_ATTRIBUTED 0/2 -> 2/2 with holds. Build-wave evidence: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-61/build/*.md.\nYour job: attack exactly the item you are given. A finding that something holds is as valuable as one that breaks; never assume either. Grade: HOLDS / BROKEN / PARTIAL with evidence.\n# Contract\nEvery `Report:` trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin — write it at /home/vgpnk/Projects/shokunin/revenger-shokunin/<that path>, NEVER under /home/vgpnk/Projects/shokunin/.ufo (six build seats misrooted there; do not repeat it). Tools start at the fleet root /home/vgpnk/Projects/shokunin: use ABSOLUTE paths always.\nYou may write ONLY your own report file plus scratch under /tmp/revenger-r61f-<YourSeatName>*. Run anything (probe, verifiers, mutants, entry Reproduce blocks) only on an extracted archive: `mkdir -p /tmp/revenger-r61f-<YourSeatName> && git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive --format=tar 6e89c249bfa57891d97706286807bb78ea594e3c | tar -x -C /tmp/revenger-r61f-<YourSeatName>` (record the hash). NEVER write the live lane tree, its jj state or Git index (no git/jj mutation in /home/vgpnk/Projects/shokunin/revenger-shokunin; avoid `git status` there), the fleet repo, sibling repos, MANIFEST.json, .ufo/state or .ufo/watchdog.log.\nScope (binding): local artifacts and the lane's authored synthetic fixtures only. Reading public documentation/specification pages to re-open sources is allowed (quote verbatim). No live-target probing, no blockchain RPC or contract interaction, no execution of bytecode, no REA producer calls (never xd://mcp__rea_* devices), no logins, no secrets/credential reads, no services/boot/package transactions. If anything is refused on policy grounds, stop and report the refusal text verbatim; never rephrase or reroute refused work.\nTooling: read /home/vgpnk/.omp/agent/RULES.md first; you may install or upgrade useful tools from official channels and must record tool/version/channel/reason. pacman guard: ALL pacman transactions are PAUSED host-wide — use uv tool / npx / an official binary in ~/.local/bin; never -Sy/-Syu/-U/-R, never restart a host service.\nNo delegation; leaf seat. Skip builds/lint/formatters. Message peers only by exact seat id, never agent://all.\nHonesty: an unrun check has not passed; separate observation vs inference vs unknown; every finding carries path:line or command+exact output; web quotes verbatim <=25 words with URL, location, version/date, access date 2026-10-21.\nReport format: at most 60 lines; first line `GRADE: HOLDS|BROKEN|PARTIAL — <target>`; findings with evidence; end with `VERDICT: <one line>` and any installs.",
+ "items": [
+  {
+   "name": "ReopenS016",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK source row S016 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md: execution-specs v2.20.0 (instructions/__init__.py opcode values; runtime.py valid-destination scan). Re-open the source yourself; check every cell (kind, tier scoped to scope, anchor revision, teaches supported by the opened text, status/recheck/used-by valid per /home/vgpnk/Projects/shokunin/CORPUS.md contract v1) and the matching ## Gate quote in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md (verbatim, located, <=25 words). Report exact URL, HTTP status, version shown, and the quote match result."
+  },
+  {
+   "name": "ReopenS017",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK source row S017 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md: Yellow Paper Shanghai efc5f9a §9.4.3 (verify PDF SHA-256 and title-page version). Re-open the source yourself; check every cell (kind, tier scoped to scope, anchor revision, teaches supported by the opened text, status/recheck/used-by valid per /home/vgpnk/Projects/shokunin/CORPUS.md contract v1) and the matching ## Gate quote in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md (verbatim, located, <=25 words). Report exact URL, HTTP status, version shown, and the quote match result."
+  },
+  {
+   "name": "ReopenS018",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK source row S018 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md: Solidity v0.8.37 ABI spec §Function Selector (also check the cited tag commit). Re-open the source yourself; check every cell (kind, tier scoped to scope, anchor revision, teaches supported by the opened text, status/recheck/used-by valid per /home/vgpnk/Projects/shokunin/CORPUS.md contract v1) and the matching ## Gate quote in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md (verbatim, located, <=25 words). Report exact URL, HTTP status, version shown, and the quote match result."
+  },
+  {
+   "name": "ReopenS019",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK source row S019 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md: Solidity Contract Metadata page (CBOR tail placement). Re-open the source yourself; check every cell (kind, tier scoped to scope, anchor revision, teaches supported by the opened text, status/recheck/used-by valid per /home/vgpnk/Projects/shokunin/CORPUS.md contract v1) and the matching ## Gate quote in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md (verbatim, located, <=25 words). Report exact URL, HTTP status, version shown, and the quote match result."
+  },
+  {
+   "name": "ReopenS020",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK source row S020 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md: Node.js v26.12.1 modules.html (LOAD_AS_FILE order, folder index fallback). Re-open the source yourself; check every cell (kind, tier scoped to scope, anchor revision, teaches supported by the opened text, status/recheck/used-by valid per /home/vgpnk/Projects/shokunin/CORPUS.md contract v1) and the matching ## Gate quote in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md (verbatim, located, <=25 words). Report exact URL, HTTP status, version shown, and the quote match result."
+  },
+  {
+   "name": "ReopenS021",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK source row S021 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md: Node.js v26.12.1 packages.html (main, exports precedence). Re-open the source yourself; check every cell (kind, tier scoped to scope, anchor revision, teaches supported by the opened text, status/recheck/used-by valid per /home/vgpnk/Projects/shokunin/CORPUS.md contract v1) and the matching ## Gate quote in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md (verbatim, located, <=25 words). Report exact URL, HTTP status, version shown, and the quote match result."
+  },
+  {
+   "name": "ReopenS022",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK source row S022 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md: ECMA-262 draft (destructuring GetV, §14.3.3.3; ImportDeclaration separation). Re-open the source yourself; check every cell (kind, tier scoped to scope, anchor revision, teaches supported by the opened text, status/recheck/used-by valid per /home/vgpnk/Projects/shokunin/CORPUS.md contract v1) and the matching ## Gate quote in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md (verbatim, located, <=25 words). Report exact URL, HTTP status, version shown, and the quote match result."
+  },
+  {
+   "name": "ReopenS023",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK source row S023 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md: Node.js v26.12.1 esm.html CommonJS Namespaces. Re-open the source yourself; check every cell (kind, tier scoped to scope, anchor revision, teaches supported by the opened text, status/recheck/used-by valid per /home/vgpnk/Projects/shokunin/CORPUS.md contract v1) and the matching ## Gate quote in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md (verbatim, located, <=25 words). Report exact URL, HTTP status, version shown, and the quote match result."
+  },
+  {
+   "name": "ReopenS024",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK source row S024 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md: RFC 3227 §2.1 (rejected row superseding S008: is its reject reason and flip Q12-conformant?). Re-open the source yourself; check every cell (kind, tier scoped to scope, anchor revision, teaches supported by the opened text, status/recheck/used-by valid per /home/vgpnk/Projects/shokunin/CORPUS.md contract v1) and the matching ## Gate quote in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md (verbatim, located, <=25 words). Report exact URL, HTTP status, version shown, and the quote match result."
+  },
+  {
+   "name": "ReopenS025",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK source row S025 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md: evm.codes (rejected community row: are reason/flip grounded?). Re-open the source yourself; check every cell (kind, tier scoped to scope, anchor revision, teaches supported by the opened text, status/recheck/used-by valid per /home/vgpnk/Projects/shokunin/CORPUS.md contract v1) and the matching ## Gate quote in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md (verbatim, located, <=25 words). Report exact URL, HTTP status, version shown, and the quote match result."
+  },
+  {
+   "name": "ReopenS026",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK own-work row S026 (saved EVM records rounds 19,21-26): verify each listed Evidence ID prefix against the files in the archive, the row's scope/teaches, and the Gate quote `\"functions\":[]` / `\"runtime_execution\":\"not-performed\"` for round-26 by command."
+  },
+  {
+   "name": "ReopenS027",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK own-work row S027 (saved JS records ev_4a93276c..., ev_66f5dc7e...): verify IDs, scope/teaches and the Gate quote `\"resolution_context\":\"package-entrypoint\"` by command in the archive."
+  },
+  {
+   "name": "EvmOpcodeTruth",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Observation 1: opcode values and the PUSH-data rule as stated, and whether the Reproduce walk implements S016 runtime.py exactly (PUSH1..PUSH32 skip; compare with get_valid_jump_destinations logic). Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "EvmR19R21Candidates",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Observation 2 for r19/r21: selector 0xdeadbeef, bytecode_offset 16 = JUMPI target, PUSH4 at 6; r21 bytes identical to r19 decoded bytes. Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "EvmR22Candidates",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Observation 2 for r22: two pairs 0xaaaaaaaa@30, 0xbbbbbbbb@32 with PUSH4 at 7 and 17. Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "EvmR23Empty",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Observation 3 for r23: bare PUSH4 c0ffee00, no JUMPI/JUMPDEST, functions []. Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "EvmR24Decoy",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Observation 3 + Inference 3 for r24: only 0x63 at offset 1 inside PUSH32; and the claim that r24 does NOT show PUSH-data exclusion (embedded target not a JUMPDEST, no 0x5B byte). Try to break the confound argument. Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "EvmR25R26Negatives",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Observation 3 + Inference 2 for r25/r26: r25 target 16 is STOP; r26 target 17 valid JUMPDEST yet functions []; is \"every statically valid pattern is reported\" really falsified for this provider version? Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "EvmFlagsDigests",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Observation 4: all seven records inferred/unknown/not-performed and subject digest equals fixture bytes; also Provenance full Evidence IDs and file sha256 prefixes. Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "EvmSelectorsAuthored",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Observation 5: no truth.json declares a signature; selectors are authored constants; S018 citation supports exactly that. Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "EvmUnknownsRules",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Unknown 1: the two post-hoc rules (pc0-reachability; stop-at-first-STOP) — do both really fit all seven outputs? any other simple rule that fits? any wording that asserts a cause? Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "EvmLimitationsQ13",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Limitations: verify_evm_evidence.py credited as no guard (0/37); r24 truth.json [1,9] defect; locator/authority label wording; Q13 conformance of the whole entry. Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "EvmCrossLane",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Cross-lane block: kaidoku lines cited (kaidoku-shokunin/corpus/knowledge/2026-10-13-r3-evm-interface.md:151-153, PROVINCE.md:54) and kasegi PROVINCE.md:25 — do they say what the entry says; does the entry still absorb kaidoku ground anywhere? Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "EvmReproduceRerun",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Extract the ## Reproduce python block from the entry in the archive, run it from the archive root, diff stdout byte-for-byte against the ## Provenance text block. Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "EvmQualityTable",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Audit the entry QUALITY table Q01-Q13 row by row against corpus/QUALITY.md; find any pass verdict that does not hold. Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "EvmVersionClaims",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md — Version/tool attribution: rea-agents@6.4.0 (ledger prose) vs evmole@0.9.3 (record) vs S002 6.7.0; check every version statement in the entry against the records/LEDGER files. Re-derive from fixture bytes/saved records in your archive by your own command."
+  },
+  {
+   "name": "JsSourceFacts",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C04 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md — Observation 1: destructured names, single require, main index.js, no exports field, byte-identical transform.js/package.json across the pair. Re-derive by your own command in your archive."
+  },
+  {
+   "name": "JsNamedEdges",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C04 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md — Observation 2: named-import edge set equals destructured names; all imports specifier ./transform resolved transform.js; one unnamed edge per graph. Re-derive by your own command in your archive."
+  },
+  {
+   "name": "JsDeltaAndCompare",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C04 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md — Observation 3: delta removes exactly checksum (imports 3->2, edges 13->12); and the claim that the round-7 comparison tool reported 0/1 (check the round-7 ledger/records). Re-derive by your own command in your archive."
+  },
+  {
+   "name": "JsEntrypointEdge",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C04 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md — Observation 4 + Unknown 1: package-entrypoint maps_to index.js inferred; and that main cannot be separated from the index.js fallback (check S020 text). Re-derive by your own command in your archive."
+  },
+  {
+   "name": "JsLabelsExports",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C04 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md — Observation 5 + Inference 3: electron-main kind label with 0 electron tokens; exposes only default. Re-derive by your own command in your archive."
+  },
+  {
+   "name": "JsDestructuringInference",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C04 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md — Inference 1: S022 semantics (evaluate then GetV) and the conclusion that imported_name edges are names read from the require value, not export bindings. Re-derive by your own command in your archive."
+  },
+  {
+   "name": "JsResolutionInference",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C04 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md — Inference 2: S020 LOAD_AS_FILE order makes ./transform -> transform.js the documented resolution for this layout. Re-derive by your own command in your archive."
+  },
+  {
+   "name": "JsLimitationsQ13",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C04 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md — Limitations: the claim that verify_js_graph_delta.py and verify_saved_evidence.py guard names and entry path (by their own negatives) and not digests/spans/unnamed edge — test by deleting those clauses in your archive copy. Re-derive by your own command in your archive."
+  },
+  {
+   "name": "JsCrossLane",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C04 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md — Cross-lane block: kaidoku-shokunin/corpus/README.md:23 and 2026-10-13-r3-renderer-asar.md:79-81 — accurate? any absorption left (title, coverage-map header, README row C04 cell)? Re-derive by your own command in your archive."
+  },
+  {
+   "name": "JsReproduceRerun",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C04 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md — Extract the ## Reproduce python block, run from the archive root, diff stdout against ## Provenance byte-for-byte; also test the regex oracle caveat (aliases/rest) is honestly stated. Re-derive by your own command in your archive."
+  },
+  {
+   "name": "JsQualityTable",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK the C04 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md — Audit the C04 entry QUALITY table Q01-Q13 row by row against corpus/QUALITY.md. Re-derive by your own command in your archive."
+  },
+  {
+   "name": "C2ProbeRerun",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK C2 — Re-run `python3 -B reports/round-61/measure.py <tree>` on archives of BOTH cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97 and 0b6ddf07f33184baf901dd807ddc72a95f4010c1 (git archive <hash> corpus) and compare every line with measure-before.log / measure-after.log."
+  },
+  {
+   "name": "C2IndependentMutantB",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK C2 — Without using measure.py, delete the receipt['command']==command conjunct (and its and) in both verifiers in your archive by your own edit; run each; show the innermost traceback frame is the forged-control require line."
+  },
+  {
+   "name": "C2ControlDeletion",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK C2 — Mutate the new control itself: (a) delete the `require(not receipt_ok(forged ...))` line, (b) drop the `not`, (c) make the forged suffix empty, (d) forge a different key instead of command. Report which mutants the scripts' own runs detect; state the residual honestly."
+  },
+  {
+   "name": "C2Kaika12OnNew",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK C2 — Re-apply kaika mutants a, c, d1, d2, d3 (see /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/kaika-r1/mutation-post.md and build/MutationKaika12Repro.md) to the NEW verifiers; confirm they are still killed (no regression)."
+  },
+  {
+   "name": "C2DiffReview",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK C2 — Review `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97 0b6ddf07f33184baf901dd807ddc72a95f4010c1 -- corpus/verify_icon_languages.py corpus/verify_multi_icon_states.py` line by line: correctness, exactly one receipt['command']== site per file, deep copy not shared, PASS lines unchanged, no file writes/network."
+  },
+  {
+   "name": "C2SafetyCriteria",
+   "role": "sentinel",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK C2 — Check the landed diff against every rejection criterion in /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-61/build/SentinelVerifierSafety.md and CriticCalibrationClaim.md items 1-7; grade each."
+  },
+  {
+   "name": "C2PassLineQuotes",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK C2 — Saved records quote verifier PASS lines verbatim (e.g. corpus/live/runs/round-46/verifier-receipt.json, round-50). Confirm both scripts' PASS output still matches every saved quote by command."
+  },
+  {
+   "name": "C2AxisCritic",
+   "role": "critic",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK C2 — Attack C2 as a calibration claim after landing: is 0.0->10.0 on a 2-mutant criterion honest given SCORECARD wording; does amendment A1 (attribution) look results-informed (build seats already saw 2/2 in clones before A1)? Grade the timing and wording."
+  },
+  {
+   "name": "CountK",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Re-derive K independently: on archives of cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97 and 0b6ddf07f33184baf901dd807ddc72a95f4010c1 count held rows in corpus/README.md and check each held row's knowledge files exist; confirm only C04/C09 changed status and row count stays 14."
+  },
+  {
+   "name": "CountCensus",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Run the seven frozen census commands from /home/vgpnk/Projects/shokunin/CORPUS.md on the archive of 6e89c249bfa57891d97706286807bb78ea594e3c and `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin revenger` (read-only); report rows/tiers/statuses before (15, A=14 C=1, mined12 queued1 rejected2) vs after."
+  },
+  {
+   "name": "CountFFreshness",
+   "role": "scout",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Re-run SCORECARD commands F (corpus/live family census) and the freshness grep on archives of cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97 and 0b6ddf07f33184baf901dd807ddc72a95f4010c1; confirm unchanged."
+  },
+  {
+   "name": "CountInputIdentity",
+   "role": "scout",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Confirm `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff --stat cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97 0b6ddf07f33184baf901dd807ddc72a95f4010c1 -- corpus/live corpus/fixtures` is empty and that no other pre-existing knowledge file changed (diff --stat over corpus/knowledge)."
+  },
+  {
+   "name": "AuditQ12Q13",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Audit QUALITY Q12 and Q13 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/QUALITY.md: grounded in lesson M21/M22? falsifiable? do they conflict with Q01-Q11? does every existing row in SOURCES.md pass Q12 (check S008, S012, S024, S025)?"
+  },
+  {
+   "name": "AuditGateRejects",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Audit the 7 rejects and 2 admits in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md ## Admission decisions: is each reject reason correct and does each cite the right Q id? Is anything rejected that the evidence supports, or admitted that should be rejected?"
+  },
+  {
+   "name": "AuditMistakes",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Audit ## Mistakes M21-M25 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md: evidence pointers resolve, captured-by honest, fixes shown able to fail; run its count command."
+  },
+  {
+   "name": "AuditReadme",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Audit /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/README.md diff cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97..6e89c249bfa57891d97706286807bb78ea594e3c: index lines, C04/C09 cells and scope notes, footer, anything stale (e.g. README:15 --self-test claim, C14 wording)."
+  },
+  {
+   "name": "AuditAmendments",
+   "role": "critic",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Audit claims.md amendments A1/A2 against the commit order (git log --format='%H %cI %s' cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97..6e89c249bfa57891d97706286807bb78ea594e3c) and build-seat reports: were they appended before any after-run on a landed tree; do they relax any threshold?"
+  },
+  {
+   "name": "AuditSourcesContract",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Check S016-S027 against every contract-v1 rule (CORPUS.md) incl. supersedes format for S024, used-by paths exist, opened dates, recheck values, anchors not bare homepages, community tier; run the validator and the frozen enum/tier awk commands."
+  },
+  {
+   "name": "AuditMisroot",
+   "role": "scout",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Verify the misroot sweep: the six moved reports exist in /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-61/build/ and are committed in 0b6ddf07f33184baf901dd807ddc72a95f4010c1; no round-61 revenger file remains under /home/vgpnk/Projects/shokunin/.ufo/waves/round-61 (read-only listing)."
+  },
+  {
+   "name": "AuditR24Truth",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Confirm by command that corpus/fixtures/evm-r24/truth.json lists [1, 9] and the 9-byte pattern occurs only at offset 1; confirm the C09 entry and lesson M25 describe it exactly and nothing edited the fixture."
+  },
+  {
+   "name": "AuditScorecard",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Audit the SCORECARD Round 61 section: every number matches measure-after.log; split reason meets AXES.md; planned items sensible; no capability pre-claimed."
+  },
+  {
+   "name": "AuditLog",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Audit LOG.md round-61 entries: append-only (git diff cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97 6e89c249bfa57891d97706286807bb78ea594e3c -- LOG.md shows only additions), every number/hash cited matches artifacts."
+  },
+  {
+   "name": "CriticSeparabilityPost",
+   "role": "critic",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — After landing: are C1 and C2 still causally separable (check the work commit touches disjoint files; would reverting either break the other's measurement)?"
+  },
+  {
+   "name": "CriticTrendVerdicts",
+   "role": "critic",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Pre-assess the learning trends per /home/vgpnk/Projects/kimi-shokunin/skills/shokunin/protocol/LEARNING.md: expansion (2 entries on uncovered rows citing mined rows?), quality (any admitted entry failing its bar?), discernment (Q12/Q13 lesson-backed; outside spot-check pending). Argue the most defensible verdict for each."
+  },
+  {
+   "name": "ConnectorKaidokuPost",
+   "role": "connector",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Re-check final C04/C09 entries against kaidoku-shokunin PROVINCE/corpus: any remaining absorbed proposition? quote both sides with path:line."
+  },
+  {
+   "name": "ConnectorKasegiPost",
+   "role": "connector",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Re-check the final C09 entry against kasegi-shokunin PROVINCE/corpus (deployed identity, claimability): any statement that reaches claimability or deployed-code identity?"
+  },
+  {
+   "name": "AuditSearchLogPaths",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK — Audit the round-61 additions to /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md `## Paths` and `## Search log` (contract v1 rule 5: query, where, date, identified/screened/included/excluded counts, exclusion reasons, stop rationale): do the counts match the S016-S027 rows and the build seat reports in /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-61/build/; are excluded-without-row sources (FIPS 202, REA EVM guide, Electron ASAR page, REA JS docs) justified?"
+  },
+  {
+   "name": "C2OtherConjunctsScope",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK C2 scope honesty — on the NEW verifiers (archive of 6e89c249bfa57891d97706286807bb78ea594e3c), delete each other receipt conjunct (exit_code, fixture_sha256, evidence_id, stdout_sha256) in both scripts and run them: does the SCORECARD statement that 8 such survivors stay outside the claim still hold, or did the new control change any of them (either way, report exactly)?"
+  }
+ ]
+}

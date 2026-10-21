@@ -1,0 +1,596 @@
+{
+ "wave": "r61-falsify",
+ "spawned": "2026-10-21T13:08:41-03:00 (falsify-dispatch-attempts.json, falsify-spawn-result.txt: 65 spawned)",
+ "host_end": "omp session 01a15c83 killed (SIGHUP) 2026-10-21T13:10:51-03:00",
+ "source": "/home/vgpnk/.omp/agent/sessions/-Projects-shokunin/2026-10-21T03-31-39-302Z_01a15c83-baa6-76c9-b209-ce1123c6cc22/CloseChousa26",
+ "reports_landed": 0,
+ "dead": 65,
+ "note": "Recorded by the session-3 replacement L1 (RevengerR61-2). Every seat is dead: no lane report; session outputs are empty or a cancellation stub. Not replaced; items not re-issued.",
+ "seats": [
+  {
+   "seat": "ReopenS016",
+   "agent_id": "CloseChousa26.ReopenS016",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 9,
+   "last_entry": "2026-10-21T16:10:51.293Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "ReopenS017",
+   "agent_id": "CloseChousa26.ReopenS017",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 9,
+   "last_entry": "2026-10-21T16:10:51.290Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "ReopenS018",
+   "agent_id": "CloseChousa26.ReopenS018",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 14,
+   "last_entry": "2026-10-21T16:10:51.290Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "ReopenS019",
+   "agent_id": "CloseChousa26.ReopenS019",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 10,
+   "last_entry": "2026-10-21T16:10:51.293Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "ReopenS020",
+   "agent_id": "CloseChousa26.ReopenS020",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 10,
+   "last_entry": "2026-10-21T16:10:51.294Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "ReopenS021",
+   "agent_id": "CloseChousa26.ReopenS021",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 10,
+   "last_entry": "2026-10-21T16:10:51.291Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "ReopenS022",
+   "agent_id": "CloseChousa26.ReopenS022",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 16,
+   "last_entry": "2026-10-21T16:10:51.292Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "ReopenS023",
+   "agent_id": "CloseChousa26.ReopenS023",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 14,
+   "last_entry": "2026-10-21T16:10:51.289Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "ReopenS024",
+   "agent_id": "CloseChousa26.ReopenS024",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 8,
+   "last_entry": "2026-10-21T16:10:51.291Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "ReopenS025",
+   "agent_id": "CloseChousa26.ReopenS025",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 11,
+   "last_entry": "2026-10-21T16:10:51.288Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "ReopenS026",
+   "agent_id": "CloseChousa26.ReopenS026",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 10,
+   "last_entry": "2026-10-21T16:10:51.288Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "ReopenS027",
+   "agent_id": "CloseChousa26.ReopenS027",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 12,
+   "last_entry": "2026-10-21T16:10:51.290Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmOpcodeTruth",
+   "agent_id": "CloseChousa26.EvmOpcodeTruth",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 6,
+   "last_entry": "2026-10-21T16:10:51.286Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmR19R21Candidates",
+   "agent_id": "CloseChousa26.EvmR19R21Candidates",
+   "report_in_lane": false,
+   "session_output_bytes": 126,
+   "assistant_turns": 9,
+   "last_entry": "2026-10-21T16:10:51.287Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmR22Candidates",
+   "agent_id": "CloseChousa26.EvmR22Candidates",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 7,
+   "last_entry": "2026-10-21T16:10:51.292Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmR23Empty",
+   "agent_id": "CloseChousa26.EvmR23Empty",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 6,
+   "last_entry": "2026-10-21T16:10:51.284Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmR24Decoy",
+   "agent_id": "CloseChousa26.EvmR24Decoy",
+   "report_in_lane": false,
+   "session_output_bytes": 139,
+   "assistant_turns": 1,
+   "last_entry": "2026-10-21T16:10:51.288Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmR25R26Negatives",
+   "agent_id": "CloseChousa26.EvmR25R26Negatives",
+   "report_in_lane": false,
+   "session_output_bytes": 341,
+   "assistant_turns": 1,
+   "last_entry": "2026-10-21T16:10:51.287Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmFlagsDigests",
+   "agent_id": "CloseChousa26.EvmFlagsDigests",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 8,
+   "last_entry": "2026-10-21T16:10:51.286Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmSelectorsAuthored",
+   "agent_id": "CloseChousa26.EvmSelectorsAuthored",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 6,
+   "last_entry": "2026-10-21T16:10:51.286Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmUnknownsRules",
+   "agent_id": "CloseChousa26.EvmUnknownsRules",
+   "report_in_lane": false,
+   "session_output_bytes": 262,
+   "assistant_turns": 1,
+   "last_entry": "2026-10-21T16:10:51.285Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmLimitationsQ13",
+   "agent_id": "CloseChousa26.EvmLimitationsQ13",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 7,
+   "last_entry": "2026-10-21T16:10:51.285Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmCrossLane",
+   "agent_id": "CloseChousa26.EvmCrossLane",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 9,
+   "last_entry": "2026-10-21T16:10:51.285Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmReproduceRerun",
+   "agent_id": "CloseChousa26.EvmReproduceRerun",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 7,
+   "last_entry": "2026-10-21T16:10:51.285Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmQualityTable",
+   "agent_id": "CloseChousa26.EvmQualityTable",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 10,
+   "last_entry": "2026-10-21T16:10:51.283Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "EvmVersionClaims",
+   "agent_id": "CloseChousa26.EvmVersionClaims",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 6,
+   "last_entry": "2026-10-21T16:10:51.282Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "JsSourceFacts",
+   "agent_id": "CloseChousa26.JsSourceFacts",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 6,
+   "last_entry": "2026-10-21T16:10:51.284Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "JsNamedEdges",
+   "agent_id": "CloseChousa26.JsNamedEdges",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 10,
+   "last_entry": "2026-10-21T16:10:51.284Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "JsDeltaAndCompare",
+   "agent_id": "CloseChousa26.JsDeltaAndCompare",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 11,
+   "last_entry": "2026-10-21T16:10:51.282Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "JsEntrypointEdge",
+   "agent_id": "CloseChousa26.JsEntrypointEdge",
+   "report_in_lane": false,
+   "session_output_bytes": 473,
+   "assistant_turns": 1,
+   "last_entry": "2026-10-21T16:10:51.283Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "JsLabelsExports",
+   "agent_id": "CloseChousa26.JsLabelsExports",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 6,
+   "last_entry": "2026-10-21T16:10:51.280Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "JsDestructuringInference",
+   "agent_id": "CloseChousa26.JsDestructuringInference",
+   "report_in_lane": false,
+   "session_output_bytes": 559,
+   "assistant_turns": 1,
+   "last_entry": "2026-10-21T16:10:51.282Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "JsResolutionInference",
+   "agent_id": "CloseChousa26.JsResolutionInference",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 9,
+   "last_entry": "2026-10-21T16:10:51.280Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "JsLimitationsQ13",
+   "agent_id": "CloseChousa26.JsLimitationsQ13",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 9,
+   "last_entry": "2026-10-21T16:10:51.281Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "JsCrossLane",
+   "agent_id": "CloseChousa26.JsCrossLane",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 9,
+   "last_entry": "2026-10-21T16:10:51.281Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "JsReproduceRerun",
+   "agent_id": "CloseChousa26.JsReproduceRerun",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 11,
+   "last_entry": "2026-10-21T16:10:51.281Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "JsQualityTable",
+   "agent_id": "CloseChousa26.JsQualityTable",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 7,
+   "last_entry": "2026-10-21T16:10:51.280Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "C2ProbeRerun",
+   "agent_id": "CloseChousa26.C2ProbeRerun",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 6,
+   "last_entry": "2026-10-21T16:10:51.279Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "C2IndependentMutantB",
+   "agent_id": "CloseChousa26.C2IndependentMutantB",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 7,
+   "last_entry": "2026-10-21T16:10:51.280Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "C2ControlDeletion",
+   "agent_id": "CloseChousa26.C2ControlDeletion",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 6,
+   "last_entry": "2026-10-21T16:10:51.279Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "C2Kaika12OnNew",
+   "agent_id": "CloseChousa26.C2Kaika12OnNew",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 7,
+   "last_entry": "2026-10-21T16:10:51.279Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "C2DiffReview",
+   "agent_id": "CloseChousa26.C2DiffReview",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 6,
+   "last_entry": "2026-10-21T16:10:51.279Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "C2SafetyCriteria",
+   "agent_id": "CloseChousa26.C2SafetyCriteria",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 5,
+   "last_entry": "2026-10-21T16:10:51.278Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "C2PassLineQuotes",
+   "agent_id": "CloseChousa26.C2PassLineQuotes",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 12,
+   "last_entry": "2026-10-21T16:10:51.277Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "C2AxisCritic",
+   "agent_id": "CloseChousa26.C2AxisCritic",
+   "report_in_lane": false,
+   "session_output_bytes": 125,
+   "assistant_turns": 1,
+   "last_entry": "2026-10-21T16:10:51.278Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "CountK",
+   "agent_id": "CloseChousa26.CountK",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 14,
+   "last_entry": "2026-10-21T16:10:51.275Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "CountCensus",
+   "agent_id": "CloseChousa26.CountCensus",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 11,
+   "last_entry": "2026-10-21T16:10:51.275Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "CountFFreshness",
+   "agent_id": "CloseChousa26.CountFFreshness",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 14,
+   "last_entry": "2026-10-21T16:10:51.276Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "CountInputIdentity",
+   "agent_id": "CloseChousa26.CountInputIdentity",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 11,
+   "last_entry": "2026-10-21T16:10:51.271Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "AuditQ12Q13",
+   "agent_id": "CloseChousa26.AuditQ12Q13",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 5,
+   "last_entry": "2026-10-21T16:10:51.277Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "AuditGateRejects",
+   "agent_id": "CloseChousa26.AuditGateRejects",
+   "report_in_lane": false,
+   "session_output_bytes": 168,
+   "assistant_turns": 1,
+   "last_entry": "2026-10-21T16:10:51.278Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "AuditMistakes",
+   "agent_id": "CloseChousa26.AuditMistakes",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 6,
+   "last_entry": "2026-10-21T16:10:51.278Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "AuditReadme",
+   "agent_id": "CloseChousa26.AuditReadme",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 10,
+   "last_entry": "2026-10-21T16:10:51.278Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "AuditAmendments",
+   "agent_id": "CloseChousa26.AuditAmendments",
+   "report_in_lane": false,
+   "session_output_bytes": 133,
+   "assistant_turns": 1,
+   "last_entry": "2026-10-21T16:10:51.276Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "AuditSourcesContract",
+   "agent_id": "CloseChousa26.AuditSourcesContract",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 11,
+   "last_entry": "2026-10-21T16:10:51.274Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "AuditMisroot",
+   "agent_id": "CloseChousa26.AuditMisroot",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 10,
+   "last_entry": "2026-10-21T16:10:51.277Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "AuditR24Truth",
+   "agent_id": "CloseChousa26.AuditR24Truth",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 10,
+   "last_entry": "2026-10-21T16:10:51.275Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "AuditScorecard",
+   "agent_id": "CloseChousa26.AuditScorecard",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 9,
+   "last_entry": "2026-10-21T16:10:51.273Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "AuditLog",
+   "agent_id": "CloseChousa26.AuditLog",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 9,
+   "last_entry": "2026-10-21T16:10:51.273Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "CriticSeparabilityPost",
+   "agent_id": "CloseChousa26.CriticSeparabilityPost",
+   "report_in_lane": false,
+   "session_output_bytes": 313,
+   "assistant_turns": 1,
+   "last_entry": "2026-10-21T16:10:51.273Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "CriticTrendVerdicts",
+   "agent_id": "CloseChousa26.CriticTrendVerdicts",
+   "report_in_lane": false,
+   "session_output_bytes": 371,
+   "assistant_turns": 1,
+   "last_entry": "2026-10-21T16:10:51.272Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "ConnectorKaidokuPost",
+   "agent_id": "CloseChousa26.ConnectorKaidokuPost",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 9,
+   "last_entry": "2026-10-21T16:10:51.272Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "ConnectorKasegiPost",
+   "agent_id": "CloseChousa26.ConnectorKasegiPost",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 8,
+   "last_entry": "2026-10-21T16:10:53.350Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "AuditSearchLogPaths",
+   "agent_id": "CloseChousa26.AuditSearchLogPaths",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 6,
+   "last_entry": "2026-10-21T16:10:53.358Z",
+   "last_error": "Request was aborted"
+  },
+  {
+   "seat": "C2OtherConjunctsScope",
+   "agent_id": "CloseChousa26.C2OtherConjunctsScope",
+   "report_in_lane": false,
+   "session_output_bytes": 0,
+   "assistant_turns": 7,
+   "last_entry": "2026-10-21T16:10:51.272Z",
+   "last_error": "Request was aborted"
+  }
+ ]
+}
