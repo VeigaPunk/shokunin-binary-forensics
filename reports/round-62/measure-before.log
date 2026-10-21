@@ -1,0 +1,35 @@
+$ git archive --format=tar 5bd4a90fc1a34caa94496601b60537b3aab12301 corpus | tar -x -C /fast/scratch/hyaku/revenger-r62/before
+$ python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-61/measure.py /fast/scratch/hyaku/revenger-r62/before # cwd=/
+K_HELD=4/14 score=2.9
+K_ROW C04 status=uncovered
+K_ROW C09 status=uncovered
+K_HELD_BACKED=4/14
+MUTANT verify_icon_languages.py control exit=0 pass :: PASS: 3/3 group-language states, 2/2 exact one-byte deltas, two icon candidates retained, forged selection REJECTED
+MUTANT verify_icon_languages.py b exit=1 killed :: AssertionError: r47: forged receipt command accepted
+MUTANT verify_icon_languages.py d2 exit=1 killed :: AssertionError: r47: receipt
+MUTANT verify_multi_icon_states.py control exit=0 pass :: PASS: 4/4 two-image states, 3/3 exact one-byte deltas, first link stable, forged second match REJECTED
+MUTANT verify_multi_icon_states.py b exit=1 killed :: AssertionError: r42: forged receipt command accepted
+MUTANT verify_multi_icon_states.py d2 exit=1 killed :: AssertionError: r42: receipt
+C2_CONTROLS_PASS=2/2
+C2_RECEIPT_B_KILLED=2/2
+C2_D2_KILLED=2/2
+C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2
+HOLD verify_evm_evidence.py exit=0 NEGATIVE REJECTED candidate destination mismatch
+HOLD verify_icon_languages.py exit=0 PASS: 3/3 group-language states, 2/2 exact one-byte deltas, two icon candidates retained, forged selection REJECTED
+HOLD verify_icon_states.py exit=0 PASS: 4/4 source-decoded states, 3/3 one-byte deltas, one forged candidate REJECTED
+HOLD verify_js_graph_delta.py exit=0 NEGATIVE REJECTED saved graph disagrees with source truth
+HOLD verify_multi_icon_states.py exit=0 PASS: 4/4 two-image states, 3/3 exact one-byte deltas, first link stable, forged second match REJECTED
+HOLD verify_named_multi_icon_states.py exit=0 PASS: 139 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.
+HOLD verify_pe_resources.py exit=0 NEGATIVE REJECTED payload relation mismatch
+HOLD verify_saved_evidence.py exit=0 NEGATIVE JS REJECTED: JS: wrong package-main mapping
+HOLD verify_semantic_trace.py exit=0 NEGATIVE REJECTED relation differs from source parent
+HOLD verify_shape_evidence.py exit=0 NEGATIVE REJECTED changed-property evidence mismatch
+HOLD_CALIBRATION=4/4
+HOLD_REPLAY=10/10
+HOLDS_OK=yes
+probe_exit=0
+
+$ /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin revenger
+revenger	W04	S024 duplicate url www.rfc-editor.org/rfc/rfc3227.txt across scopes
+revenger	ok	/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md
+census_rc=0
