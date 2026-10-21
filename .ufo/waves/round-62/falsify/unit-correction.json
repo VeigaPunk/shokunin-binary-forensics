@@ -1,0 +1,12 @@
+{
+  "prior_revision": "47511b213bf556022869fa104a4bda9d7c9a3b95",
+  "prior_candidate_sha256": "35ad7d93936f31e02eae9431df6185f31d0c38b079579586ab2fce15b80f2e4d",
+  "candidate_sha256": "e7bf76aae801027f98fc4d46932f1309ade5b6671bf4407ac206bb50914f3196",
+  "finding": "template_enclosing_instruction used hex-character length as byte extent",
+  "minimal_fix": "len(im) -> len(im)//2 in extent expression",
+  "red_before": "r19 enclosing template PUSH1 byte: [[6,99],[12,96]] incorrectly includes earlier PUSH4",
+  "expected_after": "r19 [[12,96]], r24 [[0,127]]; same primary input bytes",
+  "additional_changes": "file-offset/template-index prose distinction; exact source header anchors; no unsupported citation-reuse claim; missing direct field inventory rows",
+  "admission": "pending exact-hash independent re-review; README unchanged",
+  "new_seats": 0
+}

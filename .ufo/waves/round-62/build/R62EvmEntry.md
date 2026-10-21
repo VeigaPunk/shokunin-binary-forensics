@@ -10,22 +10,34 @@ Seat `RevengerR61-2.R62EvmEntry` (leaf). Frozen revision
 copy or on scratch files, cwd=/ for the recorded run.
 
 **Proposed entry (draft, scratch only):**
-`/fast/scratch/hyaku/revenger-r62/R62EvmEntry/candidate.md` — 556 lines, 54759
+`/fast/scratch/hyaku/revenger-r62/R62EvmEntry/candidate.md` — 587 lines, 57377
 bytes, SHA-256
-`35ad7d93936f31e02eae9431df6185f31d0c38b079579586ab2fce15b80f2e4d`.
+`e7bf76aae801027f98fc4d46932f1309ade5b6671bf4407ac206bb50914f3196`.
 Intended landing path `corpus/knowledge/round-62-evm-dispatch-byte-evidence.md`
 is **not** written by this seat; L1 integrates it.
 
-**Final artifacts.** `readout.py` (190 lines, SHA-256
-`ceb1c3ea701cdb600d0db389f847b34496e313585a818f868855e772aa026df1`) is embedded
+**Final artifacts.** `readout.py` (192 lines, SHA-256
+`2dc4210975fa26bb86ebcad6921a5f732e10f4a8a6302eff1ab3c449cdb56ce0`) is embedded
 verbatim in the entry; `readout_stdout.txt` (8 lines, SHA-256
-`669b860c85f6b81a7517dcc34352dde4479216387fbf44a6912c3105bac66a0e`) is embedded
-verbatim as the `## Provenance` block. **Final reproduce on the archived
+`8bade6c9a9641edf0673f45cfc59f799ffe30548596c98fe8848d7beeab5cef7`) is embedded
+verbatim as the `## Provenance` block. **Final focused run on the archived
 bytes:** the `## Reproduce` block was extracted from the finished candidate into
 `extracted_readout.py` (SHA-256 identical to `readout.py`) and run with
 `python3 -B extracted_readout.py frozen` → **exit 0, stderr 0 bytes, stdout
 byte-identical** to the recorded `readout_stdout.txt` (`cmp` clean, same
-SHA-256 `669b860c…`).
+SHA-256 `8bade6c9…`).
+
+**Arithmetic bug found by the rereviews and fixed here.** The
+`template_enclosing_instruction` extent was computed from the *hex string*
+length of an instruction's immediate, so it counted each byte twice: r19 printed
+`[[6,99],[12,96]]` where the correct enclosing instruction of the template's
+PUSH1 byte is the PUSH1 at 12, `[[12,96]]`. The single expression is now
+`len(im) // 2` (`readout.py:112`). After the fix r19 prints `[[12,96]]` and r24
+prints `[[0,127]]` (the PUSH32 that contains its occurrence), and the new
+printed field `template_push1_template_index` gives the byte's position inside
+the template (6) beside its file offset. No other value changed: the entry's
+own walk stores immediates as hex, and the only place an immediate length was
+used as a byte extent was this expression.
 
 **Diff summary against the falsify wave's material findings** (all read from
 `.ufo/waves/round-62/falsify/`): R62FEvmCarrier Observation 5 and
@@ -77,14 +89,14 @@ readout prints); 0 occurrences of kasegi, "every statically valid", "post-hoc",
 `total_cases` 7, `reported_candidate_observations` 4, `distinct_candidate_pairs` 3.
 
 **Line budget deviation, stated.** The earlier integration note asked for
-~≤130 code lines and ~≤450 entry lines. The corrected form is 190 code lines
-and 556 entry lines. The extra lines are the newly required derivations, not
+~≤130 code lines and ~≤450 entry lines. The corrected form is 192 code lines
+and 587 entry lines. The extra lines are the newly required derivations, not
 bulk: the carrier-boundary derivation and its eight printed fields, the
 raw-template/boundary block and its thirteen printed fields, the eight
-cross-case aggregates, and the 95-row inventory that the falsify seats
-required to cover the cross-case claims. I kept those rather than dropping the
-derivations the wave demanded; the code, stdout and prose are otherwise as
-narrow as before.
+cross-case aggregates, and the 116-row inventory that the falsify seats
+required to cover the cross-case claims, plus the one arithmetic fix. I kept
+those rather than dropping the derivations the wave demanded; the code, stdout
+and prose are otherwise as narrow as before.
 
 **Preservation and non-claims.** `git status --porcelain` shows only L1's own
 concurrent edits (`M corpus/SOURCES.md`, `?? corpus/lessons/round-62.md`) and the
@@ -92,13 +104,14 @@ wave reports directory; I changed no corpus, fixture, record, README or SOURCES
 byte. README C04/C09 still read `uncovered`; no held flip, no admission, gate or
 promotion claimed; prior rejected candidates byte-preserved.
 
-**Census.** L1's S028–S031 rows still produce exactly four E11 findings — the
-`used-by` paths for the two not-yet-landed entry files — and no other E or W
-finding; `scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin
-revenger` exits 1 until both entry files exist on disk. That is the constraint
-I measured earlier and it is unchanged by this correction. S028's anchor ranges
-now cover the constants this readout uses (`:55`, `:104-109`, `:118`,
-`:121-153`), and the entry's `## Source facts` section quotes them.
+**Census — historical, not re-run.** An earlier measurement of mine, taken
+while the two round-62 entry files were still scratch-only, found four E11
+findings for the S028–S031 `used-by` paths and a validator exit of 1. That was
+a staged-artifact observation at that moment; the entries have since landed on
+the live tree, so the observation is stale and I have not re-run the validator
+to restate it. S028's anchor ranges cover every constant this readout uses
+(`:55`, `:104-109`, `:118`, `:121-153`), and the entry's `## Source facts`
+section quotes them with the row's exact URL and file:line anchors.
 
 **Risks / unknowns (honest).** The recorded metadata subset is claimed under
 S026, whose scope covers exactly those seven saved records; the fixture bytes

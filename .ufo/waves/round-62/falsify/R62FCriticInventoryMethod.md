@@ -56,3 +56,39 @@ Both: extend the inventory to header/§Sources/§Reproduce values. Focused re-re
 VERDICT: BROKEN — C04 fails Q11 (O3–O6); C09 fails Q11 (O8). Neither is admissible on this frozen revision; C1 K stays 4/14 for these candidates as frozen.
 No repair, no admission. No JS/EVM execution, no producer/REA/chain/network. Scratch: `/fast/scratch/hyaku/revenger-r62/R62FCriticInventoryMethod/` (tree, mutJ, mutE, outputs).
 Installs: none.
+
+## Resolution — exact-hash focused re-review (appended; original text above is the byte-preserved prefix, SHA-256 `152f8883acc211d427fab298db0e3cc423e5d6670121d7f833219e50de2b1a01`)
+
+GRADE (corrected bytes): HOLDS on the inventory-method/Q11 axis for both, with nonblocking residuals R1–R5 below; no blocker on this axis.
+Target: commit `47511b213bf556022869fa104a4bda9d7c9a3b95` → `$S/tree2` (cwd=/, TMPDIR seat-owned). C04 `d4544c7012a52c0b877022009de6056d6beeda53cd78c2054361e732dce5cafe`,
+C09 `35ad7d93936f31e02eae9431df6185f31d0c38b079579586ab2fce15b80f2e4d` (both match L1). `diff --stat d977…47511b2 -- corpus/fixtures corpus/live corpus/QUALITY.md corpus/README.md` → empty.
+SOURCES word-diff: only S026 `used-by` gains the two round-62 paths, logged old→new in `lessons/round-62.md` "Allowed S026 `used-by` change"; S029 row carries `06db92a8…` verbatim.
+Re-run (changed code only): C04 `exit=0 lines=25 sha=3c62d57c…a8bcf stderr=0`, cmp==entry; C09 `exit=0 lines=8 sha=669b860c…c66a0e stderr=0`, cmp==entry.
+C04 metadata reproduced: `sha256sum` → `78a51a73…6d14 readout.py`, `3c62d57c…8bcf readout.stdout.txt`; `wc -l` → 142 / 25; `printf '%s\n' "Set value to ? GetV(value, propertyName)." | wc -w` → 6.
+
+| orig | disposition on corrected bytes | evidence |
+|---|---|---|
+| O1 | context only; equality still not credited as Q11 | both stdout cmp-equal (above) |
+| O2 | resolved: no helper/Q14; inventory rows now point at code that computes the referent (checked against code + mutants below, not tokens) | lesson tail "No lexical token inventory is treated as a Q11 pass" |
+| O3 | resolved: page digest/date/anchors labelled "recorded from the S029 row, not derived" (C04:1, §Sources, §Q13, inventory H1) | S029 row contains `06db92a8…` |
+| O4 | resolved: "6 whitespace-separated words, counted in §Reproduce" with command+output | my run → 6 |
+| O5 | resolved: §Reproduce "This entry's own metadata" prints `sha256sum`/`wc -l` and output; inventory H3 | reproduced exactly; residual R4 |
+| O6 | resolved: `splitlines()` physical numbering; span read at SAVED line/columns; `saved_line_equals_physical_source_line`, `saved_start_line_equals_physical_source_line` printed | mJ1 (blank line prepended): phys 2, all three js-r3 edges `'' False False False False`, exit 0 (matches entry's 3 false/2 true); mJ2 (rot13 saved line→2 in copy): that edge `False False False False`, others unchanged |
+| O7 | resolved: equality flags `text_at_saved_equals_manual_{require_call,binding_assignment}_text`; `source_ascii_only` true, `source_chars`=`source_bytes` 274/209 | mJ3 (unnamed start col +1): text `"equire('./transform')"`, call flag False |
+| O8 | resolved: `decode_carrier` derives form/prefix/trailer/slice and refuses malformed hex text; printed `carrier_prefix_bytes [48,120]`, `carrier_trailer_bytes [10]`, `decode_body_slice [2,38]`, three checks | mE1 prefix→`zz`: exit1 `r19 has no PUSH4 and JUMPI instruction pair`; mE2 trailer `?`: exit1 `no trailing newline`; mE3 odd body: exit1; mE4 CRLF: exit1 |
+| O9 | resolved for all-record claims via `summary.distinct_*_values` (kind/hardfork/authenticity `["unknown"]`, completeness `["unknown"]`, encodings `["hex","raw"]`); Inference 1 now cites r21 | residual R2 |
+| O10 | pattern origin resolved ("derived once from r19"; `derive_template` on r19 boundaries); `artifact.encoding` inventoried; "11 instruction tuples" still has no count field (countable from printed list; nonblocking) | — |
+| U1 | resolved: snapshot `ecma-statements.html` (round-62 source-snapshots) text: "SingleNameBinding : BindingIdentifier Initializer opt Let name be … Let lhs be ? ResolveBinding ( name , envRecord ). Set value to ? GetV ( value , propertyName )." | C04 item 16 attribution correct |
+| U2 | resolved by O5 block | — |
+
+r24 template semantics (L1 item): printed `template_push1_byte_is_instruction_opcode` false, `template_enclosing_instruction [[0,127]]`, `template_occurrence_start_is_instruction_boundary` false; r19/r21 true/true; r25 occurrence at 7 (true/true, target byte 0) is printed but not claimed.
+
+Residual (nonblocking; L1 adjudicates; minimal correction named):
+R1 C09 Obs7 "the byte at template position 7 is `0x60` (`r24.template.template_push1_byte_value`)": 7 is the r24 FILE offset (`template_push1_byte_offset`=7); the template-relative index (`push1_rel`=6, 0-based) is never printed and no base is stated. Fix: "at file offset 7 (`template_push1_byte_offset`)".
+R2 C09 Obs2 "The other six carriers are `raw_bytes` with … `[0, length]`" points only at r21/r24; stdout carries all six (verified: r21–r26 raw_bytes, `[0,18]`,`[0,34]`,`[0,7]`,`[0,35]`,`[0,19]`,`[0,19]`). Fix: cite all six or a summary field.
+R3 C09 Q01 row "pass, subject to the rows being written … the first two are reserved for this round" is stale: S028/S031 rows exist as `mined`. Header "Every value in the prose is a field of the printed output" overstates: `## Source facts` constants and Provenance run metadata are recorded, as labelled there. Wording only.
+R4 C04 §Reproduce never shows the step creating `readout.stdout.txt` (`python3 -B readout.py tree > readout.stdout.txt`); the digest reproduces under that obvious redirect. Fix: add the redirect line.
+R5 C04 `end_line` is printed but never compared (slice uses the start line only); harmless here (`end_line` 1 = `start_line` 1 printed for all five edges).
+
+VERDICT (exact corrected hashes above): HOLDS — original blockers O3–O6 (C04) and O8 (C09) resolved by changed derivations, each confirmed by mutants that now flip or fail closed; R1–R5 are wording/pointer residuals, none a missing derivation of a load-bearing value. This is one seat's axis only; no admission, no repair, no held flip.
+Scratch: `$S/tree2`, `$S/rr` (extracted blocks, outputs, mJ1–mJ3, mE1–mE4). Installs: none.

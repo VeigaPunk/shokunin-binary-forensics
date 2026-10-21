@@ -207,3 +207,18 @@ the absent facts were raw0x5B absence, the embedded-pattern occurrence
 count/span and embedded target. The retained counterexamples and new
 physical-line/hex-framing counterexamples remain the red-before evidence.
 No lexical token inventory is treated as a Q11 pass.
+
+## Mistakes — representation-unit addition
+
+| id | class | evidence | captured-by | fix and red-before evidence |
+|---|---|---|---|---|
+| M28 | number-drift / representation units: a printed immediate's hex-character length was used as a byte extent | exact-hash re-reviews of `47511b21` in `falsify/R62FEvmCarrier.md` and `R62FEvmAllCriteria.md`; r19 printed `template_enclosing_instruction=[[6,99],[12,96]]` although byte12 is not inside PUSH4@6's immediate | Q06/Q11; fresh review caught it before any admission, including printed fields not narrated by prose | extent uses `len(im)//2`, not `len(im)`; expected r19 `[[12,96]]`, r24 `[[0,127]]`; corrected code/output and before/after hashes in `falsify/unit-correction.json`. Final independent exact-hash review required, not author self-credit. |
+
+The first corrected state `47511b213bf556022869fa104a4bda9d7c9a3b95`
+cleared the original C04 blockers on independent review
+(`R62FJsAllCriteria.md`, `R62FJsScopeUnknown.md`,
+`R62FJsSemantics.md`, `R62FCriticInventoryMethod.md`, appended sections).
+C09's original framing/template/metadata blockers were also cleared,
+but L1 did not admit a known-wrong new printed field despite reviewers'
+“non-fatal” classification. The unit correction above is another bounded
+fix under the original target, with primary inputs and Q01–Q13 unchanged.

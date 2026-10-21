@@ -45,3 +45,107 @@ Frozen target: revenger-shokunin `d97761952be256d145d298022de03091de91d358` (cla
 ## VERDICT
 
 PARTIAL. The declared aggregate 4 identified / 4 screened / 4 included / 0 excluded is arithmetically correct, matches the 4 new rows, the census is clean (validate exit 0), there is no row double-numbering, and both stop rationales are scoped to the new entries. But 404 / additional-HTTP-doc treatment is inconsistent across notes landed in this very commit (F1); the opener and extra-opens accounting does not match the round's actual build source opening reports — one source-opening seat uncredited, two opened documents and one recorded 404 omitted, two 404s self-attributed without an opener record (F2); and S029 is minted over S022's quote ground with the in-round "DO NOT MINT" recommendation left undispositioned (F3). No repair and no admission performed; both candidate entries remain `uncovered` and uncounted. Installs or updates: none (no pacman/uv/npm/cargo transaction; read-only `git archive`, `grep`, `awk`, and the fleet census script on the archived copy only).
+
+---
+
+# Rereview — committed revision `47511b213bf556022869fa104a4bda9d7c9a3b95`
+
+Rereview of the F1–F6 findings against the committed correction. Subject: revenger-shokunin
+`47511b213bf556022869fa104a4bda9d7c9a3b95` ("round-62: preserve 64 fresh attacks and original drafts;
+bounded Q11 corrections pending exact-hash independent re-review"), parent `d97761952be256d145d298022de03091de91d358`.
+`git archive 47511b2 | sha256sum` = `daac8a90918a4994a4c5850bbf8fb8fc6d7dd2b9b8337cbecf0909115935667d`;
+tree hash `45f00420d18f57a52fc7f08e79a14ceff59d8446862338d65ed2e638b68a4c96`; `corpus/SOURCES.md` sha256
+`e517ec939b820c3e4d3c982aa015a7cde496f7174f869d8633d66423d8639139`, `corpus/lessons/round-62.md` sha256
+`3553e21a1620cd3207b5dc9ba8ca98adf87e42bfc137ef12f5a6127f29ec1c5f`. Read-only; scratch
+`/fast/scratch/hyaku/revenger-r62/RevengerR61-2.R62FSourceNewLogs/rereview/`. No edit, no new source claim, no admission.
+
+**Scope of the change (verified).** `corpus/SOURCES.md` differs from `d977619` by exactly two hunks: the S026
+row's `used-by` cell, and one appended note at `:69` inside `## Search log` (`:58` section → `:71` `## Leads`).
+`:66`, `:67`, `:68` are byte-identical to `d977619` (per-line `diff` = IDENTICAL) — the earlier notes are
+preserved, not rewritten. Row-level: exactly one old row touched (`grep -cE "^[-+]\| S[0-9]"` = 2 = S026 old+new);
+field-by-field comparison of the 13 cells shows **only the `used-by` cell changed** (scope/anchor/teaches/status/
+recheck/opened identical) — rule-2 legal. The lesson logs the old→new pair: "`corpus/knowledge/evm-saved-interface-
+candidates.md` → that same retained path plus `corpus/knowledge/round-62-evm-dispatch-byte-evidence.md`,
+`corpus/lessons/round-62.md`". All three targets exist; census `validate` → `W04 S024`, `W04 S028`, `W04 S029`,
+`ok`, exit 0; `rows 31 | tier.A 29 | tier.C 2 | mined 26 queued 1 rejected 4 | missing 0`. README C04/C09 remain
+`uncovered`; both candidates remain `admission-status: candidate`.
+
+**F1 (404 / additional-HTTP-doc treatment) — RESOLVED.** The appended `:69` note now states the rule inside
+the Search log section: "Failed URL attempts are excluded before the source-set count, with their reported
+dispositions retained here rather than called successful sources." That is the minimal correction I named
+(state the 404 rule inside `:66`/`:67`); the counts need not change, and did not. `:68`'s document-level convention
+is untouched and now reads alongside an explicit statement that the two units differ.
+
+**F2 (opener / extra-opens accounting) — RESOLVED.** `:69` names the missing seat and its opens: "Additional
+opener R62SourceRevisions opened /2026/, es2026/es2026-errata versions and recorded /2027/ HTTP404; these belong
+to the S029 specification-version set, were not selected as extra authorities, and were omitted from the earlier
+opener list." `grep -rn "SourceRevisions" corpus/` = 2 hits (SOURCES.md:69, lesson:177) — the seat is now credited.
+The two short-form 404s are now labeled as unverified rather than asserted: "The two short-form mirror 404s were
+self-reported by R62SourceLogPlan without complete URL/status receipts and are unverified here." `/2027/` and
+`/2026/` now appear in corpus. This matches my F2 evidence exactly (`R62SourceEcma.md` 404-count = 0; the only
+404 receipt is `R62SourceRevisions.md:30`).
+
+**F3 (S029 over S022; undispositioned duplicate-row objection) — RESOLVED as a decision, with one nit.**
+`:69` records the disposition: "S029 was retained as a scoped companion after considering R62ReviewSourcesContract's
+duplicate-row objection, not as discovery of a new document." Lesson:185-187 repeats it and adds "it does not
+supersede S022 or claim discovery of a new document." The objection is now dispositioned rather than silent, which
+was the defect I raised; S022's `used-by` is unchanged and still lists only the round-61 entry, so the reviewer's
+preferred used-by append was *not* adopted — a deliberate L1 choice, now disclosed. **Nit (unresolved):** S029's
+anchor cell still carries "§14.3.1.3 BindingEvaluation" while the lesson's S029 pointer remains
+"`R62SourceEcma.md:12-39`" (`grep -c "14\.3\.1" R62SourceEcma.md` = 0, incl. in that range). The label is
+nonetheless derivable from a committed byte: `.ufo/waves/round-62/source-snapshots/ecma-statements.html` contains
+"14.3.1.3</span> RS: BindingEvaluation" (1 match), so the value is snapshot-backed but the lesson's stated
+derivation pointer still does not reach it. Non-load-bearing (the candidate entry uses only the §14.3.3.3 quote),
+so I do not treat it as a break.
+
+**F4 (recheck cadence) — RESOLVED as a disclosed choice.** Lesson:190-193: "Recheck choices are legal cadences, not
+claimed drift-detection capabilities: 90d for the fixed saved-data sources, on-release for the specification
+re-opens. The revision scout's preference for periodic pin checks is retained as a recommendation, not a completed
+freshness fix." That answers my F4: the values are legal cadences, no drift-detection capability is claimed, and
+the contrary recommendation is retained openly rather than dropped. My earlier point that the contradicting analysis
+sat in an uncredited seat is also cured by F2's disposition (the seat is now credited).
+
+**F5 (two incompatible counting conventions unreconciled) — RESOLVED.** `:69`: "The 4/4/4/0 total counts proposed
+registry document sets, including own-work sets; it is not an HTTP-attempt total and is not comparable with the
+historical external-document counts." The non-comparability is now stated in the file rather than left to inference.
+
+**F6 (plan seat's description of its own notes inaccurate) — PARTIALLY RESOLVED; nit remains.** The inaccuracy was
+in `R62SourceLogPlan.md:57-58` ("Each note carries … negative sweep …"). That build report is an immutable
+wave artifact and was **not** rewritten (correctly so — build reports are historical). But `grep -rn "negative sweep"
+corpus/` = 0 at this revision: neither `:69` nor the lesson records that the landed `:66`/`:67` carry no sweep, so
+the discrepancy between the plan seat's self-description and the landed notes is still undispositioned in the corpus.
+Low severity (no negative claim is made by either note, so rule 5 is not breached), but it remains an open nit.
+
+**Additional dispositions I checked (not part of F1–F6, credited to other seats).** `:69` also withdraws the S024
+historical stopping-event attribution and corrects the REA main/tag reason to "incomplete, not wholly false: the
+producing tag was also opened" — verified against the round-61 report `SrcReaEvmDocs.md:23` ("Tag files:
+`rea-agents-6.4.0` HTTP 200 … `rea-agents-6.7.0` HTTP 200 … byte-identical"). The lesson adds that the S026
+re-open is for "literal saved metadata scope; it is not evidence of actual producer origin", with the located quote
+`"evmole@0.9.3"` verified present in `corpus/live/runs/round-19/inspection.json` (1 match). The new C09 entry's
+`source:` header now cites S026 for the recorded metadata ("recorded metadata and identifiers below are that row's
+scope, not S031's") — consistent with the S026 used-by append. The lesson also states the M27 precision correction
+("the old C04 **Python block**, not the entire old entry, printed no span-location derivation") and that "No lexical
+token inventory is treated as a Q11 pass." These are outside my lane's F1–F6; I verified only that they are recorded
+and do not contradict the committed bytes.
+
+**Still-open verification gaps (carried, both outside the graded target).**
+- After-census still unlogged: `grep -c "rows 31\|W04" corpus/lessons/round-62.md` = 0 and the new LOG section
+  adds no census line, though `reports/round-62/claims.md:66` requires "record census before and after" (before:
+  LOG.md:823). I measured the after-state (rows 31, tier.A 29, W04 ×3, validate exit 0) and it remains unlogged.
+- `corpus/scripts/sources-census.sh` still does not exist in this lane; the validator used was
+  `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh`, on the archived copy only.
+
+## REREVIEW VERDICT
+
+**GRADE: HOLDS (nits: 2 open, 0 material).** All six findings are dispositioned in committed bytes: F1, F2, F4 and
+F5 by the appended `:69` clarification plus the lesson's `### Source-log and mistake precision dispositions`;
+F3 by the recorded L1 decision to retain S029 as a scoped companion after considering the duplicate-row objection.
+The 4/4/4/0 totals, the four new rows, the absence of row double-numbering, the stop rationales and the census
+result (validate exit 0) all survive the correction unchanged, and the change is append-only with a single
+rule-2-legal `used-by` edit whose old→new pair is logged. Two low-severity nits remain open and are recorded here
+rather than treated as breaks: (N1) S029's anchor retains "§14.3.1.3 BindingEvaluation" while the lesson's cited
+derivation range does not contain it (value is snapshot-backed; pointer imprecise, non-load-bearing); (N2) the
+plan seat's "each note carries … negative sweep" self-description remains undispositioned in the corpus. Neither
+affects a counted value, a row, or an admission. No edit performed, no new source claim, no admission; both
+candidates remain `admission-status: candidate` and README C04/C09 remain `uncovered`. Installs or updates: none
+(read-only `git archive`, `grep`, `awk`, `diff`, and the fleet census script on the archived copy only).

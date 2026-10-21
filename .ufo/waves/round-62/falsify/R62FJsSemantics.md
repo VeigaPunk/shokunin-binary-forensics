@@ -75,3 +75,15 @@ count to the derived 6 with its command/output or an explicit recorded label, an
 state the full production form. No repair, no admission, no README/K edits here.
 
 Installs: none.
+
+## Focused rereview — 47511b2 (2026-10-21)
+
+L1 rereview of this C04 entry at revision `47511b213bf556022869fa104a4bda9d7c9a3b95`
+(full `git rev-parse`); C04 SHA-256 `d4544c7012a52c0b877022009de6056d6beeda53cd78c2054361e732dce5cafe`
+(`git archive 47511b2… | tar -x` -> `sha256sum`; matches requested). Original
+report above preserved; this section is the exact-hash rereview only.
+
+- **8-word claim corrected.** §Reproduce :92-98 now carries `printf '%s\n' "Set value to ? GetV(value, propertyName)." | wc -w` -> `6`; the entry's exact multi-line printf form reproduces `6` here. §Sources :299 says "6 whitespace-separated words, counted in §Reproduce"; inventory :327 row S1 maps quote/count to that output; Q11 :349 claims pass.
+- **Full production label.** :48 and :299 cite `SingleNameBinding : BindingIdentifier Initializer opt`, matching the page's production; the quote `Set value to ? GetV(value, propertyName).` is verbatim in that production's step 3 (§14.3.3.3, two occurrences).
+- **Recorded pins.** :1 and :299 label the draft date, clause anchors and single-page digest `06db92a8…` as recorded from the S029 row, not derived; archived `corpus/SOURCES.md:43` carries the same digest/anchors; the local primary page still hashes to `06db92a8331aa452b0d4de8c8938f4b7559b72417769b57d0032002398f27d7f`.
+- **Resolution:** the prior Q11 defect on the S029 quote count is corrected in this revision; no new defect on the assigned points. The original BROKEN finding remains the historical record for d977619. No repair, no admission, no README/K edit. No installs.
