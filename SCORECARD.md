@@ -257,3 +257,45 @@ Final measured revision: `7a66d224ef671c086c6e48fa0fc27dff4381281f`.
 Probe exit 0, `K_HELD_BACKED=4/14`,
 `C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2`, `HOLDS_OK=yes`; census exit 0,
 saved-input diff empty (`reports/round-61/measure-after.log:96-136`).
+
+## Round 62 — final measured coverage admission
+
+One claim C1, coverage K (lowest criterion), frozen at
+`a3498e25ad87bf756288812d0ea7c474b09433c7`; base
+`5bd4a90fc1a34caa94496601b60537b3aab12301`. Target at least5/14,
+4/14 falsifies. README stayed uncovered throughout drafting, fresh attacks
+and correction reviews; held flips landed only at
+`0651c7c683b4af3801b5ba63bc57ce99a46a7de0`.
+
+| axis / criterion | before → after | counting command / independent condition | measured revisions | verdict |
+|---|---|---|---|---|
+| coverage — knowledge-map ground K | **4/14 → 6/14**, **2.9 → 4.3** | unchanged `python3 -B reports/round-61/measure.py TREE`, `K_HELD=K_HELD_BACKED`; separately, named fresh-seat Q01–Q13 admission decisions in `corpus/lessons/round-62.md` | base `5bd4a90f` → final measured `b0400f02c2790c5a6cdb8d51c8e8a276b895b926` | **improved**, C1 met |
+| calibration — receipt-identity guard | 2/2 → 2/2 (10.0 → 10.0) | same probe, attributed command-mutant kills checked separately from HOLDS_OK | same | unchanged hold, not a new claim |
+| calibration — selected runnability | calibration4/4, replay10/10 both ends | same probe, controls2/2, d2kills2/2, HOLDS_OK=yes, exit0 | same | unchanged hold |
+| coverage — selected-family presence F | 4/8 → 4/8 (5.0 → 5.0) | existing F command; primary saved-input tree unchanged | same | unchanged |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (10.0 → 10.0) | existing grep, seed12 + readiness6; both files byte-identical | same | unchanged; no new current-host readiness claim |
+| depth / operability / adjacency | no separate numeric claim | new manual derivations and bounded scope; PROVINCE/ADJ-06 unchanged | same | no harm demonstrated |
+
+Final evidence: `reports/round-62/measure-after.log` and
+`reports/round-62/final-verification.json`: two entry readouts exit0 and
+match their embedded Provenance byte-for-byte (JS25 lines, EVM8 lines);
+only C04/C09 change status among14 rows; all8 held knowledge paths resolve;
+all611 preserved-input/old-evidence manifest files match; all64 original
+fresh-report prefixes preserved; unchanged ten-verifier set and Q01–Q13;
+source census exit0 (three disclosed W04s), rows27→31.
+
+The K probe still measures existence/status only; it is not an admission
+gate. New admitted files are `round-62-commonjs-require-name-evidence.md`
+and `round-62-evm-dispatch-byte-evidence.md`. Original rejected candidates,
+intermediate rejected revisions and counterexamples remain, uncredited.
+The two within-round correction stages are not new claims or replacement
+seats. M27/M28 record missing derivation and byte/hex-unit mistakes.
+
+Capabilities: none added. No gate-registry conformity, new producer route,
+runtime capability or promotion is claimed. Q01–Q13 were not weakened and
+no Q14/lexical helper was adopted.
+
+Planned future selection: coverage F on an authored local frontier artifact,
+or the remaining receipt-clause calibration debt; keep SKILL/registry,
+F03-versus-STALE and operator ADJ-06 debt explicit. This is a plan, not a
+dispatch or claim for another round.

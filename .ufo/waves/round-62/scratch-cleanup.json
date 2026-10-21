@@ -1,0 +1,7 @@
+{
+  "owned_fast_root": "/fast/scratch/hyaku/revenger-r62",
+  "fast_root_remaining": false,
+  "owned_tmp_remaining": [],
+  "scope": "only this lane round62 scratch; no sibling scratch deleted",
+  "retained": "entry code+stdout, source snapshots/manifest, bounded counterexample data, preservation manifest, 128 reports, measured JSON/logs"
+}

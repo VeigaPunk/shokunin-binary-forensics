@@ -1,0 +1,971 @@
+{
+  "round": 62,
+  "claim_base": "5bd4a90fc1a34caa94496601b60537b3aab12301",
+  "measured_revision": "b0400f02c2790c5a6cdb8d51c8e8a276b895b926",
+  "waves": [
+    {
+      "wave": "build",
+      "seats": 64,
+      "roles": {
+        "executor": 8,
+        "scout": 13,
+        "scribe": 6,
+        "reviewer": 14,
+        "critic": 8,
+        "connector": 4,
+        "sentinel": 2,
+        "revenger": 4,
+        "simplifier": 1,
+        "mutation-tester": 4
+      },
+      "attempts": [
+        [
+          "2026-10-21T14:59:28.299028",
+          0
+        ]
+      ],
+      "reports": 64,
+      "dead": 0
+    },
+    {
+      "wave": "falsify",
+      "seats": 64,
+      "roles": {
+        "reviewer": 23,
+        "scout": 17,
+        "revenger": 3,
+        "critic": 11,
+        "connector": 2,
+        "mutation-tester": 4,
+        "sentinel": 2,
+        "executor": 2
+      },
+      "attempts": [
+        [
+          "2026-10-21T17:26:30.164929",
+          0
+        ]
+      ],
+      "reports": 64,
+      "dead": 0,
+      "initial_grades": {
+        "BROKEN": 10,
+        "HOLDS": 30,
+        "PARTIAL": 24
+      }
+    }
+  ],
+  "total_seats": 128,
+  "replacement_seats": 0,
+  "followup_dispatches": 0,
+  "planner": "L1-held",
+  "correction_followups": "messages to the same existing seats; no new task spawns",
+  "final_entry_hashes": {
+    "corpus/knowledge/round-62-evm-dispatch-byte-evidence.md": "ac820493e5d0bbb78d1da3161814229c3184264446e3e581ea64373914589c26",
+    "corpus/knowledge/round-62-commonjs-require-name-evidence.md": "1186e596e59cd586f97c3d5b0cdf26dc71be70347dcb14a4409a340699d663bb"
+  },
+  "final_decision": "C1 met: two admissions, K4/14->6/14; holds preserved",
+  "reports": [
+    {
+      "wave": "build",
+      "seat": "R62EvmEntry",
+      "agent": "RevengerR61-2.R62EvmEntry",
+      "path": ".ufo/waves/round-62/build/R62EvmEntry.md",
+      "sha256": "0f756f2fb29b51a46731cfe09410fd60847d45439fd4e7edd6c23e1c2dc02e5d"
+    },
+    {
+      "wave": "build",
+      "seat": "R62JsEntry",
+      "agent": "RevengerR61-2.R62JsEntry",
+      "path": ".ufo/waves/round-62/build/R62JsEntry.md",
+      "sha256": "c93bb92f9a17fc5c8ae76a8bdf171eddd878caf57b73011d82d97dd497f43cb7"
+    },
+    {
+      "wave": "build",
+      "seat": "R62EvmCarrierOracle",
+      "agent": "RevengerR61-2.R62EvmCarrierOracle",
+      "path": ".ufo/waves/round-62/build/R62EvmCarrierOracle.md",
+      "sha256": "a1930c31051f21e1f86453f998fe591f1229de194be9bd2e3cd667056f3fd607"
+    },
+    {
+      "wave": "build",
+      "seat": "R62EvmBoundaryOracle",
+      "agent": "RevengerR61-2.R62EvmBoundaryOracle",
+      "path": ".ufo/waves/round-62/build/R62EvmBoundaryOracle.md",
+      "sha256": "9f06595c3a6de23fa5ee2d857d6c19b1fecb833e70083bc889b3f0a25d05bdce"
+    },
+    {
+      "wave": "build",
+      "seat": "R62EvmCandidatesOracle",
+      "agent": "RevengerR61-2.R62EvmCandidatesOracle",
+      "path": ".ufo/waves/round-62/build/R62EvmCandidatesOracle.md",
+      "sha256": "a67a4e36e7b49d21f1d3e18390ec84158cece5c28b5ac608313f17298580ba3a"
+    },
+    {
+      "wave": "build",
+      "seat": "R62JsSourceOracle",
+      "agent": "RevengerR61-2.R62JsSourceOracle",
+      "path": ".ufo/waves/round-62/build/R62JsSourceOracle.md",
+      "sha256": "6f71023ef84dc49457e1472a3509ac65f8467354b4c9f0cc906d1fc369081ead"
+    },
+    {
+      "wave": "build",
+      "seat": "R62JsEdgesOracle",
+      "agent": "RevengerR61-2.R62JsEdgesOracle",
+      "path": ".ufo/waves/round-62/build/R62JsEdgesOracle.md",
+      "sha256": "a8a98b6046b7abba9fa71fb592d4171833f3957309bf1d2021b41f3ddb9a25d0"
+    },
+    {
+      "wave": "build",
+      "seat": "R62JsDeltaOracle",
+      "agent": "RevengerR61-2.R62JsDeltaOracle",
+      "path": ".ufo/waves/round-62/build/R62JsDeltaOracle.md",
+      "sha256": "077aa053d4918e8962c7b50cef557928668c56f355deb6e9534eb4229e9b975e"
+    },
+    {
+      "wave": "build",
+      "seat": "R62PreservationOracle",
+      "agent": "RevengerR61-2.R62PreservationOracle",
+      "path": ".ufo/waves/round-62/build/R62PreservationOracle.md",
+      "sha256": "b82643313b4aaaca5e43c2264433233406f54224df78a78622a6cf6290a28242"
+    },
+    {
+      "wave": "build",
+      "seat": "R62MapBaseline",
+      "agent": "RevengerR61-2.R62MapBaseline",
+      "path": ".ufo/waves/round-62/build/R62MapBaseline.md",
+      "sha256": "8c4417b60d393c93894641d7ef6a90e686aa36a86b9cca617e52677712b23683"
+    },
+    {
+      "wave": "build",
+      "seat": "R62SourceEvmSpec",
+      "agent": "RevengerR61-2.R62SourceEvmSpec",
+      "path": ".ufo/waves/round-62/build/R62SourceEvmSpec.md",
+      "sha256": "380174f1b78290e28dfd9f0136f12ba0e7b442d4b61622e572e4238ba591850a"
+    },
+    {
+      "wave": "build",
+      "seat": "R62SourceEcma",
+      "agent": "RevengerR61-2.R62SourceEcma",
+      "path": ".ufo/waves/round-62/build/R62SourceEcma.md",
+      "sha256": "75e1ff6c048643d8413cec663007fb50d17468205e801454f0d50de9c90e3fea"
+    },
+    {
+      "wave": "build",
+      "seat": "R62SourceJsOwn",
+      "agent": "RevengerR61-2.R62SourceJsOwn",
+      "path": ".ufo/waves/round-62/build/R62SourceJsOwn.md",
+      "sha256": "d16abe8d0beae43da0c33b3b19751dd01331c458e0db19fe1964757495d73358"
+    },
+    {
+      "wave": "build",
+      "seat": "R62SourceEvmOwn",
+      "agent": "RevengerR61-2.R62SourceEvmOwn",
+      "path": ".ufo/waves/round-62/build/R62SourceEvmOwn.md",
+      "sha256": "7cee31d2ff1cafc3433222843bdf9355e85164308d7ca7b71cb6b46a9f89213c"
+    },
+    {
+      "wave": "build",
+      "seat": "R62SourceLogPlan",
+      "agent": "RevengerR61-2.R62SourceLogPlan",
+      "path": ".ufo/waves/round-62/build/R62SourceLogPlan.md",
+      "sha256": "5ec4c8b353c1e56257210c0ec7df17061d01deb26e3eab3609559eeb73a9c06e"
+    },
+    {
+      "wave": "build",
+      "seat": "R62LessonIntake",
+      "agent": "RevengerR61-2.R62LessonIntake",
+      "path": ".ufo/waves/round-62/build/R62LessonIntake.md",
+      "sha256": "65586c4aa35d70b57286bf0140e1d1dd5b712900b40ea849290d8ae38e35d851"
+    },
+    {
+      "wave": "build",
+      "seat": "R62Q11InventoryRule",
+      "agent": "RevengerR61-2.R62Q11InventoryRule",
+      "path": ".ufo/waves/round-62/build/R62Q11InventoryRule.md",
+      "sha256": "24df50771c2d3d7532da82322f57d322c9eec0a881f4c9d1d7f355459da3bc7f"
+    },
+    {
+      "wave": "build",
+      "seat": "R62MistakeLesson",
+      "agent": "RevengerR61-2.R62MistakeLesson",
+      "path": ".ufo/waves/round-62/build/R62MistakeLesson.md",
+      "sha256": "7281f42fa8f556bdfd6c38671898995a5d51c909ae880c672c2eb00c01dfb0dd"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReadmeAdmissionPlan",
+      "agent": "RevengerR61-2.R62ReadmeAdmissionPlan",
+      "path": ".ufo/waves/round-62/build/R62ReadmeAdmissionPlan.md",
+      "sha256": "098fdfd1192700a3b853d6d7d2646b9ca9b354ed3451572c83d320bd7fd7f50d"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReviewerChecklist",
+      "agent": "RevengerR61-2.R62ReviewerChecklist",
+      "path": ".ufo/waves/round-62/build/R62ReviewerChecklist.md",
+      "sha256": "fc30b033c6f666e9d9ad84fdc4411e21051444f6b0dd044fd48d63e2ff24a239"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReviewQ11Span",
+      "agent": "RevengerR61-2.R62ReviewQ11Span",
+      "path": ".ufo/waves/round-62/build/R62ReviewQ11Span.md",
+      "sha256": "a294cad91aa6f24c90634df8094ec3dd67818f998c3b37cc9233421260fd7559"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReviewQ11R24",
+      "agent": "RevengerR61-2.R62ReviewQ11R24",
+      "path": ".ufo/waves/round-62/build/R62ReviewQ11R24.md",
+      "sha256": "e793ee1dd985b4571c497c37f63653cc64eaf94a88aca2869746c37ae9828e4a"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReviewDigestScope",
+      "agent": "RevengerR61-2.R62ReviewDigestScope",
+      "path": ".ufo/waves/round-62/build/R62ReviewDigestScope.md",
+      "sha256": "4294335ac66149c1127efecd6015eff9004077c51c4f96f0acd9bcacc844ec91"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReviewPairCounts",
+      "agent": "RevengerR61-2.R62ReviewPairCounts",
+      "path": ".ufo/waves/round-62/build/R62ReviewPairCounts.md",
+      "sha256": "fac834e9ef0982b44c911657e3a70194085c3cb0968ccd3868fa16b84b87fff8"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReviewRecordVsDerived",
+      "agent": "RevengerR61-2.R62ReviewRecordVsDerived",
+      "path": ".ufo/waves/round-62/build/R62ReviewRecordVsDerived.md",
+      "sha256": "88d6fc3a6b3433b7b855f634b6b46e0f2b67eee69f548ef83c5188f761ae9605"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReviewJsNames",
+      "agent": "RevengerR61-2.R62ReviewJsNames",
+      "path": ".ufo/waves/round-62/build/R62ReviewJsNames.md",
+      "sha256": "aad9cf4f91e4aa9f26c96c088aa0320cc1a33aa4c78401aabad4de97a51dd144"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReviewJsSpans",
+      "agent": "RevengerR61-2.R62ReviewJsSpans",
+      "path": ".ufo/waves/round-62/build/R62ReviewJsSpans.md",
+      "sha256": "b9851eb070fcf96fbaf7ac6736d4d2773b92484c395d8577192f52bf7842a34d"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReviewJsDelta",
+      "agent": "RevengerR61-2.R62ReviewJsDelta",
+      "path": ".ufo/waves/round-62/build/R62ReviewJsDelta.md",
+      "sha256": "6a53defd33d9c38acaa14c51a22035a3fc7a1ca623cb2b172cb95c61f1daaff3"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReviewJsQ13",
+      "agent": "RevengerR61-2.R62ReviewJsQ13",
+      "path": ".ufo/waves/round-62/build/R62ReviewJsQ13.md",
+      "sha256": "2390ad6deb67f707dc5d8437611271eccac87c44182913a9abdc61ec4eec3334"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReviewEvmQ13",
+      "agent": "RevengerR61-2.R62ReviewEvmQ13",
+      "path": ".ufo/waves/round-62/build/R62ReviewEvmQ13.md",
+      "sha256": "660ef721abc93d9a4581bbe010e0ae69a1e3d80b4502b723eeb168202e4d8030"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReviewReadmeScope",
+      "agent": "RevengerR61-2.R62ReviewReadmeScope",
+      "path": ".ufo/waves/round-62/build/R62ReviewReadmeScope.md",
+      "sha256": "8d10fd6b78a928373e9576f32c5a28e87c33f2857314bc34f2612a0b1aaf2942"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ReviewSourcesContract",
+      "agent": "RevengerR61-2.R62ReviewSourcesContract",
+      "path": ".ufo/waves/round-62/build/R62ReviewSourcesContract.md",
+      "sha256": "39ed34908551e887528c4b01657795fe10a6450aba10ab2a9ef7937be43399ee"
+    },
+    {
+      "wave": "build",
+      "seat": "R62CriticFrozenClaim",
+      "agent": "RevengerR61-2.R62CriticFrozenClaim",
+      "path": ".ufo/waves/round-62/build/R62CriticFrozenClaim.md",
+      "sha256": "9cf09dbf2df9e6efdf9723139b273decda693e44af6b82ef8292ec122d4b42a1"
+    },
+    {
+      "wave": "build",
+      "seat": "R62CriticEvmScope",
+      "agent": "RevengerR61-2.R62CriticEvmScope",
+      "path": ".ufo/waves/round-62/build/R62CriticEvmScope.md",
+      "sha256": "7a44e1273dfb35431cfc2b40125cc1ffc3cba9e4a7867598eadf16a8b9fd1619"
+    },
+    {
+      "wave": "build",
+      "seat": "R62CriticJsScope",
+      "agent": "RevengerR61-2.R62CriticJsScope",
+      "path": ".ufo/waves/round-62/build/R62CriticJsScope.md",
+      "sha256": "f32f15ca42f75a0bbb72d66c2bcbd9858cd93beb91306737b5dd8027e24680bb"
+    },
+    {
+      "wave": "build",
+      "seat": "R62CriticNoCredit",
+      "agent": "RevengerR61-2.R62CriticNoCredit",
+      "path": ".ufo/waves/round-62/build/R62CriticNoCredit.md",
+      "sha256": "256510c9b997e8f5bfe4d22268dc665fcf0627e1715436e9bbd98292c318c9ca"
+    },
+    {
+      "wave": "build",
+      "seat": "R62CriticSourcedClaim",
+      "agent": "RevengerR61-2.R62CriticSourcedClaim",
+      "path": ".ufo/waves/round-62/build/R62CriticSourcedClaim.md",
+      "sha256": "4935e3749891d4de003a3fc19f9aafa81575fa66e2a340b0d6bf1c8e1456f84f"
+    },
+    {
+      "wave": "build",
+      "seat": "R62CriticQ14",
+      "agent": "RevengerR61-2.R62CriticQ14",
+      "path": ".ufo/waves/round-62/build/R62CriticQ14.md",
+      "sha256": "df53a199e3e3dfb8582e74a0951ac548cf6f4aa2697f56edb21462e4c705a399"
+    },
+    {
+      "wave": "build",
+      "seat": "R62CriticCrossLane",
+      "agent": "RevengerR61-2.R62CriticCrossLane",
+      "path": ".ufo/waves/round-62/build/R62CriticCrossLane.md",
+      "sha256": "42f4fd3482dfae7e94d9323002052da6ad75bfe0d04a37a7c7e2fb44d5a86437"
+    },
+    {
+      "wave": "build",
+      "seat": "R62CriticHarms",
+      "agent": "RevengerR61-2.R62CriticHarms",
+      "path": ".ufo/waves/round-62/build/R62CriticHarms.md",
+      "sha256": "ae8859130dd4ad8ef894a4dd2a747289a3af1bd1dc0fd2cca94bfc4d971175c9"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ConnectEvmPrior",
+      "agent": "RevengerR61-2.R62ConnectEvmPrior",
+      "path": ".ufo/waves/round-62/build/R62ConnectEvmPrior.md",
+      "sha256": "0c2f40788c19c12a0c21501151e5d4646f591dfb07a32618da78e24688c2f24c"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ConnectJsPrior",
+      "agent": "RevengerR61-2.R62ConnectJsPrior",
+      "path": ".ufo/waves/round-62/build/R62ConnectJsPrior.md",
+      "sha256": "297500c33ea80ddfddbaf02a1c9da765e783f598b8ad9ad0f06e6b4c28d6bb0f"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ConnectKasegi",
+      "agent": "RevengerR61-2.R62ConnectKasegi",
+      "path": ".ufo/waves/round-62/build/R62ConnectKasegi.md",
+      "sha256": "96253c265088df94b7ed9ad8225698b28878bcc491d3df30ffd76b388e11c040"
+    },
+    {
+      "wave": "build",
+      "seat": "R62ConnectLearning",
+      "agent": "RevengerR61-2.R62ConnectLearning",
+      "path": ".ufo/waves/round-62/build/R62ConnectLearning.md",
+      "sha256": "3491c262e08a58c85596d8164479cdf350a7cfd6fb72acdd85bc6df37ac4203e"
+    },
+    {
+      "wave": "build",
+      "seat": "R62SafeEvmReadout",
+      "agent": "RevengerR61-2.R62SafeEvmReadout",
+      "path": ".ufo/waves/round-62/build/R62SafeEvmReadout.md",
+      "sha256": "54e3109fe4d8dc43a71802adb513f417edee9bd4f199a1fab4bd20a97dc88018"
+    },
+    {
+      "wave": "build",
+      "seat": "R62SafeJsReadout",
+      "agent": "RevengerR61-2.R62SafeJsReadout",
+      "path": ".ufo/waves/round-62/build/R62SafeJsReadout.md",
+      "sha256": "0b7d76423970ed801e2f637d1baf10860be470482f02eb70003fcee2fd4a0847"
+    },
+    {
+      "wave": "build",
+      "seat": "R62RevenR24Truth",
+      "agent": "RevengerR61-2.R62RevenR24Truth",
+      "path": ".ufo/waves/round-62/build/R62RevenR24Truth.md",
+      "sha256": "9abc41d4e79f77559c82377babf2aafef193bf54833c3bb597d17ca8e628a94e"
+    },
+    {
+      "wave": "build",
+      "seat": "R62RevenR26Boundary",
+      "agent": "RevengerR61-2.R62RevenR26Boundary",
+      "path": ".ufo/waves/round-62/build/R62RevenR26Boundary.md",
+      "sha256": "e3e875af7c9d8b86fb6b174eed0b3d25a23090bef3e3d036bd72f380b1dcfbff"
+    },
+    {
+      "wave": "build",
+      "seat": "R62RevenJsRoles",
+      "agent": "RevengerR61-2.R62RevenJsRoles",
+      "path": ".ufo/waves/round-62/build/R62RevenJsRoles.md",
+      "sha256": "2e5e5b5d35a9039fe7287b358da558fc70a50f4a066d68601c256c0cd421023d"
+    },
+    {
+      "wave": "build",
+      "seat": "R62RevenRecordsCensus",
+      "agent": "RevengerR61-2.R62RevenRecordsCensus",
+      "path": ".ufo/waves/round-62/build/R62RevenRecordsCensus.md",
+      "sha256": "e627148efc3f40673d429806a85308c7cfee2394520ec5bb5385c7f18c512678"
+    },
+    {
+      "wave": "build",
+      "seat": "R62DebtSearchLog",
+      "agent": "RevengerR61-2.R62DebtSearchLog",
+      "path": ".ufo/waves/round-62/build/R62DebtSearchLog.md",
+      "sha256": "cc51a9fb312f6130b936eacb73f9750e66ee07540f404fd77111e6438c0bfa2b"
+    },
+    {
+      "wave": "build",
+      "seat": "R62DebtS019Anchor",
+      "agent": "RevengerR61-2.R62DebtS019Anchor",
+      "path": ".ufo/waves/round-62/build/R62DebtS019Anchor.md",
+      "sha256": "71f686f06b010a0b1cc5ca0306b5fcf78bf324bcbc4a41697e114b4797f7c406"
+    },
+    {
+      "wave": "build",
+      "seat": "R62DebtQ12Flip",
+      "agent": "RevengerR61-2.R62DebtQ12Flip",
+      "path": ".ufo/waves/round-62/build/R62DebtQ12Flip.md",
+      "sha256": "95b4470abffbc116cdf73a55f6785bec3b37691c07ac2711a817777238185b08"
+    },
+    {
+      "wave": "build",
+      "seat": "R62DebtM25Capture",
+      "agent": "RevengerR61-2.R62DebtM25Capture",
+      "path": ".ufo/waves/round-62/build/R62DebtM25Capture.md",
+      "sha256": "e5481273cf45aa94db331bfde94bc165d9807cdafcada68b9ddc8f638465e0cd"
+    },
+    {
+      "wave": "build",
+      "seat": "R62DebtExistingFiles",
+      "agent": "RevengerR61-2.R62DebtExistingFiles",
+      "path": ".ufo/waves/round-62/build/R62DebtExistingFiles.md",
+      "sha256": "2f0a5a3374d976dbb057f0fba414f5c4f430969e2c2493134c8f2a8cac743656"
+    },
+    {
+      "wave": "build",
+      "seat": "R62FixturePremises",
+      "agent": "RevengerR61-2.R62FixturePremises",
+      "path": ".ufo/waves/round-62/build/R62FixturePremises.md",
+      "sha256": "5c77917af7b5032a65de912c4f89cd3e31624c4f78d618054e35b426c85e9751"
+    },
+    {
+      "wave": "build",
+      "seat": "R62SimplifyEntrySurface",
+      "agent": "RevengerR61-2.R62SimplifyEntrySurface",
+      "path": ".ufo/waves/round-62/build/R62SimplifyEntrySurface.md",
+      "sha256": "370efb5c75f0221d4a323ef57b3c2f2aa0be9df8db1bf34e9e7dedcdf69941f3"
+    },
+    {
+      "wave": "build",
+      "seat": "R62BaselineHolds",
+      "agent": "RevengerR61-2.R62BaselineHolds",
+      "path": ".ufo/waves/round-62/build/R62BaselineHolds.md",
+      "sha256": "9e73fe685980ff8484d83f7f7857b760711a0f722c4f08ca557e31af9b982ae0"
+    },
+    {
+      "wave": "build",
+      "seat": "R62MutantJsCallSpan",
+      "agent": "RevengerR61-2.R62MutantJsCallSpan",
+      "path": ".ufo/waves/round-62/build/R62MutantJsCallSpan.md",
+      "sha256": "8e6cfb570b7b346432e835183178d9fb5b6cff69739769d0d948e8a8e583655c"
+    },
+    {
+      "wave": "build",
+      "seat": "R62MutantEvmDigest",
+      "agent": "RevengerR61-2.R62MutantEvmDigest",
+      "path": ".ufo/waves/round-62/build/R62MutantEvmDigest.md",
+      "sha256": "8a7b02d9dc7cda7ff242603c1df9863b7cb1c9f8d060345e9ad39ecc971b7167"
+    },
+    {
+      "wave": "build",
+      "seat": "R62MutantEvmRawVsInsn",
+      "agent": "RevengerR61-2.R62MutantEvmRawVsInsn",
+      "path": ".ufo/waves/round-62/build/R62MutantEvmRawVsInsn.md",
+      "sha256": "6b448c0de2e3c048be14796f9b91da18243847ff563c9a3266e87945591db33e"
+    },
+    {
+      "wave": "build",
+      "seat": "R62MutantJsNameSet",
+      "agent": "RevengerR61-2.R62MutantJsNameSet",
+      "path": ".ufo/waves/round-62/build/R62MutantJsNameSet.md",
+      "sha256": "cf48cba152feb0f976382c73d9c257372f450b358fa9bdfab6c8ff062b7c045c"
+    },
+    {
+      "wave": "build",
+      "seat": "R62SourceRevisions",
+      "agent": "RevengerR61-2.R62SourceRevisions",
+      "path": ".ufo/waves/round-62/build/R62SourceRevisions.md",
+      "sha256": "b62fed71280b20cf98dd8cc69fbc0cc9de1ee45cb02deb69a1a9eeb6757e5ddb"
+    },
+    {
+      "wave": "build",
+      "seat": "R62InventoryRedExemplar",
+      "agent": "RevengerR61-2.R62InventoryRedExemplar",
+      "path": ".ufo/waves/round-62/build/R62InventoryRedExemplar.md",
+      "sha256": "c2055c5ec908b37876f8381816575311da61b6ff8f360184ee2afcc7fb3079ba"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmCarrier",
+      "agent": "RevengerR61-2.R62FEvmCarrier",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmCarrier.md",
+      "sha256": "9e5eec495e0cfe1b02aa3297b441cda04f175385f317d0050edbe6c856720cb4"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmRecords",
+      "agent": "RevengerR61-2.R62FEvmRecords",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmRecords.md",
+      "sha256": "a443f9460037f8a6ae702d1289e377c1ce7d3c6fd16e99a816434f819626eddb"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmOpcodeSources",
+      "agent": "RevengerR61-2.R62FEvmOpcodeSources",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmOpcodeSources.md",
+      "sha256": "d4d69944dc5dd14282165fd7e67c2238e8e51f2bfc56c72e8f07036b5deb7abf"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmR19R21Pair",
+      "agent": "RevengerR61-2.R62FEvmR19R21Pair",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmR19R21Pair.md",
+      "sha256": "451ebcf67a61ed0a056856bb9a2e0a16ce609ad07a8299f67bf54f7eda5831eb"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmR22Pairs",
+      "agent": "RevengerR61-2.R62FEvmR22Pairs",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmR22Pairs.md",
+      "sha256": "9bb814e9025850836eb30d37d6becb2b39debec22b783e7e428860d0bac93e85"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmR23Empty",
+      "agent": "RevengerR61-2.R62FEvmR23Empty",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmR23Empty.md",
+      "sha256": "936dafc808199afdc8259e0a244c0a7cd422e9ed03de3f441f91cfe1ff250464"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmR24RawWalk",
+      "agent": "RevengerR61-2.R62FEvmR24RawWalk",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmR24RawWalk.md",
+      "sha256": "4938d1480fe96a9e88c43cc5a34321968569a417f2ec0178daae6b79b6fdc610"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmR24Span",
+      "agent": "RevengerR61-2.R62FEvmR24Span",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmR24Span.md",
+      "sha256": "0beb1026ae8c612873ed9f9951c5beaa999376b81cf63bfb5db3a401929a8b26"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmR25R26",
+      "agent": "RevengerR61-2.R62FEvmR25R26",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmR25R26.md",
+      "sha256": "6a1923764548302926c538641e284e340e4d4cbee2e66a46f5da7679cb7ca185"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmSummaryCounts",
+      "agent": "RevengerR61-2.R62FEvmSummaryCounts",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmSummaryCounts.md",
+      "sha256": "c9a5c85d709458b3f2e563a87356c000bb1bdad120cd78c783420f7f7503af62"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmWalkerSpec",
+      "agent": "RevengerR61-2.R62FEvmWalkerSpec",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmWalkerSpec.md",
+      "sha256": "7b96c0daf3cbc5a105638ba0ef6e8e4a00b221e4b460584b8214999bbb4e3b6c"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmDigestLabels",
+      "agent": "RevengerR61-2.R62FEvmDigestLabels",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmDigestLabels.md",
+      "sha256": "dc300615a0955c166cbf125ed582f2608981a99183288010112266f17ac07a51"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmQ11Inventory",
+      "agent": "RevengerR61-2.R62FEvmQ11Inventory",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmQ11Inventory.md",
+      "sha256": "0f4c42a7ff3aa3373818203f97edf299faa349dfc61beeb57fb8c05e160737b6"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmUnknowns",
+      "agent": "RevengerR61-2.R62FEvmUnknowns",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmUnknowns.md",
+      "sha256": "7ecc2a44c4e51cea186d8b379259772142b25ed1426c4b2682cc2acfe6e9f0d9"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmCrosslane",
+      "agent": "RevengerR61-2.R62FEvmCrosslane",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmCrosslane.md",
+      "sha256": "172dae0b5430528c2e045675666e59b97aa416c6ca2f87ddbf03ffb09c4309cd"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsFilesType",
+      "agent": "RevengerR61-2.R62FJsFilesType",
+      "path": ".ufo/waves/round-62/falsify/R62FJsFilesType.md",
+      "sha256": "350c553f0623d359424e8583727b0bb40adc6d05f7701f59087fef09de11b5c1"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsSourceNames",
+      "agent": "RevengerR61-2.R62FJsSourceNames",
+      "path": ".ufo/waves/round-62/falsify/R62FJsSourceNames.md",
+      "sha256": "5c0d12ccf95a6593e721e8b0d0bd15e3554673146112f9102111018fde9c5422"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsCallSpans",
+      "agent": "RevengerR61-2.R62FJsCallSpans",
+      "path": ".ufo/waves/round-62/falsify/R62FJsCallSpans.md",
+      "sha256": "6c01b5eb7f114873cc35face3cdc89830831c9fd879552cd50b26583d30a05b8"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsBindingSpans",
+      "agent": "RevengerR61-2.R62FJsBindingSpans",
+      "path": ".ufo/waves/round-62/falsify/R62FJsBindingSpans.md",
+      "sha256": "9a8edeca1d27cb50c75c5fdfaf91eeb5d762724b729f3350a2a3fcd3e534d3c6"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsImportsNames",
+      "agent": "RevengerR61-2.R62FJsImportsNames",
+      "path": ".ufo/waves/round-62/falsify/R62FJsImportsNames.md",
+      "sha256": "f9e613e05e6f5b968d2ebf8c5ae0ba04fbf514f13669a9523ca0a342d1c385e2"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsTargetIdentity",
+      "agent": "RevengerR61-2.R62FJsTargetIdentity",
+      "path": ".ufo/waves/round-62/falsify/R62FJsTargetIdentity.md",
+      "sha256": "d8f3ee4556c56b1b6ded79cf5d2e6eaf00a9d6391b84a62804e33a5c9f54d81a"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsRecordFields",
+      "agent": "RevengerR61-2.R62FJsRecordFields",
+      "path": ".ufo/waves/round-62/falsify/R62FJsRecordFields.md",
+      "sha256": "4b11b525b7b84f44cdc7169f42dc4e00c56beab47acf5467857538b8edc3c63f"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsNameDelta",
+      "agent": "RevengerR61-2.R62FJsNameDelta",
+      "path": ".ufo/waves/round-62/falsify/R62FJsNameDelta.md",
+      "sha256": "b6b3a2d501af4cdb4cccc0ef4c0e8df04a66cc90187a8cf190e6a50663a967c1"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsSemantics",
+      "agent": "RevengerR61-2.R62FJsSemantics",
+      "path": ".ufo/waves/round-62/falsify/R62FJsSemantics.md",
+      "sha256": "8f32851e5df84a736e1f8b12872fd9f5ae85a77874c23d611bc8a9ad32681762"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsQ11Inventory",
+      "agent": "RevengerR61-2.R62FJsQ11Inventory",
+      "path": ".ufo/waves/round-62/falsify/R62FJsQ11Inventory.md",
+      "sha256": "69e5be587582f4179201738619366d68b50ec3c9ca384ae7af64dcb5196cd7fc"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsScopeUnknown",
+      "agent": "RevengerR61-2.R62FJsScopeUnknown",
+      "path": ".ufo/waves/round-62/falsify/R62FJsScopeUnknown.md",
+      "sha256": "cfd290da5ebe160fb388f9bb8bf12df3986727b0232df2f989534cf120e18350"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsRegexBoundary",
+      "agent": "RevengerR61-2.R62FJsRegexBoundary",
+      "path": ".ufo/waves/round-62/falsify/R62FJsRegexBoundary.md",
+      "sha256": "a9556c360770cdbf87cc0c4489d77328b69bab5d99f4a396a49c7422ce2d4c31"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsSourceRows",
+      "agent": "RevengerR61-2.R62FJsSourceRows",
+      "path": ".ufo/waves/round-62/falsify/R62FJsSourceRows.md",
+      "sha256": "0b88a22d82cdfdc174ec355eb2addd571828dcb10266d6feadeb80ca4ed1fee7"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsQ13Boundary",
+      "agent": "RevengerR61-2.R62FJsQ13Boundary",
+      "path": ".ufo/waves/round-62/falsify/R62FJsQ13Boundary.md",
+      "sha256": "2ea15c97e9b9dc48b88949a36b20e810772b1fbd7e99d649ad7068084ddf049f"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsCrosslane",
+      "agent": "RevengerR61-2.R62FJsCrosslane",
+      "path": ".ufo/waves/round-62/falsify/R62FJsCrosslane.md",
+      "sha256": "4009244b712903647b8b91dd0fad76205c0327dbe89db57c0033ede284ec1fcf"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FSourceOpenS028",
+      "agent": "RevengerR61-2.R62FSourceOpenS028",
+      "path": ".ufo/waves/round-62/falsify/R62FSourceOpenS028.md",
+      "sha256": "46d2db8f992e5bd155682bffdb7b69088b1bd385e3dbe02483a4eaa6622e5079"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FSourceOpenS029",
+      "agent": "RevengerR61-2.R62FSourceOpenS029",
+      "path": ".ufo/waves/round-62/falsify/R62FSourceOpenS029.md",
+      "sha256": "9e74da236e9b9c0b1a6e60d14f0d9b97d75f39f465d0121836a15571274240da"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FSourceOpenS030",
+      "agent": "RevengerR61-2.R62FSourceOpenS030",
+      "path": ".ufo/waves/round-62/falsify/R62FSourceOpenS030.md",
+      "sha256": "87578b11eb637ebd5ba9ff238ff62a2a982c46e65c4b18c6d2b74d308106761a"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FSourceOpenS031",
+      "agent": "RevengerR61-2.R62FSourceOpenS031",
+      "path": ".ufo/waves/round-62/falsify/R62FSourceOpenS031.md",
+      "sha256": "f00def8894a8e5ef8bf2b027a1343caea96973629a99c4428bdcd547a9bea47e"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FSourceCells",
+      "agent": "RevengerR61-2.R62FSourceCells",
+      "path": ".ufo/waves/round-62/falsify/R62FSourceCells.md",
+      "sha256": "de9736e96d65f764efa8093957f164f1ad6bf8c10c965a224be87ab6b95db8d4"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FSourceNewLogs",
+      "agent": "RevengerR61-2.R62FSourceNewLogs",
+      "path": ".ufo/waves/round-62/falsify/R62FSourceNewLogs.md",
+      "sha256": "9b827e0cadbc1d9d205fb99d97613fe385642abcf076232b300222423e33a8b7"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FSourceOldErratum",
+      "agent": "RevengerR61-2.R62FSourceOldErratum",
+      "path": ".ufo/waves/round-62/falsify/R62FSourceOldErratum.md",
+      "sha256": "49c2fb386d18cc44f0de958d7b93245a5dbebd6b26aa9c26cb214ed32afa6f9d"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FSourceCensus",
+      "agent": "RevengerR61-2.R62FSourceCensus",
+      "path": ".ufo/waves/round-62/falsify/R62FSourceCensus.md",
+      "sha256": "e7086e807a36de12d7600a795e140f2fa300ce52ec88e8ddddea7031bdc50cdf"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmAllCriteria",
+      "agent": "RevengerR61-2.R62FEvmAllCriteria",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmAllCriteria.md",
+      "sha256": "1710e9e829b74e63cb30acd12c88064361c8dcd4848668a859c4e7eeae7474d8"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsAllCriteria",
+      "agent": "RevengerR61-2.R62FJsAllCriteria",
+      "path": ".ufo/waves/round-62/falsify/R62FJsAllCriteria.md",
+      "sha256": "a17c7ea0aab85c6dae98426ae3533ba1c4ea655b1c62e9aa269fb119e09177a0"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmNoGuard",
+      "agent": "RevengerR61-2.R62FEvmNoGuard",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmNoGuard.md",
+      "sha256": "b91f425164ba0d8c1e506417057026ec36451c59594c09d30b490a453fef31a6"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FAdmissionOrder",
+      "agent": "RevengerR61-2.R62FAdmissionOrder",
+      "path": ".ufo/waves/round-62/falsify/R62FAdmissionOrder.md",
+      "sha256": "c05618afcb87f9cd19eea98c35ca9d28fac9629b048fbad11e1c5d155dcf30bb"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FMutantJsSpan",
+      "agent": "RevengerR61-2.R62FMutantJsSpan",
+      "path": ".ufo/waves/round-62/falsify/R62FMutantJsSpan.md",
+      "sha256": "1c2101f0498e3f5fcb31a7b594c98794a8cc1785cd5cace73216dd31d23e5410"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FMutantJsNames",
+      "agent": "RevengerR61-2.R62FMutantJsNames",
+      "path": ".ufo/waves/round-62/falsify/R62FMutantJsNames.md",
+      "sha256": "a20aae2fb20c4dd746867afa228917dd0b66e1e81870e79dac728b69b2de52b4"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FMutantEvmRaw",
+      "agent": "RevengerR61-2.R62FMutantEvmRaw",
+      "path": ".ufo/waves/round-62/falsify/R62FMutantEvmRaw.md",
+      "sha256": "4f66f1e0c6d947ea3cd6082521984adda6a9aa1599620e260e5a11088b0e010a"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FMutantEvmIdentity",
+      "agent": "RevengerR61-2.R62FMutantEvmIdentity",
+      "path": ".ufo/waves/round-62/falsify/R62FMutantEvmIdentity.md",
+      "sha256": "07025a3c6479789b33dee29bce1fcf98afce7b9893654ff38bd4cc17d1827ac7"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FSafeEvm",
+      "agent": "RevengerR61-2.R62FSafeEvm",
+      "path": ".ufo/waves/round-62/falsify/R62FSafeEvm.md",
+      "sha256": "80d3c97a8881bf73fa1b77c29743cf9bc8b660a8d189cf85b1890a59317a5da5"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FSafeJs",
+      "agent": "RevengerR61-2.R62FSafeJs",
+      "path": ".ufo/waves/round-62/falsify/R62FSafeJs.md",
+      "sha256": "f349fda7d42f4d1219a95093d08022ebd50916c2220664903eac45b77b51187b"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FReproduceEvm",
+      "agent": "RevengerR61-2.R62FReproduceEvm",
+      "path": ".ufo/waves/round-62/falsify/R62FReproduceEvm.md",
+      "sha256": "d072dfd64fc8c6179834830f8d30ec64e17b271cf6e56a2f2e8f47c30d42e243"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FReproduceJs",
+      "agent": "RevengerR61-2.R62FReproduceJs",
+      "path": ".ufo/waves/round-62/falsify/R62FReproduceJs.md",
+      "sha256": "fa3f3911e506f298b4f04b2f14c05791a6dc5a78c3341cb2350a63b66a74b02e"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FHoldInputBytes",
+      "agent": "RevengerR61-2.R62FHoldInputBytes",
+      "path": ".ufo/waves/round-62/falsify/R62FHoldInputBytes.md",
+      "sha256": "e0d5eaf472961b72c9bdfb35ce061189d2ef6c70bf2d8382bfd124e979ea2525"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FHoldOldEvidence",
+      "agent": "RevengerR61-2.R62FHoldOldEvidence",
+      "path": ".ufo/waves/round-62/falsify/R62FHoldOldEvidence.md",
+      "sha256": "07ae5f70da6c5493fc93b52be9a8dd2c097dadf2897b713407a031a57a8fb907"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FHoldMap",
+      "agent": "RevengerR61-2.R62FHoldMap",
+      "path": ".ufo/waves/round-62/falsify/R62FHoldMap.md",
+      "sha256": "14adc5aa39336f838426a7664ce7f3598d703ca3d2bf85c745cde2610517b42b"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FHoldCalibration",
+      "agent": "RevengerR61-2.R62FHoldCalibration",
+      "path": ".ufo/waves/round-62/falsify/R62FHoldCalibration.md",
+      "sha256": "d4842ac192475dd9888eeccc505327408dc121dc886509c8a9154fe927f75801"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FHoldFandFreshness",
+      "agent": "RevengerR61-2.R62FHoldFandFreshness",
+      "path": ".ufo/waves/round-62/falsify/R62FHoldFandFreshness.md",
+      "sha256": "9544d52aa9f575c96d6c93d018962f4c17a12d14bb322911d423a4c9242c5d34"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FCriticKCounter",
+      "agent": "RevengerR61-2.R62FCriticKCounter",
+      "path": ".ufo/waves/round-62/falsify/R62FCriticKCounter.md",
+      "sha256": "ec2e756511829e0dae90822859b7cf6f5446a23f8da456ca5375d5faf753b8ff"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FCriticScopeSet",
+      "agent": "RevengerR61-2.R62FCriticScopeSet",
+      "path": ".ufo/waves/round-62/falsify/R62FCriticScopeSet.md",
+      "sha256": "63f506bf8ce21c65289e6f13a593722daf000c2fc1f62f44c6959febeb9d158e"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FCriticInventoryMethod",
+      "agent": "RevengerR61-2.R62FCriticInventoryMethod",
+      "path": ".ufo/waves/round-62/falsify/R62FCriticInventoryMethod.md",
+      "sha256": "2056f65a22ca3f8de184d874f286406def708c2f19c6b57e7778dac16b2680dd"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FCriticLearning",
+      "agent": "RevengerR61-2.R62FCriticLearning",
+      "path": ".ufo/waves/round-62/falsify/R62FCriticLearning.md",
+      "sha256": "9c4664f3ad9a3225413ff82c59339b54ebaea3c840a5b6e6c7404a40dc2fff6c"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FLessonM25",
+      "agent": "RevengerR61-2.R62FLessonM25",
+      "path": ".ufo/waves/round-62/falsify/R62FLessonM25.md",
+      "sha256": "bc1e2da662a3092f0fe5440666d0d6661abfae1b426264a00ff4288f244f103a"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FLessonSourcesGate",
+      "agent": "RevengerR61-2.R62FLessonSourcesGate",
+      "path": ".ufo/waves/round-62/falsify/R62FLessonSourcesGate.md",
+      "sha256": "ee899c4400a670523bb06e3e443b687a5436c4a7358c0c653607f15720b007ca"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FEvmPatternOrigin",
+      "agent": "RevengerR61-2.R62FEvmPatternOrigin",
+      "path": ".ufo/waves/round-62/falsify/R62FEvmPatternOrigin.md",
+      "sha256": "8e026ac57a4f6995be3b855746be9ec39edc32c688ee0d3ecc382023673632c0"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FJsDerivedMetadata",
+      "agent": "RevengerR61-2.R62FJsDerivedMetadata",
+      "path": ".ufo/waves/round-62/falsify/R62FJsDerivedMetadata.md",
+      "sha256": "cb4f641e0bbc178eec16ee66554a4cb3467a6331421f662f5a0d6e9c770c2c97"
+    },
+    {
+      "wave": "falsify",
+      "seat": "R62FSnapshotAuthority",
+      "agent": "RevengerR61-2.R62FSnapshotAuthority",
+      "path": ".ufo/waves/round-62/falsify/R62FSnapshotAuthority.md",
+      "sha256": "84890b552d1f5db687c5f4ace4751822e00cecc249a2e0d718899d2834023f7c"
+    }
+  ],
+  "delivery_note": {
+    "seat": "R62FEvmCarrier",
+    "reported_text": "Your last turn failed on a Devin quota error",
+    "status": "reported on a continuation resend; report delivered, no death or replacement; raw provider payload not available in this note"
+  }
+}

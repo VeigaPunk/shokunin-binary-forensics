@@ -281,3 +281,40 @@ on the final reviewed implementation. Neither is a general-purpose gate
 capability, a new criterion or outside discernment evidence.
 
 Outside spot-check for round62 remains pending independent closure.
+
+## Gate — final transition confirmed and measured
+
+The admission transition landed
+`0651c7c683b4af3801b5ba63bc57ce99a46a7de0`; final entry hashes:
+C04 `1186e596e59cd586f97c3d5b0cdf26dc71be70347dcb14a4409a340699d663bb`,
+C09 `ac820493e5d0bbb78d1da3161814229c3184264446e3e581ea64373914589c26`.
+R62FJsAllCriteria, R62FEvmAllCriteria and R62FCriticInventoryMethod
+independently confirmed the focused committed diff, with readout code/output
+byte-identical to the approved evidence bodies and no new substantive claim.
+Their original report prefixes remain intact; confirmations were landed
+in `b0400f02c2790c5a6cdb8d51c8e8a276b895b926`.
+
+L1's one final verification on that committed archive is recorded in
+`reports/round-62/measure-after.log` and `final-verification.json`:
+K_HELD=K_HELD_BACKED=6/14 (before4/14), probe exit0, attributed C2kills2/2,
+controls2/2, d2kills2/2, calibration4/4, replay10/10, HOLDS_OK=yes.
+The probe file's SHA-256 is unchanged
+`ada7a9c97bba394f6539ce6f158ee81a8c342a42fa861d634933226bdd0b50d2`.
+
+Both entry readouts exit0 and match their embedded Provenance byte-for-byte:
+C04 stdout25 lines, SHA-256
+`3c62d57c25bb10e3f0114dadb9525cda1e44c695e5a5cc50c2b674777c7a8bcf`;
+C09 stdout8 lines, SHA-256
+`8bade6c9a9641edf0673f45cfc59f799ffe30548596c98fe8848d7beeab5cef7`.
+Only C04/C09 change status among14 rows, each names its new admitted file;
+all8 held knowledge references resolve. All611 protected manifest files
+match, Q01–Q13/ten-verifier set unchanged, all64 original fresh-report
+prefixes preserved. F remains4/8; stored freshness proxy remains12+6=18,
+with both files byte-identical to base.
+
+Sources census: rows27→31, tierA25→29/C2 unchanged,
+mined22→26/queued1/rejected4; exit0 with disclosed W04s for S024/S028/S029.
+The sole old-row edit is S026's allowed used-by addition, as logged above.
+Thus C1's measured minimum5/14 is met at6/14 with two independently gated
+admissions. Initial rejected revisions and every named limitation remain.
+New capabilities0; no outside round62 spot-check or promotion is asserted.

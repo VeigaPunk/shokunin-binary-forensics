@@ -1,0 +1,56 @@
+# Round62 final measurement on b0400f02c2790c5a6cdb8d51c8e8a276b895b926
+
+$ git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive --format=tar b0400f02c2790c5a6cdb8d51c8e8a276b895b926 | tar -x -C /fast/scratch/hyaku/revenger-r62/final-verification/tree
+$ TMPDIR=/fast/scratch/hyaku/revenger-r62/final-verification/tmp python3 -B /fast/scratch/hyaku/revenger-r62/final-verification/tree/reports/round-61/measure.py /fast/scratch/hyaku/revenger-r62/final-verification/tree # cwd=/
+probe_sha256=ada7a9c97bba394f6539ce6f158ee81a8c342a42fa861d634933226bdd0b50d2
+K_HELD=6/14 score=4.3
+K_ROW C04 status=held
+K_ROW C09 status=held
+K_HELD_BACKED=6/14
+MUTANT verify_icon_languages.py control exit=0 pass :: PASS: 3/3 group-language states, 2/2 exact one-byte deltas, two icon candidates retained, forged selection REJECTED
+MUTANT verify_icon_languages.py b exit=1 killed :: AssertionError: r47: forged receipt command accepted
+MUTANT verify_icon_languages.py d2 exit=1 killed :: AssertionError: r47: receipt
+MUTANT verify_multi_icon_states.py control exit=0 pass :: PASS: 4/4 two-image states, 3/3 exact one-byte deltas, first link stable, forged second match REJECTED
+MUTANT verify_multi_icon_states.py b exit=1 killed :: AssertionError: r42: forged receipt command accepted
+MUTANT verify_multi_icon_states.py d2 exit=1 killed :: AssertionError: r42: receipt
+C2_CONTROLS_PASS=2/2
+C2_RECEIPT_B_KILLED=2/2
+C2_D2_KILLED=2/2
+C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2
+HOLD verify_evm_evidence.py exit=0 NEGATIVE REJECTED candidate destination mismatch
+HOLD verify_icon_languages.py exit=0 PASS: 3/3 group-language states, 2/2 exact one-byte deltas, two icon candidates retained, forged selection REJECTED
+HOLD verify_icon_states.py exit=0 PASS: 4/4 source-decoded states, 3/3 one-byte deltas, one forged candidate REJECTED
+HOLD verify_js_graph_delta.py exit=0 NEGATIVE REJECTED saved graph disagrees with source truth
+HOLD verify_multi_icon_states.py exit=0 PASS: 4/4 two-image states, 3/3 exact one-byte deltas, first link stable, forged second match REJECTED
+HOLD verify_named_multi_icon_states.py exit=0 PASS: 139 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.
+HOLD verify_pe_resources.py exit=0 NEGATIVE REJECTED payload relation mismatch
+HOLD verify_saved_evidence.py exit=0 NEGATIVE JS REJECTED: JS: wrong package-main mapping
+HOLD verify_semantic_trace.py exit=0 NEGATIVE REJECTED relation differs from source parent
+HOLD verify_shape_evidence.py exit=0 NEGATIVE REJECTED changed-property evidence mismatch
+HOLD_CALIBRATION=4/4
+HOLD_REPLAY=10/10
+HOLDS_OK=yes
+probe_exit=0
+
+$ # Extract each entry's first full Python block, run with cwd=/ and the same TMPDIR, compare full stdout with its JSONL Provenance fence
+{"code_sha256": "78a51a73959c36248a63407eef4b90c212a9077e4f34c5fff6d75e0486176d14", "entry": "corpus/knowledge/round-62-commonjs-require-name-evidence.md", "entry_sha256": "1186e596e59cd586f97c3d5b0cdf26dc71be70347dcb14a4409a340699d663bb", "exit": 0, "provenance_exact_bytes_match": true, "provenance_line_match": true, "stderr": "", "stdout_lines": 25, "stdout_sha256": "3c62d57c25bb10e3f0114dadb9525cda1e44c695e5a5cc50c2b674777c7a8bcf"}
+{"code_sha256": "2dc4210975fa26bb86ebcad6921a5f732e10f4a8a6302eff1ab3c449cdb56ce0", "entry": "corpus/knowledge/round-62-evm-dispatch-byte-evidence.md", "entry_sha256": "ac820493e5d0bbb78d1da3161814229c3184264446e3e581ea64373914589c26", "exit": 0, "provenance_exact_bytes_match": true, "provenance_line_match": true, "stderr": "", "stdout_lines": 8, "stdout_sha256": "8bade6c9a9641edf0673f45cfc59f799ffe30548596c98fe8848d7beeab5cef7"}
+
+$ # Parse the 14 README rows, compare base statuses, and resolve held knowledge-cell paths
+{"after_rows": 14, "before_rows": 14, "held_knowledge_references": [{"exists": true, "path": "corpus/knowledge/pe-resource-directory-layout.md", "row": "C01"}, {"exists": true, "path": "corpus/knowledge/round-62-commonjs-require-name-evidence.md", "row": "C04"}, {"exists": true, "path": "corpus/knowledge/round-62-evm-dispatch-byte-evidence.md", "row": "C09"}, {"exists": true, "path": "corpus/knowledge/utf16-unpaired-surrogates-in-resource-names.md", "row": "C11"}, {"exists": true, "path": "corpus/knowledge/tool-validation-by-function-and-version.md", "row": "C12"}, {"exists": true, "path": "corpus/knowledge/seed.md", "row": "C12"}, {"exists": true, "path": "corpus/knowledge/digest-scope-versus-provenance.md", "row": "C13"}, {"exists": true, "path": "corpus/knowledge/seed.md", "row": "C13"}], "status_changes": {"C04": ["uncovered", "held"], "C09": ["uncovered", "held"]}, "target_knowledge": {"C04": ["knowledge/round-62-commonjs-require-name-evidence.md"], "C09": ["knowledge/round-62-evm-dispatch-byte-evidence.md"]}}
+
+$ git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff --name-status 5bd4a90fc1a34caa94496601b60537b3aab12301 b0400f02c2790c5a6cdb8d51c8e8a276b895b926 -- corpus/live corpus/fixtures corpus/QUALITY.md corpus/knowledge/commonjs-destructured-require-edges.md corpus/knowledge/evm-saved-interface-candidates.md corpus/lessons/round-61.md corpus/lessons/round-61-verifier-spotcheck.md .ufo/waves/round-61 reports/round-61
+(no output)
+preservation_manifest_files=611 mismatches=0
+fresh_report_prefixes_preserved=64/64
+unchanged_verifier_set=True count=10
+
+$ /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin revenger
+revenger	W04	S024 duplicate url www.rfc-editor.org/rfc/rfc3227.txt across scopes
+revenger	W04	S028 duplicate url github.com/ethereum/execution-specs/tree/v2.20.0/src/ethereum/forks/osaka/vm across scopes
+revenger	W04	S029 duplicate url tc39.es/ecma262 across scopes
+revenger	ok	/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md
+census_rc=0
+SOURCES_ROWS=27->31 tier={'A': 29, 'C': 2} status={'mined': 26, 'queued': 1, 'rejected': 4} old_changed_cells_0based={'S026': [10]}
+COVERAGE_F=4/8 families=['native-static', 'javascript', 'archives', 'evm']
+FRESHNESS_PROXY={'seed.md': 12, '2026-10-12-rea-readiness-checklist.md': 6} byte_identical_to_base={'seed.md': True, '2026-10-12-rea-readiness-checklist.md': True}

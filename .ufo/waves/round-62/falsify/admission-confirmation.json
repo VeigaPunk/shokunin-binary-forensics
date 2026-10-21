@@ -1,0 +1,17 @@
+{
+  "admission_revision": "0651c7c683b4af3801b5ba63bc57ce99a46a7de0",
+  "measured_revision": "b0400f02c2790c5a6cdb8d51c8e8a276b895b926",
+  "entry_hashes": {
+    "corpus/knowledge/round-62-evm-dispatch-byte-evidence.md": "ac820493e5d0bbb78d1da3161814229c3184264446e3e581ea64373914589c26",
+    "corpus/knowledge/round-62-commonjs-require-name-evidence.md": "1186e596e59cd586f97c3d5b0cdf26dc71be70347dcb14a4409a340699d663bb"
+  },
+  "confirming_existing_seats": [
+    "R62FEvmAllCriteria",
+    "R62FJsAllCriteria",
+    "R62FCriticInventoryMethod"
+  ],
+  "all_confirmed": "HOLDS, code/output unchanged through admission metadata/wording transition",
+  "new_seats": 0,
+  "main_verification": "reports/round-62/final-verification.json",
+  "fresh_original_prefixes_preserved": 64
+}
