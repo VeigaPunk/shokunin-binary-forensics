@@ -106,3 +106,18 @@ Changed-code run (`$S/r3`): `exit=0 lines=8 sha=8bade6c9a9641edf0673f45cfc59f799
 - Q01 row: the stale "subject to the rows being written / reserved" wording is removed (count 0). The cross-lane note no longer says "reuses no citation from the rejected round-61 candidate" (count 0). That claim was false, because S026's `used-by` includes the round-61 candidate; the note now says S026 was reopened independently. Resolves R3 except the remainder below.
 Remaining (nonblocking wording): the line "Every value in the prose is a field of the printed output" (C09:23-24) still overstates. `## Source facts` constants and Provenance run metadata are recorded values, labelled as recorded in their own sections.
 VERDICT: HOLDS on the Q11/inventory axis for C09 `e7bf76aa…`, and for C04 `d4544c70…` unchanged. One seat's axis only. No repair, no admission, no held flip; no old-failure rerun. Installs: none.
+
+## Final transition confirmation — `0651c7c683b4af3801b5ba63bc57ce99a46a7de0` vs `8e2f082d…` (appended; prefix preserved, SHA-256 `958a38ad3fb4ff9d777f41c24d9ed99bc6819ecf3878707c81eff50ff4b2fc2f`)
+
+CONFIRMED — bounded status/wording transition; no unexpected change.
+- **Hashes:** C04 `1186e596e59cd586f97c3d5b0cdf26dc71be70347dcb14a4409a340699d663bb` and C09 `ac820493e5d0bbb78d1da3161814229c3184264446e3e581ea64373914589c26` (both verified).
+- **Changed files:** the two entries, `corpus/README.md`, `corpus/lessons/round-62.md`, `LOG.md`, `admission.json` and four falsify reports. The `--stat` over `corpus/fixtures`, `corpus/live`, `corpus/QUALITY.md`, `corpus/SOURCES.md`, `reports/round-61` and `corpus/verify_*.py` is empty.
+- **Embedded code and output:** every fenced block in both entries is byte-identical to `8e2f082`. C04 has 6 blocks, including `readout.py` `78a51a73…` and stdout `3c62d57c…`. C09 has 3 blocks, including Provenance stdout `8bade6c9…`. The Reproduce, Provenance, Evidence inventory and Sentence-to-output inventory sections are unchanged, so the earlier runs still apply; no probe was rerun.
+- **Prose diff:**
+  - C04: the source rows drop "pending independent audit"; `coverage-map:` and `admission-status:` change to admitted; the QUALITY preface and the Q01 cell now point to the lesson Gate.
+  - C09: `admission-status:` changes to admitted. The header now reads "Each byte/record value asserted as derived is printed … specification facts and run metadata are explicitly labeled recorded", which resolves my last remaining wording issue. Limitations drops the stale "no mutant run … was performed" and adds "Input-drift probes do not establish clause-deletion guard coverage", which is consistent with Q13. The Q01 cell is reworded.
+  - No claim, value, scope or criterion meaning changed.
+- **README:** only the C04 and C09 rows changed (uncovered→held). Each now names only its new entry as knowledge and keeps the rejected file as work evidence. There are still 14 rows: held 4→6, partial 4, frontier 4, uncovered 2→0.
+- **Lesson:** append-only (59 lines added, 0 removed). It adds no Q14, lexical helper or new criterion.
+- **Note (expected, not a defect):** the lesson's admission table names the reviewed hashes, `d4544c70…`@47511b2 and `e7bf76aa…`@8e2f082. The admitted bytes are `1186e596…` and `ac820493…`. The difference between them is exactly the status/wording diff verified above.
+No repair, no admission authority claimed. Installs: none.

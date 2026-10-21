@@ -96,3 +96,33 @@ My own scanner carries immediates as **bytes**, so the extent test is `o <= po <
 Q01 pass (S028/S031/S026 all written, tier A, opened this round, used-by includes this entry; no rejected row) · Q02 pass (headers present; exact URL + file:line anchors; C09 row still uncovered) · Q03 pass · Q04 pass · Q05 pass (no capability claim; recheck probe with command, date, exit 0, empty stderr) · Q06 pass (fixture premises re-derived from built bytes; extents now in bytes) · Q07 pass (no cause for the four empty pair lists) · Q08 superseded by Q11 · Q09 pass (each digest labelled with its referent; no origin/completeness/authenticity claim) · Q10 pass (seven fixtures, one recorded provider version; cross-lane reported, not decided) · **Q11 pass** (every asserted value has an in-entry command and its printed output; the byte/record facts re-derive independently; D1/D2/D3 from my 47511b21 review are closed) · Q12 n/a · Q13 pass.
 
 **Verdict at `8e2f082d`: HOLDS.** My earlier drivers are closed: the Q01 metadata-scope gap (S026 cited, row scope untouched), D1 (byte extents), D2 (file offset vs template index separated and printed), D3 (other-case carrier/template rows added), D4 (stale conditional removed). Residual, non-blocking notes for the record: the title and code docstring still use the word "dispatch" for byte-level facts while the provider's dispatch labels are no longer mentioned (no claim depends on it); the `## Provenance` records the run at lane base `a3498e25` while the committed code is the corrected one — the fixture/record bytes are identical at that base and at this commit and I reproduced the identical stdout here, so the recorded run and the committed code agree. L1 adjudicates and admits; I make no admission and no repair; README remains 4/14 with C09 uncovered pending the L1 gate. Installs: none.
+
+---
+
+# Appended final confirmation — admission/status commit `0651c7c683b4af3801b5ba63bc57ce99a46a7de0`
+
+All earlier sections (lines 1–98) are preserved byte-intact; `head -98` sha256 = `ea0e12dad548fcbd60ee2bf05b7eb943db4625085dd4f16a67236d6c455760a8` (the 8e2f082-state report). No admission, no repair, no edit to any corpus file by me.
+
+**Confirmation: GRADE HOLDS stands.** Entry at this commit: 587 lines, sha256 `ac820493e5d0bbb78d1da3161814229c3184264446e3e581ea64373914589c26` (verified in my `git archive` of `0651c7c…`). The admitted **evidence body** is the state I audited — `e7bf76aae801027f98fc4d46932f1309ade5b6671bf4407ac206bb50914f3196` at `8e2f082d405fc130fc1e8523a0763672289f287a` — which the lesson's Gate pins, together with this seat's name.
+
+## Focused diff from the approved 8e2f082 state (4 hunks, 9 insertions / 9 deletions, prose and status only)
+
+1. `admission-status:` → "admitted — recorded round-62 Gate decision in `corpus/lessons/round-62.md`; the evidence body passed exact-hash fresh reviews before the README coverage transition."
+2. Intro sentence qualified (this narrows the earlier over-broad sentence): "Each byte/record value asserted as derived is printed in `## Provenance` and mapped by `## Evidence inventory`; specification facts and run metadata are explicitly labeled recorded."
+3. Limitations: the stale event claim "and no mutant run over it was performed" is removed and the no-guard boundary now reads "it is **not** claimed to be deletion-sensitive. Input-drift probes do not establish clause-deletion guard coverage."
+4. Q01 table row: "pass, pending final review" → "author-proposed pass; final independent decisions in the round-62 lesson" (the table stays author-proposed, no longer pending).
+
+## Identity checks (single readout identity check only — no matrix re-run)
+
+- `## Reproduce` code block byte-identical to 8e2f082: sha256 `2dc4210975fa26bb86ebcad6921a5f732e10f4a8a6302eff1ab3c449cdb56ce0` (unchanged) → no code change.
+- Printed `## Provenance` block byte-identical: sha256 `c98e58d997a8be2552ec171a305b7bc76e06304720a60b57055c6304700ca7db` (unchanged) → no output change.
+- `python3 -B readout4.py ../archive4` → exit 0, stderr 0 bytes; stdout `cmp`-identical to my 8e2f082 run (`run3.out` vs `run4.out` clean) and equal to the entry's printed Provenance except the fenced block's missing trailing newline. No data change, no criterion row changed.
+
+## Source / map decision consistency
+
+- `corpus/README.md`: only the C04 and C09 rows changed; C09 now reads "knowledge/round-62-evm-dispatch-byte-evidence.md (manual authored-byte/saved-field correspondence only)" with the retained rejected candidate still listed, status `held`. Denominator and all other rows untouched.
+- `corpus/SOURCES.md`: byte-unchanged (S026's scope/anchor/teaches/status/recheck untouched; no new row changes).
+- `corpus/lessons/round-62.md`: Gate records the C09 admission at sha256 `e7bf76aa…` @ `8e2f082d…`, naming R62FEvmAllCriteria for the all-Q re-decision, and states that README C04/C09 move uncovered→held only now, naming just the new admitted files.
+- `corpus/fixtures` and `corpus/live`: unchanged vs `a3498e25` (0 files); rejected round-61 candidate blob unchanged.
+
+**Unexpected semantic change: none found.** The three prose edits narrow claims (derived-vs-recorded scoping; no-guard wording; author-proposed-vs-final decision) and add no new assertion, code path, value or criterion interpretation. Final confirmation: **HOLDS** at `0651c7c…`; L1 owns the recorded admission, I confirm only. Installs: none.
