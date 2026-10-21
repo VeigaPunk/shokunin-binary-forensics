@@ -1,0 +1,43 @@
+{
+  "claim": "C1 coverage K",
+  "base_revision": "5bd4a90fc1a34caa94496601b60537b3aab12301",
+  "pre_registered_minimum": "5/14",
+  "falsifier": "4/14",
+  "L1_decision": "admit both after independent existing-seat recommendations on corrected evidence bodies; map flips only now",
+  "body_reviews": {
+    "corpus/knowledge/round-62-evm-dispatch-byte-evidence.md": {
+      "revision": "8e2f082d405fc130fc1e8523a0763672289f287a",
+      "sha256": "e7bf76aae801027f98fc4d46932f1309ade5b6671bf4407ac206bb50914f3196",
+      "reviewers": [
+        "R62FEvmAllCriteria",
+        "R62FEvmCarrier",
+        "R62FEvmQ11Inventory",
+        "R62FCriticInventoryMethod"
+      ]
+    },
+    "corpus/knowledge/round-62-commonjs-require-name-evidence.md": {
+      "revision": "47511b213bf556022869fa104a4bda9d7c9a3b95",
+      "sha256": "d4544c7012a52c0b877022009de6056d6beeda53cd78c2054361e732dce5cafe",
+      "reviewers": [
+        "R62FJsAllCriteria",
+        "R62FJsScopeUnknown",
+        "R62FJsSemantics",
+        "R62FCriticInventoryMethod"
+      ]
+    }
+  },
+  "admission_files": {
+    "corpus/knowledge/round-62-evm-dispatch-byte-evidence.md": "ac820493e5d0bbb78d1da3161814229c3184264446e3e581ea64373914589c26",
+    "corpus/knowledge/round-62-commonjs-require-name-evidence.md": "1186e596e59cd586f97c3d5b0cdf26dc71be70347dcb14a4409a340699d663bb"
+  },
+  "transition": "status/header author-assessment wording and explicit recorded-data qualification only; readout code and observed output expected unchanged, subject to final focused diff confirmation",
+  "rejected_intermediate_revision": "d97761952be256d145d298022de03091de91d358",
+  "initial_drafts_preserved": "falsify/frozen-candidates",
+  "seats": {
+    "build": 64,
+    "falsify": 64,
+    "total": 128,
+    "new_for_followups": 0,
+    "dead": 0
+  }
+}

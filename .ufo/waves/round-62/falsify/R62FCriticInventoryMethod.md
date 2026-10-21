@@ -92,3 +92,17 @@ R5 C04 `end_line` is printed but never compared (slice uses the start line only)
 
 VERDICT (exact corrected hashes above): HOLDS — original blockers O3–O6 (C04) and O8 (C09) resolved by changed derivations, each confirmed by mutants that now flip or fail closed; R1–R5 are wording/pointer residuals, none a missing derivation of a load-bearing value. This is one seat's axis only; no admission, no repair, no held flip.
 Scratch: `$S/tree2`, `$S/rr` (extracted blocks, outputs, mJ1–mJ3, mE1–mE4). Installs: none.
+
+## Unit-fix review — EVM changed parts only (appended; prefix above preserved, SHA-256 `03b5ddd4ec1b57c05699af28233e2f7ef8a90eb1407ca7cd2bc7da39ee0ca066`)
+
+GRADE: HOLDS — C09 at commit `8e2f082d405fc130fc1e8523a0763672289f287a`, SHA-256 `e7bf76aae801027f98fc4d46932f1309ade5b6671bf4407ac206bb50914f3196` (verified). C04 is byte-unchanged at `d4544c70…`, so the previous HOLDS stands on that hash.
+`diff --stat 47511b2..8e2f082 -- corpus/fixtures corpus/live corpus/QUALITY.md corpus/README.md corpus/SOURCES.md <C04>` → empty. Commit-held copy of this report = prefix hash above.
+Correction of my previous section: at 47511b2 the printed `template_enclosing_instruction` was wrong for r19/r21/r25 (`[[6,99],[12,96]]`, hex-character extent `len(im)`). I did not catch it. Prose claimed only r24's value (`[[0,127]]`), which was correct. This is the bug the independent review found.
+Changed-code run (`$S/r3`): `exit=0 lines=8 sha=8bade6c9a9641edf0673f45cfc59f799ffe30548596c98fe8848d7beeab5cef7 stderr=0`; `cmp` equals the entry's Provenance.
+- Extent fix: `o + 1 + len(im) // 2`. An independent byte-extent check (`o <= po <= o + len(bytes.fromhex(im))`) gives the same value as the printed field for every occurrence: r19 `[[12,96]]`, r21 `[[12,96]]`, r24 `[[0,127]]`, r25 `[[13,96]]`.
+- Index vs offset: new field `template_push1_template_index`=6 in all four occurrences. Obs7 now reads "r24 file offset 7 — template index 6" and cites both fields. The phrase "template position" is gone (count 0). Resolves R1.
+- Inventory: 116 rows, each field resolved in stdout and compared with the row value: **0 mismatches**. One field is listed twice (`r24.template.template_push1_byte_value`, same value 96; harmless). All six raw carriers' form and slice are now inventoried. Resolves R2.
+- Header S028: URL plus file:line anchors. All 14 anchors match `.ufo/waves/round-62/source-snapshots/execution-specs-{instructions,runtime}.py` verbatim (EQ/STOP/JUMPI/JUMPDEST/POP/PUSH0/PUSH1/PUSH4/PUSH32; runtime 22, 28, 29-30, 64). They are labelled "recorded source facts".
+- Q01 row: the stale "subject to the rows being written / reserved" wording is removed (count 0). The cross-lane note no longer says "reuses no citation from the rejected round-61 candidate" (count 0). That claim was false, because S026's `used-by` includes the round-61 candidate; the note now says S026 was reopened independently. Resolves R3 except the remainder below.
+Remaining (nonblocking wording): the line "Every value in the prose is a field of the printed output" (C09:23-24) still overstates. `## Source facts` constants and Provenance run metadata are recorded values, labelled as recorded in their own sections.
+VERDICT: HOLDS on the Q11/inventory axis for C09 `e7bf76aa…`, and for C04 `d4544c70…` unchanged. One seat's axis only. No repair, no admission, no held flip; no old-failure rerun. Installs: none.

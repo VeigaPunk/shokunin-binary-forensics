@@ -18,17 +18,17 @@ recheck: save the `## Reproduce` block as `readout.py` and run
 saved records, executes no bytecode, opens no chain and calls no producer. The
 `## Provenance` section is the exact stdout of the recorded run
 coverage-map: C09
-admission-status: candidate — round-62 build wave, not admitted. Admission
-requires the fresh falsify wave and the L1 gate; nothing here flips a coverage
-row, and no README target row is held by this file.
+admission-status: admitted — recorded round-62 Gate decision in
+`corpus/lessons/round-62.md`; the evidence body passed exact-hash fresh
+reviews before the README coverage transition.
 
 # EVM dispatch byte evidence on seven authored fixtures — derived bytes versus saved candidate fields
 
 This entry compares two things kept apart everywhere below: the **authored
 bytes** of seven fixture files, and the **saved candidate fields** in the seven
-`inspect_evm_interface` records for those files. Every value in the prose is a
-field of the printed output in `## Provenance`; the `## Evidence inventory` table
-names that field for each claim. It is not a statement about deployed contracts,
+`inspect_evm_interface` records for those files. Each byte/record value asserted
+as derived is printed in `## Provenance` and mapped by `## Evidence inventory`;
+specification facts and run metadata are explicitly labeled recorded. It is not a statement about deployed contracts,
 any chain, the provider's internal method, present producer capability, or the
 meaning of the `bytecodeOffset` field for any carrier other than these seven
 files. No bytecode was executed, no chain or RPC was queried, no producer was
@@ -192,8 +192,8 @@ them as constants and reads no specification file.
   JUMPDEST set, the raw `0x63` and `0x5b` offsets, the template occurrences,
   spans, operand, target byte and boundary flags, the two candidate counts, and
   every inventory row. The block in `## Reproduce` is a manual comparison
-  against the saved records; it is **not** claimed to be deletion-sensitive, and
-  no mutant run over it was performed.
+  against the saved records; it is **not** claimed to be deletion-sensitive.
+  Input-drift probes do not establish clause-deletion guard coverage.
 - The seven records and the seven fixtures were read only; no file under
   `corpus/fixtures/` or `corpus/live/` was modified, and the retained round-61
   rejected candidates were not edited.
@@ -214,7 +214,7 @@ above comes from this entry's own readout.
 
 | Q | proposed | basis in this entry |
 |---|---|---|
-| Q01 | pass, pending final review | Load-bearing claims rest on S028 (opcode byte values and the jump-destination scan, quoted under `## Source facts` with its exact URL and file:line anchors, tier A for that scope), S031 (the authored fixtures and their decoded bytes) and S026 (the seven saved records, reopened independently for this entry, whose recorded metadata and identifiers are quoted in Observation 4). All three rows are written in `corpus/SOURCES.md`; the final gate re-opens them. No rejected row is cited. |
+| Q01 | author-proposed pass; final independent decisions in the round-62 lesson | Load-bearing claims rest on S028 (opcode byte values and the jump-destination scan, quoted under `## Source facts` with its exact URL and file:line anchors, tier A for that scope), S031 (the authored fixtures and their decoded bytes) and S026 (the seven saved records, reopened independently for this entry, whose recorded metadata and identifiers are quoted in Observation 4). All three rows are written in `corpus/SOURCES.md`; no rejected row is cited. |
 | Q02 | pass | `source:`, `verified-at:`, `recheck:` and `coverage-map: C09` headers are present. |
 | Q03 | pass | Expected offsets and counts come from the byte walk; the saved records supply the reported fields, never the expected ones. The template is derived once from r19's own instruction boundaries. |
 | Q04 | pass | The provider is named with its recorded id and version and its own explicit output fields; the walk is labeled manual, and the entry's own stdlib Python run and the corpus verifier it names (as a non-credited comparison) are tools it names, not tools it credits. |

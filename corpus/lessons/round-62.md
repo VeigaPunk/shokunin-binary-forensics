@@ -222,3 +222,62 @@ C09's original framing/template/metadata blockers were also cleared,
 but L1 did not admit a known-wrong new printed field despite reviewers'
 “non-fatal” classification. The unit correction above is another bounded
 fix under the original target, with primary inputs and Q01–Q13 unchanged.
+
+## Gate — final admission after independent correction review
+
+R62 build report pointers resolve under `.ufo/waves/round-62/build/`;
+R62F fresh/re-review pointers resolve under
+`.ufo/waves/round-62/falsify/`. Earlier blocked decisions remain historical.
+
+L1 now **admits both corrected new entries**, after named fresh-seat
+recommendations, not by output equality or a vote:
+
+| exact reviewed evidence body | independent recommendations | L1 decision |
+|---|---|---|
+| C04 `knowledge/round-62-commonjs-require-name-evidence.md`, SHA-256 d4544c7012a52c0b877022009de6056d6beeda53cd78c2054361e732dce5cafe at `47511b213bf556022869fa104a4bda9d7c9a3b95` | R62FJsAllCriteria: every Q re-decided; R62FJsScopeUnknown: physical-line/mutant and network findings resolved; R62FJsSemantics: word-count/source-production corrections; R62FCriticInventoryMethod: header/source/run metadata and derivation referents | **admit**, scoped source-name/call-span correspondence only |
+| C09 `knowledge/round-62-evm-dispatch-byte-evidence.md`, SHA-256 e7bf76aae801027f98fc4d46932f1309ade5b6671bf4407ac206bb50914f3196 at `8e2f082d405fc130fc1e8523a0763672289f287a` | R62FEvmAllCriteria: every Q re-decided; R62FEvmCarrier: framing and all digest referents; R62FEvmQ11Inventory: all asserted fields/roles and unit fix; R62FCriticInventoryMethod: exact-hash unit/metadata audit | **admit**, authored-byte/saved-field correspondence only |
+
+Per-criterion final bases (the reports give full independent derivations):
+
+| criterion | C04 | C09 |
+|---|---|---|
+| Q01 | pass: reopened S029 language scope and S030 source/saved literals | pass: S028 boundaries, S031 bytes, reopened S026 recorded metadata |
+| Q02 | pass: provenance headers, exact source anchors and command/output | pass: same, S028 URL/file anchors hardened |
+| Q03 | pass: source-side names/physical spans independent of graph values | pass: expected byte/role/digest values from independent byte walk |
+| Q04 | pass: manual analysis, named recorded operation/provider fields | pass: manual byte analysis, saved fields not credited as fresh producer execution |
+| Q05 | n/a: no readiness/capability claim | pass: saved observations, no current producer capability |
+| Q06 | pass: source bytes/physical lines/ASCII and saved-line readback derived | pass: explicit carrier framing, raw-byte versus instruction roles, byte extents |
+| Q07 | n/a: no predicted target parser behavior | pass: emptiness observed, no cause or rule fitted |
+| Q08 | superseded by unchanged Q11 | superseded by unchanged Q11 |
+| Q09 | pass: exact file/record bytes; root digest recorded, no origin proof | pass: carrier/decoded referents separate, no origin/authenticity proof |
+| Q10 | pass: selected source directories/records only, no sibling ruling | pass: selected authored cases/records only, ADJ-06 not resolved |
+| Q11 | pass: physical/saved-line derivations, complete run metadata commands and recorded source pins | pass: framing/template/index/extent calculations, complete in-entry values and recorded source pins |
+| Q12 | n/a: no rejected source used as support | n/a: no rejected source used as support |
+| Q13 | n/a: no deletion-sensitive guard credit; manual readout only | pass: no verifier credited; input-drift experiments not deletion coverage |
+
+The original `d9776195` revisions of both candidates are **rejected as
+written** under Q11; their exact bytes/counterexamples remain in
+`falsify/frozen-candidates/` and the initial reports. These are versioned
+reject decisions, not two extra admitted entries. Final outcome: two
+admitted new files from two proposed paths; no old rejected file admitted.
+
+Only now do README C04/C09 move uncovered→held, naming just the new
+admitted files as knowledge and retaining the rejected files as work
+evidence. The final K/hold measurement is recorded separately on a
+committed archive; admission does not substitute for that count.
+
+The final transition changes only admission metadata/author-assessment
+wording and clarifies that specification/run metadata are recorded
+exceptions to the derived-value inventory. It removes the stale
+“no mutant run” event statement, not a guard requirement. No readout
+code/output changes are intended. Final-file hashes are recorded in
+`falsify/admission.json`; existing reviewers must confirm that focused diff
+on the committed final transition before the final report is filed.
+
+M27's missing-derivation fix is now supported by fresh independent audits
+and changed-code counterexamples (physical-line mutation and explicit hex
+framing), not token presence. M28's extent fix is independently byte-verified
+on the final reviewed implementation. Neither is a general-purpose gate
+capability, a new criterion or outside discernment evidence.
+
+Outside spot-check for round62 remains pending independent closure.

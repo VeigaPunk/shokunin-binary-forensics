@@ -30,12 +30,12 @@ and `live/runs/`.
 | C01 | native static: PE resource directory (`.rsrc`) | `knowledge/pe-resource-directory-layout.md` | `fixtures/pe-r27`…`pe-r59d`; `verify_*icon*.py`, `verify_pe_resources.py` | held |
 | C02 | native analysis sessions (decompile/disassemble providers) | `knowledge/seed.md` (census), `knowledge/2026-10-12-rea-readiness-checklist.md` | `live/runs/20261012T163909Z/native-analyze.json` (`provider_unavailable`); `lessons/2026-10-12-r1-provider-gap.md` | partial |
 | C03 | managed (.NET/CLI) assemblies | — | — | frontier |
-| C04 | JavaScript/Electron packages | — (round-61 candidate rejected; see lessons/round-61.md) | `fixtures/js-r3`, `js-r7-v2`, `shapes-r12`; `verify_js_graph_delta.py`, `verify_semantic_trace.py`, `verify_shape_evidence.py`; retained rejected candidate `knowledge/commonjs-destructured-require-edges.md` | uncovered |
+| C04 | JavaScript/Electron packages | `knowledge/round-62-commonjs-require-name-evidence.md` (source names and saved call spans on authored directories only; no Electron/runtime/export-binding ground) | `fixtures/js-r3`, `js-r7-v2`, `shapes-r12`; `verify_js_graph_delta.py`, `verify_semantic_trace.py`, `verify_shape_evidence.py`; shape/semantic work is outside the new entry; retained rejected candidate `knowledge/commonjs-destructured-require-edges.md` | held |
 | C05 | Android packages (APK) | — | — | frontier |
 | C06 | archives (ZIP inventory) | `knowledge/2026-10-12-rea-readiness-checklist.md` (archive-tool row only) | `fixtures/archive-r2`, `nested-r11`, `duplicate-r15` | partial |
 | C07 | firmware images | — | — | frontier |
 | C08 | browser/Electron runtime evidence | — | — | frontier |
-| C09 | EVM bytecode interfaces | — (round-61 candidate rejected; see lessons/round-61.md) | `fixtures/evm-r19`, `evm-r21`…`evm-r26` (no `evm-r20`); `verify_evm_evidence.py`; retained rejected candidate `knowledge/evm-saved-interface-candidates.md` | uncovered |
+| C09 | EVM bytecode interfaces | `knowledge/round-62-evm-dispatch-byte-evidence.md` (manual authored-byte/saved-field correspondence only) | `fixtures/evm-r19`, `evm-r21`…`evm-r26` (no `evm-r20`); `verify_evm_evidence.py`; retained rejected candidate `knowledge/evm-saved-interface-candidates.md` | held |
 | C10 | evidence-ledger discipline (Evidence IDs; observation/inference/unknown) | `knowledge/seed.md` §Verification discipline | `verify_saved_evidence.py` | partial |
 | C11 | text encodings inside artifacts (UTF-16 names, surrogates) | `knowledge/utf16-unpaired-surrogates-in-resource-names.md` | `fixtures/pe-r34`, `pe-r51`…`pe-r57`, `pe-r59` | held |
 | C12 | tool and process validation against known truth | `knowledge/tool-validation-by-function-and-version.md`; `knowledge/seed.md` §Calibration strategy | authored fixtures carrying `truth.json` | held |
