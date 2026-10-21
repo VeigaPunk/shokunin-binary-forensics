@@ -1,0 +1,47 @@
+{
+  "revision_recorded": "a3498e25ad87bf756288812d0ea7c474b09433c7",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/fast/scratch/hyaku/revenger-r62/R62MutantJsNameSet/detect_names.py",
+    "/fast/scratch/hyaku/revenger-r62/R62MutantJsNameSet/archive"
+  ],
+  "semantic_delta": [
+    {
+      "path": [
+        "normalized_result",
+        "graph",
+        "edges",
+        9,
+        "properties",
+        "imported_name"
+      ],
+      "before": "rot13",
+      "after": "checksum"
+    }
+  ],
+  "record_before_sha256": "331ec252aefdc7715e49f039d7443736ff9560565f208f35b4c972bfe45d564e",
+  "record_mutated_sha256": "360d92b4b0476a04e0e0137ee5b1c3b7bc06c9b26820cc12170b3da3520419bf",
+  "record_after_sha256": "331ec252aefdc7715e49f039d7443736ff9560565f208f35b4c972bfe45d564e",
+  "pristine": {
+    "exit": 0,
+    "stdout": "source=corpus/fixtures/js-r7-v2/index.js\nrecord=corpus/live/runs/round-7/v2-analysis.json\nsource_line=1 const { rot13 } = require('./transform');\nselected_named_require_edges=1\nsource_names=[\"rot13\"] imported_names=[\"rot13\"]\nmissing=[] unexpected=[]\nNAME_SET=MATCH\n",
+    "stderr": ""
+  },
+  "mutated": {
+    "exit": 1,
+    "stdout": "source=corpus/fixtures/js-r7-v2/index.js\nrecord=corpus/live/runs/round-7/v2-analysis.json\nsource_line=1 const { rot13 } = require('./transform');\nselected_named_require_edges=1\nsource_names=[\"rot13\"] imported_names=[\"checksum\"]\nmissing=[\"rot13\"] unexpected=[\"checksum\"]\nNAME_SET=MISMATCH\n",
+    "stderr": ""
+  },
+  "restored": {
+    "exit": 0,
+    "stdout": "source=corpus/fixtures/js-r7-v2/index.js\nrecord=corpus/live/runs/round-7/v2-analysis.json\nsource_line=1 const { rot13 } = require('./transform');\nselected_named_require_edges=1\nsource_names=[\"rot13\"] imported_names=[\"rot13\"]\nmissing=[] unexpected=[]\nNAME_SET=MATCH\n",
+    "stderr": ""
+  },
+  "restoration": {
+    "record_exact_bytes": true,
+    "source_exact_bytes": true,
+    "readme_exact_bytes": true
+  },
+  "verdict": "killed"
+}

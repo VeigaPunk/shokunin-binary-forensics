@@ -1,0 +1,649 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": null,
+  "createdAt": "2026-10-21T17:59:28.327Z",
+  "updatedAt": "2026-10-21T17:59:28.327Z",
+  "reportDir": ".ufo/waves/round-62/build",
+  "members": {
+    "R62EvmEntry": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62EvmEntry",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62JsEntry": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62JsEntry",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62EvmCarrierOracle": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62EvmCarrierOracle",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62EvmBoundaryOracle": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62EvmBoundaryOracle",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62EvmCandidatesOracle": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62EvmCandidatesOracle",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62JsSourceOracle": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62JsSourceOracle",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62JsEdgesOracle": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62JsEdgesOracle",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62JsDeltaOracle": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62JsDeltaOracle",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62PreservationOracle": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62PreservationOracle",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62MapBaseline": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62MapBaseline",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62SourceEvmSpec": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62SourceEvmSpec",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62SourceEcma": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62SourceEcma",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62SourceJsOwn": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62SourceJsOwn",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62SourceEvmOwn": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62SourceEvmOwn",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62SourceLogPlan": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62SourceLogPlan",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62LessonIntake": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62LessonIntake",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62Q11InventoryRule": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62Q11InventoryRule",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62MistakeLesson": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62MistakeLesson",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReadmeAdmissionPlan": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReadmeAdmissionPlan",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReviewerChecklist": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReviewerChecklist",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReviewQ11Span": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReviewQ11Span",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReviewQ11R24": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReviewQ11R24",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReviewDigestScope": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReviewDigestScope",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReviewPairCounts": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReviewPairCounts",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReviewRecordVsDerived": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReviewRecordVsDerived",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReviewJsNames": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReviewJsNames",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReviewJsSpans": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReviewJsSpans",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReviewJsDelta": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReviewJsDelta",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReviewJsQ13": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReviewJsQ13",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReviewEvmQ13": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReviewEvmQ13",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReviewReadmeScope": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReviewReadmeScope",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ReviewSourcesContract": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ReviewSourcesContract",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62CriticFrozenClaim": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62CriticFrozenClaim",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62CriticEvmScope": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62CriticEvmScope",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62CriticJsScope": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62CriticJsScope",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62CriticNoCredit": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62CriticNoCredit",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62CriticSourcedClaim": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62CriticSourcedClaim",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62CriticQ14": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62CriticQ14",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62CriticCrossLane": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62CriticCrossLane",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62CriticHarms": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62CriticHarms",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ConnectEvmPrior": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ConnectEvmPrior",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ConnectJsPrior": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ConnectJsPrior",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ConnectKasegi": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ConnectKasegi",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62ConnectLearning": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62ConnectLearning",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62SafeEvmReadout": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62SafeEvmReadout",
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62SafeJsReadout": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62SafeJsReadout",
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62RevenR24Truth": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62RevenR24Truth",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62RevenR26Boundary": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62RevenR26Boundary",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62RevenJsRoles": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62RevenJsRoles",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62RevenRecordsCensus": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62RevenRecordsCensus",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62DebtSearchLog": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62DebtSearchLog",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62DebtS019Anchor": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62DebtS019Anchor",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62DebtQ12Flip": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62DebtQ12Flip",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62DebtM25Capture": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62DebtM25Capture",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62DebtExistingFiles": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62DebtExistingFiles",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62FixturePremises": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FixturePremises",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62SimplifyEntrySurface": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62SimplifyEntrySurface",
+      "role": "simplifier",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62BaselineHolds": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62BaselineHolds",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62MutantJsCallSpan": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62MutantJsCallSpan",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62MutantEvmDigest": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62MutantEvmDigest",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62MutantEvmRawVsInsn": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62MutantEvmRawVsInsn",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62MutantJsNameSet": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62MutantJsNameSet",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62SourceRevisions": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62SourceRevisions",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    },
+    "R62InventoryRedExemplar": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62InventoryRedExemplar",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 new Q11-complete narrow C04/C09 candidates, primary sources and no premature admissions"
+    }
+  }
+}

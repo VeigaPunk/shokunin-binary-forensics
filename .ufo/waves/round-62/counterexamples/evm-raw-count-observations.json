@@ -1,0 +1,75 @@
+{
+  "revision": "a3498e25ad87bf756288812d0ea7c474b09433c7",
+  "python_version": "3.14.8",
+  "mutation": {
+    "revision": "a3498e25ad87bf756288812d0ea7c474b09433c7",
+    "file": "/fast/scratch/hyaku/revenger-r62/R62MutantEvmRawVsInsn/archive/corpus/fixtures/evm-r24/fixture.raw",
+    "offset_base": 0,
+    "length_before": 35,
+    "length_after": 35,
+    "changed_byte_count": 1,
+    "delta": [
+      {
+        "offset": 10,
+        "before": "0x00",
+        "after": "0x5b"
+      }
+    ],
+    "inside_first_push32_immediate": true,
+    "before_sha256": "b69834e0ef786e3c001b2c833c8c0388acc017de14d06110cfa85d4948685d93",
+    "mutant_sha256": "d1e7a919e61e6f2af02ae897bcfd6d03d1190659d099133befcdffaae3538370",
+    "before_hex": "7f63deadbeef1460105700000000000000000000000000000000000000000000005000",
+    "mutant_hex": "7f63deadbeef146010575b000000000000000000000000000000000000000000005000"
+  },
+  "phases": [
+    {
+      "phase": "pristine",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/fast/scratch/hyaku/revenger-r62/R62MutantEvmRawVsInsn/r24_probe.py",
+        "--detect",
+        "/fast/scratch/hyaku/revenger-r62/R62MutantEvmRawVsInsn/archive/corpus/fixtures/evm-r24/fixture.raw"
+      ],
+      "cwd": "/",
+      "exit": 0,
+      "stdout": "FIXTURE_BYTES=35\nFIXTURE_SHA256=\"b69834e0ef786e3c001b2c833c8c0388acc017de14d06110cfa85d4948685d93\"\nINSTRUCTION_STARTS=[0,33,34]\nINSTRUCTION_OPCODES=[\"0x7f\",\"0x50\",\"0x00\"]\nINSTRUCTION_COUNT=3\nPUSH_IMMEDIATE_SPANS=[{\"pc\":0,\"opcode\":\"0x7f\",\"start\":1,\"end_inclusive\":32,\"byte_count\":32}]\nRAW_0X5B_OFFSETS=[]\nRAW_0X5B_COUNT=0\nRAW_0X5B_PRESENT=false\nVALID_JUMPDEST_OFFSETS=[]\nVALID_JUMPDEST_COUNT=0\nDETECTOR=RAW_INSTRUCTION_COINCIDENCE\n",
+      "stderr": "",
+      "sha256": "b69834e0ef786e3c001b2c833c8c0388acc017de14d06110cfa85d4948685d93"
+    },
+    {
+      "phase": "mutated",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/fast/scratch/hyaku/revenger-r62/R62MutantEvmRawVsInsn/r24_probe.py",
+        "--detect",
+        "/fast/scratch/hyaku/revenger-r62/R62MutantEvmRawVsInsn/archive/corpus/fixtures/evm-r24/fixture.raw"
+      ],
+      "cwd": "/",
+      "exit": 1,
+      "stdout": "FIXTURE_BYTES=35\nFIXTURE_SHA256=\"d1e7a919e61e6f2af02ae897bcfd6d03d1190659d099133befcdffaae3538370\"\nINSTRUCTION_STARTS=[0,33,34]\nINSTRUCTION_OPCODES=[\"0x7f\",\"0x50\",\"0x00\"]\nINSTRUCTION_COUNT=3\nPUSH_IMMEDIATE_SPANS=[{\"pc\":0,\"opcode\":\"0x7f\",\"start\":1,\"end_inclusive\":32,\"byte_count\":32}]\nRAW_0X5B_OFFSETS=[10]\nRAW_0X5B_COUNT=1\nRAW_0X5B_PRESENT=true\nVALID_JUMPDEST_OFFSETS=[]\nVALID_JUMPDEST_COUNT=0\nDETECTOR=RAW_INSTRUCTION_DIVERGENCE\n",
+      "stderr": "",
+      "sha256": "d1e7a919e61e6f2af02ae897bcfd6d03d1190659d099133befcdffaae3538370"
+    },
+    {
+      "phase": "restored",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/fast/scratch/hyaku/revenger-r62/R62MutantEvmRawVsInsn/r24_probe.py",
+        "--detect",
+        "/fast/scratch/hyaku/revenger-r62/R62MutantEvmRawVsInsn/archive/corpus/fixtures/evm-r24/fixture.raw"
+      ],
+      "cwd": "/",
+      "exit": 0,
+      "stdout": "FIXTURE_BYTES=35\nFIXTURE_SHA256=\"b69834e0ef786e3c001b2c833c8c0388acc017de14d06110cfa85d4948685d93\"\nINSTRUCTION_STARTS=[0,33,34]\nINSTRUCTION_OPCODES=[\"0x7f\",\"0x50\",\"0x00\"]\nINSTRUCTION_COUNT=3\nPUSH_IMMEDIATE_SPANS=[{\"pc\":0,\"opcode\":\"0x7f\",\"start\":1,\"end_inclusive\":32,\"byte_count\":32}]\nRAW_0X5B_OFFSETS=[]\nRAW_0X5B_COUNT=0\nRAW_0X5B_PRESENT=false\nVALID_JUMPDEST_OFFSETS=[]\nVALID_JUMPDEST_COUNT=0\nDETECTOR=RAW_INSTRUCTION_COINCIDENCE\n",
+      "stderr": "",
+      "sha256": "b69834e0ef786e3c001b2c833c8c0388acc017de14d06110cfa85d4948685d93"
+    }
+  ],
+  "before_sha256": "b69834e0ef786e3c001b2c833c8c0388acc017de14d06110cfa85d4948685d93",
+  "restored_sha256": "b69834e0ef786e3c001b2c833c8c0388acc017de14d06110cfa85d4948685d93",
+  "restored_byte_equal": true,
+  "verdict": "KILLED"
+}

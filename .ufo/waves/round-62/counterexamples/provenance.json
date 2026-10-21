@@ -1,0 +1,38 @@
+[
+  {
+    "file": "evm-raw-count-delta.json",
+    "source": "/fast/scratch/hyaku/revenger-r62/R62MutantEvmRawVsInsn/r24-byte-delta.json",
+    "sha256": "c0857fb2c5cb7de49783a99c713644697f4f620660835da93fff994920ba75ff",
+    "note": "bounded synthetic-data experiment; does not certify any production verifier or replace in-entry derivations"
+  },
+  {
+    "file": "evm-raw-count-observations.json",
+    "source": "/fast/scratch/hyaku/revenger-r62/R62MutantEvmRawVsInsn/probe-result.json",
+    "sha256": "8d16101c78198588d5ae38cf690338d8cfa193b8500d1645444d58e27f0b6ec2",
+    "note": "bounded synthetic-data experiment; does not certify any production verifier or replace in-entry derivations"
+  },
+  {
+    "file": "evm-raw-count-stdout.txt",
+    "source": "/fast/scratch/hyaku/revenger-r62/R62MutantEvmRawVsInsn/probe.stdout",
+    "sha256": "f704edf56e7a7057fa2f2d1c5371da960274ffa8263b3a0369a072e9519b5650",
+    "note": "bounded synthetic-data experiment; does not certify any production verifier or replace in-entry derivations"
+  },
+  {
+    "file": "js-span-stdout.txt",
+    "source": "/fast/scratch/hyaku/revenger-r62/R62MutantJsCallSpan/probe-output.txt",
+    "sha256": "b8c1b7df6bb2dcc92ec9dc2e49c95d744ff155195e641001f720b87cfb30691d",
+    "note": "bounded synthetic-data experiment; does not certify any production verifier or replace in-entry derivations"
+  },
+  {
+    "file": "js-name-observations.json",
+    "source": "/fast/scratch/hyaku/revenger-r62/R62MutantJsNameSet/probe-results.json",
+    "sha256": "8cd4667cc47fe56a3caaf772e164f360faeaa5572510891f590d01069c403af3",
+    "note": "bounded synthetic-data experiment; does not certify any production verifier or replace in-entry derivations"
+  },
+  {
+    "file": "js-name-stdout.txt",
+    "source": "/fast/scratch/hyaku/revenger-r62/R62MutantJsNameSet/probe-output.txt",
+    "sha256": "c3c431c279a29504f91582ec39e511a94a4c3597eea748b66e80638acceb4b19",
+    "note": "bounded synthetic-data experiment; does not certify any production verifier or replace in-entry derivations"
+  }
+]

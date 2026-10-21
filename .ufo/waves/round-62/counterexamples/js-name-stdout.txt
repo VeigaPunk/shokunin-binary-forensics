@@ -1,0 +1,38 @@
+frozen_revision_recorded=a3498e25ad87bf756288812d0ea7c474b09433c7
+python=3.14.8 (main, Oct  2 2026, 10:23:31) [GCC 16.2.1 20260810]
+detector_sha256=bb96801b51ecb5b25040f0e689e9da60b4ee3dc194d919cfb378d05f4fa20301
+source_sha256=b53d96d432c120f6217a2da2ea3ed592308a3a23ef1a01745a22fd335ac4c42a
+record_before_sha256=331ec252aefdc7715e49f039d7443736ff9560565f208f35b4c972bfe45d564e
+record_mutated_sha256=360d92b4b0476a04e0e0137ee5b1c3b7bc06c9b26820cc12170b3da3520419bf
+semantic_delta=[{"path":["normalized_result","graph","edges",9,"properties","imported_name"],"before":"rot13","after":"checksum"}]
+byte_delta={"offset_zero_based":30558,"removed":"rot13","inserted":"checksum","before_bytes":171150,"mutated_bytes":171153,"unchanged_prefix_bytes":30558,"unchanged_suffix_bytes":140587}
+PHASE=pristine COMMAND=/usr/bin/python3 -B /fast/scratch/hyaku/revenger-r62/R62MutantJsNameSet/detect_names.py /fast/scratch/hyaku/revenger-r62/R62MutantJsNameSet/archive
+source=corpus/fixtures/js-r7-v2/index.js
+record=corpus/live/runs/round-7/v2-analysis.json
+source_line=1 const { rot13 } = require('./transform');
+selected_named_require_edges=1
+source_names=["rot13"] imported_names=["rot13"]
+missing=[] unexpected=[]
+NAME_SET=MATCH
+EXIT=0
+PHASE=mutated COMMAND=/usr/bin/python3 -B /fast/scratch/hyaku/revenger-r62/R62MutantJsNameSet/detect_names.py /fast/scratch/hyaku/revenger-r62/R62MutantJsNameSet/archive
+source=corpus/fixtures/js-r7-v2/index.js
+record=corpus/live/runs/round-7/v2-analysis.json
+source_line=1 const { rot13 } = require('./transform');
+selected_named_require_edges=1
+source_names=["rot13"] imported_names=["checksum"]
+missing=["rot13"] unexpected=["checksum"]
+NAME_SET=MISMATCH
+EXIT=1
+PHASE=restored COMMAND=/usr/bin/python3 -B /fast/scratch/hyaku/revenger-r62/R62MutantJsNameSet/detect_names.py /fast/scratch/hyaku/revenger-r62/R62MutantJsNameSet/archive
+source=corpus/fixtures/js-r7-v2/index.js
+record=corpus/live/runs/round-7/v2-analysis.json
+source_line=1 const { rot13 } = require('./transform');
+selected_named_require_edges=1
+source_names=["rot13"] imported_names=["rot13"]
+missing=[] unexpected=[]
+NAME_SET=MATCH
+EXIT=0
+record_after_sha256=331ec252aefdc7715e49f039d7443736ff9560565f208f35b4c972bfe45d564e
+restoration={"record_exact_bytes":true,"source_exact_bytes":true,"readme_exact_bytes":true}
+VERDICT=killed

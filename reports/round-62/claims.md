@@ -75,3 +75,28 @@ no replacements. No third-party targets, bytecode/fixture-JS execution,
 REA producers, blockchain calls, intrusive reproduction or offensive workflows.
 No model arguments; current host role routing. Heavy scratch is lane/round
 owned under /fast/scratch/hyaku/revenger-r62/ and removed on landing.
+
+## Build-audit clarifications (no target or quality-rule change)
+
+`R62CriticFrozenClaim.md` identified instrument/procedure ambiguities; the
+unchanged Q01–Q13 gate and target above still govern. Final K requires
+K_HELD_BACKED = K_HELD, exact denominator14, and only C04/C09 may change
+status. A flipped row names only its NEW admitted entry in the knowledge
+cell; old rejected candidates stay work evidence. C2's attributed2/2 line
+is checked separately from HOLDS_OK, which does not test that line.
+
+No corpus/verify_*.py file is added/deleted. The unchanged probe's bytes are
+pinned by the preservation check; final runs set TMPDIR under the round's
+/fast scratch. Before measurement did not record TMPDIR, so its temporary
+copy location is not evidence of that setting.
+
+Independent final Q recommendations come from fresh-wave seats other than
+the candidate author/corrector; L1 adjudicates, not a majority vote. Focused
+re-review after any correction reuses those existing seats by message,
+names the corrected file hash and preserves the original attack result.
+
+Q11 applies to every asserted value throughout the entry, not just prose.
+Every load-bearing claim needs its scoped primary authority under Q01.
+No Q14 or lexical inventory helper is adopted; token presence cannot
+substitute for a derivation. Four reserved source rows are distinct scoped
+re-opens, not corrections to existing rows.

@@ -1,0 +1,9 @@
+{
+  "constraint": "Mounted task schema requires solutionSpace per item; validator emits only name/agent/task.",
+  "preserved_fields": ["context", "tasks[].name", "tasks[].agent", "tasks[].task"],
+  "added_metadata": "tasks[].solutionSpace (role-generic)",
+  "model_parameter_passed": false,
+  "planner": "L1-held; no planner spawn",
+  "routing": "Host-authoritative; no model or fallback edits",
+  "scratch_root": "/fast/scratch/hyaku/revenger-r62/"
+}

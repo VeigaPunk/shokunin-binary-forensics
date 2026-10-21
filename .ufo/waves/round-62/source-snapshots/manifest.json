@@ -1,0 +1,34 @@
+[
+  {
+    "file": "execution-specs-instructions.py",
+    "url": "https://raw.githubusercontent.com/ethereum/execution-specs/v2.20.0/src/ethereum/forks/osaka/vm/instructions/__init__.py",
+    "access_date": "2026-10-21",
+    "bytes": 10700,
+    "sha256": "49dd6155c7560811a8f546ea9c5a29678e3a3da859216e2ee48cfacaa5b63724",
+    "origin": "source-opening build seat; copied byte-exact by L1, never executed"
+  },
+  {
+    "file": "execution-specs-runtime.py",
+    "url": "https://raw.githubusercontent.com/ethereum/execution-specs/v2.20.0/src/ethereum/forks/osaka/vm/runtime.py",
+    "access_date": "2026-10-21",
+    "bytes": 1971,
+    "sha256": "a2801c4169b806a9494707179a9df20170a37a1769596aac56013ddba509aef8",
+    "origin": "source-opening build seat; copied byte-exact by L1, never executed"
+  },
+  {
+    "file": "ecma-statements.html",
+    "url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html",
+    "access_date": "2026-10-21",
+    "bytes": 956160,
+    "sha256": "a23fc93cf4a31708bd9dc4b89c1b66c6150fff41f7198d5c6f91819e5fc8813e",
+    "origin": "source-opening build seat; copied byte-exact by L1, never executed"
+  },
+  {
+    "file": "ecma-scripts-modules.html",
+    "url": "https://tc39.es/ecma262/multipage/ecmascript-language-scripts-and-modules.html",
+    "access_date": "2026-10-21",
+    "bytes": 1033596,
+    "sha256": "a544440624a11661a35e9b75934fe916a86078b9a94f7b6b25ea239b66b136d4",
+    "origin": "source-opening build seat; copied byte-exact by L1, never executed"
+  }
+]
