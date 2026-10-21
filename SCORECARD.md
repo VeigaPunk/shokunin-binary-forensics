@@ -183,3 +183,44 @@ Next round (declared fleet round-1 kaika continuation):
 ## Retired
 
 - none retired; record with justification when an axis is retired.
+
+## Round 61 (hyaku) — axes, current
+
+Supersedes the `Planned` list above for the items it consumes (planned item 2,
+and item 3's C04/C09 alternative). Pre-registration `reports/round-61/claims.md`
+at `e0a4b0c4348ef1fade46539f520e94fa140c4d8a`, amendments A1/A2 before any
+after-run. Measured from isolated `git archive <commit> corpus` snapshots with
+`python3 -B reports/round-61/measure.py TREE`: before `cf02419`
+(`reports/round-61/measure-before.log`), after the work landing
+`0b6ddf07f33184baf901dd807ddc72a95f4010c1` (`reports/round-61/measure-after.log`).
+
+| axis / criterion | before → after | counting command | measured commits | verdict (pending non-author verification) |
+|---|---|---|---|---|
+| coverage — knowledge-map ground (K) | 2.9 → **4.3** (`K_HELD_BACKED` 4/14 → 6/14; C04 and C09 uncovered → held, each backed by an admitted entry) | probe `K_HELD_BACKED` (regex as `:133` plus entry-file existence) | `cf02419` → `0b6ddf0` | improved |
+| calibration — receipt-identity mutation kill (new, split this round) | 0.0 → **10.0** (`C2_RECEIPT_B_KILLED_ATTRIBUTED` 0/2 → 2/2) | probe C2 lines | `cf02419` → `0b6ddf0` | improved (narrow regression guard) |
+| calibration — selected saved-ledger runnability (C) | 10.0 → 10.0 (`HOLD_CALIBRATION` 4/4, `HOLD_REPLAY` 10/10 both) | C (`:32-43`), via the probe | same | unchanged (hold) |
+| coverage — selected-family record presence (F) | 5.0 → 5.0 (`COVERAGE 4/8` both) | F (`:45-57`) | same | unchanged |
+| freshness — stored assertions re-verified | 10.0 → 10.0 (18/18 rows still present) | `:134` grep | same | unchanged |
+| depth, operability, adjacency | — | — | — | unchanged (no claim; cross-lane ground reported in each entry, not absorbed) |
+
+Split reason (AXES.md §Working the axes): the runnability criterion C counts
+exit 0 only and was already at 10.0, so it cannot see whether a verifier's own
+run would notice a deleted identity check. The new criterion counts exactly the
+two kaika survivors (`.ufo/waves/kaika-r1/mutation-post.md:15,21`); its 10.0 is
+a regression guard on two scripts, not a general calibration level. The other
+four receipt conjuncts in both scripts (8 survivors,
+`.ufo/waves/round-61/build/MutationReceiptConjuncts.md`) and the receipt clauses
+in `verify_named_multi_icon_states.py` and `verify_icon_states.py` stay outside
+the claim. Holds: saved records and fixtures byte-identical
+(`git diff --stat cf02419 0b6ddf0 -- corpus/live corpus/fixtures` empty).
+
+Capabilities: none added (C2 strengthens existing verifiers; the entries are
+knowledge, not a new capability).
+
+**planned:** next round, pick from (1) coverage F: an authored firmware fixture
+through REA `inspect_firmware_regions` (unchanged from `:179`); (2) calibration:
+in-script controls for the remaining receipt conjuncts and for the
+`verify_named_multi_icon_states.py`/`verify_icon_states.py` receipt clauses
+(Q13); (3) coverage K: re-gate `seed.md` and the readiness checklist against
+Q01–Q13, or an authored discriminator for C04's `main` vs fallback (non-index
+`main`) through a fresh producer run.

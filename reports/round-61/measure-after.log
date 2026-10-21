@@ -1,0 +1,47 @@
+$ A=/tmp/revenger-r61-after; mkdir -p $A && git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive --format=tar 0b6ddf07f33184baf901dd807ddc72a95f4010c1 corpus | tar -x -C $A && python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-61/measure.py $A
+K_HELD=6/14 score=4.3
+K_ROW C04 status=held
+K_ROW C09 status=held
+K_HELD_BACKED=6/14
+MUTANT verify_icon_languages.py control exit=0 pass :: PASS: 3/3 group-language states, 2/2 exact one-byte deltas, two icon candidates retained, forged selection REJECTED
+MUTANT verify_icon_languages.py b exit=1 killed :: AssertionError: r47: forged receipt command accepted
+MUTANT verify_icon_languages.py d2 exit=1 killed :: AssertionError: r47: receipt
+MUTANT verify_multi_icon_states.py control exit=0 pass :: PASS: 4/4 two-image states, 3/3 exact one-byte deltas, first link stable, forged second match REJECTED
+MUTANT verify_multi_icon_states.py b exit=1 killed :: AssertionError: r42: forged receipt command accepted
+MUTANT verify_multi_icon_states.py d2 exit=1 killed :: AssertionError: r42: receipt
+C2_CONTROLS_PASS=2/2
+C2_RECEIPT_B_KILLED=2/2
+C2_D2_KILLED=2/2
+C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2
+HOLD verify_evm_evidence.py exit=0 NEGATIVE REJECTED candidate destination mismatch
+HOLD verify_icon_languages.py exit=0 PASS: 3/3 group-language states, 2/2 exact one-byte deltas, two icon candidates retained, forged selection REJECTED
+HOLD verify_icon_states.py exit=0 PASS: 4/4 source-decoded states, 3/3 one-byte deltas, one forged candidate REJECTED
+HOLD verify_js_graph_delta.py exit=0 NEGATIVE REJECTED saved graph disagrees with source truth
+HOLD verify_multi_icon_states.py exit=0 PASS: 4/4 two-image states, 3/3 exact one-byte deltas, first link stable, forged second match REJECTED
+HOLD verify_named_multi_icon_states.py exit=0 PASS: 139 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.
+HOLD verify_pe_resources.py exit=0 NEGATIVE REJECTED payload relation mismatch
+HOLD verify_saved_evidence.py exit=0 NEGATIVE JS REJECTED: JS: wrong package-main mapping
+HOLD verify_semantic_trace.py exit=0 NEGATIVE REJECTED relation differs from source parent
+HOLD verify_shape_evidence.py exit=0 NEGATIVE REJECTED changed-property evidence mismatch
+HOLD_CALIBRATION=4/4
+HOLD_REPLAY=10/10
+HOLDS_OK=yes
+probe_exit=0
+
+$ git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff --stat cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97 0b6ddf07f33184baf901dd807ddc72a95f4010c1 -- corpus/live corpus/fixtures
+(no output)
+diff_rc=0
+
+$ # entry Reproduce blocks re-run from the archive root; stdout compared with each entry's Provenance block
+corpus/knowledge/evm-saved-interface-candidates.md exit 0 identical True 14
+corpus/knowledge/commonjs-destructured-require-edges.md exit 0 identical True 29
+
+$ # SCORECARD command F (coverage families) and freshness proxy, from the archive root
+COVERAGE 4 / 8 score= 5.0 families= ['native-static', 'javascript', 'archives', 'evm']
+corpus/knowledge/seed.md:12
+corpus/knowledge/2026-10-12-rea-readiness-checklist.md:6
+
+$ /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin revenger
+revenger	W04	S024 duplicate url www.rfc-editor.org/rfc/rfc3227.txt across scopes
+revenger	ok	/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md
+census_rc=0
