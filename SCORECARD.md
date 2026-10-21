@@ -252,3 +252,8 @@ The earlier K score was provisional status text, not proof of admission.
 The probe checks existence only; the quality gate is the separate necessary
 condition that rejected these candidates. Final command output and measured
 revision are appended to `reports/round-61/measure-after.log`.
+
+Final measured revision: `7a66d224ef671c086c6e48fa0fc27dff4381281f`.
+Probe exit 0, `K_HELD_BACKED=4/14`,
+`C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2`, `HOLDS_OK=yes`; census exit 0,
+saved-input diff empty (`reports/round-61/measure-after.log:96-136`).
