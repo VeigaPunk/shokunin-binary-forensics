@@ -1,0 +1,31 @@
+{
+  "original_revision": "d97761952be256d145d298022de03091de91d358",
+  "before": {
+    "corpus/knowledge/round-62-evm-dispatch-byte-evidence.md": "6a1d394ad92fcaa5344069d1225e428988f1397e80c8968745d7b48bf43fed6e",
+    "corpus/knowledge/round-62-commonjs-require-name-evidence.md": "42096e9676d33e25c3b6092e60fbd0fdacd699435ed9dc9db59ce24a1ceaaba3"
+  },
+  "corrected_pending_review": {
+    "corpus/knowledge/round-62-evm-dispatch-byte-evidence.md": "35ad7d93936f31e02eae9431df6185f31d0c38b079579586ab2fce15b80f2e4d",
+    "corpus/knowledge/round-62-commonjs-require-name-evidence.md": "d4544c7012a52c0b877022009de6056d6beeda53cd78c2054361e732dce5cafe"
+  },
+  "scope_unchanged": true,
+  "quality_Q01_Q13_unchanged": true,
+  "new_seats": 0,
+  "README_flipped": false,
+  "changes": {
+    "C04": [
+      "physical source-line derivation and saved-line readback/equality",
+      "ASCII/column convention evidence",
+      "metadata hash/count commands and exact output; recorded spec metadata",
+      "false network count/wordcount/rendering claims corrected",
+      "unknowns and crosslane paraphrase scoped"
+    ],
+    "C09": [
+      "explicit printed carrier-framing decode boundaries",
+      "r19-only raw template origin and r24 non-instruction roles",
+      "complete aggregate/value inventory and removed unsupported optional claims",
+      "S026 recorded-metadata citation with allowed source-usedby log"
+    ]
+  },
+  "next": "fresh existing reviewers re-review exact committed corrected bytes; no admission from successful code output alone"
+}

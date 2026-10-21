@@ -1,0 +1,649 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": null,
+  "createdAt": "2026-10-21T20:26:30.191Z",
+  "updatedAt": "2026-10-21T20:26:30.191Z",
+  "reportDir": ".ufo/waves/round-62/falsify",
+  "members": {
+    "R62FEvmCarrier": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmCarrier",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmRecords": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmRecords",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmOpcodeSources": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmOpcodeSources",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmR19R21Pair": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmR19R21Pair",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmR22Pairs": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmR22Pairs",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmR23Empty": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmR23Empty",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmR24RawWalk": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmR24RawWalk",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmR24Span": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmR24Span",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmR25R26": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmR25R26",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmSummaryCounts": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmSummaryCounts",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmWalkerSpec": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmWalkerSpec",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmDigestLabels": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmDigestLabels",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmQ11Inventory": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmQ11Inventory",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmUnknowns": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmUnknowns",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmCrosslane": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmCrosslane",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsFilesType": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsFilesType",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsSourceNames": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsSourceNames",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsCallSpans": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsCallSpans",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsBindingSpans": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsBindingSpans",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsImportsNames": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsImportsNames",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsTargetIdentity": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsTargetIdentity",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsRecordFields": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsRecordFields",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsNameDelta": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsNameDelta",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsSemantics": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsSemantics",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsQ11Inventory": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsQ11Inventory",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsScopeUnknown": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsScopeUnknown",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsRegexBoundary": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsRegexBoundary",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsSourceRows": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsSourceRows",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsQ13Boundary": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsQ13Boundary",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsCrosslane": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsCrosslane",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FSourceOpenS028": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FSourceOpenS028",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FSourceOpenS029": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FSourceOpenS029",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FSourceOpenS030": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FSourceOpenS030",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FSourceOpenS031": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FSourceOpenS031",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FSourceCells": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FSourceCells",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FSourceNewLogs": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FSourceNewLogs",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FSourceOldErratum": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FSourceOldErratum",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FSourceCensus": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FSourceCensus",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmAllCriteria": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmAllCriteria",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsAllCriteria": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsAllCriteria",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmNoGuard": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmNoGuard",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FAdmissionOrder": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FAdmissionOrder",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FMutantJsSpan": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FMutantJsSpan",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FMutantJsNames": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FMutantJsNames",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FMutantEvmRaw": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FMutantEvmRaw",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FMutantEvmIdentity": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FMutantEvmIdentity",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FSafeEvm": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FSafeEvm",
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FSafeJs": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FSafeJs",
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FReproduceEvm": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FReproduceEvm",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FReproduceJs": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FReproduceJs",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FHoldInputBytes": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FHoldInputBytes",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FHoldOldEvidence": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FHoldOldEvidence",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FHoldMap": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FHoldMap",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FHoldCalibration": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FHoldCalibration",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FHoldFandFreshness": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FHoldFandFreshness",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FCriticKCounter": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FCriticKCounter",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FCriticScopeSet": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FCriticScopeSet",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FCriticInventoryMethod": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FCriticInventoryMethod",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FCriticLearning": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FCriticLearning",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FLessonM25": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FLessonM25",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FLessonSourcesGate": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FLessonSourcesGate",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FEvmPatternOrigin": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FEvmPatternOrigin",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FJsDerivedMetadata": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FJsDerivedMetadata",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    },
+    "R62FSnapshotAuthority": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.R62FSnapshotAuthority",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Attack exact pending C04/C09 entries and unchanged quality gates before any held flip"
+    }
+  }
+}

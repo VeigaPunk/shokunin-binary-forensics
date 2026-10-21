@@ -1,0 +1,55 @@
+GRADE: PARTIAL — corpus/knowledge/round-62-evm-dispatch-byte-evidence.md (C09 candidate) at frozen rev d97761952be256d145d298022de03091de91d358
+
+Seat `RevengerR61-2.R62FEvmCrosslane` (leaf, cross-lane/Q10 attack on the C09
+candidate; no subagents). Frozen revision
+`d97761952be256d145d298022de03091de91d358` (tree
+`45c4c5da82aae8ca2e44f6e3ed874a33533f54b9`, archive tar sha256
+`4b52df49bbd6349d6ac8c45c4f7d73d9e7125c7f719950e89818cad21dc8cebc`), extracted
+read-only with `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive
+d97761952be256d145d298022de03091de91d358 | tar -x -C
+/fast/scratch/hyaku/revenger-r62/R62FEvmCrosslane/`. Candidate file sha256
+`6a1d394ad92fcaa5344069d1225e428988f1397e80c8968745d7b48bf43fed6e`, git blob
+`3e58a91fa8aee579aff7f873ce55061ae8f92cdf` (identical in the worktree and at
+d9776195). Base a3498e25 also extracted to `…/R62FEvmCrosslane/base`. TMPDIR
+`…/R62FEvmCrosslane/tmp`. No bytecode, chain, RPC, producer or fixture-JS
+execution; no corpus/live/fixtures write; no git index/history/jj mutation.
+
+## Observation (primary evidence, all read-only)
+
+1. **ADJ-06 stays unresolved and is reported, not decided.** Entry
+   `round-62-evm-dispatch-byte-evidence.md:175-184` ("## Cross-lane scope note
+   (Q10)") states the overlap "is recorded as unresolved" and "this entry
+   declares no ownership and no ruling". Its two attributed sources are exact
+   and exist at d9776195:
+   - `corpus/lessons/round-62.md:29` — `| ADJ-06 sibling arbitration | Operator-owned and unresolved; new entries do not declare ownership or a ruling. |`
+     The entry's quoted fragment ("ADJ-06 sibling arbitration … Operator-owned
+     and unresolved; new entries do not declare ownership or a ruling") is
+     verbatim, with the table pipe elided by `…`.
+   - `.ufo/waves/round-62/build/R62DebtExistingFiles.md:33` — `## 4. ADJ-06 (kaidoku/revenger shipped-artifact overlap) — open, operator-owned` (section 4 = the cited section).
+   Independent read-only corroboration that the arbitration is still open:
+   `grep -n 'arbitrat' kaidoku-shokunin/PROVINCE.md` → 240 "kaidoku/revenger arbitration is still open.", 273 "arbitration question remains open.", 303 "kaidoku/revenger arbitration is open." (kaidoku HEAD `1e1bbef45ea0b92e443cdca04b814e74dfecbca1`; same three lines at the build-wave pin `69e82c48` with 301 in place of 303); `tsukuroi-shokunin/corpus/knowledge/adjacency-handoffs-fleet-r1.md:54` → `| ADJ-06 | protocol integrator for ownership ruling | … | Both declare shipped-artifact RE. No owner selected, no target run, no raw core forwarded. … |`; `/home/vgpnk/Projects/shokunin/.ufo/l0-questions.md:42` is tsukuroi's open L0 question. The entry names no recipient, no ruling, no owner.
+2. **No invented kasegi ownership.** `grep -ni -E 'kasegi|kaidoku|tsukuroi' corpus/knowledge/round-62-evm-dispatch-byte-evidence.md` → rc=1, no match (also no `owns`, `prior art`, `holds the same`, `ground reported`). The false round-61 citation (`evm-saved-interface-candidates.md:104-106`, "Kasegi owns deployed-code identity and claimability", pointing at the `**Refuses:**` line `kasegi-shokunin/PROVINCE.md:25`) is not reproduced; `git diff --stat a3498e25 d9776195 -- corpus/knowledge/evm-saved-interface-candidates.md corpus/knowledge/commonjs-destructured-require-edges.md corpus/lessons/round-61.md` → empty (rejected evidence byte-preserved).
+3. **No sibling proposition re-claimed as new.** The entry cites no sibling corpus file (`grep -n -E 'kaidoku-shokunin|kasegi-shokunin|tsukuroi-shokunin'` → rc=1) and no rejected row (`grep -n -E 'S016|S017|S018|S019|S024|S025|S026|S027'` → rc=1). Its offset inference (`:121-124`) is fenced: "an observation about these bytes; it is not a definition of the field for any other carrier, and it is not a claim that the field *is* a jump destination in general", and the empty-list `evidence_id` unknown (`:143-145`) asserts only "recorded, not authenticated … claims no formula", i.e. it does not repeat the round-61 non-recomputability claim contradicted in `round-61/falsify-w3/W3ProvinceBounds.md:17-22`. No novelty or priority wording anywhere (`grep -ci 'prior art|new\b|first'` → 0).
+4. **Q11 inventory is complete and exact (independent re-derivation, not token presence).** The `## Reproduce` block was extracted programmatically from the entry (lines 292-422) and run on the archived copies: `python3 -B readout.py <archive-root>` (cwd=/) → exit 0, stderr empty, 8 stdout lines, sha256 `aff3efda2691cb95ed7146292f602ba5dc5c40794e5c64efda3aaa7275f235bf` — byte-identical to the entry's own `## Provenance` block (`EQUAL: True` on a programmatic extraction) and identical for the a3498e25 and d9776195 archives. A semantic resolver then walked every inventory row's `case.field` pointer into that output: **67 rows, 0 missing, 0 mismatched** (values compared as parsed JSON, not by token presence). Independent cross-checks outside the entry's code: `sha256sum` of `evm-r19/fixture.hex` = `294e6fd2…b827`, `evm-r21/fixture.raw` = `d1086bce…e723`, `evm-r24/fixture.raw` = `b69834e0…5d93`, `round-19/inspection.json` = `e892dd18…f948`; r24 byte scan → len 35, pattern starts [1], span (1,9), `d[7]=0x60`, `d[8]=0x10`, `d[16]=0x00`, raw `0x63` [1], raw `0x5b` []; r22/r23/r25/r26 `normalized_result.functions` = [] for all four.
+5. **Source authority (Q01) re-opened read-only, exactly as cited.** `curl` of tag v2.20.0 `instructions/__init__.py` → sha256 `49dd6155c7560811a8f546ea9c5a29678e3a3da859216e2ee48cfacaa5b63724` and `runtime.py` → `a2801c4169b806a9494707179a9df20170a37a1769596aac56013ddba509aef8`, both equal to the S028 row pins; the quoted lines match verbatim (`:55 EQ = 0x14`, `:104 STOP = 0x00`, `:106 JUMPI = 0x57`, `:109 JUMPDEST = 0x5B`, `:118 POP = 0x50`, `:121 PUSH0 = 0x5F`, `:122 PUSH1 = 0x60`, `:125 PUSH4 = 0x63`, `:153 PUSH32 = 0x7F`; `runtime.py:22`, `:28`, `:29-30`, `:64`). Tag→commit mapping confirmed via GitHub API: `refs/tags/v2.20.0` → tag object `67f038c8…` → commit `2004296f2ffcbcebcd00f41152d33e8dfda0922a`. S031/S028 rows exist in `corpus/SOURCES.md` at d9776195 (tier A, opened 2026-10-21, `mined`, `used-by` includes this entry); SOURCES census clean on the frozen tree: rows 31, malformed 0, `A=29 C=2`, `mined=26 queued=1 rejected=4`, no duplicate ids, no enum/tier violations, no missing `used-by` paths.
+6. **Unchanged gate and coverage state.** `python3 -B reports/round-61/measure.py <archived d9776195 tree>` (cwd=/) → `K_HELD_BACKED=4/14`, `K_ROW C09 status=uncovered`, `C2_CONTROLS_PASS=2/2`, `C2_RECEIPT_B_KILLED=2/2`, `C2_D2_KILLED=2/2`, `C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2`, `HOLD_CALIBRATION=4/4`, `HOLD_REPLAY=10/10`, `HOLDS_OK=yes`; `git show d9776195:corpus/README.md` → C04 `:33` and C09 `:38` still `uncovered`. No held flip has occurred; this candidate alone does not move K.
+
+## Inference
+
+- The cross-lane axis holds on the frozen bytes: the entry reports ADJ-06 as unresolved with two exact, existing, lane-local pointers, claims no ownership, ruling or recipient, cites no sibling corpus file and no rejected row, re-claims no sibling proposition as new, and repeats neither the false kasegi ownership sentence nor the contradicted `evidence_id` non-recomputability claim.
+- The load-bearing byte/record evidence holds under independent re-derivation: the entry's own block reproduces byte-identical stdout at both the declared base and the frozen candidate revision, all 67 inventory rows resolve to parsed output values with zero mismatch, the digests and r24 span/target/offset facts reproduce under code that is not the entry's, and the cited S028 anchors match the upstream files at the pinned commit.
+- Two nonfatal wording residues remain, neither a failed Q01–Q13 criterion and neither a false value: (i) `## Observation` states "The four records that report no pair. r23, r24, r25 and r26" (`:113-117`) while `## Unknown` asks "Why r23, r25 and r26 report no pair" (`:139-141`), so r24's non-reporting is not enumerated among the unexplained cases (Q07 still passes — no cause is stated for r24 either); (ii) for r24 the prose calls offset 7 "the PUSH1 opcode byte" (`:135`) and the inventory rows inherit the readout's field names `embedded_target_offset`/`embedded_target_byte` (`:271-274`) without saying that r24's offsets 1–32 are PUSH32 immediate data — the distinction is recoverable in-entry only from r24's printed instruction walk in `## Provenance` (`instructions":[[0,127,…],[33,80,""],[34,0,""]]`), and the entry's own counts (`0x0`:1, `0x50`:1, `0x7f`:1; raw `0x63` [1]; raw `0x5b` []) already show no 0x63 opcode.
+- Coverage consequence, not a decision: C09 remains `uncovered` and K stays 4/14 at the frozen revision; if this entry is admitted it is the C09 lift to 5/14 described in `reports/round-62/claims.md:9-13`. Admission belongs to L1 and the fresh wave; this seat decides nothing and repairs nothing.
+
+## Unknown / limits (honest)
+
+- Whether kaidoku's own scope limits (arc3-r3:31 "the reading does **not** hold"; arc3-r4:22 "the r1/r3 reading does NOT generalize", 0 of 15) and its held EVM map row (`kaidoku-shokunin/corpus/README.md:38`) should be recorded inside revenger's corpus for the offset inference: I report the omission (silent absorption risk flagged in `round-62/build/R62CriticCrossLane.md` counterexample 5, and `R62ConnectKasegi.md` Option A′) as an observation for L1's Q10 adjudication; I do not claim it is a defect, because the entry makes no universal claim, no novelty claim and no ownership claim, and both siblings' line numbers drift (`69e82c48` :240/:273/:301 vs HEAD `1e1bbef` :240/:273/:303), so any sibling pointer would need a commit pin.
+- I did not run any provider, chain, RPC, bytecode or fixture-JS path, and did not evaluate whether the saved records' `dispatch`/argument/mutability labels are correct (the entry states them as provider-recorded and uninterpreted).
+- I did not judge the C04 candidate `round-62-commonjs-require-name-evidence.md`; other fresh-wave seats own it.
+- No sibling line/anchor was trusted at face value; every quoted sibling line above was re-read read-only at the stated commit.
+
+## VERDICT
+
+Cross-lane assignments CONFIRMED on the frozen bytes: ADJ-06 remains unresolved and reported (not decided); no kasegi ownership invented; no sibling proposition re-claimed as new; every attributed statement traced to an exact existing source. Grade PARTIAL, not HOLDS, solely for the two nonfatal wording residues in (i) the `## Unknown` enumeration of the four empty-pair records (r24 omitted) and (ii) r24's inherited "opcode"/"target" field wording without the in-entry note that offsets 1–32 are PUSH32 immediate data. No Q01–Q13 criterion fails on this evidence, no value is correct-but-underived, no repair made and no admission claimed; L1 adjudicates the Q10 omission question and the wording items.
+
+Installs / updates: none (no pacman, uv, cargo or npm transaction; no service restart). Tools used: git (read-only archive/show/diff), curl (two public specification files + GitHub tag/commit API), python3 3.14.8 stdlib.

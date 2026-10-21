@@ -116,3 +116,94 @@ and no relaxed test. Every failed candidate stays uncounted.
 Not yet performed for round62. In-round wave reviewers are still this lane;
 independent closure will sample final admits/rejects. Prior outside decisions
 are recorded above, not reused as current admission.
+
+## Gate — fresh-wave findings and bounded correction stage
+
+Frozen candidate state `d97761952be256d145d298022de03091de91d358`
+was attacked by 64 fresh seats, with 64 reports and no deaths; initial
+advisory grades HOLDS30 / PARTIAL24 / BROKEN10
+(`.ufo/waves/round-62/falsify/initial-adjudication.json`).
+Both candidates remain blocked and both README rows remain uncovered.
+All-criteria reviewers' PARTIAL grades cannot override primary
+counterexamples from a narrower seat.
+
+Decisive C04 findings: the code numbered non-empty lines rather than
+physical lines and sliced the regex line instead of the saved line;
+readout/stdout/source-pin metadata lacked derivations or recorded labels;
+the quote's claimed eight-word count was false; a round-wide one-network-
+access claim was false. Sources: `R62FJsScopeUnknown.md`,
+`R62FJsQ13Boundary.md`, `R62FJsSemantics.md`, `R62FSafeJs.md`.
+
+Decisive C09 findings: hex framing was blindly sliced, not derived;
+r24 raw template bytes were described as instruction opcodes; the pattern
+was derived once from r19 despite plural-origin wording; optional provider
+labels were asserted without printing them; recorded metadata's source scope
+needed S026. Sources: `R62FEvmCarrier.md`, `R62FEvmQ11Inventory.md`,
+`R62FEvmDigestLabels.md`, `R62FSafeEvm.md`, `R62FEvmAllCriteria.md`.
+
+Original attacked candidate bytes are retained under
+`.ufo/waves/round-62/falsify/frozen-candidates/`, in addition to git history.
+The original authors make bounded corrections in scratch, not a new target.
+Existing fresh-wave reviewers will re-review exact committed corrected
+hashes; no new wave, replacement, pre-credit or relaxed Q11.
+
+### Re-opened metadata source and allowed row change
+
+S026 was re-opened this round by the source/record seats and L1 for its
+literal saved metadata scope; it is not evidence of actual producer origin.
+Located quote: `corpus/live/runs/round-19/inspection.json`,
+`provider.version`, accessed 2026-10-21: `"evmole@0.9.3"`.
+The fresh `R62FEvmRecords.md` report covers the same recorded fields
+across the selected records. The new entry cites S026 specifically for
+metadata, not stretching S031's byte-oracle scope.
+
+Allowed S026 `used-by` change old→new:
+`corpus/knowledge/evm-saved-interface-candidates.md`
+→ that same retained path plus
+`corpus/knowledge/round-62-evm-dispatch-byte-evidence.md`,
+`corpus/lessons/round-62.md`. Status/recheck/scope/anchor/teaches unchanged.
+The earlier “existing rows: none” statement describes the candidate-freeze
+stage, not this subsequently logged change. No other old row is changed.
+
+### Source-log and mistake precision dispositions
+
+`R62FSourceNewLogs.md` correctly calls for an explicit distinction between
+the round62 **document-set** totals and the historical erratum's
+**external-document** totals; they must not be numerically compared.
+Failed URL attempts are outside the new source-set count, not silently
+successful documents. `R62SourceLogPlan.md` self-reported two short-form
+mirror 404s without a complete URL/status receipt; that detail is recorded
+as its unverified report, not as an independently established HTTP fact.
+`R62SourceRevisions.md` additionally opened /2026/, es2026 and es2026-errata
+versions and recorded /2027/ HTTP404; these are alternative revisions in
+the S029 specification set, not new included authorities. They were not
+selected for the current-draft-specific quote; the source remains pinned
+by its recorded draft identity/digest. The note's omission of this opener
+is corrected by this explicit attribution.
+
+The recommendation not to mint S029 (`R62ReviewSourcesContract.md`) was
+considered, not silently ignored. L1 retained a scoped companion row to
+record this round's narrow source/graph-role use and ImportEntry anchor;
+it does not supersede S022 or claim discovery of a new document.
+S028's “narrower” descriptor excludes execution semantics but adds more
+opcode anchors, so it is not a strict set-subset claim; the immutable row
+is not cosmetically rewritten. Recheck choices are legal cadences, not
+claimed drift-detection capabilities: 90d for the fixed saved-data sources,
+on-release for the specification re-opens. The revision scout's preference
+for periodic pin checks is retained as a recommendation, not a completed
+freshness fix.
+
+`R62FSourceOldErratum.md` confirms the historical count reconstruction.
+Its S024 “stopped after locating Abstract/§2.1” clause was an unsupported
+attribution of a historical stopping event and is withdrawn: the
+reconstruction is bounded to the recorded §2.1/successor-field correction.
+The old REA main/tag statement was literally true but incomplete, not
+wholly false; the producing tag was also opened. S019 moving/intro-anchor
+debt remains unresolved. No old row/old search note is rewritten.
+
+M27 precision: the old C04 **Python block**, not the entire old entry,
+printed no span-location derivation. The old C09 did print raw0x63 offsets;
+the absent facts were raw0x5B absence, the embedded-pattern occurrence
+count/span and embedded target. The retained counterexamples and new
+physical-line/hex-framing counterexamples remain the red-before evidence.
+No lexical token inventory is treated as a Q11 pass.

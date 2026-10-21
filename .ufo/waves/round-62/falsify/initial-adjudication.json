@@ -1,0 +1,27 @@
+{
+  "frozen_revision": "d97761952be256d145d298022de03091de91d358",
+  "spawned": 64,
+  "reports": 64,
+  "dead": 0,
+  "grade_counts": {
+    "BROKEN": 10,
+    "HOLDS": 30,
+    "PARTIAL": 24
+  },
+  "admission": "blocked for both at original attacked bytes; no README flips",
+  "decisive_findings": {
+    "C04": [
+      "physical line ordinal/saved line not derived",
+      "readout/run/source pin metadata underived or not labeled recorded",
+      "false quote wordcount and rendering claim",
+      "false round-wide one-network-access count"
+    ],
+    "C09": [
+      "hex prefix/trailer offsets assumed and not printed",
+      "r24 raw-template bytes mislabeled as opcode boundaries",
+      "pattern origin r19-only vs plural-source prose",
+      "underived optionalproviderlabels; inventory under-pointing metadata scope"
+    ]
+  },
+  "next": "bounded corrections under already-frozen claims permission, retain attacks, reuse existing independent reviewers on exact corrected hashes"
+}

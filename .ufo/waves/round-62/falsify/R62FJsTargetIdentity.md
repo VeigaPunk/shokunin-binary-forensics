@@ -1,0 +1,38 @@
+GRADE: PARTIAL — corpus/knowledge/round-62-commonjs-require-name-evidence.md (C04 candidate): target-kind/identity/strategy/namespace/key and recorded-location audit
+
+## Frozen target
+- Revision `d97761952be256d145d298022de03091de91d358` (full, `git rev-parse`), claim base `5bd4a90fc1a34caa94496601b60537b3aab12301`, pre-registration `a3498e25ad87bf756288812d0ea7c474b09433c7`.
+- Candidate SHA-256 `42096e9676d33e25c3b6092e60fbd0fdacd699435ed9dc9db59ce24a1ceaaba3`; `cmp` of the d977619 extract copy against the working file -> `WORKTREE_MATCHES_FROZEN`.
+- Extract: `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive d9776195… | tar -x -C /fast/scratch/hyaku/revenger-r62/RevengerR61-2.R62FJsTargetIdentity/tree`; cwd=scratch, TMPDIR=scratch/tmp. Embedded `readout.py` extracted from §Reproduce -> SHA-256 `31dac2113f1b78967a635fbf65125ecedc7a7ab4924debad8ba3c4be77ee02ac`.
+- Scope of this seat: the printed per-edge target kind, identity strategy, namespace, key, and recorded location only; named-vs-unnamed scoping. No repair, no admission, no producer/REA/runtime call, no network.
+
+## Observation (primary)
+O1 Reproduction: `python3 -B readout.py tree` -> `EXIT=0`, `25 stdout.txt`, stdout SHA-256 `58b63dd9d7c7ae4a0311ff33f12317345f7e5b7c9e8f204cfb13d1d599f0c416`; the §Reproduce stdout block is byte-identical (`embedded==mine True`). This is reproduction, not independent proof of the record fields below.
+O2 Raw record target identities (independent JSON walk of `normalized_result.graph.edges` + `nodes`, both records; output abridged at `…` only, full key sets in O5/F1; every abridged field reproduced in the checks below):
+- `js-r3 name='rot13' has_name_key=True kind=javascript-module strategy=artifact-local-key ns='source-module' key='8eec9ffb7f5856da96d9411dc0dc024f39d781842853dc78c59ddc431e929f32:transform.js' span=1:6-1:50 loc=source-range/index.js state=inferred`
+- `js-r3 name='checksum' … kind=javascript-module strategy=artifact-local-key ns='source-module' key='8eec9ffb…:transform.js' span=1:6-1:50`
+- `js-r3 name=None has_name_key=False kind=javascript-asset strategy=content-digest ns=None key=None span=1:28-1:50`
+- `js-r7-v2 name='rot13' … kind=javascript-module strategy=artifact-local-key ns='source-module' key='696c24963ebaeb9f9d208a655d87c12bba322775bd95f8efabd914b49a78f655:transform.js' span=1:6-1:40`
+- `js-r7-v2 name=None has_name_key=False kind=javascript-asset strategy=content-digest ns=None key=None span=1:18-1:40`
+O3 Recorded location: every raw `evidence.location.value` has exactly `['end','kind','source','start']`; `start`/`end` are `{'line':1,'column':6/28/18}` and `{'line':1,'column':50/40}`. Slicing the fixture line at those saved columns gives exactly the entry's texts (`slice_call "require('./transform')"`, `slice_bind "{ rot13, checksum } = require('./transform')"`, `slice_pattern '{ rot13, checksum }'`, and js-r7-v2 equivalents); independent `str.find` of the require literal gives 28 and 18. Entry items 8-9 (`:34-35`) and item 11 (`:37`) match these raw values for kind, strategy, namespace, key, start/end, source and state.
+O4 Counts/state: imports edges 3 (2 named, 1 unnamed) and 2 (1 named, 1 unnamed); every edge `state='inferred'`. Matches entry item 10 (`:36`).
+O5 Identity text: the two key strings appear verbatim in the records; their prefixes are the records' recorded `root_artifact_sha256` (`8eec9ffb…`, `696c2496…`), which the entry labels recorded-not-derived at item 7. No equality between provider and local digests is claimed.
+
+## Findings
+F1 [Q11 exact-referent/labelling; nonfatal wording]. Items 8-9 (`:34-35`) say the edges "carry" `start_column_0based`, `end_column_0based_end_exclusive`, `span_1based_inclusive` and `span_text_from_fixture`, and item 8 says the unnamed edge "carries `imported_name` `null`". In the saved records: (a) `grep -c span_text_from_fixture` -> `0` and `grep -c span_1based_inclusive` -> `0` on both record files; the location value has only `start`/`end`/`kind`/`source` (O3); (b) the unnamed edges have no `imported_name` property at all — `propkeys=['expression','kind','resolved_path','specifier']` vs named `propkeys=['exported_name','imported_name','imported_path','local_name','module_link_kind','resolution_status','resolved_path','specifier','target_file_kind','target_json_status']`; (c) the asset identity keys are `['sha256','stability','strategy']`, so "no namespace or key" is a true negative, but the readout's printed `null`s are projections of absent keys. The four subfields are readout derivations (`readout.py` :144-148) and are printed, so no identity or span value is contradicted and Q11's command+output requirement is met for them; the defect is that the prose attributes the projection to the saved edges without saying so.
+Minimal correction (wording only, no value changes): "the saved location carries start {line,column}, end {line,column}, kind and source; the readout prints the 0-based names, converts to the 1-based inclusive span, and slices the fixture at the saved columns for `span_text_from_fixture`. The unnamed edge has no `imported_name` property; the readout prints null."
+F2 [Q10/Q11 self-scope; nonfatal]. Item 24 (`:62`) says "The saved edges' other properties and the records' other content were not compared, and no claim about them is made", while items 8-9 do report target kind/identity and item 8 states the asset has no namespace/key. The comparison is indeed names/spans only, but the absolute "no claim" is inaccurate. Correction: "no correctness or comparison claim about them".
+F3 [overlap, not my lane]. Q11 inventory rows 8-9 (`:264-265`) say "all saved fields" but the printed edge record omits saved properties (`module_link_kind`, `imported_path`, `local_name`, `exported_name`, `resolution_status`, `target_file_kind`, `target_json_status`, `identity.artifact_sha256`/`stability`, target `observations`). The target/location subset those rows print is correct; the completeness wording is covered by the DerivedMetadata seat and is not claimed as this seat's finding.
+F4 [out of lane, no impact on frozen inputs]. `readout.py` slices the regex-matched line, not the saved `start.line`; both frozen records use line 1, so the printed text is correct. Mutation behavior is the ScopeUnknown seat's lane.
+
+## Inference / scope
+- The named-vs-unnamed facts are per-record observations, not provider semantics: named edges target `javascript-module`/`artifact-local-key`/`source-module`, unnamed edges target `javascript-asset`/`content-digest` in these two records only. The entry claims no export binding (item 16, `:48`) and no other-package behavior (item 22, `:57`); my checks find no overreach beyond the F1/F2 wording.
+- All positive identity values printed in items 8-9 appear verbatim in the primary record; the only negative claims (asset namespace/key) are true of the raw identity object.
+
+## Unknown
+- S029's quote/anchors were not re-opened by this seat (other seats cover it); no web/EVM/chain work.
+- No runtime, loader, export, provider-capability or whole-provider semantics were tested or are claimed; the recorded `extractor` and `authority` fields were not evaluated.
+- Whether other records/providers share these target shapes is unknown and not claimed by the entry.
+
+VERDICT: PARTIAL — every claimed target kind, identity strategy, namespace and key, and every saved location start/end/kind/source, matches the frozen primary record; the entry's Q11 provenance labelling is imprecise because derived subfields are attributed to the saved edges and an absent `imported_name` property is presented as carried null. Minimal wording correction above; no value is contradicted, nothing repaired or admitted by this seat.
+Installs: none.
