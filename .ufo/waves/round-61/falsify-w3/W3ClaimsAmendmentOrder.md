@@ -1,0 +1,27 @@
+GRADE: PARTIAL — C1 pre-registration integrity (amendment A2 order, original-line immutability, goalpost test)
+
+Seat RevengerR61-2.W3ClaimsAmendmentOrder. Archive of ab580698212258a55e43e9bb9bf6ac78c91eae2a at /tmp/revenger-r61w3-W3ClaimsAmendmentOrder (read-only git log/show/diff/archive only; jj not invoked).
+
+## Holds (observed)
+1. Only two commits touch claims.md: `git log -- reports/round-61/claims.md` lists e0a4b0c (12:10:10 -03, pre-register) and 0b6ddf0 (13:04:58, "probe amendment A1/A2"). `git diff --stat 0b6ddf0 ab58069 -- reports/round-61/claims.md` prints nothing.
+2. No original line edited: `git diff --numstat e0a4b0c ab58069 -- reports/round-61/claims.md` = `45 0` (pure append, hunk `@@ -74,3 +74,48 @@`); `head -76` of landed claims.md is byte-identical to `git show e0a4b0c:reports/round-61/claims.md` (`cmp` exit 0).
+3. A2 landed WITH the entries, not before: same commit 0b6ddf0 adds claims.md +45, corpus/knowledge/{evm-saved-interface-candidates,commonjs-destructured-require-edges}.md and the README C04/C09 `uncovered`→`held` flip. Git cannot order them within the commit.
+4. Pre-registration preceded all work: e0a4b0c committed 12:10:10; first build dispatch 12:15:11, accepted 12:42:13 (`.ufo/waves/round-61/build-dispatch-attempts.json`). (Author date 12:05:33 precedes the 12:05:35 launch by 2 s; [INFERENCE] jj stamps the author time when the change is created.)
+5. The measured target did not move: A1/A2 leave the counting regex, the predictions (6/14, 5/14), the falsifier "4/14 falsifies C1" (claims.md:36-40) and the gates Q01–Q11/tier-A/Q11 (claims.md:30-33) unchanged. A1 TIGHTENS the count (K_HELD→K_HELD_BACKED, claims.md:90-93). The after-run is on 0b6ddf0, which already contains A2 (LOG.md:799).
+
+## Goalpost test on A2 (inference from file times and content)
+6. A2 was written AFTER the build-wave results. Live-tree mtimes ([INFERENCE]: mtimes are not git evidence): CriticJsScope.md 12:44:42, ConnectorKaidokuOverlap.md 12:46:05, ScribeEntryJs.md 12:46:07, CriticEvmScope.md 12:46:15, claims.md 12:59:23, ScribeEntryEvm.md 13:00:35, then the entries in corpus/ 13:03:09 and README.md 13:03:29. Content agrees with that order: build-spec.json has 0 hits for `151-153`, `fallback` and `decoy`; A2 C09 (claims.md:113-117) restates the ConnectorKaidokuOverlap verdict (`kaidoku ... 151-153`, line 44); A2 C04 (claims.md:119-121) restates ScribeEntryJs.md:39 ("The fixture cannot separate the two") and CriticJsScope.md:51.
+7. This is still not a goalpost move. A2 restricts both entries to a strict subset of the envelope pre-registered at claims.md:26-30 ("scoped to what the saved REA records and fixture bytes show"). It drops content that failed the build critics' Q04/Q10 tests rather than lowering a gate or a threshold. The landed entries keep the pre-registered subjects: C09 still reports selector→JUMPDEST candidates and cites kaidoku as prior art (evm entry:50, 94-96). C04 keeps the named-import edges and moves the `main`-versus-fallback question to Unknown (cjs entry:55-57). Narrowing a claim lowers the risk of overclaiming; it does not make the K target easier, because K counts rows, not content.
+8. PARTIAL wording issue, claims.md:110: the heading "(before any entry drafting landed)" is literally true (drafts were not yet in corpus/) but implies A2 came before drafting. Per finding 6, it followed the JS draft and the scope critics by about 13 minutes. The A1 claim "before the probe ran on any changed tree" (claims.md:82-83) cannot be checked from git: [UNKNOWN].
+
+## Integrity defect next to A2 (observed)
+9. The admission order at claims.md:33-34 is inverted: "survives the wave-2 attacks. The README row flips `uncovered` → `held` only for an admitted entry." The flip landed at 0b6ddf0 (13:04:58), and K 6/14 was measured on it (LOG.md:799), before any attack wave. The falsify wave was dispatched at 13:08:41 (`falsify-dispatch-attempts.json`) and produced 0 reports (LOG.md:803). LOG.md:804 concedes "unmet" and then redefines admission ("admission rests on the non-author closure"). That redefinition lives only in LOG.md, and this fresh wave is now being used in place of "wave-2" with no claims.md amendment recording the swap. LOG.md:804 also cites `claims.md:32`, but the text is at :33.
+
+## Impacted axes
+coverage K only (C1 admission bookkeeping). No saved record or fixture is touched; calibration and C2 are unaffected.
+
+## Smallest safe correction
+- Append an Amendment A3 to claims.md (append-only; original lines untouched) stating three things. First, falsify wave 3 (`.ufo/waves/round-61/falsify-w3/`) replaces "wave-2" as the survival conjunct. Second, the README C04/C09 `held` rows and K_HELD_BACKED=6/14 are provisional until wave 3 grades them; a BROKEN entry reverts its row. Third, A2 was written after the build-wave drafts and scope critics, before the entries were written to corpus/.
+- Fix the citation at LOG.md:804 from `claims.md:32` to `claims.md:33`.
+
+VERDICT: A2 is append-only, landed in the same commit as the entries, and no original line was ever edited. It narrowed content after seeing build-wave results, but within the pre-registered envelope and without moving the metric, predictions or gates, so it is not a goalpost move. PARTIAL because of the claims.md:110 timing wording and the unamended swap of the wave-2 survival conjunct, where the README flip came before admission. Installs: none.

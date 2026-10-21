@@ -1,0 +1,576 @@
+{
+  "frozen_revision": "ab580698212258a55e43e9bb9bf6ac78c91eae2a",
+  "wave": "revenger-r61-w3",
+  "spawned": 66,
+  "reports": 66,
+  "dead": 0,
+  "total_round_seats": 199,
+  "inherited_build": 68,
+  "inherited_falsify_dead": 65,
+  "roles": {
+    "reviewer": 16,
+    "revenger": 4,
+    "scout": 19,
+    "executor": 4,
+    "critic": 13,
+    "mutation-tester": 5,
+    "connector": 3,
+    "sentinel": 2
+  },
+  "grades": {
+    "HOLDS": 30,
+    "PARTIAL": 31,
+    "BROKEN": 5
+  },
+  "parent_ruling": "Main authorized one fresh 64\u201367-seat wave following host-kill loss of 65 seats. Old deaths remain; no frozen gate relaxed. Main later directed restoring C04/C09 to uncovered without repair, final K4/14 C1 falsified, C2 separately2/2.",
+  "C1": {
+    "verdict": "falsified",
+    "before": "4/14",
+    "provisional": "6/14",
+    "final": "4/14",
+    "reason": "both candidates fail existing Q11; correct values without in-entry derivation are rejected"
+  },
+  "C2": {
+    "verdict": "improved",
+    "before": "0/2",
+    "after": "2/2"
+  },
+  "decisive_reports": [
+    "W3JsOverclaimCritic",
+    "W3EvmR24Immediate",
+    "W3QualityQ13Apply",
+    "W3EvmQTable",
+    "W3JsQTable"
+  ],
+  "not_repaired": true,
+  "seats": [
+    {
+      "name": "W3EvmOpcodeBytes",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3EvmOpcodeBytes",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmOpcodeBytes.md",
+      "sha256": "1a2c68365fdb52a46b678f893a9259c24d2bf394e85ec771994f18c512764729"
+    },
+    {
+      "name": "W3EvmPairR19R21",
+      "role": "revenger",
+      "agent": "RevengerR61-2.W3EvmPairR19R21",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmPairR19R21.md",
+      "sha256": "a8bbacda664dcbf8e13dfaff33d67105f8d273f4a195d361647e49c079e7562d"
+    },
+    {
+      "name": "W3EvmPairsR22",
+      "role": "revenger",
+      "agent": "RevengerR61-2.W3EvmPairsR22",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmPairsR22.md",
+      "sha256": "0ee8b16cfab41bf4fed84cbc08553109c026b69fd6741b067d833198ec52f2d0"
+    },
+    {
+      "name": "W3EvmPush4SiteAbsent",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3EvmPush4SiteAbsent",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmPush4SiteAbsent.md",
+      "sha256": "ca470e2f07119e5683779de4d54a876cc274904bb8cf036e4a923b4228113405"
+    },
+    {
+      "name": "W3EvmR23Empty",
+      "role": "revenger",
+      "agent": "RevengerR61-2.W3EvmR23Empty",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmR23Empty.md",
+      "sha256": "8584f7d9affdb97020920819d6a04fc569d38907c7744c5ab5938596d1636542"
+    },
+    {
+      "name": "W3EvmR24Immediate",
+      "role": "revenger",
+      "agent": "RevengerR61-2.W3EvmR24Immediate",
+      "grade": "BROKEN",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmR24Immediate.md",
+      "sha256": "7388442b70ab780402a9e41e4f639fee558f8f775a3efd167e5b545ad880ec74"
+    },
+    {
+      "name": "W3EvmR25R26Targets",
+      "role": "executor",
+      "agent": "RevengerR61-2.W3EvmR25R26Targets",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmR25R26Targets.md",
+      "sha256": "78efe5c4cac2e6fe98269931aa674b17ff7d6345e88d080c5de5c925bf5f082e"
+    },
+    {
+      "name": "W3EvmFlagsDigest",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3EvmFlagsDigest",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmFlagsDigest.md",
+      "sha256": "3738f76a2fad20826e54b706fec9e22a251e75f67bb5b546942516b853c5641b"
+    },
+    {
+      "name": "W3EvmSelectorConstants",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3EvmSelectorConstants",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmSelectorConstants.md",
+      "sha256": "435597b6522611e12da88d5e4dcde7bf555414b381a76ffcedbeb0d309b1fa61"
+    },
+    {
+      "name": "W3EvmOffsetIsTarget",
+      "role": "critic",
+      "agent": "RevengerR61-2.W3EvmOffsetIsTarget",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmOffsetIsTarget.md",
+      "sha256": "39a1dd630a8de821bd257d404c48e98e273d98a6d7894ade65761dd89884e6b7"
+    },
+    {
+      "name": "W3EvmR26Negative",
+      "role": "critic",
+      "agent": "RevengerR61-2.W3EvmR26Negative",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmR26Negative.md",
+      "sha256": "393203d737ed1fe70bf9b01d995e1a65c50bcb0c61a87637164667f6653ab42b"
+    },
+    {
+      "name": "W3EvmR24Confound",
+      "role": "critic",
+      "agent": "RevengerR61-2.W3EvmR24Confound",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmR24Confound.md",
+      "sha256": "97b3a08743191d91b5a564ac730ba58fa7b3df2eb72b9c03ea683cd555b6d860"
+    },
+    {
+      "name": "W3EvmTwoRulesFit",
+      "role": "executor",
+      "agent": "RevengerR61-2.W3EvmTwoRulesFit",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmTwoRulesFit.md",
+      "sha256": "0a24f8ac3e4aabd292cfc38927751da3f695e9f3237db01b6915fb247a48338d"
+    },
+    {
+      "name": "W3EvmVersionPins",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3EvmVersionPins",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmVersionPins.md",
+      "sha256": "1a29f2281604b8513df82b9a7e79daa3fdb053001a0e00643301cc79b83ce612"
+    },
+    {
+      "name": "W3EvmVerifierCredit",
+      "role": "mutation-tester",
+      "agent": "RevengerR61-2.W3EvmVerifierCredit",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmVerifierCredit.md",
+      "sha256": "80a941a1587382edb782efbfc46728924ae4a90cdd6d85a12fd79870924fca7a"
+    },
+    {
+      "name": "W3EvmR24SpanFix",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3EvmR24SpanFix",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmR24SpanFix.md",
+      "sha256": "c2a475e8fa8a8a0cf17f1831994214ab92df60e764ae8f6d1b31a9720c9ddb6b"
+    },
+    {
+      "name": "W3EvmCrossLaneCites",
+      "role": "connector",
+      "agent": "RevengerR61-2.W3EvmCrossLaneCites",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmCrossLaneCites.md",
+      "sha256": "ebb31276687be18abfa54bc71b7ee3d8953f64d27ff6e57fc6d14d88270b1bad"
+    },
+    {
+      "name": "W3EvmHeaderSources",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3EvmHeaderSources",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmHeaderSources.md",
+      "sha256": "7b8e4efe9a80179ea953752c29948dc30105be638c83cb5003ac6326dc32db89"
+    },
+    {
+      "name": "W3EvmYellowPaperCite",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3EvmYellowPaperCite",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmYellowPaperCite.md",
+      "sha256": "ffda8c4134ab7938fe65d06d24f72096a7984214ee18046976c38fd17bf85588"
+    },
+    {
+      "name": "W3EvmMetadataCite",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3EvmMetadataCite",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmMetadataCite.md",
+      "sha256": "d652d813c7fca949525ce071ea4742b1f10b91f74169e8a8895d4ba53bcac2c9"
+    },
+    {
+      "name": "W3EvmQTable",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3EvmQTable",
+      "grade": "BROKEN",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmQTable.md",
+      "sha256": "054e8f99640c234befc548136a7f78e06a9cbeae041491c56afa35bba5111b21"
+    },
+    {
+      "name": "W3EvmReproduceSafety",
+      "role": "sentinel",
+      "agent": "RevengerR61-2.W3EvmReproduceSafety",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmReproduceSafety.md",
+      "sha256": "c8861a9f34654f1ba6d9188bba77491615a42607a2c6a375d8a4ce766946c293"
+    },
+    {
+      "name": "W3EvmProvenanceBase",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3EvmProvenanceBase",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmProvenanceBase.md",
+      "sha256": "9d86ea8968084e1b772ddc5941d92e343489de9d928003a946bbb61fcd851c0f"
+    },
+    {
+      "name": "W3EvmOverclaimCritic",
+      "role": "critic",
+      "agent": "RevengerR61-2.W3EvmOverclaimCritic",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmOverclaimCritic.md",
+      "sha256": "6c299797c59f3750c573ba1b89a9015df0d3cbfd341592aee918778b60b2cd74"
+    },
+    {
+      "name": "W3EvmWalkMutant",
+      "role": "mutation-tester",
+      "agent": "RevengerR61-2.W3EvmWalkMutant",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3EvmWalkMutant.md",
+      "sha256": "305561071603dc273837b5a42202c0b907afdac02e25eaef8379b43f7e786cc3"
+    },
+    {
+      "name": "W3JsSourceFacts",
+      "role": "executor",
+      "agent": "RevengerR61-2.W3JsSourceFacts",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsSourceFacts.md",
+      "sha256": "1d4d7e64340547d0b76522d429080ed62b6983d99964b0c9e2b8c09013508555"
+    },
+    {
+      "name": "W3JsNamedSet",
+      "role": "executor",
+      "agent": "RevengerR61-2.W3JsNamedSet",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsNamedSet.md",
+      "sha256": "b2c5628a919de6904b0cfeeeb8562d07262b2aa646f6258ac978205d6cc32d56"
+    },
+    {
+      "name": "W3JsSpecifierUnnamed",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3JsSpecifierUnnamed",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsSpecifierUnnamed.md",
+      "sha256": "2dda5d4a6b3d9d69e50c841c93ca8a23d903f782f728e3ffc49f3c5b48c57cff"
+    },
+    {
+      "name": "W3JsDeltaLedger",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3JsDeltaLedger",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsDeltaLedger.md",
+      "sha256": "234fe02bf313b1fdad623f05aa857c4a230e75e318920df7f1bcb9c0ccbb539d"
+    },
+    {
+      "name": "W3JsEntrypointMapsTo",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3JsEntrypointMapsTo",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsEntrypointMapsTo.md",
+      "sha256": "ec100178ce92dbcad1912744603b7c3b78a5ec866d527bef877ed94f77a11ac2"
+    },
+    {
+      "name": "W3JsLabelsDefault",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3JsLabelsDefault",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsLabelsDefault.md",
+      "sha256": "a54ccecb69f09a2600ef84c49dc60e01f77e95fc91ff8ec5fc2d0400d7d80292"
+    },
+    {
+      "name": "W3JsEcmaDestructuring",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3JsEcmaDestructuring",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsEcmaDestructuring.md",
+      "sha256": "514e50bcae96f71afb5441b42067463edce7a5531a5c5139b9e4430419a2c5ad"
+    },
+    {
+      "name": "W3JsLoadAsFile",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3JsLoadAsFile",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsLoadAsFile.md",
+      "sha256": "373aab2218d424b55c6eacb57395154df8a415381b4c51a9ed95e07bd4fdd9a3"
+    },
+    {
+      "name": "W3JsElectronMainLabel",
+      "role": "critic",
+      "agent": "RevengerR61-2.W3JsElectronMainLabel",
+      "grade": "BROKEN",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsElectronMainLabel.md",
+      "sha256": "3ed50cefabb8c9fac3abfb0bd944191485d8da9e0378e18eb0bb7361bd75a775"
+    },
+    {
+      "name": "W3JsMainVsFallback",
+      "role": "critic",
+      "agent": "RevengerR61-2.W3JsMainVsFallback",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsMainVsFallback.md",
+      "sha256": "4a1bf37ed325a1ca9df76a850d9884eb2990ee809e5b9e16cc5921b811bc0fa8"
+    },
+    {
+      "name": "W3JsEsmHeuristicQuote",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3JsEsmHeuristicQuote",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsEsmHeuristicQuote.md",
+      "sha256": "f2d51980499ee7bd327678d67970289e3858e1c032b15e8ab6d3e1179fe9c3c8"
+    },
+    {
+      "name": "W3JsVersionPins",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3JsVersionPins",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsVersionPins.md",
+      "sha256": "1e6a75d2592993600df3d127b5f6f2aeba20b02af93c8e23b98d2def49b2c19a"
+    },
+    {
+      "name": "W3JsVerifierCredit",
+      "role": "mutation-tester",
+      "agent": "RevengerR61-2.W3JsVerifierCredit",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsVerifierCredit.md",
+      "sha256": "540d3a96f5983705028d7a1c881fe5a15c48a4928b65030a90d26f655f8483a1"
+    },
+    {
+      "name": "W3JsCrossLaneCites",
+      "role": "connector",
+      "agent": "RevengerR61-2.W3JsCrossLaneCites",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsCrossLaneCites.md",
+      "sha256": "d1bae65fe75fe7c8e77622ec2386eaf6c620d9421f7ce6afbc4aae9f0d7d0047"
+    },
+    {
+      "name": "W3JsHeaderSources",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3JsHeaderSources",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsHeaderSources.md",
+      "sha256": "ae3f128b2e5db2ceafc1e9f36d618e1ceac782343af0a300c5b007c77b57035b"
+    },
+    {
+      "name": "W3JsQTable",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3JsQTable",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsQTable.md",
+      "sha256": "cca89e681c007c2038f0c9bb6b56d6c0eb59854ce6e1cfffec3cb2f8510541de"
+    },
+    {
+      "name": "W3JsReproduceSafety",
+      "role": "sentinel",
+      "agent": "RevengerR61-2.W3JsReproduceSafety",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsReproduceSafety.md",
+      "sha256": "15ad2e3be3123c3eb2cf12db0828ca43154cfe3a682649d0508a453249406676"
+    },
+    {
+      "name": "W3JsOverclaimCritic",
+      "role": "critic",
+      "agent": "RevengerR61-2.W3JsOverclaimCritic",
+      "grade": "BROKEN",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsOverclaimCritic.md",
+      "sha256": "1897d9eaaac046719bb9cb20db646ec174519a2c2a958b0431a3b3ec56602a3f"
+    },
+    {
+      "name": "W3JsRecordMutant",
+      "role": "mutation-tester",
+      "agent": "RevengerR61-2.W3JsRecordMutant",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3JsRecordMutant.md",
+      "sha256": "62a874a8466681c7fe0665f386f3092f81abd45d951149ae1dd30af71bfed657"
+    },
+    {
+      "name": "W3KRecount",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3KRecount",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3KRecount.md",
+      "sha256": "bcf8a7ad2421fb599cff033c1f2434f5b2691ffd63db7bb11b789dd5374e8ad3"
+    },
+    {
+      "name": "W3KReadmeCells",
+      "role": "critic",
+      "agent": "RevengerR61-2.W3KReadmeCells",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3KReadmeCells.md",
+      "sha256": "776ac66e55fac68fc72afddd0b43bbeb21e527c91a09e87a1dcbe36adcfb5ed2"
+    },
+    {
+      "name": "W3KProbeMutant",
+      "role": "mutation-tester",
+      "agent": "RevengerR61-2.W3KProbeMutant",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3KProbeMutant.md",
+      "sha256": "ab354b6ebb52b06ea1731a397d5a7898601e7ff6f9020aa9f8756e1c750cb614"
+    },
+    {
+      "name": "W3KEligibility",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3KEligibility",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3KEligibility.md",
+      "sha256": "fa4c23eab12f2b177c547c5747485e8d23c1baf3b70d0c83f53e7d8233e39072"
+    },
+    {
+      "name": "W3SrcContractCells",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3SrcContractCells",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3SrcContractCells.md",
+      "sha256": "309454428476f99d222d0f954312f43b17b228d1098939a33d0a056e6d34e706"
+    },
+    {
+      "name": "W3SrcGateQuotesEvm",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3SrcGateQuotesEvm",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3SrcGateQuotesEvm.md",
+      "sha256": "e15b56d2446caa57982912538fc1b2cb33849eccb2313044d7f0d3b031ef0e19"
+    },
+    {
+      "name": "W3SrcGateQuotesJs",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3SrcGateQuotesJs",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3SrcGateQuotesJs.md",
+      "sha256": "a8a6cd37aa8c392da5a843e395a672c70a12acdcaa9049767aa276eb3ae8b162"
+    },
+    {
+      "name": "W3SrcRejectRows",
+      "role": "critic",
+      "agent": "RevengerR61-2.W3SrcRejectRows",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3SrcRejectRows.md",
+      "sha256": "6fecc56cc6784ca7f4539b678f5d97db27ca9f7845ca85e76b94fbb8ceaf4c10"
+    },
+    {
+      "name": "W3SrcOwnWorkRows",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3SrcOwnWorkRows",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3SrcOwnWorkRows.md",
+      "sha256": "d2e3be9bdec2f31ff54b12fcf7ca543c9dacbfbc028f519b0b59c3c6700ae64f"
+    },
+    {
+      "name": "W3SrcSearchLog",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3SrcSearchLog",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3SrcSearchLog.md",
+      "sha256": "dd4853fac7b23a2780a431744b6bb354da02b5e717227922b336291a50ba69f2"
+    },
+    {
+      "name": "W3SrcCensusRun",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3SrcCensusRun",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3SrcCensusRun.md",
+      "sha256": "8a04bee206842e02313d5166a37a77bb187cf4f8bcd1a985bd16e4b256214a0d"
+    },
+    {
+      "name": "W3QualityQ12Fail",
+      "role": "critic",
+      "agent": "RevengerR61-2.W3QualityQ12Fail",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3QualityQ12Fail.md",
+      "sha256": "789925c3a40d9c471cac0916b2acdebaa06326b7004c511d7fd72b0a6b82e19e"
+    },
+    {
+      "name": "W3QualityQ13Apply",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3QualityQ13Apply",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3QualityQ13Apply.md",
+      "sha256": "ec997674017f96585ead259c135b682683b0f91f15478330ee22d6bf40deed19"
+    },
+    {
+      "name": "W3GateRejects",
+      "role": "critic",
+      "agent": "RevengerR61-2.W3GateRejects",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3GateRejects.md",
+      "sha256": "a0e30c0ac9b58f9d2879bbb4e1adca02a836a539868a2600b2c257cacf3e205d"
+    },
+    {
+      "name": "W3LessonMistakes",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3LessonMistakes",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3LessonMistakes.md",
+      "sha256": "b9e3a64ebac546841c1e3d61e5be51db402bcc96b6eb7790a2b49e7e3bb6b66a"
+    },
+    {
+      "name": "W3HoldInputsBytes",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3HoldInputsBytes",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3HoldInputsBytes.md",
+      "sha256": "279cc17c99764432d28c83d2a796f317d06348fcfc5c48358a576a0f1923d443"
+    },
+    {
+      "name": "W3HoldProbeRerun",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3HoldProbeRerun",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3HoldProbeRerun.md",
+      "sha256": "2742821178cdfa2804a47e4de8051cbf517166090545c94c8da40821b3665b0e"
+    },
+    {
+      "name": "W3HoldFandFreshness",
+      "role": "scout",
+      "agent": "RevengerR61-2.W3HoldFandFreshness",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3HoldFandFreshness.md",
+      "sha256": "9bfa0460bb55a0e7274cb99c3fd6f4fd4662471f7652ba940dc719317150ea3c"
+    },
+    {
+      "name": "W3SeparabilityC1",
+      "role": "critic",
+      "agent": "RevengerR61-2.W3SeparabilityC1",
+      "grade": "HOLDS",
+      "report": ".ufo/waves/round-61/falsify-w3/W3SeparabilityC1.md",
+      "sha256": "6d221e6ad17504382b96466ebd33ea15a100a005b595ebd506295182b5bd75b9"
+    },
+    {
+      "name": "W3ProvinceBounds",
+      "role": "connector",
+      "agent": "RevengerR61-2.W3ProvinceBounds",
+      "grade": "BROKEN",
+      "report": ".ufo/waves/round-61/falsify-w3/W3ProvinceBounds.md",
+      "sha256": "f792c285e44a41c42f7309bf144a0e9b633294bbd3cf11393a58a748e265a950"
+    },
+    {
+      "name": "W3ScorecardRow",
+      "role": "reviewer",
+      "agent": "RevengerR61-2.W3ScorecardRow",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3ScorecardRow.md",
+      "sha256": "1ed6eca60f592cca61381dc4e4b0d4199bdc665c00f02f4af9dff1657768230c"
+    },
+    {
+      "name": "W3ClaimsAmendmentOrder",
+      "role": "critic",
+      "agent": "RevengerR61-2.W3ClaimsAmendmentOrder",
+      "grade": "PARTIAL",
+      "report": ".ufo/waves/round-61/falsify-w3/W3ClaimsAmendmentOrder.md",
+      "sha256": "5adef970bfa1b8fd6fe5b3af7cf3adfe13f71c39b706248d3ecbe7948167fe89"
+    }
+  ]
+}

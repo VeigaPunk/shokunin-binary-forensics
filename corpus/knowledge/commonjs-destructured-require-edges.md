@@ -2,6 +2,7 @@ source: S027 (saved `analyze_javascript_application` records ev_4a93276c… and 
 verified-at: 2026-10-21, lane base e0a4b0c4348ef1fade46539f520e94fa140c4d8a; fixture bytes and saved records re-derived by `## Reproduce`
 recheck: save the `## Reproduce` block as a file and run `python3 -B <file>` from the lane root (stdlib only, read-only, executes no JavaScript); compare with `## Provenance`
 coverage-map: C04 (CommonJS destructured `require` only; no Electron, ASAR, ESM, bundler or `exports` ground)
+admission-status: rejected — round-61 fresh falsify wave on ab58069; see lessons/round-61.md
 
 # Destructured `require` as named-import edges in two saved static graphs
 
@@ -12,6 +13,11 @@ ledgers; recorded, not re-run) contain for one authored CommonJS package pair,
 fixture source. Each fixture has exactly one `require` call, a relative
 destructuring one. No JavaScript was executed. Despite the coverage row's
 label, nothing here is Electron evidence.
+
+> **Admission warning.** Rejected by the round-61 fresh falsify wave on
+> `ab58069` (material Q11 failures). The `## QUALITY check` pass verdicts below
+> are superseded by that rejection; this file is retained as evidence of the
+> rejected candidate, not admitted knowledge.
 
 ## Observation
 

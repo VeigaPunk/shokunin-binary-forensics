@@ -1,0 +1,32 @@
+GRADE: PARTIAL — C04 Observation 3 (corpus/knowledge/commonjs-destructured-require-edges.md:30-33): every count re-derives exactly and the round-7 0/1 line exists as cited; two precision/citation defects remain in the same sentence.
+
+Seat RevengerR61-2.W3JsDeltaLedger. Archive of ab580698212258a55e43e9bb9bf6ac78c91eae2a extracted to /tmp/revenger-r61w3-W3JsDeltaLedger (read-only git log/show/diff/archive; no jj, no REA call, no JS executed).
+
+## F1 — Counts HOLD (re-counted from both saved graphs, not from the entry)
+- `corpus/live/runs/20261012T164357Z/analysis.json` → edges=13, imports=3 (named checksum+rot13, 1 unnamed require); `corpus/live/runs/round-7/v2-analysis.json` → edges=12, imports=2 (named rot13, 1 unnamed require). Named set diff = removed {checksum}, added {}, kept {rot13}. Exact match with entry:30-33 and with the Provenance block.
+- Edge-shape diff (relation + node identity normalized for the two subject digests + properties + state): only-in-v1 = 1 edge (the `imports` edge, imported_name=checksum, specifier=./transform, resolved_path=transform.js, state=inferred); only-in-v2 = 0; common = 11.
+- The entry's `## Reproduce` block re-run in the archive: exit 0, and `diff` against the `## Provenance` block is IDENTICAL (29/29 lines) — so Q11 derivation holds for the counts.
+- Also checked: `git diff --stat cf02419..ab58069 -- corpus/live corpus/fixtures` and `e0a4b0c..ab58069` both print nothing (no changed saved record or fixture). Probe on the landed archive: `K_HELD=6/14`, `K_HELD_BACKED=6/14`, `K_ROW C04 status=held`, `C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2`, `HOLDS_OK=yes`, exit 0.
+
+## F2 — The 0/1 ledger line EXISTS and says what the entry says (HOLDS)
+- `corpus/live/runs/round-7/LEDGER.md:17` (verbatim): "**Comparison-tool specific detection: 0/1 removed named import identified**; no false named-import claim was emitted (precision N/A)."
+- Corroborated at `corpus/live/runs/round-7/reviewer.md:11` ("recall 0/1 from items[]") and `LOG.md:99` ("comparison-tool target detection 0/1, precision N/A").
+- Independently re-derived from the saved record: `python3 -c "import json; it=json.load(open('corpus/live/runs/round-7/comparison.json'))['normalized_result']['items']; print(len(it), sum('checksum' in json.dumps(i) for i in it))"` → `15 0` (15 items, 0 naming checksum; ground truth denominator 1). The number is right.
+
+## F3 — MEDIUM: the "0/1" unit is unstated, and the scored record itself contains `checksum`
+`corpus/live/runs/round-7/comparison.json` `normalized_result.graph.edges[21]`: relation `imports`, properties.imported_name=`checksum`, imported_path=[`checksum`], local_name=`checksum`, source node `jag_node_6fbb554e…` — present in the v1 graph, absent from v2. The comparison graph carries 5 imports edges (v1's 3 + v2's 2, rot13 twice). So the tool's saved output DOES contain the checksum import edge; what is 0/1 is relationship items in `items[]`. The lane's own reviewer discloses this at `corpus/live/runs/round-7/reviewer.md:7` ("Its combined graph retains edges including `checksum` on the left and `rot13` on both sides, but reading that graph against the two parent records is analyst-side inference, not an explicit changed-relationship item"); the C04 entry does not, while its Provenance block never opens comparison.json (grep "comparison" in the entry hits only lines 3, 32, 193). A reader who greps the comparison record finds `checksum` and cannot see why 0/1. Fix at :32-33: name the unit ("0 of 1 removed named-import relationship among the 15 comparison items") and note that the merged comparison graph still carries the left-side checksum import edge, which is what makes the delta an inference from the two parent graphs rather than a tool finding.
+
+## F4 — MEDIUM: :31 describes a derivation the block does not perform
+"This comes from the two per-graph edge sets" (:31) — the block computes `v1_named - v2_named` over the two graphs' *named-import name sets*, so it cannot show the checksum edge is the only edge difference. A literal edge-set difference over the two saved graphs is not 1-vs-0: with node identity and evidence blocks intact, 7 edges are v1-only and 6 v2-only (each run embeds its own index.js digest f7d8bf47…/b53d96d4… and subject digest 8eec9ffb…/696c2496…). The edge *shape* difference is exactly one edge (F1), so the substance holds; the sentence overstates the operation. Fix: "the delta is over the two graphs' named-import edges".
+
+## F5 — LOW: citation completeness of the 0/1
+The 0/1 is attributed to "the round-7 ledger" with no path/line and no SOURCES row; the entry's `source:` line cites S020-S023 and S027 only, and S027's scope is the two analysis records, not the comparison record or ledger (the sibling entry carries S014 + the derivation command + `compare_application_versions`/`ev_5e4b17c1…` at corpus/knowledge/tool-validation-by-function-and-version.md:29,109,122). The entry names no comparison function, version or Evidence ID. Not load-bearing (its Q04 row at :193 says the 0/1 is not credited), so a citation gap rather than a Q01/Q04 failure. Related: :200's Q11 basis ("every count, name and digest carries the command above and its output") is literally false for the 0/1 count, which Q11 permits only because the entry labels it "recorded".
+
+## Residual risk / gaps
+- F3/F4 are wording-precision fixes inside one sentence; neither changes a count, the admission, or K_HELD_BACKED (6/14).
+- I did not re-run any REA producer call, so provider-side re-derivation of the 13/12 and 3/2 counts was not attempted; counts were read from the two saved records only.
+- Mutation battery on the two JS verifiers (scratch copy) confirms the entry's :74-77 credit claim (v2 names, v2 entry mapping, v2 import state killed; v2 digest, unnamed edge, span, extra edge survive). Adjacent to seat W3JsVerifierCredit; reported here only as support for F1.
+
+VERDICT: The Observation 3 numbers (imports 3→2, edges 13→12, removed exactly checksum) and the cited round-7 0/1 ledger line all re-derive exactly (LEDGER.md:17; reviewer.md:11; LOG.md:99), but the entry's 0/1 leaves its unit unstated while the scored comparison record itself contains the checksum import edge, and :31 attributes the delta to "edge sets" where the block differences named-import name sets — PARTIAL, two in-place wording/citation fixes, no change to K_HELD_BACKED=6/14.
+
+Installs: none (stdlib python3 only; no packages installed, no host services touched).

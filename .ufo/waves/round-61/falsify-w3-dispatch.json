@@ -1,0 +1,1039 @@
+{
+ "schema": "ufo-swarm-wave-dispatch-v1",
+ "wave": "revenger-r61-w3",
+ "policy": {
+  "source": "config",
+  "maxLanes": 100,
+  "minLanes": 16,
+  "waveMinLanes": 64,
+  "waveMaxLanes": 100,
+  "declaredMaxLanes": null,
+  "hardCeiling": 100,
+  "rampBatchSize": 5,
+  "rampIntervalMs": 700,
+  "globalRunnerCeiling": 1056
+ },
+ "counts": {
+  "spawn": 66,
+  "resume": 0,
+  "total": 66
+ },
+ "registry": {
+  "schema": "ufo-swarm-registry-v1",
+  "path": ".ufo/waves/round-61/falsify-w3/swarm-registry.json",
+  "reportDir": ".ufo/waves/round-61/falsify-w3",
+  "members": {
+   "W3EvmOpcodeBytes": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmPairR19R21": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "revenger",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmPairsR22": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "revenger",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmPush4SiteAbsent": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmR23Empty": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "revenger",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmR24Immediate": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "revenger",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmR25R26Targets": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "executor",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmFlagsDigest": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmSelectorConstants": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmOffsetIsTarget": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "critic",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmR26Negative": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "critic",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmR24Confound": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "critic",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmTwoRulesFit": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "executor",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmVersionPins": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmVerifierCredit": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "mutation-tester",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmR24SpanFix": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmCrossLaneCites": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "connector",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmHeaderSources": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmYellowPaperCite": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmMetadataCite": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmQTable": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmReproduceSafety": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "sentinel",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmProvenanceBase": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmOverclaimCritic": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "critic",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3EvmWalkMutant": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "mutation-tester",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsSourceFacts": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "executor",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsNamedSet": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "executor",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsSpecifierUnnamed": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsDeltaLedger": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsEntrypointMapsTo": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsLabelsDefault": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsEcmaDestructuring": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsLoadAsFile": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsElectronMainLabel": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "critic",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsMainVsFallback": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "critic",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsEsmHeuristicQuote": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsVersionPins": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsVerifierCredit": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "mutation-tester",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsCrossLaneCites": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "connector",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsHeaderSources": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsQTable": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsReproduceSafety": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "sentinel",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsOverclaimCritic": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "critic",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3JsRecordMutant": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "mutation-tester",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3KRecount": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3KReadmeCells": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "critic",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3KProbeMutant": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "mutation-tester",
+    "item": null,
+    "axes": [
+     "coverage",
+     "calibration"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3KEligibility": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3SrcContractCells": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3SrcGateQuotesEvm": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3SrcGateQuotesJs": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3SrcRejectRows": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "critic",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3SrcOwnWorkRows": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3SrcSearchLog": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3SrcCensusRun": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3QualityQ12Fail": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "critic",
+    "item": null,
+    "axes": [
+     "coverage",
+     "calibration"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3QualityQ13Apply": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage",
+     "calibration"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3GateRejects": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "critic",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3LessonMistakes": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3HoldInputsBytes": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage",
+     "calibration"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3HoldProbeRerun": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage",
+     "calibration"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3HoldFandFreshness": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "scout",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3SeparabilityC1": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "critic",
+    "item": null,
+    "axes": [
+     "coverage",
+     "calibration"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3ProvinceBounds": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "connector",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3ScorecardRow": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "reviewer",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   },
+   "W3ClaimsAmendmentOrder": {
+    "kind": "spawn",
+    "agentId": null,
+    "role": "critic",
+    "item": null,
+    "axes": [
+     "coverage"
+    ],
+    "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+   }
+  }
+ },
+ "compaction": {
+  "applied": false,
+  "mechanism": null,
+  "reason": null,
+  "savedBytes": 0,
+  "payloadBytesBefore": 0,
+  "payloadBytesAfter": 0
+ },
+ "taskCall": {
+  "context": "# Goal\nFALSIFY wave 3 (fresh), revenger round 61 ONLY (hyaku campaign; attempt 1; never work any other round). Lane repo /home/vgpnk/Projects/shokunin/revenger-shokunin (binary forensics / reverse engineering of shipped artifacts with an evidence-ledger discipline; jj-colocated; branch main). L1 coordinator and sole integration owner: RevengerR61-2 (session-3 replacement L1). An earlier falsify wave's 65 seats died with the host session before reporting (/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-61/falsify/dead-seats.json); this is a fresh wave with new seats and a new design, not a copy. Landed state to attack: ab580698212258a55e43e9bb9bf6ac78c91eae2a (claim base cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97; work landing 0b6ddf07f33184baf901dd807ddc72a95f4010c1; C09-entry/M25 correction 0597e5336fd67654c974fcb05f73353f44d868b9).\nRead /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-61/claims.md (claims + amendments A1/A2), /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-61/measure-before.log and measure-after.log, /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/QUALITY.md (Q01-Q13) and /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md.\nClaim under attack: C1 coverage K \u2014 its pre-registered condition (claims.md:26-34): each entry is admitted only if it passes corpus/QUALITY.md Q01-Q11, cites at least one corpus/SOURCES.md row opened in round 61 that is tier A for its scope, carries in-entry derivations (Q11), and SURVIVES THESE ATTACKS. Entries: /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md (row C09) and /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md (row C04); K_HELD_BACKED 4/14 -> 6/14 via /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/README.md; SOURCES rows S016-S027 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md; harm voids admission (a changed saved record or fixture, a lost hold, an entry that overstates its evidence, a source row not opened this round).\nYour job: attack exactly the item you are given. A finding that something holds is as valuable as one that breaks; never assume either. Grade: HOLDS / BROKEN / PARTIAL with evidence. BROKEN means the entry/claim states something its evidence contradicts or a Q criterion fails; wording nits are PARTIAL at most and must name the exact line.\n# Contract\nEvery `Report:` trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin \u2014 write it at /home/vgpnk/Projects/shokunin/revenger-shokunin/<that path>, NEVER under /home/vgpnk/Projects/shokunin/.ufo (earlier seats misrooted there; do not repeat it). Tools start at the fleet root /home/vgpnk/Projects/shokunin: use ABSOLUTE paths always.\nYou may write ONLY your own report file plus scratch under /tmp/revenger-r61w3-<YourSeatName>*. Run anything (probe, verifiers, mutants, entry Reproduce blocks) only on an extracted archive: `mkdir -p /tmp/revenger-r61w3-<YourSeatName> && git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive --format=tar ab580698212258a55e43e9bb9bf6ac78c91eae2a | tar -x -C /tmp/revenger-r61w3-<YourSeatName>` (record the hash; older commits the same way into a separate dir). NEVER write the live lane tree, its jj state or Git index (no git/jj mutation in /home/vgpnk/Projects/shokunin/revenger-shokunin; read-only git log/show/diff/archive only; avoid `git status` there), the fleet repo, sibling repos, MANIFEST.json, .ufo/state or .ufo/watchdog.log.\nScope (binding): local artifacts and the lane's authored synthetic fixtures only. Reading public documentation/specification pages to re-open sources is allowed (quote verbatim). No live-target probing, no blockchain RPC or contract interaction, no execution of bytecode or fixture JavaScript, no REA producer calls (never xd://mcp__rea_* devices), no logins, no secrets/credential reads, no services/boot/package transactions. If anything is refused on policy grounds, stop and report the refusal text verbatim; never rephrase or reroute refused work.\nTooling: read /home/vgpnk/.omp/agent/RULES.md first; you may install or upgrade useful tools from official channels and must record tool/version/channel/reason. pacman guard: ALL pacman transactions are PAUSED host-wide \u2014 use uv tool / npx / an official binary in ~/.local/bin; never -Sy/-Syu/-U/-R, never restart a host service.\nNo delegation; leaf seat. Skip builds/lint/formatters. Message peers only by exact seat id, never agent://all.\nHonesty: an unrun check has not passed; separate observation vs inference vs unknown; every finding carries path:line or command+exact output; web quotes verbatim <=25 words with URL, location, version/date, access date 2026-10-21.\nReport format: at most 60 lines; first line `GRADE: HOLDS|BROKEN|PARTIAL \u2014 <target>`; findings with evidence; end with `VERDICT: <one line>` and any installs.",
+  "tasks": [
+   {
+    "name": "W3EvmOpcodeBytes",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md Observation 1: re-open S016 (execution-specs v2.20.0 instructions/__init__.py and runtime.py) and confirm PUSH4=0x63, EQ=0x14, JUMPI=0x57, JUMPDEST=0x5B and that the valid-destination scan skips PUSH-N data; check the entry's cited line numbers (55, 106, 109, 125; runtime.py 22-69) against the fetched file at tag v2.20.0.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmOpcodeBytes.md"
+   },
+   {
+    "name": "W3EvmPairR19R21",
+    "agent": "revenger",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 (independent re-derivation; write only scratch code under /tmp/revenger-r61w3-<YourSeatName>) C09 Observation 2, r19/r21: hypothesis 'both records report exactly one function, selector 0xdeadbeef, bytecode_offset 16, and 16 is a valid JUMPDEST reached by the PUSH1 operand of a JUMPI; the PUSH4 is at 6'. Decode /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/evm-r19/fixture.hex and /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/evm-r21/fixture.raw with your own walker (not the entry's code) and read /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-19 and round-21 inspection JSON on your archive.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmPairR19R21.md"
+   },
+   {
+    "name": "W3EvmPairsR22",
+    "agent": "revenger",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 (independent re-derivation; write only scratch code under /tmp/revenger-r61w3-<YourSeatName>) C09 Observation 2, r22: hypothesis 'r22 reports 0xaaaaaaaa@30 and 0xbbbbbbbb@32, PUSH4s at 7 and 17, both offsets valid JUMPDESTs that are JUMPI targets'. Own walker over /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/evm-r22/fixture.raw plus /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-22 saved record; also check there is no third candidate or extra field.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmPairsR22.md"
+   },
+   {
+    "name": "W3EvmPush4SiteAbsent",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 Observation 2 last sentence 'The PUSH4 locations themselves appear in no record field': recursively walk every key/value of the seven saved inspect_evm_interface records (/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-19, round-21..round-26) on your archive and search for the PUSH4 offsets (6; 7, 17; and r23's) as numbers or hex; report any field that carries them.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmPush4SiteAbsent.md"
+   },
+   {
+    "name": "W3EvmR23Empty",
+    "agent": "revenger",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 (independent re-derivation; write only scratch code under /tmp/revenger-r61w3-<YourSeatName>) C09 Observation 3, r23: hypothesis 'PUSH4 c0ffee00, POP, STOP; no JUMPI, no JUMPDEST; record functions: []'. Decode /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/evm-r23 bytes yourself and read the saved record.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmR23Empty.md"
+   },
+   {
+    "name": "W3EvmR24Immediate",
+    "agent": "revenger",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 (independent re-derivation; write only scratch code under /tmp/revenger-r61w3-<YourSeatName>) C09 Observation 3, r24: hypothesis 'one PUSH32 whose immediate contains the r19 pattern; the only 0x63 byte is at offset 1 inside it; no executable PUSH4; functions: []'. Decode /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/evm-r24/fixture.raw; count every 0x63 and 0x5B byte; read the saved round-24 record.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmR24Immediate.md"
+   },
+   {
+    "name": "W3EvmR25R26Targets",
+    "agent": "executor",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 (independent re-derivation; write only scratch code under /tmp/revenger-r61w3-<YourSeatName>) C09 Observation 3, r25/r26: hypothesis 'r25: entry STOP then PUSH4/EQ/PUSH1/JUMPI whose target 16 is a STOP not the JUMPDEST at 17; r26 identical except operand 17 (valid JUMPDEST); both functions: []'. Byte-diff r25 vs r26 fixtures and decode each; read both saved records.\n\nLane bounds: leaf member \u2014 no subagent dispatch except your single labrat.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmR25R26Targets.md"
+   },
+   {
+    "name": "W3EvmFlagsDigest",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 Observation 4: for all seven saved EVM records check evidence_kind: inferred, discovery_completeness: unknown, runtime_execution: not-performed, and that each subject digest equals sha256 of the fixture bytes actually decoded (for r19 the hex carrier: decide which bytes the digest covers and say so).\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmFlagsDigest.md"
+   },
+   {
+    "name": "W3EvmSelectorConstants",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 Observation 5 'selectors are authored constants, not derived': confirm no /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/evm-r*/truth.json declares a function signature; re-open S018 (Solidity v0.8.37 ABI spec \u00a7Function Selector) for the quoted definition; judge whether the conclusion follows or overstates (e.g. could a real signature hash to deadbeef \u2014 the entry must not claim impossibility).\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmSelectorConstants.md"
+   },
+   {
+    "name": "W3EvmOffsetIsTarget",
+    "agent": "critic",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 Inference 1 'bytecode_offset equals the JUMPI target, a valid JUMPDEST, not the PUSH4 site' on three records: can any alternative reading (e.g. offset of the PUSH1 operand, offset of JUMPDEST+0, block start) fit the same three records equally? If yes, is the inference overstated? Cite the kaidoku prior art the entry names and whether it is cited as prior art, not re-claimed.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmOffsetIsTarget.md"
+   },
+   {
+    "name": "W3EvmR26Negative",
+    "agent": "critic",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 Inference 2 (r26 'strongest negative'): is the r26 pattern statically valid under S016/S017 (JUMPDEST at 17 not inside PUSH data; reachable by static jump analysis even though behind an entry STOP)? Is the falsified universal ('reports every statically valid selector/JUMPDEST pattern') stated narrowly enough ('this provider version on this input')?\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmR26Negative.md"
+   },
+   {
+    "name": "W3EvmR24Confound",
+    "agent": "critic",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 Inference 3: the entry says r24 does NOT show the provider excludes PUSH data because the embedded JUMPI target (0x10) is not a JUMPDEST and the file has no 0x5B byte. Verify the bytes; enumerate at least three simple scanner rules and show which yield empty on r24; decide whether the confound statement is correct and complete.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmR24Confound.md"
+   },
+   {
+    "name": "W3EvmTwoRulesFit",
+    "agent": "executor",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 (independent re-derivation; write only scratch code under /tmp/revenger-r61w3-<YourSeatName>) C09 Unknown 1: hypothesis 'both post-hoc rules (only code reachable from pc 0 is considered; scan stops at first STOP) reproduce all seven saved outputs, and no fixture separates them'. Implement both rules in a stdlib script over the seven fixtures and compare with the saved functions lists.\n\nLane bounds: leaf member \u2014 no subagent dispatch except your single labrat.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmTwoRulesFit.md"
+   },
+   {
+    "name": "W3EvmVersionPins",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 header and Limitations version claims: rea-agents@6.4.0 'per the round ledgers', provider evmole-interface evmole@0.9.3 'inside the records', run 2026-10-12, host skill now names rea-agents@6.7.0 (S002). Check each against the round-19..26 ledgers/records under /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs and S002 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md; report every record's own provider/version fields.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmVersionPins.md"
+   },
+   {
+    "name": "W3EvmVerifierCredit",
+    "agent": "mutation-tester",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 Limitations: '/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/verify_evm_evidence.py reads r19 only, and its own run detects none of 37 single-conjunct deletions'. On your archive, enumerate the script's conjuncts, delete each singly in a temp copy (cwd=/), run, and count detections; confirm the entry correctly withholds Q13 credit.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmVerifierCredit.md"
+   },
+   {
+    "name": "W3EvmR24SpanFix",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 The correction in 0597e5336fd67654c974fcb05f73353f44d868b9: C09 Limitations now says truth.json embedded_pattern_offsets [1, 9] is the inclusive span of one 9-byte occurrence (LOG.md:289 'offsets 1-9'), and lesson M25 (/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md:41) was rewritten. Attack it: byte-search the pattern, check LOG.md:289 and the round-24 authoring records, and check other truth.json files for how *_offsets fields are used elsewhere in the lane.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmR24SpanFix.md"
+   },
+   {
+    "name": "W3EvmCrossLaneCites",
+    "agent": "connector",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 Cross-lane contest (Q10): open /home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r3-evm-interface.md:151-153, kaidoku PROVINCE.md:54 and /home/vgpnk/Projects/shokunin/kasegi-shokunin/PROVINCE.md:25 read-only; confirm each says what the entry attributes; scan kaidoku/kasegi for any other EVM ground the entry claims as its own.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmCrossLaneCites.md"
+   },
+   {
+    "name": "W3EvmHeaderSources",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 header `source:` line: every S-id cited (S026, S016, S017, S018, S019) exists in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md, was opened in round 61 (row 'opened' date and /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md ## Gate quote), and is tier A for the scope the entry uses it for; check verified-at/recheck/coverage-map fields match QUALITY Q02.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmHeaderSources.md"
+   },
+   {
+    "name": "W3EvmYellowPaperCite",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 header cites S017 'Yellow Paper Shanghai efc5f9a \u00a79.4.3 eqs. (160)-(162), p.15'. Fetch https://ethereum.github.io/yellowpaper/paper.pdf, extract text (install pdftotext via uv/npx/official binary if needed; pacman paused), confirm section, equation numbers, page and revision; quote verbatim.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmYellowPaperCite.md"
+   },
+   {
+    "name": "W3EvmMetadataCite",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 header cites S019 'Solidity \u00a7Encoding of the Metadata Hash in the Bytecode' and the Unknown sentence 'CBOR metadata tail that solc appends by default'. Re-open https://docs.soliditylang.org/en/latest/metadata.html and confirm the section name and the 'by default' wording verbatim.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmMetadataCite.md"
+   },
+   {
+    "name": "W3EvmQTable",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 entry's Q table (end of /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md): for each Q01-Q13 row the entry marks pass, check the stated reason against /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/QUALITY.md's criterion text and the entry body; report every pass that the body does not support.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmQTable.md"
+   },
+   {
+    "name": "W3EvmReproduceSafety",
+    "agent": "sentinel",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 `## Reproduce` block in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md: confirm by reading and by running it on your archive (strace or audit hooks optional) that it is stdlib-only, reads only corpus/fixtures and corpus/live/runs, writes nothing, executes no bytecode, opens no network; record its exit and whether stdout equals the `## Provenance` output block.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmReproduceSafety.md"
+   },
+   {
+    "name": "W3EvmProvenanceBase",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C09 `verified-at` names base e0a4b0c4348ef1fade46539f520e94fa140c4d8a. Run the Reproduce block on archives of e0a4b0c, 0b6ddf07f33184baf901dd807ddc72a95f4010c1 and ab580698212258a55e43e9bb9bf6ac78c91eae2a; confirm the output is identical across them and to Provenance; flag if verified-at should name a different commit.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmProvenanceBase.md"
+   },
+   {
+    "name": "W3EvmOverclaimCritic",
+    "agent": "critic",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Whole-entry overclaim attack on /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/evm-saved-interface-candidates.md: list every sentence that asserts more than the seven saved records and fixture bytes show (generalisation to deployed code, provider method, rates, 'every', 'never'); grade each against QUALITY Q05/Q07/Q10.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmOverclaimCritic.md"
+   },
+   {
+    "name": "W3EvmWalkMutant",
+    "agent": "mutation-tester",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Mutation-test the C09 Reproduce walk as a guard: in a temp copy of your archive flip one fixture byte per run (e.g. r22 JUMPDEST at 30 -> 0x00; r26 operand 17 -> 16; r24 PUSH32 -> PUSH31) and re-run the block; report which mutations change its output so a reader comparing with Provenance would notice, and which survive.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3EvmWalkMutant.md"
+   },
+   {
+    "name": "W3JsSourceFacts",
+    "agent": "executor",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 (independent re-derivation; write only scratch code under /tmp/revenger-r61w3-<YourSeatName>) C04 Observation 1: hypothesis 'js-r3/index.js line 1 destructures checksum and rot13 from require(\"./transform\"); js-r7-v2 destructures rot13 only; both package.json main index.js, no exports; transform.js and package.json byte-identical across the pair; exactly one require call per fixture'. Check /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/js-r3 and /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/js-r7-v2 with your own parser (no JS execution).\n\nLane bounds: leaf member \u2014 no subagent dispatch except your single labrat.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsSourceFacts.md"
+   },
+   {
+    "name": "W3JsNamedSet",
+    "agent": "executor",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 (independent re-derivation; write only scratch code under /tmp/revenger-r61w3-<YourSeatName>) C04 Observation 2: hypothesis 'in each saved graph the set of imports edges with imported_name equals the destructured names (v1 checksum,rot13; v2 rot13)'. Read /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/20261012T164357Z/analysis.json and /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-7/v2-analysis.json on your archive with your own code.\n\nLane bounds: leaf member \u2014 no subagent dispatch except your single labrat.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsNamedSet.md"
+   },
+   {
+    "name": "W3JsSpecifierUnnamed",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 Observation 2 second sentence: every imports edge has specifier ./transform and resolved path transform.js, and each graph has one unnamed imports edge for the require call. Dump every imports edge with all properties from both saved graphs and check.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsSpecifierUnnamed.md"
+   },
+   {
+    "name": "W3JsDeltaLedger",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 Observation 3: imports 3 -> 2, edges 13 -> 12, removed exactly checksum; 'the round-7 comparison tool did not report it (0/1, recorded in the round-7 ledger)'. Re-count from both graphs and find the round-7 ledger line under /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-7 or /home/vgpnk/Projects/shokunin/revenger-shokunin/LOG.md that records 0/1.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsDeltaLedger.md"
+   },
+   {
+    "name": "W3JsEntrypointMapsTo",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 Observation 4: each graph has exactly one maps_to edge with resolution_context package-entrypoint, resolved to index.js, state inferred. Dump all maps_to edges of both graphs and check count, target and state.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsEntrypointMapsTo.md"
+   },
+   {
+    "name": "W3JsLabelsDefault",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 Observation 5: both graphs label the entry node kind electron-main, fixtures contain zero 'electron' tokens (case-insensitive, all files), and both record a single exposed export named default. Check nodes/edges and grep the fixtures.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsLabelsDefault.md"
+   },
+   {
+    "name": "W3JsEcmaDestructuring",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 Inference 1 and header: S022 ECMA-262 draft \u00a714.3.1.3 and \u00a714.3.3.3 make `const { a } = expr` an evaluation of expr followed by a property read, not an import declaration. Re-open https://tc39.es/ecma262/ (record draft date) and check the clause numbers, titles and steps the entry relies on; quote verbatim.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsEcmaDestructuring.md"
+   },
+   {
+    "name": "W3JsLoadAsFile",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 Inference 2: S020 LOAD_AS_FILE order (.js first) makes ./transform -> transform.js the documented resolution. Re-open https://nodejs.org/api/modules.html (record version) 'All together' pseudocode and check LOAD_AS_FILE and LOAD_AS_DIRECTORY steps verbatim; note any condition under which another file would win in these fixtures.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsLoadAsFile.md"
+   },
+   {
+    "name": "W3JsElectronMainLabel",
+    "agent": "critic",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 Inference 3 'electron-main is the provider's kind name for a package main file, not an observation that Electron was involved': what evidence supports 'the provider's kind name for a package main file' \u2014 is it inferred from two records only? Is the sentence an overclaim about provider semantics (Q04/Q07)? Check the saved records and any REA docs already saved in the lane (no network calls to REA, no producer runs).\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsElectronMainLabel.md"
+   },
+   {
+    "name": "W3JsMainVsFallback",
+    "agent": "critic",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 Unknown 1 (main vs folder fallback): confirm via S020/S021 that index.js is the fallback when main is missing and that main=index.js cannot be separated; check that no entry sentence or README cell elsewhere implies the edge reflects main. Also attack the entry's coverage-map limiting clause in its header line 4.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsMainVsFallback.md"
+   },
+   {
+    "name": "W3JsEsmHeuristicQuote",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 Unknown 3 quotes S023 'does not always correctly detect named exports'. Re-open https://nodejs.org/api/esm.html 'CommonJS Namespaces' and verify the quote verbatim, its section and the docs version (v26.12.1 per the entry).\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsEsmHeuristicQuote.md"
+   },
+   {
+    "name": "W3JsVersionPins",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 header and Limitations: rea-agents@6.4.0 analyze-javascript-application 'per the round-3 and round-7 ledgers', two saved runs from 2026-10-12, host skill now names rea-agents@6.7.0 (S002). Check each against the ledgers/records under /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs and /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md; report the records' own version fields.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsVersionPins.md"
+   },
+   {
+    "name": "W3JsVerifierCredit",
+    "agent": "mutation-tester",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 Limitations credit /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/verify_js_graph_delta.py and verify_saved_evidence.py for the names and entry mapping but not v2 digests, edge spans or the unnamed edge. In temp copies of your archive mutate one of each (a name, the entry mapping, a v2 digest, an edge span, the unnamed edge) in the saved records and run both verifiers (cwd=/); report which mutations each detects and whether the entry's Q13 crediting is exact.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsVerifierCredit.md"
+   },
+   {
+    "name": "W3JsCrossLaneCites",
+    "agent": "connector",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 Cross-lane contest (Q10): open read-only /home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/README.md:23 and /home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r3-renderer-asar.md:79-81; confirm each says what the entry attributes; scan kaidoku for CommonJS destructured-require ground that would make this entry a duplicate claim.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsCrossLaneCites.md"
+   },
+   {
+    "name": "W3JsHeaderSources",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 header `source:` line: every S-id cited (S027, S020, S021, S022, S023) exists in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md, was opened in round 61 (/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md ## Gate), and is tier A for the scope it is used for; check verified-at/recheck/coverage-map fields per QUALITY Q02; re-open S021 https://nodejs.org/api/packages.html and verify the `\"main\"` quote.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsHeaderSources.md"
+   },
+   {
+    "name": "W3JsQTable",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 entry's Q table (end of /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md): for each Q01-Q13 row marked pass, check the reason against /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/QUALITY.md and the entry body; report every unsupported pass.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsQTable.md"
+   },
+   {
+    "name": "W3JsReproduceSafety",
+    "agent": "sentinel",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 C04 `## Reproduce` block in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md: confirm by reading and running it on your archive that it is stdlib-only, read-only, executes no JavaScript, opens no network; record exit and whether stdout equals the Provenance output block.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsReproduceSafety.md"
+   },
+   {
+    "name": "W3JsOverclaimCritic",
+    "agent": "critic",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Whole-entry overclaim attack on /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/commonjs-destructured-require-edges.md: list every sentence that asserts more than the two saved graphs and the fixture source show (Electron, runtime loading, export binding, generality); grade each against QUALITY Q04/Q05/Q07/Q10.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsOverclaimCritic.md"
+   },
+   {
+    "name": "W3JsRecordMutant",
+    "agent": "mutation-tester",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Mutation-test the C04 Reproduce block as a guard: in temp copies of your archive delete the v2 rot13 named edge, rename checksum in v1, change the maps_to target, and add an 'electron' token to a fixture; re-run the block per mutant and report which change its output versus Provenance.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3JsRecordMutant.md"
+   },
+   {
+    "name": "W3KRecount",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Re-derive K independently on archives of cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97 and ab580698212258a55e43e9bb9bf6ac78c91eae2a without using /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-61/measure.py: parse /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/README.md's map table, count held rows, confirm every knowledge file named in each held row exists, row count 14, and that only C04/C09 changed status.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3KRecount.md"
+   },
+   {
+    "name": "W3KReadmeCells",
+    "agent": "critic",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 README rows C04/C09 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/README.md: compare each knowledge cell's scope text with the entry's actual scope and the README status definitions (held vs partial). Is 'held' justified for a row labelled 'JavaScript/Electron packages' whose entry excludes Electron/ASAR/ESM, and for 'EVM bytecode interfaces' on seven authored fixtures? Grade against the README's own status definition text.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3KReadmeCells.md"
+   },
+   {
+    "name": "W3KProbeMutant",
+    "agent": "mutation-tester",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Mutation-test the K_HELD_BACKED counter in /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-61/measure.py: in temp copies of the archive (cwd=/) (a) flip a README row to held without an entry, (b) delete one entry file, (c) add a 15th row, (d) change a non-C04/C09 row status; run the probe per mutant; report whether each is detected (count change or exit 2) per amendment A1.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3KProbeMutant.md"
+   },
+   {
+    "name": "W3KEligibility",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Eligibility: confirm with `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin show cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97:corpus/README.md` that C04 and C09 were uncovered at the base and that their work evidence cells existed; check claims.md:19-34 eligibility wording against it.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3KEligibility.md"
+   },
+   {
+    "name": "W3SrcContractCells",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 SOURCES contract v1 (/home/vgpnk/Projects/shokunin/CORPUS.md section 'SOURCES.md \u2014 where a shokunin learns'): check every cell of rows S016-S027 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md (kind, tier, scope, anchor, teaches, status, opened, recheck, used-by) against the contract's rules; list every nonconforming cell.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3SrcContractCells.md"
+   },
+   {
+    "name": "W3SrcGateQuotesEvm",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md ## Gate quotes for S016-S019: re-open each URL, verify each quote verbatim, <=25 words, at the stated location (file:lines / section / page); report mismatches.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3SrcGateQuotesEvm.md"
+   },
+   {
+    "name": "W3SrcGateQuotesJs",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md ## Gate quotes for S020-S023: re-open each URL, verify each quote verbatim, <=25 words, at the stated section; report mismatches including HTML line-break artefacts.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3SrcGateQuotesJs.md"
+   },
+   {
+    "name": "W3SrcRejectRows",
+    "agent": "critic",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Rejected rows S024 and S025 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md: apply QUALITY Q12 (/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/QUALITY.md:24) to each \u2014 reject reason grounded in a located quote, flip names a source change or a scope the reason does not exclude. Also check S024's supersession of S008 is recorded without editing S008 (contract rule 2).\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3SrcRejectRows.md"
+   },
+   {
+    "name": "W3SrcOwnWorkRows",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Own-work rows S026 and S027 in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md: are own-work saved records legitimately tier A for 'what the saved records report' under CORPUS.md's tier rules; do their anchors and quotes in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md:65-66 exist in the named files on your archive?\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3SrcOwnWorkRows.md"
+   },
+   {
+    "name": "W3SrcSearchLog",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md `## Paths` and `## Search log` round-61 additions: do the identified/screened/included/excluded counts reconcile with rows S016-S027 and the build seat reports under /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-61/build (Src*.md, ScribeSourcesRows*.md); are no-row exclusions justified?\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3SrcSearchLog.md"
+   },
+   {
+    "name": "W3SrcCensusRun",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Run `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin revenger` (read-only) and the frozen manual census commands in /home/vgpnk/Projects/shokunin/CORPUS.md against /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md; report exit codes and every warning, and judge W04 (S024 duplicate URL) against the contract.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3SrcCensusRun.md"
+   },
+   {
+    "name": "W3QualityQ12Fail",
+    "agent": "critic",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Show Q12 (/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/QUALITY.md:24) able to fail: apply it mechanically to every rejected row in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md (S008 and S024 at least, plus any older rejected rows); report which pass and fail; confirm S008 fails and S024 passes as /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md:37 claims.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3QualityQ12Fail.md"
+   },
+   {
+    "name": "W3QualityQ13Apply",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Q13 (/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/QUALITY.md:25) applied in both entries: check that each verifier an entry cites is credited only for clauses whose deletion its own run detects, using the build mutation reports under /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-61/build (MutantEvmVerifier.md, MutantJsVerifier.md, ReviewerJsVerifierRun.md).\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3QualityQ13Apply.md"
+   },
+   {
+    "name": "W3GateRejects",
+    "agent": "critic",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md:71-87 Admission decisions: for each of the seven rejects decide whether the cited Q ids justify rejection and whether any rejected wording actually appears (unrejected) in either entry or the README; also check the admit rows' criteria lists.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3GateRejects.md"
+   },
+   {
+    "name": "W3LessonMistakes",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md ## Mistakes M21-M25: run the count command at /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-61.md:44 on your archive; check each row has class, evidence pointer that resolves, captured-by, and a fix shown able to fail (or 'none' captured-by honestly); report rows whose pointers do not resolve.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3LessonMistakes.md"
+   },
+   {
+    "name": "W3HoldInputsBytes",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Harm check: `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff --stat cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97 ab580698212258a55e43e9bb9bf6ac78c91eae2a -- corpus/live corpus/fixtures` must be empty; also compare sha256 of every file under corpus/live and corpus/fixtures between the two archives yourself.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3HoldInputsBytes.md"
+   },
+   {
+    "name": "W3HoldProbeRerun",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Re-run /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-61/measure.py on your archive of ab580698212258a55e43e9bb9bf6ac78c91eae2a and on cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97 (cwd=/); compare every printed line with /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-61/measure-after.log (appended section) and measure-before.log; report any difference and the exit codes.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3HoldProbeRerun.md"
+   },
+   {
+    "name": "W3HoldFandFreshness",
+    "agent": "scout",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Coverage F and freshness holds: run the F command at /home/vgpnk/Projects/shokunin/revenger-shokunin/SCORECARD.md:45-57 and the freshness grep at SCORECARD.md:134 on archives of cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97 and ab580698212258a55e43e9bb9bf6ac78c91eae2a; report both outputs; any drop is a harm.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3HoldFandFreshness.md"
+   },
+   {
+    "name": "W3SeparabilityC1",
+    "agent": "critic",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Separability: build a counterfactual tree = archive of cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97 plus only the C1 files from ab580698212258a55e43e9bb9bf6ac78c91eae2a (corpus/knowledge/*.md new entries, corpus/README.md, corpus/SOURCES.md, lesson) and run /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-61/measure.py; does K reach 6/14 with C2 absent and do holds stay ok? Report the exact file set used.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3SeparabilityC1.md"
+   },
+   {
+    "name": "W3ProvinceBounds",
+    "agent": "connector",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Lane bounds: read /home/vgpnk/Projects/shokunin/revenger-shokunin/PROVINCE.md and check both new entries stay inside revenger's province; scan /home/vgpnk/Projects/shokunin/*-shokunin/corpus/knowledge (read-only, filenames + grep for 'require', 'JUMPDEST', 'selector') for sibling entries the C04/C09 entries duplicate or contradict without citing.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3ProvinceBounds.md"
+   },
+   {
+    "name": "W3ScorecardRow",
+    "agent": "reviewer",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 /home/vgpnk/Projects/shokunin/revenger-shokunin/SCORECARD.md round-61 section (lines ~186-235): check the K row's before->after, counting command and measured commits against measure-before/after logs; check the replacement-L1 note at :217-223 is accurate; report any mismatch.\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3ScorecardRow.md"
+   },
+   {
+    "name": "W3ClaimsAmendmentOrder",
+    "agent": "critic",
+    "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nATTACK \u2014 Pre-registration integrity for C1: using `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin log --format='%H %cI %s' cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97..ab580698212258a55e43e9bb9bf6ac78c91eae2a` and `git show` of reports/round-61/claims.md per commit, confirm amendment A2 (C1 scope narrowing) was committed before or with the entries and that no original claims.md line was edited later; judge whether A2 narrowed the target after seeing results (goalpost move).\n\nLane bounds: leaf member \u2014 no subagent dispatch.\nJudged on: coverage\nMilestone: Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069\n\nReport: write your scoped findings to .ufo/waves/round-61/falsify-w3/W3ClaimsAmendmentOrder.md"
+   }
+  ]
+ },
+ "resumeSends": [],
+ "note": "Issue exactly one batched task call with taskCall ({context, tasks}); never split a wave into multiple task calls (one-swarm-per-wave). Then one hub send per resumeSends entry: hub send --to <entry.resume> --message <entry.message> (entry.name is bookkeeping, not a hub field)."
+}

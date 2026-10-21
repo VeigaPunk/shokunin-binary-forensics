@@ -91,3 +91,42 @@ Count: `awk -F'|' '/^\| (`knowledge|")/ || /^\| (Electron|evm\.codes)/ {d=$4; if
 
 Not performed in-round. The orchestrator's non-author closure samples at least
 one admit and one reject above; discernment stays `unchanged` until it lands.
+
+## Gate — fresh-wave rejection erratum (2026-10-21)
+
+This section supersedes the two admit decisions above; it does not erase
+their history. The parent authorized a fresh validated 66-seat attack wave
+against `ab580698` after the original 65-seat falsify wave died with the host.
+Evidence: `.ufo/waves/round-61/falsify-w3-spec.json`, its dispatch/spawn
+receipts, and `.ufo/waves/round-61/falsify-w3/` reports.
+
+| candidate | final decision | failed criterion and counterexample |
+|---|---|---|
+| C04 `knowledge/commonjs-destructured-require-edges.md` | **reject** | Q11: Limitations claimed its block carried edge spans, but neither code nor Provenance printed any location/column fields (`W3JsOverclaimCritic.md`, corroborated by `W3JsSpecifierUnnamed.md`). Q13 also over-credited verifier clauses whose own run survived deletion (`W3QualityQ13Apply.md`). `W3JsElectronMainLabel.md` identified the unsupported neutral-name reading of the provider's inferred Electron role. |
+| C09 `knowledge/evm-saved-interface-candidates.md` | **reject** | Q11: r24's PUSH32 count, raw 0x5B count, embedded target and pattern span were correct when independently checked but lacked in-entry derivations (`W3EvmR24Immediate.md`, corroborated by `W3EvmR24SpanFix.md`). `W3ProvinceBounds.md` and `W3EvmCrossLaneCites.md` also refuted the kasegi citation and found omitted sibling evidence. |
+
+Both entries remain explicitly rejected evidence, not admitted knowledge.
+C04/C09 return to `uncovered`; final admitted 0 of these 2 candidates,
+rejected 2 (in addition to the seven earlier rejected propositions/sources).
+Final K 4/14 (2.9), unchanged from the base and therefore C1 falsified by its
+registered condition. C2's receipt-command kill stays 2/2; it does not rescue
+C1 or make the whole round admitted.
+
+Other fresh-wave findings remain in the reports, not silently repaired:
+SOURCES search-log disposition/count defects (`W3SrcSearchLog.md`);
+S019 anchor precision (`W3SrcContractCells.md`); Q12's weak successor-flip
+branch (`W3QualityQ12Fail.md`); M25's imprecise attribution and capture
+classification (`W3LessonMistakes.md`, `W3EvmR24SpanFix.md`); premature
+README admission (`W3ClaimsAmendmentOrder.md`); and the K probe's file-existence
+limit/non-target-status blind spot (`W3HoldProbeRerun.md`, `W3KProbeMutant.md`).
+These are retained limitations, not fresh capabilities or admitted findings.
+
+## Mistakes — fresh-wave addition
+
+| id | class | evidence | captured-by | disposition shown able to fail |
+|---|---|---|---|---|
+| M26 | successful recheck output mistaken for complete derivation coverage | C04 block reproduced but printed no asserted spans; C09 reproduced but omitted r24 raw-count/span/target derivations; reports `W3JsOverclaimCritic.md`, `W3EvmR24Immediate.md` | Q11 (existing, admission failed to enforce it) | fresh reviewers applied the existing reject condition to factually correct but underived values; both candidates rejected and map flips rolled back, K 6/14 provisional → 4/14 final; no claimed repair |
+
+The earlier M21–M25 count remains a historical five-row count; this appended
+row is an additional mistake, not an alteration of that frozen census.
+

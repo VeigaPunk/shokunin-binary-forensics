@@ -232,3 +232,23 @@ in-script controls for the remaining receipt conjuncts and for the
 (Q13); (3) coverage K: re-gate `seed.md` and the readiness checklist against
 Q01–Q13, or an authored discriminator for C04's `main` vs fallback (non-index
 `main`) through a fresh producer run.
+
+## Round 61 final adjudication — supersedes provisional K row
+
+Fresh validated 66-seat wave over `ab580698`:
+`.ufo/waves/round-61/falsify-w3/`. C04 and C09 both failed Q11 as written;
+the admission decisions and original pass tables are superseded by
+`corpus/lessons/round-61.md` `## Gate — fresh-wave rejection erratum`.
+The candidates are retained, clearly marked rejected, with no repaired or
+weakened acceptance conditions. README C04/C09 return to `uncovered`.
+
+| axis / criterion | before → final | counting command | verdict |
+|---|---|---|---|
+| coverage — K | 4/14 → 4/14 (2.9 → 2.9); provisional 6/14 withdrawn | `python3 -B reports/round-61/measure.py TREE` (`K_HELD_BACKED`, after both rollbacks) | C1 falsified: neither candidate survives the fresh attacks |
+| calibration — receipt-identity mutation kill | 0/2 → 2/2 (0.0 → 10.0) | same probe, `C2_RECEIPT_B_KILLED_ATTRIBUTED` | C2 improved independently |
+| calibration runnability, F, freshness | holds unchanged | probe holds; F and freshness commands above, independently repeated by `W3HoldFandFreshness.md` | unchanged |
+
+The earlier K score was provisional status text, not proof of admission.
+The probe checks existence only; the quality gate is the separate necessary
+condition that rejected these candidates. Final command output and measured
+revision are appended to `reports/round-61/measure-after.log`.

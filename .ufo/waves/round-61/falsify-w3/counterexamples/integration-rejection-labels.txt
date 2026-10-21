@@ -1,0 +1,38 @@
+Integration: rejection labels for round-61 falsify wave-3 (lane revenger-shokunin, ab58069)
+Executed by RevengerR61-2.W3JsSourceFacts for L1 RevengerR61-2, 2026-10-21. Edit tool only; no tests/builds/formatters/git/jj writes; sources, fixtures, records untouched.
+
+Edits (4 files touched, 7 insert/cell replacements):
+
+1. corpus/README.md
+   - C04 row (line 30): knowledge cell -> `- (round-61 candidate rejected; see lessons/round-61.md)` (em dash);
+     work-evidence cell appended `; retained rejected candidate `knowledge/commonjs-destructured-require-edges.md``;
+     status held -> uncovered.
+   - C09 row (line 35): same treatment; retained rejected candidate `knowledge/evm-saved-interface-candidates.md`.
+   - Status legend (lines 19-24): `uncovered` now reads "work evidence exists but no admitted knowledge
+     entry (a rejected candidate retained under `knowledge/` is clearly marked in the file and is not coverage)".
+   - Index bullet `knowledge/` (lines 11-13): now states the directory also retains clearly marked rejected
+     candidates (each carries an `admission-status: rejected` header), which are evidence, not admitted knowledge.
+   - Note: the Q02 basis row inside each candidate entry still cites `coverage-map: C09`/`C04` header text;
+     untouched (entry content preserved per instruction).
+
+2. corpus/knowledge/commonjs-destructured-require-edges.md (C04)
+   - Line 5 added after existing headers (line 4 = coverage-map: C04 ...):
+     `admission-status: rejected — round-61 fresh falsify wave on ab58069; see lessons/round-61.md`
+   - Lines 17-20: admission warning blockquote added immediately before `## Observation` (now line 22),
+     stating the wave rejection supersedes the `## QUALITY check` pass verdicts and the file is retained
+     as evidence, not admitted knowledge.
+   - All original entry lines preserved; file 202 -> 208 lines (+6).
+
+3. corpus/knowledge/evm-saved-interface-candidates.md (C09)
+   - Line 5 added after existing headers (line 4 = coverage-map: C09): same admission-status line.
+   - Lines 16-19: identical admission warning blockquote before `## Observation` (now line 21).
+   - All original entry lines preserved; file 189 -> 195 lines (+6).
+
+Read-back verification (grep, read-only):
+- `^admission-status: rejected` -> exactly 1 match per entry file (lines 5).
+- Admission warning -> 1 blockquote per entry file immediately before `## Observation`.
+- K_HELD regex `grep -cE '^\| C[0-9]+ .*\| held \|$' corpus/README.md` -> 4 (was 6).
+- `grep -cE '^\| C[0-9]+ .*\| uncovered \|$' corpus/README.md` -> 2 (C04, C09).
+- `grep -c 'round-61 candidate rejected; see lessons/round-61.md' corpus/README.md` -> 2 (C04, C09 knowledge cells).
+
+Not done (owned elsewhere per assignment): lessons/round-61.md, SCORECARD.md, LOG, wave adjudication, probe rerun.

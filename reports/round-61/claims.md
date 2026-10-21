@@ -119,3 +119,23 @@ any changed tree. Original lines above are unchanged.
   in `js-r3`/`js-r7-v2` and the package `main` edge, which the fixtures cannot
   separate from the `index.js` fallback. No Electron, ASAR, ESM, bundler,
   `exports` or named-export claim.
+
+## Post-wave adjudication — frozen target unchanged (2026-10-21)
+
+The initial 65-seat falsify wave died at the host-session kill. After the
+first report was filed, the parent authorized one fresh validated wave
+(66 seats, `.ufo/waves/round-61/falsify-w3/`) over landed `ab580698`.
+This supplied the missing attack opportunity, not a relaxed admission gate.
+Both candidates failed Q11 as written: C04 claimed its block carried edge
+spans that it never printed; C09 asserted r24 counts/span/target without
+in-entry derivations. Their original pass tables are superseded by the
+rejection decisions in `corpus/lessons/round-61.md`.
+
+C04/C09 return to `uncovered`; K is 4/14, the pre-registered falsifier for C1.
+The rejected candidates and every counterexample remain as evidence; neither
+is repaired or admitted this round. C2 remains causally separate at 2/2.
+
+Timing clarification: A2 landed with the entries after the build drafts and
+critics, not before drafting. The provisional README flips preceded the
+attacks; the rollback corrects that premature admission rather than changing
+the original target.

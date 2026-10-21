@@ -1,0 +1,26 @@
+[
+  {
+    "path": ".ufo/waves/round-61/falsify-w3/counterexamples/r24-scanner-rules.py",
+    "source": "/tmp/revenger-r61w3-W3EvmR24Immediate/rules_r24.py",
+    "sha256": "73a63c4cd1d2f47c7034c48231f60cce3a7960e24f8b602fa04f49e404e32096",
+    "note": "retained from fresh-wave scratch; not rerun by L1; inspect report for invocation/context"
+  },
+  {
+    "path": ".ufo/waves/round-61/falsify-w3/counterexamples/evm-evidence-id-recompute.py",
+    "source": "/tmp/revenger-r61w3-W3ProvinceBounds/evid_recompute.py",
+    "sha256": "c460eed7ca4c636ea1f66f02ded0fac6d281ab058c641ed720248f53e3452b25",
+    "note": "retained from fresh-wave scratch; not rerun by L1; inspect report for invocation/context"
+  },
+  {
+    "path": ".ufo/waves/round-61/falsify-w3/counterexamples/evm-walk-mutation-probe.py",
+    "source": "/tmp/revenger-r61w3-W3EvmWalkMutant-probe.py",
+    "sha256": "26c6bf4afab347c01756a4c8cc23fa38ecb7f08dc250df04cbf9130920770926",
+    "note": "retained from fresh-wave scratch; not rerun by L1; inspect report for invocation/context"
+  },
+  {
+    "path": ".ufo/waves/round-61/falsify-w3/counterexamples/integration-rejection-labels.txt",
+    "source": "/fast/scratch/hyaku/revenger-r61/rejection-labels.txt",
+    "sha256": "86b24ea804d9e45a682eb161dc41538dc709608ecace06804af46e06ed0c2676",
+    "note": "retained from fresh-wave scratch; not rerun by L1; inspect report for invocation/context"
+  }
+]

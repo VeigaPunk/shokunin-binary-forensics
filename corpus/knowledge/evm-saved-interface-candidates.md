@@ -2,6 +2,7 @@ source: S026 (saved `inspect_evm_interface` records, rounds 19 and 21–26); S01
 verified-at: 2026-10-21, lane base e0a4b0c4348ef1fade46539f520e94fa140c4d8a; fixture bytes and saved records re-derived by `## Reproduce`
 recheck: save the `## Reproduce` block as a file and run `python3 -B <file>` from the lane root (stdlib only, reads fixtures and saved JSON, executes no bytecode); compare with `## Provenance`
 coverage-map: C09
+admission-status: rejected — round-61 fresh falsify wave on ab58069; see lessons/round-61.md
 
 # Saved EVM interface records on seven authored fixtures — reported candidates and empty outputs
 
@@ -12,6 +13,11 @@ independent byte walk. It is not a statement about deployed contracts, about
 REA's current release (the host skill now names `rea-agents@6.7.0`, S002), or
 about the provider's internal method. No bytecode was executed and no chain
 was queried.
+
+> **Admission warning.** Rejected by the round-61 fresh falsify wave on
+> `ab58069` (material Q11 failures). The `## QUALITY check` pass verdicts below
+> are superseded by that rejection; this file is retained as evidence of the
+> rejected candidate, not admitted knowledge.
 
 ## Observation
 

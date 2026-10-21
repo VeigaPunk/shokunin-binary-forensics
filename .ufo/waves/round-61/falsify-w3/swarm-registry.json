@@ -1,0 +1,675 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r61-w3",
+  "createdAt": "2026-10-21T16:41:36.337Z",
+  "updatedAt": "2026-10-21T16:42:14.801Z",
+  "reportDir": ".ufo/waves/round-61/falsify-w3",
+  "members": {
+    "W3EvmOpcodeBytes": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmOpcodeBytes",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmPairR19R21": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmPairR19R21",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmPairsR22": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmPairsR22",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmPush4SiteAbsent": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmPush4SiteAbsent",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmR23Empty": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmR23Empty",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmR24Immediate": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmR24Immediate",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmR25R26Targets": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmR25R26Targets",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmFlagsDigest": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmFlagsDigest",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmSelectorConstants": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmSelectorConstants",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmOffsetIsTarget": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmOffsetIsTarget",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmR26Negative": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmR26Negative",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmR24Confound": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmR24Confound",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmTwoRulesFit": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmTwoRulesFit",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmVersionPins": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmVersionPins",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmVerifierCredit": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmVerifierCredit",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmR24SpanFix": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmR24SpanFix",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmCrossLaneCites": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmCrossLaneCites",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmHeaderSources": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmHeaderSources",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmYellowPaperCite": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmYellowPaperCite",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmMetadataCite": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmMetadataCite",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmQTable": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmQTable",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmReproduceSafety": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmReproduceSafety",
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmProvenanceBase": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmProvenanceBase",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmOverclaimCritic": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmOverclaimCritic",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3EvmWalkMutant": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3EvmWalkMutant",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsSourceFacts": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsSourceFacts",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsNamedSet": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsNamedSet",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsSpecifierUnnamed": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsSpecifierUnnamed",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsDeltaLedger": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsDeltaLedger",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsEntrypointMapsTo": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsEntrypointMapsTo",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsLabelsDefault": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsLabelsDefault",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsEcmaDestructuring": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsEcmaDestructuring",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsLoadAsFile": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsLoadAsFile",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsElectronMainLabel": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsElectronMainLabel",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsMainVsFallback": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsMainVsFallback",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsEsmHeuristicQuote": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsEsmHeuristicQuote",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsVersionPins": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsVersionPins",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsVerifierCredit": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsVerifierCredit",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsCrossLaneCites": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsCrossLaneCites",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsHeaderSources": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsHeaderSources",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsQTable": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsQTable",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsReproduceSafety": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsReproduceSafety",
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsOverclaimCritic": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsOverclaimCritic",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3JsRecordMutant": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3JsRecordMutant",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3KRecount": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3KRecount",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3KReadmeCells": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3KReadmeCells",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3KProbeMutant": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3KProbeMutant",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3KEligibility": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3KEligibility",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3SrcContractCells": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3SrcContractCells",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3SrcGateQuotesEvm": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3SrcGateQuotesEvm",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3SrcGateQuotesJs": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3SrcGateQuotesJs",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3SrcRejectRows": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3SrcRejectRows",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3SrcOwnWorkRows": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3SrcOwnWorkRows",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3SrcSearchLog": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3SrcSearchLog",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3SrcCensusRun": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3SrcCensusRun",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3QualityQ12Fail": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3QualityQ12Fail",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3QualityQ13Apply": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3QualityQ13Apply",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3GateRejects": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3GateRejects",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3LessonMistakes": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3LessonMistakes",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3HoldInputsBytes": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3HoldInputsBytes",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3HoldProbeRerun": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3HoldProbeRerun",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3HoldFandFreshness": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3HoldFandFreshness",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3SeparabilityC1": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3SeparabilityC1",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3ProvinceBounds": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3ProvinceBounds",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3ScorecardRow": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3ScorecardRow",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    },
+    "W3ClaimsAmendmentOrder": {
+      "kind": "spawn",
+      "agentId": "RevengerR61-2.W3ClaimsAmendmentOrder",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Fresh falsify wave: attack C1 entries, K count, sources and holds on landed ab58069"
+    }
+  }
+}

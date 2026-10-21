@@ -1,0 +1,34 @@
+GRADE: PARTIAL — Q12 (`corpus/QUALITY.md:24`) and its application claim `corpus/lessons/round-61.md:37`
+Seat RevengerR61-2.W3QualityQ12Fail. Archive of ab580698212258a55e43e9bb9bf6ac78c91eae2a → /tmp/revenger-r61w3-W3QualityQ12Fail (read-only lane access otherwise).
+
+## Census (observed)
+`awk -F'|' '/^\| S[0-9]+ / && $9 ~ /rejected/ {n++; ids=ids $2} END{print n, ids}' corpus/SOURCES.md` → `4  S008  S012  S024  S025`.
+History: `git log -p ab58069 -- corpus/SOURCES.md` shows no rejected row ever removed; the only `-` row lines (S008, S012 in 8df2fce) leave the `teaches`/flip cell byte-identical (recheck-only change). No older rejected rows exist.
+
+## Q12 applied mechanically (two clauses + reject-when)
+| row | clause 1: reason grounded in a located quote | clause 2: flip = source change, or scope the reason does not exclude | reject-when (flip asks for content the row credits) | result |
+|---|---|---|---|---|
+| S008 `SOURCES.md:22` | met: `round-1.md:77` Abstract quote grounds "for system administrators" | FAIL: flip is "an entry needs its volatility-ordering primitive"; not a source change, and the reason's own "S005 serves that role" excludes it (S005 §7.3.1 has an Order of Volatility list, below) | FAIL: "its" credits the primitive; the row's own anchor §3.2 names it twice (rfc3227.txt:310, :314) | **FAIL** |
+| S012 `SOURCES.md:26` | UNMET as written: the reason is an absence ("no resource-directory section"); the only located quote (`round-1.md:81`, lede) does not state it | met: "article gains a field-level resource-tree section or a reproducible byte walkthrough" is a revision | not triggered | **FAIL on clause 1 / PASS on flip** |
+| S024 `SOURCES.md:38` | met: `round-61.md:58` §2.1 quote, re-matched verbatim at rfc3227.txt:183-184 | met by disjunct 2 ("the province takes up live-system evidence collection"); disjunct 1 (successor RFC/BCP) is a source change, so it passes literally | not triggered | **PASS** |
+| S025 `SOURCES.md:39` | met: `round-61.md:64` JUMPDEST quote (not L1-re-opened); "undated" is an absence carried by the anchor | met literally: "a dated, versioned snapshot" is a revision | not triggered | **PASS** |
+
+Lesson claim `round-61.md:37` ("S008 itself fails Q12, S024 passes it"): HOLDS. Q12 is able to fail.
+
+## Findings
+F1 (HOLDS, strengthens M21). S008 fails on two independent grounds, one of which the lesson does not cite. S005 itself supplies the primitive: https://swgde.org/wp-content/uploads/2025/09/2025-08-05-Best-Practices-for-Computer-Forensic-Acquisitions-17-F-002-2.1.pdf §7.3.1 "Order of Volatility" (17-F-002-2.1, 2025-08-05, accessed 2026-10-21; PDF sha256 b80e4627…8157; s005.txt:306-318): "The examiner must understand the needs of the specific situation and prioritize the collection of volatile data accordingly." So any entry "need" is already met by the newer source the reject reason names. The flip is inert because of the reason, and not only because §2.1 exists.
+F2 (PARTIAL, calibration of M21 `round-61.md:37`). "its anchor also omitted §2.1" is true, but the anchored §3.2 already says "For each system, obtain the relevant order of volatility." (https://www.rfc-editor.org/rfc/rfc3227.txt line 310, Feb 2002, accessed 2026-10-21; sha256 32e81a23…a6c5, same bytes ScoutSpotcheckIntake recorded). The row therefore credits the primitive through its own anchor. M21's "can never change the verdict" follows from F1 (S005), not from §2.1 alone. A demand-side flip with no S005 in the way could fire.
+F3 (PARTIAL, Q12 power, `QUALITY.md:24` clause 2). The pass clause is syntactic: it accepts any named "change to the source" even when the reject reason does not depend on the source.
+ - Counterexample a: S024 disjunct 1. The reason is scope ("outside this province's static shipped-artifact ledgers"), so a successor RFC on the same subject leaves the verdict unchanged. Today it is also unmet: https://www.rfc-editor.org/rfc/rfc3227.json, accessed 2026-10-21, returns `"obsoleted_by": []`. S024 passes only via disjunct 2.
+ - Counterexample b [INFERENCE]: S025's flip asks for "an opcode fact the specs do not" state. A `community` row is "never A" and tier C is "never sole support for an admitted entry" (fleet `.ufo/waves/kaika/SOURCES-CONTRACT-v1.md:29-30`). So the flip, met on its own, cannot produce admission-grade support. Q12 passes it anyway.
+F4 (PARTIAL, dropped clauses). The build draft (`.ufo/waves/round-61/build/ScoutSpotcheckIntake.md:47`) had "a need for content cannot serve as a flip" and "the round `## Gate` records the full-text search for the flip". Landed Q12 has neither. Under landed text, a need-flip for content the row does not credit passes the reject-when column.
+F5 (PARTIAL, coverage). No row-level application point exists: the Admission procedure (`QUALITY.md:28-31`) applies criteria to entries, and both entries mark Q12 `n/a` (`evm-saved-interface-candidates.md:188`, `commonjs-destructured-require-edges.md:201`). Round 61 records Q12 only for S008/S024 (`round-61.md:27,37`). Its own new rejected row S025 and the old S012 have no Q12 record; S012 fails clause 1 if applied.
+F6 (PARTIAL, wording `SOURCES.md:38`). The reason calls the province "static shipped-artifact ledgers". `PROVINCE.md:5` owns "browser/Electron runtime evidence", and `PROVINCE.md:19` allows live-target execution within the declared target. Incident response itself is not in the charter, so the reject stands; only "static" overstates.
+F7 (observed, pre-existing record drift). `round-1.md:140` says S008's "flip condition depends on a successor RFC or BCP superseding RFC 3227". The row's flip (`SOURCES.md:22`) says no such thing. S024 disjunct 1 inherits that wording, which was already inert for S008's age reason only if S005 did not exist.
+S012 reason check: Wikipedia revid 1373578392 (API `action=parse&prop=sections`, accessed 2026-10-21) has sections History, Technical details (Layout, Import table, ASLR), .NET, metadata, and the PE format, and Use on other operating systems. There is no resource section, so the reason is true today but grounded by a section list, not a quote.
+
+## Impacted axes / harm
+calibration: F2, F3, F6 (criterion and record wording overstate discrimination). coverage: F5. No saved record, fixture, hold or source row was changed, and C1 admission is not voided: both entries cite no rejected row.
+Smallest safe correction: a superseding Q row (do not edit Q12) requiring the flip to negate the reject reason's own premise, restoring the draft's need-flip and gate-search clauses. Apply it to all four rejected rows in a round lesson. S012's and S025's flips/quotes get superseding rows only if they then fail.
+
+VERDICT: Q12 can fail; S008 FAILS (two grounds) and S024 PASSES as round-61.md:37 claims. S012 fails Q12 clause 1 and S025 passes. Q12's pass clause also accepts verdict-inert source-change flips (S024 disjunct 1; S025, inferred), so its power is overstated. Installs: none.

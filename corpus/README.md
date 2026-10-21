@@ -8,7 +8,9 @@ frontier it is working toward. Province: `PROVINCE.md`. Admission bar:
 
 - `QUALITY.md` — admission criteria Q01–Q13 (Q11 supersedes Q08), each citing its mistake class.
 - `SOURCES.md` — where the lane learns: tiered, opened sources with study paths and search log (contract v1).
-- `knowledge/` — admitted domain entries (the map below names each one).
+- `knowledge/` — admitted domain entries (the map below names each one); also
+  retains clearly marked rejected candidates (each carries an
+  `admission-status: rejected` header), which are evidence, not admitted knowledge.
 - `lessons/` — `2026-10-12-r1-provider-gap.md`; `round-1.md` (fleet round-1 gates and the mined `## Mistakes` table); `round-1-verifier-spotcheck.md` (integrator-written outside check of round 1); `round-61.md` (round-61 gate, mistakes and source changes).
 - `fixtures/` — authored known-truth inputs (byte-oracle fixtures; `fixtures/REPLAY.md`).
 - `live/runs/` — saved REA outputs, receipts and non-author reviews per historical round.
@@ -18,7 +20,8 @@ frontier it is working toward. Province: `PROVINCE.md`. Admission bar:
 
 Status: `held` — at least one admitted knowledge entry covers the ground;
 `partial` — covered only by unsourced or pre-contract text; `uncovered` — work
-evidence exists but no knowledge entry; `frontier` — no knowledge and no saved
+evidence exists but no admitted knowledge entry (a rejected candidate retained
+under `knowledge/` is clearly marked in the file and is not coverage); `frontier` — no knowledge and no saved
 record. Work evidence is not knowledge: fixture and run records stay in `fixtures/`
 and `live/runs/`.
 
@@ -27,12 +30,12 @@ and `live/runs/`.
 | C01 | native static: PE resource directory (`.rsrc`) | `knowledge/pe-resource-directory-layout.md` | `fixtures/pe-r27`…`pe-r59d`; `verify_*icon*.py`, `verify_pe_resources.py` | held |
 | C02 | native analysis sessions (decompile/disassemble providers) | `knowledge/seed.md` (census), `knowledge/2026-10-12-rea-readiness-checklist.md` | `live/runs/20261012T163909Z/native-analyze.json` (`provider_unavailable`); `lessons/2026-10-12-r1-provider-gap.md` | partial |
 | C03 | managed (.NET/CLI) assemblies | — | — | frontier |
-| C04 | JavaScript/Electron packages | `knowledge/commonjs-destructured-require-edges.md` (CommonJS destructured `require` only; no Electron/ASAR ground) | `fixtures/js-r3`, `js-r7-v2`, `shapes-r12`; `verify_js_graph_delta.py`, `verify_semantic_trace.py`, `verify_shape_evidence.py` | held |
+| C04 | JavaScript/Electron packages | — (round-61 candidate rejected; see lessons/round-61.md) | `fixtures/js-r3`, `js-r7-v2`, `shapes-r12`; `verify_js_graph_delta.py`, `verify_semantic_trace.py`, `verify_shape_evidence.py`; retained rejected candidate `knowledge/commonjs-destructured-require-edges.md` | uncovered |
 | C05 | Android packages (APK) | — | — | frontier |
 | C06 | archives (ZIP inventory) | `knowledge/2026-10-12-rea-readiness-checklist.md` (archive-tool row only) | `fixtures/archive-r2`, `nested-r11`, `duplicate-r15` | partial |
 | C07 | firmware images | — | — | frontier |
 | C08 | browser/Electron runtime evidence | — | — | frontier |
-| C09 | EVM bytecode interfaces | `knowledge/evm-saved-interface-candidates.md` (saved records on seven authored fixtures) | `fixtures/evm-r19`, `evm-r21`…`evm-r26` (no `evm-r20`); `verify_evm_evidence.py` | held |
+| C09 | EVM bytecode interfaces | — (round-61 candidate rejected; see lessons/round-61.md) | `fixtures/evm-r19`, `evm-r21`…`evm-r26` (no `evm-r20`); `verify_evm_evidence.py`; retained rejected candidate `knowledge/evm-saved-interface-candidates.md` | uncovered |
 | C10 | evidence-ledger discipline (Evidence IDs; observation/inference/unknown) | `knowledge/seed.md` §Verification discipline | `verify_saved_evidence.py` | partial |
 | C11 | text encodings inside artifacts (UTF-16 names, surrogates) | `knowledge/utf16-unpaired-surrogates-in-resource-names.md` | `fixtures/pe-r34`, `pe-r51`…`pe-r57`, `pe-r59` | held |
 | C12 | tool and process validation against known truth | `knowledge/tool-validation-by-function-and-version.md`; `knowledge/seed.md` §Calibration strategy | authored fixtures carrying `truth.json` | held |
