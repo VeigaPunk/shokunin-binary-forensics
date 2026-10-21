@@ -28,3 +28,19 @@ probe_exit=0
 $ /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin revenger
 revenger	ok	/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md
 census_rc=0
+
+$ # Amendment A1 (claims.md): amended probe re-run on the same archive of cf02419 (/tmp/revenger-r61-before)
+$ python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-61/measure.py /tmp/revenger-r61-before
+K_HELD=4/14 score=2.9
+K_ROW C04 status=uncovered
+K_ROW C09 status=uncovered
+K_HELD_BACKED=4/14
+C2_CONTROLS_PASS=2/2
+C2_RECEIPT_B_KILLED=0/2
+C2_D2_KILLED=2/2
+C2_RECEIPT_B_KILLED_ATTRIBUTED=0/2
+HOLD_CALIBRATION=4/4
+HOLD_REPLAY=10/10
+HOLDS_OK=yes
+probe_exit=0
+(MUTANT and HOLD lines identical to the first run above.)

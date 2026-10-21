@@ -6,10 +6,10 @@ frontier it is working toward. Province: `PROVINCE.md`. Admission bar:
 
 ## Index
 
-- `QUALITY.md` — admission criteria Q01–Q10, each citing its mistake class.
+- `QUALITY.md` — admission criteria Q01–Q13 (Q11 supersedes Q08), each citing its mistake class.
 - `SOURCES.md` — where the lane learns: tiered, opened sources with study paths and search log (contract v1).
 - `knowledge/` — admitted domain entries (the map below names each one).
-- `lessons/` — `2026-10-12-r1-provider-gap.md`; `round-1.md` (fleet round-1 gates and the mined `## Mistakes` table).
+- `lessons/` — `2026-10-12-r1-provider-gap.md`; `round-1.md` (fleet round-1 gates and the mined `## Mistakes` table); `round-1-verifier-spotcheck.md` (integrator-written outside check of round 1); `round-61.md` (round-61 gate, mistakes and source changes).
 - `fixtures/` — authored known-truth inputs (byte-oracle fixtures; `fixtures/REPLAY.md`).
 - `live/runs/` — saved REA outputs, receipts and non-author reviews per historical round.
 - `verify_*.py` — saved-ledger replay verifiers (`--self-test`); census command in `SCORECARD.md` (C).
@@ -27,20 +27,22 @@ and `live/runs/`.
 | C01 | native static: PE resource directory (`.rsrc`) | `knowledge/pe-resource-directory-layout.md` | `fixtures/pe-r27`…`pe-r59d`; `verify_*icon*.py`, `verify_pe_resources.py` | held |
 | C02 | native analysis sessions (decompile/disassemble providers) | `knowledge/seed.md` (census), `knowledge/2026-10-12-rea-readiness-checklist.md` | `live/runs/20261012T163909Z/native-analyze.json` (`provider_unavailable`); `lessons/2026-10-12-r1-provider-gap.md` | partial |
 | C03 | managed (.NET/CLI) assemblies | — | — | frontier |
-| C04 | JavaScript/Electron packages | — | `fixtures/js-r3`, `js-r7-v2`, `shapes-r12`; `verify_js_graph_delta.py`, `verify_semantic_trace.py`, `verify_shape_evidence.py` | uncovered |
+| C04 | JavaScript/Electron packages | `knowledge/commonjs-destructured-require-edges.md` (CommonJS destructured `require` only; no Electron/ASAR ground) | `fixtures/js-r3`, `js-r7-v2`, `shapes-r12`; `verify_js_graph_delta.py`, `verify_semantic_trace.py`, `verify_shape_evidence.py` | held |
 | C05 | Android packages (APK) | — | — | frontier |
 | C06 | archives (ZIP inventory) | `knowledge/2026-10-12-rea-readiness-checklist.md` (archive-tool row only) | `fixtures/archive-r2`, `nested-r11`, `duplicate-r15` | partial |
 | C07 | firmware images | — | — | frontier |
 | C08 | browser/Electron runtime evidence | — | — | frontier |
-| C09 | EVM bytecode interfaces | — | `fixtures/evm-r19`, `evm-r21`…`evm-r26` (no `evm-r20`); `verify_evm_evidence.py` | uncovered |
+| C09 | EVM bytecode interfaces | `knowledge/evm-saved-interface-candidates.md` (saved records on seven authored fixtures) | `fixtures/evm-r19`, `evm-r21`…`evm-r26` (no `evm-r20`); `verify_evm_evidence.py` | held |
 | C10 | evidence-ledger discipline (Evidence IDs; observation/inference/unknown) | `knowledge/seed.md` §Verification discipline | `verify_saved_evidence.py` | partial |
 | C11 | text encodings inside artifacts (UTF-16 names, surrogates) | `knowledge/utf16-unpaired-surrogates-in-resource-names.md` | `fixtures/pe-r34`, `pe-r51`…`pe-r57`, `pe-r59` | held |
 | C12 | tool and process validation against known truth | `knowledge/tool-validation-by-function-and-version.md`; `knowledge/seed.md` §Calibration strategy | authored fixtures carrying `truth.json` | held |
 | C13 | fixity and provenance (digest scope, receipts versus origin) | `knowledge/digest-scope-versus-provenance.md`; `knowledge/seed.md` §Calibration strategy (fixture provenance fields only) | `lessons/round-1.md` gate, `reports/round-1/` | held |
 | C14 | host readiness for REA routes | `knowledge/2026-10-12-rea-readiness-checklist.md` (re-verified 2026-10-19; pre-contract, not re-gated) | `.ufo/waves/kaika-r1/scout-freshness.md` | partial |
 
-Rows 14 — `grep -cE '^\| C[0-9]+ ' corpus/README.md`. Statuses before this
-round's admissions are frozen at `a7acc20` (`git show a7acc20:corpus/README.md`).
+Rows 14 — `grep -cE '^\| C[0-9]+ ' corpus/README.md`. Statuses before the kaika
+round's admissions are frozen at `a7acc20` (`git show a7acc20:corpus/README.md`);
+statuses before round 61 at `cf02419` (`git show cf02419:corpus/README.md`,
+held 4/14).
 
 ## Known gaps
 

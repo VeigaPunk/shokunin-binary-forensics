@@ -1,0 +1,697 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r61-build",
+  "createdAt": "2026-10-21T15:13:15.257Z",
+  "updatedAt": "2026-10-21T15:42:29.209Z",
+  "reportDir": ".ufo/waves/round-61/build",
+  "members": {
+    "SrcSolidityAbiSelector": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcSolidityAbiSelector-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SrcSolidityAbiVersionPin": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcSolidityAbiVersionPin-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SrcExecSpecsOpcodes": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcExecSpecsOpcodes-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SrcYellowPaperJumpdest": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcYellowPaperJumpdest-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SrcKeccakVsSha3": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcKeccakVsSha3-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SrcEvmCodesScreen": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcEvmCodesScreen-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SrcSolidityMetadataTail": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcSolidityMetadataTail-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SrcReaEvmDocs": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcReaEvmDocs-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecEvmOracleR19": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecEvmOracleR19-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecEvmOracleR21": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecEvmOracleR21-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecEvmOracleR22": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecEvmOracleR22-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecEvmOracleR23": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecEvmOracleR23-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecEvmOracleR24": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecEvmOracleR24-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecEvmOracleR25": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecEvmOracleR25-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecEvmOracleR26": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecEvmOracleR26-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecSelectorKeccak": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecSelectorKeccak-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "RevenEvmHistory": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.RevenEvmHistory-10",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "MutantEvmVerifier": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.MutantEvmVerifier-10",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "CriticEvmScope": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.CriticEvmScope-10",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ReviewerEvmQuality": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReviewerEvmQuality-10",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ScribeEntryEvm": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ScribeEntryEvm-10",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ScribeSourcesRowsEvm": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ScribeSourcesRowsEvm-10",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SrcNodeCjsRequire": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcNodeCjsRequire-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SrcNodePackageMain": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcNodePackageMain-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SrcNodeCjsLexer": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcNodeCjsLexer-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SrcEcmaDestructuring": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcEcmaDestructuring-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SrcElectronAsarScreen": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcElectronAsarScreen-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SrcReaJsDocs": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SrcReaJsDocs-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecJsOracleR3": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecJsOracleR3-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecJsOracleR7v2": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecJsOracleR7v2-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecJsShapesR12": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecJsShapesR12-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecJsSemanticTrace": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecJsSemanticTrace-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecJsSavedEvidence": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecJsSavedEvidence-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "RevenJsHistory": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.RevenJsHistory-10",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "MutantJsVerifier": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.MutantJsVerifier-10",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "CriticJsScope": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.CriticJsScope-10",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ReviewerJsQuality": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReviewerJsQuality-10",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ScribeEntryJs": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ScribeEntryJs-10",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ScribeSourcesRowsJs": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ScribeSourcesRowsJs-10",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ReviewerCoverageMapRules": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReviewerCoverageMapRules-10",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ConnectorKaidokuOverlap": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ConnectorKaidokuOverlap-10",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ConnectorKasegiEvm": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ConnectorKasegiEvm-10",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ConnectorRosterScan": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ConnectorRosterScan-10",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ScoutCensusBaseline": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ScoutCensusBaseline-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ScoutSourcesContractCheck": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ScoutSourcesContractCheck-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecReceiptControlLang": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecReceiptControlLang-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecReceiptControlMulti": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecReceiptControlMulti-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecReceiptControlBoth": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecReceiptControlBoth-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "MutationKaika12Repro": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.MutationKaika12Repro-10",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "MutationReceiptConjuncts": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.MutationReceiptConjuncts-10",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ReviewerProbeAudit": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReviewerProbeAudit-10",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SentinelVerifierSafety": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SentinelVerifierSafety-10",
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "SimplifierReceiptControl": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.SimplifierReceiptControl-10",
+      "role": "simplifier",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ReviewerOtherVerifiersGap": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReviewerOtherVerifiersGap-10",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "CriticCalibrationClaim": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.CriticCalibrationClaim-10",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecNamedLedgerContrast": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecNamedLedgerContrast-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ScoutMistakeSweepLog": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ScoutMistakeSweepLog-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ScoutSpotcheckIntake": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ScoutSpotcheckIntake-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ScoutJjClassAIdioms": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ScoutJjClassAIdioms-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ScoutReadmeDrift": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ScoutReadmeDrift-10",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "CriticSeparability": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.CriticSeparability-10",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ReviewerPreregAudit": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReviewerPreregAudit-10",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ScribeLessonDraft": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ScribeLessonDraft-10",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ScribeScorecardDraft": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ScribeScorecardDraft-10",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecEvmSavedRecordCensus": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecEvmSavedRecordCensus-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ExecJsSavedRecordCensus": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ExecJsSavedRecordCensus-10",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ReviewerEvmVerifierRun": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReviewerEvmVerifierRun-10",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    },
+    "ReviewerJsVerifierRun": {
+      "kind": "spawn",
+      "agentId": "CloseChousa26.ReviewerJsVerifierRun-10",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C04/C09 sourced entries, receipt-command control, sources, first falsifiers"
+    }
+  }
+}

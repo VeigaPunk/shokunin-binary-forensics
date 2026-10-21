@@ -1,0 +1,70 @@
+# ExecNamedLedgerContrast — round 61, C2 receipt-command comparison (RUNS)
+
+Seat CloseChousa26.ExecNamedLedgerContrast-10. Base e0a4b0c4348ef1fade46539f520e94fa140c4d8a (observed: `git rev-parse HEAD` in clone /tmp/revenger-r61-ExecNamedLedgerContrast, branch r61-ExecNamedLedgerContrast). Live lane read-only. Four inputs hash identically in clone and live lane: verify_icon_languages.py ed0ad166…, verify_multi_icon_states.py 5b75339c…, verify_named_multi_icon_states.py b62441d5…, reports/round-1/replay_scenarios.py 7b7a873c….
+
+## 1. Run (observed)
+`cwd=<clone>; python3 -B reports/round-1/replay_scenarios.py` (Python 3.14.8) → exit 0. Verbatim output:
+
+```
+{"corpus": "/tmp/revenger-r61-ExecNamedLedgerContrast/corpus", "event": "corpus-snapshot", "inputs_note": "inputs = 3 fixture + 3 inspection.raw.json + 3 receipt.json", "phase": "before", "sha256": {"fixtures/pe-r55/fixture.exe": "41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b", "fixtures/pe-r56/fixture.exe": "911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b", "fixtures/pe-r57/fixture.exe": "71d11fba01d4daa040e04e649a70c39bcdb475ce2e0a2801f6171a325db0494d", "live/runs/round-55/inspection.raw.json": "54ffdeab7108895404efa01edb400c9bc32c36c4f85540babed2f5241137f860", "live/runs/round-55/receipt.json": "1fffb03106c649cb2b1cdb92925347764d8e5546704986e67f57ae44b4bb9733", "live/runs/round-56/inspection.raw.json": "59a95f9db16633b337fd058a6d1509c95687445af02d63bb3156309f1811bbe6", "live/runs/round-56/receipt.json": "1b2bcfe2323219b069b33c64259c9e052a26ef9264cb46b9c4d707ae164066ee", "live/runs/round-57/inspection.raw.json": "5c915ebdc4c79a6d98e3b9f374e6e2e67168a1c5b391487ac80bd8e199d34fc8", "live/runs/round-57/receipt.json": "ee2ec2875ebeeaa75c54acad671fcb488562051eeb3e17cb62d8a9338be67a91", "verify_named_multi_icon_states.py": "b62441d5e1fa9ce15be61686f6b0e0fe7b879d3aca3cb898edcd0c29894093a3"}}
+{"cwd": "/tmp/revenger-r61-ExecNamedLedgerContrast", "diag": "PASS: 139 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.", "event": "scenario", "exit": 0, "expect": "exit 0 and stdout line starting PASS:", "id": "P1", "kind": "positive", "met": true, "script": "corpus/verify_named_multi_icon_states.py", "shape": "lane-root-cli", "title": "P1 lane-root CLI"}
+{"cwd": "/tmp/shokunin-replay-r1-oaol7g_o/unrelated-cwd", "diag": "PASS: 139 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.", "event": "scenario", "exit": 0, "expect": "exit 0 and stdout line starting PASS:", "id": "P2", "kind": "positive", "met": true, "script": "/tmp/revenger-r61-ExecNamedLedgerContrast/corpus/verify_named_multi_icon_states.py", "shape": "unrelated-cwd", "title": "P2 unrelated CWD"}
+{"cwd": "/tmp/shokunin-replay-r1-oaol7g_o/isolated-P3-spaces-nonascii-replay 快照 ünïcode ✓", "diag": "PASS: 139 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.", "event": "scenario", "exit": 0, "expect": "exit 0 and stdout line starting PASS:", "id": "P3", "kind": "positive", "met": true, "script": "corpus/verify_named_multi_icon_states.py", "shape": "spaces-nonascii-copy", "title": "P3 minimal copy under spaces+non-ASCII path"}
+{"cwd": "/tmp/shokunin-replay-r1-oaol7g_o/isolated-N1-forged-artifact-path", "diag": "AssertionError: r55 artifact", "event": "scenario", "exit": 1, "expect": "exit 1 and stderr line 'AssertionError: r55 artifact'", "forgery": {"evidence_id_unchanged": true, "forged": "inspection.raw.json", "receipt_diff": ["stdout_sha256"], "report_diff": ["normalized_result.artifact.path"], "round": 55, "stdout_sha256_regenerated_only": true}, "id": "N1", "kind": "expected-rejection", "met": true, "round": 55, "script": "corpus/verify_named_multi_icon_states.py", "shape": "isolated-copy", "title": "N1 forged historical artifact path relabeled to relocated copy"}
+{"cwd": "/tmp/shokunin-replay-r1-oaol7g_o/isolated-N2-forged-receipt-command", "diag": "AssertionError: r55 receipt", "event": "scenario", "exit": 1, "expect": "exit 1 and stderr line 'AssertionError: r55 receipt'", "forgery": {"evidence_id_unchanged": true, "forged": "receipt.json", "raw_untouched": true, "receipt_diff": ["command"], "round": 55, "stdout_sha256_regenerated_only": false}, "id": "N2", "kind": "expected-rejection", "met": true, "round": 55, "script": "corpus/verify_named_multi_icon_states.py", "shape": "isolated-copy", "title": "N2 forged receipt command relabeled to relocated copy"}
+{"cwd": "/tmp/shokunin-replay-r1-oaol7g_o/isolated-N3-second-candidate", "diag": "AssertionError: r56 normalized result", "event": "scenario", "exit": 1, "expect": "exit 1 and stderr line 'AssertionError: r56 normalized result'", "forgery": {"evidence_id_unchanged": true, "forged": "inspection.raw.json", "receipt_diff": ["stdout_sha256"], "report_diff": ["normalized_result.icon_groups[0].images[1].candidate_resource_indices"], "round": 56, "stdout_sha256_regenerated_only": true}, "id": "N3", "kind": "expected-rejection", "met": true, "round": 56, "script": "corpus/verify_named_multi_icon_states.py", "shape": "isolated-copy", "title": "N3 second-candidate claim r56"}
+{"cwd": "/tmp/shokunin-replay-r1-oaol7g_o/isolated-N4-size-match", "diag": "AssertionError: r57 normalized result", "event": "scenario", "exit": 1, "expect": "exit 1 and stderr line 'AssertionError: r57 normalized result'", "forgery": {"evidence_id_unchanged": true, "forged": "inspection.raw.json", "receipt_diff": ["stdout_sha256"], "report_diff": ["normalized_result.icon_groups[0].images[1].size_matches"], "round": 57, "stdout_sha256_regenerated_only": true}, "id": "N4", "kind": "expected-rejection", "met": true, "round": 57, "script": "corpus/verify_named_multi_icon_states.py", "shape": "isolated-copy", "title": "N4 size-match claim r57"}
+{"cwd": "/tmp/shokunin-replay-r1-oaol7g_o/isolated-N5-unicode-name-location", "diag": "AssertionError: r55 normalized result", "event": "scenario", "exit": 1, "expect": "exit 1 and stderr line 'AssertionError: r55 normalized result'", "forgery": {"evidence_id_unchanged": true, "forged": "inspection.raw.json", "receipt_diff": ["stdout_sha256"], "report_diff": ["normalized_result.resources[2].name.location.offset"], "round": 55, "stdout_sha256_regenerated_only": true}, "id": "N5", "kind": "expected-rejection", "met": true, "round": 55, "script": "corpus/verify_named_multi_icon_states.py", "shape": "isolated-copy", "title": "N5 Unicode name location claim r55"}
+{"cwd": "/tmp/shokunin-replay-r1-oaol7g_o/isolated-N6-ancestor-entry-location", "diag": "AssertionError: r55 normalized result", "event": "scenario", "exit": 1, "expect": "exit 1 and stderr line 'AssertionError: r55 normalized result'", "forgery": {"evidence_id_unchanged": true, "forged": "inspection.raw.json", "receipt_diff": ["stdout_sha256"], "report_diff": ["normalized_result.resources[2].entry_locations[0].offset"], "round": 55, "stdout_sha256_regenerated_only": true}, "id": "N6", "kind": "expected-rejection", "met": true, "round": 55, "script": "corpus/verify_named_multi_icon_states.py", "shape": "isolated-copy", "title": "N6 ancestor entry location claim r55"}
+{"action": "removed", "event": "cleanup", "met": true}
+{"corpus": "/tmp/revenger-r61-ExecNamedLedgerContrast/corpus", "event": "corpus-snapshot", "phase": "after", "sha256": {"fixtures/pe-r55/fixture.exe": "41c0132a9ecd8274d9afcfc079fefc0c5beb14c1ae81bc7bfa0a2832e140572b", "fixtures/pe-r56/fixture.exe": "911f96b3c7cdf4b83ce49a75eadef9f6e77387578feab07605cc8dbcfaabe83b", "fixtures/pe-r57/fixture.exe": "71d11fba01d4daa040e04e649a70c39bcdb475ce2e0a2801f6171a325db0494d", "live/runs/round-55/inspection.raw.json": "54ffdeab7108895404efa01edb400c9bc32c36c4f85540babed2f5241137f860", "live/runs/round-55/receipt.json": "1fffb03106c649cb2b1cdb92925347764d8e5546704986e67f57ae44b4bb9733", "live/runs/round-56/inspection.raw.json": "59a95f9db16633b337fd058a6d1509c95687445af02d63bb3156309f1811bbe6", "live/runs/round-56/receipt.json": "1b2bcfe2323219b069b33c64259c9e052a26ef9264cb46b9c4d707ae164066ee", "live/runs/round-57/inspection.raw.json": "5c915ebdc4c79a6d98e3b9f374e6e2e67168a1c5b391487ac80bd8e199d34fc8", "live/runs/round-57/receipt.json": "ee2ec2875ebeeaa75c54acad671fcb488562051eeb3e17cb62d8a9338be67a91", "verify_named_multi_icon_states.py": "b62441d5e1fa9ce15be61686f6b0e0fe7b879d3aca3cb898edcd0c29894093a3"}}
+POSITIVES met=3/3
+EXPECTED_REJECTIONS met=6/6
+INPUTS met=9/9 (SHA-256 unchanged before/after)
+VERIFIER_SCRIPT met=1/1 (unchanged)
+CLEANUP met=1/1 (removed)
+{"all_acceptance_met": true, "cleanup": true, "event": "summary", "exit": 0, "expected_rejections": {"met": 6, "total": 6}, "inputs_unchanged": {"met": 9, "total": 9}, "positives": {"met": 3, "total": 3}, "verifier_unchanged": true}
+RESULT PASS exit=0
+EXIT=0
+```
+
+## 2. Forged receipt in verify_named_multi_icon_states.py: rejected in-script, tested externally
+- In-script rejection: `:72` `req(receipt['command']==command and …,f'r{r} receipt')` in `check(r)` (`:66-75`); `req` raises `AssertionError(msg)` (`:11-14`); expected command at `:71`.
+- External test, N2: registered `replay_scenarios.py:341-344`; `cmd_launder` `:297-300` → `forge_receipt` `:156-181` rewrites only receipt.json `command` to the staged-copy path (`prep_command_launder` `:196-205`), keeps raw bytes and `stdout_sha256` (`:168-173`), requires diff == `["command"]` (`:165-167`), runs the verifier via `run_cli` (`:89-98`, local `python3 -B` only), and requires exit 1 with last stderr line `AssertionError: r55 receipt` (`:280`, `:284`). Output line 6: `"exit": 1 … "diag": "AssertionError: r55 receipt" … "met": true`.
+- The verifier's own run forges no receipt: `main()` (`:76-98`) forges only normalized claims r56/r57 in memory (`:88-97`), with exact-message attribution at `:96`.
+
+## 3. Comparison with the two C2 targets (observed)
+| | verify_named | verify_icon_languages | verify_multi_icon_states |
+|---|---|---|---|
+| receipt command conjunct | `:72` in check() | `:143-145` in check() | `:143-144` in check() |
+| failure text | `r{r} receipt` | `r{r}: receipt` | `r{r}: receipt` |
+| in-script forged-receipt control | none | none | none |
+| in-script in-memory control | normalized r56/r57, `:88-97`, exact message `:96` | normalized forged selection, `:156-163`, bare `except` `:160` | normalized forged second match, `:155-163`, bare `except` `:160` |
+| external battery | N2 in `replay_scenarios.py` | none (replay `SCRIPT` is verify_named only, `:31`) | none |
+| kaika mutant b | not probed | survived (`.ufo/waves/kaika-r1/mutation-post.md:15`) | survived (`:21`) |
+
+## 4. Probe facts binding C2 (observed; `reports/round-61/measure.py` at base)
+- `:33` CLAUSE has no word boundary, so `forged_receipt['command']==…` also matches; `:38-40` requires exactly one match, else exit 2 (`:100`).
+- `:48-50` runs only `corpus/<script> --self-test` with `cwd="/"` on a copy of `corpus/`; `:89` HOLD globs `corpus/verify_*.py`. The replay battery is never run by the probe.
+- Base CLAUSE counts, same pattern via `_grep` (Rust engine; measure.py uses Python `re`): verify_named 1 (`:72`), verify_icon_languages 1 (`:145`), verify_multi_icon_states 1 (`:143`). Mutant b is evaluable at base.
+
+## 5. Recommendation (inference; only the replay was executed)
+C2 should mirror N2's forgery and attribution, not N2's location.
+1. Keep the in-memory control in each target's own run. An external battery leaves `C2_RECEIPT_B_KILLED=0/2`, because the probe never runs it.
+2. Forge as N2 does: copy the saved receipt and change only `command` to the relocated form `npx -y rea-agents@6.4.0 inspect-pe-resources <root>/fixtures/pe-rNN/fixture.exe --format json`. Do not read HIST (`verify_*.py:8-9`: identity only).
+3. Attribute exactly: `except AssertionError as e: require(str(e)==f'r{r}: receipt', …)` (verify_named `:96` pattern), not the bare `except` at `:160`.
+4. Factor the conjunct into a helper as `compare_normalized` (verify_named `:59-65`) does, so the real check and the forged control share one `receipt['command']==` site; build forged dicts with `dict(receipt, command=…)`. Trade-off: the in-memory control skips the file and CLI path N2 exercises; acceptable because C2 targets one conjunct.
+
+## 6. First falsifiers (post-integration `measure.py`; not run here)
+- F1: an external-only control leaves `C2_RECEIPT_B_KILLED=0/2`, falsifying C2 as pre-registered.
+- F2: a second CLAUSE match (including in comments, or `forged_receipt['command']==`) yields exit 2 (could-not-evaluate).
+- F3: a bare `except` lets an unrelated AssertionError pass the control, so a green control no longer proves the command conjunct rejects the forgery; the probe's counts would not show it.
+- F4 (inference, unexecuted): deleting verify_named `:72` makes N2 see exit 0 → `ACCEPTANCE-MISS`, `RESULT FAIL exit=1` (`replay_scenarios.py:417-419`, `:427-435`). If that does not happen, kaika's "equivalent control" claim (`mutation-post.md:34-35`) is wrong.
+
+## 7. Scope, tooling, confidence
+- Outside C2: `verify_icon_states.py:143-146` asserts exit, fixture, stdout and evidence_id but has no `receipt['command']` conjunct (observed); flag to coordinator, not in C2.
+- No mutant, probe, build or REA call; replay used only local `python3 -B` subprocesses, no network. Replay inputs 9/9 and verifier 1/1 unchanged per its own snapshot; temp trees removed (cleanup 1/1). No clone writes by this seat; git status not run.
+- Installs: none (python3 3.14.8 and git pre-existing). Subagents: none. Written: this report only.
+- Confidence: observed = replay output, line refs, CLAUSE counts. Inference = F4 and the recommendation. Unknown = whether the helper keeps CLAUSE at exactly one match (unexecuted).
+
+VERDICT: C2 should mirror N2's forgery and exact-diagnostic attribution inside each target's own run, not N2's external-battery location; verify with measure.py post-integration.

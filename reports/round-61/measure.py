@@ -27,6 +27,11 @@ print(f"K_HELD={len(held)}/{len(rows)} score={10 * len(held) / len(rows):.1f}")
 for row_id in ("C04", "C09"):
     line = next((l for l in rows if l.startswith(f"| {row_id} ")), "")
     print(f"K_ROW {row_id} status={line.rsplit('|', 2)[-2].strip() if line else 'absent'}")
+# Amendment A1: a held row counts as backed only when every `knowledge/<slug>.md` it
+# names exists in TREE/corpus (a README text flip alone is not admission).
+backed = [l for l in held if re.findall(r"knowledge/[\w.-]+\.md", l.split("|")[3])
+          and all((TREE / "corpus" / p).is_file() for p in re.findall(r"knowledge/[\w.-]+\.md", l.split("|")[3]))]
+print(f"K_HELD_BACKED={len(backed)}/{len(rows)}")
 
 # C2 calibration: receipt-command mutant (kaika mutant b) and data forgery d2.
 SCRIPTS = {"verify_icon_languages.py": 47, "verify_multi_icon_states.py": 42}
@@ -53,6 +58,9 @@ def run(tree, script):
 
 
 killed_b = killed_d2 = controls = 0
+# Amendment 2026-10-21 (claims.md "Amendment A1", before any after-run): a b kill is
+# attributed only when the run's last line names the in-script control, never a crash.
+attributed_b = 0
 evaluable = True
 for script, round_id in SCRIPTS.items():
     for variant in ("control", "b", "d2"):
@@ -79,11 +87,13 @@ for script, round_id in SCRIPTS.items():
                 controls += rc == 0
             elif variant == "b":
                 killed_b += rc != 0
+                attributed_b += rc != 0 and last.endswith("forged receipt command accepted")
             else:
                 killed_d2 += rc != 0
 print(f"C2_CONTROLS_PASS={controls}/2")
 print(f"C2_RECEIPT_B_KILLED={killed_b}/2")
 print(f"C2_D2_KILLED={killed_d2}/2")
+print(f"C2_RECEIPT_B_KILLED_ATTRIBUTED={attributed_b}/2")
 
 # Hold: SCORECARD.md command C (calibration subset and replay census), cwd TREE.
 ps = sorted((TREE / "corpus").glob("verify_*.py"))
@@ -96,5 +106,8 @@ for name, r in results:
     print("HOLD", name, f"exit={r.returncode}", (tail[-1] if tail else "")[:160])
 ok = sum(r.returncode == 0 for name, r in results if name in names)
 print(f"HOLD_CALIBRATION={ok}/{len(names)}")
-print(f"HOLD_REPLAY={sum(r.returncode == 0 for _, r in results)}/{len(results)}")
-sys.exit(0 if evaluable else 2)
+replay = sum(r.returncode == 0 for _, r in results)
+print(f"HOLD_REPLAY={replay}/{len(results)}")
+holds_ok = controls == 2 and killed_d2 == 2 and ok == len(names) and replay == len(results)
+print(f"HOLDS_OK={'yes' if holds_ok else 'no'}")
+sys.exit(2 if not evaluable else 0 if holds_ok else 1)

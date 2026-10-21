@@ -74,3 +74,48 @@ quote in `corpus/lessons/round-61.md` `## Gate`); census
 `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin revenger`
 before (`revenger ok`, exit 0) and after; one mined mistake; C1 is the
 sourced claim.
+
+## Amendment A1 — measurement hardening (2026-10-21, before any after-run)
+
+Appended after the build wave's probe and pre-registration audits
+(`.ufo/waves/round-61/build/ReviewerProbeAudit.md`, `CriticCalibrationClaim.md`,
+`ReviewerPreregAudit.md`, `CriticSeparability.md`) and before the probe ran on
+any changed tree. Original lines above are unchanged.
+
+- C2 is admitted on `C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2`: a mutant-b kill counts
+  only when the run's last line ends with `forged receipt command accepted`
+  (the in-script control), never a crash or another assertion. The original
+  `C2_RECEIPT_B_KILLED` line is still printed. The forged receipt differs from
+  the saved one only in `command`, and the real receipt must pass first.
+- C1 is admitted on `K_HELD_BACKED`: a held row counts only if every
+  `knowledge/<slug>.md` its knowledge cell names exists. A README text flip
+  alone counts 0. Rows other than C04/C09 must keep their base status, and the
+  row count stays 14.
+- Holds are now part of the probe exit: exit 1 when controls, d2,
+  `HOLD_CALIBRATION` or `HOLD_REPLAY` fail (`HOLDS_OK=no`); exit 2 stays
+  could-not-evaluate. Byte identity of saved records and fixtures is checked
+  separately: `git diff --stat <base> <after> -- corpus/live corpus/fixtures`
+  must print nothing.
+- Base re-run with the amended probe on the same archive of `cf02419`:
+  `K_HELD_BACKED=4/14`, `C2_RECEIPT_B_KILLED_ATTRIBUTED=0/2`, `HOLDS_OK=yes`,
+  exit 0 (appended to `measure-before.log`).
+- Axis wording: "lowest criterion" means the lowest scored criterion at the
+  base (K 2.9). The new calibration criterion is declared as a split in
+  `SCORECARD.md` with its reason; its denominator is exactly the two kaika
+  survivors and it is reported as a narrow regression guard, not a broad
+  calibration gain. The other receipt conjuncts and the receipt clauses of
+  `verify_named_multi_icon_states.py` and `verify_icon_states.py` stay outside
+  the claim (`MutationReceiptConjuncts.md`, `ReviewerOtherVerifiersGap.md`).
+
+## Amendment A2 — C1 scope narrowing (2026-10-21, before any entry drafting landed)
+
+- C09 is restricted to what the seven saved `inspect_evm_interface` records and
+  the fixture bytes show. Kaidoku already holds "`bytecodeOffset` is the JUMPDEST
+  dispatch target" (`kaidoku-shokunin/corpus/knowledge/2026-10-13-r3-evm-interface.md:151-153`).
+  The revenger entry cites that as prior art (Q10) and does not claim the
+  proposition as new ground. Its own subject is the lane's negative and decoy
+  fixtures, where empty output has causes that are unknown.
+- C04 is restricted to the single relative destructured `require` per fixture
+  in `js-r3`/`js-r7-v2` and the package `main` edge, which the fixtures cannot
+  separate from the `index.js` fallback. No Electron, ASAR, ESM, bundler,
+  `exports` or named-export claim.

@@ -118,6 +118,10 @@ EXPECTED = {
          (640,9,12), ((1,48,(0,),0,True),(2,48,(1,),None,None))),
 }
 
+def receipt_ok(receipt,command,expected_hash,evidence_id,raw_bytes):
+    return (receipt['command']==command and receipt['exit_code']==0 and receipt['fixture_sha256']==expected_hash and
+            receipt['evidence_id']==evidence_id and receipt['stdout_sha256']==H(raw_bytes))
+
 def check(round_id):
     expected_hash, evidence_id, _, expected_state = EXPECTED[round_id]
     fixture = root / f'fixtures/pe-r{round_id}/fixture.exe'
@@ -140,8 +144,10 @@ def check(round_id):
                  im['same_language_resource_index'],im['size_matches']) for im in groups[0]['images'])
     require(state==expected_state, f'r{round_id}: state')
     command = f'npx -y rea-agents@6.4.0 inspect-pe-resources {hist} --format json'
-    require(receipt['command']==command and receipt['exit_code']==0 and receipt['fixture_sha256']==expected_hash and
-            receipt['evidence_id']==evidence_id and receipt['stdout_sha256']==H(raw_bytes), f'r{round_id}: receipt')
+    require(receipt_ok(receipt, command, expected_hash, evidence_id, raw_bytes), f'r{round_id}: receipt')
+    forged = copy.deepcopy(receipt)
+    forged['command'] += ' --forged'
+    require(not receipt_ok(forged, command, expected_hash, evidence_id, raw_bytes), f'r{round_id}: forged receipt command accepted')
     return data, report, decoded, state
 
 def main():

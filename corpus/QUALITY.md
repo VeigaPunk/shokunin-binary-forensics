@@ -21,6 +21,8 @@ writes). Source tiers are defined in `corpus/SOURCES.md` and are not restated he
 | Q09 | A digest or receipt is claimed only for the exact bytes it hashed. It does not establish producer origin, acquisition completeness or authenticity. Saved records stay byte-preserved. | a hash match is offered as proof of origin, completeness or a valid interpretation | M11, M13 |
 | Q10 | A finding is scoped to the observed family, operation, version and input. Cross-lane contested scope is reported, not absorbed. | one family's observation is stated as a universal | M15 |
 | Q11 | Supersedes Q08. Each count, identifier, offset and digest in an entry carries, inside the entry, the command that derives it from the primary record (bytes, saved tool output) and that command's output. Constants such as header offsets are derived, not assumed. A value cited only to prose is labeled recorded, not re-derived. | a value is correct when re-derived but the entry carries no derivation, or a recorded value is presented as re-derived | M08, M09, M10, M20 |
+| Q12 | A rejected source row states a reject reason grounded in a located quote, and its `flip` names a change to the source (a successor or revision) or a scope the reject reason does not exclude. | the flip asks for content the row already credits the source with, so it can never change the verdict (S008, superseded by S024) | M21 (`lessons/round-61.md`) |
+| Q13 | A verifier or recheck command is credited in an entry only for the clauses whose deletion its own run is shown to detect; other clauses are named as unguarded. | an entry cites a verifier as guarding a value whose check survives deletion (receipt-command mutant b survived 2/2 before round 61) | M22 (`lessons/round-61.md`) |
 
 ## Admission procedure
 
