@@ -81,7 +81,7 @@ Map statuses used for eligibility are those at `cf02419`.
 | "fixture selectors are Keccak-derived" | C09 | **reject** | Q01/Q03: no `truth.json` declares a signature; S018 defines derivation (`ExecSelectorKeccak`) |
 | "REA identifies the Electron main process" | C04 | **reject** | Q04/Q10: `electron-main` is a node-kind label; 0 Electron tokens in the fixtures |
 | "the package `main` edge is discriminated from the `index.js` fallback" | C04 | **reject** | Q03/Q07: `main` is `index.js`, the documented fallback (S020); fixtures cannot separate them |
-| Electron ASAR documentation as C04 support | C04 | **reject** (kept as lead) | Q01 scope: the page says nothing about `require` destructuring or `main` (`SrcElectronAsarScreen`) |
+| Electron ASAR documentation as C04 support | C04 | **reject** (no row; `SOURCES.md` search log) | Q01 scope: the page says nothing about `require` destructuring or `main` (`SrcElectronAsarScreen`) |
 | evm.codes as C09 support | C09 | **reject** (row S025, rejected) | Q01: community, never tier A; adds nothing beyond S016/S017 |
 
 Admitted 2 (both on rows uncovered at `cf02419`); rejected 7.
