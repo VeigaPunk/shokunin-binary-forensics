@@ -299,3 +299,67 @@ Planned future selection: coverage F on an authored local frontier artifact,
 or the remaining receipt-clause calibration debt; keep SKILL/registry,
 F03-versus-STALE and operator ADJ-06 debt explicit. This is a plan, not a
 dispatch or claim for another round.
+
+## Round 63 (hyaku) — final measured three-claim round
+
+Pre-registration `reports/round-63/claims.md` at `54ab973c021cc62ca65dcbe2cbfabe3235d5ee38`;
+do-nothing control red-before `reports/round-63/measure-before.log` (base
+`55bcb6e1aeb4d42923a4e98db6580f67142b41ac`). Final measured revision
+`f6ea293255d9263be24a8f100e8a5ad7490f26fa` (`reports/round-63/measure-after.log`,
+committed with this section — round-62 routed defect (a) honored).
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — knowledge-map ground K | **6/14 → 7/14 (4.3 → 5.0)** | `python3 -B reports/round-63/measure.py TREE` (`K_HELD_BACKED`) | `55bcb6e` → `f6ea2932` | **improved, C1 met** |
+| coverage — selected-family record presence F | **4/8 → 5/8 (5.0 → 6.2)** | same probe (`F_COVERAGE`) | same | **improved, C2 met** |
+| calibration — receipt-clause attribution guard (new criterion C3) | **0/2 → 2/2 (0.0 → 10.0)** | same probe (`C3_RECEIPT_KILLED_ATTRIBUTED`) | same | **improved, C3 met** |
+| calibration — receipt-identity mutation kill (C2) | 2/2 → 2/2 | same probe | same | unchanged hold |
+| calibration — selected runnability | 4/4, replay 10/10 | same probe | same | unchanged hold |
+| freshness — stored-assertion proxy | 18/18 → 18/18 | same probe (`FRESH_ROWS`) | same | unchanged hold |
+| depth / operability / adjacency | — | — | — | unchanged (no claim; connector scan reported-not-absorbed) |
+
+Claim separation verified by named seat `W2ReviewSeparability` (build) and
+`W2VerifySeparabilityFinal` (falsify): three single-claim trees move only their
+own counters. C1 admission condition: named fresh-seat Q decisions —
+`W2AttackEntryQ01` PASS (exact-hash, re-review and transition confirm),
+`W2AttackEntryQ11` PASS (same), `W2AttackEntryScope` CLEAN/Q10,
+`W2AttackEntryIndependence` HOLDS/Q03, adversary `W2ClaimsAdmission`
+NOT-FALSIFIED, discernment `W2SpotcheckDiscern` ADMIT-AGREE + REJECT-AGREE.
+New admitted file: `corpus/knowledge/round-63-zip-central-directory-evidence.md`
+(sha256 `b2660e60…e0086`); C06 flipped `partial → held` naming only it.
+
+C2: authored inert fixture `corpus/fixtures/firmware-r63/` (generator
+reproduces the image byte-exact), one real
+`npx -y rea-agents@6.5.0 inspect-firmware-regions` run saved at
+`corpus/live/runs/round-63/` (Evidence `ev_aae7529f…`, receipt, oracle
+`ORACLE OK` — regions 512/79 and 1024/90 with decompressed digests; seat
+`W2VerifyC2Record` recomputed the Evidence ID from the shipped 6.5.0 package).
+C3: `receipt_ok` refactor + one in-script forged-receipt control per script;
+frozen mutants killed attributed (`r55:`/`r36: forged receipt accepted`);
+build `R63MutC3` mutant bytes byte-identical to the frozen counter's own
+`mutate_c3()` output; falsify `W2MutC3Final`/`W2VerifyC3Patches` reproduced.
+
+Capabilities: none added (C2/C3 strengthen existing verifier/registry ground;
+no new gate capability or promotion claimed). Sources: rows 31 → 35
+(S032 APPNOTE, S033 own-work archive bytes/record, S034 scoped APPNOTE re-open
+for §4.3.7 local-header layout, S035 own-work ledger); census exit 0 at both
+ends; the S034 same-URL W04 is the disclosed scoped re-open. Mistakes mined:
+M33 (stale fixture premise — uImage detectability assumed, not probed;
+red-before is the L1 pre-probe), M34 (counter-substitution — the counter is
+presence-only, the claim text is the gate; runnable falsifier
+`W2AttackProbeK`), M35 (residual unguarded `stdout_sha256` conjuncts in BOTH
+receipt scripts — routed, not claimed).
+
+Residual/routed (full table `.ufo/waves/round-63/falsify/routed-debt.md` when
+landed + report): frozen-counter semantics (K backed-regex prefix false
+positive, F presence-only, C3 attribution-string weakness, HOLDS_OK drift D1 —
+probe frozen, fixes route to a later registered counter); round-58/59 PASS-count
+quotes (139) no longer reproduce after the C3 patch (142) — historical records
+left unedited under void conditions, disclosed; C07 frontier-token legend
+staleness (C2 record exists, no admitted knowledge — left per void conditions);
+freshness hold proves byte survival, not current-host truth; oracle scope
+(content+correspondence, not provenance — Q09 disclaimers carried).
+
+Planned future selection: coverage K on C02/C06 re-gates or a managed-assembly
+probe if a local SDK appears; calibration on the remaining receipt conjuncts
+(M35) or a newly registered counter with the routed regex/attribution fixes.

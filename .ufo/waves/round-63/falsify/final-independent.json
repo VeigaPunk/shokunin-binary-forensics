@@ -1,0 +1,201 @@
+{
+  "receipt": "revenger-r63 final independent falsify verification (attempt 1)",
+  "seat": "revenger-r63.W2FinalIndependent",
+  "date_utc": "2026-10-24",
+  "lane": "/home/vgpnk/Projects/shokunin/revenger-shokunin",
+  "tip": {
+    "commit": "db55bd6488e24e956df5818ae34c2a043d7ddc12",
+    "subject": "round-63: C1 candidate entry (H1-H7/N1-N3 corrected), SOURCES S032+S033, round-63 lesson; README still partial pending falsify wave",
+    "base_declared": "55bcb6e1aeb4d42923a4e98db6580f67142b41ac"
+  },
+  "frozen_artifacts_sha256": {
+    "reports/round-63/measure.py": "3b7fba2d5243bbe0b723a99a53085130ff97010e23c8a59a8027f5f8992c5908",
+    "reports/round-63/claims.md": "aed53241c3e4445fab94e854e3185b235ab2ff45c921d6c95e6e60938c7d1e31",
+    "reports/round-63/measure-before.log_reference": "red-before recorded in that file: K_HELD=6/14, F_COVERAGE=4/8, C3_RECEIPT_KILLED_ATTRIBUTED=0/2"
+  },
+  "probe": {
+    "command": "cd / && TMPDIR=/tmp/revenger-r63-finalind-tmp python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/measure.py /tmp/revenger-r63-finalind",
+    "tree": "/tmp/revenger-r63-finalind = `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive db55bd6488e24e956df5818ae34c2a043d7ddc12 corpus | tar -x -C /tmp/revenger-r63-finalind`",
+    "exit_code": 0,
+    "counter_lines": [
+      "K_HELD=6/14 score=4.3",
+      "K_ROW C06 status=partial",
+      "K_HELD_BACKED=6/14",
+      "{'analyze_javascript_application': 6, 'compare_application_versions': 1, 'compare_javascript_export_shapes': 3, 'extract_artifact': 2, 'inspect_analysis_view': 1, 'inspect_artifact': 4, 'inspect_evm_interface': 7, 'inspect_firmware_regions': 1, 'inspect_pe_resources': 30, 'trace_application_feature': 2, 'trace_javascript_semantics': 2}",
+      "F_COVERAGE=5/8 score=6.2",
+      "F_FAMILIES=['native-static', 'javascript', 'archives', 'firmware', 'evm']",
+      "FRESH_ROWS=18/18",
+      "MUTANT verify_icon_languages.py control exit=0 pass :: PASS: 3/3 group-language states, 2/2 exact one-byte deltas, two icon candidates retained, forged selection REJECTED",
+      "MUTANT verify_icon_languages.py b exit=1 killed :: AssertionError: r47: forged receipt command accepted",
+      "MUTANT verify_icon_languages.py d2 exit=1 killed :: AssertionError: r47: receipt",
+      "MUTANT verify_multi_icon_states.py control exit=0 pass :: PASS: 4/4 two-image states, 3/3 exact one-byte deltas, first link stable, forged second match REJECTED",
+      "MUTANT verify_multi_icon_states.py b exit=1 killed :: AssertionError: r42: forged receipt command accepted",
+      "MUTANT verify_multi_icon_states.py d2 exit=1 killed :: AssertionError: r42: receipt",
+      "C2_CONTROLS_PASS=2/2",
+      "C2_RECEIPT_B_KILLED=2/2",
+      "C2_D2_KILLED=2/2",
+      "C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2",
+      "MUTANT verify_named_multi_icon_states.py control exit=0 pass :: PASS: 142 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.",
+      "MUTANT verify_named_multi_icon_states.py c3 exit=1 killed :: AssertionError: r55: forged receipt accepted",
+      "MUTANT verify_icon_states.py control exit=0 pass :: PASS: 4/4 source-decoded states, 3/3 one-byte deltas, one forged candidate REJECTED",
+      "MUTANT verify_icon_states.py c3 exit=1 killed :: AssertionError: r36: forged receipt accepted",
+      "C3_CONTROLS_PASS=2/2",
+      "C3_RECEIPT_KILLED_ATTRIBUTED=2/2",
+      "HOLD verify_evm_evidence.py exit=0 NEGATIVE REJECTED candidate destination mismatch",
+      "HOLD verify_icon_languages.py exit=0 PASS: 3/3 group-language states, 2/2 exact one-byte deltas, two icon candidates retained, forged selection REJECTED",
+      "HOLD verify_icon_states.py exit=0 PASS: 4/4 source-decoded states, 3/3 one-byte deltas, one forged candidate REJECTED",
+      "HOLD verify_js_graph_delta.py exit=0 NEGATIVE REJECTED saved graph disagrees with source truth",
+      "HOLD verify_multi_icon_states.py exit=0 PASS: 4/4 two-image states, 3/3 exact one-byte deltas, first link stable, forged second match REJECTED",
+      "HOLD verify_named_multi_icon_states.py exit=0 PASS: 142 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.",
+      "HOLD verify_pe_resources.py exit=0 NEGATIVE REJECTED payload relation mismatch",
+      "HOLD verify_saved_evidence.py exit=0 NEGATIVE JS REJECTED: JS: wrong package-main mapping",
+      "HOLD verify_semantic_trace.py exit=0 NEGATIVE REJECTED relation differs from source parent",
+      "HOLD verify_shape_evidence.py exit=0 NEGATIVE REJECTED changed-property evidence mismatch",
+      "HOLD_CALIBRATION=4/4",
+      "HOLD_REPLAY=10/10",
+      "HOLDS_OK=yes"
+    ]
+  },
+  "oracle_check": {
+    "command": "cd /tmp/revenger-r63-finalind && python3 -B corpus/live/runs/round-63/oracle_check.py",
+    "exit_code": 0,
+    "verdict": "ORACLE OK",
+    "region_lines": [
+      "REGION name=padding kind=padding offset=0 size=512 record=not-expected padding=OK",
+      "REGION name=diagnostic-note kind=zlib offset=512 size=79 offset=OK size=OK signature=OK decompressed_sha256=OK (a5718481696cea25cba1346f0898d2e8b2c3cc1ad5324832c9a2fbe500df7b86)",
+      "REGION name=padding kind=padding offset=591 size=433 record=not-expected padding=OK",
+      "REGION name=component-note kind=zlib offset=1024 size=90 offset=OK size=OK signature=OK decompressed_sha256=OK (2d0d86aa6fbbbb0e41824900acff3882c60e3f678b51eff227ffeabbd9eeaba9)",
+      "REGION name=padding kind=padding offset=1114 size=934 record=not-expected padding=OK"
+    ]
+  },
+  "sources_census": {
+    "tool": "/home/vgpnk/Projects/shokunin/scripts/sources-census.sh (bash+gawk; no `shokunin` CLI on PATH)",
+    "validate_command": "./scripts/sources-census.sh validate --today 2026-10-24 /home/vgpnk/Projects/shokunin/revenger-shokunin",
+    "validate_exit_code": 0,
+    "validate_output": [
+      "revenger-shokunin\tW04\tS024 duplicate url www.rfc-editor.org/rfc/rfc3227.txt across scopes",
+      "revenger-shokunin\tW04\tS028 duplicate url github.com/ethereum/execution-specs/tree/v2.20.0/src/ethereum/forks/osaka/vm across scopes",
+      "revenger-shokunin\tW04\tS029 duplicate url tc39.es/ecma262 across scopes",
+      "revenger-shokunin\tok\t/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md"
+    ],
+    "census_command": "./scripts/sources-census.sh census /home/vgpnk/Projects/shokunin/revenger-shokunin",
+    "census_exit_code": 0,
+    "rows": 33,
+    "tier_A": 31,
+    "tier_C": 2,
+    "status_mined": 28,
+    "status_queued": 1,
+    "status_rejected": 4,
+    "missing": 0,
+    "w04_disclosed": ["S024", "S028", "S029"],
+    "note": "33 rows = 31 pre-round rows + S032 + S033; zero new W04 (S032 URL unique), matches build doc's census-before 31 rows / 3 W04s."
+  },
+  "claims": {
+    "C1": {
+      "claim_text_conditions": [
+        "corpus/knowledge/round-63-zip-central-directory-evidence.md passes QUALITY Q01-Q13 as committed at the tip",
+        "named fresh-seat pass decisions from reviewers other than the author land before the README C06 flip",
+        "README C06 flips partial->held and the frozen counter prints K_HELD >= 7/14 (K 6/14 falsifies)"
+      ],
+      "observed": {
+        "K_HELD": "6/14",
+        "K_ROW_C06": "partial",
+        "K_HELD_BACKED": "6/14",
+        "flip_arithmetic_on_scratch_copy": "with the draft flip line applied in /tmp (not the lane tree): K_HELD=7/14 and K_HELD_BACKED=7/14 (both knowledge paths resolve), so the arithmetic target is reachable but not licensed by Q01",
+        "recheck_reproduction": "readout.py extracted verbatim from the entry's ### Code block, run in a fresh copy of the archive tree at cwd=repo-root: exit 0, 17 stdout lines, SHA-256 02b0f495c1db8c50e22db835cd57e7a221dd0a9c82f09d442feea461de722ed4 (equal to the entry's claim); all 17 lines appear verbatim in the entry",
+        "source_row_digests": "S033's four digests reproduce both at base 55bcb6e (`git show <base>:<path> | sha256sum`) and in the working tree"
+      },
+      "q_decisions": {
+        "Q01": "FAIL — S032's registered scope in corpus/SOURCES.md line 46 covers 'central directory file header and end-of-central-directory record field layout ... CRC-32 and local-header offset' and its anchor list omits §4.3.7; the round-63 lesson Gate (corpus/lessons/round-63.md:37-51) declares the same narrower tier-A scope and records 9 located quotes, none from §4.3.7. The entry's header line 1 attributes S032 with scope 'the local file header, ...' and entry items 5, 8 and 9 derive the 30-byte local file header layout and the name/extra-length offsets 26/28 from S032 §4.3.7; inference 17 rests on those local-header reads. The load-bearing local-header claims therefore rest on a row that is not tier A for their scope.",
+        "Q02": "pass — source:, verified-at: (2026-10-23, base commit), recheck: (runnable readout with stdout digest), coverage-map: C06; anchors are section numbers",
+        "Q03": "pass — bytes/spec derive the expected side first; the oracle and saved record only supply the compared side",
+        "Q04": "pass — manual analysis labelled (item 29); rea-agents@6.4.0 credited only with the record's existence and literal fields",
+        "Q05": "n/a — no readiness/capability claim",
+        "Q06": "pass — fixture premise byte-verified (items 1, 2, 10); current bytes reproduce",
+        "Q07": "n/a — no predicted parser behavior",
+        "Q08": "superseded by Q11",
+        "Q09": "pass — digests bind only the bytes hashed (item 20); no origin/completeness/authenticity claim; saved 20261012T164246Z record unchanged at base (7692 bytes, sha 2fec924b...)",
+        "Q10": "pass — one fixture, one provider, one operation, explicit limitations",
+        "Q11": "FAIL — the §Reproduce word-count transcript records `8` for `printf '%s\\n' \"local file header signature 4 bytes (0x04034b50)\" | wc -w`, but re-running that exact pipeline prints `7` (independently reproduced 2026-10-24 on the committed bytes). Every other recorded count matches (7, 21, 10, 8, 23, 24, 20, 12), and the 17 readout lines themselves reproduce verbatim with the claimed stdout digest. The one wrong recorded output is still a Q11 failure: the entry carries a command output that the command does not print.",
+        "Q12": "n/a — no rejected row cited",
+        "Q13": "n/a by construction — the entry credits no verifier or checker as guarding a value (§Q13 explicit)"
+      },
+      "verdict": "FALSIFIED",
+      "verdict_basis": "K_HELD=6/14 at the tip (target 7/14); Q01 and Q11 fail on committed bytes, so the C06 flip is not licensed and the entry cannot be admitted as committed. The remaining Q01-Q13 decisions pass or are n/a."
+    },
+    "C2": {
+      "claim_text_conditions": [
+        "(a) a newly saved record at corpus/live/runs/round-63/ carries evidence_id and normalized_result with operation == inspect_firmware_regions",
+        "(b) it is the output of one real `npx -y rea-agents@6.5.0 inspect-firmware-regions <path>` run, with a committed receipt carrying command, exit code, fixture SHA-256, stdout SHA-256 and Evidence ID",
+        "(c) every region the record reports matches the authored fixture's truth.json byte oracle (offset, size, and for extractable members the decompressed content SHA-256)",
+        "the frozen counter prints F_COVERAGE >= 5/8 (F 4/8 falsifies)"
+      ],
+      "observed": {
+        "a": "corpus/live/runs/round-63/inspection.json: evidence_id ev_aae7529fd55b90cd55804cd45bff0fecd837dfaca3e2a132fbe9d161080ed259, operation inspect_firmware_regions, input_size 2048, two zlib regions (512/79, 1024/90)",
+        "b": "receipt.json: command `npx -y rea-agents@6.5.0 inspect-firmware-regions /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/firmware-r63/firmware-r63.bin --format json`, exit_code 0, duration 1.296587134, fixture_sha256 bdfe9f46..., stdout_sha256 f6997835..., evidence_id equal to the record's. stdout.raw and inspection.json are the same 3904 bytes (both sha f6997835...); stderr.txt is 0 bytes",
+        "c": "record reports 2 regions; both match truth on offset and size (512/79, 1024/90) and their decompressed content SHA-256 matches truth (a5718481..., 2d0d86aa...). Independent re-derivation with zlib over the committed fixture bytes reproduces both digests and lengths (78 and 97 bytes) and confirms all three padding spans are all-zero; oracle_check.py prints ORACLE OK, exit 0",
+        "F": "F_COVERAGE=5/8 score=6.2; F_FAMILIES includes 'firmware'; counter key inspect_firmware_regions=1"
+      },
+      "verdict": "MET",
+      "verdict_basis": "Conditions (a), (b) and (c) hold on committed bytes and the counter prints 5/8. Condition (c) is one-directional by its own wording; the record reports no padding regions (truth lists 5 regions including 3 padding), which is not a violation but must not be read as set equality."
+    },
+    "C3": {
+      "claim_text_conditions": [
+        "C3_RECEIPT_KILLED_ATTRIBUTED 2/2 on verify_named_multi_icon_states.py and verify_icon_states.py",
+        "a kill is attributed iff the mutant exits non-zero and its last output line contains 'forged receipt'",
+        "red-before 0/2, in-script controls 2/2, exactly one mutation site per file, 10-verifier census unchanged"
+      ],
+      "observed": {
+        "counter": "C3_CONTROLS_PASS=2/2, C3_RECEIPT_KILLED_ATTRIBUTED=2/2",
+        "mutants": "verify_named_multi_icon_states.py c3 exit=1 killed :: AssertionError: r55: forged receipt accepted; verify_icon_states.py c3 exit=1 killed :: AssertionError: r36: forged receipt accepted",
+        "one_site": "no 'could-not-evaluate (clause match count != 1)' line was printed; probe sets evaluable=False and exit 2 otherwise",
+        "red_before": "reports/round-63/measure-before.log prints C3_CONTROLS_PASS=2/2 and C3_RECEIPT_KILLED_ATTRIBUTED=0/2 with both c3 mutants exit=0",
+        "patch_shape": "git diff 55bcb6e..db55bd6: receipt_ok helper added in both files, original conjunct chain moved verbatim (named) / original assertions moved verbatim with the round_id != 36 evidence-ID exemption preserved at verify_icon_states.py:122; forged deep-copy controls added (`command += ' --forged'`, `fixture_sha256='0'*64`); no existing positive assertion removed; named positive checks 139->142 (additive)",
+        "census": "10 verify_*.py scripts, HOLD_REPLAY=10/10, HOLD_CALIBRATION=4/4"
+      },
+      "verdict": "MET",
+      "verdict_basis": "Both patched verifiers kill the single-site clause-deletion mutant with a last line containing 'forged receipt', controls pass 2/2, red-before is 0/2, and the verifier census stays 10."
+    }
+  },
+  "findings": [
+    {
+      "severity": "high",
+      "claim": "C1",
+      "finding": "Q01 scope/anchor mismatch: S032's registered scope and anchor list in corpus/SOURCES.md:46 exclude §4.3.7 and the local-file-header field layout, and corpus/lessons/round-63.md:37-56 declares the same narrower scope with no §4.3.7 quote, while the entry's header attributes S032 with 'the local file header' scope and entry items 5/8/9 derive the 30-byte local-header layout and offsets 26/28 from §4.3.7. The local-header claims are load-bearing for the payload-offset readout and inference 17.",
+      "repair_path": "L1 amends the S032 row (scope adds local file header field layout; anchor adds §4.3.7) and records the two §4.3.7 located quotes in the lesson Gate; the entry text already carries the correct sections and quotes. Until then no C06 flip."
+    },
+    {
+      "severity": "high",
+      "claim": "C1",
+      "finding": "Q11 transcript mismatch: the entry's §Reproduce word-count block records `8` as the output of `printf '%s\\n' \"local file header signature 4 bytes (0x04034b50)\" | wc -w`; re-running that exact pipeline prints `7`. All other nine recorded counts match. The entry therefore carries one command output the command does not print, which Q11 explicitly governs.",
+      "repair_path": "Replace the single displayed `8` with `7`; the quote, derivation and ≤25-word property are unchanged."
+    },
+    {
+      "severity": "medium",
+      "claim": "C3",
+      "finding": "The frozen probe's HOLDS_OK/exit code excludes both attribution counters (attributed_b and c3_attributed are printed but not ANDed into holds_ok), so PROBE_EXIT=0 would also be produced at C3 0/2 and C2 attribution 0/2. The C3 target must be read from the printed counter line, never inferred from the exit code.",
+      "evidence": "reports/round-63/measure.py final holds_ok expression; probe lines C3_RECEIPT_KILLED_ATTRIBUTED=2/2 vs PROBE_EXIT=0"
+    },
+    {
+      "severity": "low",
+      "claim": "C2",
+      "finding": "The record reports 2 regions while truth.json lists 5 (3 padding spans). Claim (c) is one-directional so this is not a falsification, but 'byte-oracle agreement' here is precision-of-reported-regions, not full inventory equality; oracle_check.py encodes that asymmetry as `record=not-expected padding=OK`."
+    },
+    {
+      "severity": "info",
+      "claim": "C2",
+      "finding": "Producer origin is not independently provable without executing the target (forbidden by the wave rules). The envelope evidence is receipt/record byte identity (3904-byte stdout, exit 0, empty stderr, matching Evidence ID) plus raw_result.execution/version_execution; the ledger itself records this as U4 UNKNOWN."
+    }
+  ],
+  "residual_risk": [
+    "If L1 reads the S032 scope cell as non-exhaustive (it is telegraphic), Q01 could be recorded as pass-with-correction; on committed bytes the entry's own scope sentence contradicts the registry and Gate, so the correction is required either way before a flip.",
+    "C2 real-run condition rests on self-consistent saved bytes; a forged-but-consistent envelope cannot be excluded without re-running the producer.",
+    "All C3 numbers come from a frozen probe whose mutants are generated by regex on the committed verifiers; the probe verified the single-site precondition, but a post-wave edit to either verifier would invalidate the receipt."
+  ],
+  "verification_gaps": [
+    "No target execution (per wave rules): the REA producer was not re-run; oracle and envelope checks read committed bytes only.",
+    "The fleet census binary named in build docs (`validate`/`census`) is not on PATH; the read-only bash tool /home/vgpnk/Projects/shokunin/scripts/sources-census.sh was used instead (validate exit 0, census exit 0).",
+    "Heavy scratch /tmp/revenger-r63-finalind* was removed after this receipt landed."
+  ],
+  "tool_installs": "none"
+}

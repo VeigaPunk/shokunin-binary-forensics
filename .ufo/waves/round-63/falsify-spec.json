@@ -1,0 +1,276 @@
+{
+ "wave": "revenger-r63-falsify",
+ "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts",
+ "reportDir": ".ufo/waves/round-63/falsify",
+ "axes": [
+  "coverage",
+  "calibration"
+ ],
+ "context": "# Goal\nRevenger round 63 FALSIFY wave (attempt 1). Lane repo: /home/vgpnk/Projects/shokunin/revenger-shokunin (absolute paths only; tools start at the fleet root). L1 revenger-r63 holds planner + sole integration. Seats never run git/jj mutations, never commit, never edit /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves spec/registry files, MANIFEST.json, fleet repo files, sibling lanes, lane jj state or the lane Git index; write only your named report path and /tmp scratch. Build state is committed at 2a34e45562d965f9c8d32f6a27d2f2efa2e7d04e; the C1 candidate entry + SOURCES rows + lesson land in the immediately-following integration commit BEFORE this wave dispatches \u2014 attack committed bytes at the lane tip. Frozen contract: /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/claims.md; frozen counter: /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/measure.py; red-before: /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/measure-before.log.\n\nThree claims under attack: C1 coverage K \u2014 corpus/knowledge/round-63-zip-central-directory-evidence.md must pass Q01-Q13 as committed (README stays partial until YOUR wave's named pass decisions land); C2 coverage F \u2014 corpus/live/runs/round-63/ record must be a real-run envelope with byte-oracle agreement; C3 calibration \u2014 C3_RECEIPT_KILLED_ATTRIBUTED 2/2 on the two patched verifiers. Targets: C1 K 7/14 (else falsified), C2 F 5/8 (else falsified), C3 2/2 (else falsified).\n\nRules: re-run every counting command yourself; re-open every new source row; attack each claim; every item names what it attacks. QUALITY.md Q01-Q13 never weakens; corpus/live + corpus/fixtures bytes outside round-63 paths stay byte-identical; no target execution; no model arguments; never edit ~/.omp/agent/config.yml. Tooling authorization (operator 2026-10-19): installs via official channels only (uv tool / npx / official binary) \u2014 read /home/vgpnk/.omp/agent/RULES.md first and record tool/version/channel/reason. Pacman guard: ALL pacman transactions are PAUSED host-wide \u2014 no pacman at all. Heavy scratch under /tmp/revenger-r63-* removed after your report lands.\n\nEvery `Report:` trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin \u2014 write your report at /home/vgpnk/Projects/shokunin/revenger-shokunin/<that path>. Final message: 3-6 line summary with verdict + evidence pointers.",
+ "items": [
+  {
+   "name": "W2RerunAllCounters",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nRe-run the ENTIRE frozen counter end-to-end: read the lane tip via `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin rev-parse main`, extract `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive <tip> corpus` to a /tmp tree, run `python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/measure.py TREE` with cwd=/. Attack: the frozen counters themselves. Record every printed line verbatim. Expected if all claims landed: K_HELD_BACKED 7/14, K_ROW C06 held, F_COVERAGE 5/8 with firmware, C3_RECEIPT_KILLED_ATTRIBUTED 2/2, C2 2/2 attributed, d2 2/2, controls 2/2, calibration 4/4, replay 10/10, FRESH 18/18, HOLDS_OK=yes, exit 0. Any deviation = BROKEN with the exact line.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2RerunAllCounters.md"
+  },
+  {
+   "name": "W2AttackEntryQ01",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack C1's Q01: open corpus/knowledge/round-63-zip-central-directory-evidence.md and corpus/QUALITY.md. Every load-bearing claim must rest on a corpus/SOURCES.md row tier A for its scope (S032 APPNOTE, S033 own-work), opened this round. Verify each cited quote appears verbatim in .ufo/waves/round-63/source-snapshots/appnote.txt (sha256 0b993022a7d320a0bf704e6980bea36fafd17a6066ab994db0a0c16278a50cd6) at the cited section. Verdict: Q01 PASS or FAIL with located quotes.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2AttackEntryQ01.md"
+  },
+  {
+   "name": "W2AttackEntryQ11",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack C1's Q11 (the round-62 killer): EVERY count, identifier, offset and digest in the committed entry must carry, inside the entry, the command deriving it from primary bytes AND that command's output. The build-wave critic found 7 holes (H1-H7: local-header constants assumed, snapshot/stdout metadata without commands, inclusive 2941 not printed, working-tree truth.json hash missing, ZIP64 absence without sweep, 'every field' overclaim, trailing-bytes scope conflict) that the author corrected \u2014 verify each correction is real: re-run the in-entry commands yourself from /home/vgpnk/Projects/shokunin/revenger-shokunin and compare outputs. Try to find ONE value still lacking a derivation. Verdict: Q11 PASS or FAIL per value.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2AttackEntryQ11.md"
+  },
+  {
+   "name": "W2AttackEntryScope",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack C1's Q10 + the frozen scope: read the entry and claims.md C1. Hunt for any universal clause (all ZIPs, general parsers, provider accuracy, completeness, authenticity), any trailing-bytes claim (explicitly frozen out), any ZIP64-present claim. Also verify Observation/Inference/Unknown separation and at least one named limitation. Verdict: scope CLEAN or each violation located.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2AttackEntryScope.md"
+  },
+  {
+   "name": "W2AttackEntryIndependence",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack C1's Q03: every expected value must derive from bytes/truth.json \u2014 never from the record under test. Independently derive ALL archive numbers from corpus/fixtures/archive-r2/fixture.zip bytes with your own decoder BEFORE opening truth.json or the saved record. Then check the entry's values match your independent numbers and that none originated from the saved record's fields. Verdict: independence HOLDS or list each copied value.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2AttackEntryIndependence.md"
+  },
+  {
+   "name": "W2ReopenS032",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nRe-open S032's source: fetch https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT again (network), record HTTP status/date/length/sha256 of THIS fetch; diff against the committed snapshot .ufo/waves/round-63/source-snapshots/appnote.txt. Confirm the two URLs serve different revisions (primary 6.3.10 vs pkware.com 6.3.9) and that every section the entry cites (4.3.3, 4.3.7, 4.3.12, 4.3.16, 4.4.x) is byte-identical across revisions. Verdict: source re-open CONFIRMS or each drift located.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2ReopenS032.md"
+  },
+  {
+   "name": "W2ReopenS033",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nRe-open S033's own-work source: verify the row's anchor claims against the actual bytes \u2014 corpus/fixtures/archive-r2 fixture.zip + truth.json + corpus/live/runs/20261012T164246Z/artifact-inspection.json at the committed tip. Recompute fixture sha256/size, both member digests, the record's evidence_id and root sha256; check the row's teaches sentence is exactly what the bytes show. Verdict: row CONFIRMS or each mismatch located.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2ReopenS033.md"
+  },
+  {
+   "name": "W2AttackOracle",
+   "role": "mutation-tester",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nMutation-test the C2 oracle: corpus/live/runs/round-63/oracle_check.py. In /tmp copies: (1) shift one region offset by 1 byte in a copied inspection.json \u2014 expect ORACLE MISMATCH exit 1 naming the field; (2) drop one region \u2014 expect mismatch; (3) swap in an alternate image of the same size with a recomputed digest \u2014 expect rejection at the identity binding; (4) green run on the real record \u2014 expect ORACLE OK. Also forge a saved receipt field (fixture_sha256) and confirm the oracle or the record's own digest chain flags it. Report all transcripts.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2AttackOracle.md"
+  },
+  {
+   "name": "W2AttackRecordForgery",
+   "role": "revenger",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack the C2 record's ledger discipline: try to construct a forgery the committed checks would pass \u2014 e.g., transplant a foreign Evidence ID across record+stdout+receipt with recomputed digests (the build-wave revenger showed this passes oracle_check.py). Determine exactly which committed artifact stops a forgery from being CREDITED as C2 evidence under claims.md (the byte-oracle agreement + real-run receipt + LEDGER cross-checks), and whether any claims.md sentence over-credits. Verdict: discipline HOLDS with named residual, or each leak located.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2AttackRecordForgery.md"
+  },
+  {
+   "name": "W2MutC3Final",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nRe-run the frozen C3 mutants against the COMMITTED verifiers at the lane tip (in /tmp copies): delete `receipt['command']==command and ` in verify_named_multi_icon_states.py; delete ` and receipt['fixture_sha256'] == expected_hash` in verify_icon_states.py. Both must exit non-zero with last line containing `forged receipt`. Also re-run the two non-frozen residual-debt mutants (stdout_sha256 conjunct in each script) and confirm they still survive \u2014 this debt is routed, not claimed. Transcripts verbatim.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2MutC3Final.md"
+  },
+  {
+   "name": "W2AttackProbeK",
+   "role": "critic",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack the frozen counter's K section: in a /tmp tree, try (a) README flip without the entry file (backed regex must keep K_HELD_BACKED at 6/14), (b) entry file present but README not flipped (K_HELD 6/14), (c) a 15th map row added (denominator must move to 15 \u2014 detect and report whether the frozen predicate notices), (d) held row with a nonexistent knowledge path (must not count as backed). Report what the probe prints for each.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2AttackProbeK.md"
+  },
+  {
+   "name": "W2AttackProbeF",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack the frozen counter's F section: in a /tmp tree, try (a) a fabricated record JSON with made-up evidence_id + inspect_firmware_regions + non-null normalized_result (does the counter count it? does claims.md's real-run + oracle-agreement condition stop it from being C2 evidence \u2014 quote the claim text), (b) receipt.json with evidence_id but no normalized_result (must not count), (c) an unparseable JSON (must be skipped). Report what the counter prints and whether the CLAIM (not just the counter) is defensible.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2AttackProbeF.md"
+  },
+  {
+   "name": "W2AttackProbeC3",
+   "role": "critic",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack the frozen counter's C3 section: in /tmp copies, try (a) a script whose forged-receipt control message does NOT contain `forged receipt` (must not count as attributed), (b) a mutant that crashes before the control (must not count as attributed), (c) both controls deleted (c3_controls must fail). Report what the probe prints for each and whether attribution semantics hold.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2AttackProbeC3.md"
+  },
+  {
+   "name": "W2VerifyPreservation",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nVerify preservation: `find corpus/live corpus/fixtures -type f` at /home/vgpnk/Projects/shokunin/revenger-shokunin with sha256sum, diff against .ufo/waves/round-63/build/preservation-base.sha256 \u2014 every base file must be byte-identical; the ONLY additions allowed are corpus/fixtures/firmware-r63/* and corpus/live/runs/round-63/*. Any modification or unexpected addition = BROKEN. Also verify corpus/verify_*.py count is exactly 10 and only the two C3 scripts differ from base (diff against `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin show 55bcb6e:<path>`).\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifyPreservation.md"
+  },
+  {
+   "name": "W2VerifyFrozenFiles",
+   "role": "sentinel",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nVerify the frozen files: corpus/README.md unchanged vs 55bcb6e except NO change at all yet (C06 must still read partial \u2014 the flip lands only after this wave's admission); corpus/QUALITY.md byte-identical to 55bcb6e; reports/round-63/measure.py sha256 == 3b7fba2d5243bbe0b723a99a53085130ff97010e23c8a59a8027f5f8992c5908; claims.md unchanged since 54ab973c. Any drift = report located. Also scan for credential material in all new round-63 files (op://, tokens).\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifyFrozenFiles.md"
+  },
+  {
+   "name": "W2VerifySourcesTable",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nVerify corpus/SOURCES.md conformance after the S032/S033 append: run the seven census commands from CORPUS.md (rows count, malformed NF!=13 must be 0, tier histogram, status histogram, duplicate ids must print nothing, enum/tier-inflation violations must print nothing, mined used-by paths must exist); then run /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin revenger (must exit 0; only the three disclosed W04s S024/S028/S029). Confirm S032/S033 are the only new rows, S033's used-by names the entry, and old rows are untouched except logged changes. Verdict: table CONFORMANT or each defect located.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifySourcesTable.md"
+  },
+  {
+   "name": "W2VerifyLessonGate",
+   "role": "scribe",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nVerify corpus/lessons/round-63.md: ## Gate records for S032 and S033 each carry URL, access date and a <=25-word located quote (count the words); ## Mistakes rows M33/M34/M35 each carry class/evidence/captured-by/fix; the fix for M33 is shown able to fail (name the red-before command and its observed failure); search-log entries reconcile with the landed sources-row counts (identified/screened/included/excluded); routed-debt section names round-62 defect (a) and its disposition. Verdict: lesson CONFORMANT or each gap located.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifyLessonGate.md"
+  },
+  {
+   "name": "W2SpotcheckDiscern",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nIn-lane discernment first pass (LEARNING.md: at least one admit and one reject sampled): (ADMIT) re-open the C06 entry admit decision \u2014 re-derive two of its values from bytes and confirm the gate evidence; (REJECT) re-open the S033-zipfile-docs screen-and-exclusion decision \u2014 confirm the exclusion reason is grounded (zipfile.html deferral quote, 0 zipfile imports, APPNOTE already tier A) and the flip would be a source change. Record agree/disagree with reasons. This is the in-lane first pass; the non-author closure spot-check remains required.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2SpotcheckDiscern.md"
+  },
+  {
+   "name": "W2VerifyC2Record",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nVerify the C2 record against claims.md's three conditions: (a) envelope carries evidence_id + operation inspect_firmware_regions + non-null normalized_result; (b) receipt.json is a real-run receipt \u2014 command names rea-agents@6.5.0 inspect-firmware-regions, exit_code 0, fixture_sha256 == sha256 of corpus/fixtures/firmware-r63/firmware-r63.bin, stdout_sha256 == sha256 of the saved stdout copy == inspection.json bytes, evidence_id matches; (c) oracle_check.py prints ORACLE OK and every region traces to truth.json values you re-derive from the fixture bytes yourself (inflate both members, compare digests 512/79 and 1024/90). Verdict: C2 conditions MET or each unmet condition located.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifyC2Record.md"
+  },
+  {
+   "name": "W2VerifyC3Patches",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nVerify the C3 patches at the committed tip: for both scripts, diff against `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin show 55bcb6e:corpus/<script>` and confirm (1) the frozen conjunct appears exactly once inside receipt_ok, (2) every pre-existing receipt conjunct survives byte-for-byte including the round_id != 36 exemption, (3) exactly one new forged-receipt control with message containing `forged receipt`, (4) no saved-input assertion/EXPECT/PASS line changed, (5) self-test exit 0 from the lane root. Verdict: patches HOLDS or each violation located.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifyC3Patches.md"
+  },
+  {
+   "name": "W2VerifyFixture",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nVerify the C2 fixture at the committed tip: run corpus/fixtures/firmware-r63/generator.py into a /tmp scratch and confirm it reproduces firmware-r63.bin byte-exact (sha256 bdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be); confirm truth.json values match the built bytes (Q06); confirm inertness (file-type scan: no member is an executable image; padding contains no gzip/zlib magic prefixes at scan window boundaries); confirm no magic prefix collisions inside members' compressed bytes against padding spans. Verdict: fixture SOUND or each hole located.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifyFixture.md"
+  },
+  {
+   "name": "W2VerifyLedger",
+   "role": "revenger",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nVerify corpus/live/runs/round-63/LEDGER.md discipline: O/I/U separation; every digest quoted for the exact bytes it hashed (recompute each named digest); no origin/authenticity/completeness claim (Q09); the 'zero padding' wording corrected to three all-zero padding spans; the F-counter limitation section matches what the frozen counter actually counts. Try one forged-evidence scenario and name which artifact stops it from being credited. Verdict: ledger HOLDS or each leak located.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifyLedger.md"
+  },
+  {
+   "name": "W2MisrootSweep",
+   "role": "sentinel",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nMisroot sweep: `git -C /home/vgpnk/Projects/shokunin status --porcelain` at the fleet root \u2014 any untracked/modified file whose content names revenger round-63 is a misroot; verify each seat report exists under /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/ and NOT at the fleet root; check /home/vgpnk/Projects/shokunin/revenger-shokunin for stray files outside the declared paths. Report every finding with paths.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2MisrootSweep.md"
+  },
+  {
+   "name": "W2VerifyNoAxisHarm",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nVerify no axis harmed: SCORECARD.md diff vs 55bcb6e must show only the appended round-63 section (every prior row byte-identical); the K probe's held-set at tip must be a superset of the base held-set (no lost row); F families at tip must include all four base families; freshness 18/18; calibration runnability 4/4 + replay 10/10. Any lost ground = HARM, located. Note: SCORECARD/LOG updates are L1's and land after this wave \u2014 verify against the current tip where they are absent.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifyNoAxisHarm.md"
+  },
+  {
+   "name": "W2VerifySeparabilityFinal",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nRe-run causal separability on the committed tip: three /tmp trees from `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive <tip> corpus` minus/plus single-claim deltas (A: README flip + entry only -> K 7/14, F 4/8, C3 0/2; B: firmware record only -> F 5/8, K 6/14, C3 0/2; C: both C3 scripts only -> C3 2/2, K 6/14, F 4/8). Confirm each claim's counter moves only with its own work. Report the three probe outputs.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifySeparabilityFinal.md"
+  },
+  {
+   "name": "W2VerifyEntryRecheck",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nExecute the entry's own recheck exactly as its header instructs: run the embedded readout from /home/vgpnk/Projects/shokunin/revenger-shokunin, confirm exit 0 and the printed stdout digest matches the entry's recorded digest; re-run every --fact command and diff outputs. Then run the round-62-style Provenance check: does every printed fact value in the entry body byte-match the recheck output? Report exit codes and any mismatch located.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifyEntryRecheck.md"
+  },
+  {
+   "name": "W2VerifyReadmeContract",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nVerify the README contract pre-flip: corpus/README.md has exactly 14 C-rows, C06 still ends `| partial |`, no other row's text changed vs 55bcb6e; the flip draft at .ufo/waves/round-63/build/readme-flip-draft.md flips ONLY C06, names ONLY corpus/knowledge/round-63-zip-central-directory-evidence.md in the knowledge cell, and preserves the `| held |$` trailing form. Confirm flipping it + the committed entry gives K_HELD=K_HELD_BACKED=7/14 on a /tmp tree. Do NOT edit README yourself.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifyReadmeContract.md"
+  },
+  {
+   "name": "W2FinalIndependent",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nIndependent final verification (not the L1 run): on a /tmp `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive <tip> corpus` tree run the frozen probe; write a JSON verdict to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/falsify/final-independent.json recording: tip hash, every printed counter line, probe exit code, oracle_check verdict, sources-census exit code, and per-claim MET/FALSIFIED verdicts with the claim-text conditions each was checked against. This receipt must be reproducible by the closure from committed bytes alone.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2FinalIndependent.md"
+  },
+  {
+   "name": "W2ClaimsAdmission",
+   "role": "critic",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAdmission adversary: argue each claim FALSIFIED using only committed bytes \u2014 C1: is the entry's Q-pass evidence actually from fresh reviewers other than the author (name the seats)? Is any Q still failing? C2: is the record real-run (receipt + cache corroboration) and does the oracle agreement hold for EVERY region? C3: are both kills attributed (message contains `forged receipt`) rather than crashes? Where you cannot falsify, say NOT-FALSIFIED and name the strongest residual attack. This is the round's strongest adversarial voice.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2ClaimsAdmission.md"
+  },
+  {
+   "name": "W2RoutedDebt",
+   "role": "scribe",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nCollect and reconcile every routed-debt item from the build-wave reports (M35 stdout_sha256 residual guards, C07 frontier-token legend staleness, HOLDS_OK drift D1 wording, S033-screen recording, evidence-ID transplant corollary) into a single table at /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/falsify/routed-debt.md with per-item disposition: fixed-this-round / bounded-future / explicitly-unresolved + owner. Verify each item's source pointer exists. This table feeds the round report's routed-debt section.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2RoutedDebt.md"
+  },
+  {
+   "name": "W2VerifyFreshness",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack the freshness hold: run the FRESH_ROWS grep of the frozen probe by hand over corpus/knowledge/seed.md + corpus/knowledge/2026-10-12-rea-readiness-checklist.md at the lane tip (expect 18/18 rows present, holds|STALE), AND `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff 55bcb6e -- corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` must be empty (byte-identical). Any drift or missing row = BROKEN.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifyFreshness.md"
+  },
+  {
+   "name": "W2VerifyWaveReceipts",
+   "role": "scribe",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nVerify the wave-1 cohort evidence: every one of the 32 build-wave reports exists at /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/build/R63*.md, each non-empty; the registry /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/build/swarm-registry.json names all 32 members with roles matching build-spec.json; record a cohort table (name, role, report sha256, one-line verdict) at /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/falsify/cohort.json. Any missing/empty report = seat receipt defect, located by name.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\nReport: .ufo/waves/round-63/falsify/W2VerifyWaveReceipts.md"
+  }
+ ]
+}

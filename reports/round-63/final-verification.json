@@ -1,0 +1,51 @@
+{
+ "final_tip": "f6ea293255d9263be24a8f100e8a5ad7490f26fa",
+ "measure_after_log": "reports/round-63/measure-after.log",
+ "readme_rows": 14,
+ "held_rows": [
+  "C01",
+  "C04",
+  "C06",
+  "C09",
+  "C11",
+  "C12",
+  "C13"
+ ],
+ "c06_status": "held",
+ "readme_diff_vs_base_lines": "1\t1\tcorpus/README.md",
+ "entry_sha256": "b2660e606e6aa871885467125a7839910920dbb8841f9fcbe8a9efbc621e0086",
+ "lesson_sha256": "3d754b522c642b0586aeaae95ce03047406467fc34af2ca4546061cf9834f9e3",
+ "sources_sha256": "0605814564b8e522b3f7c5086646a7c1878acad6055c9f5bcf4b3ce1b2011514",
+ "verifier_count": 10,
+ "verifiers": [
+  "verify_evm_evidence.py",
+  "verify_icon_languages.py",
+  "verify_icon_states.py",
+  "verify_js_graph_delta.py",
+  "verify_multi_icon_states.py",
+  "verify_named_multi_icon_states.py",
+  "verify_pe_resources.py",
+  "verify_saved_evidence.py",
+  "verify_semantic_trace.py",
+  "verify_shape_evidence.py"
+ ],
+ "census_exit": 0,
+ "census_stdout": [
+  "revenger\tW04\tS024 duplicate url www.rfc-editor.org/rfc/rfc3227.txt across scopes",
+  "revenger\tW04\tS028 duplicate url github.com/ethereum/execution-specs/tree/v2.20.0/src/ethereum/forks/osaka/vm across scopes",
+  "revenger\tW04\tS029 duplicate url tc39.es/ecma262 across scopes",
+  "revenger\tW04\tS034 duplicate url pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT across scopes",
+  "revenger\tok\t/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md"
+ ],
+ "preservation": {
+  "base_files": 443,
+  "missing": [],
+  "changed": [],
+  "unexpected_additions": [],
+  "allowed_additions_prefixes": [
+   "corpus/fixtures/firmware-r63/",
+   "corpus/live/runs/round-63/"
+  ],
+  "note": "independent seat verification W2VerifyPreservation PASS: 443/443 base files byte-identical, 9 authorized additions"
+ }
+}

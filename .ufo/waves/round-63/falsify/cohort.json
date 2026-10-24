@@ -1,0 +1,693 @@
+{
+  "round": 63,
+  "wave": "build",
+  "purpose": "Wave-1 cohort receipt verification (falsify wave, seat W2VerifyWaveReceipts).",
+  "lane": "/home/vgpnk/Projects/shokunin/revenger-shokunin",
+  "measured_revision": "db55bd6488e24e956df5818ae34c2a043d7ddc12",
+  "build_state_commit": "2a34e45562d965f9c8d32f6a27d2f2efa2e7d04e",
+  "registry": ".ufo/waves/round-63/build/swarm-registry.json",
+  "build_spec": ".ufo/waves/round-63/build-spec.json",
+  "cohort_size": 32,
+  "totals": {
+    "registry_members": 32,
+    "build_spec_items": 32,
+    "report_files_present": 32,
+    "report_files_non_empty": 32,
+    "missing_reports": [],
+    "empty_reports": [],
+    "role_mismatches": [],
+    "axes_mismatches": [],
+    "committed_vs_worktree_drift": [
+      "R63EntryC06",
+      "R63LessonDraft",
+      "R63SourceZipfileDocs",
+      "R63SourcesRows"
+    ]
+  },
+  "verdict": "COHORT COMPLETE \u2014 32/32 build-wave reports exist at the named path, are non-empty, and are committed at the lane tip; registry names exactly the 32 build-spec items with matching roles and axes. Zero missing/empty seat receipts. 4 committed receipts are stale relative to the working tree and 3 attest digests that do not resolve to the committed artifacts (receipt defects, located by name in the report).",
+  "receipt_defects": [
+    {
+      "name": "R63EntryC06",
+      "kind": "stale-attestation",
+      "detail": "Committed receipt attests superseded candidate 630b974a\u2026 (74,270B) and stdout e112d409\u2026; the landed entry at HEAD is a0158e99\u2026 with stdout 02b0f495\u2026."
+    },
+    {
+      "name": "R63SourcesRows",
+      "kind": "stale-attestation",
+      "detail": "Committed receipt assigns the own-work row to S034 and calls S033 unused; committed corpus/SOURCES.md has S033 = own-work row and no S034."
+    },
+    {
+      "name": "R63LessonDraft",
+      "kind": "stale-attestation",
+      "detail": "Committed receipt attests draft 7dda3ff8\u2026 ; neither the current scratch draft (ce04ac74\u2026) nor the landed lesson (ce7b47e8\u2026) matches it."
+    },
+    {
+      "name": "R63ReviewC06Q",
+      "kind": "stale-object",
+      "detail": "The only committed fresh-seat Q01\u2013Q13 pass decision reviews candidate 630b974a\u2026, the superseded draft, not the landed entry a0158e99\u2026."
+    },
+    {
+      "name": "R63LedgerFirmware",
+      "kind": "unresolved-digest",
+      "detail": "Touched-surface sha256 cedc8f70\u2026 (22,481B) for corpus/live/runs/round-63/LEDGER.md resolves to no blob at HEAD (actual d41bbeac\u2026, 22,502B)."
+    },
+    {
+      "name": "R63RevengerLedger",
+      "kind": "unresolved-digest",
+      "detail": "Cites LEDGER.md sha256 cedc8f70\u2026 (22,481B) which matches no HEAD blob."
+    },
+    {
+      "name": "R63SourceZipfileDocs",
+      "kind": "stale-content",
+      "detail": "Committed blob still presents the \u00a77 contingency row as landable; the working-tree blob closes it as not needed / not to be landed."
+    }
+  ],
+  "reports": [
+    {
+      "name": "R63C3IconPatch",
+      "role": "executor",
+      "axes": [
+        "calibration"
+      ],
+      "agentId": "revenger-r63.R63C3IconPatch",
+      "report_path": ".ufo/waves/round-63/build/R63C3IconPatch.md",
+      "report_sha256": "7dba4c5901082b4e9ed995172433c4f3135d791e431a26dc7079ac4a40c004f0",
+      "report_bytes": 2198,
+      "worktree_sha256": "7dba4c5901082b4e9ed995172433c4f3135d791e431a26dc7079ac4a40c004f0",
+      "worktree_bytes": 2198,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "PATCH OK \u2014 fixture_sha256/stdout_sha256/evidence-id checks moved into receipt_ok() with round_id!=36 exemption intact; PASS 4/4 states, 3/3 deltas, one forged candidate REJECTED."
+    },
+    {
+      "name": "R63C3NamedPatch",
+      "role": "executor",
+      "axes": [
+        "calibration"
+      ],
+      "agentId": "revenger-r63.R63C3NamedPatch",
+      "report_path": ".ufo/waves/round-63/build/R63C3NamedPatch.md",
+      "report_sha256": "71c8d15bee28438623393e40f4d6f960e511fa8e559b72b688fa77eca24c472f",
+      "report_bytes": 2479,
+      "worktree_sha256": "71c8d15bee28438623393e40f4d6f960e511fa8e559b72b688fa77eca24c472f",
+      "worktree_bytes": 2479,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "PATCH OK \u2014 receipt predicate moved into receipt_ok(); forged-command control (r55/r57) added; self-test PASS 142 checks, 2/2 forged claims rejected; exit-1 mutant names `forged receipt`."
+    },
+    {
+      "name": "R63ConnectorOverlap",
+      "role": "connector",
+      "axes": [
+        "adjacency"
+      ],
+      "agentId": "revenger-r63.R63ConnectorOverlap",
+      "report_path": ".ufo/waves/round-63/build/R63ConnectorOverlap.md",
+      "report_sha256": "1117f8a2cda7665871c0ea665e625b40f5643cdc609745176a683b6a99bd66af",
+      "report_bytes": 9242,
+      "worktree_sha256": "1117f8a2cda7665871c0ea665e625b40f5643cdc609745176a683b6a99bd66af",
+      "worktree_bytes": 9242,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "NOT 'no overlap' \u2014 three contested-scope questions, each report-not-absorb; ADJ-06 ownership contradiction left unsmoothed (revenger vs kaidoku vs tsukuroi PROVINCE lines)."
+    },
+    {
+      "name": "R63CriticClaims",
+      "role": "critic",
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "agentId": "revenger-r63.R63CriticClaims",
+      "report_path": ".ufo/waves/round-63/build/R63CriticClaims.md",
+      "report_sha256": "45c2b748bd0904afa1c1255edd729301b03fe6fae2a13b1c9e3a2d4433082161",
+      "report_bytes": 16910,
+      "worktree_sha256": "45c2b748bd0904afa1c1255edd729301b03fe6fae2a13b1c9e3a2d4433082161",
+      "worktree_bytes": 16910,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "CONTRACT SOUND (scoped) \u2014 the frozen contract is sound as a conjunctive claim-and-admission gate, not as a counter-only gate; labels can be made green without the substantive work, so printed targets must not be read as admission."
+    },
+    {
+      "name": "R63CriticCounts",
+      "role": "critic",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63CriticCounts",
+      "report_path": ".ufo/waves/round-63/build/R63CriticCounts.md",
+      "report_sha256": "971036f5bea1d79356f354525d8ead4d7d696395a8a85d02affa09674ed40756",
+      "report_bytes": 16226,
+      "worktree_sha256": "971036f5bea1d79356f354525d8ead4d7d696395a8a85d02affa09674ed40756",
+      "worktree_bytes": 16226,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "NUMBERS SOUND, HOLE OPEN \u2014 no byte-derived member/count/CRC disagreement and no oracle-to-derived copying found, but the candidate still has Q11 derivation holes and a frozen-scope conflict; reviewed candidate 630b974a (superseded)."
+    },
+    {
+      "name": "R63CriticFixture",
+      "role": "critic",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63CriticFixture",
+      "report_path": ".ufo/waves/round-63/build/R63CriticFixture.md",
+      "report_sha256": "c746964ee953b87d39b817e9d92c86e5480df0ea76421d5fa13b4b61317585ac",
+      "report_bytes": 11225,
+      "worktree_sha256": "c746964ee953b87d39b817e9d92c86e5480df0ea76421d5fa13b4b61317585ac",
+      "worktree_bytes": 11225,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "DESIGN SOUND (scoped) \u2014 fixture design sound for the exact bytes, saved observation and version-bounded recipe reviewed; not an admission or canonical-judge decision."
+    },
+    {
+      "name": "R63CriticHarms",
+      "role": "critic",
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "agentId": "revenger-r63.R63CriticHarms",
+      "report_path": ".ufo/waves/round-63/build/R63CriticHarms.md",
+      "report_sha256": "9c1dd283ee4887d363491994699d94694f5727859ac3fc02227e53a942c2e477",
+      "report_bytes": 7658,
+      "worktree_sha256": "9c1dd283ee4887d363491994699d94694f5727859ac3fc02227e53a942c2e477",
+      "worktree_bytes": 7658,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "GUARD RISK \u2014 five guards CHECKABLE; key finding: hash-only preservation is incomplete (manifest alone cannot detect added out-of-scope paths) so baseline-byte checks must be paired with a path-delta/allowlist comparison; no triggered void observed."
+    },
+    {
+      "name": "R63EntryC06",
+      "role": "scribe",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63EntryC06",
+      "report_path": ".ufo/waves/round-63/build/R63EntryC06.md",
+      "report_sha256": "0594492ce975cbd10c16ef921c69156e6ba8bf970ba67162070190762630ae6e",
+      "report_bytes": 14672,
+      "worktree_sha256": "9cd8715086eb17d62484e54211554743996135ddb0e8f851ffcd620321eec2c6",
+      "worktree_bytes": 10712,
+      "committed_bytes_match_worktree": false,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "CANDIDATE OK in working tree (sha a0158e99\u2026 = the landed corpus entry) with H1\u2013H7/N1\u2013N3 corrections and 17-fact readout re-verified exit 0 / stdout 02b0f495\u2026. DEFECT: the committed blob attests the SUPERSEDED candidate 630b974a (74,270B) and old stdout e112d409\u2026."
+    },
+    {
+      "name": "R63FirmwareFixture",
+      "role": "executor",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63FirmwareFixture",
+      "report_path": ".ufo/waves/round-63/build/R63FirmwareFixture.md",
+      "report_sha256": "aab3095e4d4a638b43a63c6394aabf7fec73b21e936584b76f6481b1b46265cb",
+      "report_bytes": 10756,
+      "worktree_sha256": "aab3095e4d4a638b43a63c6394aabf7fec73b21e936584b76f6481b1b46265cb",
+      "worktree_bytes": 10756,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "FIXTURE OK \u2014 inert 2048B firmware-r63.bin (sha bdfe9f46\u2026) + generator.py + truth.json authored; two zlib members at 512/1024; reproducible, nothing executed."
+    },
+    {
+      "name": "R63FirmwareOracle",
+      "role": "executor",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63FirmwareOracle",
+      "report_path": ".ufo/waves/round-63/build/R63FirmwareOracle.md",
+      "report_sha256": "e58b2b84d47f00f3e5731ee903ee1a3c9142bacfceb37fb0150e5b041654b6c8",
+      "report_bytes": 5122,
+      "worktree_sha256": "e58b2b84d47f00f3e5731ee903ee1a3c9142bacfceb37fb0150e5b041654b6c8",
+      "worktree_bytes": 5122,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "ORACLE OK \u2014 corpus/live/runs/round-63/oracle_check.py binds record regions to truth.json by signature/offset/size and to image digest; member hashes independently recompressed/decompressed, explicitly NOT attributed to REA output."
+    },
+    {
+      "name": "R63FirmwareRun",
+      "role": "executor",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63FirmwareRun",
+      "report_path": ".ufo/waves/round-63/build/R63FirmwareRun.md",
+      "report_sha256": "ccd7cbab51c4e7285a75bbf38ebb18b625b018d6e178294b96f8b7b903de4448",
+      "report_bytes": 3045,
+      "worktree_sha256": "ccd7cbab51c4e7285a75bbf38ebb18b625b018d6e178294b96f8b7b903de4448",
+      "worktree_bytes": 3045,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "REAL RUN OK \u2014 exactly one `npx -y rea-agents@6.5.0 inspect-firmware-regions` invocation, exit 0, 1.296s; both reported regions agree with truth.json on offset/size/decompressed sha256."
+    },
+    {
+      "name": "R63LedgerFirmware",
+      "role": "scribe",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63LedgerFirmware",
+      "report_path": ".ufo/waves/round-63/build/R63LedgerFirmware.md",
+      "report_sha256": "ab25fdbe5206b2cd9c5a11f8a69047d220a0ad9c1e7d48b0141312a3cce59d8f",
+      "report_bytes": 10545,
+      "worktree_sha256": "ab25fdbe5206b2cd9c5a11f8a69047d220a0ad9c1e7d48b0141312a3cce59d8f",
+      "worktree_bytes": 10545,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "GATES PASS \u2014 C2a record shape / C2b real REA run+receipt / C2c byte-oracle 2/2 / no-target-execution / truth-unmodified / no-out-of-scope-writes all PASS. DEFECT: touched-surface digest cedc8f70\u2026 (22,481B) does not match the committed corpus/live/runs/round-63/LEDGER.md (d41bbeac\u2026, 22,502B) nor the current file (25a4a18b\u2026)."
+    },
+    {
+      "name": "R63LessonDraft",
+      "role": "scribe",
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "agentId": "revenger-r63.R63LessonDraft",
+      "report_path": ".ufo/waves/round-63/build/R63LessonDraft.md",
+      "report_sha256": "ffd061306c78fb984d757f6c2538f5249b89875f1108ab2926d0f2b40f4de237",
+      "report_bytes": 11397,
+      "worktree_sha256": "c5159ed8050d1ea318a5c626c80439fa83aeb75d7754bba9ef302f880466955e",
+      "worktree_bytes": 13084,
+      "committed_bytes_match_worktree": false,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "LESSON OK in working tree \u2014 draft sha ce04ac74\u2026 (28,934B/293 lines) with M33 and Gate block; landed corpus/lessons/round-63.md at HEAD is ce7b47e8\u2026 . DEFECT: the committed blob attests draft 7dda3ff8\u2026 , which matches neither the scratch draft nor the landed lesson."
+    },
+    {
+      "name": "R63MutC3",
+      "role": "mutation-tester",
+      "axes": [
+        "calibration"
+      ],
+      "agentId": "revenger-r63.R63MutC3",
+      "report_path": ".ufo/waves/round-63/build/R63MutC3.md",
+      "report_sha256": "f8fbaa6853af74311fe58cd1887a76a573fc586ed7f3925bbad656ce99180c34",
+      "report_bytes": 19236,
+      "worktree_sha256": "f8fbaa6853af74311fe58cd1887a76a573fc586ed7f3925bbad656ce99180c34",
+      "worktree_bytes": 19236,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "C3 CONFIRMED 2/2 \u2014 both frozen mutants KILLED with attributed `forged receipt` last line (M1 exit 1 `r55: forged receipt accepted`; M2 exit 1 `r36: forged receipt accepted`); residual stdout_sha256 conjunct SURVIVES (reported as debt, outside the frozen set)."
+    },
+    {
+      "name": "R63Preservation",
+      "role": "executor",
+      "axes": [
+        "calibration"
+      ],
+      "agentId": "revenger-r63.R63Preservation",
+      "report_path": ".ufo/waves/round-63/build/R63Preservation.md",
+      "report_sha256": "1d490089a7da045d4ceeb1fb59255d8ed741a53fe1201064c7211bad5edef095",
+      "report_bytes": 2447,
+      "worktree_sha256": "1d490089a7da045d4ceeb1fb59255d8ed741a53fe1201064c7211bad5edef095",
+      "worktree_bytes": 2447,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "GUARD OK \u2014 455-record baseline manifest (443 live/fixtures paths + 12 supplemental) captured from a clean corpus/live+corpus/fixtures status at base 55bcb6e; re-verified here: 443/443 baseline bytes unchanged, 9 new files only under the two authorized round-63 dirs."
+    },
+    {
+      "name": "R63ReadmeFlipDraft",
+      "role": "scribe",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63ReadmeFlipDraft",
+      "report_path": ".ufo/waves/round-63/build/R63ReadmeFlipDraft.md",
+      "report_sha256": "9ebceb0a84a9cbd39f3fa936902cd02cc510bc3c0e8e38e1af64fb93a2c905c7",
+      "report_bytes": 9207,
+      "worktree_sha256": "9ebceb0a84a9cbd39f3fa936902cd02cc510bc3c0e8e38e1af64fb93a2c905c7",
+      "worktree_bytes": 9207,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "FLIP DRAFT OK \u2014 exact proposed C06 row text (partial\u2192held) naming only knowledge/round-63-zip-central-directory-evidence.md; regex simulation against the frozen counter gives K_ROW C06 status=held; no repo file edited."
+    },
+    {
+      "name": "R63RevengerLedger",
+      "role": "revenger",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63RevengerLedger",
+      "report_path": ".ufo/waves/round-63/build/R63RevengerLedger.md",
+      "report_sha256": "6fc32cba39df8c96dc05b0c6a3a5161c5fa05d0cdcda99cb17d5e0f0cd8b29bb",
+      "report_bytes": 9553,
+      "worktree_sha256": "6fc32cba39df8c96dc05b0c6a3a5161c5fa05d0cdcda99cb17d5e0f0cd8b29bb",
+      "worktree_bytes": 9553,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "DISCIPLINE HOLDS \u2014 OBSERVATION/INFERENCE/UNKNOWN separation holds on all four questions, with one minor located leak and one forged-evidence scenario no committed check can flag. DEFECT: cites LEDGER.md sha cedc8f70\u2026 (22,481B) which resolves to no blob at HEAD (actual d41bbeac\u2026)."
+    },
+    {
+      "name": "R63ReviewC06Q",
+      "role": "reviewer",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63ReviewC06Q",
+      "report_path": ".ufo/waves/round-63/build/R63ReviewC06Q.md",
+      "report_sha256": "e37fc41e12b1291c92e7177ae35749bb6b48662841ac3206eabc5139e16dd9aa",
+      "report_bytes": 13413,
+      "worktree_sha256": "e37fc41e12b1291c92e7177ae35749bb6b48662841ac3206eabc5139e16dd9aa",
+      "worktree_bytes": 13413,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "Q-PASS (candidate-scoped) \u2014 'HOLDS as a candidate', no Q01\u2013Q13 criterion fails, recheck reproduces byte-exactly (exit 0, 17 lines, stdout e112d409\u2026). DEFECT: the object reviewed is candidate 630b974a (74,270B/672 lines) \u2014 the SUPERSEDED draft, not the landed a0158e99 entry; admission still gated on S032+S033 rows and fresh falsify decisions."
+    },
+    {
+      "name": "R63ReviewC3",
+      "role": "reviewer",
+      "axes": [
+        "calibration"
+      ],
+      "agentId": "revenger-r63.R63ReviewC3",
+      "report_path": ".ufo/waves/round-63/build/R63ReviewC3.md",
+      "report_sha256": "cf0cd3a0d97d2ee26b14e1c32530ff6c5ee35448d231d8ffb1a65b47d9e7586b",
+      "report_bytes": 7659,
+      "worktree_sha256": "cf0cd3a0d97d2ee26b14e1c32530ff6c5ee35448d231d8ffb1a65b47d9e7586b",
+      "worktree_bytes": 7659,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "C3 HOLDS per script \u2014 both verifiers HOLDS on the patched bytes; caveat stated: end-to-end frozen measure.py on a COMMITTED archive was not run by this reviewer (left to falsify/admission)."
+    },
+    {
+      "name": "R63ReviewFirmware",
+      "role": "reviewer",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63ReviewFirmware",
+      "report_path": ".ufo/waves/round-63/build/R63ReviewFirmware.md",
+      "report_sha256": "f0a695f7da74e100774ccf6d27458e11b1a8d0bf9993cad6d183d21429a4b7c4",
+      "report_bytes": 5079,
+      "worktree_sha256": "f0a695f7da74e100774ccf6d27458e11b1a8d0bf9993cad6d183d21429a4b7c4",
+      "worktree_bytes": 5079,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "C2 HOLDS \u2014 all five checks PASS with independently recomputed evidence (envelope, receipt, fixture sha256, oracle 2/2, fixture inertness); stdout sha256 f6997835\u2026 recomputed and equal."
+    },
+    {
+      "name": "R63ReviewGateFinal",
+      "role": "reviewer",
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "agentId": "revenger-r63.R63ReviewGateFinal",
+      "report_path": ".ufo/waves/round-63/build/R63ReviewGateFinal.md",
+      "report_sha256": "3cde27a219850895fad566a4f6cee584f73b45a52a5a14e6aea7a2d24f011b27",
+      "report_bytes": 6042,
+      "worktree_sha256": "3cde27a219850895fad566a4f6cee584f73b45a52a5a14e6aea7a2d24f011b27",
+      "worktree_bytes": 6042,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "GATE (snapshot ~23:26Z) \u2014 items 2/3/4/7/8 PASS (firmware+record+oracle, both C3 patches, README not flipped, preservation manifest, no fleet strays); items 1/5/6 FLAG PENDING because the candidate, S032/S033 rows and the lesson did not yet exist at that instant \u2014 superseded by the later integration commit."
+    },
+    {
+      "name": "R63ReviewSeparability",
+      "role": "reviewer",
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "agentId": "revenger-r63.R63ReviewSeparability",
+      "report_path": ".ufo/waves/round-63/build/R63ReviewSeparability.md",
+      "report_sha256": "c7840483c74d31a451a978efbe61b45cef17ee7384e290f05961ac61145f13e4",
+      "report_bytes": 5875,
+      "worktree_sha256": "c7840483c74d31a451a978efbe61b45cef17ee7384e290f05961ac61145f13e4",
+      "worktree_bytes": 5875,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "SEPARABLE \u2014 three single-axis trees move one counter each: A=7/14, B=5/8, C=2/2 attributed; no tree moves another claim's counter; all frozen holds green, probe exit 0 in all three."
+    },
+    {
+      "name": "R63ScoutArchive",
+      "role": "scout",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63ScoutArchive",
+      "report_path": ".ufo/waves/round-63/build/R63ScoutArchive.md",
+      "report_sha256": "38116492dd6d708e97cfd6b16b75693752abd09f7b6cb8f530e33d7767049a6d",
+      "report_bytes": 8866,
+      "worktree_sha256": "38116492dd6d708e97cfd6b16b75693752abd09f7b6cb8f530e33d7767049a6d",
+      "worktree_bytes": 8866,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "RECON OK \u2014 three archive fixtures parsed read-only; nested-r11 and duplicate-r15 lack crc32/local-header offset/EOCD (truth and/or record), so a C1-shaped CD entry is blocked for them; no corpus bytes changed."
+    },
+    {
+      "name": "R63ScoutFirmware",
+      "role": "scout",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63ScoutFirmware",
+      "report_path": ".ufo/waves/round-63/build/R63ScoutFirmware.md",
+      "report_sha256": "2d2e9cb9ccc66445b5545de109941dd986f480494f28c39bf5a20d2ff9646017",
+      "report_bytes": 11959,
+      "worktree_sha256": "2d2e9cb9ccc66445b5545de109941dd986f480494f28c39bf5a20d2ff9646017",
+      "worktree_bytes": 11959,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "RECON OK \u2014 binwalk 3.1.0 and rea-agents 6.5.0 already present (no installs, no pacman); warns the newer `main` guide adds firmwareExecutionBudgetSchema absent from the pinned 6.5.0 schema this counter parses."
+    },
+    {
+      "name": "R63ScoutRecordRecon",
+      "role": "scout",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63ScoutRecordRecon",
+      "report_path": ".ufo/waves/round-63/build/R63ScoutRecordRecon.md",
+      "report_sha256": "2f6230a5d42f8792f2de24ff8962c6a1e16d27d6e7a2be938b66ec0b81a73123",
+      "report_bytes": 10388,
+      "worktree_sha256": "2f6230a5d42f8792f2de24ff8962c6a1e16d27d6e7a2be938b66ec0b81a73123",
+      "worktree_bytes": 10388,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "DRY-RUN OK \u2014 frozen F predicate re-run by hand: base 4/8, scratch 5/8 once the round-63 firmware family exists; full measure.py deliberately not executed (it runs verifier self-tests)."
+    },
+    {
+      "name": "R63SentinelScope",
+      "role": "sentinel",
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "agentId": "revenger-r63.R63SentinelScope",
+      "report_path": ".ufo/waves/round-63/build/R63SentinelScope.md",
+      "report_sha256": "aec73bb57e254e8b83fc791d536d0695190f1424af82b3ef03bac6935361b63c",
+      "report_bytes": 1931,
+      "worktree_sha256": "aec73bb57e254e8b83fc791d536d0695190f1424af82b3ef03bac6935361b63c",
+      "worktree_bytes": 1931,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "SCOPE CLEAN at scan time \u2014 no severity, no exploit path; only the two permitted verifier edits plus round-63 paths present; no fleet-root stray naming this round."
+    },
+    {
+      "name": "R63SimplifierProbe",
+      "role": "simplifier",
+      "axes": [
+        "calibration"
+      ],
+      "agentId": "revenger-r63.R63SimplifierProbe",
+      "report_path": ".ufo/waves/round-63/build/R63SimplifierProbe.md",
+      "report_sha256": "559a0dea9570895f1883cd9bac1a6cfde9af99efa618609b6873219945a3720d",
+      "report_bytes": 10899,
+      "worktree_sha256": "559a0dea9570895f1883cd9bac1a6cfde9af99efa618609b6873219945a3720d",
+      "worktree_bytes": 10899,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "MATCHES with one drift (D1) \u2014 every frozen predicate implemented exactly as the contract states it and the do-nothing control values reproduce; D1: r63's HOLDS_OK adds three conjuncts vs r61's definition (direction conservative, no dead code)."
+    },
+    {
+      "name": "R63SourceAppnote",
+      "role": "scribe",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63SourceAppnote",
+      "report_path": ".ufo/waves/round-63/build/R63SourceAppnote.md",
+      "report_sha256": "a63982773f7ac398a35607215570c7071761aa74c9f49a6646b24efb1469ba60",
+      "report_bytes": 16388,
+      "worktree_sha256": "a63982773f7ac398a35607215570c7071761aa74c9f49a6646b24efb1469ba60",
+      "worktree_bytes": 16388,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "SOURCE OK \u2014 APPNOTE 6.3.10 fetched (HTTP 200, FINAL, Nov 2022), byte-exact snapshot 0b993022\u2026; S032 spec row + Gate quotes drafted (6 located quotes, \u00a74.3.12/\u00a74.3.16/\u00a74.4.7/\u00a74.4.16/\u00a74.3.3)."
+    },
+    {
+      "name": "R63SourceZipfileDocs",
+      "role": "scribe",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63SourceZipfileDocs",
+      "report_path": ".ufo/waves/round-63/build/R63SourceZipfileDocs.md",
+      "report_sha256": "7a3bed69c69c259bea1e3b564fa708d10fd94cb322522058f9c9ca7fa9c0e6b7",
+      "report_bytes": 23141,
+      "worktree_sha256": "111a57c6f66f113123c9c9f79d6c5b90bac1f26f2452b14bc179cb3db289c050",
+      "worktree_bytes": 35381,
+      "committed_bytes_match_worktree": false,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "EXCLUDE OK \u2014 python zipfile docs screened and excluded, no row; WT \u00a77 contingency closed as NOT needed/not to be landed. DEFECT: the committed blob still presents the \u00a77 'Contingency S033 row' as landable (only the L1 DROPPED note is present)."
+    },
+    {
+      "name": "R63SourcesRows",
+      "role": "scribe",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63SourcesRows",
+      "report_path": ".ufo/waves/round-63/build/R63SourcesRows.md",
+      "report_sha256": "441e9d3ba210b0b183da51d27fca12eda19f46490ef7374aba9eb312d69759cf",
+      "report_bytes": 8094,
+      "worktree_sha256": "b1fc26f89989580d6acb4313cdb19eafd1a5ac9e330d973aa26481b8b7aa9443",
+      "worktree_bytes": 16042,
+      "committed_bytes_match_worktree": false,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "ROWS OK in working tree \u2014 S032+S033 both conformant (11 cells/NF=13, no duplicate ids, contiguous pair, Finding 5 closed). DEFECT: the committed blob still assigns the own-work row to S034 and calls S033 'unused', contradicting the committed corpus/SOURCES.md where S033 IS the own-work row."
+    },
+    {
+      "name": "R63ZipPremise",
+      "role": "executor",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63ZipPremise",
+      "report_path": ".ufo/waves/round-63/build/R63ZipPremise.md",
+      "report_sha256": "45f3165f1a04c3e06f738f4283cd449e3409c2cc510f3872593e780460ab6792",
+      "report_bytes": 4964,
+      "worktree_sha256": "45f3165f1a04c3e06f738f4283cd449e3409c2cc510f3872593e780460ab6792",
+      "worktree_bytes": 4964,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "PREMISE OK \u2014 no drift: archive sha/size, both member tuples, byte-exact replay, saved inventory root sha and ledger root sha/size all agree with truth.json; no repairs made."
+    },
+    {
+      "name": "R63ZipReadout",
+      "role": "executor",
+      "axes": [
+        "coverage"
+      ],
+      "agentId": "revenger-r63.R63ZipReadout",
+      "report_path": ".ufo/waves/round-63/build/R63ZipReadout.md",
+      "report_sha256": "46235e6120909f1f261eeab31c1334e4754c9108b81fae087bbe399543b89e86",
+      "report_bytes": 3192,
+      "worktree_sha256": "46235e6120909f1f261eeab31c1334e4754c9108b81fae087bbe399543b89e86",
+      "worktree_bytes": 3192,
+      "committed_bytes_match_worktree": true,
+      "role_matches_build_spec": true,
+      "axes_match_build_spec": true,
+      "present_at_head": true,
+      "non_empty": true,
+      "verdict": "PREMISE OK \u2014 raw-byte EOCD/CD readout of archive-r2/fixture.zip; every truth.json-comparable field True; fields absent from truth (EOCD/CD offsets, CRC-32) reported N/A, not claimed as matches."
+    }
+  ],
+  "tooling": {
+    "installed": [],
+    "pacman": false,
+    "notes": "No tool installed or upgraded by this seat. /home/vgpnk/.omp/agent/RULES.md read; pacman is paused host-wide and was not used."
+  },
+  "evidence_commands": [
+    "git ls-tree -r HEAD --name-only .ufo/waves/round-63/build/ | grep -E 'R63.*\\.md$'   # 32",
+    "git show HEAD:<path> | sha256sum                                                     # per-report committed digest",
+    "python3 -c 'json.load(...)' on swarm-registry.json and build-spec.json                  # name/role/axes cross-check",
+    "find corpus/live corpus/fixtures -type f | xargs sha256sum vs preservation-base.sha256  # 443 baseline rows unchanged"
+  ],
+  "report": ".ufo/waves/round-63/falsify/W2VerifyWaveReceipts.md"
+}

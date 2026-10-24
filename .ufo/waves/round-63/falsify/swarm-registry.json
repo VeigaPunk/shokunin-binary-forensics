@@ -1,0 +1,337 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r63-falsify",
+  "createdAt": "2026-10-24T02:54:31.340Z",
+  "updatedAt": "2026-10-24T02:55:29.309Z",
+  "reportDir": ".ufo/waves/round-63/falsify",
+  "members": {
+    "W2RerunAllCounters": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2AttackEntryQ01": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2AttackEntryQ11": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2AttackEntryScope": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2AttackEntryIndependence": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2ReopenS032": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2ReopenS033": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2AttackOracle": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2AttackRecordForgery": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2MutC3Final": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2AttackProbeK": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2AttackProbeF": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2AttackProbeC3": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifyPreservation": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifyFrozenFiles": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifySourcesTable": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifyLessonGate": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2SpotcheckDiscern": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifyC2Record": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifyC3Patches": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifyFixture": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifyLedger": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2MisrootSweep": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifyNoAxisHarm": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifySeparabilityFinal": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifyEntryRecheck": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifyReadmeContract": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2FinalIndependent": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2ClaimsAdmission": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2RoutedDebt": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifyFreshness": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    },
+    "W2VerifyWaveReceipts": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "all three claims attacked on committed bytes; named fresh Q-pass decisions for C1; final receipts"
+    }
+  }
+}
