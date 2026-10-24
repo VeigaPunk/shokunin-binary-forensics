@@ -11,8 +11,8 @@ Lane: `/home/vgpnk/Projects/shokunin/revenger-shokunin`.
 | routed-debt table (the deliverable the round report consumes) | `.ufo/waves/round-63/falsify/routed-debt.md` |
 | this seat report | `.ufo/waves/round-63/falsify/W2RoutedDebt.md` |
 | rows in the table | **13** (D1–D5 the five named items; D6–D11 the build wave's other routed-debt handovers; D12–D13 this seat's own findings) |
-| dispositions assigned | 5 rows fixed-this-round, 7 rows bounded-future, 3 rows explicitly-unresolved — D4 and D5 carry a **split** disposition (D4: screen fixed / id note bounded; D5: receipt pin fixed / corollary unresolved), so the three counts overlap on those two rows and do not sum to 13 |
-| tip under attack at read time | `f6ea293255d9263be24a8f100e8a5ad7490f26fa` (the tip advanced **six times** during this seat: `db55bd6` → `aaa0463` → `3af3acb` → `34cfa24` → `f6c618b` → `f6ea293`; the last commit is the C06 README flip, `partial` → `held`) |
+| dispositions assigned | 6 rows fixed-this-round, 6 rows bounded-future, 3 rows explicitly-unresolved — D4 and D5 carry a **split** disposition (D4: screen fixed / id note bounded; D5: receipt pin fixed / corollary unresolved), so the three counts overlap on those two rows and do not sum to 13 |
+| tip under attack at read time | `98ad3a0cb26c78b95f94535897b61c7a73113428` (the tip advanced **seven times** during this seat: `db55bd6` → `aaa0463` → `3af3acb` → `34cfa24` → `f6c618b` → `f6ea293` → `98ad3a0`; the last is the round's final integration commit) |
 
 The table is the deliverable; this report states what was found, what was
 verified, and what could not be settled.
@@ -29,14 +29,14 @@ present in the build-wave reports and the committed lesson:
 | D3 | `HOLDS_OK` contract-wording drift (D1) | bounded-future | next round's contract author + this round's adjudicator |
 | D4 | S033-screen recording (zipfile-docs screen-and-exclusion + its forward id note) | fixed-this-round (screen) / bounded-future (id note) | next round's source-opener seat |
 | D5 | Evidence-ID transplant corollary | fixed-this-round (receipt pin) / explicitly-unresolved (the corollary) | round report author / **unassigned** for the mechanism |
-| D6 | round-62 closure defect (a) — `measure-after.log` beside the report claim | bounded-future | this round's L1 |
+| D6 | round-62 closure defect (a) — `measure-after.log` beside the report claim | fixed-this-round (committed in `98ad3a0`) | closed |
 | D7 | sibling scope on archives/firmware (ADJ-06 open) | explicitly-unresolved | fleet operator (ADJ-06) |
 | D8 | outside spot-check for round 63 | explicitly-unresolved | independent closure seat |
 | D9 | `C2_RECEIPT_B_KILLED_ATTRIBUTED` printed but absent from `holds_ok` | bounded-future | this round's L1 + next round's contract author |
 | D10 | search-log count convention for the own-work row | fixed-this-round (accepted-as-is, recorded) | closed |
 | D11 | LEDGER "zero padding" wording leak (L2) | fixed-this-round | closed |
 | D12 | **new** — lesson id-paragraph / search-log counts vs the tip's registry | fixed-this-round (all three halves marked at `34cfa24`) | closed |
-| D13 | **new** — the tip moved six times under the falsify wave; byte-pinned findings need re-anchoring | bounded-future | falsify adjudicator + L1 |
+| D13 | **new** — the tip moved seven times under the falsify wave; byte-pinned findings need re-anchoring | bounded-future | falsify adjudicator + L1 |
 
 ## Verification performed (all re-run by this seat)
 
@@ -46,16 +46,16 @@ present in the build-wave reports and the committed lesson:
   pointer was wrong on the first pass (`.ufo/waves/round-63/build/R63LessonDraft.md:275`
   — that file is 162 lines at build commit `2a34e45`) and was corrected to
   `:88-96`.
-- **Every digest re-derived, not trusted.** `git show f6ea293:corpus/live/runs/round-63/receipt.json | sha256sum` = `e930a549…5c6b94d`; the committed LEDGER pin at `:26` now matches it (it was `…5c6b94b` at `db55bd6` — the falsify wave's `W2AttackRecordForgery` located that mis-key and `aaa0463` fixed it).
+- **Every digest re-derived, not trusted.** `git show 98ad3a0:corpus/live/runs/round-63/receipt.json | sha256sum` = `e930a549…5c6b94d`; the committed LEDGER pin at `:26` now matches it (it was `…5c6b94b` at `db55bd6` — the falsify wave's `W2AttackRecordForgery` located that mis-key and `aaa0463` fixed it).
 - **The `HOLDS_OK` drift re-derived from code**, not from the report: `reports/round-63/measure.py:179-181` vs `reports/round-61/measure.py:111` — three added conjuncts (`killed_b == 2`, `c3_controls == 2`, `fresh == 18`), so `reports/round-63/claims.md:97` ("same definitions as the round-61 probe") is strictly false for `HOLDS_OK` alone.
 - **The M35 debt re-confirmed on tip bytes**: `corpus/verify_icon_states.py:121` and `corpus/verify_named_multi_icon_states.py:17` still carry the `stdout_sha256` conjunct; the verifiers are byte-unchanged between `db55bd6` and `3af3acb` (`git diff --stat` empty).
 - **The registry re-censused** with the seven commands of
   `/home/vgpnk/Projects/shokunin/.ufo/waves/kaika/SOURCES-CONTRACT-v1.md:71-81`
-  run against `f6ea293:corpus/SOURCES.md`: rows **35**, malformed **0**, tier
+  run against `98ad3a0:corpus/SOURCES.md`: rows **35**, malformed **0**, tier
   A=33/C=2, status mined=30/queued=1/rejected=4, duplicate ids **none**, enum
   and tier-inflation violations **none**, mined `used-by` paths missing **none**.
 - **The entry's S-id census at the tip**: `S032 ×14 / S033 ×12 / S034 ×17 /
-  S035 ×12` (at `f6ea293`; `35` registry rows, ending at S035).
+  S035 ×12` (at `98ad3a0`; `35` registry rows, ending at S035).
 
 ## Findings worth the round report's attention
 
@@ -76,8 +76,8 @@ present in the build-wave reports and the committed lesson:
    The falsify wave re-verified this independently (`W2AttackRecordForgery.md:41`)
    and showed the only stopper is *cross-row* reconciliation at adjudication —
    a process stopper, not an artifact check.
-3. **The tip moved six times under the falsify wave** (`db55bd6` → `aaa0463` →
-   `3af3acb` → `34cfa24` → `f6c618b` → `f6ea293`). Several falsify findings were measured on
+3. **The tip moved seven times under the falsify wave** (`db55bd6` → `aaa0463` →
+   `3af3acb` → `34cfa24` → `f6c618b` → `f6ea293` → `98ad3a0`). Several falsify findings were measured on
    pre-correction bytes; one of them (the entry's "No third source is cited") has
    already been **fixed** by `3af3acb` (entry `:682` now reads "No fifth source
    is cited: S032, S033, S034 and S035 above are this entry's complete registry
@@ -90,19 +90,21 @@ present in the build-wave reports and the committed lesson:
    draft-time sentences are retained rather than rewritten, per the append-only
    rule — the markers are the record. The round report should quote the registry
    census, not the lesson's numbers.
-5. **D6 is satisfied on disk but not yet discharged at the tip.** The lane
-   working tree now carries an **untracked** `reports/round-63/measure-after.log`
-   (plus `reports/round-63/final-verification.json`). I read that log: it records
+5. **D6 is discharged at the final tip.** Commit `98ad3a0` lands
+   `reports/round-63/measure-after.log` and `reports/round-63/final-verification.json`
+   as **tracked** files. I read the committed log: it records
    `FINAL_TIP=f6ea293…`, `K_HELD=7/14 score=5.0`, `K_ROW C06 status=held`,
    `K_HELD_BACKED=7/14`, `F_COVERAGE=5/8 score=6.2`, `F_FAMILIES=[… firmware …]`,
    `FRESH_ROWS=18/18`, `C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2`,
    `C3_CONTROLS_PASS=2/2`, `C3_RECEIPT_KILLED_ATTRIBUTED=2/2`,
    `HOLD_CALIBRATION=4/4`, `HOLD_REPLAY=10/10`, `HOLDS_OK=yes`, `PROBE_EXIT=0`.
-   The round-62 closure defect requires this output committed **in the same
-   commit as the report claim**; it is still untracked, so the obligation is not
-   discharged. Two falsify seats flagged the same dependency
+   The round-62 closure defect requires this output committed **beside the report
+   claim**, which `98ad3a0` does. **Caveat:** the log's `FINAL_TIP` is `f6ea293`
+   (the C06-flip commit it measured) while the commit carrying the log is
+   `98ad3a0` — correct ordering, but a reader expecting the log to name its own
+   commit will see `f6ea293`. Two falsify seats had flagged the earlier absence
    (`W2ClaimsAdmission.md:151`, `W2RerunAllCounters.md:350`).
-6. **D3's reading discipline is met by the new receipt.** The untracked
+6. **D3's reading discipline is met by the committed receipt.** The committed
    `measure-after.log` prints `C3_CONTROLS_PASS=2/2` (line 25) and
    `C3_RECEIPT_KILLED_ATTRIBUTED=2/2` (line 26) as **separate lines** — exactly
    what the committed lesson's D3 disposition cell demands ("`HOLDS_OK` alone
@@ -111,7 +113,7 @@ present in the build-wave reports and the committed lesson:
 7. **D4's forward id note moved twice.** `.ufo/waves/round-63/build/R63SourceZipfileDocs.md:254-255` says
    a future zipfile-docs row would take **S034**; S034 and S035 have since
    landed, so the next unused id is **S036** — and no registry row or
-   build/falsify report mentions S036 (`git show f6ea293:corpus/SOURCES.md | grep -c "S036"` → 0;
+   build/falsify report mentions S036 (`git show 98ad3a0:corpus/SOURCES.md | grep -c "S036"` → 0;
    the only hits under `corpus/` and `.ufo/waves/round-63/` are in this seat's own
    two files, which name it as the next unused id), which is itself the finding.
    The ready-made row text is retained in that report's §7.

@@ -34,6 +34,11 @@ this table asserts: the lesson line numbers (`:152`, `:237`, `:250`, `:220`,
 digest and its LEDGER pin, the LEDGER's padding wording, and the README's **C07**
 row (still `frontier` — see D2) are all identical at `98ad3a0`.
 
+The two commits after `98ad3a0` touch **only this table's own two files**
+(`aaa1790`: `W2RoutedDebt.md`; `a6f5c42`: `routed-debt.md`), so every fact below
+is unchanged by them; `98ad3a0` remains the last commit that changed the
+corpus, the registry, the README or the round's receipts.
+
 Because the tip moves, the row line numbers below are the ones **at `98ad3a0`**
 (they are unchanged across `3af3acb` → `34cfa24` → `f6c618b` → `f6ea293` →
 `98ad3a0` for every lesson line this table cites). The lane working tree carries
