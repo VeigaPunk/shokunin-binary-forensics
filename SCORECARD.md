@@ -452,3 +452,30 @@ Sources: rows 37 → 41 (+S038 mined, +S039 mined, +S040 queued, +S041 own-work)
 **planned:** next round — adjudicate the dispatched round-65 wave: on all-criteria pass flip C05 `frontier → held` naming only the round-65 entry (same revision as the Gate decision), re-measure on the committed tip, and record C1's verdict; on falsification flip `frontier → uncovered` per the frozen order. Then calibration on the remaining receipt conjuncts (`exit_code`/`fixture_sha256` still lack in-script forged controls) or coverage K on C02/C08 re-gates.
 
 Routed forward: AST-bound mutation counter (owner: future registering round); recheck-pin scope holes H1–H3; SHONEN box 1 `[x]` re-confirmation by a non-lane reviewer (r64 routing 1, unchanged); evidence-id prongs (a)/(b) + injectivity registry; `## Frontier` C05 prose refresh at admission time (with the row flip, same revision).
+
+## Round 66 (hyaku) — frozen-order adjudication: C05 falsified→uncovered, C6 calibration guard verified
+
+Pre-registration `16b9387b` (claims.md + counter `measure.py` sha256 `a59914e9…1da` + red-before on base `8214e4dd`). Claims: C1 coverage — execute the round-65 frozen admission order on the C05 row (either-way flip + candidate disposition), C2 calibration — new criterion C6 (forged `exit_code`/`fixture_sha256` receipt controls, 0/4 → 4/4 attributed). The orchestrator-dispatched 64-seat r65 wave (all 64 reports under `.ufo/waves/round-65/`, committed as evidence this round) falsified the C05 candidate at Q02/Q06/Q11 (one transcription byte-pair at entry:41); every named decision re-verified by this L1 against committed bytes before the flip.
+
+| axis / criterion | before -> after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — C05 adjudicated disposition (frozen order) | `frontier` → `uncovered` (8/14 → 8/14, 5.7 → 5.7 — honest: falsified candidate ground, not held) | `python3 -B reports/round-66/measure.py TREE` (`K_ROW C05`, `C05_REJECTED_MARKED`, `K_HELD_BACKED`) | `8214e4dd` → `a4c712a0` | **falsified C05 candidate, order executed — verdict recorded** |
+| calibration — C6 exit_code/fixture_sha256 guards | **0/4 → 4/4 attributed** | same probe (`C6_RECEIPT_KILLED_ATTRIBUTED`, controls/pass 4/4) | `8214e4dd` → `a4c712a0` | **improved, C2 met** |
+| calibration — C2/C3/C4/C5 holds | 2/2 each → 2/2 each | same probe | same | unchanged hold |
+| calibration — selected runnability (C) | 4/4, replay 10/10 | same probe (`HOLD_*`) | same | unchanged hold |
+| coverage — selected-family presence F | 5/8 → 5/8 | same probe (`F_COVERAGE`) | same | unchanged |
+| freshness — stored-assertion proxy | 18/18 → 18/18 | same probe (`FRESH_ROWS`) | same | unchanged |
+| diagnostics — STRICT scan + legend token | `STRICT_REJECT_WINDOW_SELFTEST=pass`; `README_TOKEN_LEGEND_MISMATCH` 0 → 0 (`uncovered` is a legend row) | same probe | same | unchanged diagnostics |
+| depth / operability / adjacency | — | — | — | unchanged (ADJ-06 reported-not-absorbed) |
+
+C1 verdict (frozen `reports/round-65/claims.md:110-123` order, step 3): **FALSIFIED**. Fresh-seat decisions Q02, Q06, Q11 FAIL — item 3's MANIFEST `payload_first16_hex` at `corpus/knowledge/round-65-apk-axml-byte-evidence.md:41` records `4d616e696673742d…` where the entry's own deriving command prints `4d616e69666573742d…` (15-byte `Manifst-Version` vs 16-byte `Manifest-Version`), plus the S039 anchor at line 5 and the ResourceTypes.h:239-250 range; corroborated by R65MutEntry, R65CriticEntryDeps, R65EntryQmapDraft, R65ReviewSourcesTier, and `R65SpotcheckDiscern` = REJECT at current bytes. The candidate is retained rejected (evidence, never cited as held); all repairs are text-level and routed to a next coverage round (lesson §Routed forward item 6).
+
+C2: one in-script forged control per conjunct per script (`verify_icon_languages.py:158-163`, `verify_multi_icon_states.py:157-162`; `receipt_ok` untouched; 6 insertions/0 deletions each). Frozen mutants (delete each conjunct, one regex match) exit non-zero with the attributed marker on both scripts — with this landing, every `receipt_ok` conjunct on both ledgers carries a mutation-covered forgery guard (C3–C6 complete).
+
+Registered dispositions landed in the same revision: S042–S044 rows (+3 → 44 total; S043/S044 correct S039/S040 by new row), stale `candidate` headers on the two admitted entries → `admitted`, SOURCES `## Search log` retro+current notes, SKILL.md round-66 refresh (header source/verified-at, M37–M41 rows, §6 counter/checklists repoint, apk-r65 regen warning, §6.5 gate, §7 pointer rows). Census exit 0 both ends.
+
+Round shape: L1-seat adjudication + build under the accepted host mapping; one v2-band verification spec prepared and validated at `.ufo/waves/round-66/` (64 seats, `ufo-swarm-wave.mjs plan` exit 0 under `scripts/hyaku/ufo-wave-policy-v2.json`) — prepared-but-undispatched; zero in-seat dispatch. §3 planner seat held by the L1. Tool installs: none. No confirmed misroot.
+
+**planned:** next round — the C05 re-gate needs a v2 candidate whose repairs are all text-level (entry:41 hex pair, dex-header spec row + S043 as route-scope source, item-8 provenance, item-9 dex semantics row, Q-map pointers); or calibration/coverage elsewhere on C02/C08; the dispatched r66 verification wave's findings adjudicate this round's work honestly.
+
+Routed forward: verbatim-output-diff gate for embedded entry outputs (M39 fix shape, owner: future registering round); AST-bound mutation counter + label-spoof surface; generator conditional-symlink note; evidence-ID prongs (a)/(b)/(d) + injectivity registry; endswith-attribution asymmetry; recheck-pin H1–H3; SHONEN box 1 `[x]` non-lane re-confirmation (carried); r58/59 PASS-count quotes.
