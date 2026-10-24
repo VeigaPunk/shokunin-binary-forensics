@@ -149,7 +149,12 @@ renumbered to **S032 ×10 / S033 ×5 / S034 ×0** (verified on the current
 candidate revision, sha256 `dcfe131cbf833c90ba956a54eeadbd46314f829e88f5528b52d7baad6c8ff193`).
 The round's ids are therefore the contiguous pair **S032 + S033 with no id
 skipped**; the zipfile documentation stays in the search log as
-screened-and-excluded with no row. Decision trail: `R63SourceZipfileDocs`
+screened-and-excluded with no row. UPDATE (falsify wave, same round): two
+further rows landed after this paragraph was drafted — **S034** (scoped re-open
+of the same APPNOTE document beside S032, for the local-header layout the Q01
+attack showed the entry needs) and **S035** (own-work ledger row); the registry
+ids are now the contiguous block S032–S035, and this paragraph is retained
+un-rewritten as the draft-time record with this marker appended. Decision trail: `R63SourceZipfileDocs`
 §9a (the gap finding and its resolution).
 
 **Registry state at draft time (verified, not assumed):** `corpus/SOURCES.md`
