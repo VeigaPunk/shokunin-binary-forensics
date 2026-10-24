@@ -1,0 +1,1049 @@
+{
+  "schema": "ufo-swarm-wave-v1",
+  "wave": "revenger-r65-v2",
+  "context": "# Goal\nRevenger round 65 attempt 1 (hyaku) — ONE v2 wave of exactly 64 seats, build-and-attack together. Lane repo: /home/vgpnk/Projects/shokunin/revenger-shokunin — ABSOLUTE paths only in every read/write (your tools start at the fleet root /home/vgpnk/Projects/shokunin). Frozen contract (read first): /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-65/claims.md; frozen counter: /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-65/measure.py; red-before receipt: /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-65/measure-before.log (K_HELD 8/14, K_ROW C05 status=frontier, C5_RECEIPT_EVIDENCE_KILLED_ATTRIBUTED 0/2, HOLDS_OK_V3=no, probe exit 0). Claims: C1 coverage K — exactly one independently gated admitted entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md over authored fixture corpus/fixtures/apk-r65/ covering README row C05 (K_HELD 8/14 → 9/14; README C05 flips frontier → held only on all-criteria Q01–Q13 admission by named fresh seats, else frontier → uncovered); C2 calibration — new criterion C5_RECEIPT_EVIDENCE_KILLED_ATTRIBUTED 0/2 → 2/2 via one in-script forged-evidence control per script in corpus/verify_icon_languages.py and corpus/verify_multi_icon_states.py (frozen mutant: delete the receipt['evidence_id'] conjunct; attributed iff mutant exit non-zero and last output line ends 'forged receipt evidence accepted'). Claims are causally separable: C1 touches corpus knowledge/SOURCES/README only; C2 touches the two verifier scripts only.\n\n# Build state (landed by L1 before this wave — your attack surface)\nFixture corpus/fixtures/apk-r65/ (generator.py, truth.json, readout.py, fixture.apk 947 bytes sha256 05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e); candidate entry corpus/knowledge/round-65-apk-axml-byte-evidence.md (admission-status: candidate); SOURCES.md rows S038–S041 appended; lesson corpus/lessons/round-65.md drafted; verifier controls landed (C5 patch); README C05 NOT flipped. Frozen counter labels to reproduce: after-state must print K_HELD=9/14, K_ROW C05 status=held, C5_RECEIPT_EVIDENCE_KILLED_ATTRIBUTED=2/2, STRICT_REJECT_WINDOW_SELFTEST=pass, HOLDS_OK_V3=yes, exit 0.\n\n# Contract\nRead /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-65/claims.md fully before scoring anything; the frozen kill rule, predicate and admission order there override any summary in this prompt. Counting command: git archive <commit> corpus into a scratch tree, then from /: TMPDIR=<lane-owned scratch> python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-65/measure.py <tree>. Measurements belong to committed trees only.\n\n# Bounds (hard)\nWrite ONLY your own report file at the absolute path named in your seat brief (under /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/). Everything else — corpus/, reports/, LOG.md, SCORECARD.md, SHONEN.md, the fleet repo, sibling lane repos, lane jj state, the lane Git index — is read-only for you; do NOT run git/jj mutations, do NOT edit any file another seat may own, do NOT write anywhere under /home/vgpnk/Projects/shokunin outside your own report path (no fleet-root files). Read-only seats return findings without production edits. Every `Report:` trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin — write it at /home/vgpnk/Projects/shokunin/revenger-shokunin/<that path>. Absolute paths everywhere.\n\n# Tooling authorization (operator, 2026-10-19)\nYou and every seat may install or upgrade tools that help the task — read /home/vgpnk/.omp/agent/RULES.md first (official channels, update-safety gate, record tool/version/channel/reason in your report). Pacman guard (orchestrator ruling 2026-10-20): all pacman transactions are PAUSED host-wide — install via uv tool/npx/an official binary in ~/.local/bin, or file an L0 question; never -Sy/-Syu/-U/-R, never restart a host service.\n\n# Seat rules\nTime-box: return within 15 minutes with your best findings + evidence; partial results are acceptable. You are an independent leaf: never block on or wait for another seat; never spawn subagents except one read-only labrat probe per executor card if your brief names one; if a needed artifact is absent, record the dependency as a finding and return. Put your verdict on the first line of your report (PASS / FAIL / NOT-FALSIFIED / ADMIT / REJECT / CLEAN + one-line reason), then evidence: commands with actual output, file:line pointers, sha256 where relevant. Ground every claim in a resolvable pointer; a claim without one is not evidence.",
+  "policy": {
+    "source": "config",
+    "maxLanes": 256,
+    "minLanes": 16,
+    "waveMinLanes": 64,
+    "waveMaxLanes": 128,
+    "declaredMaxLanes": null,
+    "hardCeiling": 256,
+    "rampBatchSize": 5,
+    "rampIntervalMs": 700,
+    "globalRunnerCeiling": 1056
+  },
+  "counts": {
+    "spawn": 64,
+    "resume": 0,
+    "total": 64
+  },
+  "compaction": {
+    "applied": false,
+    "mechanism": null,
+    "reason": null,
+    "savedBytes": 0,
+    "payloadBytesBefore": 0,
+    "payloadBytesAfter": 0
+  },
+  "dispatch": {
+    "calls": 1,
+    "kind": "task",
+    "note": "Issue exactly one batched task call carrying every spawn lane, plus one hub send per resume lane. Never split a wave into multiple task calls (one-swarm-per-wave)."
+  },
+  "registry": {
+    "schema": "ufo-swarm-registry-v1",
+    "path": ".ufo/waves/round-65/swarm-registry.json",
+    "reportDir": ".ufo/waves/round-65",
+    "members": {
+      "R65EntryCommands": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65BlindDerive": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65FixtureRegen": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65DexReprobe": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65AxmlReprobe": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65EntryQmapDraft": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReadmeLegend": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65LessonDraft": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65SnapshotManifest": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewEntryQ01": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewEntryQ02": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewEntryQ03": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewEntryQ06": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewEntryQ09": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewEntryQ10": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration",
+          "adjacency"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewEntryQ11": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65CriticEntryDeps": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65CriticCounts": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65MutEntry": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65MutProbe": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65SentinelScope": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "sentinel",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65SimplifierDrift": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "simplifier",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65MutC5": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewC5Lang": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewC5Multi": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65MutIcon": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewCounter": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65CriticCounter": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65CriticClaims": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65RevengerLedger": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "revenger",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ScoutCensus": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewSources": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ScoutFrontier": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ConnectorOverlap": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "connector",
+        "item": null,
+        "axes": [
+          "adjacency"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65CriticHarms": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65Preservation": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ScribeGate": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65SpotcheckDiscern": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65LabDoNothing": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65LabAttribution": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ExecVerifiers": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewSeparability": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ScoutHost": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ScoutMisroot": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ScoutReadme": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65CriticEntryScope": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65CriticFixture": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ScoutRecon": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ExecAfterMeasure": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65Distill": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewSkillCites": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65CriticCounts2": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewEntryQ04": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewEntryQ05": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewEntryQ07": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewEntryQ12": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewEntryQ13": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65MutC5Regression": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ScoutSources": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65CriticLesson": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ExecCensusProbe": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ReviewSourcesTier": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65ScoutC05Ground": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      },
+      "R65CriticAdmissionOrder": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts"
+      }
+    }
+  },
+  "priorRegistries": [],
+  "tasks": [
+    {
+      "name": "R65EntryCommands",
+      "agent": "executor",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Re-execute every command block in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md (all `python3 -B corpus/fixtures/apk-r65/readout.py --fact ...` lines plus the bare recheck command) from /home/vgpnk/Projects/shokunin/revenger-shokunin and compare each output line for exact equality with the entry's embedded line. Report the count executed, count matching, and any mismatch verbatim. Also recompute the 15-line stdout sha256 and compare with 507d79f8362b2c48640c1f0f9343dd3de2497c406df91de7c1ef0a1596dad247.\n\nReport: .ufo/waves/round-65/R65EntryCommands.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65EntryCommands.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65EntryCommands.md"
+    },
+    {
+      "name": "R65BlindDerive",
+      "agent": "executor",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: WITHOUT reading /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/readout.py or the entry's embedded outputs, derive from the raw bytes of /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/fixture.apk alone: (a) the archive size and sha256; (b) the three member names with local-header offsets, payload offsets and sizes, by walking the central directory and local headers at APPNOTE 6.3.10 field widths; (c) the AXML chunk table (offsets, types, sizes, headerSizes) by walking chunks from offset 8. Then compare your derivation against /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json and report agreement/divergence per value. This is the Q03 blind-independence seat.\n\nReport: .ufo/waves/round-65/R65BlindDerive.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65BlindDerive.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65BlindDerive.md"
+    },
+    {
+      "name": "R65FixtureRegen",
+      "agent": "executor",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Copy /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65 into a scratch directory under /tmp, run `python3 -B generator.py` there, and byte-compare the regenerated fixture.apk and truth.json against the committed originals (truth.json may differ only in the embedded python_version field when the interpreter differs — record both versions). Report cmp results and sha256s. Never run the generator in place.\n\nReport: .ufo/waves/round-65/R65FixtureRegen.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65FixtureRegen.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65FixtureRegen.md"
+    },
+    {
+      "name": "R65DexReprobe",
+      "agent": "executor",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Independently re-derive the classes.dex declared header facts from /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/fixture.apk bytes: magic, Adler-32 over bytes 12.., SHA-1 over bytes 32.., file_size, header_size, endian_tag. Use only hashlib/zlib/struct. Compare with fact dex_declared_header in the readout output and the entry item 9. Report any divergence.\n\nReport: .ufo/waves/round-65/R65DexReprobe.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65DexReprobe.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65DexReprobe.md"
+    },
+    {
+      "name": "R65AxmlReprobe",
+      "agent": "executor",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Independently re-parse the AndroidManifest.xml AXML bytes of /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/fixture.apk (extract the member by your own byte walk) and confirm: 9 strings in declared order, flags 0x100, resource-map non-zero entries 0x0101021b/0x0101021c at indices 5/6, start-element attributeStart 20 attributeSize 20 attributeCount 3, and the three attribute (name, typed value) pairs. Use only struct. Compare against truth.json axml_declared and the entry items 6-8.\n\nReport: .ufo/waves/round-65/R65AxmlReprobe.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65AxmlReprobe.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65AxmlReprobe.md"
+    },
+    {
+      "name": "R65EntryQmapDraft",
+      "agent": "scribe",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Read /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md end to end and audit ONLY internal consistency: every value in the prose of items 1-10 against the JSON output printed beneath it (sizes, offsets, hex ids, string counts), the §Comparison-with-oracle claims against /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json, and the §Limitations against what the Observation items actually claim. Report each inconsistency verbatim with file:line.\n\nReport: .ufo/waves/round-65/R65EntryQmapDraft.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65EntryQmapDraft.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65EntryQmapDraft.md"
+    },
+    {
+      "name": "R65ReadmeLegend",
+      "agent": "scout",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Read /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/README.md (coverage legend + C05 row + ## Frontier), /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md header, and /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-65/claims.md C1. Report the exact edit the README C05 row and Frontier section would need on admission (frontier → held naming only the new entry) and whether any other README text would go stale by the legend's own rules (cf. M36). Do not edit anything.\n\nReport: .ufo/waves/round-65/R65ReadmeLegend.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReadmeLegend.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReadmeLegend.md"
+    },
+    {
+      "name": "R65LessonDraft",
+      "agent": "scribe",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Read /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-65.md and check it against the round lesson rules (## Gate records URL/access date/≤25-word located quote per new SOURCES row; ## Mistakes rows carry class/evidence/captured-by/fix; fixes shown able to fail). Verify each quoted snapshot hash against .ufo/waves/round-65/source-snapshots/ and each ≤25-word quote against the snapshot bytes. Report violations verbatim.\n\nReport: .ufo/waves/round-65/R65LessonDraft.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65LessonDraft.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65LessonDraft.md"
+    },
+    {
+      "name": "R65SnapshotManifest",
+      "agent": "executor",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Recompute sha256 of every file under /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/source-snapshots/ and compare with the digests recorded in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md rows S038/S039/S040 and lesson ## Gate. Then re-fetch each source (AOSP URL with ?format=TEXT base64; npm pack rea-agents@6.5.0 member; docs.python.org zipfile page) and byte-compare with the snapshots, recording HTTP status and any drift.\n\nReport: .ufo/waves/round-65/R65SnapshotManifest.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65SnapshotManifest.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65SnapshotManifest.md"
+    },
+    {
+      "name": "R65ReviewEntryQ01",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Criterion Q01 on /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md: each load-bearing claim rests on a SOURCES row tier-A for its scope opened this round (S038 spec for AXML layout; S041 own-work for fixture bytes; S032/S034 registry tier-A for ZIP field offsets; S039 route-scope only). Check nothing load-bearing rests on tier C or on a row outside its scope. Verdict PASS/FAIL with per-claim support mapping.\n\nReport: .ufo/waves/round-65/R65ReviewEntryQ01.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewEntryQ01.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewEntryQ01.md"
+    },
+    {
+      "name": "R65ReviewEntryQ02",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Criterion Q02 on /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md: header carries source: rows with URLs/paths, exact anchors (struct names + line numbers) and snapshot digests; verified-at; recheck: with command AND stdout sha256; coverage-map row C05 named. Verify each anchor exists in the S038 snapshot bytes. Verdict PASS/FAIL per sub-item.\n\nReport: .ufo/waves/round-65/R65ReviewEntryQ02.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewEntryQ02.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewEntryQ02.md"
+    },
+    {
+      "name": "R65ReviewEntryQ03",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Criterion Q03 on /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md: expected values derived independently (authored oracle + spec-derived widths fixed outside the record under test). Confirm no expected value is copied from a saved producer record and no saved path is both identity and locator. Cross-check R65BlindDerive's report if present. Verdict PASS/FAIL.\n\nReport: .ufo/waves/round-65/R65ReviewEntryQ03.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewEntryQ03.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewEntryQ03.md"
+    },
+    {
+      "name": "R65ReviewEntryQ06",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Criterion Q06 on /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md + /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65: fixture premises byte-verified against the built fixture; generator run only in scratch; regen byte-compare performed (see R65FixtureRegen). Verify the truth.json member measurements equal a fresh byte walk of fixture.apk. Verdict PASS/FAIL.\n\nReport: .ufo/waves/round-65/R65ReviewEntryQ06.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewEntryQ06.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewEntryQ06.md"
+    },
+    {
+      "name": "R65ReviewEntryQ09",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Criterion Q09 on /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md: digests claimed only for exact bytes hashed; no origin/completeness/authenticity claim; dex checksum/signature framed as inert self-consistency, not validity. Check every digest sentence. Verdict PASS/FAIL per instance.\n\nReport: .ufo/waves/round-65/R65ReviewEntryQ09.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewEntryQ09.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewEntryQ09.md"
+    },
+    {
+      "name": "R65ReviewEntryQ10",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Criteria Q10 + cross-lane on /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md: finding scoped to one fixture/operation/version; §Limitations and §Cross-lane scope note complete; ADJ-06 reported-not-absorbed; no provider readiness claim (Q05 fence). Check the scope sentences against claims.md C1's declared scope. Verdict PASS/FAIL.\n\nReport: .ufo/waves/round-65/R65ReviewEntryQ10.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewEntryQ10.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration, adjacency\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewEntryQ10.md"
+    },
+    {
+      "name": "R65ReviewEntryQ11",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Criterion Q11 on /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md: every count/offset/identifier/digest carries its deriving command + output inside the entry; constants derived not assumed (item 5 width derivation); no recorded value presented as re-derived. Re-derive at least 5 values yourself by command. Verdict PASS/FAIL with the list checked.\n\nReport: .ufo/waves/round-65/R65ReviewEntryQ11.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewEntryQ11.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewEntryQ11.md"
+    },
+    {
+      "name": "R65CriticEntryDeps",
+      "agent": "critic",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Attack /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md for dependency errors: does any Observation item rely on another's value without saying so; does the §Comparison-with-oracle claim agreement on fields truth.json does not actually contain; do the item cross-references (item 5 ↔ item 8 sizes) hold. Falsify aggressively; name every broken link.\n\nReport: .ufo/waves/round-65/R65CriticEntryDeps.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65CriticEntryDeps.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65CriticEntryDeps.md"
+    },
+    {
+      "name": "R65CriticCounts",
+      "agent": "critic",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Attack every number in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md: recompute each of the 15 readout facts from fixture.apk bytes yourself (independent code, not the lane's readout.py) and compare. Any number in the prose (947, 925, 737, 188, 416, 196, 44, 24, 96, 0x0101021b, 0x3d120c30, 112, 69...) that fails re-derivation is a FAIL — list all.\n\nReport: .ufo/waves/round-65/R65CriticCounts.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65CriticCounts.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65CriticCounts.md"
+    },
+    {
+      "name": "R65MutEntry",
+      "agent": "mutation-tester",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Mutation-test the entry/fixture pair: (a) flip ONE byte inside fixture.apk's AXML member (e.g. a string-pool byte) in a scratch copy and show the readout changes or fails on that copy; (b) edit ONE number in a copy of the entry's embedded JSON and show it no longer matches the readout stdout. Report both mutants' observed output deltas. If a mutation is NOT detected, that is a finding.\n\nReport: .ufo/waves/round-65/R65MutEntry.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65MutEntry.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65MutEntry.md"
+    },
+    {
+      "name": "R65MutProbe",
+      "agent": "mutation-tester",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Mutation-test /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/readout.py's self-consistency checks: in a scratch copy, weaken each walk-end assertion (off == xml_size; cursor == eocd; crc match; checksum match) one at a time and confirm a corresponding forged fixture would then pass undetected. Report which checks are load-bearing and which forgeries still escape.\n\nReport: .ufo/waves/round-65/R65MutProbe.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65MutProbe.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65MutProbe.md"
+    },
+    {
+      "name": "R65SentinelScope",
+      "agent": "sentinel",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Security/scope review of /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md, /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/generator.py and /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/readout.py: no credential material, no network writes, no execution of fixture content, generator writes only beside itself (HERE), no path traversal, lesson/snapshot files carry no secrets. Also confirm the fixture is inert (no code member is executed by any round-65 command). Verdict CLEAN/FINDINGS.\n\nReport: .ufo/waves/round-65/R65SentinelScope.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65SentinelScope.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65SentinelScope.md"
+    },
+    {
+      "name": "R65SimplifierDrift",
+      "agent": "simplifier",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Minimality review of /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md: is any Observation item redundant given the others, any claim in §Inference not forced by the bytes, any §Limitations entry the legend already covers? Propose the smallest deletion set that loses no checkable content; if none, say so with the reason.\n\nReport: .ufo/waves/round-65/R65SimplifierDrift.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65SimplifierDrift.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65SimplifierDrift.md"
+    },
+    {
+      "name": "R65MutC5",
+      "agent": "mutation-tester",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Reproduce the frozen C5 kill rule on the landed scripts: in scratch tree copies, apply the frozen mutant (delete the receipt['evidence_id'] conjunct per the regex in /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-65/measure.py mutate_c5) to corpus/verify_icon_languages.py and corpus/verify_multi_icon_states.py and run --self-test. A kill is attributed iff exit is non-zero AND the last output line ends with 'forged receipt evidence accepted'. Report exit codes and last lines verbatim, plus red-before evidence the same mutants exit 0 at base commit 3eebcdd7ee7eb130b730a17fde1a0e40786c0f2f.\n\nReport: .ufo/waves/round-65/R65MutC5.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65MutC5.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65MutC5.md"
+    },
+    {
+      "name": "R65ReviewC5Lang",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Patch-shape review of corpus/verify_icon_languages.py: diff the landed file against base commit 3eebcdd7ee7eb130b730a17fde1a0e40786c0f2f (git diff, read-only). Confirm: insertions only, exactly one new control, placed after the forged-stdout control, receipt_ok untouched, the transplanted ID equals the round-42 saved evidence_id from corpus/live/runs/round-42/, message ends 'forged receipt evidence accepted'. Verdict PASS/FAIL per check.\n\nReport: .ufo/waves/round-65/R65ReviewC5Lang.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewC5Lang.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewC5Lang.md"
+    },
+    {
+      "name": "R65ReviewC5Multi",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Same patch-shape review as R65ReviewC5Lang for corpus/verify_multi_icon_states.py against base 3eebcdd7ee7eb130b730a17fde1a0e40786c0f2f, with the transplanted ID equal to corpus/live/runs/round-47/'s saved evidence_id. Verdict PASS/FAIL per check.\n\nReport: .ufo/waves/round-65/R65ReviewC5Multi.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewC5Multi.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewC5Multi.md"
+    },
+    {
+      "name": "R65MutIcon",
+      "agent": "mutation-tester",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Regression sweep: with the C5 patch landed, re-run the C2/C3/C4 frozen mutants per /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-65/measure.py on a scratch copy and confirm the attributed counts stay C2 2/2, C3 2/2, C4 2/2 and controls all pass. Any regression is a FAIL — this is the no-harm check for C2.\n\nReport: .ufo/waves/round-65/R65MutIcon.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65MutIcon.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65MutIcon.md"
+    },
+    {
+      "name": "R65ReviewCounter",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Review /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-65/measure.py against the frozen claims: every round-64 label/formula unchanged; new labels C5_* and STRICT_REJECT_WINDOW_SELFTEST additive; HOLDS_OK_V3 = V2 ∧ C5 2/2 ∧ selftest; the mutate_c5 regex has exactly one match per script; the rejected-marker scan reads whole files (no [:2000]). Then run the counter on a scratch archive of the CURRENT committed tree and report every label line.\n\nReport: .ufo/waves/round-65/R65ReviewCounter.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewCounter.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewCounter.md"
+    },
+    {
+      "name": "R65CriticCounter",
+      "agent": "critic",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Attack the round-65 counter for spoof surfaces (cf. round-64 R64CriticCounter): can a tree with no real C1 work print K_HELD=9/14 (decoy rows, README flip without admission, fake knowledge file)? Can a tree print C5_RECEIPT_EVIDENCE_KILLED_ATTRIBUTED=2/2 without the landed controls (C5_CONTROL_PRESENT says no — verify)? Demonstrate each attack you find on a scratch tree; attacks that fail, name the guard that stopped them.\n\nReport: .ufo/waves/round-65/R65CriticCounter.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65CriticCounter.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65CriticCounter.md"
+    },
+    {
+      "name": "R65CriticClaims",
+      "agent": "critic",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Attack the claims themselves as declared in /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-65/claims.md: is the C1 after-state one command re-derivable; is the C5 kill rule frozen before any after-measurement (check commit times: claims.md at 5a2e7a0 precedes any after-run); is the do-nothing control genuinely red; could a do-nothing control meet either target? Report each attack's outcome.\n\nReport: .ufo/waves/round-65/R65CriticClaims.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65CriticClaims.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65CriticClaims.md"
+    },
+    {
+      "name": "R65RevengerLedger",
+      "agent": "revenger",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Reverse the round's own ledger discipline: the C5 control transplants a REAL FOREIGN evidence id (prong c). Attempt prongs (a) same-run id, (b) injectively fresh id, (d) cross-record stdout binding on a scratch receipt copy using the landed verifiers' receipt_ok — which are still uncaught, and does the round-63/64 routed ledger check (6-prong shape) name owners for them? Report the residual surface honestly; do NOT edit any verifier.\n\nReport: .ufo/waves/round-65/R65RevengerLedger.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65RevengerLedger.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65RevengerLedger.md"
+    },
+    {
+      "name": "R65ScoutCensus",
+      "agent": "scout",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Run the maintained census `scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin revenger` from the fleet root and the seven frozen manual census commands from /home/vgpnk/Projects/shokunin/revenger-shokunin (CORPUS.md §Census). Report every exit code and output. Expected: rows 41, malformed 0, no duplicates, no enum violations, no missing used-by paths, maintained census exit 0.\n\nReport: .ufo/waves/round-65/R65ScoutCensus.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ScoutCensus.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ScoutCensus.md"
+    },
+    {
+      "name": "R65ReviewSources",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Review /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md rows S038-S041 against contract v1: 11 columns, no '|' inside cells, ids next-unused and never reused, tier scoped, anchor exact (not bare homepage), teaches grounded, queued/mined/rejected statuses legal, opened=2026-10-24. Verify S038's anchor line numbers against the snapshot bytes (struct names present at cited lines). Verdict PASS/FAIL per row.\n\nReport: .ufo/waves/round-65/R65ReviewSources.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewSources.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewSources.md"
+    },
+    {
+      "name": "R65ScoutFrontier",
+      "agent": "scout",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Read /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/README.md ## Frontier and Known gaps plus PROVINCE.md. Check the C05 fixture/entry move the frontier claim correctly: is anything left asserting C05 has 'no knowledge and no saved record'? Is the C07 firmware prose (now held) still accurate? Report required Frontier edits for the admission commit; do not edit.\n\nReport: .ufo/waves/round-65/R65ScoutFrontier.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ScoutFrontier.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ScoutFrontier.md"
+    },
+    {
+      "name": "R65ConnectorOverlap",
+      "agent": "connector",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Sibling-overlap scan: which other lanes (kaidoku, tsukuroi, chousa) touch Android/AXML/APK ground this round? Read the fleet roster reports under /home/vgpnk/Projects/shokunin/.ufo/reports/round-65/ and .ufo/reports/round-64/ for overlaps with revenger C05/C10 ground. Anything contested goes reported-not-absorbed in the entry's cross-lane note; name what ADJ-06 (fleet .ufo/l0-questions.md:42) still binds.\n\nReport: .ufo/waves/round-65/R65ConnectorOverlap.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ConnectorOverlap.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: adjacency\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ConnectorOverlap.md"
+    },
+    {
+      "name": "R65CriticHarms",
+      "agent": "critic",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Harms sweep over the round diff (git diff base 3eebcdd7ee7eb130b730a17fde1a0e40786c0f2f, read-only): any changed byte under corpus/live or pre-existing corpus/fixtures paths (void condition); any touched README row other than the C05 candidate line; any weakened Q01-Q13 text in QUALITY.md; any edit of retained rejected candidates; SCORECARD append-only. Report each violation or 'none' with the command output.\n\nReport: .ufo/waves/round-65/R65CriticHarms.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65CriticHarms.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65CriticHarms.md"
+    },
+    {
+      "name": "R65Preservation",
+      "agent": "executor",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Byte-preservation check: `git diff --numstat 3eebcdd7ee7eb130b730a17fde1a0e40786c0f2f -- corpus/live corpus/fixtures/firmware-r63 corpus/fixtures/archive-r2` must be empty, and every pre-existing verify_*.py self-test must still pass with its original exit code. Report the diff output and each self-test exit.\n\nReport: .ufo/waves/round-65/R65Preservation.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65Preservation.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65Preservation.md"
+    },
+    {
+      "name": "R65ScribeGate",
+      "agent": "scribe",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Draft the ## Gate admission-decision addendum for corpus/lessons/round-65.md from the wave's verdict files present under /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/ when you run: for each of C1 (Q01-Q13 rows) and C2 (patch shape + mutant attribution), record per-seat verdicts with file pointers, then the L1-shaped decision text (admit → README frontier → held naming only the new entry; falsify → frontier → uncovered). If verdict files are missing, record the dependency and return a skeleton. Do not edit the lesson itself.\n\nReport: .ufo/waves/round-65/R65ScribeGate.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ScribeGate.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ScribeGate.md"
+    },
+    {
+      "name": "R65SpotcheckDiscern",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Discernment spot-check: form an independent ADMIT/REJECT judgment on (1) the round-65 entry as a candidate and (2) the retained rejected candidates corpus/knowledge/commonjs-destructured-require-edges.md and corpus/knowledge/evm-saved-interface-candidates.md (should stay rejected). Name your agree/disagree with the lane's own gate so far and your reasons — this is the outside-discernment check LEARNING.md requires.\n\nReport: .ufo/waves/round-65/R65SpotcheckDiscern.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65SpotcheckDiscern.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65SpotcheckDiscern.md"
+    },
+    {
+      "name": "R65LabDoNothing",
+      "agent": "mutation-tester",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Do-nothing control proof: on a scratch archive of base commit 3eebcdd7ee7eb130b730a17fde1a0e40786c0f2f corpus (git archive), run the round-65 counter and confirm it meets NO target (K 8/14, C5 0/2, HOLDS_OK_V3=no). Then confirm a tree with ONLY the C5 patch (no C1 files) prints C5 2/2 but K_HELD stays 8/14, and a tree with ONLY C1 admission prints K 9/14 but C5 0/2 — the separability receipt.\n\nReport: .ufo/waves/round-65/R65LabDoNothing.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65LabDoNothing.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65LabDoNothing.md"
+    },
+    {
+      "name": "R65LabAttribution",
+      "agent": "mutation-tester",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Probe the attribution rule's exactness: construct a scratch variant of verify_icon_languages.py whose C5 control raises with a message NOT ending 'forged receipt evidence accepted' (e.g. 'evidence forged') and show the counter's endswith check scores it unattributed while the raw kill still fires. Report the two runs' counter lines; this probes rule sensitivity, do not edit the lane file.\n\nReport: .ufo/waves/round-65/R65LabAttribution.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65LabAttribution.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65LabAttribution.md"
+    },
+    {
+      "name": "R65ExecVerifiers",
+      "agent": "executor",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Run all ten corpus/verify_*.py --self-test from /home/vgpnk/Projects/shokunin/revenger-shokunin and record every exit code and last line, plus the SCORECARD census command C. Confirm HOLD_CALIBRATION 4/4 and HOLD_REPLAY 10/10 on the current tree, and identify precisely which scripts the C5 patch touches (must be exactly two).\n\nReport: .ufo/waves/round-65/R65ExecVerifiers.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ExecVerifiers.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ExecVerifiers.md"
+    },
+    {
+      "name": "R65ReviewSeparability",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Claim-separability review: construct the two single-claim trees from the current tree (strip C1 files / strip C2 patch) in scratch copies and run the counter on each; confirm each moves only its own labels. Also review the claims.md separability paragraph against what the counter actually measures. Verdict PASS/FAIL.\n\nReport: .ufo/waves/round-65/R65ReviewSeparability.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewSeparability.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewSeparability.md"
+    },
+    {
+      "name": "R65ScoutHost",
+      "agent": "scout",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Re-verify the round's environment claims used in the entry/lesson: python3 --version, that no network was needed by the readout (it opens only fixture.apk beside it), and that jadx 1.5.6 presence is NOT cited anywhere as capability (Q05 fence). Report any citation of presence-as-capability as a finding.\n\nReport: .ufo/waves/round-65/R65ScoutHost.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ScoutHost.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ScoutHost.md"
+    },
+    {
+      "name": "R65ScoutMisroot",
+      "agent": "scout",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Misroot sweep: run `git -C /home/vgpnk/Projects/shokunin status --porcelain` (fleet root) and list every untracked file plausibly written by a revenger round-65 seat outside the lane repo; for each, name the correct lane-relative path it should live at. Seats writing to the fleet root is the failure this seat detects; report even absence.\n\nReport: .ufo/waves/round-65/R65ScoutMisroot.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ScoutMisroot.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ScoutMisroot.md"
+    },
+    {
+      "name": "R65ScoutReadme",
+      "agent": "scout",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: README-index audit: every knowledge entry named in corpus/README.md coverage map exists as a file with matching admission status (candidate vs admitted); the C05 row's planned 'held' text will name round-65-apk-axml-byte-evidence.md — verify that filename matches the actual file. Report mismatches.\n\nReport: .ufo/waves/round-65/R65ScoutReadme.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ScoutReadme.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ScoutReadme.md"
+    },
+    {
+      "name": "R65CriticEntryScope",
+      "agent": "critic",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Attack the entry's scope fences: find any sentence in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md that a reader could generalize beyond one fixture (parser behavior, other APKs, AXML producers, provider output). Quote each risky sentence with file:line and state whether §Limitations rescues it; if one escapes both, that is a FAIL.\n\nReport: .ufo/waves/round-65/R65CriticEntryScope.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65CriticEntryScope.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65CriticEntryScope.md"
+    },
+    {
+      "name": "R65CriticFixture",
+      "agent": "critic",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Attack the fixture's fitness as known truth: could any member of fixture.apk be mistaken for a real artifact (real package name, real-looking dex)? Is the inertness legible from the bytes themselves? Is truth.json's axml_declared actually derivable from fixture.apk (not just from generator intent)? Report weaknesses with the exact byte evidence.\n\nReport: .ufo/waves/round-65/R65CriticFixture.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65CriticFixture.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65CriticFixture.md"
+    },
+    {
+      "name": "R65ScoutRecon",
+      "agent": "scout",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Round-state recon: read /home/vgpnk/Projects/shokunin/revenger-shokunin/LOG.md tail, SCORECARD.md round-64 section, reports/round-65/claims.md, corpus/lessons/round-64.md routed rows. Produce a one-page state map: what rounds 62-64 landed, what round 65 claims, which routed debts round 65 addresses (STRICT window, evidence-id prong c) and which it carries. This orients the other seats; cite file:line throughout.\n\nReport: .ufo/waves/round-65/R65ScoutRecon.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ScoutRecon.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ScoutRecon.md"
+    },
+    {
+      "name": "R65ExecAfterMeasure",
+      "agent": "executor",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: After-measurement dry run: on a scratch copy of the CURRENT working tree corpus plus the README C05 flip applied in the copy ONLY (held naming round-65-apk-axml-byte-evidence.md), run the round-65 counter and confirm it prints K_HELD=9/14, K_HELD_BACKED=9/14, K_HELD_BACKED_STRICT=9/14, K_ROW C05 status=held, README_TOKEN_LEGEND_MISMATCH=0, all C2/C3/C4/C5 lines green, HOLDS_OK_V3=yes, exit 0. This predicts the admission commit's measurement; do not edit the real README.\n\nReport: .ufo/waves/round-65/R65ExecAfterMeasure.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ExecAfterMeasure.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ExecAfterMeasure.md"
+    },
+    {
+      "name": "R65Distill",
+      "agent": "scribe",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Deduplicate the wave: read every R65*.md report present under /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/ when you run; group duplicate findings across seats, name the canonical pointer per finding, and list any seat whose verdict contradicts another's on the same evidence (adjudication queue for L1). If few reports exist yet, record the dependency and return.\n\nReport: .ufo/waves/round-65/R65Distill.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65Distill.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65Distill.md"
+    },
+    {
+      "name": "R65ReviewSkillCites",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Citation sweep of /home/vgpnk/Projects/shokunin/revenger-shokunin/SKILL.md against round-65 additions: does SKILL.md need a round-65 pointer (APK fixture family, C5 control shape) to stay current per its own §7 existence-checked table? Report the minimal edit set; do not edit SKILL.md (a later round owns the gate).\n\nReport: .ufo/waves/round-65/R65ReviewSkillCites.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewSkillCites.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewSkillCites.md"
+    },
+    {
+      "name": "R65CriticCounts2",
+      "agent": "critic",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Second independent count attack: recompute the census histograms (rows, tiers, statuses) of corpus/SOURCES.md by your own parser and compare with the maintained census output; any drift is a FAIL.\n\nReport: .ufo/waves/round-65/R65CriticCounts2.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65CriticCounts2.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65CriticCounts2.md"
+    },
+    {
+      "name": "R65ReviewEntryQ04",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Criterion Q04 on the entry: no tool claim; the readout is labeled manual stdlib byte analysis; zipfile module named only as cross-check (S040 queued row), credited with nothing. Verify by reading the entry's Q-map and §Observation tool sentences.\n\nReport: .ufo/waves/round-65/R65ReviewEntryQ04.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewEntryQ04.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewEntryQ04.md"
+    },
+    {
+      "name": "R65ReviewEntryQ05",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Criterion Q05 on the entry: no readiness/capability claim anywhere; §Cross-lane scope note fences inspect_android_package to S039 documentation scope. Check also the lesson and README planned text for stray readiness claims.\n\nReport: .ufo/waves/round-65/R65ReviewEntryQ05.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewEntryQ05.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewEntryQ05.md"
+    },
+    {
+      "name": "R65ReviewEntryQ07",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Criterion Q07 on the entry: any predicted parser behavior must be pre-registered with spec-derived ground truth. The entry makes no provider/parser predictions — verify that absence is real, not implicit.\n\nReport: .ufo/waves/round-65/R65ReviewEntryQ07.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewEntryQ07.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewEntryQ07.md"
+    },
+    {
+      "name": "R65ReviewEntryQ12",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Criterion Q12: n/a for the entry (no rejected row written by it) — confirm the Q-map says so and that no S038-S041 row is a rejected row lacking reason+flip.\n\nReport: .ufo/waves/round-65/R65ReviewEntryQ12.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewEntryQ12.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewEntryQ12.md"
+    },
+    {
+      "name": "R65ReviewEntryQ13",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Criterion Q13: no verifier/recheck command credited for clauses beyond its shown detection; the entry cites only its own readout. Confirm no verify_*.py script is credited anywhere in the entry.\n\nReport: .ufo/waves/round-65/R65ReviewEntryQ13.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewEntryQ13.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewEntryQ13.md"
+    },
+    {
+      "name": "R65MutC5Regression",
+      "agent": "mutation-tester",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Second C5 mutant path: transplant the OTHER script's real id (round-47 id into the multi script's control as authored is correct — verify) AND a made-up id ev_deadbeef...; confirm receipt_ok rejects both (foreign real and fabricated). Report both runs.\n\nReport: .ufo/waves/round-65/R65MutC5Regression.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65MutC5Regression.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65MutC5Regression.md"
+    },
+    {
+      "name": "R65ScoutSources",
+      "agent": "scout",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Re-open S038's chunk-type enum and Res_value Type enum in the snapshot; confirm the entry's 0x03/0x10 data-type names and chunk-type names match the enum member names at the cited lines (typo-level check, cf. S038's own 'occurrance' spelling preserved verbatim).\n\nReport: .ufo/waves/round-65/R65ScoutSources.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ScoutSources.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ScoutSources.md"
+    },
+    {
+      "name": "R65CriticLesson",
+      "agent": "critic",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Attack corpus/lessons/round-65.md: are the Gate quotes each ≤25 words and located; does the M38 fix row carry evidence + captured-by + a fix shown able to fail (m38-red-before.log exists and shows non-zero exit); is the lesson's claim about wave preparation consistent with .ufo/waves/round-65/wave-spec.json existing and validated?\n\nReport: .ufo/waves/round-65/R65CriticLesson.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65CriticLesson.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65CriticLesson.md"
+    },
+    {
+      "name": "R65ExecCensusProbe",
+      "agent": "executor",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Run the SCORECARD census C command (ten verifiers) from the lane root on the current tree and record all exits; confirm the probe's own exit is 0 even though constituent verifiers may fail, and that the four calibration scripts all exit 0.\n\nReport: .ufo/waves/round-65/R65ExecCensusProbe.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ExecCensusProbe.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ExecCensusProbe.md"
+    },
+    {
+      "name": "R65ReviewSourcesTier",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Tier-inflation audit of S038-S041: is any row tier A outside its declared scope (S039 route-scope sentences tier A for route scope only — check the entry never cites it for format facts; S040 queued honestly non-load-bearing; S041 own-work scope bounded to the fixture bytes)? Report any inflation with the citing sentence.\n\nReport: .ufo/waves/round-65/R65ReviewSourcesTier.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ReviewSourcesTier.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ReviewSourcesTier.md"
+    },
+    {
+      "name": "R65ScoutC05Ground",
+      "agent": "scout",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Coverage-ground check: read the C05 row's full history (git log -p -- corpus/README.md for the C05 line, read-only) and confirm the row has been frontier continuously since the map's a7acc20 freeze, so this entry is the first knowledge on that ground (no prior partial text to contradict).\n\nReport: .ufo/waves/round-65/R65ScoutC05Ground.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65ScoutC05Ground.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65ScoutC05Ground.md"
+    },
+    {
+      "name": "R65CriticAdmissionOrder",
+      "agent": "critic",
+      "task": "/skill:godspeed\n\n---\nname: godspeed\ndescription: >\n  Godspeed posture — name the axes, iterate cheap in parallel, keep moves that\n  improve any axis and harm none, and don't aim (let the frontier walk itself).\n  Stops clarifying questions and verbose planning in favor of large concurrent\n  tool-call batches. Use for any task framed with godspeed. Triggers: \"godspeed\",\n  \"--with godspeed\", \"/skill:godspeed\", or a task marked with godspeed framing.\n---\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: Attack the admission order itself: read reports/round-65/claims.md §Admission order and check the L1 followed it — candidates landed with NO README flip, fresh-seat decisions are what flips the row, falsification flips to uncovered. Any deviation visible in the tree (e.g. README already flipped) is a FAIL of the frozen order.\n\nReport: .ufo/waves/round-65/R65CriticAdmissionOrder.md — write your verdict + evidence at the ABSOLUTE path /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/R65CriticAdmissionOrder.md (the trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C05 candidate + C2 C5 patches landed as build state; README not flipped; wave provides fresh-seat Q decisions, mutant attribution and separability receipts\n\nReport: write your scoped findings to .ufo/waves/round-65/R65CriticAdmissionOrder.md"
+    }
+  ]
+}

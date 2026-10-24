@@ -152,6 +152,9 @@ def check(r):
     forged_stdout=copy.deepcopy(receipt)
     forged_stdout['stdout_sha256']=H(b'')
     require(not receipt_ok(forged_stdout,command,expected_hash,eid,raw_bytes),f'r{r}: forged receipt stdout accepted')
+    forged_evidence=copy.deepcopy(receipt)
+    forged_evidence['evidence_id']='ev_6e055332b6fc4cb1a047db769eb5896c73aff9d1ce1bad18105e6559b152dc3d'
+    require(not receipt_ok(forged_evidence,command,expected_hash,eid,raw_bytes),f'r{r}: forged receipt evidence accepted')
     return data,record,decoded
 
 def main():

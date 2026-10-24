@@ -1,0 +1,103 @@
+{
+  "axml_declared": {
+    "attributes": [
+      {
+        "data": 4,
+        "data_type": 3,
+        "name_idx": 3,
+        "ns_idx": 4294967295,
+        "raw_value_idx": 4
+      },
+      {
+        "data": 1,
+        "data_type": 16,
+        "name_idx": 5,
+        "ns_idx": 0,
+        "raw_value_idx": 7
+      },
+      {
+        "data": 8,
+        "data_type": 3,
+        "name_idx": 6,
+        "ns_idx": 0,
+        "raw_value_idx": 8
+      }
+    ],
+    "resource_ids": [
+      "0x00000000",
+      "0x00000000",
+      "0x00000000",
+      "0x00000000",
+      "0x00000000",
+      "0x0101021b",
+      "0x0101021c",
+      "0x00000000",
+      "0x00000000"
+    ],
+    "strings": [
+      "android",
+      "http://schemas.android.com/apk/res/android",
+      "manifest",
+      "package",
+      "com.example.r65",
+      "versionCode",
+      "versionName",
+      "1",
+      "1.0"
+    ]
+  },
+  "build_recipe": {
+    "command": "python3 -B generator.py",
+    "container": "zipfile.ZipFile(ZIP_STORED), fixed DOS date_time 2026-10-24-12-0-0",
+    "determinism": "Fixed members, fixed DOS date-time, ZIP_STORED; no timestamps inside members, no randomness. Byte-for-byte reproducible with the recorded Python version.",
+    "members": [
+      {
+        "bytes": 416,
+        "name": "AndroidManifest.xml"
+      },
+      {
+        "bytes": 112,
+        "name": "classes.dex"
+      },
+      {
+        "bytes": 69,
+        "name": "META-INF/MANIFEST.MF"
+      }
+    ],
+    "python_version": "3.14.8"
+  },
+  "image": {
+    "path": "fixture.apk",
+    "sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e",
+    "size": 947
+  },
+  "members": [
+    {
+      "compressed_size": 416,
+      "crc32": "962d075f",
+      "local_header_offset": 0,
+      "method": 0,
+      "name": "AndroidManifest.xml",
+      "sha256": "73d1e0f2e67c1b6210a8a2b5c741328adaf13ff31d5a21419ca36718afe9fae4",
+      "uncompressed_size": 416
+    },
+    {
+      "compressed_size": 112,
+      "crc32": "2635c82a",
+      "local_header_offset": 465,
+      "method": 0,
+      "name": "classes.dex",
+      "sha256": "57cfe8878be74cad8bbc5e409b0964d4b13c35e8783d931ef7366881f8d548c2",
+      "uncompressed_size": 112
+    },
+    {
+      "compressed_size": 69,
+      "crc32": "e948d738",
+      "local_header_offset": 618,
+      "method": 0,
+      "name": "META-INF/MANIFEST.MF",
+      "sha256": "2e5da2495f3d231eb0e9107fafea4f7a0b8e0f6b4bc603d588c8acec403c0a49",
+      "uncompressed_size": 69
+    }
+  ]
+}

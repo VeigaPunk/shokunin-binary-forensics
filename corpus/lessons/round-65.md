@@ -1,0 +1,42 @@
+# round-65 lesson — revenger
+
+author: L1 revenger-r65 (attempt 1, fresh claim after stale-claim reset)
+date: 2026-10-24
+claims: C1 (coverage K, README C05 admission), C2 (calibration, new criterion C5 evidence-id transplant guard); counter repair STRICT_REJECT_WINDOW_SELFTEST (registered, not scored)
+claim base: 3eebcdd7ee7eb130b730a17fde1a0e40786c0f2f · pre-registration: reports/round-65/claims.md at 5a2e7a0 (inherited from the dead prior attempt, re-verified by this L1 before use)
+
+## Gate — source rows opened this round
+
+Every new row below was opened this round by the L1 (no L2 wave ran in-seat; the validated wave spec is prepared at .ufo/waves/round-65/wave-spec.json for the orchestrator's between-round dispatch per the accepted host mapping).
+
+- S038 — AOSP `ResourceTypes.h` at pinned tag `android-15.0.0_r1` — https://android.googlesource.com/platform/frameworks/base/+/refs/tags/android-15.0.0_r1/libs/androidfw/include/androidfw/ResourceTypes.h — opened 2026-10-24 (fetched base64 via googlesource `?format=TEXT`, decoded, snapshotted at `.ufo/waves/round-65/source-snapshots/ResourceTypes.h`, sha256 `56b88bc4a34a9cf41323736a7a3ae935e46002515dc6a3f9109b2e408957c56f`, 86255 bytes). Located quote, lines 608-611 (comment above `struct ResXMLTree_header`): "It is followed by a flat array of ResXMLTree_node structures; the hierarchy of the XML document is described by the occurrance of RES_XML_START_ELEMENT_TYPE" (23 words).
+- S039 — REA "Android application artifacts" reference at tag rea-agents-6.5.0 — morluto/rea, `skills/reverse-engineer-anything/references/android-applications.md` — opened 2026-10-24 (`npm pack rea-agents@6.5.0`, member extracted, snapshotted at `.ufo/waves/round-65/source-snapshots/rea-android-applications.md`, sha256 `412d9cb462d85b07f6fdbc2453dd741ca3da2c0dbba627867d5624df94afa74c`, 34 lines). Located quote, line 5: "Start with `inspect_android_package` on the caller's APK path for package identity, manifest declarations, coverage, and inline Evidence." (17 words).
+- S040 — CPython 3.15.0 `zipfile` documentation — https://docs.python.org/3/library/zipfile.html — opened 2026-10-24 (snapshotted at `.ufo/waves/round-65/source-snapshots/zipfile-docs.html`, sha256 `e7fe6715126a3be8e6ea7ca4d3dc2d8713b6c979bde13f8fa9d6c458a3c49c6a`, 139782 bytes). Located quote, module description: "This module provides tools to create, read, write, append, and list a ZIP file." (16 words). Status `queued` — opened-and-held; the entry's format-level claims rest on S032/S034; resolves the round-64 closure's zipfile-docs lead as a row, honestly non-load-bearing.
+- S041 — own-work apk-r65 bundle (fixture.apk, truth.json, generator.py, readout.py) — authored this round; digests in the registry row and the entry header.
+
+Census old→new: rows 37 → 41 (+S038, +S039, +S040 queued, +S041); seven manual census commands and `scripts/sources-census.sh validate` both exit 0 at round end. No pre-existing row's status/recheck/used-by changed.
+
+## Gate — admission decisions
+
+- C2 (verifier controls): LANDED. `verify_icon_languages.py` and `verify_multi_icon_states.py` each gained exactly one in-script control after the existing forged-stdout control: deep-copy the receipt, transplant a real foreign Evidence ID (languages←round-42 `ev_6e055332…`, multi←round-47 `ev_8ed88983…`, both verified present in `corpus/live/runs/round-42|47/` saved bytes before patching), `require(not receipt_ok(...))` with message ending `forged receipt evidence accepted`. Insertions only; `receipt_ok` untouched. Frozen C5 mutant (delete the `evidence_id` conjunct, exactly one regex match per script) exits non-zero with last line ending the attribution phrase on both scripts, measured on a scratch tree copy by `reports/round-65/measure.py`: `C5_RECEIPT_EVIDENCE_KILLED_ATTRIBUTED` 0/2 → 2/2. Unmutated self-tests stay green (`C5_CONTROLS_PASS=2/2`).
+- C1 (coverage K, C05): CANDIDATE LANDED, admission pending. Fixture `corpus/fixtures/apk-r65/` (generator + truth + readout + fixture.apk, 947 bytes sha256 `05d2280f…`), entry `corpus/knowledge/round-65-apk-axml-byte-evidence.md` (candidate header). README C05 intentionally NOT flipped in the candidate commit. Per the frozen admission order (reports/round-65/claims.md §Admission order), the flip requires named fresh-seat Q01–Q13 pass decisions from non-author reviewers; with the seat dispatch living in the orchestrator's between-round lane per the accepted host mapping, this round lands the candidate and the README flip follows the dispatched wave's decisions (or `frontier → uncovered` on falsification). The L1's own Q-map in the entry is draft, not the admission.
+- Counter repair: LANDED as registered/not-scored. `reports/round-65/measure.py` scans rejected-markers over the whole entry file and self-tests the old 2000-byte window miss (`STRICT_REJECT_WINDOW_SELFTEST=pass old_window_miss=True` at base and after; red demonstration is the seeded old-window miss recorded inside the probe).
+
+## Mistakes
+
+| id | class | evidence pointer | captured-by | fix |
+|---|---|---|---|---|
+| M38 | number-drift (layout constants stated from intent, not built bytes) | `.ufo/waves/round-65/m38-red-before.log` (sha256 `aaba825263b5ce3613d8972831fa0e92bb7805547846056103e526293d814392`): the pre-fix generator computed each XML node chunk's size as `headerSize(16) + len(payload)`, double-counting lineNumber+comment (they are inside headerSize), so the size field overstated the laid-down bytes by 8; the readout's chunk walk then desynced and died `StopIteration` on the built fixture. Second caught instance, same class: the first `spec_derived_struct_widths` field list gave `ResStringPool_header` 24 bytes (four trailing u32s) against the 28 the pool header's own bytes show (five trailing u32s), caught by comparing the derived width against the observed chunk `headerSize` before commit. | Q06 — fixture premises must be byte-verified against the built fixture after every edit and before any claim rests on them; the readout's walk-end assertions (`off == xml_size`, cursor == eocd) are the failing check. | Derive node chunk sizes as `8 + len(payload)` (header 8 + lineNumber/comment + ext, with headerSize=16 naming the node fixed part) and derive the pool-header width from the struct's own five trailing u32s; keep the walk-end assertions in `readout.py` so the class cannot recur silently. Shown able to fail: the same readout against the buggy bytes exits non-zero with the desync traceback (receipt above), against the fixed bytes exits 0 with 15 lines (sha256 `507d79f8…`). |
+| M37 | stale-premise (pre-registered) | routed by R64ReviewSeparability: the round-64 probe's `rejected_marked` scanned only the first 2000 bytes of an entry for `admission-status: rejected` | the round-65 frozen counter repair | whole-file scan + `STRICT_REJECT_WINDOW_SELFTEST` (seeded marker at byte 3000; asserts the fixed scan detects it and the old `[:2000]` window misses it); registered, not scored; current counts unchanged because both retained rejected candidates mark at 859/712 |
+
+## Routed forward (from round-64 closure — disposition)
+
+1. SHONEN box 1 `[x]` verifier lane-dispatched → this round keeps the box `[~]` (named verifier was a lane seat; only a fresh non-lane reviewer may write `[x]`).
+2. AST-bound mutation counter → carried (owner: a future round that registers it; the STRICT window fix narrows but does not close the text-scan spoof surface).
+3. Recheck-pin scope holes H1–H3 → carried, named here.
+4. r58/59 PASS-count quotes → not triggered (this round does not touch `verify_named_multi_icon_states.py` / `verify_icon_states.py`).
+5. Freshness wording → `FRESH_ROWS` stays the frozen byte-survival hold.
+
+## Round shape and receipts
+
+Round shape: one v2 wave prepared (64 seats, ≥25% attack roles) under `.ufo/waves/round-65/wave-spec.json`, validated by `ufo-swarm-wave.mjs plan` exit 0; dispatch is the orchestrator's between-round act per the accepted host mapping (this seat prepares waves; it does not dispatch them — reported as the host mapping, not a conformance defect). §3 planner seat held by the L1; no lane-side seat count claimed. L1-side build/verification performed with the lane's own tools: fixture build + regen byte-compare, two verifier patch + frozen-mutant kills, frozen counter runs at base (red) and WIP (green), entry draft with byte-matched embedded outputs, census before/after.
