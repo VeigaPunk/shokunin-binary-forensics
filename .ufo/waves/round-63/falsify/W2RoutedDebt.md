@@ -90,13 +90,25 @@ present in the build-wave reports and the committed lesson:
    draft-time sentences are retained rather than rewritten, per the append-only
    rule — the markers are the record. The round report should quote the registry
    census, not the lesson's numbers.
-5. **D6 is still open as a fact**: `reports/round-63/measure-after.log` does not
-   exist at the tip (`git ls-tree -r --name-only f6ea293 -- reports/round-63/`
-   lists only `claims.md`, `measure-before.log`, `measure.py`), and the
-   round-62 closure defect this round inherited requires it *beside the report
-   claim*. Two falsify seats flagged the same dependency
+5. **D6 is satisfied on disk but not yet discharged at the tip.** The lane
+   working tree now carries an **untracked** `reports/round-63/measure-after.log`
+   (plus `reports/round-63/final-verification.json`). I read that log: it records
+   `FINAL_TIP=f6ea293…`, `K_HELD=7/14 score=5.0`, `K_ROW C06 status=held`,
+   `K_HELD_BACKED=7/14`, `F_COVERAGE=5/8 score=6.2`, `F_FAMILIES=[… firmware …]`,
+   `FRESH_ROWS=18/18`, `C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2`,
+   `C3_CONTROLS_PASS=2/2`, `C3_RECEIPT_KILLED_ATTRIBUTED=2/2`,
+   `HOLD_CALIBRATION=4/4`, `HOLD_REPLAY=10/10`, `HOLDS_OK=yes`, `PROBE_EXIT=0`.
+   The round-62 closure defect requires this output committed **in the same
+   commit as the report claim**; it is still untracked, so the obligation is not
+   discharged. Two falsify seats flagged the same dependency
    (`W2ClaimsAdmission.md:151`, `W2RerunAllCounters.md:350`).
-6. **D4's forward id note moved twice.** `R63SourceZipfileDocs.md:254-255` says
+6. **D3's reading discipline is met by the new receipt.** The untracked
+   `measure-after.log` prints `C3_CONTROLS_PASS=2/2` (line 25) and
+   `C3_RECEIPT_KILLED_ATTRIBUTED=2/2` (line 26) as **separate lines** — exactly
+   what the committed lesson's D3 disposition cell demands ("`HOLDS_OK` alone
+   does not prove C3"). The wording drift itself is in a frozen file and is
+   unchanged.
+7. **D4's forward id note moved twice.** `.ufo/waves/round-63/build/R63SourceZipfileDocs.md:254-255` says
    a future zipfile-docs row would take **S034**; S034 and S035 have since
    landed, so the next unused id is **S036** — and no registry row or
    build/falsify report mentions S036 (`git show f6ea293:corpus/SOURCES.md | grep -c "S036"` → 0;
