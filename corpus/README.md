@@ -31,7 +31,7 @@ and `live/runs/`.
 | C02 | native analysis sessions (decompile/disassemble providers) | `knowledge/seed.md` (census), `knowledge/2026-10-12-rea-readiness-checklist.md` | `live/runs/20261012T163909Z/native-analyze.json` (`provider_unavailable`); `lessons/2026-10-12-r1-provider-gap.md` | partial |
 | C03 | managed (.NET/CLI) assemblies | — | — | frontier |
 | C04 | JavaScript/Electron packages | `knowledge/round-62-commonjs-require-name-evidence.md` (source names and saved call spans on authored directories only; no Electron/runtime/export-binding ground) | `fixtures/js-r3`, `js-r7-v2`, `shapes-r12`; `verify_js_graph_delta.py`, `verify_semantic_trace.py`, `verify_shape_evidence.py`; shape/semantic work is outside the new entry; retained rejected candidate `knowledge/commonjs-destructured-require-edges.md` | held |
-| C05 | Android packages (APK) | — | — | frontier |
+| C05 | Android packages (APK) | — | `fixtures/apk-r65`; retained rejected candidate `knowledge/round-65-apk-axml-byte-evidence.md` (round-65 orchestrator-dispatched wave, falsified Q02/Q06/Q11, adjudicated round-66) | uncovered |
 | C06 | archives (ZIP inventory) | `knowledge/round-63-zip-central-directory-evidence.md` (manual byte-derived central-directory readout of `fixtures/archive-r2/fixture.zip` only; no general ZIP-parser, trailing-bytes, provider-completeness or authenticity claim) | `fixtures/archive-r2`, `nested-r11`, `duplicate-r15` | held |
 | C07 | firmware images | `knowledge/round-64-firmware-region-byte-evidence.md` (manual byte-derived readout of `fixtures/firmware-r63/firmware-r63.bin` only; no general firmware-format, extraction/execution, provider-completeness or authenticity claim) | — | held |
 | C08 | browser/Electron runtime evidence | — | — | frontier |
@@ -67,7 +67,11 @@ Ground being explored and not yet held, nearest first.
 - C03 managed assemblies — REA `inspect_managed_artifact`; `dotnet` is on PATH
   but reports no SDK, so a locally built known-truth assembly is blocked.
 - C05 Android — REA `inspect_android_package`; jadx 1.5.6 is present; needs an
-  authored APK fixture.
+  authored APK fixture. Round-66 update: the authored `fixtures/apk-r65` bundle
+  landed with a candidate entry that the dispatched round-65 wave falsified
+  (Q02/Q06/Q11 — `corpus/lessons/round-66.md` `## Gate`); the row is
+  `uncovered`, the candidate retained rejected; a re-gate needs the corrected
+  text, not new fixture bytes.
 - C08 browser/Electron runtime — passive CDP observation of a declared local page.
 - Evidence custody beyond fixity: collection and transfer records
   (SWGDE collection/acquisition guidance) — adjacent to this province; enter only

@@ -1,0 +1,28 @@
+FINDINGS — the APK/readout scope is inert and credential-free; generator output paths have a conditional symlink escape.
+
+## Finding — fixed output names follow symlinks
+
+- **Severity:** Low; local file-clobber risk, conditional on an untrusted/modified fixture directory and running the generator as a user able to write the symlink target.
+- **Exploit path:** An attacker who can supply a worktree or scratch copy with `fixture.apk` (or `truth.json`) replaced by a symlink to another writable path can induce `python3 -B generator.py`. `/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/generator.py:27-29` resolves the script directory and joins fixed output basenames, but lines 197 and 226 call `Path.write_bytes`/`Path.write_text` on those paths. Those writes follow a pre-existing target symlink; there is no user-controlled `..` component, but the actual write can escape `HERE`.
+- **Impact:** Truncation/overwrite of an arbitrary file writable by the generator's user. This is not exploitable from the current regular-file fixture state without first controlling the directory entry.
+- **Smallest remediation:** Write temporary files created inside `HERE`, then atomically `os.replace` them onto the two fixed names (or open the names relative to a directory fd with `O_NOFOLLOW`). This prevents following a pre-planted output symlink.
+
+## Other reviewed scope — no finding
+
+- **Fixture inert / no execution:** `/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/generator.py:130-145` allocates a zeroed 112-byte DEX header and populates only magic/header/checksum/signature fields; lines 151-171 package only `AndroidManifest.xml`, `classes.dex`, and text `META-INF/MANIFEST.MF` into an in-memory `ZIP_STORED` archive. `/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json:53-65,74-101` records only those three members (416/112/69 bytes). The wave prompts ask for readout execution, generator execution in a scratch copy, or independent byte parsing—not APK installation/runtime execution: `/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/wave-spec.json:18,36,45,54`. The readout reads `fixture.apk` as bytes at `/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/readout.py:20-21,41-45`, then parses ZIP/AXML/Dex fields; its DEX section reads checksums and header fields only (`:232-248`). The frozen probe runs Python verifier `--self-test` commands, not an APK runtime (`/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-65/measure.py:308-320`). Entry scope/limitations also explicitly exclude execution and call the DEX member a header only (`/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md:11,127,129-131`). I did not execute fixture content.
+- **No network writes:** The reviewed generator/readout code imports only Python standard-library hashing, JSON, struct, ZIP, path, and parsing modules; no network client, subprocess, or external program appears in either file. The entry's documented reproduction is the local `python3 -B .../readout.py` command (`/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-65-apk-axml-byte-evidence.md:154-162`).
+- **Credentials/secrets:** The authored manifest values are synthetic (`com.example.r65`, version `1`/`1.0`; `/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/generator.py:37-46`). Searches over `/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-65.md` and the full `/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-65/source-snapshots/` inventory found no private-key, API/cloud-key, or assigned secret-value patterns. The broader credential-word search only matched generic CPython `zipfile` API documentation describing its `pwd` parameter, not credentials (`zipfile-docs.html:546-548,606-607,660-661`).
+- **Current target types / digests (read-only output):**
+  ```text
+  $ stat -c '%F %n' /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65 /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/fixture.apk /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json
+  directory /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65
+  regular file /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/fixture.apk
+  regular file /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json
+  $ sha256sum /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/fixture.apk /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/generator.py /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/readout.py
+  05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e  /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/fixture.apk
+  27303baeab02e771264421cfe4bbc2f0ef0aade3a8732de43b22c0e15b4f8173  /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json
+  eaa9444c5e437c4e2deb68282da6c8a8d5e3555cdbf059544d8a195930c27c1a  /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/generator.py
+  92e347c35e39c4dba2b05763e0e32af46ff7a66af852b2ab019618eef8c13976  /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/readout.py
+  ```
+
+Report path: `.ufo/waves/round-65/R65SentinelScope.md`

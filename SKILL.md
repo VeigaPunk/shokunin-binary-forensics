@@ -2,8 +2,8 @@
 
 Headers (QUALITY.md Q02 shape, applied to this instruction file):
 
-- `source:` `corpus/QUALITY.md` Q01–Q13; `corpus/SOURCES.md` (contract v1); `corpus/README.md` coverage legend; `corpus/lessons/round-63.md` M33–M35; `reports/round-64/claims.md` (M36, C2 fix shape, admission order).
-- `verified-at:` 2026-10-24, provenance split because the round's contract files postdate its claim base: `corpus/`, `SCORECARD.md`, `SHONEN.md`, `PROVINCE.md` at lane commit `666ea84b6be2eec2b0359f556ba2429fc9044c36` (round-64 claim base); `reports/round-64/claims.md`, `measure.py`, `measure-before.log` at `3bb430f96cac09feb7269c5c52725127c6f7c463` (absent at the claim base — `git cat-file -e 666ea84b:reports/round-64/claims.md` exits 128); the two round-64 control line ranges in §1 at the uncommitted working tree on top of `a3d063f29b93ad1f0b7eab78652c552685b84d89` (the base scripts contain no `forged_stdout`). Every cited path, line range and S-id was re-read in that split, in the lane tree and at the named fleet contract path.
+- `source:` `corpus/QUALITY.md` Q01–Q13; `corpus/SOURCES.md` (contract v1); `corpus/README.md` coverage legend; `corpus/lessons/round-63.md` M33–M35; `corpus/lessons/round-66.md` M37–M41; `reports/round-66/claims.md` (C6 fix shape, adjudication order).
+- `verified-at:` 2026-10-24, re-read in the lane tree at the round-66 adjudication commit (the round-64-era split below is preserved history): `corpus/`, `SCORECARD.md`, `SHONEN.md`, `PROVINCE.md` at lane commit `666ea84b6be2eec2b0359f556ba2429fc9044c36` (round-64 claim base); `reports/round-64/claims.md`, `measure.py`, `measure-before.log` at `3bb430f96cac09feb7269c5c52725127c6f7c463`; the round-64 control line ranges in §1 at the uncommitted working tree on top of `a3d063f29b93ad1f0b7eab78652c552685b84d89`; the round-65/66 control line ranges and the round-66 instrument were re-read at the round-66 working tree (C5/C6 controls committed). Every cited path, line range and S-id was re-read in that split, in the lane tree and at the named fleet contract path.
 - `recheck:` the frozen probe by absolute lane path with `cwd=/` and lane-owned `TMPDIR` (§6.1); the seven census commands in §6.2 from the lane root; the replay commands in §6.4.
 - `box:` `SHONEN.md` box 1 — real decision tables (§1–§3), error patterns (§4), checklists (§6), cited sources (§7).
 
@@ -42,8 +42,8 @@ round-64 controls read in the uncommitted working tree on top of `a3d063f2`.
 
 | script | `receipt_ok` conjuncts (file:line) | in-script forged controls present (file:line → attribution text) | guarded conjuncts | unguarded — name, do not credit |
 |---|---|---|---|---|
-| `corpus/verify_icon_languages.py` | `command==command`, `exit_code==0`, `fixture_sha256==expected_hash`, `evidence_id==evidence_id`, `stdout_sha256==H(raw_bytes)` (:118-120) | forged `command` :149-151 → `forged receipt command accepted`; forged `stdout_sha256` :152-154 → `forged receipt stdout accepted` | `command`, `stdout_sha256` | `exit_code`, `fixture_sha256`, `evidence_id` |
-| `corpus/verify_multi_icon_states.py` | same five conjuncts (:121-123) | forged `command` :148-150 → `forged receipt command accepted`; forged `stdout_sha256` :151-153 → `forged receipt stdout accepted` | `command`, `stdout_sha256` | `exit_code`, `fixture_sha256`, `evidence_id` |
+| `corpus/verify_icon_languages.py` | `command==command`, `exit_code==0`, `fixture_sha256==expected_hash`, `evidence_id==evidence_id`, `stdout_sha256==H(raw_bytes)` (:118-120) | forged `command` :149-151 → `forged receipt command accepted`; forged `stdout_sha256` :152-154 → `forged receipt stdout accepted`; forged `evidence_id` :155-157 → `forged receipt evidence accepted`; forged `exit_code` :158-160 → `forged receipt exit accepted`; forged `fixture_sha256` :161-163 → `forged receipt fixture accepted` | `command`, `stdout_sha256`, `evidence_id`, `exit_code`, `fixture_sha256` | — (all five guarded at the round-66 tree) |
+| `corpus/verify_multi_icon_states.py` | same five conjuncts (:121-123) | forged `command` :148-150 → `forged receipt command accepted`; forged `stdout_sha256` :151-153 → `forged receipt stdout accepted`; forged `evidence_id` :154-156 → `forged receipt evidence accepted`; forged `exit_code` :157-159 → `forged receipt exit accepted`; forged `fixture_sha256` :160-162 → `forged receipt fixture accepted` | `command`, `stdout_sha256`, `evidence_id`, `exit_code`, `fixture_sha256` | — (all five guarded at the round-66 tree) |
 | `corpus/verify_icon_states.py` | `exit_code==0`, `fixture_sha256==expected_hash`, `stdout_sha256` (or `raw_output_sha256`)`==sha(raw_bytes)`, `evidence_id==evidence_id` (skipped when `round_id==36`) (:119-123) | forged `fixture_sha256` :151-158 → `forged receipt accepted` | `fixture_sha256` | `exit_code`, `stdout_sha256`, `evidence_id` |
 | `corpus/verify_named_multi_icon_states.py` | `command`, `exit_code`, `fixture_sha256`, `evidence_id`, `stdout_sha256`, `duration_seconds` numeric and `>=0` (:16-17) | forged `command` :76-78 → `forged receipt accepted` | `command` | `exit_code`, `fixture_sha256`, `evidence_id`, `stdout_sha256`, `duration_seconds` |
 
@@ -57,14 +57,18 @@ Rules that make the table usable:
   §C2, e.g. endswith `forged receipt stdout accepted`). A crash or an unrelated assertion
   is not attributed.
 - **Adding a control** follows the frozen shape: deep-copy the valid receipt, forge one
-  field, `require(not receipt_ok(...), f'r{r}: forged receipt stdout accepted')`, placed
-  after the existing forged-command control. Do not edit `receipt_ok` itself.
-- **Status at this draft.** `reports/round-64/measure-before.log` prints
-  `C4_RECEIPT_KILLED_ATTRIBUTED=0/2` at the base archive: deleting the `stdout_sha256`
-  conjunct left both self-tests green. The two controls above are the working-tree fix;
-  credit is earned only by the frozen counter printing `2/2` at the landing commit, and
-  `.ufo/waves/round-64/R64C4MultiPatch.md` records that its seat did not run the
-  self-test (parent-owned gate).
+  field, `require(not receipt_ok(...), f'r{r}: forged receipt <field> accepted')`,
+  **appended after the last existing control** in `check()` (round-65 C5 and round-66
+  C6 both append; inserting between controls renumbers this table's `file:line`
+  column). Do not edit `receipt_ok` itself.
+- **Status at this draft.** C4 is earned — `reports/round-65/measure-before.log`
+  prints `C4_RECEIPT_KILLED_ATTRIBUTED=2/2` at that base. C5 is earned —
+  `C5_RECEIPT_EVIDENCE_KILLED_ATTRIBUTED=2/2` attributed at the round-65 tip
+  (`reports/round-65/measure-after.log`). C6 is the round-66 claim:
+  `reports/round-66/measure-before.log` prints `C6_RECEIPT_KILLED_ATTRIBUTED=0/4`
+  at base `8214e4dd` (deleting `exit_code` or `fixture_sha256` left both self-tests
+  green); credit is earned only by the frozen counter printing `4/4` at the
+  round-66 landing commit.
 
 ## 2. Decision table — authoring a known-truth fixture (Q06, M33)
 
@@ -80,6 +84,17 @@ Precedent: `corpus/fixtures/firmware-r63/generator.py` plus its `truth.json`.
 | reproduce | copy the fixture directory into `/tmp/revenger-r64-*` and run the recorded recipe there (`python3 -B generator.py`), then byte-compare image and truth against the committed originals; record the interpreter and zlib versions the recipe embeds | run the generator inside `corpus/fixtures/`: it rewrites `firmware-r63.bin` and `truth.json` in place (`generator.py:149-150`), and `truth.json` embeds `zlib.ZLIB_RUNTIME_VERSION` (:131) and `platform.python_version()` (:133), so a different interpreter changes the truth even with identical payloads — a changed fixture byte voids the round (`reports/round-64/claims.md` §Harms) | `truth.json` `build_recipe.command`; `generator.py:131,133,149-150` |
 | pre-probe | before any producer call, test the fixture premise against the tool's **own signature list** and record the probe command, date, exit and output | assume a format name implies detectability | M33 (`round-63.md:218`) |
 | byte-verify | after every fixture edit and before the producer call, re-derive offsets, sizes and digests from the built bytes; retain failed inputs | state an offset or count from intent | Q06 |
+
+Second precedent (container fixtures, round-65): `corpus/fixtures/apk-r65/` —
+a ZIP container whose `truth.json` is a container schema, not the zlib schema
+above: `image{path,sha256,size}`; `members[]` with
+`local_header_offset`/`compressed_size`/`uncompressed_size`/`crc32`/`method`/`sha256`;
+`axml_declared{strings,attributes,resource_ids}`;
+`build_recipe{command,container,members,python_version,determinism}`. Node
+`size` fields include `headerSize` — the M38 defect was a `16 + len(payload)`
+chunk size against an 8-byte node header. The same scratch-only rule applies:
+`generator.py` writes `fixture.apk` (:197) and `truth.json` (:226) in place
+and the truth embeds `platform.python_version()`; regenerate only under `/tmp`.
 
 M33's concrete lesson: the zero-finding image and the positive control differed before
 the producer call, and the positive control needed binwalk's `--search-all`. Probe first,
@@ -106,7 +121,7 @@ Contract: fleet root `/home/vgpnk/Projects/shokunin/.ufo/waves/kaika/SOURCES-CON
 | no credential material, session/private URLs or `op://` references | SOURCES rule 6 |
 | the census in §6.2 prints `0` malformed rows, nothing for duplicates/enum/missing paths | SOURCES §Census |
 
-## 4. Error patterns M33–M36 → the check that catches each
+## 4. Error patterns M33–M41 → the check that catches each
 
 | id | class | what it looks like | check that catches it | source |
 |---|---|---|---|---|
@@ -114,6 +129,11 @@ Contract: fleet root `/home/vgpnk/Projects/shokunin/.ufo/waves/kaika/SOURCES-CON
 | M34 | counter substitution | flipping a README status cell or planting a shaped JSON satisfies the probe's printed labels without the claimed work | admission needs named Q01–Q13 decisions from non-author seats; `K_HELD_BACKED_STRICT`; count only a committed archive; the counter never flips README | `corpus/lessons/round-63.md:219`, `reports/round-64/claims.md` §Counting |
 | M35 | residual unguarded clause | a receipt conjunct with no in-script forgery survives deletion; the self-test stays green | §1 table + Q13 credit rule + attributed-endswith measurement; add one control per conjunct you intend to credit | `corpus/lessons/round-63.md:220`, `reports/round-64/claims.md` §C2 |
 | M36 | self-assessment drift | coverage-map token says `frontier` while a saved record already exists for that row's own surface operations | `README_TOKEN_LEGEND_MISMATCH` against the frozen `ROW_OPS` map; must print `0` at round end; at base it prints `1 rows=['C07']` | `reports/round-64/claims.md` §C1/§Frontier, `reports/round-64/measure-before.log` |
+| M37 | stale premise (counter window) | a rejected-marker scan reads only `[:2000]` of an entry, so a marker past the window prints a clean STRICT count | whole-file scan + `STRICT_REJECT_WINDOW_SELFTEST` (seeded marker at byte 3000; the old window must miss it) | `reports/round-65/claims.md` §Registered, `corpus/lessons/round-65.md:30` |
+| M38 | number-drift (layout from intent) | chunk `size` or struct width computed from intended layout (headerSize double-counted) instead of the built bytes | §2 byte-verify + derive constants from the spec's field lists; the red-before log shows the desynced walk dying `StopIteration` | `corpus/lessons/round-65.md:29`, `.ufo/waves/round-65/m38-red-before.log` |
+| M39 | number-drift (quoted output transcribed) | a pasted command-output line differs from what the named command prints — here a dropped hex pair (`4d616e696673742d…` vs `4d616e69666573742d…`) | Q11 verbatim check: re-run the deriving command and diff every embedded output line (R65ReviewEntryQ02's proposed verbatim-diff gate is routed debt) | `corpus/lessons/round-66.md` `## Mistakes`, `.ufo/waves/round-65/R65ReviewEntryQ11.md` |
+| M40 | number-drift/anchor (located-quote pointer from intent) | a Gate quote is verbatim but its line/span/word-count pointer is wrong (`lines 608-611` for 607-609; `line 5` for 7-8; `16 words` for 14) | the round-lesson located-quote rule at wave review; corrections land as superseding rows (SOURCES rule 2) — never in-place row edits | `corpus/lessons/round-66.md` `## Mistakes`, `corpus/SOURCES.md` S043/S044 |
+| M41 | attribution (count from a draft) | a report's seat-role count sums to one less than the committed spec (63 vs 64) | reconcile the report's mix line against `wave-spec.json` role counts at closure | `corpus/lessons/round-66.md` `## Mistakes` |
 
 The legend that M36 violated, from `corpus/README.md`: `held` = at least one admitted
 entry; `partial` = only unsourced or pre-contract text; `uncovered` = work evidence but
@@ -149,23 +169,31 @@ names at least one limitation.
 The counter is a measurement instrument, not the gate (M34).
 
 - Count only a **committed** tree: `git archive <commit> corpus` extracted under
-  `/tmp/revenger-r64-*`; never the live working tree.
+  `/tmp/revenger-r66-*`; never the live working tree.
 - Run with `cwd=/` and absolute paths, as the contract requires
-  (`reports/round-64/claims.md` §Counting): from `/`,
-  `TMPDIR=/tmp/revenger-r64-counter-XXXX python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-64/measure.py /tmp/revenger-r64-counter-XXXX`,
+  (`reports/round-66/claims.md` §Frozen counter): from `/`,
+  `TMPDIR=/tmp/revenger-r66-counter-XXXX python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-66/measure.py /tmp/revenger-r66-counter-XXXX`,
   with `<TREE>/corpus` present and `TMPDIR` under the same lane-owned scratch. A
   lane-root invocation is not the registered measurement; do not describe it as one.
-- Read these labels: `K_HELD`, `K_HELD_BACKED`, `K_ROW C07`, `K_HELD_BACKED_STRICT`
-  (must equal `K_HELD_BACKED` at both ends unless the discrepancy is reported),
-  `README_TOKEN_LEGEND_MISMATCH` (1 at base, 0 at round end), `F_COVERAGE`/`F_FAMILIES`,
-  `C2_*`, `C3_*`, `C4_CONTROLS_PASS`, `C4_RECEIPT_KILLED_ATTRIBUTED`,
-  `FRESH_ROWS`, `HOLDS_OK`, `HOLDS_OK_V2`.
+- Read these labels: `K_HELD`, `K_HELD_BACKED`, `K_ROW C05` (the round-66
+  disposition readout — `frontier` at base, `uncovered` after adjudication),
+  `K_ROW C07`, `K_HELD_BACKED_STRICT` (must equal `K_HELD_BACKED` at both ends
+  unless the discrepancy is reported), `C05_REJECTED_MARKED`,
+  `README_TOKEN_LEGEND_MISMATCH` (0 at the round-66 base; `1` at the round-64
+  base — the M36 fix landed), `F_COVERAGE`/`F_FAMILIES`,
+  `C2_*`, `C3_*`, `C4_*`, `C5_*`, `C6_*`,
+  `STRICT_REJECT_WINDOW_SELFTEST`, `FRESH_ROWS`, `HOLDS_OK`, `HOLDS_OK_V2`,
+  `HOLDS_OK_V3`, `HOLDS_OK_V4`.
 - Exit codes (the script's own tail): `0` = `HOLDS_OK` yes, `1` = holds not met,
-  `2` = could not evaluate. `HOLDS_OK_V2` substitutes the attributed counts and also
-  requires `README_TOKEN_LEGEND_MISMATCH == 0` (its own `len(mismatch) == 0` conjunct);
-  it is a diagnostic label, **not** folded into the exit code — read it explicitly.
-- Red-before is part of the instruction: `reports/round-64/measure-before.log` shows a
-  do-nothing base meeting no target (`K_HELD_BACKED 7/14`, mismatch `1`, C4 `0/2`).
+  `2` = could not evaluate. `HOLDS_OK_V2` substitutes the attributed counts and
+  also requires `README_TOKEN_LEGEND_MISMATCH == 0`; `HOLDS_OK_V3` = V2 ∧ C5
+  attributed 2/2 ∧ window selftest pass; `HOLDS_OK_V4` = V3 ∧ C6 attributed
+  4/4. The V-labels are diagnostics, **not** folded into the exit code — read
+  them explicitly.
+- Red-before is part of the instruction: `reports/round-66/measure-before.log`
+  shows a do-nothing base meeting no target (`K_HELD 8/14`, `K_ROW C05
+  status=frontier`, `C05_REJECTED_MARKED=no`, `C6_* 0/4`,
+  `README_TOKEN_LEGEND_MISMATCH=0`, `HOLDS_OK_V4=no`, probe exit 0).
 
 ### 6.2 Seven census commands (verbatim; run from the lane root)
 
@@ -208,17 +236,26 @@ awk -F'|' '/^\|[[:space:]]*S[0-9][0-9][0-9]+[[:space:]]*\|/ && NF==13 {s=$9; gsu
 - Census C (`SCORECARD.md`) runs all ten verifiers from the corpus tree and prints every
   exit code; **the census probe exits 0 even when constituent verifiers fail — inspect
   each printed exit**.
-- Fixture regeneration is **scratch-only**: `cp -a corpus/fixtures/firmware-r63 /tmp/revenger-r64-fixture && (cd /tmp/revenger-r64-fixture && python3 -B generator.py)`, then byte-compare both files with the committed originals. Never run the generator in place — `generator.py:149-150` overwrites the frozen image and truth, and the round's void conditions reject any changed `corpus/fixtures` byte (`reports/round-64/claims.md` §Harms). The recipe embeds `python_version` (:133) and zlib versions (:131), so a different interpreter changes the truth even when payloads match.
+- Fixture regeneration is **scratch-only**: `cp -a corpus/fixtures/firmware-r63 /tmp/revenger-r64-fixture && (cd /tmp/revenger-r64-fixture && python3 -B generator.py)`, then byte-compare both files with the committed originals. Never run the generator in place — `generator.py:149-150` overwrites the frozen image and truth, and the round's void conditions reject any changed `corpus/fixtures` byte. The recipe embeds `python_version` (:133) and zlib versions (:131), so a different interpreter changes the truth even when payloads match. The same rule binds `corpus/fixtures/apk-r65/generator.py` (:197 writes `fixture.apk`, :226 writes `truth.json`, the truth embeds `platform.python_version()`): `cp -a corpus/fixtures/apk-r65 /tmp/revenger-r66-apk && (cd /tmp/revenger-r66-apk && python3 -B generator.py)`, then byte-compare `fixture.apk` and `truth.json` against the committed pair.
 - Verify cited paths still exist before citing: every path in §7 resolves in the lane tree at the header's provenance split.
 
-### 6.5 Round-close gate (void conditions, claims.md §Harms)
+### 6.5 Round-close gate (void conditions)
 
-Any of these voids the round: changed `corpus/live` or `corpus/fixtures` byte outside new
-round-64 paths; a lost baseline held row; a README status change other than the named row;
-a changed denominator; weakened Q01–Q13; attributed calibration counts below target
-(`C2_RECEIPT_B_KILLED_ATTRIBUTED` 2/2 **and** `C2_D2_KILLED` 2/2, C3 2/2, C4 2/2 after
-landing); `HOLD_CALIBRATION` < 4/4; `HOLD_REPLAY` < 10/10; probe exit non-zero at final. Prior
-rejected candidates, counterexamples and round-63 evidence stay byte-preserved.
+The current round's own claims.md governs; round-66 has no §Harms section — its
+analogues are §Frozen counter and §Registered work.
+
+Any of these voids the round: changed `corpus/live` or `corpus/fixtures` byte
+outside the current round's registered new paths (round-66 registers none
+under `corpus/live`/`corpus/fixtures`; round-65's registered fixture was
+`corpus/fixtures/apk-r65/`); a lost baseline held row; a README status change
+other than the named row (round-66: C05 only, either-way flip); a changed
+denominator; weakened Q01–Q13; attributed calibration counts below target
+(`C2_RECEIPT_B_KILLED_ATTRIBUTED` 2/2 **and** `C2_D2_KILLED` 2/2, C3 2/2,
+C4 2/2, C5 2/2, C6 4/4 after landing); `HOLD_CALIBRATION` < 4/4;
+`HOLD_REPLAY` < 10/10; `STRICT_REJECT_WINDOW_SELFTEST` not `pass`;
+`HOLDS_OK_V4` not `yes`; probe exit non-zero at final. Prior rejected
+candidates, counterexamples and round-63/65 evidence stay byte-preserved —
+a rejected candidate keeps every byte except its `admission-status:` line.
 
 ## 7. Cited sources — existence-checked
 
@@ -259,6 +296,24 @@ rejected candidates, counterexamples and round-63 evidence stay byte-preserved.
 | `reports/round-64/measure.py` | reports/round-64/ | frozen counter |
 | `reports/round-64/measure-before.log` | reports/round-64/ | red-before receipt |
 | `reports/round-64/measure.py` sha256 | `b8e68d326c28690274be98ac35a518970d84aa8b9892b5736450a776210b9168` | identity of the frozen instrument (committed at `3bb430f`, unchanged at `a3d063f`/working tree) |
+| `reports/round-65/claims.md` | reports/round-65/ | C1/C2, C5 fix shape, frozen admission order (either-way flip) |
+| `reports/round-65/measure.py` | reports/round-65/ | frozen counter (sha256 `8a2c69c4b0e9a799592c90f0e974ffee05556db5667d7b90ada58f92cf590304`) |
+| `reports/round-65/measure-before.log` | reports/round-65/ | red-before receipt (K 8/14, C5 0/2, HOLDS_OK_V3=no) |
+| `reports/round-66/claims.md` | reports/round-66/ | C1 disposition + C2/C6 fix shape, adjudication order |
+| `reports/round-66/measure.py` | reports/round-66/ | frozen counter (sha256 `a59914e9199ac2fd49cf0bca40ea152a74823a63ecd300fae2fe45ee42ebf1da`) |
+| `reports/round-66/measure-before.log` | reports/round-66/ | red-before receipt (K 8/14, C05 frontier, C6 0/4, HOLDS_OK_V4=no) |
+| `corpus/fixtures/apk-r65/generator.py` | corpus/fixtures/apk-r65/ | container-fixture authoring (§2 second precedent) |
+| `corpus/fixtures/apk-r65/truth.json` | corpus/fixtures/apk-r65/ | container oracle schema |
+| `corpus/fixtures/apk-r65/readout.py` | corpus/fixtures/apk-r65/ | byte readout + per-fact form |
+| `corpus/knowledge/round-64-firmware-region-byte-evidence.md` | corpus/knowledge/ | worked fixture entry (admitted) |
+| `corpus/knowledge/round-65-apk-axml-byte-evidence.md` | corpus/knowledge/ | retained **rejected** candidate — falsified by the dispatched round-65 wave (Q02/Q06/Q11); evidence, never cite as held |
+| `corpus/lessons/round-65.md` | corpus/lessons/ | M37/M38 |
+| `corpus/lessons/round-66.md` | corpus/lessons/ | M39–M41; round-65 wave adjudication record |
+| S038 | `corpus/SOURCES.md` (AOSP ResourceTypes.h, android-15.0.0_r1) | AXML field layout (Q03-derived constants) |
+| S041 | `corpus/SOURCES.md` (apk-r65 bundle) | authored container fixture bytes |
+| S042 | `corpus/SOURCES.md` (round-65 wave corpus) | the named fresh-seat gate decisions |
+| S043 | `corpus/SOURCES.md` (supersedes S039) | corrected REA Android route-scope anchor (lines 7-8) |
+| S044 | `corpus/SOURCES.md` (supersedes S040) | corrected zipfile-docs title (3.15.1), queued |
 
 S-ids are cited from `corpus/SOURCES.md`; no URL is restated here, so no citation can
 drift from the registry. Knowledge entries are cited by repo-relative path, not by claim.
@@ -343,56 +398,61 @@ scoping; the record's own open unknowns are `LEDGER.md` U4–U6.
 
 ## 3. Frozen counter — the round's registered counting probe
 
-Source: `reports/round-64/claims.md:84`, whose sentence reads verbatim
-`Frozen counter: \`python3 -B reports/round-64/measure.py TREE\` (this directory,…`.
-The command it names, copied from inside the backticks:
+Source: `reports/round-66/claims.md` §Frozen counter (`reports/round-66/measure.py`,
+sha256 `a59914e9199ac2fd49cf0bca40ea152a74823a63ecd300fae2fe45ee42ebf1da` at the
+round-66 pre-registration; the round-64 instrument `b8e68d32…` and the round-65
+`8a2c69c4…` remain committed history). The command it names, copied from inside
+the backticks:
 
 ```sh
-python3 -B reports/round-64/measure.py TREE
+python3 -B reports/round-66/measure.py TREE
 ```
 
 `TREE` is the only argument; it must contain `corpus/` or the probe exits with
-`usage: measure.py TREE (TREE/corpus must exist)` (`reports/round-64/measure.py:22-23`).
-The contract (`claims.md:84-85`) fixes the rest: TREE is a committed
-`git archive <commit> corpus` extraction, cwd=`/`, TMPDIR under lane-owned
-`/tmp/revenger-r64-*`. Never point it at the working tree. The committed
-invocation shape below is quoted byte-identical from a round-63 record; change
-only the archive commit and the counter path before running it for this round:
+`usage: measure.py TREE (TREE/corpus must exist)`. The contract fixes the rest:
+TREE is a committed `git archive <commit> corpus` extraction, cwd=`/`, TMPDIR
+under lane-owned `/tmp/revenger-r66-*`. Never point it at the working tree. The
+committed invocation shape below is quoted byte-identical from a round-63
+record; change only the archive commit and the counter path before running it
+for this round:
 
 ```sh
 git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive db55bd6 corpus | tar -x -C /tmp/T
-cd / && python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/measure.py /tmp/T
+cd / && python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-66/measure.py /tmp/T
 ```
 
 Inside, the probe copies `corpus` into its own temp dirs for each mutant run
-(prefixes `rev-r64-mut-`, `rev-r64-c3-`, `rev-r64-c4-`), so the source tree is
-not mutated.
+(prefixes `rev-r64-mut-`, `rev-r64-c3-`, `rev-r64-c4-`, `rev-r65-c5-`,
+`rev-r66-c6-`), so the source tree is not mutated.
 
 Promised outcome — the labels, with the base-archive values recorded in
-`reports/round-64/measure-before.log` (recorded, not re-run here):
+`reports/round-66/measure-before.log` (base `8214e4dd`, recorded not re-run
+here):
 
-| label | base value |
-|---|---|
-| `K_HELD` | `=7/14 score=5.0` |
-| `K_ROW C07` | `status=frontier` |
-| `K_HELD_BACKED` / `K_HELD_BACKED_STRICT` | `=7/14` / `=7/14` |
-| `SAVED_RECORDS` | `=59` |
-| `ROW_OPS` | `{'C03': ['inspect_managed_artifact'], 'C05': ['inspect_android_package'], 'C07': ['inspect_firmware_regions'], 'C08': ['capture_browser_scenario', 'inspect_web_page', 'observe_web_session']}` |
-| `README_TOKEN_LEGEND_MISMATCH` | `=1 rows=['C07']` |
-| operation counter, `F_COVERAGE`, `F_FAMILIES` | `F_COVERAGE=5/8 score=6.2`, `F_FAMILIES=['native-static', 'javascript', 'archives', 'firmware', 'evm']` |
-| `FRESH_ROWS` | `=18/18` (byte survival, not current-host truth) |
-| `MUTANT <script> <variant>` lines + `C2_*` | `C2_CONTROLS_PASS=2/2`, `C2_RECEIPT_B_KILLED=2/2`, `C2_D2_KILLED=2/2`, `C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2` |
-| `C3_*` | `C3_CONTROLS_PASS=2/2`, `C3_RECEIPT_KILLED_ATTRIBUTED=2/2` |
-| `C4_*` | `C4_CONTROLS_PASS=2/2`, `C4_RECEIPT_KILLED_ATTRIBUTED=0/2` |
-| `HOLD <script> exit=...`, `HOLD_CALIBRATION`, `HOLD_REPLAY` | ten `exit=0` lines, `=4/4`, `=10/10` |
-| `HOLDS_OK` / `HOLDS_OK_V2` | `=yes` / `=no` |
+| label | round-66 base value | note |
+|---|---|---|
+| `K_HELD` | `=8/14 score=5.7` | 7/14 at the round-64 base |
+| `K_ROW C05` / `K_ROW C07` | `status=frontier` / `status=held` | C05 is the round-66 disposition readout |
+| `C05_REJECTED_MARKED` | `=no` | new round-66 label: whole-file `admission-status: rejected` scan of the retained candidate |
+| `K_HELD_BACKED` / `K_HELD_BACKED_STRICT` | `=8/14` / `=8/14` | STRICT is the whole-file rejected-marker scan (M37 repair) |
+| `STRICT_REJECT_WINDOW_SELFTEST` | `=pass old_window_miss=True` | new round-65 label |
+| `SAVED_RECORDS`, `ROW_OPS` | `=59`; `{'C03': ['inspect_managed_artifact'], 'C05': ['inspect_android_package'], 'C07': ['inspect_firmware_regions'], 'C08': ['capture_browser_scenario', 'inspect_web_page', 'observe_web_session']}` | ROW_OPS frozen |
+| `README_TOKEN_LEGEND_MISMATCH` | `=0 rows=[]` | `1 rows=['C07']` at the round-64 base — the M36 fix landed |
+| operation counter, `F_COVERAGE`, `F_FAMILIES` | `F_COVERAGE=5/8 score=6.2`, `F_FAMILIES=['native-static', 'javascript', 'archives', 'firmware', 'evm']` | unchanged |
+| `FRESH_ROWS` | `=18/18` (byte survival, not current-host truth) | unchanged |
+| `MUTANT <script> <variant>` lines + `C2_*` | `C2_CONTROLS_PASS=2/2`, `C2_RECEIPT_B_KILLED=2/2`, `C2_D2_KILLED=2/2`, `C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2` | unchanged holds |
+| `C3_*`, `C4_*`, `C5_*` | `2/2`, `2/2`, `2/2` attributed each | C4 was `0/2` at the round-64 base, C5 `0/2` at the round-65 base — both earned since |
+| `C6_*` | `C6_CONTROL_PRESENT=0/4`, `C6_CONTROLS_PASS=4/4`, `C6_RECEIPT_KILLED=0/4`, `C6_RECEIPT_KILLED_ATTRIBUTED=0/4` | the round-66 target |
+| `HOLD <script> exit=...`, `HOLD_CALIBRATION`, `HOLD_REPLAY` | ten `exit=0` lines, `=4/4`, `=10/10` | unchanged holds |
+| `HOLDS_OK` / `HOLDS_OK_V2` / `HOLDS_OK_V3` / `HOLDS_OK_V4` | `=yes` / `=yes` / `=yes` / `=no` | V4 = V3 ∧ C6 attributed 4/4 |
 
-Exit semantics (`measure.py:9-11`, `:273`): `2` = not evaluable (a frozen clause
-matched other than exactly once, printed `could-not-evaluate`), `0` = the
-round-63 holds passed, `1` = a frozen hold failed. **Exit 0 does not mean the
-round's claims are met**: the base receipt shows `C4_RECEIPT_KILLED_ATTRIBUTED=0/2`
-and `HOLDS_OK_V2=no` alongside `HOLDS_OK=yes`, which by `:273` exits 0. Read the
-labels; never quote the exit code as claim satisfaction (M34, `corpus/lessons/round-63.md`).
+Exit semantics (`reports/round-66/measure.py` tail): `2` = not evaluable (a
+frozen clause matched other than exactly once, printed `could-not-evaluate`),
+`0` = the round-63 holds passed, `1` = a frozen hold failed. **Exit 0 does not
+mean the round's claims are met**: the base receipt shows
+`C6_RECEIPT_KILLED_ATTRIBUTED=0/4` and `HOLDS_OK_V4=no` alongside
+`HOLDS_OK=yes`, which exits 0. Read the labels; never quote the exit code as
+claim satisfaction (M34, `corpus/lessons/round-63.md`).
 
 ## 4. SOURCES census
 

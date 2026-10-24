@@ -154,6 +154,12 @@ def check(round_id):
     forged_evidence = copy.deepcopy(receipt)
     forged_evidence['evidence_id'] = 'ev_8ed889836291b900a28c7e3816167392cc5042301e069cb2a647b6a98e8d4421'
     require(not receipt_ok(forged_evidence, command, expected_hash, evidence_id, raw_bytes), f'r{round_id}: forged receipt evidence accepted')
+    forged_exit = copy.deepcopy(receipt)
+    forged_exit['exit_code'] = 1
+    require(not receipt_ok(forged_exit, command, expected_hash, evidence_id, raw_bytes), f'r{round_id}: forged receipt exit accepted')
+    forged_fixture = copy.deepcopy(receipt)
+    forged_fixture['fixture_sha256'] = H(b'')
+    require(not receipt_ok(forged_fixture, command, expected_hash, evidence_id, raw_bytes), f'r{round_id}: forged receipt fixture accepted')
     return data, report, decoded, state
 
 def main():
