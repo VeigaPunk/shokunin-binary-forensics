@@ -425,3 +425,30 @@ Planned future selection: coverage K on C02/C05/C08 re-gates or a managed-assemb
 probe if a local SDK appears; calibration on the remaining receipt conjuncts
 (`evidence_id`/`exit_code` still lack in-script forged controls — named by
 R64ReviewSeparability) or the registered AST-bound counter.
+
+## Round 65 (hyaku) — verified calibration guard, coverage candidate pending dispatch
+
+Pre-registration inherited from the dead prior attempt and re-verified before use: `reports/round-65/claims.md` at `5a2e7a0`; base `3eebcdd7ee7eb130b730a17fde1a0e40786c0f2f`; do-nothing control re-run reproduced exactly (`measure-before.log`: K 8/14, C5 0/2, HOLDS_OK_V3=no, exit 0). Candidate commit `c7b7cf98ddeecbd5464e47396f224e6384b78905` (fixture + entry + S038-S041 + C5 patches + lesson + wave spec; README NOT flipped). Round shape: ONE v2 wave of exactly 64 seats prepared and validated (`plan` exit 0, counts 64, dispatch.calls 1) at `.ufo/waves/round-65/wave-spec.json`; dispatch is the orchestrator's between-round act per the accepted host mapping (2026-10-23) — zero seats dispatched in-seat, reported as the mapping, not a defect. §3 planner seat held by the L1.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| calibration — evidence-id transplant guard (C5, new criterion) | **0/2 → 2/2 (0.0 → 10.0)** | `python3 -B reports/round-65/measure.py TREE` (`C5_RECEIPT_EVIDENCE_KILLED_ATTRIBUTED`, endswith-attributed) | `3eebcdd7` → `c7b7cf98` | **improved, C2 met** |
+| coverage — knowledge-map ground K | 8/14 → 8/14 (5.7 → 5.7); admission pending | same probe (`K_HELD_BACKED`) | `3eebcdd7` → `c7b7cf98` | **pending — candidate landed, flip deferred to dispatched wave** |
+| calibration — C2/C3/C4 holds | 2/2 → 2/2 each | same probe | same | unchanged hold |
+| calibration — selected runnability (C) | 4/4, replay 10/10 | same probe (`HOLD_*`) | same | unchanged hold |
+| coverage — selected-family presence F | 5/8 → 5/8 | same probe (`F_COVERAGE`) | same | unchanged |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (byte-survival hold) | same probe (`FRESH_ROWS`) | same | unchanged |
+| diagnostics — STRICT rejected-marker scan | `[:2000]` window → whole-file scan + `STRICT_REJECT_WINDOW_SELFTEST=pass` (registered, not scored) | same probe | same | registered repair (M37) |
+| depth / operability / adjacency | — | — | — | unchanged (ADJ-06 reported-not-absorbed) |
+
+C2: one in-script forged-evidence control per script (`verify_icon_languages.py` ← transplants the round-42 saved evidence id; `verify_multi_icon_states.py` ← round-47's; both ids verified present in `corpus/live/runs/` saved bytes pre-patch). Frozen mutant (delete the `evidence_id` conjunct, one regex match per script) exits non-zero with last line ending `forged receipt evidence accepted` on both; unmutated self-tests green; patches 3 insertions / 0 deletions each, `receipt_ok` untouched. Seeds routed prong (c) of the round-63/64 Evidence-ID transplant check; prongs (a),(b) and the injectivity registry remain future-round debt (owner named in `corpus/lessons/round-65.md`).
+
+C1 (disposition): candidate entry `corpus/knowledge/round-65-apk-axml-byte-evidence.md` over authored fixture `corpus/fixtures/apk-r65/` (947 bytes sha256 `05d2280f…`, regen byte-identical in scratch) covers README C05 with a manual byte-derived readout (15 facts, stdout sha256 `507d79f8…`, every embedded output byte-matched). Admission requires named fresh-seat Q01–Q13 decisions per the frozen order; the validated 64-seat wave (attack roles 38/64 = 59%) carries those seats plus the C5 attribution/regression/separability attacks and will be dispatched by the orchestrator. L1 dry-run with the flip applied on a scratch copy prints K_HELD=K_HELD_BACKED=STRICT=9/14 (6.4), MISMATCH=0, HOLDS_OK_V3=yes, exit 0 — the after-state is one command away once the wave rules.
+
+Capabilities: none added (C2 strengthens existing verifiers; the entry is a pending candidate, not an admitted capability).
+
+Sources: rows 37 → 41 (+S038 mined, +S039 mined, +S040 queued, +S041 own-work); seven manual census commands and `scripts/sources-census.sh validate` both exit 0 at round end. Mistakes mined: M38 (layout-from-intent; red-before `.ufo/waves/round-65/m38-red-before.log`), M37 (pre-registered STRICT window; fix registered with self-test). Tool installs: none (curl/npm-pack/python3 only; no package installed or updated).
+
+**planned:** next round — adjudicate the dispatched round-65 wave: on all-criteria pass flip C05 `frontier → held` naming only the round-65 entry (same revision as the Gate decision), re-measure on the committed tip, and record C1's verdict; on falsification flip `frontier → uncovered` per the frozen order. Then calibration on the remaining receipt conjuncts (`exit_code`/`fixture_sha256` still lack in-script forged controls) or coverage K on C02/C08 re-gates.
+
+Routed forward: AST-bound mutation counter (owner: future registering round); recheck-pin scope holes H1–H3; SHONEN box 1 `[x]` re-confirmation by a non-lane reviewer (r64 routing 1, unchanged); evidence-id prongs (a)/(b) + injectivity registry; `## Frontier` C05 prose refresh at admission time (with the row flip, same revision).
