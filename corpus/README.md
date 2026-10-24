@@ -32,7 +32,7 @@ and `live/runs/`.
 | C03 | managed (.NET/CLI) assemblies | — | — | frontier |
 | C04 | JavaScript/Electron packages | `knowledge/round-62-commonjs-require-name-evidence.md` (source names and saved call spans on authored directories only; no Electron/runtime/export-binding ground) | `fixtures/js-r3`, `js-r7-v2`, `shapes-r12`; `verify_js_graph_delta.py`, `verify_semantic_trace.py`, `verify_shape_evidence.py`; shape/semantic work is outside the new entry; retained rejected candidate `knowledge/commonjs-destructured-require-edges.md` | held |
 | C05 | Android packages (APK) | — | — | frontier |
-| C06 | archives (ZIP inventory) | `knowledge/2026-10-12-rea-readiness-checklist.md` (archive-tool row only) | `fixtures/archive-r2`, `nested-r11`, `duplicate-r15` | partial |
+| C06 | archives (ZIP inventory) | `knowledge/round-63-zip-central-directory-evidence.md` (manual byte-derived central-directory readout of `fixtures/archive-r2/fixture.zip` only; no general ZIP-parser, trailing-bytes, provider-completeness or authenticity claim) | `fixtures/archive-r2`, `nested-r11`, `duplicate-r15` | held |
 | C07 | firmware images | — | — | frontier |
 | C08 | browser/Electron runtime evidence | — | — | frontier |
 | C09 | EVM bytecode interfaces | `knowledge/round-62-evm-dispatch-byte-evidence.md` (manual authored-byte/saved-field correspondence only) | `fixtures/evm-r19`, `evm-r21`…`evm-r26` (no `evm-r20`); `verify_evm_evidence.py`; retained rejected candidate `knowledge/evm-saved-interface-candidates.md` | held |
