@@ -27,8 +27,14 @@ carries a `build` field that *does* name zipfile semantics
 checksum as bin/checksum; writestr README.txt as stated"`). If the integrated entry asserts
 any claim about **zipfile module behavior** (e.g. what `ZIP_DEFLATED` or `compresslevel=9`
 mean) rather than quoting that string as a *recorded* oracle label, the exclusion would be
-wrong and the drafted S033 row in §7 must be landed instead. L1 owns that call at
+wrong and the drafted row in §7 must be landed instead. L1 owns that call at
 integration; §7 is copy-paste ready.
+
+**Contingency closed (verified after the candidate landed):** the integrated entry does
+**not** quote the `build` field and asserts no zipfile behavior — it cites S032 (spec) and
+the own-work row only, and its own §Sources records this seat's screened-and-excluded
+decision. The exclusion therefore stands on the entry's own text, and §7's row is **not
+needed and not to be landed** this round. See §9a.
 
 **S033 id availability (asked by `R63EntryC06`):** `S032` = PKWARE APPNOTE
 (`R63SourceAppnote`). Because I write no S033, **`S033` stays free**; recommend L1 assign
@@ -36,6 +42,12 @@ it to the own-work bundle row (archive-r2 `fixture.zip` + `truth.json` + the sav
 `20261012T164246Z/artifact-inspection.json`) that the entry needs under Q01, and have the
 entry cite that id as L1-assigned (or cite the own-work inputs by path anchor with the id
 marked L1-assigned). I do not own that row's text.
+
+**RESOLVED (L1, 2026-10-23):** L1 took that recommendation — the own-work row lands as
+**S033** (next-unused per contract v1) and the entry's S034 mentions are renumbered to
+S033 (correction N1 to `R63EntryC06`). The round's ids are the contiguous pair S032 + S033
+and no id is skipped or reserved for a zipfile-docs row. The screened-and-excluded
+zipfile documentation stays in the search log with no row.
 
 ## 2. The open, pinned
 
@@ -220,15 +232,33 @@ Lesson `## Gate` facts to record if the exclusion is landed: URL
 sha256 `9520a8cbce7d3c8b7ea6704f60ac1122856da14d1bdc4161075912303a270739`, and quote Q1
 (19 words, module introduction) as the ground for the exclusion.
 
-## 7. Contingency S033 row (land ONLY if the integrated entry claims zipfile module behavior)
+**L1's placement decision (2026-10-23):** the search-log note is the lesson's version
+(§6 block dropped); the **snapshot digest** above lands in the round's `## Gate` record,
+i.e. in the lesson's zipfile-docs paragraph. The Gate record for the excluded source
+therefore carries: URL `https://docs.python.org/3/library/zipfile.html`, access date
+`2026-10-23`, snapshot sha256
+`9520a8cbce7d3c8b7ea6704f60ac1122856da14d1bdc4161075912303a270739` (139782 bytes), and
+the 19-word located quote "Any advanced use of this module will require an understanding
+of the format, as defined in PKZIP Application Note." (module introduction) as the ground
+for the exclusion. `R63LessonDraft`'s draft already carries my exclusion line and that
+quote; the digest is the one item to add.
 
-Not proposed for landing under the decision in §1; supplied so L1 can land it in one step if
-the integrated entry's build-recipe sentence asserts module semantics instead of quoting
-the recorded oracle label. Contract v1 shape: 11 columns, no `|` inside any cell, id next
-unused, `used-by` = `—` until an entry cites it.
+## 7. Contingency row (NOT needed this round; id note below)
+
+**STATUS: not needed and not to be landed.** The candidate entry was re-checked after
+landing (§9a): it does not quote `truth.json`'s `build` field and asserts no zipfile
+behavior, so the trigger condition for this row is not met. L1's decision (2026-10-23) is
+option (a): the own-work row lands as **S033** and the round's ids are the contiguous
+pair S032 + S033, so **no id is skipped** and none is reserved for this contingency.
+
+**Id note for any future round:** with S032 (spec) and S033 (own-work) both landing, a
+docs row for the zipfile documentation could no longer use S033; if a later round ever
+needs it, the next unused id would be **S034**. The row text below is retained for that
+future use only, with the id corrected accordingly. Contract v1 shape: 11 columns, no `|`
+inside any cell, `used-by` = `—` until an entry cites it.
 
 ```text
-| S033 | zipfile — Work with ZIP archives, Python documentation — https://docs.python.org/3/library/zipfile.html | docs | A | Python zipfile module behavior only: what the ZIP_DEFLATED constant and the compresslevel argument mean, and that the module defers format semantics to the PKZIP Application Note; not the ZIP record layout, which S032 covers | zipfile.ZIP_DEFLATED; ZipFile.__init__ compresslevel parameter; module introduction; Python 3.15.1 documentation, page last updated Oct 24, 2026 (00:13 UTC) | Which Python-level constants and arguments a recorded build recipe names, so such a recipe can be read without inferring module behavior. | queued | 2026-10-23 | on-release | — |
+| S034 | zipfile — Work with ZIP archives, Python documentation — https://docs.python.org/3/library/zipfile.html | docs | A | Python zipfile module behavior only: what the ZIP_DEFLATED constant and the compresslevel argument mean, and that the module defers format semantics to the PKZIP Application Note; not the ZIP record layout, which S032 covers | zipfile.ZIP_DEFLATED; ZipFile.__init__ compresslevel parameter; module introduction; Python 3.15.1 documentation, page last updated Oct 24, 2026 (00:13 UTC) | Which Python-level constants and arguments a recorded build recipe names, so such a recipe can be read without inferring module behavior. | queued | 2026-10-23 | on-release | — |
 ```
 
 Gate quotes for that row: Q2 (9 words, `zipfile.ZIP_DEFLATED`) and Q3 (15 words,
@@ -288,28 +318,67 @@ redundant and may be folded into it; the values are identical.
 
 ## 9a. Post-landing verification of the decision (candidate entry now exists)
 
-The C06 candidate draft appeared at `/tmp/revenger-r63-entry/candidate.md`
-(sha256 `630b974a51e0f6ab815a5806a0f415b3f07089df91923dde3a78b6fd49904c7e`) after my
-first pass. I re-checked it against the decision above, and the **contingency branch in
-§5/§7 is NOT triggered** — the exclusion stands on the actual entry text:
+The C06 candidate draft appeared at `/tmp/revenger-r63-entry/candidate.md` after my
+first pass, and was **revised twice** while I worked. I re-checked every revision against
+the decision above. Verdict: the **contingency branch in §5/§7 is NOT triggered** — the
+exclusion stands on the actual entry text in every revision.
 
-* The entry's two `source:` rows are **S032** (APPNOTE) and **S034** (own-work bytes +
-  saved record). There is no third row, and no Python-doc citation: `grep -n 'zipfile'`
-  on the candidate returns only the two sentences that *record my exclusion* —
-  "No third source is cited. The Python `zipfile` documentation was screened and excluded
-  in this round: the readout reads the archive's bytes with `struct` and inflates with
-  `zlib`, and credits no `zipfile` behavior." (line 620) and the Q12 cell "the Python
-  `zipfile` documentation was screened and excluded without a registry row, so no reject
-  reason is owed" (line 671).
-* **The candidate does not quote `truth.json`'s `build` field at all** — `grep -n
-  'ZipFile\|ZIP_DEFLATED\|"build"'` returns no hit. So the one place zipfile semantics
-  could have entered the entry does not enter it, and the §7 row is not needed.
-* The entry's compression talk is byte-level only: "compression method 8" is reported as
-  a value read at the spec-derived offset, and the payload step is "inflating it with
-  `zlib` (raw DEFLATE)". No claim of the form "ZIP_DEFLATED produced method 8" and no
-  `compresslevel` claim appears.
-* Its §Sources lists "No third source is cited", and its Q01 cell asserts that no claim
-  rests on a row outside S032 and S034.
+**Revision 1** (sha256 `630b974a51e0f6ab815a5806a0f415b3f07089df91923dde3a78b6fd49904c7e`):
+two `source:` rows (S032 spec + S034 own-work), no `build`-field quote at all
+(`grep -n 'ZipFile\|ZIP_DEFLATED\|"build"'` → no hit), no `compresslevel` mention
+(`grep -c 'compresslevel'` → 0), and §Sources stating "No third source is cited. The
+Python `zipfile` documentation was screened and excluded in this round: the readout reads
+the archive's bytes with `struct` and inflates with `zlib`, and credits no `zipfile`
+behavior." The compression talk was byte-level only ("compression method 8" reported as a
+value read at the spec-derived offset; the payload step "inflating it with `zlib` (raw
+DEFLATE)"). No claim of the form "ZIP_DEFLATED produced method 8".
+
+**Revision 2** (sha256 `dcfe131cbf833c90ba956a54eeadbd46314f829e88f5528b52d7baad6c8ff193`,
+current): two changes, neither of which triggers the contingency.
+
+1. **The `build` string is now printed — as a recorded field, and it is not load-bearing.**
+   A new derived fact appears (`readout.py --fact 'truth_build_field'`), carrying
+   `"recorded_build_string":"Python zipfile.ZipFile(mode=w, compression=ZIP_DEFLATED,
+   compresslevel=9); write checksum as bin/checksum; writestr README.txt as stated"` with
+   its own note: *"recorded provenance string read from the oracle file; this entry makes
+   no claim about the behaviour of any library it names and does not rely on it for any
+   value"*. That is exactly the framing `R63SourcesRows` named as the condition for the
+   exclusion to hold, and the entry meets it: the string is printed, **not interpreted** —
+   no claim is made about what `ZIP_DEFLATED` or `compresslevel=9` mean, and no value in
+   the entry derives from it. The entry's own §Sources says so explicitly: *"The one place
+   a library name appears is the oracle's recorded `build` string, printed above as a
+   recorded field and relied on for no value — this entry makes no claim about what any
+   library named there does, so the exclusion stands and no docs row is needed."* The Q12
+   cell repeats it. So `grep -c 'compresslevel'` is now 2, but both hits are the quoted
+   recorded string plus its "no claim" note, not a semantics claim.
+2. **The id renumbering is applied:** `grep -o 'S03[0-9]' | sort | uniq -c` gives
+   **S032 ×10, S033 ×5, S034 ×0**. The own-work row is now cited as S033 in the
+   `source:` header and in §Sources, matching L1's option-(a) decision.
+
+**Revision 3** (sha256 `a0158e99d3fa4b3cec132e03f5738015c39ca3abb56437ae1bab81e88f2d1b53`,
+80126 B, current; reported by `R63EntryC06` after its nine corrections H1–H7 and N1–N3):
+the same framing holds and is now explicit in the sentence-to-output inventory, which
+carries a dedicated row for it —
+
+```text
+| RP | the oracle's recorded `build` string (recorded-provenance note, not an observation) | `--fact 'truth_build_field'` | `truth_build_field` → `recorded_build_string`, `note` |
+```
+
+Both occurrences of the printed string carry the identical note ("recorded provenance
+string read from the oracle file; this entry makes no claim about the behaviour of any
+library it names and does not rely on it for any value"), the ids are still **S032 ×10,
+S033 ×5, S034 ×0**, and the §Sources exclusion statement (now at line 657) and the Q12
+cell (line 708) both say the exclusion stands and no docs row is needed. A targeted grep
+for a *behaviour* claim ("zipfile produces", "zipfile writes", "ZIP_DEFLATED means",
+"compresslevel=9 means", "per the zipfile") returns **no hit**. The embedded stdout
+digest moved to `02b0f495…` (17 lines) because the H1/H7 corrections changed the stdout
+bytes — the entry seat flagged that deviation explicitly.
+
+**Cross-check:** the entry now also carries my snapshot digest inline in §Sources —
+"`.ufo/waves/round-63/source-snapshots/zipfile.html` (sha256
+`9520a8cbce7d3c8b7ea6704f60ac1122856da14d1bdc4161075912303a270739`, accessed 2026-10-23);
+it is not cited as support for any claim" — so the digest lands in the entry as well as in
+the lesson's Gate record.
 
 **Finding for L1 (material, from my exclusion, not a defect of mine):** because the
 zipfile docs take no row, **S033 is left unused**, and the round's own-work row was
@@ -328,7 +397,73 @@ This closes the id-gap question: my §7 contingency row is not needed and no id 
 for it. I changed no id myself — the renumbering is the entry seat's correction and L1's
 append.
 
-## 9b. Cross-seat consistency checked
+## 9c. Revision-trail reconciliation — the disputed rev1 sub-claim, settled against preserved bytes
+
+`R63LessonDraft`'s draft lesson (23:48:06) states: *"the first candidate revision read
+(`630b974a…`) already carried the same `truth_build_field` fact (two occurrences), while
+`R63SourceZipfileDocs` first reported a grep for `ZipFile|ZIP_DEFLATED|"build"` returning
+no hit; … the earlier premise was not."* `R63SourcesRows` concurred with that reading and
+has recorded it in its review.
+
+**That sub-claim is contradicted by evidence that survives, and I record the conflict
+verbatim rather than accept it.** The conclusion (exclusion holds) is unaffected; the
+premise attribution is not.
+
+1. **The rev1 embedded stdout is preserved on disk and has no build field.**
+   `/tmp/revenger-r63-entry/recheck-stdout.txt` (mtime 23:36) has digest
+   `e112d4092dfa8e3ed5398f07d1222457455ca06a94e01e988a0f58eab4c445ec` — **exactly** the
+   stdout digest the entry seat's own report (`R63EntryC06.md`, written 23:37:48, pinning
+   `candidate.md` = `630b974a…`) records for rev1. That preserved file contains
+   `grep -c 'compresslevel'` = **0** and `grep -c 'truth_build_field'` = **0**.
+2. **Any printed build-field line necessarily contains `compresslevel`.** Read from
+   `corpus/fixtures/archive-r2/truth.json` line 19, the recorded string is
+   `'Python zipfile.ZipFile(mode=w, compression=ZIP_DEFLATED, compresslevel=9); write
+   checksum as bin/checksum; writestr README.txt as stated'` — `contains "compresslevel":
+   True`. So a revision carrying that string has `compresslevel` > 0; rev1's preserved
+   stdout has 0.
+3. **The entry seat's own rev1 report does not list a build-field fact.**
+   `grep -c 'truth_build_field' .ufo/waves/round-63/build/R63EntryC06.md` = **0** while
+   that report enumerates the derived facts it exercised.
+4. **`R63SourcesRows`' own measurement contradicts the reading they endorsed.**
+   Their message states `grep -c 'compresslevel'` = **0** on the revision they first
+   checked and 2 on `dcfe131c…` — the same 0-vs-2 split I measured, i.e. their number
+   agrees with mine and disagrees with the lesson's sentence.
+5. **My grep was not blind to the string, and the file was not stable mid-read.** Control
+   test: a synthetic line containing the recorded string **does** match my pattern
+   (`grep -n -i 'ZipFile\|ZIP_DEFLATED\|"build"'` → 1 hit). On the file whose
+   `sha256sum` in the same command printed `630b974a…`, that pattern matched only the
+   two prose sentences (the §Sources and Q12 exclusion statements) — no build-field line.
+6. **The likely mechanism of the confusion, checkable against mtimes.** The candidate was
+   rewritten three times; the lesson draft was written at **23:48:06**, between rev2
+   (`dcfe131c…`) and rev3 (`a0158e99…`, mtime 23:49:58). Rev2 carried the build field
+   twice (lines 149 and 249), matching the lesson's "two occurrences". So the lesson seat
+   read the on-disk file at draft time — which was rev2 — and attributed its content to
+   the earlier digest `630b974a…` it had been told about. The digests it names
+   (`dcfe131c…` for its own re-check) are consistent with that sequence.
+
+**Net:** my rev1 observation stands as recorded; the lesson's sentence asserting the
+opposite about rev1 did not, and it has now been **withdrawn in the lesson** (corrected
+draft sha256 `ce04ac74aea6435aaf532d8099cb57448b246b8928b8636d1765d9f27780f378`, 28934 B:
+"the build string entered the candidate at revision `dcfe131c…` … the earlier revision
+`630b974a…` carried **no** build-field line … An earlier reading in this seat attributed
+the two occurrences to `630b974a…`; that attribution is withdrawn here"). The lesson's
+*conclusion* — "the candidate prints `truth.json`'s `build` string as a recorded field,
+claims no library behavior, so no docs row is needed" — is correct and I confirm it on the
+current revision (§9a). The correction was to the attribution of *which* revision first
+carried the string, not to the outcome.
+
+**7. Third independent corroboration (reviewer seat, after adopting the correction).**
+`R63SourcesRows` re-verified the chain itself and reported a datum of its own that settles
+it: on the candidate then on disk (74270 B, mtime 23:35) its test `"compresslevel" in
+candidate` printed **False**, and it measured **2** only at `dcfe131c…` (23:44). It has
+withdrawn the second-hand sentence from both of its reports
+(`.ufo/waves/round-63/build/sources-rows-review.md` §4 and `R63SourcesRows.md`) and
+confirmed the current revision's counts match mine (`compresslevel` = 2,
+`truth_build_field` = 6, S032 ×10 / S033 ×5 / S034 ×0). So three seats now report the
+same 0-before-`dcfe131c` / 2-after split: the entry seat's pinned stdout digest, this
+seat's grep plus control test, and the reviewer's independent membership test.
+
+## 9b. Cross-seat consistency checked (§9c reads as a companion to this section; numbering kept as first written)
 
 * `R63LessonDraft`'s draft lesson (`/tmp/revenger-r63-lesson/round-63.md`, sha256
   `7dda3ff86ab9c06eef760b3f72a211a6f913a1095ce47a3861699a4a59bcbf8d`) carries my
@@ -337,10 +472,40 @@ append.
 * `R63SourceAppnote` created `.ufo/waves/round-63/source-snapshots/manifest.json` with my
   `zipfile.html` entry (139782 bytes, sha256
   `9520a8cbce7d3c8b7ea6704f60ac1122856da14d1bdc4161075912303a270739` — matching my pin)
-  marked "no registry row (screened-and-excluded)". My `zipfile.provenance.json` sidecar
-  coexists and is not listed there; either is redundant against the other, and the values
-  agree.
-* `R63EntryC06` cites S032 + S034 and confirms it credits no zipfile behavior.
+  marked "no registry row (screened and excluded: the page defers format semantics to
+  PKWARE APPNOTE, so it is a pointer to S032, not a second authority)". My
+  `zipfile.provenance.json` sidecar coexists and is not listed there; either is redundant
+  against the other, and the values agree.
+* `R63EntryC06` cites S032 + S033 (after L1's renumbering) and confirms it credits no
+  zipfile behavior.
+* `R63SourcesRows` (reviewer seat) **CONFIRMED** the decision and independently
+  reproduced every ground: the Q1 deferral quote verbatim in the snapshot with its
+  hyperlink target literally `https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT`
+  (the same URL as S032, so pointer not second authority); `import zipfile` count 0 in
+  both readouts; all five cited APPNOTE sections present in the pinned snapshot (§4.4.4
+  l.767, §4.4.5 l.854, §4.4.7 l.900, §4.3.12 l.511, §4.3.16 l.632); and the snapshot
+  facts matching mine exactly (139782 bytes, the same sha256, the 3.15.1 docs build). Its
+  review is recorded in `.ufo/waves/round-63/build/sources-rows-review.md`.
+
+### One conflict between two sibling seats, for the record
+
+On the **search-log counts** the two seats differ, and the difference is a counting
+convention, not a factual error:
+
+* `R63LessonDraft`'s archive-spec note: identified **3**, screened **3**, included **1**
+  row (S032), excluded **2** — counting the APPNOTE fallback URL's different revision
+  (6.3.9) as the second exclusion, and counting the own-work bundle as *not* a document
+  set for the "included" figure.
+* `R63SourcesRows`' first pass said 2/2/1 for the same reason (own-work bundle not counted
+  as a document set), then wrote to L1 that **my §6 text (3/3/2/1) is the correct one**
+  and that its own §5c wording is superseded, with L1 to paste my §6 text verbatim.
+
+L1 has since decided: **use the lesson's version** (it reconciles the fallback-revision
+exclusion) and drop my §6 block, carrying only the snapshot digest into the Gate record.
+That is L1's call and it is the one in force; my §6 block is retained above for the
+record and for the digest, and is **not** to be appended. Both counts are internally
+consistent under their own conventions, and no seat's arithmetic is wrong — but only one
+note may be landed, and the lesson's is the one L1 chose.
 
 ## 10. Out of scope / not done
 
@@ -353,9 +518,14 @@ append.
   absent; the entry seat's readout script and stdout were present), so the §5 contingency
   is stated against the frozen claims.md/build-spec recipe text and the peer readout pack,
   not against landed entry prose. **Superseded by §9a**: the candidate has since landed
-  (sha256 `630b974a51e0f6ab815a5806a0f415b3f07089df91923dde3a78b6fd49904c7e`) and was
-  re-checked; it does not quote the `build` field and asserts no zipfile behavior, so the
-  contingency is not triggered and the exclusion stands on the entry's own text.
+  and been revised twice (sha256 `630b974a…` then `dcfe131c…`) and was re-checked in both
+  revisions; it prints the oracle's `build` string as a *recorded field* with an explicit
+  "no claim about the behaviour of any library it names" note and relies on it for no
+  value, so the contingency is not triggered and the exclusion stands on the entry's own
+  text.
+* I did not renumber any id in the candidate (S034 → S033) — that was L1's decision and
+  the entry seat's correction N1; I verified the renumbering landed (S034 ×0) and
+  recorded it. I changed no `corpus/` byte, no lesson file and no search-log note.
 * No tool installed or updated. No pacman transaction (host-wide pacman pause honored).
   Only `curl` and `python3` (standard library) were used.
 * No `npx`/network call other than the two `curl` GETs to `docs.python.org` recorded in §2.

@@ -9,8 +9,8 @@ Lane: `/home/vgpnk/Projects/shokunin/revenger-shokunin`.
 | item | value |
 |---|---|
 | draft path (seat scratch; L1 lands it) | `/tmp/revenger-r63-lesson/round-63.md` |
-| sha256 of the draft | `7dda3ff86ab9c06eef760b3f72a211a6f913a1095ce47a3861699a4a59bcbf8d` |
-| size | 25798 bytes / 250 lines |
+| sha256 of the draft | `ce04ac74aea6435aaf532d8099cb57448b246b8928b8636d1765d9f27780f378` |
+| size | 28934 bytes / 293 lines |
 | target landing path | `corpus/lessons/round-63.md` (L1-only; this seat wrote nothing under `corpus/`) |
 
 The draft is a **draft for L1**: it admits nothing, flips nothing, and edits no
@@ -55,6 +55,28 @@ file, sibling lane, lane jj state or lane Git index.
      exclusion, while asserting module behavior would need the S033 row the
      seat holds in reserve (§7). The candidate as drafted asserts no module
      behavior and does not quote the `build` field.
+   - *Decisions L1 closed after the draft landed (incorporated, draft updated)* —
+     (i) **id gap closed by option (a):** the own-work row lands as **S033**, the
+     S034 reservation is withdrawn and the candidate is renumbered
+     (`dcfe131c…`: S032 ×10 / S033 ×5 / S034 ×0), so the round's ids are the
+     contiguous pair S032 + S033 with no id skipped; (ii) **search log:** L1 uses
+     this lesson's archive-spec note and drops `R63SourceZipfileDocs` §6, keeping
+     only its snapshot digest — the divergence with `R63SourcesRows` (which
+     judged the §6 counts correct) is recorded verbatim in the search-log note,
+     with the seat's §9b as the decision trail; (iii) **zipfile contingency
+     closed positively:** the candidate prints `truth.json`'s `build` string as
+     the recorded fact `truth_build_field`, claims nothing about any library it
+     names and relies on it for no value, so no `zipfile` behavior enters the
+     entry and no docs row is needed.
+     Revision trail corrected on the seat's evidence and re-verified by me: the
+     build string entered the candidate at revision `dcfe131c…`; the earlier
+     revision `630b974a…` carried **no** build-field line — its embedded stdout
+     survives at `/tmp/revenger-r63-entry/recheck-stdout.txt` (sha256
+     `e112d409…`, 17 lines) with `compresslevel` = 0 and `truth_build_field` = 0,
+     and any printed build-field line necessarily contains `compresslevel`. My
+     earlier attribution of two occurrences to `630b974a…` is withdrawn in the
+     draft. Current candidate revision `a0158e99…`: `compresslevel` = 2,
+     `truth_build_field` = 6, S032 ×10 / S033 ×5 / S034 ×0.
    - *Admission order* — land without the flip → fresh falsify wave → adjudicate
      → flip C06 only on all-criteria pass → measure on a committed archive.
    - *Quality criteria* — Q01–Q13 unchanged, `corpus/QUALITY.md` byte-identical
