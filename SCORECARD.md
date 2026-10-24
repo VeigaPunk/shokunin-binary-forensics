@@ -363,3 +363,65 @@ freshness hold proves byte survival, not current-host truth; oracle scope
 Planned future selection: coverage K on C02/C06 re-gates or a managed-assembly
 probe if a local SDK appears; calibration on the remaining receipt conjuncts
 (M35) or a newly registered counter with the routed regex/attribution fixes.
+
+## Round 64 (hyaku) — final measured two-claim round
+
+Pre-registration `reports/round-64/claims.md` at `3bb430f9` (V2 diagnostic
+wording amended at `671e3a18` before any after-measurement, recorded in the
+lesson); do-nothing control `reports/round-64/measure-before.log` (base
+`666ea84b`: K 7/14, STRICT 7/14, MISMATCH 1 [C07], C4 0/2, holds green). One
+validated v2 wave, exactly 64 seats, dispatched as ONE task call (`.ufo/waves/
+round-64/`); §3 planner seat held by L1. Final measured revision: see
+`reports/round-64/measure-after.log` (committed with this section).
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — knowledge-map ground K | **7/14 → 8/14 (5.0 → 5.7)** | `python3 -B reports/round-64/measure.py TREE` (`K_HELD_BACKED`) on `git archive` trees | `666ea84b` → final tip | **improved, C1 met** |
+| calibration — stdout_sha256 receipt guard (C4, new criterion) | **0/2 → 2/2 (0.0 → 10.0)** | same probe (`C4_RECEIPT_KILLED_ATTRIBUTED`, endswith-attributed) | same | **improved, C2 met** |
+| calibration — receipt-identity (C2) and receipt-clause (C3) holds | 2/2 → 2/2 both | same probe | same | unchanged hold |
+| calibration — selected runnability (C) | 4/4, replay 10/10 | same probe (`HOLD_*`) | same | unchanged hold |
+| coverage — selected-family presence F | 5/8 → 5/8 | same probe (`F_COVERAGE`) | same | unchanged |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (byte-survival hold; not current-host truth — routed wording frozen) | same probe (`FRESH_ROWS`) | same | unchanged |
+| v2 routed-counter diagnostics | K_HELD_BACKED_STRICT 7/14→8/14 (= BACKED both ends); README_TOKEN_LEGEND_MISMATCH **1 → 0** (M36 fix, shown able to fail); HOLDS_OK_V2 no → yes | same probe | same | registered, not scored |
+| depth / operability / adjacency | no separate numeric claim | — | — | unchanged (ADJ-06 reported-not-absorbed; connector scan) |
+
+C1 admission (distinct from the counter, per the round-61 M34 lesson): named
+fresh-seat Q decisions on landed bytes — Q01+Q02 PASS (`R64ReviewEntryQ01`
+re-review), Q03 PASS (`R64ReviewEntryScope` blind derivation), Q06 PASS
+(`R64ReviewEntryQ06`), Q09 PASS ×6 criteria (`R64ReviewEntryQ09` re-review),
+Q10 PASS (`R64ReviewEntryScope` delta, cross-lane fence), Q11 PASS
+(`R64ReviewEntryQ11` re-review), remaining rows answered/n/a per the entry's
+Q-map, 24/24 in-entry commands re-run MATCH (`R64EntryCommands`), recheck
+mutation kill attributed (`R64MutEntry`). Admitted entry:
+`corpus/knowledge/round-64-firmware-region-byte-evidence.md` (sha256
+`9bf21e50…e0ebf`); README C07 flipped with the Gate decision in the same
+revision. Also discharges the routed C07 legend staleness (frontier → held).
+
+C2: one in-script forged-stdout control per script (6 insertions, 0 deletions;
+existing controls retained) — `verify_icon_languages.py` `a2fd347e…`,
+`verify_multi_icon_states.py` `9345cb8c…`. Verified by R64MutC4 (frozen mutants
+byte-verical), R64ReviewC4Lang/Multi (PASS), R64MutIcon (C2/C3 regression
+sweep), R64MutProbe (attribution integrity: loose messages rejected), 
+R64SimplifierDrift (minimality). Red-before: both mutants exit 0 at base.
+
+Capabilities: none added (C2 strengthens existing verifiers; the entry is
+knowledge). SHONEN box 1: SKILL.md landed (39098 bytes, `bfd92057…`),
+non-author verifier `R64ReviewSkill` re-stated `[x]`-ready = YES on the final
+bytes — box flips `[x]` with that named verifier. Mistake mined: M36
+(token-vs-legend drift; fix = registered `README_TOKEN_LEGEND_MISMATCH`,
+shown able to fail with value 1 at base). Sources: rows 35 → 37 (+S036 pinned
+REA firmware guide, +S037 own-work bundle), census exit 0 both ends; C1 is the
+sourced claim.
+
+Routed forward (full detail in `corpus/lessons/round-64.md`): counter spoof
+surface (decoy trees meet numeric targets — the Q-gate is the defense; an
+AST-bound mutation counter is future-counter debt); STRICT rejected-marker
+scan window (first 2000 bytes — this entry's marker sits at 4155, recorded by
+R64ReviewSeparability); entry recheck scope items 10–11 outside the stdout pin
+(R64MutEntry); Q01 two LOW line-anchoring nits; `## Frontier` C07 prose staleness;
+transplant corollary owner named (R64RevengerLedger 6-prong check).
+
+Planned future selection: coverage K on C02/C05/C08 re-gates or a managed-assembly
+probe if a local SDK appears; calibration on the remaining receipt conjuncts
+(`evidence_id`/`exit_code` still lack in-script forged controls — named by
+R64ReviewSeparability) or the registered AST-bound counter.

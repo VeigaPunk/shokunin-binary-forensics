@@ -2,11 +2,23 @@
 
 Promotion to shokunin requires all of:
 
-- [ ] SKILL.md contains real decision tables, error patterns, checklists, cited sources
-  `SKILL.md` is absent. Historical checks in `corpus/live/runs/promotion-review-r5.md` covered narrower corpus instructions, not the current canonical SKILL.md requirement; no fresh verifier.
+- [x] SKILL.md contains real decision tables, error patterns, checklists, cited sources
+  Landed `SKILL.md` (39098 bytes, sha256 `bfd92057…a9dd`; merged from the seat-drafted
+  SKILL + checklists after a non-author critic round). Named non-author verifier:
+  `revenger-r64.R64ReviewSkill` — `[x]`-ready = YES re-stated on the final bytes
+  (`.ufo/waves/round-64/R64ReviewSkill.md`); citation sweep 0 phantoms
+  (`R64ReviewSkillCites`); checklists executed verbatim with observed exits matching
+  promises (`R64ExecSkillRun` transcript). Historical checks in
+  `corpus/live/runs/promotion-review-r5.md` remain narrower history only.
 - [~] At least one end-to-end domain task executed and logged in LOG.md
-  Author-side fixture-scoped saved PE ledger replay only: `LOG.md:731-737`, `reports/round-1/measurements.json`, work commit `7c3ce197341b0babe0046b1d9cbb59f1ba43f54e`; no producer rerun, target execution or native readiness.
+  Fixture-scoped saved-ledger replay + real producer record verification:
+  `reports/round-64/measure-after.log` (frozen counter over archived corpus),
+  `corpus/live/runs/round-63/` record verified (Evidence ID re-derived from the
+  shipped package by `R64ReviewRecord`); no producer rerun this round.
 - [~] Instructions executable by an agent without oral context
-  `README.md:24-41` gives the exercised lane-root CLI; `reports/round-1/measurements.json` records replay from an isolated committed corpus snapshot. No independent outside instruction verifier in this round.
+  `SKILL.md` runnable sections executed by `R64ExecSkillRun` (census 4/4, replay 10/10,
+  oracle ORACLE OK, counter exit 0); no independent outside instruction verifier.
 - [~] No cross-domain bleed (PROVINCE.md still accurate)
-  Author-side scope repair at `PROVINCE.md:25-30` and sibling-overlap scan `reports/round-1/connector.md`; same-lane L2 reports do not grant promotion or outside-discernment authority.
+  Entry `## Cross-lane scope note (Q10)` + README C07 parenthetical report-not-absorb
+  ADJ-06 (fleet `.ufo/l0-questions.md:42` open); connector scan `R64ConnectorOverlap`;
+  no province sentence edited; no outside verifier this round.

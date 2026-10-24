@@ -1,0 +1,471 @@
+{
+ "wave": "revenger-r64-v2",
+ "policy": "ufo-wave-policy-v2.json",
+ "dispatch": "exactly one task call, 64 seats, first acceptance",
+ "total": 64,
+ "dead": [
+  {
+   "name": "R64CriticC4",
+   "role": "critic",
+   "route": "m_sol (critic)",
+   "error": "Codex error event: This content was flagged for possible cybersecurity risk (code=cyber_policy), 1m22s; recorded, not replaced"
+  }
+ ],
+ "followups": "corrections and re-reviews ran as messages to existing seat identities (round-62/63 pattern); no new spawns",
+ "seats": [
+  {
+   "name": "R64ConnectorOverlap",
+   "role": "connector",
+   "axes": [
+    "adjacency"
+   ]
+  },
+  {
+   "name": "R64C4LangPatch",
+   "role": "executor",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64C4MultiPatch",
+   "role": "executor",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64FirmwareReadout",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64RecordRecon",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64FixtureRegen",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64OracleRerun",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64Preservation",
+   "role": "executor",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64EntryCommands",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64SnapshotManifest",
+   "role": "executor",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64ExecSkillRun",
+   "role": "executor",
+   "axes": [
+    "operability"
+   ]
+  },
+  {
+   "name": "R64SourceReaGuide",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64SourcesRows",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64EntryC07",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64LessonDraft",
+   "role": "scribe",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64SkillDraft",
+   "role": "scribe",
+   "axes": [
+    "coverage",
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64SkillChecklists",
+   "role": "scribe",
+   "axes": [
+    "operability"
+   ]
+  },
+  {
+   "name": "R64ReadmeLegend",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64ScribeGate",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64ScoutRecon",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64ScoutCensus",
+   "role": "scout",
+   "axes": [
+    "freshness"
+   ]
+  },
+  {
+   "name": "R64ScoutHistory",
+   "role": "scout",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64ScoutReadme",
+   "role": "scout",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64ScoutSources",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64ScoutHost",
+   "role": "scout",
+   "axes": [
+    "freshness"
+   ]
+  },
+  {
+   "name": "R64ScoutFixtureBytes",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64ScoutMisroot",
+   "role": "scout",
+   "axes": [
+    "operability"
+   ]
+  },
+  {
+   "name": "R64ReviewC4Lang",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64ReviewC4Multi",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64ReviewEntryQ01",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64ReviewEntryQ11",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64ReviewEntryScope",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64ReviewEntryQ06",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64ReviewEntryQ09",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64ReviewRecord",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64ReviewSkill",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64ReviewSkillCites",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64ReviewSeparability",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64ReviewCounter",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64ReviewReadme",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64ReviewSources",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64ReviewLesson",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64ReviewExecSkill",
+   "role": "reviewer",
+   "axes": [
+    "operability"
+   ]
+  },
+  {
+   "name": "R64CriticClaims",
+   "role": "critic",
+   "axes": [
+    "coverage",
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64CriticC4",
+   "role": "critic",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64CriticCounts",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64CriticFixture",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64CriticHarms",
+   "role": "critic",
+   "axes": [
+    "coverage",
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64CriticSkill",
+   "role": "critic",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64CriticSourced",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64CriticEntryDeps",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64CriticCounter",
+   "role": "critic",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64MutC4",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64MutProbe",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64MutIcon",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64MutEntry",
+   "role": "mutation-tester",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64LabKregex",
+   "role": "scout",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64LabBlind",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64LabBinwalk",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ]
+  },
+  {
+   "name": "R64LabLegend",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64LabDoNothing",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64SentinelScope",
+   "role": "sentinel",
+   "axes": [
+    "coverage",
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64RevengerLedger",
+   "role": "revenger",
+   "axes": [
+    "calibration"
+   ]
+  },
+  {
+   "name": "R64SimplifierDrift",
+   "role": "simplifier",
+   "axes": [
+    "calibration"
+   ]
+  }
+ ],
+ "attack_share": "41/64 = 64% (reviewer 16, critic 9 incl. 1 dead, mutation-tester 6, scout 10)"
+}
