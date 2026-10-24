@@ -116,6 +116,13 @@ EXPECTED = {
          (608, 9, 12), (1, 48, 1036, (0,), None, None)),
 }
 
+def receipt_ok(receipt, expected_hash, evidence_id, raw_bytes, round_id):
+    assert receipt['exit_code'] == 0 and receipt['fixture_sha256'] == expected_hash
+    assert receipt.get('stdout_sha256', receipt.get('raw_output_sha256')) == sha(raw_bytes)
+    if round_id != 36:
+        assert receipt['evidence_id'] == evidence_id
+
+
 def check_saved(round_id):
     expected_hash, evidence_id, _, expected_state = EXPECTED[round_id]
     fixture = root / f'fixtures/pe-r{round_id}/fixture.exe'
@@ -140,10 +147,15 @@ def check_saved(round_id):
                     image['same_language_resource_index'], image['size_matches'])
     assert actual_state == expected_state, f'r{round_id}: state'
     receipt = json.loads((root / f'live/runs/round-{round_id}/producer-receipt.json').read_text())
-    assert receipt['exit_code'] == 0 and receipt['fixture_sha256'] == expected_hash
-    assert receipt.get('stdout_sha256', receipt.get('raw_output_sha256')) == sha(raw_bytes)
-    if round_id != 36:
-        assert receipt['evidence_id'] == evidence_id
+    receipt_ok(receipt, expected_hash, evidence_id, raw_bytes, round_id)
+    forged = copy.deepcopy(receipt)
+    forged['fixture_sha256'] = '0'*64
+    try:
+        receipt_ok(forged, expected_hash, evidence_id, raw_bytes, round_id)
+    except AssertionError:
+        pass
+    else:
+        raise AssertionError(f'r{round_id}: forged receipt accepted')
     return data, record, actual_state
 
 def main():

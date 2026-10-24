@@ -1,0 +1,8 @@
+{
+  "command": "npx -y rea-agents@6.5.0 inspect-firmware-regions /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/firmware-r63/firmware-r63.bin --format json",
+  "exit_code": 0,
+  "fixture_sha256": "bdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be",
+  "stdout_sha256": "f69978355e2897fbaa54daadb3e749d7e31d608913a6c1ee849a07ea33aa71f9",
+  "evidence_id": "ev_aae7529fd55b90cd55804cd45bff0fecd837dfaca3e2a132fbe9d161080ed259",
+  "duration_seconds": 1.296587134
+}

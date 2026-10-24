@@ -1,0 +1,21 @@
+{
+  "file": "zipfile.html",
+  "url": "https://docs.python.org/3/library/zipfile.html",
+  "final_url": "https://docs.python.org/3/library/zipfile.html",
+  "http_status": 200,
+  "content_type": "text/html",
+  "content_length": 139782,
+  "access_date": "2026-10-23",
+  "server_date_header": "Sat, 24 Oct 2026 02:25:44 GMT",
+  "last_modified": "Sat, 24 Oct 2026 00:16:18 GMT",
+  "etag": "\"6adbf8d2-22206\"",
+  "bytes": 139782,
+  "sha256": "9520a8cbce7d3c8b7ea6704f60ac1122856da14d1bdc4161075912303a270739",
+  "docs_version": "Python 3.15.1 documentation",
+  "page_title": "zipfile — Work with ZIP archives — Python 3.15.1 documentation",
+  "page_last_updated": "Oct 24, 2026 (00:13 UTC)",
+  "url_note": "docs.python.org/3/ is a moving 'current stable' alias; it served 3.15.1 at access time. The snapshot sha256 above is the pin, not the URL.",
+  "origin": "source-opening build seat; copied byte-exact, never executed",
+  "decision": "screened-and-excluded; no SOURCES.md row (see .ufo/waves/round-63/build/R63SourceZipfileDocs.md)",
+  "decision_grounds": "The page defers format semantics to PKWARE APPNOTE (\"Any advanced use of this module will require an understanding of the format, as defined in PKZIP Application Note.\", module introduction, 19 words), i.e. to S032, so it is a pointer rather than a second authority; the C06 readout is raw struct+zlib reads and credits no zipfile behavior."
+}

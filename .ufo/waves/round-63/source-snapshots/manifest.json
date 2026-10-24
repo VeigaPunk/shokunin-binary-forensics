@@ -1,0 +1,51 @@
+[
+  {
+    "file": "appnote.txt",
+    "url": "https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT",
+    "access_date": "2026-10-23",
+    "bytes": 174585,
+    "sha256": "0b993022a7d320a0bf704e6980bea36fafd17a6066ab994db0a0c16278a50cd6",
+    "origin": "source-opening build seat; copied byte-exact by L1, never executed",
+    "http_status": 200,
+    "final_url": "https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT",
+    "content_type": "text/plain",
+    "last_modified": "Tue, 01 Nov 2022 17:34:41 GMT",
+    "etag": "\"636158b1-2a9f9\"",
+    "spec_version": "6.3.10",
+    "spec_revised": "Nov 01, 2022",
+    "fallback_url": "https://pkware.com/documents/casestudies/APPNOTE.TXT",
+    "fallback_final_url": "https://pkwaredownloads.blob.core.windows.net/pkware-general/Documentation/APPNOTE-6.3.9.TXT",
+    "fallback_http_status": 200,
+    "fallback_bytes": 173575,
+    "fallback_sha256": "c7cf1fecfbde36ebbfbac643e6183d5c76fac983c2066fb8e32c6e4058a87e80",
+    "fallback_spec_version": "6.3.9",
+    "fallback_note": "The fallback URL serves a DIFFERENT revision (6.3.9). Every section quoted by the S032 row was compared line-for-line between the two revisions and is byte-identical. The row pins the primary URL and the 6.3.10 revision, which is the one snapshotted here."
+  },
+  {
+    "file": "zipfile.html",
+    "url": "https://docs.python.org/3/library/zipfile.html",
+    "access_date": "2026-10-23",
+    "bytes": 139782,
+    "sha256": "9520a8cbce7d3c8b7ea6704f60ac1122856da14d1bdc4161075912303a270739",
+    "origin": "source-opening build seat; copied byte-exact, never executed",
+    "http_status": 200,
+    "final_url": "https://docs.python.org/3/library/zipfile.html",
+    "last_modified": "Sat, 24 Oct 2026 00:16:18 GMT",
+    "etag": "\"6adbf8d2-22206\"",
+    "registry_row": "none (screened and excluded: the page defers format semantics to PKWARE APPNOTE, so it is a pointer to S032, not a second authority)"
+  },
+  {
+    "file": "rea-firmware-guide.md",
+    "url": "https://raw.githubusercontent.com/morluto/rea/main/docs/firmware-analysis.md",
+    "access_date": "2026-10-23",
+    "bytes": 15474,
+    "sha256": "d4a25c8569b37c3d030431333db08fc459af54a163af7815b4505cce2f16a898",
+    "origin": "source-opening build seat; copied byte-exact, never executed",
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/morluto/rea/main/docs/firmware-analysis.md",
+    "blob_url": "https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md",
+    "latest_commit_touching_path": "15450643f7502114c4f0755416f97b8f0b358b69",
+    "commit_date": "2026-10-23T19:00:09Z",
+    "registry_row": "none (lead only; not a registry row)"
+  }
+]

@@ -1,0 +1,335 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": null,
+  "createdAt": "2026-10-24T02:21:43.087Z",
+  "updatedAt": "2026-10-24T02:21:43.087Z",
+  "reportDir": ".ufo/waves/round-63/build",
+  "members": {
+    "R63FirmwareFixture": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63FirmwareFixture",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63FirmwareRun": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63FirmwareRun",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63C3NamedPatch": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63C3NamedPatch",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63C3IconPatch": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63C3IconPatch",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63ZipReadout": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63ZipReadout",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63FirmwareOracle": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63FirmwareOracle",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63Preservation": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63Preservation",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63ZipPremise": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63ZipPremise",
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63SourceAppnote": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63SourceAppnote",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63SourceZipfileDocs": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63SourceZipfileDocs",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63EntryC06": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63EntryC06",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63LessonDraft": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63LessonDraft",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63LedgerFirmware": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63LedgerFirmware",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63SourcesRows": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63SourcesRows",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63ScoutArchive": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63ScoutArchive",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63ScoutFirmware": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63ScoutFirmware",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63ScoutRecordRecon": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63ScoutRecordRecon",
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63ReviewC06Q": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63ReviewC06Q",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63ReviewFirmware": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63ReviewFirmware",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63ReviewC3": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63ReviewC3",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63ReviewSeparability": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63ReviewSeparability",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63CriticClaims": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63CriticClaims",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63CriticFixture": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63CriticFixture",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63CriticCounts": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63CriticCounts",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63MutC3": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63MutC3",
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63SentinelScope": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63SentinelScope",
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63RevengerLedger": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63RevengerLedger",
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63SimplifierProbe": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63SimplifierProbe",
+      "role": "simplifier",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63ConnectorOverlap": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63ConnectorOverlap",
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "adjacency"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63CriticHarms": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63CriticHarms",
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63ReviewGateFinal": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63ReviewGateFinal",
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    },
+    "R63ReadmeFlipDraft": {
+      "kind": "spawn",
+      "agentId": "revenger-r63.R63ReadmeFlipDraft",
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet"
+    }
+  }
+}

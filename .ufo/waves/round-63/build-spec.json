@@ -1,0 +1,274 @@
+{
+ "wave": "revenger-r63-build",
+ "milestone": "C1 C06 candidate + C2 firmware record + C3 attributed kills landed as build state; no admissions yet",
+ "reportDir": ".ufo/waves/round-63/build",
+ "axes": [
+  "coverage",
+  "calibration"
+ ],
+ "context": "# Goal\nRevenger round 63 attempt 1 only (hyaku). Lane repo: /home/vgpnk/Projects/shokunin/revenger-shokunin (absolute paths only \u2014 your tools start at the fleet root /home/vgpnk/Projects/shokunin). L1 revenger-r63 holds the planner seat and is sole production integrator: seats never run git/jj mutations, never commit, never edit /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves spec/registry files, MANIFEST.json, fleet repo files, sibling lanes, lane jj state or the lane Git index. You MAY write new/modified working-tree files only at the exact lane paths your item names (L1 reviews and commits). Read the frozen contract first: /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/claims.md (frozen at lane commit 54ab973c021cc62ca65dcbe2cbfabe3235d5ee38) and the frozen counter /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/measure.py. Red-before receipt: /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/measure-before.log (K 6/14, F 4/8, C3 0/2, holds green).\n\nThree claims, distinct frozen criteria: C1 coverage K \u2014 one independently gated NEW entry on C06 (archives), K 6/14 -> >=7/14, 6/14 falsifies; candidate /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-63-zip-central-directory-evidence.md (draft lands in seat scratch; L1 integrates after build review). C2 coverage F \u2014 authored inert known-truth firmware fixture + one real `npx -y rea-agents@6.5.0 inspect-firmware-regions` run saved at /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-63/ with byte-oracle agreement to truth.json; F 4/8 -> 5/8 only then, else falsified. C3 calibration \u2014 attributed forged-receipt kill on verify_named_multi_icon_states.py and verify_icon_states.py per the frozen mutation/fix sentences in claims.md; C3_RECEIPT_KILLED_ATTRIBUTED 0/2 -> 2/2.\n\nRules: README C06 flips only AFTER fresh falsify-wave Q01-Q13 pass decisions land (L1 owns the flip). QUALITY.md Q01-Q13 never weaken. corpus/live and corpus/fixtures bytes outside new round-63 paths stay byte-identical (a preservation manifest guards this). No target execution ever: fixtures are inert authored bytes; the firmware payload is never executed, no real vendor image. No model arguments \u2014 host routing table binds routes; never edit ~/.omp/agent/config.yml. Tooling authorization (operator 2026-10-19): you may install/upgrade tools that help the task via official channels only (uv tool / npx / official binary in ~/.local/bin) \u2014 read /home/vgpnk/.omp/agent/RULES.md first and record tool/version/channel/reason in your report. Pacman guard: ALL pacman transactions are PAUSED host-wide \u2014 no pacman/-S/-Sy/-R/-U; none anticipated. Heavy scratch is lane/round-owned under /tmp/revenger-r63-* and removed after your report lands; keep receipts under 1 MiB.\n\nEvery `Report:` trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin \u2014 write your report at /home/vgpnk/Projects/shokunin/revenger-shokunin/<that path>. Your final message: 3-6 line result summary with evidence pointers.",
+ "items": [
+  {
+   "name": "R63FirmwareFixture",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAuthor the C2 fixture at /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/firmware-r63/ (NEW directory): (1) generator.py that builds firmware-r63.bin deterministically \u2014 an inert raw image with at least two zlib or gzip compressed members at declared offsets plus declared padding; (2) truth.json recording image sha256/size, every declared region (offset, size, kind, and the decompressed member sha256+size), build recipe; (3) run the generator and byte-verify every truth.json value against the built image with explicit commands (Q06: values from built bytes, never intent). First run `binwalk --list` and use only signatures binwalk 3.1.0 actually has (L1 pre-probe: uImage headers are NOT detected \u2014 zlib members at known offsets are). Cross-check with `unblob --version` (26.6.4) that at least one member is extractable. Never execute any payload. Report: exact commands, sha256s, and the byte-verification transcript.\n\nReport: .ufo/waves/round-63/build/R63FirmwareFixture.md"
+  },
+  {
+   "name": "R63FirmwareRun",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nDepends on R63FirmwareFixture output existing at /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/firmware-r63/ (check it; if absent, build it yourself per claims.md C2 and note that in the report). Run ONE real `npx -y rea-agents@6.5.0 inspect-firmware-regions /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/firmware-r63/firmware-r63.bin --format json` (timeout 600s). Save at /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-63/ (NEW): inspection.json (the full envelope \u2014 it must carry evidence_id, operation inspect_firmware_regions, non-null normalized_result), receipt.json (command, exit_code, fixture_sha256, stdout_sha256, evidence_id, duration_seconds), and the raw stdout copy. Then run the byte-oracle comparison: every region in the record must match truth.json (offset, size; for extractable members also decompressed content sha256). Record whichever way it falls \u2014 a mismatch is evidence, not an error to fix silently. Report: commands, exit codes, evidence_id, oracle verdict per region.\n\nReport: .ufo/waves/round-63/build/R63FirmwareRun.md"
+  },
+  {
+   "name": "R63C3NamedPatch",
+   "role": "executor",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nApply the frozen C3 fix to /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/verify_named_multi_icon_states.py (working tree only): refactor the inline receipt req (currently `req(receipt['command']==command and receipt['exit_code']==0 and ... >=0,f'r{r} receipt')`) into a helper `receipt_ok(receipt, command, digest, eid, raw)` whose body contains the byte-preserved conjunct text `receipt['command']==command` (probe regex must match it exactly once), preserving every existing conjunct and the PASS line. Add one in-script control in check(): deep-copy the receipt, `forged['command'] += ' --forged'`, require rejection via `req(not receipt_ok(forged, command, digest, eid, raw), f'r{r}: forged receipt accepted')` so a failing run names `forged receipt`. Do not change any saved-input assertion, EXPECT table, or the final PASS line text. Verify: `python3 -B corpus/verify_named_multi_icon_states.py --self-test` exit 0 from the lane root; then apply the frozen mutant yourself in a /tmp copy (delete `receipt['command']==command and `) and show the mutant run exits non-zero with last line containing `forged receipt`. Report both transcripts.\n\nReport: .ufo/waves/round-63/build/R63C3NamedPatch.md"
+  },
+  {
+   "name": "R63C3IconPatch",
+   "role": "executor",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nApply the frozen C3 fix to /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/verify_icon_states.py (working tree only): refactor the receipt block (`receipt = json.loads(...)`; `assert receipt['exit_code'] == 0 and receipt['fixture_sha256'] == expected_hash`; the stdout-sha assert; the `if round_id != 36:` evidence assert) into `receipt_ok(receipt, expected_hash, evidence_id, raw_bytes, round_id)` whose body contains the byte-preserved conjunct text `receipt['fixture_sha256'] == expected_hash` (probe regex must match exactly once) and preserves the round_id != 36 exemption. Add one in-script control in check_saved(): deep-copy the receipt, `forged['fixture_sha256'] = '0'*64`, require rejection with a message containing `forged receipt`. No other assertion changes. Verify: self-test exit 0 from lane root; then in a /tmp copy apply the frozen mutant (delete ` and receipt['fixture_sha256'] == expected_hash`) and show the mutant exits non-zero, last line containing `forged receipt`. Report both transcripts.\n\nReport: .ufo/waves/round-63/build/R63C3IconPatch.md"
+  },
+  {
+   "name": "R63ZipReadout",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nProduce the derivation pack for the C06 candidate entry: from /home/vgpnk/Projects/shokunin/revenger-shokunin, run a manual central-directory readout of corpus/fixtures/archive-r2/fixture.zip \u2014 one stdlib-only Python readout script run with `python3 -B` that prints, with each value derived from the bytes: EOCD location, disk/central counts, per-member (name, local-header offset, compressed size, uncompressed size, CRC-32) straight from central-directory records, plus an independent recompute of each member's uncompressed sha256 by inflating the local-header payload. Compare every value against corpus/fixtures/archive-r2/truth.json and print a per-field True/False table. Save the script and its full output at /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/build/zip-readout.py and zip-readout.out. Do not use zipfile's high-level API for the derived values (raw struct reads from bytes); zipfile may only cross-check. Report: the comparison table and any mismatch.\n\nReport: .ufo/waves/round-63/build/R63ZipReadout.md"
+  },
+  {
+   "name": "R63FirmwareOracle",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nWrite the reusable byte-oracle checker /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-63/oracle_check.py: loads /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-63/inspection.json + /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/firmware-r63/truth.json, prints one line per declared truth region (offset/size match against the record's reported regions; decompressed member sha256 where extractable) and a final ORACLE OK / ORACLE MISMATCH verdict line; exit 0 iff every region matches. It must reject (exit 1, naming the field) a record whose regions are missing or offset-shifted. Test it green against the real record and red against two synthetic mutations you create under /tmp (shift one offset by 1; drop one region). Report: all three transcripts. If the record does not yet exist when you start, poll-check the path, else build the fixture+record yourself per claims.md C2 and say so.\n\nReport: .ufo/waves/round-63/build/R63FirmwareOracle.md"
+  },
+  {
+   "name": "R63Preservation",
+   "role": "executor",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nBuild the harms guard at /home/vgpnk/Projects/shokunin/revenger-shokunin: `find corpus/live corpus/fixtures -type f | sort` with sha256sum of every file, written to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/build/preservation-base.sha256 (base commit 55bcb6e state \u2014 run `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin status --porcelain corpus/live corpus/fixtures` first and STOP with a report if anything is already modified/untracked there; seats must not be racing other writers on these trees). Also record the ten verify_*.py shas and corpus/README.md + corpus/SOURCES.md shas. This manifest is the base the final preservation check diffs against. Report: file counts and any pre-existing dirt you found.\n\nReport: .ufo/waves/round-63/build/R63Preservation.md"
+  },
+  {
+   "name": "R63ZipPremise",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nRe-verify the C06 fixture premise end-to-end at /home/vgpnk/Projects/shokunin/revenger-shokunin: (1) sha256 and size of corpus/fixtures/archive-r2/fixture.zip vs corpus/fixtures/archive-r2/truth.json (archive_sha256/archive_size); (2) each member's sha256/size/compressed_size from the ZIP bytes via raw struct reads vs truth.json; (3) run corpus/fixtures/replay_fixtures.py into a /tmp scratch dir and confirm it reconstructs fixture.zip byte-exact (refuses existing output; use a fresh path). (4) Confirm corpus/live/runs/20261012T164246Z/artifact-inspection.json and its LEDGER.md still parse and the saved root sha256 equals truth.json archive_sha256. Report: the exact commands and outputs; any drift named, never repaired.\n\nReport: .ufo/waves/round-63/build/R63ZipPremise.md"
+  },
+  {
+   "name": "R63SourceAppnote",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nOpen the PKWARE ZIP file format specification (APPNOTE.TXT \u2014 https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT ; fallback https://pkware.com/documents/casestudies/APPNOTE.TXT) and save a plain-text snapshot at /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/source-snapshots/appnote.txt (record the final URL, HTTP status, date, and snapshot sha256). Extract located quotes the C06 entry can rest on: the central directory file header signature 0x02014b50 and its field order (name/extra/comment lengths, local-header offset), the end-of-central-directory signature 0x06054b50 and total-entries fields, and the CRC-32 field position \u2014 each with its section section number. Draft the SOURCES.md row for id S032 (contract v1: 11 columns, id/source/kind=spec/tier A/scope/anchor/teaches/status=queued/opened=2026-10-23/recheck/used-by=\u2014) plus a Gate record: URL, access date, and one <=25-word located quote per load-bearing claim. Report: the draft row + Gate quotes + snapshot path.\n\nReport: .ufo/waves/round-63/build/R63SourceAppnote.md"
+  },
+  {
+   "name": "R63SourceZipfileDocs",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nDecide whether the C06 entry needs Python's zipfile documentation as a second source: open https://docs.python.org/3/library/zipfile.html (record URL/date/snapshot sha256 at /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/source-snapshots/zipfile.html). It is load-bearing ONLY if the entry credits zipfile behavior (it should not \u2014 the readout is raw struct reads). If not load-bearing, record it in the round search log as screened-and-excluded with reason, and write NO row (absence from the registry with a search-log note is cleaner than a rejected row needing a grounded reject reason). If the build recipe sentence cites zipfile semantics, draft an S033 docs row instead. Report the decision and the search-log text.\n\nReport: .ufo/waves/round-63/build/R63SourceZipfileDocs.md"
+  },
+  {
+   "name": "R63EntryC06",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nDraft the C06 candidate entry at /tmp/revenger-r63-entry/candidate.md (L1 integrates to corpus/knowledge/ after build review \u2014 do NOT write under corpus/): target path corpus/knowledge/round-63-zip-central-directory-evidence.md. Requirements: opens with source: (S032 + APPNOTE URL + section anchors; and the own-work inputs corpus/fixtures/archive-r2 fixture.zip + truth.json, corpus/live/runs/20261012T164246Z/artifact-inspection.json), verified-at: 2026-10-23 (work commit pending), recheck: (the exact readout command); names coverage row C06. Body: the manual readout results (EOCD location, counts, per-member name/offset/sizes/CRC derived from bytes) each carrying its in-entry command and printed output (Q11), the truth.json comparison, and the saved-record correspondence (which saved fields equal which derived values \u2014 observation layer only). Separate Observation / Inference / Unknown; name at least one limitation (central-directory-only view, no trailing-bytes claim, single fixture, recorded-not-authenticated). No universal clauses, no provider-accuracy claim. Use /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/build/zip-readout.out if present; if absent, derive the values yourself the same way. Report: the draft path, its sha256, and the Q01-Q13 self-check table.\n\nReport: .ufo/waves/round-63/build/R63EntryC06.md"
+  },
+  {
+   "name": "R63LessonDraft",
+   "role": "scribe",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nDraft corpus/lessons/round-63.md at /tmp/revenger-r63-lesson/round-63.md (L1 lands it): frontmatter (round: 63, date 2026-10-23, author revenger-r63, claims C1/C2/C3), a ## Gate section with placeholders filled from the build evidence you can find (S032/S033 rows opened, located quotes <=25 words, candidate C06 status pending), a ## Mistakes table with row M33 (class stale-premise; evidence: L1 pre-probe 2026-10-23 \u2014 binwalk 3.1.0 signature scan finds zero regions in a 1056-byte uImage-header image while finding an offset-512 zlib region; captured-by: Q05/Q06 \u2014 fixture premise must be probed against the tool's actual signature list; fix: fixture generator restricted to binwalk-3.1-detectable members with a byte oracle able to fail), and a search-log section for this round (archive-spec query + firmware-fixture query, identified/screened/included/excluded with reasons). Also a ## Routed-debt section honoring round-62-verifier-spotcheck defect (a): on-tip re-verification output committed alongside the report claim. Report: draft path + sha256.\n\nReport: .ufo/waves/round-63/build/R63LessonDraft.md"
+  },
+  {
+   "name": "R63LedgerFirmware",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nDraft the evidence ledger for the firmware record at /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-63/LEDGER.md ONLY after inspection.json exists there (poll the path; if it is still absent at your deadline, write the LEDGER skeleton with the table empty and say so): fixture and route section (generator, binwalk/unblob versions with probe dates, REA command line, provider id/version from the record envelope), a ## Ledger table with class OBSERVATION/INFERENCE/UNKNOWN rows (OBSERVATION: each region the record reports with its evidence_id and the truth.json comparison result; INFERENCE: oracle-agreement statement scoped to this fixture; UNKNOWN: what one record cannot show \u2014 other signatures, extraction completeness), and a score/limitations section naming exactly what the F counter can and cannot see. Every conclusion separates observation, inference, unknown. Report: the LEDGER path + sha256.\n\nReport: .ufo/waves/round-63/build/R63LedgerFirmware.md"
+  },
+  {
+   "name": "R63SourcesRows",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nReview the drafted SOURCES.md rows for contract-v1 conformance BEFORE they are appended: read /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md (registry shape, tier rules), then review R63SourceAppnote's draft S032 row and R63SourceZipfileDocs' decision (find their reports under /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/build/ when present). Checks: 11 pipe-columns (awk NF==13), no | inside cells, kind enum, tier scoped to scope, anchor names an exact section not a homepage, teaches is one grounded benefit, status enum, id is next unused (S032), used-by paths exist or are \u2014 . Also verify no existing row is a duplicate URL (census W04s S024/S028/S029 are already disclosed duplicates \u2014 a NEW duplicate URL is a defect). Write your verdict + corrected row text to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/build/sources-rows-review.md. Report: verdict per check.\n\nReport: .ufo/waves/round-63/build/R63SourcesRows.md"
+  },
+  {
+   "name": "R63ScoutArchive",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nRecon for C1: inventory the archive work evidence at /home/vgpnk/Projects/shokunin/revenger-shokunin: corpus/fixtures/archive-r2, nested-r11, duplicate-r15 (list each truth.json's declared members + sha256s), and every saved REA archive record (corpus/live/runs/20261012T164246Z/artifact-inspection.json, round-11 inner/outer-inspection.json, and any rglob hit for inspect_artifact/inventory_artifact JSONs). For each saved record: operation, evidence_id, root sha256, whether normalized_result parses. Recommend which single fixture+record pair the C06 entry should rest on (archive-r2 is the default: its truth.json is the most complete) and state why. Check nested-r11/duplicate-r15 for known-truth gaps that would block a future entry on nested/duplicate ground. Report: the inventory table and recommendation.\n\nReport: .ufo/waves/round-63/build/R63ScoutArchive.md"
+  },
+  {
+   "name": "R63ScoutFirmware",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nRecon for C2 + M33 evidence: (1) read the REA firmware guide if reachable (https://github.com/morluto/rea/blob/main/docs/firmware-analysis.md \u2014 snapshot to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/source-snapshots/rea-firmware-guide.md with URL/date/sha256; note it is a lead, not a registry row); (2) reproduce L1's pre-probe independently: build a 1056-byte image = big-endian uImage header (magic 0x27051956) + payload, run binwalk on it, record zero findings; build a zlib-at-512 image, record the detected offset/size \u2014 this is the M33 red-before evidence; (3) check `npx -y rea-agents@6.5.0 --llms` (or --help) for the inspect-firmware-regions envelope and record the fields a saved record must carry for the F counter (evidence_id, operation, normalized_result). Report: transcripts + the schema note.\n\nReport: .ufo/waves/round-63/build/R63ScoutFirmware.md"
+  },
+  {
+   "name": "R63ScoutRecordRecon",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nC2 dry-run recon at /home/vgpnk/Projects/shokunin/revenger-shokunin: (1) run the F logic of /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/measure.py by hand over corpus/live/runs today and confirm F prints 4/8 with families native-static/javascript/archives/evm (before state); (2) enumerate exactly which JSON files the F counter reads and confirm a hypothetical corpus/live/runs/round-63/inspection.json with evidence_id + operation inspect_firmware_regions + non-null normalized_result would be counted (construct the test under /tmp with a synthetic JSON copied into a scratch tree \u2014 never into the lane); (3) list any existing corpus/live/runs/round-63* leftovers (there must be none; report if any seat raced you). Report: commands, outputs, and the F-predicate confirmation.\n\nReport: .ufo/waves/round-63/build/R63ScoutRecordRecon.md"
+  },
+  {
+   "name": "R63ReviewC06Q",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nFirst-pass Q01-Q13 admission review of the C06 candidate draft (find it at /tmp/revenger-r63-entry/candidate.md or, if L1 has integrated it, /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-63-zip-central-directory-evidence.md; read /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/QUALITY.md criteria first). Walk every criterion: reject with the failing Q id and a located quote, or state n/a with reason. Pay special attention: Q01 (each load-bearing claim rests on S032 tier A for its scope \u2014 check the APPNOTE snapshot exists and the quoted text matches), Q03 (expected values from truth.json/bytes, not from the record under test), Q11 (every count/offset carrying its in-entry command AND output), Q13 (no verifier credited beyond what its run detects). You are one voice, not the admission; verdict HOLDS or BROKEN with reasons. Report: the per-criterion table.\n\nReport: .ufo/waves/round-63/build/R63ReviewC06Q.md"
+  },
+  {
+   "name": "R63ReviewFirmware",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nReview the C2 record evidence once /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-63/inspection.json exists (poll briefly; if absent, review whatever R63FirmwareRun/R63FirmwareOracle reports exist and mark the record review BLOCKED-PENDING): (1) envelope carries evidence_id, operation inspect_firmware_regions, non-null normalized_result, provider id/version; (2) receipt.json fields complete and stdout_sha256 matches the saved stdout copy bytes; (3) fixture_sha256 matches corpus/fixtures/firmware-r63/firmware-r63.bin; (4) oracle_check.py verdict OK with per-region lines each tracing to truth.json values you re-derive yourself from the fixture bytes; (5) the fixture is inert (no member is an executable image; padding only). Verdict HOLDS or BROKEN with located reasons. Report: the five checks with evidence.\n\nReport: .ufo/waves/round-63/build/R63ReviewFirmware.md"
+  },
+  {
+   "name": "R63ReviewC3",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nReview the C3 patches in the /home/vgpnk/Projects/shokunin/revenger-shokunin working tree (read claims.md C3 frozen sentences first): for BOTH corpus/verify_named_multi_icon_states.py and corpus/verify_icon_states.py verify: (1) the frozen conjunct text named in claims.md appears byte-preserved inside the new receipt_ok helper exactly once; (2) every pre-existing receipt conjunct survives (diff the receipt logic line-by-line against `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin show 55bcb6e:corpus/<script>`); (3) exactly one new forged-receipt control was added with a message containing `forged receipt`; (4) no saved-input assertion, EXPECT table, or PASS line changed (same git diff); (5) both self-tests exit 0 from the lane root. Verdict HOLDS or BROKEN per script with located reasons. Report: the diff analysis.\n\nReport: .ufo/waves/round-63/build/R63ReviewC3.md"
+  },
+  {
+   "name": "R63ReviewSeparability",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nVerify causal separability of the three claims with the frozen counter /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/measure.py: construct three scratch corpus trees under /tmp from the base state (git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive 55bcb6e corpus | tar -x into each scratch): tree A = base + C06 README flip naming the entry + the entry file itself (expect K_HELD_BACKED 7/14, F 4/8, C3 0/2); tree B = base + round-63 firmware record files only (expect F 5/8, K 6/14, C3 0/2); tree C = base + both C3-patched scripts only (expect C3 2/2 attributed, K 6/14, F 4/8). Run the probe on each. If any expectation fails, the claims are not separable as frozen \u2014 report BROKEN with the printed values. Report: three probe outputs.\n\nReport: .ufo/waves/round-63/build/R63ReviewSeparability.md"
+  },
+  {
+   "name": "R63CriticClaims",
+   "role": "critic",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack the frozen contract itself: read /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/claims.md + measure.py + measure-before.log. (1) Do-nothing control adequacy: can a round that skips the claimed work still print K>=7/14, F 5/8, C3 2/2? Exhibit the cheapest such tree if yes (README flip without an entry fails K_HELD_BACKED \u2014 confirm the backed regex requires the knowledge file to exist; could a fabricated record JSON with a made-up evidence_id satisfy the F counter and the claim text? what in claims.md stops it \u2014 quote it); (2) falsifiability of each target; (3) separability overlaps; (4) any universal clause the counter does not enumerate. Verdict: contract SOUND or HOLES with located reasoning. Report: findings.\n\nReport: .ufo/waves/round-63/build/R63CriticClaims.md"
+  },
+  {
+   "name": "R63CriticFixture",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack the C2 fixture design (review /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/firmware-r63/ once written, else the build reports): (1) ambiguity \u2014 could two different truth.json states both satisfy the oracle?; (2) binwalk edge cases \u2014 does scanning stop early on this layout; is a member's magic prefix present inside another member's compressed bytes (carve-out ambiguity)?; (3) inertness \u2014 is any member an executable format binwalk would recurse into?; (4) determinism \u2014 does the generator depend on zlib version/timestamps? Require: generator uses fixed stamps, members chosen so no magic collision with padding exists (padding bytes must avoid gzip/zlib magic prefixes). Verdict: design SOUND or HOLES. Report: findings with byte-level reasoning.\n\nReport: .ufo/waves/round-63/build/R63CriticFixture.md"
+  },
+  {
+   "name": "R63CriticCounts",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack every count in the C06 candidate draft (locate like R63ReviewC06Q): each count, offset, size and CRC must carry its in-entry derivation command and output (Q11). Try to find one value presented as re-derived that is actually copied from truth.json or from the saved record; try to find one derived value that disagrees with a value you derive yourself from /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/archive-r2/fixture.zip bytes. Also attack the entry's scope sentences for universal claims (Q10). Verdict: counts SOUND or list each hole located. Report: per-value findings.\n\nReport: .ufo/waves/round-63/build/R63CriticCounts.md"
+  },
+  {
+   "name": "R63MutC3",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nIndependent mutation confirmation of C3 in /tmp copies of the /home/vgpnk/Projects/shokunin/revenger-shokunin corpus (never edit lane files): apply the two frozen C3 mutants (delete `receipt['command']==command and ` in verify_named_multi_icon_states.py; delete ` and receipt['fixture_sha256'] == expected_hash` in verify_icon_states.py) and run --self-test on each mutant: expect exit non-zero with last line containing `forged receipt` (attributed kill) IF the build patches landed; if the patches have not landed, expect exit 0 (survivor) \u2014 report that as the observed red state. Also run one mutant NOT in the frozen set (delete the stdout_sha256 conjunct in verify_icon_states.py) and report whether it survives \u2014 this names the remaining unguarded debt without expanding the claim. Report: all transcripts verbatim.\n\nReport: .ufo/waves/round-63/build/R63MutC3.md"
+  },
+  {
+   "name": "R63SentinelScope",
+   "role": "sentinel",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nScope guard scan over this round's working-tree changes at /home/vgpnk/Projects/shokunin/revenger-shokunin: `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin status --porcelain` (expect only round-63 paths: reports/round-63/*, corpus/fixtures/firmware-r63/*, corpus/live/runs/round-63/*, the two verify_* script edits, .ufo/waves/round-63/*); verify no fleet-root writes by this round's seats (`git -C /home/vgpnk/Projects/shokunin status --porcelain | head -40` \u2014 report any untracked file whose content names revenger round-63); PROVINCE.md unchanged; no member of corpus/fixtures or corpus/live outside round-63 modified (diff against /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/build/preservation-base.sha256 if present); no executable payload among the new artifacts (file-type scan); no credential material (op:// references, tokens) in any new file. Verdict: scope CLEAN or list each violation. Report: the checks.\n\nReport: .ufo/waves/round-63/build/R63SentinelScope.md"
+  },
+  {
+   "name": "R63RevengerLedger",
+   "role": "revenger",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nReverse the ledger discipline of the round's new artifacts (read /home/vgpnk/Projects/shokunin/revenger-shokunin/PROVINCE.md evidence discipline first): for corpus/live/runs/round-63/LEDGER.md + inspection.json + receipt.json and the C06 candidate entry \u2014 does every conclusion separate OBSERVATION / INFERENCE / UNKNOWN? Are Evidence IDs quoted only for the exact bytes they hashed (Q09)? Does any sentence claim provider origin/authenticity/completeness? Does the entry claim anything a single authored fixture cannot support (universal parser behavior)? Try to construct one forged-evidence scenario the ledger would fail to flag. Verdict: discipline HOLDS or list each leak located. Report: findings.\n\nReport: .ufo/waves/round-63/build/R63RevengerLedger.md"
+  },
+  {
+   "name": "R63SimplifierProbe",
+   "role": "simplifier",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nReview the frozen counter against the frozen contract for drift: read /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/claims.md and /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/measure.py side by side. Verify the same sentences freeze the same predicates: K regex/held rows, backed regex, F families set (8 frozen members), C3 mutant clauses (the exact two regexes), attribution rule (last line contains `forged receipt`), C2 definitions identical to the round-61 probe, hold conditions, exit codes. Flag any dead code, any label not printed, any printed label not in claims.md. Verdict: probe MATCHES contract or list each drift. Report: the mapping table.\n\nReport: .ufo/waves/round-63/build/R63SimplifierProbe.md"
+  },
+  {
+   "name": "R63ConnectorOverlap",
+   "role": "connector",
+   "axes": [
+    "adjacency"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nSibling-overlap scan for this round's new ground: (1) C06 archives \u2014 which fleet lanes hold ZIP/archive ground (read /home/vgpnk/Projects/shokunin/MANIFEST.json roster + sibling PROVINCE.md files read-only: kaidoku overlap ADJ-06 is noted in this lane's SCORECARD; check kaidoku-shokunin/PROVINCE.md and kasegi-shokunin/PROVINCE.md); is a ZIP central-directory byte-readout within revenger's shipped-artifact province? (2) C07 firmware \u2014 does any sibling own firmware (check PROVINCE.md Frontier lists read-only)? (3) the two patched verifiers stay lane-internal. Record each contested-scope question as report-not-absorb. Verdict: no overlap, or list each contested item with the sibling pointer. Report: findings (read-only \u2014 never write siblings).\n\nReport: .ufo/waves/round-63/build/R63ConnectorOverlap.md"
+  },
+  {
+   "name": "R63CriticHarms",
+   "role": "critic",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nPre-check the frozen harms list at build state \u2014 /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-63/claims.md 'Harms and frozen holds' \u2014 verify each guard has a working check: (1) preservation manifest exists and covers corpus/live + corpus/fixtures; (2) README unchanged so far (`git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff --stat 55bcb6e -- corpus/README.md` empty); (3) Q01-Q13 unchanged (`git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff 55bcb6e -- corpus/QUALITY.md` empty); (4) ten verify_*.py files, no additions/deletions (`ls /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/verify_*.py | wc -l` = 10); (5) measure.py sha256 still 3b7fba2d5243bbe0b723a99a53085130ff97010e23c8a59a8027f5f8992c5908. Verdict: each guard CHECKABLE or list the gap. Report: per-guard result.\n\nReport: .ufo/waves/round-63/build/R63CriticHarms.md"
+  },
+  {
+   "name": "R63ReviewGateFinal",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nBuild-wave integration gate review at /home/vgpnk/Projects/shokunin/revenger-shokunin: confirm before L1 lands the integration commit: (1) C06 candidate exists (draft or integrated) with Q01-Q13 self-check; (2) firmware fixture + record + oracle all present or their absence reported honestly; (3) both C3 patches present and self-tested; (4) README NOT flipped yet; (5) source rows drafted and reviewed; (6) lesson drafted with M33; (7) preservation manifest present; (8) no fleet-root stray files naming this round. List each item PASS/PENDING with its evidence pointer; anything PENDING that claims C1/C2/C3 progress without evidence is a flag for L1. Report: the gate table.\n\nReport: .ufo/waves/round-63/build/R63ReviewGateFinal.md"
+  },
+  {
+   "name": "R63ReadmeFlipDraft",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nDraft the exact post-admission README flip sentence for C06 at /home/vgpnk/Projects/shokunin/revenger-shokunin (DO NOT edit corpus/README.md \u2014 the flip lands only after falsify-wave admission): read the current C06 row, then write the replacement row text flipping status partial -> held and naming ONLY the new admitted entry corpus/knowledge/round-63-zip-central-directory-evidence.md in the knowledge cell (keep work-evidence cells unchanged, keep the row's style, keep the 14-row denominator and the `| held |$` trailing form the K counter regex requires). Also verify no other map row's text needs changing this round. Save the proposed before/after lines to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-63/build/readme-flip-draft.md. Report: the two lines and the regex check.\n\nReport: .ufo/waves/round-63/build/R63ReadmeFlipDraft.md"
+  }
+ ]
+}

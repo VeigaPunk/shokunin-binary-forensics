@@ -1,0 +1,38 @@
+Archive: /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/archive-r2/fixture.zip
+Archive size (bytes, from bytes): 2964
+Archive SHA-256 (from bytes): 857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e
+EOCD location (byte offset): 2942
+EOCD disk number: 0
+EOCD central-directory disk: 0
+EOCD entries on this disk: 2
+EOCD total central-directory entries: 2
+EOCD central-directory size: 114
+EOCD central-directory offset: 2828
+Central-directory records end at: 2942
+Members (record fields read from central-directory bytes; SHA-256 from inflated local payload):
+  name='bin/checksum' local_header_offset=0 compressed_size=2668 uncompressed_size=16160 crc32=0xb3df9ea7 inflated_sha256=f5ba069764ac66d5baa20224b0698a713823f45947a3364b67cfcb3f584897d0
+  name='README.txt' local_header_offset=2710 compressed_size=78 uncompressed_size=84 crc32=0x72a557b1 inflated_sha256=7d8f6a8de39432f4119f0139c5ef5970c84c23520cfe6b40d19a3653081804d3
+Comparison table (True/False against truth.json; N/A means truth.json has no corresponding field):
+Field                                            | Derived value                                                            | truth.json value                                                         | Match
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+archive_size                                     | 2964                                                                     | 2964                                                                     | True
+archive_sha256                                   | 857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e         | 857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e         | True
+eocd_location                                    | 2942                                                                     | <not recorded>                                                           | N/A
+eocd_disk_number                                 | 0                                                                        | <not recorded>                                                           | N/A
+eocd_central_directory_disk                      | 0                                                                        | <not recorded>                                                           | N/A
+eocd_entries_on_disk                             | 2                                                                        | 2                                                                        | True
+eocd_total_entries                               | 2                                                                        | 2                                                                        | True
+eocd_central_directory_size                      | 114                                                                      | <not recorded>                                                           | N/A
+eocd_central_directory_offset                    | 2828                                                                     | <not recorded>                                                           | N/A
+member[bin/checksum].name                        | bin/checksum                                                             | bin/checksum                                                             | True
+member[bin/checksum].local_header_offset         | 0                                                                        | <not recorded>                                                           | N/A
+member[bin/checksum].compressed_size              | 2668                                                                     | 2668                                                                     | True
+member[bin/checksum].uncompressed_size            | 16160                                                                    | 16160                                                                    | True
+member[bin/checksum].crc32                       | 0xb3df9ea7                                                               | <not recorded>                                                           | N/A
+member[bin/checksum].inflated_sha256              | f5ba069764ac66d5baa20224b0698a713823f45947a3364b67cfcb3f584897d0         | f5ba069764ac66d5baa20224b0698a713823f45947a3364b67cfcb3f584897d0         | True
+member[README.txt].name                          | README.txt                                                               | README.txt                                                               | True
+member[README.txt].local_header_offset           | 2710                                                                     | <not recorded>                                                           | N/A
+member[README.txt].compressed_size                | 78                                                                       | 78                                                                       | True
+member[README.txt].uncompressed_size              | 84                                                                       | 84                                                                       | True
+member[README.txt].crc32                         | 0x72a557b1                                                               | <not recorded>                                                           | N/A
+member[README.txt].inflated_sha256                | 7d8f6a8de39432f4119f0139c5ef5970c84c23520cfe6b40d19a3653081804d3         | 7d8f6a8de39432f4119f0139c5ef5970c84c23520cfe6b40d19a3653081804d3         | True

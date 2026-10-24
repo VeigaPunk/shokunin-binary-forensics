@@ -12,6 +12,10 @@ def req(ok,msg):
  global N
  N+=1
  if not ok: raise AssertionError(msg)
+
+def receipt_ok(receipt, command, digest, eid, raw):
+ return receipt['command']==command and receipt['exit_code']==0 and receipt['fixture_sha256']==digest and receipt['evidence_id']==eid and receipt['stdout_sha256']==H(raw) and isinstance(receipt['duration_seconds'],(float,int)) and receipt['duration_seconds']>=0
+
 def H(b): return sha256(b).hexdigest()
 def decode(d):
  u16=lambda o:unpack_from('<H',d,o)[0]; u32=lambda o:unpack_from('<I',d,o)[0]
@@ -69,7 +73,10 @@ def check(r):
  req(report['normalized_result']['artifact']==dict(path=str(hist),sha256=digest,bytes=len(d)),f'r{r} artifact')
  compare_normalized(report['normalized_result'],tree,hist,digest,len(d),r)
  command=f'npx -y rea-agents@6.4.0 inspect-pe-resources {hist} --format json'
- req(receipt['command']==command and receipt['exit_code']==0 and receipt['fixture_sha256']==digest and receipt['evidence_id']==eid and receipt['stdout_sha256']==H(raw) and isinstance(receipt['duration_seconds'],(float,int)) and receipt['duration_seconds']>=0,f'r{r} receipt')
+ forged=copy.deepcopy(receipt)
+ forged['command'] += ' --forged'
+ req(not receipt_ok(forged, command, digest, eid, raw), f'r{r}: forged receipt accepted')
+ req(receipt_ok(receipt, command, digest, eid, raw),f'r{r} receipt')
  req(len(tree['icon_groups'])==1 and tree['icon_groups'][0]['resource_index']==2 and len(tree['icon_groups'][0]['images'])==2,f'r{r} group shape')
  req(tree['resources'][2]['name']=={'kind':'name','name':'A😀B!','utf16le_hex':'41003dd800de42002100','location':{'offset':736,'bytes':12}},f'r{r} exact UTF-16 name')
  return d,report,tree

@@ -1,0 +1,73 @@
+{
+  "build_recipe": {
+    "command": "python3 -B generator.py",
+    "compression": {
+      "compile_version": "1.3.2",
+      "format": "RFC 1950 zlib-wrapped DEFLATE",
+      "implementation": "zlib.compress(payload, level=9)",
+      "level": 9,
+      "runtime_version": "1.3.2"
+    },
+    "determinism": "Fixed payloads, offsets, padding, and compression level; no timestamps or randomness. Byte-for-byte reproducible with the recorded Python/zlib versions.",
+    "image_size": 2048,
+    "members": [
+      {
+        "name": "diagnostic-note",
+        "offset": 512,
+        "payload_utf8": "R63 inert synthetic diagnostic record\nsensor=pressure\nunits=kPa\nstate=nominal\n"
+      },
+      {
+        "name": "component-note",
+        "offset": 1024,
+        "payload_utf8": "R63 inert synthetic component inventory\ncomponent=radio\nrevision=fixture-only\nexecution=disabled\n"
+      }
+    ],
+    "padding_byte_hex": "00",
+    "python_version": "3.14.8"
+  },
+  "image": {
+    "path": "firmware-r63.bin",
+    "sha256": "bdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be",
+    "size": 2048
+  },
+  "regions": [
+    {
+      "fill_hex": "00",
+      "kind": "padding",
+      "offset": 0,
+      "size": 512
+    },
+    {
+      "decompressed_member": {
+        "sha256": "a5718481696cea25cba1346f0898d2e8b2c3cc1ad5324832c9a2fbe500df7b86",
+        "size": 78
+      },
+      "kind": "zlib",
+      "name": "diagnostic-note",
+      "offset": 512,
+      "size": 79
+    },
+    {
+      "fill_hex": "00",
+      "kind": "padding",
+      "offset": 591,
+      "size": 433
+    },
+    {
+      "decompressed_member": {
+        "sha256": "2d0d86aa6fbbbb0e41824900acff3882c60e3f678b51eff227ffeabbd9eeaba9",
+        "size": 97
+      },
+      "kind": "zlib",
+      "name": "component-note",
+      "offset": 1024,
+      "size": 90
+    },
+    {
+      "fill_hex": "00",
+      "kind": "padding",
+      "offset": 1114,
+      "size": 934
+    }
+  ]
+}
