@@ -1,0 +1,529 @@
+{
+ "wave": "revenger-r64-v2",
+ "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet",
+ "reportDir": ".ufo/waves/round-64",
+ "axes": [
+  "coverage",
+  "calibration"
+ ],
+ "context": "# Goal\nRevenger round 64 attempt 1 (hyaku) \u2014 ONE v2 wave of exactly 64 seats, build and attack together. Lane repo: /home/vgpnk/Projects/shokunin/revenger-shokunin \u2014 ABSOLUTE paths only in every read/write (your tools start at the fleet root /home/vgpnk/Projects/shokunin). Frozen contract (read first): /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-64/claims.md; frozen counter: /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-64/measure.py; red-before receipt: /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-64/measure-before.log (K_HELD_BACKED 7/14, README_TOKEN_LEGEND_MISMATCH 1 [C07], C4_RECEIPT_KILLED_ATTRIBUTED 0/2, probe exit 0). Claims: C1 coverage K \u2014 exactly one independently gated admitted entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-64-firmware-region-byte-evidence.md covering C07, K 7/14 -> at least 8/14, README C07 flips frontier->held ONLY on all-criteria admission (fallback frontier->uncovered if C1 falsifies); C2 calibration \u2014 C4_RECEIPT_KILLED_ATTRIBUTED 0/2 -> 2/2 via one in-script forged-stdout control each in corpus/verify_icon_languages.py and corpus/verify_multi_icon_states.py. L1 revenger-r64 holds the planner seat and is sole production integrator: seats never run git/jj mutations, never commit or push, never edit .ufo/waves spec/registry files, MANIFEST.json, fleet repo files, sibling lanes, lane jj state or the lane Git index. Scribes draft corpus candidates in /tmp/revenger-r64-* scratch (L1 integrates after review); executors named to patch a corpus script write only that working-tree file. Tooling authorization (operator, 2026-10-19): you may install/upgrade tools that help the task via official channels only (uv tool / npx / official binaries in ~/.local/bin); PACMAN IS PAUSED HOST-WIDE \u2014 no pacman transactions, ever; record any install (tool, version, channel, reason) in your report. Heavy scratch stays under /tmp/revenger-r64-* and is removed on landing. Every Report: trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin \u2014 write it at /home/vgpnk/Projects/shokunin/revenger-shokunin/<that path>.",
+ "items": [
+  {
+   "name": "R64ConnectorOverlap",
+   "role": "connector",
+   "axes": [
+    "adjacency"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ConnectorOverlap.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ConnectorOverlap.md"
+  },
+  {
+   "name": "R64C4LangPatch",
+   "role": "executor",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64C4LangPatch.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64C4LangPatch.md"
+  },
+  {
+   "name": "R64C4MultiPatch",
+   "role": "executor",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64C4MultiPatch.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64C4MultiPatch.md"
+  },
+  {
+   "name": "R64FirmwareReadout",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64FirmwareReadout.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64FirmwareReadout.md"
+  },
+  {
+   "name": "R64RecordRecon",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64RecordRecon.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64RecordRecon.md"
+  },
+  {
+   "name": "R64FixtureRegen",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64FixtureRegen.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64FixtureRegen.md"
+  },
+  {
+   "name": "R64OracleRerun",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64OracleRerun.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64OracleRerun.md"
+  },
+  {
+   "name": "R64Preservation",
+   "role": "executor",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64Preservation.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64Preservation.md"
+  },
+  {
+   "name": "R64EntryCommands",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64EntryCommands.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64EntryCommands.md"
+  },
+  {
+   "name": "R64SnapshotManifest",
+   "role": "executor",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SnapshotManifest.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SnapshotManifest.md"
+  },
+  {
+   "name": "R64ExecSkillRun",
+   "role": "executor",
+   "axes": [
+    "operability"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ExecSkillRun.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ExecSkillRun.md"
+  },
+  {
+   "name": "R64SourceReaGuide",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SourceReaGuide.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SourceReaGuide.md"
+  },
+  {
+   "name": "R64SourcesRows",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SourcesRows.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SourcesRows.md"
+  },
+  {
+   "name": "R64EntryC07",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64EntryC07.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64EntryC07.md"
+  },
+  {
+   "name": "R64LessonDraft",
+   "role": "scribe",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64LessonDraft.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64LessonDraft.md"
+  },
+  {
+   "name": "R64SkillDraft",
+   "role": "scribe",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SkillDraft.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SkillDraft.md"
+  },
+  {
+   "name": "R64SkillChecklists",
+   "role": "scribe",
+   "axes": [
+    "operability"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SkillChecklists.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SkillChecklists.md"
+  },
+  {
+   "name": "R64ReadmeLegend",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReadmeLegend.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReadmeLegend.md"
+  },
+  {
+   "name": "R64ScribeGate",
+   "role": "scribe",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScribeGate.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScribeGate.md"
+  },
+  {
+   "name": "R64ScoutRecon",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutRecon.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutRecon.md"
+  },
+  {
+   "name": "R64ScoutCensus",
+   "role": "scout",
+   "axes": [
+    "freshness"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutCensus.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutCensus.md"
+  },
+  {
+   "name": "R64ScoutHistory",
+   "role": "scout",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutHistory.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutHistory.md"
+  },
+  {
+   "name": "R64ScoutReadme",
+   "role": "scout",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutReadme.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutReadme.md"
+  },
+  {
+   "name": "R64ScoutSources",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutSources.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutSources.md"
+  },
+  {
+   "name": "R64ScoutHost",
+   "role": "scout",
+   "axes": [
+    "freshness"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutHost.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutHost.md"
+  },
+  {
+   "name": "R64ScoutFixtureBytes",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutFixtureBytes.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutFixtureBytes.md"
+  },
+  {
+   "name": "R64ScoutMisroot",
+   "role": "scout",
+   "axes": [
+    "operability"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutMisroot.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutMisroot.md"
+  },
+  {
+   "name": "R64ReviewC4Lang",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewC4Lang.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewC4Lang.md"
+  },
+  {
+   "name": "R64ReviewC4Multi",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewC4Multi.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewC4Multi.md"
+  },
+  {
+   "name": "R64ReviewEntryQ01",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewEntryQ01.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewEntryQ01.md"
+  },
+  {
+   "name": "R64ReviewEntryQ11",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewEntryQ11.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewEntryQ11.md"
+  },
+  {
+   "name": "R64ReviewEntryScope",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewEntryScope.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewEntryScope.md"
+  },
+  {
+   "name": "R64ReviewEntryQ06",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewEntryQ06.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewEntryQ06.md"
+  },
+  {
+   "name": "R64ReviewEntryQ09",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewEntryQ09.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewEntryQ09.md"
+  },
+  {
+   "name": "R64ReviewRecord",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewRecord.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewRecord.md"
+  },
+  {
+   "name": "R64ReviewSkill",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewSkill.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewSkill.md"
+  },
+  {
+   "name": "R64ReviewSkillCites",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewSkillCites.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewSkillCites.md"
+  },
+  {
+   "name": "R64ReviewSeparability",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewSeparability.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewSeparability.md"
+  },
+  {
+   "name": "R64ReviewCounter",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewCounter.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewCounter.md"
+  },
+  {
+   "name": "R64ReviewReadme",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewReadme.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewReadme.md"
+  },
+  {
+   "name": "R64ReviewSources",
+   "role": "reviewer",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewSources.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewSources.md"
+  },
+  {
+   "name": "R64ReviewLesson",
+   "role": "reviewer",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewLesson.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewLesson.md"
+  },
+  {
+   "name": "R64ReviewExecSkill",
+   "role": "reviewer",
+   "axes": [
+    "operability"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewExecSkill.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewExecSkill.md"
+  },
+  {
+   "name": "R64CriticClaims",
+   "role": "critic",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticClaims.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticClaims.md"
+  },
+  {
+   "name": "R64CriticC4",
+   "role": "critic",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticC4.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticC4.md"
+  },
+  {
+   "name": "R64CriticCounts",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticCounts.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticCounts.md"
+  },
+  {
+   "name": "R64CriticFixture",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticFixture.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticFixture.md"
+  },
+  {
+   "name": "R64CriticHarms",
+   "role": "critic",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticHarms.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticHarms.md"
+  },
+  {
+   "name": "R64CriticSkill",
+   "role": "critic",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticSkill.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticSkill.md"
+  },
+  {
+   "name": "R64CriticSourced",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticSourced.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticSourced.md"
+  },
+  {
+   "name": "R64CriticEntryDeps",
+   "role": "critic",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticEntryDeps.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticEntryDeps.md"
+  },
+  {
+   "name": "R64CriticCounter",
+   "role": "critic",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticCounter.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticCounter.md"
+  },
+  {
+   "name": "R64MutC4",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64MutC4.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64MutC4.md"
+  },
+  {
+   "name": "R64MutProbe",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64MutProbe.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64MutProbe.md"
+  },
+  {
+   "name": "R64MutIcon",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64MutIcon.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64MutIcon.md"
+  },
+  {
+   "name": "R64MutEntry",
+   "role": "mutation-tester",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64MutEntry.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64MutEntry.md"
+  },
+  {
+   "name": "R64LabKregex",
+   "role": "scout",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64LabKregex.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64LabKregex.md"
+  },
+  {
+   "name": "R64LabBlind",
+   "role": "scout",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64LabBlind.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64LabBlind.md"
+  },
+  {
+   "name": "R64LabBinwalk",
+   "role": "executor",
+   "axes": [
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64LabBinwalk.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64LabBinwalk.md"
+  },
+  {
+   "name": "R64LabLegend",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64LabLegend.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64LabLegend.md"
+  },
+  {
+   "name": "R64LabDoNothing",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64LabDoNothing.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64LabDoNothing.md"
+  },
+  {
+   "name": "R64SentinelScope",
+   "role": "sentinel",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SentinelScope.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SentinelScope.md"
+  },
+  {
+   "name": "R64RevengerLedger",
+   "role": "revenger",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64RevengerLedger.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64RevengerLedger.md"
+  },
+  {
+   "name": "R64SimplifierDrift",
+   "role": "simplifier",
+   "axes": [
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SimplifierDrift.md \u2014 execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SimplifierDrift.md"
+  }
+ ]
+}

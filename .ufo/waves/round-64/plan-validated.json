@@ -1,0 +1,1010 @@
+{
+  "schema": "ufo-swarm-wave-v1",
+  "wave": "revenger-r64-v2",
+  "context": "# Goal\nRevenger round 64 attempt 1 (hyaku) — ONE v2 wave of exactly 64 seats, build and attack together. Lane repo: /home/vgpnk/Projects/shokunin/revenger-shokunin — ABSOLUTE paths only in every read/write (your tools start at the fleet root /home/vgpnk/Projects/shokunin). Frozen contract (read first): /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-64/claims.md; frozen counter: /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-64/measure.py; red-before receipt: /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-64/measure-before.log (K_HELD_BACKED 7/14, README_TOKEN_LEGEND_MISMATCH 1 [C07], C4_RECEIPT_KILLED_ATTRIBUTED 0/2, probe exit 0). Claims: C1 coverage K — exactly one independently gated admitted entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-64-firmware-region-byte-evidence.md covering C07, K 7/14 -> at least 8/14, README C07 flips frontier->held ONLY on all-criteria admission (fallback frontier->uncovered if C1 falsifies); C2 calibration — C4_RECEIPT_KILLED_ATTRIBUTED 0/2 -> 2/2 via one in-script forged-stdout control each in corpus/verify_icon_languages.py and corpus/verify_multi_icon_states.py. L1 revenger-r64 holds the planner seat and is sole production integrator: seats never run git/jj mutations, never commit or push, never edit .ufo/waves spec/registry files, MANIFEST.json, fleet repo files, sibling lanes, lane jj state or the lane Git index. Scribes draft corpus candidates in /tmp/revenger-r64-* scratch (L1 integrates after review); executors named to patch a corpus script write only that working-tree file. Tooling authorization (operator, 2026-10-19): you may install/upgrade tools that help the task via official channels only (uv tool / npx / official binaries in ~/.local/bin); PACMAN IS PAUSED HOST-WIDE — no pacman transactions, ever; record any install (tool, version, channel, reason) in your report. Heavy scratch stays under /tmp/revenger-r64-* and is removed on landing. Every Report: trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin — write it at /home/vgpnk/Projects/shokunin/revenger-shokunin/<that path>.",
+  "policy": {
+    "source": "config",
+    "maxLanes": 256,
+    "minLanes": 16,
+    "waveMinLanes": 64,
+    "waveMaxLanes": 128,
+    "declaredMaxLanes": null,
+    "hardCeiling": 256,
+    "rampBatchSize": 5,
+    "rampIntervalMs": 700,
+    "globalRunnerCeiling": 1056
+  },
+  "counts": {
+    "spawn": 64,
+    "resume": 0,
+    "total": 64
+  },
+  "compaction": {
+    "applied": false,
+    "mechanism": null,
+    "reason": null,
+    "savedBytes": 0,
+    "payloadBytesBefore": 0,
+    "payloadBytesAfter": 0
+  },
+  "dispatch": {
+    "calls": 1,
+    "kind": "task",
+    "note": "Issue exactly one batched task call carrying every spawn lane, plus one hub send per resume lane. Never split a wave into multiple task calls (one-swarm-per-wave)."
+  },
+  "registry": {
+    "schema": "ufo-swarm-registry-v1",
+    "path": ".ufo/waves/round-64/swarm-registry.json",
+    "reportDir": ".ufo/waves/round-64",
+    "members": {
+      "R64ConnectorOverlap": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "connector",
+        "item": null,
+        "axes": [
+          "adjacency"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64C4LangPatch": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64C4MultiPatch": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64FirmwareReadout": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64RecordRecon": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64FixtureRegen": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64OracleRerun": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64Preservation": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64EntryCommands": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64SnapshotManifest": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ExecSkillRun": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "operability"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64SourceReaGuide": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64SourcesRows": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64EntryC07": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64LessonDraft": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64SkillDraft": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64SkillChecklists": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "operability"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReadmeLegend": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ScribeGate": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ScoutRecon": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ScoutCensus": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "freshness"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ScoutHistory": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ScoutReadme": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ScoutSources": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ScoutHost": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "freshness"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ScoutFixtureBytes": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ScoutMisroot": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "operability"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewC4Lang": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewC4Multi": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewEntryQ01": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewEntryQ11": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewEntryScope": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewEntryQ06": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewEntryQ09": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewRecord": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewSkill": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewSkillCites": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewSeparability": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewCounter": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewReadme": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewSources": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewLesson": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64ReviewExecSkill": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "operability"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64CriticClaims": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64CriticC4": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64CriticCounts": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64CriticFixture": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64CriticHarms": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64CriticSkill": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64CriticSourced": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64CriticEntryDeps": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64CriticCounter": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64MutC4": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64MutProbe": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64MutIcon": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64MutEntry": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64LabKregex": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64LabBlind": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64LabBinwalk": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64LabLegend": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64LabDoNothing": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64SentinelScope": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "sentinel",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64RevengerLedger": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "revenger",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      },
+      "R64SimplifierDrift": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "simplifier",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet"
+      }
+    }
+  },
+  "priorRegistries": [],
+  "tasks": [
+    {
+      "name": "R64ConnectorOverlap",
+      "agent": "connector",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ConnectorOverlap.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ConnectorOverlap.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: adjacency\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ConnectorOverlap.md"
+    },
+    {
+      "name": "R64C4LangPatch",
+      "agent": "executor",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64C4LangPatch.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64C4LangPatch.md\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64C4LangPatch.md"
+    },
+    {
+      "name": "R64C4MultiPatch",
+      "agent": "executor",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64C4MultiPatch.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64C4MultiPatch.md\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64C4MultiPatch.md"
+    },
+    {
+      "name": "R64FirmwareReadout",
+      "agent": "executor",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64FirmwareReadout.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64FirmwareReadout.md\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64FirmwareReadout.md"
+    },
+    {
+      "name": "R64RecordRecon",
+      "agent": "executor",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64RecordRecon.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64RecordRecon.md\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64RecordRecon.md"
+    },
+    {
+      "name": "R64FixtureRegen",
+      "agent": "executor",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64FixtureRegen.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64FixtureRegen.md\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64FixtureRegen.md"
+    },
+    {
+      "name": "R64OracleRerun",
+      "agent": "executor",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64OracleRerun.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64OracleRerun.md\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64OracleRerun.md"
+    },
+    {
+      "name": "R64Preservation",
+      "agent": "executor",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64Preservation.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64Preservation.md\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64Preservation.md"
+    },
+    {
+      "name": "R64EntryCommands",
+      "agent": "executor",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64EntryCommands.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64EntryCommands.md\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64EntryCommands.md"
+    },
+    {
+      "name": "R64SnapshotManifest",
+      "agent": "executor",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SnapshotManifest.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SnapshotManifest.md\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64SnapshotManifest.md"
+    },
+    {
+      "name": "R64ExecSkillRun",
+      "agent": "executor",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ExecSkillRun.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ExecSkillRun.md\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: operability\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ExecSkillRun.md"
+    },
+    {
+      "name": "R64SourceReaGuide",
+      "agent": "scribe",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SourceReaGuide.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SourceReaGuide.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64SourceReaGuide.md"
+    },
+    {
+      "name": "R64SourcesRows",
+      "agent": "scribe",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SourcesRows.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SourcesRows.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64SourcesRows.md"
+    },
+    {
+      "name": "R64EntryC07",
+      "agent": "scribe",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64EntryC07.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64EntryC07.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64EntryC07.md"
+    },
+    {
+      "name": "R64LessonDraft",
+      "agent": "scribe",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64LessonDraft.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64LessonDraft.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64LessonDraft.md"
+    },
+    {
+      "name": "R64SkillDraft",
+      "agent": "scribe",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SkillDraft.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SkillDraft.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64SkillDraft.md"
+    },
+    {
+      "name": "R64SkillChecklists",
+      "agent": "scribe",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SkillChecklists.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SkillChecklists.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: operability\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64SkillChecklists.md"
+    },
+    {
+      "name": "R64ReadmeLegend",
+      "agent": "scribe",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReadmeLegend.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReadmeLegend.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReadmeLegend.md"
+    },
+    {
+      "name": "R64ScribeGate",
+      "agent": "scribe",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScribeGate.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScribeGate.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ScribeGate.md"
+    },
+    {
+      "name": "R64ScoutRecon",
+      "agent": "scout",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutRecon.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutRecon.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ScoutRecon.md"
+    },
+    {
+      "name": "R64ScoutCensus",
+      "agent": "scout",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutCensus.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutCensus.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: freshness\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ScoutCensus.md"
+    },
+    {
+      "name": "R64ScoutHistory",
+      "agent": "scout",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutHistory.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutHistory.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ScoutHistory.md"
+    },
+    {
+      "name": "R64ScoutReadme",
+      "agent": "scout",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutReadme.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutReadme.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ScoutReadme.md"
+    },
+    {
+      "name": "R64ScoutSources",
+      "agent": "scout",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutSources.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutSources.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ScoutSources.md"
+    },
+    {
+      "name": "R64ScoutHost",
+      "agent": "scout",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutHost.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutHost.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: freshness\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ScoutHost.md"
+    },
+    {
+      "name": "R64ScoutFixtureBytes",
+      "agent": "scout",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutFixtureBytes.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutFixtureBytes.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ScoutFixtureBytes.md"
+    },
+    {
+      "name": "R64ScoutMisroot",
+      "agent": "scout",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ScoutMisroot.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ScoutMisroot.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: operability\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ScoutMisroot.md"
+    },
+    {
+      "name": "R64ReviewC4Lang",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewC4Lang.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewC4Lang.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewC4Lang.md"
+    },
+    {
+      "name": "R64ReviewC4Multi",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewC4Multi.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewC4Multi.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewC4Multi.md"
+    },
+    {
+      "name": "R64ReviewEntryQ01",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewEntryQ01.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewEntryQ01.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewEntryQ01.md"
+    },
+    {
+      "name": "R64ReviewEntryQ11",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewEntryQ11.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewEntryQ11.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewEntryQ11.md"
+    },
+    {
+      "name": "R64ReviewEntryScope",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewEntryScope.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewEntryScope.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewEntryScope.md"
+    },
+    {
+      "name": "R64ReviewEntryQ06",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewEntryQ06.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewEntryQ06.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewEntryQ06.md"
+    },
+    {
+      "name": "R64ReviewEntryQ09",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewEntryQ09.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewEntryQ09.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewEntryQ09.md"
+    },
+    {
+      "name": "R64ReviewRecord",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewRecord.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewRecord.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewRecord.md"
+    },
+    {
+      "name": "R64ReviewSkill",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewSkill.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewSkill.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewSkill.md"
+    },
+    {
+      "name": "R64ReviewSkillCites",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewSkillCites.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewSkillCites.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewSkillCites.md"
+    },
+    {
+      "name": "R64ReviewSeparability",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewSeparability.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewSeparability.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewSeparability.md"
+    },
+    {
+      "name": "R64ReviewCounter",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewCounter.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewCounter.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewCounter.md"
+    },
+    {
+      "name": "R64ReviewReadme",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewReadme.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewReadme.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewReadme.md"
+    },
+    {
+      "name": "R64ReviewSources",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewSources.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewSources.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewSources.md"
+    },
+    {
+      "name": "R64ReviewLesson",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewLesson.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewLesson.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewLesson.md"
+    },
+    {
+      "name": "R64ReviewExecSkill",
+      "agent": "reviewer",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64ReviewExecSkill.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64ReviewExecSkill.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: operability\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64ReviewExecSkill.md"
+    },
+    {
+      "name": "R64CriticClaims",
+      "agent": "critic",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticClaims.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticClaims.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64CriticClaims.md"
+    },
+    {
+      "name": "R64CriticC4",
+      "agent": "critic",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticC4.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticC4.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64CriticC4.md"
+    },
+    {
+      "name": "R64CriticCounts",
+      "agent": "critic",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticCounts.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticCounts.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64CriticCounts.md"
+    },
+    {
+      "name": "R64CriticFixture",
+      "agent": "critic",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticFixture.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticFixture.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64CriticFixture.md"
+    },
+    {
+      "name": "R64CriticHarms",
+      "agent": "critic",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticHarms.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticHarms.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64CriticHarms.md"
+    },
+    {
+      "name": "R64CriticSkill",
+      "agent": "critic",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticSkill.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticSkill.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64CriticSkill.md"
+    },
+    {
+      "name": "R64CriticSourced",
+      "agent": "critic",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticSourced.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticSourced.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64CriticSourced.md"
+    },
+    {
+      "name": "R64CriticEntryDeps",
+      "agent": "critic",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticEntryDeps.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticEntryDeps.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64CriticEntryDeps.md"
+    },
+    {
+      "name": "R64CriticCounter",
+      "agent": "critic",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64CriticCounter.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64CriticCounter.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64CriticCounter.md"
+    },
+    {
+      "name": "R64MutC4",
+      "agent": "mutation-tester",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64MutC4.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64MutC4.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64MutC4.md"
+    },
+    {
+      "name": "R64MutProbe",
+      "agent": "mutation-tester",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64MutProbe.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64MutProbe.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64MutProbe.md"
+    },
+    {
+      "name": "R64MutIcon",
+      "agent": "mutation-tester",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64MutIcon.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64MutIcon.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64MutIcon.md"
+    },
+    {
+      "name": "R64MutEntry",
+      "agent": "mutation-tester",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64MutEntry.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64MutEntry.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64MutEntry.md"
+    },
+    {
+      "name": "R64LabKregex",
+      "agent": "scout",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64LabKregex.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64LabKregex.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64LabKregex.md"
+    },
+    {
+      "name": "R64LabBlind",
+      "agent": "scout",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64LabBlind.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64LabBlind.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64LabBlind.md"
+    },
+    {
+      "name": "R64LabBinwalk",
+      "agent": "executor",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64LabBinwalk.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64LabBinwalk.md\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64LabBinwalk.md"
+    },
+    {
+      "name": "R64LabLegend",
+      "agent": "mutation-tester",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64LabLegend.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64LabLegend.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64LabLegend.md"
+    },
+    {
+      "name": "R64LabDoNothing",
+      "agent": "mutation-tester",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64LabDoNothing.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64LabDoNothing.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64LabDoNothing.md"
+    },
+    {
+      "name": "R64SentinelScope",
+      "agent": "sentinel",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SentinelScope.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SentinelScope.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64SentinelScope.md"
+    },
+    {
+      "name": "R64RevengerLedger",
+      "agent": "revenger",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64RevengerLedger.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64RevengerLedger.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64RevengerLedger.md"
+    },
+    {
+      "name": "R64SimplifierDrift",
+      "agent": "simplifier",
+      "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTime-box: return within 15 minutes with your best findings+evidence; partial results are acceptable.\nYou are an independent leaf: never block on or wait for another seat; if a needed artifact is absent, record the dependency as a finding and return.\n\n# Target\nSeat brief: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-64/briefs/R64SimplifierDrift.md — execute it verbatim (round contract, bounds, deliverable and report path are inside the brief). Absolute paths only; never run git/jj mutations.\n\nReport: .ufo/waves/round-64/R64SimplifierDrift.md\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: C1 C07 candidate + C2 C4 patches landed as build state; no admissions yet\n\nReport: write your scoped findings to .ufo/waves/round-64/R64SimplifierDrift.md"
+    }
+  ]
+}
