@@ -96,9 +96,11 @@ the probe's frozen ROW_OPS map; 1 at base (`C07`), 0 at round end), `F_COVERAGE`
 `C2_*`/`C3_*`/`HOLD_*` (same definitions as the round-63 probe), `FRESH_ROWS`
 (byte-survival hold; it does not certify current-host truth — routed wording),
 `HOLDS_OK` (round-63 semantics, continuity hold) and `HOLDS_OK_V2`
-(routed-counter fix: uses the attributed counts — `C2_RECEIPT_B_KILLED_ATTRIBUTED`,
-`C3_RECEIPT_KILLED_ATTRIBUTED`, `C4_RECEIPT_KILLED_ATTRIBUTED` — instead of
-raw kills). The round-63 probe and its pinned SHA are untouched.
+(routed-counter fix: `holds_ok` with the attributed counts
+`C2_RECEIPT_B_KILLED_ATTRIBUTED`/`C3_RECEIPT_KILLED_ATTRIBUTED`/
+`C4_RECEIPT_KILLED_ATTRIBUTED` substituted for the raw kills, PLUS the
+registered legend fix `README_TOKEN_LEGEND_MISMATCH == 0`; a diagnostic
+label, not a claim target). The round-63 probe and its pinned SHA are untouched.
 
 Do-nothing control (committed with pre-registration): the frozen counter run
 on the base archive must print K_HELD_BACKED 7/14, K_HELD_BACKED_STRICT 7/14,

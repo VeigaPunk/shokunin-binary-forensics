@@ -1,0 +1,44 @@
+{
+  "task": "Re-verify firmware-r63 fixture determinism",
+  "source_directory": "/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/firmware-r63/",
+  "scratch_directory": "/tmp/revenger-r64-regen/",
+  "result": {
+    "comparison": "byte-for-byte identical",
+    "cmp_exit_code": 0,
+    "sha256": "bdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be",
+    "size_bytes": 2048,
+    "scratch_removed": true
+  },
+  "steps": [
+    {
+      "command": "mkdir -p /tmp/revenger-r64-regen",
+      "cwd": "/home/vgpnk/Projects/shokunin",
+      "stdout": "exit_code=0\n",
+      "exit_code": 0
+    },
+    {
+      "command": "cp -a /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/firmware-r63/. /tmp/revenger-r64-regen/",
+      "cwd": "/home/vgpnk/Projects/shokunin",
+      "stdout": "exit_code=0\n",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 -B generator.py",
+      "cwd": "/tmp/revenger-r64-regen",
+      "stdout": "wrote firmware-r63.bin sha256=bdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be size=2048\nregion offset=0 size=512 kind=padding\nregion offset=512 size=79 kind=zlib\nregion offset=591 size=433 kind=padding\nregion offset=1024 size=90 kind=zlib\nregion offset=1114 size=934 kind=padding\nexit_code=0\n",
+      "exit_code": 0
+    },
+    {
+      "command": "cmp /tmp/revenger-r64-regen/firmware-r63.bin /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/firmware-r63/firmware-r63.bin; cmp_rc=$?; printf 'cmp_exit_code=%s\\n' \"$cmp_rc\"; sha256sum /tmp/revenger-r64-regen/firmware-r63.bin /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/firmware-r63/firmware-r63.bin; sha_rc=$?; printf 'sha256sum_exit_code=%s\\n' \"$sha_rc\"; test \"$cmp_rc\" -eq 0 && test \"$sha_rc\" -eq 0",
+      "cwd": "/home/vgpnk/Projects/shokunin",
+      "stdout": "cmp_exit_code=0\nbdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be  /tmp/revenger-r64-regen/firmware-r63.bin\nbdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be  /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/firmware-r63/firmware-r63.bin\nsha256sum_exit_code=0\n",
+      "exit_code": 0
+    },
+    {
+      "command": "rm -r -- /tmp/revenger-r64-regen/",
+      "cwd": "/home/vgpnk/Projects/shokunin",
+      "stdout": "exit_code=0\n",
+      "exit_code": 0
+    }
+  ]
+}

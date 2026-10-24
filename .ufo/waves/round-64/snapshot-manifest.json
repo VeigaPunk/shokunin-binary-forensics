@@ -1,0 +1,57 @@
+{
+  "base_commit": "666ea84b6be2eec2b0359f556ba2429fc9044c36",
+  "files": {
+    "reports/round-64/claims.md": {
+      "sha256": "fdd7312e27d1b9c9180accb75fee4aed214c8fa938eb33444f02a82334f3cf3a",
+      "size": 9998
+    },
+    "reports/round-64/measure.py": {
+      "sha256": "b8e68d326c28690274be98ac35a518970d84aa8b9892b5736450a776210b9168",
+      "size": 12647
+    },
+    "reports/round-64/measure-before.log": {
+      "sha256": "8116b216d543984bfb60c6331defae43f384f5c94904658afb8997b8692a1003",
+      "size": 4116
+    },
+    "corpus/fixtures/firmware-r63/truth.json": {
+      "sha256": "9663f90b2b9f29c5beb621e554ed7584eedf5e77d4785f26a453e70dbd5a65e6",
+      "size": 1933
+    },
+    "corpus/fixtures/firmware-r63/firmware-r63.bin": {
+      "sha256": "bdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be",
+      "size": 2048
+    },
+    "corpus/fixtures/firmware-r63/generator.py": {
+      "sha256": "4e5d5975e3cf6362f6fd430f2147d42f75d011978f7d6b5ec86d224c77793db4",
+      "size": 5532
+    },
+    "corpus/live/runs/round-63/inspection.json": {
+      "sha256": "f69978355e2897fbaa54daadb3e749d7e31d608913a6c1ee849a07ea33aa71f9",
+      "size": 3904
+    },
+    "corpus/live/runs/round-63/stdout.raw": {
+      "sha256": "f69978355e2897fbaa54daadb3e749d7e31d608913a6c1ee849a07ea33aa71f9",
+      "size": 3904
+    },
+    "corpus/live/runs/round-63/receipt.json": {
+      "sha256": "e930a549db16a180d4ab05307e073cd71599a3317b9f3d15a0d97843d5c6b94d",
+      "size": 492
+    },
+    "corpus/live/runs/round-63/LEDGER.md": {
+      "sha256": "25a4a18b76a2a55f3b7ea397ee23bba948be3f1c1a3e13a3194c0f057bb1e1a6",
+      "size": 22671
+    },
+    "corpus/live/runs/round-63/oracle_check.py": {
+      "sha256": "d0dfd7a1cd105485e47bf52446056a2636fb803c05a404ce56da597f36ce0512",
+      "size": 11034
+    },
+    "corpus/verify_icon_languages.py": {
+      "sha256": "0f781c6a216bfdaa9cc1ab9b9fe8ae3ab9cb8a79d00ed56c4f94282c80a8efbd",
+      "size": 10058
+    },
+    "corpus/verify_multi_icon_states.py": {
+      "sha256": "0179e93f8bec17d5f4b60047f167ad26aa803a84440e98329fd8a8f2ea7a176d",
+      "size": 10172
+    }
+  }
+}

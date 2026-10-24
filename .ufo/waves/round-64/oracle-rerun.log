@@ -1,0 +1,30 @@
+Round-64 firmware byte oracle rerun
+
+Working directory: /home/vgpnk/Projects/shokunin/revenger-shokunin
+Command: cd /home/vgpnk/Projects/shokunin/revenger-shokunin && python3 -B corpus/live/runs/round-63/oracle_check.py
+
+Captured oracle output:
+REGION name=padding kind=padding offset=0 size=512 record=not-expected padding=OK
+REGION name=diagnostic-note kind=zlib offset=512 size=79 offset=OK size=OK signature=OK decompressed_sha256=OK (a5718481696cea25cba1346f0898d2e8b2c3cc1ad5324832c9a2fbe500df7b86)
+REGION name=padding kind=padding offset=591 size=433 record=not-expected padding=OK
+REGION name=component-note kind=zlib offset=1024 size=90 offset=OK size=OK signature=OK decompressed_sha256=OK (2d0d86aa6fbbbb0e41824900acff3882c60e3f678b51eff227ffeabbd9eeaba9)
+REGION name=padding kind=padding offset=1114 size=934 record=not-expected padding=OK
+ORACLE OK
+ORACLE_EXIT_CODE=0
+
+Working-tree SHA-256 (sha256sum):
+f69978355e2897fbaa54daadb3e749d7e31d608913a6c1ee849a07ea33aa71f9  corpus/live/runs/round-63/inspection.json
+f69978355e2897fbaa54daadb3e749d7e31d608913a6c1ee849a07ea33aa71f9  corpus/live/runs/round-63/stdout.raw
+e930a549db16a180d4ab05307e073cd71599a3317b9f3d15a0d97843d5c6b94d  corpus/live/runs/round-63/receipt.json
+bdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be  corpus/fixtures/firmware-r63/firmware-r63.bin
+9663f90b2b9f29c5beb621e554ed7584eedf5e77d4785f26a453e70dbd5a65e6  corpus/fixtures/firmware-r63/truth.json
+
+Frozen base byte comparison (commit 666ea84b6be2eec2b0359f556ba2429fc9044c36):
+corpus/live/runs/round-63/inspection.json f69978355e2897fbaa54daadb3e749d7e31d608913a6c1ee849a07ea33aa71f9  -
+corpus/fixtures/firmware-r63/firmware-r63.bin bdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be  -
+corpus/fixtures/firmware-r63/truth.json 9663f90b2b9f29c5beb621e554ed7584eedf5e77d4785f26a453e70dbd5a65e6  -
+Oracle source identity, working tree then frozen base:
+WORKTREE d0dfd7a1cd105485e47bf52446056a2636fb803c05a404ce56da597f36ce0512  corpus/live/runs/round-63/oracle_check.py
+BASE    d0dfd7a1cd105485e47bf52446056a2636fb803c05a404ce56da597f36ce0512  -
+
+Conclusion: oracle verdict is ORACLE OK (exit 0). The saved inspection record, fixture bytes, truth file, and oracle source have identical SHA-256 bytes in the working tree and frozen base, so the saved record still passes against the committed fixture bytes.

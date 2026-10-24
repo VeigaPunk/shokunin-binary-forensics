@@ -1,0 +1,8 @@
+image: size=2048 bytes (len(image)); sha256=bdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be (hashlib.sha256(image).hexdigest())
+padding spans: maximal contiguous all-zero runs outside measured zlib-member extents;
+  (0, 512) [half-open; end is first non-padding offset]
+  (591, 1024) [half-open; end is first non-padding offset]
+  (1114, 2048) [half-open; end is first non-padding offset]
+zlib member: offset=512 (all-offset scan found valid header=0x78 0xda); compressed_size=79 bytes (suffix length 1536 minus 1457 trailing unused bytes through EOF); decompressed_size=78 bytes (len(decoded)); decompressed_sha256=a5718481696cea25cba1346f0898d2e8b2c3cc1ad5324832c9a2fbe500df7b86 (hashlib.sha256(decoded).hexdigest())
+zlib member: offset=1024 (all-offset scan found valid header=0x78 0xda); compressed_size=90 bytes (suffix length 1024 minus 934 trailing unused bytes through EOF); decompressed_size=97 bytes (len(decoded)); decompressed_sha256=2d0d86aa6fbbbb0e41824900acff3882c60e3f678b51eff227ffeabbd9eeaba9 (hashlib.sha256(decoded).hexdigest())
+exit code: 0

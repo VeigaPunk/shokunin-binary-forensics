@@ -148,6 +148,9 @@ def check(round_id):
     forged = copy.deepcopy(receipt)
     forged['command'] += ' --forged'
     require(not receipt_ok(forged, command, expected_hash, evidence_id, raw_bytes), f'r{round_id}: forged receipt command accepted')
+    forged_stdout = copy.deepcopy(receipt)
+    forged_stdout['stdout_sha256'] = H(b'')
+    require(not receipt_ok(forged_stdout, command, expected_hash, evidence_id, raw_bytes), f'r{round_id}: forged receipt stdout accepted')
     return data, report, decoded, state
 
 def main():
