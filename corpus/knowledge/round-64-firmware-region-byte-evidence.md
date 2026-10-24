@@ -68,6 +68,15 @@ bdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be  firmware-r63.b
 9663f90b2b9f29c5beb621e554ed7584eedf5e77d4785f26a453e70dbd5a65e6  truth.json
 ```
 
+The host runtime behind item 3 is probed by command rather than asserted:
+
+```
+$ python3 -V
+Python 3.14.8
+$ python3 -c 'import zlib; print(zlib.ZLIB_VERSION, zlib.ZLIB_RUNTIME_VERSION)'
+1.3.2 1.3.2
+```
+
 **Region partition**
 
 4. The image partitions into exactly three all-zero padding spans and two zlib members, in this order and without gaps: `[0,512)`, `[512,591)`, `[591,1024)`, `[1024,1114)`, `[1114,2048)`. The five regions cover **2048** bytes contiguously from offset 0, and all three padding spans are verified all-zero byte by byte. The padding spans are **512**, **433** and **934** bytes.
@@ -79,7 +88,7 @@ $ python3 -B readout.py <repo-root> --fact 'regions'
 
 **Compressed members**
 
-5. Both members carry the RFC 1950 header bytes `78 da` (CMF `0x78`, FLG `0xda`): the header check `(CMF<<8|FLG) % 31 == 0` holds, `FLEVEL` is 3 (maximum compression, matching the oracle's level 9) and `FDICT` is 0. The 4-byte big-endian Adler-32 trailer equals the Adler-32 recomputed over the inflated plaintext for both members. Member A starts at offset **512**, is **79** compressed bytes and inflates to **78** bytes with SHA-256 `a5718481696cea25cba1346f0898d2e8b2c3cc1ad5324832c9a2fbe500df7b86`; member B starts at offset **1024**, is **90** compressed bytes and inflates to **97** bytes with SHA-256 `2d0d86aa6fbbbb0e41824900acff3882c60e3f678b51eff227ffeabbd9eeaba9`.
+5. Both members carry the RFC 1950 header bytes `78 da` (CMF `0x78`, FLG `0xda`): the header check `(CMF<<8|FLG) % 31 == 0` holds, `FLEVEL` is 3 (a maximum-compression hint, consistent with the oracle's level 9) and `FDICT` is 0. The 4-byte big-endian Adler-32 trailer equals the Adler-32 recomputed over the inflated plaintext for both members. Member A starts at offset **512**, is **79** compressed bytes and inflates to **78** bytes with SHA-256 `a5718481696cea25cba1346f0898d2e8b2c3cc1ad5324832c9a2fbe500df7b86`; member B starts at offset **1024**, is **90** compressed bytes and inflates to **97** bytes with SHA-256 `2d0d86aa6fbbbb0e41824900acff3882c60e3f678b51eff227ffeabbd9eeaba9`.
 
 ```
 $ python3 -B readout.py <repo-root> --fact 'members'
@@ -95,7 +104,7 @@ $ python3 -B readout.py <repo-root> --fact 'payloads'
 
 **Correspondence with the authored oracle**
 
-7. All **25** compared fields match `corpus/fixtures/firmware-r63/truth.json`: image size, digest and basename; padding byte `00` and recipe image size; region count 5; each padding span's kind, size and fill; each member's kind, compressed size, decompressed size and decompressed SHA-256; and both `payload_utf8` strings. The oracle's `build_recipe` records Python `3.14.8`, zlib compile/runtime `1.3.2`, level 9 and the same member offsets; those are oracle-stated build metadata, matched only by item 3's reproduction on this host, not by a byte rule.
+7. All **25** comparisons match `corpus/fixtures/firmware-r63/truth.json`. **16 compare a value derived from the fixture bytes** — image size, image SHA-256, recipe image size, region count 5, the three padding-span sizes, both compressed sizes, both decompressed sizes, both decompressed SHA-256 values, both `payload_utf8` strings and the derived padding-byte conclusion — and **9 assert a recorded constant** — the image basename, the three padding kinds, the three `fill_hex` values and the two zlib kinds. In the printed JSON the key `derived` is the check's left side; on the nine constant rows that side is the oracle's recorded value asserted equal, so those rows are **recorded, not re-derived** (Q11). The oracle's `build_recipe` records Python `3.14.8`, zlib compile/runtime `1.3.2`, level 9 and the same member offsets; those are oracle-stated build metadata, matched only by item 3's reproduction on this host, not by a byte rule.
 
 ```
 $ python3 -B readout.py <repo-root> --fact 'oracle'
@@ -104,25 +113,52 @@ $ python3 -B readout.py <repo-root> --fact 'oracle'
 
 **Correspondence with the saved record**
 
-8. All **13** compared fields match `corpus/live/runs/round-63/inspection.json`: the record's subject SHA-256, its `normalized_result.input_size` 2048, the operation `inspect_firmware_regions`, the provider version `3.1.0`, a region count of 2, and for each reported region the offset (**512**, **1024**), signature (`zlib`), `reported_size` (**79**, **90**) and `size_basis` (`provider_reported_validation_unknown`). The record's `coverage` is `signature_scan`, `confidence` `observed`, `authority` `shipped-artifact`, and its region kinds are exactly `{"zlib"}`.
+8. All **13** comparisons match `corpus/live/runs/round-63/inspection.json`. **5 compare a value derived from the fixture bytes** — the subject SHA-256, `normalized_result.input_size` 2048, the region count 2, and both `reported_size` values (**79**, **90**) — and **8 assert recorded fields** — the operation `inspect_firmware_regions`, the provider version `3.1.0`, both signatures (`zlib`), both `size_basis` values (`provider_reported_validation_unknown`) and the two per-offset presence checks. The constants appear under the same `derived` key in the printed JSON; they are recorded values asserted equal, not re-derived (Q11). The record's `coverage` is `signature_scan`, `confidence` `observed`, `authority` `shipped-artifact`, and its region kinds are exactly `{"zlib"}`.
 
 ```
 $ python3 -B readout.py <repo-root> --fact 'record'
 {"all_match": true, "authority": "shipped-artifact", "checks": [{"derived": "bdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be", "field": "subject.digest.sha256", "match": true, "stated": "bdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be"}, {"derived": 2048, "field": "normalized_result.input_size", "match": true, "stated": 2048}, {"derived": "inspect_firmware_regions", "field": "operation", "match": true, "stated": "inspect_firmware_regions"}, {"derived": "3.1.0", "field": "provider.version", "match": true, "stated": "3.1.0"}, {"derived": 2, "field": "region_count", "match": true, "stated": 2}, {"derived": true, "field": "record@512.present", "match": true, "stated": true}, {"derived": "zlib", "field": "record@512.signature", "match": true, "stated": "zlib"}, {"derived": 79, "field": "record@512.reported_size", "match": true, "stated": 79}, {"derived": "provider_reported_validation_unknown", "field": "record@512.size_basis", "match": true, "stated": "provider_reported_validation_unknown"}, {"derived": true, "field": "record@1024.present", "match": true, "stated": true}, {"derived": "zlib", "field": "record@1024.signature", "match": true, "stated": "zlib"}, {"derived": 90, "field": "record@1024.reported_size", "match": true, "stated": 90}, {"derived": "provider_reported_validation_unknown", "field": "record@1024.size_basis", "match": true, "stated": "provider_reported_validation_unknown"}], "confidence": "observed", "coverage": "signature_scan", "fact": "record", "region_kinds": ["zlib"]}
 ```
 
-9. The four read files' own digests and sizes, as computed by the same script:
+9. The four corpus files read by the script — fixture, oracle, record and ledger — hashed and sized by the same script; the two remaining S037 files and the S036 snapshot follow in item 10:
 
 ```
 $ python3 -B readout.py <repo-root> --fact 'digests'
 {"fact": "digests", "files": {"corpus/fixtures/firmware-r63/firmware-r63.bin": {"sha256": "bdfe9f46e8f2137194d11265262bd68d8c5c8805694edce7ab2fa3d55a8510be", "size": 2048}, "corpus/fixtures/firmware-r63/truth.json": {"sha256": "9663f90b2b9f29c5beb621e554ed7584eedf5e77d4785f26a453e70dbd5a65e6", "size": 1933}, "corpus/live/runs/round-63/LEDGER.md": {"sha256": "25a4a18b76a2a55f3b7ea397ee23bba948be3f1c1a3e13a3194c0f057bb1e1a6", "size": 22671}, "corpus/live/runs/round-63/inspection.json": {"sha256": "f69978355e2897fbaa54daadb3e749d7e31d608913a6c1ee849a07ea33aa71f9", "size": 3904}}}
 ```
 
+10. The two remaining S037 files and the S036 snapshot: the sizes stated in the header are re-derived and the snapshot digest re-checked (the snapshot lives outside `corpus/`, so a corpus-only checkout can replay items 1–9 but not this line):
+
+```
+$ wc -c corpus/fixtures/firmware-r63/generator.py corpus/live/runs/round-63/receipt.json .ufo/waves/round-64/source-snapshots/rea-firmware-guide.md
+ 5532 corpus/fixtures/firmware-r63/generator.py
+  492 corpus/live/runs/round-63/receipt.json
+10695 .ufo/waves/round-64/source-snapshots/rea-firmware-guide.md
+16719 total
+$ sha256sum corpus/fixtures/firmware-r63/generator.py corpus/live/runs/round-63/receipt.json .ufo/waves/round-64/source-snapshots/rea-firmware-guide.md
+4e5d5975e3cf6362f6fd430f2147d42f75d011978f7d6b5ec86d224c77793db4  corpus/fixtures/firmware-r63/generator.py
+e930a549db16a180d4ab05307e073cd71599a3317b9f3d15a0d97843d5c6b94d  corpus/live/runs/round-63/receipt.json
+e422b4816b1dbc912680afefb8e23acfd8ead4aea08c3d722d4ccb5207933609  .ufo/waves/round-64/source-snapshots/rea-firmware-guide.md
+```
+
+11. What the saved record does **not** contain, read from its fields by command — no member names, no decompressed digests, `extractions` empty, two regions, and the single `Unblob` occurrence:
+
+```
+$ python3 -c 'import json
+p="corpus/live/runs/round-63/inspection.json"
+r=json.load(open(p))
+regions=r["normalized_result"]["regions"]
+analysis=r["raw_result"]["report"][0]["Analysis"]
+text=open(p).read()
+print({"region_count":len(regions),"region_keys":[sorted(x) for x in regions],"names_present":any("name" in x for x in regions),"decompressed_digest_present":any("decompressed_member" in x for x in regions),"extractions":analysis["extractions"],"unblob_lower":text.count("unblob"),"unblob_upper":text.count("Unblob")})'
+{'region_count': 2, 'region_keys': [['description', 'offset', 'provider_id', 'reported_confidence', 'reported_size', 'signature', 'size_basis'], ['description', 'offset', 'provider_id', 'reported_confidence', 'reported_size', 'signature', 'size_basis']], 'names_present': False, 'decompressed_digest_present': False, 'extractions': {}, 'unblob_lower': 0, 'unblob_upper': 1}
+```
+
 ## Correspondence
 
-Against **truth.json** the 25 selected comparisons all match: the 2048-byte image and its digest, the three padding spans with fill `00`, both members' offsets and compressed sizes, both decompressed sizes and digests, and both plaintext strings. The oracle additionally names the members and states the build recipe; the names have no byte counterpart in a zlib stream, and the recipe is reproduced only as item 3's host-level replay.
+Against **truth.json** all 25 selected comparisons match: **16 compare a value derived from the fixture bytes** — the 2048-byte image and its digest, the three padding spans with fill `00`, both members' offsets and compressed sizes, both decompressed sizes and digests, and both plaintext strings — and **9 assert a recorded constant**. The nine are recorded, not re-derived (item 7). The oracle additionally names the members and states the build recipe; the names have no byte counterpart in a zlib stream, and the recipe is reproduced only as item 3's host-level replay.
 
-Against the **saved record** the agreement is narrower and is expected to be: the saved record's own fields name the two zlib signature matches with their offsets and provider-reported sizes, and nothing else. It contains no padding regions (its `coverage` is `signature_scan`), no member names, no decompressed sizes or digests, and `extractions` is `{}`; the second scanner named in the REA route (Unblob) appears nowhere in it. The ledger's `O11` row mentions an author-side Unblob probe outside the record; that probe is **not** used as evidence here and this entry draws no conclusion from it. Where the record and this readout state the same number, they were produced independently — the record by Binwalk 3.1.0 `--search-all`, the readout by inflating the bytes — and they agree on both offsets and both compressed sizes.
+Against the **saved record** the agreement is narrower and is expected to be: the saved record's own fields name the two zlib signature matches with their offsets and provider-reported sizes, and nothing else. It contains no padding regions (its `coverage` is `signature_scan`), no member names and no decompressed sizes or digests, and `extractions` is `{}` (item 11). No Unblob provider run appears in it (`grep -c unblob` = 0 on the lowercase provider id); its one `Unblob` mention is `limitations[2]` route boilerplate about default sandbox and skip rules, not an executed provider. The ledger's `O11` row mentions an author-side Unblob probe outside the record; that probe is **not** used as evidence here and this entry draws no conclusion from it. Where the record and this readout state the same number, the record's provenance is **recorded provenance**: Binwalk 3.1.0 `--search-all` as the record's own envelope and `raw_result` name it, and no digest establishes that attribution; the readout's side is measured by inflating the bytes, and the two sides agree on both offsets and both compressed sizes.
 
 What the agreement does **not** establish (Q09). A SHA-256 match proves only that the bytes hashed are the bytes named: not who authored them, not that the oracle is canonical or unique, not that Binwalk's signature inference is correct, and not that the fixture resembles any real firmware. The record's own `raw_result` shows it ran on a private workspace copy (`/tmp/rea-firmware-7rPoLl/firmware.bin`); the link to the fixture is the record's own subject digest and `input_size`, plus S036's statement that region offsets refer to bytes in the original firmware. The oracle's `padding_byte_hex`/`fill_hex` values and member labels are recorded metadata compared for correspondence, not independently authenticated facts.
 
@@ -151,6 +187,7 @@ What the agreement does **not** establish (Q09). A SHA-256 match proves only tha
 - U3 — what extraction or execution would yield: the record extracted nothing (`extractions` `{}`), no extraction route was run, and no member was executed.
 - U4 — how another scanner would partition the same image: the record shows Binwalk 3.1.0 only; the ledger's author-side Unblob probe is outside the record and is not evidence here.
 - U5 — whether the zero padding has domain meaning or is merely the generator's fill choice.
+- U6 — whether the oracle is an independent expectation: it is not. The generator wrote both the image and `truth.json`, so the 25 comparisons show internal consistency between an authored artifact and its authored oracle, not independent confirmation of either.
 
 ## Limitations
 
@@ -171,16 +208,16 @@ Reported, not absorbed. This entry covers only the authored bytes of `corpus/fix
 |---|---|
 | Q01 | Every load-bearing sentence is sourced: S036 tier A for route scope (what `inspect-firmware-regions` returns, what `reported_size`/`size_basis` mean, that a signature does not prove a partition), S037 tier A for the byte and record correspondence. No other source is used. |
 | Q02 | S036 is cited with URL, pinned tag, blob/commit ids, located ≤25-word quotes with snapshot line numbers (3, 56, 83-85, 91-96), access date 2026-10-24, HTTP 200, byte count and snapshot sha256. S037 is cited by the six file digests at base commit `666ea84b…`. |
-| Q03 | The values were derived by scanning the bytes from offset 0 with no oracle input; no author readout was used. Independent blind derivation by a fresh seat is the admission test, not this entry's own claim. |
-| Q04 | Falsifiable: `recheck` prints 7 JSON lines with a pinned sha256 `aa353251…`; any changed fixture byte, member boundary, digest or record field changes the stdout and breaks the pin. |
-| Q05 | Scope paragraph and §Limitations bound the claim to one authored fixture; no vendor image, format family, extraction, execution, provider completeness or authenticity is claimed. |
+| Q03 | The values were derived by scanning the bytes from offset 0 with no oracle input — members by an all-offset zlib scan, padding by the complement rule, digests by hashing inflated bytes. The authored oracle and the saved record supply only the compared side (items 7–8, item 11) and never feed a derived value. Independent blind derivation by a fresh seat is the admission test, not this entry's own claim. |
+| Q04 | Manual analysis is labelled manual throughout, and no tool is credited with a result it did not output. The saved Binwalk 3.1.0 record is credited only with the literal fields its own envelope and `raw_result` carry (operation, provider version, two offsets, provider-reported sizes, `size_basis`); the padding spans, member names, inflated sizes and digests are this readout's own computation. |
+| Q05 | n/a (no readiness or capability claim) — the entry claims no tool, provider or host readiness, availability or capability now; the saved record is read as a past saved file at its recorded digests. |
 | Q06 | The fixture premises are byte-verified against the built bytes: items 1–5 derive the image size and SHA-256, every padding span, both member offsets, both compressed sizes and both decompressed sizes and digests by command from the file itself, before and independently of any comparison with the oracle or the saved record; no offset, size or count is stated from intent. |
-| Q07 | The fixture's content is never executed, extracted or written: the script inflates and hashes in memory only; the only writes in this work are the draft file itself and the scratch generator replay under `/tmp/revenger-r64-entry/gen/`, both outside `corpus/`. |
-| Q08 | Saved-record claims quote literal fields (`input_size`, `coverage`, `size_basis`, `reported_size`, offsets, signature, `extractions`) and are separated from inference and unknown. |
+| Q07 | n/a (no predicted parser behaviour) — the entry predicts nothing about how any parser or provider will treat a file; the zlib header, Adler-32 and end-of-stream checks are observations of these bytes under Python's `zlib`, and S036's route sentences are quoted, not tested by a hypothesis. (The fixture's content is never executed or extracted: the script inflates and hashes in memory only.) |
+| Q08 | Superseded by Q11 — every count, identifier, offset and digest here is carried with its command and output under Q11's rule, and saved-record fields are quoted literally. |
 | Q09 | §Correspondence states the digest disclaimer: a match proves only the bytes hashed; the record is treated as an observation layer, and its build metadata and labels are not authenticated. |
-| Q10 | Provenance of the record is named: `inspection.json` (3904 bytes, sha256 `f6997835…`), its receipt (`e930a549…`, exit 0, command `npx -y rea-agents@6.5.0 inspect-firmware-regions … --format json`) and the run's ledger (`25a4a18b…`), all byte-identical at base. |
-| Q11 | Every value in §Observation carries its in-entry command and that command's printed output; the 7-line full stdout is reproduced in §Reproduce with its sha256. |
-| Q12 | The authored oracle `truth.json` is compared field-by-field (25 selected checks, all match), and the saved record separately (13 checks); the readout is independent of the saved record, but the oracle and the image share one author, so agreement is claimed only for those fields, not for uniqueness or canonicity. |
+| Q10 | The finding is scoped to one fixture, one saved record, one provider id and version, and one operation: 2048 authored bytes and the two regions a single Binwalk 3.1.0 `--search-all` run reported, with `coverage=signature_scan` and `size_basis=provider_reported_validation_unknown`. Cross-lane contested scope is reported, not absorbed, in §Cross-lane scope note. |
+| Q11 | Every value in §Observation carries its in-entry command and that command's printed output; the 7-line full stdout is reproduced in §Reproduce with its sha256. In the comparison JSON the key `derived` is the check's left side; the constant rows are labelled recorded/asserted in items 7–8 and are not presented as re-derived, and sizes and record absences have their own commands in items 10–11. |
+| Q12 | n/a (no rejected source row cited) — S036 and S037 are newly mined rows opened this round; no source row is rejected here, so no reject reason or flip is owed. The oracle comparison is reported under Q03 and items 7–8, with the same-author caveat in §Unknown (U6). |
 | Q13 | No guard credit is sought: no verifier, recheck-tool or checker is introduced as coverage, and none of the values is presented as covered by an automatic check. The recheck command is a reproducibility aid, not a gate. |
 
 ## Reproduce

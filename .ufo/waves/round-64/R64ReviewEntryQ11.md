@@ -202,3 +202,93 @@ No install or upgrade was performed (nothing was needed; pacman untouched).
 Scratch: `/tmp/revenger-r64-review-q11/` (copies of `readout.py`, seven fact
 outputs, full stdout, generator replay, my independent `derive.py`) — lane-owned
 and removable on landing.
+
+## Re-review (landed bytes)
+
+Artifact: `corpus/knowledge/round-64-firmware-region-byte-evidence.md`,
+**53098 bytes**, sha256
+`9bf21e5057b77f17a8406af9d006fb4594dd2da54c6d0920f4ca842cfa3e0ebf`.
+`diff -q` against the scribe draft: identical, so the re-review is of the landed
+text. The earlier sections of this report remain the history of the
+`0a3730a1…` draft.
+
+### Verdict: **PASS**
+
+### Derivations unchanged (prose-only edits confirmed)
+
+- Extracted the §Code block **from the landed file**, saved it as
+  `landed_readout.py` (identical to `readout.py`, sha256 `2abe0c13…`), ran it
+  from the lane root: exit 0, stdout byte-identical to my earlier run
+  (`cmp landed_full.out full.out` → identical), sha256
+  `aa353251f7529a00c4336f9bf8cae6634838b8d10bd20e24b7340d94cf1314ae` = the
+  entry's `recheck:` pin.
+- All seven `--fact` blocks (`image`, `regions`, `members`, `payloads`,
+  `oracle`, `record`, `digests`) compare equal to my pinned outputs, including
+  the five required re-derivations of the first review: image
+  `bdfe9f46…510be` (2048 B); offsets **512/1024**, compressed **79/90**, ends
+  591/1114; decompressed `a5718481…df7b86` (78 B) and `2d0d86aa…eeaba9`
+  (97 B); padding **512 / 433 / 934** over `[0,512) [591,1024) [1114,2048)`,
+  contiguous 2048; stdout pin as above.
+- The seven-line §Stdout block is still present verbatim and matches my run.
+
+### Findings resolved
+
+- **F1 resolved.** Item 7 now states 25 = **16 byte-derived + 9 recorded
+  constants** and item 8 states 13 = **5 byte-derived + 8 recorded fields**,
+  matching my enumeration exactly; both explain that the JSON `derived` key is
+  the check's left side and label the constants **recorded, not re-derived**.
+- **F2 resolved.** The Unblob sentence is gone. The record paragraph now says
+  no Unblob provider run appears (`grep -c unblob` = 0 on the lowercase provider
+  id), that the single `Unblob` mention is `limitations[2]` sandbox/skip
+  boilerplate, and rewords the record's producer as **recorded provenance**
+  with "no digest establishes that attribution". I ran the new item-11 command
+  verbatim: `unblob_lower: 0, unblob_upper: 1` — output identical to the entry.
+- **F3 resolved.** Item 10 prints `wc -c` and `sha256sum` for the three
+  previously underived sizes; my runs print exactly `5532`, `492`, `10695`
+  (total 16719) and `4e5d5975…`, `e930a549…`, `e422b481…` — identical to the
+  entry.
+- **F4 resolved.** Item 5 now reads "`FLEVEL` is 3 (a maximum-compression hint,
+  consistent with the oracle's level 9)".
+
+### A–H fix list confirmed
+
+- Recorded-vs-derived labels and honest counts (16+9 / 5+8): confirmed above.
+- Unblob sentence + recorded-provenance rewording: confirmed above.
+- New items 10–11: confirmed by running both blocks verbatim — item 11 prints
+  `{'region_count': 2, …, 'names_present': False,
+  'decompressed_digest_present': False, 'extractions': {}, 'unblob_lower': 0,
+  'unblob_upper': 1}`, identical to the entry.
+- Q-map rows: Q01/Q02/Q03/Q04/Q06/Q09/Q11/Q13 answer their criteria; Q05, Q07,
+  Q12 are marked `n/a` with reasons that hold (no readiness claim, no predicted
+  parser behaviour, no rejected source row); Q08 is marked superseded by Q11.
+- FLEVEL wording: confirmed.
+- U6 same-author unknown: present and correct (the generator wrote both image
+  and oracle; the 25 comparisons are internal consistency, not independent
+  confirmation).
+- Host runtime command + output: `python3 -V` → `Python 3.14.8`; `python3 -c
+  'import zlib; print(zlib.ZLIB_VERSION, zlib.ZLIB_RUNTIME_VERSION)'` →
+  `1.3.2 1.3.2` — my run reproduces both lines exactly.
+- Cross-lane citations spot-checked and present/on-topic: fleet
+  `.ufo/l0-questions.md:42`; `tsukuroi-shokunin/PROVINCE.md:3-4,11-13,51`;
+  `kaidoku-shokunin/PROVINCE.md:50,64-71,76-79,125`.
+- Block audit: 24 command blocks, 23 carry printed output; the one without
+  output is the `cp` setup line (silent by design). No `TODO`/`TBD`/
+  `placeholder` markers.
+
+### Integration warning (L1's, not a candidate defect)
+
+Lane HEAD `671e3a1` ("… C07 candidate entry …") committed the **pre-correction**
+draft: `git show HEAD:corpus/knowledge/round-64-firmware-region-byte-evidence.md`
+= sha256 `0a3730a1…`, 48440 bytes, and the index holds the same blob
+(`git ls-files -s` → `5fa82661…` → `0a3730a1…`). The reviewed bytes
+`9bf21e50…` are **worktree only** (`git status` → ` M`). L1 must stage and
+commit the reviewed bytes; a counter run on `git archive HEAD` would otherwise
+read the version this report first failed. I made no git/jj mutation.
+
+### Residual risk and gaps (unchanged)
+
+Authored oracle written by the same generator (U6 now states it); replay
+identity is host-bounded (Python 3.14.8 / zlib 1.3.2); the record is a
+signature scan and was not re-run. No `lsp` device is exposed to this seat
+(`xd://lsp` → "No such tool"), so diagnostics came from executing the landed
+§Code block (exit 0) and byte-exact stdout comparison.
