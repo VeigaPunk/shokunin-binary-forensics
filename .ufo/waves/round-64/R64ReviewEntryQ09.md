@@ -209,3 +209,65 @@ the S036 snapshot hash and every quoted anchor line re-verify; the stdout pin re
   direct reads for content. No semantic claim rests on grep output.
 - Installs: **none** (no uv/npx/binary install; no pacman transaction). Scratch:
   `/tmp/revenger-r64-q09-review/` (pinned copies only), removable on landing.
+
+## Re-review — landed text (final bytes)
+
+Same identity, same criteria. Reviewed the landed lane file
+`corpus/knowledge/round-64-firmware-region-byte-evidence.md`: 53098 B, 496 lines, sha256
+`9bf21e5057b77f17a8406af9d006fb4594dd2da54c6d0920f4ca842cfa3e0ebf` (matches the routed
+hash). This replaces the scratch review bound to `0a3730a1…` (the delivered revision);
+HEAD `671e3a1` still contains `0a3730a1…`, so the corrected bytes are a **working-tree
+modification** (`git status`: ` M corpus/knowledge/round-64-firmware-region-byte-evidence.md`).
+
+**Verdict: PASS on every criterion in my brief; no actionable finding remains in scope.**
+The candidate is admissible on Q01–Q13 as reviewed; the README C07 flip is L1's.
+
+### Re-run evidence
+
+- Embedded `### Code` block is byte-identical to the previously pinned readout
+  (`2abe0c13…fabae1`); running it from the lane root exits 0 and prints 7 JSON lines with
+  stdout sha256 `aa353251f7529a00c4336f9bf8cae6634838b8d10bd20e24b7340d94cf1314ae` — the
+  header `recheck:` pin holds. The script reads only `corpus/` paths (fixture, oracle,
+  record, ledger), so the pin reproduces from a corpus-only archive; item 10's snapshot
+  line is a separate shell command and is explicitly flagged as outside `corpus/`.
+- Item 11's command was replayed verbatim; its output on this tree is identical
+  (`region_count` 2, `names_present` False, `decompressed_digest_present` False,
+  `extractions` {}, `unblob_lower` 0, `unblob_upper` 1).
+- Item 10's sizes and digests re-verified: generator 5532 B `4e5d…`, receipt 492 B
+  `e930…`, S036 snapshot 10695 B `e422b481…7933609`.
+- S036 and S037 rows now exist in `corpus/SOURCES.md` (lines 83–84); S037 names all six
+  files including `generator.py` and `receipt.json`, tier A for byte/record
+  correspondence, at base `666ea84b…` — F4 resolved and Q01/Q02 unblocked. S036 keeps the
+  route-scope-only tier A wording.
+- `README.md` C07 is still `frontier` and the two C2 verifier scripts are the only other
+  modified paths; `corpus/live` and `corpus/fixtures` remain byte-clean.
+
+### Resolution of prior findings
+
+| Prior | Status | Evidence in landed text |
+|---|---|---|
+| F1 Q-map mislabels (Q04/Q05/Q07/Q10/Q12), no `n/a` | **RESOLVED** | Map lines 209–221: Q04 answers tool/version/manual-label; Q05 `n/a (no readiness or capability claim)`; Q07 `n/a (no predicted parser behaviour)`; Q08 "Superseded by Q11"; Q10 scopes family/operation/version/input and points to §Cross-lane scope note; Q12 `n/a (no rejected source row cited)`. Every row now answers its named criterion. |
+| F2 "13 compared fields" overstated derivation | **RESOLVED** | Item 7 splits 16 derived / 9 recorded constants; item 8 splits 5 derived / 8 recorded; Q11 row (219) states the `derived` key convention and labels the constant rows recorded, not re-derived. Counts re-checked against the readout's 25/13 checks — correct. |
+| F3 record-absence sentences had no command/output | **RESOLVED** | Item 11 (144–152) adds a `python3 -c` command and prints region keys, name/digest absence flags, `extractions` `{}`, and both `Unblob` counts. Output reproduced exactly. |
+| F4 S037 scope vs six files | **RESOLVED** | Landed S037 row names `firmware-r63.bin`, `truth.json`, `generator.py`, `inspection.json`, `receipt.json`, `LEDGER.md`, tier A for byte content and literal saved fields (E satisfied). |
+| F5 "produced independently" provenance assertion | **RESOLVED** | The sentence now reads "the record's provenance is **recorded provenance**: Binwalk 3.1.0 `--search-all` as the record's own envelope and `raw_result` name it, and no digest establishes that…"; the Q09 disclaimer (line 163) is unchanged. |
+| F6 oracle independence absent from Unknown | **RESOLVED** | U6 (190): "whether the oracle is an independent expectation: it is not… 25 comparisons show internal consistency… not independent confirmation". |
+| F7 host version asserted without command | **RESOLVED** | Item 3 adds `python3 -V` → `Python 3.14.8` and `zlib.ZLIB_VERSION/ ZLIB_RUNTIME_VERSION` → `1.3.2 1.3.2`. |
+
+### Residual notes (non-blocking)
+
+1. Nit: item 8 counts the two per-offset presence checks among the "8 recorded fields";
+   presence is a membership test over the record's region list against byte-derived
+   offsets, so the label under-claims rather than over-claims. No Q11 impact; optional
+   rewording only.
+2. **Commit before measuring.** The reviewed bytes are uncommitted (HEAD `671e3a1` holds
+   `0a3730a1…`). The frozen counter runs on a committed `git archive <commit> corpus`
+   tree; commit the corrected entry before the final measurement so the measured bytes are
+   the reviewed bytes. Until the README flip, `K_HELD_BACKED` stays 7/14 and
+   `README_TOKEN_LEGEND_MISMATCH` stays 1.
+3. The flip must name only this entry per the contract; the entry's own scope text already
+   disclaims extraction/vendor/other-fixture ground and reports ADJ-06 without absorbing
+   it.
+4. No LSP application (prose/data artifact; no callers/definitions; device absent from this
+   seat's tool set). Installs: none. No git/jj mutation was run (status/log/show reads only).
+

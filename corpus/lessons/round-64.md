@@ -250,3 +250,32 @@ after this report lands.
 - Dead seat: R64CriticC4 died on a provider cyber-policy flag (m_sol route) at
   1m22s; recorded, not replaced; its C4 kill-rule attack angle was covered by
   R64MutC4/R64MutProbe/R64CriticCounter.
+
+### Admission decision (L1, after all fresh-seat re-reviews)
+
+**C1 ADMITTED.** The corrected entry `corpus/knowledge/round-64-firmware-region-byte-evidence.md`
+(53098 bytes, sha256 `9bf21e5057b77f17a8406af9d006fb4594dd2da54c6d0920f4ca842cfa3e0ebf`)
+passes every quality criterion on landed bytes, by named non-author seats:
+Q01 PASS + Q02 PASS (R64ReviewEntryQ01 re-review, "recommend admit"), Q03 PASS
+(R64ReviewEntryScope blind derivation), Q06 PASS (R64ReviewEntryQ06), Q09 PASS
+all six criteria (R64ReviewEntryQ09 re-review), Q10 PASS (R64ReviewEntryScope
+delta — cross-lane fence present and correct), Q11 PASS (R64ReviewEntryQ11
+re-review), Q04/Q05/Q07/Q08/Q12 answered or n/a-with-reason inside the entry's
+Q-map (verified by Q09/Q11), every in-entry derivation command re-run with
+MATCH ×24 (R64EntryCommands), recheck mutation kill attributed (R64MutEntry).
+README C07 flips `frontier → held` in the same revision as this decision,
+naming only this entry. Two LOW precision nits from Q01 (guide line range
+"91-96" narrows to 91-94; l0-questions.md:42 is the question that references
+ADJ-06, the row being tsukuroi PROVINCE.md:51) are recorded as bounded debt —
+any edit to the entry requires a fresh delta re-confirm, so they route forward
+rather than re-open a passed gate.
+
+**C2 VERIFIED.** `C4_RECEIPT_KILLED_ATTRIBUTED` 0/2 → 2/2 (final bytes
+`a2fd347e…` / `9345cb8c…`), red-before 0/2 at base; attribution integrity
+(R64MutProbe), regression sweep (R64MutIcon), minimality 6 insertions/0
+deletions (R64SimplifierDrift), independent mutation reproduction (R64MutC4),
+both patch reviews PASS (R64ReviewC4Lang/Multi).
+
+**Sourced-claim conformance:** C1 rests on S036 (opened this round, pinned tag
+`rea-agents-6.5.0`) and S037; both rows landed `mined` with used-by paths
+present (R64ReviewSources PASS).

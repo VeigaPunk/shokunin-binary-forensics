@@ -153,3 +153,83 @@ the entry prose against a live run.
 - No git/jj operation, no commit, no push; no lane file written by this seat
   except this report. No tool installed or upgraded (nothing needed; pacman
   untouched).
+
+## Re-probe against the landed entry (final bytes, 2026-10-24)
+
+Landed entry: `corpus/knowledge/round-64-firmware-region-byte-evidence.md`,
+sha256 `9bf21e5057b77f17a8406af9d006fb4594dd2da54c6d0920f4ca842cfa3e0ebf`,
+53098 bytes. Its `recheck:` line names the command
+`python3 -B readout.py <repo-root>` with pinned 7-line stdout
+`aa353251f7529a00c4336f9bf8cae6634838b8d10bd20e24b7340d94cf1314ae`
+(the same pin as the pre-landing artifact). The `### Code` block was extracted
+from the landed text verbatim (10018 bytes, sha256
+`2abe0c130ae29de27ae194511e3b4e5061364818cf94d8d8671c3019eafabae1`) and is
+**byte-identical** to the readout probed above (`cmp` clean). Run on a
+byte-identical scratch copy of the six corpus files, cwd `/`: exit 0, stdout
+**byte-identical** to the pin (`cmp` clean). Baseline green.
+
+### Digest-flip kill on the landed text
+
+M1 re-probe: `truth.json` → `regions[1].decompressed_member.sha256` last hex
+digit `6→7` (`9663f90b…65e6` → `ef236f32403801d9…4c2f8f`). Run: exit 0,
+`oracle.all_match=false`, failing check **`zlib@512.decompressed_sha256`**
+(derived `a571…7b86`, stated `a571…7b87`), stdout `fbec7cc62e3a…` ≠ pin.
+**KILLED attributed under both rules** (R1 semantic check; R2 pinned stdout).
+Restored to `9663f90b…65e6`, `restored_equal=true`, copy `diff -rq`-equal to
+the pristine snapshot. The landed entry's derivation does catch a flipped
+decompressed digest.
+
+### Do items 10–11 close H1 / H3? Honest verdict
+
+**H1 (recheck blind to entry text) — NOT closed.** The readout still opens
+exactly four files (`FIXTURE`, `ORACLE`, `RECORD`, `LEDGER`); no `.md` is read.
+Items 10–11 add in-entry commands with their outputs (Q11 reproducibility), but
+those commands are one-off shell/python invocations, **not** part of the
+`readout.py` 7-line stdout, and nothing compares the entry's prose to a live
+run. Probe: flipping item 10's `receipt.json` digest inside a copy of the
+landed entry (`…b94d→…b94e`) leaves the recheck stdout **byte-identical to the
+pin** (`aa3532…14ae`, exit 0, `all_match` true). A reviewer who reruns item 10's
+`sha256sum` would see the disk hash, but only if they choose to run and compare
+it; the recheck itself remains blind. Q13's own wording ("reproducibility aid,
+not a gate") is accurate and must not be upgraded.
+
+**H3 (saved-record identity unguarded) — instance closed by omission, gap
+structural.** The landed entry cites **no** `evidence_id` (0 matches for
+`evidence_id` / `ev_[0-9a-f]` in the text), so the round-63-style unguarded
+identity citation is gone. Item 11 does not check identity: its command prints
+only region count/keys, `names_present`, `decompressed_digest_present`,
+`extractions`, and the `unblob` counts; `evidence_id` is not in its output
+either. Item 11's own command replays exactly as printed (verified) and its
+absence claims hold (`names_present=False`, `decompressed_digest_present=False`,
+`extractions={}`, `unblob_lower=0`, `unblob_upper=1`). So H3 is closed for this
+entry by not claiming the value, not by a check.
+
+**New surviving mutant class opened by item 10 — the claimed surface now
+exceeds the recheck.** Items 10–11 claim values for `generator.py`,
+`receipt.json` and the S036 snapshot, none of which the readout reads. Two
+probes on the landed code:
+
+- M5: mutate `receipt.json` (claimed sha256 `e930a549…b94d` in item 10, the
+  S037 header and the item-2 table) → `e930a549…b94d` → `fcb5831491fe…9c01`.
+  Recheck stdout **identical to the pin** (`aa3532…14ae`, exit 0,
+  `oracle`/`record` `all_match` true). **SURVIVED both rules.**
+- M6: mutate `generator.py` (`level=9`→`level=8`, i.e. the item-3 replay basis;
+  claimed sha256 `4e5d5975…d3b4`) → `76540971f577…326c`. Recheck stdout
+  **identical to the pin**, `all_match` true. **SURVIVED both rules.**
+
+Both copies were restored (`restored_equal=true`, `diff -rq` clean). This is a
+coverage finding, not a contract break: item 10's `wc -c` + `sha256sum`
+commands do catch these values **when rerun**, and the entry correctly claims no
+guard credit. The residual risk is a reviewer treating the green 7-line pin as
+covering item 10 — it does not; the pin covers only fixture, oracle, record and
+ledger. Recommended wording for the entry (author's call, not a contract
+change): state in §Reproduce that the 7-line pin covers the four read files
+only, and that item 10's sizes/digests are verified by rerunning its own
+commands.
+
+Lane bytes after the re-probe are unchanged: fixture `bdfe9f46…10be`,
+`truth.json` `9663f90b…65e6`, `generator.py` `4e5d5975…d3b4`,
+`inspection.json` `f6997835…71f9`, `receipt.json` `e930a549…b94d`,
+`LEDGER.md` `25a4a18b…e1a6`, entry `9bf21e50…0ebf`. Scratch:
+`/tmp/revenger-r64-mutentry-LD` (`readout-landed.py`, `snapshot/`,
+`reprobe-results.json`, mutant copies restored). No installs.

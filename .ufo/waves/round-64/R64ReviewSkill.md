@@ -1,150 +1,169 @@
-# R64ReviewSkill — SHONEN box 1 non-author verification
+# R64ReviewSkill — SHONEN box 1 non-author verification (final)
 
 Reviewer: **revenger-r64.R64ReviewSkill** (non-author; this seat did not draft the candidate).
-Candidate: `/tmp/revenger-r64-skill/SKILL.md` — 266 lines, sha256
-`6ee10db9dece167c3b9e541fdec4933071fd6153a98146972f0656d89ab157c2`; no
-`checklists.md` exists beside it (single merged file, as the brief allows).
-Box text being tested (`SHONEN.md:5-6`): "SKILL.md contains real decision tables,
-error patterns, checklists, cited sources".
+Candidate reviewed as the merged pair the brief allows:
+
+- `/tmp/revenger-r64-skill/SKILL.md` — 271 lines, 25591 bytes, sha256
+  `31c3f99df2b7717f5a586e790f00b42884ee2ce05a8cad267b8c64165a424e72`
+- `/tmp/revenger-r64-skill/checklists.md` — 227 lines, 13506 bytes, sha256
+  `07cdfdafd2ed557ed8f21b19c531e1f900284708e3302de10a6a443600f7b8db`
+- Landed lane artifact `/home/vgpnk/Projects/shokunin/revenger-shokunin/SKILL.md` —
+  39098 bytes, sha256
+  `bfd92057e71541cc1d93a9812cb350d69fcb5524df57b24153364d6c11b0a9dd`; verified to be
+  exactly `31c3f99d…` + one `"\n"` + `07cdfdaf…` (39098 = 25591 + 1 + 13506).
+
+Box text (`SHONEN.md:5-6`): "SKILL.md contains real decision tables, error patterns,
+checklists, cited sources". Any later edit to either file invalidates this signature; the
+digests above are the reviewed bytes.
 
 ## Verdict
 
-**SHONEN-box-1 `[x]`-ready: no, as submitted.** Three textual defects (F1–F3) must be
-corrected; each is a one-line edit in the scratch candidate. With F1–F3 fixed as
-specified, the document meets the box on the evidence below and I would sign `[x]`
-without a re-draft. F4–F5 are recommended precision fixes.
+**SHONEN-box-1 `[x]`-ready: yes**, re-stated on the final bytes — component blobs
+`31c3f99d…` + `07cdfdaf…` and the landed merge `bfd92057…`. Both files meet the box:
+three real decision tables, four error patterns mapped to catching checks, five runnable
+checklists, a fully resolved citation set, and named scope limits. Three non-blocking
+refinements are listed below; none misdirects a reader to a false claim, and none affects
+a command.
 
-## Findings
+Delta-confirm: the change from the previously signed `d66b19d7…` is **exactly two lines**
+in `SKILL.md` (scope bullets `README.md` → `corpus/README.md` for "Frontier" and "Known
+gaps"); `diff` against the signed copy shows 2 insertions / 2 deletions and nothing else,
+`checklists.md` is untouched, and the landed file is the byte-concatenation of the two
+final blobs. The other two routed citation nits — the `verified-at` base split and the
+multi-script control ranges — were already fixed in the signed `d66b19d7…`; both are
+re-verified present in the landed bytes.
 
-### F1 — Medium, blocking (provenance): false base commit for round-64 artifacts
+Revision note: my first pass reviewed the intermediate `6ee10db9…` and found three defects
+(false `verified-at` base, multi-script control ranges off by one, tier-B "sole support"
+row contradicting Q01). All three are fixed in `b3b0af1d…` and carried unchanged into the
+reviewed `d66b19d7…` (whose delta is only the §6.1 `HOLDS_OK_V2`
+`README_TOKEN_LEGEND_MISMATCH` clause), together with F4 (d2 conjunct) and F5 (bare
+filename), as described in the verification matrix.
 
-- Header: `verified-at: 2026-10-24, lane commit 666ea84b… (round-64 claim base). Every
-  file, line range and S-id cited below was re-read in the lane tree at that base.`
-- §7 last row: `reports/round-64/measure.py` sha256 `b8e68d32…` — "identity of the
-  frozen instrument at this base".
-- Observed: `git cat-file -e 666ea84b6be2eec2b0359f556ba2429fc9044c36:<path>` returns
-  absent for all three of `reports/round-64/claims.md`, `reports/round-64/measure.py`,
-  `reports/round-64/measure-before.log`. They were added in
-  `3bb430f96cac09feb7269c5c52725127c6f7c463` ("round-64: frozen claims + counting
-  probe + red-before do-nothing control"), whose blob digest for `measure.py` is
-  exactly `b8e68d326c28690274be98ac35a518970d84aa8b9892b5736450a776210b9168`.
-  The digest value is right; the base attribution is wrong.
-- Harm: this file's authority is provenance. A reader auditing at the stated base
-  finds three cited files missing, and §7's "at this base" row is false where it is
-  most load-bearing. It is the Q09/Q11 identity-claim class the lane gates on.
-- Fix: `verified-at:` names two commits — corpus files at `666ea84b…`, round-64 frozen
-  artifacts at `3bb430f…` (measure.py blob sha256 `b8e68d32…`); amend §7's last row to
-  "at `3bb430f`". Also, the sweep sentence says "in the lane tree", while §3 cites the
-  fleet contract `.ufo/waves/kaika/SOURCES-CONTRACT-v1.md` (fleet root, outside the
-  lane tree); say "lane tree and the named fleet contract".
+## Verification matrix (all re-checked on the reviewed bytes)
 
-### F2 — Medium: wrong `file:line` for the two controls in `verify_multi_icon_states.py`
+### Cited sources and paths
 
-- §1 row claims forged `command` `:149-151` and forged `stdout_sha256` `:152-154`.
-- Observed (`grep -n forged corpus/verify_multi_icon_states.py`): `forged=148`,
-  mutation=149, `require`=150, `forged_stdout=151`, mutation=152, `require`=153;
-  line 154 is `return data, report, decoded, state`. The claimed range starts one line
-  late and ends one line past the control.
-- The other three rows are exact: `verify_icon_languages.py` `:118-120` body and
-  `:149-151`/`:152-154` controls; `verify_icon_states.py` `:119-123` and `:151-158`;
-  `verify_named_multi_icon_states.py` `:16-17` and `:76-78`.
-- Fix: `:148-150` and `:151-153`.
+- Every lane-relative path cited by either file resolves in
+  `/home/vgpnk/Projects/shokunin/revenger-shokunin`: 7 knowledge entries, 5 lessons,
+  3 firmware fixture files, `corpus/{README,QUALITY,SOURCES}.md`,
+  `corpus/fixtures/REPLAY.md`, `SCORECARD.md`, `SHONEN.md`, `PROVINCE.md`, the three
+  `reports/round-64/*` files, `.ufo/waves/round-64/R64C4MultiPatch.md`. Zero missing.
+- Fleet contract: `SKILL.md` §3 cites it by absolute path
+  `/home/vgpnk/Projects/shokunin/.ufo/waves/kaika/SOURCES-CONTRACT-v1.md` and states it is
+  outside the lane; the file exists and its lines 67-80 are exactly the seven-command
+  census block cited by `checklists.md` §4b.
+- S-ids: 11 distinct (S005, S006, S007, S009, S010, S014, S015, S032, S033, S034, S035);
+  all exist in `corpus/SOURCES.md`; zero unknown. S036/S037 are correctly not cited (not
+  yet committed), and the not-yet-existing C07 entry is correctly not cited.
+- Line anchors spot-verified against the bytes: `corpus/lessons/round-63.md:218/219/220`
+  are M33/M34/M35; M27/M28 exist in `corpus/lessons/round-62.md`;
+  `corpus/README.md:21-26` is the status legend (line 25 carries "Work evidence is not
+  knowledge"); `corpus/QUALITY.md:32-33` is admission step 3; `PROVINCE.md:6-7` is the
+  observation/inference/unknown rule; `reports/round-64/claims.md:84` carries the frozen
+  counter string; `SCORECARD.md:29-30` says the census probe exits 0 even when verifiers
+  fail; `corpus/live/runs/round-63/LEDGER.md` O6, O10, I1, U4–U6 exist and are quoted
+  accurately; `round-63-verifier-spotcheck.md:31` carries the paired-member oracle markers.
 
-### F3 — Medium-low: tier-B row contradicts Q01
+### Commands
 
-- §3 tier table: B may be sole support "only where Q01's scope test passes".
-- `corpus/QUALITY.md` Q01 requires every load-bearing claim to rest on a row that is
-  tier **A** for that scope; no scope test licenses a B row as sole support of a
-  load-bearing claim. As written the cell invites the exact citation Q01 rejects.
-- Fix: "No for a load-bearing claim (Q01 requires tier A for the scope); B
-  corroborates only."
+- Seven-command census block in `checklists.md` §4b: **13/13 lines byte-identical** to the
+  fleet contract's `## Census` block (comments included). Executed read-only from the lane
+  root: rows `35`, malformed `0`, tiers `A=33 C=2`, statuses `mined=30 queued=1
+  rejected=4`, duplicate/enum/missing-used-by output empty — matching the document's
+  zero/empty promises.
+- Census C block in `checklists.md` §1: **8/8 lines byte-identical** to
+  `SCORECARD.md:35-42`.
+- Oracle command `python3 -B corpus/live/runs/round-63/oracle_check.py` is verbatim from
+  `LEDGER.md:110`; defaults at `oracle_check.py:11-12`, `REGION`/`MISMATCH`/`ORACLE
+  OK`/`ORACLE MISMATCH` output and exit 1 are as promised by the code (`:206-225`); the
+  paired-member marker ordering matches.
+- Frozen-counter usage: `checklists.md` §3 quotes `claims.md:84` verbatim and gives the
+  committed round-63 invocation byte-identical to
+  `.ufo/waves/round-63/falsify/W2FinalIndependent.md:148-149`; `measure.py:22-23` usage
+  message and `:273` exit expression match the documented semantics, and `HOLDS_OK_V2`
+  is indeed not folded into the exit code. `SKILL.md` §6.1's added claim that
+  `HOLDS_OK_V2` also requires `README_TOKEN_LEGEND_MISMATCH == 0` matches `measure.py`'s
+  `holds_ok_v2` expression (`len(mismatch) == 0`), while the exit expression tests only
+  `holds_ok`.
+- Fixture recipe `python3 -B generator.py` matches `truth.json`
+  `build_recipe.command`; generator line anchors `39-49`, `52-101`, `104-113`, `:131`,
+  `:133`, `:149-150` all land on the claimed statements.
+- `python3 -B corpus/verify_*.py --self-test` matches committed usage
+  (`corpus/knowledge/tool-validation-by-function-and-version.md:142`).
+- Fleet checker `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh` exists
+  (read-only, fleet-owned); its documented exit codes are at header lines 16-18 as cited,
+  and W04's meaning in the script ("same URL across scopes") matches `checklists.md` §4a.
 
-### F4 — Low: §6.5 void list drops the `C2 d2` conjunct
+### Decision tables, error patterns, checklists, scope
 
-`reports/round-64/claims.md` §Harms voids on "C2 attributed kills below 2/2 **or d2
-below 2/2**"; §6.5's "attributed calibration counts below target" plus holds list never
-names `C2_D2_KILLED`, and "outside new round paths" drops the contract's "round-64"
-qualifier. Fix: name the d2 condition and "new round-64 paths".
-
-### F5 — Low: bare filename citation
-
-§1 cites "`R64C4MultiPatch.md` records that its seat did not run the self-test"; the
-file is `.ufo/waves/round-64/R64C4MultiPatch.md`. Every other citation is a full
-repo-relative path; use the full path.
-
-## Passed checks (evidence)
-
-- **Path citations.** 38 backticked lane-path tokens; every `corpus/knowledge/*`,
-  `corpus/lessons/*`, `corpus/fixtures/*`, `reports/round-64/*` and root-file citation
-  resolves in the lane tree. The single flagged token
-  `.ufo/waves/kaika/SOURCES-CONTRACT-v1.md` is explicitly labeled "fleet" and exists at
-  fleet root — not a lane path claim (folded into F1's wording fix). All 7 cited
-  knowledge entries exist; `corpus/fixtures/REPLAY.md`, `corpus/README.md`,
-  `corpus/QUALITY.md`, `corpus/SOURCES.md`, `SCORECARD.md`, `SHONEN.md`, `PROVINCE.md`
-  exist.
-- **S-ids.** 11 cited (S005, S006, S007, S009, S010, S014, S015, S032, S033, S034,
-  S035); all present in `corpus/SOURCES.md`, 0 unknown. S036/S037 correctly absent (not
-  yet committed to the registry), and the new C07 entry is correctly not cited (it does
-  not exist yet).
-- **Commands.** The seven §6.2 census commands are byte-identical to
-  `.ufo/waves/kaika/SOURCES-CONTRACT-v1.md` §Census (7/7 exact match), and all seven run
-  clean read-only from the lane root: rows `35`, malformed `0`, tiers `A=33 C=2`,
-  statuses `mined=30 queued=1 rejected=4`, duplicates/enum-violations/missing-used-by
-  all print nothing. `python3 -B reports/round-64/measure.py TREE` is verbatim at
-  `reports/round-64/claims.md:84`; §6.1's exit-code reading matches `measure.py`'s tail
-  (`sys.exit(2 if not evaluable else 0 if holds_ok else 1)`, 273 lines) and
-  `HOLDS_OK_V2` is indeed not folded (its expression adds `attributed_b`,
-  `c3_attributed`, `c4_attributed`). `python3 -B corpus/verify_*.py --self-test` matches
-  committed usage (`corpus/knowledge/tool-validation-by-function-and-version.md:142`).
-  The fixture recipe `python3 -B generator.py` matches `truth.json`
-  `build_recipe.command`.
-- **§2 references.** `generator.py` `decode_member` :39-50, `derive_regions` :52-101 and
-  build :104-115 (`def main` at 104, `image = bytes(image)` at 113) all match; the
-  declared `MEMBERS` block spans 19-36, so the stated :17-35 covers the declaration
-  through the second member's closing brace (closing paren at 36) — adequate for a
-  "where it is shown" pointer, not counted as a defect. `truth.json` is 73 lines as
-  stated.
-- **Error patterns.** M33/M34/M35 are at `corpus/lessons/round-63.md:218/219/220`
-  exactly; M27/M28 exist in `corpus/lessons/round-62.md`; M36 is correctly sourced to
-  `reports/round-64/claims.md` (the round-64 lesson does not exist yet — citing it would
-  have been the defect).
-- **Actionability.** §1 gives the credit rule and the exact attribution phrase; §2 is a
-  step → do → never table with file pointers; §3 encodes the append-only/reject/flip
-  rules; §5 reproduces Q01–Q13 (Q08 flagged superseded, matching QUALITY.md's Q11
-  supersedes line); §6.1–6.5 are runnable checklists (counter labels and exits, census,
-  admission order, replay/regeneration, void conditions). A reader can act on the
-  document alone for all three governed acts.
-- **Scope limits named.** Five bullets (no producer/readiness claim, no
+- §1 gives the credit rule, exact attribution phrase, frozen control shape, and an
+  explicit "not yet earned" status for C4; the four rows match the current sources
+  (`icon_languages` 118-120 / 149-151 / 152-154; `multi_icon_states` 121-123 / 148-150 /
+  151-153; `icon_states` 119-123 / 151-158; `named_multi_icon_states` 16-17 / 76-78).
+- §2's fixture table was hardened correctly: it now warns that running `generator.py` in
+  place rewrites the frozen fixture and truth, and that interpreter/zlib versions enter
+  the truth — a real void-condition hazard.
+- §3 tier table is consistent with Q01 (B never sole support for a load-bearing claim).
+- §4 maps M33–M36 to concrete checks; M36 is correctly sourced to the round-64 contract
+  (the round-64 lesson does not exist yet).
+- §5 reproduces Q01–Q13 with Q08 flagged superseded; §6.1–6.5 are runnable checklists
+  whose labels and void conditions match `claims.md` §Counting/§Harms, including
+  `C2_RECEIPT_B_KILLED_ATTRIBUTED` and `C2_D2_KILLED` and "new round-64 paths".
+- Scope limits are named in five bullets plus §8 (no producer/readiness, no
   origin/completeness/authenticity, no generalization, no gate registry, manual stays
-  manual) plus §8, anchored to `PROVINCE.md`, `corpus/README.md:50` "Known gaps" and
-  `SCORECARD.md:17` "Rubric boundaries" — all anchors exist.
-- **Honest disclosure.** §1 states the two C4 stdout controls are the working-tree fix,
-  that `C4_RECEIPT_KILLED_ATTRIBUTED=0/2` is the base value, and that credit is earned
-  only when the frozen counter prints `2/2` at the landing commit; it does not claim the
-  target.
+  manual), anchored to existing PROVINCE/README/SCORECARD headings.
+
+## Non-blocking refinements
+
+1. `checklists.md` §4a cites `reports/round-64/claims.md:127-129` for "census exit 0,
+   35 rows, four disclosed W04s"; the four-W04 parenthetical continues on line 130, so
+   the range should be `:129-130`.
+2. `checklists.md` §4b cites the fleet contract as `.ufo/waves/kaika/SOURCES-CONTRACT-v1.md:67-80`
+   (a fleet-root path written without its root). `SKILL.md` §3 now uses the absolute path;
+   using the same absolute form in the checklist would make it resolvable from any cwd.
+3. `SKILL.md`'s `verified-at` still describes the §1 control ranges as "at the uncommitted
+   working tree on top of `a3d063f`". L1 committed the C2/C4 patches in `671e3a18`, so the
+   clause is now stale in the opposite direction; the ranges themselves stay correct
+   against the committed blobs (`icon_languages` forged-stdout `152-154`,
+   `multi_icon_states` `151-153`, both verified from `git show 671e3a18:…`). If the header
+   is touched again, name `671e3a18`.
+
+## Landed artifact
+
+`/home/vgpnk/Projects/shokunin/revenger-shokunin/SKILL.md` (39098 bytes, sha256
+`bfd92057…`) is byte-exactly `31c3f99d…` + `"\n"` + `07cdfdaf…`; `root.startswith(SKILL)`
+and `root.endswith(checklists)` both hold. Re-running the sweep on the landed bytes: zero
+bare `README.md` references, "Frontier"/"Known gaps" anchors correct, multi ranges correct,
+`3bb430f` provenance present, `HOLDS_OK_V2` mismatch clause present, census block present,
+14 S-ids all registered, and the only non-resolving path token is item 2 above (fleet
+contract by lane-relative spelling; the file exists at fleet root and §3 cites it
+absolutely).
 
 ## Residual risk
 
-- The two C4 controls are **uncommitted** at review time (`git status` shows
-  `M corpus/verify_icon_languages.py`, `M corpus/verify_multi_icon_states.py`). The
-  landed SKILL describes a commit-time state only if L1 lands those patches in the same
-  or an earlier commit; a post-landing reviewer should re-run the frozen counter for
-  `C4_RECEIPT_KILLED_ATTRIBUTED=2/2` before the box flip.
-- §1's "unguarded" column is a source-reading judgment, not mutation evidence; the M35
+- The two C4 stdout controls are **committed** as of `671e3a18` (verified from the
+  committed blobs at `icon_languages:152-154` and `multi_icon_states:151-153`; the working
+  tree is clean for `corpus/verify_*.py`). `SKILL.md` §1 correctly claims no credit: the
+  box flip and C2's target still require the frozen counter to print
+  `C4_RECEIPT_KILLED_ATTRIBUTED=2/2`.
+- The frozen `reports/round-64/claims.md` was amended once by L1 in `671e3a18` (one hunk:
+  `HOLDS_OK_V2` wording now names the attributed-count substitution plus
+  `README_TOKEN_LEGEND_MISMATCH == 0`). The frozen-counter line (`:84`) and its command are
+  unchanged; the SKILL's §6.1 wording matches the amended text.
+- §1 "unguarded" judgments are source-reading conclusions, not mutation evidence; the M35
   debt for `exit_code`, `fixture_sha256`, `evidence_id` (both scripts) and
   `duration_seconds` (`verify_named_multi_icon_states.py`) remains real until controls
   exist.
-- Box 1's wording ("real decision tables…") is satisfied in shape; nothing here asserts
-  box 2/3 or promotion.
 
 ## Verification gaps
 
 - No `lsp` device is mounted (`xd://lsp` → "No such tool: xd://lsp. Mounted devices:
-  ast_edit, debug"), so caller/definition checks used text reads and line-number greps;
-  no semantic cross-reference was possible.
-- I did not run the four `--self-test` verifiers or the frozen counter (the exec seat
-  owns execution; its report predates the candidate). The census commands were executed
-  read-only and their outputs are recorded above.
+  ast_edit, debug"), so checks used reads, line-number greps and line-range diffs; no
+  semantic cross-reference was available.
+- I did not execute the four `--self-test` verifiers or the frozen counter (the exec seat
+  owns runnable execution; its filed report predates the candidate). The census commands
+  and the `sources-census.sh` documentation were read/executed read-only as recorded.
 - No tools were installed or updated.
 
 Report: .ufo/waves/round-64/R64ReviewSkill.md

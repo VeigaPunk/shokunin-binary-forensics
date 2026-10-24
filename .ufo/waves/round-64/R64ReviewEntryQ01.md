@@ -226,3 +226,109 @@ formats remain unverified — usable as the entry's limitation, not as support f
 - No tool installed or upgraded (pacman untouched per the paused-host rule).
 - Report path per contract: `.ufo/waves/round-64/R64ReviewEntryQ01.md`, relative to
   `/home/vgpnk/Projects/shokunin/revenger-shokunin`.
+
+## Re-review — landed bytes, same identity (2026-10-24)
+
+Scope: the landed entry `corpus/knowledge/round-64-firmware-region-byte-evidence.md`, sha256
+`9bf21e5057b77f17a8406af9d006fb4594dd2da54c6d0920f4ca842cfa3e0ebf` (matches the announced corrected
+digest), and the appended rows `corpus/SOURCES.md:83` (S036) and `:84` (S037). Both blockers from the first
+pass are cleared: the candidate exists, and both rows are present (11 columns each, `status=mined`,
+`date=2026-10-24`, `refresh=on-release`, `used-by` naming this entry; S037 also names
+`corpus/lessons/round-64.md`). The registry now holds 37 `S###` rows.
+
+### Verdict after re-review
+
+| criterion | verdict | basis |
+|---|---|---|
+| Q01 | **PASS** | every load-bearing claim maps to S036 (route scope) or S037 (byte/record correspondence), both tier A for the scope used; no dangling S-id, no other row cited |
+| Q02 | **PASS** | two `source:` headers with verified anchors, `verified-at:`, `recheck:` that reproduces exactly, `coverage-map: C07`; two LOW precision nits below, neither defeating the criterion |
+
+Recommendation to L1: **admit**, optionally after the two LOW corrections. Admission authority stays with L1.
+
+### Q01 — criterion evidence
+
+| claim class (entry location) | row | scope fit, anchor verified |
+|---|---|---|
+| route identity and invocation (`rea inspect-firmware-regions <path>`) | S036 | guide line 56, quoted verbatim in the snapshot; row scope is "what `inspect-firmware-regions` returns and bounds per rea-agents-6.5.0" |
+| accepted/verified engine version (Binwalk 3.1.x, parser verified with 3.1.0) | S036 | guide lines 3-5, verified verbatim; matches the record's provider `3.1.0` |
+| region offsets are original-firmware bytes; `reported_size` is provider output; `size_basis=provider_reported_validation_unknown`; a signature/confidence byte does not prove a partition | S036 | guide lines 91-94, verified verbatim (citation range `91-96` overshoots by two lines — LOW-1) |
+| Evidence envelope fields (original path + SHA-256, executable path/digest, version, limitations) | S036 | guide lines 83-85, verified verbatim |
+| fixture, generator, oracle, record, receipt, ledger bytes at base `666ea84b…` | S037 | I recomputed all six with `git show <base>:<path> \| sha256sum` **and** `sha256sum <path>`: `bdfe9f46…`(2048), `4e5d5975…`, `9663f90b…`, `f6997835…`, `e930a549…`, `25a4a18b…` — all six equal the entry's item 2 output and the row's anchors |
+| record-only facts (operation, provider version, two `zlib` regions, `coverage=signature_scan`, `size_basis`, empty `extractions`, no names/decompressed digests, one `Unblob` mention in `limitations[2]`) | S037 | reproduced by command; `region_count` 2, `names_present` False, `decompressed_digest_present` False, `extractions` `{}`, `unblob_lower` 0 / `unblob_upper` 1 — matches item 11 exactly |
+
+Dangling-id check: the entry references only `S036` (9 occurrences) and `S037` (6); every other identifier is a
+file path or a `Q` id. The cross-lane note disclaims source support explicitly ("no other lane's file is cited
+as support for a value here"), and that holds: the fleet/sibling pointers support only the scope disclaimer,
+and the one verbatim quote in it ("protocol integrator — kaidoku/revenger ownership unresolved") is present at
+`tsukuroi-shokunin/PROVINCE.md:51` as claimed (the `l0-questions.md:42` pointer is loose — LOW-2).
+
+Scope containment (the HIGH-1 hazard from the first pass) is now handled correctly: the record is matched on
+exactly its two regions and its literal fields; the three padding spans and both decompressed digests are
+presented as byte-derived only; the oracle's member labels are explicitly *not* byte-derived (item 6), and U6
+states the oracle is not independent because one generator wrote both. No extraction, authenticity,
+provider-completeness or general-format claim appears; limitation 4 restates S036's bounds.
+
+### Q02 — criterion evidence
+
+- Header lines 1-6 carry `source:` ×2, `verified-at:`, `recheck:`, `coverage-map: C07`, `admission-status:`.
+  Each header is on one line; nothing is a bare homepage.
+- **S036 anchor is real and independently reproducible.** `refs/tags/rea-agents-6.5.0` → commit
+  `3b79af28e80785afce9f5998d8f03289402a1847` (re-checked with `git ls-remote`); file blob
+  `152819177f8dce2124dea2a6a541e701cee227ed` re-derived offline with `git hash-object` on the in-repo
+  snapshot `.ufo/waves/round-64/source-snapshots/rea-firmware-guide.md` — exact match; that snapshot's
+  sha256 is `e422b4816b1dbc912680afefb8e23acfd8ead4aea08c3d722d4ccb5207933609` (10695 B), identical to the
+  bytes I fetched from the tag URL. Quoted line numbers 3, 56, 83-85 all verified in that snapshot.
+- **S037 anchor is real**: six digests at base `666ea84b…` (table above).
+- **`recheck:` reproduces.** I extracted the `### Code` block verbatim to `/tmp/revenger-r64-review-q01/readout.py`
+  and ran `python3 -B readout.py <lane-root>` from the lane root: exit 0, **7** JSON lines, stdout sha256
+  `aa353251f7529a00c4336f9bf8cae6634838b8d10bd20e24b7340d94cf1314ae` — exactly the header's value, and
+  identical on a second run (deterministic; the script prints with `sort_keys=True`). `--fact image` emits
+  exactly one line. The script imports only `hashlib`, `json`, `sys`, `zlib`; its only file access is
+  `open(..., "rb")`; it writes nothing.
+- **Published values reproduce independently.** My own stdlib derivation (no author script) gives the same
+  image digest/size, the same five-region partition, and for both members `78 da`, mod-31 check true,
+  `FLEVEL` 3, `FDICT` 0, end-of-stream clean, Adler-32 trailers `7b3b1d2d` / `11bf252c` matching recomputation,
+  inflated sizes 78 / 97 with digests `a5718481…` / `2d0d86aa…`, and plaintext equal to the oracle's
+  `payload_utf8` strings. The entry's own disclosure that a whole-file zero-run rule would add a one-byte run
+  at offset 1098 is accurate (byte 1098 is `0x00` between `0x79` and `0x76`).
+- **Derived-vs-recorded splits are honest.** The readout prints 25 oracle checks and 13 record checks; I
+  enumerated every row and confirmed the entry's 16/9 and 5/8 splits exactly, and that the script's left
+  sides are genuinely byte-derived where the entry says so (`record region_count` derived = `len(members)`,
+  `reported_size` derived = `compressed_size`), so the "constant rows are recorded, not re-derived" disclosure
+  (Q11) is accurate rather than decorative.
+- Coverage-map row named: `coverage-map: C07` (line 5), matching `corpus/README.md:36`. README C07 is still
+  `frontier`, so the admission-order rule (flip only after all-criteria pass) is being respected.
+
+### Findings (LOW only; no criterion failure)
+
+- **LOW-1 — anchor range overshoots by two lines.** Entry line 197 and the Q02 row cite "S036 lines 91-96"
+  for two sentences that sit entirely in 91-94; line 95 is a blank line and 96 opens a different bullet
+  ("- Extraction returns regular file paths…"). The quoted content is inside the stated range, so the anchor
+  still locates it; narrowing to `91-94` would make it exact.
+- **LOW-2 — `l0-questions.md:42` is the question that references ADJ-06, not ADJ-06 itself.** Entry line 205
+  reads "ADJ-06 (fleet `.ufo/l0-questions.md:42` remains open; …)". Line 42 is the open tsukuroi round-1
+  question ending "…before an ADJ-06 analysis is routed"; the ADJ-06 row is
+  `tsukuroi-shokunin/PROVINCE.md:51`, which the entry also cites, and the quoted phrase there is verbatim.
+  Suggested wording if corrected: "the open question at `:42` references ADJ-06". Neither pointer supports a
+  value in this entry, so Q01 is unaffected.
+
+### Residual risk and gaps after re-review
+
+- `admission-status: candidate` (entry line 6) is still the marker; the Q02 header obligation is met, but the
+  C07 flip must land together with a `## Gate` decision that names this admission (prior MEDIUM-4), or the
+  round reproduces the C06-style token/evidence mismatch (`corpus/README.md:35` says `held` while
+  `round-63-zip-central-directory-evidence.md:8` still says `candidate`).
+- Author-oracle identity is disclosed (U6) and not fixed by this review; my byte-level re-derivation removes
+  transcription and readout risk only.
+- Host-bounded generator replay is disclosed (limitation 6) and held on this host (Python 3.14.8 / zlib
+  1.3.2, both digests reproduced twice).
+- Not my criterion, not evaluated here: the core six-check invariant of `reports/round-64/measure.py` on a
+  committed archive tree, the sources census after the append (37 rows), and Q03–Q13 decisions by other
+  seats. This re-review scores Q01 and Q02 only.
+
+### Re-review provenance
+
+Read-only on the lane: no git/jj mutation (only `git show`, `git hash-object`, `git ls-remote`, all
+read-only), no commit/push, no corpus or README edit; the only lane write is this appended section. Scratch
+confined to `/tmp/revenger-r64-review-q01/` (`readout.py` extracted from the entry, fixture/oracle
+regeneration copy, pinned guide snapshot). No tool installed or upgraded.

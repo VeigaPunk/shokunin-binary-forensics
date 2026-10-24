@@ -38,6 +38,12 @@ Q10 fails by **omission, not absorption**: the draft cites no sibling file, no k
 Evidence ID (`ev_0388cb9a…`, `ev_4009f834…`), no GSP count and no README host-pin line
 (`corpus/README.md:63-66`). Its confinement side is good; only the contest report is missing.
 
+**Landed-artifact update (supersedes the Q10/overall rows for the integrated entry):** on
+`corpus/knowledge/round-64-firmware-region-byte-evidence.md`, sha256
+`9bf21e5057b77f17a8406af9d006fb4594dd2da54c6d0920f4ca842cfa3e0ebf`, the cross-lane fence is
+present and Q10 **PASSES**; derived values/commands/outputs are unchanged and Q03 **PASSES**.
+See §Addendum.
+
 ## Q03 evidence — bytes-only derivation, independent of truth.json and of the author's script
 
 Copy (only the image; no `truth.json`, no `generator.py`, no saved record):
@@ -183,5 +189,59 @@ labels, not byte-derived (line 6, U1). This satisfies the Q03/Q11 labelling conc
 - Install/upgrade record: none (no tool needed; pacman not used).
 - Scratch `/tmp/revenger-r64-entryscope/` is lane-owned and can be removed on landing; the
   reviewed INPUT (`/tmp/revenger-r64-entry/`) is the scribe's, not mine.
+
+Report: .ufo/waves/round-64/R64ReviewEntryScope.md
+
+## Addendum — landed-artifact confirmation (`9bf21e50…`, 01:31)
+
+Landed file read: `/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-64-firmware-region-byte-evidence.md`,
+`sha256 9bf21e5057b77f17a8406af9d006fb4594dd2da54c6d0920f4ca842cfa3e0ebf`, 496 lines. This
+addendum supersedes the draft verdicts for the integrated artifact.
+
+### 1. Cross-lane fence (Q10) — present, named, citations verified
+
+Lines 201-203 carry `## Cross-lane scope note (Q10)` with the paragraph beginning
+"Reported, not absorbed." It states that the entry covers only the authored
+`corpus/fixtures/firmware-r63/firmware-r63.bin` bytes against the saved
+`inspect_firmware_regions` record; that a C07 `held` token does not settle ADJ-06; and that it
+does not absorb kaidoku's live surface or tsukuroi's health plane. Every citation was read at
+its target and matches:
+
+| citation in fence | target line, observed |
+|---|---|
+| fleet `.ufo/l0-questions.md:42` remains open | line 42 is the tsukuroi round-1 question to "arbitrate the kaidoku/revenger shipped-artifact overlap before an ADJ-06 analysis is routed" |
+| `tsukuroi-shokunin/PROVINCE.md:51` — "protocol integrator — kaidoku/revenger ownership unresolved" | line 51 is the ADJ-06 row and contains that exact recipient text |
+| `kaidoku-shokunin/PROVINCE.md:50,76-79,125` | `:50` archive/package inventory; `:76-79` firmware pruned into Core ("firmware … each now held"); `:125` Firmware regions + extract row naming `inspect-firmware-regions`, `extract-firmware`, binwalk 3.1.0 / unblob 26.6.4 |
+| `kaidoku-shokunin/PROVINCE.md:64-71` (pin registry) | `:64-71` "Cross-lane registry … never stands for that lane's current runtime capability" |
+| `tsukuroi-shokunin/PROVINCE.md:3-4,11-13` | `:3-4` domain includes "drivers/firmware"; `:11-13` "driver/firmware plane" |
+
+The fence ends "No ownership is declared and no other lane's file is cited as support for a
+value here." The updated Q10 map row (line 218) points to the section. No sibling Evidence ID,
+GSP count, or README host-pin line appears anywhere in the entry. **Q10 now PASSES.**
+
+### 2. Delta `e86a5b1c…` → `9bf21e50…` changed no derived value, command or output
+
+- `### Code` block (251 lines) hashes `2abe0c130ae29de27ae194511e3b4e5061364818cf94d8d8671c3019eafabae1`
+  — byte-identical to the readout reviewed at `e86a5b1c…` and to the scratch `readout.py`
+  (the landed entry and `/tmp/revenger-r64-entry/candidate.md` are now the same bytes).
+- The stdout pin `aa353251f7529a00c4336f9bf8cae6634838b8d10bd20e24b7340d94cf1314ae` is
+  present and still matches the 7-line run output.
+- Value anchors intact: image sha `bdfe9f46…a8510be` (14 occurrences), inflated digests
+  `a5718481…df7b86` and `2d0d86aa…eeaba9` (7 each), member offset/size and padding size keys
+  present.
+- This seat's blind derivation re-run against the unchanged bytes-only copy returns the same
+  values: image 2048 / `bdfe9f46…`; streams at 512 and 1024; compressed 79 and 90; inflated 78
+  and 97 with the same digests; complement padding `(0,512)`, `(591,1024)`, `(1114,2048)` =
+  512/433/934. The naive maximal-zero-run view still shows the 1098 interior byte, which the
+  entry's stated complement rule excludes.
+
+**Q03 remains PASS on the landed artifact.** The delta is prose and table edits only.
+
+### 3. Boundary
+
+This addendum clears Q03 and Q10 only. Q01/Q02/Q04–Q13 and the admission decision belong to
+their own seats and L1. The README C07 row was still `frontier` at review time
+(`corpus/README.md:36`), consistent with the frozen order (flip only after adjudication). No
+producer, counter, gate or judge was run; no tool installed or upgraded.
 
 Report: .ufo/waves/round-64/R64ReviewEntryScope.md

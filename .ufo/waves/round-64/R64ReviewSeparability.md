@@ -62,7 +62,11 @@ Base reproduction: every non-MUTANT/non-HOLD line of `neither.log` diffs **empty
 `reports/round-64/measure-before.log` (7/14 backed, strict 7/14, mismatch 1 `['C07']`, C4
 0/2, C2/C3 2/2, HOLD 4/4 and 10/10, FRESH 18/18, F 5/8, SAVED_RECORDS 59). `draft_entry_only`
 diffs empty against `neither` on all labels — **the entry file's presence, and its real
-content, change no printed label** until the README row flips.
+content, change no printed label** until the README row flips. `live_asis` (the actual
+working tree at review time: integrated entry + patches, no flip) prints the base K/mismatch
+labels with C4 2/2, so the landed-but-not-admitted state moves only C2's label;
+`live_admitted` (same corpus + the flip) prints 8/14 backed, strict 8/14, mismatch 0, C4 2/2,
+`HOLDS_OK_V2=yes`.
 
 ## Tree construction
 
@@ -87,9 +91,11 @@ content, change no printed label** until the README row flips.
 
 - **C1 entry.** The scribe draft was located at `/tmp/revenger-r64-entry/candidate.md`
   (48,440 bytes, sha256 `0a3730a1a03b19ef134930a8eb180147be8b6e503fbd7040fdd7617eafed0a22`,
-  header `admission-status: candidate`), copied **unmodified** to
-  `corpus/knowledge/round-64-firmware-region-byte-evidence.md` in the draft trees. The
-  stand-in trees use a 410-byte zero-claim placeholder that says it is not an evidence entry.
+  header `admission-status: candidate` at byte 4155) and copied **unmodified** to
+  `corpus/knowledge/round-64-firmware-region-byte-evidence.md` in the draft trees. During this
+  review the same bytes were integrated into the lane working tree (untracked; `cmp` identical
+  to the draft), so the `draft_*` trees and the `live_*` trees exercise the actual artifact.
+  The stand-in trees use a 410-byte zero-claim placeholder that says it is not an evidence entry.
   In `*_admitted*` trees the README delta is exactly one line (`diff -u` shows only C07),
   citing that single path, work evidence `fixtures/firmware-r63` +
   `live/runs/round-63/inspection.json`, status `held`. The flip simulates L1's final
@@ -158,16 +164,19 @@ V2 gate can be reached with C1 falsified; only the K labels discriminate the bra
 0 while C4 is 0/2 vs 2/2. "probe exit 0" is not admission evidence (consistent with
 `measure-before.log`, which is exit 0 at C4 0/2).
 
-**6. DEPENDENCY (updated, resolved in content) — the draft exists but is not integrated.**
-`/tmp/revenger-r64-entry/candidate.md` (sha256 `0a3730a1…`, `admission-status: candidate` at
-byte 4155) is the scribe artifact; no
-`corpus/knowledge/round-64-firmware-region-byte-evidence.md` exists at HEAD `a3d063f` or in
-the lane working tree, and the README C07 row is still `frontier`. The entry exists only in
-scratch, so the "real" end state is not yet legally constructible; the `draft_*` trees use the
-draft verbatim to remove content as a variable. Transfer to the integrated artifact is
-conditional on: (i) the file landing at exactly
-`corpus/knowledge/round-64-firmware-region-byte-evidence.md`; (ii) the C07 row citing that
-path in the knowledge column and ending `| held |` (trailing space or a second cited
+**6. DEPENDENCY (status moved during review) — entry landed, flip not applied, nothing
+committed.** At the first sweep no entry existed at HEAD `a3d063f`, in the working tree, or
+in scratch. Mid-review the scribe draft `/tmp/revenger-r64-entry/candidate.md` (sha256
+`0a3730a1…`, 48,440 bytes, `admission-status: candidate` at byte 4155) was integrated into the
+lane working tree as an untracked file, byte-identical to the draft; `corpus/SOURCES.md` gained
+2 lines; `corpus/README.md` still says `frontier` for C07, and nothing is committed. `live_asis`
+therefore measures the real corpus (K 7/14, mismatch 1, C4 2/2), and `live_admitted` (that
+corpus plus the flip) measures the intended end state (8/14, strict 8/14, mismatch 0, C4 2/2,
+`HOLDS_OK_V2=yes`) — so the label result now rests on the actual entry, not a stand-in. The
+committed end state still cannot be measured here (L1 integrates and commits); transfer is
+conditional on: (i) the file staying at exactly
+`corpus/knowledge/round-64-firmware-region-byte-evidence.md`; (ii) the C07 row citing that path
+in the knowledge column and ending `| held |` (trailing space or a second cited
 `knowledge/*.md` path that does not exist drops backed to 7/14); (iii) no other README row
 changing (denominator stays 14). Q01–Q13 admission quality was not assessed here.
 
@@ -181,7 +190,9 @@ modified; the verifier census stays at 10 (`HOLD_REPLAY=10/10`).
 `K_HELD_BACKED_STRICT=8/14`; `README_TOKEN_LEGEND_MISMATCH=0 rows=[]`;
 `C4_CONTROLS_PASS=2/2`; `C4_RECEIPT_KILLED_ATTRIBUTED=2/2`; `HOLD_CALIBRATION=4/4`;
 `HOLD_REPLAY=10/10`; `FRESH_ROWS=18/18`; `F_COVERAGE=5/8`; `SAVED_RECORDS=59`;
-`HOLDS_OK=yes`; `HOLDS_OK_V2=yes`; exit 0. Do not cite `HOLDS_OK_V2` or exit 0 alone
+`HOLDS_OK=yes`; `HOLDS_OK_V2=yes`; exit 0. This exact label set was measured on `live_admitted` (the actual
+working-tree corpus plus the simulated C07 flip); `live_asis` currently shows the K half still
+at base. Do not cite `HOLDS_OK_V2` or exit 0 alone
 (findings 4, 5), and do not cite strict==backed as a rejection check until finding 2 is fixed.
 
 ## Residual risk
@@ -197,9 +208,10 @@ modified; the verifier census stays at 10 (`HOLD_REPLAY=10/10`).
 
 ## Verification gaps
 
-- No integrated end state exists (finding 6); the flip in the `*_admitted*` trees is a
-  reviewer simulation of L1's step, and the draft content itself was used only as an
-  existence/citation artifact, not reviewed for evidence quality (other seats' Q01–Q13 scope).
+- No committed end state exists: the entry is an uncommitted working-tree file and the C07 flip
+  is not applied (finding 6). The flip in the `*_admitted*`/`live_admitted` trees is a reviewer
+  simulation of L1's step, and the entry content itself was used only as an existence/citation
+  artifact, not reviewed for evidence quality (other seats' Q01–Q13 scope).
 - No `lsp` server was used: the affected "callers" are two self-test scripts and a frozen
   single-file Python counter, both read end-to-end; definition/reference queries would add
   nothing beyond those full-text reads.
@@ -208,5 +220,5 @@ modified; the verifier census stays at 10 (`HOLD_REPLAY=10/10`).
 ## Tooling
 
 No installs or upgrades (host pacman pause respected; no uv/npx/official-binary downloads).
-Scratch: `/tmp/revenger-r64-sep/` — base archive copy, 17 trees, 15 counter logs, per-tree
+Scratch: `/tmp/revenger-r64-sep/` — base archive copy, 19 trees, 17 counter logs, per-tree
 TMPDIR under `/tmp/revenger-r64-sep/tmp/`; lane-owned, remove on landing.

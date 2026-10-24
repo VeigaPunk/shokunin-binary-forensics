@@ -3,8 +3,8 @@
 ## Behavior
 
 Drafted the SHONEN box-1 candidate at
-`/tmp/revenger-r64-skill/SKILL.md` (271 lines, 25,577 bytes,
-sha256 `d66b19d7b7dbbf9cdad337244781cd016b488274eb663bcfde8fba781c328f6c`).
+`/tmp/revenger-r64-skill/SKILL.md` (271 lines, 25,591 bytes,
+sha256 `31c3f99df2b7717f5a586e790f00b42884ee2ce05a8cad267b8c64165a424e72`).
 
 It answers `SHONEN.md` box 1 ("real decision tables, error patterns, checklists, cited
 sources") with:
@@ -48,7 +48,7 @@ All read-only; no product code, verifier, counter, or git/jj state was changed.
 | citation sweep (Python, lane root): extract every backticked `corpus/…`/`reports/…` path from the draft, test existence | 24 lane-relative paths, **0 missing**; 7 cited knowledge entries all exist; 11 S-ids cited (S005, S006, S007, S009, S010, S014, S015, S032, S033, S034, S035) all present in `corpus/SOURCES.md` |
 | census-block verbatim diff (Python): extract the `sh` block from the fleet contract's `## Census` and from draft §6.2, compare line lists | 14 lines each, **identical: True**; 7 commands present |
 | line-reference reads (`read`/`sed -n`) | `verify_icon_languages.py` receipt_ok :118-120, forged command :149-151, forged stdout :152-154; `verify_multi_icon_states.py` :121-123, forged command :148-150, forged stdout :151-153 (re-verified by `grep -n forged` and by `R64ReviewSkill` F2); `verify_icon_states.py` receipt_ok :119-123, forged fixture :151-158; `verify_named_multi_icon_states.py` receipt_ok :16-17, forged command :76-78; `generator.py` MEMBERS :17-35, `decode_member` :39-49, `derive_regions` :52-101, build :104-113; `truth.json` 73 lines; `round-63.md` M33/M34/M35 at :218/:219/:220; `SCORECARD.md` census C and `SHONEN.md` box 1 read in full |
-| `wc -l -c` / Python size re-check on the draft | final: 271 lines, 25,577 bytes, sha256 `d66b19d7…c328f6c` |
+| `wc -l -c` / Python size re-check on the draft | final: 271 lines, 25,591 bytes, sha256 `31c3f99d…424e72` |
 | `git status --porcelain` (read-only) | no path of mine in the lane working tree; only pre-existing sibling working-tree edits (`corpus/verify_icon_languages.py`, `corpus/verify_multi_icon_states.py`, `LOG.md`) and sibling reports. This seat's outputs are the scratch draft and this report, nothing else |
 
 First citation sweep flagged two non-path strings: the glob `corpus/verify_*.py` and the
@@ -94,12 +94,11 @@ asserts 2/2.
    `verify_icon_states.py` and `verify_named_multi_icon_states.py`. The SKILL lists them
    as unguarded per Q13 rather than silently crediting them — the C2 claim covers only the
    two scripts it names.
-4. **S036/S037 were absent from the committed registry.** At this seat's read the
-   committed registry (`666ea84b`/`3bb430f`) held 35 rows and the draft cites none of
-   S036/S037, so no citation can be phantom. A later sibling/L1 working-tree edit
-   appended S036/S037 (37 rows) and amended `claims.md`'s `HOLDS_OK_V2` wording; those
-   changes are not mine and were not used as SKILL evidence. If L1 lands them, the
-   sources table can add the rows without touching any decision table.
+4. **S036/S037 were absent from the committed registry at draft time.** At this seat's
+   first read the committed registry (`666ea84b`/`3bb430f`) held 35 rows and the draft
+   cites none of S036/S037, so no citation can be phantom. L1 later committed S036/S037
+   (37 rows) in `671e3a18`; the signed SKILL bytes still cite only S005–S035, and adding
+   the new rows would be a post-signature edit for L1 to decide.
 5. **Fleet-root dependency is external.** `.ufo/waves/kaika/SOURCES-CONTRACT-v1.md` is
    outside the lane repo; the draft marks it external with its absolute fleet path so a
    citation sweep does not count it as a lane path.
@@ -124,7 +123,7 @@ counter was run for any of this.
 | L96 tier B could be read as sole support on scope match, contradicting Q01's tier-A requirement | `corpus/QUALITY.md` Q01: "Each load-bearing claim rests on a `corpus/SOURCES.md` row that is tier A for that claim's scope" | tier-B cell now reads "never sole support for a load-bearing claim — corroboration beside a tier-A row only" |
 | L152-154 counter invocation described as lane-root; claims.md §Counting requires `cwd=/` | `reports/round-64/claims.md` §Counting: "on a committed `git archive <commit> corpus` tree, cwd=/, TMPDIR under lane-owned scratch" | §6.1 and the header `recheck:` now require `cwd=/`, the probe by absolute lane path and an absolute `TREE`, `TMPDIR` under the same lane-owned scratch, and state that a lane-root invocation is not the registered measurement |
 
-Post-correction checks (final draft `d66b19d7…c328f6c`, 271 lines, 25,577 bytes):
+Post-correction checks (draft before the final M1 citation fix `d66b19d7…c328f6c`, 271 lines, 25,577 bytes; final `31c3f99d…424e72`):
 lane-relative citation sweep 24/24 present; the fleet contract absolute path exists;
 11 cited S-ids all in `corpus/SOURCES.md`; census block still byte-identical (14 lines);
 host Python 3.14.8 / zlib 1.3.2 match the recorded recipe, but the draft no longer relies
@@ -156,22 +155,86 @@ fresh verdict on the current hash is the verifier's to give.
 
 While the reviewer's report was in flight, a sibling/L1 working-tree edit amended
 `reports/round-64/claims.md`'s `HOLDS_OK_V2` wording to add
-`README_TOKEN_LEGEND_MISMATCH == 0`. I did not use that uncommitted edit as evidence: the
-committed `measure.py` at `3bb430f` already computes `holds_ok_v2` with its own
-`len(mismatch) == 0` conjunct, and the writer's earlier reading of the probe shows it.
+`README_TOKEN_LEGEND_MISMATCH == 0`. I did not use that uncommitted edit as SKILL
+evidence: the committed `measure.py` at `3bb430f` already computes `holds_ok_v2` with its
+own `len(mismatch) == 0` conjunct, and the writer's earlier reading of the probe shows it.
 §6.1 now names the conjunct and keeps the statement that V2 is a diagnostic label not
-folded into the exit code. Draft re-hashed (`d66b19d7…c328f6c`, 271 lines); sweep
+folded into the exit code. Draft re-hashed (`d66b19d7…c328f6c`, then `31c3f99d…424e72` after the M1 citation fix, 271 lines); sweep
 unchanged: 24/24 lane-relative paths, 11/11 S-ids, census block identical.
+
+Temporal reconciliation with the reviewer: they report an empty `reports/round-64` diff
+while I observed a working-tree amendment. Both are true at their times — L1 committed
+that exact amendment in `671e3a18` (`git diff 3bb430f 671e3a18 -- reports/round-64/claims.md`
+shows only the `HOLDS_OK_V2` wording change), so at the reviewer's later read there was no
+uncommitted diff. Same text, different tree state; no factual conflict.
+
+## Named-verifier verdict (final pair)
+
+**Verdict: SHONEN-box-1 `[x]`-ready = YES.** Reviewer
+`revenger-r64.R64ReviewSkill` signed the pair at
+`/tmp/revenger-r64-skill/SKILL.md` sha256
+`d66b19d7b7dbbf9cdad337244781cd016b488274eb663bcfde8fba781c328f6c` (271 lines) plus
+`/tmp/revenger-r64-skill/checklists.md` sha256
+`07cdfdafd2ed557ed8f21b19c531e1f900284708e3302de10a6a443600f7b8db` (227 lines, 13,506
+bytes). Their report is `.ufo/waves/round-64/R64ReviewSkill.md`. I did not author
+`checklists.md` and did not evaluate it; it appeared beside the draft and the reviewer
+treated the pair as the submission. This seat claims no box flip; L1 lands and the box
+credit remains the verifier's.
+
+**Post-signature delta (parent-ordered M1 citation fix).** After that signature, the parent
+relayed `R64ReviewSkillCites` M1: two scope bullets cited bare `README.md` for
+"Frontier"/"Known gaps", but those sections live in `corpus/README.md`. Both were changed
+to `corpus/README.md` (mirroring line ~24); nothing else changed. New SKILL bytes are
+`31c3f99d…424e72` (271 lines, 25,591 bytes); `checklists.md` is untouched at
+`07cdfdaf…f7b8db`. The reviewer's L2 and L3 items were already correct in the signed
+bytes (provenance split present; multi ranges `148-150`/`151-153`). The reviewer was asked
+to delta-confirm the two-line change and hold its `[x]`-ready signature for the final
+bytes; no fresh verdict is claimed here.
+
+Their verified matrix on those exact bytes: provenance split correct (`claims`/`measure`/
+`measure-before` absent at `666ea84`, present from `3bb430f` whose `measure.py` blob is
+`b8e68d32…`, controls absent at `a3d063f`); multi control ranges `148-150`/`151-153`;
+tier B never sole support; d2 plus "new round-64 paths" in §6.5; full `.ufo` path in §1;
+§6.1 `HOLDS_OK_V2` mismatch conjunct matches `measure.py`'s `holds_ok_v2` and is not in
+the exit expression. They also report the census block 14/14 identical to the fleet
+contract and all seven commands run clean (35 rows, malformed 0, duplicate/enum/missing
+empty), the SCORECARD C block 8/8 identical, oracle/recipe/self-test/invocation commands
+verbatim at their named records, 11/11 S-ids, and zero missing lane paths. That census
+execution is theirs, not this seat's.
+
+**Two non-blocking refinements they left for L1's landing copy** (not applied here: the
+signature is on the exact bytes above, so editing `checklists.md` would void it):
+
+1. `checklists.md` §4a anchor `reports/round-64/claims.md:127-129` → `:129-130`; the
+   four-W04 parenthetical sits on line 130 (confirmed: lines 129-130 are the `Sources:`
+   sentence and the W04 parenthetical).
+2. `checklists.md` §4b should cite the fleet contract by absolute path, as SKILL §3 now
+   does (`/home/vgpnk/Projects/shokunin/.ufo/waves/kaika/SOURCES-CONTRACT-v1.md:67-80`),
+   instead of the lane-relative `.ufo/...` form.
+
+**Residual risk.** Their read called the C4 controls uncommitted; L1's commit `671e3a18`
+("C2 C4 patches + C07 candidate entry + S036/S037 mined rows + lesson") has since
+committed them (`git status` clean for `corpus/verify_*.py` at my final read). The
+remaining requirement is unchanged and unmet until measured: the frozen counter must
+print `C4_RECEIPT_KILLED_ATTRIBUTED=2/2` after landing; no seat in this thread has run it.
+
+Final lane state observed: HEAD `671e3a18`; S036/S037 committed (37 registry rows);
+`reports/round-64/claims.md` carries the V2 amendment; the only working-tree change I saw
+is a sibling edit to `corpus/knowledge/round-64-firmware-region-byte-evidence.md`, not
+mine.
 
 ## Out of scope (explicit)
 
 No landing, README/C07 flip, knowledge entry, lesson file, counter run, verifier edit,
-commit, push, or SHONEN box flip. `SHONEN.md` box 1 stays `[ ]` until a named non-author
-verifier passes; L1 owns integration.
+commit, push, or SHONEN box edit. The named verifier passed the pair (see above); the
+`[x]` itself is L1's to record in `SHONEN.md`, and this report neither edits that file nor
+claims the flip. L1 owns integration.
 
 ## Artifact paths
 
 - Draft: `/tmp/revenger-r64-skill/SKILL.md` (sha256 above).
+- Paired checklist (reviewed, not authored by this seat):
+  `/tmp/revenger-r64-skill/checklists.md`, sha256 `07cdfdaf…f7b8db`, 227 lines.
 - Report: `.ufo/waves/round-64/R64SkillDraft.md`.
 
 Report: .ufo/waves/round-64/R64SkillDraft.md
