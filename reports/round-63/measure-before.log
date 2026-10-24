@@ -1,0 +1,40 @@
+BASE=55bcb6e1aeb4d42923a4e98db6580f67142b41ac
+CMD=python3 -B reports/round-63/measure.py /tmp/revenger-r63-before
+NOTE=probe run from lane root against `git archive 55bcb6e corpus` extracted at /tmp/revenger-r63-before (TREE contains corpus/). This run IS the do-nothing control: no claimed work is present at base.
+K_HELD=6/14 score=4.3
+K_ROW C06 status=partial
+K_HELD_BACKED=6/14
+{'analyze_javascript_application': 6, 'compare_application_versions': 1, 'compare_javascript_export_shapes': 3, 'extract_artifact': 2, 'inspect_analysis_view': 1, 'inspect_artifact': 4, 'inspect_evm_interface': 7, 'inspect_pe_resources': 30, 'trace_application_feature': 2, 'trace_javascript_semantics': 2}
+F_COVERAGE=4/8 score=5.0
+F_FAMILIES=['native-static', 'javascript', 'archives', 'evm']
+FRESH_ROWS=18/18
+MUTANT verify_icon_languages.py control exit=0 pass :: PASS: 3/3 group-language states, 2/2 exact one-byte deltas, two icon candidates retained, forged selection REJECTED
+MUTANT verify_icon_languages.py b exit=1 killed :: AssertionError: r47: forged receipt command accepted
+MUTANT verify_icon_languages.py d2 exit=1 killed :: AssertionError: r47: receipt
+MUTANT verify_multi_icon_states.py control exit=0 pass :: PASS: 4/4 two-image states, 3/3 exact one-byte deltas, first link stable, forged second match REJECTED
+MUTANT verify_multi_icon_states.py b exit=1 killed :: AssertionError: r42: forged receipt command accepted
+MUTANT verify_multi_icon_states.py d2 exit=1 killed :: AssertionError: r42: receipt
+C2_CONTROLS_PASS=2/2
+C2_RECEIPT_B_KILLED=2/2
+C2_D2_KILLED=2/2
+C2_RECEIPT_B_KILLED_ATTRIBUTED=2/2
+MUTANT verify_named_multi_icon_states.py control exit=0 pass :: PASS: 139 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.
+MUTANT verify_named_multi_icon_states.py c3 exit=0 pass :: PASS: 139 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.
+MUTANT verify_icon_states.py control exit=0 pass :: PASS: 4/4 source-decoded states, 3/3 one-byte deltas, one forged candidate REJECTED
+MUTANT verify_icon_states.py c3 exit=0 pass :: PASS: 4/4 source-decoded states, 3/3 one-byte deltas, one forged candidate REJECTED
+C3_CONTROLS_PASS=2/2
+C3_RECEIPT_KILLED_ATTRIBUTED=0/2
+HOLD verify_evm_evidence.py exit=0 NEGATIVE REJECTED candidate destination mismatch
+HOLD verify_icon_languages.py exit=0 PASS: 3/3 group-language states, 2/2 exact one-byte deltas, two icon candidates retained, forged selection REJECTED
+HOLD verify_icon_states.py exit=0 PASS: 4/4 source-decoded states, 3/3 one-byte deltas, one forged candidate REJECTED
+HOLD verify_js_graph_delta.py exit=0 NEGATIVE REJECTED saved graph disagrees with source truth
+HOLD verify_multi_icon_states.py exit=0 PASS: 4/4 two-image states, 3/3 exact one-byte deltas, first link stable, forged second match REJECTED
+HOLD verify_named_multi_icon_states.py exit=0 PASS: 139 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validation.
+HOLD verify_pe_resources.py exit=0 NEGATIVE REJECTED payload relation mismatch
+HOLD verify_saved_evidence.py exit=0 NEGATIVE JS REJECTED: JS: wrong package-main mapping
+HOLD verify_semantic_trace.py exit=0 NEGATIVE REJECTED relation differs from source parent
+HOLD verify_shape_evidence.py exit=0 NEGATIVE REJECTED changed-property evidence mismatch
+HOLD_CALIBRATION=4/4
+HOLD_REPLAY=10/10
+HOLDS_OK=yes
+PROBE_EXIT=0
