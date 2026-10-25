@@ -44,7 +44,17 @@ $ python3 -B corpus/check_embedded_outputs.py --entry corpus/knowledge/round-69-
 checked_blocks=17 problems=0
 GATE_EXIT=0
 ```
-17 blocks = 15 per-item + the full-stdout block + the derivation block, consistent with the 50 embedded lines counted above.
+17 blocks = 15 per-item + the full-stdout block + the derivation block, consistent with the 50 embedded lines counted above; the split is machine-counted, not assumed:
+
+```
+$ grep -c '^$ ' corpus/knowledge/round-69-apk-axml-byte-evidence.md
+17
+$ grep -c '^$ python3 -B corpus/fixtures/apk-r65/readout.py' corpus/knowledge/round-69-apk-axml-byte-evidence.md
+16
+$ grep -c '^$ python3 -B corpus/derive_axml_anchors.py' corpus/knowledge/round-69-apk-axml-byte-evidence.md
+1
+```
+16 readout blocks (15 per-fact + one full run) + 1 derivation block = 17, matching the gate's `checked_blocks=17`.
 
 **Anchor derivation is a real derivation, not a hardcoded table** (this is the v3 repair that had to be checked, not trusted): `derive_axml_anchors.py:66` `VALUE_RE = re.compile(r"=\s*(0x[0-9a-fA-F]+)\s*,")`, applied at `:122-124` to `lines[line-1]` found by `find_unique` (`:74-80`, exit 2 on 0 or >1 hits, `:69-71`). The printed enum values are parsed out of the snapshot line. Independent confirmation of every printed anchor against the primary record:
 

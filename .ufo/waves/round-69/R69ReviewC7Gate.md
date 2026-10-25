@@ -362,3 +362,122 @@ Because the v7 leg must include `c7_v4_clean`, C1's `C7_V4_CLEAN=yes` becomes
 exit-relevant for the first time; the round-69 gate facts verified in this report (v4
 clean, 17/17 blocks) are therefore directly usable as that leg's expected value once the
 counter is repinned.
+
+### F7 — the retained round-68 candidate (v3) now fails the gate: confirmed, attribution verified
+
+`R69CounterReplay` flagged the sibling after-receipt's `C7_V3_CLEAN=no exit=1 ::
+checked_blocks=17 problems=7` and its attribution ("seven enum lines reformatted"). Re-derived
+on a clean `git archive HEAD` (`0f078d98fbb99fa2d0c107e2ca18579115c6840f`) tree — not the
+worktree — and the attribution is correct to the line:
+
+```console
+$ git archive HEAD corpus | tar -x -C /tmp/r69c7-v3 && cd /tmp/r69c7-v3
+$ python3 -B corpus/check_embedded_outputs.py --entry corpus/knowledge/round-68-apk-axml-byte-evidence.md
+drift entry:137 … enum RES_STRING_POOL_TYPE : 239
+drift entry:138 … enum RES_XML_TYPE : 241
+drift entry:139 … enum RES_XML_START_NAMESPACE_TYPE : 245
+drift entry:140 … enum RES_XML_END_NAMESPACE_TYPE : 246
+drift entry:141 … enum RES_XML_START_ELEMENT_TYPE : 247
+drift entry:142 … enum RES_XML_END_ELEMENT_TYPE : 248
+drift entry:143 … enum RES_XML_RESOURCE_MAP_TYPE : 253
+checked_blocks=17 problems=7        # rc=1
+```
+
+Retained-candidate matrix on the same committed tree: v2 `16/0` clean · **v3 `17/7` FAIL** ·
+v4 `17/0` clean · r65 `rc=1` at `entry:41` (the intended red).
+
+**Mechanism** — the same script at two commits:
+
+| commit | `derive_axml_anchors.py` enum output | lines |
+|---|---|---|
+| r68 `4232235` | `enum RES_STRING_POOL_TYPE : 239` … (7 lines) | 17 |
+| r69 `da02261` = HEAD | `enum RES_STRING_POOL_TYPE : 239 = 0x0001` … + `enum block open : 237` + `enum FIRST_CHUNK` + `enum block close : 263` | 20 |
+
+`diff` of the two outputs is `9,15c9,18`: the seven lines the v3 candidate embeds are
+**reformatted in place** (value suffix appended), so under the gate's **exact-line**
+presence comparison they no longer appear in stdout. The v4 candidate embeds the new
+format and is clean.
+
+**Root cause is not the gate — it is the retained candidate's dependency on a shared,
+mutable command.** Claims §C1 item 1 required extending `corpus/derive_axml_anchors.py` in
+place, and the v3 entry's declared command is that same script. The void condition
+"prior rejected candidates altered (the round-65, round-67 and round-68 candidates keep
+every byte)" is written at **byte** level and is satisfied; the invariant the instrument
+actually enforces is at **command-output** level and is broken. Under the current design v3
+and v4 cannot both be clean — restoring the v3-era output breaks v4's 20-line block.
+
+Consequences:
+
+- `HOLDS_OK_V6=no` via its `c7_v3_clean` leg (`measure.py:484`, `:574`) — a void trigger
+  named in claims §Void conditions. The after-receipt discloses it; the adjudication had
+  already reported C1 falsified on wave Q FAILs, so no claim is rescued or lost by it.
+- It does **not** move the exit status (F6): the diagnostic run reads `DIAGNOSTIC_EXIT=0`
+  with `HOLDS_OK_V6=no`, which is exactly the F6 witness, now reproduced by the sibling's
+  own run.
+- The gate is **exonerated and shows teeth**: it caught a real, committed regression that
+  its self-test cannot see, from archived bytes.
+
+Options (not adopted; the instrument is frozen): per-round derive scripts
+(`derive_axml_anchors_r68.py`), an entry-invoked pinned script copy, or a
+`--pin`/`script_tampered` mode — the registry's `pinned-value path … Pin status:
+unpinned (legacy)` (`SKILL.md:281`) already names this class.
+
+The sibling diagnostic also independently confirms F5 and F6: its widened archive
+(`git archive 579bb6e corpus reports/round-69`) prints `Q15_FALSE_KILLED=yes` while the
+same run reads `DIAGNOSTIC_EXIT=0` with `HOLDS_OK_V6=no`.
+
+### F7 precision — exact-line, not substring; per-entry script cites; the void trigger survives a re-pin
+
+`R69CounterReplay` characterised C7 as matching "embedded lines as substrings of stdout"
+and proposed a superset emission on that basis. The matching model is wrong, and the
+correction changes what the repair must do:
+
+- `corpus/check_embedded_outputs.py:83-85` is `l not in stdout_set` against
+  `:104` `stdout_set = set(stdout.splitlines())` — **whole-line set membership**, not
+  substring containment.
+- Measured: an entry quoting `enum block open` — a strict prefix of the real stdout line
+  `enum block open : 237` — drifts:
+
+```console
+drift entry:3 embedded output line not in recheck stdout: enum block open
+checked_blocks=1 problems=1        # rc=1
+```
+
+- The substring model is also self-refuting on the v3 evidence: each of the seven bare
+  lines *is* a prefix of its valued counterpart, so a substring matcher would have read
+  `problems=0`; the measured `problems=7` is itself proof of exact-line matching.
+
+**Repair consequence.** The superset emission still satisfies both candidates, but only if
+the original 17 lines are printed **byte-verbatim as their own complete lines** — not
+merely as prefixes of the valued lines, and not only in a comment. Then v3's block and
+v4's block are both exact-line subsets of one stdout, and S047's "20 output lines" is
+restated to whatever the superset prints.
+
+**Per-entry script cites.** The entries are already internally consistent; each cites its
+own script:
+
+| commit | `corpus/derive_axml_anchors.py` sha256 | cited by |
+|---|---|---|
+| `222a7a7` (base) | `bce497d6c0f5767fd7a94f7d9f6a7adb3d70f9df656028a8d080e050d1f1e249` | v3 entry (S046, "17 output lines") |
+| `da02261`/HEAD | `74d4c0d94c6955d4c707afba7ca1b804dccae58170ba44caa98a1ab24b2a83aa` | v4 entry (S047, "20 output lines") |
+
+(grep-verified in both entries). What is missing is not the cite but the **check**: the
+gate runs whatever script sits on disk and never compares it to the hash the entry names,
+so an entry can cite version X while the gate executes version Y — the same identity-gap
+class the registry already records for the r65 snapshot (`SKILL.md:281`, "Pin status:
+`unpinned (legacy)`").
+
+**Void consequence, independent of the counter.** Claims `reports/round-69/claims.md:192`
+lists `HOLDS_OK_V4`/`HOLDS_OK_V5`/`HOLDS_OK_V6` not yes among the void conditions. The
+landed build trips `HOLDS_OK_V6` through `c7_v3_clean`, so the tree is void by its own
+contract before any counter question — and this one is **not** repaired by a counter
+re-pin, unlike F0/F5/F6. It is self-inflicted: claims §C1 item 1 requires extending
+`derive_axml_anchors.py` in place, while the void condition protects prior candidates only
+at the **byte** level — v3's bytes are intact, the shared script it was derived with is
+not.
+
+**Net effect on this seat's verdict.** None. The gate is clean and has teeth; the v3
+regression is build state, disclosed in the after-receipt
+(`reports/round-69/measure-after.log`) and already reflected in the C1 adjudication. C1 is
+falsified on the wave Q FAILs independently of the counter; C2 is not evaluable with the
+pinned instrument; and the built tree additionally violates its own V6 void condition.

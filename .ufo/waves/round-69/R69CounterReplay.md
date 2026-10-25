@@ -271,9 +271,9 @@ exit: 0 · stderr: empty · lines: 105 · sha256(stdout): `e1cf90f357a94da84ab65
 
 ---
 
-# Addendum — the pinned counter cannot score the after-run (F4–F10)
+# Addendum — the pinned counter cannot score the after-run (F4–F11)
 
-Triggered by peer `L1Revenger69.R69ReviewC7Gate` (report `.ufo/waves/round-69/R69ReviewC7Gate.md`). Their claim reproduced exactly and widened into the defects below — F4 (crash), F5 (unreachable leg), F6 (exit status reads V1 only), F10 (inherited, and mis-stated by the round-68 receipt) — with the repair set in F7 and the convergence record in F9. **The MATCH verdict above stands** — my base-tree replay is still byte-identical to the committed receipt — but that receipt completed only because the base tree happens to lack the Q15 checker, so the crash path was never exercised. **C1 and C2 are not evaluable as pinned.**
+Triggered by peer `L1Revenger69.R69ReviewC7Gate` (report `.ufo/waves/round-69/R69ReviewC7Gate.md`). Their claim reproduced exactly and widened into the defects below — F4 (crash), F5 (unreachable leg), F6 (exit status reads V1 only), F10 (all inherited and mis-certified by the round-68 receipt) — with the repair set in F7 and the convergence record in F9. **F11 is a separate, independent blocker on the build state itself** (the landed derivation extension broke `C7_V3_CLEAN`, so the tree is void by its own contract) and it survives any counter re-pin. **The MATCH verdict above stands** — my base-tree replay is still byte-identical to the committed receipt — but that receipt completed only because the base tree happens to lack the Q15 checker, so the crash path was never exercised. **C1 and C2 are not evaluable as pinned.**
 
 ## F4 (blocker) — `NameError: name 'run' is not defined` on every tree from `e1d22ca` onward
 
@@ -418,3 +418,47 @@ The peer reached the same three defects from the bytes independently, and settle
 - **Ordering of the repair.** F4 fires first and masks F5/F6: on any checker-present tree the counter never reaches the archive-dependent or exit-chain-dependent code. The repair must be sequenced block-move → archive widening → exit-chain wiring, each re-verified.
 - **Vacuity enumeration (explicit).** The claim-specific labels that cannot influence exit status are: C2 — `Q15_PRESENT`, `Q15_SELFTEST`, `Q15_FALSE_KILLED`, `Q15_RESTATE_OK`; C1 — `C05_SINGLE_V4`, `HOLDS_C2_V4`, `C7_V4_CLEAN`. All seven are label-only — and per F6 the exit expression reads only V1, so the entire V2→V6 ladder is invisible as well, `HOLDS_OK_V6` and `C7_V3_CLEAN` included. The only claim-adjacent signal that is *wired* anywhere is the README legend `mismatch`, and it dies in `holds_ok_v2`, also unread.
 - **Shared verdict:** C1 and C2 are **NOT EVALUABLE** with the pinned `bca74e6d…` counter — not falsified. The base-tree replay in §1–§7 is unaffected by all of this and remains byte-identical to `measure-before.log`.
+
+## F11 (added last) — the build commit itself trips a declared void condition: the in-place derivation extension broke `C7_V3_CLEAN`
+
+Independent of the counter defects, and surviving any re-pin. Measured on the **committed HEAD archive** (`35e12584:corpus`, `7aeabf21…`), not on the in-flux worktree, so this is build state and not a sibling's uncommitted edit. Re-verified after the tip moved to `1446da59` (`corpus` now `257643d9…`, `derive_axml_anchors.py` still `74d4c0d9…`): identical results, counter pin still `bca74e6d…`, and the committed `reports/round-69/measure-after.log` reports `counter exit code: 1`, `C7_V3_CLEAN=no … problems=7`, `HOLDS_OK_V6=no`. So the void-triggering state is **committed at the tip**, not a transient:
+
+```
+=== corpus/knowledge/round-67-apk-axml-byte-evidence.md  rc=0 :: checked_blocks=16 problems=0
+=== corpus/knowledge/round-68-apk-axml-byte-evidence.md  rc=1 :: checked_blocks=17 problems=7
+=== corpus/knowledge/round-69-apk-axml-byte-evidence.md  rc=0 :: checked_blocks=17 problems=0
+```
+
+The seven drifts, verbatim from the gate:
+
+```
+drift entry:137 embedded output line not in recheck stdout: enum RES_STRING_POOL_TYPE : 239
+drift entry:138 … RES_XML_TYPE : 241
+drift entry:139 … RES_XML_START_NAMESPACE_TYPE : 245
+drift entry:140 … RES_XML_END_NAMESPACE_TYPE : 246
+drift entry:141 … RES_XML_START_ELEMENT_TYPE : 247
+drift entry:142 … RES_XML_END_ELEMENT_TYPE : 248
+drift entry:143 … RES_XML_RESOURCE_MAP_TYPE : 253
+```
+
+**Mechanism, exactly.** The extension appended a value field to seven lines that already existed; nothing new was added for those symbols:
+
+| v3 embedded (round-68, `:137-143`) | current derivation stdout |
+|---|---|
+| `enum RES_STRING_POOL_TYPE : 239` | `enum RES_STRING_POOL_TYPE : 239 = 0x0001` |
+| `enum RES_XML_TYPE : 241` | `enum RES_XML_TYPE : 241 = 0x0003` |
+| … seven lines … | … same seven, each with ` = 0xNNNN` appended |
+| — | *and three genuinely new lines:* `enum block open : 237`, `enum block close : 263`, `enum RES_XML_FIRST_CHUNK_TYPE : 244 = 0x0100`, plus `comment/field attributeStart : 686/:687` |
+
+`check_embedded_outputs.py` matches each embedded line against recheck stdout, so a reformat reads as drift even though every fact is unchanged.
+
+Script identity is unambiguous — each entry cites the sha of the file it was derived with, and the file was edited in place between them:
+
+```
+git cat-file blob 222a7a7:corpus/derive_axml_anchors.py  | sha256sum → bce497d6…f1e249   # v3 S046 cite, "17 output lines"
+git cat-file blob refs/heads/main:corpus/derive_axml_anchors.py | sha256sum → 74d4c0d9…2a83aa   # v4 S047 cite, "20 output lines"
+```
+
+**Consequence for the round.** `C7_V3_CLEAN=no` → `HOLDS_OK_V6=no` at the build commit. `claims.md` void list includes "`HOLDS_OK_V4`/`HOLDS_OK_V5`/`HOLDS_OK_V6` not yes", so **the tree as landed is void by its own contract**, before any counter question. This is a second, independent blocker: it would survive a perfect instrument. And it is self-inflicted by claims repair item 1 ("`corpus/derive_axml_anchors.py` is extended") interacting with the void condition "prior rejected candidates … keep every byte" — v3's bytes are untouched, but the shared script it was derived with is not.
+
+**Repair that satisfies both entries.** The emitted block must be a *superset*: keep the original 17 lines byte-verbatim as a prefix and print the value/extra lines additionally, so v3's embedded lines and v4's embedded lines are both substrings of the same stdout. Then restate S047's "20 output lines" to the new count. Restoring the old script instead would break `C7_V4_CLEAN`; editing v3 is forbidden by the void condition. (Sibling `measure-after.log` reported this first; §F11 confirms the attribution on the committed archive rather than the worktree.)
