@@ -403,8 +403,12 @@ mutable command.** Claims §C1 item 1 required extending `corpus/derive_axml_anc
 place, and the v3 entry's declared command is that same script. The void condition
 "prior rejected candidates altered (the round-65, round-67 and round-68 candidates keep
 every byte)" is written at **byte** level and is satisfied; the invariant the instrument
-actually enforces is at **command-output** level and is broken. Under the current design v3
-and v4 cannot both be clean — restoring the v3-era output breaks v4's 20-line block.
+actually enforces is at **command-output** level and is broken. Note what did the breaking:
+a **substitution** (the seven lines replaced by suffixed variants), not an addition. The
+gate's rule is one-way — embedded lines ⊆ stdout, with no reverse check — so a *superset*
+stdout leaves both candidates clean (measured below). Restoring the v3-era output alone
+would instead break v4's 20-line block, so the durable fix is a round-scoped script, not a
+revert.
 
 Consequences:
 
@@ -452,6 +456,32 @@ the original 17 lines are printed **byte-verbatim as their own complete lines** 
 merely as prefixes of the valued lines, and not only in a comment. Then v3's block and
 v4's block are both exact-line subsets of one stdout, and S047's "20 output lines" is
 restated to whatever the superset prints.
+
+The one-way direction is **measured, not assumed**: an entry quoting a single line of the
+20-line derivation stdout returns `checked_blocks=1 problems=0`, rc=0 —
+
+```console
+quoted_line: sha256 56b88bc4… ResourceTypes.h
+stdout_lines: 20
+checked_blocks=1 problems=0        # rc=0 — no reverse check
+```
+
+so both candidates *can* be clean simultaneously, at the cost of the seven symbols
+appearing twice in stdout. A future uniqueness or two-way rule would re-break that, which
+is why the round-scoped alternative is the more durable form: restore `bce497d6…` for the
+v3-era command and move the 20-line derivation into a script that v4 cites. Either form is
+compatible with "prior candidates keep every byte"; only editing the retained candidate's
+bytes is excluded. (This corrects an earlier draft sentence of this report that said v3
+and v4 could not both be clean under the current design — a substitution breaks both, an
+addition does not.)
+
+**State at the current tip.** Re-verified on an archive of `1446da59` (HEAD at the time of
+this addendum): `corpus/derive_axml_anchors.py` still
+`74d4c0d94c6955d4c707afba7ca1b804dccae58170ba44caa98a1ab24b2a83aa`, v3
+`checked_blocks=17 problems=7` rc=1. The regression and the resulting `HOLDS_OK_V6=no`
+void trigger are committed state, not worktree flux; `reports/round-69/measure-after.log`
+carries `counter exit code: 1`, `C7_V3_CLEAN=no … problems=7`, `HOLDS_OK_V6=no` in the
+record.
 
 **Per-entry script cites.** The entries are already internally consistent; each cites its
 own script:

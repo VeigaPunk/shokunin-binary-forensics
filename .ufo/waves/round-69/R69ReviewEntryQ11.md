@@ -44,14 +44,14 @@ $ python3 -B corpus/check_embedded_outputs.py --entry corpus/knowledge/round-69-
 checked_blocks=17 problems=0
 GATE_EXIT=0
 ```
-17 blocks = 15 per-item + the full-stdout block + the derivation block, consistent with the 50 embedded lines counted above; the split is machine-counted, not assumed:
+17 blocks = 15 per-item + the full-stdout block + the derivation block, consistent with the 50 embedded lines counted above. The gate's `checked_blocks=17` is the **primary** count — a machine re-derivation of every embedded line — and it is what this section relies on; the greps below are only the 15+1+1 split cross-check, in the portable escaped spelling (host grep is `pi-uu-grep 0.2.0`, where the unescaped `'^$ '` happens to yield the same 17/16/1, but that form is host-specific):
 
 ```
-$ grep -c '^$ ' corpus/knowledge/round-69-apk-axml-byte-evidence.md
+$ grep -c '^\$ ' corpus/knowledge/round-69-apk-axml-byte-evidence.md
 17
-$ grep -c '^$ python3 -B corpus/fixtures/apk-r65/readout.py' corpus/knowledge/round-69-apk-axml-byte-evidence.md
+$ grep -c '^\$ python3 -B corpus/fixtures/apk-r65/readout.py' corpus/knowledge/round-69-apk-axml-byte-evidence.md
 16
-$ grep -c '^$ python3 -B corpus/derive_axml_anchors.py' corpus/knowledge/round-69-apk-axml-byte-evidence.md
+$ grep -c '^\$ python3 -B corpus/derive_axml_anchors.py' corpus/knowledge/round-69-apk-axml-byte-evidence.md
 1
 ```
 16 readout blocks (15 per-fact + one full run) + 1 derivation block = 17, matching the gate's `checked_blocks=17`.
