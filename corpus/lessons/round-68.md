@@ -13,9 +13,10 @@ Round 68 declared two claims (`reports/round-68/claims.md`, frozen at `f505526` 
   established by the behavioural seats (`R68MutC7Entry`, `R68MutC7Kill`, `R68MutC7Spoof`).
 - **C2 — coverage, K (lowest non-retired criterion, 5.7): the C05 third-pass re-gate with
   machine-derived anchors.** Wave Q decisions on the landed v3 bytes: **FAIL** at Q04
-  (`R68ReviewEntryQ04`), Q05 (`R68ReviewEntryQ05`), Q07 (`R68ReviewEntryQ07`), Q11
-  (`R68ReviewEntryQ11`), Q13 (`R68ReviewEntryQ13`); PASS at Q02, Q03, Q08-under-Q11-routing, Q09,
-  Q10, Q12 (n/a). **Verdict: FALSIFIED** — kill rule executed: C05 stays `uncovered`, the v3 entry
+  (`R68ReviewEntryQ04`), Q05 (`R68ReviewEntryQ05`), Q07 (`R68ReviewEntryQ07`), Q08 (that seat
+  routed the row to Q11 and returned FAIL under it), Q11 (`R68ReviewEntryQ11`), Q13
+  (`R68ReviewEntryQ13`); PASS at Q01, Q02, Q03, Q06, Q09, Q10, Q12 (n/a). **Verdict: FALSIFIED** —
+  kill rule executed: C05 stays `uncovered`, the v3 entry
   is retained with `admission-status: rejected` and every other byte kept, `K_HELD_BACKED` stays
   8/14.
 
