@@ -1,0 +1,24 @@
+{
+  "program": "Example Bounty Program",
+  "policy_url": "https://bounty.example.test/policy#scope",
+  "authorization": "written",
+  "authorized_by": "program-triage written policy acceptance EX-2026-041",
+  "authorized_at": "2026-10-01",
+  "expires_at": "2026-10-01",
+  "methods": [
+    "static-artifact-analysis",
+    "offline-fixture"
+  ],
+  "live_target_activity": false,
+  "artifacts": [
+    {
+      "path": "artifacts/client.zip",
+      "sha256": "3fb10d3f474914e2a1f1b5c097572b5dedc90939e9373a37b2a95e4f930af2b3",
+      "provenance": "program-provided"
+    }
+  ],
+  "disclosure": {
+    "window_days": 90,
+    "contact": "security@example.test"
+  }
+}

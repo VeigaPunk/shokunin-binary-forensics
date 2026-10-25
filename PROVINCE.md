@@ -6,6 +6,12 @@ browser/Electron runtime evidence — using the REA skill and its toolset,
 with an evidence-ledger discipline: every conclusion separates observation,
 inference, and unknown, and cites Evidence IDs.
 
+Bounty and coordinated-disclosure triage enters only through
+`corpus/training/bounty-triage/MODULE.md`: a written scope record gates access
+to the artifact, triage stays static and artifact-first, and live-target
+activity, exploitation, third-party testing and disclosure outside the program
+channel remain outside this province.
+
 Sources (read-only):
 - REA skill: ~/.agents/skills/reverse-engineer-anything/ (SKILL.md +
   references/; instructions only — server registration and engines are the

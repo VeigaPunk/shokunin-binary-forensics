@@ -11,7 +11,7 @@ frontier it is working toward. Province: `PROVINCE.md`. Admission bar:
 - `knowledge/` — admitted domain entries (the map below names each one); also
   retains clearly marked rejected candidates (each carries an
   `admission-status: rejected` header), which are evidence, not admitted knowledge.
-- `lessons/` — `2026-10-12-r1-provider-gap.md`; `round-1.md` (fleet round-1 gates and the mined `## Mistakes` table); `round-1-verifier-spotcheck.md` (integrator-written outside check of round 1); `round-N.md` (round gate, mistakes and source changes) with `round-N-verifier-spotcheck.md` (outside check) for each N in 61–69 — the directory listing is the authority (`ls corpus/lessons`).
+- `lessons/` — `2026-10-12-r1-provider-gap.md`; `2026-10-27-bounty-triage-module.md` (interactive, non-round); `round-1.md` (fleet round-1 gates and the mined `## Mistakes` table); `round-1-verifier-spotcheck.md` (integrator-written outside check of round 1); `round-N.md` (round gate, mistakes and source changes) with `round-N-verifier-spotcheck.md` (outside check) for each N in 61–69 — the directory listing is the authority (`ls corpus/lessons`).
 - `fixtures/` — authored known-truth inputs (byte-oracle fixtures; `fixtures/REPLAY.md`).
 - `live/runs/` — saved REA outputs, receipts and non-author reviews per historical round.
 - `verify_*.py` — saved-ledger replay verifiers (`--self-test`); census command in `SCORECARD.md` (C).
@@ -22,6 +22,10 @@ frontier it is working toward. Province: `PROVINCE.md`. Admission bar:
 - `derive_axml_anchors_r68.py` — byte-exact earlier revision of the derivation script (sha256 `bce497d6…`), pinned in `embedded_output_pins.json` so the retained round-68 candidate re-derives against the revision that printed it.
 - `self_assessment_check.py` — counts the lane's self-assessment mismatches against repo state (classes SM1–SM6; `--root`, `--self-test`).
 - `lint_entry.py` — mechanical pre-flight lint for a knowledge entry (§Q-map completeness, Q14 byte-count heuristic, unresolved commit ids, header trio); not an admission gate.
+- `training/bounty-triage/` — instruction module for authorized, artifact-first bounty
+  triage (`MODULE.md`), its package validator (`check_package.py`), and two offline
+  exercise packages. Instruction only: it fills no coverage row and is not an admission
+  gate; `check_package.py` validates structure and evidence binding, not truth.
 
 ## Coverage map
 

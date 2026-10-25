@@ -15,11 +15,33 @@ under the [shokunin skill](https://github.com/VeigaPunk/shokunin).
 - `LOG.md` — the round-by-round audit trail · `SCORECARD.md` — axis
   verdicts · `SHONEN.md` — promotion checklist (deleted on promotion)
 - `reports/` — verifier and adjudicator reports
+- `corpus/training/bounty-triage/` — authorized, artifact-first bounty-triage
+  instruction module, package validator, and offline exercises (instruction
+  only; not an admission gate)
 
 Protocol: append-only corpus; every claim separates observation /
 inference / unknown; rounds are non-author-verified. See the fleet
 [README](https://github.com/VeigaPunk/shokunin#readme) for how a lane
 learns.
+
+## Bounty-triage training (offline)
+
+From this lane's repository root:
+
+```sh
+python3 -B corpus/training/bounty-triage/fixtures/build_exercise.py --verify
+python3 -B corpus/training/bounty-triage/check_package.py --self-test
+python3 -B corpus/training/bounty-triage/check_package.py \
+  --package corpus/training/bounty-triage/fixtures/exercise-r1/package --as-of 2026-10-27
+```
+
+`MODULE.md` gates the workflow on a written scope record, keeps triage static
+and artifact-first, binds every observation to its deriving command, and
+requires a nine-section report whose impact lines are evidence-bound or
+explicitly unknown. The defective package in `fixtures/exercise-r1-defective/`
+prints `B05`, `R04`, `R05`, `R08` and exits 1. A green run establishes
+structure and binding only: not truth, authorization, or publishability.
+
 
 ## Saved named-icon ledger replay
 

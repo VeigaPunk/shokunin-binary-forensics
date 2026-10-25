@@ -973,3 +973,24 @@ Declared three claims (`reports/round-70/claims.md`, pre-registration `dbacce212
 - **C2 verified as declared:** `corpus/self_assessment_check.py` (SM1-SM6), `SELF_MISMATCH` 9 → 0 by correcting README index/Known gaps, SHONEN box 1 (now `[~]`, no quoted digest), an appended SCORECARD erratum; limits recorded in the lesson.
 - **C3 verified as declared:** `corpus/embedded_output_pins.json` + `corpus/derive_axml_anchors_r68.py`; the gate also confines commands and pins; `EMB_R68` problems 7 → 0, r65 still 1.
 - Also landed: `corpus/lint_entry.py`, `corpus/fixtures/apk-r65/entry_checks.py`, spec snapshots, S048/S049 rows (rows 47 → 49), Q16, SKILL gate-registry rows. Mistakes M51-M53. considerthese 2026-10-25 proposals 4 and 2 acted on; 2026-10-24 proposal 3 (ledger) in the lesson. Assimilation: nothing adopted.
+
+## 2026-10-27 — non-round (operator-directed): bounty-triage training module authored, verified, landed
+
+Operator directive: train authorized bounty/coordinated-disclosure triage using
+github.com/SnailSploit/Claude-Red (intended-use statement and reporting discipline only)
+and the sammy_capital REA study-path thread (unreadable on this host — `x-unavailable`,
+no row, supports no claim).
+- Landed `corpus/training/bounty-triage/` (MODULE.md five-stage instruction, `check_package.py`
+  B/L/R validator exit 0/1/2/64, deterministic 866-byte ZIP fixtures, clean + defective
+  exercise packages) plus snapshots `corpus/snapshots/claude-red-{security,offensive-reporting}.md`.
+- Wiring: `PROVINCE.md` (triage enters only through the module — a narrowing: live-target
+  activity, exploitation, third-party testing, out-of-channel disclosure stay refused);
+  `SKILL.md` §9 pointer (validator explicitly not an admission gate, not in the Gate
+  registry); `corpus/README.md` + `README.md` indexes; `corpus/SOURCES.md` S050 (tier A,
+  scoped to Claude-Red's own policy statement) and S051 (tier C corroboration), rows 49 → 51.
+- Verified at landing: builder `--verify` binds both packages to sha256 `3fb10d3f…`
+  (truth.json deterministic, `09941abf…` across rebuilds); self-test 26/26 detectors;
+  clean package PASS exit 0; defective package FAIL exit 1 with exactly B05/R04/R05/R08;
+  seven-command census clean (51 rows, 0 malformed, 0 dupes, 0 enum violations, 0 missing
+  used-by paths). Authoring record: `corpus/lessons/2026-10-27-bounty-triage-module.md`
+  (mistakes M54–M57). No round claimed; no coverage row flipped; no tool installs.

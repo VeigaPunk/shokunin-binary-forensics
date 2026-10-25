@@ -1,0 +1,35 @@
+{
+  "artifact": {
+    "path": "artifacts/client.zip",
+    "sha256": "3fb10d3f474914e2a1f1b5c097572b5dedc90939e9373a37b2a95e4f930af2b3",
+    "size": 866
+  },
+  "members": [
+    {
+      "name": "README.txt",
+      "size": 121,
+      "sha256": "fde664efdbf579021cac03f274b8a8f9d320103a93daee99186a1001fd12626c"
+    },
+    {
+      "name": "config.json",
+      "size": 114,
+      "sha256": "b5d40a03d31af747d67e3864cce47cec92b92b4e6e186cb577aa2d613ca64d97"
+    },
+    {
+      "name": "main.js",
+      "size": 152,
+      "sha256": "f6f69381bd4c17b86bc50b47f831fc610b0aea16fa9a516d4000138d0eadfd44"
+    },
+    {
+      "name": "package.json",
+      "size": 73,
+      "sha256": "b3b0a47e19a545a156f55da8207e1ee72bd0a7f0bd9751ed7870d7ea9291f069"
+    }
+  ],
+  "build_recipe": {
+    "command": "python3 -B corpus/training/bounty-triage/fixtures/build_exercise.py",
+    "compression": "ZIP_STORED",
+    "timestamps": "1980-01-01T00:00:00",
+    "ordering": "sorted member names"
+  }
+}

@@ -4,20 +4,26 @@ Headers (QUALITY.md Q02 shape, applied to this instruction file):
 
 - `source:` `corpus/QUALITY.md` Q01–Q13; `corpus/SOURCES.md` (contract v1); `corpus/README.md` coverage legend; `corpus/lessons/round-63.md` M33–M35; `corpus/lessons/round-66.md` M37–M41; `reports/round-66/claims.md` (C6 fix shape, adjudication order).
 - `verified-at:` 2026-10-24, re-read in the lane tree at the round-66 adjudication commit (the round-64-era split below is preserved history): `corpus/`, `SCORECARD.md`, `SHONEN.md`, `PROVINCE.md` at lane commit `666ea84b6be2eec2b0359f556ba2429fc9044c36` (round-64 claim base); `reports/round-64/claims.md`, `measure.py`, `measure-before.log` at `3bb430f96cac09feb7269c5c52725127c6f7c463`; the round-64 control line ranges in §1 at the uncommitted working tree on top of `a3d063f29b93ad1f0b7eab78652c552685b84d89`; the round-65/66 control line ranges and the round-66 instrument were re-read at the round-66 working tree (C5/C6 controls committed). Every cited path, line range and S-id was re-read in that split, in the lane tree and at the named fleet contract path.
+- `§9 added:` 2026-10-27 in the interactive dispatch; §9's own pointer is verified by
+  `corpus/training/bounty-triage/check_package.py --self-test` (26/26 detectors, clean
+  control) and the two exercise runs recorded in `corpus/lessons/2026-10-27-bounty-triage-module.md`.
+  The rest of this file's provenance split is unchanged.
 - `recheck:` the frozen probe by absolute lane path with `cwd=/` and lane-owned `TMPDIR` (§6.1); the seven census commands in §6.2 from the lane root; the replay commands in §6.4.
 - `box:` `SHONEN.md` box 1 — real decision tables (§1–§3), error patterns (§4), checklists (§6), cited sources (§7).
 
 ## Scope — what this SKILL governs
 
 This is process instruction, not a knowledge entry: it fills no coverage-map row and
-carries no Evidence ID. It governs three narrow acts in this lane:
+carries no Evidence ID. It governs four narrow acts in this lane:
 
 1. drafting or reviewing an entry under `corpus/knowledge/` from authored bytes plus a
    saved REA record;
 2. guarding a saved-ledger replay verifier in the lane's `corpus/` verifier family
    (`verify_icon_states.py`, `verify_multi_icon_states.py`, `verify_icon_languages.py`,
    `verify_named_multi_icon_states.py`, and their siblings) against deletion;
-3. reading the round's frozen counting probe without mistaking it for the gate.
+3. reading the round's frozen counting probe without mistaking it for the gate;
+4. running the authorized bounty-triage exercise through §9 without mistaking its
+   validator for an admission gate.
 
 Named limits (`PROVINCE.md`, `corpus/README.md` "Known gaps", `SCORECARD.md` "Rubric
 boundaries"):
@@ -383,6 +389,27 @@ drift from the registry. Knowledge entries are cited by repo-relative path, not 
 - Treating the counter's labels as admission (M34) or a green self-test as a gate.
 - Using this SKILL as a knowledge entry or as evidence of capability: it is instruction,
   and `SHONEN.md` flips box 1 only on a named non-author verifier's pass.
+
+## 9. Bounty-triage module (instruction pointer, added 2026-10-27)
+
+Authorized bounty/coordinated-disclosure triage of a shipped artifact is governed by
+`corpus/training/bounty-triage/MODULE.md`. This section is a pointer, not a restatement.
+
+| rule | where it lives | check that catches a violation |
+|---|---|---|
+| written scope precedes any artifact read; expired/ambiguous/absent scope is a stop | `MODULE.md` §1 | `check_package.py` codes B01–B09 |
+| triage is artifact-first and static; execution or a live request is a stop | `MODULE.md` §2, §5 | B06 (`live_target_activity` / method allow-list); R08 stop record |
+| every observation carries its deriving command, bound to a declared digest | `MODULE.md` §3 | L02–L06 |
+| the report is nine sections and every impact line is evidence-bound or `unknown` | `MODULE.md` §4 | R01–R11 |
+| an escalation is recorded, never silent | `MODULE.md` §5 | R08 |
+
+The module is instruction: it fills no coverage row and carries no Evidence ID. Its
+validator (`corpus/training/bounty-triage/check_package.py`, `--package`/`--self-test`,
+exit 0/1/2/64) is **not** an admission gate and is not added to the Gate registry above;
+a green run says nothing about truth, authorization or publishability.
+Source rows are S050 (Claude-Red maintainer intended-use statement, tier A for that
+scope only) and S051 (reporting methodology, tier C corroboration).
+The authoring record is `corpus/lessons/2026-10-27-bounty-triage-module.md`.
 
 # Checklists — lane operability and evidence-ledger discipline
 
