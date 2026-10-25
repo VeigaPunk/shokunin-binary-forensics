@@ -1,0 +1,7 @@
+# red-before for the command-confinement wiring: the call site in run_cmd removed in a scratch copy, then the gate self-test
+$ python3 -B <scratch>/check_embedded_outputs.py --self-test   (scratch copy of corpus/check_embedded_outputs.py with the two-line 'if not confined(argv, cwd): return None, "", 2' block deleted)
+self-test: an entry declaring `python3 -c` was evaluated instead of refused
+EXIT=1
+# the same self-test on the committed gate
+SELFTEST OK: clean exit 0, full-run exit 0, drifted caught, forged control fired, pinned script verified by digest and named by the entry, commands confined to relative scripts inside the tree and refused through evaluate()
+EXIT=0

@@ -1,0 +1,7 @@
+revenger	W04	S024 duplicate url www.rfc-editor.org/rfc/rfc3227.txt across scopes
+revenger	W04	S028 duplicate url github.com/ethereum/execution-specs/tree/v2.20.0/src/ethereum/forks/osaka/vm across scopes
+revenger	W04	S029 duplicate url tc39.es/ecma262 across scopes
+revenger	W04	S034 duplicate url pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT across scopes
+revenger	W04	S048 duplicate url source.android.com/docs/core/runtime/dex-format across scopes
+revenger	ok	/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md
+CENSUS_EXIT=0

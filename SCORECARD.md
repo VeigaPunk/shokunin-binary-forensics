@@ -613,3 +613,33 @@ corrections from `corpus/lessons/round-69-verifier-spotcheck.md` §6: **V3** —
 unprinted; **V4** — the round-69 counting command printed in that table does not run from the fleet root; the
 executable form is `cd / && python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-69/measure.py <tree>`
 (the absolute-path form already printed in `reports/round-69/claims.md`).
+
+**Round-63 section seat name (found by the round-70 named-unmeasured sweep, `R70W1SM5Sweep` F1).** The Round 63 section's
+"`W2ReviewSeparability` (build)" names no seat that ever existed; the build-side separability seat is
+`R63ReviewSeparability` (`.ufo/waves/round-63/build/R63ReviewSeparability.md`), and `W2VerifySeparabilityFinal`
+(`.ufo/waves/round-63/falsify/W2VerifySeparabilityFinal.md`) is correct as written.
+
+## Round 70 (hyaku run 7, fresh-start round) — C1 falsified (honest stop); C2 and C3 verified as declared
+
+Pre-registration `dbacce212d798d1ec5bb59e03ff91d577eed0283` (claims + frozen counter `reports/round-70/measure.py` sha256
+`488f95aa1d502cbb20b7303e1d773f0101397a0bd45cee69c9fb389651c88c76` + red-before + eight controls on base `3f5edbc206351232a3d2d801334dd930499ccaf5`);
+tighten-only amendment A1 (`reports/round-70/claims-amendment-A1.md`, `measure-a1.py` sha256 `96feeaa048f0f2b8ab0f3bb183c714a57ff41e951d4221c09806b6acf2e87191`)
+declared before any wave-2 seat scored. Two v1 waves, 40 + 45 = 85 seats, 0 dead seats.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — knowledge-map ground K (C05 fifth pass) | `K_HELD_BACKED` 8/14 → 8/14 (5.7 → 5.7); `C05_STATUS` `uncovered` → `uncovered` | `python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-70/measure.py <git archive tree>` | `3f5edbc` → final tip | **C1 FALSIFIED — honest stop**: wave-2 FAIL Q04, Q11b, Q13 on four prose sentences (`:119`, `:152`, `:282`, `:310`); 13 of 16 decisions PASS/n-a; entry marked `rejected`, README unflipped |
+| calibration — self-assessment mismatches (new tool `corpus/self_assessment_check.py`) | `SELF_MISMATCH` 9 → 0 (`SM1=1 SM2=4 SM3=2 SM4=1 SM5=1 SM6=0` → all 0); `SELF_MUTANTS_KILLED` n/a → 6/6; `A1_C2` no → yes | same counter (`HOLDS_C2_V5`) and `measure-a1.py` | `3f5edbc` → final tip | **verified as declared**; limits: classes are bounded detectors (`R70W2CheckerClasses`), SM3/SM4 are 0 because overstatement was removed, an env-override hybrid survives both counters (`R70W2CheckerMut`) |
+| freshness — retained entries re-derive (digest-pinned historical script) | `EMB_R68` problems 7 → 0 (checked_blocks 17 both); `EMB_R65` 1 → 1 (retained M39 drift still seen); `EMB_PIN_MUTANT_KILLED_ATTRIBUTED` n/a → 1/1; `A1_C3` no → yes | same counter (`HOLDS_C3_V1`) | `3f5edbc` → final tip | **verified as declared** (`R70W2GateReplay` NO-REGRESSION incl. frozen r68 C7 labels; `R70W2PinMutants` 17/17 probes protected) |
+| holds | `HOLD_REPLAY` 10/10, `GATE_SELFTEST` exit 0, `F_COVERAGE` 5/8, `FRESH_ROWS` 18/18 both ends | same counter (`HOLDS_OK_V7=yes`) | same | unchanged |
+| depth / operability / adjacency | no separate claim | `R70W2SentinelFinal` CONTAINED; ADJ-06 reported-not-absorbed | — | unchanged |
+
+Capabilities: three registered instruments entered the repertoire as tooling, not as a new analysis family — `corpus/self_assessment_check.py` (gate), `corpus/lint_entry.py`
+(pre-flight, not a gate), the gate's digest-pin rule and command confinement; their registry rows are in `SKILL.md` §Gate registry. Mistakes mined: M51 (reference drift, captured by SM5),
+M52 (frozen predicate reachable by a cheaper control; fixed by A1), M53 (prose credits beyond a command's output; new criterion Q16). Sources: rows 47 → 49 (S048 supersedes S045's locator,
+S049 supersedes S043's repo path), census exit 0 at both ends. Assimilation: nothing adopted (two REJECT, one scope ADMIT without an entry), see `corpus/lessons/round-70.md`.
+
+K_HELD_BACKED 8/14 → 8/14
+
+**planned:** the C05 sixth pass is a repair of four sentences of `knowledge/round-70-apk-axml-byte-evidence.md` against the printed outputs (and the same-revision SCORECARD K line);
+checker residuals and the env-canary control; the gate's exit-2 contract (`R70W2GateReplay` F1/F2).

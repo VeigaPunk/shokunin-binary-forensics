@@ -248,7 +248,14 @@ def _self_test(tmp):
             and not confined(["python3", "-B", "../x.py"], tmp)
             and not confined(["python3", "-B", "link.py"], tmp),
             "self-test: command confinement accepted or refused the wrong spelling")
-    print("SELFTEST OK: clean exit 0, full-run exit 0, drifted caught, forged control fired, pinned script verified by digest and named by the entry, commands confined to relative scripts inside the tree")
+    # wiring leg (R70W2GateConfinement: the predicate legs alone leave `run_cmd`'s call site unguarded):
+    # an entry whose declared command is refused by confinement must come back could-not-evaluate
+    hostile = tmp / "hostile.md"
+    hostile.write_text("```\n$ python3 -B -c print(1)\n1\n```\n", encoding="utf-8")
+    hproblems, hchecked = evaluate(hostile, tmp)
+    require(hproblems is None and hchecked is None,
+            "self-test: an entry declaring `python3 -c` was evaluated instead of refused")
+    print("SELFTEST OK: clean exit 0, full-run exit 0, drifted caught, forged control fired, pinned script verified by digest and named by the entry, commands confined to relative scripts inside the tree and refused through evaluate()")
 
 
 def main():

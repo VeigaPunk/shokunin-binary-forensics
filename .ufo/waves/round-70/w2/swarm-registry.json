@@ -1,0 +1,517 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r70-w2",
+  "createdAt": "2026-10-25T21:33:56.107Z",
+  "updatedAt": "2026-10-25T21:33:56.107Z",
+  "reportDir": ".ufo/waves/round-70/w2",
+  "members": {
+    "R70W2GateQ01": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ02": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ03": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ04": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ05": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ06": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ07": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ08": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ09": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ10": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ11a": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ11b": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ12": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ13": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ14": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateQ15": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2FlipRehearsal": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2EntryMutants": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2Citations": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "operability",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2SourceRows": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2QuoteS038": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2OraclePerturb": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2CheckerMut": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2CheckerClasses": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2ShonenReview": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2ReadmeReview": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2LedgerRederive": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2ErratumCheck": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "calibration",
+        "freshness"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2PinMutants": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "freshness",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateReplay": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "freshness",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2GateConfinement": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "freshness",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2SentinelFinal": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "adjacency",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2SepC1": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2SepC2": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2SepC3": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "freshness",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2SepCritic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration",
+        "adjacency"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2AssimGateA": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2AssimGateB": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2AssimScope": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "adjacency",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2Quarantine": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2CensusReplay": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "freshness",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2HoldSweep": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "operability",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2CounterReplay": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2ConnRoutedCarry": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    },
+    "R70W2ConnPatterns": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "calibration",
+        "adjacency"
+      ],
+      "milestone": "C1 C05 v5.1 Q01-Q15 gate decisions on landed bytes + C2/C3 re-attacks + separability + assimilation gates + holds (falsify wave; kill-rule inputs)"
+    }
+  }
+}

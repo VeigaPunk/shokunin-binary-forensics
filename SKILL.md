@@ -141,7 +141,7 @@ The legend that M36 violated, from `corpus/README.md`: `held` = at least one adm
 entry; `partial` = only unsourced or pre-contract text; `uncovered` = work evidence but
 no admitted entry; `frontier` = **no knowledge and no saved record**.
 
-## 5. Admission checklist — Q01–Q13 (QUALITY.md)
+## 5. Admission checklist — Q01–Q16 (QUALITY.md; rows Q14–Q16 added round 70, the table had stopped at Q13)
 
 | id | demands | reject when |
 |---|---|---|
@@ -157,6 +157,9 @@ no admitted entry; `frontier` = **no knowledge and no saved record**.
 | Q11 | **supersedes Q08** — every count, identifier, offset and digest carries, inside the entry, the command that derives it from the primary record and that output; constants derived, not assumed; prose-only values labeled recorded | correct value with no derivation in the entry, or a recorded value presented as re-derived |
 | Q12 | a rejected source row states a reject reason grounded in a located quote and a `flip` naming a source change or a scope the reason does not exclude | the flip asks for content the row already credits |
 | Q13 | a verifier/recheck command is credited only for clauses whose deletion its own run detects; other clauses named unguarded | an entry cites a verifier for a value whose check survives deletion |
+| Q14 | a hex string quoted with a byte count in the same clause carries 2 × N hex characters; an ellipsis-truncated run carries no length; an `ASCII` rendering decodes from that same run | a quoted hex string's stated length or rendering is not the bytes it quotes |
+| Q15 | a stated git object id or tree identity is re-derived with the command that names it | an identity sentence is asserted without the deriving command, or the named object resolves to a different value |
+| Q16 | a sentence crediting a script, table or command with covering a set is true only for the members its own printed output compares (the rest named unguarded), and a sentence saying what a command prints is checked against its stdout | a credit or output description reaches past what the command prints (round-70 entry `:119`, `:152`, `:282`) |
 
 Q08 is historical (superseded by Q11); applying it instead of Q11 is a Q11 failure.
 Procedure (QUALITY.md "Admission procedure"): apply every criterion, marking `n/a` only
@@ -337,7 +340,7 @@ a rejected candidate keeps every byte except its `admission-status:` line.
 | `corpus/fixtures/firmware-r63/truth.json` | corpus/fixtures/firmware-r63/ | truth shape and build recipe |
 | `corpus/fixtures/REPLAY.md` | corpus/fixtures/ | fixture replay contract pointer |
 | `corpus/README.md` | corpus/ | coverage legend and known gaps |
-| `corpus/QUALITY.md` | corpus/ | Q01–Q13 and admission procedure |
+| `corpus/QUALITY.md` | corpus/ | Q01–Q16 and admission procedure |
 | `corpus/SOURCES.md` | corpus/ | tiers, row rules, census |
 | `SCORECARD.md` | lane root | census C command; rubric boundaries; axes |
 | `SHONEN.md` | lane root | box 1 requirement this file answers |

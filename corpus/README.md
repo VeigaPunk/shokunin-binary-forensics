@@ -6,7 +6,7 @@ frontier it is working toward. Province: `PROVINCE.md`. Admission bar:
 
 ## Index
 
-- `QUALITY.md` — admission criteria Q01–Q15 (Q11 supersedes Q08), each citing its mistake class.
+- `QUALITY.md` — admission criteria Q01–Q16 (Q11 supersedes Q08), each citing its mistake class.
 - `SOURCES.md` — where the lane learns: tiered, opened sources with study paths and search log (contract v1).
 - `knowledge/` — admitted domain entries (the map below names each one); also
   retains clearly marked rejected candidates (each carries an
@@ -38,7 +38,7 @@ and `live/runs/`.
 | C02 | native analysis sessions (decompile/disassemble providers) | `knowledge/seed.md` (census), `knowledge/2026-10-12-rea-readiness-checklist.md` | `live/runs/20261012T163909Z/native-analyze.json` (`provider_unavailable`); `lessons/2026-10-12-r1-provider-gap.md` | partial |
 | C03 | managed (.NET/CLI) assemblies | — | — | frontier |
 | C04 | JavaScript/Electron packages | `knowledge/round-62-commonjs-require-name-evidence.md` (source names and saved call spans on authored directories only; no Electron/runtime/export-binding ground) | `fixtures/js-r3`, `js-r7-v2`, `shapes-r12`; `verify_js_graph_delta.py`, `verify_semantic_trace.py`, `verify_shape_evidence.py`; shape/semantic work is outside the new entry; retained rejected candidate `knowledge/commonjs-destructured-require-edges.md` | held |
-| C05 | Android packages (APK) | — | `fixtures/apk-r65`; retained rejected candidate `knowledge/round-65-apk-axml-byte-evidence.md` (round-65 orchestrator-dispatched wave, falsified Q02/Q06/Q11, adjudicated round-66) | uncovered |
+| C05 | Android packages (APK) | — | `fixtures/apk-r65`; retained rejected candidates `knowledge/round-65-apk-axml-byte-evidence.md` (round-65 wave, falsified Q02/Q06/Q11), `knowledge/round-67-apk-axml-byte-evidence.md`, `knowledge/round-68-apk-axml-byte-evidence.md`, `knowledge/round-69-apk-axml-byte-evidence.md` and `knowledge/round-70-apk-axml-byte-evidence.md` (each `admission-status: rejected`; the round-70 v5.1 candidate failed three of sixteen wave-2 decisions, Q04/Q11b/Q13, `corpus/lessons/round-70.md` `## Gate`) | uncovered |
 | C06 | archives (ZIP inventory) | `knowledge/round-63-zip-central-directory-evidence.md` (manual byte-derived central-directory readout of `fixtures/archive-r2/fixture.zip` only; no general ZIP-parser, trailing-bytes, provider-completeness or authenticity claim) | `fixtures/archive-r2`, `nested-r11`, `duplicate-r15` | held |
 | C07 | firmware images | `knowledge/round-64-firmware-region-byte-evidence.md` (manual byte-derived readout of `fixtures/firmware-r63/firmware-r63.bin` only; no general firmware-format, extraction/execution, provider-completeness or authenticity claim) | — | held |
 | C08 | browser/Electron runtime evidence | — | — | frontier |
@@ -75,11 +75,14 @@ Ground being explored and not yet held, nearest first.
 - C03 managed assemblies — REA `inspect_managed_artifact`; `dotnet` is on PATH
   but reports no SDK, so a locally built known-truth assembly is blocked.
 - C05 Android — REA `inspect_android_package`; jadx 1.5.6 is present; needs an
-  authored APK fixture. Round-66 update: the authored `fixtures/apk-r65` bundle
-  landed with a candidate entry that the dispatched round-65 wave falsified
-  (Q02/Q06/Q11 — `corpus/lessons/round-66.md` `## Gate`); the row is
-  `uncovered`, the candidate retained rejected; a re-gate needs the corrected
-  text, not new fixture bytes.
+  authored APK fixture. Round-70 update: the fifth-pass candidate
+  (`knowledge/round-70-apk-axml-byte-evidence.md`, generated from command stdout,
+  gated by a 40-seat pre-gate wave then a 45-seat fresh wave) failed three of
+  sixteen decisions, all on four prose sentences that credit a script for more
+  than it prints (`:119`, `:152`, `:282`, `:310` of the candidate); the row is
+  `uncovered`, the candidate retained rejected; the sixth pass is a repair of
+  those four sentences against the printed outputs, not new fixture bytes
+  (`corpus/lessons/round-70.md` `## Routed forward`).
 - C08 browser/Electron runtime — passive CDP observation of a declared local page.
 - Evidence custody beyond fixity: collection and transfer records
   (SWGDE collection/acquisition guidance) — adjacent to this province; enter only

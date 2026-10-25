@@ -23,6 +23,8 @@ Promotion to shokunin requires all of:
   `SKILL.md` runnable sections executed by `R64ExecSkillRun` (census 4/4, replay 10/10,
   oracle ORACLE OK, counter exit 0); no independent outside instruction verifier.
 - [~] No cross-domain bleed (PROVINCE.md still accurate)
-  Entry `## Cross-lane scope note (Q10)` + README C07 parenthetical report-not-absorb
-  ADJ-06 (fleet `.ufo/l0-questions.md:42` open); connector scan `R64ConnectorOverlap`;
-  no province sentence edited; no outside verifier this round.
+  Entry `## Cross-lane scope note (Q10)` names ADJ-06 as reported, not absorbed (fleet
+  `.ufo/l0-questions.md:42` open); the README coverage map carries no ADJ-06 parenthetical
+  (`grep -c ADJ-06 corpus/README.md` prints 0 — an earlier wording of this line said it did,
+  corrected in round 70); connector scan `R64ConnectorOverlap`; no province sentence edited;
+  no outside verifier this round.
