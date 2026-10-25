@@ -2,14 +2,18 @@
 
 Promotion to shokunin requires all of:
 
-- [x] SKILL.md contains real decision tables, error patterns, checklists, cited sources
-  Landed `SKILL.md` (39098 bytes, sha256 `bfd92057…a9dd`; merged from the seat-drafted
-  SKILL + checklists after a non-author critic round). Named non-author verifier:
-  `revenger-r64.R64ReviewSkill` — `[x]`-ready = YES re-stated on the final bytes
-  (`.ufo/waves/round-64/R64ReviewSkill.md`); citation sweep 0 phantoms
-  (`R64ReviewSkillCites`); checklists executed verbatim with observed exits matching
-  promises (`R64ExecSkillRun` transcript). Historical checks in
-  `corpus/live/runs/promotion-review-r5.md` remain narrower history only.
+- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources
+  Lane attestation, not a non-author check: the named verifier `revenger-r64.R64ReviewSkill` is a
+  seat this lane dispatched (`.ufo/waves/round-64/R64ReviewSkill.md`), and it re-stated
+  `[x]`-ready = YES on the round-64 bytes of `SKILL.md`, which resolve with
+  `git show cab8085a5fe4e222090edb223755ac1d747386db:SKILL.md` (size and digest are derived by
+  piping that command to `wc -c` and `sha256sum`; none is quoted here, so none can drift).
+  The current `SKILL.md` has no outside confirmation; routed need: a non-lane reviewer
+  re-confirming the CURRENT bytes (round-69 verifier spot-check V7,
+  `corpus/lessons/round-69-verifier-spotcheck.md`). Citation sweep 0 phantoms
+  (`R64ReviewSkillCites`); checklists executed verbatim with observed exits matching promises
+  (`R64ExecSkillRun` transcript). Historical checks in `corpus/live/runs/promotion-review-r5.md`
+  remain narrower history only.
 - [~] At least one end-to-end domain task executed and logged in LOG.md
   Fixture-scoped saved-ledger replay + real producer record verification:
   `reports/round-64/measure-after.log` (frozen counter over archived corpus),

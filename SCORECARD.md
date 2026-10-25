@@ -599,3 +599,17 @@ the `504b0506` key (Q11), fix `:48`'s two counts (Q14), add the `c7b7cf98` deriv
 (Q15). Calibration: hoist `def run` in a NEW counter revision with a fresh red-before *before* any
 after-run, map uncaught exceptions to exit 2, move the D1 fixture under `corpus/`, and make the
 derivation extension additive (a flag or a second script) so the retained round-68 candidate stays clean.
+
+## Errata to the round-69 section (appended 2026-10-25, round 70 — the rows above stay as written)
+
+erratum: `e1d22caf` -> `e1d22caaf9a2fdc4c1c13d1f4a8a6813e7b07968`
+
+The first line is the machine-read form (`corpus/self_assessment_check.py` SM5): the round-69 pre-registration
+commit is `e1d22caaf9a2fdc4c1c13d1f4a8a6813e7b07968` (`git rev-parse e1d22ca`), and the token printed at the
+Round 69 section's "Pre-registration" line is an 8-character truncation whose last character is wrong. Two more
+corrections from `corpus/lessons/round-69-verifier-spotcheck.md` §6: **V3** — the round-69 C1 table cell that reads
+"not printed — the counter crashes before the hold block" is wrong on its second half: the frozen counter printed
+`K_HELD_BACKED=8/14` (and `K_HELD_BACKED_STRICT=8/14`) before the `NameError`, and only the hold block was
+unprinted; **V4** — the round-69 counting command printed in that table does not run from the fleet root; the
+executable form is `cd / && python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-69/measure.py <tree>`
+(the absolute-path form already printed in `reports/round-69/claims.md`).

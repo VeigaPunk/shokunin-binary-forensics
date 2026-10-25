@@ -6,15 +6,22 @@ frontier it is working toward. Province: `PROVINCE.md`. Admission bar:
 
 ## Index
 
-- `QUALITY.md` — admission criteria Q01–Q13 (Q11 supersedes Q08), each citing its mistake class.
+- `QUALITY.md` — admission criteria Q01–Q15 (Q11 supersedes Q08), each citing its mistake class.
 - `SOURCES.md` — where the lane learns: tiered, opened sources with study paths and search log (contract v1).
 - `knowledge/` — admitted domain entries (the map below names each one); also
   retains clearly marked rejected candidates (each carries an
   `admission-status: rejected` header), which are evidence, not admitted knowledge.
-- `lessons/` — `2026-10-12-r1-provider-gap.md`; `round-1.md` (fleet round-1 gates and the mined `## Mistakes` table); `round-1-verifier-spotcheck.md` (integrator-written outside check of round 1); `round-61.md` (round-61 gate, mistakes and source changes).
+- `lessons/` — `2026-10-12-r1-provider-gap.md`; `round-1.md` (fleet round-1 gates and the mined `## Mistakes` table); `round-1-verifier-spotcheck.md` (integrator-written outside check of round 1); `round-N.md` (round gate, mistakes and source changes) with `round-N-verifier-spotcheck.md` (outside check) for each N in 61–69 — the directory listing is the authority (`ls corpus/lessons`).
 - `fixtures/` — authored known-truth inputs (byte-oracle fixtures; `fixtures/REPLAY.md`).
 - `live/runs/` — saved REA outputs, receipts and non-author reviews per historical round.
 - `verify_*.py` — saved-ledger replay verifiers (`--self-test`); census command in `SCORECARD.md` (C).
+- `snapshots/` — byte-exact committed copies of the specifications the APK entries cite (`ResourceTypes.h`, `APPNOTE.TXT`, `dex-format.html`, `rea-android-applications.md`); each digest is printed by the entry that cites it.
+- `q15_tree_id_check.py` — Q15 tree-identity sentence checker (`--self-test`, `--scan`).
+- `derive_axml_anchors.py` — prints the `ResourceTypes.h` line numbers and enum values an APK entry cites, from the pinned snapshot.
+- `check_embedded_outputs.py` — embedded-output verbatim gate (`--entry`, `--self-test`); reads `embedded_output_pins.json`.
+- `derive_axml_anchors_r68.py` — byte-exact earlier revision of the derivation script (sha256 `bce497d6…`), pinned in `embedded_output_pins.json` so the retained round-68 candidate re-derives against the revision that printed it.
+- `self_assessment_check.py` — counts the lane's self-assessment mismatches against repo state (classes SM1–SM6; `--root`, `--self-test`).
+- `lint_entry.py` — mechanical pre-flight lint for a knowledge entry (§Q-map completeness, Q14 byte-count heuristic, unresolved commit ids, header trio); not an admission gate.
 
 ## Coverage map
 
@@ -49,8 +56,9 @@ held 4/14).
 
 ## Known gaps
 
-- `SKILL.md` and `AGENTS.md` are absent (named debt, `SCORECARD.md`); no gate
-  registry exists, so no verifier here is registered as a gate.
+- `AGENTS.md` is absent (named debt, `SCORECARD.md`). `SKILL.md` exists and carries a
+  `## Gate registry` (rows for `check_embedded_outputs`, `self_assessment_check` and the
+  pre-flight `lint_entry`); the ten `verify_*.py` replay verifiers are not registered gates.
 - Two pre-contract entries (`seed.md`, the readiness checklist) carried no
   `source:` / `verified-at:` / `recheck:` headers at `8bbcb4e`; headers and a
   dated re-verification were added on 2026-10-19, but neither entry has been

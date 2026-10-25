@@ -50,29 +50,40 @@ def prose_lines(text):
 
 
 def lint_qmap(text, quality):
+    """Every QUALITY criterion needs a row in some `## §Q-map` section whose decision cell
+    (the column the table header names `decision`) is non-empty."""
     want = re.findall(r"^\| (Q\d+) \|", quality, re.M)
-    m = re.search(r"^## §Q-map\s*$(.*?)(?=^## |\Z)", text, re.M | re.S)
     have = set()
-    if m:
-        for row in re.findall(r"^\| (Q\d+) \| ([^|]+)\|", m.group(1), re.M):
-            if row[1].strip():
-                have.add(row[0])
+    for m in re.finditer(r"^## §Q-map\s*$(.*?)(?=^## |\Z)", text, re.M | re.S):
+        rows = [l for l in m.group(1).splitlines() if l.startswith("|")]
+        if not rows:
+            continue
+        head = [c.strip().lower() for c in rows[0].strip().strip("|").split("|")]
+        col = head.index("decision") if "decision" in head else 1
+        for l in rows[1:]:
+            cells = [c.strip() for c in l.strip().strip("|").split("|")]
+            if len(cells) > col and re.fullmatch(r"Q\d+", cells[0]) and cells[col]:
+                have.add(cells[0])
     return [q for q in want if q not in have]
 
 
 def lint_q14(text):
-    """Clause = text between `;` or sentence-final `. `; digest lengths (40, 64) are
-    file digests, not byte runs, and odd-length tokens are not byte runs."""
+    """Clause = text between `;` or sentence-final `. `; digest lengths (40, 64, 128) are
+    file digests, not byte runs, and odd-length tokens are not byte runs. Hex is read in either
+    case; an ellipsis (`…` or `...`) inside or just after the backticks truncates the run. In a
+    clause with exactly one run, every count of 32 or fewer bytes must equal len(run)/2, and a
+    truncated run carries no count."""
     hits = []
     for n, line in prose_lines(text):
         for clause in re.split(r";|\.\s", line):
-            runs = [(h, e) for h, e in re.findall(r"`([0-9a-f]{4,})(…?)`", clause)
+            runs = [(h, bool(e1 or e2)) for h, e1, e2 in
+                    re.findall(r"`([0-9a-fA-F]{4,})(…|\.\.\.)?`(…|\.\.\.)?", clause)
                     if len(h) % 2 == 0 and len(h) not in (40, 64, 128)]
-            counts = re.findall(r"(\d+)[- ]bytes?\b", clause)
-            if len(runs) != 1 or len(counts) != 1 or int(counts[0]) > 32:
+            counts = [int(c) for c in re.findall(r"(\d+)[- ]bytes?\b", clause) if int(c) <= 32]
+            if len(runs) != 1 or not counts:
                 continue
             h, ell = runs[0]
-            if ell or len(h) != 2 * int(counts[0]):
+            if ell or any(c != len(h) // 2 for c in counts):
                 hits.append(n)
     return hits
 
@@ -142,7 +153,24 @@ def self_test():
         if len(lint(p, d, quality, good)["Q14"]) != 1:
             print("SELFTEST FAIL an ellipsis-truncated run carrying a count was not flagged")
             return 1
-    print("SELFTEST OK: clean 0; four planted defects each scored exactly their class; truncated-run-with-count flagged")
+        extra = {
+            "two counts in one clause": (CLEAN.replace("(9 bytes)", "(9 bytes), a 16-byte prefix"), "Q14", 1),
+            "uppercase run, wrong count": (CLEAN.replace("`4d616e69666573742d`", "`4D616E69666573742D`").replace("(9 bytes)", "(8 bytes)"), "Q14", 1),
+            "ellipsis outside the backticks": (CLEAN.replace("`4d616e69666573742d` —", "`4d616e69666573742d`… —"), "Q14", 1),
+            "decision column reordered, cells blank": (
+                CLEAN.replace("| criterion | decision | basis |", "| criterion | basis | decision |")
+                .replace("| Q01 | pass | x |", "| Q01 | x | |").replace("| Q02 | n/a | y |", "| Q02 | y | |"), "QMAP", 2),
+            "a duplicate §Q-map section does not hide a missing row": (
+                CLEAN.replace("| Q02 | n/a | y |\n", "") + "\n## §Q-map\n\n| criterion | decision | basis |\n|---|---|---|\n| Q01 | pass | x |\n", "QMAP", 1),
+        }
+        for label, (body, cls, want_n) in extra.items():
+            p = d / "extra.md"
+            p.write_text(body, encoding="utf-8")
+            got = {k: len(v) for k, v in lint(p, d, quality, good).items()}
+            if got[cls] != want_n or sum(got.values()) != want_n:
+                print(f"SELFTEST FAIL {label}: got {got} want {cls}={want_n}")
+                return 1
+    print("SELFTEST OK: clean 0; four planted defects each scored exactly their class; truncated-run-with-count, two-count clause, uppercase run, outside-ellipsis, reordered decision column and duplicate Q-map section handled")
     return 0
 
 

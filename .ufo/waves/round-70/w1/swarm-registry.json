@@ -1,0 +1,451 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r70-w1",
+  "createdAt": "2026-10-25T21:05:47.592Z",
+  "updatedAt": "2026-10-25T21:05:47.592Z",
+  "reportDir": ".ufo/waves/round-70/w1",
+  "members": {
+    "R70W1PreQ01Q02": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1PreQ03Q06": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1PreQ04Q13": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1PreQ05Q07": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1PreQ11Items1to8": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1PreQ11Items9to15": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1PreQ09Q10Q12": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1PreQ14Q15": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1Prose": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1Citations": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "operability",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1GeneratorRerun": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "operability",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1GateMutants": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1LintMutants": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1EntryChecksMut": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1Simplify": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "simplifier",
+      "item": null,
+      "axes": [
+        "depth",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1Sentinel": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "adjacency",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1ReadmeIndex": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1ShonenDraft": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1ErratumDraft": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1SM5Sweep": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "calibration",
+        "freshness"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1ClassAttack": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1SelfMut": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1CounterReplay": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1ControlAudit": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1PinMut": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "freshness",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1PinCritic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "freshness"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1FreshSweep": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1RegistryDraft": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "operability",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1OpenS038": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1OpenS043": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1OpenS045": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1OpenS032": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1AssimUnblob": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1AssimSwgde": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "adjacency",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1AssimDraft": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1MistakeSweep": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1IndependentRead": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1ConnSeparability": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "calibration",
+        "adjacency"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1ConnSources": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage",
+        "adjacency"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    },
+    "R70W1ConnLedger": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "calibration",
+        "adjacency"
+      ],
+      "milestone": "C1 C05 v5 candidate pre-gate + C2 self-assessment mismatch repair drafts + C3 pin attacks + frontier step (source re-opens, assimilation re-grounding, mistake sweep)"
+    }
+  }
+}

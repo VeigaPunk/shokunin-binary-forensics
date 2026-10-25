@@ -27,8 +27,8 @@ Usage:
     python3 -B corpus/self_assessment_check.py --root TREE [--lane LANE]
         TREE holds corpus/, SHONEN.md, SCORECARD.md and SKILL.md (a
         `git archive <commit> corpus SHONEN.md SCORECARD.md SKILL.md`
-        extraction). --lane is the git repo that resolves SM5 hashes (default:
-        the repo containing this file). Prints SM1..SM6 and
+        extraction). --lane (required) is the git repo that resolves SM5 hashes.
+        Prints SM1..SM6 and
         `SELF_MISMATCH=<n>`. Exit 0 iff n == 0, 1 if n > 0, 2 if a required
         file is missing.
     python3 -B corpus/self_assessment_check.py --self-test
@@ -54,22 +54,29 @@ def txt(p):
 
 def sm1(root):
     readme, quality = txt(root / "corpus/README.md"), txt(root / "corpus/QUALITY.md")
-    ids = [int(x) for x in re.findall(r"^\| Q(\d+) \|", quality, re.M)]
-    m = re.search(r"`QUALITY\.md` — admission criteria Q01[–-]Q(\d+)", readme)
+    ids = sorted(int(x) for x in re.findall(r"^\|\s*Q(\d+)\s*\|", quality, re.M))
+    m = re.search(r"`QUALITY\.md` — admission criteria Q01[–—-]Q(\d+)", readme)
     if not ids or not m:
         return 1
-    return 0 if int(m.group(1)) == max(ids) else 1
+    contiguous = ids == list(range(1, max(ids) + 1))
+    return 0 if int(m.group(1)) == max(ids) and contiguous else 1
 
 
 def sm2(root):
     readme = txt(root / "corpus/README.md")
+
+    def named(name):
+        return re.search(rf"(?<![\w.-]){re.escape(name)}(?![\w-])", readme) is not None
+
     missing = 0
     for p in sorted((root / "corpus").iterdir()):
-        if p.is_file() and p.suffix == ".py":
-            named = p.name in readme or (p.name.startswith("verify_") and "verify_*.py" in readme)
-            missing += 0 if named else 1
-        elif p.is_dir() and not p.name.startswith("."):
-            missing += 0 if f"{p.name}/" in readme else 1
+        if p.name == "__pycache__":
+            continue
+        if p.is_file() and p.suffix.lower() == ".py":
+            ok = named(p.name) or (p.name.startswith("verify_") and "verify_*.py" in readme)
+            missing += 0 if ok else 1
+        elif p.is_dir():
+            missing += 0 if named(p.name) else 1
     return missing
 
 
@@ -80,7 +87,7 @@ def boxes(shonen):
         if m:
             cur = [m.group(1), [line]]
             out.append(cur)
-        elif cur is not None and line.startswith("  "):
+        elif cur is not None and re.match(r"^\s+\S", line):
             cur[1].append(line)
         else:
             cur = None
@@ -88,45 +95,69 @@ def boxes(shonen):
 
 
 def sm3(root):
+    """Each quoted `N bytes` / `sha256 `hex`` is attributed to the NEAREST preceding backticked
+    file token in its box; a value with no preceding file token, or whose nearest token is a
+    file that does not resolve, or whose bytes differ, is one mismatch."""
     bad = 0
     for _state, text in boxes(txt(root / "SHONEN.md")):
-        files = []
-        for tok in re.findall(r"`([\w./-]+\.(?:md|py|json))`", text):
+        toks = [(m.start(), m.group(1)) for m in re.finditer(r"`([\w./-]+\.(?:md|py|json))`", text)]
+
+        def near(pos):
+            before = [t for t in toks if t[0] < pos]
+            return before[-1][1] if before else None
+
+        def blob(tok):
             for cand in (root / tok, root / "corpus" / tok):
                 if cand.is_file():
-                    files.append(cand.read_bytes())
-                    break
-        if not files:
-            continue
-        for size in re.findall(r"(\d[\d,]*) bytes", text):
-            n = int(size.replace(",", ""))
-            bad += 0 if any(len(b) == n for b in files) else 1
-        for pref in re.findall(r"sha256 `([0-9a-f]{8,64})", text):
-            bad += 0 if any(hashlib.sha256(b).hexdigest().startswith(pref) for b in files) else 1
+                    return cand.read_bytes()
+            return None
+
+        for m in re.finditer(r"(?<![\w-])(\d[\d,]*) bytes", text):
+            b = blob(near(m.start())) if near(m.start()) else None
+            bad += 0 if b is not None and len(b) == int(m.group(1).replace(",", "")) else 1
+        for m in re.finditer(r"sha256 `([0-9a-f]{8,64})", text):
+            b = blob(near(m.start())) if near(m.start()) else None
+            bad += 0 if b is not None and hashlib.sha256(b).hexdigest().startswith(m.group(1)) else 1
     return bad
 
 
+SEAT = re.compile(r"(?i:revenger[-_]?r\d+[._]\w+)|(?<![A-Za-z0-9_])R\d{2}[A-Z]\w+")
+
+
 def sm4(root):
-    return sum(1 for state, text in boxes(txt(root / "SHONEN.md"))
-               if state == "x" and re.search(r"revenger-r\d+\.\w+|\bR\d{2}[A-Z]\w+", text))
+    """A `[x]` box must name its verifier in a `Named non-author verifier:` clause, and the
+    named verifier must not be a lane seat. A box that cites a seat report elsewhere in its
+    text while naming an outside verifier is not a mismatch."""
+    bad = 0
+    for state, text in boxes(txt(root / "SHONEN.md")):
+        if state != "x":
+            continue
+        m = re.search(r"Named non-author verifier:\s*([^\n]+?)\.?\s*(?:\n|$)", text)
+        bad += 1 if not m or SEAT.search(m.group(1)) else 0
+    return bad
 
 
 def sm5(root, lane, resolve=None):
     resolve = resolve or (lambda h: subprocess.run(
         ["git", "-C", str(lane), "cat-file", "-e", f"{h}^{{commit}}"],
         capture_output=True).returncode == 0)
-    lines = txt(root / "SCORECARD.md").splitlines()
+    text = re.sub(r"```.*?```", "", txt(root / "SCORECARD.md"), flags=re.S)
+    lines = text.splitlines()
     start = next((i for i, l in enumerate(lines) if l.startswith("## Round 61")), 0)
     excused = {}
     for l in lines:
-        for bad, good in re.findall(r"^erratum: `([0-9a-f]{7,40})` -> `([0-9a-f]{7,40})`", l):
-            excused[bad] = good
-    cite = re.compile(r"(?i:pre-registration|\bbase|\btip|\bcommit)\s+`([0-9a-f]{7,40})`(?!…)")
+        for bad_h, good in re.findall(r"^erratum: `([0-9a-fA-F]{7,40})` -> `([0-9a-fA-F]{7,40})`", l):
+            # the correction must share a >= 6 character prefix with the token it corrects
+            # (a typo in the tail), never an unrelated commit
+            if len(commonprefix(bad_h.lower(), good.lower())) >= 6:
+                excused[bad_h.lower()] = good.lower()
+    cite = re.compile(r"(?i:pre[- ]?registration|\bbases?|\btips?|\bcommits?)\s*:?\s+`([0-9a-fA-F]{7,40})`(?!…)")
     bad = 0
     for l in lines[start:]:
         if l.startswith("erratum:"):
             continue
         for h in cite.findall(l):
+            h = h.lower()
             if resolve(h):
                 continue
             good = excused.get(h)
@@ -134,15 +165,26 @@ def sm5(root, lane, resolve=None):
     return bad
 
 
+def commonprefix(a, b):
+    n = 0
+    while n < min(len(a), len(b)) and a[n] == b[n]:
+        n += 1
+    return a[:n]
+
+
 def sm6(root):
     readme = txt(root / "corpus/README.md")
     rows = [l for l in readme.splitlines() if re.match(r"^\| C[0-9]+ ", l)]
-    held = sum(1 for l in rows if re.search(r"\| held \|$", l))
+    held = sum(1 for l in rows if re.search(r"\|\s*held\s*\|\s*$", l))
     last = [l for l in txt(root / "SCORECARD.md").splitlines() if "K_HELD_BACKED" in l]
     if not last:
         return 1
-    nums = re.findall(r"(\d+)/14", last[-1])
-    return 0 if nums and int(nums[-1]) == held else 1
+    head = last[-1].split("K_HELD_BACKED_STRICT")[0]
+    stmts = re.findall(r"K_HELD_BACKED[^0-9]*(\d+)/14(?:\s*(?:→|->)\s*(\d+)/14)?", head)
+    if not stmts:
+        return 1
+    cur = stmts[-1][1] or stmts[-1][0]
+    return 0 if int(cur) == held else 1
 
 
 def evaluate(root, lane, resolve=None):
@@ -205,24 +247,60 @@ def self_test():
             if got[cls] != 1 or sum(got.values()) != 1:
                 print(f"SELFTEST FAIL {cls} planted defect scored {got}")
                 return 1
-        # an appended erratum with a resolving correction excuses SM5; a bad one does not
+        # erratum: a resolving correction that shares a >= 6 char prefix with the token excuses it;
+        # an unrelated resolving commit, or a non-resolving correction, does not
         t = d / "erratum"
         _fixture(t)
-        sc = txt(t / "SCORECARD.md").replace("`aaaaaaa`", "`bbbbbbb`")
-        (t / "SCORECARD.md").write_text(sc + "erratum: `bbbbbbb` -> `aaaaaaa`\n", encoding="utf-8")
-        if evaluate(t, d, good)["SM5"] != 0:
-            print("SELFTEST FAIL a resolving erratum did not excuse SM5")
-            return 1
-        (t / "SCORECARD.md").write_text(sc + "erratum: `bbbbbbb` -> `ccccccc`\n", encoding="utf-8")
-        if evaluate(t, d, good)["SM5"] != 1:
-            print("SELFTEST FAIL a non-resolving erratum excused SM5")
-            return 1
+        sc = txt(t / "SCORECARD.md").replace("`aaaaaaa`", "`aaaaaab`")
+        for tail, want in (("erratum: `aaaaaab` -> `aaaaaaa`\n", 0), ("erratum: `aaaaaab` -> `cccccc1`\n", 1),
+                           ("erratum: `aaaaaab` -> `bbbbbbb`\n", 1)):
+            (t / "SCORECARD.md").write_text(sc + tail, encoding="utf-8")
+            if evaluate(t, d, good)["SM5"] != want:
+                print(f"SELFTEST FAIL erratum {tail.strip()} scored SM5={evaluate(t, d, good)['SM5']} want {want}")
+                return 1
+        # tightened-class legs: each probe must score exactly the named class
+        probes = [
+            ("SM1", "em dash correct range stays clean", lambda r: (r / "corpus/README.md").write_text(
+                txt(r / "corpus/README.md").replace("Q01–Q02", "Q01—Q02"), encoding="utf-8"), 0),
+            ("SM1", "a gap in the Q table", lambda r: (r / "corpus/QUALITY.md").write_text(
+                "| id |\n|---|\n| Q01 | a |\n| Q03 | b |\n", encoding="utf-8"), 1),
+            ("SM2", "name only a substring of a longer README token", lambda r: (r / "corpus/tool_x.py").write_text(
+                "print(3)\n", encoding="utf-8"), 1),
+            ("SM2", "hidden directory", lambda r: (r / "corpus/.hidden").mkdir(), 1),
+            ("SM2", "upper-case suffix", lambda r: (r / "corpus/tool.PY").write_text("print(4)\n", encoding="utf-8"), 1),
+            ("SM3", "digest on a non-file", lambda r: (r / "SHONEN.md").write_text(
+                "- [~] x\n  `corpus/gone.py` (7 bytes)\n", encoding="utf-8"), 1),
+            ("SM3", "stale value on a one-space continuation", lambda r: (r / "SHONEN.md").write_text(
+                "- [~] x\n  `SKILL.md` ok\n  `SKILL.md` (9 bytes)\n", encoding="utf-8"), 1),
+            ("SM4", "verifier spelled RevengerR64.ReviewSkill", lambda r: (r / "SHONEN.md").write_text(
+                txt(r / "SHONEN.md").replace("Someone Outside", "RevengerR64.ReviewSkill"), encoding="utf-8"), 1),
+            ("SM4", "outside verifier plus a cited seat report", lambda r: (r / "SHONEN.md").write_text(
+                txt(r / "SHONEN.md").replace("Someone Outside.\n", "Someone Outside.\n  Seat report `.ufo/R64ReviewSkill.md` is context.\n"), encoding="utf-8"), 0),
+            ("SM5", "upper-case hash", lambda r: (r / "SCORECARD.md").write_text(
+                txt(r / "SCORECARD.md").replace("`aaaaaaa`", "`DEADBEE`"), encoding="utf-8"), 1),
+            ("SM5", "colon after the introducer", lambda r: (r / "SCORECARD.md").write_text(
+                txt(r / "SCORECARD.md") + "commit: `bbbbbbb`\n", encoding="utf-8"), 1),
+            ("SM5", "fenced example is not a citation", lambda r: (r / "SCORECARD.md").write_text(
+                txt(r / "SCORECARD.md") + "```\nthe token tip `bbbbbbb` must resolve\n```\n", encoding="utf-8"), 0),
+            ("SM6", "two K statements, the first wrong", lambda r: (r / "SCORECARD.md").write_text(
+                txt(r / "SCORECARD.md").replace("K_HELD_BACKED 8/14 → 8/14", "K_HELD_BACKED 9/14 → 9/14 · K_HELD_BACKED_STRICT 8/14 → 8/14"), encoding="utf-8"), 1),
+            ("SM6", "held row with trailing whitespace stays clean", lambda r: (r / "corpus/README.md").write_text(
+                txt(r / "corpus/README.md").replace("| held |\n", "| held |  \n"), encoding="utf-8"), 0),
+        ]
+        for i, (cls, label, mutate, want) in enumerate(probes):
+            t = d / f"probe{i}"
+            _fixture(t)
+            mutate(t)
+            got = evaluate(t, d, good)
+            if got[cls] != want or sum(got.values()) != want:
+                print(f"SELFTEST FAIL probe {label}: got {got} want {cls}={want}")
+                return 1
         empty = d / "empty"
         empty.mkdir()
         if required(empty):
             print("SELFTEST FAIL empty root counted as evaluable")
             return 1
-    print("SELFTEST OK: clean 0; six planted defects each scored exactly their class; erratum excuses only a resolving correction")
+    print("SELFTEST OK: clean 0; six planted defects each scored exactly their class; fourteen tightened-class probes scored as declared; erratum excuses only a resolving, prefix-sharing correction")
     return 0
 
 
@@ -232,7 +310,10 @@ def main():
         sys.exit(self_test())
     if "--root" in args:
         root = Path(args[args.index("--root") + 1]).resolve()
-        lane = Path(args[args.index("--lane") + 1]).resolve() if "--lane" in args else Path(__file__).resolve().parents[1]
+        if "--lane" not in args:
+            print("usage: --lane <repo> is required with --root (SM5 resolves hashes in the lane repo, never in the tree)")
+            sys.exit(64)
+        lane = Path(args[args.index("--lane") + 1]).resolve()
         if not required(root):
             print("could-not-evaluate: TREE lacks corpus/README.md, corpus/QUALITY.md, SHONEN.md or SCORECARD.md")
             sys.exit(2)

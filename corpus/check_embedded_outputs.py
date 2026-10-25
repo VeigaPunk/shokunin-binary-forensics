@@ -72,11 +72,36 @@ def parse_blocks(text):
     return blocks
 
 
+def confined(argv, cwd):
+    """Round-70 hardening (sentinel F1): the declared command may only be
+    `python3 [-B] <relative script inside cwd> [args]` — no `-c`/`-m`, no absolute or
+    `..` script path, no symlink leaving the tree."""
+    rest = argv[1:]
+    while rest and rest[0] == "-B":
+        rest = rest[1:]
+    if not rest or rest[0].startswith("-"):
+        return False
+    return inside(rest[0], cwd)
+
+
+def inside(rel, cwd):
+    p = Path(rel)
+    if p.is_absolute() or ".." in p.parts:
+        return False
+    root = Path(cwd).resolve()
+    try:
+        return (root / p).resolve().relative_to(root) is not None and not (root / p).is_symlink()
+    except ValueError:
+        return False
+
+
 def run_cmd(cmd, cwd):
     argv = shlex.split(cmd)
     if not argv:
         return None, "", 2
     if argv[0] not in ("python3", "python", sys.executable):
+        return None, "", 2
+    if not confined(argv, cwd):
         return None, "", 2
     proc = subprocess.run([sys.executable, "-B", *argv[1:]], cwd=str(cwd),
                           capture_output=True, text=True, timeout=120)
@@ -95,14 +120,22 @@ def load_pins(entry_path):
     return json.loads(p.read_text(encoding="utf-8")).get(Path(entry_path).name, {})
 
 
-def apply_pin(cmd, pins, cwd):
+def apply_pin(cmd, pins, cwd, entry_text=None):
     """Return (command, problem). A pinned script is verified by digest before it
-    replaces the script argument; a digest mismatch is a problem, not a fallback."""
+    replaces the script argument; a digest mismatch is a problem, not a fallback.
+    Round-70 tightening (R70W1PinMut/PinCritic): the `use` path must stay inside cwd (no
+    absolute path, no `..`, no symlink) and, when entry_text is given, the entry's own text
+    must name the pinned digest in full — a pin is the entry declaring which script revision
+    printed its output, never a free assignment."""
     argv = shlex.split(cmd)
     idx = next((i for i, a in enumerate(argv[1:], 1) if not a.startswith("-")), None)
     if idx is None or argv[idx] not in pins:
         return cmd, None
     pin = pins[argv[idx]]
+    if not inside(pin["use"], cwd):
+        return cmd, f"{PIN_MARKER}: {pin['use']} (path escapes the tree)"
+    if entry_text is not None and pin["sha256"] not in entry_text:
+        return cmd, f"{PIN_MARKER}: {pin['use']} (entry text does not name the pinned digest)"
     target = Path(cwd) / pin["use"]
     if not target.is_file() or hashlib.sha256(target.read_bytes()).hexdigest() != pin["sha256"]:
         return cmd, f"{PIN_MARKER}: {pin['use']}"
@@ -125,8 +158,13 @@ def evaluate(entry_path, cwd):
     problems = []
     checked = 0
     pins = load_pins(entry_path)
+    used = set()
     for cmd, lines, lineno in blocks:
-        cmd, pin_problem = apply_pin(cmd, pins, cwd)
+        pargv = shlex.split(cmd)
+        pidx = next((i for i, a in enumerate(pargv[1:], 1) if not a.startswith("-")), None)
+        if pidx is not None and pargv[pidx] in pins:
+            used.add(pargv[pidx])
+        cmd, pin_problem = apply_pin(cmd, pins, cwd, text)
         if pin_problem:
             problems.append(f"drift entry:{lineno} {pin_problem}")
             continue
@@ -139,6 +177,9 @@ def evaluate(entry_path, cwd):
         stdout_set = set(stdout.splitlines())
         problems += drift(lines, stdout_set, lineno)
         checked += 1
+    for key in pins:
+        if key not in used:
+            problems.append(f"drift entry:0 unused pin for script argument {key}: no block of this entry runs it")
     return problems, checked
 
 
@@ -193,7 +234,21 @@ def _self_test(tmp):
         print("self-test: a tampered pinned script was accepted")
         print(PIN_MARKER + " not raised")
         sys.exit(1)
-    print("SELFTEST OK: clean exit 0, full-run exit 0, drifted caught, forged control fired, pinned script verified by digest")
+    old.write_text("print('old')\n", encoding="utf-8")
+    require(apply_pin("python3 -B reader.py --fact a", pins, tmp, "text naming " + pins["reader.py"]["sha256"])[1] is None,
+            "self-test: a pin whose digest the entry text names was refused")
+    _, pin_problem = apply_pin("python3 -B reader.py --fact a", pins, tmp, "text that names no digest")
+    require(pin_problem is not None and pin_problem.startswith(PIN_MARKER),
+            "self-test: a pin the entry text does not name was accepted")
+    (tmp / "link.py").symlink_to("/etc/hostname")
+    require(confined(["python3", "-B", "reader.py", "--fact", "a"], tmp)
+            and not confined(["python3", "-c", "print(1)"], tmp)
+            and not confined(["python3", "-B", "-m", "json.tool"], tmp)
+            and not confined(["python3", "-B", "/etc/passwd.py"], tmp)
+            and not confined(["python3", "-B", "../x.py"], tmp)
+            and not confined(["python3", "-B", "link.py"], tmp),
+            "self-test: command confinement accepted or refused the wrong spelling")
+    print("SELFTEST OK: clean exit 0, full-run exit 0, drifted caught, forged control fired, pinned script verified by digest and named by the entry, commands confined to relative scripts inside the tree")
 
 
 def main():

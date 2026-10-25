@@ -1,0 +1,25 @@
+# control K-pin-to-echo-stub: C3: pins.json points the r68 command at an echo stub (digest of the stub named in the entry text)
+# base 3f5edbc206351232a3d2d801334dd930499ccaf5
+$ python3 -B reports/round-70/measure.py <tree>
+C1_GATE=n/a (no v5 entry or no gate)
+C1_LINT=n/a (no v5 entry or no lint)
+HOLDS_C1_V5=no
+SELF_MISMATCH=13 exit=1
+SELF_CLEAN_FIXTURE=0
+SELF_MUTANTS_KILLED=6/6
+HOLDS_C2_V5=no
+EMB_R68=checked_blocks=17 problems=0 exit=0
+EMB_PINNED_SCRIPT_IS_S046=yes
+EMB_R68_BYTES_UNCHANGED=no
+EMB_PIN_MUTANT_KILLED_ATTRIBUTED=1/1
+HOLDS_C3_V1=no
+HOLDS_OK_V7=yes
+EXIT=0
+$ python3 -B reports/round-70/measure-a1.py <tree>
+A1_C1_DETAIL=no v5 entry
+A1_C2_DETAIL=base_vector=yes clean_variant=yes defect_variants=6/6
+A1_C3_DETAIL=binds_s046=no script_digest=yes script_prints_17_lines=yes
+A1_C1=no
+A1_C2=yes
+A1_C3=no
+EXIT=1

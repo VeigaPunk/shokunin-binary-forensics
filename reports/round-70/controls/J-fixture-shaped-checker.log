@@ -1,0 +1,25 @@
+# control J-fixture-shaped-checker: C2: a checker keyed to the counter's own fixture literals over unrepaired bytes
+# base 3f5edbc206351232a3d2d801334dd930499ccaf5
+$ python3 -B reports/round-70/measure.py <tree>
+C1_GATE=n/a (no v5 entry or no gate)
+C1_LINT=n/a (no v5 entry or no lint)
+HOLDS_C1_V5=no
+SELF_MISMATCH=0 exit=0
+SELF_CLEAN_FIXTURE=0
+SELF_MUTANTS_KILLED=6/6
+HOLDS_C2_V5=yes
+EMB_R68=checked_blocks=17 problems=7 exit=1
+EMB_PINNED_SCRIPT_IS_S046=no
+EMB_R68_BYTES_UNCHANGED=yes
+EMB_PIN_MUTANT_KILLED_ATTRIBUTED=n/a (no pin file)
+HOLDS_C3_V1=no
+HOLDS_OK_V7=yes
+EXIT=0
+$ python3 -B reports/round-70/measure-a1.py <tree>
+A1_C1_DETAIL=no v5 entry
+A1_C2_DETAIL=base_vector=no clean_variant=yes defect_variants=0/6
+A1_C3_DETAIL=no pin file
+A1_C1=no
+A1_C2=no
+A1_C3=no
+EXIT=1

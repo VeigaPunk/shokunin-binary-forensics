@@ -283,6 +283,29 @@ a rejected candidate keeps every byte except its `admission-status:` line.
 | write scope | read-only over the lane tree; runs the entry's declared commands (argv list, no shell, `python3` first token only); writes nothing outside its own temp dirs |
 | owner | revenger |
 | family note | deliberately OUTSIDE the `verify_*.py` replay family: the ten-verifier census and `HOLD_REPLAY=10/10` denominator are frozen and this gate does not join them (claims.md §C2) |
+| pin rule (round 70) | an entry named in `corpus/embedded_output_pins.json` re-derives each pinned script argument against a digest-pinned earlier revision of that script (`corpus/derive_axml_anchors_r68.py`, sha256 `bce497d6…`, the S046 row's digest), verified by sha256 before use; a mismatch is a finding whose text is `pinned historical script digest mismatch` (exit 1). The registered comparison line (`problems += drift(lines, stdout_set, lineno)`) is unchanged. Credited for: the round-68 retained candidate's embedded block re-deriving (`EMB_R68` problems 7 → 0 under `reports/round-70/measure.py`); NOT credited for any entry not named in the pin file, and a pin does not make an old script current |
+
+| field | value |
+|---|---|
+| name | `self_assessment_check` |
+| kind | gate (committed, re-runnable verdict script this lane owns; round 70 C2) |
+| entry command | `python3 -B corpus/self_assessment_check.py --root <tree> [--lane <repo>]` where `<tree>` holds `corpus/`, `SHONEN.md`, `SCORECARD.md`, `SKILL.md` (a `git archive` extraction, or the lane root) |
+| verdict map | `0` `SELF_MISMATCH=0` · `1` at least one of SM1-SM6 non-zero (each class is printed) · `2` could-not-evaluate (a required file is missing) · `64` usage |
+| self-test | `python3 -B corpus/self_assessment_check.py --self-test` — clean synthetic tree scores 0, one planted defect per class scores exactly that class, an appended `erratum: \`bad\` -> \`good\`` line excuses SM5 only when `good` resolves, an empty root is not evaluable. Attributed by the frozen counter's own independent fixtures (`SELF_MUTANTS_KILLED=6/6`, `reports/round-70/measure.py`), not only by its own self-test |
+| what a green run does NOT establish | that the self-assessment is true beyond the six named classes; SM5 recognises a hash only after `pre-registration`, `base`, `tip` or `commit`; SM3 recognises `N bytes` / `sha256 \`hex\`` quoted in a SHONEN box for a file the box names in backticks |
+| write scope | read-only over TREE; runs `git cat-file -e` in the lane repo; writes nothing outside its own temp dirs |
+| owner | revenger |
+
+| field | value |
+|---|---|
+| name | `lint_entry` |
+| kind | pre-flight lint (NOT a gate: a clean lint never substitutes a Q decision; round 70 C1) |
+| entry command | `python3 -B corpus/lint_entry.py --entry <knowledge.md> [--lane <repo>]` |
+| verdict map | `0` every count 0 · `1` findings (`LINT_QMAP`, `LINT_Q14`, `LINT_Q15`, `LINT_HEADER` each printed with line numbers) · `2` unreadable · `64` usage |
+| self-test | `python3 -B corpus/lint_entry.py --self-test` — clean entry 0, one planted defect per class scores exactly that class, an ellipsis-truncated run carrying a count is flagged |
+| what a clean run does NOT establish | Q14 is a one-hex-run-one-count-per-clause heuristic (digest lengths 40/64/128 and odd lengths excluded; counts above 32 ignored); Q15 sees only a token introduced by `commit`, `base`, `tip`, `since` or `at`; QMAP checks row presence and a non-empty decision cell, not that the basis is true |
+| write scope | read-only; reads the entry, `corpus/QUALITY.md`, and runs `git cat-file -e` |
+| owner | revenger |
 
 ## 7. Cited sources — existence-checked
 
