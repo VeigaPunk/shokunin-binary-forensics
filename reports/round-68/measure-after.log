@@ -99,13 +99,14 @@ HOLDS_OK_V6=yes
 EXIT=0
 
 # --- round-68 after receipt (pinned instrument; final measured tree) ---
-final measured commit: 14774a2c3cd3918364f211e08009f9f327b4c7b3 (the adjudication commit; its corpus/ tree is the measured surface and is identical in the follow-up receipt commit)
+final measured commit: 1c3460336d14e9bbe64778f826a07bdd996ce39b (the correction commit; its corpus/ tree is byte-identical to the earlier measured 14774a2c tree — 51894d153a6e69487da2a273680d014abd240f61 — and to the receipt commit's, verified with git rev-parse <commit>:corpus)
 base commit: f165908aaffcf14798de53405fe788986bd33ff9 (lane branch tip at declaration)
 counter: reports/round-68/measure.py sha256 0de4eb6f34bdb906fb69fdd173aaac9bcef629e6ff1d4c67f5ba8c91093f7766 (never edited after pre-registration; see R68CounterIntegrity)
-command: T=$(mktemp -d /tmp/rev-r68-after-XXXX)
-         git archive 14774a2c corpus | tar -x -C "$T"
+command: T=$(mktemp -d /tmp/rev-r68-after2-XXXX)
+         git archive 1c346033 corpus | tar -x -C "$T"
          cd / && TMPDIR=/tmp python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-68/measure.py "$T"
 counter exit code: 0 (the V1 holds hold; every V-label is yes)
+determinism: byte-identical stdout to the run on the 14774a2c tree (diff exit 0)
 C1 (calibration, C8) — improved: C7_MUTANT_KILLED_ATTRIBUTED 0/1 -> 1/1; C7_NEG_SPOOF_KILLED 1/1 and C7_NEG_SPOOF_KILLED_ATTRIBUTED 0/1 at both ends; C7_SELFTEST pass at both ends; C7_RED_ON_R65_CANDIDATE yes at both ends; HOLDS_OK_V5/V6 no -> yes.
-C2 (coverage, K) — FALSIFIED (honest stop): K_HELD_BACKED 8/14 both ends, C05_STATUS uncovered both ends, C05_SINGLE_V3 no both ends, HOLDS_C2_V3 no both ends. The wave's Q decisions on the landed v3 bytes are FAIL at Q04/Q05/Q07/Q11/Q13 (.ufo/waves/round-68/R68ReviewEntryQ0*.md, R68ReviewEntryQ11.md, R68ReviewEntryQ13.md); the kill rule was executed (README unchanged, entry marked rejected, every other byte kept).
+C2 (coverage, K) — FALSIFIED (honest stop): K_HELD_BACKED 8/14 both ends, C05_STATUS uncovered both ends, C05_SINGLE_V3 no both ends, HOLDS_C2_V3 no both ends. The wave's Q decisions on the landed v3 bytes are FAIL at Q04/Q05/Q07/Q08(under Q11)/Q11/Q13 (.ufo/waves/round-68/R68ReviewEntryQ04.md, Q05, Q07, Q08, Q11, Q13); the kill rule was executed (README unchanged, entry marked rejected, every other byte kept).
 holds: HOLD_CALIBRATION 4/4, HOLD_REPLAY 10/10, FRESH_ROWS 18/18, F_COVERAGE 5/8, README_TOKEN_LEGEND_MISMATCH 0, STRICT_REJECT_WINDOW_SELFTEST pass, C2/C3/C4/C5 2/2 each, C6 4/4 — no prior hold regressed.
