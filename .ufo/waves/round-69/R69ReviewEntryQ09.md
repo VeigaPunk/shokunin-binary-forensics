@@ -159,6 +159,16 @@ $ python3 -B corpus/fixtures/apk-r65/readout.py --fact 'member[META-INF/MANIFEST
 {"cd_index": 2, "compressed_size": 69, "crc32": "e948d738", …}   (present verbatim in the full stdout)
 ```
 
+## 1.6 Third-party re-derivation of every embedded block (registered gate)
+
+```
+$ python3 -B corpus/check_embedded_outputs.py --entry corpus/knowledge/round-69-apk-axml-byte-evidence.md
+checked_blocks=17 problems=0
+exit=0
+```
+
+The registered gate re-runs each `$ ` command in the entry and requires every embedded output line to appear verbatim in that command's stdout (`parse_blocks:57-65`, `run_cmd:72-80`, `drift:83-85`, membership in `set(stdout.splitlines())`). Exit 0 over 17 blocks — the 15 per-item fact blocks plus the full-stdout block and the derivation block — is an independent machine check, beyond my hand diff in §1.5, that the entry's saved outputs are byte-preserved against the commands that produce them. Q09 note: this gate checks reproduction, not provenance; the entry nowhere cites it as evidence of origin, and the digest it would re-derive is the same `507d79f8…` stream verified in §1.2.
+
 # 2. Origin / completeness / authenticity sweep
 
 Every sentence in the entry that carries a digest or a receipt, and what it is used to establish:
