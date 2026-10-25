@@ -1,0 +1,906 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+<script type="text/javascript">
+// Executes the function when DOM will be loaded fully
+$(document).ready(function () {	
+	// hover property will help us set the events for mouse enter and mouse leave
+	$('.navigation li').hover(
+		// When mouse enters the .navigation element
+		function () {
+			//Fade in the navigation submenu
+			$('dl', this).fadeIn(); 	// fadeIn will show the sub cat menu
+		}, 
+		// When mouse leaves the .navigation element
+		function () {
+			//Fade out the navigation submenu
+			$('dl', this).fadeOut();	 // fadeOut will hide the sub cat menu		
+		}
+	);
+});
+	</script>
+	<script>
+function addCookie(url,title)
+{
+ if (document.all)
+    {
+       window.external.addFavorite(url,title);
+    }
+    else if (window.sidebar)
+    {
+       window.sidebar.addPanel(title, url, "");
+ }
+}
+
+function setHomepage(homeurl)
+{
+ if (document.all)
+    {
+        document.body.style.behavior='url(#default#homepage)';
+  document.body.setHomePage(homeurl);
+ 
+    }
+    else if (window.sidebar)
+    {
+    if(window.netscape)
+    {
+         try
+   {  
+            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");  
+         }  
+         catch (e)  
+         {  
+    alert( "该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true" );  
+         }
+    } 
+    var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components. interfaces.nsIPrefBranch);
+    prefs.setCharPref('browser.startup.homepage',homeurl);
+ }
+} 
+</script>
+
+
+</head>
+<script type="text/javascript" src="../js/checkform.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<LINK href="../css/index_style.css" rel="stylesheet" type="text/css">
+<LINK href="../css/Erji_style.css" type=text/css rel=stylesheet>
+<link href="../css/front_table_css.css" rel="stylesheet" type="text/css">
+<body>
+<div class="header">
+
+<div class="banner" style="background:url();">	
+
+<!--
+<div class="zz_logo"><img src="" width="84" height="84" /></div>
+
+	-->		
+	
+           
+		   
+			
+     </div>
+     <div class="zznav">
+            <ul class="zznav_ul">
+               <li style="border:none;" class="active"><A href="..//jos/home">主页</A></li><li><A href="../first_menu.aspx?parent_id=20071206155225001">期刊介绍</A></li><li><A href="../first_menu.aspx?parent_id=20071206155306001">编委会</A></li><li><A href="../first_menu.aspx?parent_id=20210909105053001">服务介绍</A></li><li><A href="../first_menu.aspx?parent_id=20210909102616001">投稿指南</A></li><li><A href="../first_menu.aspx?parent_id=20171218034556834">出版道德</A></li><li><A href="../first_menu.aspx?parent_id=20071206155334001">联系我们</A></li><li><A href="..//jos/action/toc_alert">E-mail Alert</A></li><li><A href="../https://www.jos.org.cn/josen/home">English</A></li>
+            </ul>
+     </div>
+</div>
+<div class="main">
+
+
+
+<span id="ErrorMessage"></span>
+<table cellspacing="1" cellpadding="4" align="center" id="QueryUI" class="front_table">
+  <tr> 
+    <td height="420" valign="top" align="center" style="margin-right:5px;">
+      <table width="100%" border="0"  cellpadding="0" cellspacing="0">
+      <tr> 
+      <td align=left vAlign=top style="margin-right:5px;"> 
+	   <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td width="100%">
+            <table border="0" cellpadding="4" cellspacing="4" width="100%">
+				<tr>
+				<td align="left">
+					<table width="100%">
+						<tr><td style="font-size:14px;" valign="top" nowrap>引用本文:</td><td></td></tr>
+						<tr><td style="font-size:14px;" valign="top" nowrap></td><td></td></tr>
+					</table>
+				</td> 
+				</tr>
+				<tr>
+					<td width="100%" height="1" style="border-bottom:1px dashed #666;padding:0px" > </td>
+			    </tr>
+				<tr>
+					<td style="padding-left:none;border-bottom:1px solid #666">		  
+					  <table style="float:left;text-align:left"> 
+						   <tr>
+								<td width="100%"  style="text-align: -webkit-center; font-size:14px;"><a href="javascript:void(0)" onclick="preview()" id="ziti">【打印本页】</a>&nbsp;&nbsp;
+								
+								<a href="create_pdf.aspx?file_no=5600&flag=1&year_id=&quarter_id=">【下载PDF全文】</a>&nbsp;&nbsp;
+								
+									<a href="appraise.aspx?file_no=5600&journal_id=jos">【<span id="ViewAppraiseLabel">查看/发表评论</span>】</a>&nbsp;&nbsp;<a href="article_export.aspx?file_no=5600&flag=1&export_type=EndNote">【EndNote】</a>  
+									&nbsp;&nbsp;<a href="article_export.aspx?file_no=5600&flag=1&export_type=ris">【RefMan】</a>  
+									&nbsp;&nbsp;<a href="article_export.aspx?file_no=5600&flag=1&export_type=bibtex">【BibTex】</a>  
+								</td>
+							</tr>
+							<tr>
+								<td align="center" height="30">
+								<table style="width:98%">
+									<tr>	
+										
+										<td style="font-size:14px;" align="center">
+										<a href="view_abstract.aspx?file_no=&flag=1">←前一篇</a>|<a href="view_abstract.aspx?file_no=&flag=1">后一篇→ </a>
+										</td>	
+										
+										<td style="font-size:14px;" align="center"><a href="issue_browser.aspx" target="_blank">过刊浏览</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="simple_advance_search.aspx">高级检索</a></td>
+									</tr>
+								</table>
+							</td>
+					   </tr>
+					</table>
+			   </td>
+			 </tr>           
+			<tr>
+			<td>
+				<table  width="100%" style=" font-size:14px; background: rgba(253, 253, 253, 0.98);">
+				 <tr>
+			<td width="100%" height="30" style=" font-size:14px;">本文已被：浏览<span id="ClickNum"></span>次&nbsp;&nbsp;&nbsp;下载<span id="PDFClickNum"></span>次</td>
+			 
+                <td rowspan="5" align="center">&nbsp;</td>
+                
+			</tr>
+
+			 <tr>
+                <td width="100%" height="20" style=" font-size:14px;">
+				<!-- JiaThis Button BEGIN --><div id="ckepop">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_weixin">微信</a> 
+<a href="http://www.jiathis.com/share"  class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a> </div> 
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1" charset="utf-8"></script>
+</div> <!-- JiaThis Button END -->
+
+				<div class="font_s"><b><font color="#FF6600">字体:</font></b><a href="#" class="fontSizePlus">加大+</a>|<a href="#" class="fontReset">默认</a>|<a href="#" class="fontSizeMinus">缩小-</a></div>
+
+
+				</td>
+           </tr>
+           <!--标题-->
+			<tr>
+				<td width="100%" height="30" align="center" style=" font-size:24px;"><font><b><span id="FileTitle"></span></b></font></td>				
+ 
+			</tr>
+           <!--作者-->
+			<tr>
+                <td width="100%" align="center" height="20" style=" font-size:14px;">
+				
+								
+				</td>				
+           </tr>
+		  
+           <!--单位-->
+		   
+</table>
+		   </td>
+</tr><div ID="Content">
+			
+			  <tr>
+				<td width="100%" height="20" align="left"><span id="Author"></span></td>
+			  </tr>
+			
+             <tr>			 
+		     <td width="100%" class="unnamed3" style=" font-size:14px;"><b><span id="AbstractLabel">摘要</span>:</b></td>
+	         </tr>
+			 <tr>
+		     <td width="100%" style="font-size:14px; text-indent: 30px; line-height: 22px; word-break:break-all;Width:fixed" class="unnamed3 intro"></td>
+	         </tr>
+			
+	         <tr>
+				<td width="100%" height="20" style=" font-size:14px;"><b><span id="KeyWordLabel">关键词</span>:</b>&nbsp;&nbsp;<span id="KeyWord"></span></td>
+	         </tr>
+			 <tr>
+                <td width="100%" height="20" style=" font-size:14px;" class="intro"><b>DOI：</b><span id="DOI"></span></td>
+           </tr>
+            <tr>
+                <td width="100%" style=" font-size:14px; line-height:20px;" class="intro"><b><span id="ClcNumberLabel">分类号</span>:</b><span id="ClcNumber"></span></td>
+             </tr>
+			 
+
+             <tr>
+                <td width="100%" style=" font-size:14px; line-height:20px;" class="intro"><b>基金项目:</b><span id="FundProject"></span></td>
+             </tr>
+
+          <tr><td style="height:25px"></td></tr>
+           <tr>
+                <td width="100%" align="center" style="font-family:times new roman "class="intro" ><font><b><span id="EnTitle"></span></b></font></td>
+           </tr>
+           <!--作者-->
+			<tr>
+                <td width="100%" align="center" style="font-family:times new roman; font-size:14px;" class="intro">
+				
+				
+						
+				
+				</td>
+           </tr>
+           <!--单位-->
+		   
+
+             <tr>
+                <td width="100%" class="unnamed3" style="font-size:14px; font-family:times new roman" class="intro"><b><span id="EnAbstractLabel">Abstract</span>:</b></td>
+              </tr>
+			<tr>
+                <td width="100%" class="unnamed3 intro" style="font-size:14px; text-indent: 30px; line-height: 22px; font-size:14px; font-family:times new roman"></td>
+            </tr>
+	       <tr>
+                <td width="100%" height="20" style="font-size:14px; font-family:times new roman" class="intro"><b><span id="EnKeyWordLabel">Key words</span>:&nbsp;&nbsp;</b><span id="EnKeyWord"></span></td>
+           </tr>
+ </div>
+             <tr><td style="border-bottom:1px dashed #666"></td></tr>
+	       
+            </table>
+          </td>
+        
+        </tr>
+      </table>
+<style>
+#KeyWord a{ color:#f00;}
+#EnTitle{ font-size:23px;}
+#ckepop{ font-size: 13px;width: 200px;float:right ;line-height: 16px !important;}
+.font_s{ float:left ; width:214px; padding-left: 10px;}
+.font_s .fontSizePlus,.fontReset,.fontSizeMinus{ padding-left:10px;  padding-right:10px; }
+</style>
+<table width="100%" align="center">
+<tr><td  align="left">
+<div id="ReferenceList">
+</div>
+</td></tr>
+<tr><td  align="left">
+<div id="WasReferencedList">
+</div>
+</td></tr>
+
+<tr><td align="left">
+<div id="RelateArticleList">
+</div>
+</td></tr>
+
+</table>
+  </td>    
+</table> 
+</td>  
+</tr>
+ <tr><td align="center"></td></tr>
+</table>  
+<!--endprint-->
+<script type="text/javascript">
+$(document).ready(function () {
+
+	//min font size
+	var min=9; 	
+
+	//max font size
+	var max=20;	
+	
+	//grab the default font size
+	var reset = $('td').css('fontSize'); 
+	
+	//font resize these elements
+	var elm = $('td.intro, p.ending');  
+	
+	//set the default font size and remove px from the value
+	var size = str_replace(reset, 'px', ''); 
+	
+	//Increase font size
+	$('a.fontSizePlus').click(function() {
+		
+		//if the font size is lower or equal than the max value
+		if (size<=max) {
+			
+			//increase the size
+			size++;
+			
+			//set the font size
+			elm.css({'fontSize' : size});
+		}
+		
+		//cancel a click event
+		return false;	
+		
+	});
+
+	$('a.fontSizeMinus').click(function() {
+
+		//if the font size is greater or equal than min value
+		if (size>=min) {
+			
+			//decrease the size
+			size--;
+			
+			//set the font size
+			elm.css({'fontSize' : size});
+		}
+		
+		//cancel a click event
+		return false;	
+		
+	});
+	
+	//Reset the font size
+	$('a.fontReset').click(function () {
+		
+		//set the default font size	
+		 elm.css({'fontSize' : reset});		
+	});
+		
+});
+
+//A string replace function
+function str_replace(haystack, needle, replacement) {
+	var temp = haystack.split(needle);
+	return temp.join(replacement);
+}
+</script>
+
+
+
+
+
+
+<p class="float"></p>
+</div>
+<div class="footer">
+<script src="js/liulanqitishi.js" type="text/javascript" charset="utf-8"></script>
+<script>liuqitis();</script><br/>
+版权所有：欢迎访问软件学报网站！<br />
+地址：北京市海淀区中关村南四街4号  邮政编码：100190<br />
+电话：010-62562563 传真：010-62562533  Email：jos@iscas.ac.cn<br />
+技术支持：<a href="http://www.e-tiller.com" target="_blank">北京勤云科技发展有限公司
+<div style="width:300px;margin:0 auto; padding:20px 0;">
+		 		<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51010702000686" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="../ext_images/batb.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">川公网安备 51010702000686号</p></a>
+		 	</div> 
+</div>
+
+
+
+<div class="go-top dn" id="go-top">
+    <a href="javascript:;" class="ta uc-2vm"></a>
+	<div class="uc-2vm-pop dn">
+			
+	</div>
+    <a href="#" target="_blank" class="ta feedback"></a>
+    <a href="javascript:;" class="ta go"></a>
+</div>
+
+<script>
+$(function(){
+	$(window).on('scroll',function(){
+		var st = $(document).scrollTop();
+		if( st>0 ){
+			if( $('#main-container').length != 0  ){
+				var w = $(window).width(),mw = $('#main-container').width();
+				if( (w-mw)/2 > 70 )
+					$('#go-top').css({'left':(w-mw)/2+mw+20});
+				else{
+					$('#go-top').css({'left':'auto'});
+				}
+			}
+			$('#go-top').fadeIn(function(){
+				$(this).removeClass('dn');
+			});
+		}else{
+			$('#go-top').fadeOut(function(){
+				$(this).addClass('dn');
+			});
+		}	
+	});
+	$('#go-top .go').on('click',function(){
+		$('html,body').animate({'scrollTop':0},500);
+	});
+
+	$('#go-top .uc-2vm').hover(function(){
+		$('#go-top .uc-2vm-pop').removeClass('dn');
+	},function(){
+		$('#go-top .uc-2vm-pop').addClass('dn');
+	});
+});
+</script>
+
+</body>
+</html>
+
+<script type="text/javascript">function copyText(obj)  
+{
+var rng = document.body.createTextRange();
+rng.moveToElementText(obj);
+rng.scrollIntoView();
+rng.select();
+rng.execCommand("Copy");
+rng.collapse(false);
+alert("复制成功!");
+}
+</script>
+<!--打印-->
+<script language="javascript">
+function preview()
+{
+  $("td").css("font-size","16px");
+  $("font").css("font-size","16px");
+  $("div").css("font-size","16px");
+  $("#en").css("padding-left","74px");
+   $("#yywb").css("width","80px");
+ bdhtml=window.document.body.innerHTML;
+ sprnstr="<!--startprint-->";
+ eprnstr="<!--endprint-->";
+ prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17);
+ prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));
+ window.document.body.innerHTML=prnhtml;
+ window.print();
+ //prnform.htext.value=prnhtml;
+ //prnform.submit();
+ //alert(prnhtml);
+}
+</script>
+<script language="javascript" src="search_reference.aspx?ct=&et=&pcid=&cid=&jid=&yid=&aid=&vid=&iid=&sid=&eid=&fileno=5600&flag=1&is_more=0"></script>
+
+
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+<script type="text/javascript">
+// Executes the function when DOM will be loaded fully
+$(document).ready(function () {	
+	// hover property will help us set the events for mouse enter and mouse leave
+	$('.navigation li').hover(
+		// When mouse enters the .navigation element
+		function () {
+			//Fade in the navigation submenu
+			$('dl', this).fadeIn(); 	// fadeIn will show the sub cat menu
+		}, 
+		// When mouse leaves the .navigation element
+		function () {
+			//Fade out the navigation submenu
+			$('dl', this).fadeOut();	 // fadeOut will hide the sub cat menu		
+		}
+	);
+});
+	</script>
+	<script>
+function addCookie(url,title)
+{
+ if (document.all)
+    {
+       window.external.addFavorite(url,title);
+    }
+    else if (window.sidebar)
+    {
+       window.sidebar.addPanel(title, url, "");
+ }
+}
+
+function setHomepage(homeurl)
+{
+ if (document.all)
+    {
+        document.body.style.behavior='url(#default#homepage)';
+  document.body.setHomePage(homeurl);
+ 
+    }
+    else if (window.sidebar)
+    {
+    if(window.netscape)
+    {
+         try
+   {  
+            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");  
+         }  
+         catch (e)  
+         {  
+    alert( "该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true" );  
+         }
+    } 
+    var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components. interfaces.nsIPrefBranch);
+    prefs.setCharPref('browser.startup.homepage',homeurl);
+ }
+} 
+</script>
+
+
+</head>
+<script type="text/javascript" src="../js/checkform.js"></script>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<LINK href="../css/index_style.css" rel="stylesheet" type="text/css">
+<LINK href="../css/Erji_style.css" type=text/css rel=stylesheet>
+<link href="../css/front_table_css.css" rel="stylesheet" type="text/css">
+<body>
+<div class="header">
+
+<div class="banner" style="background:url();">	
+
+<!--
+<div class="zz_logo"><img src="" width="84" height="84" /></div>
+
+	-->		
+	
+           
+		   
+			
+     </div>
+     <div class="zznav">
+            <ul class="zznav_ul">
+               <li style="border:none;" class="active"><A href="..//jos/home">主页</A></li><li><A href="../first_menu.aspx?parent_id=20071206155225001">期刊介绍</A></li><li><A href="../first_menu.aspx?parent_id=20071206155306001">编委会</A></li><li><A href="../first_menu.aspx?parent_id=20210909105053001">服务介绍</A></li><li><A href="../first_menu.aspx?parent_id=20210909102616001">投稿指南</A></li><li><A href="../first_menu.aspx?parent_id=20171218034556834">出版道德</A></li><li><A href="../first_menu.aspx?parent_id=20071206155334001">联系我们</A></li><li><A href="..//jos/action/toc_alert">E-mail Alert</A></li><li><A href="../https://www.jos.org.cn/josen/home">English</A></li>
+            </ul>
+     </div>
+</div>
+<div class="main">
+
+
+
+<span id="ErrorMessage"></span>
+<table cellspacing="1" cellpadding="4" align="center" id="QueryUI" class="front_table">
+  <tr> 
+    <td height="420" valign="top" align="center" style="margin-right:5px;">
+      <table width="100%" border="0"  cellpadding="0" cellspacing="0">
+      <tr> 
+      <td align=left vAlign=top style="margin-right:5px;"> 
+	   <table border="0" cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+          <td width="100%">
+            <table border="0" cellpadding="4" cellspacing="4" width="100%">
+				<tr>
+				<td align="left">
+					<table width="100%">
+						<tr><td style="font-size:14px;" valign="top" nowrap>引用本文:</td><td></td></tr>
+						<tr><td style="font-size:14px;" valign="top" nowrap></td><td></td></tr>
+					</table>
+				</td> 
+				</tr>
+				<tr>
+					<td width="100%" height="1" style="border-bottom:1px dashed #666;padding:0px" > </td>
+			    </tr>
+				<tr>
+					<td style="padding-left:none;border-bottom:1px solid #666">		  
+					  <table style="float:left;text-align:left"> 
+						   <tr>
+								<td width="100%"  style="text-align: -webkit-center; font-size:14px;"><a href="javascript:void(0)" onclick="preview()" id="ziti">【打印本页】</a>&nbsp;&nbsp;
+								
+								<a href="create_pdf.aspx?file_no=5600&flag=1&year_id=&quarter_id=">【下载PDF全文】</a>&nbsp;&nbsp;
+								
+									<a href="appraise.aspx?file_no=5600&journal_id=jos">【<span id="ViewAppraiseLabel">查看/发表评论</span>】</a>&nbsp;&nbsp;<a href="article_export.aspx?file_no=5600&flag=1&export_type=EndNote">【EndNote】</a>  
+									&nbsp;&nbsp;<a href="article_export.aspx?file_no=5600&flag=1&export_type=ris">【RefMan】</a>  
+									&nbsp;&nbsp;<a href="article_export.aspx?file_no=5600&flag=1&export_type=bibtex">【BibTex】</a>  
+								</td>
+							</tr>
+							<tr>
+								<td align="center" height="30">
+								<table style="width:98%">
+									<tr>	
+										
+										<td style="font-size:14px;" align="center">
+										<a href="view_abstract.aspx?file_no=&flag=1">←前一篇</a>|<a href="view_abstract.aspx?file_no=&flag=1">后一篇→ </a>
+										</td>	
+										
+										<td style="font-size:14px;" align="center"><a href="issue_browser.aspx" target="_blank">过刊浏览</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="simple_advance_search.aspx">高级检索</a></td>
+									</tr>
+								</table>
+							</td>
+					   </tr>
+					</table>
+			   </td>
+			 </tr>           
+			<tr>
+			<td>
+				<table  width="100%" style=" font-size:14px; background: rgba(253, 253, 253, 0.98);">
+				 <tr>
+			<td width="100%" height="30" style=" font-size:14px;">本文已被：浏览<span id="ClickNum"></span>次&nbsp;&nbsp;&nbsp;下载<span id="PDFClickNum"></span>次</td>
+			 
+                <td rowspan="5" align="center">&nbsp;</td>
+                
+			</tr>
+
+			 <tr>
+                <td width="100%" height="20" style=" font-size:14px;">
+				<!-- JiaThis Button BEGIN --><div id="ckepop">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_weixin">微信</a> 
+<a href="http://www.jiathis.com/share"  class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a> </div> 
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1" charset="utf-8"></script>
+</div> <!-- JiaThis Button END -->
+
+				<div class="font_s"><b><font color="#FF6600">字体:</font></b><a href="#" class="fontSizePlus">加大+</a>|<a href="#" class="fontReset">默认</a>|<a href="#" class="fontSizeMinus">缩小-</a></div>
+
+
+				</td>
+           </tr>
+           <!--标题-->
+			<tr>
+				<td width="100%" height="30" align="center" style=" font-size:24px;"><font><b><span id="FileTitle"></span></b></font></td>				
+ 
+			</tr>
+           <!--作者-->
+			<tr>
+                <td width="100%" align="center" height="20" style=" font-size:14px;">
+				
+								
+				</td>				
+           </tr>
+		  
+           <!--单位-->
+		   
+</table>
+		   </td>
+</tr><div ID="Content">
+			
+			  <tr>
+				<td width="100%" height="20" align="left"><span id="Author"></span></td>
+			  </tr>
+			
+             <tr>			 
+		     <td width="100%" class="unnamed3" style=" font-size:14px;"><b><span id="AbstractLabel">摘要</span>:</b></td>
+	         </tr>
+			 <tr>
+		     <td width="100%" style="font-size:14px; text-indent: 30px; line-height: 22px; word-break:break-all;Width:fixed" class="unnamed3 intro"></td>
+	         </tr>
+			
+	         <tr>
+				<td width="100%" height="20" style=" font-size:14px;"><b><span id="KeyWordLabel">关键词</span>:</b>&nbsp;&nbsp;<span id="KeyWord"></span></td>
+	         </tr>
+			 <tr>
+                <td width="100%" height="20" style=" font-size:14px;" class="intro"><b>DOI：</b><span id="DOI"></span></td>
+           </tr>
+            <tr>
+                <td width="100%" style=" font-size:14px; line-height:20px;" class="intro"><b><span id="ClcNumberLabel">分类号</span>:</b><span id="ClcNumber"></span></td>
+             </tr>
+			 
+
+             <tr>
+                <td width="100%" style=" font-size:14px; line-height:20px;" class="intro"><b>基金项目:</b><span id="FundProject"></span></td>
+             </tr>
+
+          <tr><td style="height:25px"></td></tr>
+           <tr>
+                <td width="100%" align="center" style="font-family:times new roman "class="intro" ><font><b><span id="EnTitle"></span></b></font></td>
+           </tr>
+           <!--作者-->
+			<tr>
+                <td width="100%" align="center" style="font-family:times new roman; font-size:14px;" class="intro">
+				
+				
+						
+				
+				</td>
+           </tr>
+           <!--单位-->
+		   
+
+             <tr>
+                <td width="100%" class="unnamed3" style="font-size:14px; font-family:times new roman" class="intro"><b><span id="EnAbstractLabel">Abstract</span>:</b></td>
+              </tr>
+			<tr>
+                <td width="100%" class="unnamed3 intro" style="font-size:14px; text-indent: 30px; line-height: 22px; font-size:14px; font-family:times new roman"></td>
+            </tr>
+	       <tr>
+                <td width="100%" height="20" style="font-size:14px; font-family:times new roman" class="intro"><b><span id="EnKeyWordLabel">Key words</span>:&nbsp;&nbsp;</b><span id="EnKeyWord"></span></td>
+           </tr>
+ </div>
+             <tr><td style="border-bottom:1px dashed #666"></td></tr>
+	       
+            </table>
+          </td>
+        
+        </tr>
+      </table>
+<style>
+#KeyWord a{ color:#f00;}
+#EnTitle{ font-size:23px;}
+#ckepop{ font-size: 13px;width: 200px;float:right ;line-height: 16px !important;}
+.font_s{ float:left ; width:214px; padding-left: 10px;}
+.font_s .fontSizePlus,.fontReset,.fontSizeMinus{ padding-left:10px;  padding-right:10px; }
+</style>
+<table width="100%" align="center">
+<tr><td  align="left">
+<div id="ReferenceList">
+</div>
+</td></tr>
+<tr><td  align="left">
+<div id="WasReferencedList">
+</div>
+</td></tr>
+
+<tr><td align="left">
+<div id="RelateArticleList">
+</div>
+</td></tr>
+
+</table>
+  </td>    
+</table> 
+</td>  
+</tr>
+ <tr><td align="center"></td></tr>
+</table>  
+<!--endprint-->
+<script type="text/javascript">
+$(document).ready(function () {
+
+	//min font size
+	var min=9; 	
+
+	//max font size
+	var max=20;	
+	
+	//grab the default font size
+	var reset = $('td').css('fontSize'); 
+	
+	//font resize these elements
+	var elm = $('td.intro, p.ending');  
+	
+	//set the default font size and remove px from the value
+	var size = str_replace(reset, 'px', ''); 
+	
+	//Increase font size
+	$('a.fontSizePlus').click(function() {
+		
+		//if the font size is lower or equal than the max value
+		if (size<=max) {
+			
+			//increase the size
+			size++;
+			
+			//set the font size
+			elm.css({'fontSize' : size});
+		}
+		
+		//cancel a click event
+		return false;	
+		
+	});
+
+	$('a.fontSizeMinus').click(function() {
+
+		//if the font size is greater or equal than min value
+		if (size>=min) {
+			
+			//decrease the size
+			size--;
+			
+			//set the font size
+			elm.css({'fontSize' : size});
+		}
+		
+		//cancel a click event
+		return false;	
+		
+	});
+	
+	//Reset the font size
+	$('a.fontReset').click(function () {
+		
+		//set the default font size	
+		 elm.css({'fontSize' : reset});		
+	});
+		
+});
+
+//A string replace function
+function str_replace(haystack, needle, replacement) {
+	var temp = haystack.split(needle);
+	return temp.join(replacement);
+}
+</script>
+
+
+
+
+
+
+<p class="float"></p>
+</div>
+<div class="footer">
+<script src="js/liulanqitishi.js" type="text/javascript" charset="utf-8"></script>
+<script>liuqitis();</script><br/>
+版权所有：欢迎访问软件学报网站！<br />
+地址：北京市海淀区中关村南四街4号  邮政编码：100190<br />
+电话：010-62562563 传真：010-62562533  Email：jos@iscas.ac.cn<br />
+技术支持：<a href="http://www.e-tiller.com" target="_blank">北京勤云科技发展有限公司
+<div style="width:300px;margin:0 auto; padding:20px 0;">
+		 		<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51010702000686" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="../ext_images/batb.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">川公网安备 51010702000686号</p></a>
+		 	</div> 
+</div>
+
+
+
+<div class="go-top dn" id="go-top">
+    <a href="javascript:;" class="ta uc-2vm"></a>
+	<div class="uc-2vm-pop dn">
+			
+	</div>
+    <a href="#" target="_blank" class="ta feedback"></a>
+    <a href="javascript:;" class="ta go"></a>
+</div>
+
+<script>
+$(function(){
+	$(window).on('scroll',function(){
+		var st = $(document).scrollTop();
+		if( st>0 ){
+			if( $('#main-container').length != 0  ){
+				var w = $(window).width(),mw = $('#main-container').width();
+				if( (w-mw)/2 > 70 )
+					$('#go-top').css({'left':(w-mw)/2+mw+20});
+				else{
+					$('#go-top').css({'left':'auto'});
+				}
+			}
+			$('#go-top').fadeIn(function(){
+				$(this).removeClass('dn');
+			});
+		}else{
+			$('#go-top').fadeOut(function(){
+				$(this).addClass('dn');
+			});
+		}	
+	});
+	$('#go-top .go').on('click',function(){
+		$('html,body').animate({'scrollTop':0},500);
+	});
+
+	$('#go-top .uc-2vm').hover(function(){
+		$('#go-top .uc-2vm-pop').removeClass('dn');
+	},function(){
+		$('#go-top .uc-2vm-pop').addClass('dn');
+	});
+});
+</script>
+
+</body>
+</html>
+
+<script type="text/javascript">function copyText(obj)  
+{
+var rng = document.body.createTextRange();
+rng.moveToElementText(obj);
+rng.scrollIntoView();
+rng.select();
+rng.execCommand("Copy");
+rng.collapse(false);
+alert("复制成功!");
+}
+</script>
+<!--打印-->
+<script language="javascript">
+function preview()
+{
+  $("td").css("font-size","16px");
+  $("font").css("font-size","16px");
+  $("div").css("font-size","16px");
+  $("#en").css("padding-left","74px");
+   $("#yywb").css("width","80px");
+ bdhtml=window.document.body.innerHTML;
+ sprnstr="<!--startprint-->";
+ eprnstr="<!--endprint-->";
+ prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17);
+ prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));
+ window.document.body.innerHTML=prnhtml;
+ window.print();
+ //prnform.htext.value=prnhtml;
+ //prnform.submit();
+ //alert(prnhtml);
+}
+</script>
+<script language="javascript" src="search_reference.aspx?ct=&et=&pcid=&cid=&jid=&yid=&aid=&vid=&iid=&sid=&eid=&fileno=5600&flag=1&is_more=0"></script>

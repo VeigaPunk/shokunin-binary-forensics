@@ -1,0 +1,11 @@
+URL requested : https://jsac.jpcert.or.jp/archive/2026/pdf/JSAC2026_workshop3_jp.pdf
+final URL     : https://jsac.jpcert.or.jp/archive/2026/pdf/JSAC2026_workshop3_jp.pdf (curl -sL --max-redirs 15)
+HTTP          : 200, content-type application/pdf
+size          : 6015111 bytes (>2MB: raw bytes removed per brief; sha256 retained)
+sha256        : 6a06c80e952310dd1cf026f329e71c4b784efa50d14ff9159b53914b0430ca57
+file(1)       : PDF document, version 1.7, 100 page(s)
+fetched at    : 2026-10-25T00:33:29Z
+renderer      : pdftotext -enc UTF-8 source.bin extracted.txt (poppler at /usr/bin/pdftotext)
+rendered text  : extracted.txt (pdftotext -enc UTF-8; 36140 bytes; sha256 dc8cc72474f51b1fffff9e220144b8c0ff859fa9920cac5fa86e6c3a54a65ce1)
+excerpt        : excerpt20.txt (20-line excerpt of rendered text, lines 175-194)
+fetches        : 3 total (initial + 2 verification re-fetches); size and sha256 identical on all three

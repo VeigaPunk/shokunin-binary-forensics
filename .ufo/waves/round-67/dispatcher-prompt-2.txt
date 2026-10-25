@@ -1,0 +1,14 @@
+You are a wave dispatcher session (attempt 2). Attempt 1 failed: the dispatcher exited right after spawning and the runtime disposed all 64 child jobs. Your job fixes that: spawn AND stay alive until the seats settle.
+
+Steps, in order:
+
+1. Load the payload in eval: `json.load("/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-67/taskCall.json")` — it holds {"context": str, "tasks": [{name, agent, task} x64]} (validator-rendered, policy-v2-validated; do not modify, summarize, or re-render any byte of it).
+2. Issue EXACTLY ONE task call: `await tool.task({"context": taskCall["context"], "tasks": taskCall["tasks"]})` — all 64 entries verbatim, same order. Never split into multiple task calls.
+3. Then DO NOT STOP. Poll until settled, in a loop (up to 45 minutes): each iteration —
+   a. `import time; time.sleep(60)` (or `await new Promise(r=>setTimeout(r,60000))` inside eval) to hold the session open;
+   b. count report files: `len(glob.glob("/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-67/R67*.md"))`;
+   c. if your runtime exposes a jobs listing (`await tool.jobs(...)` or similar), record each job's status; if a job reports an error, capture its error text;
+   d. stop polling when the count reaches 64, OR when 45 minutes have elapsed, OR when two consecutive polls 3 minutes apart add no new reports after minute 25.
+4. Print a final JSON object: {"reports": <count>, "settled": <bool>, "jobs_with_errors": {name: errorText}, "elapsed_min": <n>} and only then stop. Never do any seat's task yourself; never message the lanes; never spawn replacements.
+
+If the task call is refused, print the refusal error text verbatim and stop — never retry, never split.

@@ -1,0 +1,1770 @@
+TLP:CLEAR
+
+Re:birth the fidb:
+Reverse Engineering the .NET
+AOT Malware
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+1
+
+TLP:CLEAR
+
+About us
+
+株式会社エヌ・エフ・ラボラトリーズ
+リバースエンジニアリング、
+マルウェア解析講師
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+株式会社エヌ・エフ・ラボラトリーズ
+マルウェア解析講師
+
+株式会社エヌ・エフ・ラボラトリーズ
+オフェンシブ科目講師
+
+TLP:CLEAR
+
+2
+
+TLP:CLEAR
+
+Key takeaway
+• .NETのNative AOTでコンパイルされたプログラムの内部構造
+に関する基礎知識
+• 静的解析を効率化するためのシグネチャの作成方法
+• シグネチャやプラグインを活用し、膨大なコードから読むべき
+コードを絞り込む(トリアージ)手法
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+3
+
+TLP:CLEAR
+
+本日の流れ
+• 前半
+• .NETのマルウェア解析の基礎(Managed vs Native AOT)
+• GhidraやIDA Proを用いたシグネチャの作成とライブラリ関数の識別
+
+• (休憩 10分)
+• 後半
+• プラグインを使用してオブジェクトメタデータの復元
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+4
+
+TLP:CLEAR
+
+ちょっとだけ質問です
+• マルウェア解析の経験がある方（趣味・実務問わず）
+• CTF等でリバースエンジニアリング(Rev)問題をやったことのあ
+る人
+• .NETの解析に触れたことのある方
+• 解析自体が今回初めてという方
+• 経験のある方は、周囲にいる初学者の方をサポートしていただけると
+幸いです！
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+5
+
+TLP:CLEAR
+
+Re:birth the fidb:
+Reverse Engineering the .NET AOT Malware
+section #1
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+6
+
+TLP:CLEAR
+
+最近の事例
+Native AOTでコンパイルされたマルウェアの事例が
+少しずつ確認されるようになっている
+IBM X-Force Threat Analysis: QuirkyLoader - A new malware loader
+delivering infostealers and RATs | IBM
+
+Booking.com Phishing Campaign Targeting Hotels and Customers - Sekoia.io Blog
+
+Impersonated GenAI Site Lures Victims to Infostealer Download - Check Point Research
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+7
+
+TLP:CLEAR
+
+最近の事例
+Native AOTでコンパイルされたバイナリはステルス性が高く、解析
+が難しい
+
+Impersonated GenAI Site Lures Victims to Infostealer Download - Check Point Research
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+8
+
+TLP:CLEAR
+
+そもそも.NETのマルウェアはどうやって解析するの？
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+9
+
+TLP:CLEAR
+
+• .NET(C#言語など)で作成されたマルウェアは、コンパイルの方
+法によって解析のしやすさが変わる
+• デフォルトでは、IL(中間言語)が含まれるため、
+dnSpy/dnSpyExやILSpyなどを使ってデコンパイルすることで、
+高級言語のレベルで解析することができる
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+10
+
+TLP:CLEAR
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+11
+
+TLP:CLEAR
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+12
+
+TLP:CLEAR
+
+dnSpyでデコンパイル
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+13
+
+TLP:CLEAR
+
+• Ready To Run
+• アセンブリにILとネイティブコードが含まれる
+• AOT(Ahead-Of-Time)形式
+
+• .NETの最適化により、プラットフォームによってはILではなく、
+ネイティブコードが実行される
+• 解析では、実際にどちらが実行されるのかに注意を払う必要が
+ある
+• ILSpyを使うと、ILのデコンパイルとネイティブコードのアセ
+ンブリを比較してみることが可能
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+14
+
+TLP:CLEAR
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+15
+
+TLP:CLEAR
+
+• Ready To Run
+• ILと実際に実行されるコードに注意が必要
+• ILをデコイにして、実際の動作をネイティブコードに隠す手法などが
+ある -> R2R stomping
+• https://www.virusbulletin.com/uploads/pdf/conference/vb2023/pa
+pers/R2R-stomping-are-you-ready-to-run.pdf
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+16
+
+TLP:CLEAR
+
+R2RDumpでネイティブコードの位置を調査できる
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+17
+
+TLP:CLEAR
+
+• Native AOT (Ahead-Of-Time)
+• 自己完結型のネイティブコードに事前コンパイルする方式
+• Native AOTのプログラムは起動時間が短く、メモリ使用量も少ない
+• .NET runtimeがインストールされていない環境でもプログラムを実行可能
+(JITコンパイラを使用しない。)
+• .NET 7から実装され、比較的新しい
+https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/?tabs=windows%2Cnet8
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+18
+
+TLP:CLEAR
+
+• Native AOT
+• コンパイルしたプログラムには、いくつか特徴的な文字列が含まれる
+(バージョンによる差異あり)
+• hydrate/.managedセクション
+• DotNetRuntimeDebugHeader(Export関数)
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+19
+
+TLP:CLEAR
+
+• Native AOT
+• 直接ネイティブコードにコンパイルするため、dnspy等のILを対象とす
+るツールでは解析が困難
+• C++で作成したバイナリのように見える
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+20
+
+TLP:CLEAR
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+21
+
+TLP:CLEAR
+
+３つのコンパイル手法のイメージ図
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+22
+
+TLP:CLEAR
+
+解析のアプローチ
+• シグネチャでトリアージ
+• Native AOTのコードをディスアセンブルすると、静的にリンクされた
+標準ライブラリ等のコードも大量に含まれる
+• 本当に解析したいコードが埋もれてしまうため、標準ライブラリとそ
+うでないコードを分離するためのシグネチャをあらかじめ用意する
+• GhidraやIDA Proでシグネチャを適用することで、読むべきコード、そ
+うでないコードを分離して可読性を向上させる
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+23
+
+TLP:CLEAR
+
+Ghidraで解析
+• Ghidra: Function ID
+• https://github.com/NationalSecurityAgency/ghidra/tree/master/Ghidra/
+Features/FunctionID/src/main/doc
+• プログラムの関数を識別し、既知のライブラリと照合するアナライザー
+• 各関数の本体をハッシュ化し、そのハッシュをインデックス化されたデー
+タベースのキーとして使用、一致する関数を検索する
+
+• 特徴
+• 静的リンクライブラリの識別(ライブラリ関数の認識)
+• 再配置耐性
+• プロセッサー固有(異なるアーキテクチャーごとにデータベースが必要)
+• 識別したライブラリ情報を自動コメント
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+24
+
+TLP:CLEAR
+
+Ghidraで解析
+• Ghidra: Function ID Plug-in
+• ユーザーが独自のFunctionIDデータベース(.fidb)を作成・管理できる
+
+• 主な機能
+• Choose active FidDbs
+• Create new empty FidDb
+• Attach existing FidDb
+• Detach attached FidDb
+• Populate FidDb from programs
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+25
+
+TLP:CLEAR
+
+Ghidraで解析
+• Ghidra: Function ID Plug-in
+• あるライブラリが複数のバイナリに含まれることが多く、識別を
+自動化したい場合
+1. ライブラリを含むソースコードをコンパイル
+2. Ghidraでインポート・Auto Analyze(PDB込み)
+3. Function IDプラグインでFidDb(.fidb)を作成
+4. Populate FidDb from programsで関数をデータベースに入力
+5. FidDb完成（以後の解析のAnalyzerで活用）
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+26
+
+TLP:CLEAR
+
+Ghidraで解析
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+27
+
+TLP:CLEAR
+
+Ghidraで解析
+Function ID Analyzerなし
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+Function ID Analyzerあり
+
+TLP:CLEAR
+
+28
+
+TLP:CLEAR
+
+IDA Proで解析
+• IDA Pro: FLIRT(Fast Library Identification and Recognition
+Technology)
+• https://docs.hex-rays.com/user-guide/signatures/flirt
+• IDAに標準ライブラリを認識させ、可読性を向上させることができる機能
+
+• 特徴
+• 静的リンクされたライブラリの識別
+• 再配置への耐性（リンクやロード時に決定される可変バイトの無視）
+• メタデータ付与（関数名とコメントの自動割り当て）
+• プラットフォーム非依存とコンパイラ別管理
+• 偽陰性よりも偽陽性が小さくなるようなパターンマッチングの設計
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+29
+
+TLP:CLEAR
+
+IDA Proで解析
+FLIRT シグネチャファイル適用前
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+FLIRT シグネチャファイル適用後
+
+TLP:CLEAR
+
+30
+
+TLP:CLEAR
+
+ハンズオン
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+31
+
+TLP:CLEAR
+
+ハンズオン(流れ)
+AOTバイナリ解析のためのシグネチャの生成と適用
+1. Native AOTアプリケーション発行用の環境準備とシグネチャ
+生成のためのAOTバイナリを生成
+2. Ghidraを使ってAOTバイナリからFidDbを生成する
+3. 生成したFidDbをAOTバイナリに適用してみる
+4. マルウェア検体にシグネチャを適用する
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+32
+
+TLP:CLEAR
+
+ハンズオン #1
+.NET Native AOTを使ったアプリケーションの生成に必要な環境
+• Visual Studio 2022 / 2026
+• C++ によるデスクトップ開発 ワークロードが必須
+• Visual Studio 2026使う場合で.NET10以外の.NET8や9のアプリケーションを
+Publishするためには以下の修正が必要 (2025/12/16時点)
+• https://developercommunity.visualstudio.com/t/AOT-Publish-Issue-while-targetNET-9-an/11000135?sort=newest
+
+• .NET SDK 9.0 / 10.0
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+33
+
+TLP:CLEAR
+
+ハンズオン #1
+1. プロジェクト(AOT_TestApp)を生成
+> dotnet new console --aot -o AOT_TestApp
+
+2. プロジェクトファイル(AOT_TestApp.csproj)を編集する
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup>
+<OutputType>Exe</OutputType>
+<!-- 実行形式をexeで指定-->
+<TargetFramework>net8.0</TargetFramework> <!-- AOTバイナリに組み込む.NETライブラリのバージョンを指定-->
+<ImplicitUsings>enable</ImplicitUsings>
+<!-- using の自動追加-->
+<PublishAot>True</PublishAot>
+<!-- AOT発行の設定を有効化-->
+<DebugType>portable</DebugType> <!-- PDB形式の指定 (後ほど使うのでportable指定してください-->
+<Optimize>True</Optimize> <!-- 最適化を有効化(後の演習の結果が変わってくるのでTrueを指定してください)-->
+</PropertyGroup>
+</Project>
+
+※以降のワークショップで実施する手順を意識した内容になっています
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+34
+
+TLP:CLEAR
+
+ハンズオン #1
+3. Program.csに以下のリンク先のコードをコピーする
+シグネチャ生成用のソースコード：
+https://harfanglab.io/medias/2024/01/Program.txt
+(https://harfanglab.io/insidethelab/reverse-engineering-ida-pro-aot-net/)
+
+4. AOTバイナリの生成
+> cd AOT_TestApp
+> dotnet publish -r win-x64
+-r <RID> : Runtime Identifier の指定 (win-x64, win-x86…)
+どのプラットフォーム向けのネイティブバイナリを生成するかを指定
+※dotnet publish中にバイナリに取り込むランタイムを追加でダウンロードする場合がある
+
+exeとpdbファイルが bin¥Release¥net8.0¥win-x64¥publish 以下に生成される
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+35
+
+TLP:CLEAR
+
+ハンズオン #2
+Ghidraを使ってAOTバイナリをみてみる
+• Create Project
+• ghidra_11.3.1_PUBLIC¥ghidraRun.batを実行してGhidraを起動
+• File → New Project からプロジェクトを作成
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+36
+
+TLP:CLEAR
+
+ハンズオン #2
+• 解析対象のファイルをインポートし、PDBを使わずに解析
+• File→ Import File
+• インポートしたファイルをダブルクリックしてCodeBrowserを立上げ
+• 初回選択時にはAuto analyzeを実行するか問われるので Yesを選択
+• PDB Universalのチェックを外して解析する
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+37
+
+TLP:CLEAR
+
+ハンズオン #2
+
+何もわからない
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+38
+
+TLP:CLEAR
+
+ハンズオン #2
+PDBを適用して解析
+• Analysis → One Shot → PDB Universal
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+39
+
+TLP:CLEAR
+
+ハンズオン #2
+
+ありがたい
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+40
+
+TLP:CLEAR
+
+ハンズオン #2
+PDBが適用されている状態で、FidDbを生成していく
+1.
+
+Ghidraの設定変更
+File->Configure->Developerのconfigure->FidDebugPluginにチェックをいれる
+
+2.
+
+Ghidraを再起動する
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+41
+
+TLP:CLEAR
+
+ハンズオン #2
+3. 空のFidDbの新規作成
+Tools→Function ID→Create new empty FidDbを選択するとファイル作成画面に移る
+ここでは、AOT_TestApp.exeのあるフォルダにdotnet8_AOT_TestApp.fidbで作成する
+
+作成すると自動的にActiveなFid Databasesとして設定される
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+42
+
+TLP:CLEAR
+
+ハンズオン #2
+4. Function IDの生成
+Tools→Function ID→Populate FidDb from programsを選択
+表示されるダイアログでFidDbの情報を入力してOKを押下
+
+※LanguageではGhidraの言語識別子を選択する
+(今回はVisual Studioで検索するとわかりやすい)
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+43
+
+TLP:CLEAR
+
+ハンズオン #3
+生成したFidDbを使って先ほどのPDBなしの状態に適用してみる
+1. 生成したFidDbがActiveなFid Databasesとして選択されているか確認
+
+2. Analysisを実行
+Analysis→One Shot→Function IDを選択
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+44
+
+TLP:CLEAR
+
+ハンズオン #3
+3. Before/Afterの確認
+
+ありがたい
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+45
+
+TLP:CLEAR
+
+ハンズオン #3 補足
+IDA Pro でシグネチャ生成する流れ
+1.
+
+Signatureファイル生成に必要なツール(sigmake)の準備
+
+2.
+
+patternファイル(.pat)を生成
+
+3.
+
+patternファイルからsignatureファイル(.sig)を生成
+
+4.
+
+signatureファイルの適用
+
+5.
+
+Before/After
+
+※IDA Pro ver.8.3を使用
+IDA Pro ver.8.4以上は以下を参照
+https://hex-rays.com/blog/an-overview-of-the-makesig-plugin
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+46
+
+TLP:CLEAR
+
+ハンズオン #3 補足
+1.
+
+Signatureファイル生成に必要なツール(sigmake)の準備
+Hex-Rays社のDownload centerからsigmakeというツールをダウンロードする
+※My hex-raysへのログインが必要
+※flairと名前の付くファイルの中に含まれる
+
+2.
+
+patternファイル(.pat)を生成
+IDA Pro 8.0以降であればpatternファイル生成用のプラグ
+インが標準搭載されている。PDBを読み込んだ状態で以下
+のプラグインを使いpatternファイルを生成する
+Edit→Plugins→Create PAT from the database
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+47
+
+TLP:CLEAR
+
+ハンズオン #3 補足
+3. patternファイルからsignatureファイル(.sig)を生成
+> sigmake.exe AOT_TestApp.pat dotnet8_AOT_TestApp.sig
+
+以下のようなメッセージが表示された場合には手動でCollisionsを解決する必要がある
+
+同フォルダにある.excファイルを、以下の通り編集する
+• 衝突しているパターンで優先するシンボルの先頭に+を追記しておく
+• 衝突しているパターンを除外する場合は何もしない
+• ファイル先頭にある;から始まる行を削除しておくとこのファイルを読み取り処理する
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+48
+
+TLP:CLEAR
+
+ハンズオン #3 補足
+4. signatureファイルの適用
+• 生成された.sigファイルをIDAのインストールディレクトリ下にあるsigフォルダ
+の中の適当なフォルダに入れておく(アーキテクチャごとにフォルダが存在するの
+で、ここではpcフォルダに入れる)
+• File→Load file→FLIRT signature file...を選択し、先ほど格納したsigファイルを
+選択するとsignatureが適用される
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+49
+
+TLP:CLEAR
+
+ハンズオン #3 補足
+5. Before/After
+
+ありがたい
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+50
+
+TLP:CLEAR
+
+マルウェア検体への適用
+シグネチャを活かすためには、検体とシグネチャ生成のために利用したバイナリの
+TargetFrameworkのバージョン(.NETのバージョン)が一致している必要がある
+プロジェクトファイルの内容
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup>
+<OutputType>Exe</OutputType>
+<!-- 実行形式をexeで指定-->
+<TargetFramework>net8.0</TargetFramework> <!-- AOTバイナリに組み込む.NETライブラリのバージョンを指定-->
+<ImplicitUsings>enable</ImplicitUsings>
+<!-- using の自動追加-->
+<PublishAot>True</PublishAot>
+<!-- AOT発行の設定を有効化-->
+<DebugType>portable</DebugType> <!-- PDB形式の指定 (後ほど使うのでportable指定してください-->
+<Optimize>True</Optimize> <!-- 最適化を有効化(後の演習の結果が変わってくるのでTrueを指定してください)-->
+</PropertyGroup>
+</Project>
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+51
+
+TLP:CLEAR
+
+マルウェア検体への適用
+今まで使ってきているバイナリ(AOT_TestApp.exe)に対して、複数の.NET
+バージョンで生成したシグネチャを適用してみる
+
+.NET8.0
+(正解 )
+Copyright © 2026 N.F.Laboratories Inc.
+
+.NET9.0
+
+.NET10.0
+
+(リネームできるシンボル数が少ない
+
+)
+TLP:CLEAR
+
+52
+
+TLP:CLEAR
+
+マルウェア検体への適用
+Native AOTバイナリかどうかの推測
+• .NET8.0の場合：
+• hydratedや.managedという名前のセクションが存在している
+• DotNetRuntimeDebugHeaderという名前のExportが存在している
+
+• .NET9.0や10.0の場合：
+• DotNetRuntimeDebugHeaderという名前のExportが存在している
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+53
+
+TLP:CLEAR
+
+マルウェア検体への適用
+組み込まれている.NETバージョンの推測
+• stringsを確認する
+
+• Ghidraでruntime_version文字列を参照しているサブルーチンの周辺を調査する
+と、.NETバージョンがみえるサブルーチンが存在する
+(PDBを適用してみるとこれはRhGetRuntimeVersionと名前のつくサブルーチン)
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+54
+
+TLP:CLEAR
+
+ハンズオン #4
+マルウェア検体にシグネチャを適用してみよう
+使用するサンプルはこちら
+• 検体A: f5b31bd394e0a3adb6bd175207b8c3ccc51850c8f2cee1149a8421736168e13e
+• 検体B: 9726e5c7f9800b36b671b064e89784fb10465210198fbbb75816224e85bd1306
+• 検体C: 2c5d40e2bc5d03c9bbf314b6a18133bbd3ea655e0586deb61bc668d91f7959e5
+
+ZIP PW: jsac2026
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+55
+
+TLP:CLEAR
+
+ハンズオン #4
+検体Aにシグネチャを適用してみよう
+• .NETバージョンの特定 → .NET8.0.10
+
+8.0.10
+
+Native AOTバイナリの可能性あり
+Copyright © 2026 N.F.Laboratories Inc.
+
+.NETのバージョン情報を発見
+TLP:CLEAR
+
+56
+
+TLP:CLEAR
+
+ハンズオン #4
+検体Aにシグネチャを適用してみよう
+• シグネチャの適用
+
+ありがたい
+しかし、まだまだつかみどころがない…
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+57
+
+TLP:CLEAR
+
+ハンズオン #4
+早く終わった人は検体B, Cにもシグネチャを適用してみてください
+検体C
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+58
+
+TLP:CLEAR
+
+前半まとめ
+• Native AOTでコンパイルされたバイナリとそれ以外の方法でコ
+ンパイルされたバイナリの解析方法は大きく異なる
+• バイナリには大量の標準ライブラリが含まれるため、シグネ
+チャを使ったユーザー定義のコードとの分離が有効
+• シグネチャを作成して解析対象のバイナリに適用した
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+59
+
+TLP:CLEAR
+
+~Break Time~
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+60
+
+TLP:CLEAR
+
+Re:birth the fidb:
+Reverse Engineering the .NET AOT Malware
+section #2
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+61
+
+TLP:CLEAR
+
+はじめに
+• シグネチャの適用により標準ライブラリとユーザーコードを分
+離には成功した
+• しかし、文字列リテラルへの参照が失われてしまっているため
+コードの可読性が低い
+• デバッグ実行によって文字列リテラルへの参照を復元すること
+は可能だが、解析効率が悪い(手間がかかる)
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+62
+
+TLP:CLEAR
+
+はじめに
+• 以下のように、String型のオブジェクトへのポインタが
+unk_XXXとなっていて、”Hello, World!”などの文字列が直接的
+には判別できない
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+63
+
+TLP:CLEAR
+
+はじめに
+• unk_XXXの参照先は実行時に初期化される領域
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+64
+
+TLP:CLEAR
+
+はじめに
+• デバッグ実行で解析を進めると、参照先の具体的な文字列を特
+定(ただし参照先を都度確認する手間がかかる)
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+65
+
+TLP:CLEAR
+
+はじめに
+• 本セクションでは、Native AOTのコンパイル時の特徴的な動作
+(データのhydrateなど)の概要を学び、静的解析の可読性を向上さ
+せる手法を習得する
+• オブジェクトのメタデータ等を静的に復元し、シンボルを自動リネームす
+るGhidraプラグインの活用方法を実践する
+
+• ※ Native AOTの動作解説は.NET 8をベースとしている
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+66
+
+TLP:CLEAR
+
+プラグイン適用による解析結果の比較
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+67
+
+TLP:CLEAR
+
+プラグイン適用による解析結果の比較
+
+ハンズオンの前に、
+Native AOTバイナリの実行時の挙動をさらに深堀します
+(プラグインの動作理解に役立ちます)
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+68
+
+TLP:CLEAR
+
+Native AOT
+Native AOTでプログラムをコンパイルすると、、
+• オブジェクトの型に関するメタデータや、オブジェクト(Frozen Object)を圧
+縮した形でバイナリ内に格納する(Dehydrate)
+• プログラム実行時に、バイナリ内の圧縮データを展開することで、メタデー
+タやオブジェクトへの参照を復元する(Rehydrate)
+メタデータ
+
+: 型情報やVTable等を管理するMethod Table
+
+Frozen Object: コンパイル時に生成される静的なオブジェクト(メタデータと同じく、圧縮した
+状態でバイナリに配置される)
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+69
+
+TLP:CLEAR
+
+Native AOT
+実行時におけるデータの展開(Rehydrate)プロセスのイメージ
+
+managed code
+
+managed code
+参照
+
+Method Tables
+
+Frozen Objects
+
+展開
+
+Copy
+Zero Fill
+PtrReloc
+・・・
+
+Method Tables
+
+Frozen Objects
+
+DehydratedData
+
+DehydratedData
+
+プログラム実行前
+
+プログラム実行中
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+参照
+
+データ展開
+
+TLP:CLEAR
+
+70
+
+TLP:CLEAR
+
+ReadyToRun
+Native AOTバイナリ内にはReadyToRunヘッダーが含まれる
+実行時にはランタイムのコードがこのセクションを起点にメタデータを展開
+ReadyToRun Header(イメージ)
+プログラム
+
+Signature(“RTR”)
+Major Version
+
+Minor Version
+ReadyToRun Header
+
+Flags
+
+・
+・
+
+NumberOfSections
+
+FrozenObjectRegion
+
+EntrySize
+EntryType
+
+DehydrateData
+
+(各セクション)
+・・・
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+71
+
+TLP:CLEAR
+
+ReadyToRun
+ReadyToRunヘッダー配下の各エントリのうちの１つがDehydratedDataを指
+し、圧縮されたデータを参照
+Signature(“RTR”)
+
+DehydratedDataのデータ構造例*
+
+Major Version
+Minor Version
+Flags
+NumberOfSections
+
+EntrySize
+
+SectionType
+Flag
+Start pointer
+End pointer
+
+EntryType
+(各セクションが続く)
+DehydratedData
+・・・
+Copyright © 2026 N.F.Laboratories Inc.
+
+* 各メンバは実際の名称ではない
+TLP:CLEAR
+
+72
+
+TLP:CLEAR
+
+ReadyToRun
+ReadyToRun Headerの後続のDehydrateDataから、圧縮されたデータを参照
+して別のセクションに展開する
+Signature(“RTR”)
+Major Version
+Minor Version
+Flags
+NunberOfSections
+
+EntrySize
+
+ランタイムソースコード
+におけるセクションの定
+義
+
+SectionType
+Flag
+Start pointer
+End pointer
+
+EntryType
+(各セクション)
+DehydrateData
+
+https://github.com/dotnet/runtime/blob/main/src/coreclr/tools/Commo
+n/Internal/Runtime/ModuleHeaders.cs
+
+・・・
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+73
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+DehydratedDataセクションのStart pointer(offset0x08)が指す先に圧縮された
+データの展開用コードが格納されている
+RVA
+Command+payload
+SectionType(207(0xCF))
+
+Command+payload
+
+Flag
+
+Command+payload
+
+Start pointer
+
+・・・
+
+可変長
+
+End pointer
+
+イメージ図
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+74
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+• 展開コードはcommandの種類とcommand データ(payload)から構成され
+る
+• payloadの大きさによって可変長のデータ構造
+命令
+
+値
+
+説明
+
+Copy
+
+0x00
+
+データのコピー
+
+Zero Fill
+
+0x01
+
+0で初期化
+
+RelPtr32Reloc
+
+0x02
+
+再配置(REL_BASED_RELPTR32)
+
+PtrReloc
+
+0x03
+
+再配置(REL_BASED_HIGHLOW/REL_BASED_DIR64)
+
+InlineRelPtr32R
+eloc
+
+0x04
+
+再配置(REL_BASED_RELPTR32)、payloadがRVA
+
+InlinePtrReloc
+
+0x05
+
+再配置(REL_BASED_HIGHLOW/REL_BASED_DIR64)、絶対アドレス
+
+payloadがRVA
+絶対アドレス
+
+https://github.com/dotnet/runtime/blob/main/src/coreclr/tools/Common/Internal/Runtime/DehydratedData.cs
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+75
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+エンコードロジックの実装例(DehydratedData.csより抜粋)
+
+データ長に応じた可変長エンコード
+
+https://github.com/dotnet/runtime/blob/main/src/coreclr/tools/Common/Internal/Runtime/DehydratedData.cs
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+76
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+• デバッガによるランタイムのデータ展開処理のトレース
+• RehydrateDataがメタデータを展開する中核となるルーチン
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+77
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+• Dehydrated Dataの先頭1byteから命令の種類を識別するロジック
+
+commandの抽出
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+78
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+• 命令コード(command)に基づく、処理の分岐(Switch-Case)
+
+command(0x0~0x5)のチェック
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+79
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+• 例(Copyの場合)
+48 E0 FF FF FF FF FF FF FF 08
+
+DehydratedDataの先頭1byteを取り出す
+
+Case0(0x00) == Copy
+0x9
+== 9bytes分
+すなわち、2bytes目以降の9バイト分を
+hydrateセクション領域に展開する、という
+処理になる
+
+48
+
+下位3bitを命令コードとして抽出、
+0x48 and 0x07 → 0x00
+上位5bitを取り出して、
+0x48 sar 0x03 → 0x09
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+80
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+• 例(Copyの場合)
+• Dehydratred Data(.rdata等)からhydrateセクションへのデータ展開
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+81
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+• 例(Zero Fillの場合)
+21
+
+20
+
+5F
+
+FA
+
+9F
+
+FA
+
+02
+
+0C DA
+
+DehydratedDataの先頭1byteを取り出す。
+21
+
+Case1(0x01) == Zero Fill
+0x4
+== 4bytes分
+すなわち、hydrateセクションを4バイト分、
+ゼロで埋める、という処理になる。
+（1バイトの命令から、4byte分のデータ
+を展開したことになる。）
+
+下位3bitを命令とすると、
+0x21 and 0x7 → 0x01
+上位5bitを取り出して、
+0x21 sar 3 → 0x04
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+82
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+• 例(Zero Fillの場合)
+• hydrateセクションの所定の位置から4バイト分を0で埋める(見かけ上
+は変わらず)
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+83
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+• 最終的に、hydrateセクションにはMethod TableやFrozen Objectなどが配置
+される
+• Method Tableには型の種類やサイズ、Method TableへのポインタやVtable
+等の情報が含まれている
+_uFlags
+_uBaseSize
+_relatedType
+_usNumVtableSlots
+
+_usNumInterfaces
+
+Method Tableの
+メモリ上の構造イメージ
+_uFlagsは型の種類を表すビットフィールド
+_relatedTypeに親クラスのMTへのポインタ
+
+_uHashCode
+VtableSlots
+Interface
+
+VtableSlotsには_usNumVtableSlotsの数だけの
+仮想メソッド
+
+・・・
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+84
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+hydrateセクションのメモリ上のイメージ
+System.ObjectのMethod Table
+
+MT
+
+Method Table
+
+MT
+
+_relatedType(=0)
+_relatedType
+
+・・・
+
+hydrateセクション上には復元された複数のMethod Tableが
+連続して配置される
+Copyright © 2026 N.F.Laboratories Inc.
+
+_uFlags(0x50000000)
+
+_usNumVtableSlots(=3)
+_usNumInterfaces(=0)
+・・・
+relatedTypeから親のMTが分かる
+relatedTypeを辿ることで最終的に
+System.ObjectのMTに到達し、MTの継承
+関係の全体像を把握できる
+TLP:CLEAR
+
+85
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+hydrateセクションのメモリ上のイメージ
+System.StringのMethod Table
+
+MT
+MT
+
+Frozen Object
+
+文字列オブジェクトのイメージ
+
+_relatedType
+
+Method Table
+Length
+
+Frozen Object
+
+“H”
+
+・・・
+
+“e”
+
+“l”
+“l”
+Frozen Objectも同様に復元されて
+hydrateセクション内へと配置される
+Copyright © 2026 N.F.Laboratories Inc.
+
+“o”
+
+Rehydrateにより、文字列のFrozen Object
+もhydrateセクションに展開される
+展開された文字列オブジェクトは対応する
+文字列型(System.String)のMTを保持
+TLP:CLEAR
+
+86
+
+TLP:CLEAR
+
+Dehydrate/Rehydrate
+hydrateセクションの構造イメージ
+System.stringのMethod Table
+
+MT
+MT
+
+Frozen Object
+
+hydrateセクション内のFrozen Objectの領域に文字列型
+のオブジェクトレイアウトが並ぶ
+Frozen Objectの領域は、ReadyToRunディレクトリの
+_relatedType
+Object
+0x206のセクションの箇所のポインタで示されている
+Method Table
+Length
+
+Frozen Object
+
+“H”
+
+・・・
+
+“e”
+
+“l”
+“l”
+“o”
+NULL
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+87
+
+TLP:CLEAR
+
+Ghidraプラグイン
+静的解析において、ディスアセンブル画面では文字列リテラルへのポイン
+タが初期化されていないため、文字列情報が表示されていない。これを以
+下の優れたプラグイン(Ghidra)を使うことで、動的解析(デバッグ実行)をせ
+ずに圧縮されたコードを静的に展開することができる。
+• Ghidra .NET Native AOT Analyzer Plugin
+• https://github.com/Washi1337/ghidra-nativeaot
+• https://blog.washi.dev/posts/recovering-nativeaot-metadata/
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+88
+
+TLP:CLEAR
+
+Ghidraプラグイン
+• 圧縮データをhydrateセクションに展開し、ディスアセンブル/デコンパイ
+ル画面の変数をアノテートしてくれるプラグイン
+• Method Tableを探し出してウィンドウに列挙してくれる
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+89
+
+TLP:CLEAR
+
+ハンズオン
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+90
+
+TLP:CLEAR
+
+ハンズオン #5
+プラグインのインストール
+• ghidra_11.3.1_PUBLIC¥Extensions¥Ghidra¥ 以下に、追加するプラグイ
+ンzipファイルを配置する
+• File → Install Extentionsから追加するプラグインを選択する
+• 再起動する
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+91
+
+TLP:CLEAR
+
+ハンズオン #5
+プラグインのインストール
+• ghidra_11.3.1_PUBLIC¥Extensions¥Ghidra¥ 以下に追加するプラグイ
+ンzipファイルを配置する
+• File → Install Extentionsから追加するプラグインを選択する
+• 再起動する
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+92
+
+TLP:CLEAR
+
+ハンズオン #5
+メタデータ、Frozen Objectの復元
+• Search→Memoryで“RTR”を検索(ReadyToRun ヘッダーを探す)
+• 見つかったらコンテキストメニューから、Add labelを選択して、
+"__ReadyToRunHeader"のラベルを設定する
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+93
+
+TLP:CLEAR
+
+ハンズオン #5
+メタデータ、FrozenObjectの復元
+• Search→Memoryで“RTR”を検索(ReadyToRun ヘッダーを探す)
+• 見つかったらコンテキストメニューから、Add labelを選択して、
+"__ReadyToRunHeader"のラベルを設定する
+• Analysis→One Shot→Native AOT Analyzerを選択
+
+右クリック -> Add label
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+94
+
+TLP:CLEAR
+
+ハンズオン #5
+メタデータ、Frozen Objectの復元
+• Analysis→One Shot→Native AOT Analyzerを選択
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+95
+
+TLP:CLEAR
+
+ハンズオン #5
+メタデータ、FrozenObjectの復元
+• Analysis→One Shot→Native AOT Analyzerを選択
+
+ありがたい
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+96
+
+TLP:CLEAR
+
+ハンズオン #5
+早く終わった方は他の検体にも適用、実際に解析してみて変化を
+味わってみてください
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+97
+
+TLP:CLEAR
+
+まとめ
+• Native AOTバイナリに対し、GhidraやIDA Proでシグネチャを作
+成・適用した
+• Method Tableなどメタデータの展開(Rehydrate)処理の流れを解
+説した
+• Ghidraプラグインでメタデータを静的に復元し、文字列を識別で
+いるようにした
+• Native AOTマルウェアに遭遇した際には、本手法をぜひ活用して
+みてください
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+98
+
+TLP:CLEAR
+
+Thank you !
+
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+99
+
+TLP:CLEAR
+
+参考
+• Native AOT
+• https://learn.microsoft.com/en-us/dotnet/core/deploying/nativeaot/?tabs=windows%2Cnet8
+• GitHub - dotnet/runtime: .NET is a cross-platform runtime for cloud, mobile, desktop,
+and IoT apps.
+
+• Malware
+• IBM X-Force Threat Analysis: QuirkyLoader - A new malware loader delivering
+infostealers and RATs | IBM
+• Booking.com Phishing Campaign Targeting Hotels and Customers - Sekoia.io Blog
+• Impersonated GenAI Site Lures Victims to Infostealer Download - Check Point
+Research
+
+• プラグイン
+• https://github.com/Washi1337/ghidra-nativeaot
+• https://blog.washi.dev/posts/recovering-nativeaot-metadata/
+Copyright © 2026 N.F.Laboratories Inc.
+
+TLP:CLEAR
+
+100
+
+

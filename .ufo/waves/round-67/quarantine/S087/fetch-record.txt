@@ -1,0 +1,8 @@
+# R67QuarS087 fetch record — 2026-10-24
+url: https://ecma-international.org/wp-content/uploads/ECMA-335_6th_edition_june_2012.pdf
+command: curl -sL --max-redirs 15 -o source.bin <url>
+result: HTTP:200 SIZE:4982145 FINAL:<same url>
+sha256: 8c1decf6d482f020776a12dd601537e024d5d5f30df130a3ea3bbf3c51adb1d6
+size: 4982145 bytes (> 2MB -> full bytes NOT saved; /tmp/revenger-r67-quar-S087/source.bin kept as working copy)
+file(1): PDF document, version 1.6, header '%PDF-1.6'
+pdfinfo Title: ECMA-335, 6th edition, June 2012 | Author: ECMA | Pages: 574 | CreationDate: 2012-06-29 | ModDate: 2022-02-18

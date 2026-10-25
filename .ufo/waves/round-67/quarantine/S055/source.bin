@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en-US" class="html_stretched responsive av-preloader-disabled  html_header_top html_logo_left html_main_nav_header html_menu_right html_custom html_header_sticky html_header_shrinking html_header_topbar_active html_mobile_menu_tablet html_header_searchicon html_content_align_center html_header_unstick_top_disabled html_header_stretch_disabled html_elegant-blog html_modern-blog html_av-overlay-side html_av-overlay-side-classic html_av-submenu-noclone html_entry_id_2175 av-cookies-consent-show-message-bar av-cookies-cookie-consent-enabled av-cookies-can-opt-out av-cookies-user-silent-accept avia-cookie-check-browser-settings av-no-preview av-default-lightbox html_text_menu_active av-mobile-menu-switch-default">
+<head>
+<meta charset="UTF-8" />
+
+
+<!-- mobile setting -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Scripts/CSS and wp_head hook -->
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+				<script type='text/javascript'>
+
+				function avia_cookie_check_sessionStorage()
+				{
+					//	FF throws error when all cookies blocked !!
+					var sessionBlocked = false;
+					try
+					{
+						var test = sessionStorage.getItem( 'aviaCookieRefused' ) != null;
+					}
+					catch(e)
+					{
+						sessionBlocked = true;
+					}
+
+					var aviaCookieRefused = ! sessionBlocked ? sessionStorage.getItem( 'aviaCookieRefused' ) : null;
+
+					var html = document.getElementsByTagName('html')[0];
+
+					/**
+					 * Set a class to avoid calls to sessionStorage
+					 */
+					if( sessionBlocked || aviaCookieRefused )
+					{
+						if( html.className.indexOf('av-cookies-session-refused') < 0 )
+						{
+							html.className += ' av-cookies-session-refused';
+						}
+					}
+
+					if( sessionBlocked || aviaCookieRefused || document.cookie.match(/aviaCookieConsent/) )
+					{
+						if( html.className.indexOf('av-cookies-user-silent-accept') >= 0 )
+						{
+							 html.className = html.className.replace(/\bav-cookies-user-silent-accept\b/g, '');
+						}
+					}
+				}
+
+				avia_cookie_check_sessionStorage();
+
+			</script>
+			
+	<!-- This site is optimized with the Yoast SEO plugin v28.7 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>ECMA-335 - Ecma International</title>
+	<meta name="description" content="Common Language Infrastructure (CLI) - Defines the infrastructure in which applications written in multiple high-level languages can be executed" />
+	<link rel="canonical" href="https://ecma-international.org/publications-and-standards/standards/ecma-335/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="ECMA-335 - Ecma International" />
+	<meta property="og:description" content="Common Language Infrastructure (CLI) - Defines the infrastructure in which applications written in multiple high-level languages can be executed" />
+	<meta property="og:url" content="https://ecma-international.org/publications-and-standards/standards/ecma-335/" />
+	<meta property="og:site_name" content="Ecma International" />
+	<meta property="article:modified_time" content="2022-01-26T09:17:16+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/ecma-international.org\/publications-and-standards\/standards\/ecma-335\/","url":"https:\/\/ecma-international.org\/publications-and-standards\/standards\/ecma-335\/","name":"ECMA-335 - Ecma International","isPartOf":{"@id":"https:\/\/ecma-international.org\/#website"},"datePublished":"2019-08-16T10:00:48+00:00","dateModified":"2022-01-26T09:17:16+00:00","description":"Common Language Infrastructure (CLI) - Defines the infrastructure in which applications written in multiple high-level languages can be executed","breadcrumb":{"@id":"https:\/\/ecma-international.org\/publications-and-standards\/standards\/ecma-335\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/ecma-international.org\/publications-and-standards\/standards\/ecma-335\/"]}]},{"@type":"BreadcrumbList","@id":"https:\/\/ecma-international.org\/publications-and-standards\/standards\/ecma-335\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https:\/\/ecma-international.org\/home\/"},{"@type":"ListItem","position":2,"name":"Standards","item":"https:\/\/ecma-international.org\/publications-and-standards\/standards\/"},{"@type":"ListItem","position":3,"name":"ECMA-335"}]},{"@type":"WebSite","@id":"https:\/\/ecma-international.org\/#website","url":"https:\/\/ecma-international.org\/","name":"Ecma International","description":"Industry association for standardizing information and communication systems","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/ecma-international.org\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Ecma International &raquo; Feed" href="https://ecma-international.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Ecma International &raquo; Comments Feed" href="https://ecma-international.org/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://ecma-international.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fecma-international.org%2Fpublications-and-standards%2Fstandards%2Fecma-335%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://ecma-international.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fecma-international.org%2Fpublications-and-standards%2Fstandards%2Fecma-335%2F&#038;format=xml" />
+
+<style>
+.grecaptcha-badge {
+	visibility: hidden;
+}
+.wpcf7-submit {
+    margin: 0;
+    padding: 16px 20px;
+    border-radius: 2px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    font-weight: normal;
+    font-size: 0.92em;
+    min-width: 142px;
+    outline: none;
+}
+input[type="file"] {
+    -webkit-appearance: none;
+    border: 1px solid #e1e1e1;
+    border-top-color: rgb(225, 225, 225);
+    border-right-color: rgb(225, 225, 225);
+    border-bottom-color: rgb(225, 225, 225);
+    border-left-color: rgb(225, 225, 225);
+    padding: 8px 6px;
+    outline: none;
+    font: 1em "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #777;
+    margin: 0;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0;
+}
+</style><style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel='stylesheet' id='parent-style-css' href='https://ecma-international.org/wp-content/themes/enfold/style.css?ver=7.1.3' media='all' />
+<link rel='stylesheet' id='child-style-css' href='https://ecma-international.org/wp-content/themes/ecma/style.css?ver=2.2.3' media='all' />
+<style id="wp-block-library-inline-css">
+/**
+ * Colors
+ */
+/**
+ * Typography
+ */
+/**
+ * SCSS Variables.
+ *
+ * Please use variables from this sheet to ensure consistency across the UI.
+ * Don't add to this sheet unless you're pretty sure the value will be reused in many places.
+ * For example, don't add rules to this sheet that affect block visuals. It's purely for UI.
+ */
+/**
+ * Fonts & basic variables.
+ */
+/**
+ * Typography
+ */
+/**
+ * Grid System.
+ * https://make.wordpress.org/design/2019/10/31/proposal-a-consistent-spacing-system-for-wordpress/
+ */
+/**
+ * Radius scale.
+ */
+/**
+ * Elevation scale.
+ */
+/**
+ * Dimensions.
+ */
+/**
+ * Mobile specific styles
+ */
+/**
+ * Editor styles.
+ */
+/**
+ * Block & Editor UI.
+ */
+/**
+ * Block paddings.
+ */
+/**
+ * React Native specific.
+ * These variables do not appear to be used anywhere else.
+ */
+/**
+ * Breakpoints & Media Queries
+ */
+/**
+*  Converts a hex value into the rgb equivalent.
+*
+* @param {string} hex - the hexadecimal value to convert
+* @return {string} comma separated rgb values
+*/
+/**
+ * Long content fade mixin
+ *
+ * Creates a fading overlay to signify that the content is longer
+ * than the space allows.
+ */
+/**
+ * Breakpoint mixins
+ */
+/**
+ * Focus styles.
+ */
+/**
+ * Standard focus rings for the WordPress Design System.
+ *
+ * Apply `outset-ring__focus` inside the relevant pseudo-class at the call site,
+ * e.g. `&:focus { @include outset-ring__focus(); }`.
+ */
+/**
+ * Applies editor left position to the selector passed as argument
+ */
+/**
+ * Styles that are reused verbatim in a few places
+ */
+/**
+ * Allows users to opt-out of animations via OS-level preferences.
+ */
+/**
+ * Reset default styles for JavaScript UI based pages.
+ * This is a WP-admin agnostic reset
+ */
+/**
+ * Reset the WP Admin page styles for Gutenberg-like pages.
+ */
+/**
+ * Creates a checkerboard pattern background to indicate transparency.
+ * @param {String} $size - The size of the squares in the checkerboard pattern. Default is 12px.
+ */
+:root {
+  --wp-block-synced-color: #7a00df;
+  --wp-block-synced-color--rgb: 122, 0, 223;
+  --wp-bound-block-color: var(--wp-block-synced-color);
+  --wp-editor-canvas-background: #ddd;
+  --wp-admin-theme-color: #007cba;
+  --wp-admin-theme-color--rgb: 0, 124, 186;
+  --wp-admin-theme-color-darker-10: rgb(0, 107, 160.5);
+  --wp-admin-theme-color-darker-10--rgb: 0, 107, 160.5;
+  --wp-admin-theme-color-darker-20: #005a87;
+  --wp-admin-theme-color-darker-20--rgb: 0, 90, 135;
+  --wp-admin-border-width-focus: 2px;
+}
+@media (min-resolution: 192dpi) {
+  :root {
+    --wp-admin-border-width-focus: 1.5px;
+  }
+}
+
+/**
+ * Element styles.
+ */
+.wp-element-button {
+  cursor: pointer;
+}
+
+:root .has-very-light-gray-background-color {
+  background-color: #eee;
+}
+:root .has-very-dark-gray-background-color {
+  background-color: #313131;
+}
+:root .has-very-light-gray-color {
+  color: #eee;
+}
+:root .has-very-dark-gray-color {
+  color: #313131;
+}
+:root {
+  /* stylelint-disable @stylistic/function-comma-space-after -- We can not use spacing because of WP multi site kses rule. */
+}
+:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background {
+  background: linear-gradient(135deg, rgb(0, 208, 132) 0%, rgb(6, 147, 227) 100%);
+}
+:root .has-purple-crush-gradient-background {
+  background: linear-gradient(135deg, rgb(52, 226, 228) 0%, rgb(71, 33, 251) 50%, rgb(171, 29, 254) 100%);
+}
+:root .has-hazy-dawn-gradient-background {
+  background: linear-gradient(135deg, rgb(250, 172, 168) 0%, rgb(218, 208, 236) 100%);
+}
+:root .has-subdued-olive-gradient-background {
+  background: linear-gradient(135deg, rgb(250, 250, 225) 0%, rgb(103, 166, 113) 100%);
+}
+:root .has-atomic-cream-gradient-background {
+  background: linear-gradient(135deg, rgb(253, 215, 154) 0%, rgb(0, 74, 89) 100%);
+}
+:root .has-nightshade-gradient-background {
+  background: linear-gradient(135deg, rgb(51, 9, 104) 0%, rgb(49, 205, 207) 100%);
+}
+:root .has-midnight-gradient-background {
+  background: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+}
+:root {
+  /* stylelint-enable @stylistic/function-comma-space-after */
+  --wp--preset--font-size--normal: 16px;
+  --wp--preset--font-size--huge: 42px;
+}
+
+.has-regular-font-size {
+  font-size: 1em;
+}
+
+.has-larger-font-size {
+  font-size: 2.625em;
+}
+
+.has-normal-font-size {
+  font-size: var(--wp--preset--font-size--normal);
+}
+
+.has-huge-font-size {
+  font-size: var(--wp--preset--font-size--huge);
+}
+
+:root .has-text-align-center {
+  text-align: center;
+}
+
+:root .has-text-align-left {
+  /*rtl:ignore*/
+  text-align: left;
+}
+
+:root .has-text-align-right {
+  /*rtl:ignore*/
+  text-align: right;
+}
+
+.has-fit-text {
+  white-space: nowrap !important;
+}
+
+#end-resizable-editor-section {
+  display: none;
+}
+
+.aligncenter {
+  clear: both;
+}
+
+.items-justified-left {
+  justify-content: flex-start;
+}
+
+.items-justified-center {
+  justify-content: center;
+}
+
+.items-justified-right {
+  justify-content: flex-end;
+}
+
+.items-justified-space-between {
+  justify-content: space-between;
+}
+
+.screen-reader-text {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+  word-break: normal !important;
+}
+
+.screen-reader-text:focus {
+  background-color: #ddd;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+/**
+ * The following provide a simple means of applying a default border style when
+ * a user first makes a selection in the border block support panel.
+ * This prevents issues such as where the user could set a border width
+ * and see no border due there being no border style set.
+ *
+ * This is intended to be removed once intelligent defaults can be set while
+ * making border selections via the block support.
+ *
+ * See: https://github.com/WordPress/gutenberg/pull/33743
+ */
+html :where(.has-border-color) {
+  border-style: solid;
+}
+
+html :where([style^=border-color],
+[style*=";border-color"],
+[style*="; border-color"]) {
+  border-style: solid;
+}
+
+html :where([style^=border-top-color],
+[style*=";border-top-color"],
+[style*="; border-top-color"]) {
+  border-top-style: solid;
+}
+
+html :where([style^=border-right-color],
+[style*=";border-right-color"],
+[style*="; border-right-color"]) {
+  /*rtl:ignore*/
+  border-right-style: solid;
+}
+
+html :where([style^=border-bottom-color],
+[style*=";border-bottom-color"],
+[style*="; border-bottom-color"]) {
+  border-bottom-style: solid;
+}
+
+html :where([style^=border-left-color],
+[style*=";border-left-color"],
+[style*="; border-left-color"]) {
+  /*rtl:ignore*/
+  border-left-style: solid;
+}
+
+html :where([style^=border-width],
+[style*=";border-width"],
+[style*="; border-width"]) {
+  border-style: solid;
+}
+
+html :where([style^=border-top-width],
+[style*=";border-top-width"],
+[style*="; border-top-width"]) {
+  border-top-style: solid;
+}
+
+html :where([style^=border-right-width],
+[style*=";border-right-width"],
+[style*="; border-right-width"]) {
+  /*rtl:ignore*/
+  border-right-style: solid;
+}
+
+html :where([style^=border-bottom-width],
+[style*=";border-bottom-width"],
+[style*="; border-bottom-width"]) {
+  border-bottom-style: solid;
+}
+
+html :where([style^=border-left-width],
+[style*=";border-left-width"],
+[style*="; border-left-width"]) {
+  /*rtl:ignore*/
+  border-left-style: solid;
+}
+
+/**
+ * Provide baseline responsiveness for images.
+ */
+html :where(img[class*=wp-image-]) {
+  height: auto;
+  max-width: 100%;
+}
+
+/**
+ * Reset user agent styles for figure element margins.
+ */
+:where(figure) {
+  margin: 0 0 1em 0;
+}
+
+html :where(.is-position-sticky) {
+  --wp-admin--admin-bar--position-offset: var(--wp-admin--admin-bar--height, 0px);
+}
+
+@media screen and (max-width: 600px) {
+  html :where(.is-position-sticky) {
+    --wp-admin--admin-bar--position-offset: 0px;
+  }
+}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--metallic-red: #b02b2c;--wp--preset--color--maximum-yellow-red: #edae44;--wp--preset--color--yellow-sun: #eeee22;--wp--preset--color--palm-leaf: #83a846;--wp--preset--color--aero: #7bb0e7;--wp--preset--color--old-lavender: #745f7e;--wp--preset--color--steel-teal: #5f8789;--wp--preset--color--raspberry-pink: #d65799;--wp--preset--color--medium-turquoise: #4ecac2;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 1rem;--wp--preset--font-size--medium: 1.125rem;--wp--preset--font-size--large: 1.75rem;--wp--preset--font-size--x-large: clamp(1.75rem, 3vw, 2.25rem);--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:root { --wp--style--global--content-size: 800px;--wp--style--global--wide-size: 1130px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-metallic-red-color{color: var(--wp--preset--color--metallic-red) !important;}.has-maximum-yellow-red-color{color: var(--wp--preset--color--maximum-yellow-red) !important;}.has-yellow-sun-color{color: var(--wp--preset--color--yellow-sun) !important;}.has-palm-leaf-color{color: var(--wp--preset--color--palm-leaf) !important;}.has-aero-color{color: var(--wp--preset--color--aero) !important;}.has-old-lavender-color{color: var(--wp--preset--color--old-lavender) !important;}.has-steel-teal-color{color: var(--wp--preset--color--steel-teal) !important;}.has-raspberry-pink-color{color: var(--wp--preset--color--raspberry-pink) !important;}.has-medium-turquoise-color{color: var(--wp--preset--color--medium-turquoise) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-metallic-red-background-color{background-color: var(--wp--preset--color--metallic-red) !important;}.has-maximum-yellow-red-background-color{background-color: var(--wp--preset--color--maximum-yellow-red) !important;}.has-yellow-sun-background-color{background-color: var(--wp--preset--color--yellow-sun) !important;}.has-palm-leaf-background-color{background-color: var(--wp--preset--color--palm-leaf) !important;}.has-aero-background-color{background-color: var(--wp--preset--color--aero) !important;}.has-old-lavender-background-color{background-color: var(--wp--preset--color--old-lavender) !important;}.has-steel-teal-background-color{background-color: var(--wp--preset--color--steel-teal) !important;}.has-raspberry-pink-background-color{background-color: var(--wp--preset--color--raspberry-pink) !important;}.has-medium-turquoise-background-color{background-color: var(--wp--preset--color--medium-turquoise) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-metallic-red-border-color{border-color: var(--wp--preset--color--metallic-red) !important;}.has-maximum-yellow-red-border-color{border-color: var(--wp--preset--color--maximum-yellow-red) !important;}.has-yellow-sun-border-color{border-color: var(--wp--preset--color--yellow-sun) !important;}.has-palm-leaf-border-color{border-color: var(--wp--preset--color--palm-leaf) !important;}.has-aero-border-color{border-color: var(--wp--preset--color--aero) !important;}.has-old-lavender-border-color{border-color: var(--wp--preset--color--old-lavender) !important;}.has-steel-teal-border-color{border-color: var(--wp--preset--color--steel-teal) !important;}.has-raspberry-pink-border-color{border-color: var(--wp--preset--color--raspberry-pink) !important;}.has-medium-turquoise-border-color{border-color: var(--wp--preset--color--medium-turquoise) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='contact-form-7-css' href='https://ecma-international.org/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.2.3' media='all' />
+<link rel='stylesheet' id='wpb-google-fonts-css' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500&#038;display=swap&#038;ver=7.1.3' media='all' />
+<link rel='stylesheet' id='avia-grid-css' href='https://ecma-international.org/wp-content/themes/enfold/css/grid.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-base-css' href='https://ecma-international.org/wp-content/themes/enfold/css/base.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-layout-css' href='https://ecma-international.org/wp-content/themes/enfold/css/layout.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-team-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/team/team.css?ver=7.1.3' media='all' />
+<link rel='stylesheet' id='avia-module-blog-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/blog/blog.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-postslider-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/postslider/postslider.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-button-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/buttons/buttons.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-comments-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/comments/comments.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-contact-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/contact/contact.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-slideshow-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/slideshow/slideshow.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-gallery-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/gallery/gallery.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-gridrow-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/grid_row/grid_row.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-heading-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/heading/heading.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-hr-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/hr/hr.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-image-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/image/image.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-menu-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/menu/menu.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-social-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/social_share/social_share.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-table-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/table/table.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-tabs-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/tabs/tabs.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-toggles-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/toggles/toggles.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-module-video-css' href='https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/video/video.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-scs-css' href='https://ecma-international.org/wp-content/themes/enfold/css/shortcodes.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-fold-unfold-css' href='https://ecma-international.org/wp-content/themes/enfold/css/avia-snippet-fold-unfold.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-popup-css-css' href='https://ecma-international.org/wp-content/themes/enfold/js/aviapopup/magnific-popup.css?ver=8.2' media='screen' />
+<link rel='stylesheet' id='avia-lightbox-css' href='https://ecma-international.org/wp-content/themes/enfold/css/avia-snippet-lightbox.css?ver=8.2' media='screen' />
+<link rel='stylesheet' id='avia-widget-css-css' href='https://ecma-international.org/wp-content/themes/enfold/css/avia-snippet-widget.css?ver=8.2' media='screen' />
+<link rel='stylesheet' id='avia-dynamic-css' href='https://ecma-international.org/wp-content/uploads/dynamic_avia/ecma.css?ver=6ad8e8ebdca8a' media='all' />
+<link rel='stylesheet' id='avia-custom-css' href='https://ecma-international.org/wp-content/themes/enfold/css/custom.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-style-css' href='https://ecma-international.org/wp-content/themes/ecma/style.css?ver=8.2' media='all' />
+<link rel='stylesheet' id='avia-cookie-css-css' href='https://ecma-international.org/wp-content/themes/enfold/css/avia-snippet-cookieconsent.css?ver=8.2' media='screen' />
+<link rel='stylesheet' id='avia-gravity-css' href='https://ecma-international.org/wp-content/themes/enfold/config-gravityforms/gravity-mod.css?ver=8.2' media='screen' />
+<link rel='stylesheet' id='nm-styles-css' href='https://ecma-international.org/wp-content/themes/ecma/assets/dist/css/app.min.css?ver=1.0.9' media='all' />
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+<!-- Google Analytics snippet added by Site Kit -->
+<script id="google_gtagjs-js" src="https://www.googletagmanager.com/gtag/js?id=GT-NFX3CWL" async></script>
+<script id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["ecma-international.org"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-NFX3CWL");
+//# sourceURL=google_gtagjs-js-after
+</script>
+<script id="jquery-core-js" src="https://ecma-international.org/wp-includes/js/jquery/jquery.js?ver=3.7.1"></script>
+<script id="avia-js-js" src="https://ecma-international.org/wp-content/themes/enfold/js/avia-js.js?ver=8.2"></script>
+<script id="avia-compat-js" src="https://ecma-international.org/wp-content/themes/enfold/js/avia-compat.js?ver=8.2"></script>
+<link rel="https://api.w.org/" href="https://ecma-international.org/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ecma-international.org/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.3" />
+<link rel='shortlink' href='https://ecma-international.org/?p=2175' />
+<meta name="generator" content="Site Kit by Google 1.190.0" />
+<link rel="icon" href="https://www.ecma-international.org/wp-content/uploads/ecma-favicon@2x-300x300.png" type="image/png">
+<!--[if lt IE 9]><script src="https://ecma-international.org/wp-content/themes/enfold/js/html5shiv.js"></script><![endif]--><link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="alternate" type="application/rss+xml" title="Ecma International RSS2 Feed" href="https://ecma-international.org/feed/" />
+<link rel="pingback" href="https://ecma-international.org/xmlrpc.php" />
+
+<style type='text/css' media='screen'>
+ #top #header_main > .container, #top #header_main > .container .main_menu  .av-main-nav > li > a, #top #header_main > .container .main_menu .av-main-nav > li.av-header-slot > .av-header-slot-inner, #top #header_main #menu-item-shop .cart_dropdown_link{ height:120px; line-height: 120px; }
+ .html_top_nav_header .av-logo-container{ height:120px;  }
+ .html_header_top.html_header_sticky #top #wrap_all #main{ padding-top:150px; } 
+</style>
+
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script>
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-N24TS38C' );
+			
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+<style type="text/css">
+		@font-face {font-family: 'entypo-fontello-enfold'; font-weight: normal; font-style: normal; font-display: auto;
+		src: url('https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello-enfold/entypo-fontello-enfold.woff2') format('woff2'),
+		url('https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello-enfold/entypo-fontello-enfold.woff') format('woff'),
+		url('https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello-enfold/entypo-fontello-enfold.ttf') format('truetype'),
+		url('https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello-enfold/entypo-fontello-enfold.svg#entypo-fontello-enfold') format('svg'),
+		url('https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello-enfold/entypo-fontello-enfold.eot'),
+		url('https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello-enfold/entypo-fontello-enfold.eot?#iefix') format('embedded-opentype');
+		}
+
+		#top .avia-font-entypo-fontello-enfold, body .avia-font-entypo-fontello-enfold, html body [data-av_iconfont='entypo-fontello-enfold']:before{ font-family: 'entypo-fontello-enfold'; }
+		
+		@font-face {font-family: 'entypo-fontello'; font-weight: normal; font-style: normal; font-display: auto;
+		src: url('https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello/entypo-fontello.woff2') format('woff2'),
+		url('https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello/entypo-fontello.woff') format('woff'),
+		url('https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello/entypo-fontello.ttf') format('truetype'),
+		url('https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello/entypo-fontello.svg#entypo-fontello') format('svg'),
+		url('https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello/entypo-fontello.eot'),
+		url('https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-template-builder/assets/fonts/entypo-fontello/entypo-fontello.eot?#iefix') format('embedded-opentype');
+		}
+
+		#top .avia-font-entypo-fontello, body .avia-font-entypo-fontello, html body [data-av_iconfont='entypo-fontello']:before{ font-family: 'entypo-fontello'; }
+		</style>
+<style id="core-block-supports-inline-css">
+/**
+ * Core styles: block-supports
+ */
+
+/*# sourceURL=core-block-supports-inline-css */
+</style>
+
+</head>
+
+<body data-rsssl=1 id="top" class="wp-singular standards-template-default single single-standards postid-2175 wp-theme-enfold wp-child-theme-ecma stretched rtl_columns av-curtain-numeric  post-type-standards avia-responsive-images-support av-recaptcha-enabled av-google-badge-hide" itemscope="itemscope" itemtype="https://schema.org/WebPage" >
+
+			<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N24TS38C" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+		
+	<div id='wrap_all'>
+
+	
+<header id='header' class='all_colors header_color light_bg_color  av_header_top av_logo_left av_main_nav_header av_menu_right av_custom av_header_sticky av_header_shrinking av_header_stretch_disabled av_mobile_menu_tablet av_header_searchicon av_header_unstick_top_disabled av_bottom_nav_disabled  av_header_border_disabled' aria-label="Header" data-av_shrink_factor='50' role="banner" itemscope="itemscope" itemtype="https://schema.org/WPHeader" >
+
+		<div id='header_meta' class='container_wrap container_wrap_meta  av_icon_active_right av_extra_header_active av_entry_id_2175'>
+
+			      <div class='container'>
+			      <ul class='noLightbox social_bookmarks icon_count_2'><li class='social_bookmarks_square-x-twitter av-social-link-square-x-twitter social_icon_1 avia_social_iconfont'><a  target="_blank" aria-label="Link to X" href='https://twitter.com/EcmaIntl' data-av_icon='' data-av_iconfont='entypo-fontello' title="Link to X" desc="Link to X" title='Link to X'><span class='avia_hidden_link_text'>Link to X</span></a></li><li class='social_bookmarks_linkedin av-social-link-linkedin social_icon_2 avia_social_iconfont'><a  target="_blank" aria-label="Link to LinkedIn" href='https://www.linkedin.com/company/ecma-international' data-av_icon='' data-av_iconfont='entypo-fontello' title="Link to LinkedIn" desc="Link to LinkedIn" title='Link to LinkedIn'><span class='avia_hidden_link_text'>Link to LinkedIn</span></a></li></ul>			      </div>
+		</div>
+
+		<div  id='header_main' class='container_wrap container_wrap_logo'>
+
+        <div class='container av-logo-container'><div class='inner-container'><span class='logo avia-standard-logo'><a href='https://ecma-international.org/' class='' aria-label='Ecma International' ><img src="https://ecma-international.org/wp-content/uploads/ecma_65_H-1-300x102.png" height="100" width="300" alt='Ecma International' title='' /></a></span><nav class='main_menu' data-selectname='Select a page'  role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement" ><div class="avia-menu av-main-nav-wrap"><ul role="menu" class="menu av-main-nav" id="avia-menu"><li role="menuitem" id="menu-item-16680" class="menu-ecma-about menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-top-level menu-item-top-level-1"><a href="https://ecma-international.org/mission/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">About Ecma</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+
+
+<ul class="sub-menu">
+	<li role="menuitem" id="menu-item-4970" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/mission/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Mission</span></a></li>
+	<li role="menuitem" id="menu-item-4969" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/areas-of-work/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Areas of work</span></a></li>
+	<li role="menuitem" id="menu-item-14705" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/organisation/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Organisation</span></a></li>
+	<li role="menuitem" id="menu-item-14706" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/members/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Members</span></a></li>
+	<li role="menuitem" id="menu-item-4966" class="menu-ecma-meeting-calendar menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/meeting-calendar/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Meeting calendar</span></a></li>
+	<li role="menuitem" id="menu-item-4965" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/history/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">History</span></a></li>
+	<li role="menuitem" id="menu-item-14081" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/ecma-fellow-awards-and-ecma-recognition-awards/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Awards</span></a></li>
+	<li role="menuitem" id="menu-item-4963" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/join-ecma/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Join Ecma</span></a></li>
+</ul>
+</li>
+<li role="menuitem" id="menu-item-16643" class="menu-ecma-publications menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-top-level menu-item-top-level-2"><a href="https://www.ecma-international.org/publications-and-standards/standards/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Publications and standards</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+
+
+<ul class="sub-menu">
+	<li role="menuitem" id="menu-item-51" class="menu-ecma-standards menu-item menu-item-type-custom menu-item-object-custom"><a href="https://www.ecma-international.org/publications-and-standards/standards/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Standards</span></a></li>
+	<li role="menuitem" id="menu-item-86" class="menu-ecma-technical-reports menu-item menu-item-type-custom menu-item-object-custom"><a href="https://www.ecma-international.org/publications-and-standards/technical-reports/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Technical Reports</span></a></li>
+	<li role="menuitem" id="menu-item-4938" class="menu-ecma-mementos menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/publications-and-standards/mementos/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Mementos</span></a></li>
+	<li role="menuitem" id="menu-item-6177" class="menu-ecma-get-involved menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/join-ecma/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Get involved</span></a></li>
+</ul>
+</li>
+<li role="menuitem" id="menu-item-5958" class="menu-ecma-committees menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-3"><a href="https://ecma-international.org/technical-committees/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Committees</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li>
+<li role="menuitem" id="menu-item-4934" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-top-level menu-item-top-level-4"><a href="https://ecma-international.org/policies/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Policies</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a>
+
+
+<ul class="sub-menu">
+	<li role="menuitem" id="menu-item-5797" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/policies/by-laws/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Ecma By-laws</span></a></li>
+	<li role="menuitem" id="menu-item-12802" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/policies/rules/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Ecma Rules</span></a></li>
+	<li role="menuitem" id="menu-item-5798" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/policies/by-ipr/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Ecma IPR policies</span></a></li>
+	<li role="menuitem" id="menu-item-14095" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/policies/ecma_awards_policy/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Ecma awards policy</span></a></li>
+	<li role="menuitem" id="menu-item-19857" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://ecma-international.org/policies/ecma-directives/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Ecma directives</span></a></li>
+</ul>
+</li>
+<li role="menuitem" id="menu-item-5907" class="menu-ecma-news menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-5"><a href="https://ecma-international.org/news/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">News</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li>
+<li role="menuitem" id="menu-item-4932" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-top-level menu-item-top-level-6"><a href="https://ecma-international.org/contact/" itemprop="url" tabindex="0"><span class="avia-bullet"></span><span class="avia-menu-text">Contact</span><span class="avia-menu-fx"><span class="avia-arrow-wrap"><span class="avia-arrow"></span></span></span></a></li>
+<li id="menu-item-search" class="noMobile menu-item menu-item-search-dropdown menu-item-avia-special" role="menuitem"><a class="avia-svg-icon avia-font-svg_entypo-fontello" aria-label="Search" href="?s=" rel="nofollow" title="Click to open the search input field" data-avia-search-tooltip="
+&lt;search&gt;
+	&lt;form role=&quot;search&quot; action=&quot;https://ecma-international.org/&quot; id=&quot;searchform&quot; method=&quot;get&quot; class=&quot;&quot;&gt;
+		&lt;div&gt;
+&lt;span class=&#039;av_searchform_search avia-svg-icon avia-font-svg_entypo-fontello&#039; data-av_svg_icon=&#039;search&#039; data-av_iconset=&#039;svg_entypo-fontello&#039;&gt;&lt;svg version=&quot;1.1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;25&quot; height=&quot;32&quot; viewBox=&quot;0 0 25 32&quot; preserveAspectRatio=&quot;xMidYMid meet&quot; aria-labelledby=&#039;av-svg-title-1&#039; aria-describedby=&#039;av-svg-desc-1&#039; role=&quot;graphics-symbol&quot; aria-hidden=&quot;true&quot;&gt;
+&lt;title id=&#039;av-svg-title-1&#039;&gt;Search&lt;/title&gt;
+&lt;desc id=&#039;av-svg-desc-1&#039;&gt;Search&lt;/desc&gt;
+&lt;path d=&quot;M24.704 24.704q0.96 1.088 0.192 1.984l-1.472 1.472q-1.152 1.024-2.176 0l-6.080-6.080q-2.368 1.344-4.992 1.344-4.096 0-7.136-3.040t-3.040-7.136 2.88-7.008 6.976-2.912 7.168 3.040 3.072 7.136q0 2.816-1.472 5.184zM3.008 13.248q0 2.816 2.176 4.992t4.992 2.176 4.832-2.016 2.016-4.896q0-2.816-2.176-4.96t-4.992-2.144-4.832 2.016-2.016 4.832z&quot;&gt;&lt;/path&gt;
+&lt;/svg&gt;&lt;/span&gt;			&lt;input type=&quot;submit&quot; value=&quot;&quot; id=&quot;searchsubmit&quot; class=&quot;button&quot; title=&quot;Enter at least 3 characters to show search results in a dropdown or click to route to search result page to show all results&quot; /&gt;
+			&lt;input type=&quot;search&quot; id=&quot;s&quot; name=&quot;s&quot; value=&quot;&quot; aria-label=&#039;Search&#039; placeholder=&#039;Search&#039; required /&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+&lt;/search&gt;
+" data-av_svg_icon='search' data-av_iconset='svg_entypo-fontello'><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="25" height="32" viewBox="0 0 25 32" preserveAspectRatio="xMidYMid meet" aria-labelledby='av-svg-title-2' aria-describedby='av-svg-desc-2' role="graphics-symbol" aria-hidden="true">
+<title id='av-svg-title-2'>Click to open the search input field</title>
+<desc id='av-svg-desc-2'>Click to open the search input field</desc>
+<path d="M24.704 24.704q0.96 1.088 0.192 1.984l-1.472 1.472q-1.152 1.024-2.176 0l-6.080-6.080q-2.368 1.344-4.992 1.344-4.096 0-7.136-3.040t-3.040-7.136 2.88-7.008 6.976-2.912 7.168 3.040 3.072 7.136q0 2.816-1.472 5.184zM3.008 13.248q0 2.816 2.176 4.992t4.992 2.176 4.832-2.016 2.016-4.896q0-2.816-2.176-4.96t-4.992-2.144-4.832 2.016-2.016 4.832z"></path>
+</svg><span class="avia_hidden_link_text">Search</span></a></li><li class="av-burger-menu-main menu-item-avia-special " role="menuitem">
+	        			<a href="#" aria-label="Menu" aria-hidden="false">
+							<span class="av-hamburger av-hamburger--spin av-js-hamburger">
+								<span class="av-hamburger-box">
+						          <span class="av-hamburger-inner"></span>
+						          <strong>Menu</strong>
+								</span>
+							</span>
+							<span class="avia_hidden_link_text">Menu</span>
+						</a>
+	        		   </li></ul></div></nav></div> </div> 
+		<!-- end container_wrap-->
+		</div>
+<div class="header_bg"></div>
+<!-- end header -->
+</header>
+
+	<div id='main' role='main' class='all_colors' data-scroll-offset='120'>
+
+	
+		<div class='container_wrap container_wrap_first main_color fullsize'>
+			<div class='container pt-0 template-standard template-single-standard '>
+				<main class='content units av-content-full alpha  av-blog-meta-author-disabled av-blog-meta-comments-disabled av-blog-meta-category-disabled av-blog-meta-date-disabled av-blog-meta-html-info-disabled av-blog-meta-tag-disabled'  role="main" itemprop="mainContentOfPage" >
+                    <article><header class="entry-content-header bg-gray"><div class="container"><a href="/publications-and-standards/standards/" class="mb-20 back">Back to the list</a><div class="intro-bg-gray"><h1>ECMA-335</h1><div class="ecma-item-header-wrapper"><p class="ecma-item-short-description">Common Language Infrastructure (CLI)</p><p class="ecma-item-edition">6th edition, June 2012</p></div></div></div></header><div class="container"><div class="entry-content-wrapper clearfix standard-content"><standard><div class="ecma-item-content-wrapper"><div class="ecma-item-content"><p><strong>This Standard defines the Common Language Infrastructure (CLI) in which applications written in multiple high-level languages can be executed in different system environments without the need to rewrite those applications to take into consideration the unique characteristics of those environments. This Standard consists of the following parts:</strong></p>
+<ul>
+<li>Partition I: Concepts and Architecture – Describes the overall architecture of the CLI, and provides the normative description of the Common Type System (CTS), the Virtual Execution System (VES), and the Common Language Specification (CLS).  It also provides an informative description of the metadata.</li>
+<li>Partition II: Metadata Definition and Semantics – Provides the normative description of the metadata: its physical layout (as a file format), its logical contents (as a set of tables and their relationships), and its semantics (as seen from a hypothetical assembler, <em>ilasm</em>).</li>
+<li>Partition III: CIL Instruction Set – Describes the Common Intermediate Language (CIL) instruction set.</li>
+<li>Partition IV: Profiles and Libraries – Provides an overview of the CLI Libraries, and a specification of their factoring into Profiles and Libraries. A companion file, CLILibrary.xml, considered to be part of this Partition, but distributed in XML format, provides details of each class, value type, and interface in the CLI Libraries.</li>
+<li>Partition V: Debug Interchange Format – Describes a standard way to interchange debugging information between CLI producers and consumers.</li>
+<li>Partition VI: Annexes – Contains some sample programs written in CIL Assembly Language (ILAsm), information about a particular implementation of an assembler, a machine-readable description of the CIL instruction set which can be used to derive parts of the grammar used by this assembler as well as other tools that manipulate CIL, a set of guidelines used in the design of the libraries of Partition IV, and portability considerations.</li>
+</ul>
+<p>Consisting of XML specification, see also <a href="https://www.ecma-international.org/publications-and-standards/technical-reports/ecma-tr-84/"><u>ECMA TR/84</u></a>, see also <a href="https://www.ecma-international.org/publications-and-standards/technical-reports/ecma-tr-89/"><u>ECMA TR/89</u></a>, Common Generics.</p>
+</div><span style="float: left;"><a href="https://ecma-international.org/wp-content/uploads/ECMA-335_6th_edition_june_2012.pdf" onClick="javascript: _gaq.push(['_trackPageview', '/downloads/ECMA-335_6th_edition_june_2012']);" target="_blank" class="bg-orange download">Download this standard</a></span><span class="clear"></span></div><div class="ecma-item-meta-wrapper"><h2>Classification</h2><p class="ecma-item-category"><strong>Category</strong><a href="/publications-and-standards/standards?order=category#Software-engineering-and-interfaces">Software engineering and interfaces</a></p><p class="ecma-item-category"><strong>Subcategory</strong>Programming languages</p><p class="ecma-item-technical-committee"><strong>Technical Committee</strong><a href="https://ecma-international.org/technical-committees/tc39/">TC39</a></p><p class="ecma-item-iso-number"><strong>ISO/IEC number</strong>23271</p></div><div class="ecma-item-archives-wrapper"><h2>Archives</h2><ul class="ecma-item-archives"><li><span>ECMA-335, 1st edition, December 2001</span><span><a href="https://ecma-international.org/wp-content/uploads/ECMA-335_1st_edition_december_2001.pdf" onClick="javascript: _gaq.push(['_trackPageview', '/downloads/ECMA-335_1st_edition_december_2001']);" target="_blank" class="orange-txt download">Download</a></span></li><li><span>ECMA-335, 2nd edition, December 2002</span><span><a href="https://ecma-international.org/wp-content/uploads/ECMA-335_2nd_edition_december_2002.pdf" onClick="javascript: _gaq.push(['_trackPageview', '/downloads/ECMA-335_2nd_edition_december_2002']);" target="_blank" class="orange-txt download">Download</a></span></li><li><span>ECMA-335, 3rd edition, June 2005</span><span><a href="https://ecma-international.org/wp-content/uploads/ECMA-335_3rd_edition_june_2005.pdf" onClick="javascript: _gaq.push(['_trackPageview', '/downloads/ECMA-335_3rd_edition_june_2005']);" target="_blank" class="orange-txt download">Download</a></span></li><li><span>ECMA-335, 4th edition, June 2006</span><span><a href="https://ecma-international.org/wp-content/uploads/ECMA-335_4th_edition_june_2006.pdf" onClick="javascript: _gaq.push(['_trackPageview', '/downloads/ECMA-335_4th_edition_june_2006']);" target="_blank" class="orange-txt download">Download</a></span></li><li><span>ECMA-335, 5th edition, December 2010</span><span><a href="https://ecma-international.org/wp-content/uploads/ECMA-335_5th_edition_december_2010.pdf" onClick="javascript: _gaq.push(['_trackPageview', '/downloads/ECMA-335_5th_edition_december_2010']);" target="_blank" class="orange-txt download">Download</a></span></li></ul></div><div class="ecma-item-archives-wrapper"><h2>Resources</h2><ul class="ecma-item-archives"><li><span>Zipped XML specification for the 2nd edition</span><span><a href="https://ecma-international.org/wp-content/uploads/Ecma-335_2nd_edition-xml.zip" onClick="javascript: _gaq.push(['_trackPageview', '/downloads/Ecma-335_2nd_edition-xml']);" target="_blank" class="orange-txt download">Download</a></span></li><li><span>Zipped XML specification for the 3rd edition</span><span><a href="https://ecma-international.org/wp-content/uploads/Ecma-335_3rd_edition-xml.zip" onClick="javascript: _gaq.push(['_trackPageview', '/downloads/Ecma-335_3rd_edition-xml']);" target="_blank" class="orange-txt download">Download</a></span></li><li><span>Zipped XML specification for the 4th edition</span><span><a href="https://ecma-international.org/wp-content/uploads/Ecma-335_4th_edition-xml.zip" onClick="javascript: _gaq.push(['_trackPageview', '/downloads/Ecma-335_4th_edition-xml']);" target="_blank" class="orange-txt download">Download</a></span></li><li><span>Zipped XML specification for the 5th edition</span><span><a href="https://ecma-international.org/wp-content/uploads/Ecma-335_5th_edition-xml.zip" onClick="javascript: _gaq.push(['_trackPageview', '/downloads/Ecma-335_5th_edition-xml']);" target="_blank" class="orange-txt download">Download</a></span></li><li><span>Zipped XML specification for the 6th edition</span><span><a href="https://ecma-international.org/wp-content/uploads/Ecma-335_6th_edition-xml.zip" onClick="javascript: _gaq.push(['_trackPageview', '/downloads/Ecma-335_6th_edition-xml']);" target="_blank" class="orange-txt download">Download</a></span></li><li><span>Microsoft patent statement for ECMA-335, 4th edition, June 2006</span><span><a href="https://ecma-international.org/wp-content/uploads/ECMA-335-4th-edition-Microsoft-patent-statement.pdf" onClick="javascript: _gaq.push(['_trackPageview', '/downloads/ECMA-335-4th-edition-Microsoft-patent-statement']);" target="_blank" class="orange-txt download">Download</a></span></li></ul></div></standard></div></div></article>				<!--end content-->
+				</main>
+				
+			</div><!--end container-->
+		</div><!-- close default .container_wrap element -->
+
+
+				<div class='container_wrap footer_color' id='footer'>
+
+					<div class='container'>
+
+						<div class='flex_column av_one_fourth  first el_before_av_one_fourth'><section id="text-2" class="widget clearfix widget_text">			<div class="textwidget"><p><strong>Ecma International</strong><br />
+Rue du Rhône 114<br />
+1204 Geneva<br />
+Switzerland</p>
+</div>
+		<span class="seperator extralight-border"></span></section></div><div class='flex_column av_one_fourth  el_after_av_one_fourth el_before_av_one_fourth '><section id="nav_menu-2" class="widget clearfix widget_nav_menu"><div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-16688" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16688"><a href="https://www.ecma-international.org/mission/">About Ecma</a></li>
+<li id="menu-item-16644" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16644"><a href="https://www.ecma-international.org/publications-and-standards/standards/">Publications and standards</a></li>
+<li id="menu-item-4982" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4982"><a href="https://ecma-international.org/policies/">Policies</a></li>
+<li id="menu-item-4984" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4984"><a href="https://ecma-international.org/contact/">Contact</a></li>
+<li id="menu-item-6219" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6219"><a href="https://ecma-international.org/technical-committees/">Committees</a></li>
+<li id="menu-item-6217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6217"><a href="https://ecma-international.org/news/">News</a></li>
+<li id="menu-item-16639" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16639"><a href="https://ecma-international.org/policies/privacy-policy/">Privacy policy</a></li>
+</ul></div><span class="seperator extralight-border"></span></section></div><div class='flex_column av_one_fourth  el_after_av_one_fourth el_before_av_one_fourth '><section id="nav_menu-3" class="widget clearfix widget_nav_menu"><div class="menu-footer-col-3-container"><ul id="menu-footer-col-3" class="menu"><li id="menu-item-13911" class="members menu-item menu-item-type-custom menu-item-object-custom menu-item-13911"><a href="https://members.ecma-international.org/">Members only</a></li>
+</ul></div><span class="seperator extralight-border"></span></section><section id="custom_html-2" class="widget_text widget clearfix widget_custom_html"><div class="textwidget custom-html-widget"></div><span class="seperator extralight-border"></span></section></div><div class='flex_column av_one_fourth  el_after_av_one_fourth el_before_av_one_fourth '><section id="custom_html-3" class="widget_text widget clearfix widget_custom_html"><div class="textwidget custom-html-widget"><ul class="footer-social">
+	<li class="twitterx">
+		<a target="_blank" aria-label="Link to Twitter" href="https://twitter.com/EcmaIntl" aria-hidden="false" data-av_icon="" data-av_iconfont="entypo-fontello" title="Twitter" rel="noopener"><span class="avia_hidden_link_text">Twitter</span></a>
+		
+	</li>
+	<li class="linkedin">
+		<a target="_blank" aria-label="Link to Linkedin" href="https://www.linkedin.com/company/ecma-international" aria-hidden="true" title="Linkedin">
+			<span class="avia_hidden_link_text">Linkedin</span>
+		</a>
+	</li>
+</ul></div><span class="seperator extralight-border"></span></section></div>
+					</div>
+
+				<!-- ####### END FOOTER CONTAINER ####### -->
+				</div>
+
+	
+
+			<!-- end main -->
+		</div>
+
+		<a class='avia-post-nav avia-post-prev without-image' href='https://ecma-international.org/publications-and-standards/standards/ecma-334/' title='Link to: ECMA-334' aria-label='ECMA-334'><span class="label iconfont avia-svg-icon avia-font-svg_entypo-fontello" data-av_svg_icon='left-open-mini' data-av_iconset='svg_entypo-fontello'><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="8" height="32" viewBox="0 0 8 32" preserveAspectRatio="xMidYMid meet" aria-labelledby='av-svg-title-3' aria-describedby='av-svg-desc-3' role="graphics-symbol" aria-hidden="true">
+<title id='av-svg-title-3'>Link to: ECMA-334</title>
+<desc id='av-svg-desc-3'>Link to: ECMA-334</desc>
+<path d="M8.064 21.44q0.832 0.832 0 1.536-0.832 0.832-1.536 0l-6.144-6.208q-0.768-0.768 0-1.6l6.144-6.208q0.704-0.832 1.536 0 0.832 0.704 0 1.536l-4.992 5.504z"></path>
+</svg></span><span class="entry-info-wrap"><span class="entry-info"><span class='entry-title'>ECMA-334</span></span></span></a><a class='avia-post-nav avia-post-next without-image' href='https://ecma-international.org/publications-and-standards/standards/ecma-323/' title='Link to: ECMA-323' aria-label='ECMA-323'><span class="label iconfont avia-svg-icon avia-font-svg_entypo-fontello" data-av_svg_icon='right-open-mini' data-av_iconset='svg_entypo-fontello'><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="8" height="32" viewBox="0 0 8 32" preserveAspectRatio="xMidYMid meet" aria-labelledby='av-svg-title-4' aria-describedby='av-svg-desc-4' role="graphics-symbol" aria-hidden="true">
+<title id='av-svg-title-4'>Link to: ECMA-323</title>
+<desc id='av-svg-desc-4'>Link to: ECMA-323</desc>
+<path d="M0.416 21.44l5.056-5.44-5.056-5.504q-0.832-0.832 0-1.536 0.832-0.832 1.536 0l6.144 6.208q0.768 0.832 0 1.6l-6.144 6.208q-0.704 0.832-1.536 0-0.832-0.704 0-1.536z"></path>
+</svg></span><span class="entry-info-wrap"><span class="entry-info"><span class='entry-title'>ECMA-323</span></span></span></a><!-- end wrap_all --></div>
+<a href='#top' title='Scroll to top' id='scroll-top-link' class='avia-svg-icon avia-font-svg_entypo-fontello' data-av_svg_icon='up-open' data-av_iconset='svg_entypo-fontello' tabindex='-1' aria-hidden='true'>
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="19" height="32" viewBox="0 0 19 32" preserveAspectRatio="xMidYMid meet" aria-labelledby='av-svg-title-5' aria-describedby='av-svg-desc-5' role="graphics-symbol" aria-hidden="true">
+<title id='av-svg-title-5'>Scroll to top</title>
+<desc id='av-svg-desc-5'>Scroll to top</desc>
+<path d="M18.048 18.24q0.512 0.512 0.512 1.312t-0.512 1.312q-1.216 1.216-2.496 0l-6.272-6.016-6.272 6.016q-1.28 1.216-2.496 0-0.512-0.512-0.512-1.312t0.512-1.312l7.488-7.168q0.512-0.512 1.28-0.512t1.28 0.512z"></path>
+</svg>	<span class="avia_hidden_link_text">Scroll to top</span>
+</a>
+
+<div id="fb-root"></div>
+
+<div class="avia-cookie-consent-wrap" aria-hidden="true"><div class='avia-cookie-consent cookiebar-hidden  avia-cookiemessage-bottom'  aria-hidden='true'  data-contents='815179c1346af33d6e75316f178bcefa||v1.0' ><div class="container"><p class='avia_cookie_text'>This site uses cookies. By continuing to browse the site, you are agreeing to our use of cookies.</p><a href='#' class='avia-button avia-color-theme-color-highlight avia-cookie-consent-button avia-cookie-consent-button-1  avia-cookie-close-bar ' >Accept</a><a href='#' class='avia-button avia-color-theme-color-highlight avia-cookie-consent-button avia-cookie-consent-button-2 av-extra-cookie-btn  avia-cookie-info-btn ' >Manage</a></div></div><div id='av-consent-extra-info' data-nosnippet class='av-inline-modal main_color avia-hide-popup-close'>
+<style type="text/css" data-created_by="avia_inline_auto" id="style-css-av-av_heading-93355099aea246145fb79ff5ae893448">
+#top .av-special-heading.av-av_heading-93355099aea246145fb79ff5ae893448{
+margin:10px 0 0 0;
+padding-bottom:10px;
+}
+body .av-special-heading.av-av_heading-93355099aea246145fb79ff5ae893448 .av-special-heading-tag .heading-char{
+font-size:25px;
+}
+.av-special-heading.av-av_heading-93355099aea246145fb79ff5ae893448 .av-subheading{
+font-size:15px;
+}
+</style>
+<div  class='av-special-heading av-av_heading-93355099aea246145fb79ff5ae893448 av-special-heading-h3 blockquote modern-quote'><h3 class='av-special-heading-tag '  itemprop="headline"  >Cookie and privacy settings</h3><div class="special-heading-border"><div class="special-heading-inner-border"></div></div></div><br />
+<style type="text/css" data-created_by="avia_inline_auto" id="style-css-av-jhe1dyat-4d09ad3ba40142c2b823d908995f0385">
+#top .hr.av-jhe1dyat-4d09ad3ba40142c2b823d908995f0385{
+margin-top:0px;
+margin-bottom:0px;
+}
+.hr.av-jhe1dyat-4d09ad3ba40142c2b823d908995f0385 .hr-inner{
+width:100%;
+}
+</style>
+<div  class='hr av-jhe1dyat-4d09ad3ba40142c2b823d908995f0385 hr-custom hr-left hr-icon-no'><span class='hr-inner inner-border-av-border-thin'><span class="hr-inner-style"></span></span></div><br /><div  class='tabcontainer av-jhds1skt-57ef9df26b3cd01206052db147fbe716 sidebar_tab sidebar_tab_left noborder_tabs'><section class='av_tab_section av_tab_section av-av_tab-9d26139c92d04106fde8c71f26abd946' ><div id='tab-id-1-tab' class='tab active_tab' role='tab' aria-selected="true" tabindex="0" data-fake-id='#tab-id-1' aria-controls='tab-id-1-content' >Necessary cookies</div><div id='tab-id-1-content' class='tab_content active_tab_content' role='tabpanel' aria-labelledby='tab-id-1-tab' aria-hidden="false"><div class='tab_inner_content invers-color' ><p>Essential cookies are strictly necessary for the proper operation of our site. In particular, they govern the principles of navigation and memorize some of your choices between pages. If you refuse them, your browsing experience may be affected.</p>
+</div></div></section><section class='av_tab_section av_tab_section av-av_tab-234bb344db3781edaaee970f4d020745' ><div id='tab-id-2-tab' class='tab' role='tab' aria-selected="false" tabindex="0" data-fake-id='#tab-id-2' aria-controls='tab-id-2-content' >Analytics cookies</div><div id='tab-id-2-content' class='tab_content' role='tabpanel' aria-labelledby='tab-id-2-tab' aria-hidden="true"><div class='tab_inner_content invers-color' ><p>Analysis cookies collect statistical and anonymous information on the traffic recorded on our site. They help us to improve our pages, in order to better meet our users' expectations. If you do not want us to record your visit, you can disable this tracking.<br />
+<div data-disabled_by_browser="Please enable this feature in your browser settings and reload the page." class="av-switch-aviaPrivacyGoogleTrackingDisabled av-toggle-switch av-cookie-disable-external-toggle av-cookie-save-unchecked av-cookie-default-checked"><label><input type="checkbox" checked="checked" id="aviaPrivacyGoogleTrackingDisabled" class="aviaPrivacyGoogleTrackingDisabled " name="aviaPrivacyGoogleTrackingDisabled" ><span class="toggle-track"></span><span class="toggle-label-content">Click to enable/disable Google Analytics tracking.</span></label></div></p>
+</div></div></section><section class='av_tab_section av_tab_section av-av_tab-ad12ce1dd9e30ffe74a5edc55eb1ed53' ><div id='tab-id-3-tab' class='tab' role='tab' aria-selected="false" tabindex="0" data-fake-id='#tab-id-3' aria-controls='tab-id-3-content' >Additional services</div><div id='tab-id-3-content' class='tab_content' role='tabpanel' aria-labelledby='tab-id-3-tab' aria-hidden="true"><div class='tab_inner_content invers-color' ><p>We also use various external services such as Google WebFonts and Google Maps. These providers may collect data such as your IP address. If you deactivate these cookies, the appearance of our site may have a negative impact on your reading experience. Changes will take effect once you reload the page.  </p>
+<p><div class="av-switch-aviaPrivacyGoogleWebfontsDisabled av-toggle-switch av-cookie-disable-external-toggle av-cookie-save-unchecked av-cookie-default-checked"><label><input type="checkbox" checked="checked" id="aviaPrivacyGoogleWebfontsDisabled" class="aviaPrivacyGoogleWebfontsDisabled " name="aviaPrivacyGoogleWebfontsDisabled" ><span class="toggle-track"></span><span class="toggle-label-content">Click to enable/disable Google Webfonts.</span></label></div><br />
+<div class="av-switch-aviaPrivacyGoogleMapsDisabled av-toggle-switch av-cookie-disable-external-toggle av-cookie-save-unchecked av-cookie-default-checked"><label><input type="checkbox" checked="checked" id="aviaPrivacyGoogleMapsDisabled" class="aviaPrivacyGoogleMapsDisabled " name="aviaPrivacyGoogleMapsDisabled" ><span class="toggle-track"></span><span class="toggle-label-content">Click to enable/disable Google Maps.</span></label></div></p>
+</div></div></section><section class='av_tab_section av_tab_section av-av_tab-a00dc03aeb9cc3138ff410c9ddbe1268' ><div id='tab-id-4-tab' class='tab' role='tab' aria-selected="false" tabindex="0" data-fake-id='#tab-id-4' aria-controls='tab-id-4-content' >Privacy policy</div><div id='tab-id-4-content' class='tab_content' role='tabpanel' aria-labelledby='tab-id-4-tab' aria-hidden="true"><div class='tab_inner_content invers-color' ><p>You can find out more about our use of cookies on our <a href="https://www.ecma-international.org/policies/privacy-policy/">privacy policy page.</a></p>
+</div></div></section></div><div class="avia-cookie-consent-modal-buttons-wrap"><a href='#' class='avia-button avia-color-theme-color-highlight avia-cookie-consent-button avia-cookie-consent-button-3  avia-cookie-close-bar avia-cookie-consent-modal-button'  title="Allow to use cookies, you always can modify used cookies and services" >Save</a><a href='#' class='avia-button avia-color-theme-color-highlight avia-cookie-consent-button avia-cookie-consent-button-4 av-extra-cookie-btn avia-cookie-consent-modal-button avia-cookie-hide-notification'  title="Do not allow to use cookies or services. Some functionality on our site might not work as expected." >Deactivate all cookies</a></div><div class="av-hidden-escential-sc" data-hidden_cookies="aviaPrivacyRefuseCookiesHideBar,aviaPrivacyEssentialCookiesEnabled"><div class="av-switch-aviaPrivacyRefuseCookiesHideBar av-toggle-switch av-cookie-disable-external-toggle av-cookie-save-checked av-cookie-default-checked"><label><input type="checkbox" checked="checked" id="aviaPrivacyRefuseCookiesHideBar" class="aviaPrivacyRefuseCookiesHideBar " name="aviaPrivacyRefuseCookiesHideBar" ><span class="toggle-track"></span><span class="toggle-label-content">Check to enable permanent hiding of message bar and refuse all cookies if you do not opt in. We need 2 cookies to store this setting. Otherwise you will be prompted again when opening a new browser window or new a tab.</span></label></div><div class="av-switch-aviaPrivacyEssentialCookiesEnabled av-toggle-switch av-cookie-disable-external-toggle av-cookie-save-checked av-cookie-default-checked"><label><input type="checkbox" checked="checked" id="aviaPrivacyEssentialCookiesEnabled" class="aviaPrivacyEssentialCookiesEnabled " name="aviaPrivacyEssentialCookiesEnabled" ><span class="toggle-track"></span><span class="toggle-label-content">Click to enable/disable essential site cookies.</span></label></div></div></div></div><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/ecma/*","/wp-content/themes/enfold/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+
+ <script type='text/javascript'>
+ /* <![CDATA[ */  
+var avia_framework_globals = avia_framework_globals || {};
+    avia_framework_globals.frameworkUrl = 'https://ecma-international.org/wp-content/themes/enfold/framework/';
+    avia_framework_globals.installedAt = 'https://ecma-international.org/wp-content/themes/enfold/';
+    avia_framework_globals.ajaxurl = 'https://ecma-international.org/wp-admin/admin-ajax.php';
+    avia_framework_globals.privacyEnhancedVideo = false;
+/* ]]> */ 
+</script>
+ 
+ <script id="wp-hooks-js" src="https://ecma-international.org/wp-includes/js/dist/hooks.js?ver=f0f188028580e8dc1255"></script>
+<script id="wp-i18n-js" src="https://ecma-international.org/wp-includes/js/dist/i18n.js?ver=1dfe7db3940c23ea9216"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="swv-js" src="https://ecma-international.org/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.2.3"></script>
+<script id="contact-form-7-js-before">
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/ecma-international.org\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    }
+};
+//# sourceURL=contact-form-7-js-before
+</script>
+<script id="contact-form-7-js" src="https://ecma-international.org/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.2.3"></script>
+<script id="google-recaptcha-js" src="https://www.google.com/recaptcha/api.js?render=6LeVuzUaAAAAAFw3anTRY2rVVydadHY8cCACI0sr&#038;ver=3.0"></script>
+<script id="wp-polyfill-js" src="https://ecma-international.org/wp-includes/js/dist/vendor/wp-polyfill.js?ver=3.15.0"></script>
+<script id="wpcf7-recaptcha-js-before">
+var wpcf7_recaptcha = {
+    "sitekey": "6LeVuzUaAAAAAFw3anTRY2rVVydadHY8cCACI0sr",
+    "actions": {
+        "homepage": "homepage",
+        "contactform": "contactform"
+    }
+};
+//# sourceURL=wpcf7-recaptcha-js-before
+</script>
+<script id="wpcf7-recaptcha-js" src="https://ecma-international.org/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=6.2.3"></script>
+<script id="avia-waypoints-js" src="https://ecma-international.org/wp-content/themes/enfold/js/waypoints/waypoints.js?ver=8.2"></script>
+<script id="avia-default-js" src="https://ecma-international.org/wp-content/themes/enfold/js/avia.js?ver=8.2"></script>
+<script id="avia-shortcodes-js" src="https://ecma-international.org/wp-content/themes/enfold/js/shortcodes.js?ver=8.2"></script>
+<script id="avia-module-contact-js" src="https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/contact/contact.js?ver=8.2"></script>
+<script id="avia-module-gallery-js" src="https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/gallery/gallery.js?ver=8.2"></script>
+<script id="avia-module-menu-js" src="https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/menu/menu.js?ver=8.2"></script>
+<script id="avia-module-tabs-js" src="https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/tabs/tabs.js?ver=8.2"></script>
+<script id="avia-module-toggles-js" src="https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/toggles/toggles.js?ver=8.2"></script>
+<script id="avia-module-slideshow-video-js" src="https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/slideshow/slideshow-video.js?ver=8.2"></script>
+<script id="avia-module-video-js" src="https://ecma-international.org/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/video/video.js?ver=8.2"></script>
+<script id="avia-hamburger-menu-js" src="https://ecma-international.org/wp-content/themes/enfold/js/avia-snippet-hamburger-menu.js?ver=8.2"></script>
+<script id="avia-parallax-support-js" src="https://ecma-international.org/wp-content/themes/enfold/js/avia-snippet-parallax.js?ver=8.2"></script>
+<script id="avia-fold-unfold-js" src="https://ecma-international.org/wp-content/themes/enfold/js/avia-snippet-fold-unfold.js?ver=8.2"></script>
+<script id="avia-popup-js-js" src="https://ecma-international.org/wp-content/themes/enfold/js/aviapopup/jquery.magnific-popup.js?ver=8.2"></script>
+<script id="avia-lightbox-activation-js" src="https://ecma-international.org/wp-content/themes/enfold/js/avia-snippet-lightbox.js?ver=8.2"></script>
+<script id="avia-megamenu-js" src="https://ecma-international.org/wp-content/themes/enfold/js/avia-snippet-megamenu.js?ver=8.2"></script>
+<script id="avia-sticky-header-js" src="https://ecma-international.org/wp-content/themes/enfold/js/avia-snippet-sticky-header.js?ver=8.2"></script>
+<script id="avia-footer-effects-js" src="https://ecma-international.org/wp-content/themes/enfold/js/avia-snippet-footer-effects.js?ver=8.2"></script>
+<script id="avia-widget-js-js" src="https://ecma-international.org/wp-content/themes/enfold/js/avia-snippet-widget.js?ver=8.2"></script>
+<script id="avia-cookie-js-js-extra">
+var AviaPrivacyCookieConsent = {"?":"Usage unknown","aviaCookieConsent":"Use and storage of Cookies has been accepted - restrictions set in other cookies","aviaPrivacyRefuseCookiesHideBar":"Hide cookie message bar on following page loads and refuse cookies if not allowed - aviaPrivacyEssentialCookiesEnabled must be set","aviaPrivacyEssentialCookiesEnabled":"Allow storage of site essential cookies and other cookies and use of features if not opt out","aviaPrivacyVideoEmbedsDisabled":"Do not allow video embeds","aviaPrivacyGoogleTrackingDisabled":"Do not allow Google Analytics","aviaPrivacyGoogleWebfontsDisabled":"Do not allow Google Webfonts","aviaPrivacyGoogleMapsDisabled":"Do not allow Google Maps","aviaPrivacyGoogleReCaptchaDisabled":"Do not allow Google reCaptcha","aviaPrivacyMustOptInSetting":"Settings are for users that must opt in for cookies and services","PHPSESSID":"Operating site internal cookie - Keeps track of your session","XDEBUG_SESSION":"Operating site internal cookie - PHP Debugger session cookie","wp-settings*":"Operating site internal cookie","wordpress*":"Operating site internal cookie","tk_ai*":"Shop internal cookie","woocommerce*":"Shop internal cookie","wp_woocommerce*":"Shop internal cookie","wp-wpml*":"Needed to manage different languages"};
+var AviaPrivacyCookieAdditionalData = {"cookie_refuse_button_alert":"When refusing all cookies this site might not be able to work as expected. Please check our settings page and opt out for cookies or functions you do not want to use and accept cookies. You will be shown this message every time you open a new window or a new tab.\n\nAre you sure you want to continue?","no_cookies_found":"No accessable cookies found in domain","admin_keep_cookies":["PHPSESSID","wp-*","wordpress*","XDEBUG*"],"remove_custom_cookies":[],"no_lightbox":"We need a lightbox to show the modal popup. Please enable the built in lightbox in Theme Options Tab or include your own modal window plugin.\\n\\nYou need to connect this plugin in JavaScript with callback wrapper functions - see avia_cookie_consent_modal_callback in file enfold\\js\\avia-snippet-cookieconsent.js "};
+//# sourceURL=avia-cookie-js-js-extra
+</script>
+<script id="avia-cookie-js-js" src="https://ecma-international.org/wp-content/themes/enfold/js/avia-snippet-cookieconsent.js?ver=8.2"></script>
+<script id="avia_google_recaptcha_front_script-js-extra">
+var AviaReCAPTCHA_front = {"version":"avia_recaptcha_v3","site_key2":"6LeDPtoUAAAAAGZtCHCsXivUaTgprjhzSUbP9TEY","site_key3":"6Lfa_FEaAAAAAJvKhrtOOQAoz8Y0eXszrT8pYzI8","api":"https://www.google.com/recaptcha/api.js","api_lang":"en","avia_api_script":"https://ecma-international.org/wp-content/themes/enfold/framework/js/conditional_load/avia_google_recaptcha_api.js","theme":"light","score":"0.5","verify_nonce":"468503db05","cannot_use":"\u003Ch3 class=\"av-recaptcha-error-main\"\u003ESorry, a problem occurred trying to communicate with Google reCAPTCHA API. You are currently not able to submit the contact form. Please try again later - reload the page and also check your internet connection.\u003C/h3\u003E","init_error_msg":"Initial setting failed. Sitekey 2 and/or sitekey 3 missing in frontend.","v3_timeout_pageload":"Timeout occurred connecting to V3 API on initial pageload","v3_timeout_verify":"Timeout occurred connecting to V3 API on verifying submit","v2_timeout_verify":"Timeout occurred connecting to V2 API on verifying you as human. Please try again and check your internet connection. It might be necessary to reload the page.","verify_msg":"Verify....","connection_error":"Could not connect to the internet. Please reload the page and try again.","validate_first":"Please validate that you are a human first","validate_submit":"Before submitting we validate that you are a human first.","no_token":"Missing internal token on valid submit - unable to proceed.","invalid_version":"Invalid reCAPTCHA version found.","api_load_error":"Google reCAPTCHA API could not be loaded."};
+//# sourceURL=avia_google_recaptcha_front_script-js-extra
+</script>
+<script id="avia_google_recaptcha_front_script-js" src="https://ecma-international.org/wp-content/themes/enfold/framework/js/conditional_load/avia_google_recaptcha_front.js?ver=8.2"></script>
+<script id="nm-apps-js" src="https://ecma-international.org/wp-content/themes/ecma/assets/dist/js/app.min.js?ver=2"></script>
+<script type='text/javascript'>function av_privacy_cookie_setter( cookie_name ){var cookie_check = jQuery('html').hasClass('av-cookies-needs-opt-in') || jQuery('html').hasClass('av-cookies-can-opt-out');var toggle = jQuery('.' + cookie_name);toggle.each(function(){var container = jQuery(this).closest('.av-toggle-switch');if( cookie_check && ! document.cookie.match(/aviaCookieConsent/) ){this.checked = container.hasClass( 'av-cookie-default-checked' );}else if( cookie_check && document.cookie.match(/aviaCookieConsent/) && ! document.cookie.match(/aviaPrivacyEssentialCookiesEnabled/) && cookie_name != 'aviaPrivacyRefuseCookiesHideBar' ){if( cookie_name == 'aviaPrivacyEssentialCookiesEnabled' ){this.checked = false;}else{this.checked = container.hasClass( 'av-cookie-default-checked' );}}else{if( container.hasClass('av-cookie-save-checked') ){this.checked = document.cookie.match(cookie_name) ? true : false;}else{this.checked = document.cookie.match(cookie_name) ? false : true;}}});jQuery('.' + 'av-switch-' + cookie_name).addClass('active');toggle.on('click', function(){/* sync if more checkboxes exist because user added them to normal page content */var check = this.checked;jQuery('.' + cookie_name).each( function(){this.checked = check;});var silent_accept_cookie = jQuery('html').hasClass('av-cookies-user-silent-accept');if( ! silent_accept_cookie && cookie_check && ! document.cookie.match(/aviaCookieConsent/) || sessionStorage.getItem( 'aviaCookieRefused' ) ){return;}var container = jQuery(this).closest('.av-toggle-switch');var action = '';if( container.hasClass('av-cookie-save-checked') ){action = this.checked ? 'save' : 'remove';}else{action = this.checked ? 'remove' : 'save';}if('remove' == action){document.cookie = cookie_name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';}else{var theDate = new Date();var oneYearLater = new Date( theDate.getTime() + 31536000000 );document.cookie = cookie_name + '=true; Path=/; Expires='+oneYearLater.toGMTString()+';';}});}; av_privacy_cookie_setter('aviaPrivacyRefuseCookiesHideBar');  av_privacy_cookie_setter('aviaPrivacyEssentialCookiesEnabled');  av_privacy_cookie_setter('aviaPrivacyGoogleTrackingDisabled');  av_privacy_cookie_setter('aviaPrivacyGoogleWebfontsDisabled');  av_privacy_cookie_setter('aviaPrivacyGoogleMapsDisabled'); </script></body>
+</html>

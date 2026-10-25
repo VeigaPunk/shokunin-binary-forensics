@@ -1,0 +1,21 @@
+# pdftotext -layout source.bin | first 20 lines
+          ECMA-335
+          6th Edition / June 2012
+
+
+
+
+Common Language
+Infrastructure (CLI)
+Partitions I to VI
+
+
+
+
+                            Reference number
+                             ECMA-123:2009
+
+
+
+                     © Ecma International 2009
+

@@ -1,0 +1,2084 @@
+Fourteenforty Research Institute, Inc.
+
+
+
+
+                                組み込みシステムのセキュリティ
+             Fourteenforty Research Institute, Inc.
+                                         Fourteenforty Research Institute, Inc.
+                                            株式会社 フォティーンフォティー技術研究所
+                                                          http://www.fourteenforty.jp
+
+                                取締役副社長 最高技術責任者 鵜飼裕司 博士（工学)
+
+
+                                                                                        1
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  背景 (1)
+    - 近年、組み込みシステムにおける電子商取引が活発化
+
+    - 携帯電話や家庭用ゲーム機、情報家電などでインターネットが活発に
+
+    - PCの周辺機器も多様化。
+      PCを取り巻くシステムも多数の組み込みシステムの集合体
+
+       しかし・・・
+
+    セキュリティ脆弱性研究や攻撃は、主にデスクトップPCやサーバで動作する
+    OSやアプリケーションにフォーカス
+
+
+   • 影響が広範囲かつ深刻
+   • 攻撃者、セキュリティ研究者双方にとって技術的な情報量が多い
+
+
+                                          2
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  背景 (2)
+    近年、組み込みシステムを狙う攻撃が増加
+
+                              組み込み機器を対象としたExploitの件数
+
+
+                              2003年 4件
+                              2004年 6件
+                              2005年 6件
+                              2006年 19件
+
+
+    ・ 影響が広範囲になりつつある (音楽プレイヤーなど)
+    ・ 古典的な脆弱性を持つ製品がまだ数多く存在
+    ・ ベンダーの体制が不十分 (技術的、社会的対応)
+    ・ ユーザーの意識、ユーザー側のソリューションが不十分 (アップデート問題、検出困難)
+
+                   攻撃者にとって、格好のターゲットとなりつつある
+
+                                                       3
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  概要
+    組み込みシステムのセキュリティ脆弱性について解説
+
+
+          • 組み込みシステムにおけるセキュリティ脆弱性の現状
+
+          • 組み込みシステムの基礎
+
+          • 組み込みシステム独特のセキュリティ脆弱性とその脅威例
+
+          • セキュリティ脆弱性への対応策
+
+
+
+
+                                         4
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  Chapter 1
+ int packet_analysis(GDDCONFIG *gddc,unsigned char *packet,unsigned long length)
+ {
+     struct ip       *ip_header;     /* IP header */
+     struct tcphdr   *tcp_header;    /* TCP header */
+     char            *tcp_data;      /* TCP data */
+     struct in_addr addr;            /* IP address */
+     char            sourceIP[16];   /* Source IP address */
+     char            destIP[16];     /* Destination IP address */
+     unsigned short sourcePort;      /* Source Port */
+     unsigned short destPort;        /* Destination Port */
+     unsigned long   len_data;       /* Length of data part */
+     unsigned long   iph_len;        /* Length of IP header */
+     unsigned long   tcph_len;       /* Length of TCP header */
+     unsigned long   sequence;       /* Expected sequence */
+     int             portindex;      /* Indexnumber of port list */
+     int             direction;      /* Packet direction */
+     unsigned char   logtype;        /* Log type */
+     CONN_LIST       *bcl,*ncl;      /* Connection table list */
+     CONN_LIST       *t;             /* Temporary connection list */
+     static char     datestr[512];   /* Buffer to store datetime */
+     time_t          timeval;
+     struct tm       *timep=NULL;
+     char            *timesp=NULL;
+     char            *c;
+
+    /* Get pointer of IP header and check length of IP */
+    if (length-SIZE_OF_ETHHDR < MINSIZE_IP+MINSIZE_TCP) return(0);
+    ip_header    = (struct ip *)(packet+SIZE_OF_ETHHDR);
+    if (ip_header->ip_p!=IPPROTO_TCP
+
+
+
+                                                                   組み込みシステムにおける
+      || ip_header->ip_v!=4) return(0);                                            00001B70   FF 15 F0 11 00 01 E9 CC 03 00 00 E8 7C 1C 00 00   ......鯲...閖...
+    iph_len      = ((unsigned long)(ip_header->ip_hl))*4;                          00001B80   33 F6 56 E8 B1 FC FF FF 85 C0 0F 84 B7 03 00 00   3雎...・.┨...
+    if (iph_len<MINSIZE_IP) return(0);                                             00001B90   56 6A 02 FF 35 6C 80 00 01 FF 35 D0 87 00 01 FF   Vj..5l....5ﾐ....
+    if ((unsigned long)ntohs(ip_header->ip_len) < MINSIZE_IP+MINSIZE_TCP)          00001BA0   15 CC 11 00 01 85 C0 75 1D 68 10 10 00 00 FF 35   .ﾌ...・u.h.....5
+         return(0);                                                                00001BB0   50 80 00 01 FF 35 44 80 00 01 FF 35 D0 87 00 01   P....5D....5ﾐ...
+    if ((unsigned long)ntohs(ip_header->ip_len) > length-SIZE_OF_ETHHDR){          00001BC0   FF 15 04 12 00 01 FF 35 D0 87 00 01 FF 15 2C 12   .......5ﾐ.....,.
+
+
+
+
+                                                                      セキュリティの現状
+         return(0);                                                                00001BD0   00 01 FF 35 D4 8B 00 01 FF 15 58 10 00 01 E9 64   ...5ﾔ.....X...馘
+    }                                                                              00001BE0   03 00 00 83 FE 1A 77 47 0F 84 59 03 00 00 83 FE   ......wG.Ш.....
+                                                                                   00001BF0   11 0F 85 16 01 00 00 33 F6 39 35 E8 87 00 01 74   .......3.95閾..t
+    /* Get pointer of TCP header and check length of TCP */                        00001C00   22 8B 3D 28 12 00 01 56 FF D7 56 FF D7 68 00 10   ".=(...V.ﾗV.ﾗh..
+    tcp_header = (struct tcphdr *)((char *)ip_header+iph_len);                     00001C10   00 00 FF 35 50 80 00 01 FF 35 88 80 00 01 E9 7D   ...5P....5・..驀
+    tcph_len    = ((unsigned long)(tcp_header->th_off))*4;                         00001C20   02 00 00 6A 01 E8 0F FC FF FF E9 1A 03 00 00 8B   ...j...........急
+    tcp_data    = (char *)tcp_header+tcph_len;                                     00001C30   7D 14 B8 11 01 00 00 3B F0 0F 87 8B 00 00 00 3B    .ｸ....;..㈲...;
+    if (tcph_len<MINSIZE_TCP) return(0);                                           00001C40   F0 0F 84 16 02 00 00 83 FE 1C 0F 85 BD 00 00 00   ...........・...
+                                                                                   00001C50   33 F6 39 75 10 74 2F A1 EC 87 00 01 8B 0D F0 87   3.9u.t/｡・....
+    /* Get other parameter in TCP/IP header */                                     00001C60   00 01 3B C6 75 08 3B CE 0F 84 D9 02 00 00 8B 3D   ..;ﾆu.;ﾎ.・....=
+    if ((long)ntohs(ip_header->ip_len)-(long)iph_len-(long)tcph_len<0)             00001C70   14 12 00 01 51 50 68 B1 00 00 00 FF 35 D4 87 00   ....QPhｱ....5ﾔ..
+        return(0);                                                                 00001C80   01 E9 56 01 00 00 8B 3D 14 12 00 01 68 F0 87 00   .餬....=....h.
+    len_data    = (unsigned long)ntohs(ip_header->ip_len)                          00001C90   01 68 EC 87 00 01 68 B0 00 00 00 FF 35 D4 87 00   .h・..hｰ....5ﾔ..
+                      -iph_len-tcph_len;                                           00001CA0   01 FF D7 A1 EC 87 00 01 8B 0D F0 87 00 01 3B C1   ..ﾗ｡・......;ﾁ
+    sourcePort = ntohs(tcp_header->th_sport);                                      00001CB0   75 11 89 35 EC 87 00 01 89 35 F0 87 00 01 E9 84   u..5・...5..驗
+    destPort    = ntohs(tcp_header->th_dport);                                     00001CC0   02 00 00 51 50 E9 07 01 00 00 8B CE B8 12 01 00   ...QP.....勤ｸ...
+    memcpy(&addr,&(ip_header->ip_src),sizeof(struct in_addr));                     00001CD0   00 2B C8 0F 84 3C 02 00 00 83 E9 04 0F 84 29 02   .+ﾈ..<...・...).
+    strcpy(sourceIP,(char *)inet_ntoa(addr));                                      00001CE0   00 00 49 0F 84 F9 01 00 00 81 E9 1C 01 00 00 0F   ..I.・...・.....
+    memcpy(&addr,&(ip_header->ip_dst),sizeof(struct in_addr));                     00001CF0   84 E0 01 00 00 81 E9 E6 00 00 00 0F 84 3D 01 00   ・...・......=..
+    strcpy(destIP,(char *)inet_ntoa(addr));                                        00001D00   00 81 E9 E8 7C 00 00 0F 84 02 01 00 00 3B 35 5C   .・閖........;5¥
+    if (!strcmp(sourceIP,destIP)) return(0);                                       00001D10   88 00 01 0F 85 EE 00 00 00 8B 45 14 8B 48 0C 8B   ....・...畿.稀.驚
+                                                                                   00001D20   C1 8B D1 F7 D0 C1 EA 02 83 E0 01 83 E2 01 F6 C1    錦ﾁ..・.・.
+
+
+
+
+                                                                                                                                                                   5
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  汎用システムの現状
+    •   WindowsやUNIXは、長い年月をかけて安全性が向上
+
+
+        - 数多くのインシデントを経て現在に至る
+
+        - 開発プロセスにセキュリティを考慮
+
+        - 実際に攻略可能な脆弱性を探すのは至難の業
+
+        - 情報公開、パッチ配布、インシデント対応など、事後のノウハウも蓄積
+
+        - インターネットの成長とともに、安全性が向上してきた
+
+
+
+
+                                             6
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  組み込みシステムの現状
+  •   組み込みシステムでは・・・
+
+      - インターネットが成熟期に入った段階で急速にネット化
+
+      - 技術や事後対応のノウハウが無いまま開発が進む
+
+      - WindowsやUNIXでの教訓が生かされていないケースが多い
+
+
+      三種類に分類・・・
+
+      - 設計・実装で汎用システムで積み上げられたノウハウが生かされている安全な製品
+
+      - 比較的安全なプラットフォームで動作しているため、たまたま安全な製品
+
+      - WindowsやUNIXの歴史を繰り返し、古典的な脆弱性を大量に含む製品
+
+
+                                                7
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  組み込みシステムの脆弱性
+ •   脆弱性
+
+     - マシンコード実行型脆弱性 (バッファオーバーフロー等)
+     - コマンド実行型脆弱性 (コマンドインジェクション等)
+     - 情報リーク(ディレクトリトラバーサル、不適切な権限)
+     - その他 (XSS、DoS、認証バイパス、etc)
+
+     「アタックベクタ」が存在すれば、システムは脆弱になりうる
+
+ •   脆弱性の本質は、多くの場合汎用システムと同じ
+
+     - 攻撃のプロセスや質は汎用システムと異なるが、脆弱性の本質は多くの場合同じ
+     - 多くの脆弱性は、汎用システムで得られたノウハウで対処可
+     - しかし組み込みシステム独特の脆弱性も存在
+
+
+                                              8
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  組み込みシステムへの攻撃
+    •   汎用システムとの共通点
+
+        - 共通のアタックベクタには共通の攻撃が可能
+
+    •   用途の特殊性
+
+        - 汎用システムには無い新たな脆弱性が表面化する可能性
+        - 汎用システムには無い新たな攻撃様式が表面化する可能性
+        - 汎用システムには無い新たなアタックベクタが表面化する可能性
+
+    •   環境の特殊性
+
+        - 攻撃者にとって汎用システムには無い新たな技術的ハードル
+
+
+
+                                          9
+Fourteenforty Research Institute, Inc.
+
+
+
+
+     汎用システムとの共通点
+
+ •   共通のアタックベクタには共通の攻撃が可能
+
+     ・ 汎用システムと同じ機能には同じような脆弱性と攻撃
+     ・ 組み込みシステムにおける大半の脆弱性
+     ・ 汎用システムで得られたノウハウで対処可能
+
+
+     (例)
+     - 音楽プレイヤー : 音声ファイル処理におけるバッファオーバーフロー
+     - デジタルカメラ : 画像ファイル処理におけるバッファオーバーフロー
+     - 家庭用ルーター : 設定CGIのクロスサイトスクリプティング
+     - 家庭用ゲーム機 : TCP/IPプロトコルスタックのDoS脆弱性
+
+
+
+
+                                           10
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  用途の特殊性
+ •   汎用システムには無い新たな脆弱性
+
+     - ハードウエアの脆弱性
+       (コピー保護機構や認証バイパス、メモリ吸出し、など)
+
+ •   汎用システムには無い新たな攻撃様式
+
+     - 機器の不正操作(空調の不正温度操作、など)
+     - 機器の異常動作誘発(バッテリー発熱、故障・障害発生、など)
+     - 汎用システムへの攻撃(ルーターや周辺機器を掌握してシステムを攻撃)
+
+ •   汎用システムには無い新たなアタックベクタ
+
+     - 特殊な入力デバイス(細工されたカード、など)
+     - 組み込みシステム独特の脆弱性を狙う攻撃
+
+                                           11
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  環境の特殊性
+ •   攻撃者にとっての技術的ハードル – マシンコード実行型脆弱性
+
+     - ハードウエアやシステムコール、汎用APIの仕様が非公開
+
+       ・ 複雑な攻撃には自力での解析が必要となるケースがある
+       ・ しかし、チップの仕様は公開されているケースが多々ある
+
+     - 不慣れなCPU命令
+
+       ・ 多くの攻撃者はIA32命令のみ
+       ・ しかし、IA32習得者にとってARMやMIPSの基礎習得は容易
+
+
+
+       しかし、現在の攻撃者の多くは、この技術的ハードルを容易に越えられない
+
+
+
+                                            12
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  今回対象とする脆弱性の質
+     マシンコード実行型脆弱性にフォーカス
+
+                → 代表例として、バッファオーバーフロー脆弱性
+
+
+        攻撃者は、環境の特殊性による技術的ハードルを容易に越えられない
+
+        しかし、Windows Exploitはかつて不可能と言われた。
+
+        歴史は繰り返される・・・？
+
+
+
+
+                                           13
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  Chapter 2
+ int packet_analysis(GDDCONFIG *gddc,unsigned char *packet,unsigned long length)
+ {
+     struct ip       *ip_header;     /* IP header */
+     struct tcphdr   *tcp_header;    /* TCP header */
+     char            *tcp_data;      /* TCP data */
+     struct in_addr addr;            /* IP address */
+     char            sourceIP[16];   /* Source IP address */
+     char            destIP[16];     /* Destination IP address */
+     unsigned short sourcePort;      /* Source Port */
+     unsigned short destPort;        /* Destination Port */
+     unsigned long   len_data;       /* Length of data part */
+     unsigned long   iph_len;        /* Length of IP header */
+     unsigned long   tcph_len;       /* Length of TCP header */
+     unsigned long   sequence;       /* Expected sequence */
+     int             portindex;      /* Indexnumber of port list */
+     int             direction;      /* Packet direction */
+     unsigned char   logtype;        /* Log type */
+     CONN_LIST       *bcl,*ncl;      /* Connection table list */
+     CONN_LIST       *t;             /* Temporary connection list */
+     static char     datestr[512];   /* Buffer to store datetime */
+     time_t          timeval;
+     struct tm       *timep=NULL;
+     char            *timesp=NULL;
+     char            *c;
+
+    /* Get pointer of IP header and check length of IP */
+    if (length-SIZE_OF_ETHHDR < MINSIZE_IP+MINSIZE_TCP) return(0);
+    ip_header    = (struct ip *)(packet+SIZE_OF_ETHHDR);
+    if (ip_header->ip_p!=IPPROTO_TCP
+
+
+
+                                                                             組み込みシステムの基礎
+      || ip_header->ip_v!=4) return(0);                                            00001B70   FF 15 F0 11 00 01 E9 CC 03 00 00 E8 7C 1C 00 00   ......鯲...閖...
+    iph_len      = ((unsigned long)(ip_header->ip_hl))*4;                          00001B80   33 F6 56 E8 B1 FC FF FF 85 C0 0F 84 B7 03 00 00   3雎...・.┨...
+    if (iph_len<MINSIZE_IP) return(0);                                             00001B90   56 6A 02 FF 35 6C 80 00 01 FF 35 D0 87 00 01 FF   Vj..5l....5ﾐ....
+    if ((unsigned long)ntohs(ip_header->ip_len) < MINSIZE_IP+MINSIZE_TCP)          00001BA0   15 CC 11 00 01 85 C0 75 1D 68 10 10 00 00 FF 35   .ﾌ...・u.h.....5
+         return(0);                                                                00001BB0   50 80 00 01 FF 35 44 80 00 01 FF 35 D0 87 00 01   P....5D....5ﾐ...
+    if ((unsigned long)ntohs(ip_header->ip_len) > length-SIZE_OF_ETHHDR){          00001BC0   FF 15 04 12 00 01 FF 35 D0 87 00 01 FF 15 2C 12   .......5ﾐ.....,.
+         return(0);                                                                00001BD0   00 01 FF 35 D4 8B 00 01 FF 15 58 10 00 01 E9 64   ...5ﾔ.....X...馘
+    }                                                                              00001BE0   03 00 00 83 FE 1A 77 47 0F 84 59 03 00 00 83 FE   ......wG.Ш.....
+                                                                                   00001BF0   11 0F 85 16 01 00 00 33 F6 39 35 E8 87 00 01 74   .......3.95閾..t
+    /* Get pointer of TCP header and check length of TCP */                        00001C00   22 8B 3D 28 12 00 01 56 FF D7 56 FF D7 68 00 10   ".=(...V.ﾗV.ﾗh..
+    tcp_header = (struct tcphdr *)((char *)ip_header+iph_len);                     00001C10   00 00 FF 35 50 80 00 01 FF 35 88 80 00 01 E9 7D   ...5P....5・..驀
+    tcph_len    = ((unsigned long)(tcp_header->th_off))*4;                         00001C20   02 00 00 6A 01 E8 0F FC FF FF E9 1A 03 00 00 8B   ...j...........急
+    tcp_data    = (char *)tcp_header+tcph_len;                                     00001C30   7D 14 B8 11 01 00 00 3B F0 0F 87 8B 00 00 00 3B    .ｸ....;..㈲...;
+    if (tcph_len<MINSIZE_TCP) return(0);                                           00001C40   F0 0F 84 16 02 00 00 83 FE 1C 0F 85 BD 00 00 00   ...........・...
+                                                                                   00001C50   33 F6 39 75 10 74 2F A1 EC 87 00 01 8B 0D F0 87   3.9u.t/｡・....
+    /* Get other parameter in TCP/IP header */                                     00001C60   00 01 3B C6 75 08 3B CE 0F 84 D9 02 00 00 8B 3D   ..;ﾆu.;ﾎ.・....=
+    if ((long)ntohs(ip_header->ip_len)-(long)iph_len-(long)tcph_len<0)             00001C70   14 12 00 01 51 50 68 B1 00 00 00 FF 35 D4 87 00   ....QPhｱ....5ﾔ..
+        return(0);                                                                 00001C80   01 E9 56 01 00 00 8B 3D 14 12 00 01 68 F0 87 00   .餬....=....h.
+    len_data    = (unsigned long)ntohs(ip_header->ip_len)                          00001C90   01 68 EC 87 00 01 68 B0 00 00 00 FF 35 D4 87 00   .h・..hｰ....5ﾔ..
+                      -iph_len-tcph_len;                                           00001CA0   01 FF D7 A1 EC 87 00 01 8B 0D F0 87 00 01 3B C1   ..ﾗ｡・......;ﾁ
+    sourcePort = ntohs(tcp_header->th_sport);                                      00001CB0   75 11 89 35 EC 87 00 01 89 35 F0 87 00 01 E9 84   u..5・...5..驗
+    destPort    = ntohs(tcp_header->th_dport);                                     00001CC0   02 00 00 51 50 E9 07 01 00 00 8B CE B8 12 01 00   ...QP.....勤ｸ...
+    memcpy(&addr,&(ip_header->ip_src),sizeof(struct in_addr));                     00001CD0   00 2B C8 0F 84 3C 02 00 00 83 E9 04 0F 84 29 02   .+ﾈ..<...・...).
+    strcpy(sourceIP,(char *)inet_ntoa(addr));                                      00001CE0   00 00 49 0F 84 F9 01 00 00 81 E9 1C 01 00 00 0F   ..I.・...・.....
+    memcpy(&addr,&(ip_header->ip_dst),sizeof(struct in_addr));                     00001CF0   84 E0 01 00 00 81 E9 E6 00 00 00 0F 84 3D 01 00   ・...・......=..
+    strcpy(destIP,(char *)inet_ntoa(addr));                                        00001D00   00 81 E9 E8 7C 00 00 0F 84 02 01 00 00 3B 35 5C   .・閖........;5¥
+    if (!strcmp(sourceIP,destIP)) return(0);                                       00001D10   88 00 01 0F 85 EE 00 00 00 8B 45 14 8B 48 0C 8B   ....・...畿.稀.驚
+                                                                                   00001D20   C1 8B D1 F7 D0 C1 EA 02 83 E0 01 83 E2 01 F6 C1    錦ﾁ..・.・.
+
+
+
+
+                                                                                                                                                             14
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  組み込み機器のハードウエア基本構成
+   基本的なハードウエア構成はPC等と同様                             SDRAM
+
+
+
+
+       CPU                  I/O
+
+
+
+        メモリ             周辺装置
+
+
+                                     イーサーネットポート   CPU
+
+                                                           15
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  組み込み向けCPU
+     PC用 CISC CPU                  ・バス幅が広がることによる消費電力問題
+                                   ・様々なデバイスとの接続性の問題
+
+
+                                 組み込み用CPUとして利用し続けることは困難
+
+
+     RISCタイプのCPU               ・CISCに比べ非常に高いパフォーマンスが得られる
+                               ・物理的にCPUコアのサイズを小さくできる
+
+
+                               デコード回路を簡略化するために命令語長を統一
+                               → 32bit語長に統一するとCISCに比べコードサイズが増加
+
+     ARMアーキテクチャ                    32bitと16bitの２つの命令セットを持つ
+
+
+                                                             16
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  組み込み機器のOSとソフトウエア
+  ・ 組み込み向けリアルタイムOS、あるいはLinuxやWindowsのような汎用OS
+  ・ 汎用OSで動作する組み込み機器の攻撃は、既存の手法と大差ない
+  ・ 情報が尐なく、攻撃難易度の高い組み込み向けリアルタイムOSにフォーカス
+    ( システムに課せられた時間的制約をクリアできることが保証されているOS )
+
+
+
+                スレッド系リアルタイムOS            パフォーマンス面で有利
+                μ ITRON、μ cLinuxなど
+
+
+               プロセス系リアルタイムOS             メモリ空間が独立して
+               RTLinuxなど (MMU必須)           いるため安全
+
+
+    - システムの性質やコストにより使い分け
+    - スレッド系にフォーカス
+
+                                                       17
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  Chapter 3
+ int packet_analysis(GDDCONFIG *gddc,unsigned char *packet,unsigned long length)
+ {
+     struct ip       *ip_header;     /* IP header */
+     struct tcphdr   *tcp_header;    /* TCP header */
+     char            *tcp_data;      /* TCP data */
+     struct in_addr addr;            /* IP address */
+     char            sourceIP[16];   /* Source IP address */
+     char            destIP[16];     /* Destination IP address */
+     unsigned short sourcePort;      /* Source Port */
+     unsigned short destPort;        /* Destination Port */
+     unsigned long   len_data;       /* Length of data part */
+     unsigned long   iph_len;        /* Length of IP header */
+     unsigned long   tcph_len;       /* Length of TCP header */
+     unsigned long   sequence;       /* Expected sequence */
+     int             portindex;      /* Indexnumber of port list */
+     int             direction;      /* Packet direction */
+     unsigned char   logtype;        /* Log type */
+     CONN_LIST       *bcl,*ncl;      /* Connection table list */
+     CONN_LIST       *t;             /* Temporary connection list */
+     static char     datestr[512];   /* Buffer to store datetime */
+     time_t          timeval;
+     struct tm       *timep=NULL;
+     char            *timesp=NULL;
+     char            *c;
+
+    /* Get pointer of IP header and check length of IP */
+    if (length-SIZE_OF_ETHHDR < MINSIZE_IP+MINSIZE_TCP) return(0);
+    ip_header    = (struct ip *)(packet+SIZE_OF_ETHHDR);
+    if (ip_header->ip_p!=IPPROTO_TCP
+
+
+
+                                                       組み込み機器と
+      || ip_header->ip_v!=4) return(0);                                            00001B70   FF 15 F0 11 00 01 E9 CC 03 00 00 E8 7C 1C 00 00   ......鯲...閖...
+    iph_len      = ((unsigned long)(ip_header->ip_hl))*4;                          00001B80   33 F6 56 E8 B1 FC FF FF 85 C0 0F 84 B7 03 00 00   3雎...・.┨...
+    if (iph_len<MINSIZE_IP) return(0);                                             00001B90   56 6A 02 FF 35 6C 80 00 01 FF 35 D0 87 00 01 FF   Vj..5l....5ﾐ....
+    if ((unsigned long)ntohs(ip_header->ip_len) < MINSIZE_IP+MINSIZE_TCP)          00001BA0   15 CC 11 00 01 85 C0 75 1D 68 10 10 00 00 FF 35   .ﾌ...・u.h.....5
+         return(0);                                                                00001BB0   50 80 00 01 FF 35 44 80 00 01 FF 35 D0 87 00 01   P....5D....5ﾐ...
+    if ((unsigned long)ntohs(ip_header->ip_len) > length-SIZE_OF_ETHHDR){          00001BC0   FF 15 04 12 00 01 FF 35 D0 87 00 01 FF 15 2C 12   .......5ﾐ.....,.
+
+
+
+
+                                                バッファオーバーフロー脆弱性
+         return(0);                                                                00001BD0   00 01 FF 35 D4 8B 00 01 FF 15 58 10 00 01 E9 64   ...5ﾔ.....X...馘
+    }                                                                              00001BE0   03 00 00 83 FE 1A 77 47 0F 84 59 03 00 00 83 FE   ......wG.Ш.....
+                                                                                   00001BF0   11 0F 85 16 01 00 00 33 F6 39 35 E8 87 00 01 74   .......3.95閾..t
+    /* Get pointer of TCP header and check length of TCP */                        00001C00   22 8B 3D 28 12 00 01 56 FF D7 56 FF D7 68 00 10   ".=(...V.ﾗV.ﾗh..
+    tcp_header = (struct tcphdr *)((char *)ip_header+iph_len);                     00001C10   00 00 FF 35 50 80 00 01 FF 35 88 80 00 01 E9 7D   ...5P....5・..驀
+    tcph_len    = ((unsigned long)(tcp_header->th_off))*4;                         00001C20   02 00 00 6A 01 E8 0F FC FF FF E9 1A 03 00 00 8B   ...j...........急
+    tcp_data    = (char *)tcp_header+tcph_len;                                     00001C30   7D 14 B8 11 01 00 00 3B F0 0F 87 8B 00 00 00 3B    .ｸ....;..㈲...;
+    if (tcph_len<MINSIZE_TCP) return(0);                                           00001C40   F0 0F 84 16 02 00 00 83 FE 1C 0F 85 BD 00 00 00   ...........・...
+                                                                                   00001C50   33 F6 39 75 10 74 2F A1 EC 87 00 01 8B 0D F0 87   3.9u.t/｡・....
+    /* Get other parameter in TCP/IP header */                                     00001C60   00 01 3B C6 75 08 3B CE 0F 84 D9 02 00 00 8B 3D   ..;ﾆu.;ﾎ.・....=
+    if ((long)ntohs(ip_header->ip_len)-(long)iph_len-(long)tcph_len<0)             00001C70   14 12 00 01 51 50 68 B1 00 00 00 FF 35 D4 87 00   ....QPhｱ....5ﾔ..
+        return(0);                                                                 00001C80   01 E9 56 01 00 00 8B 3D 14 12 00 01 68 F0 87 00   .餬....=....h.
+    len_data    = (unsigned long)ntohs(ip_header->ip_len)                          00001C90   01 68 EC 87 00 01 68 B0 00 00 00 FF 35 D4 87 00   .h・..hｰ....5ﾔ..
+                      -iph_len-tcph_len;                                           00001CA0   01 FF D7 A1 EC 87 00 01 8B 0D F0 87 00 01 3B C1   ..ﾗ｡・......;ﾁ
+    sourcePort = ntohs(tcp_header->th_sport);                                      00001CB0   75 11 89 35 EC 87 00 01 89 35 F0 87 00 01 E9 84   u..5・...5..驗
+    destPort    = ntohs(tcp_header->th_dport);                                     00001CC0   02 00 00 51 50 E9 07 01 00 00 8B CE B8 12 01 00   ...QP.....勤ｸ...
+    memcpy(&addr,&(ip_header->ip_src),sizeof(struct in_addr));                     00001CD0   00 2B C8 0F 84 3C 02 00 00 83 E9 04 0F 84 29 02   .+ﾈ..<...・...).
+    strcpy(sourceIP,(char *)inet_ntoa(addr));                                      00001CE0   00 00 49 0F 84 F9 01 00 00 81 E9 1C 01 00 00 0F   ..I.・...・.....
+    memcpy(&addr,&(ip_header->ip_dst),sizeof(struct in_addr));                     00001CF0   84 E0 01 00 00 81 E9 E6 00 00 00 0F 84 3D 01 00   ・...・......=..
+    strcpy(destIP,(char *)inet_ntoa(addr));                                        00001D00   00 81 E9 E8 7C 00 00 0F 84 02 01 00 00 3B 35 5C   .・閖........;5¥
+    if (!strcmp(sourceIP,destIP)) return(0);                                       00001D10   88 00 01 0F 85 EE 00 00 00 8B 45 14 8B 48 0C 8B   ....・...畿.稀.驚
+                                                                                   00001D20   C1 8B D1 F7 D0 C1 EA 02 83 E0 01 83 E2 01 F6 C1    錦ﾁ..・.・.
+
+
+
+
+                                                                                                                                                             18
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  バッファオーバーフロー脆弱性
+              動的、あるいは静的に確保されたメモリ領域に対して書き込みを行う際、
+              確保されたサイズ以上のデータがそのバッファに書き込まれてしまう現象
+
+
+      典型的なローカルバッファオーバーフロー                               Stack
+
+
+        1:main(int argc,char *argv[])
+                                                     Return Address
+        2:{
+        3:    char buf[4];               overwrite
+                                                      Local Buffer
+        4:    strcpy(buf,argv[1]);
+                                                       Shell Code
+        5:}
+
+
+   インストラクションポインタに任意のアドレスをセットすることができ、
+   バッファに格納したネイティブコードを実行できる。
+
+                                                                      19
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  バッファオーバーフローの攻略
+
+
+      バッファオーバーフロー            メモリ、レジスタ等   コード実行     NICなど
+       脆弱性を発見する                内容を確認             周辺機器の利用
+
+
+   バッファオーバーフローexploitの作成には、メモリやレジスタの内容を確認が必須
+   → デバッガによるデバッグ
+   → 一旦exploitが作成できれば、そのexploitで同じ型の他のシステムを容易に攻撃可
+
+    一般的な組み込みシステムは、ただの「箱」。
+
+                    • CRTもキーボードもない。
+                    • デバッガなどがインストールできない
+                    • 詳細が公開されていない(API、システムコールが利用不可?)
+
+                                                           20
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  組み込みシステムのデバッグ
+
+                                 最も有効な手段はICE
+
+
+     ICEとは？
+     組み込みシステムを開発する際に利用される開発支援装置
+
+                      最近開発されたCPUやDSPの多くは、JTAG ICE
+                       (JTAGエミュレータ)によるデバッグをサポート
+
+
+                ※ JTAG：IEEE1149.1として標準化されたバウンダリスキャン
+                用のアーキテクチャとそのシリアルポート
+
+
+                                                      21
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  JTAGエミュレータ
+   ARM社純正 Multi-ICE Ver 2.2
+
+            ARM7TM、ARM9TM、ARM9ETM、
+            ARM10TM、XScaleを含む
+            現行の全ARMコアをサポート
+
+            RDI準拠デバッガに対応
+
+
+    デバッガソフトウエア
+
+
+                                             JTAGエミュレータ   ターゲットシステム
+
+
+
+                                   パラレルポート
+
+
+
+
+                                                                      22
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  バッファオーバーフロー攻撃可能条件
+            攻撃可能なバッファオーバーフローバグが存在する
+
+            外部からCPUの型番を判別でき、
+            アプリケーションノートを入手できる
+
+             ・shellコードの記述には必要不可欠
+             ・情報が全く公開されていないカスタムCPUは困難
+             ・多くの場合汎用的なCPUが利用されている
+
+            コンパイラやアセンブラを入手できる
+
+             ・ARMの場合、GNU環境を利用できる
+             ・ハンドアセンブルでも可
+
+
+
+
+                                         23
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  バッファオーバーフロー攻撃可能条件 (続き)
+
+          メモリやレジスタの内容を確認できる
+
+            ・JTAGエミュレータ、デバッグコンソールなど
+
+          周辺装置が利用できる
+
+            ・周辺装置が利用できない場合、致命的な
+              ダメージを与えるshellコード作成は難しい
+             (パケット送信、パスワード書き換え)
+                                         ida
+            ・APIを利用する
+             → ファームウエアをリバースエンジニアリング
+
+            ・周辺装置を直接ドライブする
+             → ユーザーズマニュアルを入手する
+
+                                               24
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  Chapter 4
+ int packet_analysis(GDDCONFIG *gddc,unsigned char *packet,unsigned long length)
+ {
+     struct ip       *ip_header;     /* IP header */
+     struct tcphdr   *tcp_header;    /* TCP header */
+     char            *tcp_data;      /* TCP data */
+     struct in_addr addr;            /* IP address */
+     char            sourceIP[16];   /* Source IP address */
+     char            destIP[16];     /* Destination IP address */
+     unsigned short sourcePort;      /* Source Port */
+     unsigned short destPort;        /* Destination Port */
+     unsigned long   len_data;       /* Length of data part */
+     unsigned long   iph_len;        /* Length of IP header */
+     unsigned long   tcph_len;       /* Length of TCP header */
+     unsigned long   sequence;       /* Expected sequence */
+     int             portindex;      /* Indexnumber of port list */
+     int             direction;      /* Packet direction */
+     unsigned char   logtype;        /* Log type */
+     CONN_LIST       *bcl,*ncl;      /* Connection table list */
+     CONN_LIST       *t;             /* Temporary connection list */
+     static char     datestr[512];   /* Buffer to store datetime */
+     time_t          timeval;
+     struct tm       *timep=NULL;
+     char            *timesp=NULL;
+     char            *c;
+
+    /* Get pointer of IP header and check length of IP */
+    if (length-SIZE_OF_ETHHDR < MINSIZE_IP+MINSIZE_TCP) return(0);
+    ip_header    = (struct ip *)(packet+SIZE_OF_ETHHDR);
+    if (ip_header->ip_p!=IPPROTO_TCP
+
+
+
+                             組み込みシステムの
+      || ip_header->ip_v!=4) return(0);                                            00001B70   FF 15 F0 11 00 01 E9 CC 03 00 00 E8 7C 1C 00 00   ......鯲...閖...
+    iph_len      = ((unsigned long)(ip_header->ip_hl))*4;                          00001B80   33 F6 56 E8 B1 FC FF FF 85 C0 0F 84 B7 03 00 00   3雎...・.┨...
+    if (iph_len<MINSIZE_IP) return(0);                                             00001B90   56 6A 02 FF 35 6C 80 00 01 FF 35 D0 87 00 01 FF   Vj..5l....5ﾐ....
+    if ((unsigned long)ntohs(ip_header->ip_len) < MINSIZE_IP+MINSIZE_TCP)          00001BA0   15 CC 11 00 01 85 C0 75 1D 68 10 10 00 00 FF 35   .ﾌ...・u.h.....5
+         return(0);                                                                00001BB0   50 80 00 01 FF 35 44 80 00 01 FF 35 D0 87 00 01   P....5D....5ﾐ...
+    if ((unsigned long)ntohs(ip_header->ip_len) > length-SIZE_OF_ETHHDR){          00001BC0   FF 15 04 12 00 01 FF 35 D0 87 00 01 FF 15 2C 12   .......5ﾐ.....,.
+
+
+
+
+                      バッファオーバーフロー脆弱性解析
+         return(0);                                                                00001BD0   00 01 FF 35 D4 8B 00 01 FF 15 58 10 00 01 E9 64   ...5ﾔ.....X...馘
+    }                                                                              00001BE0   03 00 00 83 FE 1A 77 47 0F 84 59 03 00 00 83 FE   ......wG.Ш.....
+                                                                                   00001BF0   11 0F 85 16 01 00 00 33 F6 39 35 E8 87 00 01 74   .......3.95閾..t
+    /* Get pointer of TCP header and check length of TCP */                        00001C00   22 8B 3D 28 12 00 01 56 FF D7 56 FF D7 68 00 10   ".=(...V.ﾗV.ﾗh..
+    tcp_header = (struct tcphdr *)((char *)ip_header+iph_len);                     00001C10   00 00 FF 35 50 80 00 01 FF 35 88 80 00 01 E9 7D   ...5P....5・..驀
+    tcph_len    = ((unsigned long)(tcp_header->th_off))*4;                         00001C20   02 00 00 6A 01 E8 0F FC FF FF E9 1A 03 00 00 8B   ...j...........急
+    tcp_data    = (char *)tcp_header+tcph_len;                                     00001C30   7D 14 B8 11 01 00 00 3B F0 0F 87 8B 00 00 00 3B    .ｸ....;..㈲...;
+    if (tcph_len<MINSIZE_TCP) return(0);                                           00001C40   F0 0F 84 16 02 00 00 83 FE 1C 0F 85 BD 00 00 00   ...........・...
+                                                                                   00001C50   33 F6 39 75 10 74 2F A1 EC 87 00 01 8B 0D F0 87   3.9u.t/｡・....
+    /* Get other parameter in TCP/IP header */                                     00001C60   00 01 3B C6 75 08 3B CE 0F 84 D9 02 00 00 8B 3D   ..;ﾆu.;ﾎ.・....=
+    if ((long)ntohs(ip_header->ip_len)-(long)iph_len-(long)tcph_len<0)             00001C70   14 12 00 01 51 50 68 B1 00 00 00 FF 35 D4 87 00   ....QPhｱ....5ﾔ..
+        return(0);                                                                 00001C80   01 E9 56 01 00 00 8B 3D 14 12 00 01 68 F0 87 00   .餬....=....h.
+    len_data    = (unsigned long)ntohs(ip_header->ip_len)                          00001C90   01 68 EC 87 00 01 68 B0 00 00 00 FF 35 D4 87 00   .h・..hｰ....5ﾔ..
+                      -iph_len-tcph_len;                                           00001CA0   01 FF D7 A1 EC 87 00 01 8B 0D F0 87 00 01 3B C1   ..ﾗ｡・......;ﾁ
+    sourcePort = ntohs(tcp_header->th_sport);                                      00001CB0   75 11 89 35 EC 87 00 01 89 35 F0 87 00 01 E9 84   u..5・...5..驗
+    destPort    = ntohs(tcp_header->th_dport);                                     00001CC0   02 00 00 51 50 E9 07 01 00 00 8B CE B8 12 01 00   ...QP.....勤ｸ...
+    memcpy(&addr,&(ip_header->ip_src),sizeof(struct in_addr));                     00001CD0   00 2B C8 0F 84 3C 02 00 00 83 E9 04 0F 84 29 02   .+ﾈ..<...・...).
+    strcpy(sourceIP,(char *)inet_ntoa(addr));                                      00001CE0   00 00 49 0F 84 F9 01 00 00 81 E9 1C 01 00 00 0F   ..I.・...・.....
+    memcpy(&addr,&(ip_header->ip_dst),sizeof(struct in_addr));                     00001CF0   84 E0 01 00 00 81 E9 E6 00 00 00 0F 84 3D 01 00   ・...・......=..
+    strcpy(destIP,(char *)inet_ntoa(addr));                                        00001D00   00 81 E9 E8 7C 00 00 0F 84 02 01 00 00 3B 35 5C   .・閖........;5¥
+    if (!strcmp(sourceIP,destIP)) return(0);                                       00001D10   88 00 01 0F 85 EE 00 00 00 8B 45 14 8B 48 0C 8B   ....・...畿.稀.驚
+                                                                                   00001D20   C1 8B D1 F7 D0 C1 EA 02 83 E0 01 83 E2 01 F6 C1    錦ﾁ..・.・.
+
+
+
+
+                                                                                                                                                             25
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  組込み機器のデバッグ手順
+      JTAGによるデバッグ
+
+      ・ 対象機器を分解し、CPUの型番を特定
+      ・ JTAGインタフェースを作成
+      ・ JTAGの接続
+      ・ デバッガを起動
+
+      シリアルコンソールによるデバッグ
+
+      ・ 対象機器を分解し、CPUの型番を特定
+      ・ UARTピンからシリアルポートを作成
+      ・ PCに接続
+      ・ シリアルコンソールがあり、かつ何らかのデバッグ機能があればそれを利用
+
+
+
+                                             26
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  JTAGエミュレータの接続
+                                                          周辺装置
+ JTAG対応CPUにはTAPポートが存在
+ PC + デバッガソフトウエア
+
+
+
+
+                                                                            コントローラ
+                                         SDRAM / ROM / FLASH
+                                                                       メモリマップド I/O
+
+ パラレル
+    USB                                                          CPU
+ Ethernet
+     など
+                                                                   TAPポート
+              JTAGエミュレータ
+
+
+                                    JTAGポート(14pin or 20pin)
+
+                                                                                     27
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  JTAGピン
+        テストアクセスポート(TAP)ピン
+
+           TCK       TAPコントローラの動作を同期化するクロック信号
+           TMS       内部ステートマシンモードの選択信号
+           TDI       データ入力
+           TDO       データ出力
+           TRST      非同期リセット(オプション)
+
+
+        Embedded ICEインタフェース                SPU : 1    2 : GND
+                                         nTRST : 3    4 : GND
+                                            TDI : 5   6 : GND
+                                           TMS : 7    8 : GND
+                                           TCK : 9    10 : GND
+                                           TDO : 11   12 : nICERST
+                                           SPU : 13   14 : GND
+
+
+                                                                     28
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  JTAGポート
+                                         1
+
+
+
+
+                                                              S3C4510B
+
+                                             58 59 60 61 62
+
+                                               TCK
+                                               TMS
+                                                TDI
+             JTAGポート回路図                        TDO
+                                             nTRST
+
+                                                                     29
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  ケーブルの接続
+      ピッチが非常に狭く、かなり熟練
+      したハンダ付けの技術が必要
+
+
+       ピンを基盤から剥がして広げる
+
+     細めの縫い針を利用
+
+                                  押し上げる
+
+
+
+
+                                          30
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  JTAGポートの実装
+
+
+
+
+                                         31
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  その他、JTAGエミュレータ接続例(1)
+
+
+
+
+                                         32
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  その他、JTAGエミュレータ接続例(2)
+
+
+
+
+                                         33
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  デバッガ
+       RDI (Remote Debug Interface)
+
+         システムデバッグのための標準API。
+         ハードウエアを抽象化する関数群とデータ構造からなる。
+
+
+        JTAGがRDIに対応していれば、RDI対応デバッガを利用できる。
+
+             • ARM - AxD
+             • Green Hills – Multi2000
+             • IAR Systems – Embedded Workbench
+             • Mentor Graphics – XRAY
+             • GNU – GDB、GNUWing
+
+
+                                                  34
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  RDIデバッガ
+   IAR Systems                           UPWind GNUWing
+   Embedded Workbench
+
+
+
+
+   http://www.iar.com/                   http://www.upwind-technology.com/
+   プロジェクトマジェージャ、コンパイラ、デバッガなどを            gdb, insight, binutils などがパッケージ化された
+   含む統合開発環境                              フリーウエア。Cygwin 、およびRedHat Linuxで動作
+
+
+
+                                                                           35
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  デバッグ用シリアルコンソール
+
+    ・ コンソール出力も非常に有用なデバッグ環境 (ex. printf()など)
+    ・ 通常のチップにはUARTが内蔵されている
+    ・ UARTを使ってデバッグ用コンソールを作成
+    ・ Shellコードのデバッグに利用可能
+
+
+
+
+                                              36
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  シリアルポート実装例
+   シリアルレベルコンバータを介してPCのRS-232Cポートへ
+
+                              Sipex SP232ACP
+
+
+
+
+                               ・ＭＡＸ２３２ピン互換
+                               ・5V単一電源動作
+                               ・コンデンサ内蔵
+
+
+                                               37
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  パニックダンプ
+          メルコ BLR-TX4L
+
+
+
+
+                                         38
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  Chapter 4
+ int packet_analysis(GDDCONFIG *gddc,unsigned char *packet,unsigned long length)
+ {
+     struct ip       *ip_header;     /* IP header */
+     struct tcphdr   *tcp_header;    /* TCP header */
+     char            *tcp_data;      /* TCP data */
+     struct in_addr addr;            /* IP address */
+     char            sourceIP[16];   /* Source IP address */
+     char            destIP[16];     /* Destination IP address */
+     unsigned short sourcePort;      /* Source Port */
+     unsigned short destPort;        /* Destination Port */
+     unsigned long   len_data;       /* Length of data part */
+     unsigned long   iph_len;        /* Length of IP header */
+     unsigned long   tcph_len;       /* Length of TCP header */
+     unsigned long   sequence;       /* Expected sequence */
+     int             portindex;      /* Indexnumber of port list */
+     int             direction;      /* Packet direction */
+     unsigned char   logtype;        /* Log type */
+     CONN_LIST       *bcl,*ncl;      /* Connection table list */
+     CONN_LIST       *t;             /* Temporary connection list */
+     static char     datestr[512];   /* Buffer to store datetime */
+     time_t          timeval;
+     struct tm       *timep=NULL;
+     char            *timesp=NULL;
+     char            *c;
+
+    /* Get pointer of IP header and check length of IP */
+    if (length-SIZE_OF_ETHHDR < MINSIZE_IP+MINSIZE_TCP) return(0);
+    ip_header    = (struct ip *)(packet+SIZE_OF_ETHHDR);
+    if (ip_header->ip_p!=IPPROTO_TCP
+
+
+
+                                                バッファオーバーフロー脆弱性
+      || ip_header->ip_v!=4) return(0);                                            00001B70   FF 15 F0 11 00 01 E9 CC 03 00 00 E8 7C 1C 00 00   ......鯲...閖...
+    iph_len      = ((unsigned long)(ip_header->ip_hl))*4;                          00001B80   33 F6 56 E8 B1 FC FF FF 85 C0 0F 84 B7 03 00 00   3雎...・.┨...
+    if (iph_len<MINSIZE_IP) return(0);                                             00001B90   56 6A 02 FF 35 6C 80 00 01 FF 35 D0 87 00 01 FF   Vj..5l....5ﾐ....
+    if ((unsigned long)ntohs(ip_header->ip_len) < MINSIZE_IP+MINSIZE_TCP)          00001BA0   15 CC 11 00 01 85 C0 75 1D 68 10 10 00 00 FF 35   .ﾌ...・u.h.....5
+         return(0);                                                                00001BB0   50 80 00 01 FF 35 44 80 00 01 FF 35 D0 87 00 01   P....5D....5ﾐ...
+    if ((unsigned long)ntohs(ip_header->ip_len) > length-SIZE_OF_ETHHDR){          00001BC0   FF 15 04 12 00 01 FF 35 D0 87 00 01 FF 15 2C 12   .......5ﾐ.....,.
+
+
+
+
+                                                         攻略の実例
+         return(0);                                                                00001BD0   00 01 FF 35 D4 8B 00 01 FF 15 58 10 00 01 E9 64   ...5ﾔ.....X...馘
+    }                                                                              00001BE0   03 00 00 83 FE 1A 77 47 0F 84 59 03 00 00 83 FE   ......wG.Ш.....
+                                                                                   00001BF0   11 0F 85 16 01 00 00 33 F6 39 35 E8 87 00 01 74   .......3.95閾..t
+    /* Get pointer of TCP header and check length of TCP */                        00001C00   22 8B 3D 28 12 00 01 56 FF D7 56 FF D7 68 00 10   ".=(...V.ﾗV.ﾗh..
+    tcp_header = (struct tcphdr *)((char *)ip_header+iph_len);                     00001C10   00 00 FF 35 50 80 00 01 FF 35 88 80 00 01 E9 7D   ...5P....5・..驀
+    tcph_len    = ((unsigned long)(tcp_header->th_off))*4;                         00001C20   02 00 00 6A 01 E8 0F FC FF FF E9 1A 03 00 00 8B   ...j...........急
+    tcp_data    = (char *)tcp_header+tcph_len;                                     00001C30   7D 14 B8 11 01 00 00 3B F0 0F 87 8B 00 00 00 3B    .ｸ....;..㈲...;
+    if (tcph_len<MINSIZE_TCP) return(0);                                           00001C40   F0 0F 84 16 02 00 00 83 FE 1C 0F 85 BD 00 00 00   ...........・...
+                                                                                   00001C50   33 F6 39 75 10 74 2F A1 EC 87 00 01 8B 0D F0 87   3.9u.t/｡・....
+    /* Get other parameter in TCP/IP header */                                     00001C60   00 01 3B C6 75 08 3B CE 0F 84 D9 02 00 00 8B 3D   ..;ﾆu.;ﾎ.・....=
+    if ((long)ntohs(ip_header->ip_len)-(long)iph_len-(long)tcph_len<0)             00001C70   14 12 00 01 51 50 68 B1 00 00 00 FF 35 D4 87 00   ....QPhｱ....5ﾔ..
+        return(0);                                                                 00001C80   01 E9 56 01 00 00 8B 3D 14 12 00 01 68 F0 87 00   .餬....=....h.
+    len_data    = (unsigned long)ntohs(ip_header->ip_len)                          00001C90   01 68 EC 87 00 01 68 B0 00 00 00 FF 35 D4 87 00   .h・..hｰ....5ﾔ..
+                      -iph_len-tcph_len;                                           00001CA0   01 FF D7 A1 EC 87 00 01 8B 0D F0 87 00 01 3B C1   ..ﾗ｡・......;ﾁ
+    sourcePort = ntohs(tcp_header->th_sport);                                      00001CB0   75 11 89 35 EC 87 00 01 89 35 F0 87 00 01 E9 84   u..5・...5..驗
+    destPort    = ntohs(tcp_header->th_dport);                                     00001CC0   02 00 00 51 50 E9 07 01 00 00 8B CE B8 12 01 00   ...QP.....勤ｸ...
+    memcpy(&addr,&(ip_header->ip_src),sizeof(struct in_addr));                     00001CD0   00 2B C8 0F 84 3C 02 00 00 83 E9 04 0F 84 29 02   .+ﾈ..<...・...).
+    strcpy(sourceIP,(char *)inet_ntoa(addr));                                      00001CE0   00 00 49 0F 84 F9 01 00 00 81 E9 1C 01 00 00 0F   ..I.・...・.....
+    memcpy(&addr,&(ip_header->ip_dst),sizeof(struct in_addr));                     00001CF0   84 E0 01 00 00 81 E9 E6 00 00 00 0F 84 3D 01 00   ・...・......=..
+    strcpy(destIP,(char *)inet_ntoa(addr));                                        00001D00   00 81 E9 E8 7C 00 00 0F 84 02 01 00 00 3B 35 5C   .・閖........;5¥
+    if (!strcmp(sourceIP,destIP)) return(0);                                       00001D10   88 00 01 0F 85 EE 00 00 00 8B 45 14 8B 48 0C 8B   ....・...畿.稀.驚
+                                                                                   00001D20   C1 8B D1 F7 D0 C1 EA 02 83 E0 01 83 E2 01 F6 C1    錦ﾁ..・.・.
+
+
+
+
+                                                                                                                                                             39
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  攻略例1 - Linksys BEFSR41 ver.2
+
+
+
+
+                                         S3C4510B
+
+
+
+
+                                                    40
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  攻略例2 - E-z Cam 100
+
+                                         WEB サーバー内蔵ネットワークカメラ
+                                         Cマウント（標準三脚ホール）
+                                         Ethernetポート
+                                         1/3” CMOS (VGA,QVGA)
+                                         外部センサー連動イベント
+                                         スケジュール機能 (FTP、メール)
+
+
+
+
+                                                                 41
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  脆弱性
+        Linksys BEFSR41の脆弱性
+
+            • Buffer Overflow (スタック)
+            • Webサーバ (Port 80/TCP)
+            • リモートから攻撃可能
+            • デフォルトではLAN側からのみ攻撃可能
+
+
+
+        E-z Cam 100 の脆弱性
+
+            • Buffer Overflow (スタック)
+            • SMTPクライアント機能
+            • 受動的攻撃
+
+
+
+                                         42
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  バッファオーバーフローの確認
+
+
+
+
+                                         43
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  ARM7TDMIのshellcode
+           Shellcodeの動作モードは16-BISモード
+            → NULL防止、コードサイズ短縮
+
+           エンディアンに注意
+            → 現在のエンディアンに応じたshellcodeを作成
+
+
+           16-BIS状態への移行
+           ・オペランドレジスタの状態ビット(bit0)をセットしてBX命令を実行
+
+           32-BIS状態への移行
+           ・オペランドレジスタの状態ビットをクリアした状態でBX命令を実行
+
+           メモリフォーマット
+           ・リトルエンディアン、ビッグエンディアンの両方をサポート
+
+
+                                                 44
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  16-BISモードの命令セット
+         ADC       キャリー付き加算              LDSH    hwの符号拡張付きロード
+         ADD       加算                    LSR     論理右シフト
+         AND       論理積                   MOV     レジスタの転送
+         ASR       算術右シフト                MUL     乗算
+         B         無条件分岐                 MVN     補数の転送
+         Bxx       条件分岐                  NEG     否定
+         BIC       ビットクリア                ORR     論理和
+         BL        リンク付き分岐               POP     レジスタのPOP
+         BX        分岐、および状態遷移            PUSH    レジスタのPUSH
+         CMN       補数の比較                 ROR     右ローテート
+         CMP       比較                    SBC     キャリー付き減算
+         EOR       排他的論理和                STMIA   複数レジスタのストア
+         LDMIA     複数レジスタのロード            STR     wordのストア
+         LDR       wordのロード              STRB    byteのストア
+         LDRB      byteのロード              STRH    hwのストア
+         LDRH      hwのロード                SWI     ソフトウエア割り込み
+         LSL       算術左シフト                SUB     減算
+         LDSB      byteの符号拡張付きロード        TST     ビットテスト
+
+                                                                45
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  shellcodeのアプローチ
+    スタックベースのバッファオーバーフローの場合、Shellcode実行までの手順は
+    通常のexploitコーディング技術と同様
+
+
+    周辺装置を利用できて初めて脅威となりえる。
+
+
+    ・ ハードウエア直接アクセス
+       → スレッド型RTOSはシングルステートのためI/Oアクセス可
+         ハードウエアを直接制御
+
+    ・ APIを利用する
+       → ファームウエアを吸出してリバースエンジニアリングし、
+          エントリアドレスや使い方を特定
+
+
+
+
+                                               46
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  ハードウエアの直接制御
+    ・ハードウエアの利用法
+    ・I/Oアドレス
+   Samsung社製「S3C4510B」には、様々な周辺装置がインテグレートされている。
+                                     ・Ethernet Controller
+                                     ・2 UART
+                                     ・18 Programmable I/O
+                                     ・I2c Serial Interface
+                                     ・Timers                 …. etc
+
+
+                        Programmable I/O ・・・・・・ 周辺装置制御
+
+                        UART ・・・・・・・・・・・・・・・・・ シリアル通信
+
+                        Ethernet Controller ・・・・・・ パケットの送受信
+
+
+                                                                      47
+Fourteenforty Research Institute, Inc.
+
+                                                                                                                                              48
+ S3C4610B メモリマップ                                                                             64Mアドレススペースの任意のエリアにバンクを定義可能
+ リセット直後のメモリマップ                                                                               0X3FFFFFF
+                                                                                                            Reserved
+  0X3FFFFFF
+                  Special Function Registers                                                                Special Register Bank   16K words (fixed)
+
+  0X3FF0000                                                                                                 Internal SRAM           0, 4 or 8KB (fixed)
+                  Undefined Area
+                                                                                                            External I/O Bank 3
+                                                                                       64M
+  0X2000000                                                                                                 External I/O Bank 2
+                  ROM/SRAM/FLASH Bank 0 Area                                                                                        16K word space
+                  (Non-Accessible)                                              32Mc
+                                                                                                            External I/O Bank 1
+                  ROM/SRAM/FLASH Bank 0 Area                                                                External I/O Bank 0       4K words (fixed)
+                  (Accessible)                                          4M
+  0X0000000
+                                                                                                            DRAM/SDRAM Bank 3
+                                                                                                16M words
+ システムマネジメントレジスタ                                                                                             DRAM/SDRAM Bank 2
+
+                                                                                                            DRAM/SDRAM Bank 1
+      Registers          Offset                Description
+                                                                                                            DRAM/SDRAM Bank 0
+      SYSCFG             0x0000                System configuration register
+
+      CLKCON             0x3000                Clock control register                                       ROM/SRAM/Flash Bank 5
+      EXTACON0           0x3008                External I/O timing register 1                               ROM/SRAM/Flash Bank 4
+      EXTACON1           0x300C                External I/O timing register 2
+                                                                                                            ROM/SRAM/Flash Bank 3
+      EXTDBWTH           0x3010                Data bus width of each bank
+                                                                                                            ROM/SRAM/Flash Bank 2
+      ROMCON0 - 5        0x3014 - 0x3028       ROM/SRAM/Flash bank control register
+
+      DRAMCON0 - 3       0x302C - 0x3038       DRAM bank control register                                   ROM/SRAM/Flash Bank 1
+      REFEXTCON          0x303C                Refresh and external I/O control register                    ROM/SRAM/Flash Bank 0   16K-4M words
+                                                                                             0X0000000
+Fourteenforty Research Institute, Inc.
+
+                                                                                                                         49
+スペシャルレジスタバンク ベースポインタ
+ System Configuration Register (SYSCFG)
+     → スペシャルレジスタと内部RAMの開始アドレスを設定
+                                      Offset    R/W            Descriptions                    Reset Value
+       アドレス : 3FF0000H
+                                      0x0000    R/W            System configuration register   0x37FFFF91
+
+
+       31 30           26 25                           16 15                            6 5         4   3    2   1   0
+
+       S                       Special Register Bank               Internal SRAM                             W   C   S
+       D       PD_ID                                                                           CM       0
+                                   Base Pointer                     Base Pointer                             E   E   E
+       M
+
+
+
+           [0] Stall enable (SE)                                     0に設定
+           [1] Cache enable (CE)                                     1=キャッシュ有効
+           [2] Write buffer enable (WE)                              1=バッファ有効
+           [5:4] Cache mode (CM)                                     キャッシュモード
+           [15:6] Internal SRAM base pointer                         上位10bit SRAMアドレス
+           [25:16] Special register bank base pointer                スペシャルレジスタ バンクポインタ
+           [30:26] Product Identifier (PD_ID)                        00001 = S3C4510X (KS32C50100)
+                                                                     11001 = S3C4510B
+           [31] Sync. DRAM Mode                                      0 = Normal/EDO DRAM インタフェース
+                                                                     1 = Sync. DRAMインタフェース
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  プログラマブルI/O
+  デジタルデータの入出力を行うためのモジュール
+
+   ・ 外部接点状態の読取り(Input)
+   ・ 外部装置制御のための接点開閉(Output)
+
+
+  S3C4510B
+
+   ・ 18個のプログラマブルI/O
+   ・ それぞれを入力、出力、および特殊機能モードに設定可能
+
+
+  用途
+
+   ・ 入力 ：各種スイッチ、センサー、デバッグ用途など
+   ・ 出力 : 各種LED、スイッチ(モーター制御など)、デバッグ用途
+
+                                         50
+Fourteenforty Research Institute, Inc.
+
+                                                          51
+ S3C4610B プログラマブルI/Oの利用
+  IOPMOD Register
+   → 各I/Oポートの動作モードを設定する
+
+
+
+
+              [0] I/Oポートモードビット(ポート0 )     ・・・ 0=入力、1=出力
+              [1] I/Oポートモードビット(ポート1 )     ・・・ 0=入力、1=出力
+                          ：
+              [17] I/Oポートモードビット(ポート17 )   ・・・ 0=入力、1=出力
+
+  IOPDATA Register
+   → 各I/Oポートに対する入出力を行う
+
+
+
+
+             [0] I/Oポート入出力(ポート0 )
+             [1] I/Oポート入出力ト(ポート1 )
+                         ：
+             [17] I/Oポート入出力(ポート17 )
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  Diag LED
+
+
+
+
+                                         52
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  制御例とshell code                                         IOPMODレジスタに
+                                                         0x0003fcb5をセット
+       unsigned long Reg_IOPMOD;                      (I/O 17番を出力に設定)
+       unsigned long Reg_IOPDATA;
+       unsigned long r,i;
+
+       Reg_IOPMOD=0x03ff5000;
+       Reg_IOPDATA=0x03ff5008;                            IOPDATAレジスタの
+                                                         Bit17をenableにする
+       *((unsigned long *)Reg_IOPMOD)=0x0003fcb5;   (Active LowなのでLEDはOFF)
+       for (;;){
+
+           r=*((unsigned long *)Reg_IOPDATA);               ウエイト
+           r=r|0x00020000;
+           *((unsigned long *)Reg_IOPDATA)=r;
+
+           for (i=0;i<0x080000;i++);                     IOPDATAレジスタの
+                                                        Bit17をdisableにする
+           r=r&(0x00020000^0xffffffff);             (Active LowなのでLEDはON)
+           *((unsigned long *)Reg_IOPDATA)=r;
+
+           for (i=0;i<0x080000;i++);
+                                                            ウエイト
+       }
+
+
+
+
+                                                                             53
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  Exploitコード
+
+
+
+
+                                         54
+Fourteenforty Research Institute, Inc.
+
+                                                                                                              55
+ S3C4610B UART
+                   Register           Offset Address   R/W       Description                        Reset Value
+                   ULCON0             0xD000           R/W       UART0 line control register        0x00
+                   UCON0              0xD004           R/W       UART0 control register             0x00
+                   USTAT0             0xD008           R         UART0 status register              0xC0
+                   UTXBUF0            0xD00C           W         UART0 transmit buffer register     0xXX
+                   URXBUF0            0xD010           R         UART0 receive buffer register      0xXX
+                   UBRDIV0            0xD014           R/W       UART0 baud rate divisor register   0x00
+                   BRDCNT0            0xD018           W         UART0 baud rate count register     0x00
+                   BRDCLK0            0xD01C           W         UART0 baud rate clock monitor      0x00
+
+ USTAT                                                     OV                Overrun error
+ → ステータスレジスタ                                               PE                Parity error
+  31              8 7   6     5   4   3   2    1   0
+                                                           FE                Frame error
+                    T   T   R     D   B   F    P   O
+                    C   B   D     T   K   E    E   V       BKD               Break detect
+                        E   R     R   D                    DTR               Data terminal ready
+                                                           RDR               Receive data ready
+
+       ・ 送信前にTBEをチェック。                                     TBE               Transmit buffer register empty
+
+       ・ EnableならUTXBUFに値をセット。                             TC                Transmit complete
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  制御例
+                                                        シェルコードのデバッグにも有用
+    void _outc(char *szBuffer,unsigned long dwLength)
+    {
+      unsigned int i,stat;
+
+        for (i=0;i<dwLength;){
+          for (;;){
+            stat=CSR_READ(USTAT0);
+            if (stat&0x00000040) break;
+          }
+          CSR_WRITE(UTXBUF0,szBuffer[i]);
+        }
+    }
+
+
+
+
+                                                                          56
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  Ethernet Controller
+     Shellcodeからパケットの送受信ができれば非常に有用
+
+            メモリ内容を攻撃者に送信
+
+               → パスワード、送受信バッファなど
+
+             タスクごとにメモリ空間が独立していないため、様々な情報を取得できる。
+
+
+            Proxyサーバ
+              → 踏み台として利用可能
+
+
+            worm化
+              → 他の対象をスキャンして攻撃
+
+                                                  57
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  S3C4510B Ethernet Controllerの利用
+     Buffered DMA (BDMA) 制御/ステータスレジスタ
+       BDMA : 送受信バッファ(FIFO)を制御する。
+
+
+    媒体アクセス制御（MAC) 制御/ステータスレジスタ
+        MAC : 媒体(Media)へのフレーム送出(Access)をコントロールする仕組み
+
+
+
+                     これらをShellcodeから制御する事でパケットの送受信が可能。
+
+
+                     割り込みを使わずポーリングで制御する。
+
+
+
+    今回は、ICMPパケットの送信を行うサンプルShellcodeを作成する。
+
+                                                         58
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  BDMA レジスタ
+
+
+
+
+     BDMATXCON         : BDMA送信制御レジスタ
+     BDMATXPTR         : 送信フレーム開始アドレスレジスタ
+
+
+
+                                            59
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  媒体アクセス制御(MAC) レジスタ
+
+
+
+
+     MACON              : MAC制御レジスタ
+     MACTXCON           : 送信制御レジスタ
+
+                                         60
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  パケット送信の手順
+                                   送信MACフレーム (BDMATXPTRにセット)
+     BDMATXCON リセット
+
+
+     MACON リセット
+
+
+     MACON 全二重モードにセット
+                                         ビット                     解説
+
+     送信MACフレームを作成                        O                       フレームオーナー (0=CPU, 1=BDMA)
+                                         Frame Data Pointer      送信フレーム格納アドレス
+
+     BDMATXPTR に                         WA                      ウイジェットアライメント制御
+     フレームアドレスをセット                        A                       フレームデータポインタ加算/減算
+                                         L                       エンディアン
+     BDMAをEnable
+                                         T                       MAC送信割り込みの有効・無効
+                                         C                       CRCモード
+     MAC 送信Enable
+                                         P                       パディングモード
+                                         Tx Status               送信フレームステータス
+                                         Next frame descriptor   次フレームデスクリプタのアドレス
+
+
+                                                                                            61
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  BDMATXCON レジスタ
+                                BDMATXCON
+    BDMATXCON リセット
+                                ビット位置     ビット        解説
+                                [4:0]     BTxBRST    BDMA送信バーストサイズ
+    MACON リセット
+                                [5]       BTxSTSKO   BDMA送信停止&スキップフレーム オーナービット
+                                [6]       N/A        予約
+    MACON 全二重モードにセット
+                                [7]       BTxCCPIE   BTxCCPIE 制御パケット割り込み有効化
+                                [8]       BTxNLIE    BTxNLIE NULLリスト割り込み有効化
+    送信MACフレームを作成
+                                [9]       BTxNOIE    非オーナー割り込み有効化
+                                [10]      BTxEmpty   バッファエンプティ割り込み有効化
+    BDMATXPTR に
+    フレームアドレスをセット                [13:11]   BTxMSL     BDMAからMAC送信FIFOへの送信開始レベル
+                                [14]      BTxEn      BDMA送信有効化
+    BDMAをEnable                 [15]      BTxRS      BDMA送信リセット
+
+
+    MAC 送信Enable                リセット
+                                          BTxRS (0x8000)
+
+                                BDMAをEnable
+                                       BTxBRST(15=32word)、BTxSTSKO、BTxEn 0x403F)
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  MACONレジスタ
+                                MACON
+    BDMATXCON リセット
+                                ビット位置    解説
+                                …        …
+    MACON リセット
+                                [2]      ソフトウエアリセット
+                                [3]      Full-duplex
+    MACON 全二重モードにセット
+                                …        …
+
+    送信MACフレームを作成
+
+
+    BDMATXPTR に                 MACONリセット
+    フレームアドレスをセット
+                                      bit [2] ソフトウエアリセット (0x0004)
+
+    BDMAをEnable                 MACON全二重モードにセット
+                                      bit [3] Full-duplex (0x0008)
+    MAC 送信Enable
+
+
+
+
+                                                                     63
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  MACTXCONレジスタ
+                               MATXCON
+    BDMATXCON リセット
+                               ビット位置     解説
+                               [0]       送信有効化
+    MACON リセット
+                               …         …
+
+    MACON 全二重モードにセット
+                               MAC送信Enable
+
+    送信MACフレームを作成                 bit [0] 送信有効化 (0x0001)
+
+    BDMATXPTR に                    このbitをEnableにす
+    フレームアドレスをセット
+                                   る事で、セットされた
+                                   MACフレーム
+    BDMAをEnable
+                                   を送信する事ができ
+                                   る
+    MAC 送信Enable
+
+
+
+
+                                                          64
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  その他Shellcodeの可能性
+                   フラッシュメモリ、EEPROMの書き換え
+
+                    • 設定データの変更 (DNSのIPアドレス書き換え、など)
+                    • ファームウエアを書き換え(Backdoor実装など)
+                    • パスワード書き換え
+
+
+
+
+                    BEFSR41 Ver.2
+                    ファームウエア格納用フラッシュメモリ   MX 29F040QC-90
+
+
+                                                          65
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  APIを利用する
+    静的リバースエンジニアリングによる解析
+
+        リバースエンジニアリングで便利なAPIとその使い方を解析
+
+        → 自由度が高く、攻撃力の強いShellcodeを記述できる
+
+        (例) パケット送受信API、フラッシュメモリ制御APIなど
+
+               ・ ファームウエアを吸出し、IDAなどで解析
+                 → JTAGを接続する
+
+               ・ 公開されているアップデートファームウエアを解析
+                → ファームウエアイメージを入手できる。難読化の解読
+
+
+
+                                             66
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  APIを使ったshellcodeと攻撃の手順例
+                         色々なAPIを解析するのは時間がかかる
+
+
+
+                   認証用パスワードを任意に設定するshellcodeを記述
+
+
+
+                                    認証をバイパス
+
+
+
+                           改造版ファームウエアをアップロード
+
+
+
+                             ターゲットに任意の処理をさせる
+
+
+                                                  67
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  Ez-Cam 100
+                                                     ZORAN ZR36060
+    Sipex SP3243ECA               AVERLOGIC AL422B   JPEG Codec
+    RS-232 converter              Video fram FIFO    http://www.zoran.com/
+    http://www.sipex.com
+
+
+
+
+    agere LU3Xe1FT2
+    Ethernet transceiver
+    http://www.agere.com/
+
+
+
+
+                                                                             68
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  NET+50
+
+     NetSilicon社製 NET+50 http://www.netsilicon.com
+
+                                             ARM7TDMI コア (44MHz)
+                                             10/100 baseT Ethernet MAC
+                                             2 serial ports
+                                             5 programmable chip selects
+                                              SRAM,FD/EDO DRAM,SDRAM
+                                              FLASH,EEPROM
+                                             40 GPIO / 16 Input
+
+
+
+
+           データシート、プログラマーズマニュアルは無償入手可能
+
+                                                                            69
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  NET+50 TAPピン
+
+
+
+
+                                         •TCK
+                                           クロック信号
+                                         •TMS
+                                           モード選択信号
+                                         •TDI
+                                           データ入力ピン
+                                         •TDO
+                                           データ出力ピン
+                                         •nTRST (Option)
+                                           非同期リセットピン
+
+
+                                                           70
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  JTAGポート
+                                         JTAGポートコンバータ
+
+
+
+
+               JTAGポート
+
+
+                                                        71
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  バッファオーバーフロー脆弱性の確認
+   e-mail送信時SMTPサーバが長大なレスポンスを返すとバッファオーバーフロー発生
+
+
+
+
+                                                72
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  Shellcode実行
+   オペランドレジスタの状態ビット(bit0)をセットしてBX命令を実行
+
+                                         32BISモードで開始
+                                         16BISモード
+
+
+
+
+                                                    73
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  Chapter 5
+ int packet_analysis(GDDCONFIG *gddc,unsigned char *packet,unsigned long length)
+ {
+     struct ip       *ip_header;     /* IP header */
+     struct tcphdr   *tcp_header;    /* TCP header */
+     char            *tcp_data;      /* TCP data */
+     struct in_addr addr;            /* IP address */
+     char            sourceIP[16];   /* Source IP address */
+     char            destIP[16];     /* Destination IP address */
+     unsigned short sourcePort;      /* Source Port */
+     unsigned short destPort;        /* Destination Port */
+     unsigned long   len_data;       /* Length of data part */
+     unsigned long   iph_len;        /* Length of IP header */
+     unsigned long   tcph_len;       /* Length of TCP header */
+     unsigned long   sequence;       /* Expected sequence */
+     int             portindex;      /* Indexnumber of port list */
+     int             direction;      /* Packet direction */
+     unsigned char   logtype;        /* Log type */
+     CONN_LIST       *bcl,*ncl;      /* Connection table list */
+     CONN_LIST       *t;             /* Temporary connection list */
+     static char     datestr[512];   /* Buffer to store datetime */
+     time_t          timeval;
+     struct tm       *timep=NULL;
+     char            *timesp=NULL;
+     char            *c;
+
+    /* Get pointer of IP header and check length of IP */
+    if (length-SIZE_OF_ETHHDR < MINSIZE_IP+MINSIZE_TCP) return(0);
+    ip_header    = (struct ip *)(packet+SIZE_OF_ETHHDR);
+    if (ip_header->ip_p!=IPPROTO_TCP
+
+
+
+                                                                                                                        まとめ
+      || ip_header->ip_v!=4) return(0);                                            00001B70   FF 15 F0 11 00 01 E9 CC 03 00 00 E8 7C 1C 00 00   ......鯲...閖...
+    iph_len      = ((unsigned long)(ip_header->ip_hl))*4;                          00001B80   33 F6 56 E8 B1 FC FF FF 85 C0 0F 84 B7 03 00 00   3雎...・.┨...
+    if (iph_len<MINSIZE_IP) return(0);                                             00001B90   56 6A 02 FF 35 6C 80 00 01 FF 35 D0 87 00 01 FF   Vj..5l....5ﾐ....
+    if ((unsigned long)ntohs(ip_header->ip_len) < MINSIZE_IP+MINSIZE_TCP)          00001BA0   15 CC 11 00 01 85 C0 75 1D 68 10 10 00 00 FF 35   .ﾌ...・u.h.....5
+         return(0);                                                                00001BB0   50 80 00 01 FF 35 44 80 00 01 FF 35 D0 87 00 01   P....5D....5ﾐ...
+    if ((unsigned long)ntohs(ip_header->ip_len) > length-SIZE_OF_ETHHDR){          00001BC0   FF 15 04 12 00 01 FF 35 D0 87 00 01 FF 15 2C 12   .......5ﾐ.....,.
+         return(0);                                                                00001BD0   00 01 FF 35 D4 8B 00 01 FF 15 58 10 00 01 E9 64   ...5ﾔ.....X...馘
+    }                                                                              00001BE0   03 00 00 83 FE 1A 77 47 0F 84 59 03 00 00 83 FE   ......wG.Ш.....
+                                                                                   00001BF0   11 0F 85 16 01 00 00 33 F6 39 35 E8 87 00 01 74   .......3.95閾..t
+    /* Get pointer of TCP header and check length of TCP */                        00001C00   22 8B 3D 28 12 00 01 56 FF D7 56 FF D7 68 00 10   ".=(...V.ﾗV.ﾗh..
+    tcp_header = (struct tcphdr *)((char *)ip_header+iph_len);                     00001C10   00 00 FF 35 50 80 00 01 FF 35 88 80 00 01 E9 7D   ...5P....5・..驀
+    tcph_len    = ((unsigned long)(tcp_header->th_off))*4;                         00001C20   02 00 00 6A 01 E8 0F FC FF FF E9 1A 03 00 00 8B   ...j...........急
+    tcp_data    = (char *)tcp_header+tcph_len;                                     00001C30   7D 14 B8 11 01 00 00 3B F0 0F 87 8B 00 00 00 3B    .ｸ....;..㈲...;
+    if (tcph_len<MINSIZE_TCP) return(0);                                           00001C40   F0 0F 84 16 02 00 00 83 FE 1C 0F 85 BD 00 00 00   ...........・...
+                                                                                   00001C50   33 F6 39 75 10 74 2F A1 EC 87 00 01 8B 0D F0 87   3.9u.t/｡・....
+    /* Get other parameter in TCP/IP header */                                     00001C60   00 01 3B C6 75 08 3B CE 0F 84 D9 02 00 00 8B 3D   ..;ﾆu.;ﾎ.・....=
+    if ((long)ntohs(ip_header->ip_len)-(long)iph_len-(long)tcph_len<0)             00001C70   14 12 00 01 51 50 68 B1 00 00 00 FF 35 D4 87 00   ....QPhｱ....5ﾔ..
+        return(0);                                                                 00001C80   01 E9 56 01 00 00 8B 3D 14 12 00 01 68 F0 87 00   .餬....=....h.
+    len_data    = (unsigned long)ntohs(ip_header->ip_len)                          00001C90   01 68 EC 87 00 01 68 B0 00 00 00 FF 35 D4 87 00   .h・..hｰ....5ﾔ..
+                      -iph_len-tcph_len;                                           00001CA0   01 FF D7 A1 EC 87 00 01 8B 0D F0 87 00 01 3B C1   ..ﾗ｡・......;ﾁ
+    sourcePort = ntohs(tcp_header->th_sport);                                      00001CB0   75 11 89 35 EC 87 00 01 89 35 F0 87 00 01 E9 84   u..5・...5..驗
+    destPort    = ntohs(tcp_header->th_dport);                                     00001CC0   02 00 00 51 50 E9 07 01 00 00 8B CE B8 12 01 00   ...QP.....勤ｸ...
+    memcpy(&addr,&(ip_header->ip_src),sizeof(struct in_addr));                     00001CD0   00 2B C8 0F 84 3C 02 00 00 83 E9 04 0F 84 29 02   .+ﾈ..<...・...).
+    strcpy(sourceIP,(char *)inet_ntoa(addr));                                      00001CE0   00 00 49 0F 84 F9 01 00 00 81 E9 1C 01 00 00 0F   ..I.・...・.....
+    memcpy(&addr,&(ip_header->ip_dst),sizeof(struct in_addr));                     00001CF0   84 E0 01 00 00 81 E9 E6 00 00 00 0F 84 3D 01 00   ・...・......=..
+    strcpy(destIP,(char *)inet_ntoa(addr));                                        00001D00   00 81 E9 E8 7C 00 00 0F 84 02 01 00 00 3B 35 5C   .・閖........;5¥
+    if (!strcmp(sourceIP,destIP)) return(0);                                       00001D10   88 00 01 0F 85 EE 00 00 00 8B 45 14 8B 48 0C 8B   ....・...畿.稀.驚
+                                                                                   00001D20   C1 8B D1 F7 D0 C1 EA 02 83 E0 01 83 E2 01 F6 C1    錦ﾁ..・.・.
+
+
+
+
+                                                                                                                                                             74
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  まとめ
+
+           古典的なセキュリティホールを含む組み込み機器は数多
+           く存在する。
+
+           JTAGエミュレータや開発者用シリアルコンソールを利用
+           できれば、exploit作成が可能。
+
+           RTOSが動作する組み込み機器でも、汎用OSと同様の
+           セキュリティ問題を発生させる可能性がある。
+
+
+
+
+                                         75
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  対策
+       経営的目線で、安全な製品をリリースするための
+       トータルスキームを確立する
+
+       安全なシステム開発のためのトレーニング
+
+          → 開発部門全体
+              - 攻撃事例の検証
+              - 安全なシステム設計、コーディング手法
+              - セキュリティテストの実施手法
+
+       ファームウエア、ハードウエアの開発プロセス全体にセキュリティを取り入れる
+
+          → 設計、実装、テスト(セキュリティQA)、出荷
+               - 設計からリリースにおける全てのプロセスが対象
+              - 各部門にてプロセスを確立 (PDCA)
+
+
+                                              76
+Fourteenforty Research Institute, Inc.
+
+
+
+
+    事後処理プロセスを確立
+
+      想定される事象
+
+              - 脆弱性が報告される
+              - 脆弱性が公開される(0-day対応)
+              - 実攻撃が発生する
+
+       → マネージメント、開発部門全体、広報など
+
+      脆弱性への対応
+
+              - 情報収集プロセス
+              - 脆弱性分析プロセス
+              - 修正プロセス
+              - アップデート提供プロセス
+              - 情報公開、メディア対応
+
+
+                                         77
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  攻撃の技術的ハードルを上げる(1)
+    脆弱性があったとしても、実攻撃に結びつかなければ損害は無い
+
+    → どこまでやるかは、コストやシステムの性質との兼ね合い
+
+   ・ 汎用PCのソフトウエアと同じ仕組みを導入(パフォーマンスとの兼ね合い)
+       - マルチステートによる権限の分離 (shellcodeが出来る事を限定)
+       - Buffer overflow対策 (DEPなど)
+       - ASLR(Address Space Layout Randomize)
+
+
+
+
+                                                78
+Fourteenforty Research Institute, Inc.
+
+
+
+
+  攻撃の技術的ハードルを上げる(2)
+
+    ・ 不必要な情報は一般公開しない
+
+    - CPUの型番を判別できないようにする
+
+
+    ・ JTAGやUARTなどを使った第三者によるデバッグを極力防止
+
+    - デバッガ検地の仕組み
+    - JTAGやUARTのポートを一目で分かるような形で基板に残さない
+    - BGAのようなCPUピンにハンダ付けできないパッケージを選択
+    - デバッグ情報を含む配線は表面層に出さない
+
+
+
+
+                                         79
+Fourteenforty Research Institute, Inc.
+
+
+
+
+    ありがとうございました
+
+
+
+
+                                         Fourteenforty Research Institute, Inc.
+                                            株式会社 フォティーンフォティー技術研究所
+                                                          http://www.fourteenforty.jp
+
+                               取締役副社長 最高技術責任者 鵜飼裕司 博士（工学)
+                                              ukai@fourteenforty.jp
+                                                                                        80
+

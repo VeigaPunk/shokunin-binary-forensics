@@ -1,0 +1,21 @@
+sha256 a9eecf37b26cd084855c530db81c2bb1b91f4c1b095a04f47aa7c20e2791f686  ApiDemos-debug.apk (6521217 bytes, http 200)
+--- unzip -l (first 19 lines) ---
+Archive:  source.bin
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+       56  1981-01-01 01:01   META-INF/com/android/build/gradle/app-metadata.properties
+  6520376  1981-01-01 01:01   classes.dex
+   238964  1981-01-01 01:01   classes10.dex
+     7720  1981-01-01 01:01   classes11.dex
+    48968  1981-01-01 01:01   classes12.dex
+    81584  1981-01-01 01:01   classes13.dex
+   226788  1981-01-01 01:01   classes2.dex
+     6896  1981-01-01 01:01   classes3.dex
+    43328  1981-01-01 01:01   classes4.dex
+    26464  1981-01-01 01:01   classes5.dex
+   284228  1981-01-01 01:01   classes6.dex
+    56632  1981-01-01 01:01   classes7.dex
+   147520  1981-01-01 01:01   classes8.dex
+    64000  1981-01-01 01:01   classes9.dex
+     5266  1981-01-01 01:01   assets/HelloActivity.apk
+    39104  1981-01-01 01:01   assets/fonts/samplefont.ttf

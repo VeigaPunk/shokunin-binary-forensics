@@ -1,0 +1,555 @@
+Scientific Working Group on
+Digital Evidence
+Core Competencies for Mobile Device Forensics
+SWGDE 12-F-003-2.0
+Disclaimer Regarding Use of SWGDE Documents
+SWGDE documents are developed by a consensus process that involves the best efforts of
+relevant subject matter experts, organizations, and input from other stakeholders to publish
+standards, requirements, best practices, guidelines, technical notes, positions, and considerations
+in the discipline of digital and multimedia forensics and related fields. No warranty or other
+representation as to SWGDE work product is made or intended.
+SWGDE requests notification by email before or contemporaneous to the introduction of this
+document, or any portion thereof, as a marked exhibit offered for or moved into evidence in such
+proceeding. The notification should include: 1) The formal name of the proceeding, including
+docket number or similar identifier; 2) the name and location of the body conducting the hearing
+or proceeding; and 3) the name, mailing address (if available) and contact information of the
+party offering or moving the document into evidence. Subsequent to the use of this document in
+the proceeding please notify SWGDE as to the outcome of the matter. Notifications should be
+submitted via the SWGDE Notice of Use/Redistribution Form or sent to secretary@swgde.org.
+From time to time, SWGDE documents may be revised, updated, deprecated, or sunsetted.
+Readers are advised to verify on the SWGDE website (https://www.swgde.org) they are utilizing
+the current version of this document. Prior versions of SWGDE documents are archived and
+available on the SWGDE website.
+Redistribution Policy
+SWGDE grants permission for redistribution and use of all publicly posted documents created by
+SWGDE, provided that the following conditions are met:
+1.
+2.
+3.
+
+Redistribution of documents or parts of documents must retain this SWGDE cover
+page containing the Disclaimer Regarding Use.
+Neither the name of SWGDE nor the names of contributors may be used to endorse
+or promote products derived from its documents.
+Any reference or quote from a SWGDE document must include the version number
+(or creation date) of the document and also indicate if the document is in a draft
+status.
+
+Requests for Modification
+SWGDE encourages stakeholder participation in the preparation of documents. Suggestions for
+modifications are welcome and must be submitted via the SWGDE Request for Modification
+Form or forwarded to the Secretary in writing at secretary@swgde.org. The following
+information is required as a part of any suggested modification:
+a) Submitter’s name
+b) Affiliation (agency/organization)
+c) Address
+
+Scientific Working Group on
+Digital Evidence
+d) Telephone number and email address
+e) SWGDE Document title and version number
+f) Change from (note document section number)
+g) Change to (provide suggested text where appropriate; comments not including suggested
+text will not be considered)
+h) Basis for suggested modification
+Intellectual Property
+All images, tables, and figures in SWGDE documents are developed and owned by SWGDE,
+unless otherwise credited.
+Unauthorized use of the SWGDE logo or document content, including images, tables, and
+figures, without written permission from SWGDE is a violation of our intellectual property
+rights.
+Individuals may not misstate and/or over represent duties and responsibilities of SWGDE work.
+This includes claiming oneself as a contributing member without actively participating in
+SWGDE meetings; claiming oneself as an officer of SWGDE without serving as such; claiming
+sole authorship of a document; use the SWGDE logo on any material and/or curriculum vitae.
+Any mention of specific products within SWGDE documents is for informational purposes only;
+it does not imply a recommendation or endorsement by SWGDE.
+
+Scientific Working Group on
+Digital Evidence
+Core Competencies for Mobile Device Forensics
+Table of Contents
+1.
+
+Purpose........................................................................................................................................ 2
+
+2.
+
+Scope............................................................................................................................................ 2
+
+3.
+
+Limitations .................................................................................................................................. 2
+
+4.
+
+General Considerations............................................................................................................. 2
+
+5.
+
+Mobile Device Forensics Core Competencies ......................................................................... 3
+5.1
+
+Legal Considerations and Ethical Standards .................................................................. 3
+
+5.2
+
+Foundational Skills............................................................................................................. 4
+
+5.3
+
+Evidence Identification ...................................................................................................... 4
+
+5.4
+
+Collection, Seizure, and Preservation .............................................................................. 5
+
+5.5
+
+Acquisition .......................................................................................................................... 6
+
+5.6
+
+Examination and Analysis ................................................................................................. 6
+
+5.7
+
+Documentation ................................................................................................................... 7
+
+5.8
+
+Presentation and Testimony.............................................................................................. 7
+
+6.
+
+Additional Resources ................................................................................................................. 8
+
+7.
+
+History ......................................................................................................................................... 9
+
+Core Competencies for Mobile Device Forensics
+SWGDE 12-F-003-2.0
+Version: 2.0 (7/12/2025)
+This document includes a cover page with the SWGDE disclaimer.
+Page 1 of 9
+
+Scientific Working Group on
+Digital Evidence
+1. Purpose
+This document provides an outline of the knowledge and abilities all practitioners of mobile device
+forensics should possess. The following elements provide a basis for training and testing programs.
+This basis is suitable for authorization, competency assessment, and proficiency testing.
+2. Scope
+This document identifies the core competencies necessary for the handling and forensic
+processing of mobile devices through the life cycle of an investigation. This document applies to
+anyone involved in any of these tasks. For the purposes of this document, the term “examiner”
+refers to individuals who have specialized training, knowledge, skills, and abilities that allow them
+to handle a wide range of technical issues related to mobile device forensics, and who may be
+performing technical tasks to include collection, acquisition, analysis, and reporting.
+Not all core competencies will be relevant to every practitioner’s role in a forensic services
+organization. These organizations must determine which core competencies are within the scope
+of their organization and examiners. Lack of competence in one component may not invalidate
+overall competency.
+There is a spectrum of capabilities within core competencies. It is not expected that an examiner
+has to be proficient in every capability to be considered competent. Examiners should exhibit
+competence pertinent to the examination being undertaken.
+This document does not address core competencies for chip-off or micro-read analysis.
+Refer to SWGDE 10-Q-002-3.0 Guidelines & Recommendations for Training in Digital &
+Multimedia Evidence for general training requirements of forensic practitioners.
+An examiner should apply all principles as defined in SWGDE 10-Q-001-1.0 Minimum
+Requirements for Quality Assurance in the Processing of Digital and Multimedia Evidence .
+3.
+
+Limitations
+
+This document is not all-inclusive, does not contain information relative to or in support of
+specific commercial products, and is not intended to be a training manual or to specify operating
+procedures.
+4.
+
+General Considerations
+
+Examiners engaging in mobile device forensics activities should be confirmed by their
+organization to meet criteria such as capabilities, education, training history, certification,
+competency assessment(s), and final authorization determined by the organization to carry out
+examinations.
+Mobile device forensics continues to be a dynamic and specialized subdiscipline of digital
+
+Core Competencies for Mobile Device Forensics
+SWGDE 12-F-003-2.0
+Version: 2.0 (7/12/2025)
+This document includes a cover page with the SWGDE disclaimer.
+Page 2 of 9
+
+Scientific Working Group on
+Digital Evidence
+forensics. As noted above, within an organization specialized roles may perform one or more
+tasks associated with the collection, acquisition, analysis, and reporting of mobile devices.
+Personnel conducting these tasks should be trained to the competencies relevant to their tasks
+and should remain current in developments in mobile device technologies. This may be
+accomplished by reading trade journals, taking classes, participating in professional organizations,
+taking continuing education, on the job training, and hands-on experience.
+5.
+
+Mobile Device Forensics Core Competencies
+
+An examiner must be able to recognize circumstances beyond their expertise and seek appropriate
+guidance, consulting with specialists as needed. The categories of core competencies are as
+follows:
+•
+•
+•
+•
+•
+•
+•
+•
+5.1
+
+Legal Considerations and Ethical Standards
+Foundational Skills
+Evidence Identification
+Collection, Seizure, and Preservation
+Data Acquisition
+Examination and Analysis
+Documentation
+Presentation and Testimony
+
+Legal Considerations and Ethical Standards
+• Sufficient training to understand and apply authorization to conduct a search and seizure of
+digital devices (e.g., the ability to read a search warrant and determine scope including what
+places may be searched and what data may be seized)
+• Awareness and understanding of applicable laws and organizational policies relevant to
+handling digital evidence or computer-related crimes
+• Understanding jurisdictional differences, informed by local, state, and federal guidelines,
+related to digital evidence and privacy regulations
+• Understand the Stored Communications Act and its implication to mobile device forensics.
+• Adherence to ethical guidelines and professional standards established by professional
+organizations within the digital forensics community to ensure impartiality, proportionality,
+confidentiality, and legal compliance in the collection, analysis, and reporting of digital
+evidence
+• Understanding of how cognitive bias may influence the collection, perception, and
+interpretation of data so as to minimize its impact to the digital forensic process
+• Balancing the need to review relevant evidence while minimizing intrusion into privacy
+Core Competencies for Mobile Device Forensics
+SWGDE 12-F-003-2.0
+Version: 2.0 (7/12/2025)
+This document includes a cover page with the SWGDE disclaimer.
+Page 3 of 9
+
+Scientific Working Group on
+Digital Evidence
+
+5.2
+
+Foundational Skills
+• Ability to describe how mobile devices operate and communicate
+• Knowledge of how and when to use Personal Protective Equipment (PPE)
+• Knowledge of what equipment may be needed for both on-scene or lab examinations (e.g.,
+cables, drives, camera, software)
+• Knowledge of organizational policies, procedures, and best practices regarding the
+collection and analysis of digital evidence
+• Understanding the importance of forensic tool testing and validation to establish confidence
+in forensic results
+• Ability to prepare a forensic workstation for use during forensic examinations
+• Understanding of foundational mobile device forensic concepts including:
+o Reading and converting numbering systems relevant to computing (e.g.,
+hexadecimal, binary)
+o Wiping/sterilization of media
+o Mobile device file systems and logical structure
+o Compound files
+o Encoding/Decoding
+o File signatures
+o Parsing
+o Metadata
+o Keyword searching and search expressions
+o Encryption/Decryption
+o Common database file formats on mobile devices
+o Cloud storage and backups
+o Use of hash algorithms
+o Mobile device components and their functions
+o Common application data storage techniques
+o Device recovery states
+o Mobile device security technologies (e.g., secure enclave, secure startup)
+o Device states and modes of operation
+
+5.3
+
+Evidence Identification
+• Ability to identify mobile devices
+• Understand the differences between physical SIM cards and eSims and identify devices that
+potentially utilize one or multiple SIMs
+• Ability to differentiate between handset lock, PIN lock, and PUK
+Core Competencies for Mobile Device Forensics
+SWGDE 12-F-003-2.0
+Version: 2.0 (7/12/2025)
+This document includes a cover page with the SWGDE disclaimer.
+Page 4 of 9
+
+Scientific Working Group on
+Digital Evidence
+• Ability to locate/identify any potentially applicable removable storage media and/or
+peripheral devices (e.g., watches, Bluetooth devices)
+• Ability to identify the type of information that may be stored in the device and each storage
+media available to the device
+• Understanding differences that may be encountered when processing removable media while
+in the device versus processing it externally
+• Understanding that data from devices or removable media may not be acquired by tools in all
+instances
+• Understanding the differences between static and volatile data sources
+• Ability to recognize volatile data and the access-state of various devices
+(on/off/locked/unlocked) and respond according to best practices for data access and integrity
+• Ability to locate device identifiers (e.g., ESN, MEID, IMEI, FCC ID, MIN, SID)
+• Knowledge of the various types of identity cards (e.g., SIM, USIM, CSIM, RUIM)
+• Ability to locate SIM card identifiers when present (e.g., IMSI, ICCID, MSIN, MSISDN).
+• Knowledge of physical characteristics of various SIM card sizes (e.g., standard, mini, micro,
+and nano)
+5.4
+
+Collection, Seizure, and Preservation
+• Understand the possible need to process the device for other forensic evidence prior to
+extracting its data (e.g., fingerprints/DNA/blood/trace evidence issues)
+• Ability to execute a planned collection process to establish chain of custody for seized items
+and maintain quality control according to organizational guidelines
+• Ability to practice general collection safety and determine the best method of collection to
+preserve maximum information relevant to the incident or case
+• Understand the consequences and risks associated with previewing a mobile device prior to
+data acquisition
+• Understand the impact of battery depletion, removal, or replacement
+• Ability to effectively communicate with investigative team to obtain pertinent information to
+possibly access a device
+• Understanding of digital evidence packaging during collection and storage to protect the
+physical device from environmental damage
+• Identify the steps necessary to maintain the integrity of removable media (e.g., SIM cards or
+memory cards)
+• Understand the proper way to decontaminate a mobile device damaged by fluids (e.g., water
+or bodily fluids)
+• Ability to apply appropriate radio and network isolation techniques for a given mobile device
+(e.g., Airplane Mode, Faraday bag)
+Core Competencies for Mobile Device Forensics
+SWGDE 12-F-003-2.0
+Version: 2.0 (7/12/2025)
+This document includes a cover page with the SWGDE disclaimer.
+Page 5 of 9
+
+Scientific Working Group on
+Digital Evidence
+• Ability to explain the potential outcome of powering off or restarting a mobile device, taking
+device specific considerations into account
+• Understand how to recognize and protect devices that are physically damaged
+• Understand how to repair minor damage to mobile devices (e.g., damaged screens, part
+replacement)
+• Ability to ensure device has sufficient battery charge or externally supplied power to
+complete the data extraction
+For additional information, see SWGDE 18-F-003-1.2 Best Practices for Mobile Device
+Evidence Collection & Preservation Handling and Acquisition.
+5.5
+
+Acquisition
+• Understand the different types of acquisitions, tool limitations and the possible need for
+additional acquisitions (e.g., logical extraction of data may not retrieve deleted data from the
+handset, SIM card or memory cards)
+• Ability to demonstrate the use of forensic tools to acquire a device image and validate the
+integrity of the resulting image through hash verification
+• Ability to troubleshoot software as well as physical hardware to the extent required for
+acquisition and processing
+• Ability to identify appropriate forensic tool for acquisition of data from devices
+• Ability to conduct risk assessments for issues that may arise when using these tools ( e.g.,
+jailbreak, APK downgrade)
+• Knowledge of tool functionality, the limitations and the possible need for additional
+acquisitions (e.g., logical extraction of data may not retrieve deleted data from the handset,
+SIM card or memory cards)
+• Understand when it may be necessary to conduct a manual analysis of a mobile device
+• Understand how processing a mobile device can possibly alter the data contained within the
+device
+• Understand the different connectivity options utilized during data acquisition
+(Cable/Bluetooth)
+
+For additional information, see SWGDE 18-F-003-1.2 Best Practices for Mobile Device
+Evidence Collection & Preservation Handling and Acquisition.
+5.6
+
+Examination and Analysis
+• Knowledge of how to verify data integrity through the use of hash validation
+
+Core Competencies for Mobile Device Forensics
+SWGDE 12-F-003-2.0
+Version: 2.0 (7/12/2025)
+This document includes a cover page with the SWGDE disclaimer.
+Page 6 of 9
+
+Scientific Working Group on
+Digital Evidence
+
+•
+•
+•
+•
+•
+•
+
+•
+
+Basic recognition and understanding of common mobile device operating systems (e.g.,
+Android, iOS)
+Ability to recognize and acquire data from various commonly utilized file system formats
+Ability to determine the appropriate tool(s) for the forensic task being performed
+Ability to recognize commonly installed applications with encrypted data
+Knowledge of the type of backup files used by mobile devices and where to locate those
+files on the computers synced to the mobile device
+Understanding of the types and locations of data stored on SIM cards (e.g., Service- related
+information—ICCID, IMSI, MSISDN, SPN; Phonebook and call information— abbreviated
+and last dialed numbers; Messaging information—SMS, EMS; Location information—
+LOCI, GPRSLOCI)
+Ability to understand various methods of record deletion and their impact to recoverability
+
+For additional information, see SWGDE 18-F-003-1.2 Best Practices for Mobile Device
+Evidence Collection & Preservation Handling and Acquisition.
+5.7
+
+Documentation
+• Ability to record contemporaneous notes while conducting the acquisition and examination
+• Ability to locate software audit logs to ensure repeatability and reproducibility
+• Ability to write reports per your organizational guidelines containing all relevant
+information in a clear and concise manner to include unique identifiers of digital device(s)
+and software versions of forensic tools used
+• General photography skills to document physical condition, manual analysis, and evidence
+on site or on the target media
+
+For additional information, see SWGDE 18-Q-002-1.0 Requirements for Report Writing in
+Digital and Multimedia Forensics.
+5.8
+
+Presentation and Testimony
+• Ability to develop demonstrative exhibits for legal proceedings
+• Ability to articulate the types and use of forensic tools during the acquisition process (e.g.,
+how the tools operate, any issues during the acquisition)
+• Ability to present technical findings clearly and concisely to a non-technical audience
+Core Competencies for Mobile Device Forensics
+SWGDE 12-F-003-2.0
+Version: 2.0 (7/12/2025)
+This document includes a cover page with the SWGDE disclaimer.
+Page 7 of 9
+
+Scientific Working Group on
+Digital Evidence
+For additional information, see SWGDE 23-Q-001-1.0 Best Practices for Personnel Presenting
+Digital Evidence in Legal Proceedings and SWGDE 22-Q-001-1.1 Introduction to Testimony in
+Digital and Multimedia Forensics.
+6.
+
+Additional Resources
+•
+
+•
+
+•
+
+•
+
+•
+
+•
+
+Scientific Working Group on Digital Evidence. Best Practices for Mobile Device
+Evidence Collection & Preservation Handling and Acquisition. SWGDE 18-F-0031.2. SWGDE, 2018, https://www.swgde.org/18-f-003/.
+Scientific Working Group on Digital Evidence. Best Practices for Personnel
+Presenting Digital Evidence in Legal Proceedings. SWGDE 23-Q-001-1.1. SWGDE,
+2023, https://www.swgde.org/23-q-001/.
+Scientific Working Group on Digital Evidence. Guidelines & Recommendations for
+Training in Digital & Multimedia Evidence. SWGDE 10-Q-002-3.0. SWGDE,
+2010, https://www.swgde.org/10-q-002/.
+Scientific Working Group on Digital Evidence. Introduction to Testimony in Digital
+and Multimedia Forensics. SWGDE 22-Q-001-1.1. SWGDE, 2022,
+https://www.swgde.org/22-q-001/.
+Scientific Working Group on Digital Evidence. Minimum Requirements for Quality
+Assurance in the Processing of Digital and Multimedia Evidence . SWGDE 10-Q001-1.0. SWGDE, 2010, https://www.swgde.org/10-q-001/.
+Scientific Working Group on Digital Evidence. Requirements for Report Writing
+in Digital and Multimedia Forensics. SWGDE 18-Q-002-1.0. SWGDE, 2018,
+https://www.swgde.org/18-q-002/.
+
+Core Competencies for Mobile Device Forensics
+SWGDE 12-F-003-2.0
+Version: 2.0 (7/12/2025)
+This document includes a cover page with the SWGDE disclaimer.
+Page 8 of 9
+
+Scientific Working Group on
+Digital Evidence
+7.
+
+History
+Revision
+
+Issue Date
+
+History
+
+1.0 DRAFT
+
+6/5/2012
+
+Initial draft created. SWGDE voted to release as a
+Draft for Public Comment. Formatted for release as
+a draft for public comment.
+
+1.0 DRAFT
+
+1/17/2013
+
+Addressed public comments received.
+
+1.0
+
+2/11/2013
+
+SWGDE voted to publish as Final Approved
+document. Formatted for Final Approved document.
+
+1.0
+
+9/27/2014
+
+Document updated per current SWGDE policy with
+new disclaimer. Removed the Definitions section,
+and corrected SWGDE hyperlinks. No changes to
+content and no version/publication date change.
+
+2.0 DRAFT
+
+1/16/2025
+
+Significant reformatting and information update.
+SWGDE voted to release as a Draft for Public
+Comment.
+
+2.0 DRAFT
+
+2/10/2025
+
+Formatted for release as a draft for public comment.
+
+2.0 DRAFT
+
+5/22/2025
+
+No public comments received. Moved forward for
+SWGDE vote to publish as a Final Approved
+Document.
+
+2.0
+
+7/12/2025
+
+SWGDE voted to approve as a Final Approved
+Document. Formatted for release as a Final Approved
+Document.
+
+Core Competencies for Mobile Device Forensics
+SWGDE 12-F-003-2.0
+Version: 2.0 (7/12/2025)
+This document includes a cover page with the SWGDE disclaimer.
+Page 9 of 9
+
+

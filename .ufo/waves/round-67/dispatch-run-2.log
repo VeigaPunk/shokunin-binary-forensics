@@ -1,0 +1,8 @@
+Working...
+```json
+{"reports": 64, "settled": true, "jobs_with_errors": {}, "elapsed_min": 7.4}
+```
+
+All 64 seats dispatched in one verbatim `tool.task` call, session held until settlement: 64/64 `R67*.md` reports on disk at ~7.4 min, zero job-level errors, zero stuck jobs.
+omp-exit=0
+2026-10-24T21:40:25-03:00

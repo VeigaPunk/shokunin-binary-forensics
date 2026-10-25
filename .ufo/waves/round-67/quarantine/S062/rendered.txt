@@ -1,0 +1,3609 @@
+  
+ 
+ 
+ Android App Feature Extraction: A review of approaches for malware and app similarity detection 
+ 
+ 
+ 
+   
+ 
+ 
+  // Restore the saved color scheme preference, or
+  // enact the browser preference if "automatic", 
+  // without expecting DOM load to have completed.
+  //
+  // Also restore any saved readingmode and ToC display preferences.
+  function initializeReadingPreferences() {
+    let saved_theme = localStorage.getItem("ar5iv_theme") || "automatic";
+    if (saved_theme === "automatic") {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        saved_theme = "dark";
+      }
+    }
+    if (saved_theme == "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+
+    const tocDisplay = localStorage.getItem('arxiv_html_paper_toc_display');
+    if (tocDisplay) {
+      document.documentElement.setAttribute("data-toc-display", tocDisplay);
+    }
+    const readingMode = localStorage.getItem('arxiv_html_paper_reading_mode');
+    if (readingMode) {
+      document.documentElement.setAttribute("data-reading-mode", readingMode);
+    }
+  }
+  // Run as soon as JS starts, to minimize repainting
+  initializeReadingPreferences();
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+  /* Reading mode hides the chrome and the empty .arxiv-html-header marker: the pinned JS reads
+     the marker's display to know which way to toggle. The marker draws no box. */
+  .arxiv-html-header { display: contents; }
+  html[data-reading-mode="enabled"] :is(.arxiv-html-site-chrome, .arxiv-html-header, .ds-site-footer) { display: none; }
+  /* The paper controls' icons are blocks, so they sit centred (the pinned JS shows the theme
+     icon by making its span a block). */
+  .arxiv-html-site-chrome .ds-site-header-tools svg { display: block; width: 18px; height: 18px; flex-shrink: 0; fill: currentColor; }
+  /* ar5iv dims every image in dark mode and puts it on a white wash, for paper figures;
+     arXiv's own render as they are (the logo on the bar, the funder logos on their white
+     chips). Important: ar5iv's dark rules are unlayered, as specific as
+     :root:not([data-theme]) img:not(.ltx_no_dark_filter). */
+  :is(.ds-site-header, .ds-site-footer) img { filter: none !important; }
+  .ds-site-header img { background-color: transparent !important; }
+
+  /* Wide (the theme's 1280px): the theme lays the body out as a grid whose full-width top rows
+     were the band's and its sticky reader bar's. The band takes the first and scrolls away; the
+     header, the paper's bar (no site navigation, the paper's controls), takes the second and
+     stays in view, the one sticky bar, with the anchor clearance that requires (DESIGN-POLICIES).
+     The controls show their names. */
+  @media (min-width: 1280px) {
+    html { scroll-padding-top: 80px; }
+    .arxiv-html-site-chrome { display: contents; }
+    .arxiv-html-site-chrome > #ds-announcement { grid-area: announce; }
+    .arxiv-html-site-chrome > .ds-site-header { grid-area: header; position: sticky; top: 0; z-index: 3; }
+    .arxiv-html-site-chrome .tool-icon { display: none; }
+  }
+  /* Narrow: the header scrolls away, and the controls show icons (names kept for screen
+     readers; Why HTML? goes). The theme's contents panel is fixed below where its old sticky
+     bar was, and hidden only once the reader has closed it, so until then it is an invisible box
+     over the header and the paper: it shows only while open, under the chrome, in its place in
+     the page. The paper's footer (build logs, reporting instructions) keeps the text's side
+     inset; the theme gives it none, so it met the screen edges. */
+  @media (max-width: 1279px) {
+    .arxiv-html-site-chrome .tool-wide { display: none; }
+    .arxiv-html-site-chrome .tool-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    html:not([data-toc-display="block"]) .ltx_page_navbar { display: none; }
+    .ltx_page_navbar { position: absolute; top: auto; }
+    .arxiv-html-footer { padding-inline: 1rem; }
+  }
+  
+ 
+ Skip to main content 
+ 
+   
+     
+       Report GitHub Issue 
+       × 
+     
+
+     
+       Title: 
+       
+
+       Content selection saved. Describe the issue below: 
+
+       Description: 
+        
+     
+
+     
+       Submit without GitHub 
+       Submit in GitHub 
+     
+   
+  
+  
+  
+  
+ 
+    
+   
+     
+   
+   
+     
+         
+     
+   
+      Why HTML? 
+     
+          Report Issue 
+          
+           Back to Abstract 
+     
+     
+          Download PDF 
+          
+           Contents 
+     
+     
+          Reading mode 
+     
+     
+                         Colour theme 
+       
+  
+  
+ 
+ 
+   Abstract.   
+    1  INTRODUCTION   
+    2  THE TECHNICAL FOUNDATION OF ANDROID APPLICATION ANALYSIS  
+ 
+    2.1  EXPLORING THE MECHANISMS UNDERLYING ANDROID APPLICATIONS   
+    2.2  STRATEGIES FOR COLLECTING ANDROID APPLICATIONS   
+    2.3  METHODOLOGIES FOR EXTRACTING FEATURES  
+ 
+    2.3.1  APK Decompiler and APK Analysis Tools   
+    2.3.2  Java Analysis Tools   
+    2.3.3  Hash Tools   
+    2.3.4  Helper Tools   
+  
+  
+    3  EXTRACTABLE ANDROID FEATURES  
+ 
+    3.1  App Store features  
+ 
+    3.1.1  Description   
+    3.1.2  Permissions and features   
+    3.1.3  App Rating Score and App Rating counter   
+    3.1.4  Application size   
+    3.1.5  Category   
+    3.1.6  Meta information   
+  
+    3.2  APK Features  
+ 
+    3.2.1  Code   
+    3.2.2  API Calls   
+    3.2.3  Permissions   
+    3.2.4  Metadata from the Manifest   
+    3.2.5  UI-related data   
+    3.2.6  Sensors   
+    3.2.7  Identifiers   
+    3.2.8  Printable Strings   
+    3.2.9  Statistical features   
+    3.2.10  Metadata   
+  
+  
+    4  CREATING A UNIVERSAL, INTERDISCIPLINARY DATASET   
+    5  LIMITATIONS   
+    6  CONCLUSION   
+    7  ACKNOWLEDGMENTS   
+   References   
+    A  Appendices   
+  
+ 
+ 
+ 
+   
+    License: arXiv.org perpetual non-exclusive license
+   
+   
+arXiv:2412.11539v1 [cs.CR] 16 Dec 2024 
+  
+ 
+ Android App Feature Extraction: A review of approaches for malware and app similarity detection 
+    Conference:  ; ;    
+ 
+  
+ Simon Torka
+ 
+               
+    
+  email:   simon.torka@dai-labor.de 
+ 
+  Affiliation:   DAI-Lab, Technische Universität Berlin ,  Ernst-Reuter-Platz 7 ,  Berlin ,  Berlin ,  Germany ,  10587 
+    
+  and    
+ Sahin Albayrak
+ 
+               
+    
+  email:   sahin.albayrak@dai-labor.de 
+ 
+  Affiliation:   DAI-Lab, Technische Universität Berlin ,  Ernst-Reuter-Platz 7 ,  Berlin ,  Berlin ,  Germany ,  10587 
+     
+ © none 
+
+  Abstract. 
+    
+ This paper reviews work published between 2002 and 2022 in the fields of Android malware, clone, and similarity detection. It examines the data sources, tools, and features used in existing research and identifies the need for a comprehensive, cross-domain dataset to facilitate interdisciplinary collaboration and the exploitation of synergies between different research areas. Furthermore, it shows that many research papers do not publish the dataset or a description of how it was created, making it difficult to reproduce or compare the results. The paper highlights the necessity for a dataset that is accessible, well-documented, and suitable for a range of applications. Guidelines are provided for this purpose, along with a schematic method for creating the dataset. 
+  
+ 
+ 
+ Keywords:  Android, feature extraction, code analysis, similarity detection, malware detection, clone detection
+ 
+ 
+  1.  INTRODUCTION 
+
+ 
+ Smartphones are becoming increasingly important and indispensable for people’s daily lives because they offer a range of convenient features and functions that simplify everyday tasks. However, this fact leads to a dependency between users and their smartphones which can be dangerous if compromised applications are used. 
+ 
+ 
+ According to Ericsson (cited by   Turner, 2023  ), in 2021, 6.34 billion smartphones were in use. The most widespread smartphone operating system is Google’s Android, with at least 71.45% market coverage, followed by Apple’s iOS, with about 27.83% market coverage   Statista, 2022  . The popularity of Android also has its drawbacks. According to   Willems     Willems, 2022   from GDATA, currently, more than 25 million malicious applications for Android have been detected. Furthermore, not only intentionally manipulated apps can harm users. Poorly programmed or outdated applications can also pose significant risks. According to atlasVPN   Ruth, 2022  , "63% of Android applications had known security vulnerabilities in Q1 2021, with an average of 39 vulnerabilities per app", whereby gaming and finance apps have the most security issues. 
+ 
+ 
+ Malware is often distributed by adding malicious code to pirated apps, also known as "piggybacking".  1    1 
+             1 
+            
+            
+            
+            
+            
+            
+            
+          According to   Zhou et al.     Zhou et al., 2012  , pirated apps are not only used to inject malicious code; They can also be used to “replace existing in-app advertisements or embed new ones to ‘steal’ or redirect advertising revenue”   Zhou et al., 2012 , 317 . In addition to the threat posed by pirated apps due to inserted malicious code, they also represent a violation of applicable copyright law.    One way to identify piggybacking is to detect applications that are nearly identical but differ in minor ways.  2    2 
+             2 
+            
+            
+            
+            
+            
+            
+            
+          This method can also detect currently unknown malicious code.    This approach demonstrates the advantages of combining similarity analysis and malware detection. Such strategies are essential to contemporary threat detection systems and require further investigation. Additionally, research into comprehensive systems that also consider the human factor as a potential security risk  3    3 
+             3 
+            
+            
+            
+            
+            
+            
+            
+          Users may ignore risks and continue to use malicious applications if suitable alternatives are not provided.    is vital to the success of contemporary protection systems. 
+ 
+ 
+ A fundamental requirement for conducting research on such systems is the availability of appropriate training datasets. However, the existing research landscape reveals deficiencies in the provision of this data.  4    4 
+             4 
+            
+            
+            
+            
+            
+            
+            
+          The deficiencies include unpublished or no longer available datasets, errors in the description of the dataset generation process, and the omission of all dataset-relevant information. In addition, publicly available datasets usually focus on the area of malware detection and are often outdated, e.g., Android Genom Project   Zhou & Jiang, 2012  , M0DROID   Damshenas et al., 2015  , Drebin   Arp et al., 2014 ;  Spreitzenbarth et al., 2013  , Kharon   Kiss et al., 2016  , AAGM   Lashkari et al., 2017  , Android PRAGuard   Maiorca et al., 2015  , AndroZoo   Allix et al., 2023   or unavailable, e.g., ContagioDump, AndroMalShare, AMD Project.    This makes it difficult to compare, evaluate, and reproduce research results. Furthermore, research on systems for detecting functionally similar applications and research on holistic systems is currently not possible because of the lack of universal datasets. 
+ 
+ 
+ To address this, we examine the literature on malware, app similarity, and clone detection published between 2002 and 2022 to identify all features suitable for creating such a dataset as well as the tools necessary to extract them. A keyword and snowballing search was performed to identify relevant literature  5    5 
+             5 
+            
+            
+            
+            
+            
+            
+            
+          The keyword search was performed on ”ACM digital library”, ”Google Scholar”, and ”IEEE Xplore” and included terms such as ”Android + Similarity”, ”Clone + Android” and ”Malware + Android”. For the snowballing search, connectedpapers was used (https://www.connectedpapers.com/). This is a website to generate citation graphs based on the provided starting literature.   . 
+ 
+ 
+ Furthermore, existing survey papers in the domains that have analyzed literature related to malware, app similarity, and clone detection were examined. However, these surveys often lack a comparative analysis between these domains, as well as a thorough discussion on the creation of derived datasets from identified features. For instance,   Li et al.     Li et al., 2017   focus on clone and malware detection but do not delve into similarity detection.   Firdaus et al.     Firdaus et al., 2018   explore static features extracted from app code and find the best feature set for malware detection by using a genetic algorithm but do not provide a comparative analysis of their application in clone and similarity detection.   Alzubaidi     Alzubaidi, 2021   and   Feizollah et al.     Feizollah et al., 2015   also primarily concentrate on feature extraction for malware detection, neglecting similarity analysis.   Dhalaria & Gandotra     Dhalaria & Gandotra, 2021   and   Jusoh et al.     Jusoh et al., 2021   provide detailed insights into malware detection techniques but do not discuss their results in the context of similarity detection.   Sharma & Rattan     Sharma & Rattan, 2021   review 380 papers, offering a comprehensive overview of features and techniques but solely within the context of malware detection.   Selvaganapathy et al.     Selvaganapathy et al., 2021   also focus on the area of malware detection. In their work, they provide a list of public datasets for malware detection and briefly discuss approaches to feature analysis and the tools most commonly used for this purpose. 
+ 
+ 
+ Our research expands the existing literature by jointly examining the key research areas that have been analyzed individually so far. In a comprehensive literature mining process, features usable across disciplines are identified and analyzed in detail. This forms the basis for a comprehensive multi-purpose dataset. In addition, we aim to define the requirements that such a dataset must fulfill and outline the process for its creation. 
+ 
+ 
+ This paper is structured as follows: section 2 lays the technical foundations of Android application analysis and examines the mechanisms underlying these applications. In addition, sources for collecting applications are shown and tools that can be used to capture features are discussed. In section 3, different Android features extractable from the app stores or the APK files are introduced. It is also discussed how these features are used in different domains. Section 4 describes the process of generating a universal, interdisciplinary dataset, and forms the core of this work together with the analysis of extractable features. Section 5 critically discusses the limitations of this work. Finally, section 6 offers a reflection of the findings and implications from the previous chapters. 
+ 
+ 
+ 
+  2.  THE TECHNICAL FOUNDATION OF ANDROID APPLICATION ANALYSIS 
+
+ 
+ This section lays the foundation for this survey paper by providing information on the technical background of Android and Android application analysis tools. All essential information starting from the definition of how an Android application is built up, executed, and distributed, as well as information about sources to gather Android applications, tools to extract data from Android applications, and features that can be extracted from Android applications, are presented. 
+ 
+ 
+  2.1.  EXPLORING THE MECHANISMS UNDERLYING ANDROID APPLICATIONS 
+
+ 
+ Android’s operating system is a mobile device multi-user computing platform   Chen et al., 2013  . It was introduced by Andy Rubin and taken over by Google in 2005   Google, 2022a  . It relies on an open-source Linux kernel optimized for mobile usage and provides a separate virtual environment for each running application to increase security   Schmidt et al., 2009a  . Furthermore, an application framework and some core applications are supplied by Android. To expand and individualize the usability of Android, users can expand the function set of their smartphones by installing applications (Apps) for different purposes. These applications - mostly provided by third parties - can be downloaded from different stores and come in the format of an Android application file (APK). An .apk-file is similar to a Java .jar file. Jar files, and .apk-files, are compressed zip archives that contain the application resources and code   Sahs & Khan, 2012 ;  Shabtai et al., 2010  . After decompressing, the extracted folder contains the AndroidManifest.xml file, the classes.dex file, the resources.arsc file as well as folders for resources (res-folder), meta information (Meta-INF-folder), libraries (lib-folder), and assets (Asset-folder) (see
+  Figure   1  ), which can be used to derive a lot of useful information   Gonzalez et al., 2015 ;  Hamednai et al., 2019 ;  Potharaju et al., 2012 ;  Xu et al., 2018  . 
+ 
+  
+   Figure 1 .   APK inner structure by   Hamednai et al.     Hamednai et al., 2019    A schematic of the internal structure of the .apk zip archive, including AndroidManifest.xml, classes.dex, resources.arse, the res folder and the include drawable, layout and .xml folders, the meta-in folder, and the internal cert.rsa, cert.sf, and manifest.mf files, and the lib and assets folders.  
+ 
+ 
+ The  AndroidManifest.xml  holds meta-information about the application, for example the application’s name, version, the codes package (or namespace), and the permissions necessary for execution   Crussell et al., 2012 ;  Hamednai et al., 2019 ;  Sahs & Khan, 2012  . It also contains information about the app’s behavior, like its entry points   Gonzalez et al., 2016 ;  Gonzalez et al., 2015  . The  classes.dex  file includes the application’s Dalvik byte code and can also be used to mine some helpful information. A developer must write the application’s code in Java to generate this dex-code. This Java application must be translated into Java byte code (.jar). Because Android smartphones cannot interpret Java byte code, a further translation step is necessary by translating the .jar-files into the Dalvik executable (DEX) format   Chen et al., 2013 ;  Crussell et al., 2012 ;  Gonzalez et al., 2015 ;  Hanna et al., 2013  . The DEX format is no longer human-readable and can only be interpreted by the Dalvik virtual machine   Crussell et al., 2012 ;  Zhou et al., 2012   or with the Android runtime (ART)   Hamednai et al., 2019  . To investigate Android security, gathering information from the dex code and transforming it back into several intermediate languages or to the original Java format is possible. The precompiled application resources are held in the  resources.arsc    Hosseini et al., 2021  . The  res-folder  contains all data which are not compiled into the resources.arsc folder, e.g., sounds, images, icons, and xml files necessary to run the application, as well as its UI layouts   Crussell et al., 2012 ;  Gonzalez et al., 2016 ;  Gonzalez et al., 2015 ;  Hamednai et al., 2019  , and could also be used as a data source. The  Meta-Inf-folder  contains the digital signature of the application as well as the author.  6    6 
+               6 
+              
+              
+              
+              
+              
+              
+              
+            In detail the authentication is done with the CERT.RSA file, CERT.SF files as well as the MANIFEST.MF file.    This information is necessary to identify the author and validate the authenticity of the ownership   Zhou et al., 2012  . It contains the developers’ names, their contact and organization information, as well as the public key fingerprints for validation   Gonzalez et al., 2015 ;  Hamednai et al., 2019 ;  Zhou et al., 2012  . It can be seen as the authors’ base information which can also be used to identify different security-related aspects. The  lib-folder  contains all compiled executables and all native libraries as lib.so files. This code can be called from the application’s .dex-file using the Java native interface (JNI)   Gonzalez et al., 2016 ;  Hosseini et al., 2021  . It can be used to compare apps and detect malicious data injected into the application during runtime. The application’s assets like the FAQ or license information are stored in the  assets-folder    Hosseini et al., 2021  . This information can also be used as a data source to detect Android security-related purposes. 
+ 
+ 
+ Because the  dex-file  contains the application’s source code and thus the application’s behavior, this data will be investigated in more detail. To run a dex file, an interpreter is necessary. The Dalvik Virtual Machine, as part of the applications’ frameworks, can be used   Chen et al., 2013 ;  Potharaju et al., 2012  . Most dex files are third-party applications and can be downloaded from different Android application stores. To understand how Android works it is necessary to understand the inner structure  7    7 
+               7 
+              
+              
+              
+              
+              
+              
+              
+            A detailed explanation of how a dex file is organized can be found in   Lynch, 2018   which is the base for the following chapter.    of a .dex-file which can be seen in   Figure   2    8    8 
+               8 
+              
+              
+              
+              
+              
+              
+              
+            A graph of all sections used in an APK can be found under https://formats.kaitai.io/dex/dex.svg.   . According to   Lynch     Lynch, 2018  , the .dex-file is organized into several sections. The first section is the  header-section  which contains some meta-data about the application. A detailed view of the header file is given in   Table   1  . 
+ 
+ 
+        
+  
+ 
+        
+ 
+   Figure 2 .   The inner structure of a .dex-file. Own visualization based on   Hosseini et al.     Hosseini et al., 2021    
+ 
+         The inner .dex structure starting with the header, the ids (including string_ids, type_ids, proto_ids, field_ids and metod_ids), the class_defs, the data (including map_list, string_data, class_data, type_list, code and additional data) and the link_data. 
+      
+ 
+ 
+        
+ 
+   Table 1 .   Inner structure of the header field. Own visualization based on   Lynch     Lynch, 2018    
+ 
+        
+ 
+ 
+ 
+ 
+  Field Name  
+  Description   
+ 
+ 
+ 
+ 
+ 
+ DEX_FILE_MAGIC 
+  
+ 
+ 
+ unique file type identifier 
+   
+ 
+ 
+ 
+ Adler-32 Checksum 
+  
+ 
+ 
+ checksum for validation 
+   
+ 
+ 
+ 
+ SHA-1 HASH 
+  
+ 
+ 
+ used as identifier e.g. in multidex scenarios 
+   
+ 
+ 
+ 
+ File Size 
+  
+ 
+ 
+ size of the APK in bytes 
+   
+ 
+ 
+ 
+ Header Size 
+  
+ 
+ 
+ size of the header information in bytes 
+   
+ 
+ 
+ 
+ Endian Tag 
+  
+ 
+ 
+ Identifier for big or little endian coding 
+   
+ 
+ 
+ 
+ Link Size 
+  
+ 
+ 
+ size of library link id field 
+   
+ 
+ 
+ 
+ Link Offset 
+  
+ 
+ 
+ offset to find the field 
+   
+ 
+ 
+ 
+ Map Offset 
+  
+ 
+ 
+ offset to find the field 
+   
+ 
+ 
+ 
+ String Ids Size 
+  
+ 
+ 
+ size of the string id field 
+   
+ 
+ 
+ 
+ String Ids Offset 
+  
+ 
+ 
+ offset to find the field 
+   
+ 
+ 
+ 
+ Type Ids Size 
+  
+ 
+ 
+ size type of id field 
+   
+ 
+ 
+ 
+ Type Ids Offset 
+  
+ 
+ 
+ offset to find the field 
+   
+ 
+ 
+ 
+ Proto Ids Size 
+  
+ 
+ 
+ size of the proto id field 
+   
+ 
+ 
+ 
+ Proto Ids Offset 
+  
+ 
+ 
+ offset to find the field 
+   
+ 
+ 
+ 
+ Field Ids Size 
+  
+ 
+ 
+ size of the field id field 
+   
+ 
+ 
+ 
+ Field Ids Offset 
+  
+ 
+ 
+ offset to find the field 
+   
+ 
+ 
+ 
+ Method Ids Size 
+  
+ 
+ 
+ size of the method id field 
+   
+ 
+ 
+ 
+ Method Ids Offset 
+  
+ 
+ 
+ offset to find the field 
+   
+ 
+ 
+ 
+ Class Defs Size 
+  
+ 
+ 
+ size of the class def field 
+   
+ 
+ 
+ 
+ Class Defs Offset 
+  
+ 
+ 
+ offset to find the field 
+   
+ 
+ 
+ 
+ Data Size 
+  
+ 
+ 
+ size of application data 
+   
+ 
+ 
+ 
+ Data Offset 
+  
+ 
+ 
+ offset to find application data 
+   
+ 
+ 
+ 
+      
+ 
+ 
+ As claimed by   Lynch     Lynch, 2018  , the first entry of each header-section is the DEX_FILE_MAGIC, which is only an identifier to detect that the following file is a dex-file. The value is constantly called "dex", followed by the SDK’s target file version. The Checksum is for validating the given file. SHA-1 Hash can be used to identify .dex files in a multidex scenario. Next, the file size provides information about the size of the whole file, while the header-size gives only the size of the header. The endian tag is the last entry in the header and tells if big- or little-endian encoding is used. 
+ 
+ 
+ Next, IDs for strings, types, protos, fields, methods, and classes are specified. According to   Lynch     Lynch, 2018  , each ID field consists of the size of the referenced data and the reference address offset information, which keeps the required data. Furthermore, all data in these sections are sorted by their content and should not have any duplicate information   Hamednai et al., 2019  . 
+ 
+ 
+ By resolving the string IDs, textual information about classes, methods, parameters, variables, (error) messages, and user dialogues can be found   Hamednai et al., 2019  . The resolved type IDs identify all types used in the application, like classes, arrays, or primitive data types. Therefore, the types reference the string fields to specify the type names. The resolved proto IDs determine function prototypes by clarifying their return types and the number of needed parameters  9    9 
+               9 
+              
+              
+              
+              
+              
+              
+              
+            A list of types and more information about generating prototypes can be found in   Android Open Source Project, 2022  .   . The fields section contains information about all defined data fields used in the application. The method section defines each user-defined method as well as all called API methods. Each method definition consists of three parts. The method’s name references the string table, prototype references, defined prototypes, and class ID. The last entry in the IDs section is the class section, where all used classes are defined. The mechanism behind those definitions is the same as the one behind the function referencing. 
+ 
+ 
+ All code and data representing the application are stored in the data section. The previously introduced ID-sections reference all their content in this data section by offset and size. Therefore, this section consists of the content of the other sections and can be easily accessed using the underlying addresses   Gonzalez et al., 2016 ;  Hamednai et al., 2019  . 
+ 
+ 
+ The link data section is the last section of a .dex-file and contains information related to all static linked native libraries   Lynch, 2018  . 
+ 
+ 
+ Sometimes it is necessary to analyze a dex-file (e.g., for security analysis or to detect app similarities). To do this, the non-readable dex-file must be transferred into a human-readable format. An option is to translate the .dex-file into the human-readable Smali format   Felt et al., 2011 ;  Zhang et al., 2018  . 
+ 
+ 
+ According to   McLaughlin et al.     McLaughlin et al., 2017  , when translating a dex-file into the human-readable Smali format, each class contained in the dex-file is transferred to a separate Smali-file. In addition, each Smali file contains the methods of the underlying class as well as their instructions and operands, in a human-readable format. According to   Hosseini et al.     Hosseini et al., 2021  , all instructions in a method can be interpreted as a sequence of instructions representing the flow of the function. 
+ 
+ 
+ But why is all that necessary, why can Android apps be dangerous, and how can malware be injected into Android applications? The answer lies in the concept of how the Android ecosystem works. As mentioned, most Android applications are provided by third-party authorities. The process of publishing and distributing Android applications is a gateway for malware. According to   Peng et al.     Peng et al., 2012  , developers need a publisher account to distribute their Android applications in the Play Store. Only a Gmail account and an initial payment of 25.00 USD are required   Potharaju et al., 2012  . After creating an account, each developer gets a digital certificate. According to   Potharaju et al.     Potharaju et al., 2012  , it is necessary to sign an application before uploading it to the Play Store with the author’s public key. Then the application can be uploaded and get its product page at the Play Store   Peng et al., 2012  . According to   Potharaju et al.     Potharaju et al., 2012  , each product site delivers meta information like the app’s name, the users’ rating of the application, the update history, the current app’s version, the category to which the app belongs, the number of installs, the size of the application and the application’s price. Furthermore, there are some Android stores from other companies than Google like apkpure   APKPure, 2021  . Because of this concept, it is really easy to clone applications, insert malware, and republish them on the same or other stores   Crussell et al., 2012  . 
+ 
+ 
+ 
+  2.2.  STRATEGIES FOR COLLECTING ANDROID APPLICATIONS 
+
+ 
+ Sources to gather Android applications are manifold. However, according to   Schmicker et al.     Schmicker et al., 2019 , 67 , this process "can be time consuming, e.g., one may be tasked with writing a crawler or contacting website administrators for access to a bulk download". Furthermore, some authors do not describe the composition of their data well. The problems range from unspecified app sources to insufficiently documented or incomplete data. Furthermore, some datasets are no longer available or have not been published. The unavailability of some 3 rd  party stores further complicates data access. For this paper, all sources are extracted from the analyzed literature and listed in   Table   2    10    10 
+               10 
+              
+              
+              
+              
+              
+              
+              
+            Datasets that are not described well enough and unavailable 3 rd  party stores are not considered in   Table   2  . For example, the referenced dataset from   Zhou et al.     Zhou et al., 2013   is not available, and the one from   Schmicker et al.     Schmicker et al., 2019   is no longer publicly accessible. In the case of   Sahs & Khan     Sahs & Khan, 2012  , the dataset cannot be mentioned because insufficient information about it is available (the app source is not specified). In   Shabtai et al.     Shabtai et al., 2010  , only the data source ([official] Android Market) and statistical information about apps are given, but not the names of these apps. In   Linares-Vásquez et al.     Linares-Vásquez et al., 2016  , the data source (Play Store) and a list of app names and categories are available but not the app version, the APK or a dataset with all extracted features. In these cases, the original data source (Play Store) is listed in   Table   2   but not the derived dataset.   . 
+ 
+ 
+ The data are split into three domains: "Official Android Store", which is the Google Play Store, "3rd Party Android App Store", which are all other stores to gather Android applications, and "Datasets", which are available to analyze Android applications and malware. Crawlers can be used to collect applications from the Play Store or 3rd Party stores. Some authors use VirusTotal after crawling the applications to decide if they are benign or malicious. 
+ 
+ 
+   Table 2 .   Data Sources for Android Applications  
+ 
+ 
+ 
+ 
+ 
+  Type  
+  
+ 
+ 
+  Data source  
+  
+  URL   
+ 
+ 
+ 
+  Official  
+  
+ 
+ 
+ Play Store 
+  
+  https://play.google.com/   
+ 
+ 
+ 
+  3rd Party  
+  
+ 
+ 
+ 1mobile 
+  
+  https://1mobile-market.de.aptoide.com/app   
+ 
+  
+ 
+ 
+ 9app 
+  
+  https://www.9apps.com/   
+ 
+  
+ 
+ 
+ Amazon Appstore for Android 
+  
+  https://www.amazon.de/gp/mas/get/amazonapp   
+ 
+  
+ 
+ 
+ ApkPure 
+  
+  https://m.apkpure.com/   
+ 
+  
+ 
+ 
+ AppChina 
+  
+  http://m.appchina.com/   
+ 
+  
+ 
+ 
+ Appland 
+  
+  https://www.applandinc.com/   
+ 
+  
+ 
+ 
+ appsapk 
+  
+  https://www.appsapk.com/   
+ 
+  
+ 
+ 
+ Aptoide 
+  
+  https://de.aptoide.com/   
+ 
+  
+ 
+ 
+ BAIDU 
+  
+  http://shouji.baidu.com/   
+ 
+  
+ 
+ 
+ Dangle Store 
+  
+  http://android.d.cn   
+ 
+  
+ 
+ 
+ Fdroid 
+  
+  https://f-droid.org/   
+ 
+  
+ 
+ 
+ freewarelovers 
+  
+  https://www.freewarelovers.com/   
+ 
+  
+ 
+ 
+ GetJar 
+  
+  https://www.getjar.com/   
+ 
+  
+ 
+ 
+ goapk 
+  
+  https://goapk.org/   
+ 
+  
+ 
+ 
+ Mumayi 
+  
+  http://www.mumayi.cn/   
+ 
+  
+ 
+ 
+ MYAPP 
+  
+  http://android.myapp.com/   
+ 
+  
+ 
+ 
+ proAndroid 
+  
+  https://www.proandroid.com/   
+ 
+  
+ 
+ 
+ Sliedme Store 
+  
+  http://slideme.org/   
+ 
+  
+ 
+ 
+ softportal 
+  
+  https://www.softportal.com/   
+ 
+ 
+ 
+  Datasets  
+  
+ 
+ 
+ UNB Android botnet dataset 
+  
+  https://www.unb.ca/cic/datasets/android-botnet.html   
+ 
+  
+ 
+ 
+ UNB Android validation dataset 
+  
+  https://www.unb.ca/cic/datasets/android-validation.html   
+ 
+  
+ 
+ 
+ GitHub Android Malware Collection 
+  
+  https://github.com/ashishb/android-malware   
+ 
+  
+ 
+ 
+ Android Malware Genome Project 
+  
+  http://www.malgenomeproject.org/   
+ 
+  
+ 
+ 
+ Dataset of Dienst and Berger 
+  
+  http://www.informatik.uni-leipzig.de/~berger/tr/2012-dienst.pdf   
+ 
+  
+ 
+ 
+ Drebin 
+  
+  https://drebin.mlsec.org/   
+ 
+  
+ 
+ 
+ DroidAnalytics 
+  
+  http://ansrlab.cse.cuhk.edu.hk/software/droidanalytics/   
+ 
+  
+ 
+ 
+ Mobilewalla 
+  
+  https://www.mobilewalla.com/   
+ 
+  
+ 
+ 
+ VirusShare Database 
+  
+  https://virusshare.com/   
+ 
+  
+ 
+ 
+ Contagio Mobile 
+  
+  https://contagiominidump.blogspot.com/   
+ 
+  
+ 
+ 
+ Das Malwerk 
+  
+  http://dasmalwerk.eu/   
+ 
+  
+ 
+ 
+ theZoo 
+  
+  https://thezoo.morirt.com/   
+ 
+ 
+ 
+ 
+ 
+  2.3.  METHODOLOGIES FOR EXTRACTING FEATURES 
+
+ 
+ For investigating Android applications, it is necessary to examine some valuable and analyzable features of the application. Many different tools were found, which are listed in   Table   3   and explained in this chapter.  11    11 
+               11 
+              
+              
+              
+              
+              
+              
+              
+            An extended version of this table, containing information on all tools, including their input and output values, as well as their usability, can be found in the Appendix,   Table   6  .    Most tools cannot be used stand-alone because they are specialized for specific purposes like decompiling, extracting, or analyzing. For this reason, toolchains are necessary. An illustration of a toolchain for analyzing Android applications can be found in   Figure   3   and was introduced by   Linares-Vásquez et al.     Linares-Vásquez et al., 2016  . 
+ 
+  
+   Figure 3 .   An example of a feature extraction toolchain   Linares-Vásquez et al., 2016  .  Schematic toolchain starting with the .apk decompiled with APKTools, which extracts the permissions and provides the dex for the dex2jar tool. The dex2jar returns the jars which can be decompressed with 7zip into .class files. Then jad extracts the source code. The sensors can be extracted from the .class files. API calls can also be extracted using the JClassInfo tool.  
+ 
+ 
+ The examined tools are divided into "APK Decompiler and APK Analysis Tools", "Java Analysis Tools", "Hash Tools", and "Helper Tools". Under "APK Decompiler and APK Analysis Tools", all tools necessary to decompile Android APK and those that can directly handle Android APK without intermediate steps were listed. Furthermore, this area contains complex tools which can directly derive deeper information like graphs from the Java code. The "Java Analysis Tools" include all tools that can be used after translating an Android application into pure Java code. "Hash Tools" can generate hash values for comparing purposes or malware fingerprinting. Under the "Helper Tools", all smaller tools that are not directly related to the other topics are listed. 
+ 
+ 
+ Several problems related to the investigated tools and toolchains were detected during the research. Most of the tools used in the literature cannot keep pace with the development cycles of Android and are not regularly or never maintained. Therefore, they are often not adapted to the actual Android version. For example, Androguard’s last official release is version 3.3.5, released on 18 Feb 2019. At this date, Android Pie (Version number 9, API Level 28) was the current version. Today (September 2022), Android 13 is on the market (Version number 13, API Level 33). This discrepancy leads to the issue that some parts of Android packages that were changed or introduced with newer versions cannot be analyzed entirely. This blind spot leads to undiscovered malware or unrecognized clones. Another major problem with much of the literature is that the underlying systems are often not publicly available, no longer accessible, or not open source. Additionally, the description of how the system’s toolchains are usually inadequate or incomplete, which makes replication difficult. Therefore, most approaches cannot be exactly replicated, and the solutions cannot be verified or compared. For example, a toolchain is described in   Linares-Vásquez et al.     Linares-Vásquez et al., 2016    12    12 
+               12 
+              
+              
+              
+              
+              
+              
+              
+            Their system is publicly available under https://www.cs.wm.edu/semeru/data/clandroid/.   . If the authors had not made their system publicly available, replicating their system would not have been possible because the configurations of the underlying tools are not well defined in their paper. Another example is "AndroParse"   Schmicker et al., 2019  , a project written in Golang   The Go Authors, 2024   that extracts various features using AAPT and the RAPID library. While the source code is still publicly available, the resulting data is unfortunately no longer accessible   13    13 
+               13 
+              
+              
+              
+              
+              
+              
+              
+            The source code is available at https://github.com/rschmicker/AndroParse/wiki/Querying-the-REST-API. The dataset, which consists of 67,703 harmless and 46,683 malicious APKs, should be available at https://64.251.61.74/all. However, the address is no longer accessible.   . 
+ 
+ 
+   Table 3 .   Feature extraction tools  
+ 
+ 
+ 
+  Name  
+  Paper  
+  Category   
+ 
+ 
+ 
+ python   Python Software Foundation,2024   
+   Chen et al.,2014   
+ Programming language  
+ 
+ apktool   Tumbleson & Wiśniewski,2020   
+   Anupama et al.,2022 ;  Batyuk et al.,2011 ;  Gorla et al.,2014 ;  Hosseini et al.,2021 ;  Linares-Vásquez et al.,2016 ;  Linares-Vásquez et al.,2014 ;  Shao et al.,2014 ;  Sun et al.,2014 ;  Tian et al.,2015 ;  Wang et al.,2015 ;  Xu et al.,2018 ;  Zhang et al.,2018   
+ APK decompiler  
+ 
+ Baksmali   Gruver,2024   
+   Bläsing et al.,2010 ;  Chen et al.,2014 ;  McLaughlin et al.,2017 ;  Shao et al.,2014 ;  Sun et al.,2014 ;  Zhou et al.,2013 ;  Zhou et al.,2012   
+ APK decompiler  
+ 
+ Dedexer   Paller,2009   
+   Felt et al.,2011 ;  Sanz et al.,2012   
+ APK decompiler  
+ 
+ dexdump   archlinux,2022   
+   Potharaju et al.,2012   
+ APK decompiler  
+ 
+ dex2jar   Pan,2016   
+   Crussell et al.,2012 ;  Crussell et al.,2013 ;  Crussell et al.,2015 ;  Linares-Vásquez et al.,2016 ;  Shao et al.,2014 ;  Tian et al.,2015 ;  Wang et al.,2015 ;  Yang et al.,2014   
+ APK decompiler  
+ 
+ Androguard   Desnos et al.,2018   
+   Crussell et al.,2012 ;  Sahs & Khan,2012 ;  Wang et al.,2015 ;  Yang et al.,2014 ;  Zhang et al.,2015   
+ APK analysis tool  
+ 
+ A3E   Azim & Neamtiu,2013   
+   Shao et al.,2014   
+ APK analysis tool  
+ 
+ IDA   Hex-Rays,2022   
+   Hosseini et al.,2021   
+ APK analysis tool  
+ 
+ Keytool   Oracle,2022   
+   Wang et al.,2015 ;  Zhou et al.,2012   
+ APK analysis tool  
+ 
+ Soot   Vallée-Rai et al.,1999   
+   Chen et al.,2013   
+ APK analysis tool  
+ 
+ aapt   Android Developers,2020   
+   Anupama et al.,2022 ;  Schmicker et al.,2019 ;  Shao et al.,2014   
+ Helper Tool  
+ 
+ BCEL Java Library   Apache Software Foundation.,2020   
+   Tian et al.,2015   
+ Java analysis tool  
+ 
+ ckjm   Spinellis,2005   
+   Tian et al.,2015   
+ Java analysis tool  
+ 
+ JAD Compiler   Kouznetsov,2001   
+   Linares-Vásquez et al.,2014   
+ Java analysis tool  
+ 
+ JADX Compiler   Skylot,2020   
+   Hosseini et al.,2021   
+ Java analysis tool  
+ 
+ JClassInfo   Anarxia,2004   
+   Linares-Vásquez et al.,2016   
+ Java analysis tool  
+ 
+ JD Core   GitHub,2022   
+   Wang et al.,2015   
+ Java analysis tool  
+ 
+ WALA   IBM,2022   
+   Crussell et al.,2012 ;  Crussell et al.,2013 ;  Crussell et al.,2015 ;  Linares-Vásquez et al.,2014   
+ Java analysis tool  
+ 
+ RAPID library   Zhang et al.,2016   
+   Schmicker et al.,2019   
+ Java analysis tool  
+ 
+ LSH code   Andoni & Indyk,2006   
+   Crussell et al.,2013 ;  Crussell et al.,2015   
+ Hash Tool  
+ 
+ MinHash   Broder,1998 ;  Broder et al.,2000   
+   Crussell et al.,2013 ;  Crussell et al.,2015   
+ Hash Tool  
+ 
+ 7zip   Riehm,2022   
+   Linares-Vásquez et al.,2016 ;  Linares-Vásquez et al.,2014   
+ Helper Tool  
+ 
+ 
+ 
+ 
+  2.3.1.  APK Decompiler and APK Analysis Tools 
+
+ 
+ There are several tools to decompile and analyze Android applications. In the studied literature, decompilers like the APKTool, Dedexer, Dexdump, Dex2Jar, and Baksmali are used. After decompiling the APK, tools like the keytool, soot, or Androguard extract helpful information. 
+ 
+ 
+ One of the most used tools to decompile Android applications is Apktool   Tumbleson & Wiśniewski, 2020  . It is a tool to decompress   Linares-Vásquez et al., 2016 ;  Linares-Vásquez et al., 2014 ;  Sun et al., 2014   and decompile   Anupama et al., 2022 ;  Batyuk et al., 2011 ;  Gorla et al., 2014 ;  Linares-Vásquez et al., 2016 ;  Linares-Vásquez et al., 2014 ;  Wang et al., 2015 ;  Xu et al., 2018 ;  Zhang et al., 2018   Android packages. Furthermore, it contains all features of Baksmali   Sun et al., 2014   and utilities for reverse engineering Android applications   Anupama et al., 2022  . It is possible to extract the compiled binary data   Gorla et al., 2014   and human-readable Smali files   Hosseini et al., 2021 ;  Shao et al., 2014 ;  Xu et al., 2018 ;  Zhang et al., 2018  . The Android manifest and the application resources can also be obtained   Shao et al., 2014 ;  Tian et al., 2015  . However, according to   Shao et al.     Shao et al., 2014  , Apktool might fail to extract the information from an application. According to the authors, a solution could be to use aapt and Baksmali to extract resources and Smali code in separate steps. Dedexer   Paller, 2009   and Dexdump   archlinux, 2022   are other tools for decompiling Android applications. Dedexer reads DEX data and translates the data into Java bytecode   Sanz et al., 2012  . The authors say it can generate a directory structure with the identified classes. Dexdump is a disassembler included in the Android SDK   archlinux, 2022  . According to   Potharaju et al.     Potharaju et al., 2012  , dexdump creates a dump of all classes and methods derived from the DEX file. In contrast to the other decompilers, Dex2Jar   Pan, 2016   allows transferring DEX files directly into JAR files   Crussell et al., 2012 ;  Crussell et al., 2013  . These JAR files are zipped representations of the .class files. According to   Crussell et al.     Crussell et al., 2013  , dex2jar has a higher success rate than tools converting directly from DEX to Java. 
+ 
+ 
+ Another option to handle Android applications is to transform data into a human-readable representation of the Dalvik bytecode, for example Smali. A tool to translate an APK in this format is given by Baksmali, which can reverse engineer classes.dex to Smali code   Bläsing et al., 2010 ;  Chen et al., 2014 ;  McLaughlin et al., 2017 ;  Zhou et al., 2013 ;  Zhou et al., 2012  .   Zhou et al.     Zhou et al., 2013   extend the Baksmali disassembler so that the tool can directly derive program dependency graphs (PDG). According to   Chen et al.     Chen et al., 2014  , an advantage of Baksmali is that Smali code can be compiled back to runnable DEX data. 
+ 
+ 
+ A further resource that can be used is information about the authors. This data can be mined with the keytool, a tool to manage Android’s key and certificate information   Oracle, 2022  . It is implemented in the Android SDK and can authenticate Android applications   Google Developers, 2022  .   Zhou et al.     Zhou et al., 2012   and   Wang et al.     Wang et al., 2015   use it in reverse to extract authors’ information. 
+ 
+ 
+ All previously shown tools can only decompile Android applications and require other tools or complex toolchains to extract features. In contrast to this, Androguard, Soot, Interactive DisAssembler (IDA), and Automatic Android App Explorer (A3E) do not require external support. Soot, which was proposed by   Vallée-Rai et al.     Vallée-Rai et al., 1999  , can be used for generating high-level output data, such as call graphs, sink-to-source analysis, and data flow analysis. A3E, which was introduced by   Azim & Neamtiu     Azim & Neamtiu, 2013  , is a framework specifically designed to analyze Android Apps directly on smartphones during app runtime. IDA   Hex-Rays, 2022   is a powerful disassembler and debugger that is not limited to Android. It serves as an important tool for analyzing application code, enabling the analysis and visualization of code and data flow. The literature reviewed in this work primarily employs these tools for graph construction   Chen et al., 2013 ;  Shao et al., 2014 ;  Hosseini et al., 2021  . 
+ 
+ 
+ A very powerful tool to process an APK with only one tool is Androguard. According to the Androguard webpage, Androguard combines all the other tools into a single command line interface application   Desnos, 2018  . The authors call Androguard "the swiss army knife" in the context of Android analysis because it allows decompiling apps and extracting all needed features like used permissions or different graphs. They also mention that Androguard has better exception handling than other tools. Furthermore, according to   Yang et al.     Yang et al., 2014  , the decompiled results of Androguard are more accurate than other tools like dex2Jar or Baksmali. 
+ 
+ 
+ 
+  2.3.2.  Java Analysis Tools 
+
+ 
+ Many Java analyzers can analyze Android applications because Android is based on Java. JD Core, JAD, and JDAX are Java decompilers that can be used when analyzing the application’s Java code   GitHub, 2022  . JD Core and JAD can transform .class files to Java source code   Kouznetsov, 2001  . JADX is the GUI implementation of the JAD decompiler and can also be used for analysis purposes   Skylot, 2020  . 
+ 
+ 
+ Tools like the Apache Commons BCEL Java library, Jclassinfo, the Watson Libraries for Analysis, and the Chidamber and Kemerer Java Metrics are useful for analyzing the underlying structures. The Apache Commons BCEL Java library can transform the byte code files into readable JVM instructions, which can be analyzed to identify method invocations indicating dependencies   Apache Software Foundation., 2020  . Jclassinfo reads Java class files and provides information about the class, dependencies, and more   Anarxia, 2004  . The Watson Libraries for Analysis (WALA)   IBM, 2022   is an open-source tool initially developed by the IBM T.J. Watson Research Centre in 2006, which delivers tools for the static analysis of Java byte code and JavaScript. Next to other possible uses, in the field of app analysis, WALA is often used to generate program dependency graphs (PDG)   Crussell et al., 2012  . According to the author, WALA can construct PDGs for each method in every class of the Android application directly from the jar files. The Chidamber and Kemerer Java Metrics (short ckjm), written by   Spinellis     Spinellis, 2005  , is a tool to calculate six different metrics for each class of jar files. These six metrics are the weighted methods per class (WMC), the depth of inheritance tree (DIT), the number of children (NOC), the coupling between object classes (CBO), the response for a class (RFC), and the lack of cohesion in methods (LCOM). In addition, it can also calculate afferent couplings (CA) and the number of public methods (NPM). 
+ 
+ 
+ 
+  2.3.3.  Hash Tools 
+
+ 
+ Hashing is often used to detect malware as well as to detect similar applications. According to   Crussell et al.     Crussell et al., 2015  , locality-sensitive hashing (LSH)   Andoni & Indyk, 2006   can efficiently find the nearest neighbors in a large number of vectors. Therefore, LSH uses a lot of different hash functions to raise the possibility of a collision when hashing similar vectors. Another instance of LSH is the MinHash algorithm, which originates from Alta Vista   Broder, 1998 ;  Broder et al., 2000  . It was developed to find similar web pages and is also based on the theory of LSH. To do that, features are extracted from the compared examinees. Those features generate hash values based on a set of hashing algorithms. 
+ 
+ 
+ 
+  2.3.4.  Helper Tools 
+
+ 
+ Besides the previously explained tools, helper tools are not specialized in software engineering. These are often used to fulfill base tasks. An example can be given by 7zip, which is a tool to decompress archives   Riehm, 2022  . In Android analysis, it is often used to extract the .class files from the JAR   Linares-Vásquez et al., 2016 ;  Linares-Vásquez et al., 2014  . A more complex zip tool is AAPT which allows one to view, create, and update zipped packages like ZIP, JAR, and APK   Android Developers, 2020  . 
+ 
+ 
+ 
+ 
+ 
+  3.  EXTRACTABLE ANDROID FEATURES 
+
+ 
+ The study analyzes the features found in the research projects studied and explains how to use and extract them. Only static features are analyzed; features extracted at runtime, such as CPU usage or phone temperature, are not considered. The analysis is divided into features that can be mined from the app store and features that can be extracted from the APK (see   Table   4  ), which will be shown in the following chapters. In addition, each feature is described in a subchapter, where all the literature that uses that feature is examined. From the app stores, textual features like the app description, technical features like the reported permissions, and metadata like the rating of the app are analyzed. From the APK file, textual features like strings, technical features like permissions, meta information from the manifest, and statistics derived from these features are examined. In addition, within these chapters, a separation is made between literature from the field of malware detection as well as similarity and clone detection to compare approaches that can be used in different domains. This was done because none of the reviewed papers analyze tools and techniques that cover both domains or compare how the tools, features, and techniques are used in the specific domain. Since most of the literature uses more than one feature, some publications appear in more than one chapter. Not every approach is discussed in detail; a detailed description of the approach can already be found in the underlying literature. 
+ 
+ 
+   Table 4 .   Overview of analyzed features  
+ 
+ 
+ 
+  Source  
+  Type  
+ 
+ 
+  Used by  
+  
+  Count   
+ 
+ 
+ 
+  App Store features  
+ Textual Features 
+ 
+ 
+   Al-Subaihin et al.,2019 ;  Al-Subaihin et al.,2016 ;  Berardi et al.,2015 ;  Bhandari et al.,2013 ;  Chen et al.,2015 ;  Crussell et al.,2012 ;  Gorla et al.,2014 ;  Johann et al.,2017 ;  Pandita et al.,2002 ;  Uddin et al.,2020 ;  Yin et al.,2013   
+  
+ 11  
+ 
+ App Store Metadata 
+ 
+ 
+   Berardi et al.,2015 ;  Bhandari et al.,2013 ;  Chen et al.,2015 ;  Crussell et al.,2012 ;  Johann et al.,2017 ;  Pandita et al.,2002 ;  Peng et al.,2012 ;  Potharaju et al.,2012 ;  Sanz et al.,2012 ;  Shabtai et al.,2010 ;  Tian et al.,2015   
+  
+ 11  
+ 
+ Technical Features 
+ 
+ 
+   Chen et al.,2015 ;  Pandita et al.,2002 ;  Peng et al.,2012 ;  Sanz et al.,2012 ;  Zhou et al.,2018   
+  
+ 5  
+ 
+  APK features  
+ Technical Features 
+ 
+ 
+   Abawajy et al.,2021 ;  Allix et al.,2016 ;  Anupama et al.,2022 ;  Batyuk et al.,2011a ;  Bläsing et al.,2010 ;  Chen et al.,2014 ;  Chen et al.,2013 ;  Crussell et al.,2012 ;  Crussell et al.,2013 ;  Crussell et al.,2015 ;  Felt et al.,2011 ;  Gonzalez et al.,2016 ;  Gonzalez et al.,2015 ;  Gorla et al.,2014 ;  Hamednai et al.,2019 ;  Hanna et al.,2013 ;  Hosseini et al.,2021 ;  Jerome et al.,2014 ;  Linares-Vásquez et al.,2016 ;  Linares-Vásquez et al.,2014 ;  McLaughlin et al.,2017 ;  Potharaju et al.,2012 ;  Sahs & Khan,2012 ;  Sanz et al.,2012 ;  Schmicker et al.,2019 ;  Schmidt et al.,2009 ;  Shabtai et al.,2010 ;  Shao et al.,2014 ;  Sun et al.,2014 ;  Tian et al.,2015 ;  Wang et al.,2015 ;  Xu et al.,2018 ;  Xu et al.,2019 ;  Yang et al.,2014 ;  Zhang et al.,2015 ;  Zhang et al.,2018 ;  Zhou et al.,2013 ;  Zhou et al.,2012 ;  Zhou et al.,2018   
+  
+ 39  
+ 
+ Meta-information 
+ 
+ 
+   Anupama et al.,2022 ;  Chen et al.,2013 ;  Gonzalez et al.,2015 ;  Hamednai et al.,2019 ;  Linares-Vásquez et al.,2016 ;  Schmicker et al.,2019 ;  Shabtai et al.,2010 ;  Shao et al.,2014 ;  Sun et al.,2014 ;  Tian et al.,2015 ;  Zhou et al.,2013 ;  Zhou et al.,2012 ;  Zhou et al.,2018   
+  
+ 13  
+ 
+ Textual Features 
+ 
+ 
+   Hamednai et al.,2019 ;  Hanna et al.,2013 ;  Sanz et al.,2012 ;  Shabtai et al.,2010 ;  Tian et al.,2015   
+  
+ 5  
+ 
+ 
+ 
+ 
+  3.1.  App Store features 
+
+ 
+ Play Store or other app store features can be collected by crawling the underlying websites. According to   Feizollah et al.     Feizollah et al., 2015  , only 3% of their researched literature uses those features. They refer to data visible in the Play Store before downloading and installing the APK "applications metadata". Furthermore, those features can be used without having or processing the APK. The advantages of these features are that they are easily accessed and collected. It is essential to know that most of these features are registered by the app’s developers, except for statistical information from the app stores. According to   Pandita et al.     Pandita et al., 2002  , it is impossible to be sure that the developer does not manipulate this data, e.g., to reach higher downloads. This uncertainty can be described as the most significant disadvantage of this easily accessed data. 
+ 
+ 
+  3.1.1.  Description 
+
+ 
+ In Play Store, each app can be portrayed by a short description with a maximum of 80 words   Google, 2022   and a long description with a maximum of 4000 words   App Radar, 2023  . According to   Berardi et al.     Berardi et al., 2015 , 586 , "[t]his field briefly presents the app, and it usually lists its characteristics and functionality". They also mention that the description "gives (…) very detailed information about the aim and functionality of the application"   Berardi et al., 2015 , 588 . These characteristics lead to a lot of usage across different domains. 
+ 
+ 
+   Crussell et al.     Crussell et al., 2012  ,   Gorla et al.     Gorla et al., 2014  , and   Pandita et al.     Pandita et al., 2002   use the description for security purposes. While WHYPER   Pandita et al., 2002   can detect relationships between permissions and the description, CHABADA   Gorla et al., 2014   analyzes relationships between used API calls and the description. WHYPER uses natural language processing (NLP) to explore the description of every single app. Instead of using NLP techniques, CHABADA is clustering the applications based on their app description. Then each cluster’s API calls are analyzed to detect outliers. Clustering is also used by DNADroid   Crussell et al., 2012   as a first indicator to detect cloned applications. 
+ 
+ 
+ Another area of using the description is to detect similar applications. This approach was followed by   Al-Subaihin et al.     Al-Subaihin et al., 2019  ,   Al-Subaihin et al.     Al-Subaihin et al., 2016  ,   Berardi et al.     Berardi et al., 2015  ,   Bhandari et al.     Bhandari et al., 2013  , and   Chen et al.     Chen et al., 2015  .   Bhandari et al.     Bhandari et al., 2013   use the Term Frequency Inverse Document Frequency (TF-IDF) to calculate the cosine distance based on the app description and other metadata from the Play Store. The distance is used to explain the similarity between applications. Building on that, SimApp   Chen et al., 2015   uses Latent Dirichlet Allocation (LDA) to detect high-level app similarities.   Al-Subaihin et al.     Al-Subaihin et al., 2016   identify functionally similar apps with a two-stage clustering. First, they extract features from apps’ descriptions based on   Harman et al.     Harman et al., 2012    14    14 
+                 14 
+                
+                
+                
+                
+                
+                
+                
+              In   Harman et al., 2012  , the authors analyze app relationships from Blackberry app store based on technical-, customer- and business-related features. Their analysis does not use any source code. Only features which can be crawled from the store itself are used.   . In this stage, features from the description are extracted using the Natural Language Toolkit (NLTK). The second stage uses this information to detect relationships between the apps. Four years later   Al-Subaihin et al.     Al-Subaihin et al., 2019   reviewed different app similarity measurement techniques based on textual features and compared them with commonly known approaches. They compared Latent Dirichlet Allocation, Feature Vector Space Model, Vector Space Model + Latent Semantic Analysis, feature vector space model based on collocation-based feature, and feature vector space model based on Dependency-Based Feature.  15    15 
+                 15 
+                
+                
+                
+                
+                
+                
+                
+              Further information and sources about the used models can be found in   Al-Subaihin et al., 2019  , chapter 2.    
+ 
+ 
+ A special field of similarity detection is detecting functional coverage between applications. Systems that can discover apps with similar functions can also be called app recommendation systems. The advantage of this technique is that apps with similar features can replace dangerous applications with harmless alternatives without limiting functional usage. A first approach was made by   Yin et al.     Yin et al., 2013  . First, they calculate the functional coverage between different apps by Latent Dirichlet Allocation (LDA) based on the app description. Then, the authors calculate possible candidates to replace installed apps with an Actual-Tempting model combined with content-based recommendation systems and collaborative filters. Another system that can deliver functionally similar apps was proposed by   Johann et al.     Johann et al., 2017   called SAFE (Simple Approach for Feature Extraction). The authors analyze the speech of the description in a deductive human way. Therefore, they implemented "18 part-of-speech and 5 sentence patterns"   Johann et al., 2017 , 21  that the developers frequently followed in the app description. After pre-processing the app description with well-known techniques like removing stop words and tokenization, the authors use the 18 different POS patterns to tag the words in sentences based on linguistic building blocks like "noun-noun" or "verb-noun". After that, the sentences are analyzed by five different patterns, e.g., "send and receive images, videos and sticker" is interpreted as "send images", "send videos", and so on   Johann et al., 2017 , 22 . This information is used to compare applications. Furthermore,   Uddin et al.     Uddin et al., 2020   compare text-based semantic similarity scoring systems based on descriptions to detect feature similarities of Android applications. In their first approach, they analyze the complete description only pre-processed by well-known text analysis techniques like stop word removal and tokenization. The outcome is analyzed with WordNET   Miller, 1995   and Word2Vect   Rehurek & Sojka, 2010  . In their second approach, they extract features of applications from the description with the SAFE   Johann et al., 2017   system. They conclude that the feature-based approach leads to better results. 
+ 
+ 
+ 
+  3.1.2.  Permissions and features 
+
+ 
+ It is also possible to get information about used permissions and features from Play Store. This data can be used to detect malicious or vulnerable applications as well as to detect app similarities. 
+ 
+ 
+ The usage of detecting security leaks was shown by   Peng et al.     Peng et al., 2012   and   Zhou et al.     Zhou et al., 2018  . According to   Peng et al.     Peng et al., 2012 , 241 , "[o]ne of Android’s main defense mechanisms against malicious apps is a risk communication mechanism which warns the user about permissions an app requires before being installed, trusting that the user will make the right decision". Nevertheless, this security policy is inefficient because most applications request many permissions so that users do not check their relevance. Therefore, the authors propose a risk score based on Android permissions. In contrast,   Zhou et al.     Zhou et al., 2018   use permissions as a first filter stage to detect malicious applications. Therefore, permission-based heuristics for known malware are used to detect possible candidates for further investigation. 
+ 
+ 
+   Chen et al.     Chen et al., 2015   and   Sanz et al.     Sanz et al., 2012   use permissions and features to detect similar applications.   Sanz et al.     Sanz et al., 2012   crawl permissions and features mentioned on Play Store as well as permissions and features found in the manifest. This information is used to categorize Android applications. In contrast,   Chen et al.     Chen et al., 2015   only use permissions gathered from Play Store. They transfer them to a Bag of Words and use the (Term Frequency Inverse Document Frequency) TF-IDF. Then, the matrix similarity is computed by the Radial basis function (RBF) kernel. 
+ 
+ 
+ 
+  3.1.3.  App Rating Score and App Rating counter 
+
+ 
+ Google and most other app stores use a rating system based on a Likert Scale with a maximum of 5 (1 worst – 5 best). In most cases, the stores provide the average rating of the app given by users and the number of users that rated the app. 
+ 
+ 
+ Contrary to the other features, app rating information is usually not used to detect malicious applications because they give no direct information about their security weaknesses. 
+ 
+ 
+   Potharaju et al.     Potharaju et al., 2012   propose a system to detect plagiarized applications using app rating as an indicator. Furthermore, rating information is used by   Berardi et al.     Berardi et al., 2015  ,   Chen et al.     Chen et al., 2015  ,   Sanz et al.     Sanz et al., 2012  , and   Tian et al.     Tian et al., 2015   to detect similarities in applications. Their base statement is that besides some other features, apps with the same rating could be similar because their rating provides information about the app’s content quality   Chen et al., 2015  . While   Berardi et al.     Berardi et al., 2015  ,   Chen et al.     Chen et al., 2015  , and   Sanz et al.     Sanz et al., 2012   use this information for app categorization or classification,   Tian et al.     Tian et al., 2015   discovered characteristics of high-ranked apps based on the app’s ranking. In their case, the rating is the target value of their system. 
+ 
+ 
+ 
+  3.1.4.  Application size 
+
+ 
+ Application size can also be used as a feature during app analysis to detect similar applications.   Chen et al.     Chen et al., 2015   state that two apps with similar sizes could be more related than apps differing in size. This feature is also used in the previously described papers of   Berardi et al.     Berardi et al., 2015  ,   Potharaju et al.     Potharaju et al., 2012  ,   Sanz et al.     Sanz et al., 2012  , and   Tian et al.     Tian et al., 2015  . Furthermore, the application size is among the top 20 features in the approach by   Shabtai et al.     Shabtai et al., 2010  . During their work, apps within the categories "games" and "tools" are classified using only static features. 
+ 
+ 
+ 
+  3.1.5.  Category 
+
+ 
+   Berardi et al.     Berardi et al., 2015  ,   Peng et al.     Peng et al., 2012  ,   Potharaju et al.     Potharaju et al., 2012   as well as   Tian et al.     Tian et al., 2015   also use the Play Store categories as features in their approaches. Other work like   Shabtai et al.     Shabtai et al., 2010   also uses categories, but not as features. Instead, they use this information as the target vector of their approaches. In   Chen et al.     Chen et al., 2015  , besides other information, the app category is used as a feature to detect similar apps. Therefore, apps get clustered according to their categorization because apps in the same category have a high possibility of showing similar functionalities. 
+ 
+ 
+ 
+  3.1.6.  Meta information 
+
+ 
+ All other features that can be extracted from app stores are described as meta information. First, all features and all authors will be described. Next, an explanation is given of how the authors use those features. 
+ 
+ 
+ The most mined meta information is the app’s name used by   Bhandari et al.     Bhandari et al., 2013  ,   Chen et al.     Chen et al., 2015  ,   Crussell et al.     Crussell et al., 2012  , and   Potharaju et al.     Potharaju et al., 2012  . The developers’ names and the user reviews are the second most used meta information. The developers’ name is used by   Chen et al.     Chen et al., 2015  ,   Crussell et al.     Crussell et al., 2012  , and   Peng et al.     Peng et al., 2012  , and user reviews are used by   Bhandari et al.     Bhandari et al., 2013  ,   Chen et al.     Chen et al., 2015   and   Johann et al.     Johann et al., 2017  . In addition to the previously mentioned metadata,   Crussell et al.     Crussell et al., 2012   use package and market names. Also,   Potharaju et al.     Potharaju et al., 2012   use additional metadata like the update date, the app’s version, the number of app installations, and the application’s price. Furthermore,   Chen et al.     Chen et al., 2015  use the update text and promotional images. 
+ 
+ 
+   Crussell et al.     Crussell et al., 2012   use the proposed metadata to detect possible cloned applications. Therefore, these data are used as a first filtering stage by clustering apps with similar meta information.   Peng et al.     Peng et al., 2012   use the app names and permissions to clean their dataset from apps generated by app generation tools running with the default settings.   Potharaju et al.     Potharaju et al., 2012   use the metadata to detect plagiarized applications. In   Bhandari et al.     Bhandari et al., 2013  , all meta information is used to construct the Term Frequency Inverse Document Frequency (TF-IDF). Then those matrices are used to calculate the cosine distance and get a similarity index.   Chen et al.     Chen et al., 2015   and   Johann et al.     Johann et al., 2017   use that metadata to detect functionally similar applications. 
+ 
+ 
+ 
+ 
+  3.2.  APK Features 
+
+ 
+ In contrast to features extracted from app stores, data from the APK itself can only be extracted if the app’s APK is available. A more complex toolchain is necessary to extract this data. In   Feizollah et al.     Feizollah et al., 2015  , features extracted from APK are called statistic features. The authors also found that 45% of their analyzed research uses those features among 36% of papers using Android permissions. 
+ 
+ 
+  3.2.1.  Code 
+
+ 
+ The application’s source code is one of the most popular sources to detect malware or app similarity.   Table   5   lists the most used and most important techniques to analyze source code in the fields of malware and similarity detection  16    16 
+                 16 
+                
+                
+                
+                
+                
+                
+                
+              None of the analyzed papers cover both fields.   . This table will be followed by a detailed description of how those approaches are used in the scientific context. 
+ 
+ 
+   Table 5 .   Techniques to analyze source code  
+ 
+ 
+ 
+  Analysis Techniques  
+  Malware Detection  
+  Similarity Detection   
+ 
+ 
+ 
+ Call graph (CG) 
+   Hosseini et al.,2021 ;  Xu et al.,2018 ;  Xu et al.,2019 ;  Yang et al.,2014 ;  Zhou et al.,2018   
+   Zhang et al.,2015    
+ 
+ Dependency Graph (DG) 
+   Yang et al.,2014 ;  Zhou et al.,2013   
+   Crussell et al.,2012 ;  Crussell et al.,2013 ;  Crussell et al.,2015    
+ 
+ Abstract Syntax Tree 
+  
+   Potharaju et al.,2012    
+ 
+ Control Flow Graph (CFG) 
+   Allix et al.,2016 ;  Sahs & Khan,2012 ;  Xu et al.,2018 ;  Xu et al.,2019   
+   Chen et al.,2014 ;  Sun et al.,2014    
+ 
+ Data Flow Graph (DFG) 
+   Xu et al.,2018 ;  Xu et al.,2019   
+   
+ 
+ Control and Data Flow Graph (CDFG) 
+   Xu et al.,2018 ;  Xu et al.,2019   
+   
+ 
+ Sequence Analysis (SA) e.g., n-grams excluding graphs 
+   Anupama et al.,2022 ;  Canfora et al.,2015 ;  Jerome et al.,2014 ;  McLaughlin et al.,2017 ;  Xu et al.,2019 ;  Zhang et al.,2018   
+   Gonzalez et al.,2015 ;  Hanna et al.,2013 ;  Wang et al.,2015 ;  Zhou et al.,2012    
+ 
+ Frequency 
+   Canfora et al.,2015 ;  Xu et al.,2019 ;  Zhang et al.,2018   
+   Wang et al.,2015    
+ 
+ Hash 
+  
+   Crussell et al.,2013 ;  Crussell et al.,2015 ;  Gonzalez et al.,2016 ;  Hanna et al.,2013 ;  Linares-Vásquez et al.,2014 ;  Zhou et al.,2012    
+ 
+ Filter only code 
+   Gonzalez et al.,2016 ;  Xu et al.,2019 ;  Zhang et al.,2015 ;  Zhou et al.,2018   
+   Crussell et al.,2012    
+ 
+ Other data from the code 
+   Batyuk et al.,2011 ;  Shabtai et al.,2010   
+   
+ 
+ 
+ 
+ 
+ One of the most important techniques to detect malicious or similar applications are graphs derived from applications’ code. One example of graphs are call graphs which are used by   Hosseini et al.     Hosseini et al., 2021  ,   Xu et al.     Xu et al., 2018  ,   Yang et al.     Yang et al., 2014  , and   Zhou et al.     Zhou et al., 2018   to detect malicious applications as well as by   Zhang et al.     Zhang et al., 2015   to detect app similarity. While   Zhou et al.     Zhou et al., 2018   use API call graphs,   Hosseini et al.     Hosseini et al., 2021  ,   Xu et al.     Xu et al., 2018  , and   Yang et al.     Yang et al., 2014   use function call graphs. Another special kind of call graph was suggested by   Hosseini et al.     Hosseini et al., 2021  . They propose a call graph based on native library calls. According to   Hosseini et al.     Hosseini et al., 2021  , it is possible to integrate C or C++ code into Android applications with the Android native development kit (NDK). This code is directly transferred into machine code and stored in the lib.so files. This data can be transferred into a call graph with a tool called IDA. Those call graphs are used to run a CNN-LSTM network which can decide which app is benign and which includes malware. On the other hand,   Zhang et al.     Zhang et al., 2015   are constructing function call graphs to detect app similarity. Then they detect the main module by finding activities that invoke their decoration APIs for user interaction. After finding the main module, the authors calculate the relations between the modules. 
+ 
+ 
+ Another type of often-used graph are graphs representing different kinds of dependencies inside the applications. Those graphs are used by   Yang et al.     Yang et al., 2014   and   Zhou et al.     Zhou et al., 2013   to detect malicious applications and by   Crussell et al.     Crussell et al., 2012  ,   Crussell et al.     Crussell et al., 2013  , and   Crussell et al.     Crussell et al., 2015   to detect app similarity.   Zhou et al.     Zhou et al., 2013   use a class-based program dependency graph where classes are the nodes and the connections are the relationships between the classes to detect piggybacked applications. They are using the circumstance that cloned apps share the same primary functions. To differentiate between primary and non-primary modules, each connection in the graph is represented by a unidirectional weight. This weight shows the connection strength regarding the relationships like "class inheritance, package homogeneity (…), method calls, and member field references"   Zhou et al., 2013 , 186 . These weights are used to merge and cluster the modules. The primary modules can be detected by analyzing the Android manifest and searching the corresponding entry point ACTION.MAIN, as well as comparing the model against references to the main UI or the package name against the application’s name. Then the authors extract a fingerprint-based on "the requested permissions, the Android API calls used, involved intent types (…), the use of native code or external classes, as well as the authorship information"   Zhou et al., 2013 , 187 . These features are represented in a vector which can then be compared with the Jaccard distance. In contrast, DrodiMiner   Yang et al., 2014   extracts two-tier behavior graphs based on known malware families. These behavior graphs detect malware in applications and can be derived from a function call graph. The upper layer is a component dependency graph (CDG) representing interactions between activities, services, broadcast receivers, and content providers. The lower layer is a component behavior graph (CBG) which describes the upper layer’s functionalities and logic with their underlying API calls.   Crussell et al.     Crussell et al., 2012   compare the applications’ program dependency graphs to detect cloned applications. Their work was expanded by   Crussell et al.     Crussell et al., 2013   and   Crussell et al.     Crussell et al., 2015  . In this work, the authors propose AnDarwin, a system to detect similarities. AnDarwin constructs a program dependency graph (PDG) based on the data flow for each application. This Data PDG represents the relationship between data inside a function and can be used to detect similar code blocks between applications. Another approach to measuring similarities in applications was proposed by   Chen et al.     Chen et al., 2014  . 
+ 
+ 
+ One of the most basic graphs are abstract syntax trees (AST). This graph builds the base for a lot of others. The elementary AST was used by   Potharaju et al.     Potharaju et al., 2012  . To extract the AST of an APK, the authors use the built-in Android disassembler dexdump to generate a dump file including all classes and methods. To achieve their goals, they have modified the dexdump functions dumpClass, dumpMethod, dumpCode, dumpSField, and dumpIField. The outcome is used to generate an abstract syntax tree (AST) which can be used to construct a fingerprint of each method. The fingerprint contains information about how many virtual and direct functions are called by a method, how many arguments and parameters are passed through a method, and which sub-methods are called. This information is used to detect plagiarized applications with three different approaches, the symbol-coverage, the AST-distance, and the AST-coverage. The symbol coverage can only be used if the code is not obfuscated. In this case, "[t]he coverage of an application A i  by A is computed as the number of classes and methods in A i  that also exist in A divided by the total number of classes and methods in A i "   Potharaju et al., 2012 , 113 . If the code is level-1 obfuscated, the AST-distance calculates the Euclidian distance between the previously shown fingerprints to measure app similarity. Level-2 obfuscation can be handled with the AST-coverage approach. Therefore, the symbol-coverage approach and the AST-distance will be combined. 
+ 
+ 
+ A specialization of an AST is a control flow graph (CFG), which represents the application’s control flow (CFG). According to   Xu et al.     Xu et al., 2018 , 178 , CFGs reflect "what a program intends to behave (e.g., opcodes) as well as how it behaves (e.g., possible execution paths), such that malware behaviour patterns can be captured easily by this feature". These graphs are used by   Allix et al.     Allix et al., 2016  ,   Sahs & Khan     Sahs & Khan, 2012  ,   Xu et al.     Xu et al., 2018  , and   Xu et al.     Xu et al., 2019   to detect malware. It was also used in the field of detecting similar apps by   Chen et al.     Chen et al., 2014   and   Sun et al.     Sun et al., 2014  .   Sahs & Khan     Sahs & Khan, 2012   build a Control Flow Graph for every method found in the manifest file to detect malware. To avoid metamorphic techniques that are often used to suppress malware detector findings, the authors rewrite parts of the CFG by merging "consecutive instruction blocks", "unconditional jumps with the instruction block they jump to", and "consecutive conditional jumps"   Sahs & Khan, 2012 , 142 . CDGDroid   Xu et al., 2018   also uses a control flow graph (CFG) to detect malicious applications by analyzing the control flow in malicious applications and describing control flows typical for malware. In   Xu et al.     Xu et al., 2019  , the authors expand CDGDroid to automatically classify and characterize Android malware families. Therefore, the graphs get weighted, and the API calls are combined with their corresponding permissions. An overview of different approaches to using CFGs is given by   Allix et al.     Allix et al., 2016  . Next to some other graphs, the authors test CFG-based techniques to detect malicious applications. The CFGs are derived from the extracted Dalvik bytecode code. This code level contains the most information from the original Java byte code. Each CFG is divided into its basic blocks, and each app is represented by its blocks. Then a Boolean feature vector with all basic blocks is built for each app. This is the fingerprint of the application. The authors justify this approach with the fact that the semantics and structure of the software can better be caught with data blocks than keeping low-level information like variable names or registers because that information can easily be changed and is not independent of the program structure. As mentioned before,   Chen et al.     Chen et al., 2014   calculate the geometrical centroid of the CFGs. This technique was derived from force calculation in physics and can be used to compare applications based on their centroids. The centroid is based on a 3D-based method control flow graph (3D-CFG), where "x is the sequence number in the CFG. y is the number of outgoing edges of the node. z is the depth of loop of the node"   Chen et al., 2014 , 178 . Also,   Sun et al.     Sun et al., 2014   use CFGs to detect app similarity. As mentioned in chapter   3.2.2  , they are used to construct component-based control flow graphs. 
+ 
+ 
+ Another specialization of the AST is data flow graphs (DFGs). According to   Xu et al.     Xu et al., 2018  , DFGs represent the interactions between variables and operations and define how variables are processed during the program steps. DFGs are used by   Xu et al.     Xu et al., 2018   and   Xu et al.     Xu et al., 2019   for malware detection. Therefore, the graphs are transferred into matrices which will then be analyzed with a CNN to detect malicious applications.   Xu et al.     Xu et al., 2018   and   Xu et al.     Xu et al., 2019   also use the combination of CFG and DFG. 
+ 
+ 
+ Another option to analyze Android applications is to use sequence analysis techniques like n-grams.   Canfora et al.     Canfora et al., 2015  ,   Jerome et al.     Jerome et al., 2014  ,   McLaughlin et al.     McLaughlin et al., 2017  ,   Wang et al.     Wang et al., 2015  ,   Xu et al.     Xu et al., 2018  , and   Zhang et al.     Zhang et al., 2018   use sequence-related techniques for malware detection while   Gonzalez et al.     Gonzalez et al., 2015  ,   Hanna et al.     Hanna et al., 2013  , and
+  Zhou et al.     Zhou et al., 2012   use sequence analysis techniques to detect similar applications. In detail,   Canfora et al.     Canfora et al., 2015  ,   Jerome et al.     Jerome et al., 2014  ,   Xu et al.     Xu et al., 2018  , and   Zhang et al.     Zhang et al., 2018   explicitly use n-grams. An example of how to use n-grams can be given by analyzing the process of n-gram analysis done by   Jerome et al.     Jerome et al., 2014  . To derive n-grams, a window slides above the entire code. After each window step, an n-gram is extracted. Then all operands are removed because they are easy to change   Jerome et al., 2014   or obfuscate   Zhou et al., 2012  . In the end, a feature vector is constructed, which represents the occurrence of each unique n-gram. Instead of deriving n-grams from source code, CDGDroid   Xu et al., 2019   extracts the n-grams from the previously mentioned graphs. Another kind of sequence analysis was proposed by   Wang et al.     Wang et al., 2015  . The authors are using a two-stage based approach. The first stage is based on API call sequences. The second fine-grained detection stage is based on Boreas  17    17 
+                 17 
+                
+                
+                
+                
+                
+                
+                
+              Boreas is a counting-based code clone detection approach based on matching variables used in the applications   Yuan & Guo, 2011 ;  Yuan & Guo, 2012  .   .   McLaughlin et al.     McLaughlin et al., 2017   use a convolutional neural network (CNN) to detect malware. This approach allows them to use a long sequence of concatenated opcode n-grams. After removing the operands, this long sequence is transformed into an on-hot-encoded vector. 
+ 
+ 
+   Zhou et al.     Zhou et al., 2012   use sequence analysis techniques to detect app similarity. Therefore, instruction sequences are mined with a sliding window, and the operands are discarded. Instead of removing all operands from the n-grams,   Hanna et al.     Hanna et al., 2013   keep the constant data like const-strings, making the further analysis more fine-grained. Furthermore, code containing reflections can only be compared if the strings are kept.   Gonzalez et al.     Gonzalez et al., 2015   investigate the usage of opcode and bytecode n-grams to detect app similarity. Together with the previously mentioned metadata, the authors build a two-stage system using n-grams to calculate app distances with the Simplified Profile Intersection (SPI) proposed by   Frantzeskou et al.     Frantzeskou et al., 2006  . This design allows the authors to detect multiple levels of relationships between applications such as siblings, twins, step-siblings, and cousins. 
+ 
+ 
+ A technique that can be used additionally to sequence-based approaches is to count the frequency of occurrence of unique sequences. This technique was used by   Canfora et al.     Canfora et al., 2015  ,   Xu et al.     Xu et al., 2019  , and   Zhang et al.     Zhang et al., 2018   to detect malware and by   Wang et al.     Wang et al., 2015   to detect app similarities.   Canfora et al.     Canfora et al., 2015   and   Zhang et al.     Zhang et al., 2018   use the frequency of opcode n-grams to detect malware. They compute statistics between the distance of opcode frequencies in benign and malicious applications. Another way to use opcode frequency was shown by   Xu et al.     Xu et al., 2019  . The authors expand their tool CDGDroid to detect malware families based on n-grams frequencies. In the domain of detecting similar applications,   Wang et al.     Wang et al., 2015   use the frequency of API call sequences. 
+ 
+ 
+ Another technique that can be used next to the ones previously shown is calculating hashes and using them to find malicious or similar applications. This technique was used by   Crussell et al.     Crussell et al., 2012  ,   Crussell et al.     Crussell et al., 2013  ,   Crussell et al.     Crussell et al., 2015     Hanna et al.     Hanna et al., 2013  ,   Linares-Vásquez et al.     Linares-Vásquez et al., 2014  , and   Zhou et al.     Zhou et al., 2012   and to detect similar applications.   Linares-Vásquez et al.     Linares-Vásquez et al., 2014   use the hash values of all classes found in the application to compare applications.   Crussell et al.     Crussell et al., 2013   and   Crussell et al.     Crussell et al., 2015   generate hash values over the semantic vectors derived from the PDG to detect similar applications. Another possibility of using hashes was proposed by   Zhou et al.     Zhou et al., 2012  . The authors generated a fuzzy hash over their extracted program instruction sequences to generate an application’s fingerprint. The hash generator cuts the hash generation on a specific reset point to get comparable hash values. By doing this, the code is sliced into smaller pieces, and each piece gets its hash. Ultimately, an overall hash is calculated by concatenating the hash values of the smaller code slices. This hash can compare Android applications by calculating the edit distance between two fingerprints. A similar approach was proposed by   Hanna et al.     Hanna et al., 2013   within Juxtapp. Instead of unlimited instruction sequences, they use overlapping n-grams as a starting point for their djb2 hash values. These hashes are transferred into a feature vector where each n-gram is represented by a single bit. Then the Jaccard distance between those feature vectors is used to calculate app similarity. 
+ 
+ 
+ Filtering techniques can reduce resource usage during calculation by minimizing the search space. Filtering techniques were used by   Gonzalez et al.     Gonzalez et al., 2016  ,   Xu et al.     Xu et al., 2019  , and   Zhang et al.     Zhang et al., 2015   and to find malicious applications and by   Crussell et al.     Crussell et al., 2012   to find app similarities.   Zhang et al.     Zhang et al., 2015   filter all function calls which are not meaningful for detecting malware. Their system keeps graphs only if the FCG parts are loosely coupled and end with an abusable API call. Another approach was proposed by   Gonzalez et al.     Gonzalez et al., 2016   by using bloom filters to detect different kinds of reused code. For this purpose, some known sources for code reuse are crawled like Android SDK-related base functions, common (advertisement) libraries, or malware code snippets. Then this code is hashed and a bloom filter is constructed. This filter detects the presence and the kind of reused code, like using a library, implementing ads, or using the app for piggybacking malware.   Xu et al.     Xu et al., 2019   also use filtering techniques. They filter the opcode n-grams according to their weight and the frequency of opcode occurrence. 
+ 
+ 
+ Filtering techniques are also used to identify similar applications.   Crussell et al.     Crussell et al., 2012   filter their graphs by removing parts that are not meaningful to detect cloned applications. For example, code from third-party libraries is removed to make the system more robust. 
+ 
+ 
+ In addition to graph or code sequence-based approaches, code analyses can extract metadata from the code.   Shabtai et al.     Shabtai et al., 2010   use code analysis techniques to extract data like strings, types, classes, prototypes, methods, fields, static values, inheritance, and opcodes. These data are used to classify Android applications. Another approach to using code was shown in   Batyuk et al., 2011  . In their work, the authors search for code parts violating privacy. Then they develop a method to autopatch those code fragments and generate a patched application. 
+ 
+ 
+ 
+  3.2.2.  API Calls 
+
+ 
+ According to Google   Google Developers     Google Developers, 2022a  , 4821 Android-related API calls currently exist. Android API calls are essential to building an application because they connect the operating system and the hardware components with the application. Another important factor why API calls are often used is that their modification during API name obfuscation is impossible   Wang et al., 2015  . 
+ 
+ 
+ In general, API calls can be interpreted in multiple ways. According to   Linares-Vásquez et al.     Linares-Vásquez et al., 2016  , API calls can be separated by their source. One source is the Android framework itself because it provides many (operational) system-related commands. Another source could be functions provided by third-party developers like Unity   Unity Technologies, 2023  . All API calls provided by the developer can be regarded as internal calls.   Gorla et al.     Gorla et al., 2014   suggest differentiating API calls into sensitive API calls and regular ones. Sensitive API calls are API calls that are based on user permissions. According to   Google Developers     Google Developers, 2022a   and   Zhang et al.     Zhang et al., 2018  , API calls can be divided into "package name", possibly "sub package name", "class name", and "function name". E.g., LAndroid/net/ConnectivityManager/getNetworkCapabilities means the function "getNetworkCapabilities" is located in the package "ConnectivityManager" which comes from the package "LAndroid", located in the Subpackage "net" where LAndroid indicates that this is an Android native API Call. 
+ 
+ 
+   Bläsing et al.     Bläsing et al., 2010  ,   Chen et al.     Chen et al., 2013  ,   Schmidt et al.     Schmidt et al., 2009  ,   Zhang et al.     Zhang et al., 2018  , and   Zhou et al.     Zhou et al., 2018   use API calls to detect malicious application behavior.   Zhou et al.     Zhou et al., 2018   investigate Android API calls based on API call graphs. They also monitor the parameters and compare all with previously derived malware heuristics. In their approach, API calls are also used to detect unknown zero-day exploits by monitoring dynamically loaded code by observing the corresponding API call from the class "DexClassLoader". If dynamically loaded code is detected, the interactions between the Java code and the Android API calls are monitored in a live system to investigate malicious behaviours. Building on their previous work,   Zhou et al.     Zhou et al., 2013   use API calls to generate a fingerprint to detect piggybacked applications.   Gorla et al.     Gorla et al., 2014   use API calls to find outliers of app behavior.   Chen et al.     Chen et al., 2013   developed the PEGASUS system, which can detect malicious behavior based on the "temporal properties of the interaction between an application and the Android event system"   Chen et al., 2013 , 1 . A permission event graph is constructed to map the temporal transitions between permissions and lifecycle-related components, including their API call usage based on the related events.   Zhang et al.     Zhang et al., 2018   use operand sequences derived from API calls for malware detection. For this purpose, they only keep the API call package names.   Bläsing et al.     Bläsing et al., 2010   and   Schmidt et al.     Schmidt et al., 2009   use monitoring techniques to analyze system and library calls. They extract function call lists and compare them against malware heuristics. 
+ 
+ 
+ Another application scenario of using API calls is to detect plagiarism, like finding reused code   Sun et al., 2014   or cloned Android applications   Wang et al., 2015   as well as (functional) similar Android applications   Hamednai et al., 2019 ;  Linares-Vásquez et al., 2016  .   Sun et al.     Sun et al., 2014   construct a component-based control flow graph (CB-CFG) where API calls are the nodes, and the edges represent the control flow. With this approach, the authors can detect reused code.   Wang et al.     Wang et al., 2015   propose a three-stage-based system to detect cloned Android applications. In the first stage, a feature pre-processing is done. In the second, coarse-grained stage, possible clones can be detected by comparing the "call frequencies of different Android APIs"   Wang et al., 2015 , 74 . The third stage is described in the chapter "Code".   Linares-Vásquez et al.     Linares-Vásquez et al., 2016   propose a system to detect similar Android applications. In this approach, they are using several features to fingerprint applications. One of these features are API calls.   Hamednai et al.     Hamednai et al., 2019   use API calls to detect functionally similar applications because, together with permissions, API calls can capture the app’s behaviors and functionalities. Additionally, the authors capture all Android API calls from the Android developer page, merge them with the "Android.jar" file, and compare those with their extracted ones. Also, the authors divide API calls into API-class and API-method, where API-class only contains the API package name and API-method contains the package name and class name. 
+ 
+ 
+ Furthermore, some other domains were covered by   Schmicker et al.     Schmicker et al., 2019   and   Tian et al.     Tian et al., 2015  . While   Schmicker et al.     Schmicker et al., 2019   use API calls in their own malware-related Android feature extraction framework,   Tian et al.     Tian et al., 2015   use API calls to detect characteristics of high-rated apps. 
+ 
+ 
+ 
+  3.2.3.  Permissions 
+
+ 
+ Android’s security is based on a permission system where apps have to request permissions granted or declined by the user   Almomani & Khayer, 2020  . In Android 13 API 33, 206 Android permissions are listed, which can be divided into the protection levels normal-, dangerous- and signature- / system-permissions  18    18 
+                 18 
+                
+                
+                
+                
+                
+                
+                
+              A detailed description of Android permission levels can be found in   Felt et al., 2011  , chapter 2.1 ”Android Background”.      Android Developers, 2022a ;  Google Developers, 2022a  . There are two different ways to set those permissions. One option is to request permissions during installation. The other option is to request permissions by user interaction during runtime   Android Developers, 2022a  . Permissions granted during installation are typically not dangerous for the user and can be changed later in the Android app options. Those permissions must be declared in the Android manifest file   Android Developers, 2022  . 
+ 
+ 
+ According to   Sanz et al.     Sanz et al., 2012  , the high involvement of user interaction leads to security risks because their security consciousness is limited, and they fail to read permissions requested before installation. Furthermore,   Almomani & Khayer     Almomani & Khayer, 2020   found that a majority of users agree to the listed permissions without fully understanding them. According to   Felt et al.     Felt et al., 2011  , one-third of all Android applications are overprivileged. To avoid this, the authors developed Stowaway, a tool that compares API calls and the underlying permissions. 
+ 
+ 
+ For malware detection, permissions are used by   Abawajy et al.     Abawajy et al., 2021  ,   Anupama et al.     Anupama et al., 2022  ,   Chen et al.     Chen et al., 2013  ,   Sahs & Khan     Sahs & Khan, 2012  , and   Zhou et al.     Zhou et al., 2013  . According to   Abawajy et al.     Abawajy et al., 2021  , most malware can be detected by changed or overfitted permissions because malware authors commonly exploit these. In addition,   Abawajy et al.     Abawajy et al., 2021   investigate which feature selection techniques could perform best in the area of malware detection.   Anupama et al.     Anupama et al., 2022   consider permissions as one of two features in their static analysis part. They use them to generate a binary feature vector (0 absent; 1 present). This feature vector is used to train diverse AI systems to detect malicious applications.   Chen et al.     Chen et al., 2013   propose the PEGASUS system to detect malicious apps based on the temporal connection between permissions and API calls. Regarding the ability to generate custom permissions,   Sahs & Khan     Sahs & Khan, 2012   further divide them into standard built-in permissions and non-standard permissions. The former are handled by setting a bit in a features vector if permission is required in the application. The latter are split into the segments "prefix (usually "com" or "org"), the organization and product section, and the permission name"   Sahs & Khan, 2012 , 142 .   Zhou et al.     Zhou et al., 2013   use permissions to detect piggybacked apps. 
+ 
+ 
+ On the other hand,   Hamednai et al.     Hamednai et al., 2019  ,   Linares-Vásquez et al.     Linares-Vásquez et al., 2016  ,   Sanz et al.     Sanz et al., 2012  , and   Shabtai et al.     Shabtai et al., 2010   compare the permission usage to detect app similarities. 
+ 
+ 
+ As shown in the previous chapter,   Schmicker et al.     Schmicker et al., 2019   also use permissions in their own malware-related Android feature extraction framework, while   Tian et al.     Tian et al., 2015   use them to detect characteristics of high-rated apps. 
+ 
+ 
+ 
+  3.2.4.  Metadata from the Manifest 
+
+ 
+ Besides permissions, other helpful information can be mined from the manifest file, for example intent filters, providers, and queries. A complete list can be found under   Android Developers     Android Developers, 2022  . 
+ 
+ 
+   Shabtai et al.     Shabtai et al., 2010  ,   Shao et al.     Shao et al., 2014  , and   Tian et al.     Tian et al., 2015   use data from the manifest to generate statistics.   Shabtai et al.     Shabtai et al., 2010   use elements, attributes, namespaces, strings, and actions.   Shao et al.     Shao et al., 2014   use the number of activities, the number of permissions, and the number of intent filters.   Tian et al.     Tian et al., 2015   use the count of specified services and activities in the manifest as a statistical value to detect high-ranked Android apps. 
+ 
+ 
+   Zhou et al.     Zhou et al., 2012   use intent filters to detect repacked applications.   Zhou et al.     Zhou et al., 2013   extract the "involved intent types (which represent the way for inter-component or inter-process communication)"   Zhou et al., 2013 , 187  for piggybacked app detection. Furthermore,   Zhou et al.     Zhou et al., 2018   use services and receivers to detect malicious applications based on malware heuristics. 
+ 
+ 
+   Anupama et al.     Anupama et al., 2022   and   Chen et al.     Chen et al., 2013   extract application components like activities, services, broadcast receivers, and content providers.   Chen et al.     Chen et al., 2013   use those to construct relationships between the UI, the API calls, and the temporal colorations between all of them.   Anupama et al.     Anupama et al., 2022   build binary feature vectors from those components. 
+ 
+ 
+   Hamednai et al.     Hamednai et al., 2019   and   Linares-Vásquez et al.     Linares-Vásquez et al., 2016   use data from the manifest to detect app similarities. While   Linares-Vásquez et al.     Linares-Vásquez et al., 2016   only extract intents,   Hamednai et al.     Hamednai et al., 2019   collect several features from the manifest to fulfill this purpose.   Hamednai et al.     Hamednai et al., 2019   collect hardware and software components required by the app, app components like activities, services, broadcast receivers, content providers, and intent filters. This information is used to construct feature vectors to check app similarity. Furthermore, the package name in the manifest is captured. For this purpose, package names are split into separate components like "weatherforecast" and will be interpreted as "weather" and "forecast". 
+ 
+ 
+ 
+  3.2.5.  UI-related data 
+
+ 
+ The connection between GUI usage and the expected app behavior can be used to detect malicious applications.   Chen et al.     Chen et al., 2013   extract "user interface entities such as buttons and widgets, and their relevant event-handlers"   Chen et al., 2013 , 4 . This data is used to check if an app only provides the behavior expected by the user or if an app shows malicious behavior under the surface. 
+ 
+ 
+ Because the GUI is an essential part of an APK,   Shao et al.     Shao et al., 2014   use it to detect cloned applications. The base idea is that resources and code are divided into separate files to make the application simple to maintain. The relationships between those components can then be used to detect repacked Android applications because GUI elements (layouts) and event handlers are mostly not modified by malware authors because the interaction between those elements represents the app’s functionality. This mechanism could change the original app’s functionality, making it less likely for the malware to be undetected or spread. 
+ 
+ 
+   Taba et al.     Taba et al., 2014   and   Tian et al.     Tian et al., 2015   investigated how user interface complexity relates to the ranking in the Google Play Store. They achieve contradictory results, which may be grounded in the different approaches used to identify the UI complexity.   Taba et al.     Taba et al., 2014   based the complexity calculation on UI elements like input and output and clustered them based on textual features like strings extracted from each UI. This data is set concerning the application’s rank in the Play Store to find relations between UI and perceived app quality. On the other hand,   Tian et al.     Tian et al., 2015   use GUI elements and their occurrence in the resource folders to detect highly rated applications. 
+ 
+ 
+ 
+  3.2.6.  Sensors 
+
+ 
+ Sensors are all hardware elements that can detect changes in the environment of the device, like GPS position, temperature, or acceleration.   Linares-Vásquez et al.     Linares-Vásquez et al., 2016   utilize the information on sensor usage as a feature to detect app similarity. For this purpose, they have written a sensors extractor using APKs’ zip file as input. In   Batyuk et al.     Batyuk et al., 2011a  , sensor information like geodesic coordinates and ambient loudness is used to obtain information about the current context of phone usage, for example, using the phone in a business context or for private purposes. Dependent on this information, the phone settings can be adjusted according to the security conditions of the context. 
+ 
+ 
+ 
+  3.2.7.  Identifiers 
+
+ 
+ In Android, identifiers can be used to track the user’s behavior when using applications. This is primarily used for market analysis purposes.   Linares-Vásquez et al.     Linares-Vásquez et al., 2016   use identifiers as one feature in their work to detect similar applications. 
+ 
+ 
+ 
+  3.2.8.  Printable Strings 
+
+ 
+ Printable strings can be found in many places of an APK, like inside the code, the folder structure, or the underlying files. According to   Shabtai et al.     Shabtai et al., 2010  , string features are "meaningful plain-text strings that are encoded in programs files"   Shabtai et al., 2010 , 330 .   Sanz et al.     Sanz et al., 2012   and   Shabtai et al.     Shabtai et al., 2010   extract this information from dex files and count their frequency of occurrence. This information is used to classify Android applications into different categories.   Tian et al.     Tian et al., 2015   extract strings from the application’s root directory, which includes a "resource" folder containing, e.g., strings. This information is used to detect high-ranked applications.   Hamednai et al.     Hamednai et al., 2019   use strings found in dex files and strings found in xml files in "/res/values/" folder to gather app-related string information. This data gets filtered to remove duplicates, for example, caused by double values against other features like API calls.   Schmicker et al.     Schmicker et al., 2019   use the AAPT tool to extract strings in their Android feature extraction framework. 
+ 
+ 
+ 
+  3.2.9.  Statistical features 
+
+ 
+ Statistical Android features are all kinds of data that represent some numerical aspect of the application, like the size of the application or the count of files included in the APK. 
+ 
+ 
+   Shabtai et al.     Shabtai et al., 2010   explore statistical features in the APK and the manifest. From the APK, they extract ".apk size, number of zip entries, number of files for each file type, common folders and more"   Shabtai et al., 2010 , 331 . From the xml, they mine the "[c]ount of xml elements, attributes, namespaces, and distinct strings"   Shabtai et al., 2010 , 331 . They also collect features for "each element name (e.g., count of distinct actions, distinct categories), [f]eatures for each attribute name [and] [f]eatures for each attribute type (e.g., number, string)"   Shabtai et al., 2010 , 331 . 
+ 
+ 
+   Zhou et al.     Zhou et al., 2018   use the archive structure to detect malware based on malware heuristics. For this purpose, the archive is decompressed, and the internal structure is monitored. 
+ 
+ 
+   Gonzalez et al.     Gonzalez et al., 2015  ,
+  Schmicker et al.     Schmicker et al., 2019  , and   Shao et al.     Shao et al., 2014   use statistics derived from different data types. While   Shao et al.     Shao et al., 2014   use the average number of .png files and .xml files per directory,   Gonzalez et al.     Gonzalez et al., 2015   use statistics derived from the number as well as the (average) size of .apk, .zip, .java, .jar, images, libraries, and binary files.   Schmicker et al.     Schmicker et al., 2019   use the file size as well as the date. 
+ 
+ 
+ 
+  3.2.10.  Metadata 
+
+ 
+ Android-related metadata like the inner structure, security policies, organization, and ownership characterize the application.   Sun et al.     Sun et al., 2014   extract some information from the META-INF file, like detailed information about the application’s author and certificate file cert.rsa. Furthermore,   Gonzalez et al.     Gonzalez et al., 2015 , 441  use the "certificate serial number, the hash value (md5) for the .apk container and a .dex file (md5), and a list of internal files’ names with corresponding hash values (md5)" to detect app similarities. Additionally,   Schmicker et al.     Schmicker et al., 2019   extract several hash values like MD5, SHA1 and SHA256. 
+ 
+ 
+ 
+ 
+ 
+  4.  CREATING A UNIVERSAL, INTERDISCIPLINARY DATASET 
+
+ 
+ After describing the data sources, extraction tools, and features most often used to analyze research questions in similarity, clone, and malware detection, this section shifts its focus to defining the requirements for a multipurpose dataset. First, the necessity of such a dataset is presented from the scientific and user perspective. Second, the challenges of existing approaches identified in the reviewed literature are highlighted. Based on this, guidelines and the schematic process for generating the dataset are described. 
+ 
+ 
+ From a scientific point of view, creating a universal dataset fosters a research environment that enables validation and replication, facilitating and accelerating the development of new methods and models. Furthermore, a universal dataset can be applied not only to specific use cases  19    19 
+             19 
+            
+            
+            
+            
+            
+            
+            
+          Researchers typically extract only the data relevant to their specific research, making comparisons to alternative approaches, which typically require different features, difficult.   , but to a variety of other problems, leading to more general, consistent, and robust solutions and enabling new fields of research. Additionally, an existing dataset significantly reduces the time and effort involved in data collection. By consolidating all relevant features in one dataset, researchers can work more efficiently and at the same time exploit synergy effects between malware, clone, and similarity analysis. For instance, a system for detecting clones could be expanded to detect subtle differences in potentially identical applications, which can offer a way to detect (previously unknown) malicious code fragments   Zhou et al., 2013  .  20    20 
+             20 
+            
+            
+            
+            
+            
+            
+            
+          A system to detect piggybacked apps was proposed by   Zhou et al.     Zhou et al., 2013  . However, the authors did not make their dataset publicly available.    This opens up new possibilities by enabling collaboration and knowledge sharing between different research groups and disciplines. 
+ 
+ 
+ In addition to the benefits to the research community, future systems based on a universal dataset promise improved security and usability for users. These systems are not only able to detect malware but also offer specific recommendations for action, such as alternatives to potentially dangerous applications.  21    21 
+             21 
+            
+            
+            
+            
+            
+            
+            
+          For example,   Linares-Vásquez et al.     Linares-Vásquez et al., 2016   proposed a system for detecting similar Android applications that could be used for this purpose.    In addition, they could also implement recommender systems  22    22 
+             22 
+            
+            
+            
+            
+            
+            
+            
+          For instance, systems that proactively show apps using more permissions than the app functionality requires. An example was provided by   Gorla et al.     Gorla et al., 2014  . However, they only analyzed which permissions are necessary based on the app’s description but not on its functionality.   , which can further reduce the burden on users. These points are particularly important because user studies suggest that risk mitigation systems only achieve their full potential when the perceived cost of risk mitigation does not exceed the perceived effectiveness   Alsaleh et al., 2017 ;  Hansen et al., 2004 ;  Liang & Xue, 2009 ;  Sasse & Flechais, 2005  . Providing security-relevant information to technically-savvy users can overwhelm non-technically savvy users, which in turn represents a security risk for everyone. Therefore, different user groups must be addressed through adapted security mechanisms and options for action   Hansen et al., 2004 ;  Sasse & Flechais, 2005  . Systems addressing the individual needs of users therefore enable an improved user experience for all user groups, regardless of their technical background. 
+ 
+ 
+ This paper identified numerous challenges associated with the creation of a universal dataset. A significant obstacle to the research, validation, and replication of current and future threat protection systems are unpublished or no longer available datasets. In addition, the reviewed literature suffers from deficiencies in data quality, data collection, data storage, and documentation.  23    23 
+             23 
+            
+            
+            
+            
+            
+            
+            
+          As described in section   2.2  , many authors do not provide clearly defined data collection methods or make datasets publicly available. Furthermore, some authors publish only a description of the dataset generation process, but not the actual data. Due to inaccuracies and ambiguities in these descriptions, it is often impossible to reproduce the dataset. For example, the referenced dataset from   Zhou et al.     Zhou et al., 2013   is not available, and that from   Schmicker et al.     Schmicker et al., 2019   is no longer publicly accessible. The dataset used by   Sahs & Khan     Sahs & Khan, 2012   is poorly documented, while   Shabtai et al.     Shabtai et al., 2010   offer statistical data without additional information about the underlying apps.   Linares-Vásquez et al.     Linares-Vásquez et al., 2016   provide a list of APK names and corresponding labels, but do not include necessary features like the application versions or the complete dataset with all extracted features.    These issues are also raised by   Hutson     Hutson, 2018  , who shows that AI is facing a reproduction crisis, with only about 6% of authors publishing their code and less than a third disclosing their database.  24    24 
+             24 
+            
+            
+            
+            
+            
+            
+            
+          Another factor for this could be the constant change and development of the extraction tools on the one hand and the apps on the other, which leads to inconsistent replications.    The absence of published code has negative effects on all areas of computer science, while the lack of available datasets is a particularly significant burden on research into modern AI systems, which require massive amounts of training data. The unavailability of code and data, and the resulting issues with reproducibility greatly impede research progress. 
+ 
+ 
+ To address these challenges, we have defined a series of requirements that must be met by future datasets. Some of these requirements extend beyond the domains discussed in this article and can be applied to other fields as well. 
+ 
+ 
+ 
+  •  
+ 
+  Including apps for different purposes:  To identify malicious and cloned applications, or to detect minimal differences between the original and the pirated application, datasets are needed that contain the original applications, malicious applications, and pirated copies with malicious code. Developing systems that provide options for action requires datasets with features that enable the identification of similarity relationships between applications. 
+  
+  •  
+ 
+  Providing multipurpose features and labels:  To create a database for validation, replication, and further development of existing systems, the dataset must have a wide variety of features and labels that are useful for different purposes. Most existing datasets either only provide the app and the label or app features derived for a specific use case. These need to be expanded. 
+  
+  •  
+ 
+  Research data management:  Long-term, high-quality, and cross-institutional data management is required to ensure availability and timeliness. To be able to react to current developments and validate previously published works with the same dataset version, it is necessary to implement mechanisms that enable the data to be updated quickly and constantly. To ensure verifiability and replicability, it is essential to guarantee that all dataset versions are permanently available. 
+  
+  •  
+ 
+  Quality of the data sources:  Future datasets must be based on knowledge from several sources like different app stores and malware sources to improve their reliability and completeness. 
+  
+  •  
+ 
+  Documentation: 
+A continuous and conscientious documentation of all work processes including the data collection, data preprocessing and data usage is essential. 
+  
+ 
+ 
+ 
+ Generating such datasets requires a non-trivial feature extraction procedure. The following is an example of how an effective tool chain could be structured based on the tools and features identified in this article. At the beginning, APKs must be collected. All app sources mentioned in   Table   2   should be considered. In addition to the APK, features such as app name, size, developer, rating, version, description, and app categories  25    25 
+             25 
+            
+            
+            
+            
+            
+            
+            
+          In addition to its usage as a feature in malware detection, the app category can also serve as a label for similarity detection.    can be derived from the app stores. Existing databases such as the Android Malware Genome Project should also be used (see   Table   2  ). Web scrapers and crawlers can be used for this purpose.  26    26 
+             26 
+            
+            
+            
+            
+            
+            
+            
+          See, for example, Selenium   ThoughtWorks, 2024  , which can be used to automatically extract data from websites.    The data should then be prepared and harmonized. For example, APKs downloaded from app stores should be analyzed with a virus scanner so that this data can be tagged with appropriate malware labels. On the other hand, the data from the existing datasets should be enriched with missing information, such as metadata from the app stores. A comprehensive dataset can then be generated from features such as API calls, call graphs, strings, sensors, intents, permissions, functions, activities, services, and recipients. It is advisable to use different tools and combine their results to get a better end result. The generated dataset should be usable for training malware and similarity detection systems. All analysis steps must be meticulously documented and published along with all versions of the dataset. 
+ 
+ 
+ 
+  5.  LIMITATIONS 
+
+ 
+ This study looks at the features required for Android malware, clone, and similarity detection and provides a comprehensive overview of their acquisition and usability. The research and development of such systems requires a sufficient number of high-quality labels in addition to the above-mentioned features, at least for the validation of the results. 
+ 
+ 
+ In the case of Android malware detection  27    27 
+             27 
+            
+            
+            
+            
+            
+            
+            
+          This also includes detecting piggybacked malware in clones. However, this process only requires labels for validation purposes.    and simple similarity detection, labels exist and have been used by several authors. In case of malware detection, results from virus scanners and labels from existing Android malware datasets such as Drebin or the Android Malware Genome Project (see   Table   2  ) can be used. For a simple similarity detection, app store categories can be used. The inclusion of both labels was proposed in the description of the schematic process for generating a comprehensive dataset (see section   4  ). 
+ 
+ 
+ However, high-quality labels that describe the apps’ functionality in detail are required for recognizing functionally identical Android apps. However, no comprehensive dataset containing such labels is known. Some researchers solve this by using handwritten labels. However, this is expensive and time-consuming. Furthermore, none of the reviewed sources take into account that modern Android apps can be multifunctional and therefore need to be assigned to multiple labels. These problems need to be addressed in future research. A starting point could be the development of a partly automated labeling process or a crowdsourcing approach. 
+ 
+ 
+ 
+  6.  CONCLUSION 
+
+ 
+ This paper analyzes the literature on Android malware detection, clone detection, and functional similarity detection between 2002 and 2022, focusing on the underlying features. We extracted and analyzed data sources, data collection tools, and feature mining processes from scientific publications. In doing so, we lay the foundation for the creation of a publicly available, universal and interdisciplinary Android feature dataset. 
+ 
+ 
+ The evaluation of the examined literature showed that a wide range of sources, methods and tools are available. A critical step in collecting features from Android apps is to collect the app’s APK, which can be obtained from app stores and public malware sources. Another important step is feature extraction. To extract features from both the marketplace and the app’s APK, several tools and toolchains were analyzed, including those for decompiling and analyzing the APK, examining the underlying Java code, and generating statistics and graphics. The analyzed features showed that textual features such as app description, author information, and app ratings can be easily obtained by crawling Android marketplaces, but according to   Pandita et al.     Pandita et al., 2002  , they are more susceptible to manipulation. In contrast, technical features extracted directly from the APK are more tamper-proof and reliable for security-related analysis due to their direct association with the application. However, their extraction is much more difficult due to their complexity. The paper also shows that the most commonly used features of the APK are API calls, permissions, and code analysis. Since code is at the heart of any application, techniques such as extracting and analyzing diagrams, n-grams, and statistics, or using hashing and filtering techniques to reduce the search space have been extensively explored in this article. Metadata, such as the internal structure of the application, and textual features, such as strings, are used less frequently. 
+ 
+ 
+ We explored how to make the extracted features useful for malware, clone, and similarity detection purposes, aiming to acquire profound insights into feature utilization and uncover potential synergies. It is described that synergies can be exploited by extracting overlapping features in these domains. In this context, the work examines the symbiotic relationship between these areas and how they can benefit from each other. Malware detection systems can benefit from clone detection systems because cloned applications often contain malicious code. Clone detection systems, in turn, can benefit from the technical concepts of (functional) similarity detection systems, which in turn provide users with solutions to risks identified by malware and clone detection systems. 
+ 
+ 
+ An interdisciplinary Android dataset is vital for research as it enables validation, replication, and the development of new methods and models. Its versatility allows it to address various problems across disciplines, fostering general and robust solutions and opening avenues for new research fields. Additionally, using an existing dataset reduces the time and effort required for data collection, enabling researchers to work more efficiently. This paper also highlights the importance of the human factor in mitigating security risks. For example, inexperienced users may not act appropriately despite warnings from malware or clone detection systems, posing a potential risk to the entire Android ecosystem. It is therefore essential to have combined systems that inform users about dangerous applications and provide them with options for action to protect themselves. 
+ 
+ 
+ In summary, our analysis shows that there is a significant lack of publicly available, universal, and interdisciplinary Android feature datasets that can be used in the analyzed research areas. This lack impedes progress and collaboration in the field of Android security research. To address this issue, we outline the requirements and the process of creating such a publicly available, universal, and interdisciplinary Android feature dataset. Authors need to 1) Include apps for different purposes, 2) Provide multipurpose features and labels, 3) Implement and maintain research data management, 4) Ensure quality of the data sources, and 5) Document adequately. 
+ 
+ 
+ In addition to the researchers, publishers can also help to ensure availability and reproducibility of research outcomes. For example, journals could require a reference to a publicly accessible dataset or the publication of the dataset used, along with the publication of documentation and source code on the journal’s website alongside the papers. This would enable the broader research community to reproduce and assess the findings of the published work. A freely available dataset, such as the one proposed in this article, can be helpful in this regard. 
+ 
+ 
+ The review not only summarizes the current state of research but also underscores the importance of collaborative efforts to overcome existing challenges. The promotion of open data-sharing practices and the encouragement of reproducible research can facilitate the advancement of Android security research and empower users to make informed decisions about app security. 
+ 
+ 
+ 
+  7.  ACKNOWLEDGMENTS 
+
+ 
+     
+ 
+ 
+ 
+ References 
+
+ 
+      
+  Abawajy et al. (2021) 
+ Jemal Abawajy, Abdulbasit Darem and Asma. Alhashmi
+ 
+ “Feature Subset Selection for Malware Detection in Smart IoT Platforms”
+ 
+ In  Sensors   21.4 , 2021, pp. 1374
+ 
+ DOI:  10.3390/s21041374 
+  
+      
+  Allix et al. (2016) 
+ Kevin Allix et al.
+ 
+ “Empirical assessment of machine learning-based malware detectors for Android”
+ 
+ In  Empirical Software Engineering   21.1 , 2016, pp. 183–211
+ 
+ DOI:  10.1007/s10664-014-9352-6 
+  
+      
+  Allix et al. (2023) 
+ Kevin Allix, Tegawendé. Bissyandé, Jacques Klein and Yves Le Traon
+ 
+ “AndroZoo: Collecting Millions of Android Apps for the Research Community”, 2023
+ 
+ URL:  https://androzoo.uni.lu/ 
+  
+      
+  Almomani & Khayer (2020) 
+ Iman. Almomani and Aala Khayer
+ 
+ “A Comprehensive Analysis of the Android Permissions System”
+ 
+ In  IEEE Access   8 , 2020, pp. 216671–216688
+ 
+ DOI:  10.1109/ACCESS.2020.3041432 
+  
+      
+  Alsaleh et al. (2017) 
+ Mansour Alsaleh, Noura Alomar and Abdulrahman Alarifi
+ 
+ “Smartphone users: Understanding how security mechanisms are perceived and new persuasive methods”
+ 
+ In  PloS one   12.3 , 2017, pp. e0173284
+ 
+ DOI:  10.1371/journal.pone.0173284 
+  
+      
+  Alzubaidi (2021) 
+ Abdulaziz Alzubaidi
+ 
+ “Recent Advances in Android Mobile Malware Detection: A Systematic Literature Review”
+ 
+ In  IEEE Access   9 , 2021, pp. 146318–146349
+ 
+ DOI:  10.1109/ACCESS.2021.3123187 
+  
+      
+  Anarxia (2004) 
+ Nicos Anarxia
+ 
+ “jclassinfo: Java Class Information Extractor”, 2004
+ 
+ URL:  http://jclassinfo.sourceforge.net/ 
+  
+      
+  Andoni & Indyk (2006) 
+ Alexandr Andoni and Piotr Indyk
+ 
+ “Near-Optimal Hashing Algorithms for Approximate Nearest Neighbor in High Dimensions”
+ 
+ In  47th Annual IEEE Symposium on Foundations of Computer Science 
+ 
+ Los Alamitos, Calif.: IEEE Computer Society, 2006, pp. 459–468
+ 
+ DOI:  10.1109/FOCS.2006.49 
+  
+      
+  Android Developers (2020) 
+ Android Developers
+ 
+ “AAPT2”, 2020
+ 
+ URL:  https://developer.android.com/studio/command-line/aapt2 
+  
+      
+  Android Developers (2022) 
+ Android Developers
+ 
+ “App Manifest Overview”, 2022
+ 
+ URL:  https://developer.android.com/guide/topics/manifest/manifest-intro 
+  
+      
+  Android Developers (2022a) 
+ Android Developers
+ 
+ “Permissions on Android”, 2022
+ 
+ URL:  https://developer.android.com/guide/topics/permissions/overview 
+  
+      
+  Android Open Source Project (2022) 
+ Android Open Source Project
+ 
+ “Dalvik Ausführbares Format”, 2022
+ 
+ URL:  https://source.android.com/docs/core/dalvik/dex-format 
+  
+      
+  Anupama et al. (2022) 
+ M.. Anupama et al.
+ 
+ “Detection and robustness evaluation of android malware classifiers”
+ 
+ In  Journal of Computer Virology and Hacking Techniques   18.3 , 2022, pp. 147–170
+ 
+ DOI:  10.1007/s11416-021-00390-2 
+  
+      
+  Apache Software Foundation. (2020) 
+ Apache Software Foundation.
+ 
+ “Apache Commons BCEL™ – Home”, 2020
+ 
+ URL:  https://commons.apache.org/proper/commons-bcel/ 
+  
+      
+  APKPure (2021) 
+ APKPure
+ 
+ “APKPure.com”, 2021
+ 
+ URL:  https://apkpure.net/de/ 
+  
+      
+  App Radar (2023) 
+ App Radar
+ 
+ “How to write perfect short & long descriptions in Play Store?”, 2023
+ 
+ URL:  https://appradar.com/academy/short-long-app-description 
+  
+      
+  archlinux (2022) 
+ archlinux
+ 
+ “Android - ArchWiki - dexdump”, 2022
+ 
+ URL:  https://wiki.archlinux.org/title/android 
+  
+      
+  Arp et al. (2014) 
+ Daniel Arp et al.
+ 
+ “Drebin: Effective and Explainable Detection of Android Malware in Your Pocket”
+ 
+ In  Proceedings 2014 Network and Distributed System Security Symposium 
+ 
+ Reston, VA: Internet Society, 2014
+ 
+ DOI:  10.14722/ndss.2014.23247 
+  
+      
+  Azim & Neamtiu (2013) 
+ Tanzirul Azim and Iulian Neamtiu
+ 
+ “Targeted and depth-first exploration for systematic testing of android apps”
+ 
+ In  Proceedings of the 2013 ACM SIGPLAN international conference on Object oriented programming systems languages & applications   48.10 , 2013, pp. 641–660
+ 
+ DOI:  10.1145/2544173.2509549 
+  
+      
+  Batyuk et al. (2011) 
+ Leonid Batyuk et al.
+ 
+ “Using static analysis for automatic assessment and mitigation of unwanted and malicious activities within Android applications”
+ 
+ In  2011 6th International Conference on Malicious and Unwanted Software (Malware 2011) 
+ 
+ Piscataway, NJ: IEEE, 2011, pp. 66–72
+ 
+ DOI:  10.1109/MALWARE.2011.6112328 
+  
+      
+  Batyuk et al. (2011a) 
+ Leonid Batyuk, Christian Scheel, Seyit Camtepe and Sahin Albayrak
+ 
+ “Context-aware device self-configuration using self-organizing maps”
+ 
+ In  Proceedings of the 2011 workshop on Organic computing , ACM Conferences
+ 
+ New York, NY: ACM, 2011, pp. 13–22
+ 
+ DOI:  10.1145/1998642.1998647 
+  
+      
+  Berardi et al. (2015) 
+ Giacomo Berardi, Andrea Esuli, Tiziano Fagni and Fabrizio Sebastiani
+ 
+ “Multi-store metadata-based supervised mobile app classification”
+ 
+ In  Proceedings of the 30th Annual ACM Symposium on Applied Computing , ACM Digital Library
+ 
+ New York, NY: ACM, 2015, pp. 585–588
+ 
+ DOI:  10.1145/2695664.2695997 
+  
+      
+  Bhandari et al. (2013) 
+ Upasna Bhandari, Kazunari Sugiyama, Anindya Datta and Rajni Jindal
+ 
+ “Serendipitous Recommendation for Mobile Apps Using Item-Item Similarity Graph”
+ 
+ In  Information retrieval technology   8281 , Lecture notes in computer science
+ 
+ HeidelbergBerlin: Springer, 2013, pp. 440–451
+ 
+ DOI:  10.1007/978-3-642-45068-6_38 
+  
+      
+  Bläsing et al. (2010) 
+ Thomas Bläsing et al.
+ 
+ “An Android Application Sandbox system for suspicious software detection”
+ 
+ In  2010 5th International Conference on Malicious and Unwanted Software (Malware 2010) 
+ 
+ Piscataway, NJ: IEEE, 2010, pp. 55–62
+ 
+ DOI:  10.1109/MALWARE.2010.5665792 
+  
+      
+  Broder (1998) 
+ Andrei. Broder
+ 
+ “On the resemblance and containment of documents: MinHash”
+ 
+ In  Compression and complexity of sequences 1997 
+ 
+ Los Alamitos, Calif.: IEEE Computer Soc, 1998, pp. 21–29
+ 
+ DOI:  10.1109/SEQUEN.1997.666900 
+  
+      
+  Broder et al. (2000) 
+ Andrei. Broder, Moses Charikar, Alan. Frieze and Michael Mitzenmacher
+ 
+ “Min-Wise Independent Permutations: MinHash”
+ 
+ In  Journal of Computer and System Sciences   60.3 , 2000, pp. 630–659
+ 
+ DOI:  10.1006/jcss.1999.1690 
+  
+      
+  Canfora et al. (2015) 
+ Gerardo Canfora et al.
+ 
+ “Effectiveness of Opcode ngrams for Detection of Multi Family Android Malware”
+ 
+ In  2015 10th International Conference on Availability, Reliability and Security (ARES) 
+ 
+ Piscataway, NJ: IEEE, 2015, pp. 333–340
+ 
+ DOI:  10.1109/ARES.2015.57 
+  
+      
+  Chen et al. (2014) 
+ Kai Chen, Peng Liu and Yingjun Zhang
+ 
+ “Achieving accuracy and scalability simultaneously in detecting application clones on Android markets”
+ 
+ In  Proceedings of the 36th International Conference on Software Engineering 
+ 
+ New York, NY: Assoc. for Computing Machinery, 2014, pp. 175–186
+ 
+ DOI:  10.1145/2568225.2568286 
+  
+      
+  Chen et al. (2013) 
+ Kevin Chen et al.
+ 
+ “Contextual Policy Enforcement in Android Applications with Permission Event Graphs”
+ 
+ In  The Network and Distributed System Security (NDSS) Symposium , Proceedings of the Conference on Networked and Distributed System Security, 2013
+ 
+ URL:  https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.299.1240 
+  
+      
+  Chen et al. (2015) 
+ Ning Chen, Steven.H. Hoi, Shaohua Li and Xiaokui Xiao
+ 
+ “SimApp”
+ 
+ In  WSDM ’15: Proceedings of the Eighth ACM International Conference on Web Search and Data Mining, 31 January - 6 February, Shanghai , 2015, pp. 305–314
+ 
+ DOI:  10.1145/2684822.2685305 
+  
+      
+  Crussell et al. (2015) 
+ Jonathan Crussell, Clint Gibler and Hao Chen
+ 
+ “AnDarwin: Scalable Detection of Android Application Clones Based on Semantics”
+ 
+ In  IEEE Transactions on Mobile Computing   14.10 , 2015, pp. 2007–2019
+ 
+ DOI:  10.1109/TMC.2014.2381212 
+  
+      
+  Crussell et al. (2012) 
+ Jonathan Crussell, Clint Gibler and Hao Chen
+ 
+ “Attack of the Clones: Detecting Cloned Applications on Android Markets”
+ 
+ In  Computer Security – ESORICS 2012. ESORICS 2012. Lecture Notes in Computer Science   7459 
+ 
+ Berlin, Heidelberg.: Springer, 2012
+ 
+ URL:  https://www.semanticscholar.org/paper/Attack-of-the-Clones 
+  
+      
+  Crussell et al. (2013) 
+ Jonathan Crussell, Clint Gibler and Hao Chen
+ 
+ “Scalable Semantics-Based Detection of Similar Android Applications”
+ 
+ In  Computer Security – ESORICS 2013. ESORICS 2013. Lecture Notes in Computer Science   8134 
+ 
+ Berlin, Heidelberg.: Springer, 2013
+ 
+ URL:  https://www.semanticscholar.org/paper/Scalable-Semantics-Based-Detection-of-Similar-Crussell-Gibler/43a42675188ecab3b240a6ee2a28d1bad048431c 
+  
+      
+  Damshenas et al. (2015) 
+ Mohsen Damshenas, Ali Dehghantanha, Kim-Kwang Choo and Ramlan Mahmud
+ 
+ “M0Droid: An Android Behavioral-Based Malware Detection Model”
+ 
+ In  Journal of Information Privacy and Security   11.3 , 2015, pp. 141–157
+ 
+ DOI:  10.1080/15536548.2015.1073510 
+  
+      
+  Desnos (2018) 
+ Anthony Desnos
+ 
+ “androguard - The swiss army knife — Androguard 3.4.0 documentation”, 2018
+ 
+ URL:  https://androguard.readthedocs.io/en/latest/tools/androguard.html 
+  
+      
+  Desnos et al. (2018) 
+ Anthony Desnos, Geoffroy Gueguen and Sebastian Bachmann
+ 
+ “Androguard: Welcome to Androguard’s documentation! - Androguard 3.4.0 documentation”, 2018
+ 
+ URL:  https://androguard.readthedocs.io/en/latest/ 
+  
+      
+  Dhalaria & Gandotra (2021) 
+ Meghna Dhalaria and Ekta Gandotra
+ 
+ “Android Malware Detection Techniques: A Literature Review”
+ 
+ In  Recent Patents on Engineering   15.2 , 2021, pp. 225–245
+ 
+ DOI:  10.2174/1872212114999200710143847 
+  
+      
+  Feizollah et al. (2015) 
+ Ali Feizollah, Nor Anuar, Rosli Salleh and Ainuddin Wahab
+ 
+ “A review on feature selection in mobile malware detection”
+ 
+ In  Digital Investigation   13 , 2015, pp. 22–37
+ 
+ DOI:  10.1016/j.diin.2015.02.001 
+  
+      
+  Felt et al. (2011) 
+ Adrienne Felt et al.
+ 
+ “Android permissions demystified”
+ 
+ In  Proceedings of the 18th ACM conference on Computer and communications security , ACM Conferences
+ 
+ New York, NY: ACM, 2011, pp. 627–638
+ 
+ DOI:  10.1145/2046707.2046779 
+  
+      
+  Firdaus et al. (2018) 
+ Ahmad Firdaus, Nor Anuar, Ahmad Karim and Razak, Mohd Faizal Ab
+ 
+ “Discovering optimal features using static analysis and a genetic search based method for Android malware detection”
+ 
+ In  Frontiers of Information Technology & Electronic Engineering   19.6 , 2018, pp. 712–736
+ 
+ DOI:  10.1631/FITEE.1601491 
+  
+      
+  Frantzeskou et al. (2006) 
+ Georgia Frantzeskou, Efstathios Stamatatos, Stefanos Gritzalis and Sokratis Katsikas
+ 
+ “Source Code Author Identification Based on N-gram Author Profiles”
+ 
+ In  Artificial Intelligence Applications and Innovations   204 , SpringerLink Bücher
+ 
+ Boston, MA: Springer US, 2006, pp. 508–515
+ 
+ DOI:  10.1007/0-387-34224-9_59 
+  
+      
+  GitHub (2022) 
+ GitHub
+ 
+ “GitHub - java-decompiler/jd-core: JD-Core is a JAVA decompiler written in JAVA”, 2022
+ 
+ URL:  https://github.com/java-decompiler/jd-core 
+  
+      
+  Gonzalez et al. (2015) 
+ Hugo Gonzalez, Natalia Stakhanova and Ali. Ghorbani
+ 
+ “DroidKin: Lightweight Detection of Android Apps Similarity”
+ 
+ In  International Conference on Security and Privacy in Communication Networks   152 , Springer eBook Collection Computer Science
+ 
+ Cham: Springer International Publishing, 2015, pp. 436–453
+ 
+ DOI:  10.1007/978-3-319-23829-6_30 
+  
+      
+  Gonzalez et al. (2016) 
+ Hugo Gonzalez, Natalia Stakhanova and Ali. Ghorbani
+ 
+ “Measuring code reuse in Android apps”
+ 
+ In  2016 14th Annual Conference on Privacy, Security and Trust (PST) 
+ 
+ Piscataway, NJ: IEEE, 2016, pp. 187–195
+ 
+ DOI:  10.1109/PST.2016.7906925 
+  
+      
+  Google (2022) 
+ Google
+ 
+ “Add preview assets to showcase your app - Play Console Help”, 2022
+ 
+ URL:  https://support.google.com/googleplay/android-developer/answer/9866151?hl=en#zippy= 
+  
+      
+  Google (2022a) 
+ Google
+ 
+ “Die Geschichte von Android - Google”, 2022
+ 
+ URL:  https://about.google/intl/ALL_de/stories/geschichte-android/ 
+  
+      
+  Google Developers (2022) 
+ Google Developers
+ 
+ “Authenticating Your Client; Google Play services; Google Developers: keytool”, 2022
+ 
+ URL:  https://developers.google.com/android/guides/client-auth 
+  
+      
+  Google Developers (2022a) 
+ Google Developers
+ 
+ “Package Index”, 2022
+ 
+ URL:  https://developer.android.com/reference/packages 
+  
+      
+  Gorla et al. (2014) 
+ Alessandra Gorla, Ilaria Tavecchia, Florian Gross and Andreas Zeller
+ 
+ “Checking app behavior against app descriptions”
+ 
+ In  Proceedings of the 36th International Conference on Software Engineering 
+ 
+ New York, NY: Assoc. for Computing Machinery, 2014, pp. 1025–1035
+ 
+ DOI:  10.1145/2568225.2568276 
+  
+      
+  Gruver (2024) 
+ Ben Gruver
+ 
+ “Baksmali: A tool for disassembling and decompiling Android DEX files.”, 2024
+ 
+ URL:  https://github.com/JesusFreke/smali 
+  
+      
+  Hamednai et al. (2019) 
+ Masoud Hamednai, Gyoosik Kim and Seong-je Cho
+ 
+ “SimAndro: an effective method to compute similarity of Android applications”
+ 
+ In  Soft Computing   23.17 , 2019, pp. 7569–7590
+ 
+ DOI:  10.1007/s00500-019-03755-4 
+  
+      
+  Hanna et al. (2013) 
+ Steve Hanna et al.
+ 
+ “Juxtapp: A Scalable System for Detecting Code Reuse among Android Applications”
+ 
+ In  Detection of intrusions and malware, and vulnerability assessment   7591 , Lecture notes in computer science
+ 
+ Berlin: Springer, 2013, pp. 62–81
+ 
+ DOI:  10.1007/978-3-642-37300-8_4 
+  
+      
+  Hansen et al. (2004) 
+ Marit Hansen et al.
+ 
+ “Privacy-enhancing identity management”
+ 
+ In  Information Security Technical Report   9.1 , 2004, pp. 35–44
+ 
+ DOI:  10.1016/S1363-4127(04)00014-7 
+  
+      
+  Harman et al. (2012) 
+ M. Harman, Yue Jia and Yuanyuan Zhang
+ 
+ “App store mining and analysis: MSR for app stores”
+ 
+ In  2012 9th IEEE Working Conference on Mining Software Repositories (MSR) , 2012, pp. 108–111
+ 
+ DOI:  10.1109/MSR.2012.6224306 
+  
+      
+  Hex-Rays (2022) 
+ Hex-Rays
+ 
+ “IDA Pro”, 2022
+ 
+ URL:  https://hex-rays.com/ida-pro/ 
+  
+      
+  Hosseini et al. (2021) 
+ Soodeh Hosseini, Ali Nezhad and Hossein Seilani
+ 
+ “Android malware classification using convolutional neural network and LSTM”
+ 
+ In  Journal of Computer Virology and Hacking Techniques   17.4 , 2021, pp. 307–318
+ 
+ DOI:  10.1007/s11416-021-00385-z 
+  
+      
+  Hutson (2018) 
+ Matthew Hutson
+ 
+ “Artificial intelligence faces reproducibility crisis”
+ 
+ In  Science (New York, N.Y.)   359.6377 , 2018, pp. 725–726
+ 
+ DOI:  10.1126/science.359.6377.725 
+  
+      
+  IBM (2022) 
+ IBM
+ 
+ “T. J. Watson Libraries for Analysis (WALA)”, 2022
+ 
+ URL:  https://github.com/wala/WALA 
+  
+      
+  Jerome et al. (2014) 
+ Quentin Jerome, Kevin Allix, Radu State and Thomas Engel
+ 
+ “Using opcode-sequences to detect malicious Android applications”
+ 
+ In  ICC 2014 - 2014 IEEE International Conference on Communications 
+ 
+ Piscataway, NJ: IEEE, 2014, pp. 914–919
+ 
+ DOI:  10.1109/ICC.2014.6883436 
+  
+      
+  Johann et al. (2017) 
+ Timo Johann, Christoph Stanik, Alireza. Alizadeh B. and Walid Maalej
+ 
+ “SAFE: A Simple Approach for Feature Extraction from App Descriptions and App Reviews”
+ 
+ In  2017 IEEE 25th International Requirements Engineering Conference (RE) , 2017, pp. 21–30
+ 
+ DOI:  10.1109/RE.2017.71 
+  
+      
+  Jusoh et al. (2021) 
+ Rosmalissa Jusoh et al.
+ 
+ “Malware detection using static analysis in Android: a review of FeCO (features, classification, and obfuscation)”
+ 
+ In  PeerJ. Computer science   7 , 2021, pp. e522
+ 
+ DOI:  10.7717/peerj-cs.522 
+  
+      
+  Kiss et al. (2016) 
+ Nicolas Kiss, Jean-Francois Lalande, Mourad Leslous and Valérie Viet Triem Tong
+ 
+ “Kharon Dataset: Android Malware under a Microscope”
+ 
+ In  Proceedings of the Learning from Authoritative Security Experiment Results (LASER) 2016 , 2016, pp. 1–12
+  
+      
+  Kouznetsov (2001) 
+ Pavel Kouznetsov
+ 
+ “JAD Java Decompiler Download Mirror”, 2001
+ 
+ URL:  https://varaneckas.com/jad/ 
+  
+      
+  Lashkari et al. (2017) 
+ Arash Lashkari et al.
+ 
+ “Towards a Network-Based Framework for Android Malware Detection and Characterization”
+ 
+ In  2017 15th Annual Conference on Privacy, Security and Trust 
+ 
+ Piscataway, NJ: IEEE, 2017, pp. 233–23309
+ 
+ DOI:  10.1109/PST.2017.00035 
+  
+      
+  Li et al. (2017) 
+ Li Li et al.
+ 
+ “Static analysis of android apps: A systematic literature review”
+ 
+ In  Information and Software Technology   88 , 2017, pp. 67–95
+ 
+ DOI:  10.1016/j.infsof.2017.04.001 
+  
+      
+  Liang & Xue (2009) 
+ Liang and Xue
+ 
+ “Avoidance of Information Technology Threats: A Theoretical Perspective”
+ 
+ In  MIS Quarterly   33.1 , 2009, pp. 71
+ 
+ DOI:  10.2307/20650279 
+  
+      
+  Linares-Vásquez et al. (2014) 
+ Mario Linares-Vásquez, Andrew Holtzhauer, Carlos Bernal-Cárdenas and Denys Poshyvanyk
+ 
+ “Revisiting Android reuse studies in the context of code obfuscation and library usages”
+ 
+ In  11th Working Conference on Mining Software Repositories : proceedings : May 31 - June 1, 2014 
+ 
+ Hyderabad, India: ACM, 2014, pp. 242–251
+ 
+ DOI:  10.1145/2597073.2597109 
+  
+      
+  Linares-Vásquez et al. (2016) 
+ Mario Linares-Vásquez, Andrew Holtzhauer and Denys Poshyvanyk
+ 
+ “On automatically detecting similar Android apps”, IEEE 24th International Conference on Program Comprehension (ICPC), 2016
+ 
+ DOI:  10.1109/ICPC.2016.7503721 
+  
+      
+  Lynch (2018) 
+ Jamie Lynch
+ 
+ “The Dex File Format | Bugsnag Blog”, 2018
+ 
+ URL:  https://www.bugsnag.com/blog/dex-and-d8 
+  
+      
+  Maiorca et al. (2015) 
+ Davide Maiorca et al.
+ 
+ “Stealth attacks: An extended insight into the obfuscation effects on Android malware”
+ 
+ In  Computers & Security   51 , 2015, pp. 16–31
+ 
+ DOI:  10.1016/j.cose.2015.02.007 
+  
+      
+  McLaughlin et al. (2017) 
+ Niall McLaughlin et al.
+ 
+ “Deep Android Malware Detection”
+ 
+ In  Proceedings of the Seventh ACM on Conference on Data and Application Security and Privacy , ACM Digital Library
+ 
+ New York, NY: ACM, 2017, pp. 301–308
+ 
+ DOI:  10.1145/3029806.3029823 
+  
+      
+  Miller (1995) 
+ George. Miller
+ 
+ “WordNet”
+ 
+ In  Communications of the ACM   38.11 , 1995, pp. 39–41
+ 
+ DOI:  10.1145/219717.219748 
+  
+      
+  Oracle (2022) 
+ Oracle
+ 
+ “keytool”, 2022
+ 
+ URL:  https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html 
+  
+      
+  Paller (2009) 
+ Gabor Paller
+ 
+ “Dedexer user’s manual”, 2009
+ 
+ URL:  http://dedexer.sourceforge.net/ 
+  
+      
+  Pan (2016) 
+ Bob Pan
+ 
+ “dex2jar: Tools to work with android .dex and java .class file”, 2016
+ 
+ URL:  https://github.com/pxb1988/dex2jar 
+  
+      
+  Pandita et al. (2002) 
+ Rahul Pandita et al.
+ 
+ “WHYPER: Towards Automating Risk Assessment of Mobile Applications”
+ 
+ In  Proceedings of the Sixteenth Systems Administration Conference (LISA XVI) , Conference proceedings
+ 
+ Berkeley, Calif.: USENIX Association, 2002, pp. 527–542
+ 
+ URL:  https://www.usenix.org/conference/usenixsecurity13/technical-sessions/presentation/pandita 
+  
+      
+  Peng et al. (2012) 
+ Hao Peng et al.
+ 
+ “Using probabilistic generative models for ranking risks of Android apps”
+ 
+ In  Proceedings of the 2012 ACM conference on Computer and communications security , ACM Conferences
+ 
+ New York, NY: ACM, 2012, pp. 241–252
+ 
+ DOI:  10.1145/2382196.2382224 
+  
+      
+  Potharaju et al. (2012) 
+ Rahul Potharaju, Andrew Newell, Cristina Nita-Rotaru and Xiangyu Zhang
+ 
+ “Plagiarizing Smartphone Applications: Attack Strategies and Defense Techniques”
+ 
+ In  Engineering secure software and systems   7159 , Lecture notes in computer science
+ 
+ BerlinHeidelberg: Springer, 2012, pp. 106–120
+ 
+ DOI:  10.1007/978-3-642-28166-2_11 
+  
+      
+  Python Software Foundation (2024) 
+ Python Software Foundation
+ 
+ “Python Language Reference”, 2024
+ 
+ URL:  https://www.python.org/ 
+  
+      
+  Rehurek & Sojka (2010) 
+ Radim Rehurek and Petr Sojka
+ 
+ “Software Framework for Topic Modelling with Large Corpora”
+ 
+ In  Proceedings of the LREC 2010 Workshop on New - Challenges for NLP Frameworks , 2010, pp. 45–50
+ 
+ URL:  https://www.semanticscholar.org/paper/Software-Framework-for-Topic-Modelling-with-Large-Rehurek-Sojka/83a6cacc126d85c45605797406262677c256a6af 
+  
+      
+  Riehm (2022) 
+ Sebastian Riehm
+ 
+ “Download 7-zip.de”, 2022
+ 
+ URL:  https://7-zip.de/download.html 
+  
+      
+  Ruth (2022) 
+ C. Ruth
+ 
+ “Over 60% of Android apps have security vulnerabilities - Atlas VPN”, 2022
+ 
+ URL:  https://atlasvpn.com/blog/over-60-of-android-apps-have-security-vulnerabilities 
+  
+      
+  Sahs & Khan (2012) 
+ Justin Sahs and Latifur Khan
+ 
+ “A Machine Learning Approach to Android Malware Detection”
+ 
+ In  European Intelligence and Security Informatics Conference (EISIC), 2012 
+ 
+ Piscataway, NJ: IEEE, 2012, pp. 141–147
+ 
+ DOI:  10.1109/EISIC.2012.34 
+  
+      
+  Sanz et al. (2012) 
+ Borja Sanz et al.
+ 
+ “On the automatic categorisation of android applications”
+ 
+ In  2012 IEEE Consumer Communications and Networking Conference (CCNC 2012) 
+ 
+ Piscataway, NJ: IEEE, 2012, pp. 149–153
+ 
+ DOI:  10.1109/CCNC.2012.6181075 
+  
+      
+  Sasse & Flechais (2005) 
+ Angela. Sasse and Ivan Flechais
+ 
+ “Usable security: Why do we need it? How do we get it?”
+ 
+ In  Security and Usability 
+ 
+ Sebastopol: O’Reilly Media Inc, 2005, pp. 13–30
+  
+      
+  Schmicker et al. (2019) 
+ Robert Schmicker, Frank Breitinger and Ibrahim Baggili
+ 
+ “AndroParse - An Android Feature Extraction Framework and Dataset”
+ 
+ In  Digital Forensics and Cyber Crime , Lecture Notes of the Institute for Computer Sciences, Social Informatics and Telecommunications Engineering Ser
+ 
+ Cham: Springer International Publishing AG, 2019, pp. 66–88
+ 
+ DOI:  10.1007/978-3-030-05487-8_4 
+  
+      
+  Schmidt et al. (2009) 
+ Aubrey-Derrick Schmidt et al.
+ 
+ “Static Analysis of Executables for Collaborative Malware Detection on Android”
+ 
+ In  2009 IEEE International Conference on Communications 
+ 
+ Piscataway, NJ: IEEE, 2009, pp. 1–5
+ 
+ DOI:  10.1109/ICC.2009.5199486 
+  
+      
+  Schmidt et al. (2009a) 
+ Aubrey-Derrick Schmidt et al.
+ 
+ “Monitoring Smartphones for Anomaly Detection”
+ 
+ In  Mobile Networks and Applications   14.1 , 2009, pp. 92–106
+ 
+ DOI:  10.1007/s11036-008-0113-x 
+  
+      
+  Selvaganapathy et al. (2021) 
+ ShymalaGowri Selvaganapathy, Sudha Sadasivam and Vinayakumar Ravi
+ 
+ “A Review on Android Malware: Attacks, Countermeasures and Challenges Ahead”
+ 
+ In  Journal of Cyber Security and Mobility , 2021
+ 
+ DOI:  10.13052/jcsm2245-1439.1017 
+  
+      
+  Shabtai et al. (2010) 
+ Asaf Shabtai, Yuval Fledel and Yuval Elovici
+ 
+ “Automated Static Code Analysis for Classifying Android Applications Using Machine Learning”
+ 
+ In  2010 International Conference on Computational Intelligence and Security (CIS 2010) 
+ 
+ Piscataway, NJ: IEEE, 2010, pp. 329–333
+ 
+ DOI:  10.1109/CIS.2010.77 
+  
+      
+  Shao et al. (2014) 
+ Yuru Shao et al.
+ 
+ “Towards a scalable resource-driven approach for detecting repackaged Android applications”
+ 
+ In  Proceedings of the 30th Annual Computer Security Applications Conference , ACM Digital Library
+ 
+ New York, NY: ACM, 2014, pp. 56–65
+ 
+ DOI:  10.1145/2664243.2664275 
+  
+      
+  Sharma & Rattan (2021) 
+ Tejpal Sharma and Dhavleesh Rattan
+ 
+ “Malicious application detection in android — A systematic literature review”
+ 
+ In  Computer Science Review   40 , 2021, pp. 100373
+ 
+ DOI:  10.1016/j.cosrev.2021.100373 
+  
+      
+  Skylot (2020) 
+ Skylot
+ 
+ “jadx”, 2020
+ 
+ URL:  https://github.com/skylot/jadx 
+  
+      
+  Spinellis (2005) 
+ Diomidis Spinellis
+ 
+ “Tool Writing: A Forgotten Art?”
+ 
+ In  IEEE Software   22.4 , 2005, pp. 9–11
+ 
+ DOI:  10.1109/MS.2005.111 
+  
+      
+  Spreitzenbarth et al. (2013) 
+ Michael Spreitzenbarth et al.
+ 
+ “Mobile-sandbox”
+ 
+ In  Proceedings of the 28th Annual ACM Symposium on Applied Computing , ACM Digital Library
+ 
+ New York, NY: ACM, 2013, pp. 1808–1815
+ 
+ DOI:  10.1145/2480362.2480701 
+  
+      
+  Statista (2022) 
+ Statista
+ 
+ “Mobile Betriebssysteme - Marktanteile Internetnutzung weltweit bis Mai 2022 | Statista”, 2022
+ 
+ URL:  https://de.statista.com/statistik/daten/studie/184335/umfrage/marktanteil-der-mobilen-betriebssysteme-weltweit-seit-2009/ 
+  
+      
+  Al-Subaihin et al. (2019) 
+ Afnan Al-Subaihin, Federica Sarro, Sue Black and Licia Capra
+ 
+ “Empirical comparison of text-based mobile apps similarity measurement techniques”
+ 
+ In  Empirical Software Engineering   24.6 , 2019, pp. 3290–3315
+ 
+ DOI:  10.1007/s10664-019-09726-5 
+  
+      
+  Al-Subaihin et al. (2016) 
+ Afnan Al-Subaihin et al.
+ 
+ “Clustering Mobile Apps Based on Mined Textual Features”
+ 
+ In  Proceedings of the 10th ACM/IEEE International Symposium on Empirical Software Engineering and Measurement (ESEM) 
+ 
+ Piscataway, NJ: IEEE, 2016, pp. 1–10
+ 
+ DOI:  10.1145/2961111.2962600 
+  
+      
+  Sun et al. (2014) 
+ Xin Sun et al.
+ 
+ “Detecting Code Reuse in Android Applications Using Component-Based Control Flow Graph”
+ 
+ In  ICT systems security and privacy protection   428 , IFIP advances in information and communication technology
+ 
+ Heidelberg: Springer, 2014, pp. 142–155
+ 
+ DOI:  10.1007/978-3-642-55415-5_12 
+  
+      
+  Taba et al. (2014) 
+ Seyyed Taba et al.
+ 
+ “An Exploratory Study on the Relation between User Interface Complexity and the Perceived Quality”
+ 
+ In  Web engineering , Lecture notes in computer science Information systems and application, incl. Internet/web and HCI
+ 
+ Cham: SpringerSpringer International Publishing, 2014, pp. 370–379
+  
+      
+  The Go Authors (2024) 
+ The Go Authors
+ 
+ “The Go Programming Language”, 2024
+ 
+ URL:  https://go.dev/ 
+  
+      
+  ThoughtWorks (2024) 
+ ThoughtWorks
+ 
+ “Selenium”, 2024
+ 
+ URL:  https://www.selenium.dev/ 
+  
+      
+  Tian et al. (2015) 
+ Yuan Tian, Meiyappan Nagappan, David Lo and Ahmed. Hassan
+ 
+ “What are the characteristics of high-rated apps? A case study on free Android Applications”
+ 
+ In  2015 IEEE International Conference on Software Maintenance and Evolution (ICSME) 
+ 
+ Piscataway, NJ: IEEE, 2015, pp. 301–310
+ 
+ DOI:  10.1109/ICSM.2015.7332476 
+  
+      
+  Tumbleson & Wiśniewski (2020) 
+ Connor Tumbleson and Ryszard Wiśniewski
+ 
+ “Apktool: A tool for reverse engineering 3rd party, closed, binary Android apps”, 2020
+ 
+ URL:  https://ibotpeaches.github.io/Apktool/ 
+  
+      
+  Turner (2023) 
+ Ash Turner
+ 
+ “How Many People Have Smartphones Worldwide (July 2022)”, 2023
+ 
+ URL:  https://www.bankmycell.com/blog/how-many-phones-are-in-the-world 
+  
+      
+  Uddin et al. (2020) 
+ Md Uddin, Qiang He, Jun Han and Caslon Chua
+ 
+ “Comparison of Text-Based and Feature-Based Semantic Similarity Between Android Apps”
+ 
+ In  Web Information Systems Engineering – WISE 2020 , Information Systems and Applications, incl. Internet/Web, and HCI
+ 
+ Cham: Springer International Publishing, 2020, pp. 530–545
+  
+      
+  Unity Technologies (2023) 
+ Unity Technologies
+ 
+ “Creating games for Android”, 2023
+ 
+ URL:  https://unity.com/solutions/mobile/android-game-development 
+  
+      
+  Vallée-Rai et al. (1999) 
+ Raja Vallée-Rai et al.
+ 
+ “Soot”, 1999
+ 
+ DOI:  10.1145/1925805.1925818 
+  
+      
+  Wang et al. (2015) 
+ Haoyu Wang, Yao Guo, Ziang Ma and Xiangqun Chen
+ 
+ “WuKong: a scalable and accurate two-phase approach to Android app clone detection”
+ 
+ In  Proceedings of the 2015 International Symposium on Software Testing and Analysis , ACM Digital Library
+ 
+ New York, NY: ACM, 2015, pp. 71–82
+ 
+ DOI:  10.1145/2771783.2771795 
+  
+      
+  Willems (2022) 
+ Eddy Willems
+ 
+ “Android Malware: An underestimated problem?”, 2022
+ 
+ URL:  https://www.gdatasoftware.com/blog/2022/02/android-malware-an-underestimated-problem 
+  
+      
+  Xu et al. (2018) 
+ Zhiwu Xu, Kerong Ren, Shengchao Qin and Florin Craciun
+ 
+ “CDGDroid: Android Malware Detection Based on Deep Learning Using CFG and DFG”
+ 
+ In  Formal methods and software engineering , Lecture notes in computer science
+ 
+ Cham: Springer, 2018, pp. 177–193
+  
+      
+  Xu et al. (2019) 
+ Zhiwu Xu, Kerong Ren and Fu Song
+ 
+ “Android Malware Family Classification and Characterization Using CFG and DFG”
+ 
+ In  2019 13th International Symposium on Theoretical Aspects of Software Engineering 
+ 
+ Piscataway, NJ: IEEE, 2019, pp. 49–56
+ 
+ DOI:  10.1109/TASE.2019.00-20 
+  
+      
+  Yang et al. (2014) 
+ Chao Yang et al.
+ 
+ “DroidMiner: Automated Mining and Characterization of Fine-grained Malicious Behaviors in Android Applications”
+ 
+ In  Computer Security - ESORICS 2014 , Lecture notes in computer science
+ 
+ Cham: Springer International Publishing, 2014, pp. 163–182
+  
+      
+  Yin et al. (2013) 
+ Peifeng Yin, Ping Luo, Wang-Chien Lee and Min Wang
+ 
+ “App recommendation”
+ 
+ In  Proceedings of the 6th ACM International Conference on Web Search and Data Mining 
+ 
+ New York, NY: ACM, 2013, pp. 395–404
+ 
+ DOI:  10.1145/2433396.2433446 
+  
+      
+  Yuan & Guo (2011) 
+ Yang Yuan and Yao Guo
+ 
+ “ACMCD: Count Matrix Based Code Clone Detection”
+ 
+ In  2011 18th Asia Pacific Software Engineering Conference (APSEC 2011) 
+ 
+ Piscataway, NJ: IEEE, 2011, pp. 250–257
+ 
+ DOI:  10.1109/APSEC.2011.13 
+  
+      
+  Yuan & Guo (2012) 
+ Yang Yuan and Yao Guo
+ 
+ “Boreas: an accurate and scalable token-based approach to code clone detection”
+ 
+ In  2012 proceedings of the 27th IEEE/ACM International Conference on Automated Software Engineering (ASE) 
+ 
+ Piscataway, NJ: IEEE, 2012, pp. 286–289
+ 
+ DOI:  10.1145/2351676.2351725 
+  
+      
+  Zhang et al. (2015) 
+ Lulu Zhang, Yongzheng Zhang and Tianning Zang
+ 
+ “Detecting Malicious Behaviors in Repackaged Android Apps with Loosely-Coupled Payloads Filtering Scheme”
+ 
+ In  International Conference on Security and Privacy in Communication Networks   152 , Springer eBook Collection Computer Science
+ 
+ Cham: Springer International Publishing, 2015, pp. 454–462
+ 
+ DOI:  10.1007/978-3-319-23829-6_31 
+  
+      
+  Zhang et al. (2018) 
+ Peng Zhang, Shaoyin Cheng, Songhao Lou and Fan Jiang
+ 
+ “A Novel Android Malware Detection Approach Using Operand Sequences”
+ 
+ In  2018 Third International Conference on Security of Smart Cities, Industrial Control System and Communications (SSIC) 
+ 
+ Piscataway, NJ: IEEE, 2018, pp. 1–5
+ 
+ DOI:  10.1109/SSIC.2018.8556755 
+  
+      
+  Zhang et al. (2016) 
+ Xiaolu Zhang, Frank Breitinger and Ibrahim Baggili
+ 
+ “Rapid Android Parser for Investigating DEX files (RAPID)”
+ 
+ In  Digital Investigation   17 , 2016, pp. 28–39
+ 
+ DOI:  10.1016/j.diin.2016.03.002 
+  
+      
+  Zhou et al. (2013) 
+ Wu Zhou et al.
+ 
+ “Fast, scalable detection of "Piggybacked" mobile applications”
+ 
+ In  Proceedings of the third ACM conference on Data and application security and privacy , ACM Conferences
+ 
+ New York, NY: ACM, 2013, pp. 185–196
+ 
+ DOI:  10.1145/2435349.2435377 
+  
+      
+  Zhou et al. (2012) 
+ Wu Zhou, Yajin Zhou, Xuxian Jiang and Peng Ning
+ 
+ “Detecting repackaged smartphone applications in third-party android marketplaces”
+ 
+ In  Proceedings of the second ACM conference on Data and Application Security and Privacy 
+ 
+ New York, NY: ACM, 2012, pp. 317–326
+ 
+ DOI:  10.1145/2133601.2133640 
+  
+      
+  Zhou & Jiang (2012) 
+ Yajin Zhou and Xuxian Jiang
+ 
+ “Dissecting Android Malware: Characterization and Evolution”
+ 
+ In  Proceedings, 2012 IEEE Symposium on Security and Privacy, S&P 2012 
+ 
+ Los Alamitos, Calif.: IEEE Computer Society, 2012, pp. 95–109
+ 
+ DOI:  10.1109/SP.2012.16 
+  
+      
+  Zhou et al. (2018) 
+ Yajin Zhou, Zhi Wang, Wu Zhou and Xuxian Jiang
+ 
+ “Hey, You, Get Off of My Market: Detecting Malicious Apps in Official and Alternative Android Markets”
+ 
+ In  NDSS , 2018
+ 
+ URL:  https://www.ndss-symposium.org/ndss2012/ndss-2012-programme/hey-you-get-my-market-detecting-malicious-apps-official-and-alternative-android-markets/ 
+  
+    
+ 
+ 
+  
+ 
+  Appendix A  Appendices 
+
+ 
+   Table 6 .   Extended feature extraction tools  
+ 
+ 
+ 
+  
+  
+  
+  
+  
+   
+ 
+ 
+ 
+  Category  
+  
+ 
+ 
+  Name  
+  
+ 
+ 
+  Paper  
+  
+ 
+ 
+  Input  
+  
+ 
+ 
+  Output  
+  
+ 
+ 
+  Usabillity  
+   
+ 
+ 
+ 
+ 
+ 
+ Programming language 
+  
+ 
+ 
+ python   Python Software Foundation,2024   
+  
+ 
+ 
+   Chen et al.,2014   
+  
+ 
+ 
+ Source code files 
+  
+ 
+ 
+ - 
+  
+ 
+ 
+ Provides a scripting language for automation and tool development. 
+   
+ 
+ 
+ 
+ APK decompiler 
+  
+ 
+ 
+ apktool   Tumbleson & Wiśniewski,2020   
+  
+ 
+ 
+   Anupama et al.,2022 ;  Batyuk et al.,2011 ;  Gorla et al.,2014 ;  Hosseini et al.,2021 ;  Linares-Vásquez et al.,2016 ;  Linares-Vásquez et al.,2014 ;  Shao et al.,2014 ;  Sun et al.,2014 ;  Tian et al.,2015 ;  Wang et al.,2015 ;  Xu et al.,2018 ;  Zhang et al.,2018   
+  
+ 
+ 
+ Android APK file 
+  
+ 
+ 
+ decompiled files (dex, jar, java, smalie, …), resources (xml, jpg, …), manifest file 
+  
+ 
+ 
+ Assemble/Disassemble APK files, aiding in analyzing code for malicious patterns and identifying clones. 
+   
+ 
+ 
+ 
+ APK decompiler 
+  
+ 
+ 
+ Baksmali   Gruver,2024   
+  
+ 
+ 
+   Bläsing et al.,2010 ;  Chen et al.,2014 ;  McLaughlin et al.,2017 ;  Shao et al.,2014 ;  Sun et al.,2014 ;  Zhou et al.,2013 ;  Zhou et al.,2012   
+  
+ 
+ 
+ Dalvik bytecode (dex) 
+  
+ 
+ 
+ Smali code (human-readable assembly-like code) 
+  
+ 
+ 
+ Generates readable smali code, which can be analyzed for malicious behaviors. 
+   
+ 
+ 
+ 
+ APK decompiler 
+  
+ 
+ 
+ Dedexer   Paller,2009   
+  
+ 
+ 
+   Felt et al.,2011 ;  Sanz et al.,2012   
+  
+ 
+ 
+ Dalvik bytecode (dex) 
+  
+ 
+ 
+ Decompiled source code, smali code 
+  
+ 
+ 
+ Helps in decompiling DEX files for understanding app logic and identifying malicious activities. 
+   
+ 
+ 
+ 
+ APK decompiler 
+  
+ 
+ 
+ dexdump   archlinux,2022   
+  
+ 
+ 
+   Potharaju et al.,2012   
+  
+ 
+ 
+ Dalvik bytecode (dex) 
+  
+ 
+ 
+ Decompiled source code, various information about DEX file 
+  
+ 
+ 
+ Provides detailed information about DEX files, aiding in understanding app structure and identifying anomalies. 
+   
+ 
+ 
+ 
+ APK decompiler 
+  
+ 
+ 
+ dex2jar   Pan,2016   
+  
+ 
+ 
+   Crussell et al.,2012 ;  Crussell et al.,2013 ;  Crussell et al.,2015 ;  Linares-Vásquez et al.,2016 ;  Shao et al.,2014 ;  Tian et al.,2015 ;  Wang et al.,2015 ;  Yang et al.,2014   
+  
+ 
+ 
+ Dalvik bytecode (dex) 
+  
+ 
+ 
+ Java bytecode (JAR file) 
+  
+ 
+ 
+ Converts DEX files to JAR format for further analysis, enabling detection of malicious code patterns. 
+   
+ 
+ 
+ 
+ APK analysis tool 
+  
+ 
+ 
+ Androguard   Desnos et al.,2018   
+  
+ 
+ 
+   Crussell et al.,2012 ;  Sahs & Khan,2012 ;  Wang et al.,2015 ;  Yang et al.,2014 ;  Zhang et al.,2015   
+  
+ 
+ 
+ Android APK file 
+  
+ 
+ 
+ Various metadata including permissions, API calls, intents, activities, services, broadcast receivers, and more. 
+  
+ 
+ 
+ Analyzes APKs for suspicious behaviors, permissions, and API calls, aiding in malware detection. 
+   
+ 
+ 
+ 
+ APK analysis tool 
+  
+ 
+ 
+ A3E   Azim & Neamtiu,2013   
+  
+ 
+ 
+   Shao et al.,2014   
+  
+ 
+ 
+ Decompiled source code, bytecode, or APK file 
+  
+ 
+ 
+ static and dynamic analyze, resource extraction, Control flow graph, call graph 
+  
+ 
+ 
+ Analyze apps and extract resources and graphs, aiding in visualizing app structures and behaviors. 
+   
+ 
+ 
+ 
+ APK analysis tool 
+  
+ 
+ 
+ Keytool   Oracle,2022   
+  
+ 
+ 
+   Wang et al.,2015 ;  Zhou et al.,2012   
+  
+ 
+ 
+ Android APK file 
+  
+ 
+ 
+ Certificate information, key information, signature details. 
+  
+ 
+ 
+ Extracts certificate information for verifying app authenticity, helping to identify potentially malicious apps. 
+   
+ 
+ 
+ 
+ APK analysis tool 
+  
+ 
+ 
+ Soot   Vallée-Rai et al.,1999   
+  
+ 
+ 
+   Chen et al.,2013   
+  
+ 
+ 
+ Android APK file, .jar, .class 
+  
+ 
+ 
+ Intermediate representation (Jimple, Shimple, Grimp), control flow graph, call graph, points-to analysis results. 
+  
+ 
+ 
+ Provides control flow graphs and call graphs for app analysis, aiding in identifying code similarities and anomalies. 
+   
+ 
+ 
+ 
+ APK analysis tool 
+  
+ 
+ 
+ aapt   Android Developers,2020   
+  
+ 
+ 
+   Anupama et al.,2022 ;  Schmicker et al.,2019 ;  Shao et al.,2014   
+  
+ 
+ 
+ Android APK file 
+  
+ 
+ 
+ Various information including package name, version code, version name, permissions. 
+  
+ 
+ 
+ Injects and extracts information and data, aiding in understanding app properties and permissions. 
+   
+ 
+ 
+ 
+ Java analysis tool 
+  
+ 
+ 
+ BCEL Java Library   Apache Software Foundation.,2020   
+  
+ 
+ 
+   Tian et al.,2015   
+  
+ 
+ 
+ Java bytecode (jar and class files) 
+  
+ 
+ 
+ Parsed bytecode instructions, class structure information. 
+  
+ 
+ 
+ Analyzes Java bytecode, aiding in identifying code vulnerabilities and detecting malicious code patterns. 
+   
+ 
+ 
+ 
+ Java analysis tool 
+  
+ 
+ 
+ ckjm   Spinellis,2005   
+  
+ 
+ 
+   Tian et al.,2015   
+  
+ 
+ 
+ Java bytecode (class files) 
+  
+ 
+ 
+ Different complexity metrics. 
+  
+ 
+ 
+ Calculates cyclomatic complexity, weighted methods per class, and lack of cohesion in methods aiding in identifying complex or potentially obfuscated code. 
+   
+ 
+ 
+ 
+ Java analysis tool 
+  
+ 
+ 
+ JAD Compiler   Kouznetsov,2001   
+  
+ 
+ 
+   Linares-Vásquez et al.,2014   
+  
+ 
+ 
+ Java bytecode (class files) 
+  
+ 
+ 
+ Decompiled source code (Java files). 
+  
+ 
+ 
+ Decompiles Java bytecode into readable source code, aiding in identifying malicious patterns. 
+   
+ 
+ 
+ 
+ Java analysis tool 
+  
+ 
+ 
+ JADX Compiler   Skylot,2020   
+  
+ 
+ 
+   Hosseini et al.,2021   
+  
+ 
+ 
+ Android APK file, .jar, .class, .dex 
+  
+ 
+ 
+ Decompiled source code (Java files). 
+  
+ 
+ 
+ Decompiles Java bytecode into readable source code, aiding in analyzing code for malicious patterns. 
+   
+ 
+ 
+ 
+ Java analysis tool 
+  
+ 
+ 
+ JClassInfo   Anarxia,2004   
+  
+ 
+ 
+   Linares-Vásquez et al.,2016   
+  
+ 
+ 
+ Java bytecode (jar and class files) 
+  
+ 
+ 
+ Class hierarchy information, method signatures. 
+  
+ 
+ 
+ Provides information about class hierarchy and method signatures, aiding in code analysis. 
+   
+ 
+ 
+ 
+ Java analysis tool 
+  
+ 
+ 
+ JD Core   GitHub,2022   
+  
+ 
+ 
+   Wang et al.,2015   
+  
+ 
+ 
+ Java bytecode (jar and class files) 
+  
+ 
+ 
+ Decompiled source code (Java files). 
+  
+ 
+ 
+ Decompiles Java bytecode into readable source code, aiding in analyzing code for malicious patterns. 
+   
+ 
+ 
+ 
+ Java analysis tool 
+  
+ 
+ 
+ WALA   IBM,2022   
+  
+ 
+ 
+   Crussell et al.,2012 ;  Crussell et al.,2013 ;  Crussell et al.,2015 ;  Linares-Vásquez et al.,2014   
+  
+ 
+ 
+ Java bytecode (jar, class, and aar files) 
+  
+ 
+ 
+ Intermediate representation (IR), control flow graph, call graph. 
+  
+ 
+ 
+ Provides an intermediate representation for Java bytecode, aiding in analyzing complex code structures. 
+   
+ 
+ 
+ 
+ Java analysis tool 
+  
+ 
+ 
+ RAPID library   Zhang et al.,2016   
+  
+ 
+ 
+   Schmicker et al.,2019   
+  
+ 
+ 
+ .dex, .apk 
+  
+ 
+ 
+ Structural analyse of input data. 
+  
+ 
+ 
+ Analyze results and summaries, aiding in code analysis. 
+   
+ 
+ 
+ 
+ Generic analysis tool 
+  
+ 
+ 
+ IDA   Hex-Rays,2022   
+  
+ 
+ 
+   Hosseini et al.,2021   
+  
+ 
+ 
+ Different executables (exe, dll, apk, …) 
+  
+ 
+ 
+ disassembly, code analysis, data structure views, dependency graphs 
+  
+ 
+ 
+ Provides analysis results, interactive views and dependency graphs, aiding in deep analysis of app structures. 
+   
+ 
+ 
+ 
+ Hash Tool 
+  
+ 
+ 
+ LSH code   Andoni & Indyk,2006   
+  
+ 
+ 
+   Crussell et al.,2013 ;  Crussell et al.,2015   
+  
+ 
+ 
+ Data to be hashed 
+  
+ 
+ 
+ Locality Sensitive Hash (LSH) values 
+  
+ 
+ 
+ Computes Locality Sensitive Hash (LSH) values, aiding in identifying similarities. 
+   
+ 
+ 
+ 
+ Hash Tool 
+  
+ 
+ 
+ MinHash   Broder,1998 ;  Broder et al.,2000   
+  
+ 
+ 
+   Crussell et al.,2013 ;  Crussell et al.,2015   
+  
+ 
+ 
+ Data to be hashed 
+  
+ 
+ 
+ MinHash signature 
+  
+ 
+ 
+ Generates MinHash signatures, aiding in identifying similarities. 
+   
+ 
+ 
+ 
+ Helper Tool 
+  
+ 
+ 
+ 7zip   Riehm,2022   
+  
+ 
+ 
+   Linares-Vásquez et al.,2016 ;  Linares-Vásquez et al.,2014   
+  
+ 
+ 
+ De-/Compressed files 
+  
+ 
+ 
+ De-/Compressed files 
+  
+ 
+ 
+ De-/Compress files, aiding in app packaging and analysis. 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+    Experimental support, please
+     view the build logs 
+    for errors. Generated by
+     
+       
+        L
+         A 
+        T
+         E 
+       
+       xml 
+       
+     .
+   
+   
+     Instructions for reporting errors 
+     We are continuing to improve HTML versions of papers, and your feedback helps enhance accessibility and mobile
+      support. To report errors in the HTML that will help us improve conversion and rendering, choose any of the
+      methods listed below: 
+     
+       Click the "Report Issue"  ( 
+             
+           )  button, located in the page header. 
+     
+      Tip:  You can select the relevant text first, to include it in your report. 
+     Our team has already identified  the following issues . We appreciate your time reviewing and reporting rendering errors we
+      may not have found yet. Your efforts will help us improve the HTML versions for all readers, because disability
+      should not be a barrier to accessing research. Thank you for your continued support in championing open access for
+      all. 
+     Have a free development cycle? Help support accessibility at arXiv! Our collaborators at LaTeXML maintain a  list of packages that need conversion , and welcome  developer contributions . 
+   
+  
+   
+     
+       
+        We gratefully acknowledge support from our   major funders  ,
+          member institutions   ,    ,
+        and all contributors.
+       
+       
+         About   · 
+         Help   · 
+         Contact   · 
+         Subscribe   · 
+         Copyright   · 
+         Privacy   · 
+         Accessibility   · 
+         Operational Status  (opens in new tab)  
+       
+     
+   
+  
+   
+      
+       
+     
+   
+  
+ 

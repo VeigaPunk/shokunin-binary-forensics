@@ -1,0 +1,1567 @@
+ <!DOCTYPE html>
+		<html
+			class="layout layout-holy-grail   show-table-of-contents conceptual show-breadcrumb default-focus"
+			lang="ja-jp"
+			dir="ltr"
+			data-authenticated="false"
+			data-auth-status-determined="false"
+			data-target="docs"
+			x-ms-format-detection="none"
+		>
+			
+		<head>
+			<title>デバッグ中に .NET コードを逆コンパイルする - Visual Studio (Windows) | Microsoft Learn</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta name="color-scheme" content="light dark" />
+
+			<meta name="description" content="Visual Studio でのデバッグ中に、.NET アセンブリからソース コードを生成して埋め込みます。 埋め込みソース コードを抽出して表示します。" />
+			<link rel="canonical" href="https://learn.microsoft.com/ja-jp/visualstudio/debugger/decompilation?view=visualstudio" /> 
+
+			<!-- Non-customizable open graph and sharing-related metadata -->
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:site" content="@MicrosoftLearn" />
+			<meta property="og:type" content="website" />
+			<meta property="og:image:alt" content="Microsoft Learn" />
+			<meta property="og:image" content="https://learn.microsoft.com/en-us/media/open-graph-image.png" />
+			<!-- Page specific open graph and sharing-related metadata -->
+			<meta property="og:title" content="デバッグ中に .NET コードを逆コンパイルする - Visual Studio (Windows)" />
+			<meta property="og:url" content="https://learn.microsoft.com/ja-jp/visualstudio/debugger/decompilation?view=visualstudio" />
+			<meta property="og:description" content="Visual Studio でのデバッグ中に、.NET アセンブリからソース コードを生成して埋め込みます。 埋め込みソース コードを抽出して表示します。" />
+			<meta name="platform_id" content="24db8182-f7f7-3b53-fdd9-96b788edf14f" /> <meta name="scope" content="VS IDE" />
+			<meta name="locale" content="ja-jp" />
+			 
+			<meta name="uhfHeaderId" content="MSDocsHeader-VisualStudio" />
+
+			<meta name="page_type" content="conceptual" />
+
+			<!--page specific meta tags-->
+			
+
+			<!-- custom meta tags -->
+			
+		<meta name="schema" content="Conceptual" />
+	
+		<meta name="archive_url" content="/previous-versions/visualstudio" />
+	
+		<meta name="audience" content="developer" />
+	
+		<meta name="author" content="madskristensen" />
+	
+		<meta name="breadcrumb_path" content="/visualstudio/_breadcrumb/toc.json" />
+	
+		<meta name="default_moniker" content="visualstudio" />
+	
+		<meta name="depot_name" content="VS.docs" />
+	
+		<meta name="document_id" content="321e264c-24ad-ce2e-b82d-3e6ddee86b71" />
+	
+		<meta name="document_version_independent_id" content="ef0c9ec0-8cac-e90b-a30d-d2c1c60de6f2" />
+	
+		<meta name="exclude_monikers" content="vs-2017" />
+	
+		<meta name="exclude_monikers" content="vs-2019" />
+	
+		<meta name="feedback_help_link_type" content="ask-the-community" />
+	
+		<meta name="feedback_help_link_url" content="https://developercommunity.microsoft.com/VisualStudio" />
+	
+		<meta name="feedback_product_url" content="https://developercommunity.visualstudio.com/VisualStudio/suggest" />
+	
+		<meta name="feedback_system" content="Standard" />
+	
+		<meta name="git_commit_id" content="c273277c806c59b673b28d9b5c4db1b1a7e9f7d0" />
+	
+		<meta name="gitcommit" content="https://github.com/MicrosoftDocs/visualstudio-docs-pr/blob/c273277c806c59b673b28d9b5c4db1b1a7e9f7d0/docs/debugger/decompilation.md" />
+	
+		<meta name="monikerRange" content="&gt;= vs-2022" />
+	
+		<meta name="monikers" content="vs-2022" />
+	
+		<meta name="monikers" content="visualstudio" />
+	
+		<meta name="ms.author" content="madsk" />
+	
+		<meta name="ms.date" content="2025-10-28T00:00:00Z" />
+	
+		<meta name="ms.manager" content="nitinme" />
+	
+		<meta name="ms.service" content="visual-studio-windows" />
+	
+		<meta name="ms.subservice" content="debug-diagnostics" />
+	
+		<meta name="ms.topic" content="how-to" />
+	
+		<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/visualstudio-docs-pr/blob/live/docs/debugger/decompilation.md" />
+	
+		<meta name="recommendations" content="true" />
+	
+		<meta name="site_name" content="Docs" />
+	
+		<meta name="toc_preview" content="true" />
+	
+		<meta name="updated_at" content="2026-10-14T19:44:00Z" />
+	
+		<meta name="ms.translationtype" content="MT" />
+	
+		<meta name="ms.contentlocale" content="ja-jp" />
+	
+		<meta name="loc_version" content="2025-12-12T01:07:05.7256984Z" />
+	
+		<meta name="loc_source_id" content="Github-70191053#live" />
+	
+		<meta name="loc_file_id" content="Github-70191053.live.VS.docs.debugger/decompilation.md" />
+	
+		<meta name="toc_rel" content="toc.json" />
+	
+		<meta name="search.mshattr.devlang" content="csharp" />
+	
+		<meta name="word_count" content="3657" />
+	
+		<meta name="asset_id" content="debugger/decompilation" />
+	
+		<meta name="item_type" content="Content" />
+	
+		<meta name="previous_tlsh_hash" content="7D017132CAC9B8227230562419AA5F08DA0059E32B40B096818EDE4CAE4F413EB9CE2F777FBCF3D05639992493A1684D35D4B589DC57EDA33A36403ED565973C7CDE464BF4" />
+	
+		<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/visualstudio-docs/blob/main/docs/debugger/decompilation.md" />
+	
+		<meta name="markdown_url" content="https://learn.microsoft.com/ja-jp/visualstudio/debugger/decompilation?view=visualstudio&amp;accept=text/markdown" />
+	 
+
+			<!-- Apply persisted/system theme before first paint to prevent wrong-theme flash when scripts are deferred. -->
+			<script id="theme-preference">
+				(function () {
+			try {
+				var stored = localStorage.getItem('theme');
+				var theme = /^(light|dark|high-contrast)$/.test(stored)
+					? stored
+					: matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				document.documentElement.classList.add('theme-' + theme);
+			} catch (e) {}
+		})();;
+			</script>
+
+			<script id="atlas-layout-preferences">
+				(function () {
+			try {
+				var state = JSON.parse(localStorage.getItem('atlas-layout-preferences') || '{}');
+				var view = state["docs-layout-persistence"] || {};
+				var excludesKey = "";
+				var blocked = {};
+				if (excludesKey) {
+					var exclusions = JSON.parse(localStorage.getItem('atlas-layout-exclusions') || '{}');
+					if (Object.prototype.hasOwnProperty.call(exclusions, excludesKey)) {
+						var scoped = exclusions[excludesKey];
+						if (scoped) {
+							if (typeof scoped === 'object') blocked = scoped;
+						}
+					}
+				}
+				var html = document.documentElement;
+				for (var c in view) {
+					if (Object.prototype.hasOwnProperty.call(blocked, c)) continue;
+					if (view[c]) html.classList.add(c);
+					else html.classList.remove(c);
+				}
+			} catch (e) {}
+		})();;
+			</script>
+
+			<!-- assets and js globals -->
+			
+			<link rel="stylesheet" href="/static/assets/0.4.03574.8308-9505b1c8/styles/site.css" />
+			
+			<script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+			<!-- Keep this URL in sync with oneDSScriptSelector in instrumentation/one-ds.ts. -->
+			<script async src="https://js.monitor.azure.com/scripts/c/ms.jsll-4.min.js"></script>
+			
+
+			<!-- msdocs global object -->
+			<script id="msdocs-script">
+		var msDocs = {
+  "environment": {
+    "accessLevel": "online",
+    "azurePortalHostname": "portal.azure.com",
+    "reviewFeatures": false,
+    "supportLevel": "production",
+    "systemContent": true,
+    "siteName": "learn",
+    "legacyHosting": false
+  },
+  "data": {
+    "contentLocale": "ja-jp",
+    "contentDir": "ltr",
+    "userLocale": "ja-jp",
+    "userDir": "ltr",
+    "pageTemplate": "Conceptual",
+    "layoutStateStorageKey": "docs-layout-persistence",
+    "brand": "",
+    "context": {},
+    "standardFeedback": true,
+    "showFeedbackReport": false,
+    "feedbackHelpLinkType": "ask-the-community",
+    "feedbackHelpLinkUrl": "https://developercommunity.microsoft.com/VisualStudio",
+    "feedbackSystem": "Standard",
+    "feedbackGitHubRepo": "",
+    "feedbackProductUrl": "https://developercommunity.visualstudio.com/VisualStudio/suggest",
+    "extendBreadcrumb": false,
+    "isEditDisplayable": false,
+    "isPrivateUnauthorized": false,
+    "hideViewSource": false,
+    "isPermissioned": false,
+    "hasRecommendations": true,
+    "defaultDevLang": "csharp"
+  },
+  "functions": {}
+};;
+	</script>
+
+			<!-- base scripts, msdocs global should be before this -->
+			<script
+				src="/static/assets/0.4.03574.8308-9505b1c8/scripts/ja-jp/index-docs.js"
+				async
+			></script>
+			
+
+			<!-- json-ld -->
+			
+		</head>
+	
+			<body
+				id="body"
+				data-bi-name="body"
+				class="layout-body "
+				lang="ja-jp"
+				dir="ltr"
+			>
+				<header class="layout-body-header background-color-body-medium">
+		<div class="header-holder has-default-focus">
+			
+		<a
+			href="#main"
+			
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			
+		>
+			メイン コンテンツにスキップ
+		</a>
+	
+		<a
+			href="#"
+			data-skip-to-ask-learn
+			style="z-index: 1070"
+			class="outline-color-text visually-hidden-until-focused position-fixed inner-focus focus-visible top-0 left-0 right-0 padding-xs text-align-center background-color-body"
+			hidden
+		>
+			Ask Learn チャット エクスペリエンスにスキップする
+		</a>
+	
+
+			<div hidden id="cookie-consent-holder" data-test-id="cookie-consent-container"></div>
+			<!-- Unsupported browser warning -->
+			<div
+				id="unsupported-browser"
+				style="background-color: white; color: black; padding: 16px; border-bottom: 1px solid grey;"
+				hidden
+			>
+				<div style="max-width: 800px; margin: 0 auto;">
+					<p style="font-size: 24px">このブラウザーはサポートされなくなりました。</p>
+					<p style="font-size: 16px; margin-top: 16px;">
+						Microsoft Edge にアップグレードすると、最新の機能、セキュリティ更新プログラム、およびテクニカル サポートを利用できます。
+					</p>
+					<div style="margin-top: 12px;">
+						<a
+							href="https://go.microsoft.com/fwlink/p/?LinkID=2092881 "
+							style="background-color: #0078d4; border: 1px solid #0078d4; color: white; padding: 6px 12px; border-radius: 2px; display: inline-block;"
+						>
+							Microsoft Edge をダウンロードする
+						</a>
+						<a
+							href="https://learn.microsoft.com/en-us/lifecycle/faq/internet-explorer-microsoft-edge"
+							style="background-color: white; padding: 6px 12px; border: 1px solid #505050; color: #171717; border-radius: 2px; display: inline-block;"
+						>
+							Internet Explorer と Microsoft Edge の詳細情報
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- site header -->
+			<div
+				id="ms--site-header"
+				data-test-id="site-header-wrapper"
+				itemscope="itemscope"
+				itemtype="http://schema.org/Organization"
+			>
+				<div
+					id="ms--mobile-nav"
+					class="site-header display-none-tablet padding-inline-none gap-none"
+					data-bi-name="mobile-header"
+					data-test-id="mobile-header"
+				></div>
+				<div
+					id="ms--primary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L1-header"
+					data-test-id="primary-header"
+				></div>
+				<div
+					id="ms--secondary-nav"
+					class="site-header display-none display-flex-tablet"
+					data-bi-name="L2-header"
+					data-test-id="secondary-header"
+					
+				></div>
+			</div>
+			
+		<!-- banner -->
+		<div data-banner>
+			<div id="disclaimer-holder"></div>
+			
+		</div>
+		<!-- banner end -->
+	
+		</div>
+	</header>
+				 <section
+					id="layout-body-menu"
+					class="layout-body-menu border-right display-flex background-color-body-medium"
+					data-bi-name="menu"
+			  >
+					
+		<div
+			id="left-container"
+			class="left-container display-none padding-none display-block-tablet width-full display-none-until-layout-restored"
+			data-toc-container="true"
+		>
+			<div
+				id="ms--toc-content"
+				class="padding-left-sm padding-right-none padding-bottom-sm height-full"
+			>
+				<nav
+					id="affixed-left-container"
+					class="margin-top-xxs-tablet position-sticky display-flex flex-direction-column width-full"
+					aria-label="プライマリ"
+					data-bi-name="left-toc"
+					role="navigation"
+				>
+					<div
+						id="ms--collapsible-toc-header"
+						class="display-flex flex-direction-row-reverse justify-content-center align-items-center margin-bottom-xxs margin-right-xxs"
+					>
+						<button
+							type="button"
+							class="button button-clear button-sm inner-focus"
+							data-collapsible-toc-toggle
+							aria-expanded="true"
+							hidden
+							aria-controls="ms--toc-content"
+							aria-label="目次"
+						>
+							<span class="icon icon-mirrored-rtl" aria-hidden="true">
+								<span
+									class="docon docon-panel-left-contract display-none-layout-menu-collapsed"
+								></span>
+								<span
+									class="docon docon-panel-left-expand display-none display-inline-layout-menu-collapsed"
+								></span>
+							</span>
+						</button>
+						<div
+							id="ms--collapsible-toc-moniker-slot"
+							class="flex-grow-1 display-none-layout-menu-collapsed"
+						></div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	
+			  </section>
+
+				<main
+					id="main"
+					role="main"
+					class="layout-body-main "
+					data-bi-name="content"
+					lang="ja-jp"
+					dir="ltr"
+				>
+					
+			<div
+		id="ms--content-header"
+		class="content-header default-focus border-bottom-none"
+		data-bi-name="content-header"
+	>
+		<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+			<button
+				type="button"
+				class="contents-button button button-sm margin-right-xxs"
+				data-bi-name="contents-expand"
+				aria-haspopup="true"
+				data-contents-button
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-menu"></span></span>
+				<span class="contents-expand-title"> 目次 </span>
+			</button>
+			<button
+				type="button"
+				class="ap-collapse-behavior ap-expanded button button-sm"
+				data-bi-name="ap-collapse"
+				aria-controls="action-panel"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-exit-mode"></span></span>
+				<span>エディター モードを終了する</span>
+			</button>
+		</div>
+	</div> 
+		<div
+			id="action-panel"
+			role="region"
+			aria-label="アクション パネル"
+			class="action-panel"
+			tabindex="-1"
+		></div>
+	
+			<div
+				data-main-column
+				class="reading-width margin-inline-auto layout-padding padding-top-none padding-top-sm-tablet padding-bottom-sm"
+			>
+				<div>
+					
+		<div id="article-header" class="background-color-body margin-bottom-xs display-none-print">
+			<div class="display-flex align-items-center justify-content-space-between">
+				
+		<details
+			id="article-header-breadcrumbs-overflow-popover"
+			class="popover popover-left"
+			data-for="article-header-breadcrumbs"
+		>
+			<summary
+				class="button button-clear button-primary button-sm inner-focus"
+				aria-label="すべての階層リンク"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-more"></span>
+				</span>
+			</summary>
+			<div id="article-header-breadcrumbs-overflow" class="popover-content"></div>
+		</details>
+
+		<bread-crumbs
+			id="article-header-breadcrumbs"
+			role="group"
+			aria-label="階層リンク"
+			data-test-id="article-header-breadcrumbs"
+			class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop margin-left-negative-xxs padding-left-xxs"
+		></bread-crumbs>
+	 
+		<div
+			id="article-header-page-actions"
+			class="opacity-none margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch"
+		>
+			
+		<button
+			class="button button-sm border-none inner-focus display-none-tablet flex-shrink-0 "
+			data-bi-name="ask-learn-assistant-entry"
+			data-test-id="ask-learn-assistant-modal-entry-mobile"
+			data-ask-learn-modal-entry
+			
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Learn に質問する"
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-none display-inline-flex-tablet display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-modal-entry-tablet"
+			data-ask-learn-modal-entry
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Learn に質問する</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn "
+			data-bi-name="ask-learn-assistant-entry"
+			
+			data-test-id="ask-learn-assistant-flyout-entry"
+			data-ask-learn-flyout-entry
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Learn に質問する</span>
+		</button>
+	 
+
+			<details class="popover popover-right" id="article-header-page-actions-overflow">
+				<summary
+					class="justify-content-flex-start button button-clear button-sm button-primary inner-focus"
+					aria-label="その他の操作"
+					aria-expanded="false"
+					title="その他の操作"
+				>
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-more-vertical"></span>
+					</span>
+				</summary>
+				<div class="popover-content">
+					
+		<button
+			type="button"
+			id="ms--focus-mode-button"
+			data-focus-mode
+			data-bi-name="focus-mode-entry"
+			data-page-action-item="overflow-all"
+			data-popover-close
+			class="button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus display-none display-inline-flex-tablet"
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-glasses"></span>
+			</span>
+			<span>読み取りモード</span>
+		</button>
+	 
+		<button
+			data-page-action-item="overflow-mobile"
+			type="button"
+			class="display-block-layout-menu-collapsed button-block button-sm inner-focus button button-clear display-none-tablet justify-content-flex-start text-align-left"
+			data-bi-name="contents-expand"
+			data-contents-button
+			data-popover-close
+		>
+			<span class="icon" aria-hidden="true"
+				><span class="docon docon-editor-list-bullet"></span
+			></span>
+			<span class="contents-expand-title">目次</span>
+		</button>
+	 
+		<a
+			id="lang-link-overflow"
+			class="button-sm inner-focus button button-clear button-block justify-content-flex-start text-align-left"
+			data-bi-name="language-toggle"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-read-in-link
+			href="#"
+			hidden
+		>
+			<span class="icon" aria-hidden="true" data-read-in-link-icon>
+				<span class="docon docon-locale-globe"></span>
+			</span>
+			<span data-read-in-link-text>英語で読む</span>
+		</a>
+	
+					
+		<button
+			type="button"
+			class="collection button button-clear button-sm button-block justify-content-flex-start text-align-left inner-focus"
+			data-list-type="collection"
+			data-bi-name="collection"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="collection-status">追加</span>
+		</button>
+	 
+		<button
+			type="button"
+			class="collection button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+			data-list-type="plan"
+			data-bi-name="plan"
+			data-page-action-item="overflow-all"
+			data-check-hidden="true"
+			data-popover-close
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-circle-addition"></span>
+			</span>
+			<span class="plan-status">計画に追加する</span>
+		</button>
+	 
+					  
+		<hr class="margin-block-xxs" />
+		
+				<button
+					class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+					type="button"
+					data-bi-name="copy-markdown"
+					data-page-action-item="overflow-all"
+					data-copy-markdown
+					data-copy-state="idle"
+					data-check-hidden="true"
+				>
+					<span class="icon color-primary" aria-hidden="true">
+						<span data-show-when="idle" class="docon docon-code-lang"></span>
+						<span data-show-when="loading" class="loader" hidden></span>
+						<span data-show-when="success" class="docon docon-check-mark" hidden></span>
+					</span>
+					<span>マークダウンのコピー</span>
+				</button>
+		   
+				<button
+					class="button button-block button-clear button-sm justify-content-flex-start text-align-left inner-focus"
+					type="button"
+					data-bi-name="print"
+					data-page-action-item="overflow-all"
+					data-popover-close
+					data-print-page
+					data-check-hidden="true"
+				>
+					<span class="icon color-primary" aria-hidden="true">
+						<span class="docon docon-print"></span>
+					</span>
+					<span>印刷</span>
+				</button>
+		  
+	
+				</div>
+			</details>
+		</div>
+	
+			</div>
+		</div>
+	  
+		<!-- privateUnauthorizedTemplate is hidden by default -->
+		<div unauthorized-private-section data-bi-name="permission-content-unauthorized-private" hidden>
+			<hr class="hr margin-top-xs margin-bottom-sm" />
+			<div class="notification notification-info">
+				<div class="notification-content">
+					<p class="margin-top-none notification-title">
+						<span class="icon" aria-hidden="true"
+							><span class="docon docon-exclamation-circle-solid"></span
+						></span>
+						<span>Note</span>
+					</p>
+					<p class="margin-top-none authentication-determined not-authenticated">
+						このページにアクセスするには、承認が必要です。 <a class="docs-sign-in" href="#" data-bi-name="permission-content-sign-in">サインイン</a>または<a  class="docs-change-directory" data-bi-name="permisson-content-change-directory">ディレクトリの変更</a>を試すことができます。
+					</p>
+					<p class="margin-top-none authentication-determined authenticated">
+						このページにアクセスするには、承認が必要です。 <a class="docs-change-directory" data-bi-name="permisson-content-change-directory">ディレクトリの変更</a>を試すことができます。
+					</p>
+				</div>
+			</div>
+		</div>
+	
+					<div class="content"><h1 id="generate-source-code-from-net-assemblies-while-debugging">デバッグ中に .NET アセンブリからソース コードを生成する</h1></div>
+					
+		<div
+			id="article-metadata"
+			data-bi-name="article-metadata"
+			data-test-id="article-metadata"
+			class="page-metadata-container display-flex gap-xxs justify-content-space-between align-items-center flex-wrap-wrap"
+		>
+			 
+				<div
+					id="user-feedback"
+					class="margin-block-xxs display-none display-none-print"
+					hidden
+					data-hide-on-archived
+				>
+					
+		<button
+			id="user-feedback-button"
+			data-test-id="conceptual-feedback-button"
+			class="button button-sm button-clear button-primary display-none"
+			type="button"
+			data-bi-name="user-feedback-button"
+			data-user-feedback-button
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-like"></span>
+			</span>
+			<span>フィードバック</span>
+		</button>
+	
+				</div>
+		  
+		</div>
+	  
+		<nav
+			id="center-doc-outline"
+			class="doc-outline display-none-desktop display-none-print margin-bottom-sm"
+			data-bi-name="intopic toc"
+			aria-label="この記事の内容"
+		>
+			<h2 id="ms--in-this-article" class="title is-6 margin-block-xs">
+				この記事の内容
+			</h2>
+		</nav>
+	 <div class="content"><p>.NET アプリケーションをデバッグするときに、持っていないソース コードを表示したい場合があります。 たとえば、例外発生時にプログラムを中断したり、呼び出し履歴を利用してソース位置に移動したりします。</p>
+<div class="NOTE">
+<p>手記</p>
+<ul>
+<li>ソース コード生成 (逆コンパイル) は.NET アプリケーションでのみ使用でき、ILSpy <a href="https://github.com/icsharpcode/ILSpy" data-linktype="external">プロジェクト</a> オープン ソースに基づいています。</li>
+<li>逆コンパイルは、Visual Studio 2019 16.5 以降でのみ使用できます。</li>
+<li>
+              <a href="/ja-jp/dotnet/api/system.runtime.compilerservices.suppressildasmattribute" data-linktype="absolute-path">SuppressIldasmAttribute</a> 属性をアセンブリまたはモジュールに適用すると、Visual Studio が逆コンパイルを試みなくなります。 この属性は .NET 6 以降では使用されていませんが、Visual Studio ではこの属性が使用されます。</li>
+</ul>
+</div>
+<h2 id="generate-source-code">ソース コードの生成</h2>
+<p>デバッグ中にソース コードが使用できない場合、Visual Studio には <strong>Source Not Found</strong> ドキュメントが表示されます。あるいは、アセンブリのシンボルがない場合には、<strong>No Symbols Loaded</strong> ドキュメントが表示されます。 どちらのドキュメントにも、現在の場所の C# コードを生成する <strong>逆コンパイル ソース コード</strong> オプションがあります。 生成された C# コードは、他のソース コードと同様に使用できます。 コードの表示、変数の検査、ブレークポイントの設定などを行うことができます。</p>
+<h3 id="no-symbols-loaded">シンボルが読み込まれていない</h3>
+<p>次の図は、<strong>シンボルが読み込まれていない</strong>というメッセージを示しています。</p>
+<p>
+              <img src="media/decompilation-no-symbol-found.png?view=visualstudio" alt="シンボルが読み込まれていないドキュメントのスクリーンショット" data-linktype="relative-path">
+               のスクリーンショット</p>
+<h3 id="source-not-found">ソースが見つかりません</h3>
+<p>次の図は、<strong>Source Not Found</strong> メッセージを示しています。</p>
+<p>
+              <img src="media/decompilation-no-source-found.png?view=visualstudio" alt="ソースが見つからないドキュメントの" data-linktype="relative-path">
+               のスクリーンショット</p>
+<div data-moniker="visualstudio vs-2022">
+<h2 id="autodecompile-code">オートコンパイル コード</h2>
+<p>Visual Studio 2022 バージョン 17.7 以降、Visual Studio デバッガーでは、外部 .NET コードの自動コンパイルがサポートされています。 外部コードにステップ インするとき、または [呼び出し履歴] ウィンドウを使用する場合は、自動コンパイルできます。</p>
+<p>外部で実装されたコードにステップ インすると、デバッガーによって自動的に逆コンパイルされ、現在の実行ポイントが表示されます。 外部コードにステップ インする場合は、<a href="just-my-code?view=visualstudio" data-linktype="relative-path">[マイ コードのみ]</a> を無効にします。</p>
+<p>[マイ コードのみ] を無効にしなくても、[呼び出し履歴] ウィンドウから逆コンパイルできます。</p>
+<p>[呼び出し履歴] ウィンドウからオートコンパイルするには:</p>
+<ol>
+<li><p>[呼び出し履歴] ウィンドウを開いた状態でデバッグ中に、<strong>[外部コードの表示]</strong> を選択します。</p>
+</li>
+<li><p>[呼び出し履歴] ウィンドウで、任意のスタック フレームをダブルクリックします。 デバッガーはコードを逆コンパイルし、現在の実行ポイントに直接移動します。</p>
+<p>
+              <img src="media/vs-2022/decompilation-call-stack-window.png?view=visualstudio" alt="外部コードを示す [呼び出し履歴] ウィンドウのスクリーンショット。" data-linktype="relative-path">
+              
+            </p>
+<p>逆コンパイルされたすべてのコードは、ソリューション エクスプローラーの [外部ソース] ノードにも表示されるため、必要に応じて外部ファイルを簡単に参照できます。</p>
+<p>
+              <img src="media/vs-2022/decompilation-external-sources-node.png?view=visualstudio" alt="逆コンパイルされたアセンブリを示す [外部ソース] ノードのスクリーンショット。" data-linktype="relative-path">
+              
+            </p>
+<p>逆コンパイルされたコードをデバッグし、ブレークポイントを設定できます。</p>
+</li>
+</ol>
+</div>
+<p>外部コードの自動逆コンパイルを無効にするには:</p>
+<div data-moniker="visualstudio">
+<ol>
+<li><p>
+              <strong>[ツール</strong>&gt;<strong>オプション</strong>] ウィンドウを開き<strong></strong>&gt;<strong></strong>&gt;] セクションを展開します。</p>
+</li>
+<li><p>右側のウィンドウで、[ <strong>必要に応じソースに自動的に逆コンパイルする (管理のみ)]</strong> チェック ボックスをオフにします。</p>
+</li>
+</ol>
+</div>
+<div data-moniker="vs-2022">
+<ol>
+<li><p>
+              <strong>[ツール</strong>&gt;<strong>オプション</strong>] ダイアログを開き、[デバッグ<strong></strong>&gt;] セクション<strong>を</strong>展開します。</p>
+</li>
+<li><p>右側のウィンドウで、[ <strong>必要に応じソースに自動的に逆コンパイルする (管理のみ)]</strong> チェック ボックスをオフにします。</p>
+</li>
+<li><p>
+              <strong>[OK] を選択</strong>.</p>
+</li>
+</ol>
+</div>
+<h2 id="generate-and-embed-sources-for-an-assembly">アセンブリのソースを生成して埋め込む</h2>
+<p>特定の場所のソース コードを生成するだけでなく、特定の .NET アセンブリのすべてのソース コードを生成できます。 このタスクを実行するには、<strong>モジュール</strong> ウィンドウに移動し、.NET アセンブリのコンテキスト メニューから、<strong>逆コンパイル ソースからシンボル ファイルへの</strong> コマンドを選択します。 Visual Studio によってアセンブリのシンボル ファイルが生成され、ソースがシンボル ファイルに埋め込まれます。 後のステップで、埋め込まれたソース コードを<a href="#extract-and-view-the-embedded-source-code" data-linktype="self-bookmark">抽出する</a>ことができます。</p>
+<p>
+              <img src="media/decompilation-decompile-source-code.png?view=visualstudio" alt="逆コンパイル ソース コマンドを使用したモジュール ウィンドウのアセンブリ コンテキスト メニューのスクリーンショット。" data-linktype="relative-path">
+              
+            </p>
+<h2 id="extract-and-view-the-embedded-source-code">埋め込みソース コードを抽出して表示する</h2>
+<p>シンボル ファイルに埋め込まれているソース ファイルは、[<strong>モジュール]</strong> ウィンドウのコンテキスト メニューの [ソース コードの抽出] <strong>コマンド</strong> 使用して抽出できます。</p>
+<p>
+              <img src="media/decompilation-extract-source-code.png?view=visualstudio" alt="ソースの抽出コマンドを使用したモジュール ウィンドウのアセンブリ コンテキスト メニューのスクリーンショット。" data-linktype="relative-path">
+              
+            </p>
+<p>抽出されたソース ファイルは、ソリューションにその他の <a href="../ide/reference/miscellaneous-files?view=visualstudio" data-linktype="relative-path">ファイル</a>として追加されます。 Visual Studio では、その他のファイル機能は既定でオフになっています。 この機能が有効になっていない場合、抽出されたソース コードを開くことはありません。</p>
+<div data-moniker="visualstudio">
+<p>この機能は、[ <strong>ツール</strong>&gt;<strong>オプション</strong> ] メニューから有効にすることができます。</p>
+<ol>
+<li><p>
+              <strong>[ツール</strong>&gt;<strong>オプション</strong>] ウィンドウを開き<strong></strong>&gt;<strong></strong>&gt;] セクションを展開します。</p>
+</li>
+<li><p>右側のウィンドウで、[ <strong>ソリューション エクスプローラーでその他のファイルを表示</strong> する] チェック ボックスをオンまたはオフにします。</p>
+<p>このオプションを選択すると、 <strong>その他のファイル プロジェクトに保存されているアイテム</strong>の数を指定できます。</p>
+<p>
+              <img src="media/visualstudio/decompilation-tools-options-misc-files.png?view=visualstudio" alt="Visual Studio のソリューション エクスプローラーで [その他のファイルの表示] オプションを構成する方法を示すスクリーンショット。" data-linktype="relative-path">
+              
+            
+</p>
+</li>
+<li><p>変更を適用するには、Visual Studio を再起動します。</p>
+</li>
+</ol>
+</div>
+<div data-moniker="vs-2022">
+<ol>
+<li><p>
+              <strong>[ツール</strong>&gt;<strong>オプション</strong>] ダイアログを開き、[<strong>環境</strong>&gt;<strong>Documents</strong>] セクションを展開します。</p>
+</li>
+<li><p>右側のウィンドウで、[ <strong>ソリューション エクスプローラーでその他のファイルを表示</strong> する] チェック ボックスをオンまたはオフにします。</p>
+<p>このオプションを選択すると、 <strong>その他のファイル プロジェクトに保存されているアイテム</strong>の数を指定できます。</p>
+<p>
+              <img src="media/decompilation-tools-options-misc-files.png?view=visualstudio" alt="その他のファイル オプションが有効になっているツール オプション ページのスクリーンショット。" data-linktype="relative-path">
+              
+            </p>
+</li>
+<li><p>
+              <strong>[OK] を選択</strong>.</p>
+</li>
+</ol>
+</div>
+<p>抽出されたソース ファイルは、ソリューション エクスプローラー <strong>のその他</strong>ファイルに表示されます。</p>
+<p>
+              <img src="media/decompilation-solution-explorer.png?view=visualstudio" alt="その他のファイルを含むソリューション エクスプローラーのスクリーンショット。" data-linktype="relative-path">
+              
+            </p>
+<h2 id="sourcelink">SourceLink</h2>
+<p>.NET ライブラリの場合、または SourceLink で有効になっている NuGet パッケージの場合は、ソース コードにステップ インし、ブレークポイントを設定し、デバッガーのすべての機能を使用することもできます。 詳細については、「Source Link <a href="how-to-improve-diagnostics-debugging-with-sourcelink?view=visualstudio" data-linktype="relative-path">を使用してデバッグと診断を有効にする</a> と、SourceLink <a href="https://devblogs.microsoft.com/dotnet/improving-debug-time-productivity-with-source-link/" data-linktype="external">を使用したデバッグ時の生産性の向上</a>を参照してください。</p>
+<h2 id="known-limitations">既知の制限事項</h2>
+<h3 id="decompilation-limitations">逆コンパイルの制限事項</h3>
+<p>.NET アセンブリで使用される中間形式 (IL) からソース コードを生成する場合、固有の制限事項がいくつかあります。 そのため、生成されたソース コードは元のソース コードのようには見えません。 異なっているのは、ほとんどが、元のソース コードの情報が実行時に必要のない箇所です。 たとえば、空白、コメント、ローカル変数の名前などの情報は、実行時には必要ありません。 生成されたソースを使用して、元のソース コードの代わりにではなく、プログラムの実行方法を理解することをお勧めします。</p>
+<h3 id="debug-optimized-or-release-assemblies">最適化されたアセンブリまたはリリース アセンブリをデバッグする</h3>
+<p>コンパイラの最適化を使用してコンパイルされたアセンブリから逆コンパイルされたコードをデバッグすると、次の問題が発生する可能性があります。</p>
+<ul>
+<li>ブレークポイントは、必ずしも一致するソースの場所にバインドされるとは限りません。</li>
+<li>ステップ実行では、正しい場所に常にステップ実行するとは限りません。</li>
+<li>ローカル変数の名前が正確でない場合があります。</li>
+<li>一部の変数は評価に使用できない場合があります。</li>
+</ul>
+<p>詳細については、GitHub の問題を参照してください。<a href="https://github.com/icsharpcode/ILSpy/issues/1901" data-linktype="external">ICSharpCode.Decompiler を VS Debugger</a>に統合します。</p>
+<h3 id="decompilation-reliability">逆コンパイルの信頼性</h3>
+<p>逆コンパイルの試行の割合が比較的小さいと、エラーが発生する可能性があります。 この動作は、ILSpy のシーケンス ポイントの null 参照エラーが原因です。  これらの問題をキャッチし、逆コンパイルの試行を適切に失敗させることで、エラーを軽減しました。</p>
+<p>詳細については、GitHub の問題を参照してください。<a href="https://github.com/icsharpcode/ILSpy/issues/1901" data-linktype="external">ICSharpCode.Decompiler を VS Debugger</a>に統合します。</p>
+<h3 id="limitations-with-async-code">非同期コードに関する制限事項</h3>
+<p>非同期/待機コード パターンを使用してモジュールを逆コンパイルした結果は、不完全であるか、完全に失敗する可能性があります。 async/await および yield ステート マシンの ILSpy 実装は、部分的にのみ実装されます。</p>
+<p>詳細については、GitHub の問題「<a href="https://github.com/icsharpcode/ILSpy/issues/1422" data-linktype="external">PDB ジェネレーターの状態</a>」を参照してください。</p>
+<h3 id="just-my-code">マイ コードのみ</h3>
+<p>
+              <a href="just-my-code?view=visualstudio" data-linktype="relative-path">Just My Code (JMC)</a> 設定を使用すると、Visual Studio でシステム、フレームワーク、ライブラリ、およびその他の非ユーザー呼び出しをステップ オーバーできます。 デバッグ セッション中に、[<strong>モジュール</strong>] ウィンドウには、デバッガーがマイ コード (ユーザー コード) として扱うコード モジュールが表示されます。</p>
+<p>最適化されたモジュールまたはリリース モジュールを逆コンパイルすると、非ユーザー コードが生成されます。 たとえば、逆コンパイルされた非ユーザー コードでデバッガーが中断された場合は、<strong>[ソース</strong> なし] ウィンドウが表示されます。 [<strong>ツール</strong>]、[<strong>オプション</strong>]&gt;、[<strong>デバッグ</strong><strong></strong>&gt;] メニューの [<strong>マイ コードのみ</strong>] 機能を無効にできます。</p>
+<div data-moniker="visualstudio">
+<p>
+              <strong>[ツール</strong>&gt;<strong>オプション</strong>] ウィンドウを開き<strong></strong>&gt;<strong></strong>&gt;] セクションを展開します。 [ <strong>マイ コードのみを有効にする]</strong> チェック ボックスをオフにします。</p>
+</div>
+<div data-moniker="vs-2022">
+<p>
+              <strong>[ツール</strong>&gt;<strong>オプション</strong>] ダイアログを開き、[デバッグ<strong></strong>&gt;] セクション<strong>を</strong>展開します。 [ <strong>マイ コードのみを有効にする]</strong> チェック ボックスをオフにします。</p>
+</div>
+<h3 id="extracted-sources">抽出されたソース</h3>
+<p>アセンブリから抽出されるソース コードには、次の制限があります。</p>
+<ul>
+<li>生成されたファイルの名前と場所は構成できません。</li>
+<li>ファイルは一時的であり、Visual Studio によって削除されます。</li>
+<li>ファイルは 1 つのフォルダーに配置され、元のソースが使用していたフォルダー階層は使用されません。</li>
+<li>各ファイルのファイル名には、ファイルのチェックサム ハッシュが含まれています。</li>
+</ul>
+<h3 id="generated-code-is-c-only">生成されたコードは C# のみ</h3>
+<p>逆コンパイルでは、C# でソース コード ファイルのみが生成されます。 他の言語でファイルを生成するオプションはありません。</p>
+</div>
+					
+		<div
+			id="ms--inline-notifications"
+			class="margin-block-xs"
+			data-bi-name="inline-notification"
+		></div>
+	 
+		<div
+			id="assertive-live-region"
+			role="alert"
+			aria-live="assertive"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+		<div
+			id="polite-live-region"
+			role="status"
+			aria-live="polite"
+			class="visually-hidden"
+			aria-relevant="additions"
+			aria-atomic="true"
+		></div>
+	
+					
+		<!-- feedback section -->
+		<section
+			id="site-user-feedback-footer"
+			class="font-size-sm margin-top-md display-none-print display-none-desktop"
+			data-test-id="site-user-feedback-footer"
+			data-bi-name="site-feedback-section"
+		>
+			<hr class="hr" />
+			<h2 id="ms--feedback" class="title is-3">フィードバック</h2>
+			<div class="display-flex flex-wrap-wrap align-items-center">
+				<p class="font-weight-semibold margin-xxs margin-left-none">
+					このページはお役に立ちましたか?
+				</p>
+				<div class="buttons">
+					<button
+						class="thumb-rating-button like button button-primary button-sm"
+						data-test-id="footer-rating-yes"
+						data-binary-rating-response="rating-yes"
+						type="button"
+						title="この記事は役に立ちます"
+						data-bi-name="button-rating-yes"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-like"></span>
+						</span>
+						<span>はい</span>
+					</button>
+					<button
+						class="thumb-rating-button dislike button button-primary button-sm"
+						id="standard-rating-no-button"
+						hidden
+						data-test-id="footer-rating-no"
+						data-binary-rating-response="rating-no"
+						type="button"
+						title="この記事は役に立ちません"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+						<span>いいえ</span>
+					</button>
+					<details
+						class="popover popover-top"
+						id="mobile-help-popover"
+						data-test-id="footer-feedback-popover"
+					>
+						<summary
+							class="thumb-rating-button dislike button button-primary button-sm"
+							data-test-id="details-footer-rating-no"
+							data-binary-rating-response="rating-no"
+							title="この記事は役に立ちません"
+							data-bi-name="button-rating-no"
+							aria-pressed="false"
+							data-bi-an="feedback-unhelpful-popover"
+						>
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-dislike"></span>
+							</span>
+							<span>いいえ</span>
+						</summary>
+						<div
+							class="popover-content width-200 width-300-tablet"
+							role="dialog"
+							aria-labelledby="popover-heading"
+							aria-describedby="popover-description"
+						>
+							<p id="popover-heading" class="font-size-lg margin-bottom-xxs font-weight-semibold">
+								このトピックについてサポートが必要ですか?
+							</p>
+							<p id="popover-description" class="font-size-sm margin-bottom-xs">
+								このトピックの意図を把握したり、理解を深めたりするために Ask Learn を使ってみませんか?
+							</p>
+							
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Learn に質問する"
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Learn に質問する</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Learn に質問する</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> 修正を提案しますか? </span>
+			</button>
+		</div>
+	
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+		<!-- end feedback section -->
+	
+				</div>
+				
+		<div id="ms--additional-resources-mobile" class="display-none-print">
+			<hr class="hr" hidden />
+			<h2 id="ms--additional-resources-mobile-heading" class="title is-3" hidden>
+				その他のリソース
+			</h2>
+			
+		<section
+			id="right-rail-recommendations-mobile"
+			class=""
+			data-bi-name="recommendations"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-training-mobile"
+			class=""
+			data-bi-name="learning-resource-card"
+			hidden
+		></section>
+	 
+		<section
+			id="right-rail-events-mobile"
+			class=""
+			data-bi-name="events-card"
+			hidden
+		></section>
+	
+		</div>
+	 
+		<div
+			id="article-metadata-footer"
+			data-bi-name="article-metadata-footer"
+			data-test-id="article-metadata-footer"
+			class="page-metadata-container"
+		>
+			<hr class="hr" />
+			<ul class="metadata page-metadata" data-bi-name="page info" lang="ja-jp" dir="ltr">
+				<li class="visibility-hidden-visual-diff">
+			<span class="badge badge-sm text-wrap-pretty">
+				<span>最終更新: <local-time format="twoDigitNumeric"
+		datetime="2025-12-12T01:54:00.000Z"
+		data-article-date-source="calculated"
+		class="is-invisible"
+	>
+		2025-12-12
+	</local-time></span>
+			</span>
+		</li>
+			</ul>
+		</div>
+	
+			</div>
+		
+				</main>
+				<aside
+					id="layout-body-aside"
+					class="layout-body-aside  "
+					data-bi-name="aside"
+					aria-label="その他のリソース"
+			  >
+					
+		<div
+			id="ms--additional-resources"
+			class="right-container padding-sm display-none display-block-desktop height-full"
+			data-bi-name="pageactions"
+		>
+			<div id="affixed-right-container" data-bi-name="right-column">
+				
+		<nav
+			id="side-doc-outline"
+			class="doc-outline border-bottom padding-bottom-xs margin-bottom-xs scrollbar-width-thin"
+			data-bi-name="intopic toc"
+			aria-label="この記事の内容"
+		>
+			<h3>この記事の内容</h3>
+		</nav>
+	
+				<!-- Feedback -->
+				
+		<section
+			id="ms--site-user-feedback-right-rail"
+			class="font-size-sm display-none-print"
+			data-test-id="site-user-feedback-right-rail"
+			data-bi-name="site-feedback-right-rail"
+		>
+			<div class="display-flex flex-wrap-wrap align-items-center">
+				<p class="font-weight-semibold margin-xxs margin-left-none">
+					このページはお役に立ちましたか?
+				</p>
+				<div class="display-flex flex-wrap-nowrap">
+					<button
+						class="thumb-rating-button like inner-focus"
+						data-test-id="right-rail-rating-yes"
+						data-binary-rating-response="rating-yes"
+						type="button"
+						title="この記事は役に立ちます"
+						aria-label="この記事は役に立ちます"
+						data-bi-name="button-rating-yes"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-like"></span>
+						</span>
+					</button>
+					<button
+						class="thumb-rating-button dislike inner-focus"
+						id="right-rail-no-button"
+						hidden
+						data-test-id="right-rail-rating-no"
+						data-binary-rating-response="rating-no"
+						type="button"
+						title="この記事は役に立ちません"
+						aria-label="この記事は役に立ちません"
+						data-bi-name="button-rating-no"
+						aria-pressed="false"
+					>
+						<span class="icon" aria-hidden="true">
+							<span class="docon docon-dislike"></span>
+						</span>
+					</button>
+					<details class="popover popover-right" id="help-popover" data-test-id="feedback-popover">
+						<summary
+							tabindex="0"
+							class="thumb-rating-button dislike inner-focus"
+							data-test-id="details-right-rail-rating-no"
+							data-binary-rating-response="rating-no"
+							title="この記事は役に立ちません"
+							aria-label="この記事は役に立ちません"
+							data-bi-name="button-rating-no"
+							aria-pressed="false"
+							data-bi-an="feedback-unhelpful-popover"
+						>
+							<span class="icon" aria-hidden="true">
+								<span class="docon docon-dislike"></span>
+							</span>
+						</summary>
+						<div
+							class="popover-content width-200 width-300-tablet"
+							role="dialog"
+							aria-labelledby="popover-heading-right-rail"
+							aria-describedby="popover-description-right-rail"
+						>
+							<p
+								id="popover-heading-right-rail"
+								class="font-size-lg margin-bottom-xxs font-weight-semibold"
+							>
+								このトピックについてサポートが必要ですか?
+							</p>
+							<p id="popover-description-right-rail" class="font-size-sm margin-bottom-xs">
+								このトピックの意図を把握したり、理解を深めたりするために Ask Learn を使ってみませんか?
+							</p>
+							
+		<div class="buttons flex-direction-row flex-wrap justify-content-center gap-xxs">
+			<div>
+		<button
+			class="button button-sm border inner-focus display-none margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-test-id="ask-learn-assistant-modal-entry-mobile-feedback"
+			data-ask-learn-modal-entry-feedback
+			data-bi-an=feedback-unhelpful-popover
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-label="Learn に質問する"
+			hidden
+		>
+			<span class="icon" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+		</button>
+		<button
+			class="button button-sm display-inline-flex display-none-desktop flex-shrink-0 margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-modal-entry-tablet-feedback"
+			data-ask-learn-modal-entry-feedback
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Learn に質問する</span>
+		</button>
+		<button
+			class="button button-sm display-none flex-shrink-0 display-inline-flex-desktop margin-right-xxs border-color-ask-learn margin-right-xxs"
+			data-bi-name="ask-learn-assistant-entry-troubleshoot"
+			data-bi-an=feedback-unhelpful-popover
+			data-test-id="ask-learn-assistant-flyout-entry-feedback"
+			data-ask-learn-flyout-entry-show-only
+			data-flyout-button="toggle"
+			type="button"
+			style="min-width: max-content;"
+			aria-expanded="false"
+			aria-controls="ask-learn-flyout"
+			hidden
+		>
+			<span class="icon font-size-lg" aria-hidden="true">
+				<span class="docon docon-chat-sparkle-fill gradient-ask-learn-logo"></span>
+			</span>
+			<span>Learn に質問する</span>
+		</button>
+	</div>
+			<button
+				type="button"
+				class="button button-sm margin-right-xxs"
+				data-help-option="suggest-fix"
+				data-bi-name="feedback-suggest"
+				data-bi-an="feedback-unhelpful-popover"
+				data-test-id="suggest-fix"
+			>
+				<span class="icon" aria-hidden="true">
+					<span class="docon docon-feedback"></span>
+				</span>
+				<span> 修正を提案しますか? </span>
+			</button>
+		</div>
+	
+						</div>
+					</details>
+				</div>
+			</div>
+		</section>
+	
+			</div>
+		</div>
+	
+			  </aside> <section
+					id="layout-body-flyout"
+					class="layout-body-flyout "
+					data-bi-name="flyout"
+			  >
+					 <div
+	class="height-full border-left background-color-body-medium"
+	id="ask-learn-flyout"
+></div>
+			  </section> <div class="layout-body-footer " data-bi-name="layout-footer">
+		<footer
+			id="footer"
+			data-test-id="footer"
+			data-bi-name="footer"
+			class="footer-layout padding-xs padding-sm-desktop has-default-focus border-top"
+			role="contentinfo"
+		>
+			<div class="display-flex gap-xs flex-wrap-wrap is-full-height padding-right-lg-desktop">
+				
+		<a
+			data-mscc-ic="false"
+			href="#"
+			data-bi-name="select-locale"
+			class="locale-selector-link flex-shrink-0 button button-sm button-clear external-link-indicator"
+			id=""
+			title=""
+			><span class="icon" aria-hidden="true"
+				><span class="docon docon-world"></span></span
+			><span class="local-selector-link-text">ja-jp</span></a
+		>
+	 <div class="ccpa-privacy-link" data-ccpa-privacy-link hidden>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://aka.ms/yourcaliforniaprivacychoices"
+			data-bi-name="your-privacy-choices"
+			class="button button-sm button-clear flex-shrink-0 external-link-indicator"
+			id=""
+			title=""
+			>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 0 30 14"
+			xml:space="preserve"
+			height="16"
+			width="43"
+			aria-hidden="true"
+			focusable="false"
+		>
+			<path
+				d="M7.4 12.8h6.8l3.1-11.6H7.4C4.2 1.2 1.6 3.8 1.6 7s2.6 5.8 5.8 5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#fff"
+			></path>
+			<path
+				d="M22.6 0H7.4c-3.9 0-7 3.1-7 7s3.1 7 7 7h15.2c3.9 0 7-3.1 7-7s-3.2-7-7-7zm-21 7c0-3.2 2.6-5.8 5.8-5.8h9.9l-3.1 11.6H7.4c-3.2 0-5.8-2.6-5.8-5.8z"
+				style="fill-rule:evenodd;clip-rule:evenodd;fill:#06f"
+			></path>
+			<path
+				d="M24.6 4c.2.2.2.6 0 .8L22.5 7l2.2 2.2c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-2.2-2.2-2.2 2.2c-.2.2-.6.2-.8 0-.2-.2-.2-.6 0-.8L20.8 7l-2.2-2.2c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0l2.2 2.2L23.8 4c.2-.2.6-.2.8 0z"
+				style="fill:#fff"
+			></path>
+			<path
+				d="M12.7 4.1c.2.2.3.6.1.8L8.6 9.8c-.1.1-.2.2-.3.2-.2.1-.5.1-.7-.1L5.4 7.7c-.2-.2-.2-.6 0-.8.2-.2.6-.2.8 0L8 8.6l3.8-4.5c.2-.2.6-.2.9 0z"
+				style="fill:#06f"
+			></path>
+		</svg>
+	
+			<span>プライバシーの選択</span></a
+		>
+	
+	</div>
+				<div class="flex-shrink-0">
+		<div class="dropdown has-caret-up">
+			<button
+				data-test-id="theme-selector-button"
+				class="dropdown-trigger button button-clear button-sm inner-focus theme-dropdown-trigger"
+				aria-controls="{{ themeMenuId }}"
+				aria-haspopup="true"
+				aria-expanded="false"
+				data-bi-name="theme"
+			>
+				<span class="icon" aria-hidden="true"><span class="docon docon-sun"></span></span>
+				<span>テーマ</span>
+				<span class="icon expanded-indicator" aria-hidden="true">
+					<span class="docon docon-chevron-down-light"></span>
+				</span>
+			</button>
+			<div class="dropdown-menu" id="{{ themeMenuId }}" role="menu">
+				<ul class="theme-selector padding-xxs" data-test-id="theme-dropdown-menu" role="none">
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="light"
+							tabindex="-1"
+						>
+							<span class="theme-light margin-right-xxs">
+								<span
+									class="theme-selector-icon border display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> 白 </span>
+						</button>
+					</li>
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="dark"
+							tabindex="-1"
+						>
+							<span class="theme-dark margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> 黒 </span>
+						</button>
+					</li>
+					<li class="theme display-block" role="none">
+						<button
+							class="button button-clear button-sm theme-control button-block justify-content-flex-start text-align-left"
+							role="menuitemradio"
+							aria-checked="false"
+							data-theme-to="high-contrast"
+							tabindex="-1"
+						>
+							<span class="theme-high-contrast margin-right-xxs">
+								<span
+									class="border theme-selector-icon display-inline-block has-body-background"
+									aria-hidden="true"
+								>
+									<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+										<rect width="22" height="14" class="has-fill-body-background" />
+										<rect x="5" y="5" width="12" height="4" class="has-fill-secondary" />
+										<rect x="5" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="8" y="2" width="2" height="1" class="has-fill-secondary" />
+										<rect x="11" y="2" width="3" height="1" class="has-fill-secondary" />
+										<rect x="1" y="1" width="2" height="2" class="has-fill-secondary" />
+										<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary" />
+										<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary" />
+									</svg>
+								</span>
+							</span>
+							<span> ハイ コントラスト </span>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+			</div>
+			<ul class="links" data-bi-name="footerlinks">
+				<li class="manage-cookies-holder" hidden=""></li>
+				<li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/ja-jp/principles-for-ai-generated-content"
+			data-bi-name="aiDisclaimer"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>AI 免責事項</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/ja-jp/previous-versions/"
+			data-bi-name="archivelink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>以前のバージョン</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog"
+			data-bi-name="bloglink"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>ブログ</a
+		>
+	
+	</li> <li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/ja-jp/contribute"
+			data-bi-name="contributorGuide"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>投稿</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?LinkId=521839"
+			data-bi-name="privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>プライバシー</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://go.microsoft.com/fwlink/?linkid=2259814"
+			data-bi-name="consumer-health-privacy"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>コンシューマーの健康に関するプライバシー</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://learn.microsoft.com/ja-jp/legal/termsofuse"
+			data-bi-name="termsofuse"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>利用条件</a
+		>
+	
+	</li><li>
+		
+		<a
+			data-mscc-ic="false"
+			href="https://www.microsoft.com/legal/intellectualproperty/Trademarks/"
+			data-bi-name="trademarks"
+			class=" external-link-indicator"
+			id=""
+			title=""
+			>商標</a
+		>
+	
+	</li>
+				<li>&copy; Microsoft 2026</li>
+			</ul>
+		</footer>
+	</footer>
+			</body>
+		</html>

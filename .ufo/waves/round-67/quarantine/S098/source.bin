@@ -1,0 +1,822 @@
+[
+  {
+    "sha": "403fef0d401c1014a41fddce375085eb6e4a3823",
+    "node_id": "C_kwDOSB6hVdoAKDQwM2ZlZjBkNDAxYzEwMTRhNDFmZGRjZTM3NTA4NWViNmU0YTM4MjM",
+    "commit": {
+      "author": {
+        "name": "Stoian Andrei-Șerban",
+        "email": "s_andreiserban@yahoo.com",
+        "date": "2026-10-24T17:54:08Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-24T17:54:08Z"
+      },
+      "message": "docs(i18n): add complete Romanian README (#7026)\n\nCo-authored-by: Stoian Andrei-Șerban <11259126+An3treiu@users.noreply.github.com>",
+      "tree": {
+        "sha": "8aeb28092b0859eb9f004790470c58257514da91",
+        "url": "https://api.github.com/repos/morluto/rea/git/trees/8aeb28092b0859eb9f004790470c58257514da91"
+      },
+      "url": "https://api.github.com/repos/morluto/rea/git/commits/403fef0d401c1014a41fddce375085eb6e4a3823",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq3PDACRC1aQ7uu5UhlAAAQEAQAFSr+YgbN3kSd+fKVBCUr9wm\nGAkI8spu5kYbF4ZOb98FdTg3bBFnOf2Watkda9Hp4PEO9hhdSMNcKJEbRd66pxVT\nz3eKfnawNkMD93FmAXE1hKHyxdhgkIT2km4EowB3PVfPK8awGrnzzQKwHR5v9UN2\nuyBYgBnx/HXwqc91vKQwH5aFu9Ob2Txn8Mt6CTvraJCHDYqBzGb8W1UlwhmyjpsP\nKg8Eid+ZE0wPDVVtIUeb0rIKTwZ/xU4sjISPzGnx4HyGjuedBybvw3/pb/8+CfHd\nEhgPmwWhm0vQCNSCip/NeZjV5/keu8dehc49On//Szp4SqCJHWl4ZiGEbuTOSv7d\nfPLLh2A/C5hNqp3eM0V7OtCaGqWMHjgQarEbbujxKXafNc7ABUdRw9c5PAUbn5sE\n3Dsf9Geu5mYGpOd7pUMHAUlhjcd67bWTSveKhM5MgWl2AKsBt3a8ku829jWMPWxH\nE7/E62AtPYouUzMmIwQyuex5illYxsrufvFducNfmT7vROC4Ep9lbizdBSzWhlbF\n2Vi0NhGolgS4bX7XmPEAkFwpc4PbeRZKp1HS3656RB+ShzIP8O6hUcvlcaB4xL5L\nOcYCtc/4gGK5AH2iQdz41/+yb3+9ngElTebotH62hqcESZgsdvYc9y/S8fCpvnsi\nbzKQrJInzFUwXIDUlwEh\n=mOMC\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 8aeb28092b0859eb9f004790470c58257514da91\nparent de37dfbcc9b1b7bcbe0dc84b2179b8d2b54df917\nauthor Stoian Andrei-Șerban <s_andreiserban@yahoo.com> 1792864448 +0300\ncommitter GitHub <noreply@github.com> 1792864448 +0800\n\ndocs(i18n): add complete Romanian README (#7026)\n\nCo-authored-by: Stoian Andrei-Șerban <11259126+An3treiu@users.noreply.github.com>",
+        "verified_at": "2026-10-24T17:54:09Z"
+      }
+    },
+    "url": "https://api.github.com/repos/morluto/rea/commits/403fef0d401c1014a41fddce375085eb6e4a3823",
+    "html_url": "https://github.com/morluto/rea/commit/403fef0d401c1014a41fddce375085eb6e4a3823",
+    "comments_url": "https://api.github.com/repos/morluto/rea/commits/403fef0d401c1014a41fddce375085eb6e4a3823/comments",
+    "author": {
+      "login": "An3treiu",
+      "id": 11259126,
+      "node_id": "MDQ6VXNlcjExMjU5MTI2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11259126?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/An3treiu",
+      "html_url": "https://github.com/An3treiu",
+      "followers_url": "https://api.github.com/users/An3treiu/followers",
+      "following_url": "https://api.github.com/users/An3treiu/following{/other_user}",
+      "gists_url": "https://api.github.com/users/An3treiu/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/An3treiu/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/An3treiu/subscriptions",
+      "organizations_url": "https://api.github.com/users/An3treiu/orgs",
+      "repos_url": "https://api.github.com/users/An3treiu/repos",
+      "events_url": "https://api.github.com/users/An3treiu/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/An3treiu/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "de37dfbcc9b1b7bcbe0dc84b2179b8d2b54df917",
+        "url": "https://api.github.com/repos/morluto/rea/commits/de37dfbcc9b1b7bcbe0dc84b2179b8d2b54df917",
+        "html_url": "https://github.com/morluto/rea/commit/de37dfbcc9b1b7bcbe0dc84b2179b8d2b54df917"
+      }
+    ]
+  },
+  {
+    "sha": "dba8a319789a09d61a11206d3d581514416c9149",
+    "node_id": "C_kwDOSB6hVdoAKGRiYThhMzE5Nzg5YTA5ZDYxYTExMjA2ZDNkNTgxNTE0NDE2YzkxNDk",
+    "commit": {
+      "author": {
+        "name": "Matt Van Horn",
+        "email": "mvanhorn@users.noreply.github.com",
+        "date": "2026-10-24T14:35:20Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-24T14:35:20Z"
+      },
+      "message": "feat(elf): inspect Linux kernel module metadata (#7010)\n\n* feat(elf): inspect Linux kernel module metadata\n\nAdds inspect-kernel-module and inspect_kernel_module for ELF32/ELF64\nET_REL Linux kernel modules, read statically without executing them.\nReports ordered .modinfo entries with duplicates preserved, __versions\nsymbol CRCs, the presence of .gnu.linkonce.this_module and __ksymtab,\n.init.text and .exit.text sizes, and an appended module signature\ntrailer with its PKCS#7 byte range and SHA-256. gzip, xz and zstd\ncontainers are reported unsupported with external decompression as the\nnext probe. Malformed headers and exhausted entry budgets return no\npartial success.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_016y53PdpyMAp9RSW65fatHe\n\n* fix(elf): bound kernel module ksymtab listing and tighten contracts\n\nCharge listed __ksymtab* sections against max_entries, omit section names\nlonger than 256 bytes with ksymtab_name_exceeds_limit, and aggregate the\nnon-file-backed limitation so repeated huge names cannot inflate Evidence.\nUse fixedTupleSchema for the signature pad bytes with projection parity\ntests, and assert the late-cancellation reason and retained observation.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_016y53PdpyMAp9RSW65fatHe\n\n* fix: resolve merge integration errors\n\n---------\n\nCo-authored-by: Matt Van Horn <455140+mvanhorn@users.noreply.github.com>\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>\nCo-authored-by: morluto <76467478+morluto@users.noreply.github.com>",
+      "tree": {
+        "sha": "9e101df4f2c532a3db2c6d871e59b8f638c37edb",
+        "url": "https://api.github.com/repos/morluto/rea/git/trees/9e101df4f2c532a3db2c6d871e59b8f638c37edb"
+      },
+      "url": "https://api.github.com/repos/morluto/rea/git/commits/dba8a319789a09d61a11206d3d581514416c9149",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq3MIoCRC1aQ7uu5UhlAAAz60QACn8PUQa+zSrJyYWTcj8Pabh\nu9ABAhlMqazmRWVtMu3GzP0ID9peZEblN0OnPmwwagYdrKUiWaYLhciFc0wc18lB\njw+NXUIJLDovlORJbfX6IEZ66LkNixFLgNZoLwsEdz/2ngfeHU/GevUgG1gzCyCs\ncpiS27L/DFkvbZTxDn2Er1TdBCh40CGBx+uxA0BFz9NLZKDMyB/tQTPXus70+4WU\nGDCYTxbHUajvycS6GWeLRT61WdWRKFY/JtHIFiuFpzg+AE/g6TdtKeBAf+jxHlM/\nxk5ZO87I8KDakwpkendWEmhJFAJZTrVt0gZEZKwcFhzrqRpCiEokkJNhlEmvN761\nKM9yemjKpqzWBTvyC+eHRoqz8zY0pnH2sZrOCSBnOpuyPxkYcqtRexF8fMf9X72N\nfIQGkPRE10cfx7SArLK3QZ7u6rGBpsMgzvV9Z1OjPOWA/qTx9/W/RubKV/N74cJP\nOHtCT3I3siQ9EBZYxarHdwasq8Mi+CxvW7D/ksjkYELVAwoMLda/5mhHbUSta15b\nlXKGkffsqoRbneoorjP6GPfYdWD0atVdWLrOcEKwSkGRDhvjua0x4VItb3mHLUmA\nADCfMvEwBYxfzrlpEOpwthy8whcdCP63IwqAMhYK/vBp9u36hoi38kOHxm4Vgl/y\ngVBqBU/hA/iYlgUZpLAd\n=Jjn9\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 9e101df4f2c532a3db2c6d871e59b8f638c37edb\nparent de088fcec661a215df76e234c5375c952e2f5c58\nauthor Matt Van Horn <mvanhorn@users.noreply.github.com> 1792852520 -0700\ncommitter GitHub <noreply@github.com> 1792852520 +0800\n\nfeat(elf): inspect Linux kernel module metadata (#7010)\n\n* feat(elf): inspect Linux kernel module metadata\n\nAdds inspect-kernel-module and inspect_kernel_module for ELF32/ELF64\nET_REL Linux kernel modules, read statically without executing them.\nReports ordered .modinfo entries with duplicates preserved, __versions\nsymbol CRCs, the presence of .gnu.linkonce.this_module and __ksymtab,\n.init.text and .exit.text sizes, and an appended module signature\ntrailer with its PKCS#7 byte range and SHA-256. gzip, xz and zstd\ncontainers are reported unsupported with external decompression as the\nnext probe. Malformed headers and exhausted entry budgets return no\npartial success.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_016y53PdpyMAp9RSW65fatHe\n\n* fix(elf): bound kernel module ksymtab listing and tighten contracts\n\nCharge listed __ksymtab* sections against max_entries, omit section names\nlonger than 256 bytes with ksymtab_name_exceeds_limit, and aggregate the\nnon-file-backed limitation so repeated huge names cannot inflate Evidence.\nUse fixedTupleSchema for the signature pad bytes with projection parity\ntests, and assert the late-cancellation reason and retained observation.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_016y53PdpyMAp9RSW65fatHe\n\n* fix: resolve merge integration errors\n\n---------\n\nCo-authored-by: Matt Van Horn <455140+mvanhorn@users.noreply.github.com>\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>\nCo-authored-by: morluto <76467478+morluto@users.noreply.github.com>",
+        "verified_at": "2026-10-24T14:35:21Z"
+      }
+    },
+    "url": "https://api.github.com/repos/morluto/rea/commits/dba8a319789a09d61a11206d3d581514416c9149",
+    "html_url": "https://github.com/morluto/rea/commit/dba8a319789a09d61a11206d3d581514416c9149",
+    "comments_url": "https://api.github.com/repos/morluto/rea/commits/dba8a319789a09d61a11206d3d581514416c9149/comments",
+    "author": {
+      "login": "mvanhorn",
+      "id": 455140,
+      "node_id": "MDQ6VXNlcjQ1NTE0MA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/455140?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mvanhorn",
+      "html_url": "https://github.com/mvanhorn",
+      "followers_url": "https://api.github.com/users/mvanhorn/followers",
+      "following_url": "https://api.github.com/users/mvanhorn/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mvanhorn/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mvanhorn/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mvanhorn/subscriptions",
+      "organizations_url": "https://api.github.com/users/mvanhorn/orgs",
+      "repos_url": "https://api.github.com/users/mvanhorn/repos",
+      "events_url": "https://api.github.com/users/mvanhorn/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mvanhorn/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "de088fcec661a215df76e234c5375c952e2f5c58",
+        "url": "https://api.github.com/repos/morluto/rea/commits/de088fcec661a215df76e234c5375c952e2f5c58",
+        "html_url": "https://github.com/morluto/rea/commit/de088fcec661a215df76e234c5375c952e2f5c58"
+      }
+    ]
+  },
+  {
+    "sha": "781760a195c9d90c1bd3d57ad9ff55e5461bfcd4",
+    "node_id": "C_kwDOSB6hVdoAKDc4MTc2MGExOTVjOWQ5MGMxYmQzZDU3YWQ5ZmY1NWU1NDYxYmZjZDQ",
+    "commit": {
+      "author": {
+        "name": "Matt Van Horn",
+        "email": "mvanhorn@users.noreply.github.com",
+        "date": "2026-10-24T08:02:59Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-24T08:02:59Z"
+      },
+      "message": "feat(apple): inspect IPS crash reports (#6511)\n\n* feat(apple): inspect IPS crash reports\n\nAdd inspect_apple_ips for caller-selected Apple .ips files. Parse the\nfirst-line metadata object and, when bug_type is the string 309, the\ncrash body: process identity, exception and termination facts, threads,\nusedImages, lossless integer registers, and documented classification\nrules. Other bug types including 288 stackshots return no crash result.\nOpened Mach-O and dSYM UUID joins remain unobserved.\n\nRelated to #4297\n\n* fix(apple): keep IPS register literals exact\n\nUse the arm64e fixture integer that matches 0x8527000193ed4944 instead\nof an IEEE-754-rounded decimal, and count the lossless JSON example\nlength from the source text.\n\n* fix(apple): budget IPS parsing and keep typed presence\n\nParse the IPS metadata and crash body through a projection of the\ndocumented members. Members the report does not interpret are\nsyntax-checked without being materialized, and thread, frame, image and\nthe new max_registers budgets run before each row is parsed, so a large\nselected file fails with a typed resource error instead of first\nexpanding every row. Fixed allowances bound JSON nesting, unlisted key\nnames and termination reasons.\n\nPresent values whose JSON type differs from the documented one are no\nlonger read as absence: they are listed in coverage.type_mismatches and\ncoverage becomes partial, including wrong-type or missing threads and\nusedImages collections. osVersion keeps the producer dictionary or the\nstring form. Frame roles follow physical frame depth, so the top frame\nof a non-faulting thread is current_instruction and inlined rows share\nthe following frame's role. SIGKILL classes compare the canonical hex\nonce, so 0xdeadd0cc no longer matches dead10cc. Invalid UTF-8 is refused\ninstead of being replaced, and JSON strings are decoded by copying\nunescaped spans.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01Ra7LM2NyQ7DumdssxbUq5g\n\n* fix(apple): bound integer text expansion and reconcile coverage\n\n* refactor(apple): retain image metadata at its owning row\n\n* refactor(apple): validate row capacity through reconciled coverage\n\n* test(apple): verify resource recovery at the public error boundary\n\n* docs(apple): record complete IPS task and corpus measurements\n\n* docs(apple): record integrated checks and stdio corpus evidence\n\n* docs(apple): record PE integration and baseline cleanup controls\n\n* fix(native): bound IPS string decoding and preserve invalid identities\n\n* refactor(native): use exact optional IPS source evidence\n\n* docs(native): verify IPS escape capacity and complete-task costs\n\n* test(native): verify IPS through production stdio MCP\n\n* style(tests): format IPS advertised schema bindings\n\n* fix(native): preserve unresolved IPS references and recorded frame semantics\n\n* docs(native): record IPS reference review evidence\n\n* fix(apple-ips): enforce JSON and report consistency\n\n* docs(apple-ips): record final consistency verification\n\n---------\n\nCo-authored-by: Matt Van Horn <455140+mvanhorn@users.noreply.github.com>\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>\nCo-authored-by: gensokyo-dev <342580529+gensokyo-dev@users.noreply.github.com>",
+      "tree": {
+        "sha": "94439f347aa3aa74a51b92a9e83963d5e367170d",
+        "url": "https://api.github.com/repos/morluto/rea/git/trees/94439f347aa3aa74a51b92a9e83963d5e367170d"
+      },
+      "url": "https://api.github.com/repos/morluto/rea/git/commits/781760a195c9d90c1bd3d57ad9ff55e5461bfcd4",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq3GYzCRC1aQ7uu5UhlAAAP+0QAK0N4WU9fHNzxZu5DLRlSdc4\ngJWG4L/mZdM3pCz3DqXvcvyOcBSZD0KDRHrC0nHGScR+Zb/S+AzlX11/7k950zt3\nmyYdYx0tnh2pq6XmF/eotwAiLi5K2S8kpQDPxunQyEEf0tMQrhYn6nbDX5Cyw/Jp\nEvg8T8ojIvDVJuysfim2FYalejfjFb3XSDNrUj4NMdSURPTRfGs1PTDpLBs0e8bq\nSW4e8PHNqxRnjg2JF7NwzQEb3znV06KxjDjY5VfRqmpmG+D5e2z7Hamp5AUUjXx3\nEP3gFVJVHgOd5GUVejX0zUp8GbtvRPMNrcll7OqUYTb7s4SkA7ObpupmYca21lH6\nzKxl5He+XBctAYOTfLuZGdWpPSL1v7jXfbyOiUF0PYI057xgP0zlbta/06Fgzz2B\nl24jv6BxhfJ25bgZ9hMd4RjeZ/fQObM2KoZJTvy7hIQ7cB8g7rhXOvHNjMI40n0R\nMl7cmnNtC5Ef7RxhGjgMRCxwRvZ9fSjkaGQFNuquahy1+ue7ycGVyffpmgoh7UNE\nhc83gvsoexBot8+mX+sTzv/WSYpp9Eufin+pDbsLEs1RcKk0uZK1mRORAb2Txw2E\nLca5yTmU4UrGhZDOjEnfOl1AzKmWNp9eZ0JteQUop+w9jsi7il88Jy30wfD0jfo6\n0OCbF1q8XlgPEjRpihIc\n=lwAK\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 94439f347aa3aa74a51b92a9e83963d5e367170d\nparent 977c9727e656c8493b62587c50447b371eb9a0a5\nauthor Matt Van Horn <mvanhorn@users.noreply.github.com> 1792828979 -0700\ncommitter GitHub <noreply@github.com> 1792828979 +0800\n\nfeat(apple): inspect IPS crash reports (#6511)\n\n* feat(apple): inspect IPS crash reports\n\nAdd inspect_apple_ips for caller-selected Apple .ips files. Parse the\nfirst-line metadata object and, when bug_type is the string 309, the\ncrash body: process identity, exception and termination facts, threads,\nusedImages, lossless integer registers, and documented classification\nrules. Other bug types including 288 stackshots return no crash result.\nOpened Mach-O and dSYM UUID joins remain unobserved.\n\nRelated to #4297\n\n* fix(apple): keep IPS register literals exact\n\nUse the arm64e fixture integer that matches 0x8527000193ed4944 instead\nof an IEEE-754-rounded decimal, and count the lossless JSON example\nlength from the source text.\n\n* fix(apple): budget IPS parsing and keep typed presence\n\nParse the IPS metadata and crash body through a projection of the\ndocumented members. Members the report does not interpret are\nsyntax-checked without being materialized, and thread, frame, image and\nthe new max_registers budgets run before each row is parsed, so a large\nselected file fails with a typed resource error instead of first\nexpanding every row. Fixed allowances bound JSON nesting, unlisted key\nnames and termination reasons.\n\nPresent values whose JSON type differs from the documented one are no\nlonger read as absence: they are listed in coverage.type_mismatches and\ncoverage becomes partial, including wrong-type or missing threads and\nusedImages collections. osVersion keeps the producer dictionary or the\nstring form. Frame roles follow physical frame depth, so the top frame\nof a non-faulting thread is current_instruction and inlined rows share\nthe following frame's role. SIGKILL classes compare the canonical hex\nonce, so 0xdeadd0cc no longer matches dead10cc. Invalid UTF-8 is refused\ninstead of being replaced, and JSON strings are decoded by copying\nunescaped spans.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01Ra7LM2NyQ7DumdssxbUq5g\n\n* fix(apple): bound integer text expansion and reconcile coverage\n\n* refactor(apple): retain image metadata at its owning row\n\n* refactor(apple): validate row capacity through reconciled coverage\n\n* test(apple): verify resource recovery at the public error boundary\n\n* docs(apple): record complete IPS task and corpus measurements\n\n* docs(apple): record integrated checks and stdio corpus evidence\n\n* docs(apple): record PE integration and baseline cleanup controls\n\n* fix(native): bound IPS string decoding and preserve invalid identities\n\n* refactor(native): use exact optional IPS source evidence\n\n* docs(native): verify IPS escape capacity and complete-task costs\n\n* test(native): verify IPS through production stdio MCP\n\n* style(tests): format IPS advertised schema bindings\n\n* fix(native): preserve unresolved IPS references and recorded frame semantics\n\n* docs(native): record IPS reference review evidence\n\n* fix(apple-ips): enforce JSON and report consistency\n\n* docs(apple-ips): record final consistency verification\n\n---------\n\nCo-authored-by: Matt Van Horn <455140+mvanhorn@users.noreply.github.com>\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>\nCo-authored-by: gensokyo-dev <342580529+gensokyo-dev@users.noreply.github.com>",
+        "verified_at": "2026-10-24T08:03:00Z"
+      }
+    },
+    "url": "https://api.github.com/repos/morluto/rea/commits/781760a195c9d90c1bd3d57ad9ff55e5461bfcd4",
+    "html_url": "https://github.com/morluto/rea/commit/781760a195c9d90c1bd3d57ad9ff55e5461bfcd4",
+    "comments_url": "https://api.github.com/repos/morluto/rea/commits/781760a195c9d90c1bd3d57ad9ff55e5461bfcd4/comments",
+    "author": {
+      "login": "mvanhorn",
+      "id": 455140,
+      "node_id": "MDQ6VXNlcjQ1NTE0MA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/455140?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mvanhorn",
+      "html_url": "https://github.com/mvanhorn",
+      "followers_url": "https://api.github.com/users/mvanhorn/followers",
+      "following_url": "https://api.github.com/users/mvanhorn/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mvanhorn/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mvanhorn/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mvanhorn/subscriptions",
+      "organizations_url": "https://api.github.com/users/mvanhorn/orgs",
+      "repos_url": "https://api.github.com/users/mvanhorn/repos",
+      "events_url": "https://api.github.com/users/mvanhorn/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mvanhorn/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "977c9727e656c8493b62587c50447b371eb9a0a5",
+        "url": "https://api.github.com/repos/morluto/rea/commits/977c9727e656c8493b62587c50447b371eb9a0a5",
+        "html_url": "https://github.com/morluto/rea/commit/977c9727e656c8493b62587c50447b371eb9a0a5"
+      }
+    ]
+  },
+  {
+    "sha": "4ef916da03d93729041f79cec0ee243cd2d3097d",
+    "node_id": "C_kwDOSB6hVdoAKDRlZjkxNmRhMDNkOTM3MjkwNDFmNzljZWMwZWUyNDNjZDJkMzA5N2Q",
+    "commit": {
+      "author": {
+        "name": "Matt Van Horn",
+        "email": "mvanhorn@users.noreply.github.com",
+        "date": "2026-10-24T03:44:12Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-24T03:44:12Z"
+      },
+      "message": "feat(pe): inspect import and delay-load tables (#6509)\n\n* feat(pe): inspect import and delay-load tables\n\nAdd inspect_pe_imports / inspect-pe-imports to read PE32/PE32+ import\nand delay-load directories without executing the image. The report keeps\nDLL names, named and ordinal functions, ILT/IAT RVAs, and a pefile\nimport hash of the standard import table. A missing directory is\nobserved absence, not proof the image never imported APIs.\n\n* fix(pe): default PE import fixture options\n\nAllow peImportImage() without an argument so CLI and filesystem tests\ncan use the KERNEL32 sample without repeating an empty options object.\n\n* test(pe): keep import path cases on the dedicated MCP contract\n\ninspect_pe_imports already rejects relative MCP paths in its own\nboundary test. Leave the shared absolute-path matrix to tools whose\nhandler issue projection matches that suite's expected shape.\n\n* fix(native): index virtual-to-file mapping lookups\n\nmappedFileOffset scans every mapping twice per span, so a parser that\ntranslates one span per table entry costs sections x entries. Add\nfileMappingLookup, which builds an O(n log n) interval index once and\nanswers each span in O(log n) with the same accept, reject and\ntranslation results. A differential test checks it against\nmappedFileOffset over randomized overlapping mappings and zero fills.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01Ra7LM2NyQ7DumdssxbUq5g\n\n* fix(pe): report partial import evidence and exact pefile hashes\n\n- Withhold imphash with an explicit reason whenever the standard import\n  table is partial (unreadable names or thunks, missing tables), or when\n  pefile 2024.8.26 would hash a different row sequence: invalid or\n  truncated names, ordinal 0, descriptors without functions, tables its\n  bounds or repeat/spread heuristics discard, and its 8192-thunk import\n  symbol cap. Delay-load issues do not withhold it.\n- Hash ordinal imports with pefile's complete ordlookup tables and its\n  ord<decimal> fallback instead of declining unmapped ordinals.\n- Report a nonterminal descriptor whose FirstThunk is zero, and a\n  delay-load descriptor whose IAT or INT RVA is zero, as malformed_entry\n  partial coverage instead of a complete empty inventory.\n- Directory evidence lists the file spans actually consumed for the\n  descriptor array and terminator; discontiguous mappings produce\n  separate spans and separate Evidence ranges.\n- Carry exhausted limits as PeImportLimitFailure.limit and derive\n  recovery from it; the fixed 16 MiB retained-text ceiling reports a\n  fixed allowance instead of max_file_bytes advice.\n- Translate RVAs through the indexed mapping lookup and yield with a\n  cancellation check every 1024 table entries.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01Ra7LM2NyQ7DumdssxbUq5g\n\n* fix(pe): read only own ordinal tables for DLL names\n\nDLL names such as constructor and __proto__ pass pefile's name rule but\nresolved inherited object members, throwing before the ord<n> fallback.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01Ra7LM2NyQ7DumdssxbUq5g\n\n* fix(native): preserve PE import facts and prove hash compatibility\n\n* test(native): verify PE import workflows and measured costs\n\n* refactor(native): narrow PE facts across the container union\n\n* docs(native): record integrated PE import validation\n\n* fix(native): bound every PE import RVA span\n\n* docs(native): measure RVA guard completed workflows\n\n* fix(pe): reconcile import coverage with retained rows\n\n* fix(pe): retain partial imports at descriptor mapping gaps\n\n---------\n\nCo-authored-by: Matt Van Horn <455140+mvanhorn@users.noreply.github.com>\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>\nCo-authored-by: gensokyo-dev <342580529+gensokyo-dev@users.noreply.github.com>",
+      "tree": {
+        "sha": "f7610c5e2a992708fa62ddd5875848635e4686ee",
+        "url": "https://api.github.com/repos/morluto/rea/git/trees/f7610c5e2a992708fa62ddd5875848635e4686ee"
+      },
+      "url": "https://api.github.com/repos/morluto/rea/git/commits/4ef916da03d93729041f79cec0ee243cd2d3097d",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq3CmMCRC1aQ7uu5UhlAAA81QQAKq/dw71YqhH757Bj2jyjWbw\nB4tE/lRNh0nOB1J2qOUHz+96Hjp5swMNB7p7ZvKsxb12C1nwicwiWfk9fuAb20eg\n5YuTjadvoILtqa/COLx9+sUvWyRf6siNiGBWqPWt5+uxhtsKhsFdWQvfxbrqz1Uw\nUtRISRw/1Iy5DjYAgzbyTe/jss3Y+RWPWniUe0C39ETXwRSJ1rFsEjb28TDyfjAX\nCpRBukdt7Nb9ph6enkfnY1w+xPockRmVYVDSbsU+YPpKsPSG4soLCFaaM74qr0Jf\nGscnTNrA2Yu1sNu8pJaWoEEVZTC0jAgcK+W7DqBK+/WY/XmNrpKzAi0L5k2nO1R/\ncopSDGdOX2xOIp71GsxnAVFOutWOhL5gxaloe8GXpYiR5imNZAAZJ5aH7pFugPS4\nzwD9PvNAKsk6ksuhjWZR4EN16AAoOwWpSTvsvMF60cGtxnH9S+/Q6TqtsOLXP+Cs\nS4CmKEf3THrNBJDGZwalzoosIRDkx66gkET8QcQaz1gElfqrKb7kcP0wDC/XypMw\nM5Y1tn9QasqQYJTp6xrrASg9SO3gue5wX2avRL2rxfveIhOKr5wvbmjtD+mlLRQ6\nSSdlHGAyWiLndg2GUMi/F7AcSpnmm66ivlvCxRte3b1aVUKvsNKJiwO7r2rjoRaW\nDJEZJZk/rsa2DlUGH9iF\n=qqtv\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree f7610c5e2a992708fa62ddd5875848635e4686ee\nparent f508a1a47e651f3b39194a9d130cee8fcab69520\nauthor Matt Van Horn <mvanhorn@users.noreply.github.com> 1792813452 -0700\ncommitter GitHub <noreply@github.com> 1792813452 +0800\n\nfeat(pe): inspect import and delay-load tables (#6509)\n\n* feat(pe): inspect import and delay-load tables\n\nAdd inspect_pe_imports / inspect-pe-imports to read PE32/PE32+ import\nand delay-load directories without executing the image. The report keeps\nDLL names, named and ordinal functions, ILT/IAT RVAs, and a pefile\nimport hash of the standard import table. A missing directory is\nobserved absence, not proof the image never imported APIs.\n\n* fix(pe): default PE import fixture options\n\nAllow peImportImage() without an argument so CLI and filesystem tests\ncan use the KERNEL32 sample without repeating an empty options object.\n\n* test(pe): keep import path cases on the dedicated MCP contract\n\ninspect_pe_imports already rejects relative MCP paths in its own\nboundary test. Leave the shared absolute-path matrix to tools whose\nhandler issue projection matches that suite's expected shape.\n\n* fix(native): index virtual-to-file mapping lookups\n\nmappedFileOffset scans every mapping twice per span, so a parser that\ntranslates one span per table entry costs sections x entries. Add\nfileMappingLookup, which builds an O(n log n) interval index once and\nanswers each span in O(log n) with the same accept, reject and\ntranslation results. A differential test checks it against\nmappedFileOffset over randomized overlapping mappings and zero fills.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01Ra7LM2NyQ7DumdssxbUq5g\n\n* fix(pe): report partial import evidence and exact pefile hashes\n\n- Withhold imphash with an explicit reason whenever the standard import\n  table is partial (unreadable names or thunks, missing tables), or when\n  pefile 2024.8.26 would hash a different row sequence: invalid or\n  truncated names, ordinal 0, descriptors without functions, tables its\n  bounds or repeat/spread heuristics discard, and its 8192-thunk import\n  symbol cap. Delay-load issues do not withhold it.\n- Hash ordinal imports with pefile's complete ordlookup tables and its\n  ord<decimal> fallback instead of declining unmapped ordinals.\n- Report a nonterminal descriptor whose FirstThunk is zero, and a\n  delay-load descriptor whose IAT or INT RVA is zero, as malformed_entry\n  partial coverage instead of a complete empty inventory.\n- Directory evidence lists the file spans actually consumed for the\n  descriptor array and terminator; discontiguous mappings produce\n  separate spans and separate Evidence ranges.\n- Carry exhausted limits as PeImportLimitFailure.limit and derive\n  recovery from it; the fixed 16 MiB retained-text ceiling reports a\n  fixed allowance instead of max_file_bytes advice.\n- Translate RVAs through the indexed mapping lookup and yield with a\n  cancellation check every 1024 table entries.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01Ra7LM2NyQ7DumdssxbUq5g\n\n* fix(pe): read only own ordinal tables for DLL names\n\nDLL names such as constructor and __proto__ pass pefile's name rule but\nresolved inherited object members, throwing before the ord<n> fallback.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01Ra7LM2NyQ7DumdssxbUq5g\n\n* fix(native): preserve PE import facts and prove hash compatibility\n\n* test(native): verify PE import workflows and measured costs\n\n* refactor(native): narrow PE facts across the container union\n\n* docs(native): record integrated PE import validation\n\n* fix(native): bound every PE import RVA span\n\n* docs(native): measure RVA guard completed workflows\n\n* fix(pe): reconcile import coverage with retained rows\n\n* fix(pe): retain partial imports at descriptor mapping gaps\n\n---------\n\nCo-authored-by: Matt Van Horn <455140+mvanhorn@users.noreply.github.com>\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>\nCo-authored-by: gensokyo-dev <342580529+gensokyo-dev@users.noreply.github.com>",
+        "verified_at": "2026-10-24T03:44:13Z"
+      }
+    },
+    "url": "https://api.github.com/repos/morluto/rea/commits/4ef916da03d93729041f79cec0ee243cd2d3097d",
+    "html_url": "https://github.com/morluto/rea/commit/4ef916da03d93729041f79cec0ee243cd2d3097d",
+    "comments_url": "https://api.github.com/repos/morluto/rea/commits/4ef916da03d93729041f79cec0ee243cd2d3097d/comments",
+    "author": {
+      "login": "mvanhorn",
+      "id": 455140,
+      "node_id": "MDQ6VXNlcjQ1NTE0MA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/455140?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mvanhorn",
+      "html_url": "https://github.com/mvanhorn",
+      "followers_url": "https://api.github.com/users/mvanhorn/followers",
+      "following_url": "https://api.github.com/users/mvanhorn/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mvanhorn/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mvanhorn/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mvanhorn/subscriptions",
+      "organizations_url": "https://api.github.com/users/mvanhorn/orgs",
+      "repos_url": "https://api.github.com/users/mvanhorn/repos",
+      "events_url": "https://api.github.com/users/mvanhorn/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mvanhorn/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f508a1a47e651f3b39194a9d130cee8fcab69520",
+        "url": "https://api.github.com/repos/morluto/rea/commits/f508a1a47e651f3b39194a9d130cee8fcab69520",
+        "html_url": "https://github.com/morluto/rea/commit/f508a1a47e651f3b39194a9d130cee8fcab69520"
+      }
+    ]
+  },
+  {
+    "sha": "36cae9016117f49a2cd0823137456ae804ef7035",
+    "node_id": "C_kwDOSB6hVdoAKDM2Y2FlOTAxNjExN2Y0OWEyY2QwODIzMTM3NDU2YWU4MDRlZjcwMzU",
+    "commit": {
+      "author": {
+        "name": "Cassie_Fox",
+        "email": "249835913+CassieFox23@users.noreply.github.com",
+        "date": "2026-10-23T21:51:22Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-23T21:51:22Z"
+      },
+      "message": "docs(readme): show a dark showcase image on dark themes (#6915)\n\nThe showcase illustration was a single light PNG, so it stayed a white\nslab on GitHub's dark themes. Redraw it as a light and a dark SVG, and\nswap the linked image in README.md and all 21 translations for a\n<picture> with a prefers-color-scheme: dark source. Alt text and link\ntargets are unchanged. The PNG is deleted because nothing else uses it.\nwebsite/figures.md notes the pair.\n\n🤖 Generated with Claude Code (Sonnet 5.5) 🦊\n\nCo-authored-by: Claude Sonnet 5.5 <noreply@anthropic.com>",
+      "tree": {
+        "sha": "1912d1cbcea2306ea2c3bb69f00dd86be42a1624",
+        "url": "https://api.github.com/repos/morluto/rea/git/trees/1912d1cbcea2306ea2c3bb69f00dd86be42a1624"
+      },
+      "url": "https://api.github.com/repos/morluto/rea/git/commits/36cae9016117f49a2cd0823137456ae804ef7035",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq29baCRC1aQ7uu5UhlAAA89QQAIWbUVV/CbaFnvpnCvdM2LMF\nzo96UnStjYXujlV0SEAEc/n4VeYX8sZ6xkdMrxfTkvhgh+OSSe8dqnFuxWZv7zE3\nWcL3mK1Bedc2V2HjXrUXJXaeUIOqJfT9DKljKaGzn8Q41bdLAPNyJsRUZy47RbpA\nuQQJdvyBz1SAMlQFRU+ScBgrImTgdCvqqAugHmMAqBLv4upt47nS6Ss/01aSPlp0\n1a/LNrHAUlN2DR6cuy/uyXdyWIaEuyjNA0nN/BHBfErwTMrq06TzCSPmRkR1agnq\nL823PTQQM3Mx7Hqwvf9NG8NJukZcWVVPoqU4c9P1vzm+N21N7TOFtiQtJ/E+rghP\nQAXOt4/BqRiq3u8HOzO4m1cYo9A8M+qY9iZblf7cg83pw9+GDbkcBmTR/ig4gNUs\njsKqz5f1A6zAl2O8w4wi4DJQa9NQN6q8NjTYTyWjC/OO2zUezSCstKWubqln+8jg\nKDY2qXW1pLvpd71vXne7kBZ2tycFEk1BK9svl6GBn1pI2qPai5Hpfv+mn/wloGJw\nHTdBQqNq254vLJTAGB/zMb2N8o3VLhGaTt1HWJvEmfC0ZuTozbMk0cnLzNzo9MYw\n54kmNXusr0mkIaGpNgIu2Sbne6gmTD5GSG/d2PrK50OFdhH6+ouDoHq7eHxAqFrU\nCiFuTahwUnvD2tE72Ov+\n=xL0z\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 1912d1cbcea2306ea2c3bb69f00dd86be42a1624\nparent bcd18d289845051b0f0513e11bc1aefd3f766902\nauthor Cassie_Fox <249835913+CassieFox23@users.noreply.github.com> 1792792282 -0400\ncommitter GitHub <noreply@github.com> 1792792282 +0800\n\ndocs(readme): show a dark showcase image on dark themes (#6915)\n\nThe showcase illustration was a single light PNG, so it stayed a white\nslab on GitHub's dark themes. Redraw it as a light and a dark SVG, and\nswap the linked image in README.md and all 21 translations for a\n<picture> with a prefers-color-scheme: dark source. Alt text and link\ntargets are unchanged. The PNG is deleted because nothing else uses it.\nwebsite/figures.md notes the pair.\n\n🤖 Generated with Claude Code (Sonnet 5.5) 🦊\n\nCo-authored-by: Claude Sonnet 5.5 <noreply@anthropic.com>",
+        "verified_at": "2026-10-23T21:51:23Z"
+      }
+    },
+    "url": "https://api.github.com/repos/morluto/rea/commits/36cae9016117f49a2cd0823137456ae804ef7035",
+    "html_url": "https://github.com/morluto/rea/commit/36cae9016117f49a2cd0823137456ae804ef7035",
+    "comments_url": "https://api.github.com/repos/morluto/rea/commits/36cae9016117f49a2cd0823137456ae804ef7035/comments",
+    "author": {
+      "login": "CassieFox23",
+      "id": 249835913,
+      "node_id": "U_kgDODuQxiQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/249835913?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/CassieFox23",
+      "html_url": "https://github.com/CassieFox23",
+      "followers_url": "https://api.github.com/users/CassieFox23/followers",
+      "following_url": "https://api.github.com/users/CassieFox23/following{/other_user}",
+      "gists_url": "https://api.github.com/users/CassieFox23/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/CassieFox23/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/CassieFox23/subscriptions",
+      "organizations_url": "https://api.github.com/users/CassieFox23/orgs",
+      "repos_url": "https://api.github.com/users/CassieFox23/repos",
+      "events_url": "https://api.github.com/users/CassieFox23/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/CassieFox23/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "bcd18d289845051b0f0513e11bc1aefd3f766902",
+        "url": "https://api.github.com/repos/morluto/rea/commits/bcd18d289845051b0f0513e11bc1aefd3f766902",
+        "html_url": "https://github.com/morluto/rea/commit/bcd18d289845051b0f0513e11bc1aefd3f766902"
+      }
+    ]
+  },
+  {
+    "sha": "fc2d91a45fc42ade4bffade22af7c7950446106f",
+    "node_id": "C_kwDOSB6hVdoAKGZjMmQ5MWE0NWZjNDJhZGU0YmZmYWRlMjJhZjdjNzk1MDQ0NjEwNmY",
+    "commit": {
+      "author": {
+        "name": "morluto",
+        "email": "76467478+morluto@users.noreply.github.com",
+        "date": "2026-10-23T20:52:41Z"
+      },
+      "committer": {
+        "name": "morluto",
+        "email": "76467478+morluto@users.noreply.github.com",
+        "date": "2026-10-23T21:02:21Z"
+      },
+      "message": "docs(readme): align localized guide link occurrences",
+      "tree": {
+        "sha": "9cbe3870c805583d6de7f8ecbc7aba59a5aa0766",
+        "url": "https://api.github.com/repos/morluto/rea/git/trees/9cbe3870c805583d6de7f8ecbc7aba59a5aa0766"
+      },
+      "url": "https://api.github.com/repos/morluto/rea/git/commits/fc2d91a45fc42ade4bffade22af7c7950446106f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/morluto/rea/commits/fc2d91a45fc42ade4bffade22af7c7950446106f",
+    "html_url": "https://github.com/morluto/rea/commit/fc2d91a45fc42ade4bffade22af7c7950446106f",
+    "comments_url": "https://api.github.com/repos/morluto/rea/commits/fc2d91a45fc42ade4bffade22af7c7950446106f/comments",
+    "author": {
+      "login": "morluto",
+      "id": 76467478,
+      "node_id": "MDQ6VXNlcjc2NDY3NDc4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76467478?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/morluto",
+      "html_url": "https://github.com/morluto",
+      "followers_url": "https://api.github.com/users/morluto/followers",
+      "following_url": "https://api.github.com/users/morluto/following{/other_user}",
+      "gists_url": "https://api.github.com/users/morluto/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/morluto/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/morluto/subscriptions",
+      "organizations_url": "https://api.github.com/users/morluto/orgs",
+      "repos_url": "https://api.github.com/users/morluto/repos",
+      "events_url": "https://api.github.com/users/morluto/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/morluto/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "morluto",
+      "id": 76467478,
+      "node_id": "MDQ6VXNlcjc2NDY3NDc4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76467478?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/morluto",
+      "html_url": "https://github.com/morluto",
+      "followers_url": "https://api.github.com/users/morluto/followers",
+      "following_url": "https://api.github.com/users/morluto/following{/other_user}",
+      "gists_url": "https://api.github.com/users/morluto/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/morluto/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/morluto/subscriptions",
+      "organizations_url": "https://api.github.com/users/morluto/orgs",
+      "repos_url": "https://api.github.com/users/morluto/repos",
+      "events_url": "https://api.github.com/users/morluto/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/morluto/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b03a15e6d1d710ffd8e9c844ddce4ab5d38f65fa",
+        "url": "https://api.github.com/repos/morluto/rea/commits/b03a15e6d1d710ffd8e9c844ddce4ab5d38f65fa",
+        "html_url": "https://github.com/morluto/rea/commit/b03a15e6d1d710ffd8e9c844ddce4ab5d38f65fa"
+      }
+    ]
+  },
+  {
+    "sha": "9b656dda291ae9e60f35d955e90a1c1cd52efb2f",
+    "node_id": "C_kwDOSB6hVdoAKDliNjU2ZGRhMjkxYWU5ZTYwZjM1ZDk1NWU5MGExYzFjZDUyZWZiMmY",
+    "commit": {
+      "author": {
+        "name": "morluto",
+        "email": "76467478+morluto@users.noreply.github.com",
+        "date": "2026-10-23T18:51:39Z"
+      },
+      "committer": {
+        "name": "morluto",
+        "email": "76467478+morluto@users.noreply.github.com",
+        "date": "2026-10-23T19:00:08Z"
+      },
+      "message": "docs(readme): align translated setup and analysis facts",
+      "tree": {
+        "sha": "4d146abece4425dd2d18017152e11d3b2d886572",
+        "url": "https://api.github.com/repos/morluto/rea/git/trees/4d146abece4425dd2d18017152e11d3b2d886572"
+      },
+      "url": "https://api.github.com/repos/morluto/rea/git/commits/9b656dda291ae9e60f35d955e90a1c1cd52efb2f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/morluto/rea/commits/9b656dda291ae9e60f35d955e90a1c1cd52efb2f",
+    "html_url": "https://github.com/morluto/rea/commit/9b656dda291ae9e60f35d955e90a1c1cd52efb2f",
+    "comments_url": "https://api.github.com/repos/morluto/rea/commits/9b656dda291ae9e60f35d955e90a1c1cd52efb2f/comments",
+    "author": {
+      "login": "morluto",
+      "id": 76467478,
+      "node_id": "MDQ6VXNlcjc2NDY3NDc4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76467478?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/morluto",
+      "html_url": "https://github.com/morluto",
+      "followers_url": "https://api.github.com/users/morluto/followers",
+      "following_url": "https://api.github.com/users/morluto/following{/other_user}",
+      "gists_url": "https://api.github.com/users/morluto/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/morluto/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/morluto/subscriptions",
+      "organizations_url": "https://api.github.com/users/morluto/orgs",
+      "repos_url": "https://api.github.com/users/morluto/repos",
+      "events_url": "https://api.github.com/users/morluto/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/morluto/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "morluto",
+      "id": 76467478,
+      "node_id": "MDQ6VXNlcjc2NDY3NDc4",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76467478?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/morluto",
+      "html_url": "https://github.com/morluto",
+      "followers_url": "https://api.github.com/users/morluto/followers",
+      "following_url": "https://api.github.com/users/morluto/following{/other_user}",
+      "gists_url": "https://api.github.com/users/morluto/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/morluto/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/morluto/subscriptions",
+      "organizations_url": "https://api.github.com/users/morluto/orgs",
+      "repos_url": "https://api.github.com/users/morluto/repos",
+      "events_url": "https://api.github.com/users/morluto/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/morluto/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "cf5e4f6fa370ae12412e7750715822ff8ed4afd8",
+        "url": "https://api.github.com/repos/morluto/rea/commits/cf5e4f6fa370ae12412e7750715822ff8ed4afd8",
+        "html_url": "https://github.com/morluto/rea/commit/cf5e4f6fa370ae12412e7750715822ff8ed4afd8"
+      }
+    ]
+  },
+  {
+    "sha": "520f8e8042c39833fb1656d3e55fb2896bff43a5",
+    "node_id": "C_kwDOSB6hVdoAKDUyMGY4ZTgwNDJjMzk4MzNmYjE2NTZkM2U1NWZiMjg5NmJmZjQzYTU",
+    "commit": {
+      "author": {
+        "name": "GamerDubz",
+        "email": "105694977+GamerDubz@users.noreply.github.com",
+        "date": "2026-10-23T11:03:03Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-23T11:03:03Z"
+      },
+      "message": "fix(runtime): align remaining Node security pins and setup guidance (#6316)\n\nDerive exported Docker image versions from .nvmrc through generated package metadata. Align active setup translations with patched Node release floors and verify actual CLI exports, real Docker/agentenv, package and website workflows.\n\nEight built-test shards pass; three unrelated managed source failures reproduce on clean main and remain tracked in #6650.\n\nRefs #6480\n\nCo-authored-by: gensokyo-dev <342580529+gensokyo-dev@users.noreply.github.com>",
+      "tree": {
+        "sha": "4f66bd793d984b93d108c715046dd316b82d9203",
+        "url": "https://api.github.com/repos/morluto/rea/git/trees/4f66bd793d984b93d108c715046dd316b82d9203"
+      },
+      "url": "https://api.github.com/repos/morluto/rea/git/commits/520f8e8042c39833fb1656d3e55fb2896bff43a5",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq2z7nCRC1aQ7uu5UhlAAAwtsQADZ/YwrYtHhLGS9BpCB38DF4\nyXW6pACU/5t/YVnqPGRnf/6PLt/9xUELFn5zHfbHTQUTMRUVVOjmlPIY6uPwNlEl\nID7Ul7SBZjTPF+yOIeFZjkHW8M3jK6UuVtGKTn6q8sMOZwcj/avDTWBsQbsx4Gnd\nNwn1oAAZbdkURnVU8TbPmettbPIwTNp97ODE/utQw0P3Y8vtDYamdeNf+Ee/0q/+\ns5E+oR89XhSwzjsKoXezxRicmWeP8qMxh8tRolo6HAlbgNDxQXvFkbWYl38ejbM8\ngGnPHD1tCiIRSCldWVqdbK9WZLJmLx+bt5mRa5tctONzFN75eVM+IO4WCqDZzkC4\n32MdwzqFP9ZeedeO23gehMWwxOtIT5fksKUTMkEOfOJpMoDI0FNu5SJXukoPS2rr\nMy9kNOosK/l5pC3omJMIMXJo2ZP6nkrdDRFmVoAsFEwj4U1HDBDm3Rx4dilJnoOM\nKCiYgb5LGfME6LbxfTswfK8MtMGOsmjaZ2En5fKcBpoGN05TL3ZfHU9TVbYdt84r\niemA+VlTbaNyJiEqaAvMEs+znSKMH4zCe6ag+ug0rYMqL+anRcTUG1dZNI+YO8r+\nLFpwdrC3/qAd4H4DZqYAERu6bvHmNo6htvQaWJoacNqs1U0KlPZbFkdGZrV7niWp\nNgXimydbZLdPLpOnQvuQ\n=HCv+\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 4f66bd793d984b93d108c715046dd316b82d9203\nparent 19520d00087bc92b5c1020918ea3b7c064768bb4\nauthor GamerDubz <105694977+GamerDubz@users.noreply.github.com> 1792753383 +0200\ncommitter GitHub <noreply@github.com> 1792753383 +0000\n\nfix(runtime): align remaining Node security pins and setup guidance (#6316)\n\nDerive exported Docker image versions from .nvmrc through generated package metadata. Align active setup translations with patched Node release floors and verify actual CLI exports, real Docker/agentenv, package and website workflows.\n\nEight built-test shards pass; three unrelated managed source failures reproduce on clean main and remain tracked in #6650.\n\nRefs #6480\n\nCo-authored-by: gensokyo-dev <342580529+gensokyo-dev@users.noreply.github.com>",
+        "verified_at": "2026-10-23T11:03:04Z"
+      }
+    },
+    "url": "https://api.github.com/repos/morluto/rea/commits/520f8e8042c39833fb1656d3e55fb2896bff43a5",
+    "html_url": "https://github.com/morluto/rea/commit/520f8e8042c39833fb1656d3e55fb2896bff43a5",
+    "comments_url": "https://api.github.com/repos/morluto/rea/commits/520f8e8042c39833fb1656d3e55fb2896bff43a5/comments",
+    "author": {
+      "login": "GamerDubz",
+      "id": 105694977,
+      "node_id": "U_kgDOBkzHAQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/105694977?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/GamerDubz",
+      "html_url": "https://github.com/GamerDubz",
+      "followers_url": "https://api.github.com/users/GamerDubz/followers",
+      "following_url": "https://api.github.com/users/GamerDubz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/GamerDubz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/GamerDubz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/GamerDubz/subscriptions",
+      "organizations_url": "https://api.github.com/users/GamerDubz/orgs",
+      "repos_url": "https://api.github.com/users/GamerDubz/repos",
+      "events_url": "https://api.github.com/users/GamerDubz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/GamerDubz/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "19520d00087bc92b5c1020918ea3b7c064768bb4",
+        "url": "https://api.github.com/repos/morluto/rea/commits/19520d00087bc92b5c1020918ea3b7c064768bb4",
+        "html_url": "https://github.com/morluto/rea/commit/19520d00087bc92b5c1020918ea3b7c064768bb4"
+      }
+    ]
+  },
+  {
+    "sha": "524b84792fdc10a8356db99c009bb5d4e7027c8a",
+    "node_id": "C_kwDOSB6hVdoAKDUyNGI4NDc5MmZkYzEwYTgzNTZkYjk5YzAwOWJiNWQ0ZTcwMjdjOGE",
+    "commit": {
+      "author": {
+        "name": "Hifza Zafar",
+        "email": "152292315+hifzabuildsai@users.noreply.github.com",
+        "date": "2026-10-23T08:06:27Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-23T08:06:27Z"
+      },
+      "message": "docs(readme): add Roman Urdu edition (#6499)\n\n* docs(readme): add Roman Urdu edition\n\nRegister ur-Latn with a pending website catalog and preserve English command examples.\n\nScript-tag handling follows morluto's shared helper proposed in PR #2043 (c46f606c899e27b2e51c16500493413daf57ddad).\n\n* test(website): cover completed script-tag page metadata",
+      "tree": {
+        "sha": "a8b45e5522aa12b11b71be72c8dd30a55d5d7afe",
+        "url": "https://api.github.com/repos/morluto/rea/git/trees/a8b45e5522aa12b11b71be72c8dd30a55d5d7afe"
+      },
+      "url": "https://api.github.com/repos/morluto/rea/git/commits/524b84792fdc10a8356db99c009bb5d4e7027c8a",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq2xWDCRC1aQ7uu5UhlAAAcWkQAH8MrzgA44OxPI3mWZcqJDmb\nN+XbtQ3OX9RcCvDzwMjI7A57rWn0o+GFqtLa46GGAK23zdgiX80pSNLl0xcI5Zfh\nqLSG4Zx8918203PUbXZoKDrbzMcbafHLVfEeTeX9LRilbH+87cD1/cyHX1+sDBwZ\n2IjHsY+SIzf131iQJH61eVhQnHbTYxhhQoYhfsSnYYgAjTUe99CvHzWwVBq1EwQi\nNUnkNvMHQ5xnZyP0Rt6BIHMB2ian6SHLzdFxpl9twMRjDxUUYyQwgNEn38NsHLXs\nujvBXi8WboiMQIPutZE1BbhIo1nc8V+yGWdvwh5Dy3YEVWC8rICLuGaA5Uh0n45/\npoXL98ebLmkB2WIKrjjtRSzXmfKu6r+WoIiU2B1Fi96oHLM5/XR0kqebbc56ou2p\no/1yhiIEamXAef3h8FOvQ2/pNUlIx7Cabjgxr7yzMZ/XyKwRb93DOyvF67VSU2iY\nQappCqiTMm2gjc9zzmo+iS679XazlX18Fouka2hFnK4CGG3M+BUDDq9i7bFxVbgb\n/1HuU4VPFbAheRWs22VipXRPLr0lRBoqKiBUjyWUgwo/krPrF6wpiOvyLXT1rRxf\nJKVVom/yIgXA/wNnnUo/vhaI4X0JPMJrDQHBfu/0dmuv+nqQ7x+tuK+VOZ3ekfDU\nLij9NWJfG/INR4kUoGiO\n=j5HH\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree a8b45e5522aa12b11b71be72c8dd30a55d5d7afe\nparent 1635eadfcc49bbb80178838ab74667c2981de383\nauthor Hifza Zafar <152292315+hifzabuildsai@users.noreply.github.com> 1792742787 +0500\ncommitter GitHub <noreply@github.com> 1792742787 +0800\n\ndocs(readme): add Roman Urdu edition (#6499)\n\n* docs(readme): add Roman Urdu edition\n\nRegister ur-Latn with a pending website catalog and preserve English command examples.\n\nScript-tag handling follows morluto's shared helper proposed in PR #2043 (c46f606c899e27b2e51c16500493413daf57ddad).\n\n* test(website): cover completed script-tag page metadata",
+        "verified_at": "2026-10-23T08:06:28Z"
+      }
+    },
+    "url": "https://api.github.com/repos/morluto/rea/commits/524b84792fdc10a8356db99c009bb5d4e7027c8a",
+    "html_url": "https://github.com/morluto/rea/commit/524b84792fdc10a8356db99c009bb5d4e7027c8a",
+    "comments_url": "https://api.github.com/repos/morluto/rea/commits/524b84792fdc10a8356db99c009bb5d4e7027c8a/comments",
+    "author": {
+      "login": "hifzabuildsai",
+      "id": 152292315,
+      "node_id": "U_kgDOCRPL2w",
+      "avatar_url": "https://avatars.githubusercontent.com/u/152292315?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/hifzabuildsai",
+      "html_url": "https://github.com/hifzabuildsai",
+      "followers_url": "https://api.github.com/users/hifzabuildsai/followers",
+      "following_url": "https://api.github.com/users/hifzabuildsai/following{/other_user}",
+      "gists_url": "https://api.github.com/users/hifzabuildsai/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/hifzabuildsai/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/hifzabuildsai/subscriptions",
+      "organizations_url": "https://api.github.com/users/hifzabuildsai/orgs",
+      "repos_url": "https://api.github.com/users/hifzabuildsai/repos",
+      "events_url": "https://api.github.com/users/hifzabuildsai/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/hifzabuildsai/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "1635eadfcc49bbb80178838ab74667c2981de383",
+        "url": "https://api.github.com/repos/morluto/rea/commits/1635eadfcc49bbb80178838ab74667c2981de383",
+        "html_url": "https://github.com/morluto/rea/commit/1635eadfcc49bbb80178838ab74667c2981de383"
+      }
+    ]
+  },
+  {
+    "sha": "bfba99827e314b9f2469f46eb98c3e1f928abd7a",
+    "node_id": "C_kwDOSB6hVdoAKGJmYmE5OTgyN2UzMTRiOWYyNDY5ZjQ2ZWI5OGMzZTFmOTI4YWJkN2E",
+    "commit": {
+      "author": {
+        "name": "Matt Van Horn",
+        "email": "mvanhorn@users.noreply.github.com",
+        "date": "2026-10-22T09:46:15Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-10-22T09:46:15Z"
+      },
+      "message": "feat(erlang): inspect BEAM IFF chunks and tables (#4833)\n\n* feat(erlang): inspect BEAM IFF chunks and tables\n\nReplay the Erlang BEAM inspection workflow, including table bounds,\nOTP 28+ atom layouts, the shared absolute-path policy, and empty-path\nCLI coverage, without carrying GitHub workflow edits.\n\nCo-authored-by: morluto <morluto@users.noreply.github.com>\n\n* fix(erlang): use publicInputStrictObject for BEAM tool input\n\ninspect_erlang_beam advertised a public input built with bare\nz.strictObject, so later shared input-policy changes would miss it.\nResult and internal objects stay on their own constructors.\n\nCo-authored-by: morluto <morluto@users.noreply.github.com>\n\n---------\n\nCo-authored-by: Cursor Agent <cursoragent@cursor.com>\nCo-authored-by: morluto <morluto@users.noreply.github.com>",
+      "tree": {
+        "sha": "52aca747f406ce521102e3e177f078a199e98ed8",
+        "url": "https://api.github.com/repos/morluto/rea/git/trees/52aca747f406ce521102e3e177f078a199e98ed8"
+      },
+      "url": "https://api.github.com/repos/morluto/rea/git/commits/bfba99827e314b9f2469f46eb98c3e1f928abd7a",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq2dtnCRC1aQ7uu5UhlAAAduoQABnp5hQnG9cn8iQk0xLY+9Lr\nl3GA7rJGKnb0AjyeMMa3kV9OzaHYLZwweP/2jxzU7AR/lRgxpVOjyQl6skZqmzYb\ntw9I8K0jEX7lAicqaNl7dkHrgIRo024Tj7RwXEQiulwNBFTCVtPRvmZq9TuA3yI8\nK3OxirmVusXsQZWXPSsNcnC5SD5SohwHnn420SK0qJp1VpoFdoYfwLEDne/9EyXO\njV1I4M1VlYmKwvJS8mdywR2Mvv3YLYP9XU62frpd9G47Nl+1xMENkU0ZEvOEndq5\nERRguH7qDPX5w4RW6ZAPxKcLmyTZWW3ZfcxVdmMT+5+Hea7bKS4+D/m/rZ5INotz\nJaxdIanjLsf5EW+xXaCuXwxZl5OY7JVcUWN/e+ZiFV7W70+BIC9rChEVQ66qdyq3\nKIlM24bPe/Ax8wLqpuOu6cLXcUbnvyficFEThynmsrjVDm3JGEauTPBQlQWFPPsr\nwAmVP2Z/vLdc7L1Y2yu2q3JPg5YG7OXhDE8wiAvSNjqxDriGY9sMPAArdmCaBLhi\nCvrvI1avmxKOjr28wNpgrhcDjEfwtmssjg9Nr1BXMnGuWoiRLyhKyswWNMGCT5Rj\ng7GN0jVu3U+harh0oWImCMk56NMsGkvxpmfCOQqkFANqwtDthL7lPhM0JkkNC7rX\n9DjvOg5QzJW0K+ftryfL\n=GS4D\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 52aca747f406ce521102e3e177f078a199e98ed8\nparent 44827a502004997738296f040dde04d9ed942bed\nauthor Matt Van Horn <mvanhorn@users.noreply.github.com> 1792662375 -0700\ncommitter GitHub <noreply@github.com> 1792662375 +0800\n\nfeat(erlang): inspect BEAM IFF chunks and tables (#4833)\n\n* feat(erlang): inspect BEAM IFF chunks and tables\n\nReplay the Erlang BEAM inspection workflow, including table bounds,\nOTP 28+ atom layouts, the shared absolute-path policy, and empty-path\nCLI coverage, without carrying GitHub workflow edits.\n\nCo-authored-by: morluto <morluto@users.noreply.github.com>\n\n* fix(erlang): use publicInputStrictObject for BEAM tool input\n\ninspect_erlang_beam advertised a public input built with bare\nz.strictObject, so later shared input-policy changes would miss it.\nResult and internal objects stay on their own constructors.\n\nCo-authored-by: morluto <morluto@users.noreply.github.com>\n\n---------\n\nCo-authored-by: Cursor Agent <cursoragent@cursor.com>\nCo-authored-by: morluto <morluto@users.noreply.github.com>",
+        "verified_at": "2026-10-22T09:46:16Z"
+      }
+    },
+    "url": "https://api.github.com/repos/morluto/rea/commits/bfba99827e314b9f2469f46eb98c3e1f928abd7a",
+    "html_url": "https://github.com/morluto/rea/commit/bfba99827e314b9f2469f46eb98c3e1f928abd7a",
+    "comments_url": "https://api.github.com/repos/morluto/rea/commits/bfba99827e314b9f2469f46eb98c3e1f928abd7a/comments",
+    "author": {
+      "login": "mvanhorn",
+      "id": 455140,
+      "node_id": "MDQ6VXNlcjQ1NTE0MA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/455140?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mvanhorn",
+      "html_url": "https://github.com/mvanhorn",
+      "followers_url": "https://api.github.com/users/mvanhorn/followers",
+      "following_url": "https://api.github.com/users/mvanhorn/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mvanhorn/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mvanhorn/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mvanhorn/subscriptions",
+      "organizations_url": "https://api.github.com/users/mvanhorn/orgs",
+      "repos_url": "https://api.github.com/users/mvanhorn/repos",
+      "events_url": "https://api.github.com/users/mvanhorn/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mvanhorn/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "44827a502004997738296f040dde04d9ed942bed",
+        "url": "https://api.github.com/repos/morluto/rea/commits/44827a502004997738296f040dde04d9ed942bed",
+        "html_url": "https://github.com/morluto/rea/commit/44827a502004997738296f040dde04d9ed942bed"
+      }
+    ]
+  }
+]

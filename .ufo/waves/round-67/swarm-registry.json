@@ -1,0 +1,678 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r67-v2",
+  "createdAt": "2026-10-25T00:05:38.943Z",
+  "updatedAt": "2026-10-25T00:05:38.943Z",
+  "reportDir": ".ufo/waves/round-67",
+  "members": {
+    "R67QuarS053": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS054": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS055": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS058": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS060": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS061": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS062": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS063": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS064": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS075": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS081": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS083": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS085": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS087": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS089": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS090": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS092": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS093": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS094": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS095": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS098": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS099": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS107": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS108": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS111": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67QuarS113": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewEntryQ01": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewEntryQ02": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewEntryQ03": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewEntryQ04": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewEntryQ05": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewEntryQ06": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewEntryQ07": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewEntryQ08": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewEntryQ09": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewEntryQ10": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewEntryQ11": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewEntryQ12": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewEntryQ13": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67MutC7Kill": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67MutC7Surface": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67CriticC7Claim": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewC7Gate": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67CounterReplay": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67CensusReplay": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67FixtureHold": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67HexContainer": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67HexDex": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67PointerAudit": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "depth"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67BlindDerive": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewSeparability": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67CriticSeparability": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ConnectorOverlap": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "adjacency"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67SentinelScope": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67SimplifierGate": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "simplifier",
+      "item": null,
+      "axes": [
+        "depth"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67RevengerLedger": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67SpotcheckDiscern": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewSourcesS045": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ScoutDexReopen": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ScoutSigningRecon": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67CriticClaimsC1": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67CriticAssim": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "adjacency"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67ReviewSkillRefresh": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "depth"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    },
+    "R67CriticEntryDeps": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 v2 C05 candidate + C2 C7 gate landed as build state; README not flipped; wave provides fresh-seat Q decisions, C7 mutant/surface attacks, 26 quarantine verdicts, separability and discernment receipts"
+    }
+  }
+}

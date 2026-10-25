@@ -479,3 +479,31 @@ Round shape: L1-seat adjudication + build under the accepted host mapping; one v
 **planned:** next round — the C05 re-gate needs a v2 candidate whose repairs are all text-level (entry:41 hex pair, dex-header spec row + S043 as route-scope source, item-8 provenance, item-9 dex semantics row, Q-map pointers); or calibration/coverage elsewhere on C02/C08; the dispatched r66 verification wave's findings adjudicate this round's work honestly.
 
 Routed forward: verbatim-output-diff gate for embedded entry outputs (M39 fix shape, owner: future registering round); AST-bound mutation counter + label-spoof surface; generator conditional-symlink note; evidence-ID prongs (a)/(b)/(d) + injectivity registry; endswith-attribution asymmetry; recheck-pin H1–H3; SHONEN box 1 `[x]` non-lane re-confirmation (carried); r58/59 PASS-count quotes.
+
+## Round 67 (hyaku) — quarantine-first: both claims honestly falsified, holds green
+
+Pre-registration `d11f81df` (claims.md + frozen counter sha256 `7933c060…` + red-before on base
+`fa0eb3eb`); build `7668510f`; ONE v2 wave of 64 seats dispatched in-seat (attempt 1 aborted by
+the dispatcher exit — 0 seat work; attempt 2 same taskCall, 64/64 reports, 0 dead); adjudicated
+fail branch on both claims; final measured tip = the adjudication commit (measure-after.log).
+
+| axis / criterion | before → after | counting command | verdict |
+|---|---|---|---|
+| coverage — C05 re-gate (K, lowest criterion) | 8/14 → 8/14 (5.7 → 5.7) — honest: the v2 candidate was rejected (wave Q02 FAIL: START_NAMESPACE anchor :244 vs actual :245, twice) and retained; C05 stays uncovered | `python3 -B reports/round-67/measure.py TREE` (K_HELD_BACKED 8/14, K_ROW C05 uncovered, C05_SINGLE_V2 no) | **C1 falsified — honest stop** (5/6 routed repairs verified good by fresh seats; fix routed) |
+| calibration — C7 embedded-output verbatim gate | 0 → present but unattributed: killed 1/1, attributed **0/1** (the forged-control marker is shadowed dead code — seats R67MutC7Kill/R67CriticC7Claim/R67ReviewC7Gate) | same probe (C7_* labels; HOLDS_OK_V5=no is the honest signal) | **C2 falsified — honest stop** (gate's drift detection + red-before real and verified; reorder fix routed) |
+| calibration — C2–C6 prior holds | 2/2·2/2·2/2·2/2·4/4 → same | same probe | unchanged hold |
+| calibration — selected runnability C + replay | 4/4, 10/10 → same | same probe (HOLD_*) | unchanged hold |
+| coverage — selected-family presence F | 5/8 → 5/8 | same probe | unchanged |
+| freshness — stored-assertion proxy | 18/18 → 18/18 | same probe | unchanged hold |
+| diagnostics | C05_REJECTED_MARKED yes (r65 candidate); MISMATCH 0; STRICT window pass | same probe | unchanged |
+| depth / operability / adjacency | no claim | connector CONTEST-NAMED (kaidoku; reported-not-absorbed) | unchanged |
+
+Neither claim is exploratory; no `unprovable-but-better` ruling sought. Capabilities: none added
+(the C7 gate registered as a probe in SKILL.md, with its registry row corrected at adjudication).
+Sources: 44 → 45 (+S045 mined, dex-format spec, snapshot committed); census exit 0 both ends.
+Mistakes: M44 (anchor off-by-one from intent — M40 recurring; builder must derive symbol lines),
+M45 (registered attribution claim false — marker shadowed; registry corrected, fix routed).
+Quarantine (item 10, wave-4): 26/26 verdicts — 4 PRESENT (register wrong), 19 ABSENT
+(fabrication-class confirms), 1 UNREACHABLE, 2 UNVERIFIED-REACHABLE; adoption closed; 0 package
+rows/entries appended or copied.
+
