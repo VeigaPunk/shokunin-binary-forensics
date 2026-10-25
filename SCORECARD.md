@@ -551,3 +551,51 @@ item 9's namespace sentence, add S032/S034 `source:` lines and pin `generator.py
 commit, then re-gate. Calibration side: give the frozen counter a behavioural (non-marker) C7 leg,
 drop `c7_v3_clean` from `HOLDS_OK_V6`, and close the kill rules over every mechanical conjunct.
 
+
+## Round 69 (hyaku run 6) — both claims honestly falsified; instrument defect reported, not repaired
+
+Pre-registration `e1d22caf` (claims + frozen counter `reports/round-69/measure.py` sha256
+`bca74e6d8b5010aee79886521474f072257ee22ec7ccc24e4186666bdc048377` + red-before
+`reports/round-69/measure-before.log` on base `222a7a70`); build `da02261` (C05 v4 candidate + extended
+derivation + S047 + QUALITY Q15); ONE validated v2 wave of exactly 64 seats, dispatched in one call
+(attack 45/64 = 70.3 % lane predicate, 41/64 = 64.1 % prompt §3 floor list), 64/64 reports, 0 dead seats.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — coverage aggregate on the C05 row (`HOLDS_C2_V4`) | `no` → `no`; `K_HELD_BACKED` 8/14 → 8/14; `C05_STATUS` `uncovered` → `uncovered`; `C05_SINGLE_V4` no → no | `python3 -B reports/round-69/measure.py TREE` over `git archive <commit> corpus` | `222a7a7` → adjudicated tip | **C1 FALSIFIED — honest stop** (wave Q FAILs at Q05, Q07, Q11, Q14, Q15 on the landed v4 bytes; kill rule executed: README unflipped, v4 entry `admission-status: rejected`, every other byte kept) |
+| calibration — Q15 tree-identity criterion + D1 restatement | criterion row present (`QUALITY.md:27`), checker behaves as specified on every leg run by hand (`--self-test` exit 0; D1 fixture scan exit 1; true restatement scan exit 0), restatement + false-sentence lines committed in `corpus/lessons/round-69.md` | checker: `python3 -B corpus/q15_tree_id_check.py --self-test` / `--scan <file> --lane <lane>`; counter label `Q15_PRESENT` (+ `Q15_SELFTEST`/`Q15_FALSE_KILLED`/`Q15_RESTATE_OK`, all **unevaluable** — see below) | `222a7a7` → adjudicated tip | **C2 FALSIFIED — honest stop, instrument defect.** The frozen counter dies `NameError` at `measure.py:158` on every tree carrying the Q15 checker (`def run` is at `:187`), so no `Q15_*`, `C7_*` or `HOLDS_OK*` label is printable with the pinned sha256; the D1 fixture also sits outside the `corpus`-only archive. Not repaired after scoring (kumitate r42) |
+| calibration — C7 gate and C2–C6 receipt guards | gate behaved as specified under four independent reviews; labels unprintable for the reason above | same probe | same | **unchanged hold, unmeasured this round** — the C7 L0 (marker-presence vs behavioural legs) stays open and was not pre-empted |
+| calibration — selected runnability + replay | `HOLD_CALIBRATION` 4/4, `HOLD_REPLAY` 10/10 — every `verify_*.py --self-test` exits 0 when run directly (`R69HoldSweep`) | ten verifier self-tests | same | unchanged |
+| coverage — selected-family presence F | 5/8 → 5/8 (`6.2`) | same probe (`F_COVERAGE`) | same | unchanged |
+| freshness — stored-assertion proxy | 18/18 → 18/18 | same probe (`FRESH_ROWS`) | same | unchanged hold (byte survival only) |
+| diagnostics | `README_TOKEN_LEGEND_MISMATCH=0`; STRICT window selftest pass | same probe | same | unchanged |
+| depth / operability / adjacency | no claim | `R69ConnectorOverlap` (CONTEST-NAMED, ADJ-06 still open), `R69SentinelScope` (CONTAINED) | — | unchanged (reported, not absorbed) |
+
+**Round void conditions fired, recorded not hidden** (`reports/round-69/claims.md:187-194`): counter exit
+non-zero at final; `HOLDS_OK_V6` not yes. The V6 cause is independent of C2: extending
+`corpus/derive_axml_anchors.py` in place reformatted seven enum lines the retained round-68 candidate
+embeds verbatim, so `C7_V3_CLEAN` went `yes → no` while that candidate's own bytes are unchanged
+(`R69HoldSweep`, `R69CriticClaimsC1`). No target was narrowed; no acceptance condition was repaired.
+
+Capabilities: none added. The Q15 criterion + checker are admission-bar and instrument work, not a new
+capability (the checker's kill leg is `rc != 0` and a non-demonstrating fixture also satisfies it —
+`R69CriticClaimsC2`). SHONEN box 1: **D4 reconciled by append** — committed `SHONEN.md:4-9` reads `[x]`
+with named verifier `revenger-r64.R64ReviewSkill`; the round-68 paragraph's `[~]` sentence is superseded
+as a *state* statement and survives only as a *scope* statement (the `[x]` covers the r64 bytes,
+39098 B / `bfd92057…`; current bytes are 51809 B / `a12fb8e2…` and have no non-lane re-confirmation;
+seven live defects listed in `R69ShonenBox1`). Mistakes: **M48** (identity-without-derivation — the r68
+D1 class, found three more times inside this round's own claims text), **M49** (enum-block bound stated
+as 237-253 where the block closes at 263), **M50** (frozen-counter regression: new block calls a helper
+defined below it; the red-before could not see it because the branch does not exist on the base tree).
+Sources: rows 46 → 47 (+S047 supersedes S046), census exit 0 at both ends, same four disclosed W04s.
+Quarantine (item 10): `Assimilation: none` for adoption — the full 26-row slice hand-checked, verdicts
+per seat in `corpus/lessons/round-69.md` §Item-10; adoption closed; zero package rows or entries copied.
+considerthese: `2026-10-24.md` proposal 2 (provider-refusal seats on their own line) landed as a zero line
+in the wave record — no seat was lost to a provider refusal.
+
+**planned:** the next coverage round re-gates C05 a fifth time with the routed set: probe-or-drop the
+exit-2 clause (Q05), restate `:91` as direct string-pool indexing (Q07), label the recorded ZIP widths and
+the `504b0506` key (Q11), fix `:48`'s two counts (Q14), add the `c7b7cf98` derivation and a Q15 row
+(Q15). Calibration: hoist `def run` in a NEW counter revision with a fresh red-before *before* any
+after-run, map uncaught exceptions to exit 2, move the D1 fixture under `corpus/`, and make the
+derivation extension additive (a flag or a second script) so the retained round-68 candidate stays clean.
