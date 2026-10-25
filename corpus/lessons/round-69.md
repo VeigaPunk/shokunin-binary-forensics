@@ -98,15 +98,28 @@ round-68 `W03` stays clear and the four disclosed `W04` duplicate-scope warnings
     Q14's own reject rule, reproduced inside the entry that added the sweep.
   - **Q15** (`R69ReviewEntryQ15`) — `:8` states a git object id ("unchanged since `c7b7cf98`") with no
     deriving command, and the §Q-map has no Q15 row at all.
+  - **Q08** (`R69ReviewEntryQ08`, applying the Q11 rule it supersedes) — `:30` states the EOCD signature
+    `504b0506` while `--fact eocd` prints no signature bytes at all (`grep -c 504b0506` on the real stdout
+    = 0) under a framing that says every numbered item is readout-produced. The round-68 Q11 seat named
+    this exact repair and v4 did not apply it.
+  - **Q11** (`R69ReviewEntryQ11`) — `504b0506`, the 46-byte/30-byte ZIP fixed widths and the "agrees with
+    the oracle on every shared field" sentence carry a value with no in-entry derivation and no
+    `recorded` label; all three are numerically correct, which is precisely Q11's reject shape. The v3's
+    underived enum lines are genuinely repaired (50/50 embedded output lines match the live stdout).
   - Passing on **Q01** (`R69ReviewEntryQ01`: every cited row tier A, S047 landed with the entry),
-    **Q04** (`R69ReviewEntryQ04`: manual labels present and true, derivation credit bounded to the 20
-    printed lines), **Q06** (`R69ReviewEntryQ06`: fixture premise re-built byte-identical from the pinned
-    generator), **Q10** (`R69ReviewEntryQ10`: every finding scoped, ADJ-06 reported at an open pointer);
-    **Q12** is `n/a` with a named reason (`R69ReviewEntryQ12`: no rejected-sources row is written).
-  - Also recorded by seats and NOT scored as FAILs because their criteria were still in flight at
-    adjudication: Q02/Q03/Q08/Q09/Q11/Q13 seats' reports are committed as wave evidence under
-    `.ufo/waves/round-69/`; the falsification does not depend on them (four FAILs already trigger the
-    kill rule).
+    **Q02** (`R69ReviewEntryQ02`: header complete, every row and digest resolves),
+    **Q03** (`R69ReviewEntryQ03`: every value re-derived from bytes/spec/pin, nothing copied from the
+    oracle it compares against), **Q04** (`R69ReviewEntryQ04`: manual labels present and true, derivation
+    credit bounded to the 20 printed lines; residual: `readout.py:49-50` still asserts "computed here …
+    not assumed"), **Q06** (`R69ReviewEntryQ06`: fixture re-built byte-identical from the pinned
+    generator), **Q09** (`R69ReviewEntryQ09`: all six pins re-derive, no origin/authenticity claim),
+    **Q10** (`R69ReviewEntryQ10`, `R69CriticEntryScope`: SCOPE-CLEAN, ADJ-06 at an open pointer),
+    **Q13** (`R69ReviewEntryQ13`: deletion detected in every credited class); **Q12** is `n/a` with a
+    named reason (`R69ReviewEntryQ12`: no rejected-sources row is written).
+  - **§Q-map regression, recorded** (`R69QmapSelfCheck`, `R69CriticEntryScope` F1): v4's map carries 8
+    rows where v3 carried 13 and `QUALITY.md` has 15 criteria; Q03/Q06/Q08/Q09/Q10/Q12/Q15 have no row
+    and no `n/a` reason, and two published `pass` rows (Q11, Q14) are contradicted by the entry's own
+    bytes. That alone makes C1's "every applicable Q decision PASS or a named n/a" unsatisfiable.
 - **No entry admitted this round**, so no expansion credit is taken and `K_HELD_BACKED` stays 8/14.
 
 **Label-naming hazard, recorded (`R69CriticSeparability` F7):** `HOLDS_C2_V4` and `HOLDS_C2_V3` are the
@@ -114,6 +127,17 @@ round-68 `W03` stays clear and the four disclosed `W04` duplicate-scope warnings
 (calibration). This round's C1 is the coverage claim and its target conjunct is `HOLDS_C2_V4`; its C2 is
 the Q15 criterion and its labels are `Q15_*`. Read the labels by what they compute (`measure.py:114-125`
 for `HOLDS_C2_*`), never by the claim letter.
+
+**What the labels would read, reported as a diagnostic and never as the measurement.**
+`reports/round-69/measure-after.log` carries the registered crash receipt and, separately labelled, one
+diagnostic run of the same pinned counter with only the four-line `def run` helper relocated above its
+first use (+67 bytes of layout, no logic change) on a tree archived as `corpus reports/round-69`. That
+diagnostic reads `Q15_PRESENT=yes`, `Q15_SELFTEST=pass`, `Q15_FALSE_KILLED=yes`, `Q15_RESTATE_OK=yes`,
+`C7_V4_CLEAN=yes`, `K_HELD_BACKED=8/14`, `C05_STATUS=uncovered`, `HOLDS_C2_V4=no`, `C7_V3_CLEAN=no`,
+`HOLDS_OK_V6=no`, `HOLD_CALIBRATION=4/4`, `HOLD_REPLAY=10/10`, exit 0. The C2 claim stays **FALSIFIED as
+declared** — its own kill rule reads a label the pinned instrument cannot print — and the diagnostic is
+the honest disclosure that the criterion and the checker work while the instrument does not. A reader
+must not quote the diagnostic as the claim's measurement.
 
 ### Item-10 quarantine posture (wave-4, adoption stays closed)
 
@@ -125,7 +149,7 @@ L1's roll-up and does not overwrite a seat's finding.
 | seat | rows | PRESENT | ABSENT | UNREACHABLE | UNVERIFIED-REACHABLE / other |
 |---|---|---|---|---|---|
 | `R69QuarA` | S053, S054, S055, S058, S060, S061, S062, S063, S064 | 1 (S055) | 7 | 1 (S054, auth-gated 302 loop) | 0 |
-| `R69QuarB` | S075, S081, S083, S085, S087, S089, S090, S092, S093 | see seat report | | | |
+| `R69QuarB` | S075, S081, S083, S085, S087, S089, S090, S092, S093 | 2 (S090, S092) | 3 (S075, S083, S093 partial) | 1 (S085 — the census `url` cell is truncated at 140 chars, so the cited URL cannot resolve) | 3 UNVERIFIED-REACHABLE (S081, S087, S089: quote verbatim in a neighbouring document, not in the cited one) |
 | `R69QuarC` | S094, S095, S098, S099, S100, S107, S108, S111, S113 | 4 (S107 literal, S111 under JSON re-serialization, S113 at the article's canonical URL, S108 under whitespace fold) | 3 (S094, S095, S098) | 0 | S099 UNVERIFIED-REACHABLE; S100 NO-ROW |
 | `R69QuarD` | the slice itself (26 rows) + the 24 quoted rows re-checked | 4 (S055, S107, S108, S111) | 17 | 2 (S061 upstream 502, S085 upstream 404) | 1 PARTIAL (S083 — filename only, in `Content-Disposition`) |
 
