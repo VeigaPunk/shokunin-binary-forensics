@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
-"""Derive the AXML spec anchors this lane's knowledge entries cite (round-68 C2).
+"""Derive the AXML spec anchors this lane's knowledge entries cite (round-68 C2,
+extended round-69 C1).
 
-The round-65 and round-67 candidates both failed an admission gate on one
-transcribed line number (`RES_XML_START_NAMESPACE_TYPE` written as :244 where
-the pinned snapshot has it at :245 — mistake class M40/M44). This script is
-the capture for that class: every anchor an entry states is printed here by
-searching the pinned AOSP `ResourceTypes.h` bytes for the symbol, so the entry
-can embed the derivation as a command whose output the registered gate
-(`corpus/check_embedded_outputs.py`) re-checks verbatim.
+The round-65, round-67 and round-68 candidates failed admission gates on
+transcribed or un-derived line numbers (`RES_XML_START_NAMESPACE_TYPE` written as
+:244 where the pinned snapshot has it at :245; the enum-block range written as
+237-253 where the block runs to :263). This script is the capture for that class:
+every anchor an entry states is printed here by searching the pinned AOSP
+`ResourceTypes.h` bytes for the symbol, so the entry can embed the derivation as
+a command whose output the registered gate (`corpus/check_embedded_outputs.py`)
+re-checks verbatim.
+
+Round-69 extension adds `RES_XML_FIRST_CHUNK_TYPE` (:244), the enum-block bounds
+(:237 open, :263 close) and each cited enum's value, so the output covers every
+line number and value the C05 v4 candidate states (20 lines).
 
 The snapshot it reads is committed at `corpus/snapshots/ResourceTypes.h`, a
 byte-exact copy of the lane's pinned snapshot
@@ -26,6 +32,7 @@ Usage (cwd = lane root):
 Read-only: it reads one file in this repository and writes nothing.
 """
 import hashlib
+import re
 import sys
 from pathlib import Path
 
@@ -45,6 +52,7 @@ STRUCTS = (
 ENUMS = (
     "RES_STRING_POOL_TYPE",
     "RES_XML_TYPE",
+    "RES_XML_FIRST_CHUNK_TYPE",
     "RES_XML_START_NAMESPACE_TYPE",
     "RES_XML_END_NAMESPACE_TYPE",
     "RES_XML_START_ELEMENT_TYPE",
@@ -54,6 +62,8 @@ ENUMS = (
 
 COMMENT_TEXT = "Byte offset from the start of this structure where the attributes start"
 COMMENT_FIELD = "uint16_t attributeStart;"
+
+VALUE_RE = re.compile(r"=\s*(0x[0-9a-fA-F]+)\s*,")
 
 
 def fail(msg):
@@ -68,6 +78,24 @@ def find_unique(lines, predicate, what):
     if len(hits) > 1:
         fail(f"{what}: ambiguous ({len(hits)} hits at {hits})")
     return hits[0]
+
+
+def enum_block_bounds(lines):
+    """Return (open_line, close_line) of the chunk-type enum block.
+
+    The block is the `enum {` line whose OWN body (up to its first `};`)
+    contains `RES_NULL_TYPE`; its close is that first `};`.
+    """
+    open_hits = [i for i, line in enumerate(lines) if line.strip() == "enum {"]
+    for i in open_hits:
+        span = []
+        for l in lines[i + 1:]:
+            if l.strip() == "};":
+                break
+            span.append(l)
+        if any(l.strip().startswith("RES_NULL_TYPE") for l in span):
+            return i + 1, i + 1 + len(span) + 1
+    fail("enum block open: no block containing RES_NULL_TYPE found")
 
 
 def main():
@@ -86,10 +114,15 @@ def main():
         line = find_unique(lines, lambda l, n=name: l.strip() == f"struct {n}",
                            f"struct {name}")
         out.append(f"struct {name} : {line}")
+    open_line, close_line = enum_block_bounds(lines)
+    out.append(f"enum block open : {open_line}")
     for name in ENUMS:
         line = find_unique(lines, lambda l, n=name: l.strip().startswith(n + " "),
                            f"enum {name}")
-        out.append(f"enum {name} : {line}")
+        m = VALUE_RE.search(lines[line - 1])
+        value = m.group(1) if m else "?"
+        out.append(f"enum {name} : {line} = {value}")
+    out.append(f"enum block close : {close_line}")
     comment = find_unique(lines, lambda l: COMMENT_TEXT in l, "attributeStart comment")
     field = find_unique(lines, lambda l: l.strip() == COMMENT_FIELD, "attributeStart field")
     out.append(f"comment attributeStart : {comment}")
