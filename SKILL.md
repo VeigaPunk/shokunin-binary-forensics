@@ -28,9 +28,11 @@ boundaries"):
   the exact bytes it hashed (Q09; S005, S006, S015).
 - **No generalization.** A finding is scoped to the observed family, operation, version
   and input (Q10). One authored fixture never supports a general format claim.
-- **No gate registry.** No verifier here is a registered gate; a green `--self-test` is
-  replay evidence, not admission (`corpus/README.md` "Known gaps"; `SCORECARD.md` rubric
-  boundaries). This SKILL is checklist work and claims no new capability.
+- **Registry is the only admission instrument.** §Gate registry below registers exactly one
+  committed gate (`check_embedded_outputs`, kind `gate`); the ten `verify_*.py` scripts and every
+  other self-test are replay evidence, not admission, and a green `--self-test` is not a verdict
+  (`corpus/README.md` "Known gaps"; `SCORECARD.md` rubric boundaries). This SKILL is checklist work
+  and claims no new capability.
 - **Manual stays labeled manual.** A byte readout done by hand is labeled manual and is
   not credited to a tool (Q04, Q11).
 
@@ -181,15 +183,25 @@ The counter is a measurement instrument, not the gate (M34).
   unless the discrepancy is reported), `C05_REJECTED_MARKED`,
   `README_TOKEN_LEGEND_MISMATCH` (0 at the round-66 base; `1` at the round-64
   base — the M36 fix landed), `F_COVERAGE`/`F_FAMILIES`,
-  `C2_*`, `C3_*`, `C4_*`, `C5_*`, `C6_*`,
+  `C2_*`, `C3_*`, `C4_*`, `C5_*`, `C6_*`, `C7_*` (`C7_GATE_PRESENT`,
+  `C7_SELFTEST`, `C7_CONTROL_PASS`, `C7_MUTANT_KILLED`,
+  `C7_MUTANT_KILLED_ATTRIBUTED`, `C7_NEG_SPOOF_KILLED`,
+  `C7_NEG_SPOOF_KILLED_ATTRIBUTED`, `C7_RED_ON_R65_CANDIDATE`, `C7_V2_CLEAN`,
+  `C7_V3_CLEAN`),
   `STRICT_REJECT_WINDOW_SELFTEST`, `FRESH_ROWS`, `HOLDS_OK`, `HOLDS_OK_V2`,
-  `HOLDS_OK_V3`, `HOLDS_OK_V4`.
+  `HOLDS_OK_V3`, `HOLDS_OK_V4`, `HOLDS_OK_V5`, `HOLDS_OK_V6`.
 - Exit codes (the script's own tail): `0` = `HOLDS_OK` yes, `1` = holds not met,
   `2` = could not evaluate. `HOLDS_OK_V2` substitutes the attributed counts and
   also requires `README_TOKEN_LEGEND_MISMATCH == 0`; `HOLDS_OK_V3` = V2 ∧ C5
   attributed 2/2 ∧ window selftest pass; `HOLDS_OK_V4` = V3 ∧ C6 attributed
-  4/4. The V-labels are diagnostics, **not** folded into the exit code — read
-  them explicitly.
+  4/4; `HOLDS_OK_V5` = V4 ∧ every `C7_*` target (including the attributed kill
+  and the negative spoof pair); `HOLDS_OK_V6` = V5 ∧ the C7 negative control ∧
+  `C7_V3_CLEAN`. **Coupling to declare when reading V6:** it folds in the
+  round-68 C05 candidate's verdict, so a C2 artifact defect can force V6 `no`
+  even when the gate itself is sound (seat `R68CriticSeparability`; the
+  round-68 claims' "neither counter reads the other's artifact" is false in
+  both directions — routed). The V-labels are diagnostics, **not** folded into
+  the exit code — read them explicitly.
 - Red-before is part of the instruction: `reports/round-66/measure-before.log`
   shows a do-nothing base meeting no target (`K_HELD 8/14`, `K_ROW C05
   status=frontier`, `C05_REJECTED_MARKED=no`, `C6_* 0/4`,
@@ -264,13 +276,13 @@ a rejected candidate keeps every byte except its `admission-status:` line.
 | name | `check_embedded_outputs` |
 | kind | gate (committed, re-runnable verdict script this lane owns) |
 | entry command | `python3 -B corpus/check_embedded_outputs.py --entry <knowledge.md>` (cwd = lane root) |
-| verdict map | `0` clean (≥1 block checked, every embedded output line verbatim) · `1` failed (drift: an embedded output line the entry's own command does not print) · `2` could-not-evaluate (no `$ cmd` blocks / unsupported command / read failure) |
-| self-test | `python3 -B corpus/check_embedded_outputs.py --self-test` (spelling `--self-test`; hermetic temp trees; asserts clean+full-run exit 0 and drifted-caught — the drifted-case `require` at `_self_test` carries the frozen-mutant kill; **correction 2026-10-24 (r67 adjudication):** the trailing forged-drift control's marker `drifted entry output accepted` is structurally shadowed by that earlier require and can never fire — seats `R67ReviewC7Gate`/`R67MutC7Kill`/`R67CriticC7Claim`; recorded limitation, reorder fix routed) |
-| pinned-value path | red snapshot `corpus/knowledge/round-65-apk-axml-byte-evidence.md` sha256 `cf42cc2059e454027685a59a2a35a190f6ba981f95645f41e407c47c01c4d05a` — expected verdict over these committed bytes: exit 1 naming entry:41 (the M39 drift); the bytes are the round-66-tip bytes, unchanged since |
-| measured-against | round-67 frozen counter `reports/round-67/measure.py` labels `C7_*` (sha256 `7933c060…bc07e`, pinned in `reports/round-67/claims.md`) |
+| verdict map | `0` clean (≥1 block checked, every embedded output line verbatim) · `1` failed (two finding kinds: `drift entry:N …` — an embedded output line the entry's own command does not print — and `drift entry:N command exited RC`) · `2` could-not-evaluate (no `$ cmd` blocks / unsupported command) · `64` usage (no arguments or an unrecognised form; PROTOCOL §Gate standard requires it declared) |
+| self-test | `python3 -B corpus/check_embedded_outputs.py --self-test` (spelling `--self-test`; hermetic temp trees; asserts clean+full-run exit 0 and that the drifted case is caught). **Rewritten 2026-10-25 from the after-run (r68 adjudication, repair D2/M46):** the drifted case is an `if not caught:` branch (`corpus/check_embedded_outputs.py:140-146`) that prints `self-test: drifted entry not caught`, then the marker `drifted entry output accepted` **as the last line**, then exits 1 — so the frozen mutant (the verbatim comparison removed) is killed *and attributed*: measured `C7_MUTANT_KILLED_ATTRIBUTED=1/1` against `0/1` at base. The negative control (same mutant plus `MARKER = "…(spoofed)"`) is killed but **not** attributed (`C7_NEG_SPOOF_KILLED=1/1`, `C7_NEG_SPOOF_KILLED_ATTRIBUTED=0/1`), so the attribution rule cannot be satisfied by any non-zero exit. **Named limitation, not closed:** the drift fixture quotes a single line, so a *weakened* comparison (`drift(lines[:1], …)`) still passes the self-test (seat `R68CriticC7Surface`); a two-line partial-drift fixture is routed |
+| pinned-value path | red snapshot `corpus/knowledge/round-65-apk-axml-byte-evidence.md` sha256 `cf42cc2059e454027685a59a2a35a190f6ba981f95645f41e407c47c01c4d05a` — expected verdict over these committed bytes: exit 1 naming entry:41 (the M39 drift); the bytes are the round-66-tip bytes, unchanged since. **Pin status: `unpinned (legacy)`** — the gate holds no digest of this file, so an edited snapshot reads as a compared verdict instead of `snapshot_tampered` (seat `R68ReviewSkillRegistry`; in-gate verification is routed, not claimed) |
+| measured-against | round-68 frozen counter `reports/round-68/measure.py` labels `C7_*` (sha256 `0de4eb6f34bdb906fb69fdd173aaac9bcef629e6ff1d4c67f5ba8c91093f7766`, pinned in `reports/round-68/claims.md`): `C7_MUTANT_KILLED_ATTRIBUTED=1/1`, `C7_NEG_SPOOF_KILLED=1/1`, `C7_NEG_SPOOF_KILLED_ATTRIBUTED=0/1`, `HOLDS_OK_V5=yes`, `HOLDS_OK_V6=yes` (`reports/round-68/measure-after.log`) |
 | write scope | read-only over the lane tree; runs the entry's declared commands (argv list, no shell, `python3` first token only); writes nothing outside its own temp dirs |
 | owner | revenger |
-| family note | deliberately OUTSIDE the `verify_*.py` replay family: the ten-verifier census and `HOLD_REPLAY=10/10` denominator are frozen and this probe does not join them (claims.md §C2) |
+| family note | deliberately OUTSIDE the `verify_*.py` replay family: the ten-verifier census and `HOLD_REPLAY=10/10` denominator are frozen and this gate does not join them (claims.md §C2) |
 
 ## 7. Cited sources — existence-checked
 

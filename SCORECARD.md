@@ -507,3 +507,47 @@ Quarantine (item 10, wave-4): 26/26 verdicts — 4 PRESENT (register wrong), 19 
 (fabrication-class confirms), 1 UNREACHABLE, 2 UNVERIFIED-REACHABLE; adoption closed; 0 package
 rows/entries appended or copied.
 
+## Round 68 (hyaku, attempt 2) — C1 verified, C2 falsified on five wave criteria
+
+Pre-registration `f505526f7ecf4ac1ad51d99aa2d1dd5c57c0bae0` (claims, frozen counter
+`reports/round-68/measure.py` sha256 `0de4eb6f…93f7766`, red-before receipt on base
+`f165908aaffcf14798de53405fe788986bd33ff9`); build `4232235723cf8d4731a1e7e78ca098b8af953a57`;
+ONE validated v2 wave of exactly 64 seats (attack 46/64 = 71.9 %), dispatched in one call; final
+measured tip in `reports/round-68/measure-after.log`.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| calibration — C7 attribution (C8) | `C7_MUTANT_KILLED_ATTRIBUTED` **0/1 → 1/1**; `HOLDS_OK_V5`/`V6` **no → yes**; negative spoof pair `1/1` / `0/1` at both ends; counter exit 0 | `python3 -B reports/round-68/measure.py TREE` over `git archive <commit> corpus` | `f165908` → final tip | **improved, C1 met** — with the named instrument caveat: two critics show the predicate is satisfiable by a non-detecting gate (`R68CriticC7Claim`, `R68CriticClaimsC1`); behavioural legs on the landed gate were run by `R68MutC7Entry`/`R68MutC7Kill`/`R68MutC7Spoof`, and counter-side behavioural legs are routed |
+| coverage — knowledge-map ground K | `K_HELD_BACKED` 8/14 → 8/14; `K_ROW C05` `uncovered` → `uncovered`; `C05_SINGLE_V3` no → no; `HOLDS_C2_V3` no → no | same probe | same | **C2 FALSIFIED — honest stop**: wave decisions Q04, Q05, Q07, Q11, Q13 FAIL on the landed v3 bytes; kill rule executed (row unchanged, entry `admission-status: rejected`, every other byte kept) |
+| coverage — selected-family presence F | 5/8 → 5/8 (`6.2`) | same probe (`F_COVERAGE`) | same | unchanged |
+| calibration — C2–C6 receipt guards | 2/2 · 2/2 · 2/2 · 2/2 · 4/4 → same | same probe | same | unchanged hold |
+| calibration — selected runnability + replay | 4/4, 10/10 → same | same probe (`HOLD_*`) | same | unchanged hold |
+| freshness — stored-assertion proxy | 18/18 → 18/18 | same probe (`FRESH_ROWS`) | same | unchanged hold |
+| diagnostics | `README_TOKEN_LEGEND_MISMATCH` 0; STRICT window selftest pass; `C05_REJECTED_MARKED=yes` | same probe | same | unchanged |
+| depth / operability / adjacency | no claim | `R68ConnectorOverlap`, `R68SentinelScope` | — | unchanged (ADJ-06 contest named, reported-not-absorbed) |
+
+The v3 candidate passes Q01, Q02, Q03, Q06, Q09, Q10, Q12 and fails Q04/Q05/Q07/Q11/Q13, all on one
+root: item 11's claim that the derivation script prints *every* stated S038 line number, while `:237`
+and `:244` are stated and never printed, item 5's widths are a Python literal presented as derived,
+and item 9's namespace-resolution sentence is ungrounded. The C05 row therefore stays `uncovered`,
+`corpus/README.md` is byte-unchanged, and the repair set is routed as one bundle
+(`corpus/lessons/round-68.md` §Routed forward item 6).
+
+Capabilities: none added (the gate repair strengthens an existing registered gate; Q14 is an
+admission criterion, not a capability). SHONEN box 1 keeps its `[~]`-with-outside-verifier state —
+`R68ReviewSkillRefresh` is lane-dispatched and says so. Mistakes mined: **M46** (landing/registry
+drift — the SKILL gate row asserted the r67 limitation after the r68 repair; fixed from the
+after-run, shown able to fail against `C7_MUTANT_KILLED_ATTRIBUTED=1/1`), **M47** (prose hex/ASCII
+length drift at entry:46; fix = new criterion Q14, shown to flag that line and pass the admitted
+round-63 line 97). Sources: rows 45 → 46 (S046), `S046 used-by` `—` → the round-68 entry; census
+exit 0 both ends, the round-start `W03` gone at round end. Quarantine (item 10): `Assimilation:
+none` — frozen-claim round; the re-derived slice is still 26 rows and stays closed. considerthese:
+`2026-10-24.md` proposal 1 landed as Q14.
+
+**planned:** the next coverage round re-gates C05 with the routed repair bundle: extend
+`derive_axml_anchors.py` (`RES_XML_FIRST_CHUNK_TYPE`, enum block bounds, enum values) and re-embed
+item 11 to 19+ lines, label item 5's widths manual, bound item 11's credit, drop "framework", fix
+item 9's namespace sentence, add S032/S034 `source:` lines and pin `generator.py` — all in one
+commit, then re-gate. Calibration side: give the frozen counter a behavioural (non-marker) C7 leg,
+drop `c7_v3_clean` from `HOLDS_OK_V6`, and close the kill rules over every mechanical conjunct.
+
