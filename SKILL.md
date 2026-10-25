@@ -257,6 +257,21 @@ C4 2/2, C5 2/2, C6 4/4 after landing); `HOLD_CALIBRATION` < 4/4;
 candidates, counterexamples and round-63/65 evidence stay byte-preserved —
 a rejected candidate keeps every byte except its `admission-status:` line.
 
+## Gate registry (registry home; PROTOCOL.md §Gate standard)
+
+| field | value |
+|---|---|
+| name | `check_embedded_outputs` |
+| kind | gate (committed, re-runnable verdict script this lane owns) |
+| entry command | `python3 -B corpus/check_embedded_outputs.py --entry <knowledge.md>` (cwd = lane root) |
+| verdict map | `0` clean (≥1 block checked, every embedded output line verbatim) · `1` failed (drift: an embedded output line the entry's own command does not print) · `2` could-not-evaluate (no `$ cmd` blocks / unsupported command / read failure) |
+| self-test | `python3 -B corpus/check_embedded_outputs.py --self-test` (spelling `--self-test`; hermetic temp trees; asserts clean+full-run exit 0, drifted caught, and the forged-drift control fires with attributed marker `drifted entry output accepted`) |
+| pinned-value path | red snapshot `corpus/knowledge/round-65-apk-axml-byte-evidence.md` sha256 `cf42cc2059e454027685a59a2a35a190f6ba981f95645f41e407c47c01c4d05a` — expected verdict over these committed bytes: exit 1 naming entry:41 (the M39 drift); the bytes are the round-66-tip bytes, unchanged since |
+| measured-against | round-67 frozen counter `reports/round-67/measure.py` labels `C7_*` (sha256 `7933c060…bc07e`, pinned in `reports/round-67/claims.md`) |
+| write scope | read-only over the lane tree; runs the entry's declared commands (argv list, no shell, `python3` first token only); writes nothing outside its own temp dirs |
+| owner | revenger |
+| family note | deliberately OUTSIDE the `verify_*.py` replay family: the ten-verifier census and `HOLD_REPLAY=10/10` denominator are frozen and this probe does not join them (claims.md §C2) |
+
 ## 7. Cited sources — existence-checked
 
 | citation | exists at | credited for |
@@ -314,6 +329,12 @@ a rejected candidate keeps every byte except its `admission-status:` line.
 | S042 | `corpus/SOURCES.md` (round-65 wave corpus) | the named fresh-seat gate decisions |
 | S043 | `corpus/SOURCES.md` (supersedes S039) | corrected REA Android route-scope anchor (lines 7-8) |
 | S044 | `corpus/SOURCES.md` (supersedes S040) | corrected zipfile-docs title (3.15.1), queued |
+| S045 | `corpus/SOURCES.md` (AOSP DEX format spec, opened 2026-10-24, snapshot `.ufo/waves/round-67/source-snapshots/dex-format.html`) | dex declared-header field semantics for the round-67 C05 v2 candidate (item 9) |
+| `corpus/knowledge/round-67-apk-axml-byte-evidence.md` | corpus/knowledge/ | round-67 C05 **candidate** — the r66-routed text-level repairs; admission decided by the dispatched wave, never cited as held while `admission-status: candidate` |
+| `corpus/check_embedded_outputs.py` | corpus/ | registered gate (see §Gate registry): embedded-output verbatim drift check, the M39 fix shape |
+| `reports/round-67/claims.md` | reports/round-67/ | C1 either-way order + C2/C7 fix shape, frozen counter, void conditions |
+| `reports/round-67/measure.py` | reports/round-67/ | frozen counter (sha256 `7933c060db4d9b8db889830e2e0b6e1da1724d94854201aac9552e2a49cbc07e`) |
+| `reports/round-67/measure-before.log` | reports/round-67/ | red-before receipt (K 8/14, C7 0/no, HOLDS_OK_V5=no, exit 0) |
 
 S-ids are cited from `corpus/SOURCES.md`; no URL is restated here, so no citation can
 drift from the registry. Knowledge entries are cited by repo-relative path, not by claim.
