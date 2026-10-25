@@ -1,0 +1,47 @@
+# after: frozen counters on the committed tip (git archive ca6a1ff04950bc4a9b5fa66dcf782fc7a43ed7e3 corpus SHONEN.md SCORECARD.md SKILL.md)
+$ python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-70/measure.py <tree>
+K_HELD_BACKED=8/14 score=5.7
+K_HELD_BACKED_STRICT=8/14
+C05_STATUS=uncovered
+C05_KNOWLEDGE_COLUMN=-
+C05_SINGLE_V5=no
+V5_ENTRY_PRESENT=yes
+V5_ADMITTED_MARKED=no
+C1_GATE=checked_blocks=24 problems=0 exit=0 ok=yes
+C1_LINT=LINT_QMAP=1 ['Q16']; LINT_Q14=0; LINT_Q15=0; LINT_HEADER=0 exit=1
+HOLDS_C1_V5=no
+SM1=0
+SM2=0
+SM3=0
+SM4=0
+SM5=0
+SM6=0
+SELF_MISMATCH=0 exit=0
+SELF_CLEAN_FIXTURE=0
+SELF_MUTANTS_KILLED=6/6
+SHONEN_BOX_COUNT=4
+README_ROWS=14
+HOLDS_C2_V5=yes
+EMB_R65=checked_blocks=15 problems=1 exit=1
+EMB_R67=checked_blocks=16 problems=0 exit=0
+EMB_R68=checked_blocks=17 problems=0 exit=0
+EMB_R69=checked_blocks=17 problems=0 exit=0
+EMB_PINNED_SCRIPT_IS_S046=yes
+EMB_R68_BYTES_UNCHANGED=yes
+EMB_R65_BYTES_UNCHANGED=yes
+EMB_PIN_MUTANT_KILLED_ATTRIBUTED=1/1
+HOLDS_C3_V1=yes
+HOLD_REPLAY=10/10
+GATE_SELFTEST=exit 0
+F_COVERAGE=5/8 score=6.2
+FRESH_ROWS=18/18
+HOLDS_OK_V7=yes
+EXIT=0
+$ python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-70/measure-a1.py <tree>
+A1_C1_DETAIL=distinct_commands=24 scripts_allowlisted=True readout_lines=15/15 source_rows_tier_a=7/7
+A1_C2_DETAIL=base_vector=yes clean_variant=yes defect_variants=6/6
+A1_C3_DETAIL=binds_s046=yes script_digest=yes script_prints_17_lines=yes
+A1_C1=yes
+A1_C2=yes
+A1_C3=yes
+EXIT=0
