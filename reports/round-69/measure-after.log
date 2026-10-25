@@ -1,0 +1,82 @@
+# --- round-69 after receipt (pinned instrument; adjudicated + disposition tip) ---
+final measured commit: 579bb6e2948539f9177b9542f618f5d6f0d22732
+base commit: 222a7a702529fb60598633ebdf5e1442007bc15d (lane branch tip at declaration)
+counter: reports/round-69/measure.py sha256 bca74e6d8b5010aee79886521474f072257ee22ec7ccc24e4186666bdc048377
+         (never edited after pre-registration; R69CounterIntegrity: one blob across e1d22ca..HEAD)
+command: T=$(mktemp -d /tmp/rev-r69-reg-XXXX)
+         git archive 579bb6e2948539f9177b9542f618f5d6f0d22732 corpus | tar -x -C "$T"
+         cd / && TMPDIR=/tmp/revenger-r69-reg-tmp python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-69/measure.py "$T"
+counter exit code: 1
+
+VERDICT OF THE REGISTERED MEASUREMENT: the frozen counter CRASHES on the adjudicated tree. Its exit 1
+is NOT 'a hold failed' — it is an uncaught NameError raised before every C7_*, Q15_* and HOLDS_OK*
+label. Reported as measured; deliberately not repaired in-revision (claims.md:167 freezes the
+instrument; patching it after seats scored would be the post-scoring change kumitate r42 forbids).
+
+--- registered run: stdout (22 lines, then the traceback) ---
+K_HELD=8/14 score=5.7
+K_ROW C05 status=uncovered
+K_ROW C07 status=held
+K_HELD_BACKED=8/14
+C05_REJECTED_MARKED=yes
+K_HELD_BACKED_STRICT=8/14
+C05_KNOWLEDGE_COLUMN=-
+C05_SINGLE_V2=no
+C05_SINGLE_V3=no
+C05_SINGLE_V4=no
+STRICT_REJECT_WINDOW_SELFTEST=pass old_window_miss=True
+SAVED_RECORDS=59
+ROW_OPS={'C03': ['inspect_managed_artifact'], 'C05': ['inspect_android_package'], 'C07': ['inspect_firmware_regions'], 'C08': ['capture_browser_scenario', 'inspect_web_page', 'observe_web_session']}
+README_TOKEN_LEGEND_MISMATCH=0 rows=[]
+C05_STATUS=uncovered
+HOLDS_C2_V3=no
+HOLDS_C2_V4=no
+{'analyze_javascript_application': 6, 'compare_application_versions': 1, 'compare_javascript_export_shapes': 3, 'extract_artifact': 2, 'inspect_analysis_view': 1, 'inspect_artifact': 4, 'inspect_evm_interface': 7, 'inspect_firmware_regions': 1, 'inspect_pe_resources': 30, 'trace_application_feature': 2, 'trace_javascript_semantics': 2}
+F_COVERAGE=5/8 score=6.2
+F_FAMILIES=['native-static', 'javascript', 'archives', 'firmware', 'evm']
+FRESH_ROWS=18/18
+Q15_PRESENT=yes
+--- registered run: stderr ---
+Traceback (most recent call last):
+  File "/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-69/measure.py", line 158, in <module>
+    rc, last = run(TREE, "q15_tree_id_check.py", "--self-test")
+               ^^^
+NameError: name 'run' is not defined
+
+--- DIAGNOSTIC ONLY (not the registered measurement) ---
+One mechanical relocation of the pinned counter: the four-line 'def run' helper moved above its first
+use (+67 bytes of comment/layout, helper bytes unchanged), run on a tree archived as
+  git archive 579bb6e2948539f9177b9542f618f5d6f0d22732 corpus reports/round-69
+so the D1 fixture is inside the tree. Nothing else changed. The registered receipt above remains the
+round's measurement; these values are disclosure, not scoring.
+
+DIAGNOSTIC_EXIT=0
+K_HELD_BACKED=8/14
+K_HELD_BACKED_STRICT=8/14
+C05_STATUS=uncovered
+HOLDS_C2_V4=no
+Q15_PRESENT=yes
+Q15_SELFTEST=pass :: Q15_SELFTEST=pass (true sentence verified; false sentence killed)
+Q15_FALSE_KILLED=yes exit=1 :: Q15_FALSE_KILLED: all false-sentence pairs failed (defect receipt)
+Q15_RESTATE_OK=yes exit=0 :: Q15_RESTATE_OK=yes (every restatement pair re-derived; false-sentence pair killed)
+C7_V3_CLEAN=no exit=1 :: checked_blocks=17 problems=7
+C7_V4_CLEAN=yes exit=0 :: checked_blocks=17 problems=0
+HOLD_CALIBRATION=4/4
+HOLD_REPLAY=10/10
+HOLDS_OK=yes
+HOLDS_OK_V2=yes
+HOLDS_OK_V3=yes
+HOLDS_OK_V4=yes
+HOLDS_OK_V5=yes
+HOLDS_OK_V6=no
+
+--- reading (honest labels) ---
+C2: all four Q15 labels would read at target under a hoisted-run counter, so the criterion row and
+the checker are real work; the CLAIM is falsified because its own kill rule reads a label the pinned
+instrument cannot print at all. Do not quote these four values as the claim's measurement.
+C1: the coverage labels are unchanged and the target is unmet (K_HELD_BACKED 8/14, C05 uncovered,
+HOLDS_C2_V4 no) — the C05 row was never flipped, by design on the kill branch; the wave's Q FAILs,
+not a counter label, are what falsify C1.
+HOLDS_OK_V6=no is the build's own void trigger: C7_V3_CLEAN yes -> no because the in-place derivation
+extension reformatted seven enum lines the retained round-68 candidate embeds verbatim
+(R69HoldSweep, R69CriticClaimsC1); that candidate's own bytes are unchanged.
