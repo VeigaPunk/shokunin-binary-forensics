@@ -1,0 +1,8 @@
+{
+  "round-68-apk-axml-byte-evidence.md": {
+    "corpus/derive_axml_anchors.py": {
+      "use": "corpus/derive_axml_anchors_r68.py",
+      "sha256": "bce497d6c0f5767fd7a94f7d9f6a7adb3d70f9df656028a8d080e050d1f1e249"
+    }
+  }
+}

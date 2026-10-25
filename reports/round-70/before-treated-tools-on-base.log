@@ -1,0 +1,14 @@
+# C2 before value: the round-70 checker (uncommitted scratch bytes at pre-registration) run against the base tree
+$ python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/self_assessment_check.py --root <base-tree> --lane /home/vgpnk/Projects/shokunin/revenger-shokunin
+SM1=1
+SM2=4
+SM3=2
+SM4=1
+SM5=1
+SM6=0
+SELF_MISMATCH=9
+EXIT=1
+# tool self-tests
+SELFTEST OK: clean 0; six planted defects each scored exactly their class; erratum excuses only a resolving correction
+SELFTEST OK: clean 0; four planted defects each scored exactly their class; truncated-run-with-count flagged
+SELFTEST OK: clean exit 0, full-run exit 0, drifted caught, forged control fired, pinned script verified by digest

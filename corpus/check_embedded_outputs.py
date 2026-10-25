@@ -26,6 +26,7 @@ Read-only over the lane tree: it runs the entry's declared commands, which in
 this corpus are standard-library readouts; it writes nothing outside its own
 temp dirs.
 """
+import hashlib
 import json
 import shlex
 import subprocess
@@ -34,6 +35,8 @@ import tempfile
 from pathlib import Path
 
 MARKER = "drifted entry output accepted"
+PIN_MARKER = "pinned historical script digest mismatch"
+PINS_REL = "embedded_output_pins.json"
 
 
 def require(cond, msg):
@@ -80,6 +83,33 @@ def run_cmd(cmd, cwd):
     return proc, proc.stdout, proc.returncode
 
 
+def load_pins(entry_path):
+    """Round-70 C3 (freshness): a retained entry whose embedded output was printed
+    by an earlier revision of a script re-derives against that revision, pinned by
+    sha256 in corpus/embedded_output_pins.json, never against the current script.
+    Shape: {"<entry file name>": {"<script arg as written in the command>":
+    {"use": "<repo-relative path of the pinned copy>", "sha256": "<hex>"}}}."""
+    p = Path(__file__).resolve().parent / PINS_REL
+    if not p.is_file():
+        return {}
+    return json.loads(p.read_text(encoding="utf-8")).get(Path(entry_path).name, {})
+
+
+def apply_pin(cmd, pins, cwd):
+    """Return (command, problem). A pinned script is verified by digest before it
+    replaces the script argument; a digest mismatch is a problem, not a fallback."""
+    argv = shlex.split(cmd)
+    idx = next((i for i, a in enumerate(argv[1:], 1) if not a.startswith("-")), None)
+    if idx is None or argv[idx] not in pins:
+        return cmd, None
+    pin = pins[argv[idx]]
+    target = Path(cwd) / pin["use"]
+    if not target.is_file() or hashlib.sha256(target.read_bytes()).hexdigest() != pin["sha256"]:
+        return cmd, f"{PIN_MARKER}: {pin['use']}"
+    argv[idx] = pin["use"]
+    return shlex.join(argv), None
+
+
 def drift(lines, stdout_set, lineno):
     return [f"drift entry:{out_lineno} embedded output line not in recheck stdout: {l}"
             for l, out_lineno in lines if l not in stdout_set]
@@ -94,7 +124,12 @@ def evaluate(entry_path, cwd):
         return None, None
     problems = []
     checked = 0
+    pins = load_pins(entry_path)
     for cmd, lines, lineno in blocks:
+        cmd, pin_problem = apply_pin(cmd, pins, cwd)
+        if pin_problem:
+            problems.append(f"drift entry:{lineno} {pin_problem}")
+            continue
         proc, stdout, rc = run_cmd(cmd, cwd)
         if proc is None:
             return None, None
@@ -146,7 +181,19 @@ def _self_test(tmp):
     fproblems, fchecked = evaluate(full_entry, tmp)
     require(fproblems is not None and fchecked == 1 and not fproblems,
             "self-test: full-run entry not clean")
-    print("SELFTEST OK: clean exit 0, full-run exit 0, drifted caught, forged control fired")
+    old = tmp / "old_reader.py"
+    old.write_text("print('old')\n", encoding="utf-8")
+    pins = {"reader.py": {"use": "old_reader.py", "sha256": hashlib.sha256(old.read_bytes()).hexdigest()}}
+    pinned_cmd, pin_problem = apply_pin("python3 -B reader.py --fact a", pins, tmp)
+    require(pin_problem is None and pinned_cmd.split()[2] == "old_reader.py",
+            "self-test: a digest-verified pin did not replace the script argument")
+    old.write_text("print('tampered')\n", encoding="utf-8")
+    _, pin_problem = apply_pin("python3 -B reader.py --fact a", pins, tmp)
+    if not (pin_problem and pin_problem.startswith(PIN_MARKER)):
+        print("self-test: a tampered pinned script was accepted")
+        print(PIN_MARKER + " not raised")
+        sys.exit(1)
+    print("SELFTEST OK: clean exit 0, full-run exit 0, drifted caught, forged control fired, pinned script verified by digest")
 
 
 def main():

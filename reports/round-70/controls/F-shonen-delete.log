@@ -1,0 +1,40 @@
+# control F-shonen-delete: C2: treated tools, SHONEN boxes deleted instead of corrected
+# base 3f5edbc206351232a3d2d801334dd930499ccaf5
+$ python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-70/measure.py <tree>
+K_HELD_BACKED=8/14 score=5.7
+K_HELD_BACKED_STRICT=8/14
+C05_STATUS=uncovered
+C05_KNOWLEDGE_COLUMN=-
+C05_SINGLE_V5=no
+V5_ENTRY_PRESENT=no
+V5_ADMITTED_MARKED=no
+C1_GATE=n/a (no v5 entry or no gate)
+C1_LINT=n/a (no v5 entry or no lint)
+HOLDS_C1_V5=no
+SM1=1
+SM2=7
+SM3=0
+SM4=0
+SM5=1
+SM6=0
+SELF_MISMATCH=9 exit=1
+SELF_CLEAN_FIXTURE=0
+SELF_MUTANTS_KILLED=6/6
+SHONEN_BOX_COUNT=0
+README_ROWS=14
+HOLDS_C2_V5=no
+EMB_R65=checked_blocks=15 problems=1 exit=1
+EMB_R67=checked_blocks=16 problems=0 exit=0
+EMB_R68=checked_blocks=17 problems=0 exit=0
+EMB_R69=checked_blocks=17 problems=0 exit=0
+EMB_PINNED_SCRIPT_IS_S046=yes
+EMB_R68_BYTES_UNCHANGED=yes
+EMB_R65_BYTES_UNCHANGED=yes
+EMB_PIN_MUTANT_KILLED_ATTRIBUTED=1/1
+HOLDS_C3_V1=yes
+HOLD_REPLAY=10/10
+GATE_SELFTEST=exit 0
+F_COVERAGE=5/8 score=6.2
+FRESH_ROWS=18/18
+HOLDS_OK_V7=yes
+EXIT=0

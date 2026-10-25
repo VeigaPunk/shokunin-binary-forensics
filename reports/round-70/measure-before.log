@@ -1,0 +1,43 @@
+# red-before: frozen counter on the claim base tree (git archive 3f5edbc206351232a3d2d801334dd930499ccaf5 corpus SHONEN.md SCORECARD.md SKILL.md)
+$ python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-70/measure.py <tree>
+K_HELD_BACKED=8/14 score=5.7
+K_HELD_BACKED_STRICT=8/14
+C05_STATUS=uncovered
+C05_KNOWLEDGE_COLUMN=-
+C05_SINGLE_V5=no
+V5_ENTRY_PRESENT=no
+V5_ADMITTED_MARKED=no
+C1_GATE=n/a (no v5 entry or no gate)
+C1_LINT=n/a (no v5 entry or no lint)
+HOLDS_C1_V5=no
+SELF_MISMATCH=n/a (no checker)
+SELF_CLEAN_FIXTURE=n/a (no checker)
+SELF_MUTANTS_KILLED=n/a (no checker)
+SHONEN_BOX_COUNT=4
+README_ROWS=14
+HOLDS_C2_V5=no
+EMB_R65=checked_blocks=15 problems=1 exit=1
+EMB_R67=checked_blocks=16 problems=0 exit=0
+EMB_R68=checked_blocks=17 problems=7 exit=1
+EMB_R69=checked_blocks=17 problems=0 exit=0
+EMB_PINNED_SCRIPT_IS_S046=no
+EMB_R68_BYTES_UNCHANGED=yes
+EMB_R65_BYTES_UNCHANGED=yes
+EMB_PIN_MUTANT_KILLED_ATTRIBUTED=n/a (no pin file)
+HOLDS_C3_V1=no
+HOLD verify_evm_evidence.py exit=0 NEGATIVE REJECTED candidate destination mismatch
+HOLD verify_icon_languages.py exit=0 PASS: 3/3 group-language states, 2/2 exact one-byte deltas, two icon candidates retained, forged selection REJECTED
+HOLD verify_icon_states.py exit=0 PASS: 4/4 source-decoded states, 3/3 one-byte deltas, one forged candidate REJECTED
+HOLD verify_js_graph_delta.py exit=0 NEGATIVE REJECTED saved graph disagrees with source truth
+HOLD verify_multi_icon_states.py exit=0 PASS: 4/4 two-image states, 3/3 exact one-byte deltas, first link stable, forged second match REJECTED
+HOLD verify_named_multi_icon_states.py exit=0 PASS: 142 positive checks; 2/2 forged claims rejected (r56 candidate, r57 size). Limits: authored r55-r57 fixtures, not general PE validatio
+HOLD verify_pe_resources.py exit=0 NEGATIVE REJECTED payload relation mismatch
+HOLD verify_saved_evidence.py exit=0 NEGATIVE JS REJECTED: JS: wrong package-main mapping
+HOLD verify_semantic_trace.py exit=0 NEGATIVE REJECTED relation differs from source parent
+HOLD verify_shape_evidence.py exit=0 NEGATIVE REJECTED changed-property evidence mismatch
+HOLD_REPLAY=10/10
+GATE_SELFTEST=exit 0
+F_COVERAGE=5/8 score=6.2
+FRESH_ROWS=18/18
+HOLDS_OK_V7=yes
+EXIT=0
