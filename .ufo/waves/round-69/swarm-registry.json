@@ -1,0 +1,717 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r69-v2",
+  "createdAt": "2026-10-25T10:08:17.099Z",
+  "updatedAt": "2026-10-25T10:08:17.099Z",
+  "reportDir": ".ufo/waves/round-69",
+  "members": {
+    "R69ReviewEntryQ01": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ02": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ03": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ04": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ05": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ06": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ07": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ08": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ09": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ10": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ11": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ12": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ13": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ14": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewEntryQ15": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69HeaderCheck": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69QmapSelfCheck": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69Item1": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69Item2": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69Item3": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69Item4": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69Item6": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69Item8": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69Item9": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69Item10": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69OracleCorrespondence": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReadmeFlipCheck": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69AnchorDerive": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "operability"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69AnchorBlind": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69AnchorCritic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69DeriveCritic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69MutC7Kill": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69MutC7Spoof": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewC7Gate": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69CriticC7Claim": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69MutC7Entry": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69C7Hermetic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69CounterReplay": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69CounterIntegrity": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69HoldSweep": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69CensusReplay": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69FixtureHold": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69CorpusPathHygiene": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "operability"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69CriticClaimsC1": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69CriticClaimsC2": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69CriticSeparability": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69CriticEntryDeps": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69CriticEntryScope": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69KillRuleClosure": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69SentinelScope": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ConnectorOverlap": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage",
+        "adjacency"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69RevengerLedger": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69SpotcheckDiscern": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ReviewSourcesS047": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69QuarA": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69QuarB": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69QuarC": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69QuarD": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69LessonCheck": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69WaveContractAudit": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69MisrootSweep": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69Q15CheckerRun": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69D1RestateCheck": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    },
+    "R69ShonenBox1": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration",
+        "depth"
+      ],
+      "milestone": "C1 C05 v4 re-gate + C2 Q15 criterion as build state (README not flipped); wave: Q01-Q15, C7 holds, derivation re-runs, counter replays, quarantine hand-checks, D1-D5 audits"
+    }
+  }
+}
