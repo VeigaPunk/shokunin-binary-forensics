@@ -3,7 +3,9 @@
 knowledge entry before it is gated (M39 class — a transcribed command-output
 line that the entry's own declared command does not print).
 
-Probe, not a registered gate of the verify_* replay family: this file is
+Registered gate (SKILL.md `## Gate registry`, kind `gate`): a committed,
+re-runnable verdict script that can fail. It is deliberately OUTSIDE the
+verify_* replay family: this file is
 deliberately named outside the `verify_*.py` glob so the frozen ten-verifier
 census and HOLD_REPLAY=10/10 denominator stay untouched (reports/round-67/
 claims.md §C2). Registry row: SKILL.md §Gate registry (owner revenger).
@@ -16,7 +18,9 @@ Usage (cwd = lane root):
         Exit 0 clean (>=1 block checked) · 1 drift found · 2 could-not-evaluate.
     python3 -B corpus/check_embedded_outputs.py --self-test
         Hermetic temp-tree cases plus the in-script forged control whose
-        attributed failure marker is `drifted entry output accepted`.
+        attributed failure marker is `drifted entry output accepted` — the
+        marker is the last output line of a failed run (round-68 repair of the
+        round-67 shadowing defect M45).
 
 Read-only over the lane tree: it runs the entry's declared commands, which in
 this corpus are standard-library readouts; it writes nothing outside its own
@@ -129,21 +133,20 @@ def _self_test(tmp):
     require(problems is not None and checked == 1 and not problems,
             "self-test: clean entry not clean")
     dproblems, dchecked = evaluate(drifted_entry, tmp)
-    require(dproblems is not None and dchecked == 1 and dproblems
-            and dproblems[0].startswith("drift entry:"),
-            "self-test: drifted entry not caught")
+    # Forged control (round-68 repair of M45): the drifted case MUST be
+    # caught. If the verbatim comparison is removed (or weakened) the branch
+    # below is taken, and the attributed marker is the LAST output line, so
+    # the kill is attributable to the marker and not to some earlier require.
+    caught = (dproblems is not None and dchecked == 1 and dproblems
+              and dproblems[0].startswith("drift entry:"))
+    if not caught:
+        print("self-test: drifted entry not caught")
+        print(MARKER)
+        sys.exit(1)
     fproblems, fchecked = evaluate(full_entry, tmp)
     require(fproblems is not None and fchecked == 1 and not fproblems,
             "self-test: full-run entry not clean")
-    # In-script forged control: the drifted case MUST be caught. If the
-    # verbatim comparison is removed (or weakened), this fires with the
-    # attributed marker as the last output line.
-    require(not ok(dproblems), MARKER)
     print("SELFTEST OK: clean exit 0, full-run exit 0, drifted caught, forged control fired")
-
-
-def ok(problems):
-    return not problems
 
 
 def main():
