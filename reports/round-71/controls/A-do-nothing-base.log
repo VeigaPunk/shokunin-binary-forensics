@@ -10,7 +10,7 @@ C1_LINT=n/a
 C1_W2_Q_VOTES=0/16
 HOLDS_C1_V6=no
 C2_MISSING_ENTRY_EXIT2=0/1 rc=1 stderr_traceback=yes
-C2_TIMEOUT_EXIT2=0/1 rc=1 stderr_traceback=no
+C2_TIMEOUT_EXIT2=0/1 rc=1 stderr_traceback=yes
 C2_GATE_SELFTEST=0 named_legs=0
 HOLDS_C2_V1=no
 EMB_R65=checked_blocks=15 problems=1 exit=1

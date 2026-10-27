@@ -7,3 +7,5 @@ Red-before: reports/round-71/measure-before.log (MEASURE_EXIT=0; C1 no, C2 no; K
 Do-nothing controls: reports/round-71/controls/A-do-nothing-base.log, B-C1-readme-flip-only.log, C-C1-admitted-stub.log, D-C1-v5-copy-with-q16.log.
 Control D reaches K 9/14 with gate and lint clean but `C1_W2_Q_VOTES=0/16`, so `HOLDS_C1_V6=no`.
 Counter prints ten individual HOLD lines; counter exit contract: 0 holds green, 1 a named hold red, 2 could not evaluate.
+Pre-wave2 counter amendment A1: `reports/round-71/measure-amendment-A1.md`; claim hash unchanged (`1febae12…`), counter SHA now `fbd81050…`. Only the timeout fixture command path changed so its command runs the in-tree sleeper; C1 vote-file source/predicate, all targets and kill rules remain unchanged. This correction is made before wave-2 scoring.
+Corrected red-before after counter amendment A1: `measure-before.log` exit 0; C1 no (`K_HELD_BACKED=8/14`, `C1_W2_Q_VOTES=0/16`); C2 no (`C2_MISSING_ENTRY_EXIT2=0/1`, `C2_TIMEOUT_EXIT2=0/1`, both `stderr_traceback=yes`); `HOLD_REPLAY=10/10`, `HOLDS_OK_V8=yes`; all 10 HOLD lines present. Details and current counter SHA in `reports/round-71/measure-amendment-A1.md`.

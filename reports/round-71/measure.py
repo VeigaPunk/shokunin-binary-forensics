@@ -100,7 +100,7 @@ def body(tree,scratch):
     d=scratch/'timeout-fixture'; shutil.rmtree(d,ignore_errors=True); shutil.copytree(tree/'corpus',d/'corpus')
     (d/'corpus/sleeper_r71.py').write_text('import time\ntime.sleep(300)\n',encoding='utf-8')
     slow=d/'corpus/knowledge/round-71-timeout-probe.md'; slow.parent.mkdir(parents=True,exist_ok=True)
-    slow.write_text('```\n$ python3 -B sleeper_r71.py\nfinished\n```\n',encoding='utf-8')
+    slow.write_text('```\n$ python3 -B corpus/sleeper_r71.py\nfinished\n```\n',encoding='utf-8')
     try:
         timed=gate_cli(d,'--entry',str(slow),timeout=TIMEOUT+30)
         timeout_ok=timed.returncode==2 and 'could-not-evaluate: command timed out after 120s:' in timed.stdout and 'Traceback' not in timed.stderr
