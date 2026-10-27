@@ -1,0 +1,649 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "r72-w1",
+  "createdAt": "2026-10-27T18:16:03.333Z",
+  "updatedAt": "2026-10-27T18:16:03.333Z",
+  "reportDir": ".ufo/waves/round-72/w1",
+  "members": {
+    "CoreS054Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only source row S054 and corpus/knowledge/round-72-tool-landscape.md's S054-linked claim. Reopen the exact pinned REA README cited in the row. Verify locator, ≤25-word quote, access-date/commit evidence, tier/status/used-by, and whether entry wording stays within the repository's own stated scope. Return any specific mismatch with exact line/quote; do not broaden to other REA docs.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS055Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S055 and its linked entry text. Reopen the pinned Ghidra README identified by the row; verify its quote, locator/revision, scope, access date, status and used-by. Flag any claim beyond the project's own README (including tested capability or host readiness) with exact evidence.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS056Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S056 and its linked entry text. Reopen LaurieWired/GhidraMCP at the pinned README revision; verify the quoted feature/prerequisite and ensure the entry attributes claims only to this project, not other GhidraMCP implementations. Report a specific evidence-backed mismatch or support.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS057Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S057 and its linked entry text. Reopen mrexodia/ida-pro-mcp at its pinned README revision; verify the recommendation and scope wording, including whether the repository itself recommends the official Hex-Rays server. Do not infer use/readiness. Quote exact contradiction or support.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS058Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S058 and its linked entry text. Reopen the pinned skylot/jadx README; verify the ≤25-word source quote, locator/revision, stated role and evidence-bounded entry text. Report any overclaim or quote/row mismatch precisely.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS059Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S059 and its linked entry text. Reopen the pinned iBotPeaches/Apktool README; verify the exact quote/anchor and whether scope distinguishes its documented purpose from reverse-engineering claims not made there. Return exact evidence.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS060Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S060 and its linked entry text. Reopen the pinned frida/frida README; verify quote/anchor, tier/status/date/used-by and its stated instrumentation scope. Ensure no live-target use or tested capability is claimed.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS061Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S061 and its linked entry text. Reopen the pinned ILSpy README; check the source quote, frontend/decompiler attribution, scope and any platform claim. Flag any inference that output equals original source or was tested here.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS062Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S062 and its linked entry text. Reopen the pinned radare2 README; verify the locator, quote, documented tool scope, and bounded wording. Do not extrapolate to host availability, accuracy, or run evidence.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS063Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S063 and its linked entry text. Reopen the pinned x64dbg README; verify quote, revision/date, stated debugger scope and whether the entry avoids unsupported capability/platform claims. Return exact evidence.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS064Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S064 and its linked entry text. Reopen the pinned WerWolv/ImHex README; verify the quote/anchor and documented scope. Check that entry does not imply analysis of a target or a tool run.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS065Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S065 and its linked entry text. Reopen the pinned angr README; verify quote/locator and the stated program-analysis scope without unsupported accuracy or execution assertions. Report a concrete mismatch or support.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS066Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S066 and its linked entry text. Reopen the pinned mitmproxy README; check exact scope, quote and row metadata. Verify entry does not turn network inspection documentation into live-target activity or a run claim.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS067Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S067 and its linked entry text. Reopen the original dnSpy repository and verify archived status/date plus its own documented scope; ensure it is not represented as maintained. Cite direct repository evidence.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS068Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S068 and its linked entry text. Reopen the dnSpyEx README at the cited revision; verify scope and freshness language. The README revision is old; ensure no active-maintenance assertion exceeds evidence.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS069Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S069 and its linked entry text. Reopen the pinned Rizin README; check the quote, stated project/tool scope, revision and evidence limits. Return any exact overclaim or support.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS070Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S070 and its linked entry text. Reopen the pinned EpicGames/raddebugger README; verify its documented scope, quote/locator, date and entry's bounded wording. Do not treat upstream claims as host test results.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "CoreS073Review": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": "Review only S073 and its linked entry text. Reopen Dryxio/ReAgent at the pinned README revision; verify its own declared role and conservative-validation caveat. Ensure no claim of semantic equivalence, installed/tested status, or source reconstruction.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS074Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S074 (SnailSploit/Claude-Red) and its disposition. Reopen the repository's own landing text and compare the quoted scope with the rejection reason/flip in lesson. Is its broad offensive scope appropriate to this lane? Enforce province boundaries; do not touch another lane or infer sibling dispatch.",
+      "axes": [
+        "coverage",
+        "scope control"
+      ]
+    },
+    "SuppS075Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S075 (REA installation/setup doc). Reopen the pinned document and verify quote, access evidence, narrow scope and the explicit no-install/no-readiness treatment. Return only evidence-backed corrections.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS076Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S076 (REA guided MCP prompts). Reopen the pinned document; check the quoted untrusted-argument/authorization claim and whether its use in the knowledge entry is accurate and bounded. Do not run the MCP.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS077Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S077 (REA WASM interface-comparison spec/verification). Reopen both spec.md and verification.md in the pinned path. Confirm the feature-specific scope and first-party/self-reported nature; reject any repo-wide clean-room or independently-run claim.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS078Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S078 (pwn.college course). Reopen the assigned course page and verify the quote and toy-program-only boundary. Flag if entry or lesson turns educational exercises into authorization for real-target exploitation.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS079Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S079 (OST2 Arch1001). Reopen the exact course page and verify quote/date/prerequisites and the narrow learning-resource use. Do not claim completion or capability acquisition.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS080Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S080 (Decomperson study). Reopen USENIX source and verify quote, sample/population context and that entry does not generalize the study into a universal RE workflow or benchmark.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS081Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S081 (learned names/types paper). Reopen the paper and verify quote and exact claim about information loss; ensure entry distinguishes learned suggestions from source truth.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS082Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S082 (LLM4Decompile). Reopen the cited publication/project source and validate its quoted benchmark/model scope. Flag unsupported performance generalization or provenance claims.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS083Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S083 (AutoDecompiler). Reopen the cited source and check benchmark/task scope, quote and entry attribution. Treat reported results as the authors' claims, not independently reproduced facts.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS084Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S084 (ALT4Decompile). Reopen the cited source and verify its stated subject and quote. Check the entry does not extend one evaluated method to general decompiler quality.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS085Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S085 (prompt-injection paper). Reopen the cited paper and verify locator, quote and the threat model; ensure cited threat evidence is not miscast as proof of exploitability in this lane.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS086Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S086 (REA essay). Reopen the exact public page and verify the short quote and authorship/date. Distinguish author opinion from repository contract or independently verified capability.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS087Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S087 (REA Gems catalog). Reopen catalog and inspect its tier-C discovery-only disposition. Verify it is not presented as primary evidence or a validated tool recommendation.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS088Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S088 (Alexgaoth reverse-engineered catalog). Reopen the catalog and check row's tier/status, scope and discovery-only use. Identify any apparent tool endorsement unsupported by primary evidence.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS089Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S089 (Ghidra Book publisher page). Reopen publisher source, check bibliographic quote and evidence scope; ensure this is a book citation, not a tool-readiness or capability test.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS090Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S090 (Practical Binary Analysis publisher page). Reopen publisher source and verify book description/quote. Report any entry inference beyond the publisher's wording.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS091Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S091 (Practical Malware Analysis). Reopen the cited source, verify publication date and the exact reason for rejecting it as current procedure. Do not imply dated training content is safe or unsafe beyond evidence.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS092Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S092 (Android Malware Handbook). Reopen the source; verify publication/edition locator and narrow description. Do not claim its methods were executed or modern without evidence.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS093Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S093 (Malware Unicorn RE101). Reopen the setup instructions and test whether the rejection is grounded in source text about disabling protection/shared folders. Confirm reason+flip are specific and safety boundary is respected.",
+      "axes": [
+        "coverage",
+        "scope control"
+      ]
+    },
+    "SuppS094Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S094 (OWASP MASTG). Reopen the pinned project README; verify the quote and that entry uses it only as a mobile security testing/reverse-engineering reference, not an endorsement of live testing.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "SuppS095Critic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": "Critique only S095 (REA agent-environment spec index). Reopen the pinned docs/specs/agent-environments/README.md and verify it is an index of feature-specific contracts, not a general clean-room/source-reconstruction protocol. Check locator/URL and quoted claim.",
+      "axes": [
+        "coverage",
+        "source accuracy"
+      ]
+    },
+    "MutMissingCitation": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": "Attack the frozen C15 counter with an isolated mutation: remove exactly one REQUIRED source citation from a copy of the entry in a synthetic extracted tree under your seat scratch. Run the unchanged frozen measure.py on that copy. Does it fail the 18/18 target? Record command/output and remove scratch. Do not change the committed counter or real corpus.",
+      "axes": [
+        "coverage",
+        "counter robustness"
+      ]
+    },
+    "MutRowStatus": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": "Attack the frozen C15 counter with an isolated mutation: change one required row's status from mined to rejected in a synthetic tree under your seat scratch. Run unchanged measure.py. Report whether the row count falls and exact output; no production writes.",
+      "axes": [
+        "coverage",
+        "counter robustness"
+      ]
+    },
+    "MutWrongTier": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": "Attack the frozen C15 counter with an isolated mutation: change one required source row tier A to C in a synthetic extracted tree. Run unchanged measure.py and report whether it rejects the row, with output. Do not modify production files.",
+      "axes": [
+        "coverage",
+        "counter robustness"
+      ]
+    },
+    "MutWrongKind": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": "Attack the frozen C15 counter with an isolated mutation: change one required source row kind from tool to docs. Run unchanged measure.py on your scratch tree and report exact output and whether counter detects it.",
+      "axes": [
+        "coverage",
+        "counter robustness"
+      ]
+    },
+    "MutUsedByMismatch": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": "Attack the frozen counter: change one REQUIRED row's used-by cell so it no longer names the C15 entry, in a synthetic tree. Run unchanged measure.py; report whether predicate detects mismatch. Preserve frozen bytes and remove scratch.",
+      "axes": [
+        "coverage",
+        "counter robustness"
+      ]
+    },
+    "MutEntryAbsent": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": "Attack the frozen counter: remove the C15 knowledge entry from an isolated synthetic tree, leave registry/README unchanged, and run measure.py. Record result and whether it correctly returns zero; clean scratch on exit.",
+      "axes": [
+        "coverage",
+        "counter robustness"
+      ]
+    },
+    "MutDuplicateId": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": "Attack the frozen counter's registry parser using a synthetic duplicate row for one required source ID with conflicting metadata. Use only a scratch copy; report which duplicate wins and whether this can overstate coverage. Do not revise the frozen predicate; identify only a material falsifier.",
+      "axes": [
+        "coverage",
+        "counter robustness"
+      ]
+    },
+    "MutMalformedPipes": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": "Attack the frozen counter using a malformed/extra-pipe copy of one required registry row in a scratch tree. Determine whether its 11-cell parser skips the malformed row or can still count it. Report exact result; remove scratch.",
+      "axes": [
+        "coverage",
+        "counter robustness"
+      ]
+    },
+    "ExecBaseCounter": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": "Run the exact frozen C15 measure.py against the frozen base tree at /fast/scratch/hyaku/revenger-r72/L1/base (if the base tree exists; otherwise stop and report blocker). Capture command, all output, exit status and exact tree/commit provenance. Do not mutate any tree.",
+      "axes": [
+        "coverage",
+        "measurement"
+      ]
+    },
+    "ExecStatusControl": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": "Run frozen measure.py against the frozen base tree with --control-status-flip-only. Capture exact command/output/exit code and check that this do-nothing status-only control does not meet 1/1 or 18/18. Report if it does.",
+      "axes": [
+        "coverage",
+        "control validity"
+      ]
+    },
+    "ExecCensusFinal": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": "Independently run the documented sources-census validate command against the current revenger lane working tree and count source rows using grep -cE '^\\|[[:space:]]*S[0-9]{3,}[[:space:]]*\\|' corpus/SOURCES.md. Capture exact output/exit codes and distinguish known W01/W04 warnings from E findings. Read-only only.",
+      "axes": [
+        "coverage",
+        "registry conformance"
+      ]
+    },
+    "ExecQuoteCount": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": "Write no files: inspect corpus/lessons/round-72.md ## Gate and independently count each new row's located quote word count, checking ≤25 words for S054–S095, and compare gate IDs against registry additions. Report exact count/command and any missing/overlong quote. Do not edit the lesson.",
+      "axes": [
+        "coverage",
+        "evidence quality"
+      ]
+    },
+    "ExecCounterWalk": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": "Walk frozen reports/round-72/measure.py line by line and independently derive REQUIRED IDs, all conditions, exit behavior and labels. Compare to claims.md predicate; identify any mismatch without editing. Return line pointers and a concrete support/falsifier judgment.",
+      "axes": [
+        "coverage",
+        "measurement"
+      ]
+    },
+    "ExecControlsDistinct": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": "Inspect the committed no-op base and status-flip-only control logs and frozen counter. Re-run each control if inputs available; establish the control skips claimed source work and cannot meet the target. Report precise command/output, not a paraphrase; no source or counter edits.",
+      "axes": [
+        "coverage",
+        "control validity"
+      ]
+    },
+    "ScribeGateAudit": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": "Audit lesson ## Gate against SOURCES.md for every new S054–S095 row: access date, exact locator, ≤25-word located quote, current tier/status, disposition reason/flip on rejects, and used-by links. Return a concise list of any missing or unsupported records; do not write prose to source files.",
+      "axes": [
+        "coverage",
+        "evidence quality"
+      ]
+    },
+    "ScribeEntryAudit": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": "Audit corpus/knowledge/round-72-tool-landscape.md as an editorial/source-attribution pass. Check each tool statement cites its row, differentiates project-declared scope from tested behavior, and preserves safety boundaries. Return exact line-level corrections only; do not modify the entry.",
+      "axes": [
+        "coverage",
+        "evidence quality"
+      ]
+    },
+    "ScribeLessonAudit": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": "Review corpus/lessons/round-72.md for evidence fidelity: mistake captured with class/evidence/captured-by/fix, source-research limitations, parent shortlink dispositions, and no unsupported claim of assimilation/tool execution. Return precise omissions or confirm support; do not edit.",
+      "axes": [
+        "calibration",
+        "learning"
+      ]
+    },
+    "ScribeCountsAudit": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": "Independently reconcile count claims in round-72 lesson against actual additions: IDs S054–S095, expected 42 new rows, tier/status counts, and before/after registry counts. Read the source table and lesson; report arithmetic/wording mismatches with paths/lines only.",
+      "axes": [
+        "coverage",
+        "record integrity"
+      ]
+    },
+    "ScoutLinks01to15": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": "Audit only the first 15 numbered entries in reports/round-72/shortlink-dispositions.md. Reopen each original t.co URL safely using static reads, note resolved URL/page content actually returned, and detect bad destination, inaccessible, duplicate, unsafe/live-target or overclaim disposition. Do not bulk-admit any link.",
+      "axes": [
+        "coverage",
+        "source freshness"
+      ]
+    },
+    "ScoutLinks16to30": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": "Audit only numbered shortlink entries 16–30 in reports/round-72/shortlink-dispositions.md. Resolve/reopen each via static reads, verify destination and summarized content evidence, flag redirects with no content, duplicates, or unsafe/live-target guidance. No bulk admission.",
+      "axes": [
+        "coverage",
+        "source freshness"
+      ]
+    },
+    "ScoutLinks31to43": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": "Audit only numbered shortlink entries 31–43 and the X article disposition in reports/round-72/shortlink-dispositions.md. Reopen safely and verify what the reader actually exposes; separate unavailable/metadata-only items from located content. No broad corpus admission.",
+      "axes": [
+        "coverage",
+        "source freshness"
+      ]
+    },
+    "ConnectSourceBuckets": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": "Map overlap and distinct scope among the 18 required direct tools S054–S070/S073, catalogs S071–S072, and supplemental documentation S074–S095. Independently inspect actual entries, identify false duplicate/false independence claims, and advise a non-overlapping taxonomy. No source or corpus edits.",
+      "axes": [
+        "coverage",
+        "scope control"
+      ]
+    },
+    "ConnectClaimLineage": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": "Trace frozen claim C15 from claims.md through counter.py, README C15 row, knowledge entry citations, and required source IDs. Identify any broken causal link, control weakness, or unstated assumption with exact paths/lines; do not judge other axes.",
+      "axes": [
+        "coverage",
+        "measurement"
+      ]
+    },
+    "ConnectSafetyBoundaries": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": "Cross-check safety/province boundaries across S060 Frida, S066 mitmproxy, S074 Claude-Red, S078 course, S093 RE101, and the lane knowledge entry. Identify any inconsistency or bleed into offensive/live-target/game-dev scope with direct cited text; do not expand scope.",
+      "axes": [
+        "coverage",
+        "scope control"
+      ]
+    }
+  }
+}

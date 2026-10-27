@@ -1,0 +1,10 @@
+# CoreS056Review — source accuracy and coverage
+
+**Judgment: Support.** S056 and its linked entry accurately scope the evidence to LaurieWired/GhidraMCP, without attributing other GhidraMCP implementations' claims to it.
+
+- Reopened the pinned source: [LaurieWired/GhidraMCP README at `1e980252087b2479a21b9ca6d82d5829538651a7`](https://github.com/LaurieWired/GhidraMCP/blob/1e980252087b2479a21b9ca6d82d5829538651a7/README.md). Under **Features**, it states “MCP Server + Ghidra Plugin,” then lists decompile/analyze and method/class/import/export listing. Under **Prerequisites**, it says “Install Ghidra 12.1.4”; the README's headless section likewise requires Ghidra 12.1.4 and specifies Python 3.10–3.13 for that mode.
+- `corpus/SOURCES.md` S056 names LaurieWired/GhidraMCP and confines its claim to “This project's README feature declaration and Ghidra bridge prerequisites only; not execution or provider readiness.” Its source summary correctly describes the bridge and treats the Ghidra version as a setup constraint, not a run result.
+- `corpus/lessons/round-72.md` S056 quotes the exact feature heading text and admits it as evidence for “this repository's documented bridge”; it explicitly disclaims uniqueness or being most widely used.
+- The linked `corpus/knowledge/round-72-tool-landscape.md` names “LaurieWired/GhidraMCP S056” alongside distinct projects and says it “documents a Ghidra plugin/MCP bridge.” The table's boundary explicitly rejects feature parity and inferring local provider readiness. It does not generalize another implementation's functions to S056.
+
+The quote is within the README's Features section; the version prerequisite is verifiable under Prerequisites and accurately characterized in the source row. No evidence here establishes installation, execution, or provider availability, and the entry makes no such claim.
