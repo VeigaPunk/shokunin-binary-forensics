@@ -1,0 +1,12 @@
+FAIL — the mechanical C1 vote label does not establish the frozen fresh-seat predicate; syntactic fabricated votes alone produce 16/16.
+
+Commands/evidence:
+- Read `reports/round-71/measure.py:42-70,79-105`. `q_votes()` validates JSON shape, seat/stem, assigned Q keys, and PASS/n/a only; it does not bind votes to reports, authorship, or evaluation. `body()` sets `HOLDS_C1_V6` from tree state plus that integer.
+- In isolated `/fast/scratch/hyaku/revenger-r71/R71W2ControlsCritic/tree/.ufo/waves/round-71/w2-votes/`, created four synthetic JSON files with the expected seat names/Q sets and all PASS, then directly called `q_votes()`; output: `synthetic q_votes= 16`. This tests only the mechanical helper, not a complete C1 tree.
+- `reports/round-71/controls/D-C1-v5-copy-with-q16.log:1-11` already demonstrates the strongest registered D: copied v5.1 at v6 path, admitted, C05 held, K 9/14, gate/lint clean, but votes 0/16 and HOLDS_C1_V6=no. Adding fabricated syntactic votes would satisfy the sole remaining displayed conjunct if those tree properties persist; I did not claim a full counter run.
+- `reports/round-71/measure-amendment-A2.md:7-10` expressly says vote files are structural receipts, not cryptographic identity proof, and that the condition additionally requires reports and independent final-seat evidence. These are not checked by the counter.
+- Frozen contract `reports/round-71/claims.md:13,17` says fresh W2 seats decide Q01–Q16; control D is registered as a do-nothing control, not as a valid adjudication. A mechanical `HOLDS_C1_V6=yes` would not itself authorize flipping C05.
+
+Impacted axes: C1 coverage calibration and the fresh-seat/provenance component of coverage. A2 correctly makes committed bytes reproducible and rejects duplicate keys/non-object roots, but does not authenticate that a reviewer performed the assigned work. Q decisions and seat reports remain the required human evidence; synthetic values cannot be treated as fresh findings.
+
+Smallest safe correction: preserve the frozen predicate and counter; treat `HOLDS_C1_V6` strictly as a mechanical label, and adjudicate only from the four specified fresh-seat reports plus their committed matching files. Do not repair/re-gate after scoring. No source or vote-file edits made. Scratch removed.

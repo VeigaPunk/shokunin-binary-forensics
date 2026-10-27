@@ -1,0 +1,25 @@
+PASS WITH A RESIDUAL CONTRACT GAP — committed controls reject README-only and stub flips; parser accepts fabricated vote bytes and extra top-level JSON keys, so it is structural evidence only, not identity proof.
+
+Commands and evidence (scratch probes used `/fast/scratch/hyaku/revenger-r71/R71W2ClaimsCritic/`; no lane source or vote files changed):
+
+- Read `reports/round-71/claims.md`, `pre-registration.txt`, A1/A2 amendment records, W1 attack inventory and `reports/round-71/measure.py`.
+- Read existing isolated-control receipts `reports/round-71/controls/B-C1-readme-flip-only.log`, `C-C1-admitted-stub.log`, and `D-C1-v5-copy-with-q16.log`.
+- Inspected `reports/round-71/build-controls.py`: its `archive()` at lines 10–15 includes only `corpus`, `SHONEN.md`, `SCORECARD.md`, `SKILL.md`, not `.ufo`. Thus D's `C1_W2_Q_VOTES=0/16` was guaranteed by omitting the vote directory; D still demonstrates that K=9/14, held C05, admitted v6, gate 24 blocks/problems 0 and clean lint do not suffice without votes. It does not test forged committed votes.
+- In an isolated TREE fixture, imported the committed counter and called `q_votes(TREE)`:
+  - Four syntactically valid fabricated reviewer files with exact stems/Q assignments and PASS values: `16`.
+  - Duplicate top-level `seat` key: `0`.
+  - Malformed JSON: `0`.
+  - Otherwise-valid file with an extra top-level `extra` key: `16`.
+  This counter accepts any bytes conforming to the vote shape; it cannot authenticate who authored them. A2 itself explicitly calls these structural receipts, not cryptographic identity proof. The W2 reports/independent evidence remain necessary. The `extra` result is a literal mismatch with the vote-file contract's “exactly the keys seat and decisions,” though current assigned reviewers are instructed to produce exact objects.
+- The committed B README-only control reports `K_HELD_BACKED=8/14`, `C05_STATUS=held`, no knowledge path, `C1_W2_Q_VOTES=0/16`, `HOLDS_C1_V6=no`; gate/lint are skipped (`n/a`) because v6 is absent. The admitted-stub control likewise remains K=8/14 and C1 no; v6 absent means gate/lint skipped. Thus those controls do not pass C1 by flipping README/admission metadata alone.
+- The committed D v5-copy/Q16 control reports K=9/14 and clean gate/lint, but votes 0/16 and `HOLDS_C1_V6=no`; it skips successful vote validation. Its counter archive omitted `.ufo` as noted above.
+- C2 baseline receipts: missing entry exits 1 with `FileNotFoundError` traceback; timeout exits 1 with `TimeoutExpired` traceback after 120 seconds. Frozen claim requires real CLI exit 2/text/no traceback for both plus self-test; the baseline therefore fails. Current counter leg at `measure.py:113–115` checks return code, exact timeout text, and traceback absence but not wall-clock duration. A shortened-timeout mutant that preserves the `120s` message could pass those labels; this is a counter calibration gap, not evidence that the current gate violates its runtime behavior. Counter's 120s leg is expensive; no additional full run was performed.
+- `reports/round-71/measure.py` at the frozen candidate commit `4c1eea…` has the A2 SHA `718daa96…`; later commit `33fadb2` adds A3 symlink/nonregular-file containment and unhashable-seat handling (current SHA `82c817e1…`). A3 documents it as a correction after W2 Sentinel identified F2/F3. The current implementation rejects symlink vote root/member. Claims contract says do not alter predicates/targets after scoring; this code change preserves those predicates but changes enforcement after W2 began. Findings from pre-A3 parser probes must be treated as pre-amendment, not as final-candidate results.
+
+Counterexample / impacted axes / smallest safe correction:
+
+1. Shape-valid fake files receive 16 votes (`q_votes` structural count); an extra top-level key also receives 16. Impact: calibration/provenance fidelity and, narrowly, contract closure. The counter alone must not be treated as proof of seat identity (A2 already disclaims this); independently verify each assigned reviewer report and committed file. Smallest parser correction, if enforcing the literal JSON contract, is require `set(data) == {'seat','decisions'}`. Do not change frozen target or use this as a post-vote re-gate.
+2. The current timeout counter's unmeasured elapsed-time assumption is a potential calibration bypass. Smallest correction in a future pre-registered run: measure monotonic elapsed time and bind it to the declared 120-second timeout with an appropriate tolerance; no retroactive change to this round.
+3. No C1 positive falsification of the actual v6 text from this assignment; control D's v5 copy is deliberately not the candidate. The structural vote probes and control receipts do not substitute for the four fresh seat verdicts. No judge/admission recommendation is made.
+
+Scratch cleanup: `/fast/scratch/hyaku/revenger-r71/R71W2ClaimsCritic/` was removed before return.

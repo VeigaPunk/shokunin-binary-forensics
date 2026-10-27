@@ -18,6 +18,6 @@ Status histogram: mined=44 queued=4 rejected=5
 duplicate IDs: (empty)
 enum/tier-inflation violations: (empty)
 mined used-by missing paths: (empty)
-All seven manual commands exit 0.
+Every frozen manual command exited 0; validator exit 0.
 
 Round-start before→after: rows 51→53; tier A 48→50, tier C 3→3; status mined 43→44, queued 4→4, rejected 4→5; +S052 mined own-work and +S053 rejected docs, both tier A. Existing rows' status/recheck/used-by unchanged. Frontier: C05 was uncovered at base; wave-2 adjudication will record uncovered→held only on all-criteria admission.
