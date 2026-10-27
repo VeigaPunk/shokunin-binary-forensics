@@ -643,3 +643,16 @@ K_HELD_BACKED 8/14 → 8/14
 
 **planned:** the C05 sixth pass is a repair of four sentences of `knowledge/round-70-apk-axml-byte-evidence.md` against the printed outputs (and the same-revision SCORECARD K line);
 checker residuals and the env-canary control; the gate's exit-2 contract (`R70W2GateReplay` F1/F2).
+## Round 71 (hyaku run 10, attempt 1) — C1 falsified; C2 verified
+
+Supersedes only the round-70 **planned** C05 sixth pass; the earlier round-70 record remains unchanged. Pre-registration `63b560bec2405228797405ec06a818ee343e61f0`, base `b7abcd875c84f4e1d6c8df966b6bd20f4154c53f`, frozen candidate `4c1eeaee88fd07e442f1bd546faf77be3957d390`, and final vote/adjudication measurement commit `dac9590236f0d3e7213c30ccdb343f0891a36644`. Counter `reports/round-71/measure.py` SHA-256 `82c817e1c2f7181cae759328fc884b8c38defbdba80dde4aad535d9c1f5f91b2` (A3).
+
+| axis / criterion | before → final | counting command / evidence | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — knowledge-map ground K (C05 sixth pass) | `K_HELD_BACKED` 8/14 → 8/14 (5.7 → 5.7); C05 `uncovered` → `uncovered`; frozen 9/14 target unmet | counter below; `C1_W2_Q_VOTES=0/16`, `C1_GATE=24 blocks / 0 problems`, lint `0/0/0/0`, `HOLDS_C1_V6=no`; Q09/Q16 FAILs in `corpus/lessons/round-71.md` | `b7abcd8` → `dac9590` | **C1 FALSIFIED — honest stop;** no entry admitted |
+| calibration — declared gate exit-2 outcomes | `C2_MISSING_ENTRY_EXIT2` 0/1 → 1/1 and `C2_TIMEOUT_EXIT2` 0/1 → 1/1 (score 0.0 → 10.0); `HOLDS_C2_V1` no → yes | same counter; missing-entry and production 120s timeout both exit 2 without traceback; self-test exit 0 with both named legs | `b7abcd8` → `dac9590` | **C2 verified as declared** |
+| retained holds | `HOLD_REPLAY` 10/10, `F_COVERAGE` 5/8, `FRESH_ROWS` 18/18, `HOLDS_OK_V8=yes` | same counter; all ten `HOLD <name> exit=0` lines captured in `reports/round-71/measure-after.log`; retained `EMB_R65` red label unchanged | `b7abcd8` → `dac9590` | unchanged; no harm observed |
+
+Counting command: `python3 -B reports/round-71/measure.py TREE`; `TREE` was an isolated archive of `dac9590236f0d3e7213c30ccdb343f0891a36644` containing `corpus`, `SKILL.md`, `SCORECARD.md`, `SHONEN.md` and `.ufo/waves/round-71/w2-votes/`. Exact output is `reports/round-71/measure-after.log` (exit 0). The frozen C1 vote rule accepts only PASS/n/a: the 16 decisions include two FAILs, so 0/16 is the correct counter result, not a missing vote receipt.
+
+Learning trends: expansion **unchanged** (no C05 flip, no admitted entry); quality **unchanged** (no existing admitted entry failed re-check and none was strengthened); discernment **unchanged** (the S052/S053 outside spot-check remains pending; no lane seat is counted as outside). No capability added. The counter's live round-70 self-check import limitation is disclosed in `corpus/lessons/round-71.md` and is not claimed as hermetic.
