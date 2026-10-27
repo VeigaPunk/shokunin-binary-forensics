@@ -1,0 +1,6 @@
+Command (run from lane root):
+python3 -B -c 'import re,sys; p="corpus/lessons/round-72.md"; rows=[x for x in open(p,encoding="utf-8") if re.match(r"\| S\d{3} \|",x)]; q=[(re.search("“([^”]+)”",x).group(1).split() if re.search("“([^”]+)”",x) else []) for x in rows]; bad=[(i+54,len(w)) for i,w in enumerate(q) if len(w)>25 or not w]; print(f"ROWS={len(rows)} QUOTES={sum(bool(w) for w in q)} MAX_WORDS={max(map(len,q),default=0)} OVER25_OR_MISSING={len(bad)} DETAILS={bad}"); sys.exit(bool(bad) or len(rows)!=42)'
+
+Output:
+ROWS=42 QUOTES=42 MAX_WORDS=23 OVER25_OR_MISSING=0 DETAILS=[]
+Exit: 0

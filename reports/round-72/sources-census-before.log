@@ -9,3 +9,7 @@ revenger	W04	S048 duplicate url source.android.com/docs/core/runtime/dex-format 
 revenger	W01	S051 tierC mined used-by=corpus/training/bounty-triage/MODULE.md
 revenger	W04	S053 duplicate url docs.python.org/3/library/zipfile.html across scopes
 revenger	ok	/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md
+Count command:
+grep -cE '^\|[[:space:]]*S[0-9]{3,}[[:space:]]*\|' corpus/SOURCES.md
+Output: 53
+Exit: 0

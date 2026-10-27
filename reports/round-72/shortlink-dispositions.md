@@ -1,0 +1,54 @@
+# Round-72 further-study link screen (read-only)
+
+Access date: 2026-10-27. Each `t.co` URL was opened through the read-only URL reader; the resulting canonical URL below is what the reader actually returned. No link target was run, downloaded, installed, or executed. A source row is added only where the surfaced source has in-province evidence value; duplicate repositories reuse the existing/round-72 repository row. X article retrieval was separately attempted with both the reader and exact-ID web search; it remained unavailable. This screen is not a claim that uninspected video bytes, source code, malware, or a remote target were analyzed.
+
+| # | supplied URL | resolved destination | inspected content / disposition |
+|---:|---|---|---|
+| 1 | `https://t.co/ycWs1KcDEK` | `https://rea.tools/` | Official REA site; overview, setup-approval wording, and linked guides/showcases. Supplementary to primary repository S054. |
+| 2 | `https://t.co/xPcibAOnaw` | `https://github.com/morluto/rea/blob/main/docs/installation.md` | Official setup instructions; plan review/approval, client selection and readiness checks. Scoped to documented setup behavior, not a host install. |
+| 3 | `https://t.co/VMq1vzHMKt` | `https://rea.tools/first-investigation/` | Official small Electron sample; local supplied files, traced export path, then a formatter prediction checked against actual sample output. Documentation example only. |
+| 4 | `https://t.co/8k2KaopWvN` | `https://rea.tools/guides/` | Official guides index for native, Electron and browser examples; guide descriptions only. |
+| 5 | `https://t.co/3qqMBrfhPB` | `https://github.com/morluto/rea/blob/main/docs/mcp-prompts.md` | Official MCP prompt contract; prompts do not invoke tools; requested arguments are untrusted selection data, not instructions or authorization. High relevance. |
+| 6 | `https://t.co/pFEKBLo0tq` | `https://www.youtube.com/watch?v=FnB9tHKBJXQ` | Only YouTube metadata/title/description returned; video/transcript not opened, so no instructional claim admitted. |
+| 7 | `https://t.co/dRSxxSbIs9` | `https://www.datacamp.com/tutorial/reverse-engineer-anything-rea-tutorial` | Article describes using a live `chrome://dino` remote-debugging target and building/publishing a clone. Rejected for this lane: the live-target activity is outside current province limits; no runtime activity conducted. |
+| 8 | `https://t.co/nYl41r238P` | `https://www.youtube.com/watch?v=OFAxXXcLXbc` | Only YouTube metadata/title/description returned; video/transcript not opened. |
+| 9 | `https://t.co/xOPHb5akx7` | `https://www.youtube.com/watch?v=GHh9P-Dyq1w` | Only YouTube metadata/title/description returned; mentions Frida/mobile analysis, but no video/transcript or tool use verified. |
+| 10 | `https://t.co/In8qPyfQEm` | `https://pwn.college/` | Educational platform homepage; generic community/curriculum overview only. |
+| 11 | `https://t.co/2IMKVDx5Pr` | `https://pwn.college/intro-re-pwn~5933fc84/reversing/` | Course page gives a static-analysis → debugger → confirm loop and a toy challenge scope. In-scope learning resource; no challenge or target exercised. |
+| 12 | `https://t.co/SSwWK3JDGq` | `https://malwareunicorn.org/workshops/re101` | Malware lab page is dated 2019 and directs disabling Windows Defender, bidirectional host/guest sharing and other unsafe setup. Rejected as current procedure; no malware or lab environment touched. |
+| 13 | `https://t.co/X6mmOrpyY6` | `https://rea.tools/showcase/notion/` | Official case page describes one Notion 7.6.1 clipboard path through preload/IPC/main handler. It is the publisher's case-study assertion, not independent verification of the target. |
+| 14 | `https://t.co/MLPT8XZ1G6` | `https://rea.tools/showcase/dx-ball/` | Official DX-Ball case page describes code inspection plus an independent reconstruction/checking project. Game-specific reconstruction is not adopted as a new game-mechanics claim. |
+| 15 | `https://t.co/SqChuIEHRX` | `https://rea.tools/showcase/aegis/` | Official Aegis 3.4.3 case page states the APK was inspected statically and describes a reconstruction checked against published cases. Publisher's example only, not producer readiness. |
+| 16 | `https://t.co/4j3PApvY66` | `https://rea.tools/showcase/th04/` | Official TH04 game-code case study. Game-specific bullet mechanics are adjacent; no claim or source row absorbed. |
+| 17 | `https://t.co/28Tq0x1fE9` | `https://github.com/morluto/rea` | Duplicate of primary repository S054; read this round, no duplicate source row. |
+| 18 | `https://t.co/Wxxd1D1Mbs` | `https://github.com/morluto/awesome-reverse-engineering` | Duplicate of user-listed catalog S072; no duplicate row. |
+| 19 | `https://t.co/j1kp8JUnKX` | `https://github.com/sqwu/rea-gems` | Community gallery, self-described as unofficial, auto-updated case collection; lead only, not proof of case claims. |
+| 20 | `https://t.co/BdvZJIx1b4` | `https://github.com/alexgaoth/awesome-reverse-engineered` | Community catalog of reverse-engineered projects with a RE-tools category; useful as a lead index only, never proof of individual project behavior. |
+| 21 | `https://t.co/P6Abt6uAoH` | `https://github.com/NationalSecurityAgency/ghidra` | Duplicate of primary repository S055; re-opened, no duplicate source row. |
+| 22 | `https://t.co/w3dVkx3Srw` | `https://github.com/skylot/jadx` | Duplicate of primary repository S058; re-opened, no duplicate source row. |
+| 23 | `https://t.co/jMhhe28i7s` | HTTP 404 from reader | No destination/content verified; unresolved, no source row. |
+| 24 | `https://t.co/bj56i2svw0` | `https://github.com/icsharpcode/ILSpy` | Duplicate of primary repository S061; re-opened, no duplicate source row. |
+| 25 | `https://t.co/4u3QnIiJuq` | `https://github.com/x64dbg/x64dbg` | Duplicate of primary repository S063; re-opened, no duplicate source row. |
+| 26 | `https://t.co/LRfSa6K1JB` | `https://nostarch.com/ghidra-book-2e` | Publisher's second-edition Ghidra book page and table of contents; bibliographic/topic scope only, not a substitute for reading the book. |
+| 27 | `https://t.co/gog8yvVl9L` | `https://go.yurichev.com` (HTML script redirect) | Reader exposed only a client-side redirect to `go.yurichev.com`, no final destination/content. Unresolved; no source row. |
+| 28 | `https://t.co/mC7s95Z9cg` | `https://nostarch.com/binaryanalysis` | Publisher page for *Practical Binary Analysis*, with publication date and chapter list; book content not read. |
+| 29 | `https://t.co/lSmIvewphe` | `https://nostarch.com/malware` | Publisher page for *Practical Malware Analysis* (2012) with chapter list; too old to support current malware-analysis procedure, no such procedure adopted. |
+| 30 | `https://t.co/K82KD0YiX5` | `https://nostarch.com/androidmalwarehandbook` | Publisher page for a 2023 Android malware handbook and its chapter list; book content not read. |
+| 31 | `https://t.co/pPmObWpLKr` | `https://www.wiley.com/en-us/Reversing%3A+Secrets+of+Reverse+Engineering-p-9780764574818` (from redirect HTML) | Direct page read returned HTTP 403; title destination observed, contents not verified. No source row. |
+| 32 | `https://t.co/zYFwsVasal` | `https://arxiv.org/abs/2403.05286` | LLM4Decompile v3 abstract; scoped research result on its stated model/benchmarks, not operational readiness or general decompiler accuracy. |
+| 33 | `https://t.co/Xdvz2kSMEx` | `https://arxiv.org/abs/2606.16162` | AutoDecompiler v2 abstract; multi-turn compile/execute/I-O feedback method, scoped to paper's stated evaluations. |
+| 34 | `https://t.co/202LIZwoba` | `https://arxiv.org/abs/2509.14646` | ALT4Decompile v2 abstract; C-aligned abstract loop-tree method and paper's stated benchmarks only. |
+| 35 | `https://t.co/WeMchHQg1c` | `https://www.usenix.org/conference/usenixsecurity22/presentation/burk` | USENIX paper landing page for Decomperson; abstract describes a large human-reverser process dataset, not universal analyst behavior. |
+| 36 | `https://t.co/4V8jpEiK6T` | `https://www.usenix.org/system/files/sec22-chen-qibin.pdf` | USENIX PDF for DIRTY; paper says decompilers cannot recover developer names/types reliably and its model proposes likely labels, not ground truth. |
+| 37 | `https://t.co/mgRXn2lq3N` | `https://arxiv.org/abs/2605.30667` | arXiv abstract on adversarial prompt injection of LLM-assisted RE agents via analyzed executable strings; defensive risk only, no attack reproduction or instructions. |
+| 38 | `https://t.co/YNr2dX7URl` | `https://rea.tools/blog/reverse-engineering-models/` | Official REA essay discusses compiler feedback, controlled comparison and testing an oracle; opinion/first-party experience only, not benchmark evidence. |
+| 39 | `https://t.co/7OV4XkcoO0` | `https://p.ost2.fyi/courses/course-v1%3AOpenSecurityTraining2%2BArch1001_x86-64_Asm%2B2021_v1/about` | OST2 course page, x86-64 assembly, C prerequisite and RE use; course description only. |
+| 40 | `https://t.co/Y3M497RwEa` | `https://pwn.college/reversing-hell/` | ASU CSE 598 Fall 2025 reverse-engineering/program-analysis course page; tool/use descriptions only, no challenge execution. |
+| 41 | `https://t.co/ADLe5FShkI` | `https://github.com/guyinatuxedo/nightmare` | CTF/exploit training repository (2015) and older tooling; outside current artifact-first province; not adopted. |
+| 42 | `https://t.co/d9NL0IfkpM` | `https://github.com/RPISEC/MBE` | RPISEC course materials from Spring 2015, including exploit-development labs and Ubuntu 14.04 VM instructions; stale and out of current scope, not adopted. |
+| 43 | `https://t.co/7XYSoBTiDN` | `https://mas.owasp.org/` | OWASP MAS page describes MASVS, MASWE and MASTG; directly relevant mobile-testing guidance, not an analysis-tool capability claim. |
+
+Additional supplied URL: `https://x.com/i/article/2111752926104375296` returned `x-unavailable`; an exact-ID web search returned unrelated results, so destination/content is unavailable. No row or claim is made from it.
+REA SPEC/oracle note: The user-described root `https://github.com/morluto/rea/blob/main/SPEC.md` returned HTTP 404. Browsing the repository tree (no guessed file path) revealed `docs/specs/2356-wasm-interface-comparison/{spec.md,plan.md,tasks.md,verification.md}`. I opened `spec.md` and `verification.md` again pinned to REA commit `0cd7ef456bf960da265e04b341e82a24b1e377d5`. These are a feature-specific WebAssembly comparison spec and a repository-authored test/review receipt; they do not establish a repo-wide clean-room workflow or independent test execution by this lane. The entry and SOURCES row preserve that narrower reading.
+
+Dedupe/adoption decisions are recorded in `corpus/lessons/round-72.md` `## Gate`; only sources with a lane-specific, located claim are added to SOURCES. Files on GitHub and web pages were only read; no upstream checkout was modified, fetched, installed, or tested.

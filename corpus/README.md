@@ -52,8 +52,9 @@ and `live/runs/`.
 | C12 | tool and process validation against known truth | `knowledge/tool-validation-by-function-and-version.md`; `knowledge/seed.md` §Calibration strategy | authored fixtures carrying `truth.json` | held |
 | C13 | fixity and provenance (digest scope, receipts versus origin) | `knowledge/digest-scope-versus-provenance.md`; `knowledge/seed.md` §Calibration strategy (fixture provenance fields only) | `lessons/round-1.md` gate, `reports/round-1/` | held |
 | C14 | host readiness for REA routes | `knowledge/2026-10-12-rea-readiness-checklist.md` (re-verified 2026-10-19; pre-contract, not re-gated) | `.ufo/waves/kaika-r1/scout-freshness.md` | partial |
+| C15 | Selected reverse-engineering tool repositories and declared boundaries | `knowledge/round-72-tool-landscape.md` (candidate; claims scoped to named project sources, not tool execution, host readiness, accuracy or complete market coverage) | `corpus/SOURCES.md`; `reports/round-72/shortlink-dispositions.md` | uncovered |
 
-Rows 14 — `grep -cE '^\| C[0-9]+ ' corpus/README.md`. Statuses before the kaika
+Rows 15 — `grep -cE '^\| C[0-9]+ ' corpus/README.md` (2026-10-27, observed 15). Statuses before the kaika
 round's admissions are frozen at `a7acc20` (`git show a7acc20:corpus/README.md`);
 statuses before round 61 at `cf02419` (`git show cf02419:corpus/README.md`,
 held 4/14).

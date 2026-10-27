@@ -1,0 +1,20 @@
+Command:
+/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin revenger
+
+Output:
+revenger	W04	S024 duplicate url www.rfc-editor.org/rfc/rfc3227.txt across scopes
+revenger	W04	S028 duplicate url github.com/ethereum/execution-specs/tree/v2.20.0/src/ethereum/forks/osaka/vm across scopes
+revenger	W04	S029 duplicate url tc39.es/ecma262 across scopes
+revenger	W04	S034 duplicate url pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT across scopes
+revenger	W04	S048 duplicate url source.android.com/docs/core/runtime/dex-format across scopes
+revenger	W01	S051 tierC mined used-by=corpus/training/bounty-triage/MODULE.md
+revenger	W04	S053 duplicate url docs.python.org/3/library/zipfile.html across scopes
+revenger	W01	S087 tierC mined used-by=corpus/knowledge/round-72-tool-landscape.md
+revenger	W01	S088 tierC mined used-by=corpus/knowledge/round-72-tool-landscape.md
+revenger	ok	/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md
+Exit: 0
+Count command:
+grep -cE '^\|[[:space:]]*S[0-9]{3,}[[:space:]]*\|' corpus/SOURCES.md
+Output: 95
+Exit: 0
+Note: The pre-fix run (not the final receipt above) had E01 `S095 fields=10`; the terminal table delimiter was added before this successful run.
