@@ -1,0 +1,449 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r71-w1",
+  "createdAt": "2026-10-27T15:18:36.465Z",
+  "updatedAt": "2026-10-27T15:19:01.795Z",
+  "reportDir": ".ufo/waves/round-71/w1",
+  "members": {
+    "R71W1GateQ04": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1GateQ11b": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1GateQ13Q16": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1Q01Q02": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "freshness"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1Q03Q06": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1Q05Q09Q10": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "adjacency"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1Q14Q15": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1ReadmeRow": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1Reproduce": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "operability",
+        "freshness"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1Prose": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1ClaimsCritic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1CouplingCritic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration",
+        "freshness"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1QmapCritic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1EntryMutants": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1GateMut": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1PinRegression": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "freshness",
+        "calibration"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1Sentinel": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "operability",
+        "adjacency"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1IndependentRead": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1EntryBlocks": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "operability",
+        "coverage"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1GateReplay": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "operability",
+        "calibration"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1CounterReplay": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1TimeoutProbe": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1ControlsRun": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1Probe": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "operability",
+        "freshness"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1OpenS038": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1OpenS048": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1OpenS032": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1Quarantine": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1MistakeSweep": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1ProvincePin": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "depth"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1Considerthese": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1LessonDraft": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "calibration",
+        "freshness"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1RegistryDraft": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "operability",
+        "calibration"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1ConnOverlap": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "adjacency",
+        "coverage"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1ConnLedger": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "calibration",
+        "adjacency"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1Simplify": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "simplifier",
+      "item": null,
+      "axes": [
+        "depth",
+        "operability"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1FreshSweep": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1ReceiptDraft": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "operability",
+        "calibration"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1ScorecardDraft": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    },
+    "R71W1OpenS049": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+    }
+  }
+}

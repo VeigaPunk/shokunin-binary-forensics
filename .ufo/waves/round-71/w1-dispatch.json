@@ -1,0 +1,683 @@
+{
+  "schema": "ufo-swarm-wave-dispatch-v1",
+  "wave": "revenger-r71-w1",
+  "policy": {
+    "source": "config",
+    "maxLanes": 256,
+    "minLanes": 16,
+    "waveMinLanes": 32,
+    "waveMaxLanes": 64,
+    "declaredMaxLanes": null,
+    "hardCeiling": 256,
+    "rampBatchSize": 5,
+    "rampIntervalMs": 700,
+    "globalRunnerCeiling": 1056
+  },
+  "counts": {
+    "spawn": 40,
+    "resume": 0,
+    "total": 40
+  },
+  "registry": {
+    "schema": "ufo-swarm-registry-v1",
+    "path": ".ufo/waves/round-71/w1/swarm-registry.json",
+    "reportDir": ".ufo/waves/round-71/w1",
+    "members": {
+      "R71W1GateQ04": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "depth"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1GateQ11b": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "depth"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1GateQ13Q16": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1Q01Q02": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "freshness"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1Q03Q06": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "depth"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1Q05Q09Q10": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "adjacency"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1Q14Q15": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1ReadmeRow": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1Reproduce": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "operability",
+          "freshness"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1Prose": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage",
+          "depth"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1ClaimsCritic": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1CouplingCritic": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "freshness"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1QmapCritic": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1EntryMutants": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1GateMut": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration",
+          "operability"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1PinRegression": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "freshness",
+          "calibration"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1Sentinel": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "sentinel",
+        "item": null,
+        "axes": [
+          "operability",
+          "adjacency"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1IndependentRead": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "revenger",
+        "item": null,
+        "axes": [
+          "coverage",
+          "depth"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1EntryBlocks": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "operability",
+          "coverage"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1GateReplay": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "operability",
+          "calibration"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1CounterReplay": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration",
+          "operability"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1TimeoutProbe": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration",
+          "operability"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1ControlsRun": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1Probe": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "operability",
+          "freshness"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1OpenS038": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "freshness",
+          "coverage"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1OpenS048": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "freshness",
+          "coverage"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1OpenS032": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "freshness",
+          "coverage"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1Quarantine": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1MistakeSweep": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "calibration",
+          "operability"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1ProvincePin": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "freshness",
+          "depth"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1Considerthese": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1LessonDraft": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "calibration",
+          "freshness"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1RegistryDraft": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "operability",
+          "calibration"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1ConnOverlap": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "connector",
+        "item": null,
+        "axes": [
+          "adjacency",
+          "coverage"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1ConnLedger": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "connector",
+        "item": null,
+        "axes": [
+          "calibration",
+          "adjacency"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1Simplify": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "simplifier",
+        "item": null,
+        "axes": [
+          "depth",
+          "operability"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1FreshSweep": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "freshness",
+          "coverage"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1ReceiptDraft": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "operability",
+          "calibration"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1ScorecardDraft": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      },
+      "R71W1OpenS049": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "freshness",
+          "coverage"
+        ],
+        "milestone": "C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks"
+      }
+    }
+  },
+  "compaction": {
+    "applied": false,
+    "mechanism": null,
+    "reason": null,
+    "savedBytes": 0,
+    "payloadBytesBefore": 0,
+    "payloadBytesAfter": 0
+  },
+  "taskCall": {
+    "context": "# Goal\nRevenger round 71, WAVE 1 of 2 (build/pre-gate). Lane repo: /home/vgpnk/Projects/shokunin/revenger-shokunin. Only the lane repo is the write scope. Never write fleet root, sibling lanes, `/home/vgpnk/Projects/shokuknow`, source repos or global routing/config. L1 is sole integration owner; seats are leaf advisers and never commit, push, mutate jj/Git, spawn or message agent://all.\n\n# Frozen contract\nRead `/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-71/claims.md` and `reports/round-71/pre-registration.txt` first. C1 coverage K is C05 sixth pass; C2 calibration is the registered gate's exit-2 classification. The counter/predicates/kill rules/targets are frozen. Wave 1 is advisory pre-gate; it may recommend repairs before the final candidate. The §3 planner seat is held by L1; `R71W1ConnLedger` is only a bounded data walk.\n\n# Evidence, paths, scratch\nTools start at fleet root `/home/vgpnk/Projects/shokunin`; use absolute paths. Each task names its report path. The validator's `Report:` trailer is relative to `/home/vgpnk/Projects/shokunin/revenger-shokunin`; write that lane path. Findings cite commands with actual output and file:line. Read-only tasks do not edit lane source. Do not use `/tmp` for evidence. Scratch root is `/fast/scratch/hyaku/revenger-r71/<seat-name>/`; create it and pass it explicitly, copy receipts before returning, then delete it. No pacman transactions: host-wide pause. Read `/home/vgpnk/.omp/agent/RULES.md` before installs; official authorized channels only, record tool/version/channel/reason. Never change global routing; roles route through operator config and no model is passed.\n\n# Tooling directive\nAny agent may install/update a task-helping tool with full privilege; read `/home/vgpnk/.omp/agent/RULES.md` first (official channels, update-safety gate, record tool/version/channel/reason). Pacman transactions are paused host-wide; use `uv tool`/`npx`/official binaries or file an L0 question. No install is needed for this wave.\n\n# Output\nLeaf only, no task spawn. Time-box 12 minutes. First report line is verdict + short reason; then evidence. No seat judges the round. Every new source row opened this round needs access date and ≤25-word located quote in the Gate draft. No source-tree writes or campaign tools.",
+    "tasks": [
+      {
+        "name": "R71W1GateQ04",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRead claims §C1 and v6 item 11/12. Run `--spec-quotes` and `--zip-layout`; number all 20 zip lines. Decide Q04 on actual stdout; locate defect/offer exact correction. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1GateQ04.md. Report trailer path `.ufo/waves/round-71/w1/R71W1GateQ04.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1GateQ04/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, depth\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1GateQ04.md"
+      },
+      {
+        "name": "R71W1GateQ11b",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nCheck Observation paragraph against readout.py:22,76,166,211,233-248 and actual --zip-layout/--axml-layout stdout. Are compared and locators-only literals named accurately under Q11/Q16? Give exact evidence. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1GateQ11b.md. Report trailer path `.ufo/waves/round-71/w1/R71W1GateQ11b.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1GateQ11b/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, depth\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1GateQ11b.md"
+      },
+      {
+        "name": "R71W1GateQ13Q16",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRead QUALITY Q13/Q16, v6 rows, round-70 R70W2EntryMutants report and current gate. Verify the different in-tree echo-script forgery and one-way/superset cases are named unguarded. Find overcredit, exact line/output. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1GateQ13Q16.md. Report trailer path `.ufo/waves/round-71/w1/R71W1GateQ13Q16.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1GateQ13Q16/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1GateQ13Q16.md"
+      },
+      {
+        "name": "R71W1Q01Q02",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nCheck v6 provenance header and S038/S048/S032/S034/S047/S041/S049/S052 against QUALITY Q01-Q02 and SOURCES. Re-run --spec-quotes for S052; source row supports only output shape. Find gaps. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1Q01Q02.md. Report trailer path `.ufo/waves/round-71/w1/R71W1Q01Q02.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1Q01Q02/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, freshness\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1Q01Q02.md"
+      },
+      {
+        "name": "R71W1Q03Q06",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nAssess Q03/Q06; independently derive at least one APK expected value without readout.py (zipfile/direct bytes), inspect truth.json and generator. Compare fixture hash and state limitations. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1Q03Q06.md. Report trailer path `.ufo/waves/round-71/w1/R71W1Q03Q06.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1Q03Q06/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, depth\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1Q03Q06.md"
+      },
+      {
+        "name": "R71W1Q05Q09Q10",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nAssess Q05/Q09/Q10: no readiness overclaim, digest scope exact, one-fixture scope, ADJ-06 fence. Read PROVINCE and README frontier; report exact lines and discrepancies. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1Q05Q09Q10.md. Report trailer path `.ufo/waves/round-71/w1/R71W1Q05Q09Q10.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1Q05Q09Q10/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, adjacency\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1Q05Q09Q10.md"
+      },
+      {
+        "name": "R71W1Q14Q15",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nAudit all prose hex strings/counts and git/tree identities in v6 against Q14/Q15; state n/a where applicable. Give command/output and questionable line. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1Q14Q15.md. Report trailer path `.ufo/waves/round-71/w1/R71W1Q14Q15.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1Q14Q15/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1Q14Q15.md"
+      },
+      {
+        "name": "R71W1ReadmeRow",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nDraft (do not apply) exact final C05 README row and SCORECARD K line for frozen C1. Ensure no other row/status changes; give counting command that falsifies 9/14.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1ReadmeRow.md. Report trailer path `.ufo/waves/round-71/w1/R71W1ReadmeRow.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1ReadmeRow/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1ReadmeRow.md"
+      },
+      {
+        "name": "R71W1Reproduce",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRun v6 ## Reproduce commands as written from lane root. Compare stdout with each claim. Report commands, exits, misleading text. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1Reproduce.md. Report trailer path `.ufo/waves/round-71/w1/R71W1Reproduce.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1Reproduce/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: operability, freshness\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1Reproduce.md"
+      },
+      {
+        "name": "R71W1Prose",
+        "agent": "critic",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nLine-by-line prose audit of v6. Classify assertions observed/recorded/inferred/unknown; compare every output description, especially four repaired sentences, limitations and Q16. Give unsupported phrase/line/corrected text. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1Prose.md. Report trailer path `.ufo/waves/round-71/w1/R71W1Prose.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1Prose/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, depth\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1Prose.md"
+      },
+      {
+        "name": "R71W1ClaimsCritic",
+        "agent": "critic",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nAttack C1/C2 frozen predicates and counter. Cheapest skip-work controls on scratch base archive: README-only, stub, v5.1 copy, fake vote file, malformed/duplicate votes. Run frozen counter; exact labels and any target reached. No lane edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1ClaimsCritic.md. Report trailer path `.ufo/waves/round-71/w1/R71W1ClaimsCritic.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1ClaimsCritic/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1ClaimsCritic.md"
+      },
+      {
+        "name": "R71W1CouplingCritic",
+        "agent": "critic",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nTest C1/C2 separability. Trace which labels gate change can alter (entry, EMB pins, self-test, replay) and whether C1 moves C2. Propose one-claim tree probes, report couplings. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1CouplingCritic.md. Report trailer path `.ufo/waves/round-71/w1/R71W1CouplingCritic.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1CouplingCritic/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, freshness\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1CouplingCritic.md"
+      },
+      {
+        "name": "R71W1QmapCritic",
+        "agent": "critic",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nAttack v6 Q-map completeness/honesty against QUALITY Q01-Q16. Run lint but do not treat it as admission. Identify missing n/a reasons or self-support. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1QmapCritic.md. Report trailer path `.ufo/waves/round-71/w1/R71W1QmapCritic.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1QmapCritic/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1QmapCritic.md"
+      },
+      {
+        "name": "R71W1EntryMutants",
+        "agent": "mutation-tester",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nScratch-copy corpus; mutate repaired Q04 prose, remove Q16, falsely claim locator compared, delete embedded line, or use another in-tree echo script. Run gate/lint. Report exits/findings/survivors. Never edit lane source.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1EntryMutants.md. Report trailer path `.ufo/waves/round-71/w1/R71W1EntryMutants.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1EntryMutants/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1EntryMutants.md"
+      },
+      {
+        "name": "R71W1GateMut",
+        "agent": "mutation-tester",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nScratch-mutate patched gate: remove missing-entry handler, timeout catch, restore traceback, alter only exit mapping. Run self-test/CLI; report mutant attribution/survivors. No lane edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1GateMut.md. Report trailer path `.ufo/waves/round-71/w1/R71W1GateMut.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1GateMut/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, operability\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1GateMut.md"
+      },
+      {
+        "name": "R71W1PinRegression",
+        "agent": "mutation-tester",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nScratch-run r65/r67/r68/r69 entries through patched gate; tamper pinned r68 script and pin path. Compare with round-70 labels. Report any pin/confinement/verbatim regression. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1PinRegression.md. Report trailer path `.ufo/waves/round-71/w1/R71W1PinRegression.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1PinRegression/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: freshness, calibration\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1PinRegression.md"
+      },
+      {
+        "name": "R71W1Sentinel",
+        "agent": "sentinel",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nReview lane diff from base for scope/safety: no source/fleet/sibling/routes or fixture-byte change; gate remains read-only; command execution not broadened. Check ADJ-06 fence. CONTAINED or findings.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1Sentinel.md. Report trailer path `.ufo/waves/round-71/w1/R71W1Sentinel.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1Sentinel/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: operability, adjacency\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1Sentinel.md"
+      },
+      {
+        "name": "R71W1IndependentRead",
+        "agent": "revenger",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently inspect authored APK without readout.py: zipfile and direct byte/struct read for ZIP header, AXML/dex declared fields. Tool/version/command/exit or label manual; scope only one fixture. No producer, no edit.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1IndependentRead.md. Report trailer path `.ufo/waves/round-71/w1/R71W1IndependentRead.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1IndependentRead/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, depth\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1IndependentRead.md"
+      },
+      {
+        "name": "R71W1EntryBlocks",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRun gate on v6, independently compare all embedded blocks with stdout. Report checked_blocks/problems/exit and whether blocks match v5.1. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1EntryBlocks.md. Report trailer path `.ufo/waves/round-71/w1/R71W1EntryBlocks.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1EntryBlocks/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: operability, coverage\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1EntryBlocks.md"
+      },
+      {
+        "name": "R71W1GateReplay",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRun gate self-test, v6 entry, lint and missing-entry probe. Compare output/exit to registry. Run old drift and pinned-r68 case. Record commands/output; no edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1GateReplay.md. Report trailer path `.ufo/waves/round-71/w1/R71W1GateReplay.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1GateReplay/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: operability, calibration\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1GateReplay.md"
+      },
+      {
+        "name": "R71W1CounterReplay",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRun frozen counter on base archive; diff with measure-before.log, including all HOLD lines. Replay strongest D control and test parser refusal for malformed/duplicate vote JSON on scratch. Record SHA/output/exit.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1CounterReplay.md. Report trailer path `.ufo/waves/round-71/w1/R71W1CounterReplay.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1CounterReplay/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration, operability\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1CounterReplay.md"
+      },
+      {
+        "name": "R71W1TimeoutProbe",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nProbe patched gate on missing entry and scratch in-tree sleeper using production 120s limit; confirm exit 2/text/no traceback; run fast self-test. Preserve output in report; delete scratch.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1TimeoutProbe.md. Report trailer path `.ufo/waves/round-71/w1/R71W1TimeoutProbe.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1TimeoutProbe/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration, operability\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1TimeoutProbe.md"
+      },
+      {
+        "name": "R71W1ControlsRun",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nAudit frozen controls A-D and receipts; confirm D reaches K 9/14 + gate/lint clean but fails at zero vote files. Report exact label outputs and any control flaw; no edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1ControlsRun.md. Report trailer path `.ufo/waves/round-71/w1/R71W1ControlsRun.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1ControlsRun/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration, coverage\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1ControlsRun.md"
+      },
+      {
+        "name": "R71W1Probe",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRun --spec-quotes and --zip-layout; preserve exact stdout/line numbers; check S052 quote and v6 item 12 line ranges. No source edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1Probe.md. Report trailer path `.ufo/waves/round-71/w1/R71W1Probe.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1Probe/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: operability, freshness\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1Probe.md"
+      },
+      {
+        "name": "R71W1OpenS038",
+        "agent": "scout",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRe-open S038 primary URL this round; locate attributeStart and one enum phrase used by v6. Record access date/time, status, snapshot comparison and <=25-word located quote. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1OpenS038.md. Report trailer path `.ufo/waves/round-71/w1/R71W1OpenS038.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1OpenS038/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: freshness, coverage\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1OpenS038.md"
+      },
+      {
+        "name": "R71W1OpenS048",
+        "agent": "scout",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRe-open S048 https://source.android.com/docs/core/runtime/dex-format; locate checksum/header_size quote. Record access date/time, status, snapshot comparison, <=25-word located quote. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1OpenS048.md. Report trailer path `.ufo/waves/round-71/w1/R71W1OpenS048.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1OpenS048/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: freshness, coverage\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1OpenS048.md"
+      },
+      {
+        "name": "R71W1OpenS032",
+        "agent": "scout",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRe-open S032/S034 APPNOTE URL; locate 4.3.7/4.3.12/4.3.16 headings. Record access date/time, snapshot comparison and <=25-word quote/location. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1OpenS032.md. Report trailer path `.ufo/waves/round-71/w1/R71W1OpenS032.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1OpenS032/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: freshness, coverage\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1OpenS032.md"
+      },
+      {
+        "name": "R71W1Quarantine",
+        "agent": "scout",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRead-only re-derive revenger slice in shokuknow absent-defect-register with 0-3-space-safe command; confirm count/verdict pointers from r70/r69/r67 lessons. Do not edit/campaign-tool there.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1Quarantine.md. Report trailer path `.ufo/waves/round-71/w1/R71W1Quarantine.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1Quarantine/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1Quarantine.md"
+      },
+      {
+        "name": "R71W1MistakeSweep",
+        "agent": "scout",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRead r70 verifier spotcheck §6 and measure-after/before receipts. Verify ten HOLD rows now print. Draft M58: class/evidence/captured-by/fix with red-before pointer; no file edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1MistakeSweep.md. Report trailer path `.ufo/waves/round-71/w1/R71W1MistakeSweep.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1MistakeSweep/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, operability\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1MistakeSweep.md"
+      },
+      {
+        "name": "R71W1ProvincePin",
+        "agent": "scout",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nConfirm PROVINCE route pin 6.4.0 versus records/S049 6.5.0 by read-only search. Provide exact evidence and whether 6.5.0 correction is justified. No edit.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1ProvincePin.md. Report trailer path `.ufo/waves/round-71/w1/R71W1ProvincePin.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1ProvincePin/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: freshness, depth\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1ProvincePin.md"
+      },
+      {
+        "name": "R71W1Considerthese",
+        "agent": "scribe",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRead operator-authored considerthese/2026-10-26.md; draft compact proposal-adoption ledger for proposal 1 only, grounded in 2026-10-24–26 lessons. Distinguish proposed/acted/checked-at-next-gate. Do not edit input.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1Considerthese.md. Report trailer path `.ufo/waves/round-71/w1/R71W1Considerthese.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1Considerthese/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1Considerthese.md"
+      },
+      {
+        "name": "R71W1LessonDraft",
+        "agent": "scribe",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nDraft lesson outline with ## Gate and ## Mistakes: S052 quote/date, at least one admit/reject for outside spot-check, M58 receipt omission, proposal-1 ledger. Only observed facts; do not edit lesson.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1LessonDraft.md. Report trailer path `.ufo/waves/round-71/w1/R71W1LessonDraft.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1LessonDraft/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, freshness\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1LessonDraft.md"
+      },
+      {
+        "name": "R71W1RegistryDraft",
+        "agent": "scribe",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nDraft exact SKILL registry wording for missing-entry/timeout exit 2, fast self-test legs, unchanged drift/pin/confinement. Check row matches code. Do not edit.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1RegistryDraft.md. Report trailer path `.ufo/waves/round-71/w1/R71W1RegistryDraft.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1RegistryDraft/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: operability, calibration\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1RegistryDraft.md"
+      },
+      {
+        "name": "R71W1ConnOverlap",
+        "agent": "connector",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nCross-lane overlap scan: PROVINCE, C05 candidate, open ADJ-06; ensure v6 does not absorb kaidoku APK/content-graph scope. Report contested boundary only.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1ConnOverlap.md. Report trailer path `.ufo/waves/round-71/w1/R71W1ConnOverlap.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1ConnOverlap/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: adjacency, coverage\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1ConnOverlap.md"
+      },
+      {
+        "name": "R71W1ConnLedger",
+        "agent": "connector",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nBounded planner data-walk: read r70 spotcheck, SCORECARD, r70 claims/lesson, r71 claims. List routed debts open/addressed/deferred; verify C1 is lowest active criterion move. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1ConnLedger.md. Report trailer path `.ufo/waves/round-71/w1/R71W1ConnLedger.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1ConnLedger/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, adjacency\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1ConnLedger.md"
+      },
+      {
+        "name": "R71W1Simplify",
+        "agent": "simplifier",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nYAGNI pass on v6 prose and gate patch. Identify exact deletion(s) preserving C05 and two exit-2 legs, or nothing-to-drop. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1Simplify.md. Report trailer path `.ufo/waves/round-71/w1/R71W1Simplify.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1Simplify/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: depth, operability\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1Simplify.md"
+      },
+      {
+        "name": "R71W1FreshSweep",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOn scratch archive, run embedded-output gate for every knowledge entry with `$` blocks. Record entry/blocks/problems/exit; note expected retained r65 M39. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1FreshSweep.md. Report trailer path `.ufo/waves/round-71/w1/R71W1FreshSweep.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1FreshSweep/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: freshness, coverage\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1FreshSweep.md"
+      },
+      {
+        "name": "R71W1ReceiptDraft",
+        "agent": "scribe",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nDraft after-receipt checklist: all ten HOLD lines, C1 vote label, C2 outputs, exact command/revision. Compare with r70 spotcheck. Do not edit counter/log.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1ReceiptDraft.md. Report trailer path `.ufo/waves/round-71/w1/R71W1ReceiptDraft.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1ReceiptDraft/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: operability, calibration\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1ReceiptDraft.md"
+      },
+      {
+        "name": "R71W1ScorecardDraft",
+        "agent": "scribe",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nDraft SCORECARD rows for C1 K 8/14→9/14 and C2 calibration leg, exact command and measured-revision slot, no scalar. Do not edit SCORECARD.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1ScorecardDraft.md. Report trailer path `.ufo/waves/round-71/w1/R71W1ScorecardDraft.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1ScorecardDraft/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1ScorecardDraft.md"
+      },
+      {
+        "name": "R71W1OpenS049",
+        "agent": "scout",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRe-open the S049 raw Android application reference at https://raw.githubusercontent.com/morluto/rea/rea-agents-6.5.0/.agents/skills/reverse-engineer-anything/references/android-applications.md this round. Locate the exact route sentence quoted by v6, record access date/time, digest/byte comparison with committed snapshot and <=25-word located quote. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w1/R71W1OpenS049.md. Report trailer path `.ufo/waves/round-71/w1/R71W1OpenS049.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W1OpenS049/`; delete before returning.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: freshness, coverage\nMilestone: C05 v6 pre-gate, gate exit-2 review, source/mistake frontier and frozen counter/control attacks\n\nReport: write your scoped findings to .ufo/waves/round-71/w1/R71W1OpenS049.md"
+      }
+    ]
+  },
+  "resumeSends": [],
+  "note": "Issue exactly one batched task call with taskCall ({context, tasks}); never split a wave into multiple task calls (one-swarm-per-wave). Then one hub send per resumeSends entry: hub send --to <entry.resume> --message <entry.message> (entry.name is bookkeeping, not a hub field)."
+}

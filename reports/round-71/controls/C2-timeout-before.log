@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/fast/scratch/hyaku/revenger-r71/c2-timeout-before/corpus/check_embedded_outputs.py", line 281, in <module>
+    main()
+    ~~~~^^
+  File "/fast/scratch/hyaku/revenger-r71/c2-timeout-before/corpus/check_embedded_outputs.py", line 268, in main
+    problems, checked = evaluate(args[1], Path.cwd())
+                        ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/fast/scratch/hyaku/revenger-r71/c2-timeout-before/corpus/check_embedded_outputs.py", line 171, in evaluate
+    proc, stdout, rc = run_cmd(cmd, cwd)
+                       ~~~~~~~^^^^^^^^^^
+  File "/fast/scratch/hyaku/revenger-r71/c2-timeout-before/corpus/check_embedded_outputs.py", line 106, in run_cmd
+    proc = subprocess.run([sys.executable, "-B", *argv[1:]], cwd=str(cwd),
+                          capture_output=True, text=True, timeout=120)
+  File "/usr/lib/python3.14/subprocess.py", line 557, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 1221, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 2154, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 1268, in _check_timeout
+    raise TimeoutExpired(
+    ...<2 lines>...
+            stderr=b''.join(stderr_seq) if stderr_seq else None)
+subprocess.TimeoutExpired: Command '['/usr/bin/python3', '-B', '-B', 'sleeper.py']' timed out after 120 seconds
+RC=1

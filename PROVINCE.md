@@ -16,7 +16,7 @@ Sources (read-only):
 - REA skill: ~/.agents/skills/reverse-engineer-anything/ (SKILL.md +
   references/; instructions only — server registration and engines are the
   lane's readiness domain)
-- REA package: `rea` CLI when installed, else `npx -y rea-agents@6.4.0`
+- REA package: `rea` CLI when installed, else `npx -y rea-agents@6.5.0`
   within authorized scope (setup never installs unrelated software)
 - Host engines as they become available (caller-supplied per REA: Ghidra,
   IDA, JADX, Binwalk/Unblob, pwntools) — census in corpus/knowledge/seed.md

@@ -5,10 +5,9 @@ line that the entry's own declared command does not print).
 
 Registered gate (SKILL.md `## Gate registry`, kind `gate`): a committed,
 re-runnable verdict script that can fail. It is deliberately OUTSIDE the
-verify_* replay family: this file is
-deliberately named outside the `verify_*.py` glob so the frozen ten-verifier
-census and HOLD_REPLAY=10/10 denominator stay untouched (reports/round-67/
-claims.md §C2). Registry row: SKILL.md §Gate registry (owner revenger).
+verify_* replay family: this file is deliberately named outside the
+`verify_*.py` glob so the frozen ten-verifier census and HOLD_REPLAY=10/10
+denominator stay untouched. Registry row: SKILL.md §Gate registry (owner revenger).
 
 Usage (cwd = lane root):
     python3 -B corpus/check_embedded_outputs.py --entry <knowledge.md>
@@ -16,16 +15,17 @@ Usage (cwd = lane root):
         that exact command (argv list, no shell), and requires every following
         output line to appear verbatim in the command's stdout.
         Exit 0 clean (>=1 block checked) · 1 drift found · 2 could-not-evaluate.
+        A missing/unreadable entry and a command timeout are exit 2 with a
+        `could-not-evaluate:` line and no traceback.
     python3 -B corpus/check_embedded_outputs.py --self-test
-        Hermetic temp-tree cases plus the in-script forged control whose
-        attributed failure marker is `drifted entry output accepted` — the
-        marker is the last output line of a failed run (round-68 repair of the
-        round-67 shadowing defect M45).
+        Hermetic temp-tree cases plus the in-script forged control and fast
+        missing-entry/timeout cases.
 
 Read-only over the lane tree: it runs the entry's declared commands, which in
 this corpus are standard-library readouts; it writes nothing outside its own
 temp dirs.
 """
+
 import hashlib
 import json
 import shlex
@@ -37,6 +37,10 @@ from pathlib import Path
 MARKER = "drifted entry output accepted"
 PIN_MARKER = "pinned historical script digest mismatch"
 PINS_REL = "embedded_output_pins.json"
+
+class CannotEvaluate(Exception):
+    """A declared could-not-evaluate condition; the CLI reports it as exit 2."""
+
 
 
 def require(cond, msg):
@@ -95,7 +99,7 @@ def inside(rel, cwd):
         return False
 
 
-def run_cmd(cmd, cwd):
+def run_cmd(cmd, cwd, timeout=120):
     argv = shlex.split(cmd)
     if not argv:
         return None, "", 2
@@ -103,8 +107,11 @@ def run_cmd(cmd, cwd):
         return None, "", 2
     if not confined(argv, cwd):
         return None, "", 2
-    proc = subprocess.run([sys.executable, "-B", *argv[1:]], cwd=str(cwd),
-                          capture_output=True, text=True, timeout=120)
+    try:
+        proc = subprocess.run([sys.executable, "-B", *argv[1:]], cwd=str(cwd),
+                              capture_output=True, text=True, timeout=timeout)
+    except subprocess.TimeoutExpired as exc:
+        raise CannotEvaluate(f"could-not-evaluate: command timed out after {timeout}s: {cmd}") from exc
     return proc, proc.stdout, proc.returncode
 
 
@@ -148,10 +155,15 @@ def drift(lines, stdout_set, lineno):
             for l, out_lineno in lines if l not in stdout_set]
 
 
-def evaluate(entry_path, cwd):
-    """Entry mode. Returns (problems, blocks_checked) or (None, None) if the
-    entry or a command could not be evaluated (exit 2)."""
-    text = Path(entry_path).read_text(encoding="utf-8", errors="ignore")
+def evaluate(entry_path, cwd, timeout=120):
+    """Return (problems, blocks_checked); raise CannotEvaluate for exit-2 cases."""
+    path = Path(entry_path)
+    if not path.is_file():
+        raise CannotEvaluate(f"could-not-evaluate: entry not found: {path}")
+    try:
+        text = path.read_text(encoding="utf-8", errors="ignore")
+    except OSError as exc:
+        raise CannotEvaluate(f"could-not-evaluate: entry not readable: {path}") from exc
     blocks = parse_blocks(text)
     if not blocks:
         return None, None
@@ -168,7 +180,7 @@ def evaluate(entry_path, cwd):
         if pin_problem:
             problems.append(f"drift entry:{lineno} {pin_problem}")
             continue
-        proc, stdout, rc = run_cmd(cmd, cwd)
+        proc, stdout, rc = run_cmd(cmd, cwd, timeout=timeout)
         if proc is None:
             return None, None
         if rc != 0:
@@ -255,7 +267,23 @@ def _self_test(tmp):
     hproblems, hchecked = evaluate(hostile, tmp)
     require(hproblems is None and hchecked is None,
             "self-test: an entry declaring `python3 -c` was evaluated instead of refused")
-    print("SELFTEST OK: clean exit 0, full-run exit 0, drifted caught, forged control fired, pinned script verified by digest and named by the entry, commands confined to relative scripts inside the tree and refused through evaluate()")
+    try:
+        evaluate(tmp / "missing-entry.md", tmp)
+        print("self-test: missing entry did not raise could-not-evaluate")
+        sys.exit(1)
+    except CannotEvaluate as exc:
+        require("entry not found:" in str(exc), "self-test: missing-entry reason was not declared")
+    sleeper = tmp / "sleeper.py"
+    sleeper.write_text("import time\ntime.sleep(5)\n", encoding="utf-8")
+    slow = tmp / "slow.md"
+    slow.write_text("```\n$ python3 -B sleeper.py\nfinished\n```\n", encoding="utf-8")
+    try:
+        evaluate(slow, tmp, timeout=1)
+        print("self-test: timed-out command did not raise could-not-evaluate")
+        sys.exit(1)
+    except CannotEvaluate as exc:
+        require("command timed out after 1s:" in str(exc), "self-test: timeout reason was not declared")
+    print("SELFTEST OK: clean exit 0, full-run exit 0, drifted caught, forged control fired, pin and confinement checks passed, missing-entry and timeout legs passed")
 
 
 def main():
@@ -265,9 +293,13 @@ def main():
             _self_test(Path(d))
         sys.exit(0)
     if len(args) == 2 and args[0] == "--entry":
-        problems, checked = evaluate(args[1], Path.cwd())
+        try:
+            problems, checked = evaluate(args[1], Path.cwd())
+        except CannotEvaluate as exc:
+            print(str(exc))
+            sys.exit(2)
         if problems is None:
-            print("could-not-evaluate: no `$ cmd` blocks, unsupported command, or read failure")
+            print("could-not-evaluate: no `$ cmd` blocks or unsupported command")
             sys.exit(2)
         for p in problems:
             print(p)

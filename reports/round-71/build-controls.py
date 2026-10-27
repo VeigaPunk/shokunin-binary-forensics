@@ -37,7 +37,9 @@ def dcontrol(d):
     src=LANE/'corpus/knowledge/round-70-apk-axml-byte-evidence.md'
     dst=d/'corpus'/V6; dst.parent.mkdir(parents=True,exist_ok=True); shutil.copy2(src,dst)
     text=dst.read_text(encoding='utf-8').replace('admission-status: rejected','admission-status: admitted',1)
-    text += '\n| Q16 | pass | no unsupported credit |\n'
+    marker='| Q15 | pass | this entry states no git object id; identity statements are file digests printed by item 14. |'
+    assert marker in text
+    text=text.replace(marker,marker+'\n| Q16 | pass | counter-forged statement; not independently checked |',1)
     dst.write_text(text,encoding='utf-8')
 
 if __name__=='__main__':
