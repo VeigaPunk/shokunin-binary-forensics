@@ -1,0 +1,16 @@
+PASS — item 11/12 stdout descriptions match the captured command output; repair the Q04 map rationale, which falsely says there is no tool claim.
+
+## Evidence
+
+- `corpus/QUALITY.md:16` defines Q04: name tool/version/function, score its explicit output, and label manual analysis.
+- `$ python3 -B corpus/fixtures/apk-r65/entry_checks.py --spec-quotes` — exit 0; six `MATCH` lines. Each prints snapshot filename, `first line N`, `folded phrase present=True`, and the searched phrase. For example: `MATCH dex-format.html: first line 5035, folded phrase present=True: uint ENDIAN_CONSTANT = 0x12345678;`. This matches item 11's output description at `corpus/knowledge/round-71-apk-axml-byte-evidence.md:120,144-150`; embedded six lines compare byte-for-byte equal to captured stdout. The script is identified by path and its committed bytes are digest-pinned in item 14; the function is `--spec-quotes`. No raw snapshot line is being represented as command output.
+- `$ python3 -B corpus/fixtures/apk-r65/entry_checks.py --zip-layout` — exit 0, exactly 20 stdout lines. Numbered output: 1–3 print local/central/EOCD fixed widths; 4–15 print offset/literal-presence checks; 16 `MATCH APPNOTE 4.3.7: heading line 387, transcribed field lines 389-399`; 17 `MATCH APPNOTE 4.3.12: heading line 511, transcribed field lines 522-538`; 18 `MATCH APPNOTE 4.3.16: heading line 632, transcribed field lines 634-646`; 19 `MATCH central.fixed_part: spec width 46, readout.py literal \`cursor + 46\` present=True`; 20 `MATCH local.fixed_part: spec width 30, readout.py literal \`lh_off + 30\` present=True`. All 20 embedded stdout lines at entry:157-176 compare byte-for-byte equal to the captured output. Snapshot spot-check confirms the three headings and field endpoints at `corpus/snapshots/APPNOTE.TXT:387-399,511-538,632-646`.
+- Item 12 at entry:153 accurately states that lines 16–18 locate the three layouts and the last two lines compare central/local fixed-part widths. Its “manually transcribed” qualification matches `entry_checks.py:53-60`; it does not misrepresent those sums as independently derived from the snapshot.
+
+## Actionable correction
+
+The v6 Q-map rationale at `corpus/knowledge/round-71-apk-axml-byte-evidence.md:302` says `no tool claim`, contradicting the entry's explicit script/output claims in items 11–12. Replace that clause with: `the readout is manual standard-library byte analysis, the APPNOTE widths are labeled manual (items 5, 12), and item 11's derivation-script claims are limited to the line numbers and phrases its printed output shows (items 11-12); the script path/function and committed script bytes are identified/pinned.` This preserves PASS while making the rationale accurate. The item's descriptions themselves need no stdout-based correction.
+
+Residual risk / verification gap: this review was scoped to Q04 and the requested two commands; it does not adjudicate other Q-map criteria. Commands were run from the lane root. No source changes made.
+
+Report: `.ufo/waves/round-71/w1/R71W1GateQ04.md`

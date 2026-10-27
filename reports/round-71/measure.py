@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Round-71 frozen counter. Usage: measure.py TREE (git archive corpus snapshot).
-Reads TREE, lane git objects and committed round-71 vote JSON under the lane's `.ufo/`;
-scratch is rooted under HYAKU_SCRATCH. Exit 0 = prior holds green, 1 = named hold red,
-2 = could not evaluate.
+"""Round-71 frozen counter. Usage: measure.py TREE (git archive of corpus, SKILL.md,
+SCORECARD.md, SHONEN.md and committed `.ufo/waves/round-71/w2-votes/` files).
+Reads only TREE and lane git objects; scratch is rooted under HYAKU_SCRATCH.
+Exit 0 = prior holds green, 1 = named hold red, 2 = could not evaluate.
 """
 import hashlib, json, os, re, shutil, subprocess, sys, tempfile, traceback
 from pathlib import Path
@@ -46,12 +46,20 @@ EXPECTED_VOTES={
     'R71W2Q13Q16':('Q13','Q14','Q15','Q16'),
 }
 
-def q_votes():
-    root=LANE/'.ufo/waves/round-71/w2-votes'; seen={}
+def unique_object(pairs):
+    result={}
+    for key,value in pairs:
+        if key in result: raise ValueError(f'duplicate JSON key: {key}')
+        result[key]=value
+    return result
+
+def q_votes(tree):
+    root=Path(tree)/'.ufo/waves/round-71/w2-votes'; seen={}
     if not root.is_dir(): return 0
     for path in root.glob('*.json'):
-        try: data=json.loads(path.read_text(encoding='utf-8'))
+        try: data=json.loads(path.read_text(encoding='utf-8'),object_pairs_hook=unique_object)
         except (OSError,ValueError,UnicodeError): return 0
+        if not isinstance(data,dict): return 0
         seat=data.get('seat'); expected=EXPECTED_VOTES.get(seat)
         decisions=data.get('decisions')
         if expected is None or path.stem!=seat or not isinstance(decisions,dict) or set(decisions)!=set(expected): return 0
@@ -88,7 +96,7 @@ def body(tree,scratch):
         rc,out,_=run(tree,'lint_entry.py','--entry',str(v6),'--lane',str(LANE),cwd=tree)
         lint_ok=rc==0; print(f'C1_LINT={"; ".join(out.strip().splitlines())} exit={rc}')
     else: print('C1_GATE=n/a'); print('C1_LINT=n/a')
-    votes=q_votes(); print(f'C1_W2_Q_VOTES={votes}/16')
+    votes=q_votes(tree); print(f'C1_W2_Q_VOTES={votes}/16')
     c1=len(br)==9 and len(strict)==9 and status=='held' and paths==[V6] and admitted and gate_ok and lint_ok and votes==16
     print(f'HOLDS_C1_V6={"yes" if c1 else "no"}')
 

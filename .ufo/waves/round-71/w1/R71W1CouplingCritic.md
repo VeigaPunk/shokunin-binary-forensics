@@ -1,0 +1,22 @@
+ADVISORY PASS — C1 and C2 are predicate-separable in the registered counter; C2 gate edits still share regression surfaces with EMB/pin/self-test labels.
+
+## Axes
+- **Calibration:** Does the frozen C2 exit-2 behavior measure independently from C1 coverage/admission?
+- **Freshness / preservation:** Can either claim silently alter retained-entry, pin, replay, or self-test labels?
+
+## Evidence and counterexample
+- `reports/round-71/measure.py:84-93` computes C1 from coverage rows, V6 admission/gate/lint, and W2 votes; `:95-113` computes C2 solely from actual missing-entry CLI, timeout CLI, and gate self-test. There is no cross-term in either `HOLDS_*` predicate.
+- Strongest local counterexample to *shared-counter label isolation*: C1-only control D (`reports/round-71/controls/D-C1-v5-copy-with-q16.log:8-15`) reaches `C1_GATE=...ok=yes`, clean lint, and `K=9/14` (preregistration `reports/round-71/pre-registration.txt:8`) while C2 remains red exactly as base: missing `rc=1`, timeout `rc=1`, self-test named legs 0, `HOLDS_C2_V1=no`. This demonstrates C1 movement does not move C2. A/B/C likewise keep C2 red (`reports/round-71/controls/A-do-nothing-base.log:12-15`, B/C corresponding rows).
+- The controls also show these are not independent *all-label* interventions: D's self-assessment remains `SM6=1`, `SELF_MISMATCH=1` (`D...log:24-32`), as do the other C1 controls; changing C1 tree state changes a separate self-assessment/repository-consistency label, not C2. The counter deliberately derives that check against lane state at `reports/round-71/measure.py:133-143`.
+- C2's real CLI catches `CannotEvaluate` only around `evaluate()` (`corpus/check_embedded_outputs.py:289-307`); that evaluation handles absent entries and wraps command timeouts (`:158-166`, `:102-115`). Its self-test includes fast missing/timeout paths plus drift, pin, and confinement controls (`:220-286`). Thus the C2 change is close to shared gate semantics: weakening comparison, pin, or confinement while implementing catch/report behavior can alter retained `EMB_*`/pin labels or pass an exit-only self-test. Counter separately records retained `EMB_R65..R69`, byte digests, pin mutant attribution, self-assessment, and ten replays (`reports/round-71/measure.py:115-150`).
+- The exact frozen counter keeps C1 and C2 claims distinct from the general counter exit (`measure.py:163-165`); preregistered C1 control D's `0/16` vote predicate is a particularly good guard against a convincing but non-adjudicated candidate (`pre-registration.txt:7-9`).
+
+## One-claim tree probes (recommended)
+1. **C1-only:** use control D's isolated README/entry state; assert C1 gate/lint and K can move while `HOLDS_C2_V1` and its three C2 component labels remain byte-for-byte at red-before. Existing evidence passes this probe.
+2. **C2-only:** hold README, V6 entry, vote directory, retained entries, pins and verifier scripts at the same tree; change only gate classification implementation. Assert missing and timeout CLI legs plus self-test change to pass, while `C1_*`, `EMB_R65..R69`, unchanged digests, pin mutant, self-assessment and `HOLD_REPLAY` remain equal to red-before. For stronger attribution, use separate one-mutant variants: exit mapping only (missing), timeout mapping only, and a control that edits the exit text but leaves exit 1 (frozen E). Do not combine those variants into one successful tree.
+3. **C1 does not rescue C2:** retain D's C1-positive partial state with the base gate and assert C2 stays no; this exact control already demonstrates it. Avoid interpreting stable `HOLDS_OK_V8=yes`/replay as evidence that C2 passes: those are different predicates.
+
+## Couplings / smallest safe correction
+C1→C2 predicate coupling: **none observed**; no counter or claim change recommended. C1→self-assessment consistency label: **observed and expected**, not C2 coupling. C2→retained-gate regression labels is a real shared implementation surface, but frozen pin/drift/confinement/replay checks already constrain it. Keep the gate patch limited to explicit `CannotEvaluate` classification and CLI reporting, preserve existing `evaluate`/comparison/pin/confinement behavior, and inspect all listed regression labels in the final measured tree. Do not add C1 status as a C2 precondition or infer C2 from the overall counter exit.
+
+This is a wave-1 advisory separability review, not a round judgment. No source rows were opened; no sources census/access-date quote is needed.

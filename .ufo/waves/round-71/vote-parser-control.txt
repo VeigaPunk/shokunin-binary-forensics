@@ -1,0 +1,5 @@
+A2 helper control, executed on isolated `/fast/scratch/hyaku/revenger-r71/L1-vote-parser-test/` (removed after run):
+- Four valid JSON files, exact stems and assigned Q sets, 16 `PASS` decisions → `q_votes(TREE)=16`.
+- Duplicate JSON key `Q01: FAIL` then `Q01: PASS` in one file → `q_votes(TREE)=0` (`object_pairs_hook` rejects duplicate keys).
+- Valid JSON root `[1,2]` → `q_votes(TREE)=0` (non-object treated as malformed; no exception/receipt truncation).
+No lane data file was used as test input; the eventual `measure.py` archive includes `.ufo/waves/round-71/w2-votes/` as committed bytes.

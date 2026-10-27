@@ -44,6 +44,7 @@ def dcontrol(d):
 
 if __name__=='__main__':
     ROOT.mkdir(parents=True,exist_ok=True)
-    run('B-C1-readme-flip-only',b)
-    run('C-C1-admitted-stub',c)
-    run('D-C1-v5-copy-with-q16',dcontrol)
+    controls=[('B-C1-readme-flip-only',b),('C-C1-admitted-stub',c),('D-C1-v5-copy-with-q16',dcontrol)]
+    selected=set(sys.argv[1:])
+    for name,mutate in controls:
+        if not selected or name in selected: run(name,mutate)

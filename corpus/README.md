@@ -11,7 +11,7 @@ frontier it is working toward. Province: `PROVINCE.md`. Admission bar:
 - `knowledge/` — admitted domain entries (the map below names each one); also
   retains clearly marked rejected candidates (each carries an
   `admission-status: rejected` header), which are evidence, not admitted knowledge.
-- `lessons/` — `2026-10-12-r1-provider-gap.md`; `2026-10-27-bounty-triage-module.md` (interactive, non-round); `round-1.md` (fleet round-1 gates and the mined `## Mistakes` table); `round-1-verifier-spotcheck.md` (integrator-written outside check of round 1); `round-N.md` (round gate, mistakes and source changes) with `round-N-verifier-spotcheck.md` (outside check) for each N in 61–69 — the directory listing is the authority (`ls corpus/lessons`).
+- `lessons/` — `2026-10-12-r1-provider-gap.md`; `2026-10-27-bounty-triage-module.md` (interactive, non-round); `round-1.md` (fleet round-1 gates and the mined `## Mistakes` table); `round-1-verifier-spotcheck.md` (integrator-written outside check of round 1); `round-N.md` (round gate, mistakes and source changes) with `round-N-verifier-spotcheck.md` (outside check) for completed rounds when present — `ls corpus/lessons` is the authority for exact files.
 - `fixtures/` — authored known-truth inputs (byte-oracle fixtures; `fixtures/REPLAY.md`).
 - `live/runs/` — saved REA outputs, receipts and non-author reviews per historical round.
 - `verify_*.py` — saved-ledger replay verifiers (`--self-test`); census command in `SCORECARD.md` (C).

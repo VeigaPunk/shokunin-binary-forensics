@@ -10,7 +10,7 @@ C1_LINT=LINT_QMAP=0; LINT_Q14=0; LINT_Q15=0; LINT_HEADER=0 exit=0
 C1_W2_Q_VOTES=0/16
 HOLDS_C1_V6=no
 C2_MISSING_ENTRY_EXIT2=0/1 rc=1 stderr_traceback=yes
-C2_TIMEOUT_EXIT2=0/1 rc=1 stderr_traceback=no
+C2_TIMEOUT_EXIT2=0/1 rc=1 stderr_traceback=yes
 C2_GATE_SELFTEST=0 named_legs=0
 HOLDS_C2_V1=no
 EMB_R65=checked_blocks=15 problems=1 exit=1
@@ -45,4 +45,4 @@ GATE_SELFTEST=exit 0
 F_COVERAGE=5/8 score=6.2
 FRESH_ROWS=18/18
 HOLDS_OK_V8=yes
-CONTROL=D-C1-v5-q16-vote-control EXIT=0
+CONTROL=D-C1-v5-copy-with-q16 EXIT=0
