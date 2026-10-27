@@ -1,0 +1,9 @@
+Round 71 pre-registration receipt; recorded before any wave seat scored.
+Base lane commit: b7abcd875c84f4e1d6c8df966b6bd20f4154c53f
+Base tree: 5286bea515714e001a6bb150ccbb4d2c7218abd2
+Counter SHA-256: d0d59b79652dae9d65796493f703470dc4d4998ec607cb25a41aed939f38d06c
+Claims SHA-256: 1febae1279fdeca323f5e8beffeb0a8ac2f26256158f7000bb0b2eff8321c3f5
+Red-before: reports/round-71/measure-before.log (MEASURE_EXIT=0; C1 no, C2 no; K 8/14; C2 missing 0/1, timeout 0/1; HOLD_REPLAY 10/10; HOLDS_OK_V8 yes)
+Do-nothing controls: reports/round-71/controls/A-do-nothing-base.log, B-C1-readme-flip-only.log, C-C1-admitted-stub.log, D-C1-v5-copy-with-q16.log.
+Control D reaches K 9/14 with gate and lint clean but `C1_W2_Q_VOTES=0/16`, so `HOLDS_C1_V6=no`.
+Counter prints ten individual HOLD lines; counter exit contract: 0 holds green, 1 a named hold red, 2 could not evaluate.

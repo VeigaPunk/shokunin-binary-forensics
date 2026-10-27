@@ -1,0 +1,11 @@
+Command: /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin revenger
+Exit: 0
+Output:
+revenger W04 S024 duplicate url www.rfc-editor.org/rfc/rfc3227.txt across scopes
+revenger W04 S028 duplicate url github.com/ethereum/execution-specs/tree/v2.20.0/src/ethereum/forks/osaka/vm across scopes
+revenger W04 S029 duplicate url tc39.es/ecma262 across scopes
+revenger W04 S034 duplicate url pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT across scopes
+revenger W04 S048 duplicate url source.android.com/docs/core/runtime/dex-format across scopes
+revenger W01 S051 tierC mined used-by=corpus/training/bounty-triage/MODULE.md
+revenger ok /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md
+Row count: `git show b7abcd875c84f4e1d6c8df966b6bd20f4154c53f:corpus/SOURCES.md | grep -cE '^\|[[:space:]]*S[0-9]{3,}[[:space:]]*\|'` -> 51.
