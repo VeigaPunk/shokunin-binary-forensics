@@ -1,0 +1,6 @@
+A3 q_votes(TREE) scratch probes using counter SHA to be recorded in `reports/round-71/measure-amendment-A3.md`:
+valid four-seat files=16
+single symlink member=0
+unhashable `seat` (list)=0
+symlink vote-directory root=0
+The scratch tree and external fixture JSON were removed after the probes. No lane vote files were created.

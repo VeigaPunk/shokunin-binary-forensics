@@ -55,13 +55,15 @@ def unique_object(pairs):
 
 def q_votes(tree):
     root=Path(tree)/'.ufo/waves/round-71/w2-votes'; seen={}
-    if not root.is_dir(): return 0
+    if root.is_symlink() or not root.is_dir(): return 0
     for path in root.glob('*.json'):
+        if path.is_symlink() or not path.is_file(): return 0
         try: data=json.loads(path.read_text(encoding='utf-8'),object_pairs_hook=unique_object)
-        except (OSError,ValueError,UnicodeError): return 0
+        except (OSError,ValueError,UnicodeError,TypeError): return 0
         if not isinstance(data,dict): return 0
-        seat=data.get('seat'); expected=EXPECTED_VOTES.get(seat)
-        decisions=data.get('decisions')
+        seat=data.get('seat')
+        if not isinstance(seat,str): return 0
+        expected=EXPECTED_VOTES.get(seat); decisions=data.get('decisions')
         if expected is None or path.stem!=seat or not isinstance(decisions,dict) or set(decisions)!=set(expected): return 0
         for q in expected:
             value=decisions[q]
