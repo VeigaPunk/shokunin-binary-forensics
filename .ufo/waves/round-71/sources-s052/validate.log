@@ -6,3 +6,4 @@ file	W04	S048 duplicate url source.android.com/docs/core/runtime/dex-format acro
 file	W01	S051 tierC mined used-by=corpus/training/bounty-triage/MODULE.md
 file	ok	/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/sources-s052/validate/corpus/SOURCES.md
 EXIT=0
+The temporary full-corpus mirror was removed after validation; the current committed registry and row count are revalidated in `../census-after.txt`.

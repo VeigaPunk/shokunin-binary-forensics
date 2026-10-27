@@ -7,3 +7,4 @@ file	W01	S051 tierC mined used-by=corpus/training/bounty-triage/MODULE.md
 file	W04	S053 duplicate url docs.python.org/3/library/zipfile.html across scopes
 file	ok	/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/sources-s053/validate/corpus/SOURCES.md
 EXIT=0
+The temporary full-corpus mirror was removed after validation; the current committed registry and row count are revalidated in `../census-after.txt`.
