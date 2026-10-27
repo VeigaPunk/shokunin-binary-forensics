@@ -68,9 +68,9 @@ Located-quote audit: `reports/round-72/source-quotes-check.log` runs the recorde
 
 ## Gate review plan / results
 
-The frozen C1 remains coverage C15; source registry count alone is not the C1 predicate. Only the wave and the final counter decide admission. Each source statement in `corpus/knowledge/round-72-tool-landscape.md` is bounded to its own cited page; no tool is described as installed or tested.
+The frozen C1 remains coverage C15; source registry count alone is not the predicate. Candidate commit `99911e808a25f8d9ba26e1c00fbb18e755daf820` measured `C15_HELD_BACKED=0/1`, `C15_TOOL_ROWS=18/18`, `HOLDS_C15=no`; C15 stays uncovered. The 64-item wave was validated and `w1.ready` written, but no `WAVE-DONE`/results handoff arrived before priority closure under the parent's quota hold. No seat verdict or independent verification is credited; the candidate is not admitted. Tool language remains bounded to each cited page, with no install/test claim.
 
-Outside admit/reject spot-check offered: S054 (primary REA project README source, admitted for its own declared tool scope) and S071 (secondary catalog source, rejected as direct support for any tool capability). Lane-dispatched seats are not a non-author reviewer; independent outside agreement/reasons remain pending the closure verifier.
+Outside admit/reject sample offered for closure: S054 (primary REA README, admitted only as evidence of its declared scope) and S071 (secondary catalog, rejected as direct capability evidence). No non-author reviewer returned an agreement/reason set; the independent outside spot-check remains unverified.
 
 ## Mistakes
 
@@ -81,11 +81,11 @@ Outside admit/reject spot-check offered: S054 (primary REA project README source
 
 ## Assimilation and frontier
 
-Assimilation: none from `/home/vgpnk/Projects/shokuknow`; no package entries or rows were adopted. Round-71 already recorded the complete 26-row quarantine slice and per-row verdicts (`.ufo/waves/round-71/assimilation/quarantine-slice`; `corpus/lessons/round-71.md:88`). This round re-opened the lane's newest in-scope proposal file `considerthese/2026-10-26.md`. Proposal 1 (adoption ledger) was already used in round 71; proposals 2 and 3 concern a C05 candidate/hit-rate statement not made in this claim. The still-unimplemented proposal 4, per-role seat yield, is evaluated after the wave in the `## Per-role yield` section below; it is a reporting/learning experiment, not a second claim. No `considerthese/` file was edited.
+Assimilation: none from `/home/vgpnk/Projects/shokuknow`; no package entries or rows adopted. Round 71 recorded the complete 26-row quarantine slice and verdicts (`.ufo/waves/round-71/assimilation/quarantine-slice`; `corpus/lessons/round-71.md:88`). This round re-opened `considerthese/2026-10-26.md`: proposal 1 (adoption ledger) was already used; proposals 2–3 concern a C05 candidate/hit-rate not claimed here. Proposal 4 (per-role yield) was not evaluable without wave results; no `considerthese/` file was edited.
 
 ## Per-role yield (considerthese/2026-10-26.md proposal 4)
 
-Pending `WAVE-DONE`; fill only from the committed v2 wave result records and seat reports. The acceptance unit is a located finding that changed an entry/source/counter decision, not raw word count; if no role-specific change is traceable, record that honest no-yield result rather than infer contribution from role names.
+Not evaluable: `.ufo/waves/round-72/w1.ready` was written, but no WAVE-DONE/results handoff arrived before closure; therefore no role-level finding/yield can be attributed. Do not infer contribution from planned role names.
 
 ## Assimilation note
 

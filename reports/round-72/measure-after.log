@@ -1,0 +1,20 @@
+Measured committed candidate `99911e808a25f8d9ba26e1c00fbb18e755daf820` (`git archive` extracted to `/fast/scratch/hyaku/revenger-r72/L1/candidate-99911`).
+
+Command:
+python3 -B /fast/scratch/hyaku/revenger-r72/L1/candidate-99911/reports/round-72/measure.py /fast/scratch/hyaku/revenger-r72/L1/candidate-99911
+
+Output:
+C15_HELD_BACKED=0/1
+C15_TOOL_ROWS=18/18
+C15_STATUS=not-held-or-absent
+ENTRY_PRESENT=yes
+HOLDS_C15=no
+MEASURE_EXIT=0
+
+The candidate C15 row remains `uncovered` and the knowledge header remains `candidate`; therefore the 18/18 row label does not satisfy the frozen hold predicate.
+
+Coverage-map count command against that same committed tree:
+python3 -B -c 'import pathlib,re; rows=[x for x in pathlib.Path("/fast/scratch/hyaku/revenger-r72/L1/candidate-99911/corpus/README.md").read_text(encoding="utf-8").splitlines() if re.match(r"^\| C[0-9]+ ",x)]; held=sum(x.rstrip().endswith("| held |") for x in rows); print(f"K_HELD_BACKED={held}/{len(rows)} score={10*held/len(rows):.1f}")'
+Output: K_HELD_BACKED=8/15 score=5.3
+Exit: 0
+Prior comparison `reports/round-71/measure-after.log`: `K_HELD_BACKED=8/14 score=5.7` on the prior admitted map. This round therefore does not meet C1 and does not warrant flipping C15 to held.
