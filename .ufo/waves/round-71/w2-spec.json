@@ -1,0 +1,322 @@
+{
+ "wave": "revenger-r71-w2",
+ "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure",
+ "reportDir": ".ufo/waves/round-71/w2",
+ "axes": [
+  "coverage",
+  "calibration",
+  "freshness",
+  "operability",
+  "depth",
+  "adjacency"
+ ],
+ "context": "# Goal\nRevenger round 71, WAVE 2 of 2 (fresh falsification). Lane: /home/vgpnk/Projects/shokunin/revenger-shokunin. Candidate/build commit: `4c1eeaee88fd07e442f1bd546faf77be3957d390`; counter amendment A1 + A2 and frozen claims are in `reports/round-71/`. Round-71 total planned size is 40 + 34 = 74 seats. Only the lane repo is the write scope. L1 is sole integrator; no seat is a judge. Never write fleet/sibling/source repos, global route/config, commit/push, spawn, or message agent://all.\n\n# Frozen contract and handoff\nRead `/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-71/claims.md`, `pre-registration.txt`, `measure-amendment-A1.md`, `measure-amendment-A2.md`, and `.ufo/waves/round-71/w1-attack-inventory.md`. C1 remains the frozen C05 coverage claim; C2 remains the gate's missing-entry/120s timeout exit-2 claim. A1 corrects only the counter sleeper fixture path; A2 binds votes to committed TREE files and rejects duplicate/non-object vote JSON. Do not change predicates, targets, thresholds or kill rules after scoring begins. Final candidate is committed; W2 is the only C1 adjudicating wave. If any Q fails, report it with a located defect; do not repair/re-gate after the vote.\n\n# W2 vote-file contract\nFour reviewer seats own these exact Q subsets and unique files: `R71W2Q01Q04` Q01\u2013Q04; `R71W2Q05Q08` Q05\u2013Q08; `R71W2Q09Q12` Q09\u2013Q12; `R71W2Q13Q16` Q13\u2013Q16. Each such reviewer writes exactly one pure UTF-8 JSON object to `/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2-votes/<seat>.json` with exactly the keys `seat` and `decisions`; `decisions` contains exactly the four assigned Q keys and values `PASS`, `n/a`, or `FAIL`. Do not use duplicate JSON keys, extra Q keys, Markdown fences, or shared files. The report remains separate. No other seat writes into `w2-votes`. Counter D path and A2 parser are the authority for how the vote files bind.\n\n# Paths, scratch, tooling\nEvery tool starts at fleet root `/home/vgpnk/Projects/shokunin`; use absolute paths. Each task names a report path; `Report:` trailer is relative to lane root `/home/vgpnk/Projects/shokunin/revenger-shokunin`. Read-only seats do not edit source. Scratch: `/fast/scratch/hyaku/revenger-r71/<seat-name>/`; create and pass explicitly, copy receipts to the report then remove. Do not use `/tmp` for evidence. No pacman transactions (host-wide pause). Read `/home/vgpnk/.omp/agent/RULES.md` before installing any tool; official channels/update-safety gate, record tool/version/channel/reason. No install is needed. Never change routing; role routes are host config, no model is passed.\n\n# Output\nLeaf, no spawn, 12-minute time-box. First line of report is a verdict + reason, then commands and output/file lines. Wave-2 results are fresh-seat findings; they do not authorize source edits. If C1 passes all Q01\u2013Q16, L1 alone flips C05 and writes SCORECARD/LOG. If any fail, L1 applies the frozen honest-stop mark. No L0 question is answered here.",
+ "items": [
+  {
+   "name": "R71W2Q01Q04",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "depth"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently decide Q01\u2013Q04 on final committed v6 bytes. Reopen cited tier-A source rows, header/provenance and source anchors; independently derive one fixture value; compare item11 `--spec-quotes` and item12 `--zip-layout` with actual stdout. Do not accept the entry's Q-map. Record one Qnn verdict each and located evidence. Vote file: `.ufo/waves/round-71/w2-votes/R71W2Q01Q04.json` (absolute lane path in context).\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2Q01Q04.md. Report trailer `.ufo/waves/round-71/w2/R71W2Q01Q04.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2Q01Q04/`; delete it before returning.\n\nFINAL VOTE FILE REQUIRED: write pure JSON only, exactly `{\"seat\":\"R71W2Q01Q04\",\"decisions\":{\"Q01\":\"PASS\",\"Q02\":\"PASS\",\"Q03\":\"PASS\",\"Q04\":\"PASS\"}}` to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2-votes/R71W2Q01Q04.json; replace each PASS with PASS/n/a/FAIL from your decisions. No extra keys, Markdown, duplicate keys or other vote file. Keep your report separate."
+  },
+  {
+   "name": "R71W2Q05Q08",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently decide Q05\u2013Q08 on final v6 bytes: readiness, digest scope, family/input scope, parser behavior, and Q08 superseded by Q11 classification. Re-run relevant commands; cite exact line/output. Do not accept the entry's own map. Write exact assigned decisions to your vote JSON file specified by the W2 contract.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2Q05Q08.md. Report trailer `.ufo/waves/round-71/w2/R71W2Q05Q08.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2Q05Q08/`; delete it before returning.\n\nFINAL VOTE FILE REQUIRED: write pure JSON only, exactly `{\"seat\":\"R71W2Q05Q08\",\"decisions\":{\"Q05\":\"PASS\",\"Q06\":\"PASS\",\"Q07\":\"PASS\",\"Q08\":\"PASS\"}}` to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2-votes/R71W2Q05Q08.json; replace each PASS with PASS/n/a/FAIL from your decisions. No extra keys, Markdown, duplicate keys or other vote file. Keep your report separate."
+  },
+  {
+   "name": "R71W2Q09Q12",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "depth"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently decide Q09\u2013Q12 on final bytes: exact digest scope, cross-lane fence, derivation of numbers/offsets, and whether Q12 n/a is justified by absence of a rejected-source claim in this entry. Verify citations/commands and state n/a reasons. Write exact assigned decisions to your vote JSON file.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2Q09Q12.md. Report trailer `.ufo/waves/round-71/w2/R71W2Q09Q12.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2Q09Q12/`; delete it before returning.\n\nFINAL VOTE FILE REQUIRED: write pure JSON only, exactly `{\"seat\":\"R71W2Q09Q12\",\"decisions\":{\"Q09\":\"PASS\",\"Q10\":\"PASS\",\"Q11\":\"PASS\",\"Q12\":\"PASS\"}}` to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2-votes/R71W2Q09Q12.json; replace each PASS with PASS/n/a/FAIL from your decisions. No extra keys, Markdown, duplicate keys or other vote file. Keep your report separate."
+  },
+  {
+   "name": "R71W2Q13Q16",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently decide Q13\u2013Q16 on final bytes. Attack each credited set against actual printed output; rerun --zip-layout and --axml-layout, inspect Q13 survivor list, verify every locator-only literal. Treat the Q-map as a claim, not proof. Write exact assigned decisions to your vote JSON file.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2Q13Q16.md. Report trailer `.ufo/waves/round-71/w2/R71W2Q13Q16.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2Q13Q16/`; delete it before returning.\n\nFINAL VOTE FILE REQUIRED: write pure JSON only, exactly `{\"seat\":\"R71W2Q13Q16\",\"decisions\":{\"Q13\":\"PASS\",\"Q14\":\"PASS\",\"Q15\":\"PASS\",\"Q16\":\"PASS\"}}` to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2-votes/R71W2Q13Q16.json; replace each PASS with PASS/n/a/FAIL from your decisions. No extra keys, Markdown, duplicate keys or other vote file. Keep your report separate."
+  },
+  {
+   "name": "R71W2Header",
+   "role": "reviewer",
+   "axes": [
+    "freshness",
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRe-review v6 provenance trio/source rows S052/S053 and the entry's Gate/source anchors on final bytes. Verify S052 output quote and S053 rejected-source quote/flip, no dangling path, and that source rows' scope/tier match claims. Report exact source lines and limits; no vote file.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2Header.md. Report trailer `.ufo/waves/round-71/w2/R71W2Header.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2Header/`; delete it before returning."
+  },
+  {
+   "name": "R71W2Reproduce",
+   "role": "reviewer",
+   "axes": [
+    "operability",
+    "freshness"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRun every Reproduce command and all embedded blocks at final tip. Check item15 stdout count/digest and the entry's eight entry_checks flags. Re-derive command line counts with stdout excluding `$` command lines. Report exact outputs and any discrepancy.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2Reproduce.md. Report trailer `.ufo/waves/round-71/w2/R71W2Reproduce.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2Reproduce/`; delete it before returning."
+  },
+  {
+   "name": "R71W2ReadmeScorecard",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOn final tree, independently derive README coverage rows and `K_HELD_BACKED` count. Confirm only C05 can change, exact v6 path in knowledge column on admission, no premature flip, and SCORECARD command/evidence line matches final counter. Report draft wording only; no source edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2ReadmeScorecard.md. Report trailer `.ufo/waves/round-71/w2/R71W2ReadmeScorecard.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2ReadmeScorecard/`; delete it before returning."
+  },
+  {
+   "name": "R71W2S052S053",
+   "role": "reviewer",
+   "axes": [
+    "freshness",
+    "discernment"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nReopen S052 own-work command output and S053 `zipfile` docs quote on the exact scope; verify the S052 admit and S053 reject reasons/flip in `corpus/lessons/round-71.md`. Record agree/disagree with located quote; this is a lane seat, not the non-author closure spotcheck.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2S052S053.md. Report trailer `.ufo/waves/round-71/w2/R71W2S052S053.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2S052S053/`; delete it before returning."
+  },
+  {
+   "name": "R71W2CounterClaim",
+   "role": "reviewer",
+   "axes": [
+    "calibration",
+    "operability"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nReview final frozen counter/claims amendment hashes and C1/C2 labels on the final committed archive. Recompute SHA-256, check vote parser's exact-Q/stem/duplicate behavior and no fake result directory. State whether the counter reads committed bytes and what it cannot authenticate.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2CounterClaim.md. Report trailer `.ufo/waves/round-71/w2/R71W2CounterClaim.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2CounterClaim/`; delete it before returning."
+  },
+  {
+   "name": "R71W2Q16Scope",
+   "role": "reviewer",
+   "axes": [
+    "coverage",
+    "depth"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nFresh Q16-specific audit of all sentences that say what a command prints or what set it covers. Check item5, item11/item12, Observation, limitations, Q13/Q14/Q16 map against actual stdout. Return any located FAIL; do not edit.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2Q16Scope.md. Report trailer `.ufo/waves/round-71/w2/R71W2Q16Scope.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2Q16Scope/`; delete it before returning."
+  },
+  {
+   "name": "R71W2ClaimsCritic",
+   "role": "critic",
+   "axes": [
+    "calibration",
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nAdversarially attack both frozen claims and their cheapest controls using the committed A/B/C/D receipts. Try a fake vote-file set, duplicate keys, malformed JSON, a fake admitted v6 entry with Q-map, and a README-only flip. Run counter on isolated archive copies; report exact labels and what work each control skips. No lane edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2ClaimsCritic.md. Report trailer `.ufo/waves/round-71/w2/R71W2ClaimsCritic.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2ClaimsCritic/`; delete it before returning."
+  },
+  {
+   "name": "R71W2ProseCritic",
+   "role": "critic",
+   "axes": [
+    "coverage",
+    "depth"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nLine-by-line Q16/Q13/Q14 overclaim audit of final v6 after wave-1 repairs. Verify command stdout, source output shapes, observed/recorded/inferred/unknown boundaries, and no leftover r70 sentence. Report all exact lines even if PASS.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2ProseCritic.md. Report trailer `.ufo/waves/round-71/w2/R71W2ProseCritic.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2ProseCritic/`; delete it before returning."
+  },
+  {
+   "name": "R71W2ControlsCritic",
+   "role": "critic",
+   "axes": [
+    "calibration",
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nAttack the strongest D control and any proposed final C05 admitted tree. Find the cheapest control that skips actual Q work; test whether syntactic vote files alone can make C1's counter yes, and distinguish the mechanical label from the required fresh-seat predicate. Report the exact limitation; do not edit.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2ControlsCritic.md. Report trailer `.ufo/waves/round-71/w2/R71W2ControlsCritic.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2ControlsCritic/`; delete it before returning."
+  },
+  {
+   "name": "R71W2CounterSeparability",
+   "role": "critic",
+   "axes": [
+    "calibration",
+    "freshness"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nCheck C1/C2 causal separability on committed single-claim trees: C1 should not affect C2; C2 gate repair should not alter C1 gate/lint, EMB pins, replay or self-check diagnostics. Run the registered counter where feasible and cite outputs.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2CounterSeparability.md. Report trailer `.ufo/waves/round-71/w2/R71W2CounterSeparability.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2CounterSeparability/`; delete it before returning."
+  },
+  {
+   "name": "R71W2ReportContract",
+   "role": "critic",
+   "axes": [
+    "calibration",
+    "operability"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nReview frozen claims, before/after measurement strategy, lesson, source rows and proposed report contract. Identify any claim target not re-derived from committed bytes, missing log pointer, unsupported trend verdict, or line that confuses counter pass with admission.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2ReportContract.md. Report trailer `.ufo/waves/round-71/w2/R71W2ReportContract.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2ReportContract/`; delete it before returning."
+  },
+  {
+   "name": "R71W2EntryMutants",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration",
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nScratch-mutate final v6 Q04/Q16 prose, a cited output line, Q16 row, unguarded locators and an alternate in-tree echo-script block. Run gate/lint/counter to identify survivors; retain exact outputs. No lane writes.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2EntryMutants.md. Report trailer `.ufo/waves/round-71/w2/R71W2EntryMutants.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2EntryMutants/`; delete it before returning."
+  },
+  {
+   "name": "R71W2GateMutants",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration",
+    "operability"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nScratch-mutate patched gate's missing-entry and TimeoutExpired catch/main exit mapping; run fast self-test and exact CLI legs. Verify the CLI leg, not self-test alone, kills main-handler mutants. Report each exit and marker.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2GateMutants.md. Report trailer `.ufo/waves/round-71/w2/R71W2GateMutants.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2GateMutants/`; delete it before returning."
+  },
+  {
+   "name": "R71W2VoteMutants",
+   "role": "mutation-tester",
+   "axes": [
+    "calibration",
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nCreate scratch copies of four assigned vote files and mutate: duplicate JSON key, non-object root, wrong stem, missing Q, duplicate seat/Q, FAIL, lowercase n/a, malformed JSON. Run `measure.py` vote parser path/isolated helper; expected invalid cases return 0/16, valid exact set returns 16/16; report all outputs. No lane writes.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2VoteMutants.md. Report trailer `.ufo/waves/round-71/w2/R71W2VoteMutants.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2VoteMutants/`; delete it before returning."
+  },
+  {
+   "name": "R71W2RetainedGate",
+   "role": "mutation-tester",
+   "axes": [
+    "freshness",
+    "calibration"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRun retained r65/r67/r68/r69 entries on final corpus; tamper pinned r68 script and a forbidden pin path; confirm labels match frozen expectations and no C2 patch regression. Scratch only.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2RetainedGate.md. Report trailer `.ufo/waves/round-71/w2/R71W2RetainedGate.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2RetainedGate/`; delete it before returning."
+  },
+  {
+   "name": "R71W2Sentinel",
+   "role": "sentinel",
+   "axes": [
+    "operability",
+    "adjacency"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nScope/safety review of all round-71 diffs since base and final candidate. Ensure no source/fleet/sibling/routing/fixture writes, C05 remains candidate until L1, and all seats' paths stay lane-local. Report any high finding; no edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2Sentinel.md. Report trailer `.ufo/waves/round-71/w2/R71W2Sentinel.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2Sentinel/`; delete it before returning."
+  },
+  {
+   "name": "R71W2IndependentRead",
+   "role": "revenger",
+   "axes": [
+    "coverage",
+    "depth"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependent byte-level read of the authored APK without readout.py; verify one ZIP/AXML/dex fact and all disputed item5 offsets from source bytes. Scope exactly one fixture, manual vs tool labeled. Report divergence; no producer, no edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2IndependentRead.md. Report trailer `.ufo/waves/round-71/w2/R71W2IndependentRead.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2IndependentRead/`; delete it before returning."
+  },
+  {
+   "name": "R71W2CounterReplay",
+   "role": "executor",
+   "axes": [
+    "calibration",
+    "operability"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nArchive final commit including corpus, SKILL, SCORECARD, SHONEN and `.ufo/waves/round-71/w2-votes`; run the A2 counter from `/`. Record SHA, all labels, all ten HOLD rows, stdout/stderr and exit. Re-run for deterministic equality if time permits. Scratch under assigned path.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2CounterReplay.md. Report trailer `.ufo/waves/round-71/w2/R71W2CounterReplay.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2CounterReplay/`; delete it before returning."
+  },
+  {
+   "name": "R71W2GateReplay",
+   "role": "executor",
+   "axes": [
+    "calibration",
+    "operability"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRun final gate self-test, v6 entry gate/lint, missing-entry CLI and a scratch in-tree production-timeout CLI leg; verify exit 2 text/no traceback at 120s. Run one retained pin/drift hold. Record exact output; do not edit.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2GateReplay.md. Report trailer `.ufo/waves/round-71/w2/R71W2GateReplay.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2GateReplay/`; delete it before returning."
+  },
+  {
+   "name": "R71W2EntryBlocks",
+   "role": "executor",
+   "axes": [
+    "coverage",
+    "operability"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRe-run every v6 embedded command and compare each embedded output line against actual stdout at final tip. Record checked_blocks/problems and identify any mismatch; gate floor is not admission.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2EntryBlocks.md. Report trailer `.ufo/waves/round-71/w2/R71W2EntryBlocks.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2EntryBlocks/`; delete it before returning."
+  },
+  {
+   "name": "R71W2Census",
+   "role": "executor",
+   "axes": [
+    "freshness",
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRun final `sources-census.sh validate --root ... revenger` and the seven frozen manual census commands. Record exit codes, row count, tier/status histograms, duplicates/enums/missing paths; compare with census-before. No source writes.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2Census.md. Report trailer `.ufo/waves/round-71/w2/R71W2Census.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2Census/`; delete it before returning."
+  },
+  {
+   "name": "R71W2VoteReceiptAudit",
+   "role": "executor",
+   "axes": [
+    "calibration",
+    "operability"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nCheck four vote JSON files are in the committed `.ufo/waves/round-71/w2-votes/`, stems match seat names, Q subsets are exact, each mapped seat is a fresh reviewer in `w2-results.json`, and outputs/reports agree with the file. Report any mismatch; do not edit.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2VoteReceiptAudit.md. Report trailer `.ufo/waves/round-71/w2/R71W2VoteReceiptAudit.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2VoteReceiptAudit/`; delete it before returning."
+  },
+  {
+   "name": "R71W2OpenS038",
+   "role": "scout",
+   "axes": [
+    "freshness",
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nReopen S038 URL again; locate attributeStart/enum quote and state whether raw live bytes are line-addressable or only the pinned snapshot supports the locator. Record date, exact \u226425-word quote and evidence limits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2OpenS038.md. Report trailer `.ufo/waves/round-71/w2/R71W2OpenS038.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2OpenS038/`; delete it before returning."
+  },
+  {
+   "name": "R71W2OpenS048",
+   "role": "scout",
+   "axes": [
+    "freshness",
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nReopen S048 DEX docs; locate checksum and header_size quotes; record access date, output form, snapshot limits and \u226425-word quote. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2OpenS048.md. Report trailer `.ufo/waves/round-71/w2/R71W2OpenS048.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2OpenS048/`; delete it before returning."
+  },
+  {
+   "name": "R71W2OpenS053",
+   "role": "scout",
+   "axes": [
+    "freshness",
+    "discernment"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nReopen docs.python.org `zipfile` module docs at the row's URL; verify the S053 3.15.2 quote and that its rejection/flip is scoped to this C05 manual readout, not a blanket rejection of the module. Record date/quote; no edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2OpenS053.md. Report trailer `.ufo/waves/round-71/w2/R71W2OpenS053.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2OpenS053/`; delete it before returning."
+  },
+  {
+   "name": "R71W2SpotcheckDraft",
+   "role": "scribe",
+   "axes": [
+    "discernment",
+    "freshness"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nDraft a one-admit/one-reject source decision table for the eventual non-author closure spotcheck: S052 and S053, exact quotes/locations/reasons. Explicitly state you are a lane-dispatched scribe and not the outside verifier. No lesson edit.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2SpotcheckDraft.md. Report trailer `.ufo/waves/round-71/w2/R71W2SpotcheckDraft.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2SpotcheckDraft/`; delete it before returning."
+  },
+  {
+   "name": "R71W2LessonReview",
+   "role": "scribe",
+   "axes": [
+    "calibration",
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nReview `corpus/lessons/round-71.md` against CORPUS: Gate source quotes/access dates, row status changes, Mistakes class/evidence/captured-by/fix, quarantine, proposal1 ledger, all Q outcomes. Draft any missing section text but do not edit.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2LessonReview.md. Report trailer `.ufo/waves/round-71/w2/R71W2LessonReview.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2LessonReview/`; delete it before returning."
+  },
+  {
+   "name": "R71W2ConnOverlap",
+   "role": "connector",
+   "axes": [
+    "adjacency",
+    "coverage"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nFinal sibling-overlap scan for C05 and current wave outputs: ensure no kaidoku content-graph or Android decode scope absorbed; keep ADJ-06 open and name any contested surface.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2ConnOverlap.md. Report trailer `.ufo/waves/round-71/w2/R71W2ConnOverlap.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2ConnOverlap/`; delete it before returning."
+  },
+  {
+   "name": "R71W2ConnCarry",
+   "role": "connector",
+   "axes": [
+    "calibration",
+    "adjacency"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nCompare round-70 routed debts and W1 inventory with final committed fixes/deferrals. Produce a precise carry-through/deferred list with report pointers; do not claim unresolved items were fixed.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2ConnCarry.md. Report trailer `.ufo/waves/round-71/w2/R71W2ConnCarry.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2ConnCarry/`; delete it before returning."
+  },
+  {
+   "name": "R71W2Simplify",
+   "role": "simplifier",
+   "axes": [
+    "depth",
+    "operability"
+   ],
+   "prompt": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim \u2014 let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nYAGNI review of final candidate and C2 gate patch. Name exact safe deletions only if they preserve all frozen claims and scope; otherwise nothing-to-drop. No edits.\n\nWrite report to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-71/w2/R71W2Simplify.md. Report trailer `.ufo/waves/round-71/w2/R71W2Simplify.md`. Scratch `/fast/scratch/hyaku/revenger-r71/R71W2Simplify/`; delete it before returning."
+  }
+ ]
+}

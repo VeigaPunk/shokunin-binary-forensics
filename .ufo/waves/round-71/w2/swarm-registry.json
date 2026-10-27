@@ -1,0 +1,383 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r71-w2",
+  "createdAt": "2026-10-27T16:01:20.088Z",
+  "updatedAt": "2026-10-27T16:03:15.320Z",
+  "reportDir": ".ufo/waves/round-71/w2",
+  "members": {
+    "R71W2Q01Q04": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2Q05Q08": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2Q09Q12": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2Q13Q16": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2Header": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2Reproduce": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "operability",
+        "freshness"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2ReadmeScorecard": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2S052S053": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "freshness",
+        "discernment"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2CounterClaim": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2Q16Scope": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2ClaimsCritic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2ProseCritic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2ControlsCritic": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2CounterSeparability": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration",
+        "freshness"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2ReportContract": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2EntryMutants": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2GateMutants": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2VoteMutants": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2RetainedGate": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "freshness",
+        "calibration"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2Sentinel": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "operability",
+        "adjacency"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2IndependentRead": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "revenger",
+      "item": null,
+      "axes": [
+        "coverage",
+        "depth"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2CounterReplay": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2GateReplay": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2EntryBlocks": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "operability"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2Census": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2VoteReceiptAudit": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2OpenS038": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2OpenS048": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "coverage"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2OpenS053": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness",
+        "discernment"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2SpotcheckDraft": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "discernment",
+        "freshness"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2LessonReview": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2ConnOverlap": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "adjacency",
+        "coverage"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2ConnCarry": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "calibration",
+        "adjacency"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    },
+    "R71W2Simplify": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "simplifier",
+      "item": null,
+      "axes": [
+        "depth",
+        "operability"
+      ],
+      "milestone": "Fresh falsification of landed v6 candidate, C2 exit-2 counter/gate legs, source and mistake closure"
+    }
+  }
+}
