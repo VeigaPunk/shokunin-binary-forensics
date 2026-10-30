@@ -1035,3 +1035,11 @@ no row, supports no claim).
 - **Tools.** Installed and probed by `ReToolbenchInstaller` (ghidra, yara, capa+rules, floss, DIE, ImHex, kaitai-struct-compiler, apktool, ilspycmd, LIEF, rr, pwndbg, gef, diffoscope, checksec, rz-cutter, wabt, binaryen and others); versions, channels, checksums and probes in `reports/round-73/tool-probes.md`. No `pacman -Sy/-Syu`. pycdc and ksv not installed (AUR-only). Installation is presence, not readiness.
 - **Not done.** No admission, no non-author gate, no coverage row C16 (proposed only; adding it would change the frozen K counter), no fixture or tool-scoring run from the atlas, no install of REA engines or provider setup. Single-opener rows S343, S380, S381 are labelled in their anchors.
 - **Trends.** Expansion improved (registry 95 → 426 rows); quality unchanged (candidate only); discernment improved narrowly (re-fetch exclusions, committed verifier, labelled single-opener rows). No L0 question filed.
+
+## 2026-10-30 — Round 73 (hyaku run 12, attempt 2): honest stop — C1 unresolved; wave v2 not settled
+
+- **Claim.** C1 coverage, C10 `held` target (`C10_HELD_BACKED=1/1`), frozen at `606548a` with controls (`reports/round-73/claims.md`, `measure.py`, `candidate-pin.json`). Unchanged in this attempt.
+- **Measured now (not after).** Counter on `git archive` of `74e1c3e`: `K_HELD_BACKED=8/15`, `C10_CANDIDATE_PIN=1/1`, `C10_SOURCES=1/1`, `C10_Q_VOTES=0/16`, `C10_HELD_BACKED=0/1`, `HOLDS_C10=no`. No vote file exists; the claim cannot verify.
+- **Wave.** `v2` (64 seats, policy v2): 42 round-72 source audits (S054–S095), 14 C10 source audits (S096–S109), 4 criterion-group Q reviewers, 3 executors, 1 connector. Validated; `v2.ready` written 12:14. The dispatcher spawned 34 of 64 by 12:50; the operator wrap-up released it un-settled. No `WAVE-DONE`, no `v2-results.json`, no vote files; 11 partial seat reports sit in `.ufo/waves/round-73/v2/` and are credited to nothing.
+- **Stale attempt-1 ready.** `w1.ready` (L1 `RevengerR73`, never spawned) was renamed to `w1.ready.attempt1-orphan` so it could not be revived under this attempt's L1 label; see the round-73 lesson `## Honest stop`.
+- **Trends.** Expansion, quality and discernment `unchanged`: no admitted entry, no re-check, no outside spot-check.

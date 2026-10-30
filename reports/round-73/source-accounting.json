@@ -1,0 +1,21 @@
+{
+  "command": "parse 11-cell S-id rows; compare git show abe4276bfb6efd37405c6845ea88c786267cd675:corpus/SOURCES.md to current corpus/SOURCES.md",
+  "base_rows": 95,
+  "round_entry_rows": 426,
+  "current_rows": 428,
+  "new_by_tier": {
+    "A": 294,
+    "B": 21,
+    "C": 18
+  },
+  "new_by_status": {
+    "mined": 315,
+    "rejected": 6,
+    "queued": 12
+  },
+  "inherited_ids": "S096-S426",
+  "new_round_ids": "S427-S428",
+  "existing_rows_changed": [
+    "S002"
+  ]
+}

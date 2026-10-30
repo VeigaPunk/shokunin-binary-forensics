@@ -80,3 +80,16 @@ The publisher page for *Practical Malware Analysis* S091 was rejected as a sourc
 ## Cross-domain note
 
 The opened REA DX-Ball and TH04 case pages discuss game-specific reconstruction; those examples were not used to claim game-mechanics correctness or absorb game-dev ownership. The bounty-hunter request for the broad Claude-Red skills set is routed to kasegi only when that lane is formally dispatchable; this lane reuses the narrow S050/S051 screening and does not alter another lane's corpus.
+
+## Round-73 source-attribution erratum
+
+This candidate remains unadmitted. S082's original quote is misattributed:
+the readable/compilable-but-behaviorally-different sentence belongs to
+AutoDecompiler (S083), not LLM4Decompile. S428 supersedes S082 only for the
+LLM4Decompile abstract's stated readability/executability motivation; it
+does not support the behavioral-equivalence assertion. S427 supersedes
+S071's paraphrased catalog quote with the verbatim “each one read and
+security-graded”; the rejection of catalog grades as tool-function evidence
+stands. Earlier author Q01/Q02/Q16 PASS cells are not admission evidence and
+are superseded for these source-attribution claims by this erratum.
+Primary re-opens, quotes, and access dates: `corpus/lessons/round-73.md`.

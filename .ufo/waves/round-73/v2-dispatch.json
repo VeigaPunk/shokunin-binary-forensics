@@ -1,0 +1,1003 @@
+{
+  "schema": "ufo-swarm-wave-dispatch-v1",
+  "wave": "r73-v2",
+  "policy": {
+    "source": "config",
+    "maxLanes": 64,
+    "minLanes": 16,
+    "waveMinLanes": 64,
+    "waveMaxLanes": 128,
+    "declaredMaxLanes": 64,
+    "hardCeiling": 256,
+    "rampBatchSize": 5,
+    "rampIntervalMs": 700,
+    "globalRunnerCeiling": 1056
+  },
+  "counts": {
+    "spawn": 64,
+    "resume": 0,
+    "total": 64
+  },
+  "registry": {
+    "schema": "ufo-swarm-registry-v1",
+    "path": ".ufo/waves/round-73/v2/swarm-registry.json",
+    "reportDir": ".ufo/waves/round-73/v2",
+    "members": {
+      "R73Source054": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S054 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source055": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S055 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source056": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S056 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source057": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S057 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source058": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S058 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source059": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S059 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source060": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S060 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source061": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S061 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source062": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S062 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source063": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S063 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source064": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S064 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source065": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S065 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source066": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S066 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source067": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S067 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source068": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S068 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source069": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S069 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source070": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S070 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source071": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": "Open SOURCES.md row S071 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source072": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S072 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source073": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Open SOURCES.md row S073 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source074": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S074 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source075": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S075 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source076": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S076 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source077": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S077 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source078": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S078 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source079": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S079 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source080": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": "Open SOURCES.md row S080 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source081": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S081 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source082": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S082 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source083": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S083 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source084": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S084 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source085": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": "Open SOURCES.md row S085 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source086": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S086 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source087": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S087 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source088": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S088 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source089": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S089 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source090": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S090 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source091": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S091 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source092": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S092 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source093": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S093 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source094": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S094 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73Source095": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "Open SOURCES.md row S095 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.",
+        "axes": [
+          "coverage",
+          "source accuracy"
+        ]
+      },
+      "R73C10S096": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": "Independently reopen exact source S096 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73C10S097": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Independently reopen exact source S097 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73C10S098": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Independently reopen exact source S098 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73C10S099": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": "Independently reopen exact source S099 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73C10S100": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Independently reopen exact source S100 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73C10S101": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Independently reopen exact source S101 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73C10S102": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Independently reopen exact source S102 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73C10S103": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Independently reopen exact source S103 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73C10S104": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Independently reopen exact source S104 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73C10S105": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Independently reopen exact source S105 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73C10S106": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": "Independently reopen exact source S106 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73C10S107": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Independently reopen exact source S107 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73C10S108": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Independently reopen exact source S108 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73C10S109": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Independently reopen exact source S109 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.",
+        "axes": [
+          "coverage",
+          "evidence-ledger discipline"
+        ]
+      },
+      "R73Q01": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Render binding fresh-seat admission decisions for ['Q01', 'Q02', 'Q03', 'Q04'] only on frozen C10 candidate. Apply corpus/QUALITY.md, not its author Q-map. Candidate normalized digest 7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4. Reopen primary sources as necessary. A material failure is FAIL, unavailable proof is UNKNOWN; n/a requires reason; no PASS-with-flags. Write /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-73/votes/R73Q01.json as JSON {\"seat\":\"R73Q01\",\"candidate_sha256\":\"7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4\",\"decisions\":{each assigned Q: PASS or n/a or FAIL or UNKNOWN}}; no other vote file. Report reasons/line pointers for each decision in own report. No edits to candidate, no retargeting. Q08 is superseded by Q11; Q15 includes external source identities and must not assert no identities when source commits are named.",
+        "axes": [
+          "coverage",
+          "admission"
+        ]
+      },
+      "R73Q05": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Render binding fresh-seat admission decisions for ['Q05', 'Q06', 'Q07', 'Q08'] only on frozen C10 candidate. Apply corpus/QUALITY.md, not its author Q-map. Candidate normalized digest 7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4. Reopen primary sources as necessary. A material failure is FAIL, unavailable proof is UNKNOWN; n/a requires reason; no PASS-with-flags. Write /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-73/votes/R73Q05.json as JSON {\"seat\":\"R73Q05\",\"candidate_sha256\":\"7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4\",\"decisions\":{each assigned Q: PASS or n/a or FAIL or UNKNOWN}}; no other vote file. Report reasons/line pointers for each decision in own report. No edits to candidate, no retargeting. Q08 is superseded by Q11; Q15 includes external source identities and must not assert no identities when source commits are named.",
+        "axes": [
+          "coverage",
+          "admission"
+        ]
+      },
+      "R73Q09": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Render binding fresh-seat admission decisions for ['Q09', 'Q10', 'Q11', 'Q12'] only on frozen C10 candidate. Apply corpus/QUALITY.md, not its author Q-map. Candidate normalized digest 7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4. Reopen primary sources as necessary. A material failure is FAIL, unavailable proof is UNKNOWN; n/a requires reason; no PASS-with-flags. Write /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-73/votes/R73Q09.json as JSON {\"seat\":\"R73Q09\",\"candidate_sha256\":\"7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4\",\"decisions\":{each assigned Q: PASS or n/a or FAIL or UNKNOWN}}; no other vote file. Report reasons/line pointers for each decision in own report. No edits to candidate, no retargeting. Q08 is superseded by Q11; Q15 includes external source identities and must not assert no identities when source commits are named.",
+        "axes": [
+          "coverage",
+          "admission"
+        ]
+      },
+      "R73Q13": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "Render binding fresh-seat admission decisions for ['Q13', 'Q14', 'Q15', 'Q16'] only on frozen C10 candidate. Apply corpus/QUALITY.md, not its author Q-map. Candidate normalized digest 7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4. Reopen primary sources as necessary. A material failure is FAIL, unavailable proof is UNKNOWN; n/a requires reason; no PASS-with-flags. Write /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-73/votes/R73Q13.json as JSON {\"seat\":\"R73Q13\",\"candidate_sha256\":\"7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4\",\"decisions\":{each assigned Q: PASS or n/a or FAIL or UNKNOWN}}; no other vote file. Report reasons/line pointers for each decision in own report. No edits to candidate, no retargeting. Q08 is superseded by Q11; Q15 includes external source identities and must not assert no identities when source commits are named.",
+        "axes": [
+          "coverage",
+          "admission"
+        ]
+      },
+      "R73Counter": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": "Run reports/round-73/measure.py on an archive of main and inspect red-before/status-only controls. Use scratch, capture commands/outputs. Attack frozen predicate by removing entry, source citation, and one vote from synthetic complete inputs; identify any false acceptance without production edits.",
+        "axes": [
+          "coverage",
+          "calibration"
+        ]
+      },
+      "R73QuoteAudit": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": "Implement a NEW hermetic-testable source-quote audit script in your scratch only; copy final script to your own report directory as quote_audit.py for L1 integration. Audit S054–S095 (42 rows) by fetching exact cited pages and checking ONLY text inside paired quote delimiters in anchor cells as normalized substrings. Never accept unquoted anchor prose. Distinguish unreachable/absent/noquote. Preserve per-row URL, quote, verdict and counts in your report directory; include offline self-test with absent quote failing. Inherited reports/round-73/verify_quotes.py is a probe, not trusted: qs currently includes unquoted split segments. Do not fix production file or register a gate.",
+        "axes": [
+          "coverage",
+          "calibration"
+        ]
+      },
+      "R73Holds": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": "Explicit verification assignment: run the ten existing corpus/verify_*.py --self-test and corpus/check_embedded_outputs.py --self-test from lane root, capture each exit. Read-only fixture usage, scratch via TMPDIR=/fast/scratch/hyaku/revenger-r73/R73Holds. Compare retained source/live/fixture bytes to main via read-only git diff. Do not include any new script in ten-verifier set.",
+        "axes": [
+          "coverage",
+          "calibration"
+        ]
+      },
+      "R73Connector": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "connector",
+        "item": "Bounded overlap/planning scan: inspect PROVINCE, frozen claim, C10 candidate, atlas candidates and latest considerthese/2026-10-28.md. Identify precise sibling-domain bleed, causality overlap, or useful single proposal applicable to this round. Examine inherited interactive work provenance vs round attempt; flag inflated expansion/discernment assertions and pacman pause wording. No edits or delegation.",
+        "axes": [
+          "coverage",
+          "calibration"
+        ]
+      }
+    }
+  },
+  "compaction": {
+    "applied": false,
+    "mechanism": null,
+    "reason": "disabled",
+    "savedBytes": 0,
+    "payloadBytesBefore": 0,
+    "payloadBytesAfter": 0
+  },
+  "taskCall": {
+    "context": "# Round 73: frozen C10 coverage admission\nL1 RevengerR73a2 owns integration. Lane root /home/vgpnk/Projects/shokunin/revenger-shokunin. Read reports/round-73/claims.md, candidate-pin.json and measure.py before work. Claim target C10_HELD_BACKED=1/1, frozen predicate, no retargeting. C10 candidate is corpus/knowledge/2026-10-29-rea-evidence-ledger-discipline.md. All files and Report: trailers are relative to /home/vgpnk/Projects/shokunin/revenger-shokunin; write each Report at /home/vgpnk/Projects/shokunin/revenger-shokunin/<that path>.\nRead /home/vgpnk/.omp/agent/RULES.md first. You may install helpful tools via official channels; record tool/version/channel/reason. ALL PACMAN TRANSACTIONS PAUSED host-wide: no pacman install/update/remove; use uv/npx/official binaries only. Do not alter host routing or sources.\nRead-only production: no corpus, shared source, sibling or fleet writes; only your own absolute report and explicitly assigned vote file. No git/jj mutations, commits, pushes, child tasks or background jobs. Do not run builds/lints/tests beyond explicitly requested checks. Every tool path absolute. Scratch only /fast/scratch/hyaku/revenger-r73/<seat-name>/, one clone maximum, cleanup before yield after receipts copied to report. No /tmp trees. Source checkout ~/.local/share/rea is READ ONLY. Static source reads only; no target execution or live-target requests. No secrets. Findings must distinguish observation/inference/unknown; cite exact locator and source text; unreachable is not false. A seat is lane-internal, never an outside discernment verifier.",
+    "tasks": [
+      {
+        "name": "R73Source054",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S054 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source054.md"
+      },
+      {
+        "name": "R73Source055",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S055 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source055.md"
+      },
+      {
+        "name": "R73Source056",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S056 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source056.md"
+      },
+      {
+        "name": "R73Source057",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S057 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source057.md"
+      },
+      {
+        "name": "R73Source058",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S058 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source058.md"
+      },
+      {
+        "name": "R73Source059",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S059 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source059.md"
+      },
+      {
+        "name": "R73Source060",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S060 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source060.md"
+      },
+      {
+        "name": "R73Source061",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S061 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source061.md"
+      },
+      {
+        "name": "R73Source062",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S062 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source062.md"
+      },
+      {
+        "name": "R73Source063",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S063 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source063.md"
+      },
+      {
+        "name": "R73Source064",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S064 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source064.md"
+      },
+      {
+        "name": "R73Source065",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S065 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source065.md"
+      },
+      {
+        "name": "R73Source066",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S066 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source066.md"
+      },
+      {
+        "name": "R73Source067",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S067 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source067.md"
+      },
+      {
+        "name": "R73Source068",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S068 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source068.md"
+      },
+      {
+        "name": "R73Source069",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S069 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source069.md"
+      },
+      {
+        "name": "R73Source070",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S070 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source070.md"
+      },
+      {
+        "name": "R73Source071",
+        "agent": "scribe",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S071 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source071.md"
+      },
+      {
+        "name": "R73Source072",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S072 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source072.md"
+      },
+      {
+        "name": "R73Source073",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S073 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source073.md"
+      },
+      {
+        "name": "R73Source074",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S074 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source074.md"
+      },
+      {
+        "name": "R73Source075",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S075 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source075.md"
+      },
+      {
+        "name": "R73Source076",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S076 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source076.md"
+      },
+      {
+        "name": "R73Source077",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S077 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source077.md"
+      },
+      {
+        "name": "R73Source078",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S078 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source078.md"
+      },
+      {
+        "name": "R73Source079",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S079 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source079.md"
+      },
+      {
+        "name": "R73Source080",
+        "agent": "scout",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S080 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source080.md"
+      },
+      {
+        "name": "R73Source081",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S081 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source081.md"
+      },
+      {
+        "name": "R73Source082",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S082 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source082.md"
+      },
+      {
+        "name": "R73Source083",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S083 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source083.md"
+      },
+      {
+        "name": "R73Source084",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S084 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source084.md"
+      },
+      {
+        "name": "R73Source085",
+        "agent": "scout",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S085 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source085.md"
+      },
+      {
+        "name": "R73Source086",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S086 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source086.md"
+      },
+      {
+        "name": "R73Source087",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S087 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source087.md"
+      },
+      {
+        "name": "R73Source088",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S088 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source088.md"
+      },
+      {
+        "name": "R73Source089",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S089 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source089.md"
+      },
+      {
+        "name": "R73Source090",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S090 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source090.md"
+      },
+      {
+        "name": "R73Source091",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S091 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source091.md"
+      },
+      {
+        "name": "R73Source092",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S092 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source092.md"
+      },
+      {
+        "name": "R73Source093",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S093 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source093.md"
+      },
+      {
+        "name": "R73Source094",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S094 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source094.md"
+      },
+      {
+        "name": "R73Source095",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nOpen SOURCES.md row S095 and its round-72 lesson and entry wording. Reopen the exact cited primary URL/pin yourself; compare located quote VERBATIM (normalizing markup only), scope, tier, used-by and rejection flip. Return an exact <=25-word located quote, access date, URL, and agree/disagree with source disposition. S071 and S082 have routed quote defects in round-72-verifier-spotcheck.md: propose a NEW superseding row, never edit old row. No other source admission; report only your assigned row. Explicitly state network/source failures. Read-only besides report.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, source accuracy\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Source095.md"
+      },
+      {
+        "name": "R73C10S096",
+        "agent": "scout",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S096 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S096.md"
+      },
+      {
+        "name": "R73C10S097",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S097 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S097.md"
+      },
+      {
+        "name": "R73C10S098",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S098 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S098.md"
+      },
+      {
+        "name": "R73C10S099",
+        "agent": "scout",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S099 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S099.md"
+      },
+      {
+        "name": "R73C10S100",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S100 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S100.md"
+      },
+      {
+        "name": "R73C10S101",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S101 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S101.md"
+      },
+      {
+        "name": "R73C10S102",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S102 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S102.md"
+      },
+      {
+        "name": "R73C10S103",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S103 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S103.md"
+      },
+      {
+        "name": "R73C10S104",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S104 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S104.md"
+      },
+      {
+        "name": "R73C10S105",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S105 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S105.md"
+      },
+      {
+        "name": "R73C10S106",
+        "agent": "scout",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S106 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S106.md"
+      },
+      {
+        "name": "R73C10S107",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S107 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S107.md"
+      },
+      {
+        "name": "R73C10S108",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S108 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S108.md"
+      },
+      {
+        "name": "R73C10S109",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nIndependently reopen exact source S109 cited by C10 candidate. Read its Gate row in corpus/lessons/2026-10-29-evidence-ledger-curation.md. Verify quoted text, location/revision, teaching and every C10 candidate sentence depending on this row. Return precise support/falsifier and <=25-word located quote URL/access-date. For source pin use raw.githubusercontent.com at stated full hash when appropriate. Do not substitute installed skill for checkout pin. No source mutation or target execution.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, evidence-ledger discipline\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73C10S109.md"
+      },
+      {
+        "name": "R73Q01",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRender binding fresh-seat admission decisions for ['Q01', 'Q02', 'Q03', 'Q04'] only on frozen C10 candidate. Apply corpus/QUALITY.md, not its author Q-map. Candidate normalized digest 7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4. Reopen primary sources as necessary. A material failure is FAIL, unavailable proof is UNKNOWN; n/a requires reason; no PASS-with-flags. Write /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-73/votes/R73Q01.json as JSON {\"seat\":\"R73Q01\",\"candidate_sha256\":\"7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4\",\"decisions\":{each assigned Q: PASS or n/a or FAIL or UNKNOWN}}; no other vote file. Report reasons/line pointers for each decision in own report. No edits to candidate, no retargeting. Q08 is superseded by Q11; Q15 includes external source identities and must not assert no identities when source commits are named.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, admission\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Q01.md"
+      },
+      {
+        "name": "R73Q05",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRender binding fresh-seat admission decisions for ['Q05', 'Q06', 'Q07', 'Q08'] only on frozen C10 candidate. Apply corpus/QUALITY.md, not its author Q-map. Candidate normalized digest 7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4. Reopen primary sources as necessary. A material failure is FAIL, unavailable proof is UNKNOWN; n/a requires reason; no PASS-with-flags. Write /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-73/votes/R73Q05.json as JSON {\"seat\":\"R73Q05\",\"candidate_sha256\":\"7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4\",\"decisions\":{each assigned Q: PASS or n/a or FAIL or UNKNOWN}}; no other vote file. Report reasons/line pointers for each decision in own report. No edits to candidate, no retargeting. Q08 is superseded by Q11; Q15 includes external source identities and must not assert no identities when source commits are named.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, admission\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Q05.md"
+      },
+      {
+        "name": "R73Q09",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRender binding fresh-seat admission decisions for ['Q09', 'Q10', 'Q11', 'Q12'] only on frozen C10 candidate. Apply corpus/QUALITY.md, not its author Q-map. Candidate normalized digest 7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4. Reopen primary sources as necessary. A material failure is FAIL, unavailable proof is UNKNOWN; n/a requires reason; no PASS-with-flags. Write /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-73/votes/R73Q09.json as JSON {\"seat\":\"R73Q09\",\"candidate_sha256\":\"7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4\",\"decisions\":{each assigned Q: PASS or n/a or FAIL or UNKNOWN}}; no other vote file. Report reasons/line pointers for each decision in own report. No edits to candidate, no retargeting. Q08 is superseded by Q11; Q15 includes external source identities and must not assert no identities when source commits are named.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, admission\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Q09.md"
+      },
+      {
+        "name": "R73Q13",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRender binding fresh-seat admission decisions for ['Q13', 'Q14', 'Q15', 'Q16'] only on frozen C10 candidate. Apply corpus/QUALITY.md, not its author Q-map. Candidate normalized digest 7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4. Reopen primary sources as necessary. A material failure is FAIL, unavailable proof is UNKNOWN; n/a requires reason; no PASS-with-flags. Write /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-73/votes/R73Q13.json as JSON {\"seat\":\"R73Q13\",\"candidate_sha256\":\"7880b17608f60c3f7462fb3f6602cb4a20d8bcac0a86331b8454697cef76c7c4\",\"decisions\":{each assigned Q: PASS or n/a or FAIL or UNKNOWN}}; no other vote file. Report reasons/line pointers for each decision in own report. No edits to candidate, no retargeting. Q08 is superseded by Q11; Q15 includes external source identities and must not assert no identities when source commits are named.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, admission\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Q13.md"
+      },
+      {
+        "name": "R73Counter",
+        "agent": "executor",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nRun reports/round-73/measure.py on an archive of main and inspect red-before/status-only controls. Use scratch, capture commands/outputs. Attack frozen predicate by removing entry, source citation, and one vote from synthetic complete inputs; identify any false acceptance without production edits.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage, calibration\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Counter.md"
+      },
+      {
+        "name": "R73QuoteAudit",
+        "agent": "executor",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nImplement a NEW hermetic-testable source-quote audit script in your scratch only; copy final script to your own report directory as quote_audit.py for L1 integration. Audit S054–S095 (42 rows) by fetching exact cited pages and checking ONLY text inside paired quote delimiters in anchor cells as normalized substrings. Never accept unquoted anchor prose. Distinguish unreachable/absent/noquote. Preserve per-row URL, quote, verdict and counts in your report directory; include offline self-test with absent quote failing. Inherited reports/round-73/verify_quotes.py is a probe, not trusted: qs currently includes unquoted split segments. Do not fix production file or register a gate.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage, calibration\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73QuoteAudit.md"
+      },
+      {
+        "name": "R73Holds",
+        "agent": "executor",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nExplicit verification assignment: run the ten existing corpus/verify_*.py --self-test and corpus/check_embedded_outputs.py --self-test from lane root, capture each exit. Read-only fixture usage, scratch via TMPDIR=/fast/scratch/hyaku/revenger-r73/R73Holds. Compare retained source/live/fixture bytes to main via read-only git diff. Do not include any new script in ten-verifier set.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage, calibration\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Holds.md"
+      },
+      {
+        "name": "R73Connector",
+        "agent": "connector",
+        "task": "/skill:godspeed\n\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\nBounded overlap/planning scan: inspect PROVINCE, frozen claim, C10 candidate, atlas candidates and latest considerthese/2026-10-28.md. Identify precise sibling-domain bleed, causality overlap, or useful single proposal applicable to this round. Examine inherited interactive work provenance vs round attempt; flag inflated expansion/discernment assertions and pacman pause wording. No edits or delegation.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\n\nReport: write your scoped findings to .ufo/waves/round-73/v2/R73Connector.md"
+      }
+    ]
+  },
+  "resumeSends": [],
+  "note": "Issue exactly one batched task call with taskCall ({context, tasks}); never split a wave into multiple task calls (one-swarm-per-wave). Then one hub send per resumeSends entry: hub send --to <entry.resume> --message <entry.message> (entry.name is bookkeeping, not a hub field)."
+}

@@ -41,3 +41,15 @@ writes). Source tiers are defined in `corpus/SOURCES.md` and are not restated he
 - A single tool-test report: scoped to that tool version, function and data set.
 - Vendor or community write-ups without reproducible detail: leads (tier C).
 - Older guidance used as current procedure without a revision check.
+
+## Source-attribution check — round 73 supporting procedure
+
+Grounding: `lessons/round-73.md` Mistakes, and the outside
+`lessons/round-72-verifier-spotcheck.md` S071/S082 disagreement.
+Before crediting a located quotation, reopen the exact cited document/revision
+and compare only the text inside paired quotation delimiters with that source.
+Unquoted locator prose is never a successful quote match. Record inaccessible
+sources separately from absent quotations. A word-count audit is not attribution
+evidence. Corrections use new superseding SOURCES rows, never replacement of the
+historical row. This procedure supports existing Q01/Q02; it does not change the
+frozen round-73 Q01–Q16 admission predicate.

@@ -90,3 +90,18 @@ Not evaluable: `.ufo/waves/round-72/w1.ready` was written, but no WAVE-DONE/resu
 ## Assimilation note
 
 The short-link sweep has 43 `t.co` destinations; direct URL and content decisions are in `reports/round-72/shortlink-dispositions.md`. The X article could not be fetched. No games, APKs, live traffic, malware, binaries or other targets were inspected. The REA case pages for DX-Ball and TH04 remain adjacent and were not admitted as game-mechanics knowledge.
+
+## Erratum appended in round 73
+
+The S082 Gate quotation is from AutoDecompiler S083, not LLM4Decompile;
+S428 supersedes its source attribution with text re-opened from the proper
+LLM4Decompile abstract. S427 similarly supersedes S071's paraphrased registry
+quote. Exact primary URLs, quotes, and 2026-10-30 access records are in
+`corpus/lessons/round-73.md` Gate. Old rows and Gate bytes remain historical.
+The word-count check did not establish quotation attribution.
+
+The interrupted wave did produce partial outcomes: sixteen source reviews and
+its registry under `.ufo/waves/round-72/w1/`, now committed in
+`74e1c3e82cde45e1f3f03985891973357acab925`. Any earlier “no worker outcomes”
+wording is superseded. This does not establish full settlement or C15 admission;
+the report's no-WAVE-DONE limitation still stands.
