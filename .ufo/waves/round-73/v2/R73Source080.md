@@ -116,9 +116,10 @@ the integrator, neither requiring an edit of the old row:
   punctuation artifact, and a superseding row for a soundly-attributed row adds registry noise.
 - **Option B (append-only, only if the S054–S095 audit must be green):** append the row below. It
   uses a scope string distinct from S080's (so the census scope key differs → at most a W04
-  duplicate-URL warning, which does not fail validation, cf. `scripts/sources-census.sh:646-649`)
-  and its `teaches` cell contains "supersedes S080" (which suppresses E04 outright, cf. census
-  line 648). Old rows are never edited.
+  duplicate-URL warning, which does not fail validation, cf. `scripts/sources-census.sh:645-646`)
+  and its `teaches` cell contains "supersedes S080" (which suppresses E04 outright; the E04
+  condition is at `scripts/sources-census.sh:647-650`, its `teaches !~ /supersedes S[0-9]{3}/`
+  test at line 649). Old rows are never edited.
 
   `| S429 | Decomperson: How Humans Decompile and What We Can Learn From It — https://www.usenix.org/conference/usenixsecurity22/presentation/burk | paper | A | The 2022 study's reported competition-cohort sample and its perfect-decompilation metric, as stated in the abstract | USENIX Security 22 abstract, proceedings pages 2765–2782, 2022; "Over 150 people participated, and we collected more than 35,000 code submissions, the largest manual reverse engineering dataset to date." | supersedes S080 — the study's reported sample and its own perfect-decompilation metric; not a population estimate for analysts generally and not a tool benchmark | mined | 2026-10-30 | on-release | corpus/knowledge/round-72-tool-landscape.md |`
 
@@ -145,14 +146,18 @@ misattribution **and** a one-word paraphrase of S083's sentence. S083's own regi
 ("feedback-driven multi-turn binary decompilation") is **FOUND** verbatim in v2, so S083's row needs
 no correction; the defect lives only in S082's row.
 
-**Append-only superseding rows already present in the working tree** (not committed at the time of
-this audit; `git status` shows `corpus/SOURCES.md` modified and `corpus/lessons/round-73.md`
-untracked): `S427` (`corpus/SOURCES.md:442`, supersedes S071, quote "each one read and security-
-graded", status `rejected`, tier C) and `S428` (`corpus/SOURCES.md:443`, supersedes S082, quote
+**Append-only superseding rows already present in the registry**: `S427` (`corpus/SOURCES.md:442`,
+supersedes S071, quote "each one read and security-graded", status `rejected`, tier C) and `S428`
+(`corpus/SOURCES.md:443`, supersedes S082, quote
 "traditional tools like Ghidra often produce results that are difficult to read and execute.",
 status `mined`, tier A). I re-opened both quotes myself — **both FOUND verbatim** — and the lane's
 own audit returns OK for both (`--ids S427-S428` → `rows=2 {'OK': 2}`). The round-73 lesson Gate
 records both re-opens at `corpus/lessons/round-73.md:13-14`. Old rows S071 and S082 were not edited.
+Timing note: when this seat audited them they were uncommitted working-tree bytes (`git status` then
+showed `corpus/SOURCES.md` modified, `corpus/lessons/round-73.md` untracked); another actor
+committed them during this seat's run at lane HEAD `d4ab332` ("round-73: honest stop (attempt 2) …").
+This seat made no git/jj mutation. The S080 row itself is unchanged at HEAD (same 11 cells as
+audited).
 
 **My proposal (for the integrator; nothing written).** If the integrator wants the superseding rows
 to carry this seat's re-open receipts rather than the in-tree S427/S428, the same two corrections
@@ -204,9 +209,9 @@ mutation, no commit, no push), `pdfinfo`.
   sample-bounded) is supported by the paper's own text; the trailing-period deviation is a
   citation-style artifact rather than a paraphrase or a misattribution, and the strict
   quote-substring audit of this round will flag it unless Option B is taken.
-- **Unknown:** whether the trailing-period style is a deliberate house convention (the same
-  clause-closing appears in the neighbouring S079/S081 rows and in the Gate rows) — not decidable
-  from the lane, so I do not classify it as a source-accuracy defect. Also unknown: whether
+- **Unknown:** whether the trailing-period style is a deliberate citation convention of this lane
+  or a one-off slip — not decidable from the lane, so I do not classify it as a source-accuracy
+  defect, only as a strict-audit artifact. Also unknown: whether
   prior-wave artifacts exist for S080 elsewhere (the round-72 wave directory contains 16 review
   files; I did not read them and credit nothing from them). Unreachable is not false: the only
   unreachable item in this seat's scope was S077's tree-URL README, which is not my row.
