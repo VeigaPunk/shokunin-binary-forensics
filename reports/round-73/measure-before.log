@@ -1,0 +1,19 @@
+$ python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-73/measure.py /fast/scratch/hyaku/revenger-r73/L1/base
+K_HELD_BACKED=8/15
+C10_STATUS=partial
+C10_CANDIDATE_PIN=0/1
+C10_SOURCES=0/1
+C10_Q_VOTES=0/16
+C10_HELD_BACKED=0/1
+HOLDS_C10=no
+exit=0
+
+$ python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-73/measure.py /fast/scratch/hyaku/revenger-r73/L1/base --control-status-flip-only
+K_HELD_BACKED=8/15
+C10_STATUS=held
+C10_CANDIDATE_PIN=0/1
+C10_SOURCES=0/1
+C10_Q_VOTES=0/16
+C10_HELD_BACKED=0/1
+HOLDS_C10=no
+exit=0
