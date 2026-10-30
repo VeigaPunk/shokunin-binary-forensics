@@ -31,7 +31,7 @@ S072 is **REJECTED, tier C** (community catalog): a discovery lead, never sole s
 ## Network / source failures
 
 - None for this row. Two HTTPS fetches (raw README, commits API) plus one CONTRIBUTING fetch: all HTTP 200, no rate-limit, no redirect off-github(-usercontent).
-- Tools used: system `curl` only (pre-existing; version `curl 8.14.1` channel pacman/core, no install or update performed this seat). No packages installed; pacman pause honored.
+- Tools used: system `curl` only (pre-existing, observed `curl 8.23.0`; no install or update performed this seat). No packages installed; pacman pause honored.
 
 ## Uncertainty
 
