@@ -1,0 +1,8 @@
+title: Create an evidence-linked residual-unknowns registry
+state: closed
+
+## Correctness
+Resolution requires qualifying evidence or explicit withdrawn/out-of-scope disposition. Inference cannot satisfy observed authority. Deleted evidence invalidates dependent resolution. Contradictions remain visible. Imports validate references and cycles.
+
+## Non-goals
+General project management, automatic truth determination, or replacing GitHub issues.

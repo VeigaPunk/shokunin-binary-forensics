@@ -1,0 +1,19 @@
+title: Add an in-memory evidence ledger and deterministic bundle model
+state: closed
+
+## Problem
+Individual evidence records are reproducible but investigations cannot collect, deduplicate, or export them coherently.
+
+## Outcome
+Add a session-owned in-memory ledger and a deterministic bundle domain model.
+
+## Acceptance criteria
+- Direct and enhanced calls add exactly one record; composed internal calls do not create duplicates.
+- Repeated identical calls deduplicate.
+- Switching targets retains earlier evidence until session close.
+- Cancellation and failures leave the ledger unchanged.
+- Bundle serialization is byte-stable for equivalent ledger contents.
+- Memory and record-count bounds return typed truncation/limit errors rather than evicting evidence silently.
+
+## Non-goals
+Database persistence, cloud synchronization, or filesystem import/export.

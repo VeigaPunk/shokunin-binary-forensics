@@ -1,0 +1,46 @@
+slice	candidate	reason
+ReDisasmGroundTruth	binit-x64-lifter-semantic-bugs	quote not reproduced (FAIL)
+ReDisasmGroundTruth	dogbolt-decompiler-explorer	quote not reproduced (FAIL)
+bf-specs-abi	Itanium C++ ABI (core)	quote not reproduced (UNVERIFIED)
+bf-specs-abi	LLVM docs: The PDB File Format (overview and stream table)	quote not reproduced (UNVERIFIED)
+bf-specs-abi	LLVM docs: The MSF File Format	quote not reproduced (UNVERIFIED)
+bf-specs-abi	Apple XNU Mach-O `loader.h`	quote not reproduced (UNVERIFIED)
+bf-specs-abi	Apple: Writing ARM64 code for Apple platforms	quote not reproduced (FAIL)
+bf-specs-abi	Intel 64 and IA-32 SDM — landing page (version and canonical PDFs only)	quote not reproduced (UNVERIFIED)
+bf-specs-abi	Go `internal/abi/symtab.go` — pclntab magic values (version oracle)	quote not reproduced (FAIL)
+bf-specs-abi	Rust RFC 2603 — v0 symbol mangling	quote not reproduced (UNVERIFIED)
+bf-specs-abi	PEP 552 — Deterministic pycs	quote not reproduced (UNVERIFIED)
+bf-format-obscura	PoC||GTFO mirror (angea/pocorgtfo README)	quote not reproduced (FAIL)
+bf-format-obscura	tmp.out #2 "Some ELF Parser Bugs" (netspooky)	quote not reproduced (FAIL)
+bf-triage-tools	Diaphora	duplicate url
+bf-triage-tools	BinDiff (+ BinExport)	duplicate url
+bf-triage-tools	ghidriff	duplicate url
+bf-triage-tools	Compiler Explorer (godbolt) documentation	duplicate url (near)
+bf-triage-tools	RetDec	duplicate url
+bf-triage-tools	Qiling Framework	duplicate url
+bf-triage-tools	Binary Ninja documentation (BNIL overview)	duplicate url
+ReFrameworkTargets	goresym-readme	duplicate url
+ReFrameworkTargets	go-debug-gosym-pclntab	duplicate url (near)
+ReFrameworkTargets	hermes-bytecode-file-format	duplicate url
+bf-ecosystems	ASAR archive format (electron/asar README)	duplicate url
+bf-ecosystems	Linux uapi `module_signature.h`	quote not reproduced (FAIL)
+bf-ecosystems	Godot `file_access_pack.{h,cpp}` (PCK reader)	quote not reproduced (NOQUOTE)
+bf-ecosystems	rustc book — v0 Symbol Format	duplicate url
+ReFirmwareAndArchives	ofrak-readme	duplicate url
+ReFirmwareAndArchives	uefitool-readme	duplicate url
+ReFirmwareAndArchives	diffoscope-readme	quote not reproduced (FAIL)
+ReObfuscationAnalysis	packin-heat-ndss20	quote not reproduced (FAIL)
+ReObfuscationAnalysis	qsynthesis-repo-bar20	quote not reproduced (FAIL)
+ReObfuscationAnalysis	decompilebench-gao25	duplicate url
+bf-research-papers	Phoenix (USENIX Security 2013)	duplicate url
+bf-research-papers	No More Gotos / DREAM (NDSS 2015)	duplicate url
+bf-research-papers	DIRE (arXiv 1909.09029)	duplicate url
+bf-research-papers	BinKit / Revisiting BCSA (arXiv 2011.10749)	duplicate url
+bf-research-papers	Ghidra SLEIGH language documentation	duplicate url
+bf-research-papers	McSema README (archived)	duplicate url
+ReLearningAndPractice	ghidra-class-docs	quote not reproduced (FAIL)
+bf-learning	Ian Lance Taylor, "Linkers part 8" (ELF Segments)	quote not reproduced (FAIL)
+bf-learning	Agner Fog, "Calling conventions for different C++ compilers and operating systems"	duplicate url (near)
+bf-learning	uops.info: latency, throughput and port usage	quote not reproduced (FAIL)
+bf-learning	Nightmare (guyinatuxedo)	conflicts with rejected exploitation-training row
+bf-learning	crackmes.one FAQ	duplicate url

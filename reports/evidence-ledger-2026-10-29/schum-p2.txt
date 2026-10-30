@@ -1,0 +1,40 @@
+International Journal of Intelligence and Counterintelligence, vol.22: 298-319, 2009.
+
+2
+
+Unfortunately, there is another way we can easily be misled and it concerns what we
+ourselves do with the evidence between the time the original evidence is acquired from
+a source and when intelligence analysts receive final reports of the substance of this
+evidence. In a few cases intelligence analysts may interact directly with assets or
+informants or they may receive original sensor records or various other kinds of tangible
+objects. In many cases, however, the original evidence from some source is processed in
+a variety of ways either by persons having skills necessary at some processing step or by
+devices that perform these processing steps automatically. Here we have borrowed an
+important concept from the field of law to describe these intermediate processing
+steps; this concept is that of a chain of custody. As we will describe in detail, a chain of
+custody refers to the persons or devices having access to the original source evidence,
+the time at which they had such access, and what they do to the original evidence when
+they had access to it. The important point here is to consider what was done to the
+original evidence and the extent to which what the analyst finally receives is an
+authentic and complete account of what an original source provided. Uncertainties
+arising in chains of custody of intelligence evidence are not always taken account of.
+One result is that we can often mislead ourselves about what evidence is telling us. The
+original evidence may be altered in various ways at various links in chains of custody.
+This can mean that the evidence received by the analyst is not the same as the original
+evidence provided by its source.
+One major trouble is that the chain of custody of some item of intelligence evidence
+depends on what form the original evidence takes. As we will discuss, evidence can be
+testimonial assertions from a human source based on observations this source allegedly
+made. But it can also be one of a wide variety of tangible evidence items either in the
+form of records of our own sensor observations or of other objects provided for us by
+various external sources. The point here is that possible uncertainties are introduced at
+each link in a chain of custody through which some item of intelligence evidence passes.
+Identifying and assessing these sources of uncertainty, if they are indeed taken into
+account, is a very complex activity. Add to this the uncertainties associated with the
+credibility of the original sources themselves, and so analysts have an extremely difficult
+time assessing the extent to which they can believe the events reported in the evidence
+they receive.
+
+2
+
+

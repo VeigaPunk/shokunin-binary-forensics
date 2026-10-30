@@ -1,0 +1,9 @@
+installed ~/.agents/skills/.../evidence-workflows.md
+  size 4363 lines 71
+  sha256 2bdee98a843d018cf850c706111bb74c459ba8640da00799e9208122e4d5ab80
+
+checkout ~/.local/share/rea @ 12f6e0974cc0db0b3a9b86246accc76556837222
+  size 8091 lines 126
+  sha256 f44b68acc6ebaa60c1f5d0670e4f9ff7212d351a0ecc6e6ca77ce38b9177ea57
+
+S100 pins the checkout blob at 12f6e09, not the installed skill copy.

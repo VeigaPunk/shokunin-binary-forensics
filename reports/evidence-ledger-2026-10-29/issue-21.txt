@@ -1,0 +1,11 @@
+title: Add evidence envelopes, artifact hashes, and reproducible exports
+state: closed
+
+## Scope
+Add artifact SHA-256/format/architecture, provider identity/version, parsed parameters, raw and normalized results, observed/derived/inferred confidence, limitations, source locations, stable evidence IDs, investigation manifests, and JSON evidence export.
+
+## Acceptance criteria
+- Every workflow can emit evidence.
+- Unchanged artifacts have stable identity.
+- Reports cite evidence IDs and locations.
+- Secrets and arbitrary environment values never enter evidence.

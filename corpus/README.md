@@ -11,7 +11,7 @@ frontier it is working toward. Province: `PROVINCE.md`. Admission bar:
 - `knowledge/` — admitted domain entries (the map below names each one); also
   retains clearly marked rejected candidates (each carries an
   `admission-status: rejected` header), which are evidence, not admitted knowledge.
-- `lessons/` — `2026-10-12-r1-provider-gap.md`; `2026-10-27-bounty-triage-module.md` (interactive, non-round); `round-1.md` (fleet round-1 gates and the mined `## Mistakes` table); `round-1-verifier-spotcheck.md` (integrator-written outside check of round 1); `round-N.md` (round gate, mistakes and source changes) with `round-N-verifier-spotcheck.md` (outside check) for completed rounds when present — `ls corpus/lessons` is the authority for exact files.
+- `lessons/` — `2026-10-12-r1-provider-gap.md`; `2026-10-27-bounty-triage-module.md` (interactive, non-round); `2026-10-29-evidence-ledger-curation.md` (interactive C10 EvidenceLedger source gate); `2026-10-29-re-resource-atlas.md` (interactive RE resource atlas source gate, S110–S426); `round-1.md` (fleet round-1 gates and the mined `## Mistakes` table); `round-1-verifier-spotcheck.md` (integrator-written outside check of round 1); `round-N.md` (round gate, mistakes and source changes) with `round-N-verifier-spotcheck.md` (outside check) for completed rounds when present — `ls corpus/lessons` is the authority for exact files.
 - `fixtures/` — authored known-truth inputs (byte-oracle fixtures; `fixtures/REPLAY.md`).
 - `live/runs/` — saved REA outputs, receipts and non-author reviews per historical round.
 - `verify_*.py` — saved-ledger replay verifiers (`--self-test`); census command in `SCORECARD.md` (C).
@@ -47,7 +47,7 @@ and `live/runs/`.
 | C07 | firmware images | `knowledge/round-64-firmware-region-byte-evidence.md` (manual byte-derived readout of `fixtures/firmware-r63/firmware-r63.bin` only; no general firmware-format, extraction/execution, provider-completeness or authenticity claim) | — | held |
 | C08 | browser/Electron runtime evidence | — | — | frontier |
 | C09 | EVM bytecode interfaces | `knowledge/round-62-evm-dispatch-byte-evidence.md` (manual authored-byte/saved-field correspondence only) | `fixtures/evm-r19`, `evm-r21`…`evm-r26` (no `evm-r20`); `verify_evm_evidence.py`; retained rejected candidate `knowledge/evm-saved-interface-candidates.md` | held |
-| C10 | evidence-ledger discipline (Evidence IDs; observation/inference/unknown) | `knowledge/seed.md` §Verification discipline | `verify_saved_evidence.py` | partial |
+| C10 | evidence-ledger discipline (Evidence IDs; observation/inference/unknown) | `knowledge/seed.md` §Verification discipline; candidate `knowledge/2026-10-29-rea-evidence-ledger-discipline.md` (S096–S109; not yet admitted) | `verify_saved_evidence.py`; `corpus/lessons/2026-10-29-evidence-ledger-curation.md`; `reports/evidence-ledger-2026-10-29/` | partial |
 | C11 | text encodings inside artifacts (UTF-16 names, surrogates) | `knowledge/utf16-unpaired-surrogates-in-resource-names.md` | `fixtures/pe-r34`, `pe-r51`…`pe-r57`, `pe-r59` | held |
 | C12 | tool and process validation against known truth | `knowledge/tool-validation-by-function-and-version.md`; `knowledge/seed.md` §Calibration strategy | authored fixtures carrying `truth.json` | held |
 | C13 | fixity and provenance (digest scope, receipts versus origin) | `knowledge/digest-scope-versus-provenance.md`; `knowledge/seed.md` §Calibration strategy (fixture provenance fields only) | `lessons/round-1.md` gate, `reports/round-1/` | held |
@@ -92,3 +92,12 @@ Ground being explored and not yet held, nearest first.
 - Evidence custody beyond fixity: collection and transfer records
   (SWGDE collection/acquisition guidance) — adjacent to this province; enter only
   as it bears on shipped-artifact evidence ledgers.
+- C10 admit gate for `knowledge/2026-10-29-rea-evidence-ledger-discipline.md`
+  (candidate; sourced REA EvidenceLedger/residual-unknown contracts at
+  `12f6e09` plus APU/Schum/Richards/ED/Frontiers method adjacency).
+- RE resource atlas (candidate `knowledge/round-73-re-resource-atlas.md`, sources S110–S426,
+  gate `lessons/2026-10-29-re-resource-atlas.md`): breadth map of primary specs, papers,
+  format tooling, framework extractors, firmware/provenance sources and practice corpora.
+  A coverage row C16 is proposed (with `knowledge/re-ground-truth-resource-atlas.md`) but not
+  added: a new row would change the frozen K held-row counter. The next quality move is one
+  route from the atlas turned into an authored byte-oracle fixture with a scored tool.
