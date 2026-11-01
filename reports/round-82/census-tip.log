@@ -1,0 +1,7 @@
+# census-tip.log - r82 FINAL-TIP archive census (adjudication commit 0ad3ff7e04b1d4f15b051f6545a8b18fe9b5b226), 2026-11-01
+extraction: git archive 0ad3ff7 | tar -x -> tip-extract/ (outside any repo)
+command: sources-census.sh validate --root <fleet-root> <extraction-dir>
+tip_exit=0
+E_lines: 0 (zero E-findings; the three landing-era E11 resolved by the lesson carried at 0ad3ff7)
+W0_lines: 31 (21 W01 + 10 W04, the same disclosed classes)
+tip-extract	ok	<tip-extract>/corpus/SOURCES.md
