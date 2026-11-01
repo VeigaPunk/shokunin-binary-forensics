@@ -1,0 +1,5 @@
+GATE_LEG0_RECEIPTS_PRESENT=yes
+GATE_LEG1_ANDROID_MATCH=1 (live gate exit 1, four fields equal)
+GATE_LEG2_FIRMWARE_MATCH=1 (live gate exit 1, four fields equal)
+GATE_LEG3_NEGCTL_FLAGGED=1 (mutated details.operation flagged)
+GATE_VERDICT=green

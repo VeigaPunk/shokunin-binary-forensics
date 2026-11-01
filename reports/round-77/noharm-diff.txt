@@ -1,0 +1,25 @@
+# round-77 no-harm receipt — changed paths 3e980481..071de560 (landing)
+
+## All changed paths (landing commit):
+M	PROVINCE.md
+M	SKILL.md
+M	corpus/SOURCES.md
+A	corpus/fixtures/browser-r77/app.js
+A	corpus/fixtures/browser-r77/index.html
+A	corpus/fixtures/browser-r77/oracle_check.py
+A	corpus/fixtures/browser-r77/truth.json
+A	corpus/lessons/round-77.md
+A	corpus/live/runs/round-77/LEDGER.md
+A	corpus/live/runs/round-77/inspection.json
+A	corpus/live/runs/round-77/provider-gates/android-gate.json
+A	corpus/live/runs/round-77/provider-gates/firmware-gate.json
+A	corpus/live/runs/round-77/provider-gates/receipt.json
+A	corpus/live/runs/round-77/receipt.json
+A	corpus/live/runs/round-77/target-listing.json
+A	reports/round-77/claims.md
+A	reports/round-77/f-red.log
+A	reports/round-77/gate-red.log
+A	reports/round-77/gate_probe.sh
+
+## Protected-path check (must be empty):
+(end)

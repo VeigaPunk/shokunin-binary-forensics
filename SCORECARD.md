@@ -797,3 +797,55 @@ R across the 444 legacy registry rows that quote counting commands (S444 was the
 flagged instance), or give criterion N's negctl harness the mutation-killed
 attribution pair (r75 planned (b), still open). K stays blocked until the operator
 rules on the filed L0.
+
+## Round 77 (hyaku run 16) — browser-runtime moves through a real CDP producer run on the host's own browser; the r76 gate-payload refutation leg becomes committed, machine-checked receipts (criterion G)
+
+(The r76 **planned** paragraph above is superseded below for the items this
+round consumed — the CDP endpoint turned out to be supplier-immediate (the
+lane itself, r76 spotcheck routed-premise class); the browser family moved,
+and the gate-receipt work became criterion G. Android's jadx gate and the
+criterion-R/N calibration items stand as written there.)
+
+Freeze `5acef36fe6cd473308bd57ec103372a2cc17ac4a` (claims + probes + red-befores);
+landing `071de56028ed32180b210c1559eda9ece99ec132`; final measured revision = the
+adjudication commit carrying this section. Both claims causally separable, neither
+exploratory. Carry-in dispositions (r76 non-author closure, all status-neutral):
+census sanctioned form recorded next to the literal (`SKILL.md` §4a); the
+scratch-probe leg committed and machine-checked (C2's substance); the two cosmetic
+wording notes applied in `corpus/lessons/round-77.md` §Carry-in (S445 left
+byte-untouched). Full gate, receipts and mistake mining: `corpus/lessons/round-77.md`.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — selected-family record presence (F) | **6/8 → 7/8 (7.50 → 8.75)**, families += `browser-runtime` | `PYTHONUTF8=1 python -B reports/round-76/f_probe.py <git-archive tree>/corpus` (frozen r76 instrument, sha256 `e15a43af…f39ed` unchanged; before `f-red.log`, after `f-after.log`) | `3e980481` → this round's tip | **improved, C1 met** — one real `rea inspect-web-page` (6.8.0, built-in `rea-cdp-browser`) passive record of an authored inert local page (`corpus/fixtures/browser-r77/`, committed-files-as-truth; regen n/a — no generator) served from the committed bytes on loopback `http://127.0.0.1:8477`, CDP `http://127.0.0.1:9333` (host Chrome/156.0.8078.74 headless, scratch profile, caller-supplied surface — nothing installed); identity oracle `ORACLE OK (17/17 checks)` (`corpus/live/runs/round-77/`), including both `cdp_hash == sha256(authored script text)` bindings. Disclosed histogram delta: `inspect_web_page: 1` + `list_browser_targets: 1` (discovery aux; in no family set). Note (r76 spotcheck item 3a): f_probe prints two decimals; the r71 counter prints `8.8` — representation-only, mapping AST-verified equal. Boundary: F presence-only (r63); android stays uncovered — caller-supplied `REA_JADX_MCP_JAR` absent (committed gate receipt, S448) |
+| calibration — provider-gate payload receipt fidelity (new bounded criterion G) | red (`gate-red.log` exit 1: `GATE_LEG0_RECEIPTS_PRESENT=no` over the base archive) → **green (`gate-after.log` exit 0: LEG0 yes, LEG1=1, LEG2=1, LEG3 negctl flagged) (0.0 → 10.0)** | `bash reports/round-77/gate_probe.sh` (sha256 `a594b57f…e84a`, pinned at freeze) | same | **improved, C2 met** — carries r76 spotcheck routed item 2: the producer's own gate payloads (`details.operation` snake_case) are now committed receipts (`corpus/live/runs/round-77/provider-gates/`, S448), re-run live per leg and machine-checked, with a mutated-copy negative control that is flagged (a blind comparator would fail LEG3). The three-surface r76 refutation is fully durable from committed bytes: S445 aliases + S448 payloads + S446/S447 real records |
+| coverage — knowledge-map ground K | 8/15 (5.3) → 8/15; C05 uncovered, C10 partial, C15 uncovered | not re-run this round — no README/knowledge byte changed (no-harm diff below); operator-blocked route (r74 L0 unanswered, re-checked) | same | unchanged (blocked route, not attempted) |
+| coverage — province surface accuracy (P2 hold) | 11/11 / 0 / 0 / 10.0 exit 0 → same after the dated browser-surface record landed | `bash reports/round-75/province_probe2.sh` (`p2-rerun.log`) | same | unchanged hold — the frozen probe's fixed token list does not see the new record by construction (routed: wiring it into a future P revision is a future registering round's call) |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (seed 12 + readiness 6) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` (exit 0) | same | unchanged hold |
+| calibration — C2–C8 guards, exit-2 gate, runnability; C/R criteria | untouched; no verifier, gate, README or knowledge byte changed | no-harm diff: protected paths (knowledge, README, verifiers, SHONEN, LOG, SCORECARD, r71 counter, r76 f_probe) empty on 3e980481..071de560 (`reports/round-77/noharm-diff.txt`); `reports/round-76/f_probe.py` blob unchanged | same | unchanged (no harm observed) |
+| separability | C1-only tree (provider-gates + gate_probe removed) still 7/8; C2-only tree (all browser-r77 bytes removed; probe references 0 browser-r77 paths) still green | `f-separability.log`, `g-separability.log` | same | claims separable as frozen |
+| depth / operability / adjacency | no claim; no engine readiness claimed beyond the demonstrated run (Q05: the PROVINCE browser record cites the run receipt, not presence) | — | — | unchanged (ADJ-06 unchanged) |
+
+Capabilities: none added (the fixture, oracle and probe are instruments/evidence;
+the CDP observation route is REA's built-in provider, exercised once — not a new
+analysis capability owned by this lane).
+
+Sources: rows 446 → 448 (+S447 the recorded browser record, +S448 the committed
+gate receipts; both mined, opened this round; C1 and C2 are sourced claims).
+Census exit 0 at both ends, warning count 31 → 31 (same disclosed W01/W04
+classes); the literal contract form exits 2 and the sanctioned explicit-lane-dir
+form exits 0 — both recorded with real outputs in `SKILL.md` §4a and the lesson
+`## Census` (r76 spotcheck routed item 1). `reports/round-77/census-after.log`.
+Mistakes mined (full table `corpus/lessons/round-77.md` `## Mistakes`): assumed
+observation (script-source retention under late attach — caught by reading the
+producer record before pinning expectations), incomplete red tree (instrument
+bytes missing from the first red extraction — self-caught), surface-reachability
+premise inherited unexamined ("caller-supplied" read as operator-supplied —
+re-derived before any fixture was authored).
+
+**planned:** next round — F's last family (android) is hard-gated on the
+caller-supplied `REA_JADX_MCP_JAR` (jadx-headless-mcp 0.7.1, absent; committed
+receipt): it moves only if that surface appears; otherwise calibration (criterion
+R extension to the legacy receipt-quoting rows, or criterion N's mutation-killed
+attribution pair — r75 planned (b), still open). K stays blocked until the
+operator rules on the filed L0.
