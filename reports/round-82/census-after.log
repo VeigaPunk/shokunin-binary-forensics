@@ -1,0 +1,25 @@
+# census-after.log - r82 round-end census receipts (2026-11-01)
+== form 1: sanctioned explicit-lane-dir form over the worktree (SKILL.md 4a), round end ==
+sanctioned_exit=0
+W0_lines: 31 (21 W01 + 10 W04, the same disclosed classes as round start)
+E_lines: 0 (zero E-findings; S459-S461 used-by paths resolve on the worktree — the lesson landed with this adjudication)
+shokunin-binary-forensics	ok	.../fleet/shokunin-binary-forensics/corpus/SOURCES.md
+== form 2: contract literal form (expected exit 2, disclosed r74-r81 lineage) ==
+literal_exit=2
+ERROR: unknown lane (not a dir, not in conf or root): revenger
+(the consolidation L0 line landed r79; routed around again this round)
+== form 3: landing-archive-bytes census (9201d97a92ea6b355e8c9d713d2c3b0c8aa7a13b) ==
+archive_exit=0 -- E11 x3, the expected intermediate state (same shape as r80's S455 and r81's S457/S458):
+census-arch	E11	S459 missing used-by corpus/lessons/round-82.md
+census-arch	E11	S460 missing used-by corpus/lessons/round-82.md
+census-arch	E11	S461 missing used-by corpus/lessons/round-82.md
+(the lesson lands WITH the adjudication commit, after the landing the census ran over; all three rows' used-by then resolve - resolved-by = the adjudication)
+archive_W0_lines: 31 (21 W01 + 10 W04, same disclosed classes; zero E other than the three E11)
+== row counts ==
+worktree_rows: 461
+landing_rows: 461
+== final-tip archive census ==
+re-runnable by the closure judge after the adjudication commit lands:
+git archive <adjudication-sha> | tar -x, then
+sources-census.sh validate --root <fleet-root> <extraction>
+expected: exit 0, zero E-findings, 31 W (the three E11 resolved by the lesson)
