@@ -1,0 +1,49 @@
+{
+ "encoding_code": 1,
+ "encoding_name": "UTF-8",
+ "file_size": 20480,
+ "fixture_name": "fixture.db",
+ "fixture_sha256": "30703cce38a43ce7b01f4c3ba2a96d916da623ff79beb64e3c9b17ee5c8fbed8",
+ "magic_ok": true,
+ "objects": {
+  "meta": {
+   "column_count": 2,
+   "columns": [
+    "k",
+    "v"
+   ],
+   "kind": "table",
+   "root_page": 2,
+   "strict": false,
+   "table": "meta",
+   "without_rowid": false
+  },
+  "samples": {
+   "column_count": 3,
+   "columns": [
+    "id",
+    "name",
+    "score"
+   ],
+   "kind": "table",
+   "root_page": 4,
+   "strict": false,
+   "table": "samples",
+   "without_rowid": false
+  },
+  "sqlite_autoindex_meta_1": {
+   "kind": "index",
+   "root_page": 3,
+   "table": "meta"
+  },
+  "sqlite_autoindex_samples_1": {
+   "kind": "index",
+   "root_page": 5,
+   "table": "samples"
+  }
+ },
+ "page_count": 5,
+ "page_size": 4096,
+ "triggers_expected": [],
+ "views_expected": []
+}

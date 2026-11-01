@@ -1,0 +1,17 @@
+{
+ "command": "rea inspect-sqlite-database <lane>/corpus/fixtures/sqlite-r80/fixture.db --schema-scope database --format json",
+ "command_host_form": "PYTHONUTF8=1 rea inspect-sqlite-database C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/fixtures/sqlite-r80/fixture.db --schema-scope database --format json",
+ "producer": "rea 6.8.0 (installed CLI; provider sqlite, built-in 'REA SQLite database inspector', SQLite 3.53.4 worker; no external engine)",
+ "exit_code": 0,
+ "fixture_sha256": "30703cce38a43ce7b01f4c3ba2a96d916da623ff79beb64e3c9b17ee5c8fbed8",
+ "stdout_sha256": "a9c190cd52ff96190a756338a48b81ddc4f07fc36db12ab41a6f512e5482b6b7",
+ "evidence_id": "ev_5e68ebfedf219dc9622a28f15e3f64d13eddfaa636159bc103cf9e3c05b5f290",
+ "stderr_bytes": 0,
+ "run_date": "2026-11-01",
+ "receipt_author": "revenger-shokunin L1 (round 80)",
+ "oracle": "python -B oracle_check.py truth.json inspection.json fixture.db -> ORACLE OK (34/34 checks), exit 0",
+ "fixture_generator_sha256": "94d016df3a76ecc302b73234df601f7886354b158514eaf6b8489a08a9722fa3",
+ "oracle_sha256": "706a776e031a2f30a5b631e8d8a2e44f57478664d3474b09ff712b74d1d10133",
+ "regen": "python -B generator.py regen -> REGEN: byte-identical (20480 bytes)",
+ "notes": "One bounded static run on the committed fixture bytes. The producer declares the source database and WAL are never opened by SQLite or modified; the fixture is authored inert bytes (schema-inventory target only). Structural identity evidence only: the record's schema facts are checked against byte-derived truth.json (page-1 sqlite_master parse), never the reverse."
+}
