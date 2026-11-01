@@ -1,0 +1,43 @@
+# revenger r75 tip-verification receipt
+# tip: e783101f190ea52b2a29158fb01caeee942fa623 (work commit e783101; this file lands in the receipts commit)
+
+## push check
+e783101f190ea52b2a29158fb01caeee942fa623	refs/heads/main
+e783101f190ea52b2a29158fb01caeee942fa623
+## P2 at tip
+rea-skill-dir                ABSENT-RECORDED (dated marker in PROVINCE.md)
+rea-cli                      PRESENT (probe exit 0)
+npx-fallback                 PRESENT (probe exit 0)
+engine-ghidra                PRESENT (probe exit 0)
+engine-ida                   ABSENT-RECORDED (dated marker in PROVINCE.md)
+engine-jadx                  ABSENT-RECORDED (dated marker in PROVINCE.md)
+engine-binwalk               ABSENT-RECORDED (dated marker in PROVINCE.md)
+engine-pwntools              ABSENT-RECORDED (dated marker in PROVINCE.md)
+demand-context               ABSENT-RECORDED (dated marker in PROVINCE.md)
+bounty-triage-module         PRESENT (probe exit 0)
+lane-repo                    PRESENT (probe exit 0)
+P2_SURFACES_RESOLVED=11/11 UNRECORDED_ABSENT=0 STALE_RECORDS=0 P2_SCORE=10.0
+p2-tip-exit=0
+## negctl at tip
+NEGCTL_V1_STALE_RECORD_FLAGGED=0/1 (exit 0 on a record that contradicts the host — the defect)
+NEGCTL_V2_STALE_RECORD_FLAGGED=1/1 (exit 1, engine-ghidra STALE-RECORD)
+NEGCTL_V2_UNRECORDED_ABSENT_FLAGGED=1/1 (exit 1, engine-ghidra UNRECORDED-ABSENT)
+NEGCTL_V2_POSITIVE_CONTROL=pass
+NEGCTL_V1_ON_FIXED_OBSERVED=exit-1 (v1 has no PRESENT-record grammar; superseded by P2, disclosed not scored)
+NEGCTL_SELFTEST=pass
+negctl-tip-exit=0
+## K over tip archive (r73 counter)
+K_HELD_BACKED=8/15
+C10_STATUS=partial
+C10_CANDIDATE_PIN=1/1
+C10_SOURCES=1/1
+C10_Q_VOTES=0/16
+C10_HELD_BACKED=0/1
+HOLDS_C10=no
+k-tip-exit=0
+## no-harm diff (protected paths vs base)
+protected-diff-bytes=0
+## v1 on fixed tip (disclosed supersession)
+v1-tip-exit=1
+engine-ghidra                UNRECORDED-ABSENT
+PROVINCE_SURFACES_RESOLVED=10/11 UNRECORDED_ABSENT=1 P_SCORE=9.1
