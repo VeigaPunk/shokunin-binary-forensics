@@ -1,0 +1,81 @@
+# pre-probe receipt (scratch, BEFORE the freeze and before any committed-fixture run)
+# scratch iteration probe-auth4.exe: same builder as the committed corpus/fixtures/native-auth-r79/generator.py
+# image sha256 813778b9d97cf74f2aa5ba1c963cecba5c91ba72adebc08b50d7ec8b3196cf80 (== committed fixture bytes)
+# producer: PYTHONUTF8=1 rea inspect-pe-certificates probe-auth4.exe --format json (rea 6.8.0)
+# purpose: the normalized_result SHAPE (field paths, enum names) the record expectations in truth.json
+#          were derived from - written down before pinning expectations (Q06), since scratch is deleted
+#          at round end and the landing run's stdout is the evidence, not this probe.
+# normalized_result:
+{
+ "artifact": {
+  "path": "C:\\Users\\jpvei\\.zcode\\workspace\\95b1ba4d-5089-47a4-9fd8-54adebbce2ae\\scratch\\revenger-r79\\probe-auth4.exe",
+  "sha256": "813778b9d97cf74f2aa5ba1c963cecba5c91ba72adebc08b50d7ec8b3196cf80",
+  "bytes": 1144
+ },
+ "format": "pe32",
+ "machine": 332,
+ "table": {
+  "location": {
+   "offset": 1024,
+   "bytes": 120
+  },
+  "data_directory_location": {
+   "offset": 216,
+   "bytes": 8
+  }
+ },
+ "entries": [
+  {
+   "index": 0,
+   "location": {
+    "offset": 1024,
+    "bytes": 120
+   },
+   "length": 120,
+   "revision": 512,
+   "certificate_type": 2,
+   "certificate_type_name": "pkcs7",
+   "payload": {
+    "location": {
+     "offset": 1032,
+     "bytes": 109
+    },
+    "bytes": 109,
+    "sha256": "045837b545d1a9310deaead9d137d25f8ffc53a045c5744e3dcedfdf15eba41c"
+   },
+   "pkcs7": {
+    "content_type_oid": "1.2.840.113549.1.7.2",
+    "content_type_name": "signedData",
+    "digest_algorithm_oids": [
+     "2.16.840.1.101.3.4.2.1"
+    ],
+    "certificates": [],
+    "signers": [
+     {
+      "digest_algorithm_oid": "2.16.840.1.101.3.4.2.1",
+      "digest_algorithm_name": "sha256",
+      "signature_algorithm_oid": "1.2.840.113549.1.1.1",
+      "signature_algorithm_name": "rsaEncryption",
+      "issuer": null,
+      "serial_hex": null,
+      "subject_key_identifier_hex": "abcd",
+      "authenticated_attributes": false
+     }
+    ]
+   }
+  }
+ ],
+ "coverage": {
+  "status": "complete",
+  "examined_entries": 1,
+  "certificates": 0
+ },
+ "limitations": [
+  "This workflow does not verify signatures, certificate chains, timestamps, or Authenticode digest coverage of image bytes.",
+  "PKCS#7 fields are decoded structurally; cryptographic validity remains unobserved."
+ ]
+}
+# evidence_id: ev_f5fc14102af40e7c4e70a617fe6623038df00c6b686919000f2079594bf8396f
+# provider: {"id": "rea-pe-certificates", "name": "REA PE certificate parser", "version": "1"}
+# earlier iterations (disclosed): payload=64 arbitrary bytes -> invalid_request PKCS#7 malformed (end-of-contents);
+# ContentInfo without SignerInfo -> invalid_request signerInfos contains no SignerInfo; both refused, no record.
