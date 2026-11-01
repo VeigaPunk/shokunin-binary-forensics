@@ -1,0 +1,17 @@
+# r78 tip verification at 46c605c6e61e05b48ac3897df53e3ea606a6a5fb (archive bytes).
+# C1: negctl over the tip bytes, target = the lane checkout:
+P2_NEGCTL_STALE_BROWSER_FLAGGED=0/1 (v2 false-pass on a stale browser record — the routed blind spot, by construction)
+P3_NEGCTL_STALE_BROWSER_FLAGGED=1/1 (exit 1, attributed: the failing line names cdp-browser STALE-RECORD)
+P3_NEGCTL_UNRECORDED_PRESENT_GREEN_BY_DESIGN=ok (a present surface with no record is not a defect)
+P3_NEGCTL_UNRECORDED_ABSENT_LEG=not-claimable (the absent state is not manufacturable for cdp-browser in a fixture; the branch is the same shared check() code the eleven carried surfaces exercise)
+P3_POSITIVE_CONTROL=pass (lane tree green at 12/12)
+P3_NEGCTL_VERDICT=green
+NEGCTL_EXIT=0
+# C2: registry counts at the tip:
+5
+2
+# F hold at the tip:
+F_COVERAGE=7/8 score=8.75
+F_FAMILIES=['archives', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-static']
+F_EXIT=0
+# Census at the tip working tree: see census-after.log (exit 0, 31 W, rows 450).
