@@ -1,0 +1,3 @@
+SWEEP_SELFTEST=pass
+v3 selftest exit=0
+ag_probe present: orphan_sweep3.py*

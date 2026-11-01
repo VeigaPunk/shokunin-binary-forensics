@@ -1,0 +1,9 @@
+== noharm: full range ad74dc8..9201d97 (declared files only, all additions) ==
+ 10 files changed, 554 insertions(+)
+== protected paths diff (must be empty) ==
+== protected-paths diff exit=0 (empty above = clean) ==
+== frozen v2 instrument content sha over the landing archive ==
+30aa3527069b99ac35ac81c73d9304c4bdab54386b1e8eaad64fccc5dca93eb6 *landing-extract/reports/round-81/orphan_sweep2.py
+== FRESH_ROWS ==
+landing-extract/corpus/knowledge/seed.md:12
+landing-extract/corpus/knowledge/2026-10-12-rea-readiness-checklist.md:6
