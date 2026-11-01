@@ -1,0 +1,105 @@
+{
+ "alpha": {
+  "bytes": 80,
+  "commands": [
+   {
+    "cmd_hex": "0x0000000d",
+    "cmdsize": 48,
+    "name": "@rpath/libalpha.dylib"
+   }
+  ],
+  "cpu_subtype": 3,
+  "cpu_type": 16777223,
+  "file_type": "dylib",
+  "file_type_code": 6,
+  "install_name": "@rpath/libalpha.dylib",
+  "load_dylibs": [],
+  "magic_hex": "0xfeedfacf",
+  "ncmds": 1,
+  "path": "image/rpathdir/libalpha.dylib",
+  "rpaths": [],
+  "sha256": "bda3d4ffb44d4d291f3388c265a4c773bc651310414b3772dad165c0a2bbcf07",
+  "sizeofcmds": 48
+ },
+ "build_recipe": {
+  "command": "python -B generator.py",
+  "container": "mach-o-64-little-endian-load-command-tree",
+  "determinism": "byte-deterministic (fixed constants, no time)",
+  "python_version": "3.13.15",
+  "struct_format": "<IiiIIIII header; <IiIIII dylib; <IiI rpath"
+ },
+ "declared_resolution": {
+  "edge0_candidate_exists_in_root": true,
+  "edge0_candidate_path": "rpathdir/libalpha.dylib",
+  "edge1_candidate_escapes_root": true,
+  "edge2_candidate_outside_root": true,
+  "edge_compatibility_versions": [
+   "1.0.0",
+   "1.0.0",
+   "1.0.0"
+  ],
+  "edge_current_versions": [
+   "1.0.0",
+   "1.0.0",
+   "1.0.0"
+  ],
+  "edge_install_names": [
+   "@rpath/libalpha.dylib",
+   "@loader_path/../Frameworks/libbeta.dylib",
+   "/usr/lib/libSystem.B.dylib"
+  ],
+  "tree_files": [
+   "image/main.dylib",
+   "image/rpathdir/libalpha.dylib"
+  ]
+ },
+ "derived_checks": 15,
+ "main": {
+  "bytes": 304,
+  "commands": [
+   {
+    "cmd_hex": "0x0000000d",
+    "cmdsize": 56,
+    "name": "@rpath/librevenger-r82.dylib"
+   },
+   {
+    "cmd_hex": "0x0000000c",
+    "cmdsize": 48,
+    "name": "@rpath/libalpha.dylib"
+   },
+   {
+    "cmd_hex": "0x0000000c",
+    "cmdsize": 72,
+    "name": "@loader_path/../Frameworks/libbeta.dylib"
+   },
+   {
+    "cmd_hex": "0x0000000c",
+    "cmdsize": 56,
+    "name": "/usr/lib/libSystem.B.dylib"
+   },
+   {
+    "cmd_hex": "0x8000001c",
+    "cmdsize": 40,
+    "name": "@loader_path/rpathdir"
+   }
+  ],
+  "cpu_subtype": 3,
+  "cpu_type": 16777223,
+  "file_type": "dylib",
+  "file_type_code": 6,
+  "install_name": "@rpath/librevenger-r82.dylib",
+  "load_dylibs": [
+   "@rpath/libalpha.dylib",
+   "@loader_path/../Frameworks/libbeta.dylib",
+   "/usr/lib/libSystem.B.dylib"
+  ],
+  "magic_hex": "0xfeedfacf",
+  "ncmds": 5,
+  "path": "image/main.dylib",
+  "rpaths": [
+   "@loader_path/rpathdir"
+  ],
+  "sha256": "5f56d14d5648176be1dd3028ded42a298c5f198fc86b035a2dc914a96a49507d",
+  "sizeofcmds": 272
+ }
+}

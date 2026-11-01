@@ -1,0 +1,19 @@
+{
+  "round": 82,
+  "command": "rea trace-dylib-resolution corpus/fixtures/macho-r82/image/main.dylib --format json",
+  "cwd": "lane root",
+  "host_env": {"PYTHONUTF8": "1", "rea": "6.8.0", "provider": "rea-artifact-graph"},
+  "exit_code": 0,
+  "stderr_bytes": 0,
+  "stdout_sha256": "05142d7e1d4e4ca38482071bca7015c6e38de5b021f59304b3070649aae6e786",
+  "saved_path": "corpus/live/runs/round-82/inspection.json",
+  "fixture": "corpus/fixtures/macho-r82/image/main.dylib",
+  "fixture_sha256": "5f56d14d5648176be1dd3028ded42a298c5f198fc86b035a2dc914a96a49507d",
+  "fixture_bytes": 304,
+  "second_image": "corpus/fixtures/macho-r82/image/rpathdir/libalpha.dylib",
+  "second_image_sha256": "bda3d4ffb44d4d291f3388c265a4c773bc651310414b3772dad165c0a2bbcf07",
+  "second_image_bytes": 80,
+  "evidence_id": "ev_851a74058ef2973352f214efbf3798b96f98de3d87a3d1e9340fb3ddc04d514a",
+  "oracle": {"command": "python -I -B corpus/fixtures/macho-r82/oracle_check.py corpus/fixtures/macho-r82/truth.json corpus/live/runs/round-82/inspection.json corpus/fixtures/macho-r82/image/main.dylib", "result": "ORACLE OK (47/47 checks)", "exit_code": 0},
+  "generator": {"self_check": "15/15 SELFCHECK ok", "regen": "REGEN byte-identical (304 + 80 bytes)"}
+}
