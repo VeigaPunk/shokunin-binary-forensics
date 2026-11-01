@@ -1,0 +1,9 @@
+# r78 holds at the round tip (b7fee90f archive bytes).
+# F hold (frozen r76 instrument): PYTHONUTF8=1 python -B reports/round-76/f_probe.py <archive-tree>/corpus
+F_COVERAGE=7/8 score=8.75
+F_FAMILIES=['archives', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-static']
+F_EXIT=0
+# FRESH_ROWS hold:
+corpus/knowledge/2026-10-12-rea-readiness-checklist.md:6
+corpus/knowledge/seed.md:12
+FRESH_EXIT=0

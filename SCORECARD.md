@@ -849,3 +849,54 @@ receipt): it moves only if that surface appears; otherwise calibration (criterio
 R extension to the legacy receipt-quoting rows, or criterion N's mutation-killed
 attribution pair — r75 planned (b), still open). K stays blocked until the
 operator rules on the filed L0.
+
+## Round 78 (hyaku run 17; watchdog driver label `zcode run14` is the driver's process label, not a run counter) — the province probe learns the browser surface (criterion P3); criterion G/R instruments registered per the §Gate standard
+
+Base `9676f52f627cacbcf1eeab8093c212743ec4a2bd`. Freeze
+`f042b2959a257644782405f295272486389fc908` (claims + sha-pinned instruments +
+red-befores). Landing `7f303c3d53b148c82d1296f66f40e924d18b2af5` (SKILL registry
+rows, S449/S450, lesson). Correction `b7fee90ff4308498a696ebec1fb0911f0cc67f12`
+(disclosed post-freeze p3_negctl LEG4 tree-resolution fix + lesson mistake row 3) —
+final measured revision = the adjudication commit carrying this section. Both claims
+causally separable, neither exploratory. Carry-in dispositions (r77 non-author
+closure, all status-neutral): the two gate registrations landed (C2), the sanctioned
+census form stays documented in SKILL.md §4a (re-run both forms this round), and the
+report-title/driver-label alignment is applied. Full gate, receipts and mistake
+mining: `corpus/lessons/round-78.md`.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — province surface accuracy (criterion P revision, instrument P3; supersedes the r75 P2 as the criterion's instrument) | score held **10.0 → 10.0** at **11 → 12 surfaces**; the moved quantity is the caught defect class: `P2_NEGCTL_STALE_BROWSER_FLAGGED=0/1` (frozen v2 exits 0 on a stale browser record — `p3-before.log`, committed at freeze) → `P3_NEGCTL_STALE_BROWSER_FLAGGED=1/1` (exit 1, attributed to `cdp-browser STALE-RECORD`; `P3_NEGCTL_VERDICT=green` from the b7fee90f archive bytes, `p3-negctl-run.log`; standalone `p3-after.log`: fixture exit 1, lane exit 0 12/12) | red: `bash reports/round-75/province_probe2.sh <fixture-with-stale-browser-record>` → exit 0; after: `bash reports/round-78/province_probe3.sh <same-fixture>` → exit 1, and `bash reports/round-78/province_probe3.sh <lane-dir>` → exit 0 `P3_SCORE=10.0` | `f042b295` (red) → `b7fee90f` | **improved, C1 met** — the r77-routed blind spot (P2's fixed surface list predates the browser record, S450) is closed with its own red-before; no PROVINCE.md byte changed (blob `bd7cd320` identical base↔tip); boundary: a PRESENT surface with no record is green by design and the UNRECORDED-ABSENT state is not manufacturable for cdp-browser in a fixture — disclosed, not claimed (`P3_NEGCTL_UNRECORDED_ABSENT_LEG=not-claimable`) |
+| calibration — gate-registry registration (r77 carry-in item 1; criterion R unregistered since r76) | registered instruments in the SKILL.md Gate registry **3 → 5**; probe-path rows **0 → 2** | `sed -n '/^## Gate registry/,/^## [^G]/p' SKILL.md \| grep -cE '^\| name \|'` (before `registry-before.log` = 3, after `registry-after.log` = 5) and `grep -cE 'reports/round-7[67]/(gate\|receipt)_probe' SKILL.md` (0 → 2) | `f042b295` (red) → `b7fee90f` | **improved, C2 met** — criterion G's `gate_probe.sh` and criterion R's `receipt_probe.sh` are registered with the PROTOCOL §Gate-standard row fields (S449: "closure grades no gate conformant until its registry row exists at the lane's registry home"), including the honest disposition that neither exposes a self-test mode (routed debt, not claimed); no criterion score moved (C 5.0, N 10.0, R 10.0, G 10.0 all held) — the closed gap is that two in-use verdict instruments were invisible to gate-conformance checking |
+| coverage — knowledge-map ground K | 8/15 (5.3) → 8/15; C05 uncovered, C10 partial, C15 uncovered | not re-run — no README/knowledge byte changed (no-harm diff below); operator-blocked route (r74 L0 unanswered, re-checked in the fleet `.ufo/l0-questions.md` this round) | same | unchanged (blocked route, not attempted) |
+| coverage — selected-family record presence F | 7/8 (8.75) → 7/8; android hard-gated on the caller-supplied `REA_JADX_MCP_JAR` (env unset, no jadx on PATH, no `~/tools/jadx*` — re-probed this round; S448 receipt stands) | `PYTHONUTF8=1 python -B reports/round-76/f_probe.py <archive-tree>/corpus` (`holds.log`, exit 0) | same | unchanged (gated route, not attempted) |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (seed 12 + readiness 6; knowledge files untouched) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` (`holds.log`) | same | unchanged hold |
+| calibration — C2–C8 guards, exit-2 gate, runnability; C/R/G criteria bytes | untouched; no verifier, gate, README or knowledge byte changed | no-harm diff: protected paths (knowledge, README, verifiers, SHONEN, P2, f_probe, receipt_probe, gate_probe, PROVINCE.md) empty on 9676f52f..b7fee90f; frozen instruments blob-identical (P2 `8760ae57`, f_probe `ea42e6c2`, receipt_probe `7b51a021`, gate_probe `58816812`); whole range 551 insertions, 0 deletions (`reports/round-78/noharm-diff.txt`) | same | unchanged (no harm observed) |
+| separability | C1-only tree (base archive + P3/negctl, no SKILL/SOURCES bytes): negctl green, registry still 3/0 (`c1-only.log`); C2-only tree (base archive + landing SKILL.md, no probe bytes): registry 5/2 holds, P2 still 11/11 (`c2-only.log`) | see the two logs | same | claims separable as frozen |
+| depth / operability / adjacency | no claim; no engine readiness claimed (Q05: P3 resolves the recorded browser binaries' presence, exactly as the engine rows resolve theirs) | — | — | unchanged (ADJ-06 unchanged) |
+
+Instrument pins: `reports/round-78/province_probe3.sh` sha256
+`bde7ecd04ed8f9b7b2326f7e8fd7c4d129da73b7c3ad3ee6ef185b06bf77e1f4` (unchanged since
+the freeze); `reports/round-78/p3_negctl.sh` sha256 `68b78ea1…9d17` at the freeze,
+superseded by the disclosed post-freeze LEG4 correction — current sha256
+`a7f0f6fd846784802a68011a1d3a6c56da660d35c473765bb47145c260a1f54f` (mistake row 3;
+red-befores and the C1 predicate bytes unaffected). Sources: rows 448 → 450 (+S449
+fleet PROTOCOL §Gate standard, +S450 the committed r77 routed items; both opened this
+round; C1 and C2 are sourced claims). Census exit 0 at both ends, warning count
+31 → 31 (same disclosed W01/W04 classes; literal form exit 2, old-host layout,
+routed r74–r78 lineage); `reports/round-78/census-before.log`, `census-after.log`.
+Mistakes mined (full table `corpus/lessons/round-78.md` `## Mistakes`): dropped
+r75 fixture scaffolding (self-caught at the red-before), semantically impossible
+LEG3 expectation (self-caught at the red-before), post-freeze LEG4 tree-resolution
+defect (caught by the committed-bytes receipt run), SOURCES row written in prose
+shape vs the census parser's grammar (caught by the round-end census receipt).
+
+**planned:** next round — calibration: criterion R extension to the legacy
+receipt-quoting registry rows (r76 routed), or criterion N's mutation-killed
+attribution pair (r75 planned (b), still open), or criterion C repair (the two
+failing replay verifiers, routed since r75; re-confirmed failing this round);
+protocol: self-test modes for the two newly registered gates mean superseding
+instrument revisions, not edits of the pinned bytes, and the criterion-instrument
+registration class question (P/F/counters) stays routed to a future registering
+round. Coverage: F android moves only if the caller-supplied `REA_JADX_MCP_JAR`
+appears; K stays blocked until the operator rules on the filed L0.

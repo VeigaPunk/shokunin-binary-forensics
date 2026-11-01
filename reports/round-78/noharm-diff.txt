@@ -1,0 +1,14 @@
+# r78 no-harm receipt, base 9676f52f..b7fee90f (adjudication parent).
+# 1) protected paths (knowledge, README, verifiers, SHONEN, frozen instruments, PROVINCE):
+# (empty above = untouched)
+# 2) frozen-instrument blob identity base vs tip:
+SAME reports/round-75/province_probe2.sh 8760ae57dc9eed3727ff8fff87db5db03c80e30e
+SAME reports/round-76/f_probe.py ea42e6c2f9c0b18526743fc08c0b365b30d2122e
+SAME reports/round-76/receipt_probe.sh 7b51a021fae4bf695cdb7c5dd9c857f734defba1
+SAME reports/round-77/gate_probe.sh 5881681230562a423f2e6527d184f6d544b871ef
+SAME PROVINCE.md bd7cd320342c3a81b82c55267f368b7742a1f10c
+SAME corpus/fixtures/browser-r77/truth.json e4a49a5c843b6f94f8c99fbfd1636af60bdb67e9
+SAME corpus/live/runs/round-77/inspection.json 5fdd96448ebb40e34da008f6f43b384256c12104
+# 3) whole-range file totals (insertions/deletions per commit):
+ 8 files changed, 551 insertions(+)
+# (no DELETED-BYTES-IN lines = append-only)

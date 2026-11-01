@@ -1079,3 +1079,62 @@ no row, supports no claim).
 - **Freeze discipline.** `5acef36f` froze claims + sha-pinned probes (`f_probe.py` `e15a43af…` reused unchanged; `gate_probe.sh` `a594b57f…` new) + red-befores before any after-run; landing `071de560`; adjudication = the commit carrying this entry. Separability on single-claim trees (`f-separability.log`, `g-separability.log`; the C2 probe references zero browser-r77 paths).
 - **Holds.** FRESH_ROWS 18/18 (exit 0); P2 rerun after the dated PROVINCE browser-surface record: 11/11 / 0 / 0 / 10.0 exit 0 (`p2-rerun.log`); no-harm diff: protected paths (knowledge, README, verifiers, SHONEN, LOG, SCORECARD, r71 counter, r76 f_probe) empty on 3e980481..071de560 (`reports/round-77/noharm-diff.txt`); census exit 0 at both ends (31 W → 31 W, same disclosed classes; rows 446 → 448).
 - **Trends.** Expansion unchanged (no knowledge admission; K 8/15 untouched — blocked route re-checked); quality improved (a routed scratch-only evidence leg is now committed, per-leg machine-checked and negative-controlled; F's ground extended to a real browser-runtime producer record with byte-derived identity); discernment improved (the round's own routed-blocker premise — "caller-supplied = operator-supplied" — was re-derived from the tool's contract before any fixture was authored, and the corrected reading is recorded with the demonstration). L2 floor: no dispatch surface on this host (r74 L0 stands); receipts L1-authored and disclosed; the oracle and probe re-derive every verdict from committed bytes.
+
+## 2026-11-01 — Round 78 (hyaku run 17; the watchdog launch label `zcode run14` is the driver's process label, not a run counter): the province probe learns the browser surface it was blind to; criterion G/R instruments registered
+
+- **Carry-in first (r77 non-author closure, all status-neutral).** (1) Both routed
+  gate registrations landed: criterion G's `reports/round-77/gate_probe.sh` and
+  criterion R's `reports/round-76/receipt_probe.sh` now have SKILL.md Gate-registry
+  rows with the full PROTOCOL §Gate-standard field set (grounded in the new S449),
+  recording honestly that neither exposes a self-test mode (routed debt, not
+  claimed) and that the criterion-instrument class question (P/F/counters) stays
+  routed. (2) The census literal form re-run before any write: exit 2 (old-host
+  layout, routed r74–r78 lineage); the sanctioned explicit-lane-dir form (documented
+  in SKILL.md §4a since r77) exits 0. (3) Report-title/driver-label alignment
+  applied: titles now carry the lane's hyaku number (17) and the driver's process
+  label, explicitly typed.
+- **C1 (coverage, criterion P revision, instrument P3).** The r77-routed blind spot
+  (P2's fixed surface list predates the browser record, S450) closed with its own
+  red-before: frozen P2 exits 0 on a fixture whose PROVINCE.md plants a stale
+  browser record (`p3-before.log`, committed at freeze `f042b295`); P3 carries the
+  eleven v2 checks byte-identically plus a twelfth `cdp-browser` surface with its
+  own absent-sentinel token, and flags the same fixture (exit 1, attributed;
+  `P3_NEGCTL_VERDICT=green` re-run from the `b7fee90f` archive bytes,
+  `p3-negctl-run.log`; `p3-after.log`: fixture exit 1, lane exit 0 at 12/12). No
+  PROVINCE.md byte changed (blob `bd7cd320` identical); P score held 10.0 → 10.0 —
+  the moved quantity is the caught class, boundary disclosed (the UNRECORDED-ABSENT
+  state is not manufacturable for cdp-browser inside a fixture; `not-claimable`
+  line in the harness).
+- **C2 (calibration, gate-registry registration).** Registered instruments 3 → 5,
+  probe-path rows 0 → 2 (`registry-before.log` / `registry-after.log`); no criterion
+  score moved (C 5.0, N/R/G 10.0 held) — the closed gap is that two in-use verdict
+  instruments were invisible to gate-conformance checking.
+- **Freeze discipline + disclosed post-freeze correction.** `f042b295` froze claims
+  + sha-pinned instruments + red-befores before any after-run. The committed-bytes
+  receipt run then caught a real harness defect (LEG4 targeted the instrument's own
+  tree, not LANE_DIR — invisible at lane-root invocation, fatal from an archive
+  extraction); fixed and disclosed in correction `b7fee90f` with the lesson mistake
+  row; red-befores and the C1 predicate bytes unaffected; corrected instrument
+  sha256 `a7f0f6fd…1f54f` pinned in the SCORECARD.
+- **Holds.** F 7/8 (8.75; android hard-gated on the absent caller-supplied
+  `REA_JADX_MCP_JAR`, re-probed); FRESH_ROWS 18/18; K 8/15 untouched (L0 re-checked,
+  unanswered); no-harm: protected paths empty on 9676f52f..b7fee90f, frozen
+  instruments blob-identical, 551 insertions / 0 deletions (`noharm-diff.txt`).
+  Separability on single-claim trees (`c1-only.log`, `c2-only.log`). Census exit 0
+  both ends (31 W → 31 W, same disclosed classes); rows 448 → 450 (S449 fleet
+  PROTOCOL §Gate standard, S450 the committed r77 routed items — both opened this
+  round; C1 and C2 are sourced claims). The first round-end census run failed on
+  S449's prose-shaped cells (E01/E11/E05 — one mistake, three fires, mined); fixed
+  same round, receipt discloses the chain.
+- **Mistakes mined** (`corpus/lessons/round-78.md`): dropped r75 fixture scaffolding
+  and a semantically impossible LEG3 expectation (both self-caught at the
+  red-before), the post-freeze LEG4 tree-resolution defect (caught by the
+  committed-bytes receipt), the SOURCES-row grammar mismatch (caught by the census).
+- **Trends.** Expansion unchanged (no knowledge admission; K 8/15 untouched);
+  quality improved (the coverage criterion's instrument now catches the routed
+  blind-spot class, and the two criterion gates are registered with verdict maps,
+  pinned values and write scope); discernment improved (four real defects mined
+  this round, three self-caught before the freeze and one by the mandated
+  committed-bytes receipt; the harness's not-claimable leg is disclosed rather than
+  papered over). L2 floor: no dispatch surface on this host (r74 L0 stands);
+  instruments and receipts re-derive every verdict from committed bytes.
