@@ -1,0 +1,52 @@
+# preprobe-keyed-shape.log - r81 scratch rehearsal for the keyed-archive fixture
+# (committed at the freeze, before the landing; scratch paths are session-local,
+# the values below are the observed receipts)
+
+== rehearsal 1: flat string-root archive (scratch ka-r81-rehearsal.plist, 184 bytes) ==
+producer: rea inspect-keyed-archive <file> --format json
+  exit=0; stderr 0 bytes; evidence_id ev_d34cbc7d...(form ev_<64hex>)
+  operation inspect_keyed_archive; provider rea-artifact-graph
+  normalized_result keys: archive_format=binary-plist, roots={root:{UID:1}},
+  objects[5] (id0 nil $null; id1 scalar 'shokunin-fixture'; id2..4 scalars),
+  references[1] {source:null, path:[root], target:1, status:resolved},
+  total_objects=5 total_references=1 truncated=false next_offset=null
+  limitations[>=3] (first: "Archive classes are never instantiated. ...")
+
+== rehearsal 2: dict-root archive with nested UID refs (scratch ka-r81-rehearsal2.plist, 193 bytes) ==
+  $objects=["$null","shokunin-fixture",{"alpha":UID(1),"beta":UID(4),"n":4242},"alpha","beta"]
+  $top={"root":UID(2)}
+  producer exit=0; total_objects=5 total_references=3
+  objects: nil + scalar + dictionary{alpha:UID1, beta:UID4, n:4242} + 2 scalars
+  references: {null,[root],2,resolved}, {2,[alpha],1,resolved}, {2,[beta],4,resolved}
+  confidence=observed authority=shipped-artifact limitations=3
+  -> reference paths inside containers are flat keys ([alpha], not [root,alpha]);
+
+== generator self-check catch (Q06, disclosed) ==
+  first generator draft asserted scalar_objects=4 / dict_objects=1 from the
+  earlier draft shape while the derived-from-bytes truth of the final authored
+  shape is scalar=3 / dict=2 ($objects has 6 entries: 1 nil + 3 scalars + 2 dicts;
+  the integer 1729 lives INSIDE object 2, it is not a separate scalar).
+  Observed: SELFCHECK scalar_objects_4 FAIL / dict_objects_1 FAIL -> constants
+  corrected to the authored shape; final build 14/14 SELFCHECK ok.
+
+== oracle sort defect (self-caught, pre-freeze) ==
+  first oracle draft sorted reference tuples containing source=None
+  (root ref) against ints -> TypeError '<' not supported between 'int' and
+  'NoneType' on the real record; fixed with a None->-1 sort key; the first
+  real run is saved unregenerated (inspection.json sha
+  83fe4046ec51977b074e04e6cbee10e127be38a32a17bf32e14601fdde348fcf) and the
+  fixed oracle re-ran over the SAME bytes: ORACLE OK (27/27 checks).
+
+== final fixture (corpus/fixtures/keyed-r81/) ==
+  generator.py build: 14/14 SELFCHECK ok; REGEN: byte-identical (210 bytes)
+  fixture.plist sha256 f0e02e64e0a3c10b82c736c7927577de24091ebee660df17156e83258937785c
+  truth.json derived from the built bytes (roots, 6 objects, 4 references,
+  format, totals, offset/truncation)
+
+== r80-corpus reconstruction receipts (carry-in item 1; scratch r80recon/) ==
+  tokenizer over lessons@ef7d3ee3 + fleet reports minus round-80:
+    CITED=344 (exactly); classified with v1 classify() against current HEAD:
+    committed=330 absent-fleet=6 absent=8 LANDABLE_ORPHANS=0
+  tokenizer over lessons@b1e0c60e + current fleet reports: CITED=357
+    (exactly the committed receipt's count basis)
+  current tree (v1): CITED=358 COMMITTED=344 ABSENT=14
