@@ -1,0 +1,14 @@
+{
+  "command": "rea inspect-managed-artifact <lane>/corpus/fixtures/managed-r76/fixture.dll --format json",
+  "command_host_form": "PYTHONUTF8=1 rea inspect-managed-artifact C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/fixtures/managed-r76/fixture.dll --format json",
+  "producer": "rea 6.8.0 (installed CLI; provider rea-dotnet-static, built-in; no external engine)",
+  "exit_code": 0,
+  "fixture_sha256": "25ece37da2e0effbe313662d81469371d59a1de4c610ed081b8a68bcdd75733c",
+  "stdout_sha256": "9da6800db9a8139f74edf51c72e06453422fed4172af89384595becc77b0c65c",
+  "evidence_id": "ev_4f16651a0dd5dc78cb74ca1b9830833ce861a95fcc2aa6e44b149b68fb911ebf",
+  "duration_seconds": 3.220302,
+  "stderr_bytes": 0,
+  "run_date": "2026-11-01",
+  "receipt_author": "revenger-shokunin L1 (this host has no seat-dispatch surface; L1-authored receipt disclosed per the r74 ruling route; the counter and oracle re-derive every verdict from committed bytes)",
+  "notes": "inspection.json is the producer's exact stdout bytes (byte-for-byte; sha256 above). One bounded static run on an authored inert fixture; no target execution."
+}

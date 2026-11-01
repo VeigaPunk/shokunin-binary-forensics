@@ -1,0 +1,27 @@
+{
+  "fixture": "fixture.dll",
+  "byte_length": 924,
+  "sha256": "25ece37da2e0effbe313662d81469371d59a1de4c610ed081b8a68bcdd75733c",
+  "regen": "python -B generator.py regen-check.dll && cmp fixture.dll regen-check.dll (byte-identical; generator self-check re-derives every premise from the built bytes before writing)",
+  "authored": {
+    "format": "minimal managed PE/CLI: PE32 (i386 0x014C), IL-only DLL, one .text section, no entry point, no imports, no native code",
+    "cor20": { "cb": 72, "runtime": "4.0", "flags": "COMIMAGE_FLAGS_ILONLY (1)", "entrypoint_token": 0, "data_directory_index": 14 },
+    "metadata": { "signature": "BSJB", "version": "1.1", "version_string": "v4.0.30319", "streams": ["#~", "#Strings", "#US", "#GUID", "#Blob"] },
+    "tables": { "Module": 1, "TypeDef": 2, "Assembly": 1 },
+    "module_name": "r76-managed.dll",
+    "assembly_name": "r76-managed",
+    "assembly_version": "1.2.3.4",
+    "type": { "namespace": "R76Probe", "name": "Probe" },
+    "mvid_bytes": "00-01-02-03-04-05-06-07-08-09-0A-0B-0C-0D-0E-0F"
+  },
+  "producer_expected": {
+    "operation": "inspect_managed_artifact",
+    "classification_status": "managed",
+    "implementation": "metadata-only",
+    "module_name": "r76-managed.dll",
+    "assembly_name": "r76-managed",
+    "assembly_version": "1.2.3.4",
+    "stream_names": ["#Blob", "#GUID", "#Strings", "#US", "#~"],
+    "subject_sha256": "25ece37da2e0effbe313662d81469371d59a1de4c610ed081b8a68bcdd75733c"
+  }
+}
