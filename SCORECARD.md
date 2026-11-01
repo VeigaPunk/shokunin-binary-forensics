@@ -166,6 +166,7 @@ retired: none.
 |---|---|---|---|
 | sources-curation | Keep a contract-v1 `corpus/SOURCES.md` registry of opened sources (scoped tiers, append-only rows, study paths, a search log, kept rejects) whose seven census commands all run clean | `corpus/SOURCES.md` at `35b2e8b`; census: 15 rows, malformed 0, `A=14 C=1`, `mined=12 queued=1 rejected=2`, duplicate/enum/missing-path checks print nothing (fleet `.ufo/waves/kaika/SOURCES-CONTRACT-v1.md` §Census) | fleet round-1 (kaika continuation) |
 | ghidra-headless-recon | Import a PE into the local Ghidra 12.1.4 headless, run auto-analysis, and export per-function decompiled C via a committed Java postScript (Ghidra 12.x Python scripts require PyGhidra, so the postScript is Java) | `reports/round-75/ghidra-headless-recon.log`; fixture `corpus/fixtures/pe-r75-headless-smoke/` (generator + truth pin; regen byte-identical); run: exit 0, `1 functions, 1 decompiled`, `entry @ 140001000` → `return 0x2a;` | round-75 |
+| cited-evidence orphan sweep | Enumerate every lane-repo path cited by the closed round reports and lessons, classify each against HEAD and the working tree (committed / orphan / orphan-dir / absent-fleet / absent), and exit 1 naming any landable orphan (on-disk, never committed); hermetic `--selftest` (no git/network/live-tree write) with a planted-orphan vector and an attributed mutant kill | `PYTHONUTF8=1 python -B reports/round-80/orphan_sweep.py --lane <lane> --fleet <fleet-root>` → `CITED=344 COMMITTED=330 LANDABLE_ORPHANS=0 ABSENT=14`, exit 0 (`reports/round-80/sweep-real-after.log`); `--selftest` → `SWEEP_SELFTEST=pass`, exit 0 (`reports/round-80/selftest-after.log`); red-before `reports/round-80/orphan-before.log` | round-80 |
 
 Rows enter only through a round that demonstrates the capability running (`AXES.md` §Capabilities).
 
@@ -953,3 +954,61 @@ L0. The criterion-instrument class question stays routed.
 Routed forward: the class question (F2 was frozen as a claims revision, not a
 registry row); criterion C repair; criterion R extension; criterion N attribution
 pair; F android gate; K L0; census literal form (operator-side, lineage L0 landed).
+
+## Round 80 (hyaku run 19) — a tenth F family moves through a real SQLite schema-inventory producer run (criterion F3, `sqlite`); the cited-evidence hygiene duty becomes a standing self-testing instrument (capability: orphan sweep)
+
+Base `4eb2856a88514ae12e67337c1bb962197b4bd189`. Freeze
+`f21e0d51a91a2ad5e941baa390132c6cf19bbaad` (claims + sha-pinned instruments +
+red-befores + pre-probe receipt). Landing
+`ef7d3ee34f547e3f1451d944135df8722cf902fd` (fixture + producer record + S454–S456 +
+the committed form of the r79 SOURCES row-move fix — see Mistakes row 1 in
+`corpus/lessons/round-80.md`); final measured revision = the adjudication commit
+carrying this section. Two claims, distinct axes, causally separable, neither
+exploratory; C2 is a capability acquisition. Carry-in dispositions (r79 non-author
+closure, addressed first): the §Census 32W→31W correction filed as an appended
+erratum in `corpus/lessons/round-79.md`; the orphaned-evidence hygiene duty executed
+twice (hand sweep + the C2 instrument): 344 cited paths, **zero landable orphans**,
+14 recorded dispositions. Full gate, receipts and mistake mining:
+`corpus/lessons/round-80.md`.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — selected-family record presence (F3, registered mapping revision; supersedes the frozen F2 mapping as the criterion's counting instrument) | **8/9 (8.89) → 9/10 (9.00)** on the registered instrument; frozen instruments hold: v1 `F_COVERAGE=7/8 (8.75)` unchanged, `F2_COVERAGE=8/9 (8.89)` unchanged on the frozen nine | before: `PYTHONUTF8=1 python -B reports/round-76/f_probe.py <base-archive>/corpus`, `…/reports/round-79/f_probe2.py`, `…/reports/round-80/f_probe3.py` → `f3-before.log` (8/10 = 8.00, sqlite absent); after: same three over the landing archive → `f3-after.log` | `4eb2856` → `ef7d3ee3` | **improved, C1 met** — one real `rea inspect-sqlite-database --schema-scope database --format json` run (rea 6.8.0, built-in `sqlite` provider, SQLite 3.53.4 worker) on the authored inert SQLite fixture (`corpus/fixtures/sqlite-r80/`, generator self-check derives every oracle-checked fact from the built bytes incl. a page-1 sqlite_master b-tree parse; regen byte-identical; sha256 `30703cce…8fbed8`); oracle `ORACLE OK (34/34 checks)` over the archive bytes (`corpus/live/runs/round-80/`, Evidence `ev_5e68ebfe…5f290`). Honest boundary: numerator+denominator move together (had the record not landed, F3 prints 8/10 = 8.00 < 8.89); android stays hard-gated — F3's honest exception is 9/10, not 10/10 (macho/signature `unsupported_host`, S453; jadx JAR absent) |
+| calibration — capability acquisition: standing cited-evidence orphan sweep (the routed hygiene duty, institutionalized) | capability absent (hand-only; the r78 class) → present: `CITED=344 COMMITTED=330 LANDABLE_ORPHANS=0 ABSENT=14`, exit 0 on the real tree; `--selftest` 4 legs ok + `SWEEP_SELFTEST=pass` exit 0 with the mutant leg `SWEEP_SELFTEST_MUTANT_FLAGGED=ok` | before: `git cat-file -e 4eb2856:reports/round-80/orphan_sweep.py` → exit 128 (`orphan-before.log`); after: `PYTHONUTF8=1 python -B reports/round-80/orphan_sweep.py --selftest` → `selftest-after.log`; `… --lane <lane> --fleet <fleet-root>` → `sweep-real-after.log` | `4eb2856` → adjudication | **improved, C2 met** — `reports/round-80/orphan_sweep.py` (sha `f21f5e3d…890b`, declared exits 0/1/64) classifies every cited lane path against HEAD and disk, exits 1 naming any landable orphan; hermetic selftest proven by running it from the extracted archive outside any repo; the mutant leg kills a sabotaged blind classifier with the attributed vector; the 14 real-tree dispositions match the hand sweep one-for-one; enters the capabilities table this round. Known parser limitations named in claims §C2 (multi-line-ref remnants, dir-style cites) and dispositioned by hand |
+| coverage — knowledge-map ground K | 8/15 (5.3) → 8/15; C05 uncovered, C10 partial, C15 uncovered | not re-run — no README/knowledge byte changed (no-harm diff below); operator-blocked route (r74 L0 unanswered, re-read at the fleet `.ufo/l0-questions.md:233`) | same | unchanged (blocked route, not attempted) |
+| coverage — province surface accuracy (P3 hold) | 12/12 / 0 / 0 / 10.0 exit 0 → same (probe and PROVINCE bytes unchanged) | `bash reports/round-78/province_probe3.sh <lane-dir>` not re-run — no-harm diff | same | unchanged hold |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (seed 12 + readiness 6; knowledge files untouched) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` (exit 0) | same | unchanged hold |
+| calibration — C2–C8 receipt guards, exit-2 gate, runnability; G/R/N criteria bytes | untouched; no verifier, README or knowledge byte changed; v1/F2 criterion instruments blob-identical (f_probe `e15a43af…`, f_probe2 `0be0d8b5…`) | no-harm diff: protected paths empty on `4eb2856..ef7d3ee3` (`reports/round-80/noharm-diff.txt`) | same | unchanged (no harm observed) |
+| separability | C1-only tree (base + fixture/record + f_probe3, no orphan_sweep): F3 9/10, instrument ABSENT (`c1-only.log`); C2-only tree (base + orphan_sweep, no fixture/record/f_probe3): selftest pass + real sweep exit 0, F2 prints 8/9 (`c2-only.log`) | see the two logs | same | claims separable as frozen |
+| depth / operability / adjacency | no claim; no engine readiness claimed (Q05: the record demonstrates the built-in sqlite provider's schema-inventory read of one authored fixture, not general database forensics — rows unrequested, WAL/encrypted/forensics outside the producer's own profile) | — | — | unchanged (ADJ-06 unchanged) |
+
+Capabilities: **one added** — cited-evidence orphan sweep (row above; demonstrated
+running this round with its red-before and selftest receipts).
+
+Sources: rows 453 → 456 (+S454 the sqlite capability surface [own-work, tier A],
++S455 the producer record [own-work, tier A], +S456 the r78 orphan-incident commit
+[own-work, tier A]; C1 and C2 are both sourced claims). The landing also commits the
+r79 SOURCES row-move fix that had existed only in the worktree (Mistakes row 1).
+Census: round start — literal exit 2 (disclosed lineage), sanctioned exit 0, 31 W;
+landing-tip archive census — no E12 (the fix is really committed), but `E01 S454
+fields=13` (row-grammar pipes, fixed in the adjudication) and `E11 S455` used-by
+preceding the lesson (resolved by it); round end — both worktree and final-tip
+archive forms expected exit 0, receipts `reports/round-80/census-after.log`.
+Mistakes mined (full table `corpus/lessons/round-80.md`): the worktree-only r79
+E12 fix (caught by the no-harm pure-append check), SOURCES row-grammar pipes (caught
+by the census), the r79 32W-vs-31W narrative count (caught by the r79 closure,
+erratum filed), and a self-caught u16/u32 header-width parse bug (pre-freeze).
+
+**planned:** next round — calibration: criterion R extension to the legacy
+receipt-quoting rows, or criterion N's mutation-killed attribution pair (both
+re-offered and re-superseded this round; N's negctl harness selftests since r75), or
+the orphan_sweep tokenizer tightening (the named parser limitations). Coverage: F
+android moves only if the caller-supplied `REA_JADX_MCP_JAR` appears; the remaining
+uncovered producer surfaces are host-gated (macho/signature, S453) or outside the
+declared families — a further F move needs a new host surface. K stays blocked until
+the operator rules on the filed L0.
+
+Routed forward: criterion R extension; criterion N attribution pair; criterion C
+repair (§9); the class question (instruments vs registry rows — orphan_sweep lands
+as a capability, not a row); F android gate; K L0; census literal form
+(operator-side, lineage L0 landed r79).

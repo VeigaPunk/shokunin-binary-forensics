@@ -1,0 +1,42 @@
+# noharm-diff.txt - r80 protected-path diff 4eb2856..ef7d3ee3 (2026-11-01)
+# full-range name-status (landing ef7d3ee3; freeze f21e0d51 also below):
+M	corpus/SOURCES.md
+A	corpus/fixtures/sqlite-r80/fixture.db
+A	corpus/fixtures/sqlite-r80/generator.py
+A	corpus/fixtures/sqlite-r80/oracle_check.py
+A	corpus/fixtures/sqlite-r80/truth.json
+A	corpus/live/runs/round-80/LEDGER.md
+A	corpus/live/runs/round-80/inspection.json
+A	corpus/live/runs/round-80/receipt.json
+A	corpus/live/runs/round-80/stderr.txt
+A	reports/round-80/claims.md
+A	reports/round-80/f3-before.log
+A	reports/round-80/f_probe3.py
+A	reports/round-80/orphan-before.log
+A	reports/round-80/orphan_sweep.py
+A	reports/round-80/preprobe-sqlite-shape.log
+# protected paths (knowledge, README, verifiers, SHONEN, PROVINCE, LOG, SCORECARD, SKILL,
+# P2/P3 probes, f_probe v1, f_probe2, receipt/gate v1+v2, r71 counter, corpus README):
+# (empty section above = no protected path touched)
+# instrument identity at the landing:
+e15a43af56f453479681b49e063741bb008245ed758af7fc2d685aa5e64f39ed *reports/round-76/f_probe.py
+0be0d8b5ac131963f273e296c6c2822d277614d634db25b559256f4744e4cc12 *reports/round-79/f_probe2.py
+9441640dc0ff37195337097f677a80bac529b3372f5d352750b7c52da714b418 *reports/round-80/f_probe3.py
+f21f5e3d730624d53ad4d370d1d50fe6d2cd4e94c6c557009d292bfe2d71890b *reports/round-80/orphan_sweep.py
+# SOURCES.md line diff 4eb2856..ef7d3ee3: 3 lines show as delete+re-add (S451/S452/S453).
+# NOT a content violation - the base blob 4eb2856 carried S451-S453 OUTSIDE the Registry
+# section (lines 552-554, after '## Leads (unopened)'): the r79 E12 fix (the round-79
+# lesson's Mistakes row 1) was applied to the WORKING TREE only and the r79 adjudication
+# commit's file list omitted corpus/SOURCES.md, so the committed tree kept the E12-prone
+# layout. The r80 landing ef7d3ee3 commits the corrected layout: S450-S456 all inside
+# '## Registry' (lines 466-472, before '## Paths' at 474). Verified by row placement
+# greps on both blobs and by the archive-bytes census over the ef7d3ee3 extraction
+# (no E12 anywhere; that landing-tip run DID fire E01 `S454 fields=13` - two escaped
+# pipes inside the row's help quote split the 12-cell row grammar - and E11 `S455
+# missing used-by corpus/lessons/round-80.md` - the lesson commits with the
+# adjudication, after the landing. Both receipted in scratch and both resolved by the
+# adjudication commit: the S454 row re-worded pipe-free, the lesson landed. The
+# final-tip archive census is the clean one; see the census receipts). Mined in
+# corpus/lessons/round-80.md Mistakes rows 1-2 (worktree-only fix class; row-grammar pipes).
+# deleted-line count in 4eb2856..ef7d3ee3 for corpus/SOURCES.md: 3 (the three moved
+# rows above; their bytes are identical, positions differ).

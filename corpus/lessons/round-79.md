@@ -142,3 +142,17 @@ sanctioned form exit 0, 31 W (W01/W04 disclosed classes), rows 450. Round end: r
 same-checkout W04); literal form exit 2 (unchanged lineage). Receipt:
 `reports/round-79/census-after.log` (both forms; its header discloses the E12 ×3
 fire-and-fix chain — Mistakes row 1).
+
+## Erratum (appended 2026-11-01, round 80 — the text above stays as written)
+
+The §Census paragraph above says the round-end sanctioned census printed "32 W". The
+correct figure is **31 W** (21 W01 + 10 W04): the committed receipt this paragraph
+cites (`reports/round-79/census-after.log`) prints exactly 31 W lines
+(`grep -cE '^shokunin-binary-forensics\s+W0'` = 31), the lesson's own §Gate paragraph
+says 31 W, and the r79 non-author closure judge (round-79-verifier-spotcheck.md §8,
+routed defect 1) re-counted the receipt and re-ran the census: 31 W, exit 0. The
+§Census clause "same disclosed classes **+ the S452 same-checkout W04**" is also
+wrong — no new W04 fired in the round-end run (S452 cites a path + checkout hash, not
+a bare URL); the receipt's W set is identical to round start's. Filed as an appended
+erratum per the closure ruling (never an in-place rewrite); the narrative-count-vs-
+receipt class is mined in `corpus/lessons/round-80.md` §Mistakes row 3.

@@ -1,0 +1,18 @@
+# census-after.log - r80 round-end census (2026-11-01, post-adjudication worktree), both forms
+# literal contract form:
+revenger	missing	C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin/revenger-shokunin/corpus/SOURCES.md
+literal_exit=2
+# sanctioned explicit-lane-dir form (SKILL.md 4a) - findings tail:
+sanctioned_exit=0
+shokunin-binary-forensics	W01	S399 tierC mined used-by=corpus/knowledge/round-73-re-resource-atlas.md
+shokunin-binary-forensics	W01	S400 tierC mined used-by=corpus/knowledge/round-73-re-resource-atlas.md
+shokunin-binary-forensics	W04	S427 duplicate url github.com/zhuyansen/awesome-ai-reverse-engineering across scopes
+shokunin-binary-forensics	W04	S428 duplicate url arxiv.org/abs/2403.05286v3 across scopes
+shokunin-binary-forensics	W04	S429 duplicate url github.com/mrexodia/ida-pro-mcp across scopes
+shokunin-binary-forensics	W04	S430 duplicate url github.com/skylot/jadx across scopes
+shokunin-binary-forensics	W01	S437 tierC mined used-by=corpus/lessons/round-74.md
+shokunin-binary-forensics	ok	C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/SOURCES.md
+# W-count: 31
+# note: the first receipt draft printed literal_exit=0 because `$?` captured tail's exit,
+# not the census's; this receipt re-runs the literal form unpiped (exit 2, revenger missing -
+# the disclosed r74-r80 lineage). Self-caught on receipt review before commit.
