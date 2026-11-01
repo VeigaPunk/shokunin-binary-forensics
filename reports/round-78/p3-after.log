@@ -1,0 +1,11 @@
+# r78 after (C1): the P3 instrument (committed bytes, b7fee90f) on both trees.
+# Run 1 — the stale fixture (rebuilt per p3-before.log's construction):
+#   bash reports/round-78/province_probe3.sh <fixture-with-stale-browser-record>
+PROBE_EXIT1=1
+cdp-browser                  STALE-RECORD (surface present on host; PROVINCE.md still records it absent)
+P3_SURFACES_RESOLVED=11/12 UNRECORDED_ABSENT=0 STALE_RECORDS=1 P3_SCORE=9.2
+# Run 2 — the lane tree:
+#   bash reports/round-78/province_probe3.sh <lane-dir>
+PROBE_EXIT2=0
+cdp-browser                  PRESENT (probe exit 0)
+P3_SURFACES_RESOLVED=12/12 UNRECORDED_ABSENT=0 STALE_RECORDS=0 P3_SCORE=10.0

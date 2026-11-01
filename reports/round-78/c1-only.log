@@ -1,0 +1,11 @@
+# C1-only tree: base 9676f52f archive + the frozen P3/negctl instruments; no SKILL/SOURCES/lesson bytes.
+# C1 must hold without C2:
+P2_NEGCTL_STALE_BROWSER_FLAGGED=0/1 (v2 false-pass on a stale browser record — the routed blind spot, by construction)
+P3_NEGCTL_STALE_BROWSER_FLAGGED=1/1 (exit 1, attributed: the failing line names cdp-browser STALE-RECORD)
+P3_NEGCTL_UNRECORDED_PRESENT_GREEN_BY_DESIGN=ok (a present surface with no record is not a defect)
+P3_POSITIVE_CONTROL=pass (lane tree green at 12/12)
+P3_NEGCTL_VERDICT=green
+NEGCTL_EXIT=0
+# C2 must be ABSENT here (registry still red):
+name_rows=3
+probe_rows=0

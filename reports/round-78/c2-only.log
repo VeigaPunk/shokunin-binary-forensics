@@ -1,0 +1,11 @@
+# C2-only tree: base 9676f52f archive + the landing SKILL.md only; no P3/negctl/SOURCES/lesson bytes.
+# C2 must hold without C1:
+# Command 1: sed -n '/^## Gate registry/,/^## [^G]/p' SKILL.md | grep -cE '^\| name \|'
+5
+# Command 2: grep -cE 'reports/round-7[67]/(gate|receipt)_probe' SKILL.md
+2
+# C1 must be ABSENT here (no probe instrument bytes in this tree):
+0
+# and P2 (the base instrument) still resolves the clean lane at its own 11 surfaces:
+P2_SURFACES_RESOLVED=11/11 UNRECORDED_ABSENT=0 STALE_RECORDS=0 P2_SCORE=10.0
+P2_EXIT=0
