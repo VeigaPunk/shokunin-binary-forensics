@@ -317,6 +317,38 @@ a rejected candidate keeps every byte except its `admission-status:` line.
 | write scope | read-only; reads the entry, `corpus/QUALITY.md`, and runs `git cat-file -e` |
 | owner | revenger |
 
+| field | value |
+|---|---|
+| name | `receipt_probe` (criterion R instrument, round 76; registered round 78 — the r77 non-author spotcheck routed item 1, "criterion R unregistered since r76") |
+| kind | gate (committed, re-runnable verdict script this lane owns; it can fail: red exit 1 / green exit 0) |
+| entry command | `bash reports/round-76/receipt_probe.sh` (cwd = lane root) |
+| verdict map | `0` green (LEG1 llms=2 named `inspect_macho inspect_signature`, LEG2 doctor=0, LEG3 the S445 row carries the exact per-leg tokens, LEG4 the base-row negative control fires) · `1` red (any leg fails; LEG4 not firing is itself a FAIL) · no other exit declared — an undeclared nonzero reads `could-not-evaluate` (PROTOCOL §Gate standard) |
+| self-test | **none exposed — routed debt of this registration, recorded honestly** (the probe has no self-invocation mode over hermetic fixtures; the §Gate-standard self-test clause is NOT satisfied and is not claimed). Two evidences instead: red `reports/round-76/receipt-before.log` (base `6f3a646c`: LEG3 FAIL + LEG4 `S444_MISMATCH_FLAGGED`) vs green `reports/round-76/receipt-after.log` (LEG4 still firing over the superseded base row). Producer-coupling note: LEG1/2/4 read the installed `rea` version's declared operation names — a producer update that changes them turns the probe red until its pinned rows are superseded; that redness is the criterion working, not a defect |
+| pinned-value path | `corpus/SOURCES.md` row S445 (the exact per-leg tokens LEG3 greps) and the LEG4 pinned base row `6f3a646c691017f92012fc4cf928d9e946838b84:corpus/SOURCES.md` (S444, "prints 0"); probe bytes sha256 `9315f8d8a2440feaca9d943b95b3eb7247a4635c0e113ee6c4101799d4bd5a11` (working tree = `7b51a021` blob at the r77 tip, unchanged since r76) |
+| write scope | read-only over the lane tree; runs `rea --llms`, `rea doctor` and `git show`; writes nothing |
+| owner | revenger |
+
+| field | value |
+|---|---|
+| name | `gate_probe` (criterion G instrument, round 77; registered round 78 — the r77 non-author spotcheck routed item 1) |
+| kind | gate (committed, re-runnable verdict script this lane owns; it can fail: red exit 1 / green exit 0) |
+| entry command | `bash reports/round-77/gate_probe.sh` (cwd = lane root) |
+| verdict map | `0` green (`GATE_LEG0_RECEIPTS_PRESENT=yes`, LEG1 android-match=1, LEG2 firmware-match=1, LEG3 mutated-copy negative control flagged) · `1` red (receipts absent, a live gate payload diverges from its committed receipt, or the negative control is accepted) · no other exit declared — an undeclared nonzero reads `could-not-evaluate` (PROTOCOL §Gate standard; the script `cd`s to the lane root or exits 2) |
+| self-test | **none exposed — routed debt of this registration, recorded honestly** (same disposition as `receipt_probe`; the §Gate-standard self-test clause is NOT satisfied and is not claimed). Two evidences instead: red `reports/round-77/gate-red.log` (over the base `3e980481` archive: `GATE_LEG0_RECEIPTS_PRESENT=no`, exit 1) vs green `reports/round-77/gate-after.log`; the built-in LEG3 mutated-copy comparator is the negative control a blind comparator would fail |
+| pinned-value path | `corpus/live/runs/round-77/provider-gates/android-gate.json` + `firmware-gate.json` — the committed producer payloads the comparator's expected values come from (S448); probe bytes sha256 `a594b57f58bcc5f401242d71a9ef50b14489b1dab142191bb8b96ec06c3ae84a` (pinned at the r77 freeze, unchanged) |
+| write scope | read-only over the lane tree; runs live `rea` provider gates (both exit 1 by design); writes only its own `mktemp -d` dir, removed on exit |
+| owner | revenger |
+
+Registry note (round 78): the criterion-P instrument `reports/round-75/province_probe2.sh`
+was superseded this round by `reports/round-78/province_probe3.sh` (adds the twelfth
+`cdp-browser` surface; carries the eleven v2 checks byte-identically). P3 can fail
+(exit 1) and is therefore gate-class under the §Gate standard's definition; this
+registration does NOT settle the criterion-instrument class: whether every criterion
+probe of P's class (P2/P3, the F counter, the round counters) takes a full row here
+is a lane disposition left **routed to a future registering round**, not an exemption
+claimed here. Those instruments' verdict contracts live in their SCORECARD criterion
+rows (entry command, verdict lines, pinned instrument sha, red/green logs) until then.
+
 ## 7. Cited sources — existence-checked
 
 | citation | exists at | credited for |
