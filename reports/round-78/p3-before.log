@@ -1,0 +1,18 @@
+# r78 red-before (C1): frozen v2 instrument on a fixture whose PROVINCE.md plants a stale
+# browser record ([absent on this host: cdp-browser]) while the browser binaries are
+# genuinely present on this host. Fixture scaffolding per the r75 negctl pattern
+# (.git + corpus/training/bounty-triage/MODULE.md). Command:
+#   bash reports/round-75/province_probe2.sh <fixture-with-stale-browser-record>
+rea-skill-dir                ABSENT-RECORDED (dated marker in PROVINCE.md)
+rea-cli                      PRESENT (probe exit 0)
+npx-fallback                 PRESENT (probe exit 0)
+engine-ghidra                PRESENT (probe exit 0)
+engine-ida                   ABSENT-RECORDED (dated marker in PROVINCE.md)
+engine-jadx                  ABSENT-RECORDED (dated marker in PROVINCE.md)
+engine-binwalk               ABSENT-RECORDED (dated marker in PROVINCE.md)
+engine-pwntools              ABSENT-RECORDED (dated marker in PROVINCE.md)
+demand-context               ABSENT-RECORDED (dated marker in PROVINCE.md)
+bounty-triage-module         PRESENT (probe exit 0)
+lane-repo                    PRESENT (probe exit 0)
+P2_SURFACES_RESOLVED=11/11 UNRECORDED_ABSENT=0 STALE_RECORDS=0 P2_SCORE=10.0
+EXIT=0

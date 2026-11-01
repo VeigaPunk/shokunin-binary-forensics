@@ -1,0 +1,7 @@
+# r78 red-before (C2): the SKILL.md Gate registry at base 9676f52f — criterion G's
+# gate_probe.sh and criterion R's receipt_probe.sh are unregistered.
+# Command 1: sed -n '/^## Gate registry/,/^## [^G]/p' SKILL.md | grep -cE '^\| name \|'
+3
+# Command 2: grep -cE 'reports/round-7[67]/(gate|receipt)_probe' SKILL.md
+0
+# (command 2 exits 1 because its count is 0 — the grep no-match exit, which IS the red state)
