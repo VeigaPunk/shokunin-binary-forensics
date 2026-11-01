@@ -1,0 +1,8 @@
+# c1-only.log - C1-only tree: base c205ef83 + native-auth fixture/record + f_probe2 (no v2 gate scripts, no registry rows)
+# f_probe2 over the C1-only tree:
+F2_COVERAGE=8/9 score=8.89
+F2_FAMILIES=['archives', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static']
+SELFTEST_MODE_PRESENT=0/2
+SELFTEST_MUTANT_KILLED_ATTRIBUTED=0/2
+USAGE_EXIT64=0/2
+c2_leg_probe_exit=1

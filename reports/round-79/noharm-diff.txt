@@ -1,0 +1,7 @@
+# noharm-diff.txt - protected paths unchanged base (c205ef83) -> landing (95e50032)
+protected_diff_empty=0
+# frozen instrument shas at landing:
+e15a43af56f453479681
+9315f8d8a2440feaca9d
+a594b57f58bcc5f40124
+04b543162f9682bc0a28

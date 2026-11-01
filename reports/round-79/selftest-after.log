@@ -1,0 +1,27 @@
+# selftest-after.log - after-measurement over the LANDING archive (95e50032) instruments
+# command: bash <archive>/reports/round-79/selftest_probe.sh <archive>/reports/round-79/gate_probe2.sh <archive>/reports/round-79/receipt_probe2.sh
+SELFTEST_MODE_PRESENT=2/2
+SELFTEST_MUTANT_KILLED_ATTRIBUTED=2/2
+USAGE_EXIT64=2/2
+probe_exit=0
+# individual legs (visible runs, PATH intact):
+-- gate2 --selftest:
+GATE_SELFTEST_COMPARATOR_EQUAL=ok
+GATE_SELFTEST_COMPARATOR_MUTANT_FLAGGED=ok
+GATE_SELFTEST_COMPARATOR_FIELD_MISSING_FLAGGED=ok
+GATE_SELFTEST=pass
+rc=0
+-- receipt2 --selftest:
+RECEIPT_SELFTEST_LLMS_VERDICT=ok
+RECEIPT_SELFTEST_TOKEN_CHECK=ok
+RECEIPT_SELFTEST_NEGCTL_LOGIC=ok
+RECEIPT_SELFTEST=pass
+rc=0
+-- frozen mutants (pinned seds from claims.md):
+GATE_SELFTEST_COMPARATOR_EQUAL=ok
+GATE_SELFTEST=fail (ST2: mutated details.operation accepted)
+selftest: blind comparator accepted mutated receipt
+rc=1
+RECEIPT_SELFTEST=fail (ST1: wrong count accepted)
+selftest: per-leg receipt verdict accepted any count
+rc=1

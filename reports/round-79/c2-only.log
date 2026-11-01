@@ -1,0 +1,9 @@
+# c2-only.log - C2-only tree: base c205ef83 + v2 instruments + SKILL.md (no fixture, no record)
+# selftest probe over the C2-only tree's v2 pair:
+SELFTEST_MODE_PRESENT=2/2
+SELFTEST_MUTANT_KILLED_ATTRIBUTED=2/2
+USAGE_EXIT64=2/2
+probe_exit=0
+# f_probe2 over the C2-only tree corpus (C1 absent -> 7/9):
+F2_COVERAGE=7/9 score=7.78
+F2_FAMILIES=['archives', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-static']

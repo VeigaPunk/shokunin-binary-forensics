@@ -1,0 +1,5 @@
+# plain-equal.log - v2 plain-mode value lines byte-equal to v1 on the lane tree (no verdict drift)
+# command: diff <(bash reports/round-77/gate_probe.sh) <(bash reports/round-79/gate_probe2.sh)
+GATE2_PLAIN_BYTES_EQUAL=yes
+# command: diff <(bash reports/round-76/receipt_probe.sh) <(bash reports/round-79/receipt_probe2.sh)
+RECEIPT2_PLAIN_BYTES_EQUAL=yes

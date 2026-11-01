@@ -1,0 +1,13 @@
+# f2-after.log - after-measurement over the LANDING archive (95e50032a6484f42297a6072d39843cc0222887d)
+# command: git archive 95e50032 | tar -x -> the two counting commands from reports/round-79/claims.md
+{"analyze_javascript_application": 6, "compare_application_versions": 1, "compare_javascript_export_shapes": 3, "extract_artifact": 2, "inspect_analysis_view": 1, "inspect_artifact": 4, "inspect_evm_interface": 7, "inspect_firmware_regions": 1, "inspect_managed_artifact": 1, "inspect_pe_certificates": 1, "inspect_pe_resources": 30, "inspect_web_page": 1, "list_browser_targets": 1, "trace_application_feature": 2, "trace_javascript_semantics": 2}
+F_COVERAGE=7/8 score=8.75
+F_FAMILIES=['archives', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-static']
+f_probe_exit=0
+{"analyze_javascript_application": 6, "compare_application_versions": 1, "compare_javascript_export_shapes": 3, "extract_artifact": 2, "inspect_analysis_view": 1, "inspect_artifact": 4, "inspect_evm_interface": 7, "inspect_firmware_regions": 1, "inspect_managed_artifact": 1, "inspect_pe_certificates": 1, "inspect_pe_resources": 30, "inspect_web_page": 1, "list_browser_targets": 1, "trace_application_feature": 2, "trace_javascript_semantics": 2}
+F2_COVERAGE=8/9 score=8.89
+F2_FAMILIES=['archives', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static']
+f_probe2_exit=0
+# oracle over archive bytes:
+ORACLE OK (27/27 checks)
+oracle_exit=0

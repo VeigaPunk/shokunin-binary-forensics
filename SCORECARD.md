@@ -900,3 +900,56 @@ instrument revisions, not edits of the pinned bytes, and the criterion-instrumen
 registration class question (P/F/counters) stays routed to a future registering
 round. Coverage: F android moves only if the caller-supplied `REA_JADX_MCP_JAR`
 appears; K stays blocked until the operator rules on the filed L0.
+
+## Round 79 (hyaku run 18) — a ninth F family moves through a real certificate-table producer run (criterion F2, `native-authenticode`); both registered gates gain §Gate-standard self-test modes (v2 supersessions)
+
+Base `c205ef83ca3fa8e0c0e20488625d232cc3efc4c7`. Freeze
+`34c2c5a1dc77424ab93044842e4161c87b23c818` (claims + sha-pinned instruments +
+red-befores + pre-probe receipt). Landing
+`95e50032a6484f42297a6072d39843cc0222887d` (fixture + producer record + SKILL
+registry rows + S451–S453); final measured revision = the adjudication commit
+carrying this section. Both claims causally separable, neither exploratory.
+Carry-in dispositions (r78 non-author closure, all status-neutral): the gate
+self-test routed debt is closed by supersession (C2's substance); the census
+lineage L0 consolidation line landed; the class question and criterion C repair
+stay routed. Full gate, receipts and mistake mining: `corpus/lessons/round-79.md`.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — selected-family record presence (F2, registered mapping revision; supersedes the frozen f_probe as the criterion's counting instrument) | **7/8 (8.75) → 8/9 (8.89)** on the registered instrument; v1 frozen instrument holds **7/8 (8.75) → 7/8** on the unchanged frozen eight | before: `PYTHONUTF8=1 python -B reports/round-76/f_probe.py <base-archive>/corpus` + `PYTHONUTF8=1 python -B reports/round-79/f_probe2.py <base-archive>/corpus` (`f2-before.log`); after: same two over the landing archive (`f2-after.log`) | `c205ef83` → `95e50032` | **improved, C1 met** — one real `rea inspect-pe-certificates` run (6.8.0, built-in `rea-pe-certificates`) on an authored inert native PE32 certificate-table fixture (`corpus/fixtures/native-auth-r79/`, generator self-check, regen byte-identical, sha256 `813778b9…cf80`); identity oracle `ORACLE OK (27/27 checks)` over the archive bytes (`corpus/live/runs/round-79/`, Evidence `ev_3701e3a1…52fcc`). Honest boundary: numerator+denominator move together (had the record not landed, F2 prints 7/9 = 7.78 < 7/8) — the moved quantity is the in-province family with an oracle-checked record, not the print; android stays hard-gated (macho/signature ruled out on S453 `unsupported_host`) |
+| calibration — §Gate-standard self-test modes for the two registered gates (routed debt closed by supersession) | `SELFTEST_MODE_PRESENT` **0/2 → 2/2**, `SELFTEST_MUTANT_KILLED_ATTRIBUTED` **0/2 → 2/2**, `USAGE_EXIT64` **0/2 → 2/2**; plain-mode value lines byte-equal to v1 (no verdict drift) | `bash reports/round-79/selftest_probe.sh <gate-script> <receipt-script>` (before: v1 pair → `selftest-before.log` exit 1; after: v2 pair over the landing archive → `selftest-after.log` exit 0; plain drift → `plain-equal.log`) | `c205ef83` (red) → `95e50032` | **improved, C2 met** — `gate_probe2.sh`/`receipt_probe2.sh` expose hermetic `--selftest` modes (no producer call — PATH-stripped leg in the receipt) asserting the exit code AND stable committed finding-ids per S452; frozen sed mutants die with the attributed last lines; unrecognized forms exit 64; criterion G/R scores hold **10.0 → 10.0** over identical verdict bytes; v1 bytes and registry rows stand |
+| coverage — knowledge-map ground K | 8/15 (5.3) → 8/15; C05 uncovered, C10 partial, C15 uncovered | not re-run — no README/knowledge byte changed (no-harm diff below); operator-blocked route (r74 L0 unanswered, re-checked) | same | unchanged (blocked route, not attempted) |
+| coverage — province surface accuracy (P3 hold) | 12/12 / 0 / 0 / 10.0 exit 0 → same (instrument untouched this round) | `bash reports/round-78/province_probe3.sh <lane-dir>` not re-run — probe and PROVINCE bytes unchanged (no-harm diff) | same | unchanged hold |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (seed 12 + readiness 6; knowledge files untouched) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` (exit 0) | same | unchanged hold |
+| calibration — C2–C8 receipt guards, exit-2 gate, runnability; C/N/R/G criteria bytes | untouched; no verifier, README or knowledge byte changed; v1 criterion instruments blob-identical (f_probe `e15a43af…`, receipt_probe `9315f8d8…`, gate_probe `a594b57f…`) | no-harm diff: protected paths empty on `c205ef83..95e50032` (`reports/round-79/noharm-diff.txt`) | same | unchanged (no harm observed) |
+| separability | C1-only tree (base + fixture/record + f_probe2, no v2 scripts): F2 8/9, selftest probe red (`c1-only.log`); C2-only tree (base + v2 scripts + SKILL.md, no record): selftest probe green 2/2 ×3, F2 7/9 (`c2-only.log`) | see the two logs | same | claims separable as frozen |
+| depth / operability / adjacency | no claim; no engine readiness claimed (Q05: the record demonstrates the built-in provider's structural read, not a general capability) | — | — | unchanged (ADJ-06 unchanged) |
+
+Capabilities: none added (the fixture/oracle/F2 mapping and the v2 gates are
+instruments and evidence; the certificate-table route is REA's built-in provider,
+exercised once — not a new analysis family owned by this lane).
+
+Sources: rows 450 → 453 (+S451 the record, +S452 the §Self-test/§Verdict clauses at
+the S449 checkout, +S453 the producer capability surface; all opened this round; C1
+and C2 are sourced claims). Census exit 0 at round end (sanctioned form, 31 W — same
+disclosed W01/W04 classes as round start; literal form exit 2, unchanged r74–r79
+lineage, L0 consolidation line landed). `reports/round-79/census-after.log`.
+Mistakes mined (full table `corpus/lessons/round-79.md` `## Mistakes`): SOURCES rows
+appended at EOF outside the Registry section (E12 ×3, caught by the round-end
+census), non-8-aligned WIN_CERTIFICATE length (self-caught at the scratch
+self-check), producer_expected drafted from the observed record instead of the
+authored bytes (self-caught, Q06 — the generator now derives every fact the oracle
+checks).
+
+**planned:** next round — calibration: criterion R extension to the legacy
+receipt-quoting rows, or criterion N's mutation-killed attribution pair (r75 planned
+(b), still open), or criterion C repair (§9-ruled-out twice; needs the operator to
+rule the fixture-chain re-authoring in scope). Coverage: F android moves only if the
+caller-supplied `REA_JADX_MCP_JAR` appears; no other in-province producer family is
+manufacturable on this host (S453: macho/signature `unsupported_host`) — a further F
+move needs a new host surface. K stays blocked until the operator rules on the filed
+L0. The criterion-instrument class question stays routed.
+
+Routed forward: the class question (F2 was frozen as a claims revision, not a
+registry row); criterion C repair; criterion R extension; criterion N attribution
+pair; F android gate; K L0; census literal form (operator-side, lineage L0 landed).
