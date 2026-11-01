@@ -27,6 +27,13 @@ Sources (read-only):
   `rea doctor` reports ghidra, ghidra-headless and ghidra-native_decompiler healthy.
   Presence, not readiness (Q05). Off-PATH install of 2026-10-26 that the r74 PATH-only
   probe could not see]
+  [present on this host, 2026-11-01: CDP browser surface — the host's own
+  Chrome/156.0.8078.74 at C:/Program Files/Google/Chrome/Application/chrome.exe
+  and Edge at C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe serve a
+  loopback CDP endpoint for REA's `rea-cdp-browser` provider (`rea list-browser-targets`,
+  `rea inspect-web-page`); demonstrated by the recorded round-77 run on an authored
+  loopback fixture (`corpus/live/runs/round-77/`, S447), not mere presence (Q05);
+  caller-supplied surface, nothing installed]
   [absent on this host, 2026-10-31: ida / ida64 — PATH probe]
   [absent on this host, 2026-10-31: jadx — PATH probe]
   [absent on this host, 2026-10-31: binwalk / unblob — PATH probe]

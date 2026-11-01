@@ -1,0 +1,21 @@
+{
+  "command": "rea inspect-web-page <cdp-endpoint> <targetId> --allowed-origins http://127.0.0.1:8477 --format json",
+  "command_host_form": "rea inspect-web-page http://127.0.0.1:9333 F6A6B5C8E48625523BCEA0CE47F68B42 --allowed-origins http://127.0.0.1:8477 --format json",
+  "producer": "rea 6.8.0 (installed CLI; provider rea-cdp-browser, built-in; browser surface is the host's own Chrome/156.0.8078.74 headless on loopback CDP — no engine installed or updated)",
+  "target_discovery_command": "rea list-browser-targets http://127.0.0.1:9333 --format json (stdout saved as target-listing.json)",
+  "server_command": "python -m http.server 8477 --bind 127.0.0.1 (cwd = corpus/fixtures/browser-r77; loopback only)",
+  "browser_command": "\"C:/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --remote-debugging-port=9333 --user-data-dir <scratch>/chrome-profile-r77 --no-first-run --no-default-browser-check --disable-gpu http://127.0.0.1:8477/index.html",
+  "exit_code": 0,
+  "duration_seconds": 3.498,
+  "stderr_bytes": 0,
+  "fixture_files_sha256": {
+    "corpus/fixtures/browser-r77/index.html": "46e51761af28b05c4c382c8ee72f9d77fee6f20d0b904f69b1c7f9a2214deb45",
+    "corpus/fixtures/browser-r77/app.js": "fb079fa20d08a1309bed44c80743293d37ec8cd51c7ef7f9ee465e0d0d5aa593"
+  },
+  "stdout_sha256": "b045a4eecf2d77cfdee5de83e5864fcadbd6fd54e749f6985a04ecbeebaae868",
+  "target_listing_stdout_sha256": "6954848b4850c94fa946e41f50bf0a044316c123d7541d6a6141af85e5eebbb8",
+  "evidence_id": "ev_a0134e6f482424baa278ec374f9bf0e984738a113106556b9933d2fd403918fd",
+  "run_date": "2026-11-01",
+  "receipt_author": "revenger-shokunin L1 (this host has no seat-dispatch surface; L1-authored receipt disclosed per the r74 ruling route; the oracle re-derives every identity verdict from committed bytes)",
+  "notes": "inspection.json is the producer's exact stdout bytes (byte-for-byte; sha256 above). inspection.json and target-listing.json each carry evidence_id+normalized_result; the frozen F probe therefore shows two new histogram keys (inspect_web_page:1, list_browser_targets:1) — only inspect_web_page is in a family set (browser-runtime); list_browser_targets matches no family. A re-run reproduces the oracle verdict (authored-fact checks) but not the stdout bytes: evidence_id, target_id, script_key, cdp capture timestamps are per-run (volatile list in truth.json)."
+}

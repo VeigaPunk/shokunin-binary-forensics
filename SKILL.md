@@ -577,6 +577,22 @@ never edit it.
 /home/vgpnk/Projects/shokunin/scripts/sources-census.sh census /home/vgpnk/Projects/shokunin/revenger-shokunin
 ```
 
+**This host (2026-11-01, r77 carry-in):** both the old-host literal above and
+the closure contract's lane-id form `sources-census.sh validate --root
+<fleet-root> revenger` fail here — a lane id resolves to
+`<root>/<id>-shokunin/`, which does not exist on this layout (re-run
+2026-11-01: exit 2, `revenger missing … revenger-shokunin/corpus/SOURCES.md`).
+The sanctioned invocation form on this host is the **explicit lane dir**:
+
+```sh
+bash <fleet-root>/scripts/sources-census.sh validate --root <fleet-root> <lane-dir>
+# e.g. (fleet root = the shokunin-clone checkout; lane dir = this repo):
+bash C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin/scripts/sources-census.sh validate --root C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics
+```
+
+exit 0 with the disclosed W01/W04 warnings; the same output shape as the
+round-end census receipts (`reports/round-<N>/census-after.log`).
+
 Promised outcome: TSV on stdout, `lane<TAB>code-or-metric<TAB>value…`; exit `0`
 clean or warnings only, `1` E/overdue findings, `2` usage/env/missing registry,
 `3` selftest failure (script header `:16-18`). `--today` is a scalar parameter,

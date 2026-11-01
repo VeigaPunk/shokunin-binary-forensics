@@ -1,0 +1,44 @@
+{
+  "fixture": "browser-r77 (two authored static files; the committed files are the source of truth — no generator)",
+  "files": {
+    "index.html": {
+      "sha256": "46e51761af28b05c4c382c8ee72f9d77fee6f20d0b904f69b1c7f9a2214deb45",
+      "byte_length": 316
+    },
+    "app.js": {
+      "sha256": "fb079fa20d08a1309bed44c80743293d37ec8cd51c7ef7f9ee465e0d0d5aa593",
+      "byte_length": 101
+    }
+  },
+  "authored": {
+    "static_title": "r77 probe page",
+    "inline_script_suffix_literal": " [loaded]",
+    "external_script_path": "/app.js",
+    "marker_text": "inert static fixture for revenger round 77",
+    "inert": "no network egress, no storage writes, no navigation; the only scripted behavior sets the document title"
+  },
+  "run_pin": {
+    "cdp_endpoint": "http://127.0.0.1:9333",
+    "http_origin": "http://127.0.0.1:8477",
+    "page_url": "http://127.0.0.1:8477/index.html",
+    "server": "python -m http.server 8477 --bind 127.0.0.1 (cwd = this fixture directory)",
+    "browser": "Chrome/156.0.8078.74 headless (--headless=new --remote-debugging-port=9333), loopback CDP only",
+    "run_date": "2026-11-01"
+  },
+  "producer_expected": {
+    "operation": "inspect_web_page",
+    "provider_id": "rea-cdp-browser",
+    "target_type": "page",
+    "script_count": 2,
+    "resource_count": 1,
+    "resource_mime": "text/javascript",
+    "cdp_hash_binding": "scripts.items[].cdp_hash equals the sha256 of the corresponding script text (verified for both scripts on the recorded run: app.js file bytes and the inline index.html script text); the oracle re-derives both hashes from the committed fixture bytes"
+  },
+  "volatile_not_compared": [
+    "evidence_id (fresh per run; only its shape is checked)",
+    "target.target_id and frame_id (per browser launch)",
+    "scripts.items[].script_key and .cdp_hash (per parse/session)",
+    "capture_window timestamps (wall clock)",
+    "completeness counters (attach- and policy-dependent)"
+  ]
+}

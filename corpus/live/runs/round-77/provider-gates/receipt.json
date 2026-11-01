@@ -1,0 +1,32 @@
+{
+  "purpose": "Committed receipts for the r76 refutation leg (b): the producer's own provider-gate payloads carry snake_case details.operation into the frozen counter's name space. Reproduced and committed this round so the three-surface refutation is fully durable from committed bytes (r76 verifier spotcheck routed item 2).",
+  "legs": [
+    {
+      "name": "android",
+      "command": "rea inspect-android-package <lane>/corpus/fixtures/apk-r65/fixture.apk --format json",
+      "exit_code": 1,
+      "stdout_file": "android-gate.json",
+      "stdout_sha256": "4d0e6ea59823c97242bfa75b009952dfe8c1e9c63bc1793c09308d6482167330",
+      "code": "capability_unavailable",
+      "category": "unsupported_provider",
+      "details_provider_id": "jadx",
+      "details_operation": "inspect_android_package",
+      "diagnostics": "jar_configured=false, failure_kind=jar, failure_code=not_configured"
+    },
+    {
+      "name": "firmware",
+      "command": "rea inspect-firmware-regions <lane>/corpus/fixtures/firmware-r63/firmware-r63.bin --format json",
+      "exit_code": 1,
+      "stdout_file": "firmware-gate.json",
+      "stdout_sha256": "1dfc910c852a6ad20c64eb9ee02ea0382525fc7e1f6b053afdc15e8bc936cb19",
+      "code": "capability_unavailable",
+      "category": "unsupported_provider",
+      "details_provider_id": "binwalk",
+      "details_operation": "inspect_firmware_regions",
+      "diagnostics": "requires Linux + caller-supplied absolute REA_BINWALK_COMMAND"
+    }
+  ],
+  "run_date": "2026-11-01",
+  "receipt_author": "revenger-shokunin L1 (L1-authored receipt disclosed per the r74 ruling route; reports/round-77/gate_probe.sh re-runs both legs live and machine-checks these receipts, with a mutated-copy negative control)",
+  "notes": "These payload files carry no evidence_id/normalized_result (error objects, not analysis records), so the frozen F probe does not count them. Machine-checked by reports/round-77/gate_probe.sh (calibration criterion G)."
+}
