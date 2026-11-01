@@ -1,0 +1,13 @@
+{
+  "command": "rea inspect-pe-certificates <lane>/corpus/fixtures/native-auth-r79/fixture.dll --format json",
+  "command_host_form": "PYTHONUTF8=1 rea inspect-pe-certificates C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/fixtures/native-auth-r79/fixture.dll --format json",
+  "producer": "rea 6.8.0 (installed CLI; provider rea-pe-certificates, built-in; no external engine)",
+  "exit_code": 0,
+  "fixture_sha256": "813778b9d97cf74f2aa5ba1c963cecba5c91ba72adebc08b50d7ec8b3196cf80",
+  "stdout_sha256": "317b0b744f6d18725387cedc73085edb6b197c22de800e2ba731842397447b79",
+  "evidence_id": "ev_3701e3a16f9581ec471a6da6f3e1834f0625fd79ad52ba1943f795d53d752fcc",
+  "stderr_bytes": 0,
+  "run_date": "2026-11-01",
+  "receipt_author": "revenger-shokunin L1 (this host has no seat-dispatch surface; L1-authored receipt disclosed per the r74 ruling route; the oracle and counter re-derive every verdict from committed bytes)",
+  "notes": "inspection.json is the producer's exact stdout bytes (byte-for-byte; sha256 above). One bounded static run on an authored inert fixture; no target execution; the embedded PKCS#7 blob is structurally valid DER and cryptographically meaningless by construction."
+}

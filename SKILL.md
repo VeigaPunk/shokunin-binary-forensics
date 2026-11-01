@@ -339,6 +339,28 @@ a rejected candidate keeps every byte except its `admission-status:` line.
 | write scope | read-only over the lane tree; runs live `rea` provider gates (both exit 1 by design); writes only its own `mktemp -d` dir, removed on exit |
 | owner | revenger |
 
+| field | value |
+|---|---|
+| name | `gate_probe2` (criterion G instrument revision 2, round 79 — supersedes `gate_probe` above as the criterion's registered instrument; the v1 row above stands for the frozen v1 bytes) |
+| kind | gate (committed, re-runnable verdict script this lane owns; it can fail: red exit 1 / green exit 0) |
+| entry command | `bash reports/round-79/gate_probe2.sh` (cwd = lane root; plain mode value lines byte-identical to v1 — `reports/round-79/plain-equal.log`) |
+| verdict map | `0` green (plain mode: the v1 leg contract verbatim — `GATE_LEG0_RECEIPTS_PRESENT=yes`, LEG1 android-match=1, LEG2 firmware-match=1, LEG3 negctl flagged; `--selftest`: last line `GATE_SELFTEST=pass`) · `1` red (plain: receipts absent, a live gate payload diverges from its committed receipt, or the negative control is accepted; `--selftest`: an assertion dies with an attributed `selftest: …` last line) · `64` usage (any unrecognized invocation form; usage line on stderr) — declared per PROTOCOL §Gate standard §Verdict (S452) |
+| self-test | `bash reports/round-79/gate_probe2.sh --selftest` (spelling `--selftest`) — hermetic per the §Self-test clause (S452): isolated `mktemp -d` fixtures, no network, no live-tree write, **no producer call** (the committed receipt `reports/round-79/selftest-after.log` runs it with the rea directory stripped from PATH); asserts the exit code and the stable expected finding-ids `GATE_SELFTEST_COMPARATOR_EQUAL=ok`, `GATE_SELFTEST_COMPARATOR_MUTANT_FLAGGED=ok`, `GATE_SELFTEST_COMPARATOR_FIELD_MISSING_FLAGGED=ok`, last line `GATE_SELFTEST=pass`, committed here and in `reports/round-79/claims.md` (expectation independent of the recomputation). Attribution: the frozen sed mutant (recipe pinned in claims.md — the comparator's exit expression replaced by `sys.exit(0)`) dies with the last line `selftest: blind comparator accepted mutated receipt`, exit 1 (`reports/round-79/selftest-after.log` / the probe counter `SELFTEST_MUTANT_KILLED_ATTRIBUTED`) |
+| pinned-value path | plain mode: the v1 receipts stand (`corpus/live/runs/round-77/provider-gates/`, S448); selftest: expected finding-ids committed in this row + `reports/round-79/claims.md`; two-evidences pair `reports/round-79/selftest-before.log` (v1 pair: `0/2 · 0/2 · 0/2`, exit 1) vs `reports/round-79/selftest-after.log` (`2/2 · 2/2 · 2/2`, exit 0), both produced by the frozen counting instrument `reports/round-79/selftest_probe.sh` sha256 `4126af12767d1968be1cd344c5795a3cb4c2f6cbc9f11e35556ebd6fb6722e1e`; probe bytes sha256 `e2b71649faf34000ec0c2a777c07cf75dac1c92ca89561158093b73aa14caead` (pinned at the r79 freeze, `34c2c5a1`) |
+| write scope | read-only over the lane tree; plain mode runs live `rea` provider gates (both exit 1 by design); `--selftest` runs no producer call; writes only its own `mktemp -d` dirs, removed on exit |
+| owner | revenger |
+
+| field | value |
+|---|---|
+| name | `receipt_probe2` (criterion R instrument revision 2, round 79 — supersedes `receipt_probe` above as the criterion's registered instrument; the v1 row above stands for the frozen v1 bytes) |
+| kind | gate (committed, re-runnable verdict script this lane owns; it can fail: red exit 1 / green exit 0) |
+| entry command | `bash reports/round-79/receipt_probe2.sh` (cwd = lane root; plain mode value lines byte-identical to v1 — `reports/round-79/plain-equal.log`) |
+| verdict map | `0` green (plain mode: the v1 leg contract verbatim — LEG1 llms=2 named `inspect_macho inspect_signature`, LEG2 doctor=0, LEG3 the S445 row carries the exact per-leg tokens, LEG4 the base-row negative control fires; `--selftest`: last line `RECEIPT_SELFTEST=pass`) · `1` red (plain: any leg fails, LEG4 not firing is itself a FAIL; `--selftest`: an assertion dies with an attributed `selftest: …` last line) · `64` usage (any unrecognized invocation form; usage line on stderr) — declared per PROTOCOL §Gate standard §Verdict (S452) |
+| self-test | `bash reports/round-79/receipt_probe2.sh --selftest` (spelling `--selftest`) — hermetic per the §Self-test clause (S452): embedded temp fixtures only, no network, no live-tree write, **no producer call** (PATH-stripped receipt as above); asserts the exit code and the stable expected finding-ids `RECEIPT_SELFTEST_LLMS_VERDICT=ok`, `RECEIPT_SELFTEST_TOKEN_CHECK=ok`, `RECEIPT_SELFTEST_NEGCTL_LOGIC=ok`, last line `RECEIPT_SELFTEST=pass`, committed here and in `reports/round-79/claims.md`. Attribution: the frozen sed mutant (`llms_ok` blinded to `return 0`) dies with the last line `selftest: per-leg receipt verdict accepted any count`, exit 1 (probe counter `SELFTEST_MUTANT_KILLED_ATTRIBUTED`) |
+| pinned-value path | plain mode: `corpus/SOURCES.md` row S445 and the LEG4 pinned base row `6f3a646c:corpus/SOURCES.md` (S444) — unchanged from v1; selftest: expected finding-ids in this row + claims.md; the same `selftest-before.log` / `selftest-after.log` two-evidences pair; probe bytes sha256 `076cdb67a4bb1dc5a5586cb23fd45d580703369a11b5baabc8e5ef12df2289d9` (pinned at the r79 freeze) |
+| write scope | read-only over the lane tree; plain mode runs `rea --llms`, `rea doctor` and `git show`; `--selftest` runs no producer call; writes nothing |
+| owner | revenger |
+
 Registry note (round 78): the criterion-P instrument `reports/round-75/province_probe2.sh`
 was superseded this round by `reports/round-78/province_probe3.sh` (adds the twelfth
 `cdp-browser` surface; carries the eleven v2 checks byte-identically). P3 can fail

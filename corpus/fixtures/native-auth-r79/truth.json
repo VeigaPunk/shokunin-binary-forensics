@@ -1,0 +1,62 @@
+{
+  "fixture": "fixture.dll",
+  "byte_length": 1144,
+  "sha256": "813778b9d97cf74f2aa5ba1c963cecba5c91ba72adebc08b50d7ec8b3196cf80",
+  "regen": "python -B generator.py regen-check.dll && cmp fixture.dll regen-check.dll (byte-identical; generator self-check re-derives every premise from the built bytes before writing)",
+  "authored": {
+    "format": "minimal native PE32 (i386 0x014C), one .text section, no entry point, no imports, no native code, no CLI metadata; one appended WIN_CERTIFICATE entry",
+    "certificate_table": {
+      "file_offset": 1024,
+      "table_bytes": 120,
+      "ddir4_slot_offset": 216,
+      "entry_length": 120,
+      "wRevision": "0x0200 (WIN_CERT_REVISION_2_0) = 512",
+      "wCertificateType": "0x0002 (PKCS_SIGNED_DATA) = 2",
+      "payload_offset": 1032,
+      "payload_bytes": 109,
+      "payload_sha256": "045837b545d1a9310deaead9d137d25f8ffc53a045c5744e3dcedfdf15eba41c"
+    },
+    "pkcs7_structure": {
+      "content_type_oid": "1.2.840.113549.1.7.2 (signedData)",
+      "digest_algorithm_oid": "2.16.840.1.101.3.4.2.1 (sha256)",
+      "signature_algorithm_oid": "1.2.840.113549.1.1.1 (rsaEncryption)",
+      "signer_identifier": "subjectKeyIdentifier [0] abcd",
+      "authenticated_attributes": false,
+      "certificates_in_signeddata": 0,
+      "note": "structurally valid DER only; cryptographically meaningless by construction (structural bytes, no real key, no real digest) - the producer declares it never verifies signatures, chains or digests"
+    },
+    "section_mark": "R79AUTHENTICODEPROBE",
+    "mvid_note": "not applicable (no CLI metadata; this is a plain native PE32)"
+  },
+  "producer_expected": {
+    "operation": "inspect_pe_certificates",
+    "provider_id": "rea-pe-certificates",
+    "format": "pe32",
+    "machine": 332,
+    "table_location": { "offset": 1024, "bytes": 120 },
+    "data_directory_location": { "offset": 216, "bytes": 8 },
+    "entry_count": 1,
+    "entry0": {
+      "length": 120,
+      "revision": 512,
+      "certificate_type": 2,
+      "certificate_type_name": "pkcs7",
+      "payload_offset": 1032,
+      "payload_bytes": 109,
+      "payload_sha256": "045837b545d1a9310deaead9d137d25f8ffc53a045c5744e3dcedfdf15eba41c",
+      "content_type_oid": "1.2.840.113549.1.7.2",
+      "digest_algorithm_oids": ["2.16.840.1.101.3.4.2.1"],
+      "signer_count": 1,
+      "signer0": {
+        "digest_algorithm_oid": "2.16.840.1.101.3.4.2.1",
+        "signature_algorithm_oid": "1.2.840.113549.1.1.1",
+        "subject_key_identifier_hex": "abcd",
+        "issuer": null,
+        "serial_hex": null,
+        "authenticated_attributes": false
+      }
+    },
+    "coverage": { "status": "complete", "examined_entries": 1, "certificates": 0 },
+    "subject_sha256": "813778b9d97cf74f2aa5ba1c963cecba5c91ba72adebc08b50d7ec8b3196cf80"
+  }
+}
