@@ -1,0 +1,10 @@
+# carryin-numstat.log - r82 carry-in item 2 reproduction (counting convention), 2026-11-01
+-- raw numstat of the r81 correction commit b2fc6bb vs landing 88b7e7ce, LOG.md:
+10	0	LOG.md
+-- raw diff added-line count (grep -c '^\+'), incl. the +++ header:
+11
+-- raw added lines excluding the +++ header line:
+0
+10
+-- blank added lines:
+1

@@ -1,0 +1,12 @@
+# countgrep-red.log - r82 carry-in item 1 reproduction over COMMITTED r81 bytes (git show 33764dd:reports/round-81/sweep-v1-red.log), 2026-11-01
+-- as pasted (trailing space inside the pattern):
+1
+exit=0
+-- corrected alternation (no trailing space):
+2
+-- separate prefixes (the registered corrected form):
+1
+1
+-- the matched lines:
+160:SWEEP absent corpus/knowledge/round-68-apk-axml-byte-evidence.md:57,:148, | exists nowhere on this host; recorded, nothing to land
+175:SWEEP absent corpus/lessons/round-64 | exists nowhere on this host; recorded, nothing to land
