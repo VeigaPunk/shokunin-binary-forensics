@@ -16,8 +16,13 @@
 #         browser binaries sit at fixed host paths, so that absent state is
 #         not manufacturable inside a fixture; disclosed, not claimed) —
 #         P3_NEGCTL_UNRECORDED_PRESENT_GREEN_BY_DESIGN=ok
-#   LEG4  positive control: P3 on the lane tree itself is green (exit 0,
-#         12/12, P3_SCORE=10.0) — P3_POSITIVE_CONTROL=pass
+#   LEG4  positive control: P3 on the TARGET tree (LANE_DIR, default the lane
+#         root this script lives in) is green (exit 0, 12/12, P3_SCORE=10.0)
+#         — P3_POSITIVE_CONTROL=pass. r78 correction: LEG4 originally ran P3
+#         with no argument, which resolves the INSTRUMENT's own tree root —
+#         identical when invoked at the lane root, wrong from an archive
+#         extraction (no .git there; caught by the committed-bytes receipt
+#         run, mined in corpus/lessons/round-78.md).
 #
 # The fixtures are built in a mktemp dir from the PROVINCE.md bytes of the
 # tree the run targets (LANE_DIR argument, default the lane root this script
@@ -109,7 +114,7 @@ else
   L3=0
 fi
 
-P3P_LINE="$(bash "$P3" 2>&1)"; P3P_RC=$?
+P3P_LINE="$(bash "$P3" "$L" 2>&1)"; P3P_RC=$?
 echo "$P3P_LINE" | sed 's/^/  [p3-on-lane] /'
 if [ "$P3P_RC" -eq 0 ] && printf '%s\n' "$P3P_LINE" | grep -q 'P3_SURFACES_RESOLVED=12/12 UNRECORDED_ABSENT=0 STALE_RECORDS=0 P3_SCORE=10.0'; then
   echo "P3_POSITIVE_CONTROL=pass (lane tree green at 12/12)"

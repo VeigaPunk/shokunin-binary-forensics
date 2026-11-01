@@ -79,7 +79,8 @@ lands (eleven v2 checks byte-identical + the twelfth surface) → green: P3 on t
 same fixture prints `cdp-browser STALE-RECORD …`, `P3_SURFACES_RESOLVED=11/12 …
 P3_SCORE=9.2` **exit 1**, attributed (the failing line names cdp-browser);
 `P3_NEGCTL_VERDICT=green` over all legs (`p3-negctl-run.log`, re-run from a fresh
-`git archive` extraction of the landing commit); positive control: P3 on the lane
+`git archive` extraction after the disclosed post-freeze LEG4 correction — see
+Mistakes row 3); positive control: P3 on the lane
 tree → `12/12 0 0 P3_SCORE=10.0` exit 0 — **no PROVINCE.md byte was touched this
 round**; the r77 dated present-record already satisfies the probe. Disclosed:
 P3_NEGCTL_UNRECORDED_PRESENT_GREEN_BY_DESIGN=ok — a present surface with no record
@@ -113,6 +114,7 @@ counter — blob-compared at adjudication).
 |---|---|---|---|
 | Dropped fixture scaffolding (inherited r75 pattern not carried) | the first `p3_negctl.sh` draft built PROVINCE-only fixtures; `bounty-triage-module` and `lane-repo` probe against the fixture dir, so both printed UNRECORDED-ABSENT and the red leg exited 1 for the wrong reason (`9/11, 2 UNRECORDED` — not the blind `11/11, exit 0` the claim needs); the r75 harness had solved this (`probe_negctl.sh` scaffolds `.git` + the MODULE.md into each fixture) and the pattern was not carried | the red-before run itself, before the freeze (Q06: no expectation written from intent survived contact with the run) | r75 scaffolding copied into the harness (disclosed in the script header); re-run → LEG1 shows the true blind false-pass; mined here so the next probe-revision round starts from the scaffolded shape |
 | Semantically impossible expectation in the first LEG3 draft | the draft asserted P3 on the record-removed fixture must flag UNRECORDED-ABSENT; the run printed `12/12 … exit 0` with `cdp-browser PRESENT` — correct probe semantics: a PRESENT surface with no record is not a defect, and cdp-browser's binaries sit at fixed host paths, so the absent state is not manufacturable inside a fixture (r75's ghidra leg could fake an empty HOME; this surface cannot) | the red-before run + reading the probe's own branch semantics before rewriting the expectation | LEG3 restructured as a by-design disclosure (`P3_NEGCTL_UNRECORDED_PRESENT_GREEN_BY_DESIGN=ok`) with an explicit not-claimable line; the harness green now rests on LEG1 (v2 blind) + LEG2 (v3 attributed kill) + LEG4 (positive control), which is exactly what the claim asserts |
+| Instrument tree-resolution: LEG4 targeted the instrument's own tree, not the target tree | the frozen harness ran LEG4's P3 with no argument; P3 then resolves its root from `dirname $0` — identical when invoked at the lane root (all pre-freeze runs), wrong from a `git archive` extraction (no `.git` there → `lane-repo UNRECORDED-ABSENT` → 11/12 exit 1). Caught the moment the committed-bytes receipt was produced: the extraction run failed LEG4 while the lane-root run passed it — the discrepancy is the defect signature | the adjudication receipt run (commit 7f303c3d bytes, extraction in scratch) — the run r77's closure judge would run | post-freeze correction, disclosed: `bash "$P3" "$L"` (LEG4 tests the TARGET tree, as the LANE_DIR contract says); committed in the round-78 correction commit together with this row; red-befores and the C1 predicate bytes are unaffected (LEG1–LEG3 do not read LEG4's tree resolution), the corrected instrument sha is pinned at adjudication |
 
 ## Routed forward
 
