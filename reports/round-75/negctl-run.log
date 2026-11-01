@@ -1,0 +1,6 @@
+NEGCTL_V1_STALE_RECORD_FLAGGED=0/1 (exit 0 on a record that contradicts the host — the defect)
+NEGCTL_V2_STALE_RECORD_FLAGGED=1/1 (exit 1, engine-ghidra STALE-RECORD)
+NEGCTL_V2_UNRECORDED_ABSENT_FLAGGED=1/1 (exit 1, engine-ghidra UNRECORDED-ABSENT)
+NEGCTL_V2_POSITIVE_CONTROL=pass
+NEGCTL_V1_ON_FIXED_OBSERVED=exit-1 (v1 has no PRESENT-record grammar; superseded by P2, disclosed not scored)
+NEGCTL_SELFTEST=pass

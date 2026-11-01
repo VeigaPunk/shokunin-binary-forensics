@@ -22,7 +22,11 @@ Sources (read-only):
   installed on this host at 6.8.0 (`rea --version` exit 0, 2026-10-31)
 - Host engines as they become available (caller-supplied per REA: Ghidra,
   IDA, JADX, Binwalk/Unblob, pwntools) — census in corpus/knowledge/seed.md
-  [absent on this host, 2026-10-31: ghidra / analyzeHeadless — PATH probe]
+  [present on this host, 2026-11-01: ghidra 12.1.4 at
+  C:/Users/jpvei/tools/ghidra_12.1.4_PUBLIC — support/analyzeHeadless.bat + JDK 21 present;
+  `rea doctor` reports ghidra, ghidra-headless and ghidra-native_decompiler healthy.
+  Presence, not readiness (Q05). Off-PATH install of 2026-10-26 that the r74 PATH-only
+  probe could not see]
   [absent on this host, 2026-10-31: ida / ida64 — PATH probe]
   [absent on this host, 2026-10-31: jadx — PATH probe]
   [absent on this host, 2026-10-31: binwalk / unblob — PATH probe]

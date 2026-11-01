@@ -1,0 +1,113 @@
+# revenger r75 — capability demonstration receipt: ghidra-headless-recon
+
+Date: 2026-11-01 (this round). Host: win32 x64, this workspace lane.
+Surface: Ghidra 12.1.4 PUBLIC at C:/Users/jpvei/tools/ghidra_12.1.4_PUBLIC
+(launcher support/analyzeHeadless.bat; JDK 21 at C:/Program Files/Eclipse
+Adoptium/jdk-21.0.12.101-hotspot). Discovered this round by `rea doctor`
+(ghidra, ghidra-headless, ghidra-native_decompiler all "healthy") after the
+r74 PATH-only probe had recorded it absent. Presence of the install:
+directory created 2026-10-26 23:14 (Get-Item CreationTime), before the r74
+probe ran on 2026-10-31.
+
+What is demonstrated (and not): the lane can now import a PE into local
+Ghidra headless, run auto-analysis, and export per-function decompiled C via
+a committed postScript — end to end, exit 0, on this host. This is a
+capability demonstration, not a readiness claim about any other artifact,
+engine or family (Q05/Q10: scoped to this fixture, this Ghidra version, this
+host). The scripts and fixture are committed; every value below is re-derivable.
+
+## Leg A — pipeline on a committed resource-only fixture (pe-r53)
+
+Command (fixture and lane paths abbreviated here for line length; both are
+the committed corpus/fixtures/pe-r53/fixture.exe and this reports dir):
+
+  analyzeHeadless.bat <tmp>/proj rev75cap \
+    -import <lane>/corpus/fixtures/pe-r53/fixture.exe \
+    -scriptPath <scratch> -postScript rev75_dump.py -deleteProject
+
+Result: exit 0; script error under Ghidra 12.x (Jython removed — Python
+scripts require PyGhidra): "Ghidra was not started with PyGhidra. Python is
+not available". Retried with the same logic as a Java postScript
+(rev75_dump.java): exit 0, output
+  program_name=fixture.exe / image_base=140000000 / function_count=0 /
+  // decompiled_ok=0 of 0
+Ghidra's own output reports 0 functions for this artifact; the r53 fixture
+is a resource-structure fixture. No decompile claim is made from this leg —
+it exercises import+analysis+postScript only.
+
+## Leg B — decompile leg on the authored fixture (corpus/fixtures/pe-r75-headless-smoke/)
+
+Fixture: authored this round by the committed generator gen_pe_r75.py
+(deterministic, no timestamps; byte-verifies its own premises before
+writing). sha256 fixture.exe =
+fe060de1bc5106f30dec532270fc634426484e4e2ef186e5b7617443950afd72, 1024
+bytes. Regen check at landing: generator rerun to a second path, cmp against
+the committed bytes → byte-identical (REGEN_BYTE_IDENTICAL). Declared
+premises, re-derived from the built bytes by the generator's own asserts:
+PE32+ magic 0x20b, machine 0x8664, entry RVA 0x1000 (file 0x200), image base
+0x140000000, entry bytes B82A000000C3 = `mov eax, 0x2A; ret`.
+
+Command:
+
+  T=C:/Users/jpvei/AppData/Local/Temp/rev75-ghidra   (project dir; Ghidra
+      refuses project paths with dot-prefixed path elements, so the project
+      cannot live under the .zcode workspace — see lesson M-note)
+  rm -rf $T/proj2 && mkdir -p $T/proj2
+  REV75_OUT=<scratch>/codeable-decompiled.c \
+  analyzeHeadless.bat $T/proj2 rev75cap2 \
+    -import <lane>/corpus/fixtures/pe-r75-headless-smoke/fixture.exe \
+    -scriptPath <scratch> -postScript rev75_dump.java -deleteProject \
+    > ghidra-headless-codeable.log 2>&1
+  echo $?   -> 0
+
+Tool's own output (grep from the headless log):
+
+  INFO  rev75_dump.java> REV75_DUMP wrote .../codeable-decompiled.c:
+  1 functions, 1 decompiled (GhidraScript)
+
+Decompiled output, verbatim (whole file; the expected `return 0x2a;` body
+derived from the authored entry bytes is present):
+
+  program_name=codeable.exe
+  image_base=140000000
+  function_count=1
+  // ==== FUNC entry @ 140001000 ====
+
+  undefined8 entry(void)
+
+  {
+    return 0x2a;
+  }
+
+
+
+  // decompiled_ok=1 of 1
+
+Match against the fixture's declared premises (truth.json): function name
+`entry` at 140001000 = image base + entry RVA; body `return 0x2a;` = the
+authored `mov eax,0x2A; ret`. Both agree with the bytes, independently of
+the producer (Q03-style derivation from authored bytes + truth pin).
+
+## Capability-table row this receipt backs
+
+ghidra-headless-recon | import a PE into local Ghidra 12.1.4 headless, run
+auto-analysis, and export per-function decompiled C via a committed Java
+postScript | this file + corpus/fixtures/pe-r75-headless-smoke/ | round-75.
+
+## Notes
+
+- Ghidra 12.x needs PyGhidra for Python scripts; the committed postScript is
+  Java (runtime-compiled, JDK 21). application.properties:
+  application.version=12.1.4, application.java.min=21,
+  application.revision.ghidra=8b6bbb857accdfa20dc5b2f5dea471178c2e9fbc.
+- The `-deleteProject` flag keeps the run hermetic: no project files persist
+  in the temp dir after the run.
+- The full raw headless log for Leg B is committed as
+  reports/round-75/ghidra-headless-codeable.log (10 KB; it carries only this
+  host's temp/workspace paths). Re-run: the fixture, generator and
+  postScript are committed; the postScript source is reproduced below.
+
+## postScript source (committed with the fixture dir? no — reproduced here; committed copy at reports/round-75/rev75_dump.java)
+
+See reports/round-75/rev75_dump.java (byte-identical to the scratch script
+used in the run above).

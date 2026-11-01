@@ -1,0 +1,15 @@
+{
+  "purpose": "ghidra-headless-recon capability smoke fixture (r75): one .text section whose entry point is `mov eax, 0x2a; ret`, so Ghidra headless has a function to decompile",
+  "sha256": "fe060de1bc5106f30dec532270fc634426484e4e2ef186e5b7617443950afd72",
+  "size": 1024,
+  "format": "PE32+ (magic 0x20b), machine 0x8664, one section .text",
+  "image_base": "0x140000000",
+  "entry_rva": "0x1000",
+  "entry_file_offset": "0x200",
+  "entry_bytes_hex": "B82A000000C3",
+  "entry_bytes_meaning": "mov eax, 0x2A; ret",
+  "expected_ghidra_function": "entry @ 140001000",
+  "expected_decompile_sha_watch": "the decompiled body contains `return 0x2a;`",
+  "generator": "gen_pe_r75.py (deterministic: no timestamps, all header fields written explicitly, byte-verifies its own premises before writing; regen checked byte-identical at landing)",
+  "inert": "never executed; analysis target only"
+}

@@ -165,6 +165,7 @@ retired: none.
 | Capability | What it can now do | Evidence pointer | First-working round |
 |---|---|---|---|
 | sources-curation | Keep a contract-v1 `corpus/SOURCES.md` registry of opened sources (scoped tiers, append-only rows, study paths, a search log, kept rejects) whose seven census commands all run clean | `corpus/SOURCES.md` at `35b2e8b`; census: 15 rows, malformed 0, `A=14 C=1`, `mined=12 queued=1 rejected=2`, duplicate/enum/missing-path checks print nothing (fleet `.ufo/waves/kaika/SOURCES-CONTRACT-v1.md` §Census) | fleet round-1 (kaika continuation) |
+| ghidra-headless-recon | Import a PE into the local Ghidra 12.1.4 headless, run auto-analysis, and export per-function decompiled C via a committed Java postScript (Ghidra 12.x Python scripts require PyGhidra, so the postScript is Java) | `reports/round-75/ghidra-headless-recon.log`; fixture `corpus/fixtures/pe-r75-headless-smoke/` (generator + truth pin; regen byte-identical); run: exit 0, `1 functions, 1 decompiled`, `entry @ 140001000` → `return 0x2a;` | round-75 |
 
 Rows enter only through a round that demonstrates the capability running (`AXES.md` §Capabilities).
 
@@ -706,3 +707,50 @@ lowest criterion: C05/C10/C15 admission all require the wave Q-review surface �
 that surface must first exist (L0 filed), so a K move stays blocked and should not be declared
 again until the operator rules; (c) P's absent surfaces (engines) may become freshness moves if
 the operator installs any.
+
+## Round 75 (hyaku run 14) — P2: the r74 province probe's blind spot fixed with its own red-before; calibration criterion N; first local headless decompilation
+
+Base `f29dc92b3adb4202195bc7fc25b4aa6a5b7a2563`. Two claims, neither exploratory. The r74
+carry-in items are addressed in `corpus/lessons/round-75.md` `## Mistakes` (mode-correction
+note; treecommit file-args discipline — this round's commit lists explicit files only and is
+verified by the mandated diff-stat). Full gate, receipts and mistake mining:
+`corpus/lessons/round-75.md`.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — province surface accuracy (criterion P revision, instrument P2; split unchanged from r74) | red `P2_SURFACES_RESOLVED=10/11 UNRECORDED_ABSENT=0 STALE_RECORDS=1 P2_SCORE=9.1` exit 1 (`p2-before.log`, base PROVINCE bytes in a fixture; `engine-ghidra STALE-RECORD`) → green `11/11 0 0 10.0` exit 0 (`p2-after.log`) after the dated present-record lands | red: `bash reports/round-75/province_probe2.sh <fixture-with-base-PROVINCE.md>`; green: `bash reports/round-75/province_probe2.sh` | `f29dc92` → this round's tip | **improved, C1 met** — ghidra 12.1.4 (off-PATH install of 2026-10-26, `rea doctor` healthy, S443) was recorded absent on 2026-10-31 by a PATH-only probe; the record is now true and the probe can see the mismatch class. Boundary: K 8/15 (5.3), F 5/8 unchanged; no coverage-map row moved; no admission claimed. v1 on the fixed bytes exits 1 by construction (no PRESENT-record grammar) — disclosed supersession, `negctl-run.log` leg 4 |
+| calibration — record-vs-reality mismatch detection (new bounded criterion N) | `NEGCTL_V1_STALE_RECORD_FLAGGED=0/1` (v1 false-pass: exit 0 on a record contradicting the host) → `NEGCTL_V2_STALE_RECORD_FLAGGED=1/1` (exit 1, attributed `engine-ghidra … STALE-RECORD`), `NEGCTL_V2_UNRECORDED_ABSENT_FLAGGED=1/1`, `NEGCTL_V2_POSITIVE_CONTROL=pass`, `NEGCTL_SELFTEST=pass` (0.0 → 10.0) | `bash reports/round-75/probe_negctl.sh` (`negctl-run.log`, exit 0) | same | **improved, C2 met** — the kill leg requires the specific line + token, not merely a non-zero exit |
+| coverage — knowledge-map ground K | 8/15 (5.3) → 8/15 at base re-run; untouched by this round (C05 uncovered, C10 partial, C15 uncovered) | `PYTHONUTF8=1 python -B reports/round-73/measure.py <git-archive TREE>` (`holds.log`, exit 0; K operator-blocked per r74 planned (b) — ruled out again, not declared) | `f29dc92` (tip re-run in `tip-verification.log`) | unchanged (operator-blocked route, not attempted) |
+| coverage — selected-family presence F | 5/8 (6.25) → 5/8 | SCORECARD F command, cwd=lane (`holds.log`, exit 0); producer route ruled out on S444 (`rea --llms`: zero `inspect_*` operations in 6.8.0 — a 6.5-era-named record would be fabricated) | same | unchanged (blocked route documented, not attempted) |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (seed 12 + readiness 6; knowledge files untouched) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` (`holds.log`) | same | unchanged hold |
+| calibration — C2–C8 receipt guards, exit-2 gate, runnability | untouched this round; no verifier, gate, fixture (except the new pe-r75-headless-smoke addition), README byte or knowledge byte changed | no-harm diff receipt `reports/round-75/tip-verification.log` (protected paths: corpus/knowledge, corpus/live, corpus/README.md, all pre-r75 fixtures → additions only, the new fixture dir) | same | unchanged (no harm observed) |
+| freshness — engine-record currency (re-verification, not a scored criterion) | ida, jadx, binwalk/unblob, pwntools re-probed 2026-11-01 with the wider probe (PATH + `~/tools` + `/c/Program Files` + python imports): all absent, records stand; ghidra record corrected (C1) | P2 run itself (`p2-after.log`) | same | exercised; recorded in lesson Gate |
+| depth / operability / adjacency | no claim; no engine readiness claimed (Q05: presence is not readiness) | — | — | unchanged (ADJ-06 unchanged) |
+
+Capabilities: `ghidra-headless-recon` enters the table above on this round's demonstration
+(authored fixture, committed generator + Java postScript; `entry @ 140001000` →
+`return 0x2a;` against the authored bytes `B82A000000C3`; pe-r53 pipeline leg exit 0 with
+Ghidra's own `function_count=0` — no decompile claim from that leg).
+
+Sources: rows 442 → 444 (+S443 own-host Ghidra install, +S444 own-host rea manifest; both
+mined, opened this round; C1 is the sourced claim). Census exit 0 at both ends, warning
+count 31 → 31 (same disclosed W01/W04 classes; no new warning).
+`reports/round-75/census-before.log`, `census-after.log`.
+
+Mistakes mined (full table `corpus/lessons/round-75.md`): PATH-only presence probe
+(inherited r74 defect — the round's central find), restored-instrument mode drift (r74
+carry-in, closed by the note treecommit cannot avoid), frozen-counter/producer
+operation-name drift (S444; routed), shared absent-marker genericity in the first P2
+draft (self-caught at the red-before), generator assert-offset defects (self-caught, Q06
+held).
+
+Routed forward: F counter revision for current-producer operation names (needs a frozen
+mapping table, owner: a future registering round); `rea doctor` node gate
+(24.21.0 < required 24.22.1, `environment_healthy: false`) recorded, substrate remediation
+refused per PROVINCE; r74 P row's 10.0 stays historical under v1.
+
+**planned:** next round — if the operator installs/registers any engine or the node gate
+clears, a readiness move on the newly workable surface (F-family producer route once the F
+counter revision exists); otherwise calibration: give criterion N a mutation-killed
+attribution pair on the negctl harness itself, or retire/split P2 at saturation. K stays
+blocked until the operator rules on the filed L0.

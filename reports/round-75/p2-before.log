@@ -1,0 +1,12 @@
+rea-skill-dir                ABSENT-RECORDED (dated marker in PROVINCE.md)
+rea-cli                      PRESENT (probe exit 0)
+npx-fallback                 PRESENT (probe exit 0)
+engine-ghidra                STALE-RECORD (surface present on host; PROVINCE.md still records it absent)
+engine-ida                   ABSENT-RECORDED (dated marker in PROVINCE.md)
+engine-jadx                  ABSENT-RECORDED (dated marker in PROVINCE.md)
+engine-binwalk               ABSENT-RECORDED (dated marker in PROVINCE.md)
+engine-pwntools              ABSENT-RECORDED (dated marker in PROVINCE.md)
+demand-context               ABSENT-RECORDED (dated marker in PROVINCE.md)
+bounty-triage-module         PRESENT (probe exit 0)
+lane-repo                    PRESENT (probe exit 0)
+P2_SURFACES_RESOLVED=10/11 UNRECORDED_ABSENT=0 STALE_RECORDS=1 P2_SCORE=9.1
