@@ -1,0 +1,16 @@
+{
+  "round": 81,
+  "command": "rea inspect-keyed-archive corpus/fixtures/keyed-r81/fixture.plist --format json",
+  "cwd": "lane root",
+  "host_env": {"PYTHONUTF8": "1", "rea": "6.8.0", "provider": "rea-artifact-graph"},
+  "exit_code": 0,
+  "stderr_bytes": 0,
+  "stdout_sha256": "83fe4046ec51977b074e04e6cbee10e127be38a32a17bf32e14601fdde348fcf",
+  "saved_path": "corpus/live/runs/round-81/inspection.json",
+  "fixture": "corpus/fixtures/keyed-r81/fixture.plist",
+  "fixture_sha256": "f0e02e64e0a3c10b82c736c7927577de24091ebee660df17156e83258937785c",
+  "fixture_bytes": 210,
+  "evidence_id": "ev_6eb77fb0c3648cd34a7db9757bf2bd7709c30ffde0cbe0bc879de03002af4b73",
+  "oracle": {"command": "python -I -B corpus/fixtures/keyed-r81/oracle_check.py corpus/fixtures/keyed-r81/truth.json corpus/live/runs/round-81/inspection.json corpus/fixtures/keyed-r81/fixture.plist", "result": "ORACLE OK (27/27 checks)", "exit_code": 0},
+  "generator": {"self_check": "14/14 SELFCHECK ok", "regen": "REGEN: byte-identical (210 bytes)"}
+}

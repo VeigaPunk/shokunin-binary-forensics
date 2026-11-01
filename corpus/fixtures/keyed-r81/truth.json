@@ -1,0 +1,101 @@
+{
+ "archive_format": "binary-plist",
+ "derived_checks": 14,
+ "fixture_bytes": 210,
+ "fixture_sha256": "f0e02e64e0a3c10b82c736c7927577de24091ebee660df17156e83258937785c",
+ "magic": "bplist00",
+ "next_offset": null,
+ "objects": [
+  {
+   "id": 0,
+   "kind": "nil",
+   "status": "nil",
+   "value": "$null"
+  },
+  {
+   "id": 1,
+   "kind": "scalar",
+   "status": "observed",
+   "value": "revenger-keyed-r81"
+  },
+  {
+   "id": 2,
+   "kind": "dictionary",
+   "status": "observed",
+   "value": {
+    "alpha": {
+     "UID": 1
+    },
+    "beta": {
+     "UID": 4
+    },
+    "n": 1729
+   }
+  },
+  {
+   "id": 3,
+   "kind": "scalar",
+   "status": "observed",
+   "value": "alpha"
+  },
+  {
+   "id": 4,
+   "kind": "scalar",
+   "status": "observed",
+   "value": "beta"
+  },
+  {
+   "id": 5,
+   "kind": "dictionary",
+   "status": "observed",
+   "value": {
+    "gamma": {
+     "UID": 1
+    }
+   }
+  }
+ ],
+ "offset": 0,
+ "references": [
+  {
+   "path": [
+    "root"
+   ],
+   "source": null,
+   "status": "resolved",
+   "target": 2
+  },
+  {
+   "path": [
+    "alpha"
+   ],
+   "source": 2,
+   "status": "resolved",
+   "target": 1
+  },
+  {
+   "path": [
+    "beta"
+   ],
+   "source": 2,
+   "status": "resolved",
+   "target": 4
+  },
+  {
+   "path": [
+    "gamma"
+   ],
+   "source": 5,
+   "status": "resolved",
+   "target": 1
+  }
+ ],
+ "roots": {
+  "root": {
+   "UID": 2
+  }
+ },
+ "total_objects": 6,
+ "total_references": 4,
+ "truncated": false
+}
