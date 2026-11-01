@@ -1,0 +1,10 @@
+# round-74 C2 measure-after — measured commit 704be4dcec7a374894e02251462a201dfbdf2680 (frozen counter reports/round-74/measure.py sha256 ff2e52bdd6705bfb3d1a2140451a8ab16416cbb57c9cebeeabb78d75296e4ea6, byte-unchanged from freeze 85db6ab)
+# command: PYTHONUTF8=1 python -B reports/round-74/measure.py <git-archive-tree of 704be4d: corpus .ufo/waves/round-74>  (host: Windows, python 3.13; PYTHONUTF8=1 is the locale fix, zero instrument bytes changed)
+# run: 2026-10-31
+QA_RANGE_ROWS=42 QA_TERMINALS=42/42
+QA_VERIFIED=42/42 QA_UNREACHABLE=0/42 QA_UNRESOLVED=0/42
+QA_MANUAL_VERIFIED=9/9 QA_MANUAL_UNREACHABLE=0/9 QA_MANUAL_UNRESOLVED=0/9
+QA_VERIFIED_TOTAL=51/51 (target >= 40)
+QA_NEGCTRL=pass
+QA_TARGET=yes
+counter-exit=0

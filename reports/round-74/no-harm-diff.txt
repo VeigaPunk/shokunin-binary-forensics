@@ -1,0 +1,6 @@
+# round-74 no-harm receipt: git diff 85db6ab..704be4d over protected corpus paths
+# (README map, live runs, fixtures, admitted knowledge, prior-round lessons) — expected: empty
+protected-diff-bytes=0
+# knowledge/ changes limited to the C10 candidate's single admission-status line:
+-admission-status: candidate
++admission-status: rejected

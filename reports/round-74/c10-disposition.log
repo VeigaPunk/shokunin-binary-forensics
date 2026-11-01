@@ -1,0 +1,11 @@
+# round-74 C10 disposition (frozen r73 kill rule: required review unavailable on this host)
+# command: PYTHONUTF8=1 python -B reports/round-73/measure.py <git-archive-tree of 85db6ab: corpus .ufo/waves/round-73>; reports/round-73/measure.py and candidate-pin.json byte-unchanged
+# run: 2026-10-31; disposition: candidate admission-status candidate -> rejected (single line, same commit as this receipt's round)
+K_HELD_BACKED=8/15
+C10_STATUS=partial
+C10_CANDIDATE_PIN=1/1
+C10_SOURCES=1/1
+C10_Q_VOTES=0/16
+C10_HELD_BACKED=0/1
+HOLDS_C10=no
+counter-exit=0
