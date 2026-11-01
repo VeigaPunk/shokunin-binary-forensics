@@ -1,0 +1,45 @@
+# preprobe-sqlite-shape.log - r80 C1 dress rehearsal (scratch, 2026-11-01, before the record run)
+# Purpose: learn the producer output SHAPE and debug the byte-derivation parser before
+# any committed byte and before the producer run on the lane fixture (r79 pattern).
+# Every expectation in truth.json is derived from the built fixture bytes; this file
+# records the rehearsal, including the refused iterations.
+#
+# 1. Default invocation (no --format) prints YAML, not JSON:
+#      PYTHONUTF8=1 rea inspect-sqlite-database probe.db
+#    -> envelope: evidence_id ev_9a6d9b87..., operation inspect_sqlite_database,
+#       provider id sqlite / "REA SQLite database inspector" / version "SQLite 3.53.4",
+#       normalized_result: artifact.{sha256,bytes=20480}, wal null, engine SQLite,
+#       database_encoding UTF-8, schema.scope inventory (columns not requested),
+#       rows null.
+#    Refused as the record form: the lane's record discipline pins exact stdout of a
+#    single bounded run; r79's committed record used --format json. Chosen invocation:
+#      PYTHONUTF8=1 rea inspect-sqlite-database <fixture> --schema-scope database --format json
+#    (--schema-scope database requests full schema: column names + counts for ALL
+#    tables - a stronger, still-inventory oracle than the default scope.)
+#
+# 2. First header-parse attempt read the u32 header fields as u16:
+#      page_count u16(b,28) -> 0, encoding u16(b,56) -> 0   (WRONG)
+#    Self-caught in the rehearsal (both printed 0 while the record and the file size
+#    20480 = 5*4096 demanded 5 and 1); fixed to u32; SQLite file-format spec offsets
+#    (28: database size in pages; 56: text encoding, 1=UTF-8). Mined in
+#    corpus/lessons/round-80.md (fixed-width header fields read at the wrong width).
+#
+# 3. Determinism: probe.db built twice from the same generator statements ->
+#    sha256 a9bb1235ed268df71cf16322e5bfaf826653288df03e586f79dfe9c991d6fd9c both
+#    times (byte-identical). The committed fixture.db builds byte-identically too
+#    (regen receipt at landing).
+#
+# 4. Page-1 sqlite_master b-tree parse over the rehearsal bytes derives:
+#      meta ('table',  root 2), samples ('table', root 4),
+#      sqlite_autoindex_meta_1 ('index', table meta, root 3),
+#      sqlite_autoindex_samples_1 ('index', table samples, root 5)
+#    - all four match the producer record's schema block; root pages are derived
+#    from the built bytes, never copied from the record (Q03).
+#
+# 5. First oracle draft printed two checks both named INDEX_1 (check-id collision,
+#    cosmetic); fixed to AUTOIDX_META / AUTOIDX_SAMPLES. Rehearsal oracle result over
+#    the scratch record ev_cba67c6cedae6c3b7...: ORACLE OK (34/34 checks), exit 0,
+#    producer exit 0, stderr 0 bytes.
+#
+# Refused iteration summary: 2 defects self-caught before any committed byte (u16/u32
+# width; check-id collision), 1 form refusal (YAML default vs --format json discipline).

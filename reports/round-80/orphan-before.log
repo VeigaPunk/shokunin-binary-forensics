@@ -1,0 +1,8 @@
+# orphan-before.log - r80 C2 red-before (capability absent at base 4eb2856; 2026-11-01)
+git cat-file -e 4eb2856:reports/round-80/orphan_sweep.py -> fatal: path 'reports/round-80/orphan_sweep.py' does not exist in '4eb2856'
+exit=128
+git cat-file -e 4eb2856:reports/round-80 -> fatal: path 'reports/round-80' does not exist in '4eb2856'
+exit=128
+# lineage: the r78-class incident (four evidence logs the r78 adjudication (cited by the r79 report) cited but the
+# lane tree did not carry - commit 46c605c landed them) was caught by hand by the closure judge's
+# mandated diff check; before r80 no standing instrument enumerates cited-but-uncommitted evidence.
