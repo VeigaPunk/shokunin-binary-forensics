@@ -1,0 +1,8 @@
+RECEIPT_LLMS_COUNT=2
+RECEIPT_LLMS_NAMES=inspect_macho inspect_signature
+RECEIPT_LEG1=pass
+RECEIPT_DOCTOR_COUNT=0
+RECEIPT_LEG2=pass
+RECEIPT_LEG3=pass
+RECEIPT_LEG4=S444_MISMATCH_FLAGGED (base row records 'prints 0'; actual llms leg prints 2)
+RECEIPT_VERDICT=green

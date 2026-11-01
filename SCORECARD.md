@@ -754,3 +754,46 @@ clears, a readiness move on the newly workable surface (F-family producer route 
 counter revision exists); otherwise calibration: give criterion N a mutation-killed
 attribution pair on the negctl harness itself, or retire/split P2 at saturation. K stays
 blocked until the operator rules on the filed L0.
+
+## Round 76 (hyaku run 15) — the routed F-counter revision was premised on a false record; managed family moves through a real 6.8.0 run; criterion R receipt correction
+
+Freeze `68feeca6b625dc94d31de3954cac75391cc22146` (claims + frozen probes sha-pinned
+in `reports/round-76/claims.md` + red-befores; `c21e5a4` immediately before it is an
+empty-path commit, mined M-r76.3). Landing `9116ddd662b56b8a93232359e63525c53909b4ff`;
+final measured revision = the adjudication commit carrying this section. Both claims
+causally separable, neither exploratory. Carry-in dispositions (non-author r75 closure):
+S444 per-leg correction landed (S445, machine-checked); the sanctioned F-counter
+amendment was **not executed — its premise is refuted by producer evidence** (manifest
+kebab-case equivalents for every F family; provider-gate payloads carrying snake_case
+`details.operation`; a real 6.8.0 record writing `operation: inspect_managed_artifact`),
+so the frozen counter bytes stay unchanged (`reports/round-76/claims.md` §carry-in;
+`corpus/lessons/round-76.md`).
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — selected-family record presence (F) | **5/8 → 6/8 (6.25 → 7.50)**, families += `managed` | `PYTHONUTF8=1 python -B reports/round-76/f_probe.py <git-archive tree>/corpus` (predicate byte-equal to the r71 counter's F block; before `f-before.log`, after `f-after.log`) | `6f3a646c` → `9116ddd6` | **improved, C1 met** — one real `rea inspect-managed-artifact` (6.8.0, built-in `rea-dotnet-static`) record on an authored inert managed PE/CLI (`corpus/fixtures/managed-r76/`, generator self-check, regen byte-identical, sha256 `25ece37d…5733c`); identity oracle `ORACLE OK (10/10)` (`corpus/live/runs/round-76/`); boundary: F presence-only, the record+oracle is the gate; no K row moved (K stays 8/15, 5.3) |
+| calibration — SOURCES-row receipt fidelity (new bounded criterion R) | red (`receipt-before.log` exit 1: LEG3 FAIL, LEG4 `S444_MISMATCH_FLAGGED`) → **green (`receipt-after.log` exit 0: LEG1/2/3 pass, LEG4 fires) (0.0 → 10.0)** | `bash reports/round-76/receipt_probe.sh` | same | **improved, C2 met** — carries the r75 non-author carry-in: S444's aggregated "prints 0" is false on the `--llms` leg (actual 2: `inspect_macho`, `inspect_signature`; doctor leg 0); superseding row S445 records exact per-leg values; the negative control keeps flagging the base row |
+| calibration — carry-in premise re-derivation (not scored; protocol work) | r75 routed premise "F names no longer exist in the producer" → refuted on three independent surfaces (manifest, provider-gate payloads, saved record) | S445 row; `reports/round-76/claims.md` §carry-in | same | routed revision resolved by evidence; no frozen byte changed |
+| coverage — knowledge-map ground K | 8/15 (5.3) → 8/15; C05 uncovered, C10 partial, C15 uncovered | `PYTHONUTF8=1 python -B reports/round-73/measure.py <tree>` not re-run this round — no README/knowledge byte changed (no-harm diff below); operator-blocked route (r74 L0 unanswered, re-checked) | same | unchanged (blocked route, not attempted) |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (seed 12 + readiness 6) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` | same | unchanged hold |
+| calibration — C2–C8 guards, exit-2 gate, runnability | untouched; no verifier/gate/README/knowledge byte changed | `git diff 6f3a646c..9116ddd6 --stat -- corpus/knowledge corpus/README.md corpus/verify_*.py …` → empty on protected paths (`reports/round-76/noharm-diff.txt`: additions only, fixture+run dirs) | same | unchanged (no harm observed) |
+| separability | C1-only tree (landing archive, SOURCES reverted to base) still 6/8; C2's before-run executed with zero C1 bytes in the tree | `reports/round-76/f-separability.log`, `r-separability.log` | same | claims separable as frozen |
+| depth / operability / adjacency | no claim; no engine readiness claimed (provider presence, not readiness — Q05) | — | — | unchanged (ADJ-06 unchanged) |
+
+Capabilities: none added (the fixture and probes are instruments/evidence, not a new
+analysis family). Sources: rows 444 → 446 (+S445 correction supersedes S444, +S446
+own-work; both mined, opened this round; C1 and C2 are sourced claims). Census exit 0
+at both ends, 31 W → 31 W (same disclosed W01/W04 classes); 444 → 446 rows.
+`reports/round-76/census-after.log`. Mistakes mined (full table
+`corpus/lessons/round-76.md`): aggregated per-leg receipts (the carry-in class);
+routing on an un-re-derived premise; treecommit absolute-path empty commit
+(`c21e5a4`, caught by the mandated diff check); generator metadata-layout asserts
+(self-caught, Q06 held).
+
+**planned:** next round — if the operator supplies a provider surface (jadx
+`REA_JADX_MCP_JAR`, Linux binwalk, or a CDP endpoint), the android/firmware/browser
+F families are one bounded producer run each; otherwise calibration: extend criterion
+R across the 444 legacy registry rows that quote counting commands (S444 was the
+flagged instance), or give criterion N's negctl harness the mutation-killed
+attribution pair (r75 planned (b), still open). K stays blocked until the operator
+rules on the filed L0.

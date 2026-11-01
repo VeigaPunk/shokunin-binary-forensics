@@ -1,0 +1,5 @@
+# r-separability: C2 does not read C1 bytes.
+receipt-before.log ran at freeze state with zero C1 bytes in the tree (fixture/run landed later, in 9116ddd6): LEG1/LEG2/LEG4 executed against producer CLI + base git object only, LEG3 red solely for the absent S445 row.
+the probe touches only corpus/SOURCES.md, git show <base>:corpus/SOURCES.md, and the rea CLI (verify: grep -nE 'fixture|live/runs' receipt_probe.sh prints nothing):
+(no matches — confirmed)
+green after-run (S445 present): receipt-after.log, exit 0.

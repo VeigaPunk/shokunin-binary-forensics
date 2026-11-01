@@ -1,0 +1,11 @@
+# no-harm diff 6f3a646c..9116ddd6 (protected paths)
+(empty above = knowledge/README/verifiers untouched)
+ corpus/fixtures/managed-r76/fixture.dll     | Bin 0 -> 924 bytes
+ corpus/fixtures/managed-r76/generator.py    | 237 ++++++++++++++++++++++++++++
+ corpus/fixtures/managed-r76/oracle_check.py |  54 +++++++
+ corpus/fixtures/managed-r76/truth.json      |  27 ++++
+ corpus/live/runs/round-76/LEDGER.md         |  33 ++++
+ corpus/live/runs/round-76/inspection.json   |   1 +
+ corpus/live/runs/round-76/receipt.json      |  14 ++
+ corpus/live/runs/round-76/stderr.txt        |   0
+ 8 files changed, 366 insertions(+)
