@@ -1,0 +1,46 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S442",
+ "row_url": "https://docs.amd.com/v/u/en-US/40332_4.10_APM_Vol1-5_PUB",
+ "fetch_url": "https://docs.amd.com/api/khub/documents/SLs_hsYJwsu9rrIjE0rGxA/content",
+ "final_url": "https://docs.amd.com/api/khub/documents/SLs_hsYJwsu9rrIjE0rGxA/content",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "9d588731c163e8d5446de539831c790f37a6b974fb8f3693a0b2212dd1c96ccd",
+ "length": 29159,
+ "anchor": "",
+ "quote": "Reverse engineering or disassembly is prohibited.",
+ "span": {
+  "start": 1831,
+  "end": 1880
+ },
+ "verdict": "verified",
+ "body_derivation": "pdftotext -q -f 1 -l 8 <fetched 40332_4.11_APM_Vol1-5.pdf> -  (27,645,192-byte PDF NOT committed; fetch: https://docs.amd.com/api/khub/documents/SLs_hsYJwsu9rrIjE0rGxA/content, HTTP 200, content-length 27645192, 2026-10-31; metadata receipt in attempts)",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://docs.amd.com/v/u/en-US/40332_4.10_APM_Vol1-5_PUB",
+   "status": 200,
+   "error": "JS app shell only; no document text",
+   "kind": "page",
+   "note": "portal viewer URL (row_url); rev 4.10 no longer served"
+  },
+  {
+   "url": "https://docs.amd.com/api/khub/documents/SLs_hsYJwsu9rrIjE0rGxA",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "document metadata JSON: filename 40332_4.11_APM_Vol1-5.pdf, Release_Date 2026-10-29, Revision 4.11 English, contentSize 27645192"
+  },
+  {
+   "url": "https://docs.amd.com/api/khub/documents/SLs_hsYJwsu9rrIjE0rGxA/content",
+   "status": 200,
+   "error": "",
+   "kind": "pdf",
+   "note": "rev 4.11 PDF, 27645192 bytes",
+   "bytes": 27645192
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S380: portal now serves rev 4.11 (Release_Date 2026-10-29); quote re-located in rev 4.11 front matter"
+}

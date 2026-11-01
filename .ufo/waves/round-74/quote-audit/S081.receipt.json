@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S081",
+ "row_url": "https://www.usenix.org/system/files/sec22-chen-qibin.pdf",
+ "fetch_url": "https://www.usenix.org/system/files/sec22-chen-qibin.pdf",
+ "final_url": "https://www.usenix.org/system/files/sec22-chen-qibin.pdf",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "db1f40d6239bfb084ec95c80477948c1db6c0bda8e0d2756c5c4125a3e8f9305",
+ "length": 83221,
+ "anchor": "Abstract, pp. 4327 onward, 31st USENIX Security Symposium, 2022; \"comments, variable names, and custom variable types are technically impossible to recover.\"",
+ "quote": "comments, variable names, and custom variable types are technically impossible to recover.",
+ "span": {
+  "start": 1439,
+  "end": 1529
+ },
+ "verdict": "verified",
+ "body_derivation": "pdftotext -q .ufo/waves/round-74/quote-audit/raw/S081.orig.pdf -  (orig committed alongside)",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://www.usenix.org/system/files/sec22-chen-qibin.pdf",
+   "status": 200,
+   "error": "",
+   "kind": "pdf",
+   "note": "paper PDF; text via pdftotext (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "quote verified in derived text; derivation command named; orig committed"
+}

@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S059",
+ "row_url": "https://github.com/iBotPeaches/Apktool",
+ "fetch_url": "https://raw.githubusercontent.com/iBotPeaches/Apktool/0312d212c713c9ebc568b7d9295eec0f47858bfa/README.md",
+ "final_url": "https://raw.githubusercontent.com/iBotPeaches/Apktool/0312d212c713c9ebc568b7d9295eec0f47858bfa/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "a12dbea8be721e72124c45c4c96907375ef2b8e84d0f8386dcfd3a383454baaf",
+ "length": 3372,
+ "anchor": "README.md \"Apktool\", commit 0312d212c713c9ebc568b7d9295eec0f47858bfa, accessed 2026-10-27; \"It can decode resources to nearly original form and rebuild them after making some modifications\"",
+ "quote": "It can decode resources to nearly original form and rebuild them after making some modifications",
+ "span": {
+  "start": 534,
+  "end": 630
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/iBotPeaches/Apktool/0312d212c713c9ebc568b7d9295eec0f47858bfa/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

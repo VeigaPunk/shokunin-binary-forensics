@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S072",
+ "row_url": "https://github.com/morluto/awesome-reverse-engineering",
+ "fetch_url": "https://raw.githubusercontent.com/morluto/awesome-reverse-engineering/8bfb44b3f6fdd796bf35fef23ddaf5f12213fc53/README.md",
+ "final_url": "https://raw.githubusercontent.com/morluto/awesome-reverse-engineering/8bfb44b3f6fdd796bf35fef23ddaf5f12213fc53/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "2c4f8c8bf9202a0b9e1730d1f2639857a7293d96ced86611bfc31782982aae46",
+ "length": 49576,
+ "anchor": "README.md opening, commit 8bfb44b3f6fdd796bf35fef23ddaf5f12213fc53, accessed 2026-10-27; \"A curated starting point for understanding binaries, applications, firmware, file formats, and protocols.\"",
+ "quote": "A curated starting point for understanding binaries, applications, firmware, file formats, and protocols.",
+ "span": {
+  "start": 389,
+  "end": 494
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/morluto/awesome-reverse-engineering/8bfb44b3f6fdd796bf35fef23ddaf5f12213fc53/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

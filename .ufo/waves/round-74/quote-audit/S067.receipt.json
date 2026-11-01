@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S067",
+ "row_url": "https://github.com/dnSpy/dnSpy",
+ "fetch_url": "https://github.com/dnSpy/dnSpy",
+ "final_url": "https://github.com/dnSpy/dnSpy",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "c4c47b7205feaba304baabe44db6e8613baaa25f72cc01156dd88955b5a02194",
+ "length": 264100,
+ "anchor": "README.md at commit 45716aff73eb4a3047def20fa6006d156a7e25bb; GitHub archive banner says archived 2020-12-21; accessed 2026-10-27; \"This repository was archived by the owner on Dec 21, 2020. It is now read-only.\"",
+ "quote": "This repository was archived by the owner on Dec 21, 2020. It is now read-only.",
+ "span": {
+  "start": 108921,
+  "end": 109000
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://github.com/dnSpy/dnSpy",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "archive banner lives on the repo page (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

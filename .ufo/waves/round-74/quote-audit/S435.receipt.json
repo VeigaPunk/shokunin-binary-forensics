@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S435",
+ "row_url": "https://www.usenix.org/conference/usenixsecurity22/presentation/burk",
+ "fetch_url": "https://www.usenix.org/conference/usenixsecurity22/presentation/burk",
+ "final_url": "https://www.usenix.org/conference/usenixsecurity22/presentation/burk",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "aeda053d3158c18421528708a4f241b0bb89707bb2b729d6abbb38d9ce189b4a",
+ "length": 39352,
+ "anchor": "",
+ "quote": "Over 150 people participated, and we collected more than 35,000 code submissions, the largest manual reverse engineering dataset to date.",
+ "span": {
+  "start": 29024,
+  "end": 29161
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://www.usenix.org/conference/usenixsecurity22/presentation/burk",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "abstract page (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S080: quote re-located verbatim in the same fetched bytes"
+}

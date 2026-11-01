@@ -1,0 +1,12 @@
+rea-skill-dir                UNRECORDED-ABSENT
+rea-cli                      PRESENT (probe exit 0)
+npx-fallback                 PRESENT (probe exit 0)
+engine-ghidra                UNRECORDED-ABSENT
+engine-ida                   UNRECORDED-ABSENT
+engine-jadx                  UNRECORDED-ABSENT
+engine-binwalk               UNRECORDED-ABSENT
+engine-pwntools              UNRECORDED-ABSENT
+demand-context               UNRECORDED-ABSENT
+bounty-triage-module         PRESENT (probe exit 0)
+lane-repo                    PRESENT (probe exit 0)
+PROVINCE_SURFACES_RESOLVED=4/11 UNRECORDED_ABSENT=7 P_SCORE=3.6

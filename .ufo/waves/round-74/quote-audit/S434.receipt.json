@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S434",
+ "row_url": "https://github.com/dnSpyEx/dnSpy",
+ "fetch_url": "https://raw.githubusercontent.com/dnSpyEx/dnSpy/de5a83051161e0becc70f32834c2596db6239fbd/README.md",
+ "final_url": "https://raw.githubusercontent.com/dnSpyEx/dnSpy/de5a83051161e0becc70f32834c2596db6239fbd/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "c9f5030bc9ddd3a76fdc4890219066dfea4c1a391aa86644930cd84a9061ecff",
+ "length": 4824,
+ "anchor": "",
+ "quote": "dnSpyEx is an unofficial continuation of the [dnSpy](https://github.com/dnSpy/dnSpy) project which is a debugger and .NET assembly editor.",
+ "span": {
+  "start": 11,
+  "end": 149
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/dnSpyEx/dnSpy/de5a83051161e0becc70f32834c2596db6239fbd/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S068: quote re-located verbatim in the same fetched bytes"
+}

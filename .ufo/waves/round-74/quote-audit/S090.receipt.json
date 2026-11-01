@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S090",
+ "row_url": "https://nostarch.com/binaryanalysis",
+ "fetch_url": "https://nostarch.com/binaryanalysis",
+ "final_url": "https://nostarch.com/binaryanalysis",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "a38677c2a28074d32fde391489437688f7841e1cb853589426e3d2bd77fc89b2",
+ "length": 45743,
+ "anchor": "Publisher page published 2018-03-21, updated 2026-02-09; chapter list; \"Build Your Own Linux Tools for Binary Instrumentation, Analysis, and Disassembly\"",
+ "quote": "Build Your Own Linux Tools for Binary Instrumentation, Analysis, and Disassembly",
+ "span": {
+  "start": 25263,
+  "end": 25343
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://nostarch.com/binaryanalysis",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "publisher page (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

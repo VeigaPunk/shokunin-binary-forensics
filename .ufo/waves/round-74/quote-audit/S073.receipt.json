@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S073",
+ "row_url": "https://github.com/Dryxio/reagent",
+ "fetch_url": "https://raw.githubusercontent.com/Dryxio/reagent/d12cea338c61898b06a86fe8adb25275fa9d5615/README.md",
+ "final_url": "https://raw.githubusercontent.com/Dryxio/reagent/d12cea338c61898b06a86fe8adb25275fa9d5615/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "ba66cef64fb57b9ab15e2ff1bee595f8a654059bf79cece400dec01a744e5929",
+ "length": 20697,
+ "anchor": "README.md \"What it does\", commit d12cea338c61898b06a86fe8adb25275fa9d5615, accessed 2026-10-27; \"This is conservative verification, not a proof of semantic equivalence.\"",
+ "quote": "This is conservative verification, not a proof of semantic equivalence.",
+ "span": {
+  "start": 3316,
+  "end": 3387
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/Dryxio/reagent/d12cea338c61898b06a86fe8adb25275fa9d5615/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

@@ -1,0 +1,33 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S440",
+ "row_url": "https://www.usenix.org/conference/usenixsecurity13/technical-sessions/presentation/schwartz",
+ "fetch_url": "https://www.usenix.org/conference/usenixsecurity13/technical-sessions/presentation/schwartz",
+ "final_url": "https://www.usenix.org/conference/usenixsecurity13/technical-sessions/presentation/schwartz",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "e6a5de4b977684c7d9525c86d04f430f21983a273f1c54e8cb1ab3285e1fb9ab",
+ "length": 67213,
+ "anchor": "",
+ "quote": "existing structuring algorithms are not <em>semantics-preserving</em>, which means that they cannot safely be used for decompilation without modification",
+ "span": {
+  "start": 45575,
+  "end": 45728
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://www.usenix.org/conference/usenixsecurity13/technical-sessions/presentation/schwartz",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "abstract page (row source names the proceedings entry)",
+   "bytes": 67213,
+   "final_url": "https://www.usenix.org/conference/usenixsecurity13/technical-sessions/presentation/schwartz"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S115: quote re-located verbatim in the same fetched bytes"
+}

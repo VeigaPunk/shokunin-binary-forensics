@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S070",
+ "row_url": "https://github.com/EpicGames/raddebugger",
+ "fetch_url": "https://raw.githubusercontent.com/EpicGames/raddebugger/62b715a30e5da6b8d7e02372a8e7458feab1df97/README.md",
+ "final_url": "https://raw.githubusercontent.com/EpicGames/raddebugger/62b715a30e5da6b8d7e02372a8e7458feab1df97/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "0909f149ea72e0fd49dd2438944c81674e2b77c75bfc636c4501b467a1c2d29c",
+ "length": 22146,
+ "anchor": "README.md \"The RAD Debugger Project\", commit 62b715a30e5da6b8d7e02372a8e7458feab1df97, accessed 2026-10-27; \"It currently only supports local-machine x64 debugging on both Windows and Linux\"",
+ "quote": "It\r\ncurrently only supports local-machine x64 debugging on both Windows and Linux",
+ "span": {
+  "start": 547,
+  "end": 628
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/EpicGames/raddebugger/62b715a30e5da6b8d7e02372a8e7458feab1df97/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

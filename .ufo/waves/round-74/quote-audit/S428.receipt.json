@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S428",
+ "row_url": "https://arxiv.org/abs/2403.05286v3",
+ "fetch_url": "https://arxiv.org/abs/2403.05286v3",
+ "final_url": "https://arxiv.org/abs/2403.05286v3",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "d09e10b4898b25b981f139fbb871b883fa2ef24a9032397c57d96767f1dc1893",
+ "length": 43987,
+ "anchor": "v3 abstract opening sentence, accessed 2026-10-30; \"traditional tools like Ghidra often produce results that are difficult to read and execute.\"",
+ "quote": "traditional tools like Ghidra often produce results that are difficult to read and execute.",
+ "span": {
+  "start": 2559,
+  "end": 2650
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://arxiv.org/abs/2403.05286v3",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "abs page (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

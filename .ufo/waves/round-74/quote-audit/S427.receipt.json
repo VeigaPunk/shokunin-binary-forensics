@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S427",
+ "row_url": "https://github.com/zhuyansen/awesome-ai-reverse-engineering",
+ "fetch_url": "https://raw.githubusercontent.com/zhuyansen/awesome-ai-reverse-engineering/63900b2c9e2ae2dac61fc0db7553d4ce88ebb932/README.md",
+ "final_url": "https://raw.githubusercontent.com/zhuyansen/awesome-ai-reverse-engineering/63900b2c9e2ae2dac61fc0db7553d4ce88ebb932/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "b5622090bcaa5726b994c13a1329fd399cf70e9d9f55d9f363bd8f19f6fc193d",
+ "length": 39590,
+ "anchor": "README introduction at 63900b2c9e2ae2dac61fc0db7553d4ce88ebb932; \"each one read and security-graded\"",
+ "quote": "each one read and security-graded",
+ "span": {
+  "start": 285,
+  "end": 318
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/zhuyansen/awesome-ai-reverse-engineering/63900b2c9e2ae2dac61fc0db7553d4ce88ebb932/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

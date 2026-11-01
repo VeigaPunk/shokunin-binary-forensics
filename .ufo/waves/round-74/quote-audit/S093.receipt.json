@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S093",
+ "row_url": "https://malwareunicorn.org/workshops/re101",
+ "fetch_url": "https://malwareunicorn.org/workshops/re101",
+ "final_url": "https://malwareunicorn.org/workshops/re101",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "9169ccefd79fa6b2b29fa08b6df61c1585fa43b5b4f8896bbc302a01312120ca",
+ "length": 59631,
+ "anchor": "\"Post Install Instructions\", linked VM materials dated 2019-07-23; \"Victim VM: Disable Windows Defender Runtime\"",
+ "quote": "Victim VM: Disable Windows Defender Runtime",
+ "span": {
+  "start": 8835,
+  "end": 8878
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://malwareunicorn.org/workshops/re101",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "workshop page (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

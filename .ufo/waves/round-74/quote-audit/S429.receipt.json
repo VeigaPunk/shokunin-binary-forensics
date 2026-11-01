@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S429",
+ "row_url": "https://github.com/mrexodia/ida-pro-mcp",
+ "fetch_url": "https://raw.githubusercontent.com/mrexodia/ida-pro-mcp/c133c3853faa111a9b00ee615c013b720d0c4acd/README.md",
+ "final_url": "https://raw.githubusercontent.com/mrexodia/ida-pro-mcp/c133c3853faa111a9b00ee615c013b720d0c4acd/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "52ba58c0203be594781db71b595585c15e0352f331d4aef2563602e0b151bf26",
+ "length": 20064,
+ "anchor": "",
+ "quote": "I recommend using the [Official Hex-Rays IDA MCP Server](https://github.com/HexRaysSA/ida-mcp) instead!",
+ "span": {
+  "start": 34,
+  "end": 137
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/mrexodia/ida-pro-mcp/c133c3853faa111a9b00ee615c013b720d0c4acd/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S057: quote re-located verbatim in the same fetched bytes"
+}

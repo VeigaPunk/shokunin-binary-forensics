@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S433",
+ "row_url": "https://github.com/mitmproxy/mitmproxy",
+ "fetch_url": "https://raw.githubusercontent.com/mitmproxy/mitmproxy/7458ea26ccec7d06ffdc434f878e8d92973aec7e/README.md",
+ "final_url": "https://raw.githubusercontent.com/mitmproxy/mitmproxy/7458ea26ccec7d06ffdc434f878e8d92973aec7e/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "3388d7046a275a9b88e9503c6ea5141ab618a6db95a6b03530da1f09d8e9057f",
+ "length": 4015,
+ "anchor": "",
+ "quote": "``mitmproxy`` is an interactive, SSL/TLS-capable intercepting proxy with a console\ninterface for HTTP/1, HTTP/2, and WebSockets.",
+ "span": {
+  "start": 2562,
+  "end": 2690
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/mitmproxy/mitmproxy/7458ea26ccec7d06ffdc434f878e8d92973aec7e/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S066: quote re-located verbatim in the same fetched bytes"
+}

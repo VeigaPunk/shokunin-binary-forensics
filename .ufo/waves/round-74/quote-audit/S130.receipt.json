@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S130",
+ "row_url": "https://godbolt.org/",
+ "fetch_url": "https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/c655710e809d203f988ce34653e2aa854937177c/README.md",
+ "final_url": "https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/c655710e809d203f988ce34653e2aa854937177c/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "8fc3932164eca2a38d6c714801f2d82b564f90f1a1f696cf46afa52021d2ab78",
+ "length": 11083,
+ "anchor": "README § intro, commit c655710, accessed 2026-10-29 — \"see how that code looks after being compiled in real time.\" [integrator re-opened and located the quote]",
+ "quote": "see how that code looks after being\ncompiled in real time.",
+ "span": {
+  "start": 725,
+  "end": 783
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/c655710e809d203f988ce34653e2aa854937177c/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

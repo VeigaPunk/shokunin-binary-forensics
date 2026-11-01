@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S092",
+ "row_url": "https://nostarch.com/androidmalwarehandbook",
+ "fetch_url": "https://nostarch.com/androidmalwarehandbook",
+ "final_url": "https://nostarch.com/androidmalwarehandbook",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "a5ac887ac984911043a05cb62236c3c527263be80bba2ab8f37f214109e6bc6d",
+ "length": 45359,
+ "anchor": "Publisher page published 2023-03-06, updated 2025-08-06; \"Manual Analysis\" table of contents; \"Explore the static, dynamic, and complex features you can extract from malware for analysis\"",
+ "quote": "Explore the static, dynamic, and complex features you can extract from malware for analysis",
+ "span": {
+  "start": 30162,
+  "end": 30253
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://nostarch.com/androidmalwarehandbook",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "publisher page (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

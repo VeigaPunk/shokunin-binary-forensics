@@ -1,0 +1,4120 @@
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pwn.college</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="pwn.college">
+    <meta property="og:description" content="Learn to Hack!">
+    <meta property="og:image" content="https://pwn.college/themes/dojo_theme/static/img/dojo/ninja.png">
+
+    <link rel="icon" href="/themes/dojo_theme/static/img/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link rel="preload" href="/themes/dojo_theme/static/font/SpaceMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="/themes/dojo_theme/static/font/SpaceMono-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="/themes/dojo_theme/static/font/SpaceGrotesk-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <style>
+      @font-face {
+        font-family: 'Space Mono';
+        src: url("/themes/dojo_theme/static/font/SpaceMono-Regular.ttf") format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Space Mono';
+        src: url("/themes/dojo_theme/static/font/SpaceMono-Bold.ttf") format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Space Grotesk';
+        src: url("/themes/dojo_theme/static/font/SpaceGrotesk-VariableFont_wght.ttf") format('truetype');
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+    <link rel="stylesheet" href="/themes/dojo_theme/static/css/dojo.css?v=93c9182d">
+    <link rel="stylesheet" href="/themes/dojo_theme/static/css/custom.css?v=113f54a9">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+    
+
+    
+
+<style>
+.challenge-workspace {
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.challenge-iframe {
+  display: block;
+  width: 100%;
+  min-height: 60vh;
+  aspect-ratio: 16/9;
+  border: 0;
+}
+
+.challenge-init {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+.challenge-hidden {
+  visibility: hidden;
+  max-height: 0 !important;
+}
+
+.challenge-hidden .workspace-ssh {
+  display: none !important;
+}
+</style>
+
+
+
+
+    <script type="text/javascript">
+      var init = {
+	  'urlRoot': "",
+	  'csrfNonce': "ec5499d5ae11ed8586c93a557987fcbfbe2ae20532a9afdec4c23fc3fac8ef61",
+	  'userId': 0,
+          'dojo': "intro-re-pwn~5933fc84",
+          'module': "reversing"
+      }
+    </script>
+  </head>
+  <body>
+    
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+  <div class="container">
+    <a href="/" class="brand-mono-bold wordmark">
+      
+      <span class="brand-white">pwn</span><span class="brand-dot-white">.</span><span class="brand-white">college</span>
+      
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#base-navbars"
+            aria-controls="base-navbars" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="base-navbars">
+      <div class="d-none d-md-block" style="border-left: 2px solid white; height: 20px; margin: 0 20px;"></div>
+      <ul class="navbar-nav mr-auto">
+        
+<li class="nav-item">
+  
+  <a class="nav-link" href="/dojos">
+  
+    <span class="d-block" data-toggle="tooltip" data-placement="bottom" title="Dojos">
+      <i class="fas fa-torii-gate d-none d-md-block d-lg-none" style="width: 20px"></i>
+    </span>
+    <span class="d-sm-block d-md-none d-lg-block text-nowrap">
+      <i class="fas fa-torii-gate pr-1"></i>
+      
+      Dojos
+      
+    </span>
+  </a>
+</li>
+
+        
+<li class="nav-item">
+  
+  <a class="nav-link" href="/workspace">
+  
+    <span class="d-block" data-toggle="tooltip" data-placement="bottom" title="Workspace">
+      <i class="fas fa-desktop d-none d-md-block d-lg-none" style="width: 20px"></i>
+    </span>
+    <span class="d-sm-block d-md-none d-lg-block text-nowrap">
+      <i class="fas fa-desktop pr-1"></i>
+      
+      Workspace
+      
+    </span>
+  </a>
+</li>
+
+        
+<li class="nav-item">
+  
+  <a class="nav-link" href="/sensai" target="_blank">
+  
+    <span class="d-block" data-toggle="tooltip" data-placement="bottom" title="Help">
+      <i class="fas fa-question d-none d-md-block d-lg-none" style="width: 20px"></i>
+    </span>
+    <span class="d-sm-block d-md-none d-lg-block text-nowrap">
+      <i class="fas fa-question pr-1"></i>
+      
+      Help
+      
+    </span>
+  </a>
+</li>
+
+        
+<li class="nav-item">
+  
+  <a class="nav-link" href="https://discord.gg/pwncollege" target="_blank">
+  
+    <span class="d-block" data-toggle="tooltip" data-placement="bottom" title="Chat">
+      <i class="fas fa-comments d-none d-md-block d-lg-none" style="width: 20px"></i>
+    </span>
+    <span class="d-sm-block d-md-none d-lg-block text-nowrap">
+      <i class="fas fa-comments pr-1"></i>
+      
+      Chat
+      
+    </span>
+  </a>
+</li>
+
+        
+<li class="nav-item">
+  
+  <a class="nav-link" href="#">
+  
+    <span class="d-block" data-toggle="tooltip" data-placement="bottom" title="Search">
+      <i class="fas fa-search d-none d-md-block d-lg-none" style="width: 20px"></i>
+    </span>
+    <span class="d-sm-block d-md-none d-lg-block text-nowrap">
+      <i class="fas fa-search pr-1"></i>
+      
+      Search
+      
+    </span>
+  </a>
+</li>
+
+      </ul>
+      <hr class="d-sm-flex d-md-flex d-lg-none">
+      <ul class="navbar-nav ml-md-auto d-block d-sm-flex d-md-flex">
+        
+        
+        
+<li class="nav-item">
+  
+  <a class="nav-link" href="/register">
+  
+    <span class="d-block" data-toggle="tooltip" data-placement="bottom" title="Register">
+      <i class="fas fa-user-plus d-none d-md-block d-lg-none" style="width: 20px"></i>
+    </span>
+    <span class="d-sm-block d-md-none d-lg-block text-nowrap">
+      <i class="fas fa-user-plus pr-1"></i>
+      
+      Register
+      
+    </span>
+  </a>
+</li>
+
+        
+
+        
+<li class="nav-item">
+  
+  <a class="nav-link" href="/login?next=/intro-re-pwn~5933fc84/reversing/?">
+  
+    <span class="d-block" data-toggle="tooltip" data-placement="bottom" title="Login">
+      <i class="fas fa-sign-in-alt d-none d-md-block d-lg-none" style="width: 20px"></i>
+    </span>
+    <span class="d-sm-block d-md-none d-lg-block text-nowrap">
+      <i class="fas fa-sign-in-alt pr-1"></i>
+      
+      Login
+      
+    </span>
+  </a>
+</li>
+
+        
+
+        <li class="nav-item">
+          <a class="nav-link close-link" href="javascript:void(0)">
+            <span class="d-block" data-toggle="tooltip" data-placement="bottom" title="Hide Navbar">
+              <i class="fas caret-up d-none d-md-block d-lg-none"></i>
+            </span>
+            <span class="d-sm-block d-md-none d-lg-block text-nowrap">
+              <i class="fas fa-caret-up pr-1"></i>
+              <span class="d-lg-none">Hide Navbar</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="navbar-pulldown">
+  <i class="fas fa-fw fa-caret-down" title="Show navigation bar"></i>
+</div>
+
+<div id="searchModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document" style="margin: 10vh auto; max-width: 650px; width: 80%;">
+    <div class="modal-content bg-dark text-white rounded-lg shadow-lg">
+      <div class="modal-body p-4">
+        <form id="searchForm">
+          <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-secondary border-0 text-white">
+                <i class="fas fa-search"></i>
+              </span>
+            </div>
+            <input type="text" id="searchInput" class="form-control bg-dark text-white border-0" placeholder="Search..." autocomplete="off">
+            <div class="input-group-append">
+              <button type="button" class="btn btn-outline-light" data-dismiss="modal">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+        <div id="searchResults" class="mt-3">
+          <!-- Results will be inserted here dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <main role="main">
+      
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="brand-white brand-mono-bold">Reverse Engineering</h1>
+    <br>
+    <h2 class="module-dojo"><a class="brand-white brand-mono-bold" href="/dojo/intro-re-pwn~5933fc84">Intro to Reverse Engineering &amp; Binary Exploitation<span class="brand-dot">.</span></a></h2>
+
+    
+  </div>
+</div>
+<div class="container">
+
+  
+  <div>
+    
+    <p>Combine static analysis and debugging to understand small programs without
+seeing their source code.</p>
+<p>New to this? Read the <strong>Start here</strong> lessons below before the first
+challenge. They walk through a complete example, from a program you know
+nothing about to the input it wants.</p>
+
+  </div>
+  <br>
+  
+
+  
+  
+
+  <div class="accordion" id="module-content">
+    
+    
+      
+        
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-1">
+      <h2 class="mb-0 button-wrapper">
+        <button id="module-content-header-button-1" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#module-content-body-1" aria-expanded="false" aria-controls="module-content-body-1">
+          
+          
+            
+            <h4 class="accordion-item-name">
+              <i class="resource-icon pr-3 fas fa-file-alt"></i>
+              <span class="pr-2">Start here: what reverse engineering is</span>
+            </h4>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="module-content-body-1" class="collapse" aria-labelledby="module-content-header-1" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            
+            <div class="embed-responsive">
+              
+              <h2>What this module is about</h2>
+<p><strong>Reverse engineering</strong> (RE) means working out what a program does when you
+have only the compiled program, not the source code someone wrote it from.
+Every challenge in this module is a small Linux program that checks
+something you type: a number, a password, or a table position. You will read
+its machine code, run it under a debugger, and turn what you learn into the
+input it accepts. Every later module builds on this: before you can exploit a
+bug, you have to find it and understand the code around it.</p>
+<p>This module assumes you have done <strong>Assembly Basics</strong> (registers, <code>mov</code>,
+<code>cmp</code>, jumps) and <strong>Looking Inside Programs</strong> (<code>strings</code>, <code>objdump</code>,
+<code>ltrace</code>). If a line like <code>mov eax,DWORD PTR [rbp-0x4]</code> means nothing to you
+yet, go back to those first.</p>
+<h2>The workflow</h2>
+<p>Reverse engineering is a loop of guessing and checking. Most problems go
+through four steps, often more than once:</p>
+<pre><code> 1. LOOK            2. STATIC ANALYSIS     3. DYNAMIC ANALYSIS    4. CONFIRM
+ run it once,       read the code          run it under a         compute the
+ file, strings,     without running it:    debugger, stop it,     answer (often
+ ltrace             objdump, Ghidra        inspect and change     in Python) and
+                                           values: gdb            give it to the
+                                                                  real program
+   |                     |                       |                     |
+   +----&gt; form a guess --+----&gt; test the guess --+----&gt; works? done.   |
+               ^                                        no? go back ---+
+</code></pre>
+<ol>
+<li><strong>Look.</strong> Spend two minutes on cheap questions. What kind of file is it
+(<code>file</code>)? What text is inside (<code>strings</code>)? What does it print when you run
+it? Which library functions does it call (<code>ltrace</code>)? You are collecting
+clues, not answers.</li>
+<li><strong>Static analysis</strong> means reading the program without running it. A
+<strong>disassembler</strong> (<code>objdump</code>) shows the machine instructions. A
+<strong>decompiler</strong> (Ghidra) turns those instructions back into approximate C,
+which is faster to read but can be wrong in small ways.</li>
+<li><strong>Dynamic analysis</strong> means running the program and watching it. A
+<strong>debugger</strong> (<code>gdb</code>) can stop the program at any instruction, show you
+registers and memory at that moment, and change them.</li>
+<li><strong>Confirm.</strong> Feed your answer to the real program. The program is the
+judge, not your notes. If it says no, one of your guesses was wrong; go
+back and find which one.</li>
+</ol>
+<h2>Tools in this dojo</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What it is for</th>
+<th>How to start it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file</code>, <code>strings</code>, <code>readelf</code></td>
+<td>first look at a program</td>
+<td><code>readelf -h /challenge/NAME</code></td>
+</tr>
+<tr>
+<td><code>objdump</code></td>
+<td>disassemble</td>
+<td><code>objdump -d -M intel /challenge/NAME | more</code></td>
+</tr>
+<tr>
+<td><code>ltrace</code></td>
+<td>list library calls as they happen</td>
+<td><code>ltrace /challenge/NAME</code></td>
+</tr>
+<tr>
+<td>Ghidra</td>
+<td>decompile to C (graphical)</td>
+<td><code>ghidraRun</code> from the Desktop workspace</td>
+</tr>
+<tr>
+<td>Ghidra headless</td>
+<td>decompile from a terminal</td>
+<td><code>analyzeHeadless</code> (lesson &quot;Ghidra and gdb in this dojo&quot;)</td>
+</tr>
+<tr>
+<td>radare2 + Ghidra's decompiler</td>
+<td>quick decompile in a terminal</td>
+<td><code>r2 -A -qc 'pdg @ main' /challenge/NAME</code></td>
+</tr>
+<tr>
+<td><code>gdb</code> with pwndbg</td>
+<td>debugger</td>
+<td><code>gdb /challenge/NAME</code></td>
+</tr>
+<tr>
+<td><code>python3</code></td>
+<td>calculator and small scripts</td>
+<td><code>python3</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ghidra is installed in <code>/opt/ghidra</code>. Its own beginner course and cheat
+sheet are in <code>/opt/ghidra/docs/GhidraClass/Beginner/</code> and
+<code>/opt/ghidra/docs/CheatSheet.html</code>.</p>
+<h2>A suggested order</h2>
+<ol>
+<li><strong>xor-key</strong>: function names are present; one <code>xor</code>, one <code>cmp</code>.</li>
+<li><strong>stripped</strong>: the names are gone; find <code>main</code> yourself.</li>
+<li><strong>simple-crackme</strong>: a decode loop with a one-byte key.</li>
+<li><strong>encoded-string</strong>: a decode loop where each byte gets a different key.</li>
+<li><strong>multi-func</strong>: a table of function addresses.</li>
+<li><strong>gdb-runtime</strong>: the answer exists only while the program runs.</li>
+</ol>
+<p>Read the next lessons in order. &quot;Worked example&quot; puts everything together
+on a toy program that is not one of the challenges.</p>
+
+            </div>
+            
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+      
+    
+      
+        
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-2">
+      <h2 class="mb-0 button-wrapper">
+        <button id="module-content-header-button-2" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#module-content-body-2" aria-expanded="false" aria-controls="module-content-body-2">
+          
+          
+            
+            <h4 class="accordion-item-name">
+              <i class="resource-icon pr-3 fas fa-file-alt"></i>
+              <span class="pr-2">Concepts: finding main in a stripped program</span>
+            </h4>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="module-content-body-2" class="collapse" aria-labelledby="module-content-header-2" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            
+            <div class="embed-responsive">
+              
+              <h2>Symbols, and what stripping removes</h2>
+<p>When <code>gcc</code> builds a program it keeps a <strong>symbol table</strong>: a list of names
+(<code>main</code>, <code>check</code>, global variable names) and the address of each. Tools use
+it to label the disassembly with <code>&lt;main&gt;:</code> and to let you type
+<code>break main</code> in gdb. The program does not need these names to run.</p>
+<p><code>strip</code> deletes the symbol table. The result is a <strong>stripped</strong> binary. Every
+instruction is still there; only the labels are gone. <code>file</code> tells you:</p>
+<pre><code>toylock-stripped: ELF 64-bit LSB executable, x86-64, ... stripped
+</code></pre>
+<p>Names of <strong>library functions</strong> such as <code>printf</code> and <code>memcmp</code> survive,
+because the program needs them to find those functions in the C library
+when it starts.</p>
+<h2>How a C program starts</h2>
+<p><code>main</code> is not the first code that runs. The <strong>entry point</strong> is the address
+where Linux starts executing the program. It is written in the file's
+header, and it points at a small piece of startup code called <code>_start</code>:</p>
+<pre><code> Linux loads the program
+         |
+         v
+ _start                    at the entry point address (readelf -h)
+         |  puts the ADDRESS OF main into rdi, the first-argument register
+         v
+ __libc_start_main(main, ...)      inside the C library
+         |  sets up the library, then calls the function it was given
+         v
+ main(argc, argv, envp)    the code the programmer wrote
+         |
+         v
+ exit(whatever main returned)
+</code></pre>
+<p>On x86-64 Linux the first six arguments of a function call travel in the
+registers <code>rdi</code>, <code>rsi</code>, <code>rdx</code>, <code>rcx</code>, <code>r8</code>, <code>r9</code>, in that order. So the
+address of <code>main</code> is whatever <code>_start</code> puts into <code>rdi</code> right before it calls
+<code>__libc_start_main</code>.</p>
+<h2>The recipe</h2>
+<ol>
+<li><code>readelf -h PROGRAM</code> and read the line <code>Entry point address</code>.</li>
+<li><code>objdump -d -M intel PROGRAM | more</code>, then search for that address
+(type <code>/</code> and the address without <code>0x</code>, then Enter). <code>more</code> shows one
+screen at a time: Space for the next screen, <code>/</code> to search, <code>q</code> to quit.</li>
+<li>A few lines later you will see <code>mov rdi,ADDRESS</code>, then a <code>call</code>, then
+<code>hlt</code>. That <code>ADDRESS</code> is <code>main</code>.</li>
+</ol>
+<p>The worked example shows this on a real program. Two warnings:</p>
+<ul>
+<li><strong>objdump invents labels in stripped programs.</strong> It names every address
+after the nearest symbol it still knows, so you will see nonsense such as
+<code>call 40124b &lt;fgets@plt+0x16b&gt;</code>. That call does not go anywhere near
+<code>fgets</code>. Ignore the text in <code>&lt; &gt;</code> and use the number.</li>
+<li>All programs in this module are built as <strong>non-PIE</strong>, so they load at the
+same fixed addresses every run and the address in <code>mov rdi,ADDRESS</code> is the
+real one. A <strong>PIE</strong> (position-independent executable) is loaded at a
+random address each run; its <code>_start</code> uses <code>lea rdi,[rip+0x...]</code> instead,
+and the comment objdump prints after it holds the offset of <code>main</code>.</li>
+</ul>
+<p>Ghidra and radare2 apply this same recipe for you. In a stripped program
+Ghidra shows the startup code as <code>entry</code>, and the decompiled <code>entry</code> reads
+<code>__libc_start_main(FUN_004012ac, ...)</code>: the first argument is <code>main</code>.
+Knowing the recipe still matters, because it tells you what to check when a
+tool guesses wrong.</p>
+
+            </div>
+            
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+      
+    
+      
+        
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-3">
+      <h2 class="mb-0 button-wrapper">
+        <button id="module-content-header-button-3" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#module-content-body-3" aria-expanded="false" aria-controls="module-content-body-3">
+          
+          
+            
+            <h4 class="accordion-item-name">
+              <i class="resource-icon pr-3 fas fa-file-alt"></i>
+              <span class="pr-2">Concepts: encode loops, XOR, and lookup tables</span>
+            </h4>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="module-content-body-3" class="collapse" aria-labelledby="module-content-header-3" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            
+            <div class="embed-responsive">
+              
+              <h2>Why programs hide strings</h2>
+<p>If a password sits in the program as plain text, <code>strings</code> shows it in one
+second. So simple programs <strong>encode</strong> it: they store a scrambled version and
+use a small, reversible rule to turn your input into the scrambled form, or
+the scrambled form back into text (<strong>decode</strong>). This is not real encryption.
+Anyone who reads the rule can undo it, and reading the rule is your job.</p>
+<h2>XOR</h2>
+<p><strong>XOR</strong> (exclusive OR, <code>^</code> in C and Python, <code>xor</code> in assembly) compares two
+numbers bit by bit. Each result bit is 1 when the two input bits differ:</p>
+<pre><code>  bit A  bit B  A^B           0x61  = 0110 0001   the letter 'a'
+    0      0     0          ^ 0x13  = 0001 0011   a key byte
+    0      1     1          = 0x72  = 0111 0010   scrambled
+    1      0     1          ^ 0x13  = 0001 0011   the same key again
+    1      1     0          = 0x61  = 0110 0001   back to 'a'
+</code></pre>
+<p>The right-hand side shows the property that makes XOR popular: applying the
+same key twice gives back what you started with. If <code>scrambled = plain ^ key</code>,
+then <code>plain = scrambled ^ key</code>. You undo XOR with XOR.</p>
+<h2>What a loop looks like at <code>-O0</code></h2>
+<p>The programs here are compiled without optimization (<code>-O0</code>), so every
+<code>for</code> loop has the same shape. The loop counter lives on the stack:</p>
+<pre><code>       mov  DWORD PTR [rbp-0x4],0x0    ; i = 0
+       jmp  CHECK                      ; test the condition first
+BODY:  ...                             ; one round of work, uses i
+       add  DWORD PTR [rbp-0x4],0x1    ; i = i + 1
+CHECK: mov  eax,DWORD PTR [rbp-0x4]
+       cmp  eax,LIMIT
+       jl   BODY                       ; go back while i &lt; LIMIT
+</code></pre>
+<p>To find a loop, look for a jump that goes <strong>backwards</strong> (to a smaller
+address). Then count the rounds carefully: <code>jl</code> (jump if less) means
+<code>i &lt; LIMIT</code>, which is <code>LIMIT</code> rounds. <code>jle</code> (jump if less or equal) means
+<code>i &lt;= LIMIT</code>, which is <code>LIMIT + 1</code> rounds.</p>
+<p>An <strong>encode loop</strong> body has three parts: read one byte (<code>movzx eax,BYTE PTR [...]</code>), mix it with something (<code>xor</code>, <code>add</code>, <code>sub</code>, <code>imul</code>), and write one
+byte (<code>mov BYTE PTR [...],dl</code>). Find those three and you have the rule.</p>
+<h2>Lookup tables</h2>
+<p>A <strong>lookup table</strong> is an array of constants stored in the program, read at a
+position (an <strong>index</strong>) the code computes. The bytes sit next to each other
+in memory:</p>
+<pre><code> address   0x402008  0x402009  0x40200a  0x40200b
+ value       0x13      0x37      0x42      0x7f
+ index       [0]       [1]       [2]       [3]
+</code></pre>
+<p>In assembly, reading <code>table[index]</code> looks like this:</p>
+<pre><code>movzx  eax,BYTE PTR [rax+0x402008]    ; one byte from (0x402008 + rax)
+</code></pre>
+<p>The constant is the table's address and the register is the index. For
+bigger entries the index is multiplied by the entry size: <code>[rax*4+ADDR]</code> for
+4-byte numbers, <code>[rax*8+ADDR]</code> for 8-byte values. An 8-byte value is often an
+<strong>address of a function</strong>. A table of function addresses followed by a
+<code>call rax</code> (an <strong>indirect call</strong>, where the target comes from a register) is
+how a program picks which function to run based on a number.</p>
+<p><strong><code>i % 4</code> in disassembly.</strong> A key that repeats every 4 bytes uses
+<code>table[i % 4]</code>. gcc writes <code>%</code> as a strange-looking sequence, because it has
+to handle negative numbers too:</p>
+<pre><code>sar    eax,0x1f
+shr    eax,0x1e
+add    edx,eax
+and    edx,0x3        ; &lt;- the 3 means &quot;% 4&quot; (for i &gt;= 0, i % 4 == i &amp; 3)
+sub    edx,eax
+</code></pre>
+<p>When you see <code>and REG,0x3</code> (or <code>0x7</code>, <code>0xf</code>) next to shifts, think &quot;remainder
+after dividing by 4 (or 8, or 16)&quot;.</p>
+<h2>Undoing an encode rule</h2>
+<p>Undo the steps <strong>in reverse order</strong>, each with its opposite:</p>
+<table>
+<thead>
+<tr>
+<th>the program did</th>
+<th>you do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x ^ k</code></td>
+<td><code>x ^ k</code> (XOR undoes itself)</td>
+</tr>
+<tr>
+<td><code>x + k</code></td>
+<td><code>x - k</code></td>
+</tr>
+<tr>
+<td><code>x - k</code></td>
+<td><code>x + k</code></td>
+</tr>
+<tr>
+<td>the last step</td>
+<td>first</td>
+</tr>
+</tbody>
+</table>
+<p>Machine registers wrap around: a byte that goes past <code>0xff</code> starts again at
+<code>0x00</code>. Python numbers never wrap, so after each <code>+</code> or <code>-</code> add <code>&amp; 0xff</code> to
+keep only the lowest 8 bits, the same as the program does.</p>
+<p>Notice which direction the program works in. If it <strong>decodes</strong> stored bytes
+and compares the result with your input, run the decode yourself (or read
+the decoded text in gdb). If it <strong>encodes your input</strong> and compares that with
+stored bytes, you must invert the rule. The worked example is the second kind.</p>
+
+            </div>
+            
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+      
+    
+      
+        
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-4">
+      <h2 class="mb-0 button-wrapper">
+        <button id="module-content-header-button-4" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#module-content-body-4" aria-expanded="false" aria-controls="module-content-body-4">
+          
+          
+            
+            <h4 class="accordion-item-name">
+              <i class="resource-icon pr-3 fas fa-file-alt"></i>
+              <span class="pr-2">Ghidra and gdb in this dojo</span>
+            </h4>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="module-content-body-4" class="collapse" aria-labelledby="module-content-header-4" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            
+            <div class="embed-responsive">
+              
+              <h2>Ghidra, the graphical way</h2>
+<p>Open the <strong>Desktop</strong> workspace in pwn.college, open a terminal there, and run
+<code>ghidraRun</code>. Then:</p>
+<ol>
+<li>Accept the license, close the tips window.</li>
+<li><strong>File → New Project → Non-Shared Project</strong>, pick a folder in your home
+directory and a name, <strong>Finish</strong>.</li>
+<li><strong>File → Import File</strong>, choose <code>/challenge/NAME</code>, <strong>OK</strong>, <strong>OK</strong>.</li>
+<li>Double-click the imported program. Answer <strong>Yes</strong> to &quot;Analyze?&quot;, then
+click <strong>Analyze</strong>.</li>
+<li>On the left, <strong>Symbol Tree → Functions</strong> lists every function. Click one.
+The middle panel (<strong>Listing</strong>) shows its assembly; the right panel
+(<strong>Decompile</strong>) shows Ghidra's C. Clicking a line in one panel highlights
+the matching lines in the other.</li>
+</ol>
+<p>Two keys you will use: <strong>L</strong> renames whatever is under the cursor (rename
+<code>FUN_0040124b</code> to <code>check</code> once you know what it does), and <strong>G</strong> jumps to an
+address you type.</p>
+<h2>Ghidra without the graphics</h2>
+<p><code>analyzeHeadless</code> runs the same analysis from a terminal. It needs a small
+script to print the decompiled C. Save this as
+<code>~/ghidra_scripts/Decompile.java</code> (for example with <code>nano</code>):</p>
+<pre><code class="language-java">// Write Ghidra's decompiled C to ~/&lt;program&gt;.decomp.c
+// Name functions after the script to pick them; name none to get every function.
+import ghidra.app.decompiler.DecompInterface;
+import ghidra.app.script.GhidraScript;
+import ghidra.program.model.listing.Function;
+import java.io.File;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.List;
+
+public class Decompile extends GhidraScript {
+    @Override
+    public void run() throws Exception {
+        List&lt;String&gt; wanted = Arrays.asList(getScriptArgs());
+        File outFile = new File(System.getProperty(&quot;user.home&quot;),
+                                currentProgram.getName() + &quot;.decomp.c&quot;);
+        DecompInterface decompiler = new DecompInterface();
+        decompiler.openProgram(currentProgram);
+        try (PrintWriter out = new PrintWriter(outFile)) {
+            for (Function f : currentProgram.getFunctionManager().getFunctions(true)) {
+                if (f.isThunk() || f.isExternal()) continue;
+                if (!wanted.isEmpty() &amp;&amp; !wanted.contains(f.getName())) continue;
+                out.println(decompiler.decompileFunction(f, 60, monitor)
+                                      .getDecompiledFunction().getC());
+            }
+        }
+        println(&quot;wrote &quot; + outFile);
+    }
+}
+</code></pre>
+<p>Then run it (about 10 seconds for a small program):</p>
+<pre><code class="language-bash">mkdir -p ~/ghidra-projects
+analyzeHeadless ~/ghidra-projects scratch -import /challenge/NAME -deleteProject \
+    -scriptPath ~/ghidra_scripts -postScript Decompile.java &gt; ~/ghidra.log 2&gt;&amp;1
+more ~/NAME.decomp.c
+</code></pre>
+<p><code>-deleteProject</code> throws the project away afterwards, so you can run the same
+command again. If <code>NAME.decomp.c</code> is missing, read <code>~/ghidra.log</code>.</p>
+<h2>The fastest way: radare2 with Ghidra's decompiler</h2>
+<p>radare2 (<code>r2</code>) is another reverse-engineering tool. The copy here includes
+Ghidra's decompiler, behind the command <code>pdg</code>:</p>
+<pre><code class="language-bash">r2 -A -qc 'pdg @ main' /challenge/NAME 2&gt;/dev/null
+r2 -A -qc 'afl' /challenge/NAME 2&gt;/dev/null       # list the functions it found
+</code></pre>
+<p><code>-A</code> analyzes the program, <code>-q</code> quits afterwards, <code>-c</code> runs the command in
+quotes, and <code>2&gt;/dev/null</code> hides the progress messages. radare2 finds <code>main</code>
+even in a stripped program; other unnamed functions appear as
+<code>fcn.ADDRESS</code>. Its names for variables differ from Ghidra's own (<code>arg1</code>
+instead of <code>param_1</code>), but the logic is the same.</p>
+<h2>gdb, the commands you need</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gdb /challenge/NAME</code></td>
+<td>load the program (it does not start yet)</td>
+</tr>
+<tr>
+<td><code>break *0x401228</code></td>
+<td>stop when execution reaches that address. The <code>*</code> means &quot;address&quot;; without it gdb looks for a function name, and a stripped program has none.</td>
+</tr>
+<tr>
+<td><code>run</code></td>
+<td>start the program. <code>run &lt; /tmp/in.txt</code> feeds a file as its input.</td>
+</tr>
+<tr>
+<td><code>continue</code> (<code>c</code>)</td>
+<td>keep running until the next breakpoint</td>
+</tr>
+<tr>
+<td><code>ni</code> / <code>si</code></td>
+<td>run one instruction; <code>si</code> follows into calls, <code>ni</code> steps over them</td>
+</tr>
+<tr>
+<td><code>x/1i $pc</code></td>
+<td>show the instruction about to run (<code>$pc</code> is the current address)</td>
+</tr>
+<tr>
+<td><code>info registers</code></td>
+<td>every register</td>
+</tr>
+<tr>
+<td><code>p/x $eax</code></td>
+<td>print one register in hex (<code>p $eax</code> for decimal)</td>
+</tr>
+<tr>
+<td><code>x/8bx ADDRESS</code></td>
+<td>show 8 bytes of memory in hex (more in &quot;How to read the output&quot;)</td>
+</tr>
+<tr>
+<td><code>set $eax = 0</code></td>
+<td>change a register</td>
+</tr>
+<tr>
+<td><code>attach PID</code> / <code>detach</code></td>
+<td>take control of an already-running process / let it go</td>
+</tr>
+<tr>
+<td><code>kill</code>, <code>quit</code></td>
+<td>stop the program / leave gdb</td>
+</tr>
+</tbody>
+</table>
+<p>gdb here loads <strong>pwndbg</strong>, an add-on that redraws registers, the stack and
+the next instructions every time the program stops. It makes the screen
+busy but the commands above work the same.</p>
+<p><strong>gdb and the flag.</strong> The challenge programs are <strong>setuid</strong>: they run with
+extra permission so they can read <code>/flag</code>. Linux removes that permission when
+a debugger starts the program. Use gdb to learn how the program works, then
+run it normally with your answer to get the flag. (<strong>gdb-runtime</strong> is built
+differently; its README explains how.)</p>
+
+            </div>
+            
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+      
+    
+      
+        
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-5">
+      <h2 class="mb-0 button-wrapper">
+        <button id="module-content-header-button-5" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#module-content-body-5" aria-expanded="false" aria-controls="module-content-body-5">
+          
+          
+            
+            <h4 class="accordion-item-name">
+              <i class="resource-icon pr-3 fas fa-file-alt"></i>
+              <span class="pr-2">Worked example: reversing a toy password check</span>
+            </h4>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="module-content-body-5" class="collapse" aria-labelledby="module-content-header-5" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            
+            <div class="embed-responsive">
+              
+              <p>This is a toy program written for this lesson. It is <strong>not</strong> one of the
+challenges, and its rule is different from all of them. We pretend we have
+never seen its source; the source is at the end. Every output below was
+captured from real runs. Where we cut lines, we say so.</p>
+<p>The program is <code>toylock-stripped</code>. It asks for a password.</p>
+<h2>Step 1: look</h2>
+<pre><code>$ file toylock-stripped
+toylock-stripped: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=074a0d112cebca200cfecfc122f14d0e531efdc5, for GNU/Linux 3.2.0, stripped
+</code></pre>
+<p>64-bit Linux program (<strong>ELF</strong> is the Linux program file format),
+<strong>executable</strong> (not PIE, so fixed addresses), <strong>stripped</strong> (no function
+names).</p>
+<pre><code>$ strings toylock-stripped        (excerpt: the lines that look like messages)
+Password:
+Door open.
+Wrong.
+</code></pre>
+<p>The messages are there; the password is not. It is probably encoded.</p>
+<pre><code>$ echo abcdefgh | ltrace ./toylock-stripped
+printf(&quot;Password: &quot;)                             = 10
+fgets(&quot;abcdefgh\n&quot;, 64, 0x70b90aa608e0)          = 0x7ffcf25abfc0
+strcspn(&quot;abcdefgh\n&quot;, &quot;\n&quot;)                      = 8
+strlen(&quot;abcdefgh&quot;)                               = 8
+memcmp(0x7ffcf25abfa8, 0x402010, 8, 16)          = 15
+puts(&quot;Wrong.&quot;)                                   = 7
+Password: Wrong.
++++ exited (status 0) +++
+</code></pre>
+<p>Each line is one library call: the function, its arguments, and after <code>=</code>
+what it returned. Clues:</p>
+<ul>
+<li><code>fgets</code> reads our line; <code>strcspn</code> finds the newline so it can be removed.</li>
+<li><code>strlen</code> measures our input. Maybe the length is checked.</li>
+<li><code>memcmp</code> compares 8 bytes at two addresses and returned 15 (not 0, so
+they differ). One address (<code>0x7ff...</code>) is on the stack; the other,
+<code>0x402010</code>, is a fixed address inside the program. Our text
+<code>abcdefgh</code> is not passed to <code>memcmp</code> directly, so something changed it
+first. (<code>memcmp</code> takes three arguments; ltrace guessed a fourth, <code>16</code>,
+which is leftover junk.)</li>
+</ul>
+<p><strong>Guess:</strong> the program transforms our 8 characters and compares the result
+with 8 stored bytes at <code>0x402010</code>.</p>
+<h2>Step 2: find main</h2>
+<pre><code>$ readelf -h toylock-stripped        (excerpt)
+  Type:                              EXEC (Executable file)
+  Entry point address:               0x4010f0
+</code></pre>
+<pre><code>$ objdump -d -M intel toylock-stripped        (excerpt, from 0x4010f0)
+  4010f0:       f3 0f 1e fa             endbr64
+  4010f4:       31 ed                   xor    ebp,ebp
+  4010f6:       49 89 d1                mov    r9,rdx
+  4010f9:       5e                      pop    rsi
+  4010fa:       48 89 e2                mov    rdx,rsp
+  4010fd:       48 83 e4 f0             and    rsp,0xfffffffffffffff0
+  401101:       50                      push   rax
+  401102:       54                      push   rsp
+  401103:       45 31 c0                xor    r8d,r8d
+  401106:       31 c9                   xor    ecx,ecx
+  401108:       48 c7 c7 ac 12 40 00    mov    rdi,0x4012ac
+  40110f:       ff 15 c3 2e 00 00       call   QWORD PTR [rip+0x2ec3]        # 403fd8 &lt;fgets@plt+0x2ef8&gt;
+  401115:       f4                      hlt
+</code></pre>
+<p><code>mov rdi,0x4012ac</code>, then <code>call</code>, then <code>hlt</code>: <strong><code>main</code> is at <code>0x4012ac</code></strong>.
+The label <code>&lt;fgets@plt+0x2ef8&gt;</code> is one of objdump's invented names. The call
+really goes through the slot at <code>0x403fd8</code>, and <code>readelf -r</code> confirms that
+slot belongs to <code>__libc_start_main</code>:</p>
+<pre><code>$ readelf -r toylock-stripped | grep 403fd8
+000000403fd8  000100000006 R_X86_64_GLOB_DAT 0000000000000000 __libc_start_main@GLIBC_2.34 + 0
+</code></pre>
+<h2>Step 3: static analysis with Ghidra</h2>
+<p>This is Ghidra's decompiler output (captured with the headless script from
+&quot;Ghidra and gdb in this dojo&quot;; the GUI's Decompile panel shows the same). Ghidra
+calls <code>main</code> <code>FUN_004012ac</code>, after its address:</p>
+<pre><code class="language-c">undefined8 FUN_004012ac(void)
+
+{
+  int iVar1;
+  char *pcVar2;
+  undefined8 uVar3;
+  size_t sVar4;
+  char local_48 [64];
+
+  printf(&quot;Password: &quot;);
+  pcVar2 = fgets(local_48,0x40,stdin);
+  if (pcVar2 == (char *)0x0) {
+    uVar3 = 1;
+  }
+  else {
+    sVar4 = strcspn(local_48,&quot;\n&quot;);
+    local_48[sVar4] = '\0';
+    iVar1 = FUN_0040124b(local_48);
+    if (iVar1 == 0) {
+      puts(&quot;Wrong.&quot;);
+    }
+    else {
+      puts(&quot;Door open.&quot;);
+    }
+    uVar3 = 0;
+  }
+  return uVar3;
+}
+</code></pre>
+<p>Read it top to bottom: read up to 64 bytes into <code>local_48</code>, cut off the
+newline, call <code>FUN_0040124b</code> with our text. If it returns 0, &quot;Wrong.&quot;;
+otherwise &quot;Door open.&quot;. So <code>FUN_0040124b</code> is the checker. In the GUI you
+would now press <strong>L</strong> on it and rename it <code>check</code>.</p>
+<pre><code class="language-c">bool FUN_0040124b(char *param_1)
+
+{
+  int iVar1;
+  size_t sVar2;
+  bool bVar3;
+  undefined1 local_10 [8];
+
+  sVar2 = strlen(param_1);
+  if (sVar2 == 8) {
+    FUN_004011d6(param_1,local_10,8);
+    iVar1 = memcmp(local_10,&amp;DAT_00402010,8);
+    bVar3 = iVar1 == 0;
+  }
+  else {
+    bVar3 = false;
+  }
+  return bVar3;
+}
+</code></pre>
+<p>This matches the ltrace guess. The password must be exactly 8 characters.
+<code>FUN_004011d6</code> is given our text, an 8-byte buffer <code>local_10</code>, and the number
+8; then the buffer is compared with the 8 bytes at <code>0x402010</code>
+(<code>DAT_00402010</code> is Ghidra's name for &quot;some data at this address&quot;). So
+<code>FUN_004011d6</code> fills the buffer from our input: it is the encode step.</p>
+<pre><code class="language-c">void FUN_004011d6(long param_1,long param_2,int param_3)
+
+{
+  int local_c;
+
+  for (local_c = 0; local_c &lt; param_3; local_c = local_c + 1) {
+    *(char *)(param_2 + local_c) =
+         (char)local_c + *(char *)(param_1 + local_c) ^ (&amp;DAT_00402008)[local_c % 4];
+  }
+  return;
+}
+</code></pre>
+<p>Rename in your head: <code>param_1</code> is <code>in</code>, <code>param_2</code> is <code>out</code>, <code>param_3</code> is <code>n</code>,
+<code>local_c</code> is <code>i</code>, <code>DAT_00402008</code> is <code>KEY</code>. Then the line reads:</p>
+<pre><code class="language-c">out[i] = (i + in[i]) ^ KEY[i % 4];
+</code></pre>
+<p>C does <code>+</code> before <code>^</code>, so the addition happens first. <code>KEY[i % 4]</code> is a
+<strong>4-entry lookup table</strong> at <code>0x402008</code>: position 0 uses <code>KEY[0]</code>, position 4
+uses <code>KEY[0]</code> again.</p>
+<p><strong>Check the decompiler against the assembly</strong> when it matters. Here is the
+same loop from objdump (excerpt; objdump's invented <code>&lt;fgets@plt+...&gt;</code> labels
+left as they are):</p>
+<pre><code>  4011e9:       c7 45 fc 00 00 00 00    mov    DWORD PTR [rbp-0x4],0x0
+  4011f0:       eb 4d                   jmp    40123f &lt;fgets@plt+0x15f&gt;
+  4011f2:       8b 45 fc                mov    eax,DWORD PTR [rbp-0x4]
+  4011f5:       48 63 d0                movsxd rdx,eax
+  4011f8:       48 8b 45 e8             mov    rax,QWORD PTR [rbp-0x18]
+  4011fc:       48 01 d0                add    rax,rdx
+  4011ff:       0f b6 00                movzx  eax,BYTE PTR [rax]
+  401202:       89 c2                   mov    edx,eax
+  401204:       8b 45 fc                mov    eax,DWORD PTR [rbp-0x4]
+  401207:       01 d0                   add    eax,edx
+  401209:       89 c1                   mov    ecx,eax
+  40120b:       8b 55 fc                mov    edx,DWORD PTR [rbp-0x4]
+  40120e:       89 d0                   mov    eax,edx
+  401210:       c1 f8 1f                sar    eax,0x1f
+  401213:       c1 e8 1e                shr    eax,0x1e
+  401216:       01 c2                   add    edx,eax
+  401218:       83 e2 03                and    edx,0x3
+  40121b:       29 c2                   sub    edx,eax
+  40121d:       89 d0                   mov    eax,edx
+  40121f:       48 98                   cdqe
+  401221:       0f b6 80 08 20 40 00    movzx  eax,BYTE PTR [rax+0x402008]
+  401228:       31 c1                   xor    ecx,eax
+  40122a:       8b 45 fc                mov    eax,DWORD PTR [rbp-0x4]
+  40122d:       48 63 d0                movsxd rdx,eax
+  401230:       48 8b 45 e0             mov    rax,QWORD PTR [rbp-0x20]
+  401234:       48 01 d0                add    rax,rdx
+  401237:       89 ca                   mov    edx,ecx
+  401239:       88 10                   mov    BYTE PTR [rax],dl
+  40123b:       83 45 fc 01             add    DWORD PTR [rbp-0x4],0x1
+  40123f:       8b 45 fc                mov    eax,DWORD PTR [rbp-0x4]
+  401242:       3b 45 dc                cmp    eax,DWORD PTR [rbp-0x24]
+  401245:       7c ab                   jl     4011f2 &lt;fgets@plt+0x112&gt;
+</code></pre>
+<p>Line by line, in groups:</p>
+<ul>
+<li><code>4011e9</code>–<code>4011f0</code>: <code>i = 0</code> (<code>i</code> lives at <code>[rbp-0x4]</code>), then jump to the
+condition at <code>40123f</code>.</li>
+<li><code>4011f2</code>–<code>4011ff</code>: <code>rax = in + i</code>, then read <strong>one byte</strong> from there:
+<code>eax = in[i]</code>. (<code>in</code> was saved at <code>[rbp-0x18]</code> when the function started.)</li>
+<li><code>401202</code>–<code>401209</code>: <code>ecx = i + in[i]</code>.</li>
+<li><code>40120b</code>–<code>40121f</code>: <code>eax = i % 4</code> (the <code>and edx,0x3</code> pattern).</li>
+<li><code>401221</code>: <code>eax = KEY[i % 4]</code>, one byte from the table at <code>0x402008</code>.</li>
+<li><code>401228</code>: <code>ecx = ecx ^ eax</code>: the XOR.</li>
+<li><code>40122a</code>–<code>401239</code>: write the low byte of <code>ecx</code> (<code>dl</code>) to <code>out[i]</code>.</li>
+<li><code>40123b</code>–<code>401245</code>: <code>i = i + 1</code>; go back to <code>4011f2</code> while <code>i &lt; n</code> (<code>jl</code>,
+so exactly <code>n</code> rounds). <code>n</code> was saved at <code>[rbp-0x24]</code>.</li>
+</ul>
+<p>Same rule as Ghidra's. Now the data. <code>KEY</code> is at <code>0x402008</code> (4 bytes) and the
+stored answer at <code>0x402010</code> (8 bytes, from <code>memcmp</code>):</p>
+<pre><code>$ objdump -s -j .rodata toylock-stripped
+
+toylock-stripped:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 402000 01000200 00000000 1337427f 00000000  .........7B.....
+ 402010 63553219 76472905 50617373 776f7264  cU2.vG).Password
+ 402020 3a20000a 00446f6f 72206f70 656e2e00  : ...Door open..
+ 402030 57726f6e 672e00                      Wrong..
+</code></pre>
+<p>The row starting <code>402000</code> holds addresses <code>0x402000</code> to <code>0x40200f</code>.
+<code>0x402008</code> is 8 bytes into it: skip <code>01000200 00000000</code>, and the next four
+bytes are the key, <code>13 37 42 7f</code>. The stored bytes start the next row:
+<code>63 55 32 19 76 47 29 05</code>.</p>
+<h2>Step 4: dynamic analysis with gdb</h2>
+<p>Static analysis gave us a rule. Let us watch it happen, to make sure we read
+it right. We stop at the <code>xor</code> (<code>0x401228</code>) and print both operands. Input is
+<code>abcdefgh</code> from a file. (Captured with <code>gdb -nx -batch</code>, which turns pwndbg
+off so the output is short; each command is shown before its output, and two
+<code>[Thread debugging ...]</code> lines gdb prints after <code>run</code> are cut. Your screen
+will also show pwndbg's panels.)</p>
+<pre><code>$ echo abcdefgh &gt; /tmp/guess.txt
+$ gdb -q ./toylock-stripped
+(gdb) break *0x401228
+Breakpoint 1 at 0x401228
+(gdb) run &lt; /tmp/guess.txt
+Breakpoint 1, 0x0000000000401228 in ?? ()
+(gdb) x/1i $pc
+=&gt; 0x401228:    xor    ecx,eax
+(gdb) p/x $eax
+$1 = 0x13
+(gdb) p/x $ecx
+$2 = 0x61
+(gdb) continue
+Breakpoint 1, 0x0000000000401228 in ?? ()
+(gdb) p/x $eax
+$3 = 0x37
+(gdb) continue
+Breakpoint 1, 0x0000000000401228 in ?? ()
+(gdb) p/x $eax
+$4 = 0x42
+</code></pre>
+<p>Round 0: <code>ecx</code> is <code>0x61</code> (<code>'a'</code> plus 0) and <code>eax</code> is <code>KEY[0] = 0x13</code>. Rounds 1
+and 2 bring <code>0x37</code> and <code>0x42</code>: the program is walking the table, as
+predicted. (<code>?? ()</code> means gdb has no function name for this address,
+because the program is stripped.)</p>
+<p>Next, stop at the <code>memcmp</code> call (<code>0x40129d</code>) and look at both buffers. <code>rdi</code>
+and <code>rsi</code> hold its first two arguments:</p>
+<pre><code>(gdb) delete
+(gdb) break *0x40129d
+Breakpoint 2 at 0x40129d
+(gdb) continue
+Breakpoint 2, 0x000000000040129d in ?? ()
+(gdb) x/1i $pc
+=&gt; 0x40129d:    call   0x4010d0 &lt;memcmp@plt&gt;
+(gdb) x/8bx $rdi
+0x7fffffffeb38: 0x72    0x54    0x27    0x18    0x7a    0x5c    0x2f    0x10
+(gdb) x/8bx $rsi
+0x402010:       0x63    0x55    0x32    0x19    0x76    0x47    0x29    0x05
+</code></pre>
+<p>Check the first byte by hand: <code>('a' + 0) ^ 0x13 = 0x61 ^ 0x13 = 0x72</code>. It
+matches the first byte of our scrambled input. The rule is confirmed.</p>
+<p><strong>Changing a register.</strong> Right after <code>memcmp</code> returns, <code>check</code> runs
+<code>test eax,eax</code> at <code>0x4012a2</code>: <code>eax</code> is 0 only if the buffers matched. In a
+fresh gdb session, stop there, overwrite <code>eax</code>, and continue:</p>
+<pre><code>(gdb) break *0x4012a2
+Breakpoint 1 at 0x4012a2
+(gdb) run &lt; /tmp/guess.txt
+Breakpoint 1, 0x00000000004012a2 in ?? ()
+(gdb) x/1i $pc
+=&gt; 0x4012a2:    test   eax,eax
+(gdb) p $eax
+$1 = 15
+(gdb) set $eax = 0
+(gdb) p $eax
+$2 = 0
+(gdb) continue
+Password: Door open.
+[Inferior 1 (process 30) exited normally]
+</code></pre>
+<p>With the wrong password, the door opened. This proves we found the decision
+point. It did <strong>not</strong> give us the password, and in most challenges it would
+not give you the flag either, because a program started by gdb loses its
+permission to read <code>/flag</code>.</p>
+<h2>Step 5: turn the rule into a script</h2>
+<p>The program did <code>out[i] = (in[i] + i) ^ KEY[i % 4]</code> and compared <code>out</code> with
+the stored bytes. Undo it in reverse order: XOR first, then subtract <code>i</code>.</p>
+<pre><code class="language-python"># Undo toylock's scramble: out[i] = (in[i] + i) ^ KEY[i % 4]
+key = bytes.fromhex(&quot;1337427f&quot;)              # the 4-byte table at 0x402008
+secret = bytes.fromhex(&quot;6355321976472905&quot;)   # the 8 bytes at 0x402010
+
+password = []
+for i, b in enumerate(secret):
+    x = b ^ key[i % 4]          # undo the XOR first (it was done last)
+    x = (x - i) &amp; 0xff          # then undo &quot;+ i&quot;, keeping one byte
+    password.append(x)
+
+print(bytes(password).decode())
+</code></pre>
+<pre><code>$ python3 undo_toylock.py
+pancakes
+</code></pre>
+<h2>Step 6: confirm on the real program</h2>
+<pre><code>$ python3 undo_toylock.py | ./toylock-stripped
+Password: Door open.
+</code></pre>
+<p>Done: the program itself accepted the answer.</p>
+<h2>The source, revealed</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+static const unsigned char KEY[4] = { 0x13, 0x37, 0x42, 0x7f };
+static const unsigned char SECRET[8] = {
+    0x63, 0x55, 0x32, 0x19, 0x76, 0x47, 0x29, 0x05
+};
+
+static void scramble(const char *in, unsigned char *out, int n)
+{
+    for (int i = 0; i &lt; n; i++)
+        out[i] = (in[i] + i) ^ KEY[i % 4];
+}
+
+int check(const char *guess)
+{
+    unsigned char buf[8];
+
+    if (strlen(guess) != 8)
+        return 0;
+    scramble(guess, buf, 8);
+    return memcmp(buf, SECRET, 8) == 0;
+}
+
+int main(void)
+{
+    char line[64];
+
+    printf(&quot;Password: &quot;);
+    if (!fgets(line, sizeof line, stdin))
+        return 1;
+    line[strcspn(line, &quot;\n&quot;)] = '\0';
+    if (check(line))
+        puts(&quot;Door open.&quot;);
+    else
+        puts(&quot;Wrong.&quot;);
+    return 0;
+}
+</code></pre>
+<p>Built with the same options as this module's challenges, then stripped:</p>
+<pre><code class="language-bash">gcc -O0 -fno-stack-protector -no-pie -fno-pie -o toylock toylock.c
+cp toylock toylock-stripped
+strip toylock-stripped
+</code></pre>
+<p>To follow along, save the source as <code>~/toylock.c</code> and run those three
+commands in your home directory. If your addresses differ from the ones
+above, trust yours.</p>
+
+            </div>
+            
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+      
+    
+      
+        
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-6">
+      <h2 class="mb-0 button-wrapper">
+        <button id="module-content-header-button-6" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#module-content-body-6" aria-expanded="false" aria-controls="module-content-body-6">
+          
+          
+            
+            <h4 class="accordion-item-name">
+              <i class="resource-icon pr-3 fas fa-file-alt"></i>
+              <span class="pr-2">How to read the output</span>
+            </h4>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="module-content-body-6" class="collapse" aria-labelledby="module-content-header-6" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            
+            <div class="embed-responsive">
+              
+              <h2>objdump -d -M intel</h2>
+<pre><code>  401221:       0f b6 80 08 20 40 00    movzx  eax,BYTE PTR [rax+0x402008]
+  ^^^^^^        ^^^^^^^^^^^^^^^^^^^^    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  address       the instruction's       the instruction, Intel syntax:
+  (hex)         raw bytes (hex)         DESTINATION first, then SOURCE
+</code></pre>
+<p>The raw bytes are what the CPU reads. You can usually ignore them, but notice
+that the constant <code>0x402008</code> is visible in them backwards (<code>08 20 40 00</code>):
+x86-64 is <strong>little-endian</strong> and stores the lowest byte of a number first.</p>
+<p>Text after <code>#</code> is objdump's comment, often the address an <code>rip</code>-relative
+operand works out to. Text in <code>&lt; &gt;</code> is the nearest known symbol, which in a
+stripped program is often wrong.</p>
+<h2>Memory operands</h2>
+<p>Square brackets mean &quot;the memory at this address&quot;. The word in front says
+how many bytes:</p>
+<table>
+<thead>
+<tr>
+<th>word</th>
+<th>bytes</th>
+<th>C type, roughly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BYTE PTR</code></td>
+<td>1</td>
+<td><code>char</code></td>
+</tr>
+<tr>
+<td><code>WORD PTR</code></td>
+<td>2</td>
+<td><code>short</code></td>
+</tr>
+<tr>
+<td><code>DWORD PTR</code></td>
+<td>4</td>
+<td><code>int</code></td>
+</tr>
+<tr>
+<td><code>QWORD PTR</code></td>
+<td>8</td>
+<td><code>long</code>, any pointer</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>DWORD PTR [rbp-0x4]</code>: the 4 bytes starting 4 below <code>rbp</code>. At <code>-O0</code> local
+variables live at fixed distances below <code>rbp</code>.</li>
+<li><code>BYTE PTR [rax+0x402008]</code>: one byte at address <code>0x402008 + rax</code>, a table
+read.</li>
+<li><code>lea rax,[rbp-0x8]</code> computes the address <code>rbp-0x8</code> and does <strong>not</strong> read
+memory. It is how code gets a pointer to a local buffer.</li>
+<li><code>movzx</code> reads a small value and fills the rest of the register with zeros.
+<code>movsxd</code> copies a signed 4-byte value into an 8-byte register.</li>
+</ul>
+<p>The stack frame of <code>check</code> in the worked example:</p>
+<pre><code> higher addresses
+   rbp+0x8    return address (where check goes back to in main)
+   rbp        saved rbp of main
+   rbp-0x8    buf[0] .. buf[7]       8 bytes; Ghidra calls it local_10
+   rbp-0x10   (unused)
+   rbp-0x18   copy of the guess pointer (rdi, saved at entry)
+   rbp-0x20   &lt;- rsp, after sub rsp,0x20
+ lower addresses
+</code></pre>
+<p>Ghidra's <code>local_10</code> and objdump's <code>rbp-0x8</code> are the same bytes. Ghidra
+measures from where the stack pointer was before the function's <code>push rbp</code>,
+which is 8 bytes higher than <code>rbp</code>, so its numbers are 8 bigger in functions
+like this one.</p>
+<h2>Ghidra's names</h2>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FUN_004011d6</code></td>
+<td>a function at <code>0x4011d6</code> with no symbol</td>
+</tr>
+<tr>
+<td><code>DAT_00402010</code></td>
+<td>data at <code>0x402010</code></td>
+</tr>
+<tr>
+<td><code>PTR_..._00403fd8</code></td>
+<td>a stored address (pointer) at <code>0x403fd8</code></td>
+</tr>
+<tr>
+<td><code>param_1</code>, <code>param_2</code></td>
+<td>the function's arguments, in order</td>
+</tr>
+<tr>
+<td><code>local_10</code></td>
+<td>a local variable on the stack (see above)</td>
+</tr>
+<tr>
+<td><code>iVar1</code>, <code>uVar3</code>, <code>sVar2</code>, <code>bVar3</code>, <code>pcVar2</code></td>
+<td>values Ghidra made up to hold a result: <code>i</code> int, <code>u</code> unsigned or unknown, <code>s</code> <code>size_t</code>, <code>b</code> bool, <code>pc</code> pointer to char</td>
+</tr>
+<tr>
+<td><code>undefined8</code>, <code>undefined1</code></td>
+<td>&quot;8 bytes (or 1 byte) of something; I don't know the type&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>The decompiler guesses types and can print expressions that are correct but
+hard to read. Read carefully around <code>^</code>, <code>&lt;&lt;</code> and casts, and confirm in the
+assembly or in gdb when the answer depends on it.</p>
+<h2>objdump -s (a section's raw bytes)</h2>
+<pre><code> 402000 01000200 00000000 1337427f 00000000  .........7B.....
+ ^^^^^^ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^^
+ start  16 bytes, in groups of 4             the same bytes as text
+ address                                     ('.' = not printable)
+</code></pre>
+<p>The bytes are in memory order. To find an array, count bytes from the start
+of the row to the array's address: each pair of hex digits is one byte.</p>
+<h2>gdb's x command</h2>
+<p><code>x/NFU ADDRESS</code> means &quot;examine N units of size U, shown in format F&quot;.</p>
+<table>
+<thead>
+<tr>
+<th>F</th>
+<th>format</th>
+<th>U</th>
+<th>unit size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x</code></td>
+<td>hex</td>
+<td><code>b</code></td>
+<td>1 byte</td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>decimal</td>
+<td><code>h</code></td>
+<td>2 bytes</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>text string</td>
+<td><code>w</code></td>
+<td>4 bytes</td>
+</tr>
+<tr>
+<td><code>i</code></td>
+<td>instruction</td>
+<td><code>g</code></td>
+<td>8 bytes</td>
+</tr>
+</tbody>
+</table>
+<p>The same 8 bytes, the toy's <code>KEY</code> table and the 4 zero bytes after it, three
+ways:</p>
+<pre><code>(gdb) x/8bx 0x402008
+0x402008:       0x13    0x37    0x42    0x7f    0x00    0x00    0x00    0x00
+(gdb) x/2wx 0x402008
+0x402008:       0x7f423713      0x00000000
+(gdb) x/1gx 0x402008
+0x402008:       0x000000007f423713
+(gdb) x/s 0x402018
+0x402018:       &quot;Password: &quot;
+</code></pre>
+<p><code>x/8bx</code> shows bytes in memory order. <code>x/2wx</code> and <code>x/1gx</code> group them into
+numbers, and because of little-endian order the first byte (<code>0x13</code>) becomes
+the <strong>last</strong> two hex digits. When you copy bytes out of memory, use the <code>b</code>
+form.</p>
+
+            </div>
+            
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+      
+    
+      
+        
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-7">
+      <h2 class="mb-0 button-wrapper">
+        <button id="module-content-header-button-7" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#module-content-body-7" aria-expanded="false" aria-controls="module-content-body-7">
+          
+          
+            
+            <h4 class="accordion-item-name">
+              <i class="resource-icon pr-3 fas fa-file-alt"></i>
+              <span class="pr-2">Glossary</span>
+            </h4>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="module-content-body-7" class="collapse" aria-labelledby="module-content-header-7" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            
+            <div class="embed-responsive">
+              
+              <ul>
+<li><strong>address</strong>: a number naming one byte of memory.</li>
+<li><strong>argument registers</strong>: <code>rdi</code>, <code>rsi</code>, <code>rdx</code>, <code>rcx</code>, <code>r8</code>, <code>r9</code>, which hold a
+function's first six arguments on x86-64 Linux. <code>rax</code>/<code>eax</code> holds the
+return value.</li>
+<li><strong>attach</strong>: make gdb take control of a process that is already running.</li>
+<li><strong>binary</strong>: a compiled program file (as opposed to source code).</li>
+<li><strong>breakpoint</strong>: a place where the debugger stops the program.</li>
+<li><strong>decode / encode</strong>: turn scrambled bytes back into readable data / the
+reverse. Here, a simple reversible rule, not real encryption.</li>
+<li><strong>decompiler</strong>: a tool that turns machine code into approximate C (Ghidra).</li>
+<li><strong>disassembler</strong>: a tool that turns machine code into assembly text
+(<code>objdump</code>).</li>
+<li><strong>dynamic analysis</strong>: learning about a program by running it and watching.</li>
+<li><strong>ELF</strong>: the file format of Linux programs.</li>
+<li><strong>entry point</strong>: the address where a program starts running; shown by
+<code>readelf -h</code>.</li>
+<li><strong>function pointer</strong>: a stored address of a function, called through a
+register (an <strong>indirect call</strong>).</li>
+<li><strong>hex (hexadecimal)</strong>: base 16, digits <code>0</code>–<code>9</code> and <code>a</code>–<code>f</code>; <code>0x</code> marks it.
+Two hex digits make one byte.</li>
+<li><strong>immediate</strong>: a constant written inside an instruction, such as <code>0x3</code> in
+<code>and edx,0x3</code>.</li>
+<li><strong>index</strong>: the position of an element in an array or table.</li>
+<li><strong><code>__libc_start_main</code></strong>: the C library function that <code>_start</code> calls; it
+calls <code>main</code>.</li>
+<li><strong>little-endian</strong>: storing the lowest byte of a number first in memory.</li>
+<li><strong>lookup table</strong>: a stored array of constants that code reads at a computed
+position.</li>
+<li><strong>loop counter</strong>: the variable (often <code>i</code>) that counts the rounds of a loop.</li>
+<li><strong>non-PIE / PIE</strong>: a program that loads at a fixed address / at a random
+address each run.</li>
+<li><strong>process / PID</strong>: a running copy of a program / the number Linux uses to
+name it.</li>
+<li><strong>pwndbg</strong>: an add-on that makes gdb show registers, stack and code
+automatically.</li>
+<li><strong>radare2 (<code>r2</code>)</strong>: a command-line reverse-engineering tool; <code>pdg</code> runs
+Ghidra's decompiler inside it.</li>
+<li><strong>register</strong>: a small, fast storage slot inside the CPU (<code>rax</code>, <code>rdi</code>, ...).</li>
+<li><strong><code>.rodata</code></strong>: the section of a program holding read-only data: constants,
+strings, tables.</li>
+<li><strong>reverse engineering</strong>: working out how a program works from the program
+itself.</li>
+<li><strong>setuid</strong>: a file permission that makes a program run with its owner's
+rights; here, enough to read <code>/flag</code>.</li>
+<li><strong>stack</strong>: memory where a function keeps its local variables; <code>rbp</code> marks
+the current function's part of it.</li>
+<li><strong><code>_start</code></strong>: the startup code at the entry point.</li>
+<li><strong>static analysis</strong>: learning about a program by reading it without running
+it.</li>
+<li><strong>stripped</strong>: with the symbol table removed.</li>
+<li><strong>symbol</strong>: a name attached to an address (<code>main</code>, <code>KEY</code>).</li>
+<li><strong><code>.text</code></strong>: the section of a program holding its instructions.</li>
+<li><strong>XOR</strong>: exclusive OR; a bit is 1 where the two inputs differ. Applying the
+same XOR twice undoes it.</li>
+</ul>
+
+            </div>
+            
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+      
+    
+      
+        
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-8">
+      <h2 class="mb-0 button-wrapper">
+        <button id="module-content-header-button-8" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#module-content-body-8" aria-expanded="false" aria-controls="module-content-body-8">
+          
+          
+            
+            <h4 class="accordion-item-name">
+              <i class="resource-icon pr-3 fas fa-file-alt"></i>
+              <span class="pr-2">Common mistakes, and where to go next</span>
+            </h4>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="module-content-body-8" class="collapse" aria-labelledby="module-content-header-8" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            
+            <div class="embed-responsive">
+              
+              <h2>Common mistakes</h2>
+<ul>
+<li><strong>Trusting objdump's <code>&lt;name+0x...&gt;</code> labels in a stripped program.</strong> Use the
+address. The name is a guess.</li>
+<li><strong>Using numbers from someone else's copy.</strong> Each challenge comes in several
+versions with different constants. Only the program in your <code>/challenge</code>
+counts.</li>
+<li><strong>Undoing steps in the wrong order.</strong> If the program added and then XORed,
+you XOR first and then subtract.</li>
+<li><strong>Forgetting <code>&amp; 0xff</code> in Python.</strong> Python numbers never wrap; the program's
+bytes do.</li>
+<li><strong>Off by one on the loop length.</strong> <code>jl</code> means <code>i &lt; N</code> (N rounds); <code>jle</code>
+means <code>i &lt;= N</code> (N + 1 rounds).</li>
+<li><strong>Counting <code>.rodata</code> bytes from the start of the row</strong> instead of from the
+array's own address.</li>
+<li><strong>Reading <code>x/gx</code> or <code>x/wx</code> output as bytes.</strong> Little-endian order reverses
+them. Use <code>x/Nbx</code> to copy bytes.</li>
+<li><strong><code>break 0x401228</code> without the <code>*</code>.</strong> gdb then looks for a function by that
+name. Use <code>break *0x401228</code>.</li>
+<li><strong>Expecting the flag while running under gdb.</strong> The debugger removes the
+permission to read <code>/flag</code>. Learn in gdb, then run the program normally.
+(gdb-runtime is the exception; its README explains why.)</li>
+<li><strong>Believing the decompiler over the program.</strong> Ghidra's C is a guess. When
+an answer depends on a detail, check the assembly or watch it in gdb.</li>
+<li><strong>Giving up on the loop and guessing.</strong> Write down what one round does to
+one byte, check it on the first byte by hand (as in the worked example),
+then write the script.</li>
+</ul>
+<h2>Where to go next</h2>
+<ul>
+<li><a href="https://pwn.college/program-security/">pwn.college Program Security dojo</a>:
+its <strong>Reverse Engineering</strong> module is the next step up, with many more
+crackme-style levels.</li>
+<li>Ghidra's own course is already installed: open
+<code>/opt/ghidra/docs/GhidraClass/Beginner/</code> in the Desktop workspace, and keep
+<code>/opt/ghidra/docs/CheatSheet.html</code> open while you work.</li>
+<li><a href="https://beej.us/guide/bggdb/">Beej's Quick Guide to GDB</a>: a short gdb
+tutorial.</li>
+<li><a href="https://beginners.re/">Reverse Engineering for Beginners</a> by Dennis
+Yurichev: a free book that shows what C turns into, compiler by compiler.</li>
+<li><a href="https://godbolt.org/">Compiler Explorer</a>: write C and see the assembly
+next to it. Choose x86-64 gcc with <code>-O0 -masm=intel</code> to match this module.</li>
+<li><a href="https://crackmes.one/">crackmes.one</a>: small practice programs made by
+other people, rated by difficulty.</li>
+</ul>
+
+            </div>
+            
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+      
+    
+      
+        
+        
+          <br>
+          <h2>Challenges</h2>
+        
+      
+    
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+          
+        
+
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-10">
+      <h2 class="mb-0 button-wrapper">
+        <button id="challenges-header-button-1" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#challenges-body-1" aria-expanded="false" aria-controls="challenges-body-1">
+          
+          
+            <h4 class="accordion-item-name challenge-name " data-challenge-index="1" data-challenge-id="stripped" data-challenge-name="A Stripped Binary" id="challenges-header-1">
+                <i class="challenge-icon pr-3 fas fa-flag challenge-unsolved "></i>
+                
+                <span class="pr-2">A Stripped Binary</span>
+                
+                
+                
+            </h4>
+            <span class="challenge-header-right">
+              
+              <span class="total-solves">
+                9 solves
+              </span>
+            </span>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="challenges-body-1" class="collapse" aria-labelledby="module-content-header-10" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            <div class="embed-responsive challenge-description">
+              
+                
+                
+                <p>Find the hidden <code>main</code> function in a stripped 64-bit Linux program, then recover the value it checks.</p>
+
+              
+            </div>
+            <div class="challenge-init row">
+              <div class="col-md-3 form=group text-center">
+                <button id="challenge-start" type="submit" class="btn btn-md btn-outline-secondary challenge-init">
+                  <i class="fas fa-play fa-lg"></i>Start
+                </button>
+              </div>
+              
+              <div class="col-md-3 form=group text-center">
+                <button id="challenge-priv" type="submit" class="btn btn-md btn-outline-secondary challenge-init">
+                  <i class="fas fa-unlock fa-lg"></i>Privileged
+                </button>
+              </div>
+              
+              <div class="col-md-6">
+                <input id="module" type="hidden" value="reversing">
+                <input id="challenge" type="hidden" value="stripped">
+                <input id="challenge-id" type="hidden" value="26787">
+                <input id="challenge-input" class="challenge-input form-control" type="text" name="answer" placeholder="Flag">
+              </div>
+            </div>
+            <div class="challenge-workspace challenge-hidden">
+              <div class="iframe-wrapper">
+                
+              </div>
+              <div class="workspace-ssh" style="display: none;">
+                <h3>Connect with SSH</h3>
+                Link your <a href="/settings#ssh-key" target="_blank">SSH key</a>, then connect with: <code>ssh <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8be3eae8e0eef9cbefe4e1e4a5fbfce5a5e8e4e7e7eeecee">[email&#160;protected]</a></code>
+              </div>
+              
+              <style>
+  :root {
+    --background: #111;
+    --foreground: #222;
+    --highlight: #6c757d;
+    --error: #800000;
+    --warn: #d0c000;
+  }
+
+  .SSH {
+    height: 0 !important;
+    min-height: 0 !important;
+    flex: none !important;
+  }
+
+  .workspace-controls {
+    width: 100%;
+    margin: 5px 0;
+    padding: 0 5px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .workspace-control {
+    margin: 2px 2px;
+    border-width: 0px;
+    border-radius: 1em;
+    background-color: var(--foreground);
+  }
+
+  button.workspace-control {
+    width: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button.workspace-control.workspace-service,
+  button.workspace-control.workspace-description-control {
+    width: auto;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .workspace-service .workspace-service-name,
+  .workspace-description-control .workspace-description-name {
+    margin-left: 0.4em;
+  }
+
+  .workspace-service .popout-icon,
+  .workspace-service .hint-icon {
+    margin-left: 0.5em;
+    font-size: 0.7em;
+    opacity: 0.6;
+  }
+
+  .workspace-service.active,
+  .workspace-description-control.active {
+    color: #fff;
+    background-color: var(--foreground) !important;
+    box-shadow: inset 0 0 0 1px var(--highlight) !important;
+  }
+
+  .workspace-service.active:focus,
+  .workspace-description-control.active:focus {
+    box-shadow: inset 0 0 0 1px var(--highlight), 0 0 0 0.2rem rgba(108, 117, 125, 0.5) !important;
+  }
+
+  .workspace-input input {
+    height: 100% !important;
+    box-sizing: border-box;
+    padding-left: 0.5em;
+    padding-right: 1em;
+    color: #fff;
+    background-color: var(--foreground);
+    border: 0;
+    border-color: #000 !important;
+    border-radius: 1em;
+    box-shadow: none !important;
+  }
+
+  .workspace-input input::placeholder {
+    color: var(--highlight);
+    opacity: 1;
+  }
+
+  .workspace-input input.disabled {
+    color: var(--highlight);
+  }
+
+  .workspace-input input:focus,
+  .workspace-input input:hover {
+    outline: 0 !important;
+  }
+
+  .workspace-highlight {
+    color: var(--highlight);
+  }
+
+  .workspace-input {
+    padding-left: 1em;
+  }
+
+  .workspace-control-spacer {
+    flex: 1;
+  }
+
+  label#workspace-change-privilege {
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin-bottom: 0;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    cursor: pointer;
+  }
+
+  label#workspace-change-privilege input {
+    appearance: none;
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0 0.45em 0 0;
+    border: 2px solid #adb5bd;
+    border-radius: 0.25em;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  label#workspace-change-privilege input:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+  }
+
+  label#workspace-change-privilege input:checked {
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23111' stroke-width='3' d='M2.5 8.5l4 4 7-8'/%3E%3C/svg%3E");
+    background-size: 0.85em;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .workspace-ssh {
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: var(--foreground);
+    border-radius: 0.5em;
+  }
+
+  @keyframes banner-animation {
+    0% {
+      left: 50%;
+      width: 0%;
+    }
+    5% {
+      left: 10%;
+      width: 80%;
+    }
+    95% {
+      left: 10%;
+      width: 80%;
+      border-width: 2px;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    100% {
+      left: 50%;
+      width: 0;
+      border-left-width: 0;
+      border-right-width: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .animate-banner {
+    animation-name: banner-animation;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+    display: block !important;
+  }
+
+  .animate-banner-fast {
+    animation-name: banner-animation;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    display: block !important;
+  }
+
+  #workspace-notification-banner {
+    position: absolute;
+    background-color: var(--foreground);
+    color: #fff;
+    border-color: var(--brand-green);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 1em;
+    padding: 1em;
+    height: 4em;
+    bottom: 4em;
+    white-space: normal;
+    text-align: center;
+    overflow: hidden;
+    display: none;
+  }
+</style>
+
+
+<div class="workspace-controls" data-popout="true">
+  <div id="workspace-notification-banner"></div>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="terminal: 7681"
+      aria-pressed="false"
+      title="Open Terminal in a new tab">
+    <i class="fas fa-terminal"></i>
+    <span class="workspace-service-name">Terminal</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="code: 8080"
+      aria-pressed="false"
+      title="Open Code in a new tab">
+    <i class="fas fa-code"></i>
+    <span class="workspace-service-name">Code</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="desktop: 6080"
+      aria-pressed="false"
+      title="Open Desktop in a new tab">
+    <i class="fas fa-desktop"></i>
+    <span class="workspace-service-name">Desktop</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="ssh: "
+      aria-pressed="false"
+      title="Show SSH connection info">
+    <i class="fas fa-key"></i>
+    <span class="workspace-service-name">SSH</span>
+    
+    <i class="fas fa-question-circle hint-icon"></i>
+  </button>
+  
+  
+  <div title="Enter flag" class="workspace-control workspace-input">
+    <i class="fas fa-flag workspace-highlight input-icon"></i>
+    <input id="flag-input" type="text" placeholder="Flag">
+    <input type="hidden" id="current-challenge-id" value="26787" data-dojo="intro-re-pwn~5933fc84" data-module="reversing" data-challenge="stripped" data-challenge-name="A Stripped Binary">
+  </div>
+  <div class="workspace-control-spacer"></div>
+  <button id="challenge-restart" title="Restart challenge" class="workspace-control btn btn-md btn-outline-secondary btn-challenge-start">
+    <i class="fas fa-redo"></i>
+  </button>
+  
+  <label id="workspace-change-privilege"
+      title="Restart the challenge with or without sudo access"
+      class="workspace-control btn btn-md btn-outline-secondary"
+      data-privileged="false">
+    <input type="checkbox" >
+    <span>sudo</span>
+  </label>
+  
+  
+</div>
+              
+            </div>
+            <div class="row notification-row">
+              <div class="col-md-12">
+                <div id="result-notification" class="alert alert-dismissable text-center w-100" role="alert" style="display: none;">
+                  <strong id="result-message"></strong>
+                </div>
+              </div>
+            </div>
+            <div class="row survey-row">
+              <div class="col-md-12">
+                <form target="survey-target" method="post" action="/pwncollege_api/v1/dojos/intro-re-pwn~5933fc84/reversing/stripped/surveys" id="survey-notification" class="survey alert-dismissable w-100 survey-id-26787" role="alert" style="display: none;">
+                  <input type="hidden" name="nonce" value="ec5499d5ae11ed8586c93a557987fcbfbe2ae20532a9afdec4c23fc3fac8ef61">
+                  
+                </form>
+              </div>
+            </div>
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+        
+      
+    
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+          
+        
+
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-11">
+      <h2 class="mb-0 button-wrapper">
+        <button id="challenges-header-button-2" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#challenges-body-2" aria-expanded="false" aria-controls="challenges-body-2">
+          
+          
+            <h4 class="accordion-item-name challenge-name " data-challenge-index="2" data-challenge-id="xor-key" data-challenge-name="Recover an XOR Key" id="challenges-header-2">
+                <i class="challenge-icon pr-3 fas fa-flag challenge-unsolved "></i>
+                
+                <span class="pr-2">Recover an XOR Key</span>
+                
+                
+                
+            </h4>
+            <span class="challenge-header-right">
+              
+              <span class="total-solves">
+                7 solves
+              </span>
+            </span>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="challenges-body-2" class="collapse" aria-labelledby="module-content-header-11" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            <div class="embed-responsive challenge-description">
+              
+                
+                
+                <p>Recover an XOR mask and comparison target from a 64-bit Linux binary, then reverse the calculation.</p>
+
+              
+            </div>
+            <div class="challenge-init row">
+              <div class="col-md-3 form=group text-center">
+                <button id="challenge-start" type="submit" class="btn btn-md btn-outline-secondary challenge-init">
+                  <i class="fas fa-play fa-lg"></i>Start
+                </button>
+              </div>
+              
+              <div class="col-md-3 form=group text-center">
+                <button id="challenge-priv" type="submit" class="btn btn-md btn-outline-secondary challenge-init">
+                  <i class="fas fa-unlock fa-lg"></i>Privileged
+                </button>
+              </div>
+              
+              <div class="col-md-6">
+                <input id="module" type="hidden" value="reversing">
+                <input id="challenge" type="hidden" value="xor-key">
+                <input id="challenge-id" type="hidden" value="26788">
+                <input id="challenge-input" class="challenge-input form-control" type="text" name="answer" placeholder="Flag">
+              </div>
+            </div>
+            <div class="challenge-workspace challenge-hidden">
+              <div class="iframe-wrapper">
+                
+              </div>
+              <div class="workspace-ssh" style="display: none;">
+                <h3>Connect with SSH</h3>
+                Link your <a href="/settings#ssh-key" target="_blank">SSH key</a>, then connect with: <code>ssh <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="345c55575f514674505b5e5b1a44435a1a575b5858515351">[email&#160;protected]</a></code>
+              </div>
+              
+              <style>
+  :root {
+    --background: #111;
+    --foreground: #222;
+    --highlight: #6c757d;
+    --error: #800000;
+    --warn: #d0c000;
+  }
+
+  .SSH {
+    height: 0 !important;
+    min-height: 0 !important;
+    flex: none !important;
+  }
+
+  .workspace-controls {
+    width: 100%;
+    margin: 5px 0;
+    padding: 0 5px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .workspace-control {
+    margin: 2px 2px;
+    border-width: 0px;
+    border-radius: 1em;
+    background-color: var(--foreground);
+  }
+
+  button.workspace-control {
+    width: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button.workspace-control.workspace-service,
+  button.workspace-control.workspace-description-control {
+    width: auto;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .workspace-service .workspace-service-name,
+  .workspace-description-control .workspace-description-name {
+    margin-left: 0.4em;
+  }
+
+  .workspace-service .popout-icon,
+  .workspace-service .hint-icon {
+    margin-left: 0.5em;
+    font-size: 0.7em;
+    opacity: 0.6;
+  }
+
+  .workspace-service.active,
+  .workspace-description-control.active {
+    color: #fff;
+    background-color: var(--foreground) !important;
+    box-shadow: inset 0 0 0 1px var(--highlight) !important;
+  }
+
+  .workspace-service.active:focus,
+  .workspace-description-control.active:focus {
+    box-shadow: inset 0 0 0 1px var(--highlight), 0 0 0 0.2rem rgba(108, 117, 125, 0.5) !important;
+  }
+
+  .workspace-input input {
+    height: 100% !important;
+    box-sizing: border-box;
+    padding-left: 0.5em;
+    padding-right: 1em;
+    color: #fff;
+    background-color: var(--foreground);
+    border: 0;
+    border-color: #000 !important;
+    border-radius: 1em;
+    box-shadow: none !important;
+  }
+
+  .workspace-input input::placeholder {
+    color: var(--highlight);
+    opacity: 1;
+  }
+
+  .workspace-input input.disabled {
+    color: var(--highlight);
+  }
+
+  .workspace-input input:focus,
+  .workspace-input input:hover {
+    outline: 0 !important;
+  }
+
+  .workspace-highlight {
+    color: var(--highlight);
+  }
+
+  .workspace-input {
+    padding-left: 1em;
+  }
+
+  .workspace-control-spacer {
+    flex: 1;
+  }
+
+  label#workspace-change-privilege {
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin-bottom: 0;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    cursor: pointer;
+  }
+
+  label#workspace-change-privilege input {
+    appearance: none;
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0 0.45em 0 0;
+    border: 2px solid #adb5bd;
+    border-radius: 0.25em;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  label#workspace-change-privilege input:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+  }
+
+  label#workspace-change-privilege input:checked {
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23111' stroke-width='3' d='M2.5 8.5l4 4 7-8'/%3E%3C/svg%3E");
+    background-size: 0.85em;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .workspace-ssh {
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: var(--foreground);
+    border-radius: 0.5em;
+  }
+
+  @keyframes banner-animation {
+    0% {
+      left: 50%;
+      width: 0%;
+    }
+    5% {
+      left: 10%;
+      width: 80%;
+    }
+    95% {
+      left: 10%;
+      width: 80%;
+      border-width: 2px;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    100% {
+      left: 50%;
+      width: 0;
+      border-left-width: 0;
+      border-right-width: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .animate-banner {
+    animation-name: banner-animation;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+    display: block !important;
+  }
+
+  .animate-banner-fast {
+    animation-name: banner-animation;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    display: block !important;
+  }
+
+  #workspace-notification-banner {
+    position: absolute;
+    background-color: var(--foreground);
+    color: #fff;
+    border-color: var(--brand-green);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 1em;
+    padding: 1em;
+    height: 4em;
+    bottom: 4em;
+    white-space: normal;
+    text-align: center;
+    overflow: hidden;
+    display: none;
+  }
+</style>
+
+
+<div class="workspace-controls" data-popout="true">
+  <div id="workspace-notification-banner"></div>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="terminal: 7681"
+      aria-pressed="false"
+      title="Open Terminal in a new tab">
+    <i class="fas fa-terminal"></i>
+    <span class="workspace-service-name">Terminal</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="code: 8080"
+      aria-pressed="false"
+      title="Open Code in a new tab">
+    <i class="fas fa-code"></i>
+    <span class="workspace-service-name">Code</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="desktop: 6080"
+      aria-pressed="false"
+      title="Open Desktop in a new tab">
+    <i class="fas fa-desktop"></i>
+    <span class="workspace-service-name">Desktop</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="ssh: "
+      aria-pressed="false"
+      title="Show SSH connection info">
+    <i class="fas fa-key"></i>
+    <span class="workspace-service-name">SSH</span>
+    
+    <i class="fas fa-question-circle hint-icon"></i>
+  </button>
+  
+  
+  <div title="Enter flag" class="workspace-control workspace-input">
+    <i class="fas fa-flag workspace-highlight input-icon"></i>
+    <input id="flag-input" type="text" placeholder="Flag">
+    <input type="hidden" id="current-challenge-id" value="26788" data-dojo="intro-re-pwn~5933fc84" data-module="reversing" data-challenge="xor-key" data-challenge-name="Recover an XOR Key">
+  </div>
+  <div class="workspace-control-spacer"></div>
+  <button id="challenge-restart" title="Restart challenge" class="workspace-control btn btn-md btn-outline-secondary btn-challenge-start">
+    <i class="fas fa-redo"></i>
+  </button>
+  
+  <label id="workspace-change-privilege"
+      title="Restart the challenge with or without sudo access"
+      class="workspace-control btn btn-md btn-outline-secondary"
+      data-privileged="false">
+    <input type="checkbox" >
+    <span>sudo</span>
+  </label>
+  
+  
+</div>
+              
+            </div>
+            <div class="row notification-row">
+              <div class="col-md-12">
+                <div id="result-notification" class="alert alert-dismissable text-center w-100" role="alert" style="display: none;">
+                  <strong id="result-message"></strong>
+                </div>
+              </div>
+            </div>
+            <div class="row survey-row">
+              <div class="col-md-12">
+                <form target="survey-target" method="post" action="/pwncollege_api/v1/dojos/intro-re-pwn~5933fc84/reversing/xor-key/surveys" id="survey-notification" class="survey alert-dismissable w-100 survey-id-26788" role="alert" style="display: none;">
+                  <input type="hidden" name="nonce" value="ec5499d5ae11ed8586c93a557987fcbfbe2ae20532a9afdec4c23fc3fac8ef61">
+                  
+                </form>
+              </div>
+            </div>
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+        
+      
+    
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+          
+        
+
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-12">
+      <h2 class="mb-0 button-wrapper">
+        <button id="challenges-header-button-3" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#challenges-body-3" aria-expanded="false" aria-controls="challenges-body-3">
+          
+          
+            <h4 class="accordion-item-name challenge-name " data-challenge-index="3" data-challenge-id="multi-func" data-challenge-name="Follow Multiple Functions" id="challenges-header-3">
+                <i class="challenge-icon pr-3 fas fa-flag challenge-unsolved "></i>
+                
+                <span class="pr-2">Follow Multiple Functions</span>
+                
+                
+                
+            </h4>
+            <span class="challenge-header-right">
+              
+              <span class="total-solves">
+                5 solves
+              </span>
+            </span>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="challenges-body-3" class="collapse" aria-labelledby="module-content-header-12" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            <div class="embed-responsive challenge-description">
+              
+                
+                
+                <p>Follow an indirect function call through a table and identify the one table entry that reaches the flag reader.</p>
+
+              
+            </div>
+            <div class="challenge-init row">
+              <div class="col-md-3 form=group text-center">
+                <button id="challenge-start" type="submit" class="btn btn-md btn-outline-secondary challenge-init">
+                  <i class="fas fa-play fa-lg"></i>Start
+                </button>
+              </div>
+              
+              <div class="col-md-3 form=group text-center">
+                <button id="challenge-priv" type="submit" class="btn btn-md btn-outline-secondary challenge-init">
+                  <i class="fas fa-unlock fa-lg"></i>Privileged
+                </button>
+              </div>
+              
+              <div class="col-md-6">
+                <input id="module" type="hidden" value="reversing">
+                <input id="challenge" type="hidden" value="multi-func">
+                <input id="challenge-id" type="hidden" value="26789">
+                <input id="challenge-input" class="challenge-input form-control" type="text" name="answer" placeholder="Flag">
+              </div>
+            </div>
+            <div class="challenge-workspace challenge-hidden">
+              <div class="iframe-wrapper">
+                
+              </div>
+              <div class="workspace-ssh" style="display: none;">
+                <h3>Connect with SSH</h3>
+                Link your <a href="/settings#ssh-key" target="_blank">SSH key</a>, then connect with: <code>ssh <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a3cbc2c0c8c6d1e3c7ccc9cc8dd3d4cd8dc0cccfcfc6c4c6">[email&#160;protected]</a></code>
+              </div>
+              
+              <style>
+  :root {
+    --background: #111;
+    --foreground: #222;
+    --highlight: #6c757d;
+    --error: #800000;
+    --warn: #d0c000;
+  }
+
+  .SSH {
+    height: 0 !important;
+    min-height: 0 !important;
+    flex: none !important;
+  }
+
+  .workspace-controls {
+    width: 100%;
+    margin: 5px 0;
+    padding: 0 5px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .workspace-control {
+    margin: 2px 2px;
+    border-width: 0px;
+    border-radius: 1em;
+    background-color: var(--foreground);
+  }
+
+  button.workspace-control {
+    width: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button.workspace-control.workspace-service,
+  button.workspace-control.workspace-description-control {
+    width: auto;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .workspace-service .workspace-service-name,
+  .workspace-description-control .workspace-description-name {
+    margin-left: 0.4em;
+  }
+
+  .workspace-service .popout-icon,
+  .workspace-service .hint-icon {
+    margin-left: 0.5em;
+    font-size: 0.7em;
+    opacity: 0.6;
+  }
+
+  .workspace-service.active,
+  .workspace-description-control.active {
+    color: #fff;
+    background-color: var(--foreground) !important;
+    box-shadow: inset 0 0 0 1px var(--highlight) !important;
+  }
+
+  .workspace-service.active:focus,
+  .workspace-description-control.active:focus {
+    box-shadow: inset 0 0 0 1px var(--highlight), 0 0 0 0.2rem rgba(108, 117, 125, 0.5) !important;
+  }
+
+  .workspace-input input {
+    height: 100% !important;
+    box-sizing: border-box;
+    padding-left: 0.5em;
+    padding-right: 1em;
+    color: #fff;
+    background-color: var(--foreground);
+    border: 0;
+    border-color: #000 !important;
+    border-radius: 1em;
+    box-shadow: none !important;
+  }
+
+  .workspace-input input::placeholder {
+    color: var(--highlight);
+    opacity: 1;
+  }
+
+  .workspace-input input.disabled {
+    color: var(--highlight);
+  }
+
+  .workspace-input input:focus,
+  .workspace-input input:hover {
+    outline: 0 !important;
+  }
+
+  .workspace-highlight {
+    color: var(--highlight);
+  }
+
+  .workspace-input {
+    padding-left: 1em;
+  }
+
+  .workspace-control-spacer {
+    flex: 1;
+  }
+
+  label#workspace-change-privilege {
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin-bottom: 0;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    cursor: pointer;
+  }
+
+  label#workspace-change-privilege input {
+    appearance: none;
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0 0.45em 0 0;
+    border: 2px solid #adb5bd;
+    border-radius: 0.25em;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  label#workspace-change-privilege input:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+  }
+
+  label#workspace-change-privilege input:checked {
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23111' stroke-width='3' d='M2.5 8.5l4 4 7-8'/%3E%3C/svg%3E");
+    background-size: 0.85em;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .workspace-ssh {
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: var(--foreground);
+    border-radius: 0.5em;
+  }
+
+  @keyframes banner-animation {
+    0% {
+      left: 50%;
+      width: 0%;
+    }
+    5% {
+      left: 10%;
+      width: 80%;
+    }
+    95% {
+      left: 10%;
+      width: 80%;
+      border-width: 2px;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    100% {
+      left: 50%;
+      width: 0;
+      border-left-width: 0;
+      border-right-width: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .animate-banner {
+    animation-name: banner-animation;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+    display: block !important;
+  }
+
+  .animate-banner-fast {
+    animation-name: banner-animation;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    display: block !important;
+  }
+
+  #workspace-notification-banner {
+    position: absolute;
+    background-color: var(--foreground);
+    color: #fff;
+    border-color: var(--brand-green);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 1em;
+    padding: 1em;
+    height: 4em;
+    bottom: 4em;
+    white-space: normal;
+    text-align: center;
+    overflow: hidden;
+    display: none;
+  }
+</style>
+
+
+<div class="workspace-controls" data-popout="true">
+  <div id="workspace-notification-banner"></div>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="terminal: 7681"
+      aria-pressed="false"
+      title="Open Terminal in a new tab">
+    <i class="fas fa-terminal"></i>
+    <span class="workspace-service-name">Terminal</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="code: 8080"
+      aria-pressed="false"
+      title="Open Code in a new tab">
+    <i class="fas fa-code"></i>
+    <span class="workspace-service-name">Code</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="desktop: 6080"
+      aria-pressed="false"
+      title="Open Desktop in a new tab">
+    <i class="fas fa-desktop"></i>
+    <span class="workspace-service-name">Desktop</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="ssh: "
+      aria-pressed="false"
+      title="Show SSH connection info">
+    <i class="fas fa-key"></i>
+    <span class="workspace-service-name">SSH</span>
+    
+    <i class="fas fa-question-circle hint-icon"></i>
+  </button>
+  
+  
+  <div title="Enter flag" class="workspace-control workspace-input">
+    <i class="fas fa-flag workspace-highlight input-icon"></i>
+    <input id="flag-input" type="text" placeholder="Flag">
+    <input type="hidden" id="current-challenge-id" value="26789" data-dojo="intro-re-pwn~5933fc84" data-module="reversing" data-challenge="multi-func" data-challenge-name="Follow Multiple Functions">
+  </div>
+  <div class="workspace-control-spacer"></div>
+  <button id="challenge-restart" title="Restart challenge" class="workspace-control btn btn-md btn-outline-secondary btn-challenge-start">
+    <i class="fas fa-redo"></i>
+  </button>
+  
+  <label id="workspace-change-privilege"
+      title="Restart the challenge with or without sudo access"
+      class="workspace-control btn btn-md btn-outline-secondary"
+      data-privileged="false">
+    <input type="checkbox" >
+    <span>sudo</span>
+  </label>
+  
+  
+</div>
+              
+            </div>
+            <div class="row notification-row">
+              <div class="col-md-12">
+                <div id="result-notification" class="alert alert-dismissable text-center w-100" role="alert" style="display: none;">
+                  <strong id="result-message"></strong>
+                </div>
+              </div>
+            </div>
+            <div class="row survey-row">
+              <div class="col-md-12">
+                <form target="survey-target" method="post" action="/pwncollege_api/v1/dojos/intro-re-pwn~5933fc84/reversing/multi-func/surveys" id="survey-notification" class="survey alert-dismissable w-100 survey-id-26789" role="alert" style="display: none;">
+                  <input type="hidden" name="nonce" value="ec5499d5ae11ed8586c93a557987fcbfbe2ae20532a9afdec4c23fc3fac8ef61">
+                  
+                </form>
+              </div>
+            </div>
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+        
+      
+    
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+          
+        
+
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-13">
+      <h2 class="mb-0 button-wrapper">
+        <button id="challenges-header-button-4" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#challenges-body-4" aria-expanded="false" aria-controls="challenges-body-4">
+          
+          
+            <h4 class="accordion-item-name challenge-name " data-challenge-index="4" data-challenge-id="encoded-string" data-challenge-name="Decode a String" id="challenges-header-4">
+                <i class="challenge-icon pr-3 fas fa-flag challenge-unsolved "></i>
+                
+                <span class="pr-2">Decode a String</span>
+                
+                
+                
+            </h4>
+            <span class="challenge-header-right">
+              
+              <span class="total-hackers">
+                1 hacking,
+              </span>
+              
+              <span class="total-solves">
+                5 solves
+              </span>
+            </span>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="challenges-body-4" class="collapse" aria-labelledby="module-content-header-13" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            <div class="embed-responsive challenge-description">
+              
+                
+                
+                <p>Reverse a loop that rebuilds a password from encoded bytes at runtime.</p>
+
+              
+            </div>
+            <div class="challenge-init row">
+              <div class="col-md-3 form=group text-center">
+                <button id="challenge-start" type="submit" class="btn btn-md btn-outline-secondary challenge-init">
+                  <i class="fas fa-play fa-lg"></i>Start
+                </button>
+              </div>
+              
+              <div class="col-md-3 form=group text-center">
+                <button id="challenge-priv" type="submit" class="btn btn-md btn-outline-secondary challenge-init">
+                  <i class="fas fa-unlock fa-lg"></i>Privileged
+                </button>
+              </div>
+              
+              <div class="col-md-6">
+                <input id="module" type="hidden" value="reversing">
+                <input id="challenge" type="hidden" value="encoded-string">
+                <input id="challenge-id" type="hidden" value="26790">
+                <input id="challenge-input" class="challenge-input form-control" type="text" name="answer" placeholder="Flag">
+              </div>
+            </div>
+            <div class="challenge-workspace challenge-hidden">
+              <div class="iframe-wrapper">
+                
+              </div>
+              <div class="workspace-ssh" style="display: none;">
+                <h3>Connect with SSH</h3>
+                Link your <a href="/settings#ssh-key" target="_blank">SSH key</a>, then connect with: <code>ssh <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0b636a68606e794b6f646164257b7c6525686467676e6c6e">[email&#160;protected]</a></code>
+              </div>
+              
+              <style>
+  :root {
+    --background: #111;
+    --foreground: #222;
+    --highlight: #6c757d;
+    --error: #800000;
+    --warn: #d0c000;
+  }
+
+  .SSH {
+    height: 0 !important;
+    min-height: 0 !important;
+    flex: none !important;
+  }
+
+  .workspace-controls {
+    width: 100%;
+    margin: 5px 0;
+    padding: 0 5px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .workspace-control {
+    margin: 2px 2px;
+    border-width: 0px;
+    border-radius: 1em;
+    background-color: var(--foreground);
+  }
+
+  button.workspace-control {
+    width: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button.workspace-control.workspace-service,
+  button.workspace-control.workspace-description-control {
+    width: auto;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .workspace-service .workspace-service-name,
+  .workspace-description-control .workspace-description-name {
+    margin-left: 0.4em;
+  }
+
+  .workspace-service .popout-icon,
+  .workspace-service .hint-icon {
+    margin-left: 0.5em;
+    font-size: 0.7em;
+    opacity: 0.6;
+  }
+
+  .workspace-service.active,
+  .workspace-description-control.active {
+    color: #fff;
+    background-color: var(--foreground) !important;
+    box-shadow: inset 0 0 0 1px var(--highlight) !important;
+  }
+
+  .workspace-service.active:focus,
+  .workspace-description-control.active:focus {
+    box-shadow: inset 0 0 0 1px var(--highlight), 0 0 0 0.2rem rgba(108, 117, 125, 0.5) !important;
+  }
+
+  .workspace-input input {
+    height: 100% !important;
+    box-sizing: border-box;
+    padding-left: 0.5em;
+    padding-right: 1em;
+    color: #fff;
+    background-color: var(--foreground);
+    border: 0;
+    border-color: #000 !important;
+    border-radius: 1em;
+    box-shadow: none !important;
+  }
+
+  .workspace-input input::placeholder {
+    color: var(--highlight);
+    opacity: 1;
+  }
+
+  .workspace-input input.disabled {
+    color: var(--highlight);
+  }
+
+  .workspace-input input:focus,
+  .workspace-input input:hover {
+    outline: 0 !important;
+  }
+
+  .workspace-highlight {
+    color: var(--highlight);
+  }
+
+  .workspace-input {
+    padding-left: 1em;
+  }
+
+  .workspace-control-spacer {
+    flex: 1;
+  }
+
+  label#workspace-change-privilege {
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin-bottom: 0;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    cursor: pointer;
+  }
+
+  label#workspace-change-privilege input {
+    appearance: none;
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0 0.45em 0 0;
+    border: 2px solid #adb5bd;
+    border-radius: 0.25em;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  label#workspace-change-privilege input:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+  }
+
+  label#workspace-change-privilege input:checked {
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23111' stroke-width='3' d='M2.5 8.5l4 4 7-8'/%3E%3C/svg%3E");
+    background-size: 0.85em;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .workspace-ssh {
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: var(--foreground);
+    border-radius: 0.5em;
+  }
+
+  @keyframes banner-animation {
+    0% {
+      left: 50%;
+      width: 0%;
+    }
+    5% {
+      left: 10%;
+      width: 80%;
+    }
+    95% {
+      left: 10%;
+      width: 80%;
+      border-width: 2px;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    100% {
+      left: 50%;
+      width: 0;
+      border-left-width: 0;
+      border-right-width: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .animate-banner {
+    animation-name: banner-animation;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+    display: block !important;
+  }
+
+  .animate-banner-fast {
+    animation-name: banner-animation;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    display: block !important;
+  }
+
+  #workspace-notification-banner {
+    position: absolute;
+    background-color: var(--foreground);
+    color: #fff;
+    border-color: var(--brand-green);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 1em;
+    padding: 1em;
+    height: 4em;
+    bottom: 4em;
+    white-space: normal;
+    text-align: center;
+    overflow: hidden;
+    display: none;
+  }
+</style>
+
+
+<div class="workspace-controls" data-popout="true">
+  <div id="workspace-notification-banner"></div>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="terminal: 7681"
+      aria-pressed="false"
+      title="Open Terminal in a new tab">
+    <i class="fas fa-terminal"></i>
+    <span class="workspace-service-name">Terminal</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="code: 8080"
+      aria-pressed="false"
+      title="Open Code in a new tab">
+    <i class="fas fa-code"></i>
+    <span class="workspace-service-name">Code</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="desktop: 6080"
+      aria-pressed="false"
+      title="Open Desktop in a new tab">
+    <i class="fas fa-desktop"></i>
+    <span class="workspace-service-name">Desktop</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="ssh: "
+      aria-pressed="false"
+      title="Show SSH connection info">
+    <i class="fas fa-key"></i>
+    <span class="workspace-service-name">SSH</span>
+    
+    <i class="fas fa-question-circle hint-icon"></i>
+  </button>
+  
+  
+  <div title="Enter flag" class="workspace-control workspace-input">
+    <i class="fas fa-flag workspace-highlight input-icon"></i>
+    <input id="flag-input" type="text" placeholder="Flag">
+    <input type="hidden" id="current-challenge-id" value="26790" data-dojo="intro-re-pwn~5933fc84" data-module="reversing" data-challenge="encoded-string" data-challenge-name="Decode a String">
+  </div>
+  <div class="workspace-control-spacer"></div>
+  <button id="challenge-restart" title="Restart challenge" class="workspace-control btn btn-md btn-outline-secondary btn-challenge-start">
+    <i class="fas fa-redo"></i>
+  </button>
+  
+  <label id="workspace-change-privilege"
+      title="Restart the challenge with or without sudo access"
+      class="workspace-control btn btn-md btn-outline-secondary"
+      data-privileged="false">
+    <input type="checkbox" >
+    <span>sudo</span>
+  </label>
+  
+  
+</div>
+              
+            </div>
+            <div class="row notification-row">
+              <div class="col-md-12">
+                <div id="result-notification" class="alert alert-dismissable text-center w-100" role="alert" style="display: none;">
+                  <strong id="result-message"></strong>
+                </div>
+              </div>
+            </div>
+            <div class="row survey-row">
+              <div class="col-md-12">
+                <form target="survey-target" method="post" action="/pwncollege_api/v1/dojos/intro-re-pwn~5933fc84/reversing/encoded-string/surveys" id="survey-notification" class="survey alert-dismissable w-100 survey-id-26790" role="alert" style="display: none;">
+                  <input type="hidden" name="nonce" value="ec5499d5ae11ed8586c93a557987fcbfbe2ae20532a9afdec4c23fc3fac8ef61">
+                  
+                </form>
+              </div>
+            </div>
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+        
+      
+    
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+          
+        
+
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-14">
+      <h2 class="mb-0 button-wrapper">
+        <button id="challenges-header-button-5" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#challenges-body-5" aria-expanded="false" aria-controls="challenges-body-5">
+          
+          
+            <h4 class="accordion-item-name challenge-name " data-challenge-index="5" data-challenge-id="gdb-runtime" data-challenge-name="Observe a Program in GDB" id="challenges-header-5">
+                <i class="challenge-icon pr-3 fas fa-flag challenge-unsolved "></i>
+                
+                <span class="pr-2">Observe a Program in GDB</span>
+                
+                
+                
+            </h4>
+            <span class="challenge-header-right">
+              
+              <span class="total-solves">
+                5 solves
+              </span>
+            </span>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="challenges-body-5" class="collapse" aria-labelledby="module-content-header-14" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            <div class="embed-responsive challenge-description">
+              
+                
+                
+                <p>Attach GDB to an unprivileged worker, stop at a live comparison, and change the input register to match the runtime-only value.</p>
+
+              
+            </div>
+            <div class="challenge-init row">
+              <div class="col-md-3 form=group text-center">
+                <button id="challenge-start" type="submit" class="btn btn-md btn-outline-secondary challenge-init">
+                  <i class="fas fa-play fa-lg"></i>Start
+                </button>
+              </div>
+              
+              <div class="col-md-3 form=group text-center">
+                <button id="challenge-priv" type="submit" class="btn btn-md btn-outline-secondary challenge-init">
+                  <i class="fas fa-unlock fa-lg"></i>Privileged
+                </button>
+              </div>
+              
+              <div class="col-md-6">
+                <input id="module" type="hidden" value="reversing">
+                <input id="challenge" type="hidden" value="gdb-runtime">
+                <input id="challenge-id" type="hidden" value="26791">
+                <input id="challenge-input" class="challenge-input form-control" type="text" name="answer" placeholder="Flag">
+              </div>
+            </div>
+            <div class="challenge-workspace challenge-hidden">
+              <div class="iframe-wrapper">
+                
+              </div>
+              <div class="workspace-ssh" style="display: none;">
+                <h3>Connect with SSH</h3>
+                Link your <a href="/settings#ssh-key" target="_blank">SSH key</a>, then connect with: <code>ssh <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0b8b1b3bbb5a290b4bfbabffea0a7befeb3bfbcbcb5b7b5">[email&#160;protected]</a></code>
+              </div>
+              
+              <style>
+  :root {
+    --background: #111;
+    --foreground: #222;
+    --highlight: #6c757d;
+    --error: #800000;
+    --warn: #d0c000;
+  }
+
+  .SSH {
+    height: 0 !important;
+    min-height: 0 !important;
+    flex: none !important;
+  }
+
+  .workspace-controls {
+    width: 100%;
+    margin: 5px 0;
+    padding: 0 5px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .workspace-control {
+    margin: 2px 2px;
+    border-width: 0px;
+    border-radius: 1em;
+    background-color: var(--foreground);
+  }
+
+  button.workspace-control {
+    width: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button.workspace-control.workspace-service,
+  button.workspace-control.workspace-description-control {
+    width: auto;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .workspace-service .workspace-service-name,
+  .workspace-description-control .workspace-description-name {
+    margin-left: 0.4em;
+  }
+
+  .workspace-service .popout-icon,
+  .workspace-service .hint-icon {
+    margin-left: 0.5em;
+    font-size: 0.7em;
+    opacity: 0.6;
+  }
+
+  .workspace-service.active,
+  .workspace-description-control.active {
+    color: #fff;
+    background-color: var(--foreground) !important;
+    box-shadow: inset 0 0 0 1px var(--highlight) !important;
+  }
+
+  .workspace-service.active:focus,
+  .workspace-description-control.active:focus {
+    box-shadow: inset 0 0 0 1px var(--highlight), 0 0 0 0.2rem rgba(108, 117, 125, 0.5) !important;
+  }
+
+  .workspace-input input {
+    height: 100% !important;
+    box-sizing: border-box;
+    padding-left: 0.5em;
+    padding-right: 1em;
+    color: #fff;
+    background-color: var(--foreground);
+    border: 0;
+    border-color: #000 !important;
+    border-radius: 1em;
+    box-shadow: none !important;
+  }
+
+  .workspace-input input::placeholder {
+    color: var(--highlight);
+    opacity: 1;
+  }
+
+  .workspace-input input.disabled {
+    color: var(--highlight);
+  }
+
+  .workspace-input input:focus,
+  .workspace-input input:hover {
+    outline: 0 !important;
+  }
+
+  .workspace-highlight {
+    color: var(--highlight);
+  }
+
+  .workspace-input {
+    padding-left: 1em;
+  }
+
+  .workspace-control-spacer {
+    flex: 1;
+  }
+
+  label#workspace-change-privilege {
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin-bottom: 0;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    cursor: pointer;
+  }
+
+  label#workspace-change-privilege input {
+    appearance: none;
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0 0.45em 0 0;
+    border: 2px solid #adb5bd;
+    border-radius: 0.25em;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  label#workspace-change-privilege input:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+  }
+
+  label#workspace-change-privilege input:checked {
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23111' stroke-width='3' d='M2.5 8.5l4 4 7-8'/%3E%3C/svg%3E");
+    background-size: 0.85em;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .workspace-ssh {
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: var(--foreground);
+    border-radius: 0.5em;
+  }
+
+  @keyframes banner-animation {
+    0% {
+      left: 50%;
+      width: 0%;
+    }
+    5% {
+      left: 10%;
+      width: 80%;
+    }
+    95% {
+      left: 10%;
+      width: 80%;
+      border-width: 2px;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    100% {
+      left: 50%;
+      width: 0;
+      border-left-width: 0;
+      border-right-width: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .animate-banner {
+    animation-name: banner-animation;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+    display: block !important;
+  }
+
+  .animate-banner-fast {
+    animation-name: banner-animation;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    display: block !important;
+  }
+
+  #workspace-notification-banner {
+    position: absolute;
+    background-color: var(--foreground);
+    color: #fff;
+    border-color: var(--brand-green);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 1em;
+    padding: 1em;
+    height: 4em;
+    bottom: 4em;
+    white-space: normal;
+    text-align: center;
+    overflow: hidden;
+    display: none;
+  }
+</style>
+
+
+<div class="workspace-controls" data-popout="true">
+  <div id="workspace-notification-banner"></div>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="terminal: 7681"
+      aria-pressed="false"
+      title="Open Terminal in a new tab">
+    <i class="fas fa-terminal"></i>
+    <span class="workspace-service-name">Terminal</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="code: 8080"
+      aria-pressed="false"
+      title="Open Code in a new tab">
+    <i class="fas fa-code"></i>
+    <span class="workspace-service-name">Code</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="desktop: 6080"
+      aria-pressed="false"
+      title="Open Desktop in a new tab">
+    <i class="fas fa-desktop"></i>
+    <span class="workspace-service-name">Desktop</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="ssh: "
+      aria-pressed="false"
+      title="Show SSH connection info">
+    <i class="fas fa-key"></i>
+    <span class="workspace-service-name">SSH</span>
+    
+    <i class="fas fa-question-circle hint-icon"></i>
+  </button>
+  
+  
+  <div title="Enter flag" class="workspace-control workspace-input">
+    <i class="fas fa-flag workspace-highlight input-icon"></i>
+    <input id="flag-input" type="text" placeholder="Flag">
+    <input type="hidden" id="current-challenge-id" value="26791" data-dojo="intro-re-pwn~5933fc84" data-module="reversing" data-challenge="gdb-runtime" data-challenge-name="Observe a Program in GDB">
+  </div>
+  <div class="workspace-control-spacer"></div>
+  <button id="challenge-restart" title="Restart challenge" class="workspace-control btn btn-md btn-outline-secondary btn-challenge-start">
+    <i class="fas fa-redo"></i>
+  </button>
+  
+  <label id="workspace-change-privilege"
+      title="Restart the challenge with or without sudo access"
+      class="workspace-control btn btn-md btn-outline-secondary"
+      data-privileged="false">
+    <input type="checkbox" >
+    <span>sudo</span>
+  </label>
+  
+  
+</div>
+              
+            </div>
+            <div class="row notification-row">
+              <div class="col-md-12">
+                <div id="result-notification" class="alert alert-dismissable text-center w-100" role="alert" style="display: none;">
+                  <strong id="result-message"></strong>
+                </div>
+              </div>
+            </div>
+            <div class="row survey-row">
+              <div class="col-md-12">
+                <form target="survey-target" method="post" action="/pwncollege_api/v1/dojos/intro-re-pwn~5933fc84/reversing/gdb-runtime/surveys" id="survey-notification" class="survey alert-dismissable w-100 survey-id-26791" role="alert" style="display: none;">
+                  <input type="hidden" name="nonce" value="ec5499d5ae11ed8586c93a557987fcbfbe2ae20532a9afdec4c23fc3fac8ef61">
+                  
+                </form>
+              </div>
+            </div>
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+        
+      
+    
+      
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+          
+        
+
+        
+        
+  <div class="accordion-item">
+    <div class="accordion-item-header" id="module-content-header-15">
+      <h2 class="mb-0 button-wrapper">
+        <button id="challenges-header-button-6" class="btn btn-link text-decoration-none w-100 challenge-button-2 collapsed " type="button" data-toggle="collapse" data-target="#challenges-body-6" aria-expanded="false" aria-controls="challenges-body-6">
+          
+          
+            <h4 class="accordion-item-name challenge-name " data-challenge-index="6" data-challenge-id="simple-crackme" data-challenge-name="Simple Crackme" id="challenges-header-6">
+                <i class="challenge-icon pr-3 fas fa-flag challenge-unsolved "></i>
+                
+                <span class="pr-2">Simple Crackme</span>
+                
+                
+                
+            </h4>
+            <span class="challenge-header-right">
+              
+              <span class="total-solves">
+                5 solves
+              </span>
+            </span>
+          
+        
+        </button>
+      </h2>
+    </div>
+
+    <div id="challenges-body-6" class="collapse" aria-labelledby="module-content-header-15" data-parent="#module-content">
+      <div class="accordion-item-body">
+        
+          
+            <div class="embed-responsive challenge-description">
+              
+                
+                
+                <p>Reverse a small password-checking program and recover its hidden text from an XOR-encoded byte array.</p>
+
+              
+            </div>
+            <div class="challenge-init row">
+              <div class="col-md-3 form=group text-center">
+                <button id="challenge-start" type="submit" class="btn btn-md btn-outline-secondary challenge-init">
+                  <i class="fas fa-play fa-lg"></i>Start
+                </button>
+              </div>
+              
+              <div class="col-md-3 form=group text-center">
+                <button id="challenge-priv" type="submit" class="btn btn-md btn-outline-secondary challenge-init">
+                  <i class="fas fa-unlock fa-lg"></i>Privileged
+                </button>
+              </div>
+              
+              <div class="col-md-6">
+                <input id="module" type="hidden" value="reversing">
+                <input id="challenge" type="hidden" value="simple-crackme">
+                <input id="challenge-id" type="hidden" value="26792">
+                <input id="challenge-input" class="challenge-input form-control" type="text" name="answer" placeholder="Flag">
+              </div>
+            </div>
+            <div class="challenge-workspace challenge-hidden">
+              <div class="iframe-wrapper">
+                
+              </div>
+              <div class="workspace-ssh" style="display: none;">
+                <h3>Connect with SSH</h3>
+                Link your <a href="/settings#ssh-key" target="_blank">SSH key</a>, then connect with: <code>ssh <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="076f66646c62754763686d68297770692964686b6b626062">[email&#160;protected]</a></code>
+              </div>
+              
+              <style>
+  :root {
+    --background: #111;
+    --foreground: #222;
+    --highlight: #6c757d;
+    --error: #800000;
+    --warn: #d0c000;
+  }
+
+  .SSH {
+    height: 0 !important;
+    min-height: 0 !important;
+    flex: none !important;
+  }
+
+  .workspace-controls {
+    width: 100%;
+    margin: 5px 0;
+    padding: 0 5px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .workspace-control {
+    margin: 2px 2px;
+    border-width: 0px;
+    border-radius: 1em;
+    background-color: var(--foreground);
+  }
+
+  button.workspace-control {
+    width: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button.workspace-control.workspace-service,
+  button.workspace-control.workspace-description-control {
+    width: auto;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+
+  .workspace-service .workspace-service-name,
+  .workspace-description-control .workspace-description-name {
+    margin-left: 0.4em;
+  }
+
+  .workspace-service .popout-icon,
+  .workspace-service .hint-icon {
+    margin-left: 0.5em;
+    font-size: 0.7em;
+    opacity: 0.6;
+  }
+
+  .workspace-service.active,
+  .workspace-description-control.active {
+    color: #fff;
+    background-color: var(--foreground) !important;
+    box-shadow: inset 0 0 0 1px var(--highlight) !important;
+  }
+
+  .workspace-service.active:focus,
+  .workspace-description-control.active:focus {
+    box-shadow: inset 0 0 0 1px var(--highlight), 0 0 0 0.2rem rgba(108, 117, 125, 0.5) !important;
+  }
+
+  .workspace-input input {
+    height: 100% !important;
+    box-sizing: border-box;
+    padding-left: 0.5em;
+    padding-right: 1em;
+    color: #fff;
+    background-color: var(--foreground);
+    border: 0;
+    border-color: #000 !important;
+    border-radius: 1em;
+    box-shadow: none !important;
+  }
+
+  .workspace-input input::placeholder {
+    color: var(--highlight);
+    opacity: 1;
+  }
+
+  .workspace-input input.disabled {
+    color: var(--highlight);
+  }
+
+  .workspace-input input:focus,
+  .workspace-input input:hover {
+    outline: 0 !important;
+  }
+
+  .workspace-highlight {
+    color: var(--highlight);
+  }
+
+  .workspace-input {
+    padding-left: 1em;
+  }
+
+  .workspace-control-spacer {
+    flex: 1;
+  }
+
+  label#workspace-change-privilege {
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin-bottom: 0;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    cursor: pointer;
+  }
+
+  label#workspace-change-privilege input {
+    appearance: none;
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0 0.45em 0 0;
+    border: 2px solid #adb5bd;
+    border-radius: 0.25em;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  label#workspace-change-privilege input:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
+  }
+
+  label#workspace-change-privilege input:checked {
+    background-color: var(--brand-green);
+    border-color: var(--brand-green);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23111' stroke-width='3' d='M2.5 8.5l4 4 7-8'/%3E%3C/svg%3E");
+    background-size: 0.85em;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .workspace-ssh {
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: var(--foreground);
+    border-radius: 0.5em;
+  }
+
+  @keyframes banner-animation {
+    0% {
+      left: 50%;
+      width: 0%;
+    }
+    5% {
+      left: 10%;
+      width: 80%;
+    }
+    95% {
+      left: 10%;
+      width: 80%;
+      border-width: 2px;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+    100% {
+      left: 50%;
+      width: 0;
+      border-left-width: 0;
+      border-right-width: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .animate-banner {
+    animation-name: banner-animation;
+    animation-duration: 20s;
+    animation-fill-mode: forwards;
+    display: block !important;
+  }
+
+  .animate-banner-fast {
+    animation-name: banner-animation;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    display: block !important;
+  }
+
+  #workspace-notification-banner {
+    position: absolute;
+    background-color: var(--foreground);
+    color: #fff;
+    border-color: var(--brand-green);
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 1em;
+    padding: 1em;
+    height: 4em;
+    bottom: 4em;
+    white-space: normal;
+    text-align: center;
+    overflow: hidden;
+    display: none;
+  }
+</style>
+
+
+<div class="workspace-controls" data-popout="true">
+  <div id="workspace-notification-banner"></div>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="terminal: 7681"
+      aria-pressed="false"
+      title="Open Terminal in a new tab">
+    <i class="fas fa-terminal"></i>
+    <span class="workspace-service-name">Terminal</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="code: 8080"
+      aria-pressed="false"
+      title="Open Code in a new tab">
+    <i class="fas fa-code"></i>
+    <span class="workspace-service-name">Code</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="desktop: 6080"
+      aria-pressed="false"
+      title="Open Desktop in a new tab">
+    <i class="fas fa-desktop"></i>
+    <span class="workspace-service-name">Desktop</span>
+    <i class="fas fa-external-link-alt popout-icon"></i>
+    
+  </button>
+  
+  
+  <button class="workspace-control workspace-service btn btn-md btn-outline-secondary"
+      data-service="ssh: "
+      aria-pressed="false"
+      title="Show SSH connection info">
+    <i class="fas fa-key"></i>
+    <span class="workspace-service-name">SSH</span>
+    
+    <i class="fas fa-question-circle hint-icon"></i>
+  </button>
+  
+  
+  <div title="Enter flag" class="workspace-control workspace-input">
+    <i class="fas fa-flag workspace-highlight input-icon"></i>
+    <input id="flag-input" type="text" placeholder="Flag">
+    <input type="hidden" id="current-challenge-id" value="26792" data-dojo="intro-re-pwn~5933fc84" data-module="reversing" data-challenge="simple-crackme" data-challenge-name="Simple Crackme">
+  </div>
+  <div class="workspace-control-spacer"></div>
+  <button id="challenge-restart" title="Restart challenge" class="workspace-control btn btn-md btn-outline-secondary btn-challenge-start">
+    <i class="fas fa-redo"></i>
+  </button>
+  
+  <label id="workspace-change-privilege"
+      title="Restart the challenge with or without sudo access"
+      class="workspace-control btn btn-md btn-outline-secondary"
+      data-privileged="false">
+    <input type="checkbox" >
+    <span>sudo</span>
+  </label>
+  
+  
+</div>
+              
+            </div>
+            <div class="row notification-row">
+              <div class="col-md-12">
+                <div id="result-notification" class="alert alert-dismissable text-center w-100" role="alert" style="display: none;">
+                  <strong id="result-message"></strong>
+                </div>
+              </div>
+            </div>
+            <div class="row survey-row">
+              <div class="col-md-12">
+                <form target="survey-target" method="post" action="/pwncollege_api/v1/dojos/intro-re-pwn~5933fc84/reversing/simple-crackme/surveys" id="survey-notification" class="survey alert-dismissable w-100 survey-id-26792" role="alert" style="display: none;">
+                  <input type="hidden" name="nonce" value="ec5499d5ae11ed8586c93a557987fcbfbe2ae20532a9afdec4c23fc3fac8ef61">
+                  
+                </form>
+              </div>
+            </div>
+          
+        
+      </div>
+    </div>
+  </div>
+
+        
+        
+      
+    
+  </div>
+
+  <br>
+  
+
+  
+
+  <h2 class="row" id="scoreboard-heading">30-Day Scoreboard:</h2>
+  <p>This scoreboard reflects solves for challenges in this module after the module launched in this dojo.</p>
+  
+  <div class="scoreboard-controls row">
+  <p>
+  <span id="scoreboard-control-week"><a href="javascript:loadScoreboard(7, 1)">7-Day</a></span> |
+  <span id="scoreboard-control-month"><a href="javascript:loadScoreboard(30, 1)">30-Day</a></span> |
+  <span id="scoreboard-control-all"><a href="javascript:loadScoreboard(0, 1)">All-Time</a></span>
+  </p>
+  <div class="scoreboard-view-controls">
+    <div id="scoreboard-crew-mode-toggle" class="scoreboard-view-toggle brand-mono" role="tablist" aria-label="Crew scoring" hidden>
+      <a id="scoreboard-crew-mode-cumulative" role="tab" aria-selected="true" href="javascript:setCrewMode('cumulative')">Cumulative</a>
+      <a id="scoreboard-crew-mode-unique" role="tab" aria-selected="false" href="javascript:setCrewMode('unique')">Unique</a>
+      <a id="scoreboard-crew-mode-mastery" role="tab" aria-selected="false" href="javascript:setCrewMode('mastery')">Mastery</a>
+    </div>
+    <div class="scoreboard-view-toggle brand-mono" role="tablist" aria-label="Scoreboard view">
+      <a id="scoreboard-view-hackers" role="tab" aria-selected="true" href="javascript:setScoreboardView('hackers')">Hackers</a>
+      <a id="scoreboard-view-crews" role="tab" aria-selected="false" href="javascript:setScoreboardView('crews')">Crews</a>
+    </div>
+  </div>
+</div>
+<div class="scoreboard row">
+  <div class="col-md-12 p-0">
+    <table class="table table-striped">
+	    <thead>
+	      <tr>
+	        <td scope="col" class="col-md-1"><b>Rank</b></td>
+          <td scope="col" class="col-md-1"></td>
+	        <td scope="col" class="col-md-4"><b id="scoreboard-th-name">Hacker</b></td>
+	        <td scope="col" class="col-md-4"><b id="scoreboard-th-badges">Badges</b></td>
+	        <td scope="col" class="col-md-1"></td>
+	        <td scope="col" class="col-md-1"><b id="scoreboard-th-score">Score</b></td>
+	      </tr>
+	    </thead>
+	    <tbody id="scoreboard">
+	    </tbody>
+    </table>
+  </div>
+  <div>
+    <ul id="scoreboard-pages" class="p-0">
+    </ul>
+  </div>
+</div>
+
+  
+
+</div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container text-center" style="line-height: 20px; opacity: 0.7">
+        <small>
+          Powered by <strong>pwn.college</strong><br>
+          Interested in dedicated training or tailored services for your organization?
+          <a href="https://llc.pwn.college/">Find out more</a>.
+        </small>
+      </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@10.4.1/highlight.min.js" integrity="sha384-fmD6rU+qhsT08Lw9NFBeNPYifigBcHbH7pi/tI1tbmOmUufuj8YGYK28X198h9o0" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@10.4.1/languages/x86asm.min.js" integrity="sha384-fyAJ3VJZiGzG81NZvP0/d6kCqoi4AcIy38WuzdUZbtwKCShAcZZSK0N5XEea+NUf" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@10.4.1/languages/mipsasm.min.js" integrity="sha384-ydRxb07zddIsmM8w0RB2qGAOsBEEwpQpadYXQZ67GVVQVk0WgJZy2MIfjbTLhBy+" crossorigin="anonymous"></script>
+
+    <script defer src="/themes/dojo_theme/static/js/dojo/util.js?v=930976f2"></script>
+    <script defer src="/themes/dojo_theme/static/js/dojo/navbar.js?v=d21f1462"></script>
+    <script defer src="/themes/dojo_theme/static/js/dojo/popup.js?v=aada3f2e"></script>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+    
+<script defer src="/themes/dojo_theme/static/js/dojo/actionbar.js?v=db1ca54c"></script>
+<script defer src="/themes/dojo_theme/static/js/dojo/challenges.js?v=a8cc28c3"></script>
+<script defer onload="loadScoreboard(30, 1);" src="/themes/dojo_theme/static/js/dojo/scoreboard.js?v=a0efdc69"></script>
+
+
+
+    <script>
+      window.addEventListener('load', function() {
+        if (typeof renderMathInElement !== 'undefined') {
+          renderMathInElement(document.body, {
+            delimiters: [
+              {left: '\\[', right: '\\]', display: true},
+              {left: '\\(', right: '\\)', display: false}
+            ],
+            throwOnError: false,
+            strict: false,
+            ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          });
+        }
+      });
+    </script>
+
+
+    
+    
+  <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5376ea54daacaea',t:'MTc5MzQ5OTc1MQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5376ea54daacaea',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

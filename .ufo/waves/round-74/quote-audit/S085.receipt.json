@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S085",
+ "row_url": "https://arxiv.org/abs/2605.30667v1",
+ "fetch_url": "https://arxiv.org/abs/2605.30667v1",
+ "final_url": "https://arxiv.org/abs/2605.30667v1",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "4e4bcf2926c79612925c770b6fd90113d446c341991305d5f083d0e07363c8a6",
+ "length": 41322,
+ "anchor": "arXiv v1, submitted 2026-05-28, abstract; \"extraneous string variable assignments to pass surreptitious instructions to the LLM\"",
+ "quote": "extraneous string variable assignments to pass surreptitious instructions to the LLM",
+ "span": {
+  "start": 3489,
+  "end": 3573
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://arxiv.org/abs/2605.30667v1",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "abs page (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

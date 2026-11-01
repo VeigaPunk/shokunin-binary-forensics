@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S398",
+ "row_url": "https://cloud.google.com/blog/topics/threat-intelligence/golang-internals-symbol-recovery",
+ "fetch_url": "https://cloud.google.com/blog/topics/threat-intelligence/golang-internals-symbol-recovery",
+ "final_url": "https://cloud.google.com/blog/topics/threat-intelligence/golang-internals-symbol-recovery",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "8b9407e6febb7e64cf8503be6857a750fb6d9644c261350e9feeae9a934e5b0e",
+ "length": 310395,
+ "anchor": "\"PCLNTAB\" section; dated February 28, 2022; accessed 2026-10-29; \"Byte scanning is always required for stripped PE files and occasionally for ELF and Mach-O binaries with mutated section names.\" [integrator re-opened and located the quote]",
+ "quote": "Byte scanning is always required for stripped PE files and occasionally for ELF and Mach-O binaries with mutated section names.",
+ "span": {
+  "start": 192660,
+  "end": 192787
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://cloud.google.com/blog/topics/threat-intelligence/golang-internals-symbol-recovery",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "blog article (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

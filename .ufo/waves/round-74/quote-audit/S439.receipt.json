@@ -1,0 +1,33 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S439",
+ "row_url": "https://github.com/morluto/rea/tree/main/docs/specs/agent-environments",
+ "fetch_url": "https://raw.githubusercontent.com/morluto/rea/447907f2808877d3a7de62c382e256f55d08e5ac/docs/specs/agent-environments/README.md",
+ "final_url": "https://raw.githubusercontent.com/morluto/rea/447907f2808877d3a7de62c382e256f55d08e5ac/docs/specs/agent-environments/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "646aa431a191bac1ccc8adc60bffd26d28632e2fe1d0f64facbcfc38b372714e",
+ "length": 14123,
+ "anchor": "",
+ "quote": "Start with the [quickstart](../../agent-environments-quickstart.md) for a\nuser workflow or the [reference](../../agent-environments.md) for current\ncontracts.",
+ "span": {
+  "start": 440,
+  "end": 598
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/morluto/rea/447907f2808877d3a7de62c382e256f55d08e5ac/docs/specs/agent-environments/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "index README at pinned commit",
+   "bytes": 14123,
+   "final_url": "https://raw.githubusercontent.com/morluto/rea/447907f2808877d3a7de62c382e256f55d08e5ac/docs/specs/agent-environments/README.md"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S095: quote re-located verbatim in the same fetched bytes"
+}

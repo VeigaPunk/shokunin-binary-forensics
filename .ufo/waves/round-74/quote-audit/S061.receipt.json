@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S061",
+ "row_url": "https://github.com/icsharpcode/ILSpy",
+ "fetch_url": "https://raw.githubusercontent.com/icsharpcode/ILSpy/91f0373e48b41945ca1aec6355c7be59567635c1/README.md",
+ "final_url": "https://raw.githubusercontent.com/icsharpcode/ILSpy/91f0373e48b41945ca1aec6355c7be59567635c1/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "b686abd0b649f47197e7e2c88e9a36028468aed90a212ca2cf96620ac1519b03",
+ "length": 7929,
+ "anchor": "README.md \"ILSpy\" and \"Decompiler Frontends\", commit 91f0373e48b41945ca1aec6355c7be59567635c1, accessed 2026-10-27; \"ILSpy is the open-source, cross-platform .NET assembly browser and decompiler.\"",
+ "quote": "ILSpy is the open-source, cross-platform .NET assembly browser and decompiler.",
+ "span": {
+  "start": 744,
+  "end": 822
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/icsharpcode/ILSpy/91f0373e48b41945ca1aec6355c7be59567635c1/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

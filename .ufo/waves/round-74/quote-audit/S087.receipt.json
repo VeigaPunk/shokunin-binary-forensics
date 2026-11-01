@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S087",
+ "row_url": "https://github.com/sqwu/rea-gems",
+ "fetch_url": "https://raw.githubusercontent.com/sqwu/rea-gems/71c1e0952286b6f278456936127c5456731e21a1/README.md",
+ "final_url": "https://raw.githubusercontent.com/sqwu/rea-gems/71c1e0952286b6f278456936127c5456731e21a1/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "7b0fb68189f9e1de29ff5604bd8c61b19c4e41f9cf6838106ade7da3b67e1c0b",
+ "length": 19213,
+ "anchor": "README.md \"Disclaimer\", commit 71c1e0952286b6f278456936127c5456731e21a1, accessed 2026-10-27; \"All case links point to their original authors.\"",
+ "quote": "All case links point to their original authors.",
+ "span": {
+  "start": 1334,
+  "end": 1381
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/sqwu/rea-gems/71c1e0952286b6f278456936127c5456731e21a1/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

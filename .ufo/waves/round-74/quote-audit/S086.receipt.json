@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S086",
+ "row_url": "https://rea.tools/blog/reverse-engineering-models/",
+ "fetch_url": "https://rea.tools/blog/reverse-engineering-models/",
+ "final_url": "https://rea.tools/blog/reverse-engineering-models/",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "0020c9f43831672c94fa3038b788d9e9559655c00712c8cde3c76b7c7655d4c9",
+ "length": 48025,
+ "anchor": "Essay by N0zoM1z0, published 2026-10-13, \"Takeaway\"; \"Train the next useful experiment, and test its oracle.\"",
+ "quote": "Train the next useful experiment, and test its oracle.",
+ "span": {
+  "start": 14716,
+  "end": 14770
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://rea.tools/blog/reverse-engineering-models/",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "blog essay (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

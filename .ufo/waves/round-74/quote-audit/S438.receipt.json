@@ -1,0 +1,33 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S438",
+ "row_url": "https://github.com/OWASP/mastg",
+ "fetch_url": "https://raw.githubusercontent.com/OWASP/mastg/41c6b74db6c4ec5c768630b3615449400d5d2adf/README.md",
+ "final_url": "https://raw.githubusercontent.com/OWASP/mastg/41c6b74db6c4ec5c768630b3615449400d5d2adf/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "afef5dfc0d4db3038b92c82f8942ea6b72262c936bd703a43f93b91b035d9c46",
+ "length": 2827,
+ "anchor": "",
+ "quote": "is a comprehensive manual for mobile app security testing and reverse engineering.",
+ "span": {
+  "start": 829,
+  "end": 911
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/OWASP/mastg/41c6b74db6c4ec5c768630b3615449400d5d2adf/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit",
+   "bytes": 2827,
+   "final_url": "https://raw.githubusercontent.com/OWASP/mastg/41c6b74db6c4ec5c768630b3615449400d5d2adf/README.md"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S094: quote re-located verbatim in the same fetched bytes"
+}

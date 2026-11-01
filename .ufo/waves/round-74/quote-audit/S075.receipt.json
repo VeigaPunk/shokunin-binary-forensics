@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S075",
+ "row_url": "https://github.com/morluto/rea/blob/0cd7ef456bf960da265e04b341e82a24b1e377d5/docs/installation.md",
+ "fetch_url": "https://raw.githubusercontent.com/morluto/rea/0cd7ef456bf960da265e04b341e82a24b1e377d5/docs/installation.md",
+ "final_url": "https://raw.githubusercontent.com/morluto/rea/0cd7ef456bf960da265e04b341e82a24b1e377d5/docs/installation.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "c4a16fa00f39d08267098dc56c688a008cc6455a0dc3024baf333b95770003ac",
+ "length": 105202,
+ "anchor": "\"Installation and setup\" and \"Review setup changes\", commit 0cd7ef456bf960da265e04b341e82a24b1e377d5, accessed 2026-10-27; \"Setup previews configuration changes and asks for approval before applying them.\"",
+ "quote": "Setup previews configuration changes and asks for approval before applying them.",
+ "span": {
+  "start": 107,
+  "end": 187
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/morluto/rea/0cd7ef456bf960da265e04b341e82a24b1e377d5/docs/installation.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "doc at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

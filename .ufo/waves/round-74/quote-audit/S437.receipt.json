@@ -1,0 +1,33 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S437",
+ "row_url": "https://github.com/alexgaoth/awesome-reverse-engineered",
+ "fetch_url": "https://raw.githubusercontent.com/alexgaoth/awesome-reverse-engineered/0220fbde6d44f01236e3719ee951c8803592d13e/README.md",
+ "final_url": "https://raw.githubusercontent.com/alexgaoth/awesome-reverse-engineered/0220fbde6d44f01236e3719ee951c8803592d13e/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "dc9b0181c9c789c1e28ddb0df0e3b4a72afdb0a5f5eeca2fcdb57ba3deffc2fc",
+ "length": 23575,
+ "anchor": "",
+ "quote": "**Search first.** Use the [website](https://alexgaoth.github.io/awesome-reverse-engineered/) or the [agent skill](#give-your-ai-agent-the-whole-index).",
+ "span": {
+  "start": 2239,
+  "end": 2390
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/alexgaoth/awesome-reverse-engineered/0220fbde6d44f01236e3719ee951c8803592d13e/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit",
+   "bytes": 23575,
+   "final_url": "https://raw.githubusercontent.com/alexgaoth/awesome-reverse-engineered/0220fbde6d44f01236e3719ee951c8803592d13e/README.md"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S088: quote re-located verbatim in the same fetched bytes"
+}

@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S060",
+ "row_url": "https://github.com/frida/frida",
+ "fetch_url": "https://raw.githubusercontent.com/frida/frida/e598d053f4154fa78a26bb60d4f6cbc407ea387c/README.md",
+ "final_url": "https://raw.githubusercontent.com/frida/frida/e598d053f4154fa78a26bb60d4f6cbc407ea387c/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "8478d48f61310d01be76702014de292852260f32cda695a64f8f86ab110b655b",
+ "length": 1931,
+ "anchor": "README.md introduction, commit e598d053f4154fa78a26bb60d4f6cbc407ea387c, accessed 2026-10-27; \"Dynamic instrumentation toolkit for developers, reverse-engineers, and security researchers.\"",
+ "quote": "Dynamic instrumentation toolkit for developers, reverse-engineers, and security\nresearchers.",
+ "span": {
+  "start": 9,
+  "end": 101
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/frida/frida/e598d053f4154fa78a26bb60d4f6cbc407ea387c/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

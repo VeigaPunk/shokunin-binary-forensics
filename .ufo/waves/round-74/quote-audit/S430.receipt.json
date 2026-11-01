@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S430",
+ "row_url": "https://github.com/skylot/jadx",
+ "fetch_url": "https://raw.githubusercontent.com/skylot/jadx/f2d8496e9ab766acc942484c1e483843979f1260/README.md",
+ "final_url": "https://raw.githubusercontent.com/skylot/jadx/f2d8496e9ab766acc942484c1e483843979f1260/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "985d05ae3ba2a4756db29b7c3560be09e248e6559e2bb5176f3d28560cc4a7e4",
+ "length": 18599,
+ "anchor": "",
+ "quote": "Please note that in most cases **jadx** can't decompile 100% of the code, so errors will occur.",
+ "span": {
+  "start": 1061,
+  "end": 1156
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/skylot/jadx/f2d8496e9ab766acc942484c1e483843979f1260/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S058: quote re-located verbatim in the same fetched bytes"
+}

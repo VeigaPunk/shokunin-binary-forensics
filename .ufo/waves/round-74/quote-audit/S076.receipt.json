@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S076",
+ "row_url": "https://github.com/morluto/rea/blob/b675073b731dc3209f59578fad5ca8fe85b104cc/docs/mcp-prompts.md",
+ "fetch_url": "https://raw.githubusercontent.com/morluto/rea/b675073b731dc3209f59578fad5ca8fe85b104cc/docs/mcp-prompts.md",
+ "final_url": "https://raw.githubusercontent.com/morluto/rea/b675073b731dc3209f59578fad5ca8fe85b104cc/docs/mcp-prompts.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "56acd853077ba8935e9dd7bab7785ecae225a8af7749f9c92666545d0ece351f",
+ "length": 8137,
+ "anchor": "\"Guided MCP prompts and completion\" and \"Lifecycle and safety\", commit b675073b731dc3209f59578fad5ca8fe85b104cc, accessed 2026-10-27; \"Requested prompt arguments and completion choices are rendered as untrusted selection data, not instructions or authorization.\"",
+ "quote": "Requested prompt arguments and completion choices are\nrendered as untrusted selection data, not instructions or authorization.",
+ "span": {
+  "start": 1973,
+  "end": 2099
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/morluto/rea/b675073b731dc3209f59578fad5ca8fe85b104cc/docs/mcp-prompts.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "doc at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

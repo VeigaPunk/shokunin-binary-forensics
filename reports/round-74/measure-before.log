@@ -1,0 +1,61 @@
+# round-74 red-before — base c70085776ee3c51fc76ac82a7b590d7971df112a, frozen counter reports/round-74/measure.py (sha256 ff2e52bdd6705bfb3d1a2140451a8ab16416cbb57c9cebeeabb78d75296e4ea6)
+# command: TMPDIR=/fast/scratch/hyaku/revenger-r74/l1 python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-74/measure.py <git-archive-tree of c7008577>
+# run: 2026-10-30 (cwd=/, tree at /fast/scratch/hyaku/revenger-r74/l1/base)
+QA_RANGE_ROWS=42 QA_TERMINALS=42/42
+QA_VERIFIED=0/42 QA_UNREACHABLE=0/42 QA_UNRESOLVED=42/42
+QA_MANUAL_VERIFIED=0/9 QA_MANUAL_UNREACHABLE=0/9 QA_MANUAL_UNRESOLVED=9/9
+QA_VERIFIED_TOTAL=0/51 (target >= 40)
+QA_UNRESOLVED_ROW S054 terminal=S054 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S055 terminal=S055 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S056 terminal=S056 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S057 terminal=S057 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S058 terminal=S058 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S059 terminal=S059 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S060 terminal=S060 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S061 terminal=S061 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S062 terminal=S062 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S063 terminal=S063 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S064 terminal=S064 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S065 terminal=S065 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S066 terminal=S066 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S067 terminal=S067 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S068 terminal=S068 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S069 terminal=S069 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S070 terminal=S070 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S071 terminal=S427 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S072 terminal=S072 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S073 terminal=S073 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S074 terminal=S074 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S075 terminal=S075 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S076 terminal=S076 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S077 terminal=S077 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S078 terminal=S078 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S079 terminal=S079 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S080 terminal=S080 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S081 terminal=S081 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S082 terminal=S428 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S083 terminal=S083 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S084 terminal=S084 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S085 terminal=S085 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S086 terminal=S086 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S087 terminal=S087 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S088 terminal=S088 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S089 terminal=S089 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S090 terminal=S090 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S091 terminal=S091 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S092 terminal=S092 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S093 terminal=S093 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S094 terminal=S094 why=receipt missing/unreadable
+QA_UNRESOLVED_ROW S095 terminal=S095 why=receipt missing/unreadable
+QA_MANUAL_UNRESOLVED_ROW S115 terminal=S115 why=receipt missing/unreadable
+QA_MANUAL_UNRESOLVED_ROW S130 terminal=S130 why=receipt missing/unreadable
+QA_MANUAL_UNRESOLVED_ROW S131 terminal=S131 why=receipt missing/unreadable
+QA_MANUAL_UNRESOLVED_ROW S343 terminal=S343 why=receipt missing/unreadable
+QA_MANUAL_UNRESOLVED_ROW S379 terminal=S379 why=receipt missing/unreadable
+QA_MANUAL_UNRESOLVED_ROW S380 terminal=S380 why=receipt missing/unreadable
+QA_MANUAL_UNRESOLVED_ROW S381 terminal=S381 why=receipt missing/unreadable
+QA_MANUAL_UNRESOLVED_ROW S398 terminal=S398 why=receipt missing/unreadable
+QA_MANUAL_UNRESOLVED_ROW S400 terminal=S400 why=receipt missing/unreadable
+QA_NEGCTRL=n/a (S427 receipt not verified)
+QA_TARGET=no
+counter-exit=0

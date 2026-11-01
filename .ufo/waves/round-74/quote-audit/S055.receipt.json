@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S055",
+ "row_url": "https://github.com/NationalSecurityAgency/ghidra",
+ "fetch_url": "https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/864999d7ca67cd3f533be600860f102e54370661/README.md",
+ "final_url": "https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/864999d7ca67cd3f533be600860f102e54370661/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "8d4cc75b5c6d0d6ce218bbfa45adc36029d4719d6bcabb33499a36d66ccbf3ec",
+ "length": 7205,
+ "anchor": "README.md \"Ghidra Software Reverse Engineering Framework\", commit 864999d7ca67cd3f533be600860f102e54370661, accessed 2026-10-27; \"Capabilities include disassembly, assembly, decompilation, graphing, and scripting\"",
+ "quote": "Capabilities include disassembly, \nassembly, decompilation, graphing, and scripting",
+ "span": {
+  "start": 466,
+  "end": 549
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/864999d7ca67cd3f533be600860f102e54370661/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

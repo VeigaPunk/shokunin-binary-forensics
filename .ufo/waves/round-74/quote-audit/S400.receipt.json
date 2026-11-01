@@ -1,0 +1,39 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S400",
+ "row_url": "https://reverseengineering.stackexchange.com/help/on-topic",
+ "fetch_url": "https://web.archive.org/web/20251231045737/https://reverseengineering.stackexchange.com/help/on-topic",
+ "final_url": "https://web.archive.org/web/20251231045737/https://reverseengineering.stackexchange.com/help/on-topic",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "2220ba06e2116db3f606cebb7dda57a657883b3fc2b8713d51213baae89ea07b",
+ "length": 75380,
+ "anchor": "Help Center \"What topics can I ask about here?\"; snapshot 20251231045737; accessed 2026-10-29; \"Reverse Engineering Stack Exchange is for researchers and developers who explore the principles of a system through analysis of its structure, function, and operation.\" [integrator re-opened and located the quote]",
+ "quote": "Reverse Engineering Stack Exchange is for researchers and developers who explore the principles of a system through analysis of its structure, function, and operation.",
+ "span": {
+  "start": 53504,
+  "end": 53671
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://web.archive.org/web/20251231045737/https://reverseengineering.stackexchange.com/help/on-topic",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "archive snapshot named by the row anchor"
+  },
+  {
+   "url": "https://reverseengineering.stackexchange.com/help/on-topic",
+   "status": 403,
+   "error": "Cloudflare challenge",
+   "kind": "page",
+   "note": "live page",
+   "bytes": 5711
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

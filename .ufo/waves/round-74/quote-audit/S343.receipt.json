@@ -1,0 +1,58 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S343",
+ "row_url": "https://doi.org/10.1145/2886012",
+ "fetch_url": "https://repositum.tuwien.at/handle/20.500.12708/150118",
+ "final_url": "https://repositum.tuwien.at/handle/20.500.12708/150118",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "e5cf2347ce8ba85ce7d511b493887755e9bf5adad91743ae55ed4b1faedeb91a",
+ "length": 27041,
+ "anchor": "Abstract (reposiTUm DCTERMS.abstract; issued 2016; record available 2023-02-07); accessed 2026-10-29; \"many forms of lightweight static analysis have difficulties with even basic obfuscation schemes\" [single-opener: the fetching scout read the quote; integrator re-fetch was blocked or mismatched]",
+ "quote": "many forms of lightweight static analysis have difficulties with even basic obfuscation schemes",
+ "span": {
+  "start": 3010,
+  "end": 3105
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://doi.org/10.1145/2886012",
+   "status": 403,
+   "error": "",
+   "kind": "page",
+   "note": "DOI resolution",
+   "bytes": 5682,
+   "final_url": "https://dl.acm.org/doi/10.1145/2886012"
+  },
+  {
+   "url": "https://dl.acm.org/doi/10.1145/2886012",
+   "status": 403,
+   "error": "",
+   "kind": "page",
+   "note": "ACM record",
+   "bytes": 5682,
+   "final_url": "https://dl.acm.org/doi/10.1145/2886012"
+  },
+  {
+   "url": "https://repositum.tuwien.at/handle/20.500.12708/150118",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "record named by the row anchor",
+   "final_url": "https://repositum.tuwien.at/handle/20.500.12708/150118",
+   "bytes": 27041
+  },
+  {
+   "url": "https://api.semanticscholar.org/graph/v1/paper/DOI:10.1145/2886012?fields=title,abstract,externalIds,venue,year",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "corroborating scholarly record; not the receipt body"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

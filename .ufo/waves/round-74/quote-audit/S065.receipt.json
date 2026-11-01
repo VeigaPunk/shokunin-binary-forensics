@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S065",
+ "row_url": "https://github.com/angr/angr",
+ "fetch_url": "https://raw.githubusercontent.com/angr/angr/d38cc5a0196d8120ef5a21efc12c0a22435e7be5/README.md",
+ "final_url": "https://raw.githubusercontent.com/angr/angr/d38cc5a0196d8120ef5a21efc12c0a22435e7be5/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "fb2cc79a308bd478c3420db0bb54d38df5c9f4c1c1db1405515849a50b1ba4a4",
+ "length": 2638,
+ "anchor": "README.md \"What is angr?\", commit d38cc5a0196d8120ef5a21efc12c0a22435e7be5, accessed 2026-10-27; \"angr is a platform-agnostic binary analysis framework.\"",
+ "quote": "angr is a platform-agnostic binary analysis framework.",
+ "span": {
+  "start": 421,
+  "end": 475
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/angr/angr/d38cc5a0196d8120ef5a21efc12c0a22435e7be5/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

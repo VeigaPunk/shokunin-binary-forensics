@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S079",
+ "row_url": "https://p.ost2.fyi/courses/course-v1%3AOpenSecurityTraining2%2BArch1001_x86-64_Asm%2B2021_v1/about",
+ "fetch_url": "https://p.ost2.fyi/courses/course-v1%3AOpenSecurityTraining2%2BArch1001_x86-64_Asm%2B2021_v1/about",
+ "final_url": "https://p.ost2.fyi/courses/course-v1%3AOpenSecurityTraining2%2BArch1001_x86-64_Asm%2B2021_v1/about",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "12c526126cd168acf6283b0ff36dbe8b1d2e28d0a4545d483d9fe186c7e2dd2e",
+ "length": 20497,
+ "anchor": "\"About This Course\" and \"Requirements\", course `Arch1001_x86-64_Asm+2021_v1`, accessed 2026-10-27; \"This class teaches Intel x86 assembly language. It requires you know C programming.\"",
+ "quote": "This class teaches Intel x86 assembly language. It requires you know C programming.",
+ "span": {
+  "start": 3533,
+  "end": 3616
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://p.ost2.fyi/courses/course-v1%3AOpenSecurityTraining2%2BArch1001_x86-64_Asm%2B2021_v1/about",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "course about page (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

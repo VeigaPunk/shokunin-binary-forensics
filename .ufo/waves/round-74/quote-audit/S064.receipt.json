@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S064",
+ "row_url": "https://github.com/WerWolv/ImHex",
+ "fetch_url": "https://raw.githubusercontent.com/WerWolv/ImHex/fddad83966128b96dc1a8c9d55ba0ccd0721e276/README.md",
+ "final_url": "https://raw.githubusercontent.com/WerWolv/ImHex/fddad83966128b96dc1a8c9d55ba0ccd0721e276/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "8f4c89c636606543b6396cbca436a7586bd662ef52eb365a00bc8b2f88ad5e97",
+ "length": 21423,
+ "anchor": "README.md \"Features\", commit fddad83966128b96dc1a8c9d55ba0ccd0721e276, accessed 2026-10-27; \"A Hex Editor for Reverse Engineers, Programmers\"",
+ "quote": "A Hex Editor for Reverse Engineers, Programmers",
+ "span": {
+  "start": 236,
+  "end": 283
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/WerWolv/ImHex/fddad83966128b96dc1a8c9d55ba0ccd0721e276/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

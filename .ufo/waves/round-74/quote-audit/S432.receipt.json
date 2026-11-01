@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S432",
+ "row_url": "https://github.com/x64dbg/x64dbg",
+ "fetch_url": "https://raw.githubusercontent.com/x64dbg/x64dbg/ac4db12e133a3b2a91756fd2fbe864aa8dd1c453/README.md",
+ "final_url": "https://raw.githubusercontent.com/x64dbg/x64dbg/ac4db12e133a3b2a91756fd2fbe864aa8dd1c453/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "66607f0df8c2e5f30bcfa00de99e4b1df059215e89ac43ac28bc0cc6fb166f47",
+ "length": 8920,
+ "anchor": "",
+ "quote": "An open-source binary debugger for Windows, aimed at malware analysis and reverse engineering of executables you do not have the source code for.",
+ "span": {
+  "start": 948,
+  "end": 1093
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/x64dbg/x64dbg/ac4db12e133a3b2a91756fd2fbe864aa8dd1c453/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S063: quote re-located verbatim in the same fetched bytes"
+}

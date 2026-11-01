@@ -1,0 +1,33 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S441",
+ "row_url": "https://github.com/NationalSecurityAgency/ghidra/blob/1b9e58a915cf867e106495eaa2a4b18eb4971c9d/GhidraDocs/languages/html/sleigh.html",
+ "fetch_url": "https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/1b9e58a915cf867e106495eaa2a4b18eb4971c9d/GhidraDocs/languages/html/sleigh.html",
+ "final_url": "https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/1b9e58a915cf867e106495eaa2a4b18eb4971c9d/GhidraDocs/languages/html/sleigh.html",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "52303b958287538c8a462950c39bd69bd450f7c561c302c83dd505447ae0940e",
+ "length": 25273,
+ "anchor": "",
+ "quote": "The main addition of SLEIGH is the ability to provide\n  semantic descriptions of instructions for data-flow and decompilation\n  analysis.",
+ "span": {
+  "start": 7754,
+  "end": 7891
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/1b9e58a915cf867e106495eaa2a4b18eb4971c9d/GhidraDocs/languages/html/sleigh.html",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "doc html at pinned commit",
+   "bytes": 25273,
+   "final_url": "https://raw.githubusercontent.com/NationalSecurityAgency/ghidra/1b9e58a915cf867e106495eaa2a4b18eb4971c9d/GhidraDocs/languages/html/sleigh.html"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S131: quote re-located verbatim in the same fetched bytes"
+}

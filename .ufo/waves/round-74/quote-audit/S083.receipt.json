@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S083",
+ "row_url": "https://arxiv.org/abs/2606.16162v2",
+ "fetch_url": "https://arxiv.org/abs/2606.16162v2",
+ "final_url": "https://arxiv.org/abs/2606.16162v2",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "9fb9682e27a53cf8eef9239b5859540966279dc48c371d3624f43462b7fd4d3e",
+ "length": 44662,
+ "anchor": "arXiv v2, last revised 2026-10-03, abstract; \"feedback-driven multi-turn binary decompilation\"",
+ "quote": "feedback-driven multi-turn binary decompilation",
+ "span": {
+  "start": 3151,
+  "end": 3198
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://arxiv.org/abs/2606.16162v2",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "abs page (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

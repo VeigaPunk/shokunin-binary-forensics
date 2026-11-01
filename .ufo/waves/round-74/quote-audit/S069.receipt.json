@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S069",
+ "row_url": "https://github.com/rizinorg/rizin",
+ "fetch_url": "https://raw.githubusercontent.com/rizinorg/rizin/470b1b1eb7338e7ee8bea581f3569b20321c7849/README.md",
+ "final_url": "https://raw.githubusercontent.com/rizinorg/rizin/470b1b1eb7338e7ee8bea581f3569b20321c7849/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "b91344710837f17f14fa9c40a4a3ced5a48d7faec3b0ba325a9e83ff8c6818c0",
+ "length": 4824,
+ "anchor": "README.md introduction, commit 470b1b1eb7338e7ee8bea581f3569b20321c7849, accessed 2026-10-27; \"Rizin is a reverse engineering framework, born as a fork of the radare2\"",
+ "quote": "Rizin is a reverse engineering framework, born as a fork of the radare2",
+ "span": {
+  "start": 203,
+  "end": 274
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/rizinorg/rizin/470b1b1eb7338e7ee8bea581f3569b20321c7849/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

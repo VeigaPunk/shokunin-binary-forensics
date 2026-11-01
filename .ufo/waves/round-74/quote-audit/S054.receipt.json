@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S054",
+ "row_url": "https://github.com/morluto/rea",
+ "fetch_url": "https://raw.githubusercontent.com/morluto/rea/0cd7ef456bf960da265e04b341e82a24b1e377d5/README.md",
+ "final_url": "https://raw.githubusercontent.com/morluto/rea/0cd7ef456bf960da265e04b341e82a24b1e377d5/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "783d630690c5169122965ae3a00b7714e7c9f83b9328afe3649e95cca70636a5",
+ "length": 29447,
+ "anchor": "README.md overview, commit 0cd7ef456bf960da265e04b341e82a24b1e377d5, accessed 2026-10-27; \"REA connects your agent to tools for inspecting native binaries, JavaScript and Electron apps, .NET assemblies, and websites.\"",
+ "quote": "REA connects your agent to tools for inspecting native binaries, JavaScript and Electron apps, .NET assemblies, and websites.",
+ "span": {
+  "start": 3727,
+  "end": 3852
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/morluto/rea/0cd7ef456bf960da265e04b341e82a24b1e377d5/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

@@ -1,0 +1,33 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S436",
+ "row_url": "https://arxiv.org/abs/2509.14646v2",
+ "fetch_url": "https://arxiv.org/abs/2509.14646v2",
+ "final_url": "https://arxiv.org/abs/2509.14646v2",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "03e14ce1076cb4b8e2219b1cda715099cc8fc775f98e367adeb8efb5a0d70cc3",
+ "length": 43261,
+ "anchor": "",
+ "quote": "we construct a C-aligned \\underline{\\textbf{A}}bstract \\underline{\\textbf{L}}oop \\underline{\\textbf{T}}ree (ALT)",
+ "span": {
+  "start": 3191,
+  "end": 3303
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://arxiv.org/abs/2509.14646v2",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "abs page",
+   "bytes": 43261,
+   "final_url": "https://arxiv.org/abs/2509.14646v2"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S084: quote re-located verbatim in the same fetched bytes"
+}

@@ -1,0 +1,41 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S381",
+ "row_url": "https://support.arm.com/documentation/ddi0487/latest",
+ "fetch_url": "https://documentation-service.arm.com/documentation/ddi0487/latest",
+ "final_url": "https://documentation-service.arm.com/documentation/ddi0487/latest",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "97ad2d6d0d796ea237b324ae70ded82d4d3989cd8bf496c0f50aa551e312be38",
+ "length": 21702,
+ "anchor": "Title/preface topic of ddi0487 version \"md\" (versionLabel M.d), JSON topic body decoded; accessed 2026-10-29; \"In the event of any differences between the PDF and HTML versions, the PDF version shall be considered the authoritative reference.\" [single-opener: the fetching scout read the quote; integrator re-fetch was blocked or mismatched]",
+ "quote": "In the event of any differences between the PDF and HTML versions, the PDF version shall be considered the authoritative reference.",
+ "span": {
+  "start": 1152,
+  "end": 1283
+ },
+ "verdict": "verified",
+ "body_derivation": "python -c \"import json,base64;d=json.load(open('.ufo/waves/round-74/quote-audit/raw/S381.orig',encoding='utf-8'));import sys;sys.stdout.write(base64.b64decode(d['topic']['content']).decode())\"  (orig committed alongside; document ddi0487 version md, versionLabel M.d, metadata.created 2026-09-29)",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://developer.arm.com/documentation/ddi0487/latest/",
+   "status": 403,
+   "error": "",
+   "kind": "page",
+   "note": "ARM docs HTML entry",
+   "bytes": 410,
+   "final_url": "https://developer.arm.com/documentation/ddi0487/latest/"
+  },
+  {
+   "url": "https://documentation-service.arm.com/documentation/ddi0487/latest",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "documentation-service HAL+JSON, 9,852,573 bytes",
+   "bytes": 9852573
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "quote verified in derived text; derivation command named; orig committed"
+}

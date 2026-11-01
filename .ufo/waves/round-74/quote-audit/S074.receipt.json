@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S074",
+ "row_url": "https://github.com/SnailSploit/Claude-Red",
+ "fetch_url": "https://raw.githubusercontent.com/SnailSploit/Claude-Red/a8de813edc9f66f60d44cfe42d47750e89d9930b/README.md",
+ "final_url": "https://raw.githubusercontent.com/SnailSploit/Claude-Red/a8de813edc9f66f60d44cfe42d47750e89d9930b/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "82bb9daa054e003caa6a4c33a2f19209cb5c711bcc65e34707b54828ef3698c3",
+ "length": 20968,
+ "anchor": "README.md introduction, commit a8de813edc9f66f60d44cfe42d47750e89d9930b, accessed 2026-10-27; \"Offensive security skills for Claude — drop-in `SKILL.md` files that turn Claude into a context-aware red team operator.\"",
+ "quote": "Offensive security skills for Claude — drop-in `SKILL.md` files that turn Claude into a context-aware red team operator.",
+ "span": {
+  "start": 80,
+  "end": 200
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/SnailSploit/Claude-Red/a8de813edc9f66f60d44cfe42d47750e89d9930b/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

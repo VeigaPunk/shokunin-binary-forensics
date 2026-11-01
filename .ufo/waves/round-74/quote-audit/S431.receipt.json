@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S431",
+ "row_url": "https://github.com/radareorg/radare2",
+ "fetch_url": "https://raw.githubusercontent.com/radareorg/radare2/6ac96f50eafef46c1ac75a478a1460819968c66f/README.md",
+ "final_url": "https://raw.githubusercontent.com/radareorg/radare2/6ac96f50eafef46c1ac75a478a1460819968c66f/README.md",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "dc86af03a0eb92735a59fa18e397520a90d593683abd504d5f85f4f80db1b7c9",
+ "length": 10644,
+ "anchor": "",
+ "quote": "Today, r2 is a full-featured low-level command-line tool\nwith support for scripting with the embedded Javascript interpreter or via r2pipe.",
+ "span": {
+  "start": 1473,
+  "end": 1612
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://raw.githubusercontent.com/radareorg/radare2/6ac96f50eafef46c1ac75a478a1460819968c66f/README.md",
+   "status": 200,
+   "error": "",
+   "kind": "raw",
+   "note": "README at pinned commit (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "correction row for S062: quote re-located verbatim in the same fetched bytes"
+}

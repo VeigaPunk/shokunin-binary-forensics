@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S091",
+ "row_url": "https://nostarch.com/malware",
+ "fetch_url": "https://nostarch.com/malware",
+ "final_url": "https://nostarch.com/malware",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "db11e26fe0ff66aa4ac1fc552d6af45fc2c9cfce23d9f918eca2178e8873a78a",
+ "length": 48077,
+ "anchor": "Publisher page published 2011-02-07, updated 2026-07-22; bibliographic line; \"February 2012, 800 pp.\"",
+ "quote": "February 2012, 800 pp.",
+ "span": {
+  "start": 25805,
+  "end": 25827
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://nostarch.com/malware",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "publisher page (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

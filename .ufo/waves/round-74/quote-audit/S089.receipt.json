@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S089",
+ "row_url": "https://nostarch.com/ghidra-book-2e",
+ "fetch_url": "https://nostarch.com/ghidra-book-2e",
+ "final_url": "https://nostarch.com/ghidra-book-2e",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "2fb32e94ca60eb87d706d11ef55e928d9ff9bcbcc253ab0a29d6b12e969271f6",
+ "length": 40680,
+ "anchor": "Publisher page published 2025-07-22, updated 2026-05-19; table of contents; \"Full Python 3 support via PyGhidra\"",
+ "quote": "Full Python 3 support via PyGhidra",
+ "span": {
+  "start": 29473,
+  "end": 29507
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://nostarch.com/ghidra-book-2e",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "publisher page (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}

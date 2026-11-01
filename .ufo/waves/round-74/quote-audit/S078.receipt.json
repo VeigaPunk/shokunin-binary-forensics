@@ -1,0 +1,31 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S078",
+ "row_url": "https://pwn.college/intro-re-pwn~5933fc84/reversing/",
+ "fetch_url": "https://pwn.college/intro-re-pwn~5933fc84/reversing/",
+ "final_url": "https://pwn.college/intro-re-pwn~5933fc84/reversing/",
+ "http_status": 200,
+ "fetched_at": "2026-10-31",
+ "fetch_sha256": "c9e607562f6fabd370ccc6853df41aaf082d1a68a0a6bbe5747af75e8e38641d",
+ "length": 142213,
+ "anchor": "\"The workflow\" and \"Tools in this dojo\", CSE 598 Rev&PA course page accessed 2026-10-27; \"The program is the judge, not your notes.\"",
+ "quote": "The program is the\njudge, not your notes.",
+ "span": {
+  "start": 13451,
+  "end": 13492
+ },
+ "verdict": "verified",
+ "body_derivation": "raw response bytes",
+ "normalization": "whitespace collapse only (frozen counter norm)",
+ "attempts": [
+  {
+   "url": "https://pwn.college/intro-re-pwn~5933fc84/reversing/",
+   "status": 200,
+   "error": "",
+   "kind": "page",
+   "note": "dojo page (successful first attempt; curl -sL, redirects followed)"
+  }
+ ],
+ "seat": "revenger-r74-L1 (no seat surface on this host; fetch work disclosed as L1-authored)",
+ "notes": "registry quote verbatim in fetched bytes"
+}
