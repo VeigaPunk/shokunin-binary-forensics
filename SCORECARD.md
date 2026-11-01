@@ -1079,8 +1079,9 @@ receipts `reports/round-81/census-after.log`. Mistakes mined (full table
 (caught by the Q06 derive-then-assert discipline), the oracle's None-vs-int
 reference sort (caught by the first real run), the r80 corpus-drift class
 (carry-in, root-caused first-hand), a recon corpus-isolation error
-(self-caught by a tokenizer-vs-sweep count cross-check), and a census
-receipt prefix defect (self-caught before commit; disclosed in the receipt).
+(self-caught by a tokenizer-vs-sweep count cross-check), a census
+receipt prefix defect (self-caught before commit; disclosed in the receipt), and a
+post-commit LOG.md CRLF whole-file rewrite (caught by the mandated diff check; corrected by the round's correction commit, append-only restored).
 
 **planned:** next round — coverage: the artifact-graph family's two unrecorded
 operations (`decode_interface_builder` on an authored compiled-NIB-shaped
