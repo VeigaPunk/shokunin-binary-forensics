@@ -1,0 +1,4 @@
+# c1-only.log - separability: base 4eb2856 + sqlite fixture/record + f_probe3, NO orphan_sweep (2026-11-01)
+F3_COVERAGE=9/10 score=9.00
+F3_FAMILIES=['archives', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']
+orphan_sweep in this tree: ABSENT

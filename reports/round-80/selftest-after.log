@@ -1,0 +1,10 @@
+# selftest-after.log - r80 C2 after over the landing archive instruments (2026-11-01)
+# plain selftest (landing-archive copy of reports/round-80/orphan_sweep.py):
+SWEEP_SELFTEST_CLEAN_VECTOR=ok
+SWEEP_SELFTEST_PLANTED_ORPHAN_FLAGGED=ok
+SWEEP_SELFTEST_ABSENT_RECORDED=ok
+SWEEP_SELFTEST_MUTANT_FLAGGED=ok
+SWEEP_SELFTEST=pass
+plain_exit=0
+# hermeticity: the selftest ran with no git, no network, no live-tree write (synthetic state only;
+# verified by running it from the extracted archive in scratch, outside any repo)

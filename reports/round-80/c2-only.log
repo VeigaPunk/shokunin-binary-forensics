@@ -1,0 +1,6 @@
+# c2-only.log - separability: base 4eb2856 + orphan_sweep, NO sqlite fixture/record, NO f_probe3 (2026-11-01)
+selftest: SWEEP_SELFTEST=pass
+fixture record in this tree: ABSENT
+f_probe3 in this tree: ABSENT
+F2_COVERAGE=8/9 score=8.89
+F2_FAMILIES=['archives', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static']

@@ -1,0 +1,5 @@
+# sweep-real-after.log - r80 real-tree sweep at the adjudication tree (2026-11-01)
+SWEEP committed reports/round-80/orphan_sweep.py
+SWEEP committed reports/round-80/preprobe-sqlite-shape.log
+CITED=357 COMMITTED=343 LANDABLE_ORPHANS=0 ABSENT=14
+ORPHAN_SWEEP_LANDABLE=0
