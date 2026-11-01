@@ -1,0 +1,10 @@
+# sweep2-selftest-after.log - r81 after: orphan_sweep2 --selftest run from the extracted landing archive (88b7e7cee2f07c77b7d9597e8d9e3159aed37f19) outside any repo (hermeticity shown, not asserted), 2026-11-01
+SWEEP_SELFTEST_CLEAN_VECTOR=ok
+SWEEP_SELFTEST_PLANTED_ORPHAN_FLAGGED=ok
+SWEEP_SELFTEST_ABSENT_RECORDED=ok
+SWEEP_SELFTEST_LINEREF_VECTOR=ok
+SWEEP_SELFTEST_DIRSTYLE_VECTOR=ok
+SWEEP_SELFTEST_MASKED_ABSENT_NEGATIVE=ok
+SWEEP_SELFTEST_MUTANT_FLAGGED=ok
+SWEEP_SELFTEST=pass
+exit=0

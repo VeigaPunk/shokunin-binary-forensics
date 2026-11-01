@@ -1,0 +1,19 @@
+# noharm-diff.txt - r81 no-harm receipt: protected paths on 081f032..88b7e7ce (freeze..landing)
+# protected: knowledge, corpus README/QUALITY, verifiers, SKILL, SHONEN, PROVINCE, LOG, SCORECARD, pre-r81 fixtures, frozen instruments (v1/F2/F3 probes, orphan_sweep v1, P2/P3, gate/receipt v1+v2, r71 counter)
+(empty above = protected paths byte-identical)
+
+# whole-range diff-stat (additions only expected: round-81 files + SOURCES +2):
+ reports/round-81/preprobe-keyed-shape.log |  52 +++++
+ reports/round-81/sweep-v1-red.log         | 363 ++++++++++++++++++++++++++++++
+ 15 files changed, 1400 insertions(+)
+
+# frozen instrument blobs at the landing:
+reports/round-76/f_probe.py blob ea42e6c2f9c0b1
+reports/round-79/f_probe2.py blob f090acf4d45e9b
+reports/round-80/f_probe3.py blob b8d2dd65c36e55
+reports/round-80/orphan_sweep.py blob 5ca0434313c939
+# frozen instrument content sha256 at the landing archive:
+e15a43af56f453479681b49e063741bb008245ed758af7fc2d685aa5e64f39ed *reports/round-76/f_probe.py
+0be0d8b5ac131963f273e296c6c2822d277614d634db25b559256f4744e4cc12 *reports/round-79/f_probe2.py
+9441640dc0ff37195337097f677a80bac529b3372f5d352750b7c52da714b418 *reports/round-80/f_probe3.py
+f21f5e3d730624d53ad4d370d1d50fe6d2cd4e94c6c557009d292bfe2d71890b *reports/round-80/orphan_sweep.py

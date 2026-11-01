@@ -1,0 +1,28 @@
+# census-after.log - r81 round-end census receipts (2026-11-01)
+== form 1: sanctioned explicit-lane-dir form over the worktree (SKILL.md 4a) ==
+sanctioned_exit=0
+W0_lines: 31 (21 W01 + 10 W04, the same disclosed classes as round start)
+shokunin-binary-forensics	ok	.../fleet/shokunin-binary-forensics/corpus/SOURCES.md
+== form 2: contract literal form (expected exit 2, disclosed r74-r81 lineage) ==
+literal_exit=2
+revenger	missing	.../shokunin-clone/shokunin/revenger-shokunin/corpus/SOURCES.md
+(the consolidation L0 line landed r79; routed around again this round)
+== form 3: landing-archive-bytes census (88b7e7cee2f07c77b7d9597e8d9e3159aed37f19) ==
+archive_exit=1 -- E11 x2, the expected intermediate state (same shape as r80's S455):
+census-arch	E11	S457 missing used-by corpus/lessons/round-81.md
+census-arch	E11	S458 missing used-by corpus/lessons/round-81.md
+(the lesson lands WITH the adjudication commit, after the landing the census
+ran over; both rows' used-by then resolve - resolved-by = the adjudication)
+archive_W0_lines: 31 (same disclosed classes; zero E other than the two E11)
+NOTE: the first receipt draft of this section grepped for the wrong row
+prefix (^shokunin-binary-forensics over an extraction named census-arch) and
+reported 0 W-lines - a receipt-defect self-caught on review and re-run; the
+correct counts are above.
+== row counts ==
+worktree_rows: 458
+landing_rows: 458
+== final-tip archive census ==
+re-runnable by the closure judge after the adjudication commit lands:
+git archive <adjudication-sha> | tar -x, then
+sources-census.sh validate --root <fleet-root> <extraction>
+expected: exit 0, zero E-findings, 31 W (the two E11 resolved by the lesson)

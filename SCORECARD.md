@@ -1012,3 +1012,87 @@ Routed forward: criterion R extension; criterion N attribution pair; criterion C
 repair (§9); the class question (instruments vs registry rows — orphan_sweep lands
 as a capability, not a row); F android gate; K L0; census literal form
 (operator-side, lineage L0 landed r79).
+
+## Erratum to the round-80 section (appended 2026-11-01, round 81 — the rows above stay as written)
+
+erratum (r80 non-author closure routed item 1, root-caused first-hand in
+`reports/round-81/preprobe-keyed-shape.log` §r80-corpus reconstruction): the
+`CITED=344 COMMITTED=330 LANDABLE_ORPHANS=0 ABSENT=14` figures quoted in the
+round-80 section's C2 row, the capabilities table's `cited-evidence orphan
+sweep` row, the round-80 report and `reports/round-80/claims.md` are the
+**landing-era citation corpus** (lane lessons at `ef7d3ee3` + fleet reports
+through round-79) — reproduced exactly this round: 344 tokens → 330 committed +
+6 absent-fleet + 8 absent, LANDABLE_ORPHANS=0, under the v1 tokenizer and
+classification rules. The committed receipt `reports/round-80/
+sweep-real-after.log` (regenerated at `b1e0c60e`) carries
+`CITED=357 COMMITTED=343` — its corpus is the post-adjudication one (the
+round-80 adjudication lesson + r79 erratum and the fleet round-80 report
+joined; 357 also reproduced exactly). The current tree prints CITED=358 (the
+r80 spot-check lesson, +1 net-new). Verdict-bearing values are identical in
+every corpus: LANDABLE_ORPHANS=0, ABSENT=14, exit 0 — no verdict changes; the
+drift is corpus membership, not measurement error. Standing rule (landed as
+orphan_sweep2 change 3, round 81): a sweep receipt carries its count basis
+(the `SWEEP_CORPUS fleet-reports=<n> lessons=<n>` header); a narrative count
+is a `grep -c` of a named-corpus receipt, never a recalled or cross-corpus
+number. The truncated receipt form (2 of the SWEEP lines, no stated filter)
+is likewise superseded: round-81 receipts carry full output
+(`sweep2-real-after.log`) or an in-output filter statement
+(`--format summary`).
+
+## Round 81 (hyaku run 20) — an eleventh F family moves through a real Foundation keyed-archive producer run (criterion F4, `artifact-graph`); the orphan sweep learns the r80 carry-in classes (v2 supersession)
+
+Base `081f032fda9502ebfbceb295d7e097dd8803bce1`. Freeze
+`8261a24cb806d60a47a640f948de339912dcc96b` (claims + sha-pinned instruments +
+red-befores + preprobe receipt). Landing
+`88b7e7cee2f07c77b7d9597e8d9e3159aed37f19` (fixture + producer record +
+S457–S458); final measured revision = the adjudication commit carrying this
+section. Two claims, distinct axes, causally separable, neither exploratory.
+Carry-in dispositions (r80 non-author closure, addressed first): the
+sweep-count drift corrected by the appended erratum above (first-hand
+reproduction, per-revision citation corpora named); the truncated receipt
+class closed inside v2 (full output + count basis); the SHONEN `[~]` reviewer
+debt is operator-side — routed around, no SHONEN claim. Full gate, receipts
+and mistake mining: `corpus/lessons/round-81.md`.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — selected-family record presence (F4, registered mapping revision; supersedes the frozen F3 mapping as the criterion's counting instrument) | **9/10 (9.00) → 10/11 (9.09)** on the registered instrument; frozen instruments hold: v1 `F_COVERAGE=7/8 (8.75)`, `F2_COVERAGE=8/9 (8.89)`, `F3_COVERAGE=9/10 (9.00)` unchanged | before: `PYTHONUTF8=1 python -B reports/round-76/f_probe.py <base-archive>/corpus`, `…/reports/round-79/f_probe2.py`, `…/reports/round-80/f_probe3.py`, `…/reports/round-81/f_probe4.py` → `f4-before.log` (9/11 = 8.18, artifact-graph absent); after: same four over the landing archive → `f4-after.log` | `081f032` → `88b7e7ce` | **improved, C1 met** — one real `rea inspect-keyed-archive corpus/fixtures/keyed-r81/fixture.plist --format json` run (rea 6.8.0, built-in `rea-artifact-graph` provider) on the authored inert Foundation keyed-archive fixture (210 bytes, generator self-check derives every oracle-checked fact from the built bytes — roots, 6 objects, 4 references; regen byte-identical; sha256 `f0e02e64…37785c`); oracle `ORACLE OK (27/27 checks)` over the archive bytes (`corpus/live/runs/round-81/`, Evidence `ev_6eb77fb0…02af4b73`). Honest boundary: numerator+denominator move together (had the record not landed, F4 prints 9/11 = 8.18 < 9.00); android stays hard-gated — F4's honest exception is 10/11, not 11/11; the family's other two operations stay available-but-unrecorded |
+| calibration — standing cited-evidence orphan sweep, v2 supersession (capability improvement, not a new capability) | red (`sweep-v1-red.log`: v1 full output — `CITED=358 COMMITTED=344 ABSENT=14`, NO count-basis line, the two parser-artifact tokens misdisposed absent, grep = 2; plus the committed r80 truncated receipt as the second red) → green: `SWEEP_SELFTEST=pass` 7/7 legs exit 0 (line-ref, dir-style, masked-absent-negative vectors + attributed mutant kill; hermetic archive run, `sweep2-selftest-after.log`); real tree FULL output + `SWEEP_CORPUS fleet-reports=21 lessons=42` + `CITED=357 COMMITTED=345 LANDABLE_ORPHANS=0 ABSENT=12` exit 0, parser-artifact grep = 0 (`sweep2-real-after.log`) | `PYTHONUTF8=1 python -B reports/round-81/orphan_sweep2.py --selftest` / `… --lane <lane> --fleet <fleet-root> [--format full\|summary]`; parser-artifact grep: `grep -cE '^SWEEP absent (corpus/knowledge/round-68-apk-axml-byte-evidence\.md:57\|corpus/lessons/round-64) ' <receipt>` | `081f032` (red) → adjudication | **improved, C2 met** — `reports/round-81/orphan_sweep2.py` (sha `30aa3527…93eb6`; v1 blob unchanged `f21f5e3d…1890b`): repeated line-ref stripping (the r80 `:57,:148,` false absent), dir-style cite normalization with the masked-absent negative (r80 `corpus/lessons/round-64`), the `SWEEP_CORPUS` count basis (the r80 CITED=344-vs-357 routed rule), and full-output receipts (the r80 2-of-357-lines class); declared exits 0/1/64 unchanged; counts remain per-revision-corpus (the erratum rule above). Supersession note for the capabilities table: the `cited-evidence orphan sweep` row's current instrument is v2 (this round's receipts), first-working round unchanged (r80) |
+| coverage — knowledge-map ground K | 8/15 (5.3) → 8/15; C05 uncovered, C10 partial, C15 uncovered | not re-run — no README/knowledge byte changed (no-harm diff below); operator-blocked route (r74 L0 unanswered, re-read at the fleet `.ufo/l0-questions.md:233`) | same | unchanged (blocked route, not attempted) |
+| coverage — province surface accuracy (P3 hold) | 12/12 / 0 / 0 / 10.0 exit 0 → same (probe and PROVINCE bytes unchanged) | `bash reports/round-78/province_probe3.sh <lane-dir>` not re-run — no-harm diff | same | unchanged hold |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (seed 12 + readiness 6; knowledge files untouched) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` | same | unchanged hold |
+| calibration — C2–C8 receipt guards, exit-2 gate, runnability; C/N/R/G criteria bytes | untouched; no verifier, README or knowledge byte changed; v1/F2/F3 criterion instruments blob/sha-identical (`noharm-diff.txt`: protected paths empty on `081f032..88b7e7ce`; content sha256s match their pins) | no-harm diff receipt `reports/round-81/noharm-diff.txt` | same | unchanged (no harm observed) |
+| separability | C1-only tree (base + fixture/record + f_probe4, no orphan_sweep2): F4 10/11 + oracle 27/27, instrument ABSENT (`c1-only.log`); C2-only tree (base + orphan_sweep2, no fixture/record/f_probe4): selftest pass, F2 prints 8/9 (`c2-only.log`) | see the two logs | same | claims separable as frozen |
+| depth / operability / adjacency | no claim; no engine readiness claimed (Q05: the record demonstrates the built-in artifact-graph provider's object-graph read of one authored 210-byte fixture — classes never instantiated per the producer's own limitation; NIB/dylib operations unrecorded) | — | — | unchanged (ADJ-06 unchanged) |
+
+Capabilities: none added (the F4 mapping and v2 instrument are revisions of
+existing registered ground; the supersession note above updates the r80
+orphan-sweep row's current instrument, first-working round unchanged).
+
+Sources: rows 456 → 458 (+S457 the artifact-graph capability surface
+[own-work, tier A], +S458 the producer record [own-work, tier A]; both opened
+this round; C1 is the sourced claim; C2 rests on the r80 closure's routed
+rule, S456 lineage). Census: round start sanctioned exit 0, 31 W (21 W01 +
+10 W04, same disclosed classes; literal exit 2, disclosed lineage); round end
+receipts `reports/round-81/census-after.log`. Mistakes mined (full table
+`corpus/lessons/round-81.md`): the generator's stale self-check constants
+(caught by the Q06 derive-then-assert discipline), the oracle's None-vs-int
+reference sort (caught by the first real run), the r80 corpus-drift class
+(carry-in, root-caused first-hand), a recon corpus-isolation error
+(self-caught by a tokenizer-vs-sweep count cross-check), and a census
+receipt prefix defect (self-caught before commit; disclosed in the receipt).
+
+**planned:** next round — coverage: the artifact-graph family's two unrecorded
+operations (`decode_interface_builder` on an authored compiled-NIB-shaped
+fixture, or `trace_dylib-resolution` on a Mach-O-shaped one) are one bounded
+round each, same shape as F2/F3/F4; calibration: criterion R extension or
+criterion N's attribution pair (both stay routed). F android moves only if the
+caller-supplied `REA_JADX_MCP_JAR` appears; K stays blocked until the operator
+rules on the filed L0.
+
+Routed forward: criterion R extension; criterion N attribution pair; criterion
+C repair (§9); the class question (v2 lands as a capability supersession note,
+not a registry row); F android gate; K L0; census literal form (operator-side,
+lineage L0 landed r79); the six real sweep absents keep their recorded
+dispositions (ScoutAmp misroot, round-73/votes, w1.ready, .pyc,
+measurements.json, controls/A-H).
