@@ -673,3 +673,36 @@ Sources: `corpus/SOURCES.md` 53 → 95 (42 additions: tier A 37, tier C 5; mined
 ## Round 73 (hyaku run 12, attempt 2) — C1 unresolved (honest stop); no axis moved
 
 Frozen claim C1 (`reports/round-73/claims.md`, counter `measure.py`, pin `candidate-pin.json`, frozen at `606548a`) was not measured after: the wave that carries its 16 Q votes was validated and handed off (`.ufo/waves/round-73/v2.ready`) but was released un-settled at the operator wrap-up. Counter at `74e1c3e`: `K_HELD_BACKED=8/15` (5.3, unchanged), `C10_HELD_BACKED=0/1`, `C10_Q_VOTES=0/16`. No axis score, capability or retirement changed. The claim neither verifies nor is falsified; the next round carries it unchanged under the frozen rule.
+## Round 74 (hyaku run 13, fresh start, new Windows host) — C1 verified (new coverage criterion P); C2 verified (inherited QA criterion 51/51); carried C10 disposed by the frozen kill rule
+
+Fresh-start round per the operator ruling: the last three closures were rejected honest-stops
+whose declared claims a do-nothing control could reach (wave never settled). The inherited r74
+freeze `85db6ab` (instruments sha-verified unchanged) supplied C2; its carried C10 admission was
+ruled out as a claim (required 4-seat Q review cannot exist on this host — no `.ufo/state/`
+dispatcher, `/home/vgpnk` absent) and its frozen kill rule was executed instead: counter over
+base `85db6ab` → `C10_Q_VOTES=0/16`, `C10_HELD_BACKED=0/1` (`C10_CANDIDATE_PIN=1/1`,
+`C10_SOURCES=1/1`, exit 0); candidate `admission-status:` `candidate` → `rejected` (single
+line, this round); README C10 stays `partial`; K unchanged. No repair-and-revote under that claim.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — province surface accuracy (new bounded criterion P, split recorded here; instrument-level only) | `PROVINCE_SURFACES_RESOLVED=4/11 UNRECORDED_ABSENT=7 P_SCORE=3.6` exit 1 → `11/11 / 0 / 10.0` exit 0 | `bash reports/round-74/province_probe.sh` (before `province-before.log`, after `province-after.log`) | `85db6ab` → this round's tip | **verified as declared**; boundary: K 8/15 (5.3) and F 5/8 unchanged — no coverage-map row moved, no admission claimed |
+| calibration — source-registry quote fidelity (inherited frozen QA criterion) | `QA_VERIFIED_TOTAL=0/51 QA_UNRESOLVED=51/51 QA_TARGET=no` (frozen `measure-before.log`) → `QA_VERIFIED=42/42 QA_MANUAL_VERIFIED=9/9 QA_VERIFIED_TOTAL=51/51 QA_UNRESOLVED=0/51 QA_NEGCTRL=pass QA_TARGET=yes`, counter exit 0 | `python -B reports/round-74/measure.py TREE` over `git archive <tip> corpus .ufo/waves/round-74` (host invocation `PYTHONUTF8=1`; sha-pinned counter unchanged) | `85db6ab` → this round's tip (`reports/round-74/measure-after.log`) | **verified as declared**; 10 registry quotes were not verbatim (2 misquotes S062/S068, 1 insertion S094, 2 early ends S063/S080, 5 representation-only) — corrected only via superseding rows S429–S442 opened this round; 3 rejected flips (S062, S068, S094) carry located-quote reasons (Q12) |
+| coverage — knowledge-map ground K (C05, C10, C15) | 8/15 (5.3) → 8/15 (5.3); C05 uncovered, C10 partial (candidate rejected this round), C15 uncovered | `reports/round-73/measure.py TREE` (`K_HELD_BACKED=8/15`) | same | **unchanged** (honest: no admission; the round-73 C10 claim is now falsified-closed, not carried) |
+| calibration — C2–C8 receipt guards, exit-2 gate, runnability holds | untouched this round; no gate, fixture, admitted entry or Q01–Q16 byte changed | `git diff 85db6ab..<tip> -- corpus/knowledge corpus/live corpus/fixtures corpus/README.md` → only the candidate's one status line | same | unchanged (no harm observed; diff receipt `reports/round-74/no-harm-diff.txt`) |
+| freshness | instrument bytes and registry rows re-verified on the new host: 51/51 sources re-fetched with status evidence; verifiers run under `PYTHONUTF8=1` (locale decode defect mined) | same archive counter + instrument self-test exit 0 (7/7 legs) | same | hold, exercised on a new host |
+| depth / operability / adjacency | no claim | PROVINCE corrections are coverage P work; no engine claimed (`rea` CLI 6.8.0 probed, presence not readiness, Q05) | — | unchanged (ADJ-06 unchanged) |
+
+Capabilities: none added (the probe is a counting instrument for criterion P, not a new
+analysis family). SHONEN unchanged (`[~]` states stand; no outside verifier this round).
+Sources: rows 428 → 442 (+S429–S442 mined this round; S062/S068/S094 rejected; no other
+in-place change). Census exit 0 at both ends (W01/W04 warnings only). Mistakes mined:
+environment-drift freeze defect, locale decode, rendered-vs-fetchable quote drift,
+probe summary arithmetic (self-caught) — `corpus/lessons/round-74.md`.
+
+**planned:** next round — (a) outside re-derivation of the 51 receipts is the closure judge's;
+if confirmed, QA is a candidate for saturation or sub-axis split; (b) coverage K remains the
+lowest criterion: C05/C10/C15 admission all require the wave Q-review surface — on this host
+that surface must first exist (L0 filed), so a K move stays blocked and should not be declared
+again until the operator rules; (c) P's absent surfaces (engines) may become freshness moves if
+the operator installs any.

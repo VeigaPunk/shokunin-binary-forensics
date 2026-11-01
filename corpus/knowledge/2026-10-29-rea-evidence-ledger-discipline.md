@@ -16,7 +16,7 @@ source: S002 — installed REA skill, `~/.agents/skills/reverse-engineer-anythin
 verified-at: 2026-10-29 — local REA checkout `~/.local/share/rea` at commit 12f6e0974cc0db0b3a9b86246accc76556837222; issues #21/#50/#73 opened earlier the same day; APU HTML, Schum PDF, Richards page, ED README, and Frontiers abstract page opened 2026-10-29. Installed skill `evidence-workflows.md` sha256 `2bdee98a…` differs from checkout `f44b68ac…` (71 vs 126 lines); S100 pins the checkout. No REA MCP analysis run.
 recheck: `git -C ~/.local/share/rea rev-parse HEAD`; re-open the blob URLs at that commit; re-open issue pages and arXiv/DOI destinations if a claim moves.
 coverage-map: C10 — evidence-ledger discipline (Evidence IDs; observation/inference/unknown)
-admission-status: candidate
+admission-status: rejected
 
 # REA evidence-ledger discipline — observation, residual unknown, qualification
 
