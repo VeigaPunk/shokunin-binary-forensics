@@ -1,0 +1,9 @@
+# carryin-byteverify.log - the seven r82 carry-in receipts in the recon-post disk tree, byte-verified against the 60693f2 blobs (2026-11-02)
+# left = sha256(git show 60693f2:reports/round-82/<f>) run in the lane repo; right = sha256 of the extracted file in C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/scratch/revenger-r84/recon-post; all seven must match
+MATCH ag-after.log ab918d9416ce7b3468036470caef09731783eb1a505f3b4a19878f8da8cacfbc
+MATCH sweep3-selftest-after.log ac453532a40aeb4d9f9e15c89055480fba5b52580e4011fde4dcbc26c18cb813
+MATCH sweep3-mutant-kill.log 6fb40a0823cf764c69122aaf2fe5396921fa1331e1b165537f38ce8fb489ffad
+MATCH sweep3-real-after.log 7df70651ce8acc5ac4cde5b9c01068ed656816c1022cfa415562d46117e68be6
+MATCH c1-only.log a0bb189bcb003a9b8110596daab9a7a9763e1d2210fa42ac843f1ad779959343
+MATCH c2-only.log 7c962f3dd6a3f7b8f86287a03aefbea54acd55a745089b606bbf301fa4f2baa5
+MATCH noharm-diff.txt 3d8edb2cfc2ebbdc3cbc75b9111dec6c2a5457823d41d177981bcdfca31d7470
