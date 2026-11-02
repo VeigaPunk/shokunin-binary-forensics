@@ -1,0 +1,5 @@
+# ag-red.log - r83 C1 red-before: frozen r82 ag_probe.py over the base archive 60693f2ce6b086ea3f0ee84fe27a8f8a13d46f46 (git archive corpus extract, 2026-11-01)
+A1_OP decode_interface_builder=unrecorded
+A1_OP inspect_keyed_archive=round-81
+A1_OP trace_dylib_resolution=round-82
+A1_RECORDED=2/3 score=6.67

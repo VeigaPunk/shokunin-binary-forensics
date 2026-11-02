@@ -1,0 +1,45 @@
+# preprobe-app-shape.log - r83 C1 premise probes (2026-11-01, all before the committed producer run)
+
+== probe 0: tool identity ==
+$ PYTHONUTF8=1 rea --version   -> exit 0, prints 6.8.0
+$ PYTHONUTF8=1 rea decode-interface-builder --help   -> exit 0
+  header: "Decode compiled storyboard and nib archives from an app bundle"
+  usage: rea decode-interface-builder <path>  ; path = Apple .app bundle path
+$ PYTHONUTF8=1 rea decode-interface-builder --schema   -> exit 0 (args: path required; options max_documents/max_objects/max_connections)
+$ PYTHONUTF8=1 rea capabilities   -> exit 0
+  provider rea-artifact-graph, groups[3] operations decode_interface_builder,inspect_keyed_archive,trace_dylib_resolution, available: true (win32)
+
+== probe 1: bundle WITHOUT Info.plist (minimal nib, scratch) ==
+$ rea decode-interface-builder probe1/Sample.app --format json -> exit 1, stderr 0 bytes
+  envelope error code=target_unavailable
+  message: Cannot open artifact: app resource root has no supported Info.plist layout: C:\Users\jpvei\.zcode\workspace\95b1ba4d-5089-47a4-9fd
+  (the parser requires a supported Info.plist layout: Contents/Info.plist or root Info.plist - AppBundleExecutable.js BUNDLE_LAYOUTS)
+
+== probe 2: root Info.plist added; nib varints drafted as standard LEB128 ==
+$ rea decode-interface-builder probe1/Sample.app --format json -> exit 0 (envelope ok), stderr 0 bytes
+  coverage: archive_decode partial, reason one_or_more_archives_invalid
+  limitation: Some Interface Builder archives could not be decoded: Base.lproj/MainMenu.nib: NIBArchive variable integer is too long
+  "NIBArchive variable integer is too long" - the parser readVarint returns on byte & 0x80:
+  the FINAL 7-bit group carries the HIGH bit SET (terminator), earlier groups CLEAR -
+  the inverse of standard LEB128; the draft standard-LEB128 encoding never terminated
+
+== probe 3: terminator-bit varints, minimal 1-document bundle ==
+$ rea decode-interface-builder probe1/Sample.app --format json -> exit 0, stderr 0 bytes
+  documents: 1 (Base.lproj/MainMenu.nib), graph nodes 3, edges 0 (connector unresolved)
+  isInterfaceBuilderArchive: path (lowercased) endsWith .nib or /objects.nib
+
+== probe 4: the final fixture shape (2 documents, NSActionConnector), scratch build ==
+$ rea decode-interface-builder final-probe/R83Sample.app --format json -> exit 0, stderr 0 bytes
+  documents: [('Base.lproj/MainMenu.nib', 4, 1), ('Base.lproj/SecondView.nib', 1, 0)]
+  nodes 8, edges 2, truncated False; edge relations ['target_action']
+  connector kind=action, selector null (NSLabel is data -> {$nib_data_base64}, not a string label)
+  coverage facets: 9 (['complete', 'complete', 'unsupported', 'complete', 'complete', 'complete', 'unsupported', 'complete', 'complete'])
+
+== parser-source reads grounding the fixture (installed rea-agents 6.8.0, own-work environment) ==
+  dist/artifacts/apple/NibArchive.js        - 50-byte header (magic NIBArchive, u32LE formatVersion==1, coderVersion, 4x count/offset pairs in objects<keys<values<classes order, offsets in [50,len]); object rec = 3 varints (classIndex, valueStart, valueCount) with classIndex<classCount, valueStart+count<=valueCount; key rec = varint len + utf8; value rec = varint keyIndex + 1 type byte + payload (types 0-10); class rec = varint nameLen, varint extraCount(<=16), extraCount*4 bytes, utf8 name
+  dist/domain/apple/appleArchiveFormat.js   - NIB_ARCHIVE_MAGIC = 4e 49 42 41 72 63 68 69 76 65 ("NIBArchive")
+  dist/application/AppBundleExecutable.js   - BUNDLE_LAYOUTS: [Contents/Info.plist + Contents/MacOS] or [Info.plist at root]; findAppBundleResourceRoot requires one
+  dist/artifacts/apple/InterfaceBuilderAnalysis.js - isInterfaceBuilderArchive = *.nib; document record fields (relative_path, archive_sha256, document_kind, object_count, connection_count, hierarchy_complete)
+  dist/cli-runtime/interfaceBuilderGraph-*.js - classifyConnection: /outlet/->outlet, /action|eventconnection/->action, /segue/->segue, else other; UIRuntime*Connection vs NS*Connector field namespaces (NSSource/NSDestination/NSLabel)
+
+All probes scratch-only; no repo byte written. The committed fixture bytes equal probe 4's build (same generator).
