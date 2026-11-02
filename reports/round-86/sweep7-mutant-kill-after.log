@@ -1,0 +1,15 @@
+# revenger r86 after-run — ONE frozen one-substitution sed mutant dies exit 1 attributed, from the COMMITTED blob (25041d9)
+# date: 2026-11-02T12:32:21Z
+# recipe: sed 's/^USED_BY_ACCOUNTING = True$/USED_BY_ACCOUNTING = False/' <git show 25041d9:reports/round-86/orphan_sweep7.py>
+# mutated copy sha256: 0bfe69a08d3d0491e55a6af5e2fa08a9438b732ea1a8eb7579f61b73db3028c3 (freeze pin 0bfe69a0…8c3)
+# diff vs committed blob (expect exactly the one switch line):
+  165c165
+  < USED_BY_ACCOUNTING = True
+  ---
+  > USED_BY_ACCOUNTING = False
+MUTANT_EXIT=1
+# mutant tail:
+  SWEEP_SELFTEST_SRC_CITEBACK_VECTORS=FAIL (2/4/0 [] [])
+  SWEEP_SELFTEST_SRC_ABSENT_VECTOR=FAIL (0)
+  SWEEP_SELFTEST_SRC_MUTANT_FLAGGED=FAIL
+  selftest: used-by accounting drifted (used-by class)

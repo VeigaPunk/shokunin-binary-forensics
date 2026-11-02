@@ -1,0 +1,14 @@
+# revenger r86 separability receipt — C1-only tree (freeze archive 2311400 + the fixed SOURCES.md from 25041d9; SKILL.md at freeze bytes = base, no C2 rows)
+# date: 2026-11-02T12:44:04Z
+# construction: git archive 2311400 extracted to a scratch repo (git init + one commit; scratch-side only), corpus/SOURCES.md overwritten with git show 25041d9:corpus/SOURCES.md before the commit; v7 = the committed blob (f955cd7d…618)
+--- C1 instrument on the C1-only tree ---
+SWEEP_CORPUS fleet-reports=26 lessons=52 log=1
+SWEEP_SRC registry=disk rows=452 sites=495 cited=494 mismatch=0 absent=1
+SWEEP_SRC_ABSENT S472 -> corpus/lessons/round-86.md
+CITED=1050 COMMITTED=988 LANDABLE_ORPHANS=0 ABSENT=62
+ORPHAN_SWEEP_LANDABLE=0
+C1_ONLY_SWEEP_EXIT=0
+--- C2 instrument on the C1-only tree (SKILL greps must stay at RED 9/0) ---
+9
+0
+# disclosure: S472 -> corpus/lessons/round-86.md prints ABSENT here (the round lesson is adjudication content, not a claim file; it exists only in the full tree); the six drift rows are clean (mismatch=0), which is C1's separable quantity.

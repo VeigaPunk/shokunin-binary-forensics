@@ -1,0 +1,81 @@
+# revenger r86 after-run — frozen coverage holds re-run over the LANDING archive (25041d9), probes from their committed blobs (d7fd9d9)
+# date: 2026-11-02T12:33:20Z
+# command: PYTHONUTF8=1 python -I -B <committed probe blob> <archive-of-25041d9>/corpus
+# probe shas: mg=1840c30cf4f1cad0… f4=4d871971fa49131f… ag2=f9772ab1428ebe6e…
+# archive corpus fixtures: REPLAY.md
+apk-r65/
+app-r83/
+arc-r84/
+archive-r2/
+browser-r77/
+checksum-r1/
+duplicate-r15/
+evm-r19/
+evm-r21/
+evm-r22/
+evm-r23/
+evm-r24/
+evm-r25/
+evm-r26/
+firmware-r63/
+js-r3/
+js-r7-v2/
+keyed-r81/
+macho-r82/
+managed-r76/
+managed-r85/
+native-auth-r79/
+nested-r11/
+pe-r27/
+pe-r28/
+pe-r29/
+pe-r30/
+pe-r31/
+pe-r32/
+pe-r33/
+pe-r34/
+pe-r35/
+pe-r36/
+pe-r37/
+pe-r38/
+pe-r39/
+pe-r41/
+pe-r42/
+pe-r43/
+pe-r44/
+pe-r45/
+pe-r47/
+pe-r48/
+pe-r49/
+pe-r51/
+pe-r52/
+pe-r53/
+pe-r54/
+pe-r55/
+pe-r56/
+pe-r57/
+pe-r59/
+pe-r59d/
+pe-r75-headless-smoke/
+replay_fixtures.py*
+shapes-r12/
+sqlite-r80/
+--- mg_probe (criterion M hold) ---
+M_OP inspect_managed_artifact=inspect-managed-artifact
+M_OP inspect_managed_members=inspect-managed-members
+M_OP inspect_managed_native_boundaries=inspect-managed-native-boundaries
+M_RECORDED=3/3 score=10.00
+MG_EXIT=0
+--- f_probe4 (F4 hold) ---
+F4_COVERAGE=10/11 score=9.09
+F4_EXIT=0
+--- ag_probe2 (A1v2 + A1 holds) ---
+A1V2_RECORDED=5/5 score=10.00
+AG2_EXIT=0
+--- ag_probe (r82 A1 hold) ---
+# command: PYTHONUTF8=1 python -I -B <git show d7fd9d9:reports/round-82/ag_probe.py> <archive>/corpus
+A1_OP decode_interface_builder=round-83
+A1_OP inspect_keyed_archive=round-81
+A1_OP trace_dylib_resolution=round-82
+A1_RECORDED=3/3 score=10.00
+A1_EXIT=0

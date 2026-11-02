@@ -1,0 +1,10 @@
+# revenger r86 separability receipt — C2-only tree (base archive d7fd9d9 + the edited SKILL.md from 25041d9; SOURCES.md at base, v7 ABSENT)
+# date: 2026-11-02T12:45:43Z
+# construction: git archive d7fd9d9 extracted to a scratch repo (git init + one commit; scratch-side only), SKILL.md overwritten with git show 25041d9:SKILL.md before the commit
+--- C2 instrument on the C2-only tree (SKILL greps must be GREEN 10/2) ---
+10
+2
+--- C1 absence checks on the C2-only tree ---
+v7 present (expect 0): 0
+SOURCES.md drift intact at base (S449 still lists SKILL.md, expect 1): 1
+# reading: C2's counting commands verify on SKILL.md bytes alone — C1's instrument and fix are absent and the six drift rows still stand in this tree; the claims are causally separable as frozen.

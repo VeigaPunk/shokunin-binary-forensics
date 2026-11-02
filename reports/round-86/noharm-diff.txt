@@ -1,0 +1,22 @@
+# revenger r86 no-harm diff receipt — freeze 2311400 .. landing 25041d9
+# date: 2026-11-02T12:40:45Z
+# command: git diff --numstat 2311400..25041d9 (full range; protected-path check below)
+4	0	SKILL.md
+7	6	corpus/SOURCES.md
+18	0	reports/round-86/usedby-fix-log.txt
+# protected paths in range (must print nothing):
+  (none)
+# landing diff SKILL.md hunks (additions only):
++| every listed `used-by` pointer passes cite-back: it names
++| a `used-by` placeholder cell (`—` em dash U+2014, `–`
++| division of labor: the census checks used-by path EXISTEN
++| M42 | pointer-drift (used-by written as evidence-location
+# SOURCES.md changed lines (six used-by cells + S472 append; cells changed, no row deleted):
+7	6	corpus/SOURCES.md
+# FRESH_ROWS (stored-assertion proxy):
+corpus/knowledge/2026-10-12-rea-readiness-checklist.md:6 corpus/knowledge/seed.md:12 
+# standing instruments absent from the range (must print nothing):
+  (none)
+# v6 + mg_probe blob pins re-verified at HEAD:
+b2db45b07bc86ffd
+1840c30cf4f1cad0

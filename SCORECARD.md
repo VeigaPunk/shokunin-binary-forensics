@@ -1392,3 +1392,65 @@ recorded-absent rows' standing dispositions (field-path noise,
 historical unresolvable pointers — dispositioned in the round lesson);
 the treecommit repo-relative + file-exists + numstat-count rule (three
 variants of one class mined r78/r84/r85).
+
+## Round 86 (hyaku run 23, fresh start) — the used-by pointer-drift class becomes machine-caught (orphan_sweep v7, per-source citation-sites accounting, the routed r84/r85 vector); SKILL.md gains the pointer-hygiene decision rows and the M42 signature
+
+Carry-in first (r85 non-author closure, three routed status-neutral
+items, addressed before claim work — correction 2 in
+`reports/round-85/corrections.md`; dual round-start census receipts in
+`.ufo/waves/round-86/`; SHONEN routing recorded): (1) the mg_probe.py
+docstring prediction-line ruling recorded (r86 does not touch the file;
+the verified sha pin stands; the standing rule: a docstring prediction
+line states the registration RULE, the registered red receipt governs);
+(2) the census contract-literal form exit 2 persists (r74–r86 lineage,
+operator-side, dual receipts again); (3) SHONEN non-author
+re-confirmation of the CURRENT SKILL.md bytes stays operator-side.
+
+| axis / criterion | before → after score | evidence / command | measured commits | last change |
+|---|---|---|---|---|
+| calibration — standing cited-evidence orphan sweep, v7 supersession (capability improvement, not a new capability); change 10: SOURCES.md used-by pointer accounting (per-source citation-sites accounting, the r84 lesson's routed candidate vector 1) | no criterion score moves; the moved quantity is pointer-truth: red pair over the SAME pre-fix tree at base `d7fd9d9` (`sweep7-v6-blind-prelanding.log`: `grep -c SWEEP_SRC` over the v6 summary → 0, the class does not exist in v6; `sweep7-red-prelanding.log`: `SWEEP_SRC registry=disk rows=451 sites=499 cited=493 mismatch=6 absent=0` with six SWEEP_SRC_MISMATCH rows — S448→reports/round-77/claims.md, S449→SKILL.md, S450→reports/round-78/province_probe3.sh, S451→reports/round-79/claims.md, S453→reports/round-79/claims.md, S456→reports/round-80/orphan-before.log; identical basis `SWEEP_CORPUS fleet-reports=26 lessons=52 log=1` + gating `CITED=1050 COMMITTED=988 LANDABLE_ORPHANS=0 ABSENT=62`, both exit 0) → resolved: six rule-2 in-place used-by pointer drops (old→new logged in `reports/round-86/usedby-fix-log.txt`, each row keeps its citing pointer so `mined` stays valid) → green from the committed blob over the adjudication tip (`sweep7-real-after.log`: `SWEEP_SRC … mismatch=0 absent=0`) | `PYTHONUTF8=1 python -B reports/round-86/orphan_sweep7.py --lane <lane-dir> --fleet <fleet-root> --format summary` then `grep -E '^SWEEP_SRC '`; blind leg: `… orphan_sweep6.py … --format summary` piped to `grep -c SWEEP_SRC` → 0 at both ends; v7 sha `f955cd7d…618` frozen at `2311400`; v6 blob unchanged `b2db45b0…f12b7` re-verified; exit codes 0/1/64 unchanged (change 10 non-gating); selftest 25 legs + pass exit 0 (`sweep7-selftest-after.log` from the committed blob; 21 v6 legs + SRC_PLACEHOLDER / SRC_CITEBACK_VECTORS / SRC_ABSENT_VECTOR / SRC_MUTANT_FLAGGED); ONE frozen one-substitution sed mutant dies exit 1 attributed from the committed blob (`sweep7-mutant-kill-after.log`: `USED_BY_ACCOUNTING` → `selftest: used-by accounting drifted (used-by class)`, diff exactly line 165, mutated copy `0bfe69a0…8c3`); the census existence check passes on all six drift pointers — the class was invisible to every standing instrument by construction; preprobe cross-check per pointer `grep -cw` all six CITES=0 (`freshstart-probes.log` probes 4-5) | `2311400`/`d7fd9d9` (red) → adjudication (green) | **improved, C1 met** — supersession note for the capabilities table: the `cited-evidence orphan sweep` row's current instrument is v7 (this round's receipts), first-working round unchanged (r80) |
+| depth — SKILL.md pointer-hygiene decision ground (two new §3 rule rows + the census/sweep division-of-labor row + the M42 named error signature) | reds over base bytes (`skill-red-greps.log`: `grep -cE '^\| M[0-9]+ \|' SKILL.md` → 9 (M33–M41, no pointer-drift signature); `grep -c 'cite-back' SKILL.md` → 0; `grep -c 'used-by' SKILL.md` → 4) → greens over the landing archive (`skill-green-greps.log`: M-rows → 10 (M42 added), cite-back → 2, used-by → 8) | `grep -cE '^\| M[0-9]+ \|' SKILL.md` over `git archive` bytes of each end; before `d7fd9d9` → after `25041d9` | `d7fd9d9` (red) → `25041d9` (green) | **improved, C2 met** — before this round SKILL.md's rule-2 row permitted used-by pointers with no cite-back property at all (the exact defect six live rows exhibit); after, the skill states the cite-back rule (with the six named r78–r80-vintage specimens), the placeholder semantics (em/en dash + ASCII hyphens = no citation sites; the em-dash parser class named with its 20-phantom-row specimen), and the census/sweep division of labor (existence vs cite-back truth); M42 names the class, its look, the machine check that catches it (the v7 `SWEEP_SRC` block), and the rule-2 fix |
+| coverage — M/A1/A1v2/F4/K (all criteria; the lowest non-retired axis, routed this round) | F4 10/11 → 10/11 (android hard-gated, re-probed: `REA_JADX_MCP_JAR` UNSET, no jadx on PATH — S448 stands); M 3/3, A1 3/3, A1v2 5/5 frozen holds re-run over the landing archive (holds receipt); K untouched (operator-blocked, L0 r74 re-read unanswered); asset-catalog macOS-gated (7 unsupported_host groups printed, same as r85) | `PYTHONUTF8=1 python -B reports/round-85/mg_probe.py <landing-archive>/corpus` + `reports/round-81/f_probe4.py` + `reports/round-84/ag_probe2.py` over the `25041d9` archive (`holds-over-landing-archive.log`) | `d7fd9d9` (base) → `25041d9` (landing) | unchanged hold — the lowest-axis obligation routes on documented unreachability (freshstart probes 1-3 + probe 6 enumeration; the stagnation nudge does NOT apply: K 5.3 < 7.0), not on the nudge |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (seed 12 + readiness 6; knowledge files untouched) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` (`noharm-diff.txt` tail) | same | unchanged hold |
+| calibration — C2–C8 receipt guards, exit-2 gate, runnability; C/R/G/N criterion bytes | untouched; no verifier, gate, README or knowledge byte changed; v1–v6 sweep instruments + ag_probe + ag_probe2 + f_probe4 + mg_probe absent from the landing diff (v6 blob sha re-verified `b2db45b0…f12b7`; mg_probe sha pin `1840c30c…3ac03f` stands — correction 2 records the ruling) | no-harm diff receipt `reports/round-86/noharm-diff.txt` (freeze `2311400`..landing `25041d9`: 3 files, 29 insertions, 6 deletions — SOURCES.md limited to the six used-by cells + the S472 append, SKILL.md additions only; protected paths empty) | same | unchanged (no harm observed) |
+| separability | C1-only tree (archive of base `d7fd9d9` + C1 files only — fixed SOURCES.md + v7, SKILL.md at base): SWEEP_SRC mismatch=0 present, SKILL greps at red values 9/0 (`c1-only.log`); C2-only tree (archive of base + edited SKILL.md only, SOURCES.md at base, v7 absent): M-rows 10 + cite-back 2 (`c2-only.log`) | see the two logs | same | claims separable as frozen |
+
+Capabilities: none added (v7 is a superseding measurement instrument over
+the existing registered capability — the `cited-evidence orphan sweep`
+row's current instrument becomes v7, first-working round unchanged r80).
+
+Sources: rows 471 → 472 (+S472 the used-by pointer-drift evidence
+[own-work, tier A], opened this round; C1 is sourced by S472, C2 is
+grounded by S472 + the skill's own rule-2 wording; appended inside the
+Registry directly after S471, NF=13 checked at landing, 0 malformed,
+0 duplicates). Census: round start sanctioned exit 0 (21 W01 + 10 W04,
+zero E — receipts landed with the freeze; literal exit 2, disclosed
+r74–r86 lineage); round end receipts
+`reports/round-86/census-after.log`. Mistakes mined (full table
+`corpus/lessons/round-86.md`): the em-dash placeholder-parse false
+positive (20 phantom no-disk rows in the first preprobe — captured by
+the raw-cell cross-check), the probe parse desync (unstripped id →
+65 phantom no-cite rows; captured by the two-implementation cross-check
+against the frozen instrument's 6), the frozen counting command vs first
+wording (green would have been 1 where the freeze pinned 2 — captured by
+running the frozen greps before the landing commit), and the
+stale-index diff garbage recurrence (414 phantom changed files /
+68019 deletions against sha-verified byte-identical blobs — the r78+
+host-lineage discipline re-applied on a new signature).
+
+**planned:** next round — coverage stays routed until an operator ruling
+changes a gate (F android jar, K L0) or a provider surface moves (the
+unsupported-group count is the sentinel to watch); calibration: the
+sweep's class space is closed this round (corpus, bare tokens, fleet
+resolution, LOG, used-by pointers all recorded + mutation-checked) — a
+new calibration claim needs a newly named class or criterion R/N's
+routed extensions; depth: the §3/§4 ground is fresh — a reader
+checklist for registry edits (rule-2 change procedure end-to-end) is
+the natural next row if the drift class recurs.
+
+Routed forward: criterion R full extension; criterion N attribution
+pair; criterion C repair (§9); F android gate; K L0; census literal form
+(operator-side, lineage L0 landed r79); SHONEN box 1 non-author
+re-confirmation (operator-side, now naming the r86 SKILL.md bytes);
+treecommit repo-relative + file-exists + numstat-count rule (held: 10/10
+freeze, 3/3 landing).

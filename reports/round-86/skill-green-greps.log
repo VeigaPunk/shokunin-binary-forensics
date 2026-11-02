@@ -1,0 +1,11 @@
+# revenger r86 green receipt — SKILL.md pointer-hygiene greps over COMMITTED bytes (landing 25041d9 vs base d7fd9d9)
+# date: 2026-11-02T12:36:30Z
+# commands (frozen at 2311400): grep -cE '^\| M[0-9]+ \|' SKILL.md / grep -c 'cite-back' SKILL.md / grep -c 'used-by' SKILL.md
+# run against git show 25041d9:SKILL.md (landing blob)
+10
+2
+8
+# base re-derivation against git show d7fd9d9:SKILL.md (must reproduce the red 9 / 0 / 4):
+9
+0
+4
