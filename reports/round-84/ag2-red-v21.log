@@ -1,0 +1,10 @@
+# ag2-red-v21.log - r84 C1 RED receipt, RE-RUN with the corrected instrument v2.1 (2026-11-02)
+# why: the freeze-time v2.0 (sha 6e1c07b568d982331c8ce17e9bdb659178066a68d2f44fa1e1e51fec8a71d1e1) scanned corpus/live/runs/round-/ directly only and could never see the landed layout runs/round-84/<operation>/inspection.json - exposed by the c1-only separability dry-run printing 3/5 against landed records, BEFORE any after-run receipt existed; corrected instrument re-pinned (sha f9772ab1428ebe6e420ef285f2d9a02b26372c5556e8404ba825349f04721990, rglob inspection.json by name) and the red re-run; erratum appended to claims.md
+# base archive 54a36bca (git archive, no checkout) - the same state ag2-red.log measured; expected RED unchanged: A1V2_RECORDED=3/5 score=6.00
+A1V2_OP decode_interface_builder=round-83
+A1V2_OP inspect_keyed_archive=round-81
+A1V2_OP trace_dylib_resolution=round-82
+A1V2_OP extract_artifact=unrecorded
+A1V2_OP inspect_artifact=unrecorded
+A1V2_RECORDED=3/5 score=6.00
+# exit_code=0

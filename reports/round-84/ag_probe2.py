@@ -34,6 +34,15 @@ An operation counts RECORDED iff some round dir carries BOTH
 Byte-derived from the committed corpus only; no README, no K rows, no
 knowledge admission is touched.
 
+Scan-shape revision v2.1 (pre-after-run correction, 2026-11-02): the
+record round dir may nest operation subdirs; inspection.json is matched
+by name at any depth under corpus/live/runs/ (rglob). v2.0's one-level
+scan (frozen sha 6e1c07b568d982331c8ce17e9bdb659178066a68d2f44fa1e1e51fec8a71d1e1)
+never saw runs/round-84/<operation>/inspection.json - caught by the
+c1-only separability dry-run printing 3/5 against landed records; no
+after-run receipt existed yet; red re-run as ag2-red-v21.log (3/5,
+unchanged values). See the erratum in reports/round-84/claims.md.
+
 Usage:
   PYTHONUTF8=1 python -B ag_probe2.py <tree>/corpus
 """
@@ -55,11 +64,16 @@ def main() -> int:
     runs = corpus / "live" / "runs"
     found = {op: None for op in A1V2_OPS}
     if runs.is_dir():
-        for rd in sorted(runs.iterdir()):
-            if not rd.is_dir():
-                continue
-            insp = rd / "inspection.json"
-            rec = rd / "receipt.json"
+        # r84 v2.1 scan shape: records may sit one level below the round dir
+        # (runs/round-84/<operation>/inspection.json). The freeze-time v2.0
+        # scanned runs/round-*/ directly only, which never sees the r84
+        # layout; the c1-only separability dry-run exposed this BEFORE any
+        # after-run receipt existed and the instrument was corrected
+        # (erratum in claims.md; rglob matches inspection.json by NAME at
+        # any depth, so the round-1-era artifact-inspection.json files are
+        # still not matched).
+        for insp in sorted(runs.rglob("inspection.json")):
+            rec = insp.parent / "receipt.json"
             if not (insp.is_file() and rec.is_file()):
                 continue
             try:
@@ -76,7 +90,7 @@ def main() -> int:
             oracle_ok = str(oracle_result).startswith(
                 "ORACLE OK") and receipt.get("exit_code") == 0
             if op in found and found[op] is None and oracle_ok:
-                found[op] = rd.name
+                found[op] = insp.parent.name
     recorded = 0
     for op in A1V2_OPS:
         state = found[op]

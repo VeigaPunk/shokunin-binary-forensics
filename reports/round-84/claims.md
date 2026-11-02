@@ -243,3 +243,21 @@ r84 claim routes through K. Ruled out with fresh probes (receipt
 | S468 | the r84 C2 class evidence — `reports/round-84/v4-invisible-red.log` (v4: zero instrument rows name the bare-cited token) + `v5-red-unmatched-absent.log` (v5: the recorded absent row) + the r83 closure's routed-defect note (`corpus/lessons/round-83-verifier-spotcheck.md`), opened 2026-11-02 | ADMIT (tier A, own-work) |
 
 C1 is sourced by S466 + S467; C2 is sourced by S468.
+
+## ERRATUM (appended 2026-11-02, pre-after-run instrument correction — no in-place rewrite of the frozen text above)
+
+The freeze-time pin for `reports/round-84/ag_probe2.py` above
+(`6e1c07b568d982331c8ce17e9bdb659178066a68d2f44fa1e1e51fec8a71d1e1`,
+v2.0) is superseded by
+`f9772ab1428ebe6e420ef285f2d9a02b26372c5556e8404ba825349f04721990`
+(v2.1). v2.0 scanned `corpus/live/runs/round-*/` one level deep and
+could never see the landed record layout
+`runs/round-84/<operation>/inspection.json` — the c1-only separability
+dry-run exposed this (it printed 3/5 against landed records) BEFORE any
+after-run receipt existed. v2.1 matches `inspection.json` by name at
+any depth under `runs/` (rglob); the round-1-era
+`artifact-inspection.json` files remain unmatched. The red was re-run
+with v2.1 over the same base archive: `ag2-red-v21.log`, values
+unchanged (`A1V2_RECORDED=3/5 score=6.00`, the pair unrecorded). The
+green after-runs all use v2.1. The c1-only dry-run mismatch is mined in
+`corpus/lessons/round-84.md` (record-layout vs scan-shape class).
