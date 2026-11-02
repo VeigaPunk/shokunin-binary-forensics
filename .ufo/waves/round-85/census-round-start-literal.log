@@ -1,0 +1,5 @@
+# revenger r85 round-start census — contract-literal form (D3 lineage disclosure, routed around)
+# date: 2026-11-02T08:16:48Z
+# command: bash C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin/scripts/sources-census.sh validate --root C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin revenger
+revenger	missing	C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin/revenger-shokunin/corpus/SOURCES.md
+LITERAL_EXIT=2
