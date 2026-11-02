@@ -17,6 +17,14 @@ accounting"; red mismatch=6 → green mismatch=0 over the live tree) and
 **C2 depth** (SKILL.md pointer-hygiene decision rows + the M42 named
 error signature; reds 9/0/4 → greens 10/2).
 
+Erratum (completing session, attempt 2): the attempt-1 session died after the
+landing; this session re-derived every after-run receipt from the committed blobs
+(all values reproduced), landed the adjudication `7254587d3ac5d045eb9908da5b76d5ff23c932ab`
+carrying this lesson, and the FINAL measured revision is the receipt-completion commit
+`4d8716bc4b148ebadb308851ea663eeafcf843d1` (lands `sweep7-real-after.log` per the frozen
+claims text: run over the committed adjudication tip; post-commit standing re-run exit 0,
+`SWEEP_SRC … mismatch=0 absent=0`, `LANDABLE_ORPHANS=0`).
+
 ## Gate
 
 Fresh-start §7 (r71/r72/r73 rejected closures re-read at fleet
@@ -139,6 +147,21 @@ verdict re-derives from committed bytes.
 | stale-index diff garbage recurrence: `git diff HEAD` printed 414 changed files / 68019 deletions against a working tree whose sampled blobs were byte-identical to HEAD (sha256 cross-check on three files, all equal) | the contract's standing rule (never trust git status/diff on this host) + the sha cross-check habit (compare `git show HEAD:<path>` digest vs on-disk digest) | the r78+ host-lineage discipline, re-applied on a new signature (this round it masqueraded as mass deletions, not just stat noise) | plumbing only for all round work (`git show`/`ls-tree`/`diff <base>..<new>` between real commits); byte-verify with sha256 when a diff surprises; no new treecommit variant occurred (10/10 and 3/3 numstat held) |
 | shell-heredoc truncation recurrence: the multi-KB SCORECARD round-86 append via a bash heredoc was truncated mid-word and the terminator was never seen (the r84 mined class, second host recurrence) | the immediate post-write tail check (end-of-content check habit): the tail ended mid-word and the trailing marker lines were missing | the r84 lesson's own rule ("multi-KB content moves via files, never via shell heredocs; every append is followed by an end-of-content check") | SCORECARD.md restored from the committed bytes (`git show 25041d9:SCORECARD.md`, sha-verified `d6b68041…`) and the section re-appended from a Write-tool temp file with a passing tail check; corrections.md's shorter heredoc append was verified intact; the mined rule held — this row records the recurrence, not a new class |
 | count-from-intent recurrence: the informational used-by green count was drafted as 7 by mental arithmetic (+3 §3 rows); the landing blob actually greps 8 (+3 §3 rows + the M42 row) | running the frozen greps against the landing blob before the adjudication commit (the same green pre-check that caught the cite-back wording) | the r83 count-from-intent class, re-caught by the pre-commit measurement | the three drafts (SCORECARD/LOG/lesson) corrected 7 → 8 before any of them landed; rule: every number in a draft is grepped against the bytes it names before the commit, never carried from arithmetic |
+| receipt-format assertion: the completing session's first `sweep7-real-after.log` draft
+asserted "the gating output's single new absent row names this receipt itself", but
+`--format summary` prints no absent rows at all — the assertion was derived from the
+ABSENT 62→63 movement, not from printed output | re-reading the raw section-2 output
+before committing (grep for the row name printed nothing) | the mined frozen-command
+pre-check habit, applied to prose claims inside receipts | header rewritten to the precise
+form (the 62→63 ABSENT movement; absent never gates) and a new section 4 records the
+post-write full-format classification with the exact printed row; mined |
+| invalid sweep construction: the landing-time-state section first ran v7 over a bare
+`git archive` extraction (no `.git`) — the instrument printed `SWEEP_ERROR git ls-tree
+failed` exit 1 instead of the expected block | reading the output before citing it (the
+error line, not the expected `SWEEP_SRC` block) | the r83 separability-tree rule (archive
+trees are git-init'd before instrument runs) | rebuilt as a proper landing-state git repo
+(HEAD `f31b3ec`); the invalid run discarded and disclosed in the receipt's provenance
+note; mined |
 
 ## Routed forward
 
