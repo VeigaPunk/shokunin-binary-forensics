@@ -1,0 +1,8 @@
+== round-88 counter conformance over the committed instrument bytes (landing tip 87f80ce; PATH stripped of the producer dir inside the counter)
+SWEEP_SELFTEST_MODE_PRESENT=1/1
+SWEEP_MUTANTS_KILLED_ATTRIBUTED=2/2
+SWEEP_USAGE_EXIT64=1/1
+PROBE_EXIT=0
+
+== registration counting command
+REGISTRY_NAME_ROWS=9 (8 -> 9, the receipt_sweep row)

@@ -1,0 +1,32 @@
+== round-88 separability: c1-only tree = base archive (48db9e0) + the two instruments ONLY (no SKILL row, no SOURCES rows)
+c1-only tree rows: 473 (base state; S474-S479 absent: 0 found)
+
+== sweep over the c1-only tree (cwd = the c1-only tree; the COMMITTED_GIT channel has no git history here — the disclosed marker difference)
+SWEEP_ROWS_SCANNED=473
+REGISTER S194 NON_COMMAND_NUMERIC tokens=P4-colon
+REGISTER S328 NON_COMMAND_NUMERIC tokens=P4-colon
+WC_S454=DRIFT recorded=10 derived=11 closed=no
+WC_CHANNEL_UNREACHABLE S456 channel=COMMITTED_GIT
+WC_S457=VERIFIED recorded=9 derived=9
+WC_S459=DRIFT recorded=16 derived=14 closed=no
+WC_S461=DRIFT recorded=19 derived=17 closed=no
+WC_S462=DRIFT recorded=11 derived=10 closed=no
+WC_S463=DRIFT recorded=10 derived=7 closed=no
+SWEEP_RECEIPT_ROWS_DETECTED=18
+SWEEP_NON_COMMAND_NUMERIC_ROWS=2
+SWEEP_TOKENS_P1-wordcount=7
+SWEEP_TOKENS_P2-prints=1
+SWEEP_TOKENS_P3-keyval=8
+SWEEP_TOKENS_P4-colon=4
+SWEEP_TOKENS_P5-oracle=7
+SWEEP_WORDCOUNT_VERIFIED=1/7
+SWEEP_WORDCOUNT_CLOSED=0/6
+SWEEP_WORDCOUNT_OPEN=6
+SWEEP_VERDICT=red
+C1ONLY_SWEEP_EXIT=1
+
+== counter conformance over the c1-only instrument bytes (cwd = lane tree restored below is NOT needed; the counter needs no registry)
+SWEEP_SELFTEST_MODE_PRESENT=1/1
+SWEEP_MUTANTS_KILLED_ATTRIBUTED=2/2
+SWEEP_USAGE_EXIT64=1/1
+C1ONLY_PROBE_EXIT=0

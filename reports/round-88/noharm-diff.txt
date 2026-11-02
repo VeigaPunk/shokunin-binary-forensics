@@ -1,0 +1,15 @@
+# noharm-diff.txt - r88 freeze..correction (7fab03f..41322a3; the landing 87f80ce + the E12 correction are inside this range; the final measured revision is 41322a3)
+
+== the range split
+ SKILL.md          | 12 ++++++++++++
+ corpus/SOURCES.md |  6 ++++++
+ 2 files changed, 18 insertions(+)
+ corpus/SOURCES.md | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+== protected paths over the whole range (must be empty)
+(empty above = protected paths untouched; SKILL.md one appended registry block; SOURCES.md six appended rows, moved once inside the Registry)
+
+== frozen receipt probes absent from the range
+0
+0 (none present)

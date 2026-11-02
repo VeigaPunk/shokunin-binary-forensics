@@ -1,0 +1,8 @@
+== round-88 mutant kills re-derived from the committed blob at the landing tip 87f80ce
+blob sha: 57098ed5b8f427ae331da87a1ed68ed4efe909196686db4953612ab643771271 (pin 57098ed5b8f427ae331da87a1ed68ed4efe909196686db4953612ab643771271)
+mutantA diff-lines=2 sha256=bceb9a338ce76bcb3fd25d3649ded3fde13ddc6734ef6fce1ed52d8fb0de1c30 (pin bceb9a338ce76bcb3fd25d3649ded3fde13ddc6734ef6fce1ed52d8fb0de1c30)
+selftest: word-count comparator accepted a wrong count
+MUTA_EXIT=1
+mutantB diff-lines=2 sha256=6c65f6ddb7d8cc021a616339d7e7f6548272661498344b8714bad450107ba7b0 (pin 6c65f6ddb7d8cc021a616339d7e7f6548272661498344b8714bad450107ba7b0)
+selftest: closure accepted an unverified supersession
+MUTB_EXIT=1

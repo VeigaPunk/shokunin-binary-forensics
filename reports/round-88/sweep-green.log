@@ -1,0 +1,75 @@
+== round-88 official after-run receipts, re-derived from the committed blobs at the landing tip 87f80ce (freeze 7fab03f; base 48db9e0)
+
+== worktree == landing blob check (autocrlf=false)
+57098ed5b8f427ae331da87a1ed68ed4efe909196686db4953612ab643771271 *-
+57098ed5b8f427ae331da87a1ed68ed4efe909196686db4953612ab643771271 *reports/round-88/receipt_sweep.py
+
+== GREEN: the sweep over the committed landing SOURCES blob (temp tree + committed script blob; channels resolve from the lane-root cwd)
+script blob sha: 57098ed5b8f427ae331da87a1ed68ed4efe909196686db4953612ab643771271
+SWEEP_ROWS_SCANNED=479
+REGISTER S194 NON_COMMAND_NUMERIC tokens=P4-colon
+REGISTER S328 NON_COMMAND_NUMERIC tokens=P4-colon
+WC_S454=CLOSED recorded=10 derived=11 by=S474(11)
+WC_S456=CLOSED recorded=11 derived=12 by=S475(12)
+WC_S457=VERIFIED recorded=9 derived=9
+WC_S459=CLOSED recorded=16 derived=14 by=S476(14)
+WC_S461=CLOSED recorded=19 derived=17 by=S477(17)
+WC_S462=CLOSED recorded=11 derived=10 by=S478(10)
+WC_S463=CLOSED recorded=10 derived=7 by=S479(7)
+SWEEP_RECEIPT_ROWS_DETECTED=24
+SWEEP_NON_COMMAND_NUMERIC_ROWS=2
+SWEEP_TOKENS_P1-wordcount=19
+SWEEP_TOKENS_P2-prints=1
+SWEEP_TOKENS_P3-keyval=8
+SWEEP_TOKENS_P4-colon=4
+SWEEP_TOKENS_P5-oracle=7
+SWEEP_WORDCOUNT_VERIFIED=1/7
+SWEEP_WORDCOUNT_CLOSED=6/6
+SWEEP_WORDCOUNT_OPEN=0
+SWEEP_VERDICT=green
+SWEEP_GREEN_EXIT=0
+
+== GREEN: the sweep over the landing worktree (live state)
+SWEEP_TOKENS_P4-colon=4
+SWEEP_TOKENS_P5-oracle=7
+SWEEP_WORDCOUNT_VERIFIED=1/7
+SWEEP_WORDCOUNT_CLOSED=6/6
+SWEEP_WORDCOUNT_OPEN=0
+SWEEP_VERDICT=green
+SWEEP_GREEN_LIVE_EXIT=0
+
+== mutant kills, re-derived from the committed blob (byte-preserving redirects)
+blob sha: 57098ed5b8f427ae331da87a1ed68ed4efe909196686db4953612ab643771271 (pin 57098ed5b8f427ae331da87a1ed68ed4efe909196686db4953612ab643771271)
+mutantA diff-lines=2 sha256=bceb9a338ce76bcb3fd25d3649ded3fde13ddc6734ef6fce1ed52d8fb0de1c30 (pin bceb9a338ce76bcb3fd25d3649ded3fde13ddc6734ef6fce1ed52d8fb0de1c30)
+selftest: word-count comparator accepted a wrong count
+MUTA_EXIT=1
+mutantB diff-lines=2 sha256=6c65f6ddb7d8cc021a616339d7e7f6548272661498344b8714bad450107ba7b0 (pin 6c65f6ddb7d8cc021a616339d7e7f6548272661498344b8714bad450107ba7b0)
+selftest: closure accepted an unverified supersession
+MUTB_EXIT=1
+
+== counter conformance over the committed blob
+SWEEP_SELFTEST_MODE_PRESENT=1/1
+SWEEP_MUTANTS_KILLED_ATTRIBUTED=2/2
+SWEEP_USAGE_EXIT64=1/1
+PROBE_EXIT=0
+
+== registration counting command
+REGISTRY_NAME_ROWS=9 (8 -> 9)
+== correction 87f80ce..41322a3: SOURCES.md only, 6 insertions 6 deletions (move only)
+ corpus/SOURCES.md | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+== row bytes unchanged across the move (the six rows extracted from both tips, sorted, sha-equal)
+252a18f3075e3ca852a3a2f5668ebce280d511e89aa085ed8613d459724b6fa5 *-
+252a18f3075e3ca852a3a2f5668ebce280d511e89aa085ed8613d459724b6fa5 *-
+
+== sweep green re-derived over the correction tip (committed blob)
+SWEEP_TOKENS_P5-oracle=7
+SWEEP_WORDCOUNT_VERIFIED=1/7
+SWEEP_WORDCOUNT_CLOSED=6/6
+SWEEP_WORDCOUNT_OPEN=0
+SWEEP_VERDICT=green
+SWEEP_GREEN_CORRECTION_EXIT=0
+
+== instrument blob unchanged by the correction
+corpus/SOURCES.md

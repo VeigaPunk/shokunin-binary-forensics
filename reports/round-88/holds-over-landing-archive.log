@@ -1,0 +1,36 @@
+# holds-over-landing-archive.log - r88 frozen holds over the correction tip (41322a34365817bdd54cd8a2c6c676424d98825c, the final measured revision; re-run after the E12 row-move correction), 2026-11-02
+
+== probe blob pins (frozen instruments, absent from the range)
+reports/round-85/mg_probe.py 1840c30cf4f1cad0
+reports/round-81/f_probe4.py 4d871971fa49131f
+reports/round-84/ag_probe2.py f9772ab1428ebe6e
+
+== M (criterion M, mg_probe from the committed blob over the archive corpus)
+M_RECORDED=3/3 score=10.00
+M_PROBE_EXIT=0
+
+== F4 (f_probe4 from the committed blob over the archive corpus)
+F4_COVERAGE=10/11 score=9.09
+F4_PROBE_EXIT=0
+
+== A1v2 (ag_probe2 from the committed blob over the archive corpus)
+A1V2_RECORDED=5/5 score=10.00
+AG2_PROBE_EXIT=0
+
+== A1 (ag_probe r82 from the committed blob over the archive corpus)
+A1_RECORDED=3/3 score=10.00
+A1_PROBE_EXIT=0
+
+== freshness stored-assertion proxy (12 + 6 = 18)
+corpus/knowledge/2026-10-12-rea-readiness-checklist.md:6
+corpus/knowledge/seed.md:12
+
+== K held rows (carried constant)
+K_HELD_BACKED=8/15 score=5.3
+
+== criterion R registry-wide sweep over the landing state (the claim's own hold leg)
+SWEEP_WORDCOUNT_VERIFIED=1/7
+SWEEP_WORDCOUNT_CLOSED=6/6
+SWEEP_WORDCOUNT_OPEN=0
+SWEEP_VERDICT=green
+SWEEP_LANDING_EXIT=0

@@ -1518,3 +1518,67 @@ r87 SKILL.md bytes); treecommit repo-relative + file-exists + numstat
 rule (held: 11/11 freeze, 2/2 landing); the criterion-instrument class
 question (P-class probes) stays routed (r78 registry note — this round
 registered the criterion-N verdict instrument, gate-class like R/G).
+
+## Round 88 (hyaku run 24, fresh start) — criterion R becomes a registry-wide gate (the r76 routed full extension); six legacy word-count receipts found false under the declared rule and closed by verified supersessions
+
+Base `48db9e0cee274250b2e14a03760759ee7e7375fd`. Freeze `7fab03f` (claims +
+instruments + reds, committed before any landing or after-run). Landing
+`87f80ce` (S474-S479 + the SKILL registry row; 2 files, 18 insertions, 0
+deletions). Correction `41322a3` (the landing had appended the six rows at
+FILE END, outside the Registry section — E12 ×6 at the first round-end
+census draft; the correction moved them inside the Registry directly after
+S473, move only, row bytes sha-identical across the move); final measured
+revision = the adjudication commit carrying this section. ONE claim,
+calibration, causally single, not exploratory. Full gate, receipts and
+mistake mining: `corpus/lessons/round-88.md`.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| calibration — criterion R receipt fidelity (the r76 bounded criterion becomes registry-wide) | machine-checked registry coverage: **2 rows (S444/S445 pair) → 479/479 rows scanned per run, 27 receipt tokens classified, 7/7 word-count receipts rule-verified-or-closed (1 verified: S457; 6 drifted receipts superseded by S474-S479 and machine-closed)**; six false legacy receipts corrected (S454 10→11, S456 11→12, S459 16→14, S461 19→17, S462 11→10, S463 10→7 under the declared whitespace rule) | `PYTHONUTF8=1 python -B reports/round-88/receipt_sweep.py; echo $?` → red over base state (`SWEEP_WORDCOUNT_OPEN=6`, exit 1, `reports/round-88/sweep-red-prelanding.log`) → green over the landing (`SWEEP_WORDCOUNT_OPEN=0`, exit 0, `reports/round-88/sweep-green.log`); conformance `bash reports/round-88/sweep_probe.sh reports/round-88/receipt_sweep.py; echo $?` → `1/1 · 2/2 · 1/1` exit 0 both ends | `48db9e0` → `7fab03f` → `87f80ce` → `41322a3` | **improved, C1 met** — the criterion-R score itself stays held at its r76 value; the moved quantity is the criterion's registry-wide reach plus the six receipts' correction (the r87-registration shape). The instrument carries the §Gate standard: verdict map 0/1/2/64, hermetic `--selftest` (5 finding-ids + pass), two frozen sed mutants killed with attributed one-line deaths (`mutant-kill-after.log`, mutated shas match the claims pins), counter red form receipted; registered as the ninth SKILL.md §Gate row (`sed -n '/^## Gate registry/,/^## 7\./p' SKILL.md \| grep -cE '^\| name \|'` → 8 → 9) |
+| coverage — M/A1/A1v2/F4/K (the lowest non-retired axis, routed this round on fresh receipts) | F4 10/11 → 10/11 (android hard-gated, re-probed fresh 2026-11-02: `REA_JADX_MCP_JAR` UNSET, no jadx on PATH — S448 stands); M 3/3, A1 3/3, A1v2 5/5 frozen holds re-run over the correction tip `41322a3` (`holds-over-landing-archive.log`, all probe exits 0); K 8/15 (5.3) untouched (operator-blocked, L0 r74 re-read unanswered); asset-catalog macOS-gated (7 `availability_code: unsupported_host` groups, registered metric, sentinel unchanged; the loose noise pattern 31 disclosed) | `PYTHONUTF8=1 python -B reports/round-85/mg_probe.py <archive>/corpus` + `reports/round-81/f_probe4.py` + `reports/round-84/ag_probe2.py` + the r82 `ag_probe.py` from the committed blobs over the `41322a3` archive | `48db9e0` → `41322a3` | unchanged hold — the lowest-axis obligation routes on documented unreachability (freshstart probes receipted 2026-11-02; the stagnation nudge does NOT apply: K 5.3 < 7.0), not on the nudge |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (seed 12 + readiness 6; knowledge files untouched) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` (`holds-over-landing-archive.log`) | same | unchanged hold |
+| calibration — C2-C8 receipt guards, exit-2 gate, runnability; R/G/N criterion bytes | untouched; receipt_probe2, gate_probe2 and probe_negctl2 bytes unchanged (all absent from the freeze..correction range, `noharm-diff.txt`); receipt_probe2's standing legs keep the live census pair the sweep deliberately does not re-derive | no-harm diff receipt `reports/round-88/noharm-diff.txt` (freeze `7fab03f`..correction `41322a3`: SKILL.md one appended registry block + SOURCES.md six appended rows moved once inside the Registry; protected paths empty) | same | unchanged (no harm observed) |
+| separability | C1-only tree (archive of base `48db9e0` + the two instruments ONLY — no SKILL row, no SOURCES rows): 473 base rows, red exit 1 with the disclosed marker difference (the COMMITTED_GIT leg reports CHANNEL_UNREACHABLE in a non-git tree — the channel needs the lane repository; the other six word-count legs identical to the base red); counter conformance green over the c1-only bytes (`c1-only.log`) | see the receipt | same | single claim; the instruments read nothing outside their bytes, the registry, and the named channels |
+| depth / operability / adjacency | no claim; depth ground grows by the registration row (additions only, the round-78 precedent shape); no engine readiness claimed (plain-mode host dependencies disclosed in the registry row, Q05); ADJ-06 unchanged; PROVINCE byte-unchanged | — | same | unchanged |
+
+Capabilities: none added (the sweep is the criterion-R instrument, not a new
+analysis family).
+
+Sources: rows 473 → 479 (+S474-S479, the six corrected word-count receipts,
+own-work tier A, opened this round, appended inside the Registry directly
+after S473 — after the E12 correction moved them from the file end; NF=13
+checked at append and after the move, 0 malformed, 0 duplicates; C1 is
+sourced by them). Census: round start sanctioned exit 0 (21 W01 + 10 W04,
+zero E; literal exit 2, disclosed lineage); round end FIRST draft caught the
+landing defect (E12 ×6, exit 1, receipt superseded), SECOND draft caught the
+E11 sequencing class (the lesson must land before the census), FINAL
+sanctioned census over the adjudication state exits 0
+(`.ufo/waves/round-88/census-round-end-sanctioned.log`), literal exit 2.
+Mistakes mined (full table `corpus/lessons/round-88.md`, five rows): the
+Registry-append placement class (E12 ×6, caught by the census, corrected
+move-only); the synthetic-id grammar mismatch (preprobe); the pinned-marker
+reachability defect (mutant A died at the wrong stage with the wrong last
+line — caught by hand-running both mutants at the preprobe); the grep-piped
+exit attribution recurrence + the unpinned temp-tree construction (both
+receipt drafts, caught by reading before citing); the P3 truncated-version
+detector defect (S443's `version=12.1.4` counted as a receipt token — caught
+by the hits-vs-row-text cross-check, pattern frozen with the
+version-excluding lookahead).
+
+**planned:** next round — calibration: criterion R is CLOSED as routed debt
+(the sweep is the criterion's standing gate; a future word-count receipt
+must declare-rule its count or register a WC_MAP/Closure revision with its
+own red-before); remaining calibration candidates: a newly named class
+(N's class space is closed, R's is closed this round), or the C7
+behavioural-leg L0 / criterion C repair (operator-gated). Coverage stays
+routed until an operator ruling changes a gate (F android jar, K L0) or a
+provider surface moves (the 7 unsupported_host groups are the sentinel).
+
+Routed forward: criterion C repair (§9); F android gate; K L0; census
+literal form (operator-side, lineage L0 r79); SHONEN box 1 non-author
+re-confirmation (operator-side, naming the r88 SKILL.md bytes);
+treecommit repo-relative + file-exists + numstat rule (held: 9/9 freeze,
+2/2 landing, 1/1 correction); the criterion-instrument class question
+(P-class probes) stays routed (r78 registry note); the sweep's standing
+maintenance duty (word-count receipts must declare-rule or register);
+the census-ordering class (round-end census runs after the lesson lands).
