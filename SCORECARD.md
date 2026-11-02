@@ -1237,3 +1237,82 @@ lineage L0 landed r79); the LOG.md corpus blind spot (v4 covers fleet
 reports + lessons; LOG.md is still not scanned); the six real sweep
 absents keep their recorded dispositions (ScoutAmp misroot,
 round-73/votes, w1.ready, .pyc, measurements.json, controls/A-H).
+
+## Round 84 (hyaku run 23) — the artifact-graph family's archive-side pair moves through real inventory/extraction producer records (criterion A1v2, the full available set); the orphan sweep learns the unmatched-bare-citation and LOG-corpus classes (v5 supersession)
+
+Carry-in first (r83 non-author closure, three routed status-neutral
+defects, all addressed before claim work — carry-in landing
+`67e1470e5b2492df7b86632c5b3bafabfdd3e023`): (1)
+`reports/round-83/v4-postlanding-recon.log` regenerated from committed
+bytes only and landed (recon HEAD=`60693f2` via fetch+update-ref, disk =
+the seven r82 receipts byte-verified 7/7,
+`.ufo/waves/round-84/carryin-byteverify.log`; `LANDABLE_ORPHANS=0`
+exit 0 — the load-bearing values the five citing surfaces carry
+reproduce; full provenance + basis-movement header in the receipt);
+(2) `reports/round-84/corrections.md` correction 1 — the five
+`f520f8d6…9701` abbreviated-sha drift sites named (report ×1, lesson
+×2, SCORECARD, LOG); the claims.md full sha
+`f520f8d69875d1ca83eb8daeddbffecb5f471bf5f5e6aba43bd97029fc2ea701`
+governs; append-only, no in-place rewrite; (3) corrections.md
+correction 2 — the `census-round-start-sanctioned2.log` pointer
+resolved three ways (the committed killed-run output body, the r83
+verifier's independent re-run, this round's exit-0 re-run receipt
+`.ufo/waves/round-84/census-round-start-sanctioned.log`).
+
+| axis / criterion | before → after score | evidence / command | measured commits | last change |
+|---|---|---|---|---|
+| coverage — artifact-graph operation record depth, full available set (criterion A1v2, registered this round; supersedes the r82 A1 mapping as the criterion's counting instrument; the r82 instrument stays frozen) | **3/5 (6.00) → 5/5 (10.00)** on the registered instrument; frozen instruments hold: r82 `A1_RECORDED=3/3 (10.00)`, r81 `F4_COVERAGE=10/11 (9.09)` unchanged (the pair is operation-level; the family and the triple were already present/recorded) | before: `PYTHONUTF8=1 python -B reports/round-84/ag_probe2.py <base-archive 54a36bca>/corpus` → `ag2-red.log` / `ag2-red-v21.log` (3/5, `extract_artifact` + `inspect_artifact` unrecorded); after: same over the landing archive `8e21e8f2` → `ag2-after.log` (5/5 with both recorded; oracles re-run over archive bytes `ORACLE OK (36/36)` + `ORACLE OK (31/31)`; record stdout shas match the receipt pins; regen byte-identical from the archive generator) | `54a36bca` (red) → `8e21e8f2` (green) | **improved, C1 met** — two real producer records on the provider's archive-side pair (`rea inspect-artifact` Evidence `ev_753cfca9…138ba` 36/36; `rea extract-artifact` Evidence `ev_07e34a94…77467` 31/31; both exit 0, stderr 0 bytes) on the authored inert 508-byte three-entry ZIP_STORED fixture (`corpus/fixtures/arc-r84/`, generator 17/17 SELFCHECK re-derives every checked fact from the built bytes, no byte-size constants, regen byte-identical; truth.json Q07 hypotheses frozen pre-run). Denominator disclosure (pre-run): the provider declares FIVE available operations (S466); the r82 registration counted the no-effects triple only; `inspect_asset_catalog` excluded (`available: false` unsupported_host). Instrument erratum (pre-after-run): the freeze-time v2.0 scan shape could never see the landed `runs/round-84/<operation>/` layout — exposed by the c1-only dry-run printing 3/5 against landed records; v2.1 (rglob by name) re-pinned `f9772ab1…1990`, red re-run unchanged, erratum appended to claims.md; mined. Separability: `c1-only.log` (A1v2 5/5 + oracles OK with v5 ABSENT) / `c2-only.log` (selftest 18 legs pass with fixture/records/ag_probe2 ABSENT) |
+| coverage — selected-family record presence F4 | 10/11 (9.09) → 10/11; android hard-gated (`REA_JADX_MCP_JAR` UNSET, no jadx on PATH, re-probed 2026-11-02 — S448 stands); the pair does not move F4 (the archives family was already present) | `PYTHONUTF8=1 python -B reports/round-81/f_probe4.py <landing-archive>/corpus` (`ag2-after.log`) | same | unchanged hold |
+| calibration — standing cited-evidence orphan sweep, v5 supersession (capability improvement, not a new capability) | no criterion score moves; the moved quantity is citation visibility: red (`v4-invisible-red.log`: v4 over the pre-carry-in tree — ZERO instrument rows name the bare-cited `v4-postlanding-recon.log`; `SWEEP_BARE_TOKENS matched=302 unmatched_skipped=1408`) → recorded (`v5-red-unmatched-absent.log`: same tree, row `SWEEP absent v4-postlanding-recon.log` note bare-token unmatched, `unmatched_recorded_absent=47`, `SWEEP_CORPUS fleet-reports=24 lessons=48 log=1`, `CITED=987` vs v4's 705) → resolved (`sweep5-real-after.log`: the token bare-token-normalized committed, no absent row names it; the receipt's three LANDABLE_ORPHANS rows are the conservative-ambiguity rule firing on this round's own then-uncommitted same-basename adjudication receipts, resolved by the adjudication commit — post-run note in the receipt) | `PYTHONUTF8=1 python -B reports/round-84/orphan_sweep5.py --selftest` (18 legs + pass, exit 0, `sweep5-selftest-after.log` from the committed blob) / `… --lane <lane-dir> --fleet <fleet-root> [--format full|summary]`; v5 change 7: an unmatched extension-bearing bare token is RECORDED as an absent row (no `..`, not all digits+dots, tail extension; disclosed noise: dotted JSON field paths; absent never gates — exit codes 0/1/64 unchanged); v5 change 8: LOG.md joins the citation corpus (SWEEP_CORPUS gains log=); three mutation-checked switches with frozen one-substitution sed recipes, all three die exit 1 attributed from the committed blob (`sweep5-mutant-kill-after.log`) | `67e1470`/`45c8b42` (red) → adjudication | **improved, C2 met** — `reports/round-84/orphan_sweep5.py` (sha `d9a7ba17…46cb`; v4 blob unchanged `f520f8d6…c2ea701` — the FULL sha per corrections.md): the two gaps the r83 closure routed (a bare-cited token matching nothing was skipped invisible; LOG.md was a standing corpus blind spot) close inside the standing instrument. Counts remain per-revision-corpus (basis lines cited first — the red receipts ran over the pre-carry-in tree, the green receipt over the pre-adjudication-text worktree; movements disclosed in each receipt header). The recorded absent rows carry their disposition classes in the round lesson |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (seed 12 + readiness 6; knowledge files untouched) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` (`noharm-diff.txt` tail) | same | unchanged hold |
+| calibration — C2–C8 receipt guards, exit-2 gate, runnability; C/R/G/N criterion bytes | untouched; no verifier, gate, README or knowledge byte changed; v1–v4 sweep instruments + ag_probe + f_probe4 absent from the landing range (blob shas re-verified: v4 `f520f8d6…c2ea701` full) | no-harm diff receipt `reports/round-84/noharm-diff.txt` (protected paths empty on `45c8b42..8e21e8f2`; 15 files, 704 insertions, 0 deletions — additions only) | same | unchanged (no harm observed) |
+| separability | C1-only tree (pre-freeze base `67e1470` + fixture/records/ag_probe2-v2.1, no v5): A1v2 5/5 + oracles OK 36/36 + 31/31, v5 ABSENT (`c1-only.log`); C2-only tree (base + v5 only): selftest pass exit 0, fixture/records/ag_probe2 ABSENT (`c2-only.log`) | see the two logs | same | claims separable as frozen |
+| depth / operability / adjacency | no claim; no engine readiness claimed (Q05/Q10: the records demonstrate the built-in provider's zip inventory + regular-contents extraction of one authored inert archive; extraction output under the host temp area, nothing executed, nothing written inside the lane repo; DMG/PKG/nested-container surfaces unclaimed per the provider's own limitations) | — | — | unchanged (ADJ-06 unchanged) |
+
+Capabilities: none added (A1v2 is a registered mapping revision over
+the r82 criterion instrument; v5 is a superseding measurement
+instrument over the existing registered capability; the inventory/
+extract route is REA's built-in provider, exercised once — not a new
+analysis family owned by this lane).
+
+Sources: rows 465 → 468 (+S466 the A1v2 provider surface [own-work,
+tier A], +S467 the two producer records + fixture [own-work, tier A],
++S468 the unmatched-bare-citation class evidence [own-work, tier A];
+all opened this round; C1 is sourced by S466+S467, C2 by S468; all
+appended inside the Registry after S465; NF checked mid-flight — S468's
+quoted receipt row initially carried a literal pipe, fixed before the
+landing, the r83 S465 class). Census: round start sanctioned exit 0
+(21 W01 + 10 W04, same disclosed classes; first attempt hit the shell's
+own 120 s default timeout and was re-run foreground with an explicit
+generous timeout — the r83 mined class recurring, disclosed in the
+lesson; literal exit 2, disclosed lineage); round end receipts
+`reports/round-84/census-after.log`. Mistakes mined (full table
+`corpus/lessons/round-84.md`): the record-layout vs scan-shape
+instrument defect (caught by the c1-only separability dry-run before
+any after-run receipt), the treecommit directory-args silent no-op
+(caught by the mandated post-commit diff check — the first landing
+commit carried only SOURCES.md), the census 120 s default-timeout
+recurrence, the S468 literal-pipe NF defect (r83 S465 class, caught
+mid-flight), and the count-from-intent placeholder in the first claims
+draft (caught by measure-before-write before the freeze).
+
+**planned:** next round — coverage: A1v2 is saturated (5/5); F android
+moves only if the caller-supplied `REA_JADX_MCP_JAR` appears (F4's
+honest exception stays 10/11); K stays blocked until the operator rules
+on the filed L0; calibration: criterion R full extension to the legacy
+receipt-quoting rows, or criterion N's mutation-killed attribution pair
+(both stay routed); candidate sweep v6 vectors: the LOG-corpus
+citation-sites accounting (per-source rows) and a fleet-side
+basename resolution for absent-fleet bare tokens — each needs its own
+falsifiable red/green; routed, not declared.
+
+Routed forward: criterion R full extension; criterion N attribution
+pair; criterion C repair (§9); the class question (v5 lands as a
+capability supersession note, not a registry row); F android gate; K
+L0; census literal form (operator-side, lineage L0 landed r79); the
+v5 recorded-absent rows' standing dispositions (field-path noise,
+fleet-root bare names, historical unresolvable pointers — dispositioned
+in the round lesson; a standing disposition ledger is operator-side if
+wanted); the six real sweep absents keep their recorded dispositions
+(ScoutAmp misroot, round-73/votes, w1.ready, .pyc, measurements.json,
+controls/A-H).

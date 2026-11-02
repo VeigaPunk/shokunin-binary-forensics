@@ -1,0 +1,17 @@
+# c1-only.log - r84 separability: PRE-FREEZE base 67e1470 + C1 files only (fixture 4 + records 10 + corrected ag_probe2 v2.1), no orphan_sweep5 (2026-11-02)
+== instrument presence ==
+ag_probe2.py*
+ls: cannot access 'c1-only/reports/round-84/orphan_sweep5.py': No such file or directory
+== A1v2 over the c1-only tree ==
+A1V2_OP decode_interface_builder=round-83
+A1V2_OP inspect_keyed_archive=round-81
+A1V2_OP trace_dylib_resolution=round-82
+A1V2_OP extract_artifact=extract-artifact
+A1V2_OP inspect_artifact=inspect-artifact
+A1V2_RECORDED=5/5 score=10.00
+exit=0
+== oracles over the c1-only bytes ==
+ORACLE OK (36/36 checks)
+exit=0
+ORACLE OK (31/31 checks)
+exit=0

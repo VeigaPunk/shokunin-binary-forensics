@@ -1,0 +1,23 @@
+# census-after.log - r84 round-end census receipts (2026-11-02)
+== form 1: sanctioned explicit-lane-dir form over the worktree (SKILL.md 4a), round end ==
+sanctioned_exit=0
+W0_lines: 31 (21 W01 + 10 W04, the same disclosed classes as round start and r74-r83)
+E_lines: 0 (zero E-findings; S466-S468 used-by paths resolve on the worktree - the lesson is present in the adjudication worktree)
+shokunin-binary-forensics	ok	.../fleet/shokunin-binary-forensics/corpus/SOURCES.md
+DISCLOSED first-run defect (self-caught by this census): the first form-1 run printed exit 1 with E12 x3 (S466/S467/S468 'row outside Registry section') - the three new rows had been APPENDED to the file end, past ## Leads, instead of inside the Registry after S465 (the r80 mined class recurring); rows moved inside the Registry (S465->S466->S468 contiguous, all NF=13); re-run exit 0 as recorded above; mined in corpus/lessons/round-84.md
+== form 2: contract literal form (expected exit 2, disclosed r74-r83 lineage) ==
+literal_exit=2
+ERROR: unknown lane (not a dir, not in conf or root): revenger
+(the consolidation L0 line landed r79; routed around again this round)
+== form 3: landing-archive-bytes census (8e21e8f238dccc9d95c5a5a1e84500daf275979f, full tree) ==
+archive_exit=1 -- E12 x3, the expected intermediate state (same shape as r80's E11 x4 / r81-r83 patterns, but E12 because the PLACEMENT defect is in the landing itself):
+census-arch	E12	S466 row outside Registry section
+census-arch	E12	S467 row outside Registry section
+census-arch	E12	S468 row outside Registry section
+(the rows sit at the file end in the landing commit; the corrected in-Registry layout lands with THIS adjudication commit - resolved-by = the adjudication; archive_W0_lines: 31, same disclosed classes; zero E other than the three E12)
+== row counts ==
+worktree_rows: 468
+landing_rows: 468
+== round-start receipts ==
+sanctioned: .ufo/waves/round-84/census-round-start-sanctioned.log exit 0 (21 W01 + 10 W04; first attempt hit the shell tool's own 120 s default timeout, stopped and re-run foreground with an explicit generous timeout - the r83 mined class recurring, mined in the lesson)
+literal: .ufo/waves/round-84/census-round-start-literal.log exit 2 (known lineage)

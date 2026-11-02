@@ -1,0 +1,9 @@
+# noharm-diff.txt - r84: full range freeze..landing (45c8b42fe4f79d6133a0546b58abeefe7a6b5efe..8e21e8f238dccc9d95c5a5a1e84500daf275979f; the round's claim-bearing landing range; declared files only, all additions)
+ 15 files changed, 704 insertions(+)
+== protected paths diff (must be empty) ==
+== protected-paths diff exit=0 (empty above = clean) ==
+== frozen instruments absent from the range name-only list ==
+(none of the frozen instruments nor any r83/r84 carry-in receipt appear in the range: clean)
+== FRESH_ROWS ==
+corpus/knowledge/seed.md:12
+corpus/knowledge/2026-10-12-rea-readiness-checklist.md:6

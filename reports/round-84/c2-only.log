@@ -1,0 +1,10 @@
+# c2-only.log - r84 separability: PRE-FREEZE base 67e1470 + C2 files only (orphan_sweep5), no fixture, no records, no ag_probe2 (2026-11-02)
+== presence checks ==
+orphan_sweep5.py*
+ls: cannot access 'c2-only/corpus/fixtures/arc-r84': No such file or directory
+ls: cannot access 'c2-only/corpus/live/runs/round-84': No such file or directory
+ls: cannot access 'c2-only/reports/round-84/ag_probe2.py': No such file or directory
+== v5 selftest from the c2-only bytes ==
+SWEEP_SELFTEST_LOGCORPUS_MUTANT_FLAGGED=ok (mutant=empty, vector=2 tokens)
+SWEEP_SELFTEST=pass
+exit=0

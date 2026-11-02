@@ -1,0 +1,24 @@
+# ag2-after.log - r84 C1 GREEN receipt: criterion A1v2 over the LANDING archive 8e21e8f2 (2026-11-02, after the landing, before adjudication)
+# landing = 8e21e8f238dccc9d95c5a5a1e84500daf275979f (SOURCES rows landed in d77f997, fixture+records in 8e21e8f2); corpus extracted via git archive - no checkout
+# instrument: ag_probe2 v2.1 sha f9772ab1428ebe6e420ef285f2d9a02b26372c5556e8404ba825349f04721990 (the corrected scan shape; see the claims erratum)
+== A1v2 over the landing archive ==
+A1V2_OP decode_interface_builder=round-83
+A1V2_OP inspect_keyed_archive=round-81
+A1V2_OP trace_dylib_resolution=round-82
+A1V2_OP extract_artifact=extract-artifact
+A1V2_OP inspect_artifact=inspect-artifact
+A1V2_RECORDED=5/5 score=10.00
+exit=0
+== frozen holds over the same archive ==
+A1_RECORDED=3/3 score=10.00
+F4_COVERAGE=10/11 score=9.09
+== oracle re-runs over the ARCHIVE bytes ==
+ORACLE OK (36/36 checks)
+exit=0
+ORACLE OK (31/31 checks)
+exit=0
+== record stdout byte-identity: archive bytes vs committed run receipts' pins ==
+inspect-artifact stdout_sha256 match: True
+extract-artifact stdout_sha256 match: True
+== regen byte-identical from the ARCHIVE generator ==
+REGEN byte-identical (508 bytes each)

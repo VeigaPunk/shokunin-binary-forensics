@@ -1,0 +1,23 @@
+# sweep5-mutant-kill-after.log - r84 C2 green: the three frozen sed mutants re-run over the COMMITTED blob (2026-11-02, adjudication)
+# each: one substitution (diff shown), --selftest dies exit 1 attributed
+== mutant 1: BARE_TOKEN_CLASSIFICATION ==
+102c102
+< BARE_TOKEN_CLASSIFICATION = True
+---
+> BARE_TOKEN_CLASSIFICATION = False
+exit=1
+last: selftest: bare-filename classification drifted (bare-token class)
+== mutant 2: UNMATCHED_BARE_ABSENT ==
+104c104
+< UNMATCHED_BARE_ABSENT = True
+---
+> UNMATCHED_BARE_ABSENT = False
+exit=1
+last: selftest: unmatched-absent recording drifted (unmatched-absent class)
+== mutant 3: LOG_CORPUS ==
+106c106
+< LOG_CORPUS = True
+---
+> LOG_CORPUS = False
+exit=1
+last: selftest: log-corpus collection drifted (log-corpus class)
