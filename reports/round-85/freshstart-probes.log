@@ -1,0 +1,47 @@
+# revenger r85 fresh-start section-7 probes (r71/r72/r73 rejected closures re-read at fleet .ufo/reports/round-7{1,2,3}/revenger.md)
+# date: 2026-11-02T08:18:14Z
+
+== probe 1: F android hard gate ==
+$ echo ${REA_JADX_MCP_JAR:-UNSET}
+REA_JADX_MCP_JAR=UNSET
+$ command -v jadx
+(not found, exit 1)
+
+== probe 2: unsupported_host provider groups (macho/signature) ==
+$ PYTHONUTF8=1 rea capabilities | grep -c 'availability_code: unsupported_host'
+7
+
+== probe 3: the r74 L0 (K route) — re-read ==
+1
+revenger | round-74 | this Windows host has no L2/AgentSwarm dispatch surface (no .ufo/state/, no seat spawn handoff; /home/vgpnk gone): the MISSION >=8-L2 floor is not executable here, round-74 quote-audit receipts are L1-authored (disclosed, counter re-derived), and wave-Q admissions (C05/C10/C15)
+(no L0 ANSWER appended on that line — route stays blocked, routed around)
+
+== probe 4: criterion C repair standing section-9 disposition (SCORECARD) ==
+1159:criterion C repair (§9); the class question (v3 lands as a capability
+1233:pair; criterion C repair (§9); the class question (v4 lands as a
+1310:pair; criterion C repair (§9); the class question (v5 lands as a
+
+== probe 5: criterion R full extension / N attribution pair routed status ==
+157:- **Criterion R full extension** (the legacy receipt-quoting rows
+
+== probe 6: the r85 coverage route — rea-dotnet-static available set vs recorded operations ==
+$ PYTHONUTF8=1 rea capabilities | grep -A3 'rea-dotnet-static' | grep operations
+$ grep -rl inspect_managed_members corpus/live/runs/ (recorded?)
+(empty = unrecorded)
+$ grep -rl inspect_managed_native_boundaries corpus/live/runs/ (recorded?)
+(empty = unrecorded)
+(probe 6 corrected — the -A3 window missed the operations lines; re-run with a wider window)
+$ PYTHONUTF8=1 rea capabilities | sed -n '/id: rea-dotnet-static/,/shared_limitations/p' | grep -E 'operations|available'
+      - operations[1]: inspect_managed_artifact
+        available: true
+      - operations[1]: inspect_managed_members
+        available: true
+      - operations[1]: inspect_managed_native_boundaries
+        available: true
+
+== probe 7: the sqlite + artifact-graph recorded-state cross-check (r80/r84 rounds) ==
+C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/live/runs/\round-80\inspection.json
+C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/live/runs/\round-80\LEDGER.md
+$ grep -rl inspect_managed_artifact corpus/live/runs/
+C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/live/runs/\round-76\LEDGER.md
+C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/live/runs/\round-76\inspection.json

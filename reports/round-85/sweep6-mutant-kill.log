@@ -1,0 +1,36 @@
+# sweep6 frozen sed mutant — one substitution, dies exit 1 attributed
+# recipe: sed 's/^FLEET_BARE_RESOLUTION = True$/FLEET_BARE_RESOLUTION = False/'
+# diff vs orphan_sweep6.py: exactly one changed line (115)
+# mutated-copy sha256 8a1706ee50446f89391f440b99e8bddef5f398125b0f4948814f3fb607005a78
+# date: 2026-11-02T09:19:31Z
+
+$ diff orphan_sweep6.py orphan_sweep6-mutant.py
+115c115
+< FLEET_BARE_RESOLUTION = True
+---
+> FLEET_BARE_RESOLUTION = False
+
+$ PYTHONUTF8=1 python -I -B orphan_sweep6-mutant.py --selftest
+SWEEP_SELFTEST_CLEAN_VECTOR=ok
+SWEEP_SELFTEST_PLANTED_ORPHAN_FLAGGED=ok
+SWEEP_SELFTEST_ABSENT_RECORDED=ok
+SWEEP_SELFTEST_LINEREF_VECTOR=ok
+SWEEP_SELFTEST_DIRSTYLE_VECTOR=ok
+SWEEP_SELFTEST_MASKED_ABSENT_NEGATIVE=ok
+SWEEP_SELFTEST_MUTANT_FLAGGED=ok
+SWEEP_SELFTEST_COUNT_FIDELITY=ok (truth=2, A=1, B=1)
+SWEEP_SELFTEST_COUNTCMD_MUTANT_FLAGGED=ok (mutant=1 truth=2)
+SWEEP_SELFTEST_BARE_ORPHAN_FLAGGED=ok
+SWEEP_SELFTEST_BARE_COMMITTED=ok
+SWEEP_SELFTEST_BARE_UNMATCHED_SKIPPED=ok
+SWEEP_SELFTEST_BARE_MUTANT_FLAGGED=ok (mutant=skipped, vector=orphan)
+SWEEP_SELFTEST_BARE_UNMATCHED_ABSENT_RECORDED=ok
+SWEEP_SELFTEST_BARE_RANGE_VERSION_SKIPPED=ok
+SWEEP_SELFTEST_BARE_ABSENT_MUTANT_FLAGGED=ok (mutant=skipped, vector=absent)
+SWEEP_SELFTEST_LOGCORPUS_VECTOR=ok
+SWEEP_SELFTEST_LOGCORPUS_MUTANT_FLAGGED=ok (mutant=empty, vector=2 tokens)
+SWEEP_SELFTEST_FLEET_BARE_RESOLVED=FAIL (got ('absent', 'bare-token unmatched: no file named MISSION.md under HEAD or the working tree'))
+SWEEP_SELFTEST_FLEET_BARE_ABSENT_NEGATIVE=ok
+SWEEP_SELFTEST_FLEET_BARE_MUTANT_FLAGGED=FAIL (mutant=('absent', 'bare-token unmatched: no file named MISSION.md under HEAD or the working tree'))
+selftest: fleet-bare resolution drifted (fleet-bare class)
+exit=1

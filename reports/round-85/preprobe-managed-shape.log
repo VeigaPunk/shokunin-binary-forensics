@@ -1,0 +1,61 @@
+# round-85 C1 preprobe — the fixture shape and the three operations,
+# exercised BEFORE the claims freeze and BEFORE any committed run.
+# date: 2026-11-02 (times UTC below)
+# fixture: corpus/fixtures/managed-r85/fixture.dll
+#   bytes=1048 sha256=94429fa428893dd78ed4b7f26a919232d5f05cc9cdc84d256954db5b0a286760
+
+== generator self-check (derive every premise from built bytes) ==
+$ PYTHONUTF8=1 python -I -B gen_managed_r85.py fixture-r85.dll --truth
+self-check OK: managed PE/CLI premises re-derived from built bytes
+  method_rows@file=0x342 il_rva=0x1210 body_foff=0x410 ldstr_tok=0x70000001
+  implmap mapping=0x0102 fwd=5 import='RunNative' module='native.dll'
+  us[1]='Fixture Hello' (27)  tables=(1, 2, 2, 1, 1, 1)
+wrote C:\Users\jpvei\.zcode\workspace\95b1ba4d-5089-47a4-9fd8-54adebbce2ae\scratch\revenger-r85\regen-check.dll bytes=1048 sha256=94429fa428893dd78ed4b7f26a919232d5f05cc9cdc84d256954db5b0a286760
+
+== regen byte-identity ==
+cmp fixture-r85.dll fixture-r85b.dll -> identical (scratch rebuild)
+cmp corpus/fixtures/managed-r85/fixture.dll regen-check.dll -> identical
+  (the landed copy regenerates byte-identical from the landed generator)
+
+== the three operations on the pre-regen fixture (exit/stderr/oracle) ==
+$ PYTHONUTF8=1 rea inspect-managed-artifact fixture-r85.dll --format json
+  exit=0 stderr=0 bytes evidence_id=ev_9eafe48f4160ce7f790496b6c1828f657b61d62b3e41a40cf01e092687dbd0f6
+$ PYTHONUTF8=1 rea inspect-managed-members fixture-r85.dll --format json
+  exit=0 stderr=0 bytes evidence_id=ev_7d5570107d50cebfc2b907e45c7349d5646c4ad762e1d719a0e83979de86f032
+$ PYTHONUTF8=1 rea inspect-managed-native-boundaries fixture-r85.dll --format json
+  exit=0 stderr=0 bytes evidence_id=ev_9a4093581129eb65565993702a7c884d3ac82a1bd4baefc352abb2555791adb2
+
+== oracles over the preprobe records ==
+oracle_check.py truth.json preprobe2/artifact.json fixture-r85.dll
+  exit=0  ORACLE OK (20/20 checks)
+oracle_check.py truth.json preprobe2/members.json fixture-r85.dll
+  exit=0  ORACLE OK (47/47 checks)
+oracle_check.py truth.json preprobe2/boundaries.json fixture-r85.dll
+  exit=0  ORACLE OK (39/39 checks)
+
+== negative control (pre-run, members record) ==
+one mutated producer field (methods[0].name -> WrongName):
+  exit=1  FAIL m0.name: got='WrongName' want='SayHello'
+  ORACLE FAILED (46/47 checks)
+
+== authoring defects caught and fixed during the preprobe
+   (before any committed run; mined in corpus/lessons/round-85.md) ==
+1. #Blob entries need compressed-length prefixes (bare 3-byte
+   signatures decoded as length 0 'empty signature') — producer-reported.
+2. #US terminal flag must be 0x00 per ECMA-335 II.24.2.4 (0x01 fired
+   invalid-string; user_strings.state partial) — producer-reported.
+3. Wrong metadata table numbers: ModuleRef is 0x1A and ImplMap is
+   0x1C (I drafted 0x1B/0x1D = TypeSpec/FieldRVA; the producer parsed
+   the intended rows as those tables instead) — producer-reported.
+4. ImplMap.MemberForwarded coded row 1 (SayHello, which carries an IL
+   body) instead of the P/Invoke method row 2 — producer record showed
+   member_token 0x06000001 + native_implementation_count 2; corrected
+   to (2<<1)|1 = 5, count now 1, member RunNative.
+5. Oracle-side bugs (not fixture defects): rows start at t+48 (the six
+   4-byte counts precede them), GUID index n reads bytes (n-1)*16,
+   table_row_counts needs the producer's table names. Caught by the
+   oracle-vs-preprobe cross-check; the negative control was re-run
+   AFTER the fixes so its FAIL demonstrates the fixed oracle.
+
+GREEN condition premise: the three operations run clean on this shape
+and their records are oracle-checkable from the built bytes alone.
