@@ -1,0 +1,89 @@
+{
+ "sha256": "94429fa428893dd78ed4b7f26a919232d5f05cc9cdc84d256954db5b0a286760",
+ "byte_length": 1048,
+ "module_name": "r85-managed.dll",
+ "mvid": "13121110-1514-1716-1819-1a1b1c1d1e1f",
+ "assembly_name": "r85-managed",
+ "assembly_version": "2.0.1.5",
+ "method_il": {
+  "name": "SayHello",
+  "token": "0x06000001",
+  "rva": 4624,
+  "file_offset": 1040,
+  "flags": 145,
+  "impl_flags": 0,
+  "sig_blob_offset": 1,
+  "sig_bytes": "0300000e",
+  "ldstr_token": "0x70000001",
+  "il_bytes_hex": "1a72010000702a"
+ },
+ "method_pinvoke": {
+  "name": "RunNative",
+  "token": "0x06000002",
+  "rva": 0,
+  "flags": 4241,
+  "impl_flags": 5,
+  "sig_blob_offset": 5,
+  "sig_bytes": "03000001"
+ },
+ "pinvoke": {
+  "import_name": "RunNative",
+  "module_name": "native.dll",
+  "mapping_flags": 258,
+  "member_forwarded_coded": 5
+ },
+ "user_string": {
+  "heap_offset": 1,
+  "token": "0x70000001",
+  "value": "Fixture Hello"
+ },
+ "table_row_counts": {
+  "Module": 1,
+  "TypeDef": 2,
+  "MethodDef": 2,
+  "ModuleRef": 1,
+  "ImplMap": 1,
+  "Assembly": 1
+ },
+ "hyp": {
+  "members_operation": "inspect_managed_members",
+  "boundaries_operation": "inspect_managed_native_boundaries",
+  "provider_id": "rea-dotnet-static",
+  "metadata_status": "complete",
+  "coverage_state": "complete",
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "module_ref_count": 1,
+  "pinvoke_import_count": 1,
+  "user_string_literal_count": 1,
+  "body_status": "present",
+  "body_format": "tiny",
+  "opcode_counts": {
+   "ldstr": 1,
+   "ret": 1
+  },
+  "sig_parse_status": "decoded",
+  "us_state": "complete",
+  "verification": "managed-declaration-only",
+  "boundary_kind": "pinvoke",
+  "code_type": "native",
+  "managed_kind": "unmanaged",
+  "artifact_operation": "inspect_managed_artifact",
+  "classification_status": "managed",
+  "implementation": "cil",
+  "managed_architecture": "anycpu",
+  "stream_names": [
+   "#Blob",
+   "#GUID",
+   "#Strings",
+   "#US",
+   "#~"
+  ],
+  "evidence_codes": [
+   "cli-header-observed",
+   "managed-architecture-derived"
+  ],
+  "cor_header_file_offset": 512,
+  "cor_flags_file_offset": 528
+ }
+}

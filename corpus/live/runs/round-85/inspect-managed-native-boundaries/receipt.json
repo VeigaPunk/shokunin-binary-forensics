@@ -1,0 +1,33 @@
+{
+  "claim": "C1",
+  "command": "rea inspect-managed-native-boundaries corpus/fixtures/managed-r85/fixture.dll --format json",
+  "cwd": "lane root",
+  "evidence_id": "ev_2115d335dfdbe362fd4979099713275b2637394ebe73501614fad779063890ba",
+  "exit_code": 0,
+  "fixture": "corpus/fixtures/managed-r85/fixture.dll",
+  "fixture_sha256": "94429fa428893dd78ed4b7f26a919232d5f05cc9cdc84d256954db5b0a286760",
+  "fixture_bytes": 1048,
+  "generator": {
+    "self_check": "self-check OK (managed PE/CLI premises re-derived from built bytes)",
+    "regen": "REGEN byte-identical (1048 bytes, 94429fa428893dd78ed4b7f26a919232d5f05cc9cdc84d256954db5b0a286760)",
+    "sha256": "06a55942c5e090fcac9766e35c55687d7cc8802bf3bcbc727614501fa695b2cd"
+  },
+  "truth_sha256": "210c68a22cf7dbaf220e26c539224394a631a9f8bc0a2cc074ae834b68046d83",
+  "host_env": {
+    "PYTHONUTF8": "1",
+    "provider": "rea-dotnet-static",
+    "rea": "6.8.0"
+  },
+  "operation": "inspect_managed_native_boundaries",
+  "oracle": {
+    "command": "python -I -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.json corpus/live/runs/round-85/inspect-managed-native-boundaries/inspection.json corpus/fixtures/managed-r85/fixture.dll",
+    "exit_code": 0,
+    "result": "ORACLE OK (39/39 checks)"
+  },
+  "round": 85,
+  "saved_path": "corpus/live/runs/round-85/inspect-managed-native-boundaries/inspection.json",
+  "stderr_bytes": 0,
+  "stdout_bytes": 3982,
+  "stdout_sha256": "2217af2c5a22dcf7876b02ca3946c8a5f6fcfee9d944c70cbf15c1dc7586f33d",
+  "notes": "inspection.json is the producer's exact stdout bytes (byte-for-byte; sha256 above). One bounded static run on an authored inert fixture; no target execution, nothing loaded."
+}

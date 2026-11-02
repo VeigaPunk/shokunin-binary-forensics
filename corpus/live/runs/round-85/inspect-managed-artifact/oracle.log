@@ -1,0 +1,21 @@
+OK  op: got='inspect_managed_artifact'
+OK  provider.id: got='rea-dotnet-static'
+OK  subject.sha256==bytes: got='94429fa428893dd78ed4b7f26a919232d5f05cc9cdc84d256954db5b0a286760'
+OK  bytes.len: got=1048
+OK  classification.status: got='managed'
+OK  classification.implementation: got='cil'
+OK  classification.managed_architecture: got='anycpu'
+OK  classification.evidence.codes: got=['cli-header-observed', 'managed-architecture-derived']
+OK  classification.evidence.file_offsets: got=[512, 528]
+OK  metadata.status: got='complete'
+OK  metadata.stream_names: got=['#Blob', '#GUID', '#Strings', '#US', '#~']
+OK  metadata.table_row_counts: got={'Module': 1, 'TypeDef': 2, 'MethodDef': 2, 'ModuleRef': 1, 'ImplMap': 1, 'Assembly': 1}
+OK  module.name: got='r85-managed.dll'
+OK  module.mvid: got='13121110-1514-1716-1819-1a1b1c1d1e1f'
+OK  assembly.name: got='r85-managed'
+OK  assembly.version: got='2.0.1.5'
+OK  coverage.state: got='complete'
+OK  confidence: got='observed'
+OK  authority: got='shipped-artifact'
+OK  evidence_id.form: got=True
+ORACLE OK (20/20 checks)
