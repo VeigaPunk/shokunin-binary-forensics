@@ -1,0 +1,9 @@
+# revenger r86 red receipt D — SKILL.md pointer-hygiene ground (C2 red)
+# date: 2026-11-02T11:59:02Z
+# command: grep -cE '^\| M[0-9]+ \|' SKILL.md  (error-pattern rows, M33-M41)
+9
+# command: grep -c 'cite-back' SKILL.md  (cite-back rule mentions)
+0
+# command: grep -c 'used-by' SKILL.md  (used-by mentions today: the rule-2 row + census contract rows only)
+4
+# reading: no pointer-hygiene decision row and no named error signature for the used-by pointer-drift class exists at base; the r86 preprobe found 6 live specimens of the class (sweep7-red-prelanding.log).

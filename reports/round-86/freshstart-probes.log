@@ -1,0 +1,50 @@
+# revenger r86 fresh-start S7 probes + carry-in receipts -- pre-freeze
+# date: 2026-11-02T12:05:27Z
+
+## probe 1 -- F android gate (freshstart, re-derived this round)
+command: echo REA_JADX_MCP_JAR; command -v jadx
+REA_JADX_MCP_JAR=UNSET
+jadx: not on PATH
+reading: F android stays hard-gated (S448 receipt stands); F4's honest exception stays 10/11.
+
+## probe 2 -- REA provider surface (the coverage denominator, recorded as printed)
+command: PYTHONUTF8=1 rea capabilities | grep -c 'availability_code: unsupported_host'
+7
+reading: r84 printed 8 groups; r85 printed 7; this round prints the count above (the lane records the count it prints, not a cause; rea 6.8.0 unchanged).
+
+## probe 3 -- L0 re-read (nothing assumed answered)
+revenger r74 K-block line count: 1
+revenger r79 census literal-form line count: 1
+reading: K admissions stay operator-blocked on this host (r74 line: wave-Q admissions blocked); census literal form stays operator-side (r79 line). Both routed around; nothing assumed answered.
+
+## probe 4 -- used-by preprobe (the C1 vector), placeholder-aware parse (v3)
+command: python -I usedby_probe2.py <lane>  (v3: sid stripped + placeholders em/en-dash + ASCII hyphen; v1 false-positive class and v2 unstripped-id class both corrected -- the frozen instrument's parse is the reference)
+ROWS=471 USED_BY_NONPLACEHOLDER=451 SITES=499
+MISSING_ON_DISK=0
+MISSING_IN_HEAD=0
+NO_CITEBACK=6
+  no-cite S448 -> reports/round-77/claims.md
+  no-cite S449 -> SKILL.md
+  no-cite S450 -> reports/round-78/province_probe3.sh
+  no-cite S451 -> reports/round-79/claims.md
+  no-cite S453 -> reports/round-79/claims.md
+  no-cite S456 -> reports/round-80/orphan-before.log
+
+## probe 5 -- per-pointer cite-back cross-check (the 6 rows, grep -cw)
+note: grep -cw exits 1 on zero matches; the shell substitutes 0.
+S448 -> corpus/lessons/round-77.md : CITES=4
+S448 -> reports/round-77/claims.md : CITES=0
+S449 -> SKILL.md : CITES=0
+S449 -> reports/round-78/claims.md : CITES=1
+S450 -> reports/round-78/claims.md : CITES=1
+S450 -> reports/round-78/province_probe3.sh : CITES=0
+S451 -> reports/round-79/claims.md : CITES=0
+S451 -> corpus/lessons/round-79.md : CITES=5
+S453 -> reports/round-79/claims.md : CITES=0
+S453 -> corpus/lessons/round-79.md : CITES=7
+S456 -> reports/round-80/claims.md : CITES=1
+S456 -> reports/round-80/orphan-before.log : CITES=0
+reading: every drift row keeps >=1 citing pointer (mined stays valid per CORPUS.md status contract); the fix drops exactly one non-citing pointer per row (SOURCES rule 2, old->new logged in the round lesson).
+
+## probe 6 -- coverage-surface enumeration at base (the S7 gate: why no coverage claim this round)
+criterion M (managed, r85): 3/3 saturated; A1 (r82): 3/3 saturated; A1v2 (r84): 5/5 saturated; F4: 10/11 with android hard-gated (probe 1); K: operator-blocked (probe 3, L0 r74); asset-catalog: macOS-gated (probe 2 unsupported groups); ghidra-headless repeat: no new measurement (r75 capability row holds, r85 non-author spot-check concurred). Every reachable coverage surface is saturated, hard-gated, or operator-blocked at base -- routed with receipts; the lowest-axis obligation routes this round (see claims.md gate section).

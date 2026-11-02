@@ -1,0 +1,11 @@
+# revenger r86 red receipt A — v6 blind over the pre-fix tree (the used-by class does not exist in v6)
+# date: 2026-11-02T11:55:36Z
+# command: PYTHONUTF8=1 python -I -B <v6 blob sha above> --lane C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics --fleet C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin --format summary | grep SWEEP_SRC
+# v6 blob sha256: b2db45b07bc86ffd501971582730497e2d5ddc83e685665c200fc24b3c7f12b7 (r85 pin b2db45b0…f12b7)
+V6_EXIT=0
+# grep -c SWEEP_SRC over the v6 summary output:
+0
+# tail of v6 summary:
+SWEEP_CORPUS fleet-reports=26 lessons=52 log=1
+CITED=1050 COMMITTED=988 LANDABLE_ORPHANS=0 ABSENT=62
+ORPHAN_SWEEP_LANDABLE=0

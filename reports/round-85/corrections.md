@@ -33,3 +33,40 @@ round); addressed FIRST this round, before any claim work. D2 is
 addressed by `.ufo/waves/round-85/postadjudication-sweep.log` (the
 committed receipt); D3 stays operator-side routing (dual census receipts
 landed, nothing assumed answered).
+
+## Correction 2 — r85 closure routed item 1: the mg_probe.py docstring prediction line vs the registered 0/3 red
+
+The r85 non-author spot-check routed (status-neutral,
+`corpus/lessons/round-85-verifier-spotcheck.md` §7 item 1): mg_probe.py's pre-run
+denominator paragraph says "on the round base only inspect_managed_artifact is
+recorded, so M prints 1/3 (3.33)", while the frozen red (`mg-red.log`) prints 0/3
+under the registered oracle-receipt definition — the r76 artifact record predates
+the oracle-receipt gate, its receipt carries no `oracle` field, so it does not
+count. The 0/3-not-1/3 shape was disclosed at the freeze, in claims.md, in the
+LEDGER and in the report; substance was never affected.
+
+Ruling recorded (the spot-check's own condition): a one-line docstring correction
+in a NEW committed version of mg_probe.py is owed "next round the lane touches
+this file". Round 86 does NOT touch mg_probe.py — the file is executed (the
+frozen M hold re-run) but no byte changes, so the verified sha pin
+`1840c30cf4f1cad0815c89ca80492053d4a43c5d752609a2edf33fa21a3ac03f`
+(round-85 spot-check §2) stays valid and the conditional fix is not triggered.
+The correction is this entry plus the standing wording rule:
+
+- An instrument docstring's pre-run prediction line states the registration
+  RULE, not an expected count; where a predicted count and the registered red
+  differ, the registered red receipt governs and every prose citation names the
+  red receipt's number (0/3 here).
+- When the lane next touches mg_probe.py, the prediction line is corrected in
+  the same commit (rule stated in the docstring: "on the round base only
+  inspect_managed_artifact carries any record; under the registered
+  oracle-receipt gate (receipt.json oracle.result starting ORACLE OK) it does
+  not count, so M prints 0/3 (0.00)").
+
+Carry-in provenance: routed item 1 of the r85 non-author closure; addressed
+FIRST this round, before any claim work, status-neutral. Items 2 (census
+literal-form exit 2, operator-side lineage — dual round-start receipts landed
+again in `.ufo/waves/round-86/`) and 4 (SHONEN non-author re-confirmation of
+the CURRENT SKILL.md bytes — operator-side, unchanged) stay routed; item 3
+(per-revision-corpus basis movement) is honored: every r86 receipt cites its
+`SWEEP_CORPUS` basis line first.

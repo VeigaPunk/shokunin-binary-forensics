@@ -1,0 +1,20 @@
+# revenger r86 red receipt B — orphan_sweep7 over the SAME pre-fix tree (change 10 records the live drift v6 cannot see)
+# date: 2026-11-02T11:56:57Z
+# command: PYTHONUTF8=1 python -I -B reports/round-86/orphan_sweep7.py --lane C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics --fleet C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin --format summary
+# v7 sha256 (pre-freeze bytes): f955cd7d634f8aa4f61c1734195dd32c959e8d5f347f5cd320484360c1948618
+SWEEP_FORMAT=summary (per-path SWEEP lines suppressed; rerun with --format full)
+SWEEP_PARSER_GREP_A=0
+SWEEP_PARSER_GREP_B=0
+SWEEP_PARSER_GREP_AB=0
+SWEEP_BARE_TOKENS matched=379 unmatched_skipped=1777 unmatched_recorded_absent=28 fleet_resolved=22
+SWEEP_CORPUS fleet-reports=26 lessons=52 log=1
+SWEEP_SRC registry=disk rows=451 sites=499 cited=493 mismatch=6 absent=0
+SWEEP_SRC_MISMATCH S448 -> reports/round-77/claims.md
+SWEEP_SRC_MISMATCH S449 -> SKILL.md
+SWEEP_SRC_MISMATCH S450 -> reports/round-78/province_probe3.sh
+SWEEP_SRC_MISMATCH S451 -> reports/round-79/claims.md
+SWEEP_SRC_MISMATCH S453 -> reports/round-79/claims.md
+SWEEP_SRC_MISMATCH S456 -> reports/round-80/orphan-before.log
+CITED=1050 COMMITTED=988 LANDABLE_ORPHANS=0 ABSENT=62
+ORPHAN_SWEEP_LANDABLE=0
+V7_EXIT=0
