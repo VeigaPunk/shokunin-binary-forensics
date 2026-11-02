@@ -1,0 +1,23 @@
+== round-88 preprobe history (consolidated; scratch copies deleted at round end)
+
+-- catch 1: the selftest's first synthetic ids (S_A/S_B) did not satisfy the registry row grammar (S + 3+ digits), so parse_rows scanned 0 rows and ST1 failed at the very first prelanding selftest run (receipt below, verbatim). Caught by the preprobe habit (run every frozen recipe by hand BEFORE the freeze). Fix: synthetic ids S701/S702/S703.
+== bash -n sweep_probe.sh
+SYNTAX_OK
+== python syntax check receipt_sweep.py
+PY_SYNTAX_OK
+== selftest direct
+SWEEP_SELFTEST=fail (ST1: correct receipt not verified)
+
+-- catch 2: with the comparator mutant applied, ST1's first assertion gated on SWEEP_WORDCOUNT_VERIFIED=1/2, which the blinded comparator ALSO falsifies (2/2), so mutant A died at the wrong stage with the wrong last line (rejected-matching instead of accepted-wrong) and the pinned attributed marker was unreachable. Caught by hand-running both mutants at the preprobe. Fix: the first ST1 assertion checks only the correct-receipt leg; the drift assertion is mutant A's deterministic death point (ST1 before ST2, r87 ordering rule).
+== plain sweep over live tree (red expected, open=6)
+SWEEP_ROWS_SCANNED=473
+REGISTER S194 NON_COMMAND_NUMERIC tokens=P4-colon
+REGISTER S328 NON_COMMAND_NUMERIC tokens=P4-colon
+WC_S454=DRIFT recorded=10 derived=11 closed=no
+WC_S456=DRIFT recorded=11 derived=12 closed=no
+WC_S457=VERIFIED recorded=9 derived=9
+WC_S459=DRIFT recorded=16 derived=14 closed=no
+
+-- catch 3: the first prelanding receipt draft recorded MUTA_EXIT=0/MUTB_EXIT=0 although both mutants die exit 1 — the echo captured tail's exit after a pipe (the r87 grep-piped exit-attribution class, recurrence, caught by reading the receipt before landing). Fix: exits captured into variables before any pipe; the regenerated receipt is the committed sweep-red-prelanding.log.
+
+-- catch 4 (disclosed, no defect in the frozen bytes): a python write_text rewrite normalized the instrument to CRLF, so worktree sed mutants diffed whole-file (391 lines); the file was normalized back to LF (17,002 bytes; repo autocrlf=false, so the committed blob is byte-identical to the worktree), and both mutants diff exactly one line (2 diff lines: the < and > pair) at the frozen bytes.

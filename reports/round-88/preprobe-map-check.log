@@ -1,0 +1,14 @@
+S454 quote_in_anchor=True quote_in_source=True recorded=10 ws_derived=11 drift=True -> OK
+S456 quote_in_anchor=True quote_in_source=True recorded=11 ws_derived=12 drift=True -> OK
+S457 quote_in_anchor=True quote_in_source=True recorded=9 ws_derived=9 drift=False -> OK
+S459 quote_in_anchor=True quote_in_source=True recorded=16 ws_derived=14 drift=True -> OK
+S461 quote_in_anchor=True quote_in_source=True recorded=19 ws_derived=17 drift=True -> OK
+S462 quote_in_anchor=True quote_in_source=True recorded=11 ws_derived=10 drift=True -> OK
+S463 quote_in_anchor=True quote_in_source=True recorded=10 ws_derived=7 drift=True -> OK
+MAP_CHECK_ALL_OK=True
+SWEEP_SHA256=57098ed5b8f427ae331da87a1ed68ed4efe909196686db4953612ab643771271 (17664 bytes)
+PROBE_SHA256=9a2cb44251619e8bedfc71862a507550d944fbbb4f58948dd63d4ea385e77cd0 (2962 bytes)
+MUTA_PATTERN_HITS=1 MUTB_PATTERN_HITS=1
+MUTA_SHA256=bceb9a338ce76bcb3fd25d3649ded3fde13ddc6734ef6fce1ed52d8fb0de1c30
+MUTB_SHA256=6c65f6ddb7d8cc021a616339d7e7f6548272661498344b8714bad450107ba7b0
+MUTA_DIFF_LINES=1 MUTB_DIFF_LINES=1

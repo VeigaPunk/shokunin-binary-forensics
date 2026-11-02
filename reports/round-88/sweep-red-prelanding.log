@@ -1,0 +1,82 @@
+== base-state check: corpus/SOURCES.md vs base commit 48db9e0
+(empty above = live tree rows are the base-state rows)
+
+== sweep red over the live tree (base state) at freeze
+SWEEP_ROWS_SCANNED=473
+REGISTER S194 NON_COMMAND_NUMERIC tokens=P4-colon
+REGISTER S328 NON_COMMAND_NUMERIC tokens=P4-colon
+WC_S454=DRIFT recorded=10 derived=11 closed=no
+WC_S456=DRIFT recorded=11 derived=12 closed=no
+WC_S457=VERIFIED recorded=9 derived=9
+WC_S459=DRIFT recorded=16 derived=14 closed=no
+WC_S461=DRIFT recorded=19 derived=17 closed=no
+WC_S462=DRIFT recorded=11 derived=10 closed=no
+WC_S463=DRIFT recorded=10 derived=7 closed=no
+SWEEP_RECEIPT_ROWS_DETECTED=18
+SWEEP_NON_COMMAND_NUMERIC_ROWS=2
+SWEEP_TOKENS_P1-wordcount=7
+SWEEP_TOKENS_P2-prints=1
+SWEEP_TOKENS_P3-keyval=8
+SWEEP_TOKENS_P4-colon=4
+SWEEP_TOKENS_P5-oracle=7
+SWEEP_WORDCOUNT_VERIFIED=1/7
+SWEEP_WORDCOUNT_CLOSED=0/6
+SWEEP_WORDCOUNT_OPEN=6
+SWEEP_VERDICT=red
+SWEEP_RED_EXIT=1
+
+== prelanding green dry run over the staged registry (base rows + S474-S479, staged copy in scratch; channels resolve from the lane root)
+SWEEP_ROWS_SCANNED=479
+REGISTER S194 NON_COMMAND_NUMERIC tokens=P4-colon
+REGISTER S328 NON_COMMAND_NUMERIC tokens=P4-colon
+WC_S454=CLOSED recorded=10 derived=11 by=S474(11)
+WC_S456=CLOSED recorded=11 derived=12 by=S475(12)
+WC_S457=VERIFIED recorded=9 derived=9
+WC_S459=CLOSED recorded=16 derived=14 by=S476(14)
+WC_S461=CLOSED recorded=19 derived=17 by=S477(17)
+WC_S462=CLOSED recorded=11 derived=10 by=S478(10)
+WC_S463=CLOSED recorded=10 derived=7 by=S479(7)
+SWEEP_RECEIPT_ROWS_DETECTED=24
+SWEEP_NON_COMMAND_NUMERIC_ROWS=2
+SWEEP_TOKENS_P1-wordcount=19
+SWEEP_TOKENS_P2-prints=1
+SWEEP_TOKENS_P3-keyval=8
+SWEEP_TOKENS_P4-colon=4
+SWEEP_TOKENS_P5-oracle=7
+SWEEP_WORDCOUNT_VERIFIED=1/7
+SWEEP_WORDCOUNT_CLOSED=6/6
+SWEEP_WORDCOUNT_OPEN=0
+SWEEP_VERDICT=green
+SWEEP_GREEN_DRYRUN_EXIT=0
+
+== counter conformance over the frozen bytes
+SWEEP_SELFTEST_MODE_PRESENT=1/1
+SWEEP_MUTANTS_KILLED_ATTRIBUTED=2/2
+SWEEP_USAGE_EXIT64=1/1
+PROBE_EXIT=0
+
+== counter red form over a non-conforming target
+SWEEP_SELFTEST_MODE_PRESENT=0/1
+SWEEP_MUTANTS_KILLED_ATTRIBUTED=0/2
+SWEEP_USAGE_EXIT64=0/1
+PROBE_RED_EXIT=1
+
+== selftest direct
+SWEEP_SELFTEST=pass
+SELFTEST_EXIT=0
+
+== usage and could-not-evaluate legs
+USAGE_EXIT=64
+MISSING_EXIT=2
+
+== mutants by hand (from the frozen worktree bytes)
+mutantA diff-lines=2 sha256=bceb9a338ce76bcb3fd25d3649ded3fde13ddc6734ef6fce1ed52d8fb0de1c30
+selftest: word-count comparator accepted a wrong count
+MUTA_EXIT=1
+mutantB diff-lines=2 sha256=6c65f6ddb7d8cc021a616339d7e7f6548272661498344b8714bad450107ba7b0
+selftest: closure accepted an unverified supersession
+MUTB_EXIT=1
+
+== instrument shas (frozen bytes)
+57098ed5b8f427ae331da87a1ed68ed4efe909196686db4953612ab643771271 *reports/round-88/receipt_sweep.py
+9a2cb44251619e8bedfc71862a507550d944fbbb4f58948dd63d4ea385e77cd0 *reports/round-88/sweep_probe.sh

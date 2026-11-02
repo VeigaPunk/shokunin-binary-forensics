@@ -1,0 +1,15 @@
+== probe 1: F android gate (fresh 2026-11-02)
+REA_JADX_MCP_JAR=UNSET
+jadx: not on PATH
+
+== rea version:
+6.8.0
+
+== probe 3 (loose noise pattern, disclosed): grep -ciE unsupported over rea capabilities
+31
+
+== probe 6 (registered metric): availability_code: unsupported_host count
+7
+
+== probe 6b: K L0 (r74, line 233) still unanswered
+revenger | round-74 | this Windows host has no L2/AgentSwarm dispatch surface (no .ufo/state/, no seat spawn handoff; /home/vgpnk gone): the MISSION >=8-L2 floor is not executable here, round-74 quote-audit receipts are L1-authored (disclosed, counter re-derived), and wave-Q admissions (C05/C10/C15) stay blocked - operator decision needed on the dispatch surface before any K-move round
