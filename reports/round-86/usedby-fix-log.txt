@@ -1,0 +1,18 @@
+# revenger r86 — SOURCES.md rule-2 used-by changes, old->new log (landing)
+# date: 2026-11-02T12:12:15Z
+# command: python -I apply_usedby_fix.py <lane>  (six single-cell replacements, each asserted unique; S472 appended after S471)
+S448 OLD used-by: corpus/lessons/round-77.md, reports/round-77/claims.md
+S448 NEW used-by: corpus/lessons/round-77.md
+S449 OLD used-by: SKILL.md, reports/round-78/claims.md
+S449 NEW used-by: reports/round-78/claims.md
+S450 OLD used-by: reports/round-78/claims.md, reports/round-78/province_probe3.sh
+S450 NEW used-by: reports/round-78/claims.md
+S451 OLD used-by: reports/round-79/claims.md, corpus/lessons/round-79.md
+S451 NEW used-by: corpus/lessons/round-79.md
+S453 OLD used-by: reports/round-79/claims.md, corpus/lessons/round-79.md
+S453 NEW used-by: corpus/lessons/round-79.md
+S456 OLD used-by: reports/round-80/claims.md, reports/round-80/orphan-before.log
+S456 NEW used-by: reports/round-80/claims.md
+S472 appended directly after S471
+OK
+FIX_EXIT=0
