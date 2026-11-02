@@ -1,0 +1,25 @@
+# negctl-red.log - r87 C1 red-before (the same counting command over the v1 harness bytes), 2026-11-02
+
+== v1 bytes identity (base bytes, never touched this round)
+eb5d1b54fa20421c09cd55e15d6a849af1379a822887b5a6ef60e0935c013fad *reports/round-75/probe_negctl.sh
+
+== v1 blindness markers (must all be 0)
+grep -c 'usage:' reports/round-75/probe_negctl.sh
+0
+grep -c 'NEGCTL_V2_SELFTEST' reports/round-75/probe_negctl.sh
+0
+grep -c 'stale_flag_ok' reports/round-75/probe_negctl.sh
+0
+grep -c 'attribution guard' reports/round-75/probe_negctl.sh
+0
+
+== the frozen counting instrument over the v1 harness (red-before)
+$ bash reports/round-87/selftest_probe.sh reports/round-75/probe_negctl.sh
+NEG_SELFTEST_MODE_PRESENT=0/1
+NEG_SELFTEST_MUTANTS_KILLED_ATTRIBUTED=0/2
+NEG_USAGE_EXIT64=0/1
+RED_EXIT=1
+
+expected red values (pinned in claims.md): NEG_SELFTEST_MODE_PRESENT=0/1, NEG_SELFTEST_MUTANTS_KILLED_ATTRIBUTED=0/2, NEG_USAGE_EXIT64=0/1, exit 1.
+the mutant recipes cannot even apply to v1 bytes (no stale_flag_ok line) - the counting
+probe's sed-must-change-bytes guard returns them as unkillable, which is the blindness itself.

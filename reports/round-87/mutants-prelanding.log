@@ -1,0 +1,16 @@
+== mutant A recipe + run
+35c35
+< stale_flag_ok() { [ "$1" = "1" ] && printf '%s\n' "$2" | grep -Eq '^engine-ghidra .*STALE-RECORD'; }
+---
+> stale_flag_ok() { return 0; }
+NEGCTL_V2_SELFTEST=fail (ST1: false-pass accepted)
+selftest: stale-record verdict accepted a false-pass
+MUTA_EXIT=1
+
+== mutant B recipe + run
+NEGCTL_SELFTEST_FALSEPASS_LOGIC=ok
+NEGCTL_SELFTEST_ATTRIBUTION_GUARD=ok
+NEGCTL_SELFTEST_STALE_LOGIC=ok
+NEGCTL_SELFTEST_UNRECORDED_LOGIC=ok
+NEGCTL_V2_SELFTEST=pass
+MUTB_EXIT=0
