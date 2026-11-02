@@ -1,0 +1,50 @@
+{
+ "entries": [
+  {
+   "compress_type": 0,
+   "crc32": "0a6f3ab9",
+   "name": "MANIFEST.txt",
+   "sha256": "d4d1b7a08f2bafd27dc9e57271b3e6ddc7a5aeb4cbd4efc77fab100430fd4741",
+   "size": 90
+  },
+  {
+   "compress_type": 0,
+   "crc32": "05202171",
+   "name": "data/blob.bin",
+   "sha256": "4dbdc2b2b62cb00749785bc84202236dbc3777d74660611b8e58812f0cfde6c3",
+   "size": 48
+  },
+  {
+   "compress_type": 0,
+   "crc32": "45904870",
+   "name": "data/nested/note.md",
+   "sha256": "821400d4e27d232647ea61b1abc69fb8518fbe0a93d7ad5e308e0e0ecc4e45a0",
+   "size": 32
+  }
+ ],
+ "entry_count": 3,
+ "fixture": "corpus/fixtures/arc-r84/R84Sample.zip",
+ "fixture_sha256": "f1f983eff6823a4ba23d714b25b69ca8e64484ddc00ec24043210311d729bc59",
+ "hyp": {
+  "cleanup_pending": false,
+  "containment_verified": true,
+  "evidence_id_form": "ev_[0-9a-f]{64}",
+  "extract_created_all": true,
+  "extract_edge_count": 3,
+  "extract_node_count": 4,
+  "extract_operation": "extract_artifact",
+  "extraction_id_form": "aex_[0-9a-f]{64}",
+  "inspect_edge_count": 3,
+  "inspect_node_count": 4,
+  "inspect_operation": "inspect_artifact",
+  "inspect_substep_operation": "inventory_artifact",
+  "integrity_contradictions_empty": true,
+  "manifest_id_form": "agm_[0-9a-f]{64}",
+  "node_content_state": "embedded",
+  "output_root_outside_repo": true,
+  "predicate_type": "rea.analysis",
+  "provider_id": "rea-artifact-graph",
+  "root_format": "zip",
+  "substep_status": "completed"
+ }
+}

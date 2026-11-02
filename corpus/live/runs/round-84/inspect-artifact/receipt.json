@@ -1,0 +1,28 @@
+{
+  "claim": "C1",
+  "command": "rea inspect-artifact corpus/fixtures/arc-r84/R84Sample.zip --format json",
+  "cwd": "lane root",
+  "evidence_id": "ev_753cfca9daf92857826b62400bd2f4b09ba6cbb4670fd449e3250c246ca138ba",
+  "exit_code": 0,
+  "fixture": "corpus/fixtures/arc-r84/R84Sample.zip",
+  "fixture_sha256": "f1f983eff6823a4ba23d714b25b69ca8e64484ddc00ec24043210311d729bc59",
+  "generator": {
+    "regen": "REGEN byte-identical (508 bytes)",
+    "self_check": "17/17 SELFCHECK ok"
+  },
+  "host_env": {
+    "PYTHONUTF8": "1",
+    "provider": "rea-artifact-graph",
+    "rea": "6.8.0"
+  },
+  "operation": "inspect_artifact",
+  "oracle": {
+    "command": "python -I -B corpus/fixtures/arc-r84/oracle_check.py corpus/fixtures/arc-r84/truth.json corpus/live/runs/round-84/inspect-artifact/inspection.json corpus/fixtures/arc-r84/R84Sample.zip",
+    "exit_code": 0,
+    "result": "ORACLE OK (36/36 checks)"
+  },
+  "round": 84,
+  "saved_path": "corpus/live/runs/round-84/inspect-artifact/inspection.json",
+  "stderr_bytes": 0,
+  "stdout_sha256": "41d6a2a8340365f43e9e5c86b3510594b890114165ac9b944f79c0e586c21b8c"
+}

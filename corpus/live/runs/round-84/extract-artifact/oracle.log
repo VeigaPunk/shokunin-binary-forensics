@@ -1,0 +1,32 @@
+ORACLE ok BYTE operation == extract_artifact
+ORACLE ok BYTE provider.id == rea-artifact-graph
+ORACLE ok BYTE manifest.root_sha256 == fixture sha
+ORACLE ok BYTE manifest.root_format == zip
+ORACLE ok BYTE manifest.node_count == entries+1
+ORACLE ok BYTE entry 0 (MANIFEST.txt): artifact row present
+ORACLE ok BYTE entry 0 (MANIFEST.txt): sha256 match
+ORACLE ok BYTE entry 0 (MANIFEST.txt): bytes_written == 90
+ORACLE ok BYTE entry 0 (MANIFEST.txt): created true
+ORACLE ok BYTE entry 1 (data/blob.bin): artifact row present
+ORACLE ok BYTE entry 1 (data/blob.bin): sha256 match
+ORACLE ok BYTE entry 1 (data/blob.bin): bytes_written == 48
+ORACLE ok BYTE entry 1 (data/blob.bin): created true
+ORACLE ok BYTE entry 2 (data/nested/note.md): artifact row present
+ORACLE ok BYTE entry 2 (data/nested/note.md): sha256 match
+ORACLE ok BYTE entry 2 (data/nested/note.md): bytes_written == 32
+ORACLE ok BYTE entry 2 (data/nested/note.md): created true
+ORACLE ok BYTE output_root outside the fixture directory
+ORACLE ok HYP evidence_id form ev_hex64
+ORACLE ok HYP extraction_id form aex_hex64
+ORACLE ok HYP manifest_id form agm_hex64
+ORACLE ok HYP manifest.edge_count == entries
+ORACLE ok HYP selected_occurrence_ids == entries
+ORACLE ok HYP containment_verified true
+ORACLE ok HYP integrity_contradictions empty
+ORACLE ok HYP cleanup attempted false / verified true / no residuals
+ORACLE ok HYP coverage == container-entries/complete
+ORACLE ok HYP authority == shipped-artifact
+ORACLE ok HYP predicate_type == rea.analysis
+ORACLE ok HYP confidence == observed
+ORACLE ok HYP output_root under the host temp area
+ORACLE OK (31/31 checks)
