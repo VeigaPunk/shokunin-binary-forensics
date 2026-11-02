@@ -1,0 +1,121 @@
+{
+  "bundle": {
+    "path": "R83Sample.app",
+    "layout": "root",
+    "info_plist": {
+      "sha256": "1bb04ef837337b2ed0650ef97d86811c03474a82b36738dc346a37aa3169319e",
+      "bytes": 313,
+      "identifier": "local.revenger.r83",
+      "name": "R83Sample"
+    }
+  },
+  "documents": [
+    {
+      "relative_path": "Base.lproj/MainMenu.nib",
+      "bytes": 213,
+      "sha256": "f0746e35b970492e46d8cfec1fe01f46efd6623e1dad86e74055e1aa7286315e",
+      "object_count": 4,
+      "key_count": 6,
+      "value_count": 7,
+      "class_count": 3,
+      "classes": [
+        "UIView",
+        "NSActionConnector",
+        "NSIBHelpConnector"
+      ],
+      "connection_objects_with_source_encoded": 1,
+      "objects": [
+        {
+          "id": 0,
+          "class": "UIView",
+          "values": {
+            "NSFrame": 137.5,
+            "NSHidden": true
+          }
+        },
+        {
+          "id": 1,
+          "class": "UIView",
+          "values": {
+            "NSFrame": 42.25,
+            "NSTag": 7
+          }
+        },
+        {
+          "id": 2,
+          "class": "NSActionConnector",
+          "values": {
+            "NSSource": {
+              "$ref": 0
+            },
+            "NSDestination": {
+              "$ref": 1
+            },
+            "NSLabel_utf8": "doThing:",
+            "NSLabel_base64": "ZG9UaGluZzo="
+          }
+        },
+        {
+          "id": 3,
+          "class": "NSIBHelpConnector",
+          "values": {}
+        }
+      ]
+    },
+    {
+      "relative_path": "Base.lproj/SecondView.nib",
+      "bytes": 79,
+      "sha256": "7953ce251d651a27c002a251ff90c723d7b6493c5c634d9b106f93a246fd3566",
+      "object_count": 1,
+      "key_count": 1,
+      "value_count": 1,
+      "class_count": 1,
+      "classes": [
+        "UIView"
+      ],
+      "connection_objects_with_source_encoded": 0,
+      "objects": [
+        {
+          "id": 0,
+          "class": "UIView",
+          "values": {
+            "NSFrame": 5.5
+          }
+        }
+      ]
+    }
+  ],
+  "build_recipe": {
+    "command": "python -I -B build_app.py",
+    "bundle_files": [
+      "Base.lproj/MainMenu.nib",
+      "Base.lproj/SecondView.nib",
+      "Info.plist"
+    ],
+    "determinism": "struct.pack + fixed literals; no timestamps, no randomness, no host paths in bytes",
+    "python_version": "3.13.15",
+    "regen": "byte-identical rebuild verified in scratch (--out)"
+  },
+  "predicted_producer_vocabulary": {
+    "_note": "pre-registered Q07 hypotheses (Q05 preprobe + the installed 6.8.0 parser source); recorded whichever way the committed run falls",
+    "subject": null,
+    "target_sha256": null,
+    "graph_provider_tool_version": "rea-interface-builder/1",
+    "scene_nodes": 2,
+    "node_count": 8,
+    "edge_count": 2,
+    "edge_relation": "target_action",
+    "action_node": {
+      "kind": "action",
+      "selector": null,
+      "type": "NSActionConnector",
+      "destination_id": "1"
+    },
+    "hierarchy_facet": "unsupported",
+    "hierarchy_complete": false,
+    "connections_facet": "complete",
+    "truncated": false,
+    "confidence": "observed",
+    "authority": "shipped-artifact"
+  }
+}

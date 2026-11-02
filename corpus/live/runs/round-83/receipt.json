@@ -1,0 +1,19 @@
+{
+  "round": 83,
+  "command": "rea decode-interface-builder corpus/fixtures/app-r83/R83Sample.app --format json",
+  "cwd": "lane root",
+  "host_env": {"PYTHONUTF8": "1", "rea": "6.8.0", "provider": "rea-artifact-graph"},
+  "exit_code": 0,
+  "stderr_bytes": 0,
+  "stdout_sha256": "28abc85e44d1c816756585cc1ad337a5dd709d18a8cd42fbae93de982f16e1fb",
+  "saved_path": "corpus/live/runs/round-83/inspection.json",
+  "fixture": "corpus/fixtures/app-r83/R83Sample.app",
+  "fixture_files": {
+    "Info.plist": {"sha256": "1bb04ef837337b2ed0650ef97d86811c03474a82b36738dc346a37aa3169319e", "bytes": 313},
+    "Base.lproj/MainMenu.nib": {"sha256": "f0746e35b970492e46d8cfec1fe01f46efd6623e1dad86e74055e1aa7286315e", "bytes": 213},
+    "Base.lproj/SecondView.nib": {"sha256": "7953ce251d651a27c002a251ff90c723d7b6493c5c634d9b106f93a246fd3566", "bytes": 79}
+  },
+  "evidence_id": "ev_260481425d1a43fbbc0327c2033aafda8d7a51599c520a74b9985c3c550610f8",
+  "oracle": {"command": "python -I -B corpus/fixtures/app-r83/oracle_check.py corpus/fixtures/app-r83/truth.json corpus/live/runs/round-83/inspection.json corpus/fixtures/app-r83/R83Sample.app", "result": "ORACLE OK (44/44 checks)", "exit_code": 0},
+  "generator": {"self_check": "18/18 SELFCHECK ok", "regen": "REGEN byte-identical (313 + 213 + 79 bytes)"}
+}
