@@ -1,0 +1,2080 @@
+# sweep6 real-tree pair — v5 (red) vs v6 (green) over ONE tree: the committed
+# adjudication tip worktree + the fleet root. Both instruments run from their
+# COMMITTED blobs (git show d27cf95:… extracted; v5 sha d9a7ba17…46cb, v6 sha
+# b2db45b0…f12b7). Basis: counts are per-revision-corpus — the SWEEP_CORPUS
+# basis lines below name each corpus composition; the worktree carries the
+# r85 lesson/scorecard/log texts written for this adjudication but not yet
+# committed (the r84 real-receipt precedent, disclosed here).
+# date: 2026-11-02T09:41:53Z
+
+== v5 (red side: the fleet-root bare tokens as unmatched absent rows) ==
+$ PYTHONUTF8=1 python -I -B v5-committed.py --lane <lane> --fleet <fleet> --format full
+SWEEP committed .ufo | bare-token normalized: .ufo
+SWEEP committed .ufo/waves/fleet-round-1-interactive
+SWEEP committed .ufo/waves/fleet-round-1-interactive/inherited-input-shapes.json
+SWEEP committed .ufo/waves/fleet-round-1-interactive/local-acceptance.json
+SWEEP committed .ufo/waves/fleet-round-1-interactive/routing-assessment-run.json
+SWEEP absent-fleet .ufo/waves/hyaku/jj-w1/reports/JjAuditRevenger.md | exists under the fleet root (shared/other-lane surface)
+SWEEP committed .ufo/waves/kaika-r1/connector.md
+SWEEP committed .ufo/waves/kaika-r1/critic-post.md
+SWEEP committed .ufo/waves/kaika-r1/dispatch.md
+SWEEP committed .ufo/waves/kaika-r1/mutation-post.md
+SWEEP committed .ufo/waves/kaika-r1/reviewer-post.md
+SWEEP committed .ufo/waves/kaika-r1/scout-freshness.md
+SWEEP committed .ufo/waves/kaika-r1/scribe-pointer-audit.md
+SWEEP absent-fleet .ufo/waves/kaika-w1/revenger-art.md | exists under the fleet root (shared/other-lane surface)
+SWEEP absent-fleet .ufo/waves/kaika-w3/revenger-review.md | exists under the fleet root (shared/other-lane surface)
+SWEEP absent-fleet .ufo/waves/kaika/SOURCES-CONTRACT-v1.md | exists under the fleet root (shared/other-lane surface)
+SWEEP absent-fleet .ufo/waves/kaika/steer.md | exists under the fleet root (shared/other-lane surface)
+SWEEP absent-fleet .ufo/waves/round-24/w2/RevUnlandedResolution.md | exists under the fleet root (shared/other-lane surface)
+SWEEP committed .ufo/waves/round-61/build
+SWEEP committed .ufo/waves/round-61/build-spec.json
+SWEEP committed .ufo/waves/round-61/falsify-spawn-result.txt
+SWEEP committed .ufo/waves/round-61/falsify-w3
+SWEEP committed .ufo/waves/round-61/falsify-w3-spec.json
+SWEEP committed .ufo/waves/round-61/falsify-w3/adjudication.json
+SWEEP committed .ufo/waves/round-61/falsify/dead-seats.json
+SWEEP committed .ufo/waves/round-62/build
+SWEEP committed .ufo/waves/round-62/build-spec.json
+SWEEP committed .ufo/waves/round-62/build/R62LessonIntake.md
+SWEEP committed .ufo/waves/round-62/cohort.json
+SWEEP committed .ufo/waves/round-62/counterexamples
+SWEEP committed .ufo/waves/round-62/falsify
+SWEEP committed .ufo/waves/round-62/falsify/frozen-candidates
+SWEEP committed .ufo/waves/round-62/falsify/initial-adjudication.json
+SWEEP committed .ufo/waves/round-62/scratch-cleanup.json
+SWEEP committed .ufo/waves/round-62/source-snapshots
+SWEEP committed .ufo/waves/round-62/source-snapshots/ecma-statements.html
+SWEEP committed .ufo/waves/round-62/source-snapshots/execution-specs-runtime.py
+SWEEP committed .ufo/waves/round-63
+SWEEP committed .ufo/waves/round-63/build
+SWEEP committed .ufo/waves/round-63/build/R63MutC3.md
+SWEEP committed .ufo/waves/round-63/build/R63ReadmeFlipDraft.md
+SWEEP committed .ufo/waves/round-63/build/R63RevengerLedger.md
+SWEEP committed .ufo/waves/round-63/build/R63SourceAppnote.md
+SWEEP committed .ufo/waves/round-63/build/R63SourceZipfileDocs.md
+SWEEP committed .ufo/waves/round-63/build/zip-readout.py
+SWEEP committed .ufo/waves/round-63/falsify/W2AttackEntryQ01.md
+SWEEP committed .ufo/waves/round-63/falsify/W2AttackProbeK.md
+SWEEP committed .ufo/waves/round-63/falsify/W2AttackRecordForgery.md
+SWEEP committed .ufo/waves/round-63/falsify/W2VerifyReadmeContract.md
+SWEEP committed .ufo/waves/round-63/falsify/routed-debt.md
+SWEEP committed .ufo/waves/round-63/source-snapshots/appnote.provenance.json
+SWEEP committed .ufo/waves/round-63/source-snapshots/appnote.txt
+SWEEP committed .ufo/waves/round-63/source-snapshots/zipfile.html
+SWEEP committed .ufo/waves/round-64
+SWEEP committed .ufo/waves/round-64/R64ReviewEntryQ09.md
+SWEEP committed .ufo/waves/round-64/R64ReviewEntryQ11.md
+SWEEP committed .ufo/waves/round-64/R64ReviewSkill.md
+SWEEP committed .ufo/waves/round-64/gate-quotes.md
+SWEEP committed .ufo/waves/round-64/source-snapshots/rea-firmware-guide.md
+SWEEP committed .ufo/waves/round-64/wave-spec.json
+SWEEP committed .ufo/waves/round-65
+SWEEP committed .ufo/waves/round-65/R65ReviewEntryQ09.md
+SWEEP committed .ufo/waves/round-65/m38-red-before.log
+SWEEP committed .ufo/waves/round-65/source-snapshots
+SWEEP committed .ufo/waves/round-65/source-snapshots/ResourceTypes.h
+SWEEP committed .ufo/waves/round-65/source-snapshots/rea-android-applications.md
+SWEEP committed .ufo/waves/round-65/source-snapshots/zipfile-docs.html
+SWEEP committed .ufo/waves/round-65/wave-spec.json
+SWEEP committed .ufo/waves/round-66
+SWEEP committed .ufo/waves/round-66/wave-spec.json
+SWEEP committed .ufo/waves/round-67/assimilation/quarantine-slice
+SWEEP committed .ufo/waves/round-67/plan-validated.json
+SWEEP committed .ufo/waves/round-67/quarantine/S055/source.bin
+SWEEP committed .ufo/waves/round-67/quarantine/S060/source.bin
+SWEEP committed .ufo/waves/round-67/source-snapshots/dex-format.html
+SWEEP committed .ufo/waves/round-68/R68MutC7Kill.md
+SWEEP committed .ufo/waves/round-68/R68ReviewSkillRefresh.md
+SWEEP committed .ufo/waves/round-68/build-r68.py
+SWEEP committed .ufo/waves/round-68/build-wave-spec.py
+SWEEP committed .ufo/waves/round-68/dispatch/plan-validated.json
+SWEEP committed .ufo/waves/round-69
+SWEEP committed .ufo/waves/round-69/R69CounterReplay.md
+SWEEP committed .ufo/waves/round-69/R69ReviewEntryQ09.md
+SWEEP committed .ufo/waves/round-69/build-wave-spec.py
+SWEEP committed .ufo/waves/round-69/dispatch/dispatch.json
+SWEEP committed .ufo/waves/round-69/dispatch/slot-acquire.log
+SWEEP absent .ufo/waves/round-69/w1/ScoutAmp.md | exists nowhere on this host; recorded, nothing to land
+SWEEP committed .ufo/waves/round-70/assimilation
+SWEEP committed .ufo/waves/round-70/build-entry.py
+SWEEP committed .ufo/waves/round-70/census-before.txt
+SWEEP committed .ufo/waves/round-70/w1-results.json
+SWEEP committed .ufo/waves/round-70/w1/R70W1AssimDraft.draft-entry.md
+SWEEP committed .ufo/waves/round-70/w1/R70W1ControlAudit.md
+SWEEP committed .ufo/waves/round-70/w1/R70W1MistakeSweep.md
+SWEEP committed .ufo/waves/round-70/w2/R70W2ConnRoutedCarry.md
+SWEEP committed .ufo/waves/round-71/assimilation/quarantine-slice
+SWEEP committed .ufo/waves/round-71/census-after.txt
+SWEEP committed .ufo/waves/round-71/census-before.txt
+SWEEP committed .ufo/waves/round-71/sources-s052/validate.log
+SWEEP committed .ufo/waves/round-71/vote-parser-control-a3.txt
+SWEEP committed .ufo/waves/round-71/w1-results.json
+SWEEP committed .ufo/waves/round-71/w1/R71W1EntryBlocks.md
+SWEEP committed .ufo/waves/round-71/w1/R71W1GateQ04.md
+SWEEP committed .ufo/waves/round-71/w1/R71W1GateQ13Q16.md
+SWEEP committed .ufo/waves/round-71/w1/R71W1Prose.md
+SWEEP committed .ufo/waves/round-71/w1/R71W1QmapCritic.md
+SWEEP committed .ufo/waves/round-71/w1/R71W1Quarantine.md
+SWEEP committed .ufo/waves/round-71/w2
+SWEEP committed .ufo/waves/round-71/w2-results.json
+SWEEP committed .ufo/waves/round-71/w2-votes
+SWEEP committed .ufo/waves/round-71/w2/R71W2CounterReplay.md
+SWEEP committed .ufo/waves/round-71/w2/R71W2GateReplay.md
+SWEEP committed .ufo/waves/round-71/w2/R71W2LessonReview.md
+SWEEP committed .ufo/waves/round-71/w2/R71W2Q09Q12.md
+SWEEP committed .ufo/waves/round-71/w2/R71W2Q13Q16.md
+SWEEP committed .ufo/waves/round-71/w2/R71W2Q16Scope.md
+SWEEP committed .ufo/waves/round-71/w2/R71W2Sentinel.md
+SWEEP committed .ufo/waves/round-72/w1
+SWEEP committed .ufo/waves/round-72/w1-plan.json
+SWEEP committed .ufo/waves/round-72/w1.ready
+SWEEP committed .ufo/waves/round-73/v2
+SWEEP committed .ufo/waves/round-73/v2-dispatch.json
+SWEEP committed .ufo/waves/round-73/v2-plan.json
+SWEEP committed .ufo/waves/round-73/v2-spec.json
+SWEEP committed .ufo/waves/round-73/v2.ready
+SWEEP committed .ufo/waves/round-73/v2.ready.partial
+SWEEP absent .ufo/waves/round-73/votes | exists nowhere on this host; recorded, nothing to land
+SWEEP committed .ufo/waves/round-73/w1
+SWEEP absent .ufo/waves/round-73/w1.ready | exists nowhere on this host; recorded, nothing to land
+SWEEP committed .ufo/waves/round-74
+SWEEP committed .ufo/waves/round-74/quote-audit
+SWEEP committed .ufo/waves/round-83
+SWEEP committed .ufo/waves/round-83/census-round-start-sanctioned.log
+SWEEP committed .ufo/waves/round-83/sweep-post-landing.log
+SWEEP committed .ufo/waves/round-83/sweep-pre-landing.log
+SWEEP committed .ufo/waves/round-84
+SWEEP committed .ufo/waves/round-84/carryin-byteverify.log
+SWEEP committed .ufo/waves/round-84/census-round-start-sanctioned.log
+SWEEP committed 2026-10-12-rea-readiness-checklist.md | bare-token normalized: corpus/knowledge/2026-10-12-rea-readiness-checklist.md
+SWEEP committed 2026-10-24.md | bare-token normalized: considerthese/2026-10-24.md
+SWEEP committed 2026-10-25.md | bare-token normalized: considerthese/2026-10-25.md
+SWEEP committed 2026-10-28.md | bare-token normalized: considerthese/2026-10-28.md
+SWEEP absent AGENTS.md | bare-token unmatched: no file named AGENTS.md under HEAD or the working tree
+SWEEP absent APPNOTE-6.3.9.TXT | bare-token unmatched: no file named APPNOTE-6.3.9.TXT under HEAD or the working tree
+SWEEP absent AXES.md | bare-token unmatched: no file named AXES.md under HEAD or the working tree
+SWEEP absent AndroidManifest.xml | bare-token unmatched: no file named AndroidManifest.xml under HEAD or the working tree
+SWEEP absent CORPUS.md | bare-token unmatched: no file named CORPUS.md under HEAD or the working tree
+SWEEP absent CloseChousa26.jsonl | bare-token unmatched: no file named CloseChousa26.jsonl under HEAD or the working tree
+SWEEP committed CoreS054Review.md | bare-token normalized: .ufo/waves/round-72/w1/CoreS054Review.md
+SWEEP committed CoreS066Review.md | bare-token normalized: .ufo/waves/round-72/w1/CoreS066Review.md
+SWEEP committed ExecSelectorKeccak.md | bare-token normalized: .ufo/waves/round-61/build/ExecSelectorKeccak.md
+SWEEP absent ID-REMAP.md | bare-token unmatched: no file named ID-REMAP.md under HEAD or the working tree
+SWEEP committed J-fixture-shaped-checker.log | bare-token normalized: reports/round-70/controls/J-fixture-shaped-checker.log
+SWEEP committed K-pin-to-echo-stub.log | bare-token normalized: reports/round-70/controls/K-pin-to-echo-stub.log
+SWEEP absent LEARNING.md | bare-token unmatched: no file named LEARNING.md under HEAD or the working tree
+SWEEP committed LEDGER.md | bare-token normalized: corpus/live/runs/20261012T163909Z/LEDGER.md, corpus/live/runs/20261012T164246Z/LEDGER.md, corpus/live/runs/20261012T164357Z/LEDGER.md, corpus/live/runs/round-10/LEDGER.md, corpus/live/runs/round-11/LEDGER.md, corpus/live/runs/round-12/LEDGER.md, corpus/live/runs/round-13/LEDGER.md, corpus/live/runs/round-14/LEDGER.md, corpus/live/runs/round-15/LEDGER.md, corpus/live/runs/round-16/LEDGER.md, corpus/live/runs/round-17/LEDGER.md, corpus/live/runs/round-18/LEDGER.md, corpus/live/runs/round-19/LEDGER.md, corpus/live/runs/round-20/LEDGER.md, corpus/live/runs/round-21/LEDGER.md, corpus/live/runs/round-22/LEDGER.md, corpus/live/runs/round-23/LEDGER.md, corpus/live/runs/round-24/LEDGER.md, corpus/live/runs/round-25/LEDGER.md, corpus/live/runs/round-26/LEDGER.md, corpus/live/runs/round-27/LEDGER.md, corpus/live/runs/round-28/LEDGER.md, corpus/live/runs/round-29/LEDGER.md, corpus/live/runs/round-30/LEDGER.md, corpus/live/runs/round-31/LEDGER.md, corpus/live/runs/round-32/LEDGER.md, corpus/live/runs/round-33/LEDGER.md, corpus/live/runs/round-34/LEDGER.md, corpus/live/runs/round-35/LEDGER.md, corpus/live/runs/round-36/LEDGER.md, corpus/live/runs/round-37/LEDGER.md, corpus/live/runs/round-38/LEDGER.md, corpus/live/runs/round-39/LEDGER.md, corpus/live/runs/round-40/LEDGER.md, corpus/live/runs/round-41/LEDGER.md, corpus/live/runs/round-42/LEDGER.md, corpus/live/runs/round-43/LEDGER.md, corpus/live/runs/round-44/LEDGER.md, corpus/live/runs/round-45/LEDGER.md, corpus/live/runs/round-46/LEDGER.md, corpus/live/runs/round-47/LEDGER.md, corpus/live/runs/round-48/LEDGER.md, corpus/live/runs/round-49/LEDGER.md, corpus/live/runs/round-50/LEDGER.md, corpus/live/runs/round-51/LEDGER.md, corpus/live/runs/round-52/LEDGER.md, corpus/live/runs/round-53/LEDGER.md, corpus/live/runs/round-54/LEDGER.md, corpus/live/runs/round-55/LEDGER.md, corpus/live/runs/round-56/LEDGER.md, corpus/live/runs/round-57/LEDGER.md, corpus/live/runs/round-58/LEDGER.md, corpus/live/runs/round-59/LEDGER.md, corpus/live/runs/round-59/devin-author/LEDGER.md, corpus/live/runs/round-6/LEDGER.md, corpus/live/runs/round-63/LEDGER.md, corpus/live/runs/round-7/LEDGER.md, corpus/live/runs/round-76/LEDGER.md, corpus/live/runs/round-77/LEDGER.md, corpus/live/runs/round-79/LEDGER.md, corpus/live/runs/round-8/LEDGER.md, corpus/live/runs/round-80/LEDGER.md, corpus/live/runs/round-81/LEDGER.md, corpus/live/runs/round-82/LEDGER.md, corpus/live/runs/round-83/LEDGER.md, corpus/live/runs/round-84/extract-artifact/LEDGER.md, corpus/live/runs/round-84/inspect-artifact/LEDGER.md, corpus/live/runs/round-85/inspect-managed-artifact/LEDGER.md, corpus/live/runs/round-85/inspect-managed-members/LEDGER.md, corpus/live/runs/round-85/inspect-managed-native-boundaries/LEDGER.md, corpus/live/runs/round-9/LEDGER.md
+SWEEP committed LOG.md | bare-token normalized: LOG.md
+SWEEP absent MANIFEST.json | bare-token unmatched: no file named MANIFEST.json under HEAD or the working tree
+SWEEP absent MISSION.md | bare-token unmatched: no file named MISSION.md under HEAD or the working tree
+SWEEP absent PROTOCOL-APPENDIX.md | bare-token unmatched: no file named PROTOCOL-APPENDIX.md under HEAD or the working tree
+SWEEP absent PROTOCOL.md | bare-token unmatched: no file named PROTOCOL.md under HEAD or the working tree
+SWEEP committed PROVINCE.md | bare-token normalized: PROVINCE.md
+SWEEP committed QUALITY.md | bare-token normalized: corpus/QUALITY.md
+SWEEP committed R62ConnectKasegi.md | bare-token normalized: .ufo/waves/round-62/build/R62ConnectKasegi.md
+SWEEP committed R62CriticQ14.md | bare-token normalized: .ufo/waves/round-62/build/R62CriticQ14.md
+SWEEP committed R62DebtM25Capture.md | bare-token normalized: .ufo/waves/round-62/build/R62DebtM25Capture.md
+SWEEP committed R62FCriticInventoryMethod.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FCriticInventoryMethod.md
+SWEEP committed R62FEvmAllCriteria.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FEvmAllCriteria.md
+SWEEP committed R62FEvmCarrier.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FEvmCarrier.md
+SWEEP committed R62FEvmDigestLabels.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FEvmDigestLabels.md
+SWEEP committed R62FEvmQ11Inventory.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FEvmQ11Inventory.md
+SWEEP committed R62FEvmRecords.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FEvmRecords.md
+SWEEP committed R62FJsAllCriteria.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FJsAllCriteria.md
+SWEEP committed R62FJsQ13Boundary.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FJsQ13Boundary.md
+SWEEP committed R62FJsScopeUnknown.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FJsScopeUnknown.md
+SWEEP committed R62FJsSemantics.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FJsSemantics.md
+SWEEP committed R62FSafeEvm.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FSafeEvm.md
+SWEEP committed R62FSafeJs.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FSafeJs.md
+SWEEP committed R62FSourceNewLogs.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FSourceNewLogs.md
+SWEEP committed R62FSourceOldErratum.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FSourceOldErratum.md
+SWEEP committed R62ReviewSourcesContract.md | bare-token normalized: .ufo/waves/round-62/build/R62ReviewSourcesContract.md
+SWEEP committed R62SourceEcma.md | bare-token normalized: .ufo/waves/round-62/build/R62SourceEcma.md
+SWEEP committed R62SourceEvmOwn.md | bare-token normalized: .ufo/waves/round-62/build/R62SourceEvmOwn.md
+SWEEP committed R62SourceEvmSpec.md | bare-token normalized: .ufo/waves/round-62/build/R62SourceEvmSpec.md
+SWEEP committed R62SourceJsOwn.md | bare-token normalized: .ufo/waves/round-62/build/R62SourceJsOwn.md
+SWEEP committed R62SourceLogPlan.md | bare-token normalized: .ufo/waves/round-62/build/R62SourceLogPlan.md
+SWEEP committed R62SourceRevisions.md | bare-token normalized: .ufo/waves/round-62/build/R62SourceRevisions.md
+SWEEP committed R65ReviewEntryQ11.md | bare-token normalized: .ufo/waves/round-65/R65ReviewEntryQ11.md
+SWEEP committed R68CounterIntegrity.md | bare-token normalized: .ufo/waves/round-68/R68CounterIntegrity.md
+SWEEP committed R68HoldSweep.md | bare-token normalized: .ufo/waves/round-68/R68HoldSweep.md
+SWEEP committed R68MutC7Spoof.md | bare-token normalized: .ufo/waves/round-68/R68MutC7Spoof.md
+SWEEP committed R68ReviewEntryQ04.md | bare-token normalized: .ufo/waves/round-68/R68ReviewEntryQ04.md
+SWEEP committed R68ReviewEntryQ05.md | bare-token normalized: .ufo/waves/round-68/R68ReviewEntryQ05.md
+SWEEP committed R68ReviewSkillRegistry.md | bare-token normalized: .ufo/waves/round-68/R68ReviewSkillRegistry.md
+SWEEP committed R68SpotcheckDiscern.md | bare-token normalized: .ufo/waves/round-68/R68SpotcheckDiscern.md
+SWEEP committed R68WaveContractAudit.md | bare-token normalized: .ufo/waves/round-68/R68WaveContractAudit.md
+SWEEP committed R69OracleCorrespondence.md | bare-token normalized: .ufo/waves/round-69/R69OracleCorrespondence.md
+SWEEP committed R70W1ErratumDraft.md | bare-token normalized: .ufo/waves/round-70/w1/R70W1ErratumDraft.md
+SWEEP committed R70W2AssimScope.md | bare-token normalized: .ufo/waves/round-70/w2/R70W2AssimScope.md
+SWEEP committed R71W1GateQ04.md | bare-token normalized: .ufo/waves/round-71/w1/R71W1GateQ04.md
+SWEEP committed R71W1GateQ11b.md | bare-token normalized: .ufo/waves/round-71/w1/R71W1GateQ11b.md
+SWEEP committed R71W1GateQ13Q16.md | bare-token normalized: .ufo/waves/round-71/w1/R71W1GateQ13Q16.md
+SWEEP committed R71W1QmapCritic.md | bare-token normalized: .ufo/waves/round-71/w1/R71W1QmapCritic.md
+SWEEP committed R71W1Reproduce.md | bare-token normalized: .ufo/waves/round-71/w1/R71W1Reproduce.md
+SWEEP committed R71W2GateReplay.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2GateReplay.md
+SWEEP committed R71W2Q01Q04.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2Q01Q04.md
+SWEEP committed R71W2Q05Q08.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2Q05Q08.md
+SWEEP committed R71W2Q09Q12.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2Q09Q12.md
+SWEEP committed R71W2Q13Q16.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2Q13Q16.md
+SWEEP committed R71W2Q16Scope.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2Q16Scope.md
+SWEEP committed R71W2SpotcheckDraft.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2SpotcheckDraft.md
+SWEEP committed R73Source080.md | bare-token normalized: .ufo/waves/round-73/v2/R73Source080.md
+SWEEP committed R83Sample.app | bare-token normalized: corpus/fixtures/app-r83/R83Sample.app
+SWEEP committed R84Sample.zip | bare-token normalized: corpus/fixtures/arc-r84/R84Sample.zip
+SWEEP committed README.md | bare-token normalized: README.md, corpus/README.md, corpus/fixtures/checksum-r1/README.md, corpus/fixtures/duplicate-r15/README.md
+SWEEP committed README.txt | bare-token normalized: corpus/live/runs/round-10/materialized/README.txt
+SWEEP committed ResourceTypes.h | bare-token normalized: .ufo/waves/round-65/source-snapshots/ResourceTypes.h, corpus/snapshots/ResourceTypes.h
+SWEEP committed ReviewerEvmQuality.md | bare-token normalized: .ufo/waves/round-61/build/ReviewerEvmQuality.md
+SWEEP committed S081.orig.pdf | bare-token normalized: .ufo/waves/round-74/quote-audit/raw/S081.orig.pdf
+SWEEP committed S379.orig | bare-token normalized: .ufo/waves/round-74/quote-audit/raw/S379.orig
+SWEEP committed S381.orig | bare-token normalized: .ufo/waves/round-74/quote-audit/raw/S381.orig
+SWEEP committed SCORECARD.md | bare-token normalized: SCORECARD.md
+SWEEP committed SHONEN.md | bare-token normalized: SHONEN.md
+SWEEP committed SKILL.md | bare-token normalized: SKILL.md
+SWEEP committed SOURCES.md | bare-token normalized: corpus/SOURCES.md
+SWEEP absent SPEC.md | bare-token unmatched: no file named SPEC.md under HEAD or the working tree
+SWEEP absent ScoutAmp.md | bare-token unmatched: no file named ScoutAmp.md under HEAD or the working tree
+SWEEP committed ScribeEntryEvm.md | bare-token normalized: .ufo/waves/round-61/build/ScribeEntryEvm.md
+SWEEP committed W2AttackEntryIndependence.md | bare-token normalized: .ufo/waves/round-63/falsify/W2AttackEntryIndependence.md
+SWEEP committed W2AttackEntryQ11.md | bare-token normalized: .ufo/waves/round-63/falsify/W2AttackEntryQ11.md
+SWEEP committed W2AttackEntryScope.md | bare-token normalized: .ufo/waves/round-63/falsify/W2AttackEntryScope.md
+SWEEP committed W2ClaimsAdmission.md | bare-token normalized: .ufo/waves/round-63/falsify/W2ClaimsAdmission.md
+SWEEP committed W2VerifyC2Record.md | bare-token normalized: .ufo/waves/round-63/falsify/W2VerifyC2Record.md
+SWEEP committed W3ClaimsAmendmentOrder.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3ClaimsAmendmentOrder.md
+SWEEP committed W3EvmCrossLaneCites.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3EvmCrossLaneCites.md
+SWEEP committed W3EvmQTable.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3EvmQTable.md
+SWEEP committed W3EvmR24Immediate.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3EvmR24Immediate.md
+SWEEP committed W3EvmR24SpanFix.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3EvmR24SpanFix.md
+SWEEP committed W3HoldProbeRerun.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3HoldProbeRerun.md
+SWEEP committed W3JsElectronMainLabel.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3JsElectronMainLabel.md
+SWEEP committed W3JsOverclaimCritic.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3JsOverclaimCritic.md
+SWEEP committed W3JsQTable.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3JsQTable.md
+SWEEP committed W3JsSpecifierUnnamed.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3JsSpecifierUnnamed.md
+SWEEP committed W3KProbeMutant.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3KProbeMutant.md
+SWEEP committed W3LessonMistakes.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3LessonMistakes.md
+SWEEP committed W3ProvinceBounds.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3ProvinceBounds.md
+SWEEP committed W3QualityQ12Fail.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3QualityQ12Fail.md
+SWEEP committed W3QualityQ13Apply.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3QualityQ13Apply.md
+SWEEP committed W3SrcContractCells.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3SrcContractCells.md
+SWEEP committed W3SrcSearchLog.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3SrcSearchLog.md
+SWEEP committed admission.json | bare-token normalized: .ufo/waves/round-62/falsify/admission.json
+SWEEP committed ag-after.log | bare-token normalized: reports/round-82/ag-after.log, reports/round-83/ag-after.log
+SWEEP committed ag-red.log | bare-token normalized: reports/round-82/ag-red.log, reports/round-83/ag-red.log
+SWEEP committed ag2-after.log | bare-token normalized: reports/round-84/ag2-after.log
+SWEEP committed ag2-red-v21.log | bare-token normalized: reports/round-84/ag2-red-v21.log
+SWEEP committed ag2-red.log | bare-token normalized: reports/round-84/ag2-red.log
+SWEEP committed ag_probe.py | bare-token normalized: reports/round-82/ag_probe.py
+SWEEP committed ag_probe2.py | bare-token normalized: reports/round-84/ag_probe2.py
+SWEEP absent analyzeHeadless.bat | bare-token unmatched: no file named analyzeHeadless.bat under HEAD or the working tree
+SWEEP committed android-gate.json | bare-token normalized: corpus/live/runs/round-77/provider-gates/android-gate.json
+SWEEP committed archive-r2 | bare-token normalized: corpus/fixtures/archive-r2
+SWEEP committed artifact-inspection.json | bare-token normalized: corpus/live/runs/20261012T163909Z/artifact-inspection.json, corpus/live/runs/20261012T164246Z/artifact-inspection.json
+SWEEP committed attempt-count.json | bare-token normalized: corpus/live/runs/round-52/attempt-count.json
+SWEEP committed attempt-directory160.json | bare-token normalized: corpus/live/runs/round-51/attempt-directory160.json
+SWEEP committed attempt-invalid.json | bare-token normalized: corpus/live/runs/round-31/attempt-invalid.json, corpus/live/runs/round-35/attempt-invalid.json
+SWEEP committed baseline.md | bare-token normalized: corpus/live/runs/round-31/baseline.md, corpus/live/runs/round-32/baseline.md
+SWEEP committed before-treated-tools-on-base.log | bare-token normalized: reports/round-70/before-treated-tools-on-base.log
+SWEEP committed boundary.md | bare-token normalized: corpus/live/runs/round-28/boundary.md, corpus/live/runs/round-30/boundary.md, corpus/live/runs/round-31/boundary.md, corpus/live/runs/round-32/boundary.md
+SWEEP committed browser-r77 | bare-token normalized: corpus/fixtures/browser-r77
+SWEEP committed build | bare-token normalized: .ufo/waves/round-61/build, .ufo/waves/round-62/build, .ufo/waves/round-63/build
+SWEEP committed build-assignments.json | bare-token normalized: .ufo/waves/round-61/build-assignments.json, .ufo/waves/round-62/build-assignments.json
+SWEEP committed build-dispatch-attempts.json | bare-token normalized: .ufo/waves/round-61/build-dispatch-attempts.json, .ufo/waves/round-62/build-dispatch-attempts.json
+SWEEP committed build-entry.py | bare-token normalized: .ufo/waves/round-67/build-entry.py, .ufo/waves/round-70/build-entry.py
+SWEEP committed build-r68.py | bare-token normalized: .ufo/waves/round-68/build-r68.py
+SWEEP committed build-wave-spec.py | bare-token normalized: .ufo/waves/round-65/build-wave-spec.py, .ufo/waves/round-67/build-wave-spec.py, .ufo/waves/round-68/build-wave-spec.py, .ufo/waves/round-69/build-wave-spec.py
+SWEEP committed build_app.py | bare-token normalized: corpus/fixtures/app-r83/build_app.py
+SWEEP committed build_zip.py | bare-token normalized: corpus/fixtures/arc-r84/build_zip.py
+SWEEP committed byte-oracle.md | bare-token normalized: corpus/live/runs/round-27/byte-oracle.md, corpus/live/runs/round-54/byte-oracle.md, corpus/live/runs/round-55/byte-oracle.md, corpus/live/runs/round-56/byte-oracle.md, corpus/live/runs/round-57/byte-oracle.md
+SWEEP committed c1-only.log | bare-token normalized: reports/round-78/c1-only.log, reports/round-79/c1-only.log, reports/round-80/c1-only.log, reports/round-81/c1-only.log, reports/round-82/c1-only.log, reports/round-83/c1-only.log, reports/round-84/c1-only.log
+SWEEP committed c10-disposition.log | bare-token normalized: reports/round-74/c10-disposition.log
+SWEEP committed c2-only.log | bare-token normalized: reports/round-78/c2-only.log, reports/round-79/c2-only.log, reports/round-80/c2-only.log, reports/round-81/c2-only.log, reports/round-82/c2-only.log, reports/round-83/c2-only.log, reports/round-84/c2-only.log
+SWEEP committed candidate-pin.json | bare-token normalized: reports/round-73/candidate-pin.json
+SWEEP committed carryin-numstat.log | bare-token normalized: reports/round-82/carryin-numstat.log
+SWEEP committed census-after.log | bare-token normalized: reports/round-74/census-after.log, reports/round-75/census-after.log, reports/round-76/census-after.log, reports/round-77/census-after.log, reports/round-78/census-after.log, reports/round-79/census-after.log, reports/round-80/census-after.log, reports/round-81/census-after.log, reports/round-82/census-after.log, reports/round-83/census-after.log, reports/round-84/census-after.log
+SWEEP committed census-after.txt | bare-token normalized: .ufo/waves/round-70/census-after.txt, .ufo/waves/round-71/census-after.txt
+SWEEP committed census-before.log | bare-token normalized: reports/round-75/census-before.log, reports/round-78/census-before.log, reports/round-82/census-before.log
+SWEEP committed census-before.txt | bare-token normalized: .ufo/waves/round-70/census-before.txt, .ufo/waves/round-71/census-before.txt
+SWEEP absent census-end-worktree.log | bare-token unmatched: no file named census-end-worktree.log under HEAD or the working tree
+SWEEP absent census-midcheck.log | bare-token unmatched: no file named census-midcheck.log under HEAD or the working tree
+SWEEP absent census-round-start-sanctioned2.log | bare-token unmatched: no file named census-round-start-sanctioned2.log under HEAD or the working tree
+SWEEP committed census-tip.log | bare-token normalized: reports/round-82/census-tip.log
+SWEEP committed check_embedded_outputs.py | bare-token normalized: corpus/check_embedded_outputs.py
+SWEEP committed check_package.py | bare-token normalized: corpus/training/bounty-triage/check_package.py
+SWEEP committed checksum | bare-token normalized: corpus/fixtures/checksum-r1/checksum, corpus/live/runs/round-10/materialized/bin/checksum
+SWEEP committed claims.md | bare-token normalized: reports/round-61/claims.md, reports/round-62/claims.md, reports/round-63/claims.md, reports/round-64/claims.md, reports/round-65/claims.md, reports/round-66/claims.md, reports/round-67/claims.md, reports/round-68/claims.md, reports/round-69/claims.md, reports/round-70/claims.md, reports/round-71/claims.md, reports/round-72/claims.md, reports/round-73/claims.md, reports/round-74/claims.md, reports/round-76/claims.md, reports/round-77/claims.md, reports/round-78/claims.md, reports/round-79/claims.md, reports/round-80/claims.md, reports/round-81/claims.md, reports/round-82/claims.md, reports/round-83/claims.md, reports/round-84/claims.md, reports/round-85/claims.md
+SWEEP committed codeable-decompiled.c | bare-token normalized: reports/round-75/codeable-decompiled.c
+SWEEP committed cohort.json | bare-token normalized: .ufo/waves/round-62/cohort.json, .ufo/waves/round-63/falsify/cohort.json, .ufo/waves/round-64/cohort.json
+SWEEP committed collisions | bare-token normalized: .ufo/waves/round-67/assimilation/collisions, .ufo/waves/round-69/assimilation/collisions, .ufo/waves/round-70/assimilation/collisions
+SWEEP committed comparison.json | bare-token normalized: corpus/live/runs/round-12/comparison.json, corpus/live/runs/round-7/comparison.json
+SWEEP committed connector.md | bare-token normalized: .ufo/waves/kaika-r1/connector.md, reports/round-1/connector.md
+SWEEP committed considerthese | bare-token normalized: considerthese
+SWEEP committed corpus | bare-token normalized: corpus
+SWEEP committed corpus/QUALITY.md
+SWEEP committed corpus/README.md
+SWEEP committed corpus/SOURCES.md
+SWEEP absent corpus/__pycache__/check_embedded_outputs.cpython-314.pyc | exists nowhere on this host; recorded, nothing to land
+SWEEP committed corpus/audit_source_quotes.py
+SWEEP committed corpus/check_embedded_outputs.py
+SWEEP committed corpus/derive_axml_anchors.py
+SWEEP committed corpus/derive_axml_anchors_r68.py
+SWEEP committed corpus/embedded_output_pins.json
+SWEEP committed corpus/fixtures
+SWEEP committed corpus/fixtures/REPLAY.md
+SWEEP committed corpus/fixtures/apk-r65
+SWEEP committed corpus/fixtures/apk-r65/entry_checks.py
+SWEEP committed corpus/fixtures/apk-r65/readout.py
+SWEEP committed corpus/fixtures/apk-r65/truth.json
+SWEEP committed corpus/fixtures/app-r83
+SWEEP committed corpus/fixtures/arc-r84
+SWEEP committed corpus/fixtures/archive-r2/fixture.zip
+SWEEP committed corpus/fixtures/archive-r2/truth.json
+SWEEP committed corpus/fixtures/browser-r77
+SWEEP committed corpus/fixtures/checksum-r1/README.md
+SWEEP committed corpus/fixtures/checksum-r1/checksum
+SWEEP committed corpus/fixtures/duplicate-r15/fixture.zip
+SWEEP committed corpus/fixtures/duplicate-r15/truth.json
+SWEEP committed corpus/fixtures/evm-r21/fixture.raw
+SWEEP committed corpus/fixtures/evm-r24/fixture.raw
+SWEEP committed corpus/fixtures/evm-r25/truth.json
+SWEEP committed corpus/fixtures/firmware-r63
+SWEEP committed corpus/fixtures/firmware-r63/firmware-r63.bin
+SWEEP committed corpus/fixtures/firmware-r63/generator.py
+SWEEP committed corpus/fixtures/js-r3
+SWEEP committed corpus/fixtures/js-r3/index.js
+SWEEP committed corpus/fixtures/keyed-r81
+SWEEP committed corpus/fixtures/macho-r82
+SWEEP committed corpus/fixtures/managed-r76
+SWEEP committed corpus/fixtures/managed-r76/oracle_check.py
+SWEEP committed corpus/fixtures/native-auth-r79
+SWEEP committed corpus/fixtures/nested-r11/outer.zip
+SWEEP committed corpus/fixtures/pe-r28
+SWEEP committed corpus/fixtures/pe-r28/fixture.exe
+SWEEP committed corpus/fixtures/pe-r28/truth.json
+SWEEP committed corpus/fixtures/pe-r29
+SWEEP committed corpus/fixtures/pe-r29/fixture.exe
+SWEEP committed corpus/fixtures/pe-r29/truth.json
+SWEEP committed corpus/fixtures/pe-r30
+SWEEP committed corpus/fixtures/pe-r30/fixture.exe
+SWEEP committed corpus/fixtures/pe-r30/truth.json
+SWEEP committed corpus/fixtures/pe-r31/fixture.exe
+SWEEP committed corpus/fixtures/pe-r32/fixture.exe
+SWEEP committed corpus/fixtures/pe-r33/fixture.exe
+SWEEP committed corpus/fixtures/pe-r33/truth.json
+SWEEP committed corpus/fixtures/pe-r35/fixture.exe
+SWEEP committed corpus/fixtures/pe-r35/truth.json
+SWEEP committed corpus/fixtures/pe-r36/truth.json
+SWEEP committed corpus/fixtures/pe-r41/fixture.exe
+SWEEP committed corpus/fixtures/pe-r42/fixture.exe
+SWEEP committed corpus/fixtures/pe-r47/fixture.exe
+SWEEP committed corpus/fixtures/pe-r51/fixture.exe
+SWEEP committed corpus/fixtures/pe-r52/fixture.exe
+SWEEP committed corpus/fixtures/pe-r54/truth.json
+SWEEP committed corpus/fixtures/pe-r55/truth.json
+SWEEP committed corpus/fixtures/pe-r56
+SWEEP committed corpus/fixtures/pe-r57/truth.json
+SWEEP committed corpus/fixtures/pe-r59/fixture.exe
+SWEEP committed corpus/fixtures/pe-r59d/fixture.exe
+SWEEP committed corpus/fixtures/pe-r75-headless-smoke
+SWEEP committed corpus/fixtures/pe-r75-headless-smoke/fixture.exe
+SWEEP committed corpus/fixtures/sqlite-r80
+SWEEP committed corpus/knowledge
+SWEEP committed corpus/knowledge/2026-10-12-rea-readiness-checklist.md
+SWEEP committed corpus/knowledge/2026-10-29-rea-evidence-ledger-discipline.md
+SWEEP committed corpus/knowledge/commonjs-destructured-require-edges.md
+SWEEP committed corpus/knowledge/evm-saved-interface-candidates.md
+SWEEP committed corpus/knowledge/round-62-commonjs-require-name-evidence.md
+SWEEP committed corpus/knowledge/round-62-evm-dispatch-byte-evidence.md
+SWEEP committed corpus/knowledge/round-63-zip-central-directory-evidence.md
+SWEEP committed corpus/knowledge/round-64-firmware-region-byte-evidence.md
+SWEEP committed corpus/knowledge/round-65-apk-axml-byte-evidence.md
+SWEEP committed corpus/knowledge/round-67-apk-axml-byte-evidence.md
+SWEEP committed corpus/knowledge/round-68-apk-axml-byte-evidence.md
+SWEEP committed corpus/knowledge/round-69-apk-axml-byte-evidence.md
+SWEEP committed corpus/knowledge/round-70-apk-axml-byte-evidence.md
+SWEEP committed corpus/knowledge/round-71-apk-axml-byte-evidence.md
+SWEEP committed corpus/knowledge/round-72-tool-landscape.md
+SWEEP committed corpus/knowledge/round-73-re-resource-atlas.md
+SWEEP committed corpus/knowledge/seed.md
+SWEEP committed corpus/knowledge/utf16-unpaired-surrogates-in-resource-names.md
+SWEEP committed corpus/lessons/2026-10-12-r1-provider-gap.md
+SWEEP committed corpus/lessons/2026-10-27-bounty-triage-module.md
+SWEEP committed corpus/lessons/2026-10-29-re-resource-atlas.md
+SWEEP committed corpus/lessons/round-1-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-1.md
+SWEEP committed corpus/lessons/round-61-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-61.md
+SWEEP committed corpus/lessons/round-62-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-62.md
+SWEEP committed corpus/lessons/round-63-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-63.md
+SWEEP committed corpus/lessons/round-64 | normalized: corpus/lessons/round-64.md committed
+SWEEP committed corpus/lessons/round-64.md
+SWEEP committed corpus/lessons/round-65.md
+SWEEP committed corpus/lessons/round-66.md
+SWEEP committed corpus/lessons/round-67.md
+SWEEP committed corpus/lessons/round-68.md
+SWEEP committed corpus/lessons/round-69-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-69.md
+SWEEP committed corpus/lessons/round-70-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-70.md
+SWEEP committed corpus/lessons/round-71.md
+SWEEP committed corpus/lessons/round-72-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-72.md
+SWEEP committed corpus/lessons/round-73-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-73.md
+SWEEP committed corpus/lessons/round-74.md
+SWEEP committed corpus/lessons/round-75.md
+SWEEP committed corpus/lessons/round-76.md
+SWEEP committed corpus/lessons/round-77-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-77.md
+SWEEP committed corpus/lessons/round-78.md
+SWEEP committed corpus/lessons/round-79.md
+SWEEP committed corpus/lessons/round-80.md
+SWEEP committed corpus/lessons/round-81-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-81.md
+SWEEP committed corpus/lessons/round-82.md
+SWEEP committed corpus/lessons/round-83-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-83.md
+SWEEP committed corpus/lessons/round-84.md
+SWEEP committed corpus/lint_entry.py
+SWEEP committed corpus/live
+SWEEP committed corpus/live/runs
+SWEEP committed corpus/live/runs/20261012T164246Z/LEDGER.md
+SWEEP committed corpus/live/runs/20261012T164246Z/artifact-inspection.json
+SWEEP committed corpus/live/runs/20261012T164357Z/analysis.json
+SWEEP committed corpus/live/runs/promotion-review-r5.md
+SWEEP committed corpus/live/runs/review-r1-r3.md
+SWEEP committed corpus/live/runs/round-1/wave
+SWEEP committed corpus/live/runs/round-10
+SWEEP committed corpus/live/runs/round-10/reviewer.md
+SWEEP committed corpus/live/runs/round-11
+SWEEP committed corpus/live/runs/round-11/reviewer.md
+SWEEP committed corpus/live/runs/round-12
+SWEEP committed corpus/live/runs/round-12/reviewer.md
+SWEEP committed corpus/live/runs/round-13/LEDGER.md
+SWEEP committed corpus/live/runs/round-13/reviewer.md
+SWEEP committed corpus/live/runs/round-14/reviewer.md
+SWEEP committed corpus/live/runs/round-15/inspection.json
+SWEEP committed corpus/live/runs/round-15/reviewer.md
+SWEEP committed corpus/live/runs/round-16/LEDGER.md
+SWEEP committed corpus/live/runs/round-16/reviewer.md
+SWEEP committed corpus/live/runs/round-17
+SWEEP committed corpus/live/runs/round-17/LEDGER.md
+SWEEP committed corpus/live/runs/round-17/recovery.json
+SWEEP committed corpus/live/runs/round-17/reviewer.md
+SWEEP committed corpus/live/runs/round-18/reviewer.md
+SWEEP committed corpus/live/runs/round-19/inspection.json
+SWEEP committed corpus/live/runs/round-19/reviewer.md
+SWEEP committed corpus/live/runs/round-20/LEDGER.md
+SWEEP committed corpus/live/runs/round-20/reviewer.md
+SWEEP committed corpus/live/runs/round-21/reviewer.md
+SWEEP committed corpus/live/runs/round-22/reviewer.md
+SWEEP committed corpus/live/runs/round-23/reviewer.md
+SWEEP committed corpus/live/runs/round-24/reviewer.md
+SWEEP committed corpus/live/runs/round-25/LEDGER.md
+SWEEP committed corpus/live/runs/round-25/reviewer.md
+SWEEP committed corpus/live/runs/round-26/inspection.json
+SWEEP committed corpus/live/runs/round-26/reviewer.md
+SWEEP committed corpus/live/runs/round-27/reviewer.md
+SWEEP committed corpus/live/runs/round-28
+SWEEP committed corpus/live/runs/round-28/LEDGER.md
+SWEEP committed corpus/live/runs/round-28/boundary.md
+SWEEP committed corpus/live/runs/round-28/oracle.md
+SWEEP committed corpus/live/runs/round-28/reviewer.md
+SWEEP committed corpus/live/runs/round-29
+SWEEP committed corpus/live/runs/round-29/LEDGER.md
+SWEEP committed corpus/live/runs/round-29/entry-map.md
+SWEEP committed corpus/live/runs/round-29/history.md
+SWEEP committed corpus/live/runs/round-29/identity.md
+SWEEP committed corpus/live/runs/round-29/inspection.json
+SWEEP committed corpus/live/runs/round-29/limits.md
+SWEEP committed corpus/live/runs/round-29/oracle.md
+SWEEP committed corpus/live/runs/round-29/prior.md
+SWEEP committed corpus/live/runs/round-29/reviewer.md
+SWEEP committed corpus/live/runs/round-29/route.md
+SWEEP committed corpus/live/runs/round-29/score.md
+SWEEP committed corpus/live/runs/round-30
+SWEEP committed corpus/live/runs/round-30/LEDGER.md
+SWEEP committed corpus/live/runs/round-30/boundary.md
+SWEEP committed corpus/live/runs/round-30/inspection.json
+SWEEP committed corpus/live/runs/round-30/oracle.md
+SWEEP committed corpus/live/runs/round-30/reviewer.md
+SWEEP committed corpus/live/runs/round-31
+SWEEP committed corpus/live/runs/round-31/LEDGER.md
+SWEEP committed corpus/live/runs/round-31/attempt-invalid.json
+SWEEP committed corpus/live/runs/round-31/inspection.json
+SWEEP committed corpus/live/runs/round-31/reviewer.md
+SWEEP committed corpus/live/runs/round-32
+SWEEP committed corpus/live/runs/round-32/producer-receipt.json
+SWEEP committed corpus/live/runs/round-32/reviewer.md
+SWEEP committed corpus/live/runs/round-33/inspection.json
+SWEEP committed corpus/live/runs/round-33/reviewer.md
+SWEEP committed corpus/live/runs/round-34/inspection.json
+SWEEP committed corpus/live/runs/round-34/reviewer.md
+SWEEP committed corpus/live/runs/round-35/inspection.json
+SWEEP committed corpus/live/runs/round-36/inspection.raw.json
+SWEEP committed corpus/live/runs/round-36/reviewer.md
+SWEEP committed corpus/live/runs/round-37/inspection.raw.json
+SWEEP committed corpus/live/runs/round-37/reviewer.md
+SWEEP committed corpus/live/runs/round-38
+SWEEP committed corpus/live/runs/round-38/reviewer.md
+SWEEP committed corpus/live/runs/round-39
+SWEEP committed corpus/live/runs/round-39/reviewer.md
+SWEEP committed corpus/live/runs/round-4-verification.md
+SWEEP committed corpus/live/runs/round-40/reviewer.md
+SWEEP committed corpus/live/runs/round-40/verifier-receipt.json
+SWEEP committed corpus/live/runs/round-41
+SWEEP committed corpus/live/runs/round-41/inspection.raw.json
+SWEEP committed corpus/live/runs/round-41/reviewer.md
+SWEEP committed corpus/live/runs/round-42
+SWEEP committed corpus/live/runs/round-43
+SWEEP committed corpus/live/runs/round-43/reviewer.md
+SWEEP committed corpus/live/runs/round-44
+SWEEP committed corpus/live/runs/round-45
+SWEEP committed corpus/live/runs/round-45/inspection.raw.json
+SWEEP committed corpus/live/runs/round-46/LEDGER.md
+SWEEP committed corpus/live/runs/round-46/reviewer.md
+SWEEP committed corpus/live/runs/round-47
+SWEEP committed corpus/live/runs/round-48
+SWEEP committed corpus/live/runs/round-48/inspection.raw.json
+SWEEP committed corpus/live/runs/round-49
+SWEEP committed corpus/live/runs/round-49/inspection.raw.json
+SWEEP committed corpus/live/runs/round-5-review.md
+SWEEP committed corpus/live/runs/round-50/LEDGER.md
+SWEEP committed corpus/live/runs/round-50/reviewer.md
+SWEEP committed corpus/live/runs/round-51/attempt-directory160.exe
+SWEEP committed corpus/live/runs/round-51/reviewer.md
+SWEEP committed corpus/live/runs/round-52/attempt-count.exe
+SWEEP committed corpus/live/runs/round-52/reviewer.md
+SWEEP committed corpus/live/runs/round-53
+SWEEP committed corpus/live/runs/round-54
+SWEEP committed corpus/live/runs/round-54/byte-oracle.md
+SWEEP committed corpus/live/runs/round-54/result-review.md
+SWEEP committed corpus/live/runs/round-55
+SWEEP committed corpus/live/runs/round-55/byte-oracle.md
+SWEEP committed corpus/live/runs/round-55/result-review.md
+SWEEP committed corpus/live/runs/round-56
+SWEEP committed corpus/live/runs/round-57
+SWEEP committed corpus/live/runs/round-58/reviewer.md
+SWEEP committed corpus/live/runs/round-59
+SWEEP committed corpus/live/runs/round-59/inspection.stdout.json
+SWEEP committed corpus/live/runs/round-59/reviewer.md
+SWEEP committed corpus/live/runs/round-6/LEDGER.md
+SWEEP committed corpus/live/runs/round-6/reviewer.md
+SWEEP committed corpus/live/runs/round-6/view.json
+SWEEP committed corpus/live/runs/round-63
+SWEEP committed corpus/live/runs/round-63/inspection.json
+SWEEP committed corpus/live/runs/round-63/oracle_check.py
+SWEEP committed corpus/live/runs/round-63/receipt.json
+SWEEP committed corpus/live/runs/round-7
+SWEEP committed corpus/live/runs/round-7/reviewer.md
+SWEEP committed corpus/live/runs/round-76
+SWEEP committed corpus/live/runs/round-76/LEDGER.md
+SWEEP committed corpus/live/runs/round-76/inspection.json
+SWEEP committed corpus/live/runs/round-77
+SWEEP committed corpus/live/runs/round-77/LEDGER.md
+SWEEP committed corpus/live/runs/round-77/provider-gates
+SWEEP committed corpus/live/runs/round-77/provider-gates/android-gate.json
+SWEEP committed corpus/live/runs/round-77/receipt.json
+SWEEP committed corpus/live/runs/round-79
+SWEEP committed corpus/live/runs/round-79/LEDGER.md
+SWEEP committed corpus/live/runs/round-79/inspection.json
+SWEEP committed corpus/live/runs/round-8/LEDGER.md
+SWEEP committed corpus/live/runs/round-8/reviewer.md
+SWEEP committed corpus/live/runs/round-80
+SWEEP committed corpus/live/runs/round-80/LEDGER.md
+SWEEP committed corpus/live/runs/round-80/inspection.json
+SWEEP committed corpus/live/runs/round-81
+SWEEP committed corpus/live/runs/round-81/LEDGER.md
+SWEEP committed corpus/live/runs/round-81/inspection.json
+SWEEP committed corpus/live/runs/round-82
+SWEEP committed corpus/live/runs/round-82/LEDGER.md
+SWEEP committed corpus/live/runs/round-82/inspection.json
+SWEEP committed corpus/live/runs/round-83
+SWEEP committed corpus/live/runs/round-84
+SWEEP committed corpus/live/runs/round-84/inspect-artifact
+SWEEP committed corpus/live/runs/round-9/LEDGER.md
+SWEEP committed corpus/live/runs/round-9/reviewer.md
+SWEEP committed corpus/q15_tree_id_check.py
+SWEEP committed corpus/self_assessment_check.py
+SWEEP committed corpus/snapshots/APPNOTE.TXT
+SWEEP committed corpus/snapshots/ResourceTypes.h
+SWEEP committed corpus/snapshots/dex-format.html
+SWEEP committed corpus/training/bounty-triage
+SWEEP committed corpus/training/bounty-triage/MODULE.md
+SWEEP committed corpus/verify_icon_languages.py
+SWEEP committed corpus/verify_icon_states.py
+SWEEP committed corpus/verify_multi_icon_states.py
+SWEEP committed corpus/verify_named_multi_icon_states.py
+SWEEP committed corpus/verify_saved_evidence.py
+SWEEP committed countgrep-red.log | bare-token normalized: reports/round-82/countgrep-red.log
+SWEEP committed coverage-remeasurement.json | bare-token normalized: .ufo/waves/fleet-round-1-interactive/coverage-remeasurement.json
+SWEEP committed critic-post.md | bare-token normalized: .ufo/waves/kaika-r1/critic-post.md
+SWEEP committed delta-review.md | bare-token normalized: corpus/live/runs/round-56/delta-review.md, corpus/live/runs/round-57/delta-review.md
+SWEEP committed derive_axml_anchors.py | bare-token normalized: corpus/derive_axml_anchors.py
+SWEEP committed derive_axml_anchors_r68.py | bare-token normalized: corpus/derive_axml_anchors_r68.py
+SWEEP committed dex-format.html | bare-token normalized: .ufo/waves/round-67/source-snapshots/dex-format.html, corpus/snapshots/dex-format.html
+SWEEP absent digest-scope-versus-provenance-amendment-2026-10-23.md | bare-token unmatched: no file named digest-scope-versus-provenance-amendment-2026-10-23.md under HEAD or the working tree
+SWEEP absent disk-guard.sh | bare-token unmatched: no file named disk-guard.sh under HEAD or the working tree
+SWEEP committed dispatch-run-2.log | bare-token normalized: .ufo/waves/round-67/dispatch-run-2.log
+SWEEP committed dispatch-run.log | bare-token normalized: .ufo/waves/round-67/dispatch-run.log, .ufo/waves/round-68/dispatch/dispatch-run.log
+SWEEP committed dispatch-start-attempt1.txt | bare-token normalized: .ufo/waves/round-67/dispatch-start-attempt1.txt
+SWEEP committed dispatch-start.txt | bare-token normalized: .ufo/waves/round-67/dispatch-start.txt
+SWEEP committed dispatch.json | bare-token normalized: .ufo/waves/round-69/dispatch/dispatch.json, reports/round-1/dispatch.json
+SWEEP committed dispatcher-prompt-2.txt | bare-token normalized: .ufo/waves/round-67/dispatcher-prompt-2.txt
+SWEEP committed embedded_output_pins.json | bare-token normalized: corpus/embedded_output_pins.json
+SWEEP committed entry_checks.py | bare-token normalized: corpus/fixtures/apk-r65/entry_checks.py
+SWEEP committed extract-artifact | bare-token normalized: corpus/live/runs/round-84/extract-artifact
+SWEEP committed f-after.log | bare-token normalized: reports/round-76/f-after.log, reports/round-77/f-after.log
+SWEEP committed f-before.log | bare-token normalized: reports/round-76/f-before.log
+SWEEP committed f-red.log | bare-token normalized: reports/round-77/f-red.log
+SWEEP committed f-separability.log | bare-token normalized: reports/round-76/f-separability.log, reports/round-77/f-separability.log
+SWEEP committed f2-after.log | bare-token normalized: reports/round-79/f2-after.log
+SWEEP committed f2-before.log | bare-token normalized: reports/round-79/f2-before.log
+SWEEP committed f3-after.log | bare-token normalized: reports/round-80/f3-after.log
+SWEEP committed f3-before.log | bare-token normalized: reports/round-80/f3-before.log
+SWEEP committed f4-after.log | bare-token normalized: reports/round-81/f4-after.log
+SWEEP committed f4-before.log | bare-token normalized: reports/round-81/f4-before.log
+SWEEP committed f_probe.py | bare-token normalized: reports/round-76/f_probe.py
+SWEEP committed f_probe2.py | bare-token normalized: reports/round-79/f_probe2.py
+SWEEP committed f_probe3.py | bare-token normalized: reports/round-80/f_probe3.py
+SWEEP committed f_probe4.py | bare-token normalized: reports/round-81/f_probe4.py
+SWEEP absent facts.json | bare-token unmatched: no file named facts.json under HEAD or the working tree
+SWEEP committed falsify-dispatch-attempts.json | bare-token normalized: .ufo/waves/round-61/falsify-dispatch-attempts.json, .ufo/waves/round-62/falsify-dispatch-attempts.json
+SWEEP committed falsify-w3 | bare-token normalized: .ufo/waves/round-61/falsify-w3
+SWEEP absent file.md | bare-token unmatched: no file named file.md under HEAD or the working tree
+SWEEP committed final-verification.json | bare-token normalized: reports/round-62/final-verification.json, reports/round-63/final-verification.json
+SWEEP committed firmware-r63 | bare-token normalized: corpus/fixtures/firmware-r63
+SWEEP committed firmware-r63.bin | bare-token normalized: corpus/fixtures/firmware-r63/firmware-r63.bin
+SWEEP committed fixture.apk | bare-token normalized: corpus/fixtures/apk-r65/fixture.apk
+SWEEP committed fixture.dll | bare-token normalized: corpus/fixtures/managed-r76/fixture.dll, corpus/fixtures/managed-r85/fixture.dll, corpus/fixtures/native-auth-r79/fixture.dll
+SWEEP committed fixture.hex | bare-token normalized: corpus/fixtures/evm-r19/fixture.hex
+SWEEP committed fixture.plist | bare-token normalized: corpus/fixtures/keyed-r81/fixture.plist
+SWEEP committed fixture.raw | bare-token normalized: corpus/fixtures/evm-r21/fixture.raw, corpus/fixtures/evm-r22/fixture.raw, corpus/fixtures/evm-r23/fixture.raw, corpus/fixtures/evm-r24/fixture.raw, corpus/fixtures/evm-r25/fixture.raw, corpus/fixtures/evm-r26/fixture.raw
+SWEEP committed freshstart-probes.log | bare-token normalized: reports/round-84/freshstart-probes.log, reports/round-85/freshstart-probes.log
+SWEEP absent functions.task | bare-token unmatched: no file named functions.task under HEAD or the working tree
+SWEEP committed g-separability.log | bare-token normalized: reports/round-77/g-separability.log
+SWEEP committed gate-after.log | bare-token normalized: reports/round-77/gate-after.log
+SWEEP committed gate-red.log | bare-token normalized: reports/round-77/gate-red.log
+SWEEP committed gate_probe.sh | bare-token normalized: reports/round-77/gate_probe.sh
+SWEEP committed gate_probe2.sh | bare-token normalized: reports/round-79/gate_probe2.sh
+SWEEP committed gen_pe_r75.py | bare-token normalized: corpus/fixtures/pe-r75-headless-smoke/gen_pe_r75.py
+SWEEP committed generator.py | bare-token normalized: corpus/fixtures/apk-r65/generator.py, corpus/fixtures/firmware-r63/generator.py, corpus/fixtures/keyed-r81/generator.py, corpus/fixtures/macho-r82/generator.py, corpus/fixtures/managed-r76/generator.py, corpus/fixtures/managed-r85/generator.py, corpus/fixtures/native-auth-r79/generator.py, corpus/fixtures/sqlite-r80/generator.py
+SWEEP committed ghidra-headless-codeable.log | bare-token normalized: reports/round-75/ghidra-headless-codeable.log
+SWEEP committed ghidra-headless-recon.log | bare-token normalized: reports/round-75/ghidra-headless-recon.log
+SWEEP committed header-review.md | bare-token normalized: corpus/live/runs/round-56/header-review.md, corpus/live/runs/round-57/header-review.md
+SWEEP committed header.md | bare-token normalized: corpus/live/runs/round-32/header.md
+SWEEP committed holds.log | bare-token normalized: reports/round-75/holds.log, reports/round-78/holds.log
+SWEEP committed icon-review.md | bare-token normalized: corpus/live/runs/round-56/icon-review.md, corpus/live/runs/round-57/icon-review.md
+SWEEP committed identity.md | bare-token normalized: corpus/live/runs/round-29/identity.md, corpus/live/runs/round-31/identity.md
+SWEEP absent identity.sha256 | bare-token unmatched: no file named identity.sha256 under HEAD or the working tree
+SWEEP committed index.js | bare-token normalized: corpus/fixtures/js-r3/index.js, corpus/fixtures/js-r7-v2/index.js, corpus/fixtures/shapes-r12/v1/index.js, corpus/fixtures/shapes-r12/v2/index.js
+SWEEP committed inherited-preservation.json | bare-token normalized: .ufo/waves/fleet-round-1-interactive/inherited-preservation.json
+SWEEP committed inspect-artifact | bare-token normalized: corpus/live/runs/round-84/inspect-artifact
+SWEEP committed inspect-managed-artifact | bare-token normalized: corpus/live/runs/round-85/inspect-managed-artifact
+SWEEP committed inspection.json | bare-token normalized: corpus/live/runs/round-15/inspection.json, corpus/live/runs/round-19/inspection.json, corpus/live/runs/round-21/inspection.json, corpus/live/runs/round-22/inspection.json, corpus/live/runs/round-23/inspection.json, corpus/live/runs/round-24/inspection.json, corpus/live/runs/round-25/inspection.json, corpus/live/runs/round-26/inspection.json, corpus/live/runs/round-27/inspection.json, corpus/live/runs/round-28/inspection.json, corpus/live/runs/round-29/inspection.json, corpus/live/runs/round-30/inspection.json, corpus/live/runs/round-31/inspection.json, corpus/live/runs/round-32/inspection.json, corpus/live/runs/round-33/inspection.json, corpus/live/runs/round-34/inspection.json, corpus/live/runs/round-35/inspection.json, corpus/live/runs/round-63/inspection.json, corpus/live/runs/round-76/inspection.json, corpus/live/runs/round-77/inspection.json, corpus/live/runs/round-79/inspection.json, corpus/live/runs/round-80/inspection.json, corpus/live/runs/round-81/inspection.json, corpus/live/runs/round-82/inspection.json, corpus/live/runs/round-83/inspection.json, corpus/live/runs/round-84/extract-artifact/inspection.json, corpus/live/runs/round-84/inspect-artifact/inspection.json, corpus/live/runs/round-85/inspect-managed-artifact/inspection.json, corpus/live/runs/round-85/inspect-managed-members/inspection.json, corpus/live/runs/round-85/inspect-managed-native-boundaries/inspection.json
+SWEEP committed inspection.raw.json | bare-token normalized: corpus/live/runs/round-36/inspection.raw.json, corpus/live/runs/round-37/inspection.raw.json, corpus/live/runs/round-38/inspection.raw.json, corpus/live/runs/round-39/inspection.raw.json, corpus/live/runs/round-41/inspection.raw.json, corpus/live/runs/round-42/inspection.raw.json, corpus/live/runs/round-43/inspection.raw.json, corpus/live/runs/round-44/inspection.raw.json, corpus/live/runs/round-45/inspection.raw.json, corpus/live/runs/round-47/inspection.raw.json, corpus/live/runs/round-48/inspection.raw.json, corpus/live/runs/round-49/inspection.raw.json, corpus/live/runs/round-51/inspection.raw.json, corpus/live/runs/round-52/inspection.raw.json, corpus/live/runs/round-53/inspection.raw.json, corpus/live/runs/round-54/inspection.raw.json, corpus/live/runs/round-55/inspection.raw.json, corpus/live/runs/round-56/inspection.raw.json, corpus/live/runs/round-57/inspection.raw.json, corpus/live/runs/round-59/devin-author/inspection.raw.json
+SWEEP absent jj-lane.sh | bare-token unmatched: no file named jj-lane.sh under HEAD or the working tree
+SWEEP committed js-r3 | bare-token normalized: corpus/fixtures/js-r3
+SWEEP committed knowledge | bare-token normalized: corpus/knowledge
+SWEEP absent l0-questions.md | bare-token unmatched: no file named l0-questions.md under HEAD or the working tree
+SWEEP committed layout.md | bare-token normalized: corpus/live/runs/round-31/layout.md
+SWEEP committed lessons | bare-token normalized: corpus/lessons
+SWEEP committed libalpha.dylib | bare-token normalized: corpus/fixtures/macho-r82/image/rpathdir/libalpha.dylib
+SWEEP committed lint_entry.py | bare-token normalized: corpus/lint_entry.py
+SWEEP committed main.dylib | bare-token normalized: corpus/fixtures/macho-r82/image/main.dylib
+SWEEP committed marker.txt | bare-token normalized: corpus/live/runs/round-11/materialized/marker.txt
+SWEEP committed measure-a1.py | bare-token normalized: reports/round-70/measure-a1.py
+SWEEP committed measure-after.log | bare-token normalized: reports/round-61/measure-after.log, reports/round-62/measure-after.log, reports/round-63/measure-after.log, reports/round-64/measure-after.log, reports/round-65/measure-after.log, reports/round-66/measure-after.log, reports/round-67/measure-after.log, reports/round-68/measure-after.log, reports/round-69/measure-after.log, reports/round-70/measure-after.log, reports/round-71/measure-after.log, reports/round-72/measure-after.log, reports/round-74/measure-after.log
+SWEEP committed measure-before.log | bare-token normalized: reports/round-61/measure-before.log, reports/round-62/measure-before.log, reports/round-63/measure-before.log, reports/round-64/measure-before.log, reports/round-65/measure-before.log, reports/round-66/measure-before.log, reports/round-67/measure-before.log, reports/round-68/measure-before.log, reports/round-69/measure-before.log, reports/round-70/measure-before.log, reports/round-71/measure-before.log, reports/round-73/measure-before.log, reports/round-74/measure-before.log
+SWEEP committed measure.py | bare-token normalized: reports/round-61/measure.py, reports/round-63/measure.py, reports/round-64/measure.py, reports/round-65/measure.py, reports/round-66/measure.py, reports/round-67/measure.py, reports/round-68/measure.py, reports/round-69/measure.py, reports/round-70/measure.py, reports/round-71/measure.py, reports/round-72/measure.py, reports/round-73/measure.py, reports/round-74/measure.py
+SWEEP committed measurements.json | bare-token normalized: reports/round-1/measurements.json
+SWEEP absent mint-agent.sh | bare-token unmatched: no file named mint-agent.sh under HEAD or the working tree
+SWEEP committed mutation-post-l2.md | bare-token normalized: .ufo/waves/kaika-r1/mutation-post-l2.md
+SWEEP committed mutation-post.md | bare-token normalized: .ufo/waves/kaika-r1/mutation-post.md
+SWEEP committed negctl-run.log | bare-token normalized: reports/round-75/negctl-run.log
+SWEEP committed no-harm-diff.txt | bare-token normalized: reports/round-74/no-harm-diff.txt
+SWEEP committed noharm-diff.txt | bare-token normalized: reports/round-76/noharm-diff.txt, reports/round-77/noharm-diff.txt, reports/round-78/noharm-diff.txt, reports/round-79/noharm-diff.txt, reports/round-80/noharm-diff.txt, reports/round-81/noharm-diff.txt, reports/round-82/noharm-diff.txt, reports/round-83/noharm-diff.txt, reports/round-84/noharm-diff.txt
+SWEEP committed oracle-after.log | bare-token normalized: reports/round-77/oracle-after.log
+SWEEP committed oracle.md | bare-token normalized: corpus/live/runs/round-28/oracle.md, corpus/live/runs/round-29/oracle.md, corpus/live/runs/round-30/oracle.md, corpus/live/runs/round-31/oracle.md, corpus/live/runs/round-32/oracle.md, corpus/live/runs/round-36/oracle.md
+SWEEP committed oracle_check.py | bare-token normalized: corpus/fixtures/app-r83/oracle_check.py, corpus/fixtures/arc-r84/oracle_check.py, corpus/fixtures/browser-r77/oracle_check.py, corpus/fixtures/keyed-r81/oracle_check.py, corpus/fixtures/macho-r82/oracle_check.py, corpus/fixtures/managed-r76/oracle_check.py, corpus/fixtures/managed-r85/oracle_check.py, corpus/fixtures/native-auth-r79/oracle_check.py, corpus/fixtures/sqlite-r80/oracle_check.py, corpus/live/runs/round-63/oracle_check.py
+SWEEP committed orphan-before.log | bare-token normalized: reports/round-80/orphan-before.log
+SWEEP committed orphan_sweep.py | bare-token normalized: reports/round-80/orphan_sweep.py
+SWEEP committed orphan_sweep3.py | bare-token normalized: reports/round-82/orphan_sweep3.py
+SWEEP committed orphan_sweep4.py | bare-token normalized: reports/round-83/orphan_sweep4.py
+SWEEP committed orphan_sweep5.py | bare-token normalized: reports/round-84/orphan_sweep5.py
+SWEEP committed p2-after.log | bare-token normalized: reports/round-75/p2-after.log
+SWEEP committed p2-before.log | bare-token normalized: reports/round-75/p2-before.log
+SWEEP committed p2-rerun.log | bare-token normalized: reports/round-77/p2-rerun.log
+SWEEP committed p3-after.log | bare-token normalized: reports/round-78/p3-after.log
+SWEEP committed p3-before.log | bare-token normalized: reports/round-78/p3-before.log
+SWEEP committed p3-negctl-run.log | bare-token normalized: reports/round-78/p3-negctl-run.log
+SWEEP committed p3_negctl.sh | bare-token normalized: reports/round-78/p3_negctl.sh
+SWEEP committed package.json | bare-token normalized: corpus/fixtures/js-r3/package.json, corpus/fixtures/js-r7-v2/package.json, corpus/fixtures/shapes-r12/v1/package.json, corpus/fixtures/shapes-r12/v2/package.json
+SWEEP absent parameters.path | bare-token unmatched: no file named parameters.path under HEAD or the working tree
+SWEEP committed plain-equal.log | bare-token normalized: reports/round-79/plain-equal.log
+SWEEP committed plan-validated.json | bare-token normalized: .ufo/waves/round-64/plan-validated.json, .ufo/waves/round-65/plan-validated.json, .ufo/waves/round-67/plan-validated.json, .ufo/waves/round-68/dispatch/plan-validated.json, .ufo/waves/round-69/dispatch/plan-validated.json
+SWEEP committed preprobe-app-shape.log | bare-token normalized: reports/round-83/preprobe-app-shape.log
+SWEEP committed preprobe-arc-shape.log | bare-token normalized: reports/round-84/preprobe-arc-shape.log
+SWEEP committed preprobe-cert-shape.log | bare-token normalized: reports/round-79/preprobe-cert-shape.log
+SWEEP committed preprobe-keyed-shape.log | bare-token normalized: reports/round-81/preprobe-keyed-shape.log
+SWEEP committed preprobe-macho-shape.log | bare-token normalized: reports/round-82/preprobe-macho-shape.log
+SWEEP committed preprobe-sqlite-shape.log | bare-token normalized: reports/round-80/preprobe-sqlite-shape.log
+SWEEP committed probe_negctl.sh | bare-token normalized: reports/round-75/probe_negctl.sh
+SWEEP committed producer-receipt.json | bare-token normalized: corpus/live/runs/round-32/producer-receipt.json, corpus/live/runs/round-33/producer-receipt.json, corpus/live/runs/round-34/producer-receipt.json, corpus/live/runs/round-35/producer-receipt.json, corpus/live/runs/round-36/producer-receipt.json, corpus/live/runs/round-37/producer-receipt.json, corpus/live/runs/round-38/producer-receipt.json, corpus/live/runs/round-39/producer-receipt.json, corpus/live/runs/round-41/producer-receipt.json, corpus/live/runs/round-42/producer-receipt.json, corpus/live/runs/round-43/producer-receipt.json, corpus/live/runs/round-44/producer-receipt.json, corpus/live/runs/round-45/producer-receipt.json, corpus/live/runs/round-47/producer-receipt.json, corpus/live/runs/round-48/producer-receipt.json, corpus/live/runs/round-49/producer-receipt.json, corpus/live/runs/round-51/producer-receipt.json, corpus/live/runs/round-52/producer-receipt.json, corpus/live/runs/round-53/producer-receipt.json, corpus/live/runs/round-54/producer-receipt.json
+SWEEP absent provider.version | bare-token unmatched: no file named provider.version under HEAD or the working tree
+SWEEP committed province-after.log | bare-token normalized: reports/round-74/province-after.log
+SWEEP committed province-before.log | bare-token normalized: reports/round-74/province-before.log
+SWEEP committed province_probe.sh | bare-token normalized: reports/round-74/province_probe.sh
+SWEEP committed province_probe2.sh | bare-token normalized: reports/round-75/province_probe2.sh
+SWEEP committed province_probe3.sh | bare-token normalized: reports/round-78/province_probe3.sh
+SWEEP committed q15_tree_id_check.py | bare-token normalized: corpus/q15_tree_id_check.py
+SWEEP committed r-separability.log | bare-token normalized: reports/round-76/r-separability.log
+SWEEP absent r76-managed.dll | bare-token unmatched: no file named r76-managed.dll under HEAD or the working tree
+SWEEP absent r8-in-tree-pollution.txt | bare-token unmatched: no file named r8-in-tree-pollution.txt under HEAD or the working tree
+SWEEP committed raw | bare-token normalized: .ufo/waves/round-74/quote-audit/raw
+SWEEP absent rea-agents-6.5.0 | bare-token unmatched: no file named rea-agents-6.5.0 under HEAD or the working tree
+SWEEP absent rea.analysis | bare-token unmatched: no file named rea.analysis under HEAD or the working tree
+SWEEP committed readout.py | bare-token normalized: corpus/fixtures/apk-r65/readout.py
+SWEEP committed receipt-after.log | bare-token normalized: reports/round-76/receipt-after.log
+SWEEP committed receipt-before.log | bare-token normalized: reports/round-76/receipt-before.log
+SWEEP committed receipt-review.md | bare-token normalized: corpus/live/runs/round-56/receipt-review.md, corpus/live/runs/round-57/receipt-review.md
+SWEEP committed receipt.json | bare-token normalized: corpus/live/runs/round-55/receipt.json, corpus/live/runs/round-56/receipt.json, corpus/live/runs/round-57/receipt.json, corpus/live/runs/round-59/devin-author/receipt.json, corpus/live/runs/round-59/receipt.json, corpus/live/runs/round-63/receipt.json, corpus/live/runs/round-76/receipt.json, corpus/live/runs/round-77/provider-gates/receipt.json, corpus/live/runs/round-77/receipt.json, corpus/live/runs/round-79/receipt.json, corpus/live/runs/round-80/receipt.json, corpus/live/runs/round-81/receipt.json, corpus/live/runs/round-82/receipt.json, corpus/live/runs/round-83/receipt.json, corpus/live/runs/round-84/extract-artifact/receipt.json, corpus/live/runs/round-84/inspect-artifact/receipt.json, corpus/live/runs/round-85/inspect-managed-artifact/receipt.json, corpus/live/runs/round-85/inspect-managed-members/receipt.json, corpus/live/runs/round-85/inspect-managed-native-boundaries/receipt.json
+SWEEP committed receipt_probe.sh | bare-token normalized: reports/round-76/receipt_probe.sh
+SWEEP committed receipt_probe2.sh | bare-token normalized: reports/round-79/receipt_probe2.sh
+SWEEP committed reg-ids | bare-token normalized: .ufo/waves/round-67/assimilation/reg-ids, .ufo/waves/round-69/assimilation/reg-ids, .ufo/waves/round-70/assimilation/reg-ids
+SWEEP committed register-rows.json | bare-token normalized: .ufo/waves/round-67/assimilation/register-rows.json
+SWEEP committed registry-after.log | bare-token normalized: reports/round-78/registry-after.log
+SWEEP committed registry-before.log | bare-token normalized: reports/round-78/registry-before.log
+SWEEP committed rendered-undispatched.json | bare-token normalized: .ufo/waves/fleet-round-1-interactive/rendered-undispatched.json
+SWEEP committed reports | bare-token normalized: .ufo/reports, reports
+SWEEP committed reports/round-1/baseline.txt
+SWEEP committed reports/round-1/batch-receipt.json
+SWEEP committed reports/round-1/brief.md
+SWEEP committed reports/round-1/counting-commands.json
+SWEEP committed reports/round-1/implementation.md
+SWEEP committed reports/round-1/measured-before.json
+SWEEP committed reports/round-1/reviewer.md
+SWEEP committed reports/round-1/scribe.md
+SWEEP committed reports/round-59/r59-author.md
+SWEEP committed reports/round-59/r59-devin-verifier.md
+SWEEP committed reports/round-61/claims.md
+SWEEP committed reports/round-61/measure-after.log
+SWEEP committed reports/round-61/measure-before.log
+SWEEP committed reports/round-61/measure.py
+SWEEP absent reports/round-61/measurements.json | exists nowhere on this host; recorded, nothing to land
+SWEEP committed reports/round-62/claims.md
+SWEEP committed reports/round-62/measure-after.log
+SWEEP committed reports/round-62/measure-before.log
+SWEEP committed reports/round-63/claims.md
+SWEEP committed reports/round-63/measure-after.log
+SWEEP committed reports/round-63/measure-before.log
+SWEEP committed reports/round-63/measure.py
+SWEEP committed reports/round-64/claims.md
+SWEEP committed reports/round-64/measure-after.log
+SWEEP committed reports/round-64/measure-before.log
+SWEEP committed reports/round-64/measure.py
+SWEEP committed reports/round-65
+SWEEP committed reports/round-65/claims.md
+SWEEP committed reports/round-65/measure-after.log
+SWEEP committed reports/round-65/measure-before.log
+SWEEP committed reports/round-65/measure.py
+SWEEP committed reports/round-66/claims.md
+SWEEP committed reports/round-66/measure-after.log
+SWEEP committed reports/round-66/measure-before.log
+SWEEP committed reports/round-66/measure.py
+SWEEP committed reports/round-67/claims.md
+SWEEP committed reports/round-67/measure-after.log
+SWEEP committed reports/round-67/measure.py
+SWEEP committed reports/round-68/claims.md
+SWEEP committed reports/round-68/measure-after.log
+SWEEP committed reports/round-68/measure-before.log
+SWEEP committed reports/round-68/measure.py
+SWEEP committed reports/round-69
+SWEEP committed reports/round-69/claims.md
+SWEEP committed reports/round-69/measure-after.log
+SWEEP committed reports/round-69/measure.py
+SWEEP committed reports/round-70/claims-amendment-A1.md
+SWEEP committed reports/round-70/claims.md
+SWEEP committed reports/round-70/controls
+SWEEP absent reports/round-70/controls/A-H | exists nowhere on this host; recorded, nothing to land
+SWEEP committed reports/round-70/measure-after.log
+SWEEP committed reports/round-70/measure-before.log
+SWEEP committed reports/round-70/measure.py
+SWEEP committed reports/round-71/claims.md
+SWEEP committed reports/round-71/measure-after.log
+SWEEP committed reports/round-71/measure-amendment-A3.md
+SWEEP committed reports/round-71/measure-before.log
+SWEEP committed reports/round-71/measure.py
+SWEEP committed reports/round-72/claims.md
+SWEEP committed reports/round-72/controls/base.log
+SWEEP committed reports/round-72/measure-after.log
+SWEEP committed reports/round-72/measure.py
+SWEEP committed reports/round-72/shortlink-dispositions.md
+SWEEP committed reports/round-72/source-quotes-check.log
+SWEEP committed reports/round-72/sources-census-after.log
+SWEEP committed reports/round-72/sources-census-before.log
+SWEEP committed reports/round-73/candidate-pin.json
+SWEEP committed reports/round-73/claims.md
+SWEEP committed reports/round-73/dropped.tsv
+SWEEP committed reports/round-73/measure-before.log
+SWEEP committed reports/round-73/measure.py
+SWEEP committed reports/round-73/source-accounting.json
+SWEEP committed reports/round-73/sources-census-before.log
+SWEEP committed reports/round-73/tool-probes.md
+SWEEP committed reports/round-73/verify_quotes.log
+SWEEP committed reports/round-73/verify_quotes.py
+SWEEP committed reports/round-74
+SWEEP committed reports/round-74/c10-disposition.log
+SWEEP committed reports/round-74/census-after.log
+SWEEP committed reports/round-74/claims.md
+SWEEP committed reports/round-74/measure-after.log
+SWEEP committed reports/round-74/measure-before.log
+SWEEP committed reports/round-74/measure.py
+SWEEP committed reports/round-74/province-before.log
+SWEEP committed reports/round-74/province_probe.sh
+SWEEP committed reports/round-75
+SWEEP committed reports/round-75/census-after.log
+SWEEP committed reports/round-75/census-before.log
+SWEEP committed reports/round-75/ghidra-headless-recon.log
+SWEEP committed reports/round-75/holds.log
+SWEEP committed reports/round-75/negctl-run.log
+SWEEP committed reports/round-75/p2-after.log
+SWEEP committed reports/round-75/p2-before.log
+SWEEP committed reports/round-75/probe_negctl.sh
+SWEEP committed reports/round-75/province_probe2.sh
+SWEEP committed reports/round-75/tip-verification.log
+SWEEP committed reports/round-76
+SWEEP committed reports/round-76/census-after.log
+SWEEP committed reports/round-76/claims.md
+SWEEP committed reports/round-76/f-after.log
+SWEEP committed reports/round-76/f-before.log
+SWEEP committed reports/round-76/f_probe.py
+SWEEP committed reports/round-76/receipt-after.log
+SWEEP committed reports/round-76/receipt-before.log
+SWEEP committed reports/round-76/receipt_probe.sh
+SWEEP committed reports/round-77/census-after.log
+SWEEP committed reports/round-77/claims.md
+SWEEP committed reports/round-77/f-after.log
+SWEEP committed reports/round-77/gate-after.log
+SWEEP committed reports/round-77/gate_probe.sh
+SWEEP committed reports/round-77/noharm-diff.txt
+SWEEP committed reports/round-78/census-after.log
+SWEEP committed reports/round-78/census-before.log
+SWEEP committed reports/round-78/claims.md
+SWEEP committed reports/round-78/noharm-diff.txt
+SWEEP committed reports/round-78/province_probe3.sh
+SWEEP committed reports/round-78/registry-before.log
+SWEEP committed reports/round-79
+SWEEP committed reports/round-79/census-after.log
+SWEEP committed reports/round-79/claims.md
+SWEEP committed reports/round-79/f2-before.log
+SWEEP committed reports/round-79/f_probe2.py
+SWEEP committed reports/round-79/gate_probe2.sh
+SWEEP committed reports/round-79/noharm-diff.txt
+SWEEP committed reports/round-79/receipt_probe2.sh
+SWEEP committed reports/round-79/selftest-after.log
+SWEEP committed reports/round-79/selftest-before.log
+SWEEP committed reports/round-79/selftest_probe.sh
+SWEEP committed reports/round-80
+SWEEP committed reports/round-80/census-after.log
+SWEEP committed reports/round-80/claims.md
+SWEEP committed reports/round-80/f3-before.log
+SWEEP committed reports/round-80/f_probe3.py
+SWEEP committed reports/round-80/noharm-diff.txt
+SWEEP committed reports/round-80/orphan_sweep.py
+SWEEP committed reports/round-80/preprobe-sqlite-shape.log
+SWEEP committed reports/round-80/sweep-real-after.log
+SWEEP committed reports/round-81
+SWEEP committed reports/round-81/census-after.log
+SWEEP committed reports/round-81/claims.md
+SWEEP committed reports/round-81/f4-before.log
+SWEEP committed reports/round-81/f_probe4.py
+SWEEP committed reports/round-81/noharm-diff.txt
+SWEEP committed reports/round-81/orphan_sweep2.py
+SWEEP committed reports/round-81/sweep-v1-red.log
+SWEEP committed reports/round-82
+SWEEP committed reports/round-82/ag-after.log
+SWEEP committed reports/round-82/ag_probe.py
+SWEEP committed reports/round-82/carryin-numstat.log
+SWEEP committed reports/round-82/census-after.log
+SWEEP committed reports/round-82/census-tip.log
+SWEEP committed reports/round-82/countgrep-red.log
+SWEEP committed reports/round-82/noharm-diff.txt
+SWEEP committed reports/round-82/orphan_sweep3.py
+SWEEP committed reports/round-82/preprobe-macho-shape.log
+SWEEP committed reports/round-83/ag-after.log
+SWEEP committed reports/round-83/ag-red.log
+SWEEP committed reports/round-83/census-after.log
+SWEEP committed reports/round-83/claims.md
+SWEEP committed reports/round-83/noharm-diff.txt
+SWEEP committed reports/round-83/orphan_sweep4.py
+SWEEP committed reports/round-83/preprobe-app-shape.log
+SWEEP committed reports/round-83/v3-prelanding-recon.log
+SWEEP committed reports/round-83/v4-postlanding-recon.log
+SWEEP committed reports/round-84/ag2-red.log
+SWEEP committed reports/round-84/census-after.log
+SWEEP committed reports/round-84/claims.md
+SWEEP committed reports/round-84/corrections.md
+SWEEP committed reports/round-84/freshstart-probes.log
+SWEEP committed reports/round-84/noharm-diff.txt
+SWEEP committed reports/round-84/orphan_sweep5.py
+SWEEP committed reports/round-84/preprobe-arc-shape.log
+SWEEP committed reports/round-84/v4-invisible-red.log
+SWEEP absent rerun-daemons.log | bare-token unmatched: no file named rerun-daemons.log under HEAD or the working tree
+SWEEP committed result-review.md | bare-token normalized: corpus/live/runs/round-54/result-review.md, corpus/live/runs/round-55/result-review.md, corpus/live/runs/round-56/result-review.md, corpus/live/runs/round-57/result-review.md
+SWEEP committed rev75_dump.java | bare-token normalized: reports/round-75/rev75_dump.java
+SWEEP absent revenger-art.md | bare-token unmatched: no file named revenger-art.md under HEAD or the working tree
+SWEEP absent revenger-critic.md | bare-token unmatched: no file named revenger-critic.md under HEAD or the working tree
+SWEEP committed review-plan.md | bare-token normalized: corpus/live/runs/round-31/review-plan.md, corpus/live/runs/round-32/review-plan.md
+SWEEP committed reviewer-oracle.md | bare-token normalized: .ufo/waves/kaika-r1/reviewer-oracle.md
+SWEEP committed reviewer-post.md | bare-token normalized: .ufo/waves/kaika-r1/reviewer-post.md
+SWEEP committed reviewer.md | bare-token normalized: corpus/live/runs/round-10/reviewer.md, corpus/live/runs/round-11/reviewer.md, corpus/live/runs/round-12/reviewer.md, corpus/live/runs/round-13/reviewer.md, corpus/live/runs/round-14/reviewer.md, corpus/live/runs/round-15/reviewer.md, corpus/live/runs/round-16/reviewer.md, corpus/live/runs/round-17/reviewer.md, corpus/live/runs/round-18/reviewer.md, corpus/live/runs/round-19/reviewer.md, corpus/live/runs/round-20/reviewer.md, corpus/live/runs/round-21/reviewer.md, corpus/live/runs/round-22/reviewer.md, corpus/live/runs/round-23/reviewer.md, corpus/live/runs/round-24/reviewer.md, corpus/live/runs/round-25/reviewer.md, corpus/live/runs/round-26/reviewer.md, corpus/live/runs/round-27/reviewer.md, corpus/live/runs/round-28/reviewer.md, corpus/live/runs/round-29/reviewer.md, corpus/live/runs/round-30/reviewer.md, corpus/live/runs/round-31/reviewer.md, corpus/live/runs/round-32/reviewer.md, corpus/live/runs/round-33/reviewer.md, corpus/live/runs/round-34/reviewer.md, corpus/live/runs/round-35/reviewer.md, corpus/live/runs/round-36/reviewer.md, corpus/live/runs/round-37/reviewer.md, corpus/live/runs/round-38/reviewer.md, corpus/live/runs/round-39/reviewer.md, corpus/live/runs/round-40/reviewer.md, corpus/live/runs/round-41/reviewer.md, corpus/live/runs/round-42/reviewer.md, corpus/live/runs/round-43/reviewer.md, corpus/live/runs/round-44/reviewer.md, corpus/live/runs/round-45/reviewer.md, corpus/live/runs/round-46/reviewer.md, corpus/live/runs/round-47/reviewer.md, corpus/live/runs/round-48/reviewer.md, corpus/live/runs/round-49/reviewer.md, corpus/live/runs/round-50/reviewer.md, corpus/live/runs/round-51/reviewer.md, corpus/live/runs/round-52/reviewer.md, corpus/live/runs/round-53/reviewer.md, corpus/live/runs/round-58/reviewer.md, corpus/live/runs/round-59/reviewer.md, corpus/live/runs/round-6/reviewer.md, corpus/live/runs/round-7/reviewer.md, corpus/live/runs/round-8/reviewer.md, corpus/live/runs/round-9/reviewer.md, reports/round-1/reviewer.md
+SWEEP committed round-1.md | bare-token normalized: corpus/lessons/round-1.md
+SWEEP committed round-36 | bare-token normalized: corpus/live/runs/round-36
+SWEEP committed round-39 | bare-token normalized: corpus/live/runs/round-39
+SWEEP absent round-60-verifier-spotcheck.md | bare-token unmatched: no file named round-60-verifier-spotcheck.md under HEAD or the working tree
+SWEEP committed round-61-verifier-spotcheck.md | bare-token normalized: corpus/lessons/round-61-verifier-spotcheck.md
+SWEEP committed round-62-commonjs-require-name-evidence.md | bare-token normalized: .ufo/waves/round-62/falsify/frozen-candidates/round-62-commonjs-require-name-evidence.md, corpus/knowledge/round-62-commonjs-require-name-evidence.md
+SWEEP committed round-62-evm-dispatch-byte-evidence.md | bare-token normalized: .ufo/waves/round-62/falsify/frozen-candidates/round-62-evm-dispatch-byte-evidence.md, corpus/knowledge/round-62-evm-dispatch-byte-evidence.md
+SWEEP committed round-62.md | bare-token normalized: corpus/lessons/round-62.md
+SWEEP committed round-64.md | bare-token normalized: corpus/lessons/round-64.md
+SWEEP committed round-67.md | bare-token normalized: corpus/lessons/round-67.md
+SWEEP committed round-68-apk-axml-byte-evidence.md | bare-token normalized: corpus/knowledge/round-68-apk-axml-byte-evidence.md
+SWEEP committed round-71.md | bare-token normalized: corpus/lessons/round-71.md
+SWEEP committed round-72-tool-landscape.md | bare-token normalized: corpus/knowledge/round-72-tool-landscape.md
+SWEEP committed round-72-verifier-spotcheck.md | bare-token normalized: corpus/lessons/round-72-verifier-spotcheck.md
+SWEEP committed round-77-verifier-spotcheck.md | bare-token normalized: corpus/lessons/round-77-verifier-spotcheck.md
+SWEEP committed round-77.md | bare-token normalized: corpus/lessons/round-77.md
+SWEEP committed round-82.md | bare-token normalized: corpus/lessons/round-82.md
+SWEEP committed route.md | bare-token normalized: corpus/live/runs/round-29/route.md, corpus/live/runs/round-31/route.md, corpus/live/runs/round-32/route.md, corpus/live/runs/round-36/route.md
+SWEEP committed routing-assessment-run.json | bare-token normalized: .ufo/waves/fleet-round-1-interactive/routing-assessment-run.json
+SWEEP committed routing-contract.json | bare-token normalized: .ufo/waves/fleet-round-1-interactive/routing-contract.json
+SWEEP absent same.txt | bare-token unmatched: no file named same.txt under HEAD or the working tree
+SWEEP committed score.md | bare-token normalized: corpus/live/runs/round-29/score.md, corpus/live/runs/round-31/score.md, corpus/live/runs/round-32/score.md
+SWEEP committed scoring-review.md | bare-token normalized: corpus/live/runs/round-56/scoring-review.md, corpus/live/runs/round-57/scoring-review.md
+SWEEP committed seed.md | bare-token normalized: corpus/knowledge/seed.md
+SWEEP committed self_assessment_check.py | bare-token normalized: corpus/self_assessment_check.py
+SWEEP committed selftest-after.log | bare-token normalized: reports/round-79/selftest-after.log, reports/round-80/selftest-after.log
+SWEEP committed selftest-before.log | bare-token normalized: reports/round-79/selftest-before.log
+SWEEP committed selftest_probe.sh | bare-token normalized: reports/round-79/selftest_probe.sh
+SWEEP committed snapshots | bare-token normalized: corpus/snapshots
+SWEEP committed source-quotes-check.log | bare-token normalized: reports/round-72/source-quotes-check.log
+SWEEP committed source.bin | bare-token normalized: .ufo/waves/round-67/quarantine/S053/source.bin, .ufo/waves/round-67/quarantine/S054/source.bin, .ufo/waves/round-67/quarantine/S055/source.bin, .ufo/waves/round-67/quarantine/S058/source.bin, .ufo/waves/round-67/quarantine/S060/source.bin, .ufo/waves/round-67/quarantine/S061/source.bin, .ufo/waves/round-67/quarantine/S062/source.bin, .ufo/waves/round-67/quarantine/S063/source.bin, .ufo/waves/round-67/quarantine/S064/source.bin, .ufo/waves/round-67/quarantine/S075/source.bin, .ufo/waves/round-67/quarantine/S081/source.bin, .ufo/waves/round-67/quarantine/S085/source.bin, .ufo/waves/round-67/quarantine/S089/source.bin, .ufo/waves/round-67/quarantine/S092/source.bin, .ufo/waves/round-67/quarantine/S093/source.bin, .ufo/waves/round-67/quarantine/S094/source.bin, .ufo/waves/round-67/quarantine/S098/source.bin, .ufo/waves/round-67/quarantine/S099/source.bin, .ufo/waves/round-67/quarantine/S107/source.bin, .ufo/waves/round-67/quarantine/S108/source.bin, .ufo/waves/round-67/quarantine/S111/source.bin, .ufo/waves/round-67/quarantine/S113/source.bin
+SWEEP committed sources-census-before.log | bare-token normalized: reports/round-72/sources-census-before.log, reports/round-73/sources-census-before.log
+SWEEP absent spec.md | bare-token unmatched: no file named spec.md under HEAD or the working tree
+SWEEP committed staged-ids | bare-token normalized: .ufo/waves/round-67/assimilation/staged-ids, .ufo/waves/round-69/assimilation/staged-ids, .ufo/waves/round-70/assimilation/staged-ids
+SWEEP committed stderr.txt | bare-token normalized: corpus/live/runs/round-28/stderr.txt, corpus/live/runs/round-63/stderr.txt, corpus/live/runs/round-76/stderr.txt, corpus/live/runs/round-79/stderr.txt, corpus/live/runs/round-80/stderr.txt, corpus/live/runs/round-81/stderr.txt, corpus/live/runs/round-82/stderr.txt, corpus/live/runs/round-83/stderr.txt, corpus/live/runs/round-84/extract-artifact/stderr.txt, corpus/live/runs/round-84/inspect-artifact/stderr.txt, corpus/live/runs/round-85/inspect-managed-artifact/stderr.txt, corpus/live/runs/round-85/inspect-managed-members/stderr.txt, corpus/live/runs/round-85/inspect-managed-native-boundaries/stderr.txt
+SWEEP committed stdout.raw | bare-token normalized: corpus/live/runs/round-63/stdout.raw
+SWEEP committed streams.bin | bare-token normalized: .ufo/waves/round-67/quarantine/S093/streams.bin
+SWEEP committed string-layout.md | bare-token normalized: corpus/live/runs/round-32/string-layout.md
+SWEEP absent subject.digest.sha256 | bare-token unmatched: no file named subject.digest.sha256 under HEAD or the working tree
+SWEEP committed swarm-registry.json | bare-token normalized: .ufo/waves/round-61/build/swarm-registry.json, .ufo/waves/round-61/falsify-w3/swarm-registry.json, .ufo/waves/round-61/falsify/swarm-registry.json, .ufo/waves/round-62/build/swarm-registry.json, .ufo/waves/round-62/falsify/swarm-registry.json, .ufo/waves/round-63/build/swarm-registry.json, .ufo/waves/round-63/falsify/swarm-registry.json, .ufo/waves/round-67/swarm-registry.json, .ufo/waves/round-69/swarm-registry.json, .ufo/waves/round-70/w1/swarm-registry.json, .ufo/waves/round-70/w2/swarm-registry.json, .ufo/waves/round-71/w1/swarm-registry.json, .ufo/waves/round-71/w2/swarm-registry.json, .ufo/waves/round-72/w1/swarm-registry.json, .ufo/waves/round-73/v2/swarm-registry.json, .ufo/waves/round-73/w1/swarm-registry.json
+SWEEP committed sweep-post-landing.log | bare-token normalized: .ufo/waves/round-83/sweep-post-landing.log
+SWEEP committed sweep-pre-landing.log | bare-token normalized: .ufo/waves/round-83/sweep-pre-landing.log
+SWEEP committed sweep-real-after.log | bare-token normalized: reports/round-80/sweep-real-after.log
+SWEEP committed sweep-v1-red.log | bare-token normalized: reports/round-81/sweep-v1-red.log
+SWEEP committed sweep-v2-selftest-red.log | bare-token normalized: reports/round-82/sweep-v2-selftest-red.log
+SWEEP committed sweep2-real-after.log | bare-token normalized: reports/round-81/sweep2-real-after.log
+SWEEP committed sweep2-selftest-after.log | bare-token normalized: reports/round-81/sweep2-selftest-after.log
+SWEEP committed sweep3-mutant-kill.log | bare-token normalized: reports/round-82/sweep3-mutant-kill.log
+SWEEP committed sweep3-real-after.log | bare-token normalized: reports/round-82/sweep3-real-after.log
+SWEEP committed sweep3-selftest-after.log | bare-token normalized: reports/round-82/sweep3-selftest-after.log
+SWEEP committed sweep4-mutant-kill-after.log | bare-token normalized: reports/round-83/sweep4-mutant-kill-after.log
+SWEEP committed sweep4-real-after.log | bare-token normalized: reports/round-83/sweep4-real-after.log
+SWEEP committed sweep4-selftest-after.log | bare-token normalized: reports/round-83/sweep4-selftest-after.log
+SWEEP committed sweep5-mutant-kill-after.log | bare-token normalized: reports/round-84/sweep5-mutant-kill-after.log
+SWEEP committed sweep5-mutant-kill.log | bare-token normalized: reports/round-84/sweep5-mutant-kill.log
+SWEEP committed sweep5-real-after.log | bare-token normalized: reports/round-84/sweep5-real-after.log
+SWEEP committed sweep5-selftest-after.log | bare-token normalized: reports/round-84/sweep5-selftest-after.log
+SWEEP absent swgde-custody-authority-and-normative-scope.md | bare-token unmatched: no file named swgde-custody-authority-and-normative-scope.md under HEAD or the working tree
+SWEEP absent t.co | bare-token unmatched: no file named t.co under HEAD or the working tree
+SWEEP committed taskCall.json | bare-token normalized: .ufo/waves/round-67/taskCall.json
+SWEEP committed tip-verification.log | bare-token normalized: reports/round-75/tip-verification.log, reports/round-77/tip-verification.log, reports/round-78/tip-verification.log
+SWEEP committed tool-probes.md | bare-token normalized: reports/round-73/tool-probes.md
+SWEEP absent tool.task | bare-token unmatched: no file named tool.task under HEAD or the working tree
+SWEEP committed transform.js | bare-token normalized: corpus/fixtures/js-r3/transform.js, corpus/fixtures/js-r7-v2/transform.js
+SWEEP committed tree-review.md | bare-token normalized: corpus/live/runs/round-56/tree-review.md, corpus/live/runs/round-57/tree-review.md
+SWEEP absent treecommit.py | bare-token unmatched: no file named treecommit.py under HEAD or the working tree
+SWEEP committed truth-score.md | bare-token normalized: corpus/live/runs/round-1/wave/truth-score.md
+SWEEP committed truth.json | bare-token normalized: corpus/fixtures/apk-r65/truth.json, corpus/fixtures/app-r83/truth.json, corpus/fixtures/arc-r84/truth.json, corpus/fixtures/archive-r2/truth.json, corpus/fixtures/browser-r77/truth.json, corpus/fixtures/duplicate-r15/truth.json, corpus/fixtures/evm-r19/truth.json, corpus/fixtures/evm-r21/truth.json, corpus/fixtures/evm-r22/truth.json, corpus/fixtures/evm-r23/truth.json, corpus/fixtures/evm-r24/truth.json, corpus/fixtures/evm-r25/truth.json, corpus/fixtures/evm-r26/truth.json, corpus/fixtures/firmware-r63/truth.json, corpus/fixtures/keyed-r81/truth.json, corpus/fixtures/macho-r82/truth.json, corpus/fixtures/managed-r76/truth.json, corpus/fixtures/managed-r85/truth.json, corpus/fixtures/native-auth-r79/truth.json, corpus/fixtures/nested-r11/truth.json, corpus/fixtures/pe-r27/truth.json, corpus/fixtures/pe-r28/truth.json, corpus/fixtures/pe-r29/truth.json, corpus/fixtures/pe-r30/truth.json, corpus/fixtures/pe-r31/truth.json, corpus/fixtures/pe-r32/truth.json, corpus/fixtures/pe-r33/truth.json, corpus/fixtures/pe-r34/truth.json, corpus/fixtures/pe-r35/truth.json, corpus/fixtures/pe-r36/truth.json, corpus/fixtures/pe-r37/truth.json, corpus/fixtures/pe-r38/truth.json, corpus/fixtures/pe-r39/truth.json, corpus/fixtures/pe-r41/truth.json, corpus/fixtures/pe-r42/truth.json, corpus/fixtures/pe-r43/truth.json, corpus/fixtures/pe-r44/truth.json, corpus/fixtures/pe-r45/truth.json, corpus/fixtures/pe-r47/truth.json, corpus/fixtures/pe-r48/truth.json, corpus/fixtures/pe-r49/truth.json, corpus/fixtures/pe-r51/truth.json, corpus/fixtures/pe-r52/truth.json, corpus/fixtures/pe-r53/truth.json, corpus/fixtures/pe-r54/truth.json, corpus/fixtures/pe-r55/truth.json, corpus/fixtures/pe-r56/truth.json, corpus/fixtures/pe-r57/truth.json, corpus/fixtures/pe-r59/truth.json, corpus/fixtures/pe-r59d/truth.json, corpus/fixtures/pe-r75-headless-smoke/truth.json, corpus/fixtures/sqlite-r80/truth.json, corpus/training/bounty-triage/fixtures/truth.json
+SWEEP absent ufo-wave-policy-v2.json | bare-token unmatched: no file named ufo-wave-policy-v2.json under HEAD or the working tree
+SWEEP absent unblob.log | bare-token unmatched: no file named unblob.log under HEAD or the working tree
+SWEEP committed unit-correction.json | bare-token normalized: .ufo/waves/round-62/falsify/unit-correction.json
+SWEEP committed utf16-unpaired-surrogates-in-resource-names.md | bare-token normalized: corpus/knowledge/utf16-unpaired-surrogates-in-resource-names.md
+SWEEP committed v2 | bare-token normalized: .ufo/waves/round-73/v2, corpus/fixtures/shapes-r12/v2
+SWEEP committed v2-dispatch.json | bare-token normalized: .ufo/waves/round-73/v2-dispatch.json
+SWEEP committed v2-plan.err | bare-token normalized: .ufo/waves/round-73/v2-plan.err
+SWEEP committed v2-plan.json | bare-token normalized: .ufo/waves/round-73/v2-plan.json
+SWEEP absent v2-results.json | bare-token unmatched: no file named v2-results.json under HEAD or the working tree
+SWEEP committed v2-run.err | bare-token normalized: .ufo/waves/round-73/v2-run.err
+SWEEP committed v2.ready | bare-token normalized: .ufo/waves/round-73/v2.ready
+SWEEP committed v3-prelanding-recon.log | bare-token normalized: reports/round-83/v3-prelanding-recon.log
+SWEEP committed v4-invisible-red.log | bare-token normalized: reports/round-84/v4-invisible-red.log
+SWEEP committed v4-postlanding-recon.log | bare-token normalized: reports/round-83/v4-postlanding-recon.log
+SWEEP committed v4-prelanding-recon.log | bare-token normalized: reports/round-83/v4-prelanding-recon.log
+SWEEP committed v5-red-unmatched-absent.log | bare-token normalized: reports/round-84/v5-red-unmatched-absent.log
+SWEEP absent verification.md | bare-token unmatched: no file named verification.md under HEAD or the working tree
+SWEEP committed verify_icon_languages.py | bare-token normalized: corpus/verify_icon_languages.py
+SWEEP committed verify_icon_states.py | bare-token normalized: corpus/verify_icon_states.py
+SWEEP committed verify_multi_icon_states.py | bare-token normalized: corpus/verify_multi_icon_states.py
+SWEEP committed verify_named_multi_icon_states.py | bare-token normalized: corpus/verify_named_multi_icon_states.py
+SWEEP committed vote-parser-control-a3.txt | bare-token normalized: .ufo/waves/round-71/vote-parser-control-a3.txt
+SWEEP committed w1 | bare-token normalized: .ufo/waves/round-70/w1, .ufo/waves/round-71/w1, .ufo/waves/round-72/w1, .ufo/waves/round-73/w1
+SWEEP committed w1-dispatch.json | bare-token normalized: .ufo/waves/round-70/w1-dispatch.json, .ufo/waves/round-71/w1-dispatch.json, .ufo/waves/round-72/w1-dispatch.json, .ufo/waves/round-73/w1-dispatch.json
+SWEEP committed w1.ready | bare-token normalized: .ufo/waves/round-70/w1.ready, .ufo/waves/round-71/w1.ready, .ufo/waves/round-72/w1.ready
+SWEEP committed w1.ready.attempt1-orphan | bare-token normalized: .ufo/waves/round-73/w1.ready.attempt1-orphan
+SWEEP committed w1.ready.partial | bare-token normalized: .ufo/waves/round-72/w1.ready.partial
+SWEEP committed w1.ready.partial.attempt1-orphan | bare-token normalized: .ufo/waves/round-73/w1.ready.partial.attempt1-orphan
+SWEEP committed w2-results.json | bare-token normalized: .ufo/waves/round-70/w2-results.json, .ufo/waves/round-71/w2-results.json
+SWEEP committed w2.ready | bare-token normalized: .ufo/waves/round-70/w2.ready, .ufo/waves/round-71/w2.ready
+SWEEP committed wave-plan-run.json | bare-token normalized: .ufo/waves/fleet-round-1-interactive/wave-plan-run.json
+SWEEP committed wave-spec.json | bare-token normalized: .ufo/waves/round-64/wave-spec.json, .ufo/waves/round-65/wave-spec.json, .ufo/waves/round-66/wave-spec.json, .ufo/waves/round-67/wave-spec.json, .ufo/waves/round-68/wave-spec.json, .ufo/waves/round-69/wave-spec.json
+SWEEP committed wiring-red-before.log | bare-token normalized: reports/round-70/wiring-red-before.log
+SWEEP committed zip-readout.out | bare-token normalized: .ufo/waves/round-63/build/zip-readout.out
+SWEEP_PARSER_GREP_A=0
+SWEEP_PARSER_GREP_B=0
+SWEEP_PARSER_GREP_AB=0
+SWEEP_BARE_TOKENS matched=369 unmatched_skipped=1743 unmatched_recorded_absent=48
+SWEEP_CORPUS fleet-reports=25 lessons=50 log=1
+CITED=1025 COMMITTED=965 LANDABLE_ORPHANS=0 ABSENT=60
+ORPHAN_SWEEP_LANDABLE=0
+v5_exit=0
+
+== v6 (green side: the same tokens resolved absent-fleet) ==
+$ PYTHONUTF8=1 python -I -B v6-committed.py --lane <lane> --fleet <fleet> --format full
+SWEEP committed .ufo | bare-token normalized: .ufo
+SWEEP committed .ufo/waves/fleet-round-1-interactive
+SWEEP committed .ufo/waves/fleet-round-1-interactive/inherited-input-shapes.json
+SWEEP committed .ufo/waves/fleet-round-1-interactive/local-acceptance.json
+SWEEP committed .ufo/waves/fleet-round-1-interactive/routing-assessment-run.json
+SWEEP absent-fleet .ufo/waves/hyaku/jj-w1/reports/JjAuditRevenger.md | exists under the fleet root (shared/other-lane surface)
+SWEEP committed .ufo/waves/kaika-r1/connector.md
+SWEEP committed .ufo/waves/kaika-r1/critic-post.md
+SWEEP committed .ufo/waves/kaika-r1/dispatch.md
+SWEEP committed .ufo/waves/kaika-r1/mutation-post.md
+SWEEP committed .ufo/waves/kaika-r1/reviewer-post.md
+SWEEP committed .ufo/waves/kaika-r1/scout-freshness.md
+SWEEP committed .ufo/waves/kaika-r1/scribe-pointer-audit.md
+SWEEP absent-fleet .ufo/waves/kaika-w1/revenger-art.md | exists under the fleet root (shared/other-lane surface)
+SWEEP absent-fleet .ufo/waves/kaika-w3/revenger-review.md | exists under the fleet root (shared/other-lane surface)
+SWEEP absent-fleet .ufo/waves/kaika/SOURCES-CONTRACT-v1.md | exists under the fleet root (shared/other-lane surface)
+SWEEP absent-fleet .ufo/waves/kaika/steer.md | exists under the fleet root (shared/other-lane surface)
+SWEEP absent-fleet .ufo/waves/round-24/w2/RevUnlandedResolution.md | exists under the fleet root (shared/other-lane surface)
+SWEEP committed .ufo/waves/round-61/build
+SWEEP committed .ufo/waves/round-61/build-spec.json
+SWEEP committed .ufo/waves/round-61/falsify-spawn-result.txt
+SWEEP committed .ufo/waves/round-61/falsify-w3
+SWEEP committed .ufo/waves/round-61/falsify-w3-spec.json
+SWEEP committed .ufo/waves/round-61/falsify-w3/adjudication.json
+SWEEP committed .ufo/waves/round-61/falsify/dead-seats.json
+SWEEP committed .ufo/waves/round-62/build
+SWEEP committed .ufo/waves/round-62/build-spec.json
+SWEEP committed .ufo/waves/round-62/build/R62LessonIntake.md
+SWEEP committed .ufo/waves/round-62/cohort.json
+SWEEP committed .ufo/waves/round-62/counterexamples
+SWEEP committed .ufo/waves/round-62/falsify
+SWEEP committed .ufo/waves/round-62/falsify/frozen-candidates
+SWEEP committed .ufo/waves/round-62/falsify/initial-adjudication.json
+SWEEP committed .ufo/waves/round-62/scratch-cleanup.json
+SWEEP committed .ufo/waves/round-62/source-snapshots
+SWEEP committed .ufo/waves/round-62/source-snapshots/ecma-statements.html
+SWEEP committed .ufo/waves/round-62/source-snapshots/execution-specs-runtime.py
+SWEEP committed .ufo/waves/round-63
+SWEEP committed .ufo/waves/round-63/build
+SWEEP committed .ufo/waves/round-63/build/R63MutC3.md
+SWEEP committed .ufo/waves/round-63/build/R63ReadmeFlipDraft.md
+SWEEP committed .ufo/waves/round-63/build/R63RevengerLedger.md
+SWEEP committed .ufo/waves/round-63/build/R63SourceAppnote.md
+SWEEP committed .ufo/waves/round-63/build/R63SourceZipfileDocs.md
+SWEEP committed .ufo/waves/round-63/build/zip-readout.py
+SWEEP committed .ufo/waves/round-63/falsify/W2AttackEntryQ01.md
+SWEEP committed .ufo/waves/round-63/falsify/W2AttackProbeK.md
+SWEEP committed .ufo/waves/round-63/falsify/W2AttackRecordForgery.md
+SWEEP committed .ufo/waves/round-63/falsify/W2VerifyReadmeContract.md
+SWEEP committed .ufo/waves/round-63/falsify/routed-debt.md
+SWEEP committed .ufo/waves/round-63/source-snapshots/appnote.provenance.json
+SWEEP committed .ufo/waves/round-63/source-snapshots/appnote.txt
+SWEEP committed .ufo/waves/round-63/source-snapshots/zipfile.html
+SWEEP committed .ufo/waves/round-64
+SWEEP committed .ufo/waves/round-64/R64ReviewEntryQ09.md
+SWEEP committed .ufo/waves/round-64/R64ReviewEntryQ11.md
+SWEEP committed .ufo/waves/round-64/R64ReviewSkill.md
+SWEEP committed .ufo/waves/round-64/gate-quotes.md
+SWEEP committed .ufo/waves/round-64/source-snapshots/rea-firmware-guide.md
+SWEEP committed .ufo/waves/round-64/wave-spec.json
+SWEEP committed .ufo/waves/round-65
+SWEEP committed .ufo/waves/round-65/R65ReviewEntryQ09.md
+SWEEP committed .ufo/waves/round-65/m38-red-before.log
+SWEEP committed .ufo/waves/round-65/source-snapshots
+SWEEP committed .ufo/waves/round-65/source-snapshots/ResourceTypes.h
+SWEEP committed .ufo/waves/round-65/source-snapshots/rea-android-applications.md
+SWEEP committed .ufo/waves/round-65/source-snapshots/zipfile-docs.html
+SWEEP committed .ufo/waves/round-65/wave-spec.json
+SWEEP committed .ufo/waves/round-66
+SWEEP committed .ufo/waves/round-66/wave-spec.json
+SWEEP committed .ufo/waves/round-67/assimilation/quarantine-slice
+SWEEP committed .ufo/waves/round-67/plan-validated.json
+SWEEP committed .ufo/waves/round-67/quarantine/S055/source.bin
+SWEEP committed .ufo/waves/round-67/quarantine/S060/source.bin
+SWEEP committed .ufo/waves/round-67/source-snapshots/dex-format.html
+SWEEP committed .ufo/waves/round-68/R68MutC7Kill.md
+SWEEP committed .ufo/waves/round-68/R68ReviewSkillRefresh.md
+SWEEP committed .ufo/waves/round-68/build-r68.py
+SWEEP committed .ufo/waves/round-68/build-wave-spec.py
+SWEEP committed .ufo/waves/round-68/dispatch/plan-validated.json
+SWEEP committed .ufo/waves/round-69
+SWEEP committed .ufo/waves/round-69/R69CounterReplay.md
+SWEEP committed .ufo/waves/round-69/R69ReviewEntryQ09.md
+SWEEP committed .ufo/waves/round-69/build-wave-spec.py
+SWEEP committed .ufo/waves/round-69/dispatch/dispatch.json
+SWEEP committed .ufo/waves/round-69/dispatch/slot-acquire.log
+SWEEP absent .ufo/waves/round-69/w1/ScoutAmp.md | exists nowhere on this host; recorded, nothing to land
+SWEEP committed .ufo/waves/round-70/assimilation
+SWEEP committed .ufo/waves/round-70/build-entry.py
+SWEEP committed .ufo/waves/round-70/census-before.txt
+SWEEP committed .ufo/waves/round-70/w1-results.json
+SWEEP committed .ufo/waves/round-70/w1/R70W1AssimDraft.draft-entry.md
+SWEEP committed .ufo/waves/round-70/w1/R70W1ControlAudit.md
+SWEEP committed .ufo/waves/round-70/w1/R70W1MistakeSweep.md
+SWEEP committed .ufo/waves/round-70/w2/R70W2ConnRoutedCarry.md
+SWEEP committed .ufo/waves/round-71/assimilation/quarantine-slice
+SWEEP committed .ufo/waves/round-71/census-after.txt
+SWEEP committed .ufo/waves/round-71/census-before.txt
+SWEEP committed .ufo/waves/round-71/sources-s052/validate.log
+SWEEP committed .ufo/waves/round-71/vote-parser-control-a3.txt
+SWEEP committed .ufo/waves/round-71/w1-results.json
+SWEEP committed .ufo/waves/round-71/w1/R71W1EntryBlocks.md
+SWEEP committed .ufo/waves/round-71/w1/R71W1GateQ04.md
+SWEEP committed .ufo/waves/round-71/w1/R71W1GateQ13Q16.md
+SWEEP committed .ufo/waves/round-71/w1/R71W1Prose.md
+SWEEP committed .ufo/waves/round-71/w1/R71W1QmapCritic.md
+SWEEP committed .ufo/waves/round-71/w1/R71W1Quarantine.md
+SWEEP committed .ufo/waves/round-71/w2
+SWEEP committed .ufo/waves/round-71/w2-results.json
+SWEEP committed .ufo/waves/round-71/w2-votes
+SWEEP committed .ufo/waves/round-71/w2/R71W2CounterReplay.md
+SWEEP committed .ufo/waves/round-71/w2/R71W2GateReplay.md
+SWEEP committed .ufo/waves/round-71/w2/R71W2LessonReview.md
+SWEEP committed .ufo/waves/round-71/w2/R71W2Q09Q12.md
+SWEEP committed .ufo/waves/round-71/w2/R71W2Q13Q16.md
+SWEEP committed .ufo/waves/round-71/w2/R71W2Q16Scope.md
+SWEEP committed .ufo/waves/round-71/w2/R71W2Sentinel.md
+SWEEP committed .ufo/waves/round-72/w1
+SWEEP committed .ufo/waves/round-72/w1-plan.json
+SWEEP committed .ufo/waves/round-72/w1.ready
+SWEEP committed .ufo/waves/round-73/v2
+SWEEP committed .ufo/waves/round-73/v2-dispatch.json
+SWEEP committed .ufo/waves/round-73/v2-plan.json
+SWEEP committed .ufo/waves/round-73/v2-spec.json
+SWEEP committed .ufo/waves/round-73/v2.ready
+SWEEP committed .ufo/waves/round-73/v2.ready.partial
+SWEEP absent .ufo/waves/round-73/votes | exists nowhere on this host; recorded, nothing to land
+SWEEP committed .ufo/waves/round-73/w1
+SWEEP absent .ufo/waves/round-73/w1.ready | exists nowhere on this host; recorded, nothing to land
+SWEEP committed .ufo/waves/round-74
+SWEEP committed .ufo/waves/round-74/quote-audit
+SWEEP committed .ufo/waves/round-83
+SWEEP committed .ufo/waves/round-83/census-round-start-sanctioned.log
+SWEEP committed .ufo/waves/round-83/sweep-post-landing.log
+SWEEP committed .ufo/waves/round-83/sweep-pre-landing.log
+SWEEP committed .ufo/waves/round-84
+SWEEP committed .ufo/waves/round-84/carryin-byteverify.log
+SWEEP committed .ufo/waves/round-84/census-round-start-sanctioned.log
+SWEEP committed 2026-10-12-rea-readiness-checklist.md | bare-token normalized: corpus/knowledge/2026-10-12-rea-readiness-checklist.md
+SWEEP committed 2026-10-24.md | bare-token normalized: considerthese/2026-10-24.md
+SWEEP committed 2026-10-25.md | bare-token normalized: considerthese/2026-10-25.md
+SWEEP committed 2026-10-28.md | bare-token normalized: considerthese/2026-10-28.md
+SWEEP absent-fleet AGENTS.md | bare-token normalized: fleet/AGENTS.md, fleet/chousa-shokunin/AGENTS.md, fleet/kagi-shokunin/.ufo/waves/round-27/sandboxes/KagiR26.MutKnowledgeBase-17/base/AGENTS.md (+56 more)
+SWEEP absent APPNOTE-6.3.9.TXT | bare-token unmatched: no file named APPNOTE-6.3.9.TXT under HEAD or the working tree
+SWEEP absent-fleet AXES.md | bare-token normalized: fleet/AXES.md
+SWEEP absent AndroidManifest.xml | bare-token unmatched: no file named AndroidManifest.xml under HEAD or the working tree
+SWEEP absent-fleet CORPUS.md | bare-token normalized: fleet/CORPUS.md
+SWEEP absent CloseChousa26.jsonl | bare-token unmatched: no file named CloseChousa26.jsonl under HEAD or the working tree
+SWEEP committed CoreS054Review.md | bare-token normalized: .ufo/waves/round-72/w1/CoreS054Review.md
+SWEEP committed CoreS066Review.md | bare-token normalized: .ufo/waves/round-72/w1/CoreS066Review.md
+SWEEP committed ExecSelectorKeccak.md | bare-token normalized: .ufo/waves/round-61/build/ExecSelectorKeccak.md
+SWEEP absent ID-REMAP.md | bare-token unmatched: no file named ID-REMAP.md under HEAD or the working tree
+SWEEP committed J-fixture-shaped-checker.log | bare-token normalized: reports/round-70/controls/J-fixture-shaped-checker.log
+SWEEP committed K-pin-to-echo-stub.log | bare-token normalized: reports/round-70/controls/K-pin-to-echo-stub.log
+SWEEP absent-fleet LEARNING.md | bare-token normalized: fleet/LEARNING.md
+SWEEP committed LEDGER.md | bare-token normalized: corpus/live/runs/20261012T163909Z/LEDGER.md, corpus/live/runs/20261012T164246Z/LEDGER.md, corpus/live/runs/20261012T164357Z/LEDGER.md, corpus/live/runs/round-10/LEDGER.md, corpus/live/runs/round-11/LEDGER.md, corpus/live/runs/round-12/LEDGER.md, corpus/live/runs/round-13/LEDGER.md, corpus/live/runs/round-14/LEDGER.md, corpus/live/runs/round-15/LEDGER.md, corpus/live/runs/round-16/LEDGER.md, corpus/live/runs/round-17/LEDGER.md, corpus/live/runs/round-18/LEDGER.md, corpus/live/runs/round-19/LEDGER.md, corpus/live/runs/round-20/LEDGER.md, corpus/live/runs/round-21/LEDGER.md, corpus/live/runs/round-22/LEDGER.md, corpus/live/runs/round-23/LEDGER.md, corpus/live/runs/round-24/LEDGER.md, corpus/live/runs/round-25/LEDGER.md, corpus/live/runs/round-26/LEDGER.md, corpus/live/runs/round-27/LEDGER.md, corpus/live/runs/round-28/LEDGER.md, corpus/live/runs/round-29/LEDGER.md, corpus/live/runs/round-30/LEDGER.md, corpus/live/runs/round-31/LEDGER.md, corpus/live/runs/round-32/LEDGER.md, corpus/live/runs/round-33/LEDGER.md, corpus/live/runs/round-34/LEDGER.md, corpus/live/runs/round-35/LEDGER.md, corpus/live/runs/round-36/LEDGER.md, corpus/live/runs/round-37/LEDGER.md, corpus/live/runs/round-38/LEDGER.md, corpus/live/runs/round-39/LEDGER.md, corpus/live/runs/round-40/LEDGER.md, corpus/live/runs/round-41/LEDGER.md, corpus/live/runs/round-42/LEDGER.md, corpus/live/runs/round-43/LEDGER.md, corpus/live/runs/round-44/LEDGER.md, corpus/live/runs/round-45/LEDGER.md, corpus/live/runs/round-46/LEDGER.md, corpus/live/runs/round-47/LEDGER.md, corpus/live/runs/round-48/LEDGER.md, corpus/live/runs/round-49/LEDGER.md, corpus/live/runs/round-50/LEDGER.md, corpus/live/runs/round-51/LEDGER.md, corpus/live/runs/round-52/LEDGER.md, corpus/live/runs/round-53/LEDGER.md, corpus/live/runs/round-54/LEDGER.md, corpus/live/runs/round-55/LEDGER.md, corpus/live/runs/round-56/LEDGER.md, corpus/live/runs/round-57/LEDGER.md, corpus/live/runs/round-58/LEDGER.md, corpus/live/runs/round-59/LEDGER.md, corpus/live/runs/round-59/devin-author/LEDGER.md, corpus/live/runs/round-6/LEDGER.md, corpus/live/runs/round-63/LEDGER.md, corpus/live/runs/round-7/LEDGER.md, corpus/live/runs/round-76/LEDGER.md, corpus/live/runs/round-77/LEDGER.md, corpus/live/runs/round-79/LEDGER.md, corpus/live/runs/round-8/LEDGER.md, corpus/live/runs/round-80/LEDGER.md, corpus/live/runs/round-81/LEDGER.md, corpus/live/runs/round-82/LEDGER.md, corpus/live/runs/round-83/LEDGER.md, corpus/live/runs/round-84/extract-artifact/LEDGER.md, corpus/live/runs/round-84/inspect-artifact/LEDGER.md, corpus/live/runs/round-85/inspect-managed-artifact/LEDGER.md, corpus/live/runs/round-85/inspect-managed-members/LEDGER.md, corpus/live/runs/round-85/inspect-managed-native-boundaries/LEDGER.md, corpus/live/runs/round-9/LEDGER.md
+SWEEP committed LOG.md | bare-token normalized: LOG.md
+SWEEP absent-fleet MANIFEST.json | bare-token normalized: fleet/.ufo/waves/hyaku/frozen/s3-after-eight-closures-20261021T232215Z/MANIFEST.json, fleet/.ufo/waves/hyaku/frozen/s3-corrected-pre-closures-20261021T231500Z/MANIFEST.json, fleet/.ufo/waves/hyaku/frozen/s3-manual-api-control-20261021T231622Z/MANIFEST.json (+79 more)
+SWEEP absent-fleet MISSION.md | bare-token normalized: fleet/MISSION.md
+SWEEP absent-fleet PROTOCOL-APPENDIX.md | bare-token normalized: fleet/PROTOCOL-APPENDIX.md
+SWEEP absent-fleet PROTOCOL.md | bare-token normalized: fleet/PROTOCOL.md, fleet/chousa-shokunin/corpus/evidence/round70/entailment-review/PROTOCOL.md
+SWEEP committed PROVINCE.md | bare-token normalized: PROVINCE.md
+SWEEP committed QUALITY.md | bare-token normalized: corpus/QUALITY.md
+SWEEP committed R62ConnectKasegi.md | bare-token normalized: .ufo/waves/round-62/build/R62ConnectKasegi.md
+SWEEP committed R62CriticQ14.md | bare-token normalized: .ufo/waves/round-62/build/R62CriticQ14.md
+SWEEP committed R62DebtM25Capture.md | bare-token normalized: .ufo/waves/round-62/build/R62DebtM25Capture.md
+SWEEP committed R62FCriticInventoryMethod.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FCriticInventoryMethod.md
+SWEEP committed R62FEvmAllCriteria.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FEvmAllCriteria.md
+SWEEP committed R62FEvmCarrier.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FEvmCarrier.md
+SWEEP committed R62FEvmDigestLabels.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FEvmDigestLabels.md
+SWEEP committed R62FEvmQ11Inventory.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FEvmQ11Inventory.md
+SWEEP committed R62FEvmRecords.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FEvmRecords.md
+SWEEP committed R62FJsAllCriteria.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FJsAllCriteria.md
+SWEEP committed R62FJsQ13Boundary.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FJsQ13Boundary.md
+SWEEP committed R62FJsScopeUnknown.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FJsScopeUnknown.md
+SWEEP committed R62FJsSemantics.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FJsSemantics.md
+SWEEP committed R62FSafeEvm.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FSafeEvm.md
+SWEEP committed R62FSafeJs.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FSafeJs.md
+SWEEP committed R62FSourceNewLogs.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FSourceNewLogs.md
+SWEEP committed R62FSourceOldErratum.md | bare-token normalized: .ufo/waves/round-62/falsify/R62FSourceOldErratum.md
+SWEEP committed R62ReviewSourcesContract.md | bare-token normalized: .ufo/waves/round-62/build/R62ReviewSourcesContract.md
+SWEEP committed R62SourceEcma.md | bare-token normalized: .ufo/waves/round-62/build/R62SourceEcma.md
+SWEEP committed R62SourceEvmOwn.md | bare-token normalized: .ufo/waves/round-62/build/R62SourceEvmOwn.md
+SWEEP committed R62SourceEvmSpec.md | bare-token normalized: .ufo/waves/round-62/build/R62SourceEvmSpec.md
+SWEEP committed R62SourceJsOwn.md | bare-token normalized: .ufo/waves/round-62/build/R62SourceJsOwn.md
+SWEEP committed R62SourceLogPlan.md | bare-token normalized: .ufo/waves/round-62/build/R62SourceLogPlan.md
+SWEEP committed R62SourceRevisions.md | bare-token normalized: .ufo/waves/round-62/build/R62SourceRevisions.md
+SWEEP committed R65ReviewEntryQ11.md | bare-token normalized: .ufo/waves/round-65/R65ReviewEntryQ11.md
+SWEEP committed R68CounterIntegrity.md | bare-token normalized: .ufo/waves/round-68/R68CounterIntegrity.md
+SWEEP committed R68HoldSweep.md | bare-token normalized: .ufo/waves/round-68/R68HoldSweep.md
+SWEEP committed R68MutC7Spoof.md | bare-token normalized: .ufo/waves/round-68/R68MutC7Spoof.md
+SWEEP committed R68ReviewEntryQ04.md | bare-token normalized: .ufo/waves/round-68/R68ReviewEntryQ04.md
+SWEEP committed R68ReviewEntryQ05.md | bare-token normalized: .ufo/waves/round-68/R68ReviewEntryQ05.md
+SWEEP committed R68ReviewSkillRegistry.md | bare-token normalized: .ufo/waves/round-68/R68ReviewSkillRegistry.md
+SWEEP committed R68SpotcheckDiscern.md | bare-token normalized: .ufo/waves/round-68/R68SpotcheckDiscern.md
+SWEEP committed R68WaveContractAudit.md | bare-token normalized: .ufo/waves/round-68/R68WaveContractAudit.md
+SWEEP committed R69OracleCorrespondence.md | bare-token normalized: .ufo/waves/round-69/R69OracleCorrespondence.md
+SWEEP committed R70W1ErratumDraft.md | bare-token normalized: .ufo/waves/round-70/w1/R70W1ErratumDraft.md
+SWEEP committed R70W2AssimScope.md | bare-token normalized: .ufo/waves/round-70/w2/R70W2AssimScope.md
+SWEEP committed R71W1GateQ04.md | bare-token normalized: .ufo/waves/round-71/w1/R71W1GateQ04.md
+SWEEP committed R71W1GateQ11b.md | bare-token normalized: .ufo/waves/round-71/w1/R71W1GateQ11b.md
+SWEEP committed R71W1GateQ13Q16.md | bare-token normalized: .ufo/waves/round-71/w1/R71W1GateQ13Q16.md
+SWEEP committed R71W1QmapCritic.md | bare-token normalized: .ufo/waves/round-71/w1/R71W1QmapCritic.md
+SWEEP committed R71W1Reproduce.md | bare-token normalized: .ufo/waves/round-71/w1/R71W1Reproduce.md
+SWEEP committed R71W2GateReplay.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2GateReplay.md
+SWEEP committed R71W2Q01Q04.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2Q01Q04.md
+SWEEP committed R71W2Q05Q08.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2Q05Q08.md
+SWEEP committed R71W2Q09Q12.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2Q09Q12.md
+SWEEP committed R71W2Q13Q16.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2Q13Q16.md
+SWEEP committed R71W2Q16Scope.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2Q16Scope.md
+SWEEP committed R71W2SpotcheckDraft.md | bare-token normalized: .ufo/waves/round-71/w2/R71W2SpotcheckDraft.md
+SWEEP committed R73Source080.md | bare-token normalized: .ufo/waves/round-73/v2/R73Source080.md
+SWEEP committed R83Sample.app | bare-token normalized: corpus/fixtures/app-r83/R83Sample.app
+SWEEP committed R84Sample.zip | bare-token normalized: corpus/fixtures/arc-r84/R84Sample.zip
+SWEEP committed README.md | bare-token normalized: README.md, corpus/README.md, corpus/fixtures/checksum-r1/README.md, corpus/fixtures/duplicate-r15/README.md
+SWEEP committed README.txt | bare-token normalized: corpus/live/runs/round-10/materialized/README.txt
+SWEEP committed ResourceTypes.h | bare-token normalized: .ufo/waves/round-65/source-snapshots/ResourceTypes.h, corpus/snapshots/ResourceTypes.h
+SWEEP committed ReviewerEvmQuality.md | bare-token normalized: .ufo/waves/round-61/build/ReviewerEvmQuality.md
+SWEEP committed S081.orig.pdf | bare-token normalized: .ufo/waves/round-74/quote-audit/raw/S081.orig.pdf
+SWEEP committed S379.orig | bare-token normalized: .ufo/waves/round-74/quote-audit/raw/S379.orig
+SWEEP committed S381.orig | bare-token normalized: .ufo/waves/round-74/quote-audit/raw/S381.orig
+SWEEP committed SCORECARD.md | bare-token normalized: SCORECARD.md
+SWEEP committed SHONEN.md | bare-token normalized: SHONEN.md
+SWEEP committed SKILL.md | bare-token normalized: SKILL.md
+SWEEP committed SOURCES.md | bare-token normalized: corpus/SOURCES.md
+SWEEP absent SPEC.md | bare-token unmatched: no file named SPEC.md under HEAD or the working tree
+SWEEP absent-fleet ScoutAmp.md | bare-token normalized: fleet/kotoba-shokunin/.ufo/waves/round-69/w1/ScoutAmp.md
+SWEEP committed ScribeEntryEvm.md | bare-token normalized: .ufo/waves/round-61/build/ScribeEntryEvm.md
+SWEEP committed W2AttackEntryIndependence.md | bare-token normalized: .ufo/waves/round-63/falsify/W2AttackEntryIndependence.md
+SWEEP committed W2AttackEntryQ11.md | bare-token normalized: .ufo/waves/round-63/falsify/W2AttackEntryQ11.md
+SWEEP committed W2AttackEntryScope.md | bare-token normalized: .ufo/waves/round-63/falsify/W2AttackEntryScope.md
+SWEEP committed W2ClaimsAdmission.md | bare-token normalized: .ufo/waves/round-63/falsify/W2ClaimsAdmission.md
+SWEEP committed W2VerifyC2Record.md | bare-token normalized: .ufo/waves/round-63/falsify/W2VerifyC2Record.md
+SWEEP committed W3ClaimsAmendmentOrder.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3ClaimsAmendmentOrder.md
+SWEEP committed W3EvmCrossLaneCites.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3EvmCrossLaneCites.md
+SWEEP committed W3EvmQTable.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3EvmQTable.md
+SWEEP committed W3EvmR24Immediate.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3EvmR24Immediate.md
+SWEEP committed W3EvmR24SpanFix.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3EvmR24SpanFix.md
+SWEEP committed W3HoldProbeRerun.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3HoldProbeRerun.md
+SWEEP committed W3JsElectronMainLabel.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3JsElectronMainLabel.md
+SWEEP committed W3JsOverclaimCritic.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3JsOverclaimCritic.md
+SWEEP committed W3JsQTable.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3JsQTable.md
+SWEEP committed W3JsSpecifierUnnamed.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3JsSpecifierUnnamed.md
+SWEEP committed W3KProbeMutant.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3KProbeMutant.md
+SWEEP committed W3LessonMistakes.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3LessonMistakes.md
+SWEEP committed W3ProvinceBounds.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3ProvinceBounds.md
+SWEEP committed W3QualityQ12Fail.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3QualityQ12Fail.md
+SWEEP committed W3QualityQ13Apply.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3QualityQ13Apply.md
+SWEEP committed W3SrcContractCells.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3SrcContractCells.md
+SWEEP committed W3SrcSearchLog.md | bare-token normalized: .ufo/waves/round-61/falsify-w3/W3SrcSearchLog.md
+SWEEP committed admission.json | bare-token normalized: .ufo/waves/round-62/falsify/admission.json
+SWEEP committed ag-after.log | bare-token normalized: reports/round-82/ag-after.log, reports/round-83/ag-after.log
+SWEEP committed ag-red.log | bare-token normalized: reports/round-82/ag-red.log, reports/round-83/ag-red.log
+SWEEP committed ag2-after.log | bare-token normalized: reports/round-84/ag2-after.log
+SWEEP committed ag2-red-v21.log | bare-token normalized: reports/round-84/ag2-red-v21.log
+SWEEP committed ag2-red.log | bare-token normalized: reports/round-84/ag2-red.log
+SWEEP committed ag_probe.py | bare-token normalized: reports/round-82/ag_probe.py
+SWEEP committed ag_probe2.py | bare-token normalized: reports/round-84/ag_probe2.py
+SWEEP absent analyzeHeadless.bat | bare-token unmatched: no file named analyzeHeadless.bat under HEAD or the working tree
+SWEEP committed android-gate.json | bare-token normalized: corpus/live/runs/round-77/provider-gates/android-gate.json
+SWEEP committed archive-r2 | bare-token normalized: corpus/fixtures/archive-r2
+SWEEP committed artifact-inspection.json | bare-token normalized: corpus/live/runs/20261012T163909Z/artifact-inspection.json, corpus/live/runs/20261012T164246Z/artifact-inspection.json
+SWEEP committed attempt-count.json | bare-token normalized: corpus/live/runs/round-52/attempt-count.json
+SWEEP committed attempt-directory160.json | bare-token normalized: corpus/live/runs/round-51/attempt-directory160.json
+SWEEP committed attempt-invalid.json | bare-token normalized: corpus/live/runs/round-31/attempt-invalid.json, corpus/live/runs/round-35/attempt-invalid.json
+SWEEP committed baseline.md | bare-token normalized: corpus/live/runs/round-31/baseline.md, corpus/live/runs/round-32/baseline.md
+SWEEP committed before-treated-tools-on-base.log | bare-token normalized: reports/round-70/before-treated-tools-on-base.log
+SWEEP committed boundary.md | bare-token normalized: corpus/live/runs/round-28/boundary.md, corpus/live/runs/round-30/boundary.md, corpus/live/runs/round-31/boundary.md, corpus/live/runs/round-32/boundary.md
+SWEEP committed browser-r77 | bare-token normalized: corpus/fixtures/browser-r77
+SWEEP committed build | bare-token normalized: .ufo/waves/round-61/build, .ufo/waves/round-62/build, .ufo/waves/round-63/build
+SWEEP committed build-assignments.json | bare-token normalized: .ufo/waves/round-61/build-assignments.json, .ufo/waves/round-62/build-assignments.json
+SWEEP committed build-dispatch-attempts.json | bare-token normalized: .ufo/waves/round-61/build-dispatch-attempts.json, .ufo/waves/round-62/build-dispatch-attempts.json
+SWEEP committed build-entry.py | bare-token normalized: .ufo/waves/round-67/build-entry.py, .ufo/waves/round-70/build-entry.py
+SWEEP committed build-r68.py | bare-token normalized: .ufo/waves/round-68/build-r68.py
+SWEEP committed build-wave-spec.py | bare-token normalized: .ufo/waves/round-65/build-wave-spec.py, .ufo/waves/round-67/build-wave-spec.py, .ufo/waves/round-68/build-wave-spec.py, .ufo/waves/round-69/build-wave-spec.py
+SWEEP committed build_app.py | bare-token normalized: corpus/fixtures/app-r83/build_app.py
+SWEEP committed build_zip.py | bare-token normalized: corpus/fixtures/arc-r84/build_zip.py
+SWEEP committed byte-oracle.md | bare-token normalized: corpus/live/runs/round-27/byte-oracle.md, corpus/live/runs/round-54/byte-oracle.md, corpus/live/runs/round-55/byte-oracle.md, corpus/live/runs/round-56/byte-oracle.md, corpus/live/runs/round-57/byte-oracle.md
+SWEEP committed c1-only.log | bare-token normalized: reports/round-78/c1-only.log, reports/round-79/c1-only.log, reports/round-80/c1-only.log, reports/round-81/c1-only.log, reports/round-82/c1-only.log, reports/round-83/c1-only.log, reports/round-84/c1-only.log
+SWEEP committed c10-disposition.log | bare-token normalized: reports/round-74/c10-disposition.log
+SWEEP committed c2-only.log | bare-token normalized: reports/round-78/c2-only.log, reports/round-79/c2-only.log, reports/round-80/c2-only.log, reports/round-81/c2-only.log, reports/round-82/c2-only.log, reports/round-83/c2-only.log, reports/round-84/c2-only.log
+SWEEP committed candidate-pin.json | bare-token normalized: reports/round-73/candidate-pin.json
+SWEEP committed carryin-numstat.log | bare-token normalized: reports/round-82/carryin-numstat.log
+SWEEP committed census-after.log | bare-token normalized: reports/round-74/census-after.log, reports/round-75/census-after.log, reports/round-76/census-after.log, reports/round-77/census-after.log, reports/round-78/census-after.log, reports/round-79/census-after.log, reports/round-80/census-after.log, reports/round-81/census-after.log, reports/round-82/census-after.log, reports/round-83/census-after.log, reports/round-84/census-after.log
+SWEEP committed census-after.txt | bare-token normalized: .ufo/waves/round-70/census-after.txt, .ufo/waves/round-71/census-after.txt
+SWEEP committed census-before.log | bare-token normalized: reports/round-75/census-before.log, reports/round-78/census-before.log, reports/round-82/census-before.log
+SWEEP committed census-before.txt | bare-token normalized: .ufo/waves/round-70/census-before.txt, .ufo/waves/round-71/census-before.txt
+SWEEP absent census-end-worktree.log | bare-token unmatched: no file named census-end-worktree.log under HEAD or the working tree
+SWEEP absent census-midcheck.log | bare-token unmatched: no file named census-midcheck.log under HEAD or the working tree
+SWEEP absent census-round-start-sanctioned2.log | bare-token unmatched: no file named census-round-start-sanctioned2.log under HEAD or the working tree
+SWEEP committed census-tip.log | bare-token normalized: reports/round-82/census-tip.log
+SWEEP committed check_embedded_outputs.py | bare-token normalized: corpus/check_embedded_outputs.py
+SWEEP committed check_package.py | bare-token normalized: corpus/training/bounty-triage/check_package.py
+SWEEP committed checksum | bare-token normalized: corpus/fixtures/checksum-r1/checksum, corpus/live/runs/round-10/materialized/bin/checksum
+SWEEP committed claims.md | bare-token normalized: reports/round-61/claims.md, reports/round-62/claims.md, reports/round-63/claims.md, reports/round-64/claims.md, reports/round-65/claims.md, reports/round-66/claims.md, reports/round-67/claims.md, reports/round-68/claims.md, reports/round-69/claims.md, reports/round-70/claims.md, reports/round-71/claims.md, reports/round-72/claims.md, reports/round-73/claims.md, reports/round-74/claims.md, reports/round-76/claims.md, reports/round-77/claims.md, reports/round-78/claims.md, reports/round-79/claims.md, reports/round-80/claims.md, reports/round-81/claims.md, reports/round-82/claims.md, reports/round-83/claims.md, reports/round-84/claims.md, reports/round-85/claims.md
+SWEEP committed codeable-decompiled.c | bare-token normalized: reports/round-75/codeable-decompiled.c
+SWEEP committed cohort.json | bare-token normalized: .ufo/waves/round-62/cohort.json, .ufo/waves/round-63/falsify/cohort.json, .ufo/waves/round-64/cohort.json
+SWEEP committed collisions | bare-token normalized: .ufo/waves/round-67/assimilation/collisions, .ufo/waves/round-69/assimilation/collisions, .ufo/waves/round-70/assimilation/collisions
+SWEEP committed comparison.json | bare-token normalized: corpus/live/runs/round-12/comparison.json, corpus/live/runs/round-7/comparison.json
+SWEEP committed connector.md | bare-token normalized: .ufo/waves/kaika-r1/connector.md, reports/round-1/connector.md
+SWEEP committed considerthese | bare-token normalized: considerthese
+SWEEP committed corpus | bare-token normalized: corpus
+SWEEP committed corpus/QUALITY.md
+SWEEP committed corpus/README.md
+SWEEP committed corpus/SOURCES.md
+SWEEP absent corpus/__pycache__/check_embedded_outputs.cpython-314.pyc | exists nowhere on this host; recorded, nothing to land
+SWEEP committed corpus/audit_source_quotes.py
+SWEEP committed corpus/check_embedded_outputs.py
+SWEEP committed corpus/derive_axml_anchors.py
+SWEEP committed corpus/derive_axml_anchors_r68.py
+SWEEP committed corpus/embedded_output_pins.json
+SWEEP committed corpus/fixtures
+SWEEP committed corpus/fixtures/REPLAY.md
+SWEEP committed corpus/fixtures/apk-r65
+SWEEP committed corpus/fixtures/apk-r65/entry_checks.py
+SWEEP committed corpus/fixtures/apk-r65/readout.py
+SWEEP committed corpus/fixtures/apk-r65/truth.json
+SWEEP committed corpus/fixtures/app-r83
+SWEEP committed corpus/fixtures/arc-r84
+SWEEP committed corpus/fixtures/archive-r2/fixture.zip
+SWEEP committed corpus/fixtures/archive-r2/truth.json
+SWEEP committed corpus/fixtures/browser-r77
+SWEEP committed corpus/fixtures/checksum-r1/README.md
+SWEEP committed corpus/fixtures/checksum-r1/checksum
+SWEEP committed corpus/fixtures/duplicate-r15/fixture.zip
+SWEEP committed corpus/fixtures/duplicate-r15/truth.json
+SWEEP committed corpus/fixtures/evm-r21/fixture.raw
+SWEEP committed corpus/fixtures/evm-r24/fixture.raw
+SWEEP committed corpus/fixtures/evm-r25/truth.json
+SWEEP committed corpus/fixtures/firmware-r63
+SWEEP committed corpus/fixtures/firmware-r63/firmware-r63.bin
+SWEEP committed corpus/fixtures/firmware-r63/generator.py
+SWEEP committed corpus/fixtures/js-r3
+SWEEP committed corpus/fixtures/js-r3/index.js
+SWEEP committed corpus/fixtures/keyed-r81
+SWEEP committed corpus/fixtures/macho-r82
+SWEEP committed corpus/fixtures/managed-r76
+SWEEP committed corpus/fixtures/managed-r76/oracle_check.py
+SWEEP committed corpus/fixtures/native-auth-r79
+SWEEP committed corpus/fixtures/nested-r11/outer.zip
+SWEEP committed corpus/fixtures/pe-r28
+SWEEP committed corpus/fixtures/pe-r28/fixture.exe
+SWEEP committed corpus/fixtures/pe-r28/truth.json
+SWEEP committed corpus/fixtures/pe-r29
+SWEEP committed corpus/fixtures/pe-r29/fixture.exe
+SWEEP committed corpus/fixtures/pe-r29/truth.json
+SWEEP committed corpus/fixtures/pe-r30
+SWEEP committed corpus/fixtures/pe-r30/fixture.exe
+SWEEP committed corpus/fixtures/pe-r30/truth.json
+SWEEP committed corpus/fixtures/pe-r31/fixture.exe
+SWEEP committed corpus/fixtures/pe-r32/fixture.exe
+SWEEP committed corpus/fixtures/pe-r33/fixture.exe
+SWEEP committed corpus/fixtures/pe-r33/truth.json
+SWEEP committed corpus/fixtures/pe-r35/fixture.exe
+SWEEP committed corpus/fixtures/pe-r35/truth.json
+SWEEP committed corpus/fixtures/pe-r36/truth.json
+SWEEP committed corpus/fixtures/pe-r41/fixture.exe
+SWEEP committed corpus/fixtures/pe-r42/fixture.exe
+SWEEP committed corpus/fixtures/pe-r47/fixture.exe
+SWEEP committed corpus/fixtures/pe-r51/fixture.exe
+SWEEP committed corpus/fixtures/pe-r52/fixture.exe
+SWEEP committed corpus/fixtures/pe-r54/truth.json
+SWEEP committed corpus/fixtures/pe-r55/truth.json
+SWEEP committed corpus/fixtures/pe-r56
+SWEEP committed corpus/fixtures/pe-r57/truth.json
+SWEEP committed corpus/fixtures/pe-r59/fixture.exe
+SWEEP committed corpus/fixtures/pe-r59d/fixture.exe
+SWEEP committed corpus/fixtures/pe-r75-headless-smoke
+SWEEP committed corpus/fixtures/pe-r75-headless-smoke/fixture.exe
+SWEEP committed corpus/fixtures/sqlite-r80
+SWEEP committed corpus/knowledge
+SWEEP committed corpus/knowledge/2026-10-12-rea-readiness-checklist.md
+SWEEP committed corpus/knowledge/2026-10-29-rea-evidence-ledger-discipline.md
+SWEEP committed corpus/knowledge/commonjs-destructured-require-edges.md
+SWEEP committed corpus/knowledge/evm-saved-interface-candidates.md
+SWEEP committed corpus/knowledge/round-62-commonjs-require-name-evidence.md
+SWEEP committed corpus/knowledge/round-62-evm-dispatch-byte-evidence.md
+SWEEP committed corpus/knowledge/round-63-zip-central-directory-evidence.md
+SWEEP committed corpus/knowledge/round-64-firmware-region-byte-evidence.md
+SWEEP committed corpus/knowledge/round-65-apk-axml-byte-evidence.md
+SWEEP committed corpus/knowledge/round-67-apk-axml-byte-evidence.md
+SWEEP committed corpus/knowledge/round-68-apk-axml-byte-evidence.md
+SWEEP committed corpus/knowledge/round-69-apk-axml-byte-evidence.md
+SWEEP committed corpus/knowledge/round-70-apk-axml-byte-evidence.md
+SWEEP committed corpus/knowledge/round-71-apk-axml-byte-evidence.md
+SWEEP committed corpus/knowledge/round-72-tool-landscape.md
+SWEEP committed corpus/knowledge/round-73-re-resource-atlas.md
+SWEEP committed corpus/knowledge/seed.md
+SWEEP committed corpus/knowledge/utf16-unpaired-surrogates-in-resource-names.md
+SWEEP committed corpus/lessons/2026-10-12-r1-provider-gap.md
+SWEEP committed corpus/lessons/2026-10-27-bounty-triage-module.md
+SWEEP committed corpus/lessons/2026-10-29-re-resource-atlas.md
+SWEEP committed corpus/lessons/round-1-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-1.md
+SWEEP committed corpus/lessons/round-61-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-61.md
+SWEEP committed corpus/lessons/round-62-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-62.md
+SWEEP committed corpus/lessons/round-63-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-63.md
+SWEEP committed corpus/lessons/round-64 | normalized: corpus/lessons/round-64.md committed
+SWEEP committed corpus/lessons/round-64.md
+SWEEP committed corpus/lessons/round-65.md
+SWEEP committed corpus/lessons/round-66.md
+SWEEP committed corpus/lessons/round-67.md
+SWEEP committed corpus/lessons/round-68.md
+SWEEP committed corpus/lessons/round-69-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-69.md
+SWEEP committed corpus/lessons/round-70-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-70.md
+SWEEP committed corpus/lessons/round-71.md
+SWEEP committed corpus/lessons/round-72-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-72.md
+SWEEP committed corpus/lessons/round-73-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-73.md
+SWEEP committed corpus/lessons/round-74.md
+SWEEP committed corpus/lessons/round-75.md
+SWEEP committed corpus/lessons/round-76.md
+SWEEP committed corpus/lessons/round-77-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-77.md
+SWEEP committed corpus/lessons/round-78.md
+SWEEP committed corpus/lessons/round-79.md
+SWEEP committed corpus/lessons/round-80.md
+SWEEP committed corpus/lessons/round-81-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-81.md
+SWEEP committed corpus/lessons/round-82.md
+SWEEP committed corpus/lessons/round-83-verifier-spotcheck.md
+SWEEP committed corpus/lessons/round-83.md
+SWEEP committed corpus/lessons/round-84.md
+SWEEP committed corpus/lint_entry.py
+SWEEP committed corpus/live
+SWEEP committed corpus/live/runs
+SWEEP committed corpus/live/runs/20261012T164246Z/LEDGER.md
+SWEEP committed corpus/live/runs/20261012T164246Z/artifact-inspection.json
+SWEEP committed corpus/live/runs/20261012T164357Z/analysis.json
+SWEEP committed corpus/live/runs/promotion-review-r5.md
+SWEEP committed corpus/live/runs/review-r1-r3.md
+SWEEP committed corpus/live/runs/round-1/wave
+SWEEP committed corpus/live/runs/round-10
+SWEEP committed corpus/live/runs/round-10/reviewer.md
+SWEEP committed corpus/live/runs/round-11
+SWEEP committed corpus/live/runs/round-11/reviewer.md
+SWEEP committed corpus/live/runs/round-12
+SWEEP committed corpus/live/runs/round-12/reviewer.md
+SWEEP committed corpus/live/runs/round-13/LEDGER.md
+SWEEP committed corpus/live/runs/round-13/reviewer.md
+SWEEP committed corpus/live/runs/round-14/reviewer.md
+SWEEP committed corpus/live/runs/round-15/inspection.json
+SWEEP committed corpus/live/runs/round-15/reviewer.md
+SWEEP committed corpus/live/runs/round-16/LEDGER.md
+SWEEP committed corpus/live/runs/round-16/reviewer.md
+SWEEP committed corpus/live/runs/round-17
+SWEEP committed corpus/live/runs/round-17/LEDGER.md
+SWEEP committed corpus/live/runs/round-17/recovery.json
+SWEEP committed corpus/live/runs/round-17/reviewer.md
+SWEEP committed corpus/live/runs/round-18/reviewer.md
+SWEEP committed corpus/live/runs/round-19/inspection.json
+SWEEP committed corpus/live/runs/round-19/reviewer.md
+SWEEP committed corpus/live/runs/round-20/LEDGER.md
+SWEEP committed corpus/live/runs/round-20/reviewer.md
+SWEEP committed corpus/live/runs/round-21/reviewer.md
+SWEEP committed corpus/live/runs/round-22/reviewer.md
+SWEEP committed corpus/live/runs/round-23/reviewer.md
+SWEEP committed corpus/live/runs/round-24/reviewer.md
+SWEEP committed corpus/live/runs/round-25/LEDGER.md
+SWEEP committed corpus/live/runs/round-25/reviewer.md
+SWEEP committed corpus/live/runs/round-26/inspection.json
+SWEEP committed corpus/live/runs/round-26/reviewer.md
+SWEEP committed corpus/live/runs/round-27/reviewer.md
+SWEEP committed corpus/live/runs/round-28
+SWEEP committed corpus/live/runs/round-28/LEDGER.md
+SWEEP committed corpus/live/runs/round-28/boundary.md
+SWEEP committed corpus/live/runs/round-28/oracle.md
+SWEEP committed corpus/live/runs/round-28/reviewer.md
+SWEEP committed corpus/live/runs/round-29
+SWEEP committed corpus/live/runs/round-29/LEDGER.md
+SWEEP committed corpus/live/runs/round-29/entry-map.md
+SWEEP committed corpus/live/runs/round-29/history.md
+SWEEP committed corpus/live/runs/round-29/identity.md
+SWEEP committed corpus/live/runs/round-29/inspection.json
+SWEEP committed corpus/live/runs/round-29/limits.md
+SWEEP committed corpus/live/runs/round-29/oracle.md
+SWEEP committed corpus/live/runs/round-29/prior.md
+SWEEP committed corpus/live/runs/round-29/reviewer.md
+SWEEP committed corpus/live/runs/round-29/route.md
+SWEEP committed corpus/live/runs/round-29/score.md
+SWEEP committed corpus/live/runs/round-30
+SWEEP committed corpus/live/runs/round-30/LEDGER.md
+SWEEP committed corpus/live/runs/round-30/boundary.md
+SWEEP committed corpus/live/runs/round-30/inspection.json
+SWEEP committed corpus/live/runs/round-30/oracle.md
+SWEEP committed corpus/live/runs/round-30/reviewer.md
+SWEEP committed corpus/live/runs/round-31
+SWEEP committed corpus/live/runs/round-31/LEDGER.md
+SWEEP committed corpus/live/runs/round-31/attempt-invalid.json
+SWEEP committed corpus/live/runs/round-31/inspection.json
+SWEEP committed corpus/live/runs/round-31/reviewer.md
+SWEEP committed corpus/live/runs/round-32
+SWEEP committed corpus/live/runs/round-32/producer-receipt.json
+SWEEP committed corpus/live/runs/round-32/reviewer.md
+SWEEP committed corpus/live/runs/round-33/inspection.json
+SWEEP committed corpus/live/runs/round-33/reviewer.md
+SWEEP committed corpus/live/runs/round-34/inspection.json
+SWEEP committed corpus/live/runs/round-34/reviewer.md
+SWEEP committed corpus/live/runs/round-35/inspection.json
+SWEEP committed corpus/live/runs/round-36/inspection.raw.json
+SWEEP committed corpus/live/runs/round-36/reviewer.md
+SWEEP committed corpus/live/runs/round-37/inspection.raw.json
+SWEEP committed corpus/live/runs/round-37/reviewer.md
+SWEEP committed corpus/live/runs/round-38
+SWEEP committed corpus/live/runs/round-38/reviewer.md
+SWEEP committed corpus/live/runs/round-39
+SWEEP committed corpus/live/runs/round-39/reviewer.md
+SWEEP committed corpus/live/runs/round-4-verification.md
+SWEEP committed corpus/live/runs/round-40/reviewer.md
+SWEEP committed corpus/live/runs/round-40/verifier-receipt.json
+SWEEP committed corpus/live/runs/round-41
+SWEEP committed corpus/live/runs/round-41/inspection.raw.json
+SWEEP committed corpus/live/runs/round-41/reviewer.md
+SWEEP committed corpus/live/runs/round-42
+SWEEP committed corpus/live/runs/round-43
+SWEEP committed corpus/live/runs/round-43/reviewer.md
+SWEEP committed corpus/live/runs/round-44
+SWEEP committed corpus/live/runs/round-45
+SWEEP committed corpus/live/runs/round-45/inspection.raw.json
+SWEEP committed corpus/live/runs/round-46/LEDGER.md
+SWEEP committed corpus/live/runs/round-46/reviewer.md
+SWEEP committed corpus/live/runs/round-47
+SWEEP committed corpus/live/runs/round-48
+SWEEP committed corpus/live/runs/round-48/inspection.raw.json
+SWEEP committed corpus/live/runs/round-49
+SWEEP committed corpus/live/runs/round-49/inspection.raw.json
+SWEEP committed corpus/live/runs/round-5-review.md
+SWEEP committed corpus/live/runs/round-50/LEDGER.md
+SWEEP committed corpus/live/runs/round-50/reviewer.md
+SWEEP committed corpus/live/runs/round-51/attempt-directory160.exe
+SWEEP committed corpus/live/runs/round-51/reviewer.md
+SWEEP committed corpus/live/runs/round-52/attempt-count.exe
+SWEEP committed corpus/live/runs/round-52/reviewer.md
+SWEEP committed corpus/live/runs/round-53
+SWEEP committed corpus/live/runs/round-54
+SWEEP committed corpus/live/runs/round-54/byte-oracle.md
+SWEEP committed corpus/live/runs/round-54/result-review.md
+SWEEP committed corpus/live/runs/round-55
+SWEEP committed corpus/live/runs/round-55/byte-oracle.md
+SWEEP committed corpus/live/runs/round-55/result-review.md
+SWEEP committed corpus/live/runs/round-56
+SWEEP committed corpus/live/runs/round-57
+SWEEP committed corpus/live/runs/round-58/reviewer.md
+SWEEP committed corpus/live/runs/round-59
+SWEEP committed corpus/live/runs/round-59/inspection.stdout.json
+SWEEP committed corpus/live/runs/round-59/reviewer.md
+SWEEP committed corpus/live/runs/round-6/LEDGER.md
+SWEEP committed corpus/live/runs/round-6/reviewer.md
+SWEEP committed corpus/live/runs/round-6/view.json
+SWEEP committed corpus/live/runs/round-63
+SWEEP committed corpus/live/runs/round-63/inspection.json
+SWEEP committed corpus/live/runs/round-63/oracle_check.py
+SWEEP committed corpus/live/runs/round-63/receipt.json
+SWEEP committed corpus/live/runs/round-7
+SWEEP committed corpus/live/runs/round-7/reviewer.md
+SWEEP committed corpus/live/runs/round-76
+SWEEP committed corpus/live/runs/round-76/LEDGER.md
+SWEEP committed corpus/live/runs/round-76/inspection.json
+SWEEP committed corpus/live/runs/round-77
+SWEEP committed corpus/live/runs/round-77/LEDGER.md
+SWEEP committed corpus/live/runs/round-77/provider-gates
+SWEEP committed corpus/live/runs/round-77/provider-gates/android-gate.json
+SWEEP committed corpus/live/runs/round-77/receipt.json
+SWEEP committed corpus/live/runs/round-79
+SWEEP committed corpus/live/runs/round-79/LEDGER.md
+SWEEP committed corpus/live/runs/round-79/inspection.json
+SWEEP committed corpus/live/runs/round-8/LEDGER.md
+SWEEP committed corpus/live/runs/round-8/reviewer.md
+SWEEP committed corpus/live/runs/round-80
+SWEEP committed corpus/live/runs/round-80/LEDGER.md
+SWEEP committed corpus/live/runs/round-80/inspection.json
+SWEEP committed corpus/live/runs/round-81
+SWEEP committed corpus/live/runs/round-81/LEDGER.md
+SWEEP committed corpus/live/runs/round-81/inspection.json
+SWEEP committed corpus/live/runs/round-82
+SWEEP committed corpus/live/runs/round-82/LEDGER.md
+SWEEP committed corpus/live/runs/round-82/inspection.json
+SWEEP committed corpus/live/runs/round-83
+SWEEP committed corpus/live/runs/round-84
+SWEEP committed corpus/live/runs/round-84/inspect-artifact
+SWEEP committed corpus/live/runs/round-9/LEDGER.md
+SWEEP committed corpus/live/runs/round-9/reviewer.md
+SWEEP committed corpus/q15_tree_id_check.py
+SWEEP committed corpus/self_assessment_check.py
+SWEEP committed corpus/snapshots/APPNOTE.TXT
+SWEEP committed corpus/snapshots/ResourceTypes.h
+SWEEP committed corpus/snapshots/dex-format.html
+SWEEP committed corpus/training/bounty-triage
+SWEEP committed corpus/training/bounty-triage/MODULE.md
+SWEEP committed corpus/verify_icon_languages.py
+SWEEP committed corpus/verify_icon_states.py
+SWEEP committed corpus/verify_multi_icon_states.py
+SWEEP committed corpus/verify_named_multi_icon_states.py
+SWEEP committed corpus/verify_saved_evidence.py
+SWEEP committed countgrep-red.log | bare-token normalized: reports/round-82/countgrep-red.log
+SWEEP committed coverage-remeasurement.json | bare-token normalized: .ufo/waves/fleet-round-1-interactive/coverage-remeasurement.json
+SWEEP committed critic-post.md | bare-token normalized: .ufo/waves/kaika-r1/critic-post.md
+SWEEP committed delta-review.md | bare-token normalized: corpus/live/runs/round-56/delta-review.md, corpus/live/runs/round-57/delta-review.md
+SWEEP committed derive_axml_anchors.py | bare-token normalized: corpus/derive_axml_anchors.py
+SWEEP committed derive_axml_anchors_r68.py | bare-token normalized: corpus/derive_axml_anchors_r68.py
+SWEEP committed dex-format.html | bare-token normalized: .ufo/waves/round-67/source-snapshots/dex-format.html, corpus/snapshots/dex-format.html
+SWEEP absent digest-scope-versus-provenance-amendment-2026-10-23.md | bare-token unmatched: no file named digest-scope-versus-provenance-amendment-2026-10-23.md under HEAD or the working tree
+SWEEP absent-fleet disk-guard.sh | bare-token normalized: fleet/scripts/hyaku/disk-guard.sh
+SWEEP committed dispatch-run-2.log | bare-token normalized: .ufo/waves/round-67/dispatch-run-2.log
+SWEEP committed dispatch-run.log | bare-token normalized: .ufo/waves/round-67/dispatch-run.log, .ufo/waves/round-68/dispatch/dispatch-run.log
+SWEEP committed dispatch-start-attempt1.txt | bare-token normalized: .ufo/waves/round-67/dispatch-start-attempt1.txt
+SWEEP committed dispatch-start.txt | bare-token normalized: .ufo/waves/round-67/dispatch-start.txt
+SWEEP committed dispatch.json | bare-token normalized: .ufo/waves/round-69/dispatch/dispatch.json, reports/round-1/dispatch.json
+SWEEP committed dispatcher-prompt-2.txt | bare-token normalized: .ufo/waves/round-67/dispatcher-prompt-2.txt
+SWEEP committed embedded_output_pins.json | bare-token normalized: corpus/embedded_output_pins.json
+SWEEP committed entry_checks.py | bare-token normalized: corpus/fixtures/apk-r65/entry_checks.py
+SWEEP committed extract-artifact | bare-token normalized: corpus/live/runs/round-84/extract-artifact
+SWEEP committed f-after.log | bare-token normalized: reports/round-76/f-after.log, reports/round-77/f-after.log
+SWEEP committed f-before.log | bare-token normalized: reports/round-76/f-before.log
+SWEEP committed f-red.log | bare-token normalized: reports/round-77/f-red.log
+SWEEP committed f-separability.log | bare-token normalized: reports/round-76/f-separability.log, reports/round-77/f-separability.log
+SWEEP committed f2-after.log | bare-token normalized: reports/round-79/f2-after.log
+SWEEP committed f2-before.log | bare-token normalized: reports/round-79/f2-before.log
+SWEEP committed f3-after.log | bare-token normalized: reports/round-80/f3-after.log
+SWEEP committed f3-before.log | bare-token normalized: reports/round-80/f3-before.log
+SWEEP committed f4-after.log | bare-token normalized: reports/round-81/f4-after.log
+SWEEP committed f4-before.log | bare-token normalized: reports/round-81/f4-before.log
+SWEEP committed f_probe.py | bare-token normalized: reports/round-76/f_probe.py
+SWEEP committed f_probe2.py | bare-token normalized: reports/round-79/f_probe2.py
+SWEEP committed f_probe3.py | bare-token normalized: reports/round-80/f_probe3.py
+SWEEP committed f_probe4.py | bare-token normalized: reports/round-81/f_probe4.py
+SWEEP absent-fleet facts.json | bare-token normalized: fleet/kama-shokunin/.ufo/waves/round-24/build/out/OracleFleetHistory/facts.json, fleet/kengaku-shokunin/.ufo/waves/round-52/w1/C2ExecRowFacts/facts.json, fleet/kengaku-shokunin/.ufo/waves/round-52/w2/W2ScribeRowsCheck/receipts/facts.json (+18 more)
+SWEEP committed falsify-dispatch-attempts.json | bare-token normalized: .ufo/waves/round-61/falsify-dispatch-attempts.json, .ufo/waves/round-62/falsify-dispatch-attempts.json
+SWEEP committed falsify-w3 | bare-token normalized: .ufo/waves/round-61/falsify-w3
+SWEEP absent file.md | bare-token unmatched: no file named file.md under HEAD or the working tree
+SWEEP committed final-verification.json | bare-token normalized: reports/round-62/final-verification.json, reports/round-63/final-verification.json
+SWEEP committed firmware-r63 | bare-token normalized: corpus/fixtures/firmware-r63
+SWEEP committed firmware-r63.bin | bare-token normalized: corpus/fixtures/firmware-r63/firmware-r63.bin
+SWEEP committed fixture.apk | bare-token normalized: corpus/fixtures/apk-r65/fixture.apk
+SWEEP committed fixture.dll | bare-token normalized: corpus/fixtures/managed-r76/fixture.dll, corpus/fixtures/managed-r85/fixture.dll, corpus/fixtures/native-auth-r79/fixture.dll
+SWEEP committed fixture.hex | bare-token normalized: corpus/fixtures/evm-r19/fixture.hex
+SWEEP committed fixture.plist | bare-token normalized: corpus/fixtures/keyed-r81/fixture.plist
+SWEEP committed fixture.raw | bare-token normalized: corpus/fixtures/evm-r21/fixture.raw, corpus/fixtures/evm-r22/fixture.raw, corpus/fixtures/evm-r23/fixture.raw, corpus/fixtures/evm-r24/fixture.raw, corpus/fixtures/evm-r25/fixture.raw, corpus/fixtures/evm-r26/fixture.raw
+SWEEP committed freshstart-probes.log | bare-token normalized: reports/round-84/freshstart-probes.log, reports/round-85/freshstart-probes.log
+SWEEP absent functions.task | bare-token unmatched: no file named functions.task under HEAD or the working tree
+SWEEP committed g-separability.log | bare-token normalized: reports/round-77/g-separability.log
+SWEEP committed gate-after.log | bare-token normalized: reports/round-77/gate-after.log
+SWEEP committed gate-red.log | bare-token normalized: reports/round-77/gate-red.log
+SWEEP committed gate_probe.sh | bare-token normalized: reports/round-77/gate_probe.sh
+SWEEP committed gate_probe2.sh | bare-token normalized: reports/round-79/gate_probe2.sh
+SWEEP committed gen_pe_r75.py | bare-token normalized: corpus/fixtures/pe-r75-headless-smoke/gen_pe_r75.py
+SWEEP committed generator.py | bare-token normalized: corpus/fixtures/apk-r65/generator.py, corpus/fixtures/firmware-r63/generator.py, corpus/fixtures/keyed-r81/generator.py, corpus/fixtures/macho-r82/generator.py, corpus/fixtures/managed-r76/generator.py, corpus/fixtures/managed-r85/generator.py, corpus/fixtures/native-auth-r79/generator.py, corpus/fixtures/sqlite-r80/generator.py
+SWEEP committed ghidra-headless-codeable.log | bare-token normalized: reports/round-75/ghidra-headless-codeable.log
+SWEEP committed ghidra-headless-recon.log | bare-token normalized: reports/round-75/ghidra-headless-recon.log
+SWEEP committed header-review.md | bare-token normalized: corpus/live/runs/round-56/header-review.md, corpus/live/runs/round-57/header-review.md
+SWEEP committed header.md | bare-token normalized: corpus/live/runs/round-32/header.md
+SWEEP committed holds.log | bare-token normalized: reports/round-75/holds.log, reports/round-78/holds.log
+SWEEP committed icon-review.md | bare-token normalized: corpus/live/runs/round-56/icon-review.md, corpus/live/runs/round-57/icon-review.md
+SWEEP committed identity.md | bare-token normalized: corpus/live/runs/round-29/identity.md, corpus/live/runs/round-31/identity.md
+SWEEP absent identity.sha256 | bare-token unmatched: no file named identity.sha256 under HEAD or the working tree
+SWEEP committed index.js | bare-token normalized: corpus/fixtures/js-r3/index.js, corpus/fixtures/js-r7-v2/index.js, corpus/fixtures/shapes-r12/v1/index.js, corpus/fixtures/shapes-r12/v2/index.js
+SWEEP committed inherited-preservation.json | bare-token normalized: .ufo/waves/fleet-round-1-interactive/inherited-preservation.json
+SWEEP committed inspect-artifact | bare-token normalized: corpus/live/runs/round-84/inspect-artifact
+SWEEP committed inspect-managed-artifact | bare-token normalized: corpus/live/runs/round-85/inspect-managed-artifact
+SWEEP committed inspection.json | bare-token normalized: corpus/live/runs/round-15/inspection.json, corpus/live/runs/round-19/inspection.json, corpus/live/runs/round-21/inspection.json, corpus/live/runs/round-22/inspection.json, corpus/live/runs/round-23/inspection.json, corpus/live/runs/round-24/inspection.json, corpus/live/runs/round-25/inspection.json, corpus/live/runs/round-26/inspection.json, corpus/live/runs/round-27/inspection.json, corpus/live/runs/round-28/inspection.json, corpus/live/runs/round-29/inspection.json, corpus/live/runs/round-30/inspection.json, corpus/live/runs/round-31/inspection.json, corpus/live/runs/round-32/inspection.json, corpus/live/runs/round-33/inspection.json, corpus/live/runs/round-34/inspection.json, corpus/live/runs/round-35/inspection.json, corpus/live/runs/round-63/inspection.json, corpus/live/runs/round-76/inspection.json, corpus/live/runs/round-77/inspection.json, corpus/live/runs/round-79/inspection.json, corpus/live/runs/round-80/inspection.json, corpus/live/runs/round-81/inspection.json, corpus/live/runs/round-82/inspection.json, corpus/live/runs/round-83/inspection.json, corpus/live/runs/round-84/extract-artifact/inspection.json, corpus/live/runs/round-84/inspect-artifact/inspection.json, corpus/live/runs/round-85/inspect-managed-artifact/inspection.json, corpus/live/runs/round-85/inspect-managed-members/inspection.json, corpus/live/runs/round-85/inspect-managed-native-boundaries/inspection.json
+SWEEP committed inspection.raw.json | bare-token normalized: corpus/live/runs/round-36/inspection.raw.json, corpus/live/runs/round-37/inspection.raw.json, corpus/live/runs/round-38/inspection.raw.json, corpus/live/runs/round-39/inspection.raw.json, corpus/live/runs/round-41/inspection.raw.json, corpus/live/runs/round-42/inspection.raw.json, corpus/live/runs/round-43/inspection.raw.json, corpus/live/runs/round-44/inspection.raw.json, corpus/live/runs/round-45/inspection.raw.json, corpus/live/runs/round-47/inspection.raw.json, corpus/live/runs/round-48/inspection.raw.json, corpus/live/runs/round-49/inspection.raw.json, corpus/live/runs/round-51/inspection.raw.json, corpus/live/runs/round-52/inspection.raw.json, corpus/live/runs/round-53/inspection.raw.json, corpus/live/runs/round-54/inspection.raw.json, corpus/live/runs/round-55/inspection.raw.json, corpus/live/runs/round-56/inspection.raw.json, corpus/live/runs/round-57/inspection.raw.json, corpus/live/runs/round-59/devin-author/inspection.raw.json
+SWEEP absent-fleet jj-lane.sh | bare-token normalized: fleet/scripts/hyaku/jj-lane.sh
+SWEEP committed js-r3 | bare-token normalized: corpus/fixtures/js-r3
+SWEEP committed knowledge | bare-token normalized: corpus/knowledge
+SWEEP absent-fleet l0-questions.md | bare-token normalized: fleet/.ufo/l0-questions.md, fleet/tsukuroi-shokunin/.ufo/l0-questions.md, fleet/tsukuroi-shokunin/.ufo/waves/round-37/w1/C32Ledger218/fixture-before/.ufo/l0-questions.md
+SWEEP committed layout.md | bare-token normalized: corpus/live/runs/round-31/layout.md
+SWEEP committed lessons | bare-token normalized: corpus/lessons
+SWEEP committed libalpha.dylib | bare-token normalized: corpus/fixtures/macho-r82/image/rpathdir/libalpha.dylib
+SWEEP committed lint_entry.py | bare-token normalized: corpus/lint_entry.py
+SWEEP committed main.dylib | bare-token normalized: corpus/fixtures/macho-r82/image/main.dylib
+SWEEP committed marker.txt | bare-token normalized: corpus/live/runs/round-11/materialized/marker.txt
+SWEEP committed measure-a1.py | bare-token normalized: reports/round-70/measure-a1.py
+SWEEP committed measure-after.log | bare-token normalized: reports/round-61/measure-after.log, reports/round-62/measure-after.log, reports/round-63/measure-after.log, reports/round-64/measure-after.log, reports/round-65/measure-after.log, reports/round-66/measure-after.log, reports/round-67/measure-after.log, reports/round-68/measure-after.log, reports/round-69/measure-after.log, reports/round-70/measure-after.log, reports/round-71/measure-after.log, reports/round-72/measure-after.log, reports/round-74/measure-after.log
+SWEEP committed measure-before.log | bare-token normalized: reports/round-61/measure-before.log, reports/round-62/measure-before.log, reports/round-63/measure-before.log, reports/round-64/measure-before.log, reports/round-65/measure-before.log, reports/round-66/measure-before.log, reports/round-67/measure-before.log, reports/round-68/measure-before.log, reports/round-69/measure-before.log, reports/round-70/measure-before.log, reports/round-71/measure-before.log, reports/round-73/measure-before.log, reports/round-74/measure-before.log
+SWEEP committed measure.py | bare-token normalized: reports/round-61/measure.py, reports/round-63/measure.py, reports/round-64/measure.py, reports/round-65/measure.py, reports/round-66/measure.py, reports/round-67/measure.py, reports/round-68/measure.py, reports/round-69/measure.py, reports/round-70/measure.py, reports/round-71/measure.py, reports/round-72/measure.py, reports/round-73/measure.py, reports/round-74/measure.py
+SWEEP committed measurements.json | bare-token normalized: reports/round-1/measurements.json
+SWEEP absent mint-agent.sh | bare-token unmatched: no file named mint-agent.sh under HEAD or the working tree
+SWEEP committed mutation-post-l2.md | bare-token normalized: .ufo/waves/kaika-r1/mutation-post-l2.md
+SWEEP committed mutation-post.md | bare-token normalized: .ufo/waves/kaika-r1/mutation-post.md
+SWEEP committed negctl-run.log | bare-token normalized: reports/round-75/negctl-run.log
+SWEEP committed no-harm-diff.txt | bare-token normalized: reports/round-74/no-harm-diff.txt
+SWEEP committed noharm-diff.txt | bare-token normalized: reports/round-76/noharm-diff.txt, reports/round-77/noharm-diff.txt, reports/round-78/noharm-diff.txt, reports/round-79/noharm-diff.txt, reports/round-80/noharm-diff.txt, reports/round-81/noharm-diff.txt, reports/round-82/noharm-diff.txt, reports/round-83/noharm-diff.txt, reports/round-84/noharm-diff.txt
+SWEEP committed oracle-after.log | bare-token normalized: reports/round-77/oracle-after.log
+SWEEP committed oracle.md | bare-token normalized: corpus/live/runs/round-28/oracle.md, corpus/live/runs/round-29/oracle.md, corpus/live/runs/round-30/oracle.md, corpus/live/runs/round-31/oracle.md, corpus/live/runs/round-32/oracle.md, corpus/live/runs/round-36/oracle.md
+SWEEP committed oracle_check.py | bare-token normalized: corpus/fixtures/app-r83/oracle_check.py, corpus/fixtures/arc-r84/oracle_check.py, corpus/fixtures/browser-r77/oracle_check.py, corpus/fixtures/keyed-r81/oracle_check.py, corpus/fixtures/macho-r82/oracle_check.py, corpus/fixtures/managed-r76/oracle_check.py, corpus/fixtures/managed-r85/oracle_check.py, corpus/fixtures/native-auth-r79/oracle_check.py, corpus/fixtures/sqlite-r80/oracle_check.py, corpus/live/runs/round-63/oracle_check.py
+SWEEP committed orphan-before.log | bare-token normalized: reports/round-80/orphan-before.log
+SWEEP committed orphan_sweep.py | bare-token normalized: reports/round-80/orphan_sweep.py
+SWEEP committed orphan_sweep3.py | bare-token normalized: reports/round-82/orphan_sweep3.py
+SWEEP committed orphan_sweep4.py | bare-token normalized: reports/round-83/orphan_sweep4.py
+SWEEP committed orphan_sweep5.py | bare-token normalized: reports/round-84/orphan_sweep5.py
+SWEEP committed p2-after.log | bare-token normalized: reports/round-75/p2-after.log
+SWEEP committed p2-before.log | bare-token normalized: reports/round-75/p2-before.log
+SWEEP committed p2-rerun.log | bare-token normalized: reports/round-77/p2-rerun.log
+SWEEP committed p3-after.log | bare-token normalized: reports/round-78/p3-after.log
+SWEEP committed p3-before.log | bare-token normalized: reports/round-78/p3-before.log
+SWEEP committed p3-negctl-run.log | bare-token normalized: reports/round-78/p3-negctl-run.log
+SWEEP committed p3_negctl.sh | bare-token normalized: reports/round-78/p3_negctl.sh
+SWEEP committed package.json | bare-token normalized: corpus/fixtures/js-r3/package.json, corpus/fixtures/js-r7-v2/package.json, corpus/fixtures/shapes-r12/v1/package.json, corpus/fixtures/shapes-r12/v2/package.json
+SWEEP absent parameters.path | bare-token unmatched: no file named parameters.path under HEAD or the working tree
+SWEEP committed plain-equal.log | bare-token normalized: reports/round-79/plain-equal.log
+SWEEP committed plan-validated.json | bare-token normalized: .ufo/waves/round-64/plan-validated.json, .ufo/waves/round-65/plan-validated.json, .ufo/waves/round-67/plan-validated.json, .ufo/waves/round-68/dispatch/plan-validated.json, .ufo/waves/round-69/dispatch/plan-validated.json
+SWEEP committed preprobe-app-shape.log | bare-token normalized: reports/round-83/preprobe-app-shape.log
+SWEEP committed preprobe-arc-shape.log | bare-token normalized: reports/round-84/preprobe-arc-shape.log
+SWEEP committed preprobe-cert-shape.log | bare-token normalized: reports/round-79/preprobe-cert-shape.log
+SWEEP committed preprobe-keyed-shape.log | bare-token normalized: reports/round-81/preprobe-keyed-shape.log
+SWEEP committed preprobe-macho-shape.log | bare-token normalized: reports/round-82/preprobe-macho-shape.log
+SWEEP committed preprobe-sqlite-shape.log | bare-token normalized: reports/round-80/preprobe-sqlite-shape.log
+SWEEP committed probe_negctl.sh | bare-token normalized: reports/round-75/probe_negctl.sh
+SWEEP committed producer-receipt.json | bare-token normalized: corpus/live/runs/round-32/producer-receipt.json, corpus/live/runs/round-33/producer-receipt.json, corpus/live/runs/round-34/producer-receipt.json, corpus/live/runs/round-35/producer-receipt.json, corpus/live/runs/round-36/producer-receipt.json, corpus/live/runs/round-37/producer-receipt.json, corpus/live/runs/round-38/producer-receipt.json, corpus/live/runs/round-39/producer-receipt.json, corpus/live/runs/round-41/producer-receipt.json, corpus/live/runs/round-42/producer-receipt.json, corpus/live/runs/round-43/producer-receipt.json, corpus/live/runs/round-44/producer-receipt.json, corpus/live/runs/round-45/producer-receipt.json, corpus/live/runs/round-47/producer-receipt.json, corpus/live/runs/round-48/producer-receipt.json, corpus/live/runs/round-49/producer-receipt.json, corpus/live/runs/round-51/producer-receipt.json, corpus/live/runs/round-52/producer-receipt.json, corpus/live/runs/round-53/producer-receipt.json, corpus/live/runs/round-54/producer-receipt.json
+SWEEP absent provider.version | bare-token unmatched: no file named provider.version under HEAD or the working tree
+SWEEP committed province-after.log | bare-token normalized: reports/round-74/province-after.log
+SWEEP committed province-before.log | bare-token normalized: reports/round-74/province-before.log
+SWEEP committed province_probe.sh | bare-token normalized: reports/round-74/province_probe.sh
+SWEEP committed province_probe2.sh | bare-token normalized: reports/round-75/province_probe2.sh
+SWEEP committed province_probe3.sh | bare-token normalized: reports/round-78/province_probe3.sh
+SWEEP committed q15_tree_id_check.py | bare-token normalized: corpus/q15_tree_id_check.py
+SWEEP committed r-separability.log | bare-token normalized: reports/round-76/r-separability.log
+SWEEP absent r76-managed.dll | bare-token unmatched: no file named r76-managed.dll under HEAD or the working tree
+SWEEP absent-fleet r8-in-tree-pollution.txt | bare-token normalized: fleet/kumitate-shokunin/r8-in-tree-pollution.txt
+SWEEP committed raw | bare-token normalized: .ufo/waves/round-74/quote-audit/raw
+SWEEP absent rea-agents-6.5.0 | bare-token unmatched: no file named rea-agents-6.5.0 under HEAD or the working tree
+SWEEP absent rea.analysis | bare-token unmatched: no file named rea.analysis under HEAD or the working tree
+SWEEP committed readout.py | bare-token normalized: corpus/fixtures/apk-r65/readout.py
+SWEEP committed receipt-after.log | bare-token normalized: reports/round-76/receipt-after.log
+SWEEP committed receipt-before.log | bare-token normalized: reports/round-76/receipt-before.log
+SWEEP committed receipt-review.md | bare-token normalized: corpus/live/runs/round-56/receipt-review.md, corpus/live/runs/round-57/receipt-review.md
+SWEEP committed receipt.json | bare-token normalized: corpus/live/runs/round-55/receipt.json, corpus/live/runs/round-56/receipt.json, corpus/live/runs/round-57/receipt.json, corpus/live/runs/round-59/devin-author/receipt.json, corpus/live/runs/round-59/receipt.json, corpus/live/runs/round-63/receipt.json, corpus/live/runs/round-76/receipt.json, corpus/live/runs/round-77/provider-gates/receipt.json, corpus/live/runs/round-77/receipt.json, corpus/live/runs/round-79/receipt.json, corpus/live/runs/round-80/receipt.json, corpus/live/runs/round-81/receipt.json, corpus/live/runs/round-82/receipt.json, corpus/live/runs/round-83/receipt.json, corpus/live/runs/round-84/extract-artifact/receipt.json, corpus/live/runs/round-84/inspect-artifact/receipt.json, corpus/live/runs/round-85/inspect-managed-artifact/receipt.json, corpus/live/runs/round-85/inspect-managed-members/receipt.json, corpus/live/runs/round-85/inspect-managed-native-boundaries/receipt.json
+SWEEP committed receipt_probe.sh | bare-token normalized: reports/round-76/receipt_probe.sh
+SWEEP committed receipt_probe2.sh | bare-token normalized: reports/round-79/receipt_probe2.sh
+SWEEP committed reg-ids | bare-token normalized: .ufo/waves/round-67/assimilation/reg-ids, .ufo/waves/round-69/assimilation/reg-ids, .ufo/waves/round-70/assimilation/reg-ids
+SWEEP committed register-rows.json | bare-token normalized: .ufo/waves/round-67/assimilation/register-rows.json
+SWEEP committed registry-after.log | bare-token normalized: reports/round-78/registry-after.log
+SWEEP committed registry-before.log | bare-token normalized: reports/round-78/registry-before.log
+SWEEP committed rendered-undispatched.json | bare-token normalized: .ufo/waves/fleet-round-1-interactive/rendered-undispatched.json
+SWEEP committed reports | bare-token normalized: .ufo/reports, reports
+SWEEP committed reports/round-1/baseline.txt
+SWEEP committed reports/round-1/batch-receipt.json
+SWEEP committed reports/round-1/brief.md
+SWEEP committed reports/round-1/counting-commands.json
+SWEEP committed reports/round-1/implementation.md
+SWEEP committed reports/round-1/measured-before.json
+SWEEP committed reports/round-1/reviewer.md
+SWEEP committed reports/round-1/scribe.md
+SWEEP committed reports/round-59/r59-author.md
+SWEEP committed reports/round-59/r59-devin-verifier.md
+SWEEP committed reports/round-61/claims.md
+SWEEP committed reports/round-61/measure-after.log
+SWEEP committed reports/round-61/measure-before.log
+SWEEP committed reports/round-61/measure.py
+SWEEP absent reports/round-61/measurements.json | exists nowhere on this host; recorded, nothing to land
+SWEEP committed reports/round-62/claims.md
+SWEEP committed reports/round-62/measure-after.log
+SWEEP committed reports/round-62/measure-before.log
+SWEEP committed reports/round-63/claims.md
+SWEEP committed reports/round-63/measure-after.log
+SWEEP committed reports/round-63/measure-before.log
+SWEEP committed reports/round-63/measure.py
+SWEEP committed reports/round-64/claims.md
+SWEEP committed reports/round-64/measure-after.log
+SWEEP committed reports/round-64/measure-before.log
+SWEEP committed reports/round-64/measure.py
+SWEEP committed reports/round-65
+SWEEP committed reports/round-65/claims.md
+SWEEP committed reports/round-65/measure-after.log
+SWEEP committed reports/round-65/measure-before.log
+SWEEP committed reports/round-65/measure.py
+SWEEP committed reports/round-66/claims.md
+SWEEP committed reports/round-66/measure-after.log
+SWEEP committed reports/round-66/measure-before.log
+SWEEP committed reports/round-66/measure.py
+SWEEP committed reports/round-67/claims.md
+SWEEP committed reports/round-67/measure-after.log
+SWEEP committed reports/round-67/measure.py
+SWEEP committed reports/round-68/claims.md
+SWEEP committed reports/round-68/measure-after.log
+SWEEP committed reports/round-68/measure-before.log
+SWEEP committed reports/round-68/measure.py
+SWEEP committed reports/round-69
+SWEEP committed reports/round-69/claims.md
+SWEEP committed reports/round-69/measure-after.log
+SWEEP committed reports/round-69/measure.py
+SWEEP committed reports/round-70/claims-amendment-A1.md
+SWEEP committed reports/round-70/claims.md
+SWEEP committed reports/round-70/controls
+SWEEP absent reports/round-70/controls/A-H | exists nowhere on this host; recorded, nothing to land
+SWEEP committed reports/round-70/measure-after.log
+SWEEP committed reports/round-70/measure-before.log
+SWEEP committed reports/round-70/measure.py
+SWEEP committed reports/round-71/claims.md
+SWEEP committed reports/round-71/measure-after.log
+SWEEP committed reports/round-71/measure-amendment-A3.md
+SWEEP committed reports/round-71/measure-before.log
+SWEEP committed reports/round-71/measure.py
+SWEEP committed reports/round-72/claims.md
+SWEEP committed reports/round-72/controls/base.log
+SWEEP committed reports/round-72/measure-after.log
+SWEEP committed reports/round-72/measure.py
+SWEEP committed reports/round-72/shortlink-dispositions.md
+SWEEP committed reports/round-72/source-quotes-check.log
+SWEEP committed reports/round-72/sources-census-after.log
+SWEEP committed reports/round-72/sources-census-before.log
+SWEEP committed reports/round-73/candidate-pin.json
+SWEEP committed reports/round-73/claims.md
+SWEEP committed reports/round-73/dropped.tsv
+SWEEP committed reports/round-73/measure-before.log
+SWEEP committed reports/round-73/measure.py
+SWEEP committed reports/round-73/source-accounting.json
+SWEEP committed reports/round-73/sources-census-before.log
+SWEEP committed reports/round-73/tool-probes.md
+SWEEP committed reports/round-73/verify_quotes.log
+SWEEP committed reports/round-73/verify_quotes.py
+SWEEP committed reports/round-74
+SWEEP committed reports/round-74/c10-disposition.log
+SWEEP committed reports/round-74/census-after.log
+SWEEP committed reports/round-74/claims.md
+SWEEP committed reports/round-74/measure-after.log
+SWEEP committed reports/round-74/measure-before.log
+SWEEP committed reports/round-74/measure.py
+SWEEP committed reports/round-74/province-before.log
+SWEEP committed reports/round-74/province_probe.sh
+SWEEP committed reports/round-75
+SWEEP committed reports/round-75/census-after.log
+SWEEP committed reports/round-75/census-before.log
+SWEEP committed reports/round-75/ghidra-headless-recon.log
+SWEEP committed reports/round-75/holds.log
+SWEEP committed reports/round-75/negctl-run.log
+SWEEP committed reports/round-75/p2-after.log
+SWEEP committed reports/round-75/p2-before.log
+SWEEP committed reports/round-75/probe_negctl.sh
+SWEEP committed reports/round-75/province_probe2.sh
+SWEEP committed reports/round-75/tip-verification.log
+SWEEP committed reports/round-76
+SWEEP committed reports/round-76/census-after.log
+SWEEP committed reports/round-76/claims.md
+SWEEP committed reports/round-76/f-after.log
+SWEEP committed reports/round-76/f-before.log
+SWEEP committed reports/round-76/f_probe.py
+SWEEP committed reports/round-76/receipt-after.log
+SWEEP committed reports/round-76/receipt-before.log
+SWEEP committed reports/round-76/receipt_probe.sh
+SWEEP committed reports/round-77/census-after.log
+SWEEP committed reports/round-77/claims.md
+SWEEP committed reports/round-77/f-after.log
+SWEEP committed reports/round-77/gate-after.log
+SWEEP committed reports/round-77/gate_probe.sh
+SWEEP committed reports/round-77/noharm-diff.txt
+SWEEP committed reports/round-78/census-after.log
+SWEEP committed reports/round-78/census-before.log
+SWEEP committed reports/round-78/claims.md
+SWEEP committed reports/round-78/noharm-diff.txt
+SWEEP committed reports/round-78/province_probe3.sh
+SWEEP committed reports/round-78/registry-before.log
+SWEEP committed reports/round-79
+SWEEP committed reports/round-79/census-after.log
+SWEEP committed reports/round-79/claims.md
+SWEEP committed reports/round-79/f2-before.log
+SWEEP committed reports/round-79/f_probe2.py
+SWEEP committed reports/round-79/gate_probe2.sh
+SWEEP committed reports/round-79/noharm-diff.txt
+SWEEP committed reports/round-79/receipt_probe2.sh
+SWEEP committed reports/round-79/selftest-after.log
+SWEEP committed reports/round-79/selftest-before.log
+SWEEP committed reports/round-79/selftest_probe.sh
+SWEEP committed reports/round-80
+SWEEP committed reports/round-80/census-after.log
+SWEEP committed reports/round-80/claims.md
+SWEEP committed reports/round-80/f3-before.log
+SWEEP committed reports/round-80/f_probe3.py
+SWEEP committed reports/round-80/noharm-diff.txt
+SWEEP committed reports/round-80/orphan_sweep.py
+SWEEP committed reports/round-80/preprobe-sqlite-shape.log
+SWEEP committed reports/round-80/sweep-real-after.log
+SWEEP committed reports/round-81
+SWEEP committed reports/round-81/census-after.log
+SWEEP committed reports/round-81/claims.md
+SWEEP committed reports/round-81/f4-before.log
+SWEEP committed reports/round-81/f_probe4.py
+SWEEP committed reports/round-81/noharm-diff.txt
+SWEEP committed reports/round-81/orphan_sweep2.py
+SWEEP committed reports/round-81/sweep-v1-red.log
+SWEEP committed reports/round-82
+SWEEP committed reports/round-82/ag-after.log
+SWEEP committed reports/round-82/ag_probe.py
+SWEEP committed reports/round-82/carryin-numstat.log
+SWEEP committed reports/round-82/census-after.log
+SWEEP committed reports/round-82/census-tip.log
+SWEEP committed reports/round-82/countgrep-red.log
+SWEEP committed reports/round-82/noharm-diff.txt
+SWEEP committed reports/round-82/orphan_sweep3.py
+SWEEP committed reports/round-82/preprobe-macho-shape.log
+SWEEP committed reports/round-83/ag-after.log
+SWEEP committed reports/round-83/ag-red.log
+SWEEP committed reports/round-83/census-after.log
+SWEEP committed reports/round-83/claims.md
+SWEEP committed reports/round-83/noharm-diff.txt
+SWEEP committed reports/round-83/orphan_sweep4.py
+SWEEP committed reports/round-83/preprobe-app-shape.log
+SWEEP committed reports/round-83/v3-prelanding-recon.log
+SWEEP committed reports/round-83/v4-postlanding-recon.log
+SWEEP committed reports/round-84/ag2-red.log
+SWEEP committed reports/round-84/census-after.log
+SWEEP committed reports/round-84/claims.md
+SWEEP committed reports/round-84/corrections.md
+SWEEP committed reports/round-84/freshstart-probes.log
+SWEEP committed reports/round-84/noharm-diff.txt
+SWEEP committed reports/round-84/orphan_sweep5.py
+SWEEP committed reports/round-84/preprobe-arc-shape.log
+SWEEP committed reports/round-84/v4-invisible-red.log
+SWEEP absent rerun-daemons.log | bare-token unmatched: no file named rerun-daemons.log under HEAD or the working tree
+SWEEP committed result-review.md | bare-token normalized: corpus/live/runs/round-54/result-review.md, corpus/live/runs/round-55/result-review.md, corpus/live/runs/round-56/result-review.md, corpus/live/runs/round-57/result-review.md
+SWEEP committed rev75_dump.java | bare-token normalized: reports/round-75/rev75_dump.java
+SWEEP absent-fleet revenger-art.md | bare-token normalized: fleet/.ufo/waves/kaika-w1/revenger-art.md
+SWEEP absent-fleet revenger-critic.md | bare-token normalized: fleet/.ufo/waves/kaika-w3/revenger-critic.md
+SWEEP committed review-plan.md | bare-token normalized: corpus/live/runs/round-31/review-plan.md, corpus/live/runs/round-32/review-plan.md
+SWEEP committed reviewer-oracle.md | bare-token normalized: .ufo/waves/kaika-r1/reviewer-oracle.md
+SWEEP committed reviewer-post.md | bare-token normalized: .ufo/waves/kaika-r1/reviewer-post.md
+SWEEP committed reviewer.md | bare-token normalized: corpus/live/runs/round-10/reviewer.md, corpus/live/runs/round-11/reviewer.md, corpus/live/runs/round-12/reviewer.md, corpus/live/runs/round-13/reviewer.md, corpus/live/runs/round-14/reviewer.md, corpus/live/runs/round-15/reviewer.md, corpus/live/runs/round-16/reviewer.md, corpus/live/runs/round-17/reviewer.md, corpus/live/runs/round-18/reviewer.md, corpus/live/runs/round-19/reviewer.md, corpus/live/runs/round-20/reviewer.md, corpus/live/runs/round-21/reviewer.md, corpus/live/runs/round-22/reviewer.md, corpus/live/runs/round-23/reviewer.md, corpus/live/runs/round-24/reviewer.md, corpus/live/runs/round-25/reviewer.md, corpus/live/runs/round-26/reviewer.md, corpus/live/runs/round-27/reviewer.md, corpus/live/runs/round-28/reviewer.md, corpus/live/runs/round-29/reviewer.md, corpus/live/runs/round-30/reviewer.md, corpus/live/runs/round-31/reviewer.md, corpus/live/runs/round-32/reviewer.md, corpus/live/runs/round-33/reviewer.md, corpus/live/runs/round-34/reviewer.md, corpus/live/runs/round-35/reviewer.md, corpus/live/runs/round-36/reviewer.md, corpus/live/runs/round-37/reviewer.md, corpus/live/runs/round-38/reviewer.md, corpus/live/runs/round-39/reviewer.md, corpus/live/runs/round-40/reviewer.md, corpus/live/runs/round-41/reviewer.md, corpus/live/runs/round-42/reviewer.md, corpus/live/runs/round-43/reviewer.md, corpus/live/runs/round-44/reviewer.md, corpus/live/runs/round-45/reviewer.md, corpus/live/runs/round-46/reviewer.md, corpus/live/runs/round-47/reviewer.md, corpus/live/runs/round-48/reviewer.md, corpus/live/runs/round-49/reviewer.md, corpus/live/runs/round-50/reviewer.md, corpus/live/runs/round-51/reviewer.md, corpus/live/runs/round-52/reviewer.md, corpus/live/runs/round-53/reviewer.md, corpus/live/runs/round-58/reviewer.md, corpus/live/runs/round-59/reviewer.md, corpus/live/runs/round-6/reviewer.md, corpus/live/runs/round-7/reviewer.md, corpus/live/runs/round-8/reviewer.md, corpus/live/runs/round-9/reviewer.md, reports/round-1/reviewer.md
+SWEEP committed round-1.md | bare-token normalized: corpus/lessons/round-1.md
+SWEEP committed round-36 | bare-token normalized: corpus/live/runs/round-36
+SWEEP committed round-39 | bare-token normalized: corpus/live/runs/round-39
+SWEEP absent-fleet round-60-verifier-spotcheck.md | bare-token normalized: fleet/chousa-shokunin/corpus/lessons/round-60-verifier-spotcheck.md, fleet/kake-shokunin/corpus/lessons/round-60-verifier-spotcheck.md, fleet/kama-shokunin/corpus/lessons/round-60-verifier-spotcheck.md (+16 more)
+SWEEP committed round-61-verifier-spotcheck.md | bare-token normalized: corpus/lessons/round-61-verifier-spotcheck.md
+SWEEP committed round-62-commonjs-require-name-evidence.md | bare-token normalized: .ufo/waves/round-62/falsify/frozen-candidates/round-62-commonjs-require-name-evidence.md, corpus/knowledge/round-62-commonjs-require-name-evidence.md
+SWEEP committed round-62-evm-dispatch-byte-evidence.md | bare-token normalized: .ufo/waves/round-62/falsify/frozen-candidates/round-62-evm-dispatch-byte-evidence.md, corpus/knowledge/round-62-evm-dispatch-byte-evidence.md
+SWEEP committed round-62.md | bare-token normalized: corpus/lessons/round-62.md
+SWEEP committed round-64.md | bare-token normalized: corpus/lessons/round-64.md
+SWEEP committed round-67.md | bare-token normalized: corpus/lessons/round-67.md
+SWEEP committed round-68-apk-axml-byte-evidence.md | bare-token normalized: corpus/knowledge/round-68-apk-axml-byte-evidence.md
+SWEEP committed round-71.md | bare-token normalized: corpus/lessons/round-71.md
+SWEEP committed round-72-tool-landscape.md | bare-token normalized: corpus/knowledge/round-72-tool-landscape.md
+SWEEP committed round-72-verifier-spotcheck.md | bare-token normalized: corpus/lessons/round-72-verifier-spotcheck.md
+SWEEP committed round-77-verifier-spotcheck.md | bare-token normalized: corpus/lessons/round-77-verifier-spotcheck.md
+SWEEP committed round-77.md | bare-token normalized: corpus/lessons/round-77.md
+SWEEP committed round-82.md | bare-token normalized: corpus/lessons/round-82.md
+SWEEP committed route.md | bare-token normalized: corpus/live/runs/round-29/route.md, corpus/live/runs/round-31/route.md, corpus/live/runs/round-32/route.md, corpus/live/runs/round-36/route.md
+SWEEP committed routing-assessment-run.json | bare-token normalized: .ufo/waves/fleet-round-1-interactive/routing-assessment-run.json
+SWEEP committed routing-contract.json | bare-token normalized: .ufo/waves/fleet-round-1-interactive/routing-contract.json
+SWEEP absent same.txt | bare-token unmatched: no file named same.txt under HEAD or the working tree
+SWEEP committed score.md | bare-token normalized: corpus/live/runs/round-29/score.md, corpus/live/runs/round-31/score.md, corpus/live/runs/round-32/score.md
+SWEEP committed scoring-review.md | bare-token normalized: corpus/live/runs/round-56/scoring-review.md, corpus/live/runs/round-57/scoring-review.md
+SWEEP committed seed.md | bare-token normalized: corpus/knowledge/seed.md
+SWEEP committed self_assessment_check.py | bare-token normalized: corpus/self_assessment_check.py
+SWEEP committed selftest-after.log | bare-token normalized: reports/round-79/selftest-after.log, reports/round-80/selftest-after.log
+SWEEP committed selftest-before.log | bare-token normalized: reports/round-79/selftest-before.log
+SWEEP committed selftest_probe.sh | bare-token normalized: reports/round-79/selftest_probe.sh
+SWEEP committed snapshots | bare-token normalized: corpus/snapshots
+SWEEP committed source-quotes-check.log | bare-token normalized: reports/round-72/source-quotes-check.log
+SWEEP committed source.bin | bare-token normalized: .ufo/waves/round-67/quarantine/S053/source.bin, .ufo/waves/round-67/quarantine/S054/source.bin, .ufo/waves/round-67/quarantine/S055/source.bin, .ufo/waves/round-67/quarantine/S058/source.bin, .ufo/waves/round-67/quarantine/S060/source.bin, .ufo/waves/round-67/quarantine/S061/source.bin, .ufo/waves/round-67/quarantine/S062/source.bin, .ufo/waves/round-67/quarantine/S063/source.bin, .ufo/waves/round-67/quarantine/S064/source.bin, .ufo/waves/round-67/quarantine/S075/source.bin, .ufo/waves/round-67/quarantine/S081/source.bin, .ufo/waves/round-67/quarantine/S085/source.bin, .ufo/waves/round-67/quarantine/S089/source.bin, .ufo/waves/round-67/quarantine/S092/source.bin, .ufo/waves/round-67/quarantine/S093/source.bin, .ufo/waves/round-67/quarantine/S094/source.bin, .ufo/waves/round-67/quarantine/S098/source.bin, .ufo/waves/round-67/quarantine/S099/source.bin, .ufo/waves/round-67/quarantine/S107/source.bin, .ufo/waves/round-67/quarantine/S108/source.bin, .ufo/waves/round-67/quarantine/S111/source.bin, .ufo/waves/round-67/quarantine/S113/source.bin
+SWEEP committed sources-census-before.log | bare-token normalized: reports/round-72/sources-census-before.log, reports/round-73/sources-census-before.log
+SWEEP absent-fleet spec.md | bare-token normalized: fleet/.ufo/waves/shokunin-train-20261015-w17/spec.md, fleet/kumitate-shokunin/.ufo/waves/round-63/build/K63RevengerDispatcher/spec.md, fleet/mado-shokunin/.ufo/waves/round-51/w1/ExecControlsC1/controls-c1/spec.md (+1 more)
+SWEEP committed staged-ids | bare-token normalized: .ufo/waves/round-67/assimilation/staged-ids, .ufo/waves/round-69/assimilation/staged-ids, .ufo/waves/round-70/assimilation/staged-ids
+SWEEP committed stderr.txt | bare-token normalized: corpus/live/runs/round-28/stderr.txt, corpus/live/runs/round-63/stderr.txt, corpus/live/runs/round-76/stderr.txt, corpus/live/runs/round-79/stderr.txt, corpus/live/runs/round-80/stderr.txt, corpus/live/runs/round-81/stderr.txt, corpus/live/runs/round-82/stderr.txt, corpus/live/runs/round-83/stderr.txt, corpus/live/runs/round-84/extract-artifact/stderr.txt, corpus/live/runs/round-84/inspect-artifact/stderr.txt, corpus/live/runs/round-85/inspect-managed-artifact/stderr.txt, corpus/live/runs/round-85/inspect-managed-members/stderr.txt, corpus/live/runs/round-85/inspect-managed-native-boundaries/stderr.txt
+SWEEP committed stdout.raw | bare-token normalized: corpus/live/runs/round-63/stdout.raw
+SWEEP committed streams.bin | bare-token normalized: .ufo/waves/round-67/quarantine/S093/streams.bin
+SWEEP committed string-layout.md | bare-token normalized: corpus/live/runs/round-32/string-layout.md
+SWEEP absent subject.digest.sha256 | bare-token unmatched: no file named subject.digest.sha256 under HEAD or the working tree
+SWEEP committed swarm-registry.json | bare-token normalized: .ufo/waves/round-61/build/swarm-registry.json, .ufo/waves/round-61/falsify-w3/swarm-registry.json, .ufo/waves/round-61/falsify/swarm-registry.json, .ufo/waves/round-62/build/swarm-registry.json, .ufo/waves/round-62/falsify/swarm-registry.json, .ufo/waves/round-63/build/swarm-registry.json, .ufo/waves/round-63/falsify/swarm-registry.json, .ufo/waves/round-67/swarm-registry.json, .ufo/waves/round-69/swarm-registry.json, .ufo/waves/round-70/w1/swarm-registry.json, .ufo/waves/round-70/w2/swarm-registry.json, .ufo/waves/round-71/w1/swarm-registry.json, .ufo/waves/round-71/w2/swarm-registry.json, .ufo/waves/round-72/w1/swarm-registry.json, .ufo/waves/round-73/v2/swarm-registry.json, .ufo/waves/round-73/w1/swarm-registry.json
+SWEEP committed sweep-post-landing.log | bare-token normalized: .ufo/waves/round-83/sweep-post-landing.log
+SWEEP committed sweep-pre-landing.log | bare-token normalized: .ufo/waves/round-83/sweep-pre-landing.log
+SWEEP committed sweep-real-after.log | bare-token normalized: reports/round-80/sweep-real-after.log
+SWEEP committed sweep-v1-red.log | bare-token normalized: reports/round-81/sweep-v1-red.log
+SWEEP committed sweep-v2-selftest-red.log | bare-token normalized: reports/round-82/sweep-v2-selftest-red.log
+SWEEP committed sweep2-real-after.log | bare-token normalized: reports/round-81/sweep2-real-after.log
+SWEEP committed sweep2-selftest-after.log | bare-token normalized: reports/round-81/sweep2-selftest-after.log
+SWEEP committed sweep3-mutant-kill.log | bare-token normalized: reports/round-82/sweep3-mutant-kill.log
+SWEEP committed sweep3-real-after.log | bare-token normalized: reports/round-82/sweep3-real-after.log
+SWEEP committed sweep3-selftest-after.log | bare-token normalized: reports/round-82/sweep3-selftest-after.log
+SWEEP committed sweep4-mutant-kill-after.log | bare-token normalized: reports/round-83/sweep4-mutant-kill-after.log
+SWEEP committed sweep4-real-after.log | bare-token normalized: reports/round-83/sweep4-real-after.log
+SWEEP committed sweep4-selftest-after.log | bare-token normalized: reports/round-83/sweep4-selftest-after.log
+SWEEP committed sweep5-mutant-kill-after.log | bare-token normalized: reports/round-84/sweep5-mutant-kill-after.log
+SWEEP committed sweep5-mutant-kill.log | bare-token normalized: reports/round-84/sweep5-mutant-kill.log
+SWEEP committed sweep5-real-after.log | bare-token normalized: reports/round-84/sweep5-real-after.log
+SWEEP committed sweep5-selftest-after.log | bare-token normalized: reports/round-84/sweep5-selftest-after.log
+SWEEP absent swgde-custody-authority-and-normative-scope.md | bare-token unmatched: no file named swgde-custody-authority-and-normative-scope.md under HEAD or the working tree
+SWEEP absent t.co | bare-token unmatched: no file named t.co under HEAD or the working tree
+SWEEP committed taskCall.json | bare-token normalized: .ufo/waves/round-67/taskCall.json
+SWEEP committed tip-verification.log | bare-token normalized: reports/round-75/tip-verification.log, reports/round-77/tip-verification.log, reports/round-78/tip-verification.log
+SWEEP committed tool-probes.md | bare-token normalized: reports/round-73/tool-probes.md
+SWEEP absent tool.task | bare-token unmatched: no file named tool.task under HEAD or the working tree
+SWEEP committed transform.js | bare-token normalized: corpus/fixtures/js-r3/transform.js, corpus/fixtures/js-r7-v2/transform.js
+SWEEP committed tree-review.md | bare-token normalized: corpus/live/runs/round-56/tree-review.md, corpus/live/runs/round-57/tree-review.md
+SWEEP absent treecommit.py | bare-token unmatched: no file named treecommit.py under HEAD or the working tree
+SWEEP committed truth-score.md | bare-token normalized: corpus/live/runs/round-1/wave/truth-score.md
+SWEEP committed truth.json | bare-token normalized: corpus/fixtures/apk-r65/truth.json, corpus/fixtures/app-r83/truth.json, corpus/fixtures/arc-r84/truth.json, corpus/fixtures/archive-r2/truth.json, corpus/fixtures/browser-r77/truth.json, corpus/fixtures/duplicate-r15/truth.json, corpus/fixtures/evm-r19/truth.json, corpus/fixtures/evm-r21/truth.json, corpus/fixtures/evm-r22/truth.json, corpus/fixtures/evm-r23/truth.json, corpus/fixtures/evm-r24/truth.json, corpus/fixtures/evm-r25/truth.json, corpus/fixtures/evm-r26/truth.json, corpus/fixtures/firmware-r63/truth.json, corpus/fixtures/keyed-r81/truth.json, corpus/fixtures/macho-r82/truth.json, corpus/fixtures/managed-r76/truth.json, corpus/fixtures/managed-r85/truth.json, corpus/fixtures/native-auth-r79/truth.json, corpus/fixtures/nested-r11/truth.json, corpus/fixtures/pe-r27/truth.json, corpus/fixtures/pe-r28/truth.json, corpus/fixtures/pe-r29/truth.json, corpus/fixtures/pe-r30/truth.json, corpus/fixtures/pe-r31/truth.json, corpus/fixtures/pe-r32/truth.json, corpus/fixtures/pe-r33/truth.json, corpus/fixtures/pe-r34/truth.json, corpus/fixtures/pe-r35/truth.json, corpus/fixtures/pe-r36/truth.json, corpus/fixtures/pe-r37/truth.json, corpus/fixtures/pe-r38/truth.json, corpus/fixtures/pe-r39/truth.json, corpus/fixtures/pe-r41/truth.json, corpus/fixtures/pe-r42/truth.json, corpus/fixtures/pe-r43/truth.json, corpus/fixtures/pe-r44/truth.json, corpus/fixtures/pe-r45/truth.json, corpus/fixtures/pe-r47/truth.json, corpus/fixtures/pe-r48/truth.json, corpus/fixtures/pe-r49/truth.json, corpus/fixtures/pe-r51/truth.json, corpus/fixtures/pe-r52/truth.json, corpus/fixtures/pe-r53/truth.json, corpus/fixtures/pe-r54/truth.json, corpus/fixtures/pe-r55/truth.json, corpus/fixtures/pe-r56/truth.json, corpus/fixtures/pe-r57/truth.json, corpus/fixtures/pe-r59/truth.json, corpus/fixtures/pe-r59d/truth.json, corpus/fixtures/pe-r75-headless-smoke/truth.json, corpus/fixtures/sqlite-r80/truth.json, corpus/training/bounty-triage/fixtures/truth.json
+SWEEP absent-fleet ufo-wave-policy-v2.json | bare-token normalized: fleet/scripts/hyaku/ufo-wave-policy-v2.json
+SWEEP absent-fleet unblob.log | bare-token normalized: fleet/shokunin-reverse-engineering/.ufo/waves/round-39/w2/artifacts/R39W2C1Fabricate/unblob-K1/unblob.log, fleet/shokunin-reverse-engineering/.ufo/waves/round-41/w1/artifacts/R41S126Durable/s126/unblob.log, fleet/shokunin-reverse-engineering/.ufo/waves/round-49/w1/C1RunMut/evidence/evid-base/v1be/unblob.log (+45 more)
+SWEEP committed unit-correction.json | bare-token normalized: .ufo/waves/round-62/falsify/unit-correction.json
+SWEEP committed utf16-unpaired-surrogates-in-resource-names.md | bare-token normalized: corpus/knowledge/utf16-unpaired-surrogates-in-resource-names.md
+SWEEP committed v2 | bare-token normalized: .ufo/waves/round-73/v2, corpus/fixtures/shapes-r12/v2
+SWEEP committed v2-dispatch.json | bare-token normalized: .ufo/waves/round-73/v2-dispatch.json
+SWEEP committed v2-plan.err | bare-token normalized: .ufo/waves/round-73/v2-plan.err
+SWEEP committed v2-plan.json | bare-token normalized: .ufo/waves/round-73/v2-plan.json
+SWEEP absent-fleet v2-results.json | bare-token normalized: fleet/kotoba-shokunin/.ufo/round-46/drafts/v2/v2-results.json
+SWEEP committed v2-run.err | bare-token normalized: .ufo/waves/round-73/v2-run.err
+SWEEP committed v2.ready | bare-token normalized: .ufo/waves/round-73/v2.ready
+SWEEP committed v3-prelanding-recon.log | bare-token normalized: reports/round-83/v3-prelanding-recon.log
+SWEEP committed v4-invisible-red.log | bare-token normalized: reports/round-84/v4-invisible-red.log
+SWEEP committed v4-postlanding-recon.log | bare-token normalized: reports/round-83/v4-postlanding-recon.log
+SWEEP committed v4-prelanding-recon.log | bare-token normalized: reports/round-83/v4-prelanding-recon.log
+SWEEP committed v5-red-unmatched-absent.log | bare-token normalized: reports/round-84/v5-red-unmatched-absent.log
+SWEEP absent-fleet verification.md | bare-token normalized: fleet/kama-shokunin/.ufo/waves/round-25/a2-falsify/out/ReviewerQualityKQ36/verification.md, fleet/kumitate-shokunin/.ufo/waves/round-52/build/RevInstrumentV1/verification.md, fleet/kumitate-shokunin/.ufo/waves/round-68/build/K68ScribeLedgerE/verification.md (+1 more)
+SWEEP committed verify_icon_languages.py | bare-token normalized: corpus/verify_icon_languages.py
+SWEEP committed verify_icon_states.py | bare-token normalized: corpus/verify_icon_states.py
+SWEEP committed verify_multi_icon_states.py | bare-token normalized: corpus/verify_multi_icon_states.py
+SWEEP committed verify_named_multi_icon_states.py | bare-token normalized: corpus/verify_named_multi_icon_states.py
+SWEEP committed vote-parser-control-a3.txt | bare-token normalized: .ufo/waves/round-71/vote-parser-control-a3.txt
+SWEEP committed w1 | bare-token normalized: .ufo/waves/round-70/w1, .ufo/waves/round-71/w1, .ufo/waves/round-72/w1, .ufo/waves/round-73/w1
+SWEEP committed w1-dispatch.json | bare-token normalized: .ufo/waves/round-70/w1-dispatch.json, .ufo/waves/round-71/w1-dispatch.json, .ufo/waves/round-72/w1-dispatch.json, .ufo/waves/round-73/w1-dispatch.json
+SWEEP committed w1.ready | bare-token normalized: .ufo/waves/round-70/w1.ready, .ufo/waves/round-71/w1.ready, .ufo/waves/round-72/w1.ready
+SWEEP committed w1.ready.attempt1-orphan | bare-token normalized: .ufo/waves/round-73/w1.ready.attempt1-orphan
+SWEEP committed w1.ready.partial | bare-token normalized: .ufo/waves/round-72/w1.ready.partial
+SWEEP committed w1.ready.partial.attempt1-orphan | bare-token normalized: .ufo/waves/round-73/w1.ready.partial.attempt1-orphan
+SWEEP committed w2-results.json | bare-token normalized: .ufo/waves/round-70/w2-results.json, .ufo/waves/round-71/w2-results.json
+SWEEP committed w2.ready | bare-token normalized: .ufo/waves/round-70/w2.ready, .ufo/waves/round-71/w2.ready
+SWEEP committed wave-plan-run.json | bare-token normalized: .ufo/waves/fleet-round-1-interactive/wave-plan-run.json
+SWEEP committed wave-spec.json | bare-token normalized: .ufo/waves/round-64/wave-spec.json, .ufo/waves/round-65/wave-spec.json, .ufo/waves/round-66/wave-spec.json, .ufo/waves/round-67/wave-spec.json, .ufo/waves/round-68/wave-spec.json, .ufo/waves/round-69/wave-spec.json
+SWEEP committed wiring-red-before.log | bare-token normalized: reports/round-70/wiring-red-before.log
+SWEEP committed zip-readout.out | bare-token normalized: .ufo/waves/round-63/build/zip-readout.out
+SWEEP_PARSER_GREP_A=0
+SWEEP_PARSER_GREP_B=0
+SWEEP_PARSER_GREP_AB=0
+SWEEP_BARE_TOKENS matched=369 unmatched_skipped=1743 unmatched_recorded_absent=26 fleet_resolved=22
+SWEEP_CORPUS fleet-reports=25 lessons=50 log=1
+CITED=1025 COMMITTED=965 LANDABLE_ORPHANS=0 ABSENT=60
+ORPHAN_SWEEP_LANDABLE=0
+v6_exit=0

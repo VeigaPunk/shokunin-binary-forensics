@@ -1316,3 +1316,79 @@ in the round lesson; a standing disposition ledger is operator-side if
 wanted); the six real sweep absents keep their recorded dispositions
 (ScoutAmp misroot, round-73/votes, w1.ready, .pyc, measurements.json,
 controls/A-H).
+
+## Round 85 (hyaku run 23) — the managed provider's full available set moves through three real oracle-checked producer records (criterion M, the r76 oracle-gate gap exposed); the orphan sweep learns the fleet-root bare-token class (v6 supersession)
+
+Carry-in first (r84 non-author closure, three routed status-neutral
+defects, all addressed before claim work — carry-in landings `ac91c05`
+EMPTY (treecommit absolute-path-args class, mined) → `9cadaed` →
+`acfb3b4`): (1) D1 wording precision —
+`reports/round-85/corrections.md` correction 1 (the bare-class rule:
+zero holds of the bare-token class only; the PATH-form twin row exists
+at `v4-invisible-red.log:637`; claims.md §C2 wording governs; no
+in-place rewrite of any r84 surface); (2) D2 — the post-adjudication
+sweep absolute landed as a committed file
+(`.ufo/waves/round-85/postadjudication-sweep.log`, run from the
+committed v5 blob over tip+fleet trees: `CITED=1024 COMMITTED=964
+LANDABLE_ORPHANS=0 ABSENT=60` exit 0, basis `SWEEP_CORPUS
+fleet-reports=25 lessons=50 log=1` cited first); (3) D3 — dual
+round-start census receipts (sanctioned exit 0, 21 W01 + 10 W04, zero
+E; literal exit 2, disclosed lineage), routed around.
+
+| axis / criterion | before → after score | evidence / command | measured commits | last change |
+|---|---|---|---|---|
+| coverage — managed-operation record depth, full available set (criterion M, registered this round; instrument `reports/round-85/mg_probe.py`, scan shape born v2.1 — rglob `inspection.json` by name) | **0/3 (0.00) → 3/3 (10.00)** on the registered instrument; frozen holds: r84 `A1V2_RECORDED=5/5 (10.00)`, r82 `A1_RECORDED=3/3 (10.00)`, r81 `F4_COVERAGE=10/11 (9.09)` unchanged over the same landing archive | before: `PYTHONUTF8=1 python -B reports/round-85/mg_probe.py <base-archive 8cf92f0>/corpus` → `mg-red.log` (0/3, all three unrecorded — the r76 artifact record predates the oracle-receipt gate, its receipt carries no `oracle` field, disclosed pre-freeze); after: same over the landing archive `8b49e2d` → `mg-after.log` (3/3 with all three recorded; the three oracles re-run over archive bytes `ORACLE OK (20/20)` + `(47/47)` + `(39/39)`; record stdout shas match the receipt pins; regen byte-identical from the archive generator) | `8cf92f0` (red) → `8b49e2d` (green) | **improved, C1 met** — three real producer records on the provider's managed side (`rea inspect-managed-artifact` Evidence `ev_0eea92d7…f796e2` 20/20; `rea inspect-managed-members` Evidence `ev_e5d7a0b9…ae359f4` 47/47; `rea inspect-managed-native-boundaries` Evidence `ev_2115d335…063890ba` 39/39; all exit 0, stderr 0 bytes) on the authored inert 1048-byte IL-only PE/CLI fixture (`corpus/fixtures/managed-r85/`: six tables, one real 7-byte tiny-header IL body `ldstr 0x70000001; ret`, one P/Invoke ImplMap row declaring `RunNative` from a `native.dll` string that names no existing library; generator `self_check()` re-opens the built bytes and re-derives every premise — regen byte-identical across scratch and landed builds; `truth.json` Q07 hypotheses frozen pre-run; `oracle_check.py` re-derives every BYTE-check value from the fixture bytes with its own independent CLI-image parser, negative control demonstrated pre-run — one mutated field flips the members oracle to `ORACLE FAILED (46/47)`). Denominator disclosure (pre-run): the provider declares exactly three available operations (S469 — no unsupported group, unlike artifact-graph's `inspect_asset_catalog`). Four fixture-authoring defects + three oracle-parser bugs caught by the preprobe cross-check BEFORE any committed run; the ImplMap coded-index error (row 1 with an IL body vs the P/Invoke row 2) is mined. Honest boundary: M saturates at 3/3 (saturation line 7.0); the moved quantity is the oracle-checked operation record, not family presence (F4) and not the artifact-graph criteria (which hold); nothing is loaded or executed (Q10 notes in all three LEDGERs) |
+| coverage — selected-family record presence F4 | 10/11 (9.09) → 10/11; android hard-gated (`REA_JADX_MCP_JAR` UNSET, no jadx on PATH, re-probed 2026-11-02 — S448 stands); the managed records do not move F4 (the managed family was already present) | `PYTHONUTF8=1 python -B reports/round-81/f_probe4.py <landing-archive>/corpus` | grep F4_COVERAGE (`mg-after.log`) | `8cf92f0` (red) → `8b49e2d` (green) | unchanged hold |
+| calibration — standing cited-evidence orphan sweep, v6 supersession (capability improvement, not a new capability) | no criterion score moves; the moved quantity is citation attribution: red pair over the SAME pre-landing tree (`v5-full-prelanding.log`: 48 unmatched recorded absent rows, `SWEEP absent MISSION.md \| bare-token unmatched: no file named MISSION.md under HEAD or the working tree` → `v6-full-prelanding.log`: `unmatched_recorded_absent=26 fleet_resolved=22`, `SWEEP absent-fleet MISSION.md \| bare-token normalized: fleet/MISSION.md`, PROTOCOL.md disclosing two fleet matches; gating values identical CITED=1024 COMMITTED=964 LANDABLE_ORPHANS=0 ABSENT=60) → resolved: real-tree pair over the committed adjudication tip from the committed blobs (`sweep6-real-after.log`: v5 48 absent rows vs v6 26+22, gating identical 1025/965/0/60, both exit 0, LANDABLE_ORPHANS=0) | `PYTHONUTF8=1 python -B reports/round-85/orphan_sweep6.py --selftest` (21 legs + pass, exit 0, `sweep6-selftest-after.log` from the committed blob) / `… --lane <lane-dir> --fleet <fleet-root> [--format full\|summary]`; v6 change 9: an unmatched extension-bearing bare token whose basename exists under the fleet root resolves `absent-fleet` (bare-token normalized, up to 3 matches shown, (+N more) beyond) instead of an unmatched absent row; SWEEP_BARE_TOKENS gains an always-printed fleet_resolved= term (SWEEP_CORPUS shape unchanged); absent-fleet never gates — exit codes 0/1/64 unchanged; ONE frozen sed mutant dies exit 1 attributed from the committed blob (`sweep6-mutant-kill-after.log`: `FLEET_BARE_RESOLUTION` → `selftest: fleet-bare resolution drifted (fleet-bare class)`, exactly line 115, mutated copy `8a1706ee…05a78`) | `acfb3b4`/`d27cf95` (red) → adjudication | **improved, C2 met** — `reports/round-85/orphan_sweep6.py` (sha `b2db45b0…f12b7`; v5 blob unchanged `d9a7ba17…46cb` re-verified): the r84 lesson's routed v6 candidate vector 2 ("a fleet-side basename resolution for absent-fleet bare tokens") closes inside the standing instrument. Counts remain per-revision-corpus (basis lines cited first). Supersession note for the capabilities table: the `cited-evidence orphan sweep` row's current instrument is v6 (this round's receipts), first-working round unchanged (r80) |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (seed 12 + readiness 6; knowledge files untouched) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` (`noharm-diff.txt` tail) | same | unchanged hold |
+| calibration — C2–C8 receipt guards, exit-2 gate, runnability; C/R/G/N criterion bytes | untouched; no verifier, gate, README or knowledge byte changed; v1–v5 sweep instruments + ag_probe + ag_probe2 + f_probe4 absent from the landing range (blob shas re-verified: v5 `d9a7ba17…46cb`) | no-harm diff receipt `reports/round-85/noharm-diff.txt` (protected paths empty on `d27cf95..8b49e2d`; 20 files, 1226 insertions, 0 deletions — additions only) | same | unchanged (no harm observed) |
+| separability | C1-only tree (pre-freeze base `acfb3b4` + fixture/records/mg_probe, no v6): M 3/3 (10.00) + oracle OK 47/47, v5/v6 ABSENT (`c1-only.log`); C2-only tree (base + v6 only): selftest 21 legs pass exit 0, fixture/records/mg_probe ABSENT (`c2-only.log`) | see the two logs | same | claims separable as frozen |
+| depth / operability / adjacency | no claim; no engine readiness claimed (Q05/Q10: the records demonstrate the built-in managed provider's static metadata decode of one authored inert image; nothing loaded, nothing executed; the provider's own limitations — nothing loaded/decompiled, P/Invoke declarations only — recorded as observed) | — | — | unchanged (ADJ-06 unchanged) |
+
+Capabilities: none added (M is a registered coverage criterion over the
+existing provider surface; v6 is a superseding measurement instrument
+over the existing registered capability — the `cited-evidence orphan
+sweep` row's current instrument becomes v6, first-working round
+unchanged r80; the managed records exercise REA's built-in
+rea-dotnet-static provider once — not a new analysis family owned by
+this lane).
+
+Sources: rows 468 → 471 (+S469 the M provider surface [own-work, tier
+A], +S470 the three records + fixture [own-work, tier A], +S471 the
+fleet-root bare-token class evidence [own-work, tier A]; all opened
+this round; C1 is sourced by S469+S470, C2 by S471; all appended inside
+the Registry directly after S468, NF=13 checked mid-flight). Census:
+round start sanctioned exit 0 (21 W01 + 10 W04, zero E — receipts
+landed with the carry-in; literal exit 2, disclosed r74–r84 lineage);
+round end receipts `reports/round-85/census-after.log`. Mistakes mined
+(full table `corpus/lessons/round-85.md`): the treecommit
+absolute-path-args empty commit (ac91c05 — caught by the mandated
+post-commit diff check), the treecommit absent-file-args silent skip
+(9cadaed carried 2 of 4 — same check, second catch), the ImplMap
+coded-index authoring error (caught by the preprobe boundaries record:
+member_token 0x06000001 + native_implementation_count 2 against one
+authored import), the ECMA metadata authoring triple (blob
+compressed-length prefixes; #US terminal flag 0x00; table numbers
+0x1A/0x1C — all caught by the producer's own preprobe outputs), the
+oracle-side parser bugs (rows at t+48; GUID (n-1)*16; table names —
+caught by the oracle-vs-preprobe cross-check, negative control re-run
+after the fixes), and the tail-line receipt assumption (f_probe4's
+score line is not its last line — caught by the end-of-content check).
+
+**planned:** next round — coverage: M is saturated (3/3); F android
+moves only if the caller-supplied `REA_JADX_MCP_JAR` appears (F4's
+honest exception stays 10/11); K stays blocked until the operator rules
+on the filed L0; calibration: criterion R full extension to the legacy
+receipt-quoting rows, or criterion N's mutation-killed attribution pair
+(both stay routed); candidate v7 sweep vector: per-source citation-sites
+accounting (the r84/r85 routed vector 1) — needs its own falsifiable
+red/green; routed, not declared.
+
+Routed forward: criterion R full extension; criterion N attribution
+pair; criterion C repair (§9); the class question (v6 lands as a
+capability supersession note, not a registry row); F android gate; K
+L0; census literal form (operator-side, lineage L0 landed r79); the v6
+recorded-absent rows' standing dispositions (field-path noise,
+historical unresolvable pointers — dispositioned in the round lesson);
+the treecommit repo-relative + file-exists + numstat-count rule (three
+variants of one class mined r78/r84/r85).

@@ -1,0 +1,41 @@
+# noharm-diff — freeze d27cf95..landing 8b49e2d (the claim-consequent range)
+# date: 2026-11-02T09:45:28Z
+
+== numstat (files changed, insertions, deletions) ==
+3	0	corpus/SOURCES.md
+-	-	corpus/fixtures/managed-r85/fixture.dll
+434	0	corpus/fixtures/managed-r85/generator.py
+321	0	corpus/fixtures/managed-r85/oracle_check.py
+89	0	corpus/fixtures/managed-r85/truth.json
+48	0	corpus/live/runs/round-85/inspect-managed-artifact/LEDGER.md
+1	0	corpus/live/runs/round-85/inspect-managed-artifact/inspection.json
+21	0	corpus/live/runs/round-85/inspect-managed-artifact/oracle.log
+33	0	corpus/live/runs/round-85/inspect-managed-artifact/receipt.json
+0	0	corpus/live/runs/round-85/inspect-managed-artifact/stderr.txt
+59	0	corpus/live/runs/round-85/inspect-managed-members/LEDGER.md
+1	0	corpus/live/runs/round-85/inspect-managed-members/inspection.json
+48	0	corpus/live/runs/round-85/inspect-managed-members/oracle.log
+33	0	corpus/live/runs/round-85/inspect-managed-members/receipt.json
+0	0	corpus/live/runs/round-85/inspect-managed-members/stderr.txt
+61	0	corpus/live/runs/round-85/inspect-managed-native-boundaries/LEDGER.md
+1	0	corpus/live/runs/round-85/inspect-managed-native-boundaries/inspection.json
+40	0	corpus/live/runs/round-85/inspect-managed-native-boundaries/oracle.log
+33	0	corpus/live/runs/round-85/inspect-managed-native-boundaries/receipt.json
+0	0	corpus/live/runs/round-85/inspect-managed-native-boundaries/stderr.txt
+TOTAL 20 files, 1226 insertions, 0 deletions
+
+== protected instruments absent from the range name-list ==
+(empty — no protected instrument byte changed)
+
+== protected surfaces empty ==
+corpus/README.md: untouched
+corpus/knowledge: untouched
+PROVINCE.md: untouched
+corpus/lessons: untouched
+SKILL.md: untouched
+SHONEN.md: untouched
+
+== freshness stored-assertion proxy (FRESH_ROWS) ==
+$ grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md
+C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/knowledge/seed.md:12
+C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/knowledge/2026-10-12-rea-readiness-checklist.md:6

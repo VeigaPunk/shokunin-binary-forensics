@@ -1,0 +1,41 @@
+# mg-after — the criterion M green receipt, over the landing archive 8b49e2d (committed bytes only)
+# date: 2026-11-02T09:37:36Z
+# instrument: reports/round-85/mg_probe.py (committed blob, sha 1840c30c…3ac03f)
+
+== M green ==
+$ PYTHONUTF8=1 python -I -B reports/round-85/mg_probe.py <landing-archive 8b49e2d>/corpus
+M_OP inspect_managed_artifact=inspect-managed-artifact
+M_OP inspect_managed_members=inspect-managed-members
+M_OP inspect_managed_native_boundaries=inspect-managed-native-boundaries
+M_RECORDED=3/3 score=10.00
+
+== frozen holds over the same archive ==
+$ PYTHONUTF8=1 python -I -B reports/round-84/ag_probe2.py <landing-archive>/corpus
+A1V2_RECORDED=5/5 score=10.00
+$ PYTHONUTF8=1 python -I -B reports/round-82/ag_probe.py <landing-archive>/corpus
+A1_RECORDED=3/3 score=10.00
+$ PYTHONUTF8=1 python -I -B reports/round-81/f_probe4.py <landing-archive>/corpus
+F4_FAMILIES=['archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']
+$ PYTHONUTF8=1 python -I -B reports/round-81/f_probe4.py <landing-archive>/corpus | grep F4_COVERAGE
+F4_COVERAGE=10/11 score=9.09
+
+== oracle re-runs over the landing-archive bytes ==
+$ python -I -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.json <landing-archive>/corpus/live/runs/round-85/inspect-managed-artifact/inspection.json <landing-archive>/corpus/fixtures/managed-r85/fixture.dll
+ORACLE OK (20/20 checks)
+  exit=0
+$ python -I -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.json <landing-archive>/corpus/live/runs/round-85/inspect-managed-members/inspection.json <landing-archive>/corpus/fixtures/managed-r85/fixture.dll
+ORACLE OK (47/47 checks)
+  exit=0
+$ python -I -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.json <landing-archive>/corpus/live/runs/round-85/inspect-managed-native-boundaries/inspection.json <landing-archive>/corpus/fixtures/managed-r85/fixture.dll
+ORACLE OK (39/39 checks)
+  exit=0
+
+== regen byte-identity from the archive generator ==
+$ python -I -B <landing-archive>/corpus/fixtures/managed-r85/generator.py regen-arc.dll
+wrote C:\Users\jpvei\.zcode\workspace\95b1ba4d-5089-47a4-9fd8-54adebbce2ae\scratch\revenger-r85\regen-arc.dll bytes=1048 sha256=94429fa428893dd78ed4b7f26a919232d5f05cc9cdc84d256954db5b0a286760
+REGEN BYTE-IDENTICAL to the landing-archive fixture
+
+== record stdout shas vs receipt pins ==
+inspect-managed-artifact stdout sha == receipt pin (90440ec14937849b60fe11d4eda26a51a504529ac31d6678da0be592a586dfc4)
+inspect-managed-members stdout sha == receipt pin (8d81f038652f05b8ac9450aa613efc7958fad8c0a73850ecac7acef5a691f6ac)
+inspect-managed-native-boundaries stdout sha == receipt pin (2217af2c5a22dcf7876b02ca3946c8a5f6fcfee9d944c70cbf15c1dc7586f33d)

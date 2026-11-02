@@ -1,0 +1,20 @@
+# c1-only separability receipt
+# tree = acfb3b4 archive (PRE-freeze carry-in landing) + C1 files only
+#   (corpus/fixtures/managed-r85/ + corpus/live/runs/round-85/ + mg_probe.py).
+# date: 2026-11-02T09:46:19Z
+
+== M green on the C1-only tree ==
+$ PYTHONUTF8=1 python -I -B reports/round-85/mg_probe.py <c1tree>/corpus
+M_OP inspect_managed_artifact=inspect-managed-artifact
+M_OP inspect_managed_members=inspect-managed-members
+M_OP inspect_managed_native_boundaries=inspect-managed-native-boundaries
+M_RECORDED=3/3 score=10.00
+exit=0
+
+== v6 ABSENT from the tree ==
+$ ls <c1tree>/reports/round-85/
+mg_probe.py  (only file; orphan_sweep6.py ABSENT)
+
+== members oracle over C1-only bytes ==
+$ python -I -B corpus/fixtures/managed-r85/oracle_check.py … <c1tree> paths …
+ORACLE OK (47/47 checks)  exit=0

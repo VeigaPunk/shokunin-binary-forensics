@@ -1,0 +1,18 @@
+# c2-only separability receipt
+# tree = acfb3b4 archive + orphan_sweep6.py only; corpus/fixtures/managed-r85/
+#   ABSENT; mg_probe.py ABSENT (reports/round-85/ carries only orphan_sweep6.py).
+# date: 2026-11-02T09:46:19Z
+
+== v6 selftest on the C2-only tree ==
+$ python -I -B <c2tree>/reports/round-85/orphan_sweep6.py --selftest
+SWEEP_SELFTEST_FLEET_BARE_RESOLVED=ok
+SWEEP_SELFTEST_FLEET_BARE_ABSENT_NEGATIVE=ok
+SWEEP_SELFTEST_FLEET_BARE_MUTANT_FLAGGED=ok (mutant=absent-row, vector=absent-fleet)
+SWEEP_SELFTEST=pass
+exit=0
+
+== C1 surfaces ABSENT from the tree ==
+$ ls <c2tree>/corpus/fixtures/managed-r85
+cannot access ... No such file or directory
+$ ls <c2tree>/reports/round-85/
+orphan_sweep6.py  (only file; mg_probe.py ABSENT)
