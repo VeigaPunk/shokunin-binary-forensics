@@ -1,0 +1,49 @@
+# revenger r86 GREEN receipt — orphan_sweep v7 over the fixed tree (completing session)
+# date: 2026-11-02 (adjudication, attempt 2; receipt-completion pattern, the r85 d14e4c8 precedent)
+# instrument: reports/round-86/orphan_sweep7.py run from its COMMITTED blob (25041d9),
+#   blob sha256 f955cd7d634f8aa4f61c1734195dd32c959e8d5f347f5cd320484360c1948618 (freeze pin)
+# primary tree: the COMMITTED adjudication tip 7254587d3ac5d045eb9908da5b76d5ff23c932ab
+#   (at the section-2 run time this receipt file did not exist on disk, so its then-pending
+#   LOG/lesson citation counted in ABSENT — the 62->63 movement vs section 1's landing
+#   state — and did not gate; see section 4 for the receipt's own post-write classification)
+# basis first: counts are per-revision-corpus; the SWEEP_CORPUS lines name each composition
+
+== section 1: the landing-time state (frozen claims: 'the landing-time state is
+   additionally receipted') — v7 committed blob over a scratch git repo built from
+   git archive 25041d9 (repo HEAD f31b3ec; the round lesson is not a landing byte) ==
+SWEEP_CORPUS fleet-reports=26 lessons=52 log=1
+SWEEP_SRC registry=disk rows=452 sites=495 cited=494 mismatch=0 absent=1
+SWEEP_SRC_ABSENT S472 -> corpus/lessons/round-86.md
+CITED=1050 COMMITTED=988 LANDABLE_ORPHANS=0 ABSENT=62
+ORPHAN_SWEEP_LANDABLE=0
+SECTION1_EXIT=0
+
+== section 2 (primary): the frozen counting command over the committed adjudication tip ==
+$ PYTHONUTF8=1 python -B <committed v7 blob> --lane <lane-dir> --fleet <fleet-root> --format summary | grep -E '^SWEEP_SRC '
+SWEEP_CORPUS fleet-reports=26 lessons=53 log=1
+SWEEP_SRC registry=disk rows=452 sites=495 cited=495 mismatch=0 absent=0
+CITED=1064 COMMITTED=1001 LANDABLE_ORPHANS=0 ABSENT=63
+ORPHAN_SWEEP_LANDABLE=0
+SECTION2_EXIT=0
+
+== section 3: the v6 blind leg at the tip (class absent from v6 by construction) ==
+# instrument: reports/round-85/orphan_sweep6.py from its committed blob, sha b2db45b07bc86ffd… (unchanged)
+$ PYTHONUTF8=1 python -I -B <committed v6 blob> --lane <lane-dir> --fleet <fleet-root> --format summary | grep -c SWEEP_SRC
+0
+
+== section 4: the receipt's own post-write classification (self-reference, disclosed) ==
+# after this file was written (but before its commit), a full-format re-run over the same
+# tip classifies it as the single landable orphan — the r84 sweep5-real-after precedent:
+#   SWEEP orphan sweep7-real-after.log | bare-token match never committed: reports/round-86/sweep7-real-after.log
+#   CITED=1064 COMMITTED=1001 LANDABLE_ORPHANS=1 ABSENT=62, exit 1
+# the row is this receipt's own then-pending commit; it is resolved by the receipt-completion
+# commit that lands this file; SWEEP_SRC stayed mismatch=0 absent=0 in the same run.
+
+# reading: red mismatch=6 over the pre-fix tree (sweep7-red-prelanding.log, same
+# instrument blob) -> green mismatch=0 over the fixed tree; the six rows closed by the
+# rule-2 pointer drops (usedby-fix-log.txt); rows=452 sites=495 cited=495 absent=0 over the
+# adjudication tip (S472's two pointers both cite); the landing-time state showed
+# mismatch=0 with the one expected S472->lesson absent row, disclosed in section 1.
+# provenance note: the first landing-state construction ran v7 over a non-git archive tree
+# and printed 'SWEEP_ERROR git ls-tree failed' exit 1 — invalid construction, discarded,
+# disclosed here; the section-1 numbers come from the proper landing-state git repo.
