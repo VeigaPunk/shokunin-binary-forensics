@@ -1,0 +1,4 @@
+# c1-only.log - r83 separability: pre-freeze base 60693f2 + C1 files only (fixture + record), no v4 instrument
+A1_RECORDED=3/3 score=10.00
+ORACLE OK (44/44 checks)
+orphan_sweep4 present: reports/round-83/orphan_sweep4.py: No such file or directory (ABSENT)

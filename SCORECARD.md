@@ -1161,3 +1161,79 @@ supersession note, not a registry row); F android gate; K L0; census literal
 form (operator-side, lineage L0 landed r79); the six real sweep absents keep
 their recorded dispositions (ScoutAmp misroot, round-73/votes, w1.ready,
 .pyc, measurements.json, controls/A-H).
+## Round 83 (hyaku run 22) — the artifact-graph family's third operation moves through a real interface-builder producer run (criterion A1 completion, `decode_interface_builder`); the orphan sweep learns the bare-filename citation class (v4 supersession)
+
+Base `60693f2ce6b086ea3f0ee84fe27a8f8a13d46f46` (r82 tip + non-author
+spot-check). Carry-in landing = the same `60693f2` (the r82 non-author
+closure's first obligation, addressed FIRST: the seven cited green
+receipts landed via treecommit explicit paths, the b1e0c60e class; the
+standing v3 sweep receipted both states, LANDABLE_ORPHANS=2 exit 1 → 0
+exit 0, `.ufo/waves/round-83/sweep-{pre,post}-landing.log`). Freeze
+`28e8c290235f2e6d588a9b81538b61ae50e533b7` (claims + sha-pinned v4
+instrument + red-befores + preprobe receipt). Landing
+`75298d427d97c5668753969fecf54d98630735b7` (fixture + producer record +
+S462–S465); final measured revision = the adjudication commit carrying
+this section. Two claims, distinct axes, causally separable, neither
+exploratory. Full gate, receipts and mistake mining:
+`corpus/lessons/round-83.md`.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — artifact-graph operation record depth (criterion A1, registered r82, instrument unchanged) | **2/3 (6.67) → 3/3 (10.00)**; the family-level instrument holds: `F4_COVERAGE=10/11 score=9.09` unchanged | before: `PYTHONUTF8=1 python -B reports/round-82/ag_probe.py <base-archive>/corpus` → `ag-red.log` (2/3, `decode_interface_builder=unrecorded`); after: same over the landing archive → `ag-after.log` (3/3 with `decode_interface_builder=round-83`) | `60693f2` (red) → `75298d4` (green) | **improved, C1 met** — one real `rea decode-interface-builder corpus/fixtures/app-r83/R83Sample.app --format json` run (rea 6.8.0, built-in `rea-artifact-graph` provider) on the authored inert two-document `.app` bundle (root-layout Info.plist 313 + typed-NIBArchive documents 213 + 79 bytes; generator 18/18 SELFCHECK re-parses the built bytes and re-derives every oracle-checked fact — table offsets, terminator-bit varints, class names, per-object typed values; regen byte-identical across three scratch builds); oracle `ORACLE OK (44/44 checks)` = 26 BYTE + 18 pre-registered Q07 HYP checks over the archive bytes (`corpus/live/runs/round-83/`, Evidence `ev_260481425d1a43fbbc0327c2033aafda8d7a51599c520a74b9985c3c550610f8`). Honest boundary: A1 saturates at 3/3 (saturation line 7.0); the moved quantity is the operation record, not family presence; android stays hard-gated — F4's honest exception is 10/11, not 11/11 |
+| calibration — standing cited-evidence orphan sweep, v4 supersession (capability improvement, not a new capability) | red (`v3-prelanding-recon.log`: committed v3 over the MINIMAL pre-landing reconstruction — fresh repo, HEAD=`c153e448` via fetch+update-ref, no checkout, disk = exactly the seven worktree receipts — exit 1, `LANDABLE_ORPHANS=2`, while SEVEN landable cited receipts exist on disk; five were cited by BARE filename, invisible to the lane-domain filter) → green: `SWEEP_SELFTEST=pass` 13/13 legs exit 0 (v3's nine + `SWEEP_SELFTEST_BARE_ORPHAN_FLAGGED` / `BARE_COMMITTED` / `BARE_UNMATCHED_SKIPPED` / `BARE_MUTANT_FLAGGED`; hermetic archive run, `sweep4-selftest-after.log`); frozen sed mutant dies exit 1 attributed (`selftest: bare-filename classification drifted (bare-token class)`, `sweep4-mutant-kill-after.log`, exactly one changed line 87); reconstruction resolved: v4 over the same tree with HEAD = the carry-in landing → `LANDABLE_ORPHANS=0` exit 0 (`v4-postlanding-recon.log`); real tree FULL output + `SWEEP_PARSER_GREP_A=0 _B=0 _AB=0` (each reproduced by its registered grep over the receipt bytes) + `SWEEP_BARE_TOKENS matched=291 unmatched_skipped=1366` + `SWEEP_CORPUS fleet-reports=23 lessons=46` + `CITED=677 COMMITTED=665 LANDABLE_ORPHANS=0 ABSENT=12` exit 0 (`sweep4-real-after.log`) | `PYTHONUTF8=1 python -B reports/round-83/orphan_sweep4.py --selftest` / `… --lane <lane-dir> --fleet <fleet-root> [--format full\|summary]`; bare-token normalization resolves each slash-less cited filename against the basename index of HEAD ∪ working tree; any never-committed candidate flags ORPHAN (conservative ambiguity: one committed match never launders a second uncommitted match under the same basename) | `60693f2`/`c153e448` (red) → adjudication | **improved, C2 met** — `reports/round-83/orphan_sweep4.py` (sha `f520f8d6…9701`; v3 blob unchanged `af64b4c5…b8748` re-verified over the landing archive): the class the r83 carry-in demonstrated live (five of seven cited receipts invisible to v3) closes inside the standing instrument (change 6: bare-filename receipt normalization + four mutation-checked vectors); the `SWEEP_CORPUS` count basis, full-output receipts and registered counting commands stand (v2 changes 3–4, v3 change 5); declared exits 0/1/64 unchanged; counts remain per-revision-corpus (basis lines cited first — this round's receipt discloses the corpus movements vs r82's: fleet-reports +1 = `round-82/revenger.md` landed 13:51 after the r82 receipt 13:28; lessons +2 = the live worktree carries the two r82 lesson files the r82 landing-archive extraction predated). Supersession note for the capabilities table: the `cited-evidence orphan sweep` row's current instrument is v4 (this round's receipts), first-working round unchanged (r80) |
+| coverage — knowledge-map ground K | 8/15 (5.3) → 8/15; C05 uncovered, C10 partial, C15 uncovered | not re-run — no README/knowledge byte changed (no-harm diff below); operator-blocked route (r74 L0 unanswered, re-read this round) | same | unchanged (blocked route, not attempted) |
+| coverage — selected-family record presence F4 | 10/11 (9.09) → 10/11; android hard-gated (`REA_JADX_MCP_JAR` UNSET, no jadx on PATH, re-probed 2026-11-01 — S448 stands); macho/signature providers `unsupported_host` re-probed | `PYTHONUTF8=1 python -B reports/round-81/f_probe4.py <landing-archive>/corpus` (`ag-after.log` tail) | same | unchanged hold (the r83 record is operation-level; the family was already present) |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (seed 12 + readiness 6; knowledge files untouched) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` (`noharm-diff.txt` tail) | same | unchanged hold |
+| calibration — C2–C8 receipt guards, exit-2 gate, runnability; C/R/G/N criteria bytes | untouched; no verifier, gate, README or knowledge byte changed; v1/v2/v3 criterion instruments blob/sha-identical (v3 `af64b4c5…b8748` re-verified over the landing archive; f_probe4 and ag_probe absent from the landing range) | no-harm diff receipt `reports/round-83/noharm-diff.txt` (protected paths empty on `28e8c29..75298d4`; 11 files changed, 757 insertions, 0 deletions — additions only) | same | unchanged (no harm observed) |
+| separability | C1-only tree (pre-freeze base `60693f2` + fixture/record, no v4): A1 3/3 + oracle OK 44/44, instrument ABSENT (`c1-only.log`); C2-only tree (base + v4, no fixture/record): selftest pass exit 0, fixture ABSENT, A1 holds 2/3 (`c2-only.log`) | see the two logs | same | claims separable as frozen |
+| depth / operability / adjacency | no claim; no engine readiness claimed (Q05/Q10: the record demonstrates the built-in provider's compiled-NIB decode of one authored inert two-document bundle; nothing executed; the producer's `hierarchy: unsupported` facet semantics recorded as observed, not explained) | — | — | unchanged (ADJ-06 unchanged) |
+
+Capabilities: none added (A1 completed on the r82 instrument unchanged;
+v4 is a superseding measurement instrument over the existing registered
+capability; the decode route is REA's built-in provider, exercised once
+— not a new analysis family owned by this lane).
+
+Sources: rows 461 → 465 (+S462 the interface-builder capability surface
+[own-work, tier A], +S463 the installed parser source [own-work, tier
+A: the lane's own installed tool source, read to derive the fixture
+layout], +S464 the producer record [own-work, tier A], +S465 the
+carry-in class evidence [own-work, tier A]; all opened this round; C1
+is sourced by S462+S463+S464, C2 by S465). Census: round start
+sanctioned exit 0, 31 W (21 W01 + 10 W04, same disclosed classes;
+literal exit 2, disclosed r74–r82 lineage); round end receipts
+`reports/round-83/census-after.log` (landing-archive census fires the
+expected E11 ×4 for S462–S465 used-by the lesson preceding it, resolved
+by this adjudication commit; worktree census exit 0, zero E). Mistakes
+mined (full table `corpus/lessons/round-83.md`): the LEB128 varint
+drafting error (caught by the M33 pre-probe: "NIBArchive variable
+integer is too long" — the terminator-bit encoding is the inverse of
+LEB128), check-from-intent (the SELFCHECK's own varint leg + a
+hardcoded 211-byte size were wrong while the bytes were right; the
+derived sizes are 213/79), count-from-intent twice in one round (282→
+313 plist bytes in the claims draft; 7507→9012 stdout bytes in the
+LEDGER draft — both caught by measure-before-write), the CRLF-mutant
+class (the scratch v4 was CRLF so the sed mutant silently normalized
+line endings; normalized to LF first, mutant regenerated from the
+committed bytes — exactly one changed line), the separability-tree base
+error (first c1-only built from the freeze, which already contains v4;
+rebuilt from the pre-freeze base), and the killed-run census receipt
+artifact (backgrounded at a 120 s timeout → false exit 1 with a clean
+"ok" output; re-run foreground, exit 0).
+
+**planned:** next round — coverage: A1 is saturated (3/3); F android
+moves only if the caller-supplied `REA_JADX_MCP_JAR` appears (F4's
+honest exception stays 10/11); K stays blocked until the operator rules
+on the filed L0; calibration: criterion R full extension to the legacy
+receipt-quoting rows, or criterion N's mutation-killed attribution pair
+(both stay routed); a possible sweep v5 corpus expansion (LOG.md as a
+citation corpus) needs its own falsifiable red/green — routed, not
+declared.
+
+Routed forward: criterion R full extension; criterion N attribution
+pair; criterion C repair (§9); the class question (v4 lands as a
+capability supersession note, not a registry row); F android gate; K
+L0; census literal form + census shell-timeout note (operator-side,
+lineage L0 landed r79); the LOG.md corpus blind spot (v4 covers fleet
+reports + lessons; LOG.md is still not scanned); the six real sweep
+absents keep their recorded dispositions (ScoutAmp misroot,
+round-73/votes, w1.ready, .pyc, measurements.json, controls/A-H).

@@ -1,0 +1,24 @@
+# census-after.log - r83 round-end census receipts (2026-11-01)
+== form 1: sanctioned explicit-lane-dir form over the worktree (SKILL.md 4a), round end ==
+sanctioned_exit=0
+W0_lines: 31 (21 W01 + 10 W04, the same disclosed classes as round start and r74-r82)
+E_lines: 0 (zero E-findings; S462-S465 used-by paths resolve on the worktree - the lesson landed with this adjudication)
+shokunin-binary-forensics	ok	.../fleet/shokunin-binary-forensics/corpus/SOURCES.md
+== form 2: contract literal form (expected exit 2, disclosed r74-r82 lineage) ==
+literal_exit=2
+ERROR: unknown lane (not a dir, not in conf or root): revenger
+(the consolidation L0 line landed r79; routed around again this round)
+== form 3: landing-archive-bytes census (75298d427d97c5668753969fecf54d98630735b7) ==
+archive_exit=1 -- E11 x4, the expected intermediate state (same shape as r80's S455, r81's S457/S458, r82's S459-S461):
+census-arch	E11	S462 missing used-by corpus/lessons/round-83.md
+census-arch	E11	S463 missing used-by corpus/lessons/round-83.md
+census-arch	E11	S464 missing used-by corpus/lessons/round-83.md
+census-arch	E11	S465 missing used-by corpus/lessons/round-83.md
+(the lesson lands WITH the adjudication commit, after the landing the census ran over; all four rows' used-by then resolve - verified: touching the lesson in the extraction reruns the census with zero E11; resolved-by = the adjudication)
+archive_W0_lines: 31 (21 W01 + 10 W04, same disclosed classes; zero E other than the four E11)
+== row counts ==
+worktree_rows: 465
+landing_rows: 465
+== round-start receipts ==
+sanctioned: census-round-start-sanctioned2.log exit 0 (31 W = 21 W01 + 10 W04; first backgrounded attempt killed at a 120s shell timeout printed a false exit 1 with the same clean output - mined in the lesson)
+literal: census-round-start.log exit 2 (known lineage)

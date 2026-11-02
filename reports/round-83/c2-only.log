@@ -1,0 +1,4 @@
+# c2-only.log - r83 separability: pre-freeze base 60693f2 + reports/round-83/orphan_sweep4.py only, no C1 fixture/record
+SWEEP_SELFTEST=pass (selftest exit=0)
+app-r83 fixture present: cannot access 'corpus/fixtures/app-r83': No such file or directory (ABSENT)
+A1_RECORDED=2/3 score=6.67 (ag_probe hold: the calibration tree moves no coverage byte)

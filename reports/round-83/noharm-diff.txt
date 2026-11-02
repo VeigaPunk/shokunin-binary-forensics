@@ -1,0 +1,9 @@
+# noharm-diff.txt - r83: full range ad83-freeze..landing (28e8c290235f2e6d588a9b81538b61ae50e533b7..75298d427d97c5668753969fecf54d98630735b7; declared files only, all additions)
+11 files changed, 757 insertions(+)
+== protected paths diff (must be empty) ==
+
+== protected-paths diff exit=0 (empty above = clean) ==
+== frozen instruments absent from the range name-only list: reports/round-80/orphan_sweep.py, reports/round-81/orphan_sweep2.py, reports/round-81/f_probe4.py, reports/round-82/orphan_sweep3.py, reports/round-82/ag_probe.py (v1/v2/v3 sweep + f4 + A1 instruments byte-untouched; v3 blob sha re-verified under sweep4-real-after.log) ==
+== FRESH_ROWS ==
+corpus/knowledge/seed.md:12
+corpus/knowledge/2026-10-12-rea-readiness-checklist.md:6
