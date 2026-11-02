@@ -1454,3 +1454,67 @@ pair; criterion C repair (§9); F android gate; K L0; census literal form
 re-confirmation (operator-side, now naming the r86 SKILL.md bytes);
 treecommit repo-relative + file-exists + numstat-count rule (held: 10/10
 freeze, 3/3 landing).
+
+## Round 87 (hyaku) — criterion N's mutation-killed attribution pair lands on the negctl harness itself (instrument v2 supersedes the never-registered r75 harness); the criterion-N instrument gets its registry row
+
+Base `1306ec9ac32a4d4477cc15049c1d09e326ecac5a` (r86 tip + non-author
+spot-check). Freeze `ea143a3a0f93db8e054395bdaa29645f17db6bd2` (claims +
+sha-pinned instruments + reds + dual census receipts, committed before any
+landing or after-run). Landing `1fa086d3ad6d91dd30bd5bc0adf2e225585c5f54`
+(SKILL.md registry row + S473; 2 files, 12 insertions, 0 deletions);
+final measured revision = the adjudication commit carrying this section.
+ONE claim, calibration, not exploratory, with counting commands. The r86
+carry-in (clean, three status-neutral items) is addressed first: dual
+round-start census receipts again (`.ufo/waves/round-87/census-round-start-{sanctioned,literal}.log`;
+sanctioned exit 0, 21 W01 + 10 W04, zero E; literal exit 2, disclosed
+r74–r87 lineage, L0 r79 stands); SHONEN box 1 routing re-recorded (the
+standing non-author re-confirmation now names the r87 SKILL.md bytes —
+author marks no box); the coverage unreachability routing re-probed fresh
+2026-11-02 (freshstart probes 1/3/6/6b). Full gate, receipts and mistake
+mining: `corpus/lessons/round-87.md`.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| calibration — criterion-N instrument self-test conformance + registry visibility (the routed r75-planned-(b) "mutation-killed attribution pair on the negctl harness itself"; the moved quantity is the instrument's ability to show it can fail, plus registry visibility — the criterion-N score itself stays 10.0 held, scored r75, exactly like the r79 receipt_probe2 registration) | red (`negctl-red.log`, over the frozen v1 bytes `eb5d1b54…3fad` = base bytes, never touched: `NEG_SELFTEST_MODE_PRESENT=0/1`, `NEG_SELFTEST_MUTANTS_KILLED_ATTRIBUTED=0/2`, `NEG_USAGE_EXIT64=0/1`, exit 1; v1 blindness markers `usage:`/`NEGCTL_V2_SELFTEST`/`stale_flag_ok`/`attribution guard` all grep 0; the v1 harness's own plain legs GREEN at the same bytes — `negctl-v1-baseline.log` exit 0 — the contrast IS the routed debt) → green (`negctl-green.log`, from the committed blob over the landing tip: `1/1 · 2/2 · 1/1`, exit 0); SKILL.md §Gate registry rows 7 → 8 | `bash reports/round-87/selftest_probe.sh reports/round-87/probe_negctl2.sh; echo $?` (red twin: same command over `reports/round-75/probe_negctl.sh`); `sed -n '/^## Gate registry/,/^## 7\./p' SKILL.md \| grep -cE '^\| name \|'` | `1306ec9` (red state = frozen v1 bytes; instruments land at freeze `ea143a3a`) → `1fa086d3` (green) | **improved, C1 met** — `reports/round-87/probe_negctl2.sh` (sha `d7027146…070d`, frozen at the freeze) supersedes `reports/round-75/probe_negctl.sh` as the criterion-N registered instrument (v1 never registered — the same gap the round-78 registration closed for R/G; v1 bytes stay frozen unregistered): plain mode v1-identical (same frozen P1/P2 fixtures, same legs, byte-identical value lines — `plain-equal.log` diff empty, both exit 0, host ghidra presence + the PROVINCE.md present-record block disclosed as plain-mode dependencies); `--selftest` hermetic (synthetic verdict vectors only — no fixture build, no probe run, no producer call; expected finding-ids `NEGCTL_SELFTEST_FALSEPASS_LOGIC=ok`, `NEGCTL_SELFTEST_ATTRIBUTION_GUARD=ok`, `NEGCTL_SELFTEST_STALE_LOGIC=ok`, `NEGCTL_SELFTEST_UNRECORDED_LOGIC=ok`, last line `NEGCTL_V2_SELFTEST=pass`); usage exit 64 declared; THE PAIR: mutant A (`stale_flag_ok` blinded to `return 0`, exactly line 35, mutated sha `f70c0e9a…9a99`) dies exit 1 attributed `selftest: stale-record verdict accepted a false-pass`, mutant B (attribution pattern relaxed to `.*`, exactly line 35, mutated sha `ec29099c…39cb`) dies exit 1 attributed `selftest: attribution guard accepted an unattributed kill` — deterministic ST1→ST2 ordering gives each mutant its own message; both deaths + diffs + shas re-derived from the committed blob (`negctl-mutant-kill-after.log`, all three shas match the claims pins); counting instrument `reports/round-87/selftest_probe.sh` (sha `ed0b3282…87ed`, r79 shape) |
+| coverage — M/A1/A1v2/F4/K (all criteria; the lowest non-retired axis, routed this round on fresh receipts) | F4 10/11 → 10/11 (android hard-gated, re-probed: `REA_JADX_MCP_JAR` UNSET, no jadx on PATH — S448 stands); M 3/3, A1 3/3, A1v2 5/5 frozen holds re-run over the landing archive `1fa086d3` (`holds-over-landing-archive.log`, all probe exits 0 — probe blob pins mg `1840c30c…`, f4 `4d871971…`, ag2 `f9772ab1…`, ag(r82) via committed blob); K 8/15 untouched (operator-blocked, L0 r74 re-read unanswered); asset-catalog macOS-gated (7 unsupported_host groups, sentinel unchanged; the loose-pattern 31 disclosed + mined) | `PYTHONUTF8=1 python -B reports/round-85/mg_probe.py <archive>/corpus` + `reports/round-81/f_probe4.py` + `reports/round-84/ag_probe2.py` + the r82 `ag_probe.py` from the committed blob over the `1fa086d3` archive | `1306ec9` (base) → `1fa086d3` (landing) | unchanged hold — the lowest-axis obligation routes on documented unreachability (freshstart probes receipted 2026-11-02; the stagnation nudge does NOT apply: K 5.3 < 7.0), not on the nudge |
+| freshness — stored-assertion proxy | 18/18 → 18/18 (seed 12 + readiness 6; knowledge files untouched) | `grep -cE '^\| [FK][0-9]+ .*\| (holds\|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md` (`holds-over-landing-archive.log`) | same | unchanged hold |
+| calibration — C2–C8 receipt guards, exit-2 gate, runnability; C/R/G criterion bytes | untouched; no verifier byte changed; the v1 negctl harness, P1/P2 province probes and all standing instruments absent from the landing diff | no-harm diff receipt `reports/round-87/noharm-diff.txt` (freeze `ea143a3a`..landing `1fa086d3`: 2 files, 12 insertions, 0 deletions — SKILL.md additions only, SOURCES.md limited to the S473 append; protected paths empty) | same | unchanged (no harm observed) |
+| separability | C1-only tree (archive of base `1306ec9` + the two instruments ONLY — no SKILL registry row, no S473): green 1/1 · 2/2 · 1/1 exit 0 with base-state markers (7 registry rows, S473 absent), plain diff empty (`c1-only.log`) — the single claim's instruments read nothing outside their own bytes and the v1 fixture inputs | see the receipt | same | single claim; instruments independent of the registration bytes |
+| depth / operability / adjacency | no claim; depth ground grows by the registration row (additions only, the round-78 precedent shape); no engine readiness claimed (plain-mode host dependencies disclosed, Q05) | — | — | unchanged (ADJ-06 unchanged; PROVINCE byte-unchanged) |
+
+Capabilities: none added (the v2 instrument supersedes the existing
+criterion-N instrument; no new analysis family, no new capability row).
+
+Sources: rows 472 → 473 (+S473 the criterion-N instrument-blindness
+evidence [own-work, tier A], opened this round; C1 is sourced by S473;
+appended inside the Registry directly after S472, NF=13 checked at
+landing, 0 malformed, 0 duplicates). Census: round start sanctioned exit
+0 (21 W01 + 10 W04, zero E; literal exit 2, disclosed lineage); round end
+receipts `.ufo/waves/round-87/census-round-end-{sanctioned,literal}.log`
+(sanctioned exit 0, 31 W, zero E; literal exit 2). Mistakes mined (full
+table `corpus/lessons/round-87.md`, five rows): the loose-pattern
+counting (sentinel 31 vs registered 7 — captured by the prior-receipt
+cross-check), the mutant-recipe over-escaping (`\\\\^` never matched; the
+unapplied mutant passed its own selftest — captured by the preprobe), the
+command-substitution newline stripping (`$(git show …)` via printf
+changed the pinned shas — captured by the pin-vs-receipt check), the
+grep-piped exit attribution (grep exits recorded as probe exits + the
+missed A1 leg — captured by the r86 receipt's structure as reference,
+overwritten before landing), and the `paste -sd:")"` transcription drift
+(bash -n caught the syntax error).
+
+**planned:** next round — coverage stays routed until an operator ruling
+changes a gate (F android jar, K L0) or a provider surface moves (the 7
+unsupported_host groups are the sentinel); calibration: criterion R full
+extension to the legacy receipt-quoting rows, or a newly named class
+(N's class space is closed this round); depth: the registry-edit reader
+checklist stays conditional on a drift recurrence; the considerthese Q16
+self-map checker stays routed (consumers operator-blocked).
+
+Routed forward: criterion R full extension; criterion C repair (§9);
+F android gate; K L0; census literal form (operator-side, lineage L0
+r79); SHONEN box 1 non-author re-confirmation (operator-side, naming the
+r87 SKILL.md bytes); treecommit repo-relative + file-exists + numstat
+rule (held: 11/11 freeze, 2/2 landing); the criterion-instrument class
+question (P-class probes) stays routed (r78 registry note — this round
+registered the criterion-N verdict instrument, gate-class like R/G).

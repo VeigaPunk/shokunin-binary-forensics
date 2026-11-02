@@ -1,0 +1,15 @@
+# c1-only.log - r87 separability: archive of base 1306ec9ac32a4d4477cc15049c1d09e326ecac5a + the two claim instruments ONLY (no SKILL registry row, no S473), 2026-11-02
+
+== base-state markers in this tree (SKILL registry rows and S473 must be at base values)
+registry rows (expect 7): 7
+S473 present (expect 0): 0
+
+== the claim instruments run green in this tree
+$ bash reports/round-87/selftest_probe.sh reports/round-87/probe_negctl2.sh
+NEG_SELFTEST_MODE_PRESENT=1/1
+NEG_SELFTEST_MUTANTS_KILLED_ATTRIBUTED=2/2
+NEG_USAGE_EXIT64=1/1
+C1ONLY_EXIT=0
+
+== plain mode identical in this tree
+PLAIN_DIFF=empty

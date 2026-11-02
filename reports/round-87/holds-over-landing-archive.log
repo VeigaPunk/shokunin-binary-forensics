@@ -1,0 +1,34 @@
+# holds-over-landing-archive.log - r87 frozen holds over the landing archive (1fa086d3ad6d91dd30bd5bc0adf2e225585c5f54), 2026-11-02
+
+== probe blob pins (frozen instruments, absent from the landing range)
+reports/round-85/mg_probe.py 1840c30cf4f1cad0
+reports/round-81/f_probe4.py 4d871971fa49131f
+reports/round-84/ag_probe2.py f9772ab1428ebe6e
+
+== M (criterion M, mg_probe over the archive corpus)
+M_RECORDED=3/3 score=10.00
+M_PROBE_EXIT=0
+
+== F4 (f_probe4 over the archive corpus)
+F4_COVERAGE=10/11 score=9.09
+F4_PROBE_EXIT=0
+
+== A1v2 + A1 (ag_probe2 over the archive corpus; full label set printed)
+A1V2_RECORDED=5/5 score=10.00
+AG_PROBE_EXIT=0
+
+== freshness stored-assertion proxy (12 + 6 = 18)
+corpus/knowledge/2026-10-12-rea-readiness-checklist.md:6
+corpus/knowledge/seed.md:12
+
+== K held rows (carried constant)
+K_HELD_BACKED=8/15
+K_PROBE_EXIT=0
+
+--- ag_probe (r82 A1 hold) ---
+# command: PYTHONUTF8=1 python -I -B <git show 1fa086d3ad6d91dd30bd5bc0adf2e225585c5f54:reports/round-82/ag_probe.py> <archive>/corpus
+A1_OP decode_interface_builder=round-83
+A1_OP inspect_keyed_archive=round-81
+A1_OP trace_dylib_resolution=round-82
+A1_RECORDED=3/3 score=10.00
+A1_PROBE_EXIT=0

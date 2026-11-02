@@ -1,0 +1,33 @@
+# negctl-mutant-kill-after.log - r87 C1 mutation receipts, both mutants applied to the committed blob (git show 1fa086d3ad6d91dd30bd5bc0adf2e225585c5f54:reports/round-87/probe_negctl2.sh), 2026-11-02
+
+== committed blob identity (byte-preserving redirect)
+d70271464a437a6c0de598237a603cc50498458a14c94e37f8df2edf7e03070d *C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/scratch/revenger-r87/landing/negctl-mk/v2.sh
+(claims.md pin: d70271464a437a6c0de598237a603cc50498458a14c94e37f8df2edf7e03070d)
+
+== mutant A (verdict blind): sed 's|^stale_flag_ok() {.*|stale_flag_ok() { return 0; }|'
+35c35
+< stale_flag_ok() { [ "$1" = "1" ] && printf '%s\n' "$2" | grep -Eq '^engine-ghidra .*STALE-RECORD'; }
+---
+> stale_flag_ok() { return 0; }
+diff-lines=1 (exactly line 35)
+f70c0e9aceb72323550b4d3732edaa39013498fc2607b286f0adeddf49c79a99 *C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/scratch/revenger-r87/landing/negctl-mk/mutA.sh
+(claims.md pin: f70c0e9aceb72323550b4d3732edaa39013498fc2607b286f0adeddf49c79a99)
+NEGCTL_V2_SELFTEST=fail (ST1: false-pass accepted)
+selftest: stale-record verdict accepted a false-pass
+MUTA_EXIT=1
+
+== mutant B (attribution pattern relaxed): recipe as embedded in selftest_probe.sh
+35c35
+< stale_flag_ok() { [ "$1" = "1" ] && printf '%s\n' "$2" | grep -Eq '^engine-ghidra .*STALE-RECORD'; }
+---
+> stale_flag_ok() { [ "$1" = "1" ] && printf '%s\n' "$2" | grep -Eq '.*'; }
+diff-lines=1 (exactly line 35)
+ec29099cf02b9d10b4a9f15368e22d0ed0977d667b0e83969eedf1ffdce439cb *C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/scratch/revenger-r87/landing/negctl-mk/mutB.sh
+(claims.md pin: ec29099cf02b9d10b4a9f15368e22d0ed0977d667b0e83969eedf1ffdce439cb)
+NEGCTL_SELFTEST_FALSEPASS_LOGIC=ok
+NEGCTL_V2_SELFTEST=fail (ST2: unattributed kill accepted)
+selftest: attribution guard accepted an unattributed kill
+MUTB_EXIT=1
+
+attribution rule: a kill counts only with the exact last line - mutant A ends 'selftest: stale-record verdict accepted
+a false-pass', mutant B ends 'selftest: attribution guard accepted an unattributed kill'. A crash or an unrelated assertion is not attributed.

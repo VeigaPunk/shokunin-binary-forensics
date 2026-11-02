@@ -1,0 +1,30 @@
+# noharm-diff.txt - r87 no-harm receipt, 2026-11-02
+
+== freeze..landing (ea143a3a..1fa086d3) — the claim's fix bytes: exactly two files, additions only
+ SKILL.md          | 11 +++++++++++
+ corpus/SOURCES.md |  1 +
+ 2 files changed, 12 insertions(+)
+total: 12 insertions, 0 deletions
+
+== protected paths over the full round range (1306ec9a..1fa086d3) — each must print nothing
+protected-paths scan done (nothing above = empty)
+
+== full range file list (base..landing tip)
+A	.ufo/waves/round-87/census-round-start-literal.log
+A	.ufo/waves/round-87/census-round-start-sanctioned.log
+M	SKILL.md
+M	corpus/SOURCES.md
+A	reports/round-87/claims.md
+A	reports/round-87/freshstart-probes.log
+A	reports/round-87/green-prelanding.log
+A	reports/round-87/mutants-prelanding.log
+A	reports/round-87/negctl-red.log
+A	reports/round-87/negctl-v1-baseline.log
+A	reports/round-87/plain-equal-prelanding.log
+A	reports/round-87/probe_negctl2.sh
+A	reports/round-87/selftest_probe.sh
+
+== SOURCES.md limited to the S473 append (rows 472 -> 473)
+2
+1
+(added-lines / removed-lines for SOURCES.md; one added row, zero removed)

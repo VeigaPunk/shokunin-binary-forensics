@@ -1,0 +1,14 @@
+# negctl-green.log - r87 C1 green receipt, run from the committed v2 blob over the committed landing tip 1fa086d3ad6d91dd30bd5bc0adf2e225585c5f54, 2026-11-02
+
+== committed blob identity
+d70271464a437a6c0de598237a603cc50498458a14c94e37f8df2edf7e03070d *-
+(claims.md pin: d70271464a437a6c0de598237a603cc50498458a14c94e37f8df2edf7e03070d)
+
+== the frozen counting instrument over the v2 instrument (committed bytes, producer dir stripped from PATH inside the probe)
+$ bash reports/round-87/selftest_probe.sh reports/round-87/probe_negctl2.sh
+NEG_SELFTEST_MODE_PRESENT=1/1
+NEG_SELFTEST_MUTANTS_KILLED_ATTRIBUTED=2/2
+NEG_USAGE_EXIT64=1/1
+GREEN_EXIT=0
+
+expected green values (pinned in claims.md): NEG_SELFTEST_MODE_PRESENT=1/1, NEG_SELFTEST_MUTANTS_KILLED_ATTRIBUTED=2/2, NEG_USAGE_EXIT64=1/1, exit 0.
