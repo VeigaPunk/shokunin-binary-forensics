@@ -1,0 +1,27 @@
+# sweep5-mutant-kill.log - r84 C2 frozen sed mutants, demonstration at the freeze (2026-11-02, from the worktree bytes sha d9a7ba174ce3c30a4414fcebe8e074ea00d58bfce4cfbf2c2cdb76f888ca46cb)
+# each mutant: one substitution, diff shows exactly one changed line pair; --selftest must die exit 1 with the attributed last line
+== mutant 1: BARE_TOKEN_CLASSIFICATION = True -> False (the r83 change-6 recipe, unchanged) ==
+102c102
+< BARE_TOKEN_CLASSIFICATION = True
+---
+> BARE_TOKEN_CLASSIFICATION = False
+exit=1
+last: selftest: bare-filename classification drifted (bare-token class)
+== mutant 2: UNMATCHED_BARE_ABSENT = True -> False ==
+104c104
+< UNMATCHED_BARE_ABSENT = True
+---
+> UNMATCHED_BARE_ABSENT = False
+exit=1
+last: selftest: unmatched-absent recording drifted (unmatched-absent class)
+== mutant 3: LOG_CORPUS = True -> False ==
+106c106
+< LOG_CORPUS = True
+---
+> LOG_CORPUS = False
+exit=1
+last: selftest: log-corpus collection drifted (log-corpus class)
+== clean reference: selftest from the same worktree bytes ==
+exit=0
+legs: 18
+last: SWEEP_SELFTEST=pass

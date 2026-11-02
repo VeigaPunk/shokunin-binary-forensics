@@ -1,0 +1,16 @@
+# ag2-red.log - r84 C1 RED receipt: criterion A1v2 over the ROUND BASE archive 54a36bca (2026-11-02, before the landing)
+# base = the r83 tip + r83 verifier spot-check (the round's base commit); corpus extracted via git archive - no checkout
+# expected RED: A1V2_RECORDED=3/5 score=6.00 with extract_artifact and inspect_artifact unrecorded (the two archive-side operations the provider declares available and the r81/r82 scorecards note as available-but-unrecorded)
+# frozen instruments hold on the same base: ag_probe (r82 A1) 3/3, f_probe4 (r81 F4) 10/11
+# instrument: reports/round-84/ag_probe2.py sha-pinned in reports/round-84/claims.md (frozen before this run)
+A1V2_OP decode_interface_builder=round-83
+A1V2_OP inspect_keyed_archive=round-81
+A1V2_OP trace_dylib_resolution=round-82
+A1V2_OP extract_artifact=unrecorded
+A1V2_OP inspect_artifact=unrecorded
+A1V2_RECORDED=3/5 score=6.00
+# exit_code=0
+# frozen holds:
+A1_RECORDED=3/3 score=10.00
+F4_COVERAGE=10/11 score=9.09
+F4_FAMILIES=['archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']

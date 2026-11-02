@@ -1,0 +1,19 @@
+# preprobe-arc-shape.log - r84 C1 M33 pre-probe: both A1v2 archive-side operations against the FINAL fixture shape, before any committed run (2026-11-02)
+# fixture: scratch copy of the final worktree bytes (R84Sample.zip, sha f1f983eff6823a4ba23d714b25b69ca8e64484ddc00ec24043210311d729bc59, 508 bytes, 3 stored entries)
+# probe 1 - rea inspect-artifact <fixture> --format json: exit, stderr bytes, output size, vocabulary the oracle will pin
+inspect_exit=0
+inspect_stderr_bytes=0
+inspect_stdout_bytes=9327
+vocabulary: operation=inspect_artifact provider=rea-artifact-graph substep_op=inventory_artifact substep_status=completed node_count=4 edge_count=3 content_states=['embedded', 'materialized']
+vocabulary: authority=shipped-artifact predicate_type=rea.analysis confidence=observed coverage_status=complete-within-substeps
+# probe 2 - rea extract-artifact <fixture> --format json: exit, stderr bytes, output size, vocabulary
+extract_exit=0
+extract_stderr_bytes=0
+extract_stdout_bytes=3824
+vocabulary: operation=extract_artifact cleanup={"attempted": false, "verified": true, "residual_paths": []} containment=True integrity_contradictions=[] coverage={"scope": "container-entries", "status": "complete"}
+vocabulary: artifacts=3 rows all created=True output_root_shape=temp-dir outside the lane repo
+# probe 3 - both oracles against the probe records (dev dry-run): the oracle must be green BEFORE the committed runs
+ORACLE OK (36/36 checks)
+oracle_inspect_exit=0
+ORACLE OK (31/31 checks)
+oracle_extract_exit=0

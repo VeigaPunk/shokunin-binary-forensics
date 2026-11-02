@@ -1,0 +1,18 @@
+# freshstart-probes.log - r84 section-7 gate: the r71/r72/r73 rejected closures re-read + spot-checked, fresh ruling-out probes (2026-11-02)
+# re-read: fleet .ufo/reports/round-7{1,2,3}/revenger.md (this host copies) - all three are K-admission claims whose wave Q-review surface never settled on this host (r71: Q09/Q16 FAIL at the wave; r72: wave unconfirmed, no worker outcomes; r73: 34/64 spawned, 0 settled, no vote files); a do-nothing control reaches each identically here. Neither r84 claim routes through K.
+# fresh probes, this round:
+[1] F android gate:
+REA_JADX_MCP_JAR=[UNSET]
+jadx: not on PATH
+[2] macho/signature providers (S453 class): rea capabilities - native-macos groups print available:false / availability_code unsupported_host; rea-artifact-graph groups print available:true (see [3])
+unsupported_host group count: 8
+[3] the r84 C1 route - the provider's full available-operation set:
+      - operations[3]: decode_interface_builder,inspect_keyed_archive,trace_dylib_resolution
+        effects: []
+      - operations[2]: extract_artifact,inspect_artifact
+        effects[2]: launches_process,may_write_filesystem
+        available: false
+[4] K admissions: fleet .ufo/l0-questions.md re-read this round - no ruling on the r74 revenger K line; route stays operator-blocked, routed around, never treated as answered
+[5] criterion C repair: standing section-9 disposition (r78-r83) unchanged
+[6] criterion R full extension / N attribution pair: stay routed - this round's calibration claim is the v5 unmatched-absent + log-corpus classes the r83 closure routed as instrument gaps
+[7] A1 extension route: the r82/r83 records covered the no-effects triple; the archive-side pair (extract_artifact, inspect_artifact) stays available-but-unrecorded (r81/r82 scorecard note) - C1's route, the one the standing ruling-out maps left open
