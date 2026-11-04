@@ -1,0 +1,9 @@
+CENSUS_ROWS=18
+CENSUS_MISMATCH F01 listing:skill_dir names absent entries android-applications.md, cli-command-map.md, connection-and-recovery.md, evidence-workflows.md, javascript-applications.md, native-and-artifacts.md, runtime-observation.md
+CENSUS_MISMATCH F03 listing:references names absent entries host-contract.md, skill.md
+CENSUS_MISMATCH F08 presence:ghidra states 'absent' against the live value
+CENSUS_MISMATCH F12 import:pwn states 'ModuleNotFound' against the live value
+CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
+CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
+CENSUS_MISMATCH K05 import:pwn states 'fails' against the live value
+CENSUS_STALE_UNFLAGGED=7
