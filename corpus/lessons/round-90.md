@@ -68,3 +68,15 @@ Proposals 2–5 stay unimplemented.
 No `[x]` and no non-author credit is asserted. The closure should sample the
 S483/S484 admits and the S487 reject, the C2 controls (critic's ctl-idedit /
 ctl-stub), and re-derive both frozen counters over the landing tree.
+
+## Final measurements (adjudication; landing `abd1394bc612b224381fba29b7b2175a88a108a7`)
+
+| counter | base / control | landing | frozen target | verdict |
+|---|---|---|---|---|
+| `SM6_MISCLASS` (v1 → v2) | 7/14 (v1, base and landing) | **0/14** (v2) | 0/14 | **MET**; axis label and real-format blind spot contested (M-c, CriticR90Claims Q2) |
+| v2 `SELF_MISMATCH` over the landing tree | v1: 1 (SM6) | **0** | 0 (kill b) | holds; SM1–SM5 equal to v1 |
+| `C2_CONJUNCTS` | 1/6 no-record; 5/6 copy-r89 | **6/6** | 6/6 | predicate met; **NOT VERIFIED** — ctl-idedit and ctl-stub also 6/6 (M-b) |
+| `F4_COVERAGE` | 10/11 | **11/11** | 11/11 (K1) | moved on a real producer record (exact stdout, `ID_CONSISTENT`), not provable by the frozen counter alone |
+
+Receipts: `reports/round-90/c1-after-v2-battery.log`, `reports/round-90/c2-after.log`,
+`reports/round-90/holds.log`. Round end census: see the round report.

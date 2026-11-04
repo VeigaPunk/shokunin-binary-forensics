@@ -1,0 +1,14 @@
+# round-90 holds over the landing tree abd1394 (git archive)
+$ python3 -B reports/round-85/mg_probe.py corpus
+M_RECORDED=3/3 score=10.00
+EXIT=0
+$ python3 -B reports/round-84/ag_probe2.py corpus
+A1V2_RECORDED=5/5 score=10.00
+EXIT=0
+$ python3 -B reports/round-81/f_probe4.py corpus
+F4_COVERAGE=11/11 score=10.00
+EXIT=0
+$ grep -cE '^\| C[0-9]+ .*\| held \|$' corpus/README.md
+8
+$ python3 -B corpus/self_assessment_check.py --self-test (v1, byte-unchanged)
+SELFTEST OK: clean 0; six planted defect

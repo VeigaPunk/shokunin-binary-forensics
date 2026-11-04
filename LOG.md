@@ -1257,3 +1257,33 @@ no row, supports no claim).
   working copy onto the branch tip after the helper refused a non-tip base;
   recorded in `reports/round-89/carry-in.md` and mined as a mistake.
 - **Commits.** freeze `c84339c`, landing `6ce41aa`, adjudication = this commit.
+
+## Round 90 (hyaku) — SM6 v2 (C1 met, contested) and a real android producer record whose counter is forgeable (C2 not verified)
+
+- **Freeze `c7767789`.** Claims C1 calibration (SM6 v2; frozen 14-case battery,
+  v1 red `SM6_MISCLASS=7/14`) and C2 coverage (android record; six conjuncts in
+  `reports/round-90/c2_counter.py`; F4 red 10/11; oracle v1 red 5/9 on the
+  frozen forgery battery). Post-freeze controls before any producer run:
+  no-record 1/6, copy-r89 5/6.
+- **Wave (one v1, 14 seats).** 3 executors, 2 scribes, 1 scout, 2 reviewers,
+  1 critic, 2 mutation-testers, 1 revenger-role forgery probe, 1 connector,
+  1 sentinel. `ExecR90Producer` ran `rea inspect-android-package` twice
+  (exit 0, `NORM_EQ=identical`); `SentinelR90` LAND_OK; `ForgeryR90Probe`
+  falsified the oracle-v2 hypothesis (12/40 false greens);
+  `CriticR90Claims` reached C2 6/6 with two work-skipping controls.
+- **Landing `abd1394`.** Record `corpus/live/runs/round-90/` (run1 exact
+  stdout, LEDGER), run2/receipt/env under `reports/round-90/`; SOURCES
+  S483–S485 (Android manifest reference, Python ElementTree docs, Android
+  versioning — external docs tier A), S486 (supersedes S481, r89 D1), S487
+  (rejected community thread); QUALITY Q17 (relocation sweep) with machine
+  check `source_path_check.py` (1 → 0); checklist correction appended; D3
+  receipt; unclaimed oracle v3 (40-case false greens 12 → 0, fitted) and
+  rea `parseEvidence` id check (landed runs consistent, id-edited control
+  rejected); SKILL.md registry rows for v2/v3/source_path_check.
+- **After (`git archive abd1394`).** C1 `SM6_MISCLASS=0/14`,
+  `SELF_MISMATCH=0` → MET on the frozen counter, axis/harm contested by the
+  critic. C2 `C2_CONJUNCTS=6/6`, F4 11/11 → predicate met but NOT VERIFIED
+  (§9: reachable without a producer run). Holds unchanged.
+- **Mistakes mined:** `corpus/lessons/round-90.md` §Mistakes (D1–D3 from the
+  r89 spot-check, S486's own dead path, oracle local-name matching, the §9
+  control named instead of built, the C1 battery's format gap).

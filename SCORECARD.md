@@ -1643,3 +1643,28 @@ moves F4 11/11 but the oracle rejects it at 6/19; what passes 19/19 and moves
 F4 is a fully accurate hand-written record and the XML-comment manifest case
 (`corpus/lessons/round-89.md` §Erratum, `ReviewerR89C2` receipts). The C2
 verdict (KILLED) is unchanged.
+
+## Round 90 (hyaku run 15) — SM6 learns the map's denominator (C1 met on its frozen counter, axis contested); the android family gets a real producer record, but the C2 counter is reachable without one (C2 not verified)
+
+Base `77574c99845ab6662812bd6a88def1e72bf8d71b`; freeze
+`c7767789fe9e96bcc0d50656ad4bdce69ba3a3a9` (claims, instruments, batteries,
+reds); landing `abd1394bc612b224381fba29b7b2175a88a108a7`; adjudication = this
+commit. Claims and kill rules: `reports/round-90/claims.md` (unchanged since
+the freeze). After-runs over `git archive abd1394`:
+`reports/round-90/c1-after-v2-battery.log`, `reports/round-90/c2-after.log`,
+`reports/round-90/holds.log`.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| calibration — SM6 gate fidelity (C1) | `SM6_MISCLASS` **7/14 (v1) → 0/14 (v2)**; v2 full run `SELF_MISMATCH=0` (v1 over the same tree: 1, SM6); v2 `--self-test` OK; SM1–SM5 equal to v1 | `python3 -B reports/round-90/sm6_battery.py --impl corpus/self_assessment_check2.py --real <git archive REV>` | red `77574c9` (v1) → `abd1394` (v2) | **MET on the frozen counter; admission contested.** CriticR90Claims: the target was already met at the freeze (v2 is a freeze file), the move is gate fidelity rather than self-assessment accuracy (operability or a calibration sub-axis), and in the lane's own row format v2 reads the pointer cell, not the stated before→after cell (`c1-realformat-counterexample.log`); MutR90SM6: 4/11 mutants survive the battery. v1 flagged every `/15` statement, true or false, so it had no discrimination to lose; the closure rules on harm |
+| coverage — F4 android family (C2) | `F4_COVERAGE` **10/11 → 11/11**; `C2_CONJUNCTS` 1/6 (no-record control) → **6/6** | `python3 -B reports/round-90/c2_counter.py --tree <git archive REV>` | `77574c9` / control at `c7767789` → `abd1394` | **NOT VERIFIED (§9 defect, self-ruled).** Two work-skipping controls also reach 6/6 (CriticR90Claims `receipts/c2-controls.log`: r89 record with edited ids; stubbed in-tree instruments). The landed record itself is the seat's exact producer stdout and is `ID_CONSISTENT` under rea's own `parseEvidence` while the id-edited control is rejected, and the landing tree passes the freeze pins (`c2-after.log`, `c2-evidence-id-check.log`) — unclaimed post-freeze corroboration, not the frozen rule |
+| coverage — oracle v2 out-of-battery (no claim) | v2 `FALSE_GREEN=12/40` on the ForgeryR90Probe set → unclaimed v3 `0/40` (fitted, not held out) | `python3 -B reports/round-90/score_oracle_probe.py <oracle>` | `abd1394` | recorded limit; v3 is a candidate instrument for a future freeze |
+| evidence-ledger discipline — dead `source` paths (no claim) | `SOURCE_PATH_DEAD` 1 (S481) → 0 (S486 supersedes S481) | `python3 -B reports/round-90/source_path_check.py --root <tree>` | `77574c9` → `abd1394` | r89 D1 fixed; QUALITY Q17 added |
+| held criteria (no claim) | M 3/3, A1v2 5/5, held map rows 8 of 15 | `reports/round-90/holds.log` | `abd1394` | unchanged |
+
+**Routed forward.** (1) C2 next: freeze a predicate whose counter checks the
+landing-tree instrument digests against the freeze pins and requires rea's
+`parseEvidence` id consistency on both runs, with oracle v3 attacked by a fresh
+held-out forgery set before freezing; (2) SM6 v3 must read the stated cell of
+the lane's real K row, with real-format rows in its battery and the four
+surviving mutants killed; (3) K (8 of 15) stays operator-blocked (L0 r74).
