@@ -1582,3 +1582,57 @@ treecommit repo-relative + file-exists + numstat rule (held: 9/9 freeze,
 (P-class probes) stays routed (r78 registry note); the sweep's standing
 maintenance duty (word-count receipts must declare-rule or register);
 the census-ordering class (round-end census runs after the lesson lands).
+
+## Round 89 (hyaku) — honest stop: the host census is re-probed and corrected; both frozen claims are MISSED and neither is admitted
+
+Base `2b017fa3c616a84b7b491e3312029fa8a8c076e6`; freeze
+`c84339c051443e13f6a546cf186cc8965649a932` (claims + instruments + reds);
+landing `6ce41aabc3216b9d07981ea573cce70dbee93b76`; final measured revision =
+this adjudication commit. Two claims, distinct axes (freshness, coverage),
+declared and frozen before any after-run; **both fail their frozen
+predicates**. Nothing here is admitted. Measurement environment is
+`reports/round-89/environment.log` (HOME `/home/vgpnk`, fnm-multishell PATH);
+every count below is conditional on it — `ReviewerR89C1` D4 measured the same
+tree at 2, 8 and 10 findings across three shells.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| freshness — host-readiness census re-probe (C1) | **10 findings / 10 rows → 2 findings / 1 row** (`K04` only); frozen target `CENSUS_STALE_UNFLAGGED=0` **NOT reached** | `PYTHONUTF8=1 python3 -B corpus/census_reprobe.py --root TREE` → red `reports/round-89/census-red.log` (10, exit 1) / after `reports/round-89/c1-after.log` (2, exit 1) | `2b017fa3` → `6ce41aa` | **MISS (frozen target unmet)**; the correction itself landed: 8 stale rows now state live values, append-only |
+| coverage — selected-family record presence F4 (C2) | **10/11 → 10/11** (`9.09` → `9.09`); the frozen counters read 11/11 + `ORACLE OK (19/19)` only while the rejected record sat in the counted surface | `python3 -B reports/round-81/f_probe4.py corpus` (`reports/round-89/holds.log`); `oracle_check.py` over the preserved record (`reports/round-89/c2-after.log`) | `2b017fa3` → `6ce41aa` | **KILLED, not credited**: kill (a) fails (a hand-written minimal record and an XML-comment manifest both pass 19/19 and move F4), kill (c) fails (two producer runs differ at char 20) |
+| calibration — the freshness proxy itself | marker proxy `18/18` was not a re-verification: ten rows asserted host facts this host contradicts; the census now carries dated live values and the gate's own blind spots are named in `SKILL.md` | `reports/round-89/census-red.log` vs `c1-after.log`; `SKILL.md` §Gate registry `census_reprobe` row (5 named limits) + M43 | `6ce41aa` → this commit | **improved for honesty, not a claim**: the inflated reading is corrected in this row and the limits are recorded |
+| held criteria (no claim) | M 3/3 (10.00), A1v2 5/5 (10.00), F4 10/11 (9.09), K 8/15 (5.3), freshness marker count 36 lines across the two census files (a line count, not a row count) | `reports/round-89/holds.log`; `grep -cE '^\| C[0-9]+ .*\| held \|$' corpus/README.md` → 8 | `6ce41aa` | unchanged holds |
+| separability / no-work control | C1-only tree: F4 stays 10/11; C2-only tree: census stays 10; untouched base: census 10 exit 1 and F4 10/11 | `.ufo/waves/round-89/w1/CriticR89Claims.md` §Verdicts | `2b017fa3` | **PASS** (both, as frozen) |
+| depth / operability / adjacency | no claim; `SKILL.md` gains two registry rows and M43; `PROVINCE.md` byte-unchanged; the `rea` 6.7.0-vs-PROVINCE-6.8.0 drift is reported, not absorbed | `git diff --stat 2b017fa3..6ce41aa -- PROVINCE.md corpus/QUALITY.md` (empty) | same | unchanged |
+
+**Why C1 could not reach zero (the defect, stated exactly).** The frozen rule
+scores one string per row (the last two cells). `K04` has two probes with
+opposite live states on this host — ghidra present, ida absent — and each
+presence probe requires its own literal and forbids the other's. No truthful
+string satisfies both. Measured floor: 1 finding (one half stated in prose);
+truthful-literal: 2. Zero is reachable only by faking `PATH` (a `ghidra`/`ida`
+stub scores 0 — `CriticR89Claims` §Findings 3) or by editing the frozen bytes.
+The target is therefore recorded as unmet, not re-scoped.
+
+**Why C2 was killed.** F4 counts any `corpus/live/runs/**/*.json` with
+`evidence_id` + `normalized_result`, and the oracle's declaration legs are
+substring tests over `manifest.text` with expectations read from `truth.json`.
+A hand-written minimal record and a `<manifest package="com.attacker.fabricated" …>
+<!-- versionCode="1" versionName="1.0" -->` record each pass `ORACLE OK (19/19)`
+and move F4 to 11/11. The second frozen conjunct — two independent producer
+runs byte-identical — is also false on this host (`cmp` differs at byte 20;
+`evidence_id`, a per-run `rea-android-XXXXXX` path, JVM map order and
+`load_duration_ms` vary). The record is preserved byte-identically as
+**rejected evidence** at `reports/round-89/rejected-android-record/` and is
+deliberately outside the F4-scanned surface so the criterion is not inflated.
+
+**Routed forward.** (1) C1 needs a per-probe scope: a counter that scores each
+probe against its own sub-cell (or a row format with one line per probe), plus
+an environment pin (`which` paths recorded in the receipt) and a
+negation-resistance leg; (2) C2 needs an oracle that parses the manifest and
+binds `evidence_id` to a producer run, and a byte-identity rule restated as
+volatile-field-normalized equality — both are new frozen predicates for r90;
+(3) `self_assessment_check.py` SM6 still hardcodes a `/14` denominator against
+a 15-row map (SM2 fixed this round, 1 → 0) — a calibration claim of its own;
+(4) the census literal form now exits 0 on Linux (r74–r88 exit-2 lineage was
+Windows-layout); (5) `PROVINCE.md` still names rea 6.8.0 and a Windows ghidra
+path — a freshness correction for a later round, not absorbed here.

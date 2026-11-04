@@ -1,0 +1,18 @@
+# round-89 holds over the landing tree (6ce41aa), env reports/round-89/environment.log
+$ python3 -B reports/round-85/mg_probe.py corpus
+M_OP inspect_managed_native_boundaries=inspect-managed-native-boundaries
+M_RECORDED=3/3 score=10.00
+EXIT=0
+$ python3 -B reports/round-84/ag_probe2.py corpus
+A1V2_OP inspect_artifact=inspect-artifact
+A1V2_RECORDED=5/5 score=10.00
+EXIT=0
+$ python3 -B reports/round-81/f_probe4.py corpus
+F4_COVERAGE=10/11 score=9.09
+F4_FAMILIES=['archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']
+EXIT=0
+$ grep -cE '^\| [FK][0-9]+ .*\| (holds|STALE)' corpus/knowledge/seed.md corpus/knowledge/2026-10-12-rea-readiness-checklist.md
+corpus/knowledge/seed.md:24
+corpus/knowledge/2026-10-12-rea-readiness-checklist.md:12
+$ grep -cE '^\| C[0-9]+ .*\| held \|$' corpus/README.md
+8

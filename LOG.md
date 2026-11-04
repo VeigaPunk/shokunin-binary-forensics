@@ -1225,3 +1225,35 @@ no row, supports no claim).
 - **Holds + honesty.** No-harm: freeze `7fab03f`..correction `41322a3` = SKILL.md one appended registry block + SOURCES.md six rows appended and moved once inside the Registry; corpus/live, fixtures, knowledge/, README, QUALITY.md, PROVINCE.md and all standing verifiers byte-unchanged; the frozen probes absent from the range (`noharm-diff.txt`). Frozen holds over the correction tip `41322a3`: M 3/3 (10.00), F4 10/11 (9.09), A1v2 5/5 (10.00), A1 3/3 (10.00), freshness 18/18, K 8/15 (5.3) — all probe exits 0 (`holds-over-landing-archive.log`). Separability: `c1-only.log` (base archive + the two instruments only: 473 base rows, red exit 1, the COMMITTED_GIT leg disclosed as CHANNEL_UNREACHABLE in a non-git tree — the channel needs the lane repo — the other six legs identical to the base red; counter conformance green over the c1-only bytes). The instrument's own §Gate conformance: hermetic selftest (5 finding-ids + `SWEEP_SELFTEST=pass`, PATH-stripped counter), usage 64, missing/malformed registry 2, TWO frozen sed mutants killed attributed from the committed blob (`mutant-kill-after.log`: comparator-blind `bceb9a33…` and closure-blind `6c65f6dd…`, one-line diffs, shas match the claims pins), counter red form over a non-conforming target exit 1. Census: round start sanctioned exit 0 (receipts landed with the freeze; literal exit 2, disclosed lineage); round end FIRST draft caught the E12 landing defect, SECOND draft caught the E11 sequencing class (the lesson must land before the census), FINAL sanctioned census over the adjudication state exits 0 (21 W01 + 10 W04, zero E; literal exit 2). L2 floor: no dispatch surface on this host (r74 L0 stands); every verdict re-derives from committed bytes. Assimilation: considerthese re-read (2026-10-20 through 2026-10-28, same eight files); one still-unimplemented proposal considered (the Q16 self-map checker) and not adopted; adopted nothing — shokuknow unreachable.
 - **Mistakes mined** (`corpus/lessons/round-88.md`, five rows): the Registry-append placement class (rows at file end → E12 ×6, census-caught, move-only correction); the synthetic-id grammar mismatch (S_A/S_B vs `S\d{3,}` — preprobe); the pinned-marker reachability defect (ST1's first assertion gated on the 1/2 total, so mutant A died at the wrong stage with the wrong last line — preprobe); the grep-piped exit attribution recurrence + the unpinned temp-tree construction (both receipt drafts — caught by reading before citing); the P3 truncated-version detector defect (`version=12.1.4` counted as a token — caught by the hits-vs-row-text cross-check; pattern frozen with the version-excluding lookahead). The r87 carry-in "S473 quote word-count precision" note is addressed by the claim's declared rule (the r87 lesson's recorded 13 vs the whitespace-rule 12; quote verbatim, both ≤ 25, no registry change needed — mined as the same class).
 - **Trends.** Expansion unchanged (no knowledge admission, no new capability row — the sweep is the criterion-R instrument; coverage routed with receipts; K untouched). Quality improved (the routed criterion-R debt became machine-caught registry-wide: a receipt rule that covered two rows since r76 now scans every row every run, and its first sweep found and corrected six false legacy receipts; no axis harmed — holds green). Discernment improved (five real defects mined, four caught before any committed byte could mislead; the landing defect was caught by the census gate, not by the author — exactly what the gates are for).
+
+## Round 89 (hyaku) — census re-probe, honest stop (C1 MISS, C2 KILLED)
+
+- **Two frozen claims, both failed.** C1 freshness: `CENSUS_STALE_UNFLAGGED`
+  10 → 2, target 0 unreachable (K04 mixed-state exclusivity). C2 coverage:
+  F4 10/11 → 11/11 and `ORACLE OK (19/19)` measured, but kill (a) and kill (c)
+  both fail (fabricated/XML-comment records pass; two producer runs differ at
+  byte 20). Receipts: `reports/round-89/{census-red,c1-after,c2-after,holds,
+  junk-control,oracle-design,oracle-tamper-control,environment}.log`.
+- **Landed anyway (real work, unadmitted).** Both census files gain an
+  append-only `## Re-verification 2026-11-04` table: eight stale rows now state
+  live values (`rea` 6.7.0 on PATH, ghidra present, pwntools imports, seven
+  references, `HOST-CONTRACT.md`, `rea-agents@6.7.0`, node/npm versions); K04
+  keeps the truthful split and its residual is disclosed. The android producer
+  record is preserved byte-identically as rejected evidence at
+  `reports/round-89/rejected-android-record/` (outside the F4 surface).
+- **Registered, with limits.** `SKILL.md` §Gate registry gains `census_reprobe`
+  (experimental probe-as-gate: 5 measured blind spots) and `apk_identity_oracle`
+  (probe, no self-test), plus error pattern M43 (a marker count is not a
+  re-verification). `corpus/README.md` index gains `audit_source_quotes.py` and
+  `census_reprobe.py` (SM2 1 → 0; SM6 stays 1, routed).
+- **Sources.** S480–S482 appended inside the Registry (own-work tier A: the C1
+  red receipt, the C2 producer receipt, the oracle green receipt). Census
+  sanctioned form exit 0, zero E.
+- **Wave.** 12 seats, one v1 wave: 3 scribes, 2 executors, 1 scout, 2
+  reviewers, 1 critic, 2 mutation-testers, 1 connector, 1 sentinel — 5 attack
+  seats (42 %). Two seats (rows, registry) were superseded by the L1 after
+  stalling; their items were executed by the L1 and the reports retained.
+- **Procedural defect.** One direct `jj new` was used to move an empty
+  working copy onto the branch tip after the helper refused a non-tip base;
+  recorded in `reports/round-89/carry-in.md` and mined as a mistake.
+- **Commits.** freeze `c84339c`, landing `6ce41aa`, adjudication = this commit.

@@ -140,3 +140,10 @@ local APK, saved as producer-emitted bytes:
   on this host with the variable set it does not hold. These error payloads
   are not part of the record; the landed bytes come only from the two exit-0
   runs described above.
+
+- relocation (adjudication): this directory moved byte-identically from
+  `corpus/live/runs/round-89/` to `reports/round-89/rejected-android-record/`
+  (`cmp` 3/3 identical before the move). Reason: `reports/round-81/f_probe4.py`
+  counts any `corpus/live/runs/**/*.json` carrying `evidence_id` +
+  `normalized_result`, so a rejected record left there would read F4 11/11 —
+  a false green. Rejected evidence is preserved, not counted.

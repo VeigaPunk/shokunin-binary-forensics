@@ -1,13 +1,16 @@
-$ PYTHONUTF8=1 python3 -B reports/round-81/f_probe4.py corpus   # lane tree, env: reports/round-89/environment.log
-{"analyze_javascript_application": 6, "compare_application_versions": 1, "compare_javascript_export_shapes": 3, "decode_interface_builder": 1, "extract_artifact": 3, "inspect_analysis_view": 1, "inspect_android_package": 1, "inspect_artifact": 5, "inspect_evm_interface": 7, "inspect_firmware_regions": 1, "inspect_keyed_archive": 1, "inspect_managed_artifact": 2, "inspect_managed_members": 1, "inspect_managed_native_boundaries": 1, "inspect_pe_certificates": 1, "inspect_pe_resources": 30, "inspect_sqlite_database": 1, "inspect_web_page": 1, "list_browser_targets": 1, "trace_application_feature": 2, "trace_dylib_resolution": 1, "trace_javascript_semantics": 2}
-F4_COVERAGE=11/11 score=10.00
-F4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']
+# C2 after-run (2026-11-04). Environment: reports/round-89/environment.log
+
+# (a) With the rejected record inside the counted surface, for the record (this is the number the frozen counters produced):
+$ PYTHONUTF8=1 python3 -B reports/round-81/f_probe4.py <tree with corpus/live/runs/round-89 present>
+F4_COVERAGE=11/11 score=10.00   (measured before the relocation; see .ufo/waves/round-89/w1/CriticR89Claims.md §C2)
+
+# (b) Landed state: the record is rejected evidence at reports/round-89/rejected-android-record/, so the criterion is unchanged:
+F4_COVERAGE=10/11 score=9.09
+F4_FAMILIES=['archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']
 EXIT=0
 
-$ PYTHONUTF8=1 python3 -B corpus/fixtures/apk-r65/oracle_check.py corpus/fixtures/apk-r65/truth.json corpus/live/runs/round-89/inspection.json
-check ok: signature_verification not_performed
+# (c) The oracle over the preserved record still prints 19/19 — it does not authenticate the record:
 ORACLE OK (19/19 checks)
-EXIT=0
 
-$ sha256sum corpus/live/runs/round-89/inspection.json
-01af3141d79027a3bae53b6482779d3e9c89446ab6ca09b408a6cb266f321c76  corpus/live/runs/round-89/inspection.json
+# (d) sha256 of the preserved record:
+01af3141d79027a3bae53b6482779d3e9c89446ab6ca09b408a6cb266f321c76  reports/round-89/rejected-android-record/inspection.json

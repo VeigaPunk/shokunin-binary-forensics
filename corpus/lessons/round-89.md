@@ -98,3 +98,34 @@ No registry or campaign source tree outside this lane is written.
 No `[x]` promotion mark and no non-author discernment credit is asserted.
 The closure integrator must sample a new source admit and a rejected
 claim/forgery, reopen the source, and re-derive the frozen counters.
+
+## Final measurements (adjudication, this commit)
+
+Environment: `reports/round-89/environment.log` (HOME `/home/vgpnk`,
+fnm-multishell PATH). Commits: base `2b017fa3`, freeze `c84339c`, landing
+`6ce41aa`, adjudication = this commit.
+
+| counter | base | landed | frozen target | verdict |
+|---|---|---|---|---|
+| `CENSUS_STALE_UNFLAGGED` (findings) | 10 (10 rows, lane PATH) | **2** (1 row: K04) | 0 | **MISS** |
+| `F4_COVERAGE` | 10/11 (9.09) | 10/11 (9.09) — the rejected record is outside the counted surface | 11/11 | **MISS / KILLED** |
+| `ORACLE OK` over the preserved record | n/a | 19/19 | 19/19 | nominal only; does not authenticate |
+| producer two-run byte identity | n/a | **differs at byte 20** | identical | **FAIL** |
+| separability (C1-only / C2-only) | — | F4 stays 10/11 / census stays 10 | isolated | PASS |
+| no-work control (untouched base) | 10, F4 10/11 | — | cannot reach either target | PASS |
+
+Wave: 12 seats, one v1 wave — 3 scribe, 2 executor, 1 scout, 2 reviewer,
+1 critic, 2 mutation-tester, 1 connector, 1 sentinel (5 attack seats, 42 %).
+Seats `ScribeR89Rows` and `ScribeR89Registry` stalled after prototyping; the
+L1 executed both items directly (census tables and the registry/README edits)
+and their wave dirs are retained as evidence. No seat wrote outside its
+declared files; no seat died with a lane-file write.
+
+Admission: **not admitted.** C1's target is unreachable under the frozen
+rules; C2's kill rules fire. The round lands the correction, the preserved
+rejected evidence, the registry limits and the lesson, and reports the miss.
+
+The mined mistake table above stays as written before the landing; the two
+later findings (K04 residual 2, producer non-determinism) were reported by
+`ReviewerR89C1`/`CriticR89Claims`/`ReviewerR89C2` and are recorded in the
+Gate section rather than retro-added as mistakes.
