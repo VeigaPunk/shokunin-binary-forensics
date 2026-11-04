@@ -1,0 +1,27 @@
+[F07] cmd: bash p_mcp.sh
+top-level keys: ['$schema', 'disabledServers', 'mcpServers']
+mcpServers keys: ['rea', 'godot', 'unity', 'unity-coplay', 'blender', 'aseprite', 'tripo', 'tripo-blender', 'open-design']
+disabledServers: ['rea']
+rea entry keys: ['type', 'command', 'args', 'env']
+rea spec: rea-agents@6.7.0
+rea env key names: ['GHIDRA_INSTALL_DIR', 'JAVA_HOME', 'REA_JADX_MCP_JAR']
+[F07] exit: 0
+
+[K03] cmd: bash p_mcp.sh
+top-level keys: ['$schema', 'disabledServers', 'mcpServers']
+mcpServers keys: ['rea', 'godot', 'unity', 'unity-coplay', 'blender', 'aseprite', 'tripo', 'tripo-blender', 'open-design']
+disabledServers: ['rea']
+rea entry keys: ['type', 'command', 'args', 'env']
+rea spec: rea-agents@6.7.0
+rea env key names: ['GHIDRA_INSTALL_DIR', 'JAVA_HOME', 'REA_JADX_MCP_JAR']
+[K03] exit: 0
+
+[F12] cmd: bash p_import.sh
+[F12] exit: 0
+
+[F12b] cmd: bash p_import2.sh
+import ok: /usr/lib/python3.14/site-packages/pwn/__init__.py
+[F12b] exit: 0
+
+[K05d] cmd: bash p_import.sh
+[K05d] exit: 0

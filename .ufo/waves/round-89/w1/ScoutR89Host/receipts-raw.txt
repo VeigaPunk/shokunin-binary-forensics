@@ -1,0 +1,57 @@
+### node/npm
+v24.21.0
+11.19.0
+### command -v rea
+/run/user/1000/fnm_multishells/1981588_1793727763382/bin/rea
+exit=0
+### rea --version
+6.7.0
+### ls skill dir
+HOST-CONTRACT.md
+SKILL.md
+SKILL.md.rea.backup
+SKILL.md.rea.backup.0bfe2ed44ca6323426a436e653482208793546bc9a8ba25f8e9997f8a3bae620.recovery
+SKILL.md.rea.backup.c86398238b2a382dd34f4df230f83a5a1c3377a4f0c4df39ea43053ea0b49da0.recovery
+references
+### ls skill *.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/HOST-CONTRACT.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/SKILL.md
+### ls references *.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/android-applications.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/cli-command-map.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/evidence-workflows.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/javascript-applications.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/native-and-artifacts.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/runtime-observation.md
+### frontmatter
+---
+name: reverse-engineer-anything
+description: Reverse engineer native, managed, Electron/JavaScript, packaged, firmware, and browser targets with REA. Use shipped-artifact or requested runtime evidence to explain features, compare versions, decompile code, or guide a reconstruction. Skip REA for ordinary source-repository architecture analysis.
+metadata:
+  version: "42"
+  tool_count: 207
+---
+
+### grep rea-agents@
+33:npx -y rea-agents@6.7.0 <command> [args] --json
+37:`npx -y rea-agents@6.7.0` is the invocation.
+82:is `npx -y rea-agents@6.7.0 --llms`; per-command arguments come from
+83:`npx -y rea-agents@6.7.0 <command> --schema`.
+102:npx -y rea-agents@6.7.0 doctor --json          # is the CLI ready
+103:npx -y rea-agents@6.7.0 capabilities --json    # providers and side effects
+104:npx -y rea-agents@6.7.0 providers --json       # configured analysis providers
+### npm view
+6.8.0
+### import pwn
+OK /usr/lib/python3.14/site-packages/pwn/__init__.py
+exit=0
+### jadx/binwalk/unblob
+1.5.6
+binwalk 3.1.0
+26.6.4
+### ghidra
+/usr/bin/ghidra
+### unzip/zipinfo
+UnZip 6.00 of 20 April 2009, by Info-ZIP.  Maintained by C. Spieler.  Send
+ZipInfo 3.00 of 20 April 2009, by Greg Roelofs and the Info-ZIP group.

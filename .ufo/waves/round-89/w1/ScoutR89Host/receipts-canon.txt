@@ -1,0 +1,108 @@
+[F01] cmd: ls -1 /home/vgpnk/.agents/skills/reverse-engineer-anything
+[F01] exit: 0
+[F01] out: HOST-CONTRACT.md~references~SKILL.md~
+
+[F01b] cmd: ls -1 /home/vgpnk/.agents/skills/reverse-engineer-anything/*.md
+[F01b] exit: 0
+[F01b] out: /home/vgpnk/.agents/skills/reverse-engineer-anything/HOST-CONTRACT.md~/home/vgpnk/.agents/skills/reverse-engineer-anything/SKILL.md~
+
+[F02] cmd: sed -n 1,8p /home/vgpnk/.agents/skills/reverse-engineer-anything/SKILL.md
+[F02] exit: 0
+[F02] out: ---~name: reverse-engineer-anything~description: Reverse engineer native, managed, Electron/JavaScript, packaged, firmware, and browser targets with REA. Use shipped-artifact or requested runtime evidence to explain features, compare versions, decompile code, or guide a reconstruction. Skip REA for ordinary source-repository architecture analysis.~
+
+[F03] cmd: ls -1 /home/vgpnk/.agents/skills/reverse-engineer-anything/references/*.md
+[F03] exit: 0
+[F03] out: /home/vgpnk/.agents/skills/reverse-engineer-anything/references/android-applications.md~/home/vgpnk/.agents/skills/reverse-engineer-anything/references/cli-command-map.md~/home/vgpnk/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md~
+
+[F04] cmd: command -v rea
+[F04] exit: 0
+[F04] out: /run/user/1000/fnm_multishells/1981588_1793727763382/bin/rea~
+
+[F05a] cmd: grep -n rea-agents@ /home/vgpnk/.agents/skills/reverse-engineer-anything/SKILL.md
+[F05a] exit: 0
+[F05a] out: 33:npx -y rea-agents@6.7.0 <command> [args] --json~37:`npx -y rea-agents@6.7.0` is the invocation.~82:is `npx -y rea-agents@6.7.0 --llms`; per-command arguments come from~
+
+[F05b] cmd: npm view rea-agents version
+[F05b] exit: 0
+[F05b] out: 6.8.0~
+
+[F06a] cmd: node --version
+[F06a] exit: 0
+[F06a] out: v24.21.0~
+
+[F06b] cmd: npm --version
+[F06b] exit: 0
+[F06b] out: 11.19.0~
+
+[F07] cmd: python3 -c "import json;d=json.load(open('/home/vgpnk/.omp/agent/mcp.json'));e=d['mcpServers']['rea'];print('top:',list(d.keys()));print('rea_keys:',list(e.keys()));print('spec:',[a for a in e['args'] if 'rea-agents@' in a][0]);print('env_names:',list(e['env'].keys()))"
+[F07] exit: 1
+[F07] out:   File "<string>", line 1~    "import~    ^~
+
+[F08] cmd: command -v ghidra
+[F08] exit: 0
+[F08] out: /usr/bin/ghidra~
+
+[F09] cmd: jadx --version
+[F09] exit: 0
+[F09] out: 1.5.6~
+
+[F10] cmd: binwalk --version
+[F10] exit: 0
+[F10] out: binwalk 3.1.0~
+
+[F11] cmd: unblob --version
+[F11] exit: 0
+[F11] out: 26.6.4~
+
+[F12] cmd: python3 -c 'import pwn'
+[F12] exit: 1
+[F12] out:   File "<string>", line 1~    'import~    ^~
+
+[K01] cmd: which rea
+[K01] exit: 0
+[K01] out: /run/user/1000/fnm_multishells/1981588_1793727763382/bin/rea~
+
+[K02a] cmd: node --version
+[K02a] exit: 0
+[K02a] out: v24.21.0~
+
+[K02b] cmd: npm --version
+[K02b] exit: 0
+[K02b] out: 11.19.0~
+
+[K03] cmd: python3 -c "import json;d=json.load(open('/home/vgpnk/.omp/agent/mcp.json'));e=d['mcpServers']['rea'];print('disabled:',d.get('disabledServers'));print('spec:',[a for a in e['args'] if 'rea-agents@' in a][0])"
+[K03] exit: 1
+[K03] out:   File "<string>", line 1~    "import~    ^~
+
+[K04a] cmd: command -v ghidra
+[K04a] exit: 0
+[K04a] out: /usr/bin/ghidra~
+
+[K04b] cmd: command -v ida
+[K04b] exit: 1
+[K04b] out: ~
+
+[K05a] cmd: jadx --version
+[K05a] exit: 0
+[K05a] out: 1.5.6~
+
+[K05b] cmd: binwalk --version
+[K05b] exit: 0
+[K05b] out: binwalk 3.1.0~
+
+[K05c] cmd: unblob --version
+[K05c] exit: 0
+[K05c] out: 26.6.4~
+
+[K05d] cmd: python3 -c 'import pwn'
+[K05d] exit: 1
+[K05d] out:   File "<string>", line 1~    'import~    ^~
+
+[K06a] cmd: unzip -v
+[K06a] exit: 0
+[K06a] out: UnZip 6.00 of 20 April 2009, by Info-ZIP.  Maintained by C. Spieler.  Send~bug reports using http://www.info-zip.org/zip-bug.html; see README for details.~~
+
+[K06b] cmd: zipinfo -v
+[K06b] exit: 0
+[K06b] out: ZipInfo 3.00 of 20 April 2009, by Greg Roelofs and the Info-ZIP group.~~List name, date/time, attribute, size, compression method, etc., about files~
+

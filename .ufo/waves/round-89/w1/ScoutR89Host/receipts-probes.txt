@@ -1,0 +1,130 @@
+### F01a :: CMD: ls-skill-dir ls -1 /home/vgpnk/.agents/skills/reverse-engineer-anything
+exit=127
+probes.sh: line 2: ls-skill-dir: command not found
+
+### F01b :: CMD: ls-skill-md ls -1 /home/vgpnk/.agents/skills/reverse-engineer-anything/HOST-CONTRACT.md /home/vgpnk/.agents/skills/reverse-engineer-anything/SKILL.md
+exit=127
+probes.sh: line 2: ls-skill-md: command not found
+
+### F02 :: CMD: frontmatter sed -n 1,8p /home/vgpnk/.agents/skills/reverse-engineer-anything/SKILL.md
+exit=127
+probes.sh: line 2: frontmatter: command not found
+
+### F03 :: CMD: ls-references-md ls -1 /home/vgpnk/.agents/skills/reverse-engineer-anything/references/android-applications.md /home/vgpnk/.agents/skills/reverse-engineer-anything/references/cli-command-map.md /home/vgpnk/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md /home/vgpnk/.agents/skills/reverse-engineer-anything/references/evidence-workflows.md /home/vgpnk/.agents/skills/reverse-engineer-anything/references/javascript-applications.md /home/vgpnk/.agents/skills/reverse-engineer-anything/references/native-and-artifacts.md /home/vgpnk/.agents/skills/reverse-engineer-anything/references/runtime-observation.md
+exit=127
+probes.sh: line 2: ls-references-md: command not found
+
+### F04 :: CMD: command-v-rea command -v rea
+exit=127
+probes.sh: line 2: command-v-rea: command not found
+
+### F05a :: CMD: grep-pin grep -n rea-agents@ /home/vgpnk/.agents/skills/reverse-engineer-anything/SKILL.md
+exit=127
+probes.sh: line 2: grep-pin: command not found
+
+### F05b :: CMD: npm-view npm view rea-agents version
+exit=127
+probes.sh: line 2: npm-view: command not found
+
+### F06a :: CMD: node node --version
+exit=1
+node:internal/modules/cjs/loader:1568
+  throw err;
+  ^
+
+Error: Cannot find module '/fast/scratch/hyaku/revenger-r89/ScoutR89Host/node'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)
+    at Module._load (node:internal/modules/cjs/loader:1341:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+
+### F06b :: CMD: npm npm --version
+exit=0
+11.19.0
+
+### F07 :: CMD: mcp-json python3 -c import json;d=json.load(open('/home/vgpnk/.omp/agent/mcp.json'));e=d.get('mcpServers',{}).get('rea');print('keys:',list(d.keys()));print('rea_keys:',list(e.keys()));print('spec:',[a for a in e['args'] if 'rea-agents@' in a][0]);print('env_names:',list(e['env'].keys()))
+exit=127
+probes.sh: line 2: mcp-json: command not found
+
+### F08 :: CMD: command-v-ghidra command -v ghidra
+exit=127
+probes.sh: line 2: command-v-ghidra: command not found
+
+### F09 :: CMD: jadx-version jadx --version
+exit=127
+probes.sh: line 2: jadx-version: command not found
+
+### F10 :: CMD: binwalk-version binwalk --version
+exit=127
+probes.sh: line 2: binwalk-version: command not found
+
+### F11 :: CMD: unblob-version unblob --version
+exit=127
+probes.sh: line 2: unblob-version: command not found
+
+### F12 :: CMD: import-pwn python3 -c import pwn; print('imported', pwn.__file__)
+exit=127
+probes.sh: line 2: import-pwn: command not found
+
+### K01 :: CMD: which-rea which rea
+exit=127
+probes.sh: line 2: which-rea: command not found
+
+### K02a :: CMD: node node --version
+exit=1
+node:internal/modules/cjs/loader:1568
+  throw err;
+  ^
+
+Error: Cannot find module '/fast/scratch/hyaku/revenger-r89/ScoutR89Host/node'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1564:15)
+    at wrapResolveFilename (node:internal/modules/cjs/loader:1118:27)
+    at defaultResolveImplForCJSLoading (node:internal/modules/cjs/loader:1142:10)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1169:12)
+    at Module._load (node:internal/modules/cjs/loader:1341:5)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+
+### K02b :: CMD: npm npm --version
+exit=0
+11.19.0
+
+### K03 :: CMD: mcp-json-rea python3 -c import json;d=json.load(open('/home/vgpnk/.omp/agent/mcp.json'));e=d.get('mcpServers',{}).get('rea');print('disabled:',d.get('disabledServers'));print('spec:',[a for a in e['args'] if 'rea-agents@' in a][0])
+exit=127
+probes.sh: line 2: mcp-json-rea: command not found
+
+### K04a :: CMD: ghidra command -v ghidra
+exit=0
+
+
+### K04b :: CMD: ida command -v ida
+exit=127
+probes.sh: line 2: ida: command not found
+
+### K05a :: CMD: jadx jadx --version
+exit=0
+1.5.6
+
+### K05b :: CMD: binwalk binwalk --version
+exit=0
+binwalk 3.1.0
+
+### K05c :: CMD: unblob unblob --version
+exit=0
+26.6.4
+
+### K05d :: CMD: import-pwn python3 -c import pwn
+exit=127
+probes.sh: line 2: import-pwn: command not found
+
+### K06a :: CMD: unzip unzip -v
+exit=9
+unzip:  cannot find or open unzip, unzip.zip or unzip.ZIP.
+
+### K06b :: CMD: zipinfo zipinfo -v
+exit=9
+zipinfo:  cannot find or open zipinfo, zipinfo.zip or zipinfo.ZIP.
+
