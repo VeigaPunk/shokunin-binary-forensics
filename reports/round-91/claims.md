@@ -150,3 +150,52 @@ real-range receipt), scribe ×2 (SOURCES rows + SKILL/QUALITY prose; lesson),
 scout ×1 (per-surface recon), connector ×1 (sibling-overlap scan), reviewer ×1,
 critic ×1, mutation-tester ×1, sentinel ×1 = 4 attack seats (33 %). The L1 holds
 the canonical planner seat; no planner seat is dispatched (validator rejects it).
+
+## Erratum (appended after data, 2026-11-04; predicate, counter, kill rule and target unchanged)
+
+- **C2's description was narrower than the landed instrument.** The §C2 "What moves"
+  paragraph says the instrument extracts "every backticked repo-relative path and
+  every `.log` filename". Measured after landing (`ReviewerR91C2.md` H1): the
+  declared receipt range carries 0 backtick characters across its 23 messages and 8
+  `.log` tokens, so a strictly backticked reading cites 8 and cannot satisfy probe leg
+  4 (`cited >= 20`). The landed instrument reads path-shaped tokens backticked or
+  bare, and its own docstring declares that rule. The frozen probe passed on the
+  landed bytes and its planted-miss leg still kills a stub. This is recorded as a
+  **freeze defect** (the description and the threshold were not reconciled before the
+  freeze), not as a target change: the predicate `CAP_MESSAGE_TREE=pass`, the four
+  probe legs, the kill rule and the declared range are exactly as frozen. The claim is
+  read as "the lane can measure commit-message↔tree conformance", which the probe and
+  the real run establish; a closure that reads the description as binding will find
+  the claim not verified, and that reading is not blocked by this note.
+- **A prose line can win SM6's "last line" slot.** The rule's step 1 takes the last
+  SCORECARD *line* naming `K_HELD_BACKED`; the round-91 SCORECARD's routed-forward
+  sentence did, and scored SM6=1 until it was reworded. The counter's verdict on the
+  landed tree is 0; the gate's blind spot is named in `SKILL.md`'s registry row and
+  routed to r92 (select the last table row, not the last line).
+
+## Erratum 2 (appended after data, 2026-11-04; predicates unchanged)
+
+- **C1's frozen counter admits a skip-work control.** `CriticR91Claims` C1-1
+  built a 21-entry lookup table (`receipts/impl_fit_hardcoded.py`) that never
+  reads the stated cell and passes the frozen counter with the same four lines
+  (`receipts/c1-fit-hardcoded.log`). Under §9 ("a control that meets the target
+  means the counter or target is wrong") the frozen counter is therefore not
+  discriminating, and C1 is **contested**, not clean. The landed implementation
+  is separately corroborated: an independent held-out 22-case probe scores it
+  0/22 against v2's 5/22 (`ReviewerR91C1.md`), and the post-freeze successor
+  `c1_counter2.py` scores it `RANDOM_MISCLASS=0/40` while the fitted control
+  scores 18/40. The successor is unclaimed and is r92's candidate freeze.
+- **C2's frozen probe admits three stubs.** C2-2/C2-3/C2-4: the planted path is
+  the guessable literal `missing/r91.txt`, the planted leg never checks the
+  real range, and the real leg ignores the exit code and the miss count. `stubD`
+  (no tree or filesystem lookup) and `stubE` (worktree-only) both print
+  `CAP_MESSAGE_TREE=pass`. C2 is therefore **NOT VERIFIED** under the frozen
+  predicate, self-ruled. The successor `cap_probe2.py` (random absent path, a
+  worktree-vs-tree leg, `commits` and exit-code cross-checks) kills stubA,
+  stubD and stubE and passes the landed instrument; it is unclaimed.
+- **Two numbers in this file were wrong.** (a) §C2 said "seven of nine rounds
+  r80–r88" landed a message/tree mismatch; the committed messages reproduce
+  **6 of 9** (`CriticR91Claims/receipts/miss-classification-r80-88.log`). (b) The
+  battery docstring calls R01/R02 "verbatim SCORECARD lines 693 and 667"; both
+  are truncated (R02 shortens the stated cell) — the labels are unaffected
+  (`ExecR91BatteryX.md` disagreement 1).

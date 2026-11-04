@@ -1,0 +1,11 @@
+A	3273d67a4deff038c48d3730c4544e6915b1a01d..aab26b59a2ff7b4b9a0cee2e9433e4a2902a4edc	0	0	0	frozen spec extracts backticked paths + .log names; plain prose out of scope
+B	aab26b59a2ff7b4b9a0cee2e9433e4a2902a4edc..8e3a432f49cbde770da54d88a1cb109377a024a1	1	0	0	`path:line` anchor stripped; corpus/self_check.py exists in tree
+C	8e3a432f49cbde770da54d88a1cb109377a024a1..6b2c231eccafe3ec2e9564a83151cfcf3641b2a9	1	0	0	`corpus/` is a tree object; git cat-file -e accepts it (probed: exit 0)
+D	6b2c231eccafe3ec2e9564a83151cfcf3641b2a9..1f06217c0867a8cbcef6cf8be3319dcb37a8352e	1	1	1	bare .log resolved by suffix match against commit's OWN tree; absent here -> miss (bare)
+E	1f06217c0867a8cbcef6cf8be3319dcb37a8352e..f8950158d0b1b6a2aa12e5f0d1af8658cd7d35ba	2	0	0	leading ./ accepted by git natively (probed: exit 0); comma inside backticks is punctuation -> strip
+F1	f8950158d0b1b6a2aa12e5f0d1af8658cd7d35ba..9d8fe9dbd6da1ad1e6c7e2c3a650e1ae1abab5d4	1	0	0	checked against c_F1's OWN tree where old_name.py exists (catches HEAD-tree bug)
+F2	9d8fe9dbd6da1ad1e6c7e2c3a650e1ae1abab5d4..eceb9160c9125035cecd965296fc281f612f82f0	2	1	1	commit's own tree lacks old_name.py after rename -> miss (catches HEAD-tree bug from other side)
+G	eceb9160c9125035cecd965296fc281f612f82f0..1fda96c5330b99aab177ee3263af203cbd3a9f09	0	0	0	whitespace tokens are commands; flags/bare non-filename words are not repo-relative paths (jj advisory)
+Hside	1fda96c5330b99aab177ee3263af203cbd3a9f09..1906bef92b3605b21902579bd055297ec2a2ed5d	1	0	0	side commit's own tree carries corpus/side.py
+H	1906bef92b3605b21902579bd055297ec2a2ed5d..85dac9cab6329c68547ca797f681529836d28cad	1	0	0	merge processed, not skipped; merge tree carries corpus/side.py; no crash on merge
+AGG	767ccde389a9d677bce1a0742934baf56a04ddf4..85dac9cab6329c68547ca797f681529836d28cad	11	-	1	commits=11 total; misses exactly 2 (case D bare log, case F2 old name); exit 1

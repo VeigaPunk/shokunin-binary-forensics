@@ -27,6 +27,7 @@ frontier it is working toward. Province: `PROVINCE.md`. Admission bar:
 - `derive_axml_anchors_r68.py` — byte-exact earlier revision of the derivation script (sha256 `bce497d6…`), pinned in `embedded_output_pins.json` so the retained round-68 candidate re-derives against the revision that printed it.
 - `self_assessment_check.py` — counts the lane's self-assessment mismatches against repo state (classes SM1–SM6; `--root`, `--self-test`).
 - `self_assessment_check2.py` — v2 of the above (round 90 C1): SM6 checks the K statement's numerator AND denominator against the map (v1 hard-coded `/14`); SM1–SM5 unchanged. v1 bytes stay as the frozen r70 instrument.
+- `self_assessment_check3.py` — v3 of the above (round 91 C1): SM6 reads the K statement in the **stated before→after cell** of the lane's own SCORECARD row instead of the last token-adjacent `N/D` anywhere on the line (the r90 critic's pointer-cell defect); SM1–SM5 unchanged, v2 bytes stay as the frozen r90 instrument.
 - `lint_entry.py` — mechanical pre-flight lint for a knowledge entry (§Q-map completeness, Q14 byte-count heuristic, unresolved commit ids, header trio); not an admission gate.
 - `training/bounty-triage/` — instruction module for authorized, artifact-first bounty
   triage (`MODULE.md`), its package validator (`check_package.py`), and two offline
@@ -68,8 +69,9 @@ held 4/14).
 ## Known gaps
 
 - `AGENTS.md` is absent (named debt, `SCORECARD.md`). `SKILL.md` exists and carries a
-  `## Gate registry` (rows for `check_embedded_outputs`, `self_assessment_check` and the
-  pre-flight `lint_entry`); the ten `verify_*.py` replay verifiers are not registered gates.
+  `## Gate registry` of 17 instrument blocks (`grep -c '^| name |' SKILL.md`), each row's
+  `kind` saying gate or probe (from round 91: `self_assessment_check3` and
+  `message_tree_check`); the ten `verify_*.py` replay verifiers are still not registered gates.
 - Two pre-contract entries (`seed.md`, the readiness checklist) carried no
   `source:` / `verified-at:` / `recheck:` headers at `8bbcb4e`; headers and a
   dated re-verification were added on 2026-10-19, but neither entry has been

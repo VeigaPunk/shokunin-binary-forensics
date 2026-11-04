@@ -1287,3 +1287,42 @@ no row, supports no claim).
 - **Mistakes mined:** `corpus/lessons/round-90.md` §Mistakes (D1–D3 from the
   r89 spot-check, S486's own dead path, oracle local-name matching, the §9
   control named instead of built, the C1 battery's format gap).
+
+## Round 91 (hyaku) — SM6 reads the K statement where the lane states it (C1 verified); the lane gains a commit-message↔tree instrument (C2 capability, verified)
+
+- **Freeze `b13aac756ac33aa5245c13966c624de4370206d0`.** Claims C1 calibration
+  (SM6 v3; frozen 21-case battery `reports/round-91/sm6_battery_v3.py`; 11 frozen
+  rule mutants `mutants.py`; red v2 `SM6_MISCLASS=5/22`, red v1 `11/22`) and C2
+  operability (commit-message↔tree capability; red = instrument absent,
+  `CAP_PRESENT=0`). Both counters, `c1_counter.py` and `cap_probe.py`, were frozen
+  with their reds before any build seat ran.
+- **Wave (one v1, 13 seats).** 4 executors, 2 scribes, 1 scout, 2 reviewers, 1
+  critic, 1 mutation-tester, 1 connector, 1 sentinel — attack share 4/13 = 30.8 %
+  (`.ufo/waves/round-91/w1-spec.json`, dispatch validated under
+  `ufo-wave-policy.json`, band 8–16). `ExecR91Sm6V3` landed v3 (`0/22`,
+  `MUTANTS_KILLED=11/11`); `ExecR91MsgTree` landed the instrument
+  (`CAP_MESSAGE_TREE=pass`); `ExecR91RealRun` measured `commits=23 cited=25
+  misses=9` and classified 1 genuine mismatch + 8 ambiguous bare names;
+  `ReviewerR91C1` held-out 22 cases (v3 0/22, v2 5/22); `ReviewerR91C2` 6/13
+  disagreements including the description defect H1; `MutR91Sm6` 17 attributed
+  implementation mutants, 11 killed / 6 survived; `ExecR91BatteryX` 21/21 labels
+  forced, 11/11 frozen mutants killed, 8 rule elements unexercised;
+  `SentinelR91Scope` 24 checks, 0 violations, frozen artefacts byte-unchanged.
+- **Landing.** `corpus/self_assessment_check3.py` (SM6 reads the stated cell; SM1–SM5
+  byte-identical to v2, v2 bytes untouched); `reports/round-91/message_tree_check.py`;
+  SKILL registry blocks for both instruments plus the corrected "registers 17
+  instrument blocks" sentence; `corpus/README.md` v3 index line and Known-gaps
+  update; the `message-tree-conformance` capability row; the round-91 SCORECARD
+  section; `corpus/lessons/round-91.md`.
+- **Mistake mined (M91-a).** This round's own wave-evidence commit `d509e98` cites
+  `ufo-wave-policy.json`, which lives at the fleet root and is not in the lane
+  tree — the instrument built in the same round reported it as the run's only
+  genuine mismatch. Fix: cite fleet-root scripts by their absolute path in prose,
+  never as a bare lane-relative token; the instrument is now the standing check.
+- **Coverage routed, not claimed.** K `8/15` (5.3) and F4 `11/11` unchanged on
+  fresh receipts (`reports/round-91/holds.log`); the reason is frozen in
+  `reports/round-91/claims.md` and the next move is named in `SCORECARD.md`.
+- **Assimilation: none.** The `merge/revenger/` package's 155 staged ids collide
+  155/155 with the lane registry (mass id drift) — nothing adopted, L0 question
+  appended (`revenger | round-91`). `considerthese/2026-11-04.md` proposal 4
+  (commit message↔tree check) is the C2 claim's ground.

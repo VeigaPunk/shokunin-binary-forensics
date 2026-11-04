@@ -1,0 +1,7 @@
+CAP_PRESENT=1 path=/fast/scratch/hyaku/revenger-r91/CriticR91Claims/probe-A/message_tree_check.py
+CAP_SELFTEST=pass exit=0
+CAP_PLANTED_MISS=fail clean_exit=0 dirty_exit=0
+  dirty tail: COMMIT 0000000 cited=1 misses=0 | MESSAGE_TREE commits=21 cited=21 misses=0
+CAP_REAL=pass commits=21 cited=21 misses=0 exit=0
+LEGS present=pass selftest=pass planted=fail real=pass
+CAP_MESSAGE_TREE=fail

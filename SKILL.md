@@ -34,8 +34,9 @@ boundaries"):
   the exact bytes it hashed (Q09; S005, S006, S015).
 - **No generalization.** A finding is scoped to the observed family, operation, version
   and input (Q10). One authored fixture never supports a general format claim.
-- **Registry is the only admission instrument.** §Gate registry below registers exactly one
-  committed gate (`check_embedded_outputs`, kind `gate`); the ten `verify_*.py` scripts and every
+- **Registry is the only admission instrument.** §Gate registry below registers 17
+  instrument blocks (`grep -c '^| name |' SKILL.md`), and each row's `kind` says whether it is a
+  `gate` (admission) or a `probe` (measurement); the ten `verify_*.py` scripts and every
   other self-test are replay evidence, not admission, and a green `--self-test` is not a verdict
   (`corpus/README.md` "Known gaps"; `SCORECARD.md` rubric boundaries). This SKILL is checklist work
   and claims no new capability.
@@ -321,6 +322,31 @@ a rejected candidate keeps every byte except its `admission-status:` line.
 | measured-against | frozen battery `reports/round-90/sm6_battery.py` (14 hand-labelled cases incl. the real tree and an `8/14` forgery): v1 `SM6_MISCLASS=7/14` (`reports/round-90/c1-red-v1-battery.log`); v2 result in `reports/round-90/c1-after-v2-battery.log` |
 | what a green run does NOT establish | v1's limits stand for SM1–SM5; SM6 reads only the LAST line naming `K_HELD_BACKED` and its last `N/D` statement (text before `K_HELD_BACKED_STRICT`); a K statement elsewhere in SCORECARD is not checked |
 | write scope | read-only over TREE; runs `git cat-file -e` in the lane repo; writes nothing outside its own temp dirs |
+| owner | revenger |
+
+| field | value |
+|---|---|
+| name | `self_assessment_check3` (round 91 C1; supersedes `self_assessment_check2` above for SM6 only — v2 bytes stay as the r90 instrument) |
+| kind | gate (committed, re-runnable verdict script this lane owns) |
+| entry command | `python3 -B corpus/self_assessment_check3.py --root <tree> --lane <repo>` (same tree shape as v2) |
+| verdict map | `0` `SELF_MISMATCH=0` · `1` at least one of SM1-SM6 non-zero · `2` could-not-evaluate (a required file is missing) · `64` usage |
+| self-test | `python3 -B corpus/self_assessment_check3.py --self-test` — v2's legs plus four real-format legs (stated cell true while the pointer cell disagrees → 0; stated cell false while the pointer cell agrees → 1; stated cell carrying no `N/D` → 1; a decoy pair in the axis cell does not decide) |
+| measured-against | frozen battery `reports/round-91/sm6_battery_v3.py` (21 hand-labelled cases, 9 of them the lane's own table-row format) plus the real-tree leg: v2 `SM6_MISCLASS=5/22` (`reports/round-91/c1-red-v2.log`), v1 `11/22` (`reports/round-91/c1-red-v1.log`); v3 `0/22` with `MUTANTS_KILLED=11/11` (`reports/round-91/c1-after.log`). Held-out 22-case probe: v3 0/22, v2 5/22 (`revenger-shokunin/.ufo/waves/round-91/w1/ReviewerR91C1.md`) |
+| what a green run does NOT establish | SM1–SM5 limits are v1's; SM6 reads only the LAST SCORECARD line naming `K_HELD_BACKED` and its **stated cell** (cell index 2 of a ≥5-cell row, else the whole line), truncated at `K_HELD_BACKED_STRICT`. Eight rule elements have no discriminating battery case and 6 of 17 attributed implementation mutants survive the frozen battery (`.ufo/waves/round-91/w1/ExecR91BatteryX.md`, `MutR91Sm6.md`), so a fitted implementation can pass: the held-out probe, not the battery, is the discriminating check. Rule step 1 also means a *prose* line below the row that names the metric wins the "last line" slot and scores 1 (observed on this round's own SCORECARD before the sentence was reworded) — the r92 fix is to select the last table row, not the last line |
+| write scope | read-only over TREE; runs `git cat-file -e` in the lane repo; writes nothing outside its own temp dirs |
+| owner | revenger |
+
+| field | value |
+|---|---|
+| name | `message_tree_check` — `reports/round-91/message_tree_check.py` (round 91 C2, capability acquisition) |
+| kind | probe (committed, re-runnable measurement over the lane's own commit history; not an admission gate) |
+| entry command | `python3 -B reports/round-91/message_tree_check.py --lane <repo> --range <A>..<B>` (`--json` for the machine table) |
+| verdict map | `0` every cited path exists in the citing commit's tree · `1` at least one miss, each printed with its commit · `2` usage error |
+| self-test | `python3 -B reports/round-91/message_tree_check.py --selftest` — throwaway fixture repo: clean commit → exit 0, planted absent path → exit 1 naming it, `.log` leg; prints `MSG_TREE_SELFTEST=pass` |
+| measured-against | frozen probe `reports/round-91/cap_probe.py` (four legs incl. a planted-miss kill that a stub cannot pass); real run `7fab03f..refs/heads/main` → `MESSAGE_TREE commits=23 cited=25 misses=9`, one genuine mismatch (`reports/round-91/c2-after.log`; `.ufo/waves/round-91/w1/ExecR91RealRun/real-run-table.md`) |
+| grounded-on | S488 (git-log `--format` `%B`), S489 (`git cat-file -e` existence test) and S490 (Conventional Commits message shape) — all opened 2026-11-04 in `corpus/SOURCES.md`; `considerthese/2026-11-04.md` proposal 4 named the check |
+| what a green run does NOT establish | it sees only path-shaped tokens (a token containing `/` or ending in a known extension, backticked or bare); prose paths, `path:line` forms and directory tokens are invisible; a bare name needs a unique suffix match, so 8 of the 9 misses on this range are ambiguous bare names rather than defects (`.ufo/waves/round-91/w1/ReviewerR91C2.md` H2); and a message may cite a path it does not touch and still pass |
+| write scope | read-only over the repo (`rev-list`, `log`, `cat-file`, `ls-tree`); writes nothing outside its own temp dirs |
 | owner | revenger |
 
 | field | value |

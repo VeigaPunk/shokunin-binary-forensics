@@ -1,0 +1,22 @@
+lane /home/vgpnk/Projects/shokunin/revenger-shokunin range 7fab03f..refs/heads/main
+cmd: git -C LANE log --format=%H%x00%B%x01 RANGE  (read-only)
+commits=23
+backtick_chars_in_all_messages=0
+backticked_repo_relative_paths=0
+prefix_path_tokens(corpus|reports|tools|scripts|templates|.ufo)=9
+bare_dotlog_filenames=7
+widest_token_grammar(tameshi arm-3 extension list)=24
+per-commit (hash, backticked, prefixed, dotlog, widest):
+   ('d509e9828', 0, 0, 0, 1)
+   ('b13aac756', 0, 0, 0, 1)
+   ('b28071990', 0, 0, 0, 1)
+   ('46c170d17', 0, 1, 0, 0)
+   ('e0fbf2ea8', 0, 0, 0, 1)
+   ('7f840eb6f', 0, 0, 0, 1)
+   ('5f7ecce6a', 0, 2, 0, 2)
+   ('bd575ca11', 0, 2, 0, 0)
+   ('6ce41aabc', 0, 0, 3, 6)
+   ('c84339c05', 0, 2, 0, 2)
+   ('45b27135d', 0, 1, 4, 8)
+   ('87f80ceff', 0, 1, 0, 1)
+reading: M>=20 (cap_probe leg 4) reachable only under the widest token grammar

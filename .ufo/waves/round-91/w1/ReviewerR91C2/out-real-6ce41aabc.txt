@@ -1,0 +1,2 @@
+COMMIT 6ce41aabc3216b9d07981ea573cce70dbee93b76 cited=6 misses=3 missing=inspection.json,receipt.json,LEDGER.md bare=environment.log,c1-after.log,c2-after.log
+MESSAGE_TREE commits=1 cited=6 misses=3

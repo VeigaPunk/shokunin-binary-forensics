@@ -1,0 +1,23 @@
+== d509e982844d31bd26f3cb96e1a663e7d36f2ca8 cited=1
+   ufo-wave-policy.json -> miss  suffix_hits=0 []
+== b13aac756ac33aa5245c13966c624de4370206d0 cited=1
+   claims.md -> miss  suffix_hits=30 ['reports/round-61/claims.md', 'reports/round-62/claims.md', 'reports/round-63/claims.md']
+== 45b27135d cited=8
+   sweep-green.log -> bare
+   mutant-kill-after.log -> bare
+   sweep-probe-after.log -> bare
+   c1-only.log -> miss  suffix_hits=11 ['reports/round-78/c1-only.log', 'reports/round-79/c1-only.log', 'reports/round-80/c1-only.log']
+   noharm-diff.txt -> miss  suffix_hits=13 ['reports/round-76/noharm-diff.txt', 'reports/round-77/noharm-diff.txt', 'reports/round-78/noharm-diff.txt']
+   corpus/lessons/round-88.md -> hit
+   LOG.md -> hit
+   SCORECARD.md -> hit
+== 6ce41aabc cited=6
+   inspection.json -> miss  suffix_hits=31 ['corpus/live/runs/round-15/inspection.json', 'corpus/live/runs/round-19/inspection.json', 'corpus/live/runs/round-21/inspection.json']
+   receipt.json -> miss  suffix_hits=21 ['.ufo/waves/round-89/w1/ExecR89Record/receipt.json', 'corpus/live/runs/round-55/receipt.json', 'corpus/live/runs/round-56/receipt.json']
+   LEDGER.md -> miss  suffix_hits=72 ['corpus/live/runs/20261012T163909Z/LEDGER.md', 'corpus/live/runs/20261012T164246Z/LEDGER.md', 'corpus/live/runs/20261012T164357Z/LEDGER.md']
+   environment.log -> bare
+   c1-after.log -> bare
+   c2-after.log -> bare
+== 5f7ecce6a cited=2
+   reports/round-89/c1-after.log -> hit
+   corpus/lessons/round-89.md -> hit

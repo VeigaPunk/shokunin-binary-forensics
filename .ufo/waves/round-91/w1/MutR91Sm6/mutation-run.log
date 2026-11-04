@@ -1,0 +1,24 @@
+IMPL /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/self_assessment_check3.py
+IMPL_SHA256=7f2b8e836cbd7fcb47de2d36343c339d7dbdb1787ae924fe5a15287914630791
+BASELINE_MISMATCH=0 []  REAL=0
+BASELINE_PROBES={'S01': 1, 'S02': 1, 'S03': 0, 'S04': 'EXC:FileNotFoundError', 'S05': 'EXC:FileNotFoundError', 'S06': 0, 'S07': 1, 'S08': 0, 'S09': 1, 'S10': 1, 'S11': 1}
+BASELINE_HELDOUT={'exit': 0, 'summary': 'HELDOUT_MISCLASS=0/22', 'misclass': []}
+ID   STATUS        KILLED_BY                          SUP_FAILS    HELDOUT      DESC
+M01  killed        R02,R03,R04,R05,R06,R07,R08        -            HOUT=H01,H03,H05,H06,H08,H10,H12,H14,H15,H18,H20,H21 stated-region cell index 2 -> 3 (the evidence-pointer cell)
+M02  killed        R01,R02,R04,R07,R09                S08,S09      HOUT=H01,H03,H05,H06,H07,H08,H10,H12,H14,H15,H18,H21 stated-region cell index 2 -> 1 (the axis-name cell)
+M03  SURVIVED      -                                  S08,S09      HOUT=-            table-row threshold: >= 5 cells -> >= 6
+M04  SURVIVED      -                                  S02          HOUT=-            strip the K_HELD_BACKED_STRICT truncation
+M05  killed        R06                                S08,S09      HOUT=H05,H20      table rows fall back to the whole line (step 2 skipped)
+M06  SURVIVED      -                                  S01          HOUT=H12,H17,H18  take the FIRST K_HELD_BACKED line, not the last
+M07  SURVIVED      -                                  S03,S11      HOUT=H10          coverage-map denominator excludes `partial` rows
+M08  killed        B01,B04,B06,B08,B10,B11,R01,R02,R04,R07,R09 S03,S08      HOUT=H01,H03,H05,H06,H08,H10,H12,H14,H15,H16,H18,H21,H22 read `held` from cell index 4 (the `w` column) instead of the status column
+M09  SURVIVED      -                                  S04          HOUT=-            a missing corpus/README.md is accepted as 0 rows
+M10  killed        B03,B12,R03,R08                    S01,S09,S10  HOUT=H04,H07,H09,H11,H17 numerator check `==` -> `>=`
+M11  killed        B01,B04,B06,B07,B08,B10,B11,R01,R02,R04,R07,R09 S03,S06,S08  HOUT=H01,H03,H05,H06,H08,H10,H12,H14,H15,H16,H18,H21,H22 denominator off-by-one: len(rows) -> len(rows) + 1
+M12  killed        R02                                -            HOUT=H01,H02,H13,H19 take the LAST N/D group instead of the first after the token
+M13  killed        B04,B05,B07,B08,R02,R03,R05,R07,R09 -            HOUT=H01,H06,H10,H11,H14,H17,H18,H22 no right-side-of-arrow preference (the left side wins)
+M14  killed        B07,B08,R02,R03,R05,R07,R09        -            HOUT=H01,H06,H10,H11,H14,H17,H18,H22 no parenthesised-score skip: the arrow must follow the pair directly
+M15  killed        R06                                S02          HOUT=H20          no N/D found in the region -> 0 (pass) instead of 1
+M16  killed        B01,B04,B06,B08,B10,R01,R02,R04,R07,R09 S03,S06,S08  HOUT=H01,H03,H05,H06,H10,H12,H14,H15,H16,H18,H21,H22 the K line must also mention K_HELD_BACKED_STRICT
+M17  SURVIVED      -                                  S06,S10      HOUT=-            `held` counted as a substring anywhere on the map row
+SURVIVORS=6 ['M03', 'M04', 'M06', 'M07', 'M09', 'M17']

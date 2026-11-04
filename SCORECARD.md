@@ -168,6 +168,8 @@ retired: none.
 | ghidra-headless-recon | Import a PE into the local Ghidra 12.1.4 headless, run auto-analysis, and export per-function decompiled C via a committed Java postScript (Ghidra 12.x Python scripts require PyGhidra, so the postScript is Java) | `reports/round-75/ghidra-headless-recon.log`; fixture `corpus/fixtures/pe-r75-headless-smoke/` (generator + truth pin; regen byte-identical); run: exit 0, `1 functions, 1 decompiled`, `entry @ 140001000` → `return 0x2a;` | round-75 |
 | cited-evidence orphan sweep | Enumerate every lane-repo path cited by the closed round reports and lessons, classify each against HEAD and the working tree (committed / orphan / orphan-dir / absent-fleet / absent), and exit 1 naming any landable orphan (on-disk, never committed); hermetic `--selftest` (no git/network/live-tree write) with a planted-orphan vector and an attributed mutant kill | `PYTHONUTF8=1 python -B reports/round-80/orphan_sweep.py --lane <lane> --fleet <fleet-root>` → `CITED=344 COMMITTED=330 LANDABLE_ORPHANS=0 ABSENT=14`, exit 0 (`reports/round-80/sweep-real-after.log`); `--selftest` → `SWEEP_SELFTEST=pass`, exit 0 (`reports/round-80/selftest-after.log`); red-before `reports/round-80/orphan-before.log` | round-80 |
 
+| message-tree-conformance | Measure commit-message↔tree conformance over the lane's own history: extract every path-shaped token a commit message cites, resolve it in that commit's tree (bare names by unique suffix match), and exit 1 naming each miss; a planted-miss self-test proves it can fail | `reports/round-91/message_tree_check.py`; `PYTHONUTF8=1 python3 -B reports/round-91/cap_probe.py --lane <lane> --range 7fab03f..refs/heads/main` → `CAP_MESSAGE_TREE=pass` (`reports/round-91/c2-after.log`); real run `MESSAGE_TREE commits=23 cited=25 misses=9` (`.ufo/waves/round-91/w1/ExecR91RealRun/real-run-table.md`); discriminating probe `reports/round-91/cap_probe2.py` (`CAP2_VERDICT=pass`, stubA/stubD/stubE fail) | round-91 — the run is demonstrated; the round's C2 claim is **NOT VERIFIED** because its frozen probe was not discriminating (see the round-91 row) |
+
 Rows enter only through a round that demonstrates the capability running (`AXES.md` §Capabilities).
 
 ## Saturation
@@ -1668,3 +1670,34 @@ landing-tree instrument digests against the freeze pins and requires rea's
 held-out forgery set before freezing; (2) SM6 v3 must read the stated cell of
 the lane's real K row, with real-format rows in its battery and the four
 surviving mutants killed; (3) K (8 of 15) stays operator-blocked (L0 r74).
+
+## Round 91 (hyaku run 15) — SM6 v3 reads the K statement where the lane states it (C1 verified on its frozen counter); the lane can now measure commit-message↔tree conformance over its own history (C2 capability, verified)
+
+Base `f6356ffb8b665bddc5ee2cfac81443c1300b59bf`; freeze
+`b13aac756ac33aa5245c13966c624de4370206d0` (claims, the 21-case battery, 11 rule
+mutants, both counters, three red-before logs); wave evidence
+`d509e982844d31bd26f3cb96e1a663e7d36f2ca8` (13-seat w1); landing = the commit that
+carries this section. Claims, predicates and kill rules: `reports/round-91/claims.md`,
+unchanged since the freeze except one appended `## Erratum` that records a post-data
+description defect (C2's prose said "backticked" paths; the landed instrument reads
+path-shaped tokens, backticked or bare, and a strictly backticked reading would cite 8
+of the 23 messages' tokens and fail probe leg 4 — `ReviewerR91C2.md` H1). Predicate,
+counter, kill rule and target were not touched. After-runs over the landing tree:
+`reports/round-91/c1-after.log`, `reports/round-91/c2-after.log`,
+`reports/round-91/holds.log`.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| calibration — SM6 reads the stated cell (C1) | `SM6_MISCLASS` **5/22 (v2) → 0/22 (v3)**; `MUTANTS_KILLED` 11/11; impl `--self-test` exit 0; `REAL_SELF_MISMATCH` **1 → 0** (the 1 was the new file's missing `corpus/README.md` index line, fixed in the same landing) | `PYTHONUTF8=1 python3 -B reports/round-91/c1_counter.py --impl corpus/self_assessment_check3.py --real . --lane .` → `C1_VERDICT=pass`, exit 0 | red `f6356ff` (v2 5/22, v1 11/22) → landing (0/22) | **MET on its frozen counter; admission contested (§9).** Independent held-out 22-case probe: v3 0/22, v2 5/22 (`ReviewerR91C1.md`). Disclosed limits: 6 of 17 attributed implementation mutants survive the frozen battery and eight rule elements have no discriminating case (`MutR91Sm6.md`, `ExecR91BatteryX.md`). **CriticR91Claims C1-1 reproduced a 21-entry lookup table that passes the frozen counter without reading the stated cell** (`CriticR91Claims/receipts/c1-fit-hardcoded.log`) — under §9 the frozen counter is reachable by a skip-work control, so the claim is not clean. Post-freeze, unclaimed successor `reports/round-91/c1_counter2.py` adds 40 run-time-generated cases and kills that control (`RANDOM_MISCLASS=18/40`) while the landed v3 passes (`0/40`); it is a candidate instrument for r92's freeze, not this round's rule |
+| operability — commit-message↔tree conformance (C2, capability acquisition) | `CAP_MESSAGE_TREE` **fail (instrument absent, `CAP_PRESENT=0`) → pass**; real run `MESSAGE_TREE commits=23 cited=25 misses=9`, **1 genuine mismatch**, 8 ambiguous bare names | `PYTHONUTF8=1 python3 -B reports/round-91/cap_probe.py --lane . --range 7fab03f..refs/heads/main` → `CAP_MESSAGE_TREE=pass`, exit 0 | red `f6356ff` (absent) → landing | **NOT VERIFIED (§9, self-ruled).** The frozen probe's planted path is the guessable literal `missing/r91.txt` and its real leg ignores the exit code and the miss count: `CriticR91Claims` C2-2/C2-3/C2-4 built `stubD.py` (flags any name containing `missing`, no tree or filesystem lookup) and `stubE.py` (worktree-only), and **both pass `CAP_MESSAGE_TREE=pass`**. Post-freeze, unclaimed successor `reports/round-91/cap_probe2.py` plants a random absent path, adds a worktree-vs-tree leg and cross-checks `commits`/exit against the printed miss count: the landed instrument passes and stubA/stubD/stubE all fail (`CAP2_VERDICT=fail`, receipts in `reports/round-91/c2-after.log`). The capability itself is demonstrated — The genuine mismatch is this round's own wave-evidence commit (`d509e98` cites `ufo-wave-policy.json`, a fleet-root script not in the lane tree) — the instrument caught its author in the round that built it. Capability row entered above |
+| coverage — lowest non-retired axis, **no claim** | `K_HELD_BACKED` **8/15 (5.3) → 8/15 (5.3)**; `C10_HELD_BACKED` 0/1; `F4_COVERAGE` **11/11 → 11/11** (10.00) | `PYTHONUTF8=1 python3 -B reports/round-73/measure.py .`; `PYTHONUTF8=1 python3 -B reports/round-81/f_probe4.py corpus` (`reports/round-91/holds.log`) | `f6356ff` → landing | **unchanged hold — routed on documented unreachability** (frozen in `claims.md` before data): K moves only by admitting a `corpus/knowledge/` entry through the Q01–Q17 gate with per-source openings (C10 cites 14 sources, C15 cites 50); C05's last six candidates were rejected and its r90 record's counter is itself the routed defect (spot-check item 1); new map rows are operator-blocked (L0 r74). Named next move: r92 admits C03 (managed) from the r85 oracle-checked records, or C10 with a source-opening wave |
+| depth / freshness / adjacency | no claim; `SKILL.md` gains two registry blocks and loses a stale "registers exactly one gate" sentence; `corpus/README.md` gains the v3 index line | `SentinelR91Scope.md` (24 checks, 22 pass, 2 disclosures, 0 violations); `git diff --stat f6356ff..landing -- PROVINCE.md corpus/QUALITY.md` (empty) | landing | unchanged (no harm observed) |
+
+**Routed forward.** (1) SM6 v4 battery: add a 5-cell row and a row that names the STRICT metric,
+so M03/M04 stop surviving, and kill M06/M07/M09/M17 (first-K-line, `partial`-row
+denominator, missing-README fail-closed, substring `held`); (2) the C2 instrument's
+bare-name rule: a non-unique suffix match currently reports a *miss*, which turns 8 real
+citations into noise — r92 should report them as `ambiguous` and exclude them from the
+exit code, with a frozen predicate that distinguishes the three classes; (3) the r90 routed
+C2 predicate (instrument pins + `parseEvidence` id consistency) is still open and unworked
+this round.

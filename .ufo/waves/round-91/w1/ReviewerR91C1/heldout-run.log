@@ -1,0 +1,48 @@
+CASE H01 label=0 got=0 ok
+DERIVE H01 S1; S2 row→cells[2]; S4a first token-adjacent group takes ONE arrow step → (8,15); S6 8==held 15==rows
+CASE H02 label=1 got=1 ok
+DERIVE H02 S1; S2; S4a single arrow step from the token → (7,14) ≠ (8,15); S6 mismatch (the trailing 8/15 is past the one judged arrow step)
+CASE H03 label=0 got=0 ok
+DERIVE H03 S1; S2; S4a fails (token carries no following digits in the region); S4b last N/D = (8,15); S6 8==held 15==rows
+CASE H04 label=1 got=1 ok
+DERIVE H04 S1; S2; S4a fails; S4b last N/D = (10,16) ≠ (held 9, rows 16); S6 mismatch
+CASE H05 label=0 got=0 ok
+DERIVE H05 S1; S2 (the axis cell's token+4/14→8/14 decoy is OUTSIDE cells[2]); S4a fails (stated-cell token has no digits after it); S4b last N/D in stated cell = (8,15); S6 8==held 15==rows
+CASE H06 label=0 got=0 ok
+DERIVE H06 S1; S2 (axis N/D decoy 4/13→5/14 is outside cells[2] and carries no token); S4a → (8,14); S6 8==held 14==rows
+CASE H07 label=1 got=1 ok
+DERIVE H07 S1; S2; S4a → (9,15) ≠ (8,15); S6 mismatch (the axis decoy must not rescue anything)
+CASE H08 label=0 got=0 ok
+DERIVE H08 S1; S2; S3 truncate at K_HELD_BACKED_STRICT (7/15 discarded); S4a → (8,15); S6 8==held 15==rows
+CASE H09 label=1 got=1 ok
+DERIVE H09 S1; S2; S3 truncate (the agreeing STRICT 8/15 must be discarded); S4a → (9,15) ≠ (8,15); S6 mismatch
+CASE H10 label=0 got=0 ok
+DERIVE H10 S1; S2; S4a → (7,15); S6 held=7 (6 plain + 1 trailing-space held row, which still counts) and rows=15 (the `partial` row counts in D only)
+CASE H11 label=1 got=1 ok
+DERIVE H11 S1; S2; S4a → (8,15) ≠ (held 7, rows 15); S6 mismatch (a `partial` row is not held)
+CASE H12 label=0 got=0 ok
+DERIVE H12 S1 the fenced line above the row also names the token but the ROW is the LAST K line; S2; S4a → (8,15); S6 8==held 15==rows
+CASE H13 label=1 got=1 ok
+DERIVE H13 S1; S2; S4a the FIRST token occurrence (inside the inline code span in the stated cell) → (9,16) ≠ (8,15); S6 mismatch
+CASE H14 label=0 got=0 ok
+DERIVE H14 S1; S2 four visible columns → naive split len 6 ≥ 5, cells[2] = 2nd visible column = the stated cell; S4a → (8,15); S6 8==held 15==rows (the pointer decoy in the 4th column is outside the region)
+CASE H15 label=0 got=0 ok
+DERIVE H15 S1; S2 three visible columns → naive split len 5 ≥ 5, cells[2] = 2nd visible column = the stated cell; S4a → (8,15); S6 8==held 15==rows (the 3rd-column verdict decoy 9/15 is outside the region)
+CASE H16 label=0 got=0 ok
+DERIVE H16 S1; S2b row does not end with `|` → whole line is the region; S4a → (8,15); S6 8==held 15==rows
+CASE H17 label=1 got=1 ok
+DERIVE H17 S1 the LAST K row (recount) is judged, not the first; S2; S4a → (9,15) ≠ (8,15); S6 mismatch
+CASE H18 label=0 got=0 ok
+DERIVE H18 S1 the LAST K row (erratum) is judged; S2; S4a → (8,15); S6 8==held 15==rows
+CASE H19 label=1AMBIG got=1 ok
+DERIVE H19 S1; S2; S4a the arrow class is `→`/`->` only; `–>` (en dash) is not an arrow → group is (8,14) ≠ (8,15); S6 mismatch under the literal reading
+AMBIGUITY H19 AMBIGUOUS: a human reads `–>` as an arrow (current side 8/15 → label 0); the rule names only `→`/`->`. Label follows the literal rule.
+CASE H20 label=1AMBIG got=1 ok
+DERIVE H20 S1; S2 naive split on `|` — the escaped `\|` in the axis cell splits into an extra cell, so cells[2] = ' K map ' (no token, no N/D); S5 neither read yields a group → 1
+AMBIGUITY H20 AMBIGUOUS: a markdown-aware reader sees cells[2] as the true stated cell (label 0); the rule's `cell index 2` is undecided on escapes. Label follows the literal naive split.
+CASE H21 label=0 got=0 ok
+DERIVE H21 S1; S2 the escaped pipe sits AFTER cell 2, so cells[2] stays the stated cell; S4a → (8,15); S6 8==held 15==rows
+CASE H22 label=0 got=0 ok
+DERIVE H22 S1; S2b two visible columns → naive split len 4 < 5 → whole line is the region; S4a → (8,15); S6 8==held 15==rows
+HELDOUT_MISCLASS=0/22
+AMBIGUOUS_DIVERGENCE=0

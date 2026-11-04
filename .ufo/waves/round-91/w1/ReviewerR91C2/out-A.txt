@@ -1,0 +1,2 @@
+COMMIT aab26b59a2ff7b4b9a0cee2e9433e4a2902a4edc cited=1 misses=1 missing=missing/case-a.txt
+MESSAGE_TREE commits=1 cited=1 misses=1

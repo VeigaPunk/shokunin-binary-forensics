@@ -1,0 +1,16 @@
+A	3273d67a4deff038c48d3730c4544e6915b1a01d..aab26b59a2ff7b4b9a0cee2e9433e4a2902a4edc	exp(cited=0,miss=0,exit=0)	obs(cited=1,miss=1,exit=1,commitlines=1)	DISAGREE
+B	aab26b59a2ff7b4b9a0cee2e9433e4a2902a4edc..8e3a432f49cbde770da54d88a1cb109377a024a1	exp(cited=1,miss=0,exit=0)	obs(cited=1,miss=0,exit=0,commitlines=1)	AGREE
+C	8e3a432f49cbde770da54d88a1cb109377a024a1..6b2c231eccafe3ec2e9564a83151cfcf3641b2a9	exp(cited=1,miss=0,exit=0)	obs(cited=1,miss=0,exit=0,commitlines=1)	AGREE
+D	6b2c231eccafe3ec2e9564a83151cfcf3641b2a9..1f06217c0867a8cbcef6cf8be3319dcb37a8352e	exp(cited=1,miss=1,exit=1)	obs(cited=1,miss=1,exit=1,commitlines=1)	AGREE
+E	1f06217c0867a8cbcef6cf8be3319dcb37a8352e..f8950158d0b1b6a2aa12e5f0d1af8658cd7d35ba	exp(cited=2,miss=0,exit=0)	obs(cited=2,miss=0,exit=0,commitlines=1)	AGREE
+F1	f8950158d0b1b6a2aa12e5f0d1af8658cd7d35ba..9d8fe9dbd6da1ad1e6c7e2c3a650e1ae1abab5d4	exp(cited=1,miss=0,exit=0)	obs(cited=1,miss=0,exit=0,commitlines=1)	AGREE
+F2	9d8fe9dbd6da1ad1e6c7e2c3a650e1ae1abab5d4..eceb9160c9125035cecd965296fc281f612f82f0	exp(cited=2,miss=1,exit=1)	obs(cited=2,miss=1,exit=1,commitlines=1)	AGREE
+G	eceb9160c9125035cecd965296fc281f612f82f0..1fda96c5330b99aab177ee3263af203cbd3a9f09	exp(cited=0,miss=0,exit=0)	obs(cited=0,miss=0,exit=0,commitlines=1)	AGREE
+Hside	1fda96c5330b99aab177ee3263af203cbd3a9f09..1906bef92b3605b21902579bd055297ec2a2ed5d	exp(cited=1,miss=0,exit=0)	obs(cited=1,miss=0,exit=0,commitlines=1)	AGREE
+Hmerge	1906bef92b3605b21902579bd055297ec2a2ed5d..85dac9cab6329c68547ca797f681529836d28cad	exp(cited=1,miss=0,exit=0)	obs(cited=1,miss=0,exit=0,commitlines=1)	AGREE
+AGG	767ccde389a9d677bce1a0742934baf56a04ddf4..85dac9cab6329c68547ca797f681529836d28cad	exp(commits=11,miss=2,exit=1,11 COMMIT lines)	obs(commits=11,miss=3,exit=1,commitlines=11)	DISAGREE
+REAL	d509e982844d31bd26f3cb96e1a663e7d36f2ca8^..d509e982844d31bd26f3cb96e1a663e7d36f2ca8	exp(cited=0,miss=0,exit=0)	obs(cited=1,miss=1,exit=1,commitlines=1)	DISAGREE
+REAL	b13aac756ac33aa5245c13966c624de4370206d0^..b13aac756ac33aa5245c13966c624de4370206d0	exp(cited=0,miss=0,exit=0)	obs(cited=1,miss=1,exit=1,commitlines=1)	DISAGREE
+REAL	45b27135d^..45b27135d	exp(cited=4,miss=0,exit=0)	obs(cited=8,miss=2,exit=1,commitlines=1)	DISAGREE
+REAL	6ce41aabc^..6ce41aabc	exp(cited=3,miss=0,exit=0)	obs(cited=6,miss=3,exit=1,commitlines=1)	DISAGREE
+REAL	5f7ecce6a^..5f7ecce6a	exp(cited=1,miss=0,exit=0)	obs(cited=2,miss=0,exit=0,commitlines=1)	DISAGREE

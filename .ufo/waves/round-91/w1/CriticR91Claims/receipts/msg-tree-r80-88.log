@@ -1,0 +1,49 @@
+COMMIT 45b27135dac305142437ea49304f109b01a1325c cited=8 misses=2 missing=c1-only.log,noharm-diff.txt bare=sweep-green.log,mutant-kill-after.log,sweep-probe-after.log
+COMMIT 41322a34365817bdd54cd8a2c6c676424d98825c cited=0 misses=0
+COMMIT 87f80ceff473b9541ed031c3fa58376b4679cb85 cited=1 misses=0
+COMMIT 7fab03f32e1318aaef9af860f173569fb5a12389 cited=2 misses=0 bare=receipt_sweep.py,sweep_probe.sh
+COMMIT 48db9e0cee274250b2e14a03760759ee7e7375fd cited=0 misses=0
+COMMIT 1481f4907b370a32bc6543dfe831a3da30741d97 cited=9 misses=4 missing=plain-equal.log,c1-only.log,holds-over-landing-archive.log,noharm-diff.txt bare=negctl-green.log,negctl-mutant-kill-after.log
+COMMIT 1fa086d3ad6d91dd30bd5bc0adf2e225585c5f54 cited=6 misses=2 missing=negctl-green.log,corpus/lessons/round-87.md bare=negctl-red.log
+COMMIT ea143a3a0f93db8e054395bdaa29645f17db6bd2 cited=6 misses=2 missing=selftest_probe.sh,claims.md bare=probe_negctl2.sh,plain-equal-prelanding.log,negctl-red.log,negctl-v1-baseline.log
+COMMIT 1306ec9ac32a4d4477cc15049c1d09e326ecac5a cited=0 misses=0
+COMMIT a29381623cbcdffea9fd9cc4331868bf5e3406f3 cited=0 misses=0
+COMMIT 4d8716bc4b148ebadb308851ea663eeafcf843d1 cited=1 misses=0 bare=sweep7-real-after.log
+COMMIT 7254587d3ac5d045eb9908da5b76d5ff23c932ab cited=1 misses=1 missing=sweep7-real-after.log
+COMMIT 25041d95c04e3bb781db21b283874e8673bdbcaf cited=6 misses=0
+COMMIT 231140083fe77739d4093be6fc6767733a1c8aae cited=3 misses=1 missing=corrections.md bare=SOURCES.md
+COMMIT d7fd9d93c522ccc6f2b8f46a56cb90231926c43e cited=0 misses=0
+COMMIT d14e4c847a8895d9571b8fc2facaf840bf5d2687 cited=2 misses=0 bare=sweep6-selftest-after.log,sweep6-mutant-kill-after.log
+COMMIT f09cadad9a51aa0671477fd2f754ef8a2ce4ba31 cited=0 misses=0
+COMMIT 8b49e2d9507340c8faa2cbf6a7d4ae4c8d36c7ab cited=2 misses=1 missing=truth.json
+COMMIT d27cf95db88b86de611fb5931dd0e89d2a1da8a7 cited=5 misses=0 bare=mg-red.log,preprobe-managed-shape.log,v5-full-prelanding.log,v6-full-prelanding.log,sweep6-mutant-kill.log
+COMMIT acfb3b4ad24caf8e550edd4c96c4ecb9f9657d96 cited=2 misses=1 missing=corrections.md bare=postadjudication-sweep.log
+COMMIT 9cadaedeba8ed7968e4acd2907d2a4fb30090a83 cited=2 misses=1 missing=corrections.md bare=postadjudication-sweep.log
+COMMIT ac91c050774086ccaad907424b745befc4826eb7 cited=2 misses=1 missing=postadjudication-sweep.log bare=corrections.md
+COMMIT 8cf92f0c7c3d983181ac458ae90c2bb687226f62 cited=0 misses=0
+COMMIT 5cdebb13713aa20778f3c6b5231c74dd3ba9a590 cited=0 misses=0
+COMMIT f3d3902e830ceb55f5524cac9724c157b13a0d98 cited=3 misses=2 missing=inspection.json,runs bare=ag2-red-v21.log
+COMMIT 8e21e8f238dccc9d95c5a5a1e84500daf275979f cited=0 misses=0
+COMMIT d77f997428b715375e72bfb55b00b8e43d3118f5 cited=0 misses=0
+COMMIT 45c8b42fe4f79d6133a0546b58abeefe7a6b5efe cited=0 misses=0
+COMMIT 67e1470e5b2492df7b86632c5b3bafabfdd3e023 cited=2 misses=0 bare=v4-postlanding-recon.log,corrections.md
+COMMIT 54a36bca7bc52d528026ca28beb51f4cab98fa69 cited=0 misses=0
+COMMIT b56d81bd83811b3e122f24cb81352472d2afd554 cited=0 misses=0
+COMMIT 75298d427d97c5668753969fecf54d98630735b7 cited=0 misses=0
+COMMIT 28e8c290235f2e6d588a9b81538b61ae50e533b7 cited=2 misses=1 missing=ag-red.log bare=preprobe-app-shape.log
+COMMIT 60693f2ce6b086ea3f0ee84fe27a8f8a13d46f46 cited=0 misses=0
+COMMIT c153e44839ed86bda0623403190c49a42fe71e21 cited=0 misses=0
+COMMIT 02a4ca971d9e8d38bb6d46c5db0ee9721dea7432 cited=0 misses=0
+COMMIT 0ad3ff7e04b1d4f15b051f6545a8b18fe9b5b226 cited=0 misses=0
+COMMIT 9201d97a92ea6b355e8c9d713d2c3b0c8aa7a13b cited=0 misses=0
+COMMIT ad74dc88342a7f3b314c786ad0bbea379df8af15 cited=0 misses=0
+COMMIT 33764dd29aaab69457327618e2a2c14900d5b634 cited=0 misses=0
+COMMIT b2fc6bbb195c6029ac2ce6a51e6e376ec0001c4a cited=1 misses=0
+COMMIT b330049b2aab33deff147737d22e515c229b1b75 cited=0 misses=0
+COMMIT 88b7e7cee2f07c77b7d9597e8d9e3159aed37f19 cited=0 misses=0
+COMMIT 8261a24cb806d60a47a640f948de339912dcc96b cited=0 misses=0
+COMMIT 081f032fda9502ebfbceb295d7e097dd8803bce1 cited=0 misses=0
+COMMIT b1e0c60e325642b840cbfea20423613c49c31061 cited=0 misses=0
+COMMIT 25e31b01e8c69871c5edb20249f36d2e934a448c cited=0 misses=0
+COMMIT ef7d3ee34f547e3f1451d944135df8722cf902fd cited=0 misses=0
+MESSAGE_TREE commits=48 cited=66 misses=19

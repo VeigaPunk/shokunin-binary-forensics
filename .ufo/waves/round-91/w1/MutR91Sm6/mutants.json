@@ -1,0 +1,927 @@
+{
+  "impl": "/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/self_assessment_check3.py",
+  "impl_sha256": "7f2b8e836cbd7fcb47de2d36343c339d7dbdb1787ae924fe5a15287914630791",
+  "battery": "/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-91/sm6_battery_v3.py",
+  "cases": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09",
+    "B10",
+    "B11",
+    "B12",
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "R07",
+    "R08",
+    "R09"
+  ],
+  "baseline_mismatch": [],
+  "baseline_real": 0,
+  "heldout": "/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/ReviewerR91C1/heldout_sm6_probe.py",
+  "baseline_heldout": {
+    "exit": 0,
+    "summary": "HELDOUT_MISCLASS=0/22",
+    "misclass": []
+  },
+  "baseline_probes": {
+    "S01": 1,
+    "S02": 1,
+    "S03": 0,
+    "S04": "EXC:FileNotFoundError",
+    "S05": "EXC:FileNotFoundError",
+    "S06": 0,
+    "S07": 1,
+    "S08": 0,
+    "S09": 1,
+    "S10": 1,
+    "S11": 1
+  },
+  "mutants": [
+    {
+      "id": "M01",
+      "desc": "stated-region cell index 2 -> 3 (the evidence-pointer cell)",
+      "rule": "rule 2: stated region = cell index 2",
+      "replaced": "return cells[2]",
+      "replacement": "return cells[3]",
+      "killing_cases": [
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08"
+      ],
+      "real": 0,
+      "probe_fail": [],
+      "status": "killed",
+      "heldout": {
+        "exit": 1,
+        "summary": "HELDOUT_MISCLASS=12/22",
+        "misclass": [
+          "H01",
+          "H03",
+          "H05",
+          "H06",
+          "H08",
+          "H10",
+          "H12",
+          "H14",
+          "H15",
+          "H18",
+          "H20",
+          "H21"
+        ]
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 1,
+        "S03": 0,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 1,
+        "S08": 0,
+        "S09": 1,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M02",
+      "desc": "stated-region cell index 2 -> 1 (the axis-name cell)",
+      "rule": "rule 2: stated region = cell index 2",
+      "replaced": "return cells[2]",
+      "replacement": "return cells[1]",
+      "killing_cases": [
+        "R01",
+        "R02",
+        "R04",
+        "R07",
+        "R09"
+      ],
+      "real": 1,
+      "probe_fail": [
+        {
+          "probe": "S08",
+          "expect": 0,
+          "got": 1,
+          "baseline": 0,
+          "why": "threshold boundary: 3 visible columns are a table row (naive-split convention)"
+        },
+        {
+          "probe": "S09",
+          "expect": 1,
+          "got": 0,
+          "baseline": 1,
+          "why": "threshold boundary: a false stated cell must be flagged"
+        }
+      ],
+      "status": "killed",
+      "heldout": {
+        "exit": 1,
+        "summary": "HELDOUT_MISCLASS=12/22",
+        "misclass": [
+          "H01",
+          "H03",
+          "H05",
+          "H06",
+          "H07",
+          "H08",
+          "H10",
+          "H12",
+          "H14",
+          "H15",
+          "H18",
+          "H21"
+        ]
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 1,
+        "S03": 0,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 0,
+        "S08": 1,
+        "S09": 0,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M03",
+      "desc": "table-row threshold: >= 5 cells -> >= 6",
+      "rule": "rule 2: table row iff at least 5 cells",
+      "replaced": "if len(cells) >= 5:",
+      "replacement": "if len(cells) >= 6:",
+      "killing_cases": [],
+      "real": 0,
+      "probe_fail": [
+        {
+          "probe": "S08",
+          "expect": 0,
+          "got": 1,
+          "baseline": 0,
+          "why": "threshold boundary: 3 visible columns are a table row (naive-split convention)"
+        },
+        {
+          "probe": "S09",
+          "expect": 1,
+          "got": 0,
+          "baseline": 1,
+          "why": "threshold boundary: a false stated cell must be flagged"
+        }
+      ],
+      "status": "SURVIVED",
+      "heldout": {
+        "exit": 0,
+        "summary": "HELDOUT_MISCLASS=0/22",
+        "misclass": []
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 1,
+        "S03": 0,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 0,
+        "S08": 1,
+        "S09": 0,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M04",
+      "desc": "strip the K_HELD_BACKED_STRICT truncation",
+      "rule": "rule 3: truncate the stated region at the first K_HELD_BACKED_STRICT",
+      "replaced": "region = stated_region(last[-1]).split(\"K_HELD_BACKED_STRICT\")[0]",
+      "replacement": "region = stated_region(last[-1])",
+      "killing_cases": [],
+      "real": 0,
+      "probe_fail": [
+        {
+          "probe": "S02",
+          "expect": 1,
+          "got": 0,
+          "baseline": 1,
+          "why": "rule 3: the region truncates at STRICT, leaving no stated N/D"
+        }
+      ],
+      "status": "SURVIVED",
+      "heldout": {
+        "exit": 0,
+        "summary": "HELDOUT_MISCLASS=0/22",
+        "misclass": []
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 0,
+        "S03": 0,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 1,
+        "S08": 0,
+        "S09": 1,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M05",
+      "desc": "table rows fall back to the whole line (step 2 skipped)",
+      "rule": "rule 2: table row => stated region is cell index 2",
+      "replaced": "if len(cells) >= 5:\n            return cells[2]",
+      "replacement": "if len(cells) >= 5:\n            return s",
+      "killing_cases": [
+        "R06"
+      ],
+      "real": 0,
+      "probe_fail": [
+        {
+          "probe": "S08",
+          "expect": 0,
+          "got": 1,
+          "baseline": 0,
+          "why": "threshold boundary: 3 visible columns are a table row (naive-split convention)"
+        },
+        {
+          "probe": "S09",
+          "expect": 1,
+          "got": 0,
+          "baseline": 1,
+          "why": "threshold boundary: a false stated cell must be flagged"
+        }
+      ],
+      "status": "killed",
+      "heldout": {
+        "exit": 1,
+        "summary": "HELDOUT_MISCLASS=2/22",
+        "misclass": [
+          "H05",
+          "H20"
+        ]
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 1,
+        "S03": 0,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 0,
+        "S08": 1,
+        "S09": 0,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M06",
+      "desc": "take the FIRST K_HELD_BACKED line, not the last",
+      "rule": "rule 1: the LAST SCORECARD line containing K_HELD_BACKED",
+      "replaced": "last[-1]",
+      "replacement": "last[0]",
+      "killing_cases": [],
+      "real": 1,
+      "probe_fail": [
+        {
+          "probe": "S01",
+          "expect": 1,
+          "got": 0,
+          "baseline": 1,
+          "why": "rule 1: the LAST K line is the statement"
+        }
+      ],
+      "status": "SURVIVED",
+      "heldout": {
+        "exit": 1,
+        "summary": "HELDOUT_MISCLASS=3/22",
+        "misclass": [
+          "H12",
+          "H17",
+          "H18"
+        ]
+      },
+      "probe_all": {
+        "S01": 0,
+        "S02": 1,
+        "S03": 0,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 1,
+        "S08": 0,
+        "S09": 1,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M07",
+      "desc": "coverage-map denominator excludes `partial` rows",
+      "rule": "rule 6: D = every `^| C<n> ` map row",
+      "replaced": "re.match(r\"^\\| C[0-9]+ \", l)]",
+      "replacement": "re.match(r\"^\\| C[0-9]+ \", l) and \"partial\" not in l]",
+      "killing_cases": [],
+      "real": 1,
+      "probe_fail": [
+        {
+          "probe": "S03",
+          "expect": 0,
+          "got": 1,
+          "baseline": 0,
+          "why": "rule 6: D counts `partial` rows too"
+        },
+        {
+          "probe": "S11",
+          "expect": 1,
+          "got": 0,
+          "baseline": 1,
+          "why": "rule 6: D counts the `partial` row, so 8/14 is false"
+        }
+      ],
+      "status": "SURVIVED",
+      "heldout": {
+        "exit": 1,
+        "summary": "HELDOUT_MISCLASS=1/22",
+        "misclass": [
+          "H10"
+        ]
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 1,
+        "S03": 1,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 1,
+        "S08": 0,
+        "S09": 1,
+        "S10": 1,
+        "S11": 0
+      }
+    },
+    {
+      "id": "M08",
+      "desc": "read `held` from cell index 4 (the `w` column) instead of the status column",
+      "rule": "rule 6: N = README rows whose status is held",
+      "replaced": "if re.search(r\"\\|\\s*held\\s*\\|\\s*$\", l)",
+      "replacement": "if l.split(\"|\")[4].strip() == \"held\"",
+      "killing_cases": [
+        "B01",
+        "B04",
+        "B06",
+        "B08",
+        "B10",
+        "B11",
+        "R01",
+        "R02",
+        "R04",
+        "R07",
+        "R09"
+      ],
+      "real": 1,
+      "probe_fail": [
+        {
+          "probe": "S03",
+          "expect": 0,
+          "got": 1,
+          "baseline": 0,
+          "why": "rule 6: D counts `partial` rows too"
+        },
+        {
+          "probe": "S08",
+          "expect": 0,
+          "got": 1,
+          "baseline": 0,
+          "why": "threshold boundary: 3 visible columns are a table row (naive-split convention)"
+        }
+      ],
+      "status": "killed",
+      "heldout": {
+        "exit": 1,
+        "summary": "HELDOUT_MISCLASS=13/22",
+        "misclass": [
+          "H01",
+          "H03",
+          "H05",
+          "H06",
+          "H08",
+          "H10",
+          "H12",
+          "H14",
+          "H15",
+          "H16",
+          "H18",
+          "H21",
+          "H22"
+        ]
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 1,
+        "S03": 1,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 1,
+        "S08": 1,
+        "S09": 1,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M09",
+      "desc": "a missing corpus/README.md is accepted as 0 rows",
+      "rule": "rule 6: N/D are read from the README (absence must fail closed)",
+      "replaced": "readme = txt(root / \"corpus/README.md\")\n    rows = [l for l in readme.splitlines()",
+      "replacement": "readme = txt(root / \"corpus/README.md\") if (root / \"corpus/README.md\").is_file() else \"\"\n    rows = [l for l in readme.splitlines()",
+      "killing_cases": [],
+      "real": 0,
+      "probe_fail": [
+        {
+          "probe": "S04",
+          "expect": 1,
+          "got": 0,
+          "baseline": "EXC:FileNotFoundError",
+          "why": "rule 6 undefined without a README => fail closed"
+        }
+      ],
+      "status": "SURVIVED",
+      "heldout": {
+        "exit": 0,
+        "summary": "HELDOUT_MISCLASS=0/22",
+        "misclass": []
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 1,
+        "S03": 0,
+        "S04": 0,
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 1,
+        "S08": 0,
+        "S09": 1,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M10",
+      "desc": "numerator check `==` -> `>=`",
+      "rule": "rule 6: SM6 = 0 iff N equals the held rows",
+      "replaced": "return 0 if got == (held, len(rows)) else 1",
+      "replacement": "return 0 if got[0] >= held and got[1] == len(rows) else 1",
+      "killing_cases": [
+        "B03",
+        "B12",
+        "R03",
+        "R08"
+      ],
+      "real": 0,
+      "probe_fail": [
+        {
+          "probe": "S01",
+          "expect": 1,
+          "got": 0,
+          "baseline": 1,
+          "why": "rule 1: the LAST K line is the statement"
+        },
+        {
+          "probe": "S09",
+          "expect": 1,
+          "got": 0,
+          "baseline": 1,
+          "why": "threshold boundary: a false stated cell must be flagged"
+        },
+        {
+          "probe": "S10",
+          "expect": 1,
+          "got": 0,
+          "baseline": 1,
+          "why": "rule 6: a note-cell `held` must not count (false statement)"
+        }
+      ],
+      "status": "killed",
+      "heldout": {
+        "exit": 1,
+        "summary": "HELDOUT_MISCLASS=5/22",
+        "misclass": [
+          "H04",
+          "H07",
+          "H09",
+          "H11",
+          "H17"
+        ]
+      },
+      "probe_all": {
+        "S01": 0,
+        "S02": 1,
+        "S03": 0,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 1,
+        "S08": 0,
+        "S09": 0,
+        "S10": 0,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M11",
+      "desc": "denominator off-by-one: len(rows) -> len(rows) + 1",
+      "rule": "rule 6: D = the number of map rows",
+      "replaced": "return 0 if got == (held, len(rows)) else 1",
+      "replacement": "return 0 if got == (held, len(rows) + 1) else 1",
+      "killing_cases": [
+        "B01",
+        "B04",
+        "B06",
+        "B07",
+        "B08",
+        "B10",
+        "B11",
+        "R01",
+        "R02",
+        "R04",
+        "R07",
+        "R09"
+      ],
+      "real": 1,
+      "probe_fail": [
+        {
+          "probe": "S03",
+          "expect": 0,
+          "got": 1,
+          "baseline": 0,
+          "why": "rule 6: D counts `partial` rows too"
+        },
+        {
+          "probe": "S06",
+          "expect": 0,
+          "got": 1,
+          "baseline": 0,
+          "why": "rule 6: only the status column counts as held"
+        },
+        {
+          "probe": "S08",
+          "expect": 0,
+          "got": 1,
+          "baseline": 0,
+          "why": "threshold boundary: 3 visible columns are a table row (naive-split convention)"
+        }
+      ],
+      "status": "killed",
+      "heldout": {
+        "exit": 1,
+        "summary": "HELDOUT_MISCLASS=13/22",
+        "misclass": [
+          "H01",
+          "H03",
+          "H05",
+          "H06",
+          "H08",
+          "H10",
+          "H12",
+          "H14",
+          "H15",
+          "H16",
+          "H18",
+          "H21",
+          "H22"
+        ]
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 1,
+        "S03": 1,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 1,
+        "S07": 1,
+        "S08": 1,
+        "S09": 1,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M12",
+      "desc": "take the LAST N/D group instead of the first after the token",
+      "rule": "rule 4: the FIRST N/D group immediately following the token",
+      "replaced": "if mm:\n            got = (int(mm.group(3)",
+      "replacement": "if False:\n            got = (int(mm.group(3)",
+      "killing_cases": [
+        "R02"
+      ],
+      "real": 0,
+      "probe_fail": [],
+      "status": "killed",
+      "heldout": {
+        "exit": 1,
+        "summary": "HELDOUT_MISCLASS=4/22",
+        "misclass": [
+          "H01",
+          "H02",
+          "H13",
+          "H19"
+        ]
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 1,
+        "S03": 0,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 1,
+        "S08": 0,
+        "S09": 1,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M13",
+      "desc": "no right-side-of-arrow preference (the left side wins)",
+      "rule": "rule 4: prefer the right side of -> when the group carries one",
+      "replaced": "got = (int(mm.group(3) or mm.group(1)), int(mm.group(4) or mm.group(2)))",
+      "replacement": "got = (int(mm.group(1)), int(mm.group(2)))",
+      "killing_cases": [
+        "B04",
+        "B05",
+        "B07",
+        "B08",
+        "R02",
+        "R03",
+        "R05",
+        "R07",
+        "R09"
+      ],
+      "real": 0,
+      "probe_fail": [],
+      "status": "killed",
+      "heldout": {
+        "exit": 1,
+        "summary": "HELDOUT_MISCLASS=8/22",
+        "misclass": [
+          "H01",
+          "H06",
+          "H10",
+          "H11",
+          "H14",
+          "H17",
+          "H18",
+          "H22"
+        ]
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 1,
+        "S03": 0,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 1,
+        "S08": 0,
+        "S09": 1,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M14",
+      "desc": "no parenthesised-score skip: the arrow must follow the pair directly",
+      "rule": "rule 4: skip an optional parenthesised score such as (5.7)",
+      "replaced": "(?:\\s*(?:\\(\\s*[\\d.]+\\s*\\))?\\s*(?:\u2192|->)\\s*(\\d+)\\s*/\\s*(\\d+))?",
+      "replacement": "(?:\\s*(?:\u2192|->)\\s*(\\d+)\\s*/\\s*(\\d+))?",
+      "killing_cases": [
+        "B07",
+        "B08",
+        "R02",
+        "R03",
+        "R05",
+        "R07",
+        "R09"
+      ],
+      "real": 0,
+      "probe_fail": [],
+      "status": "killed",
+      "heldout": {
+        "exit": 1,
+        "summary": "HELDOUT_MISCLASS=8/22",
+        "misclass": [
+          "H01",
+          "H06",
+          "H10",
+          "H11",
+          "H14",
+          "H17",
+          "H18",
+          "H22"
+        ]
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 1,
+        "S03": 0,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 1,
+        "S08": 0,
+        "S09": 1,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M15",
+      "desc": "no N/D found in the region -> 0 (pass) instead of 1",
+      "rule": "rule 5: no group => SM6 = 1",
+      "replaced": "if not nums:\n            return 1",
+      "replacement": "if not nums:\n            return 0",
+      "killing_cases": [
+        "R06"
+      ],
+      "real": 0,
+      "probe_fail": [
+        {
+          "probe": "S02",
+          "expect": 1,
+          "got": 0,
+          "baseline": 1,
+          "why": "rule 3: the region truncates at STRICT, leaving no stated N/D"
+        }
+      ],
+      "status": "killed",
+      "heldout": {
+        "exit": 1,
+        "summary": "HELDOUT_MISCLASS=1/22",
+        "misclass": [
+          "H20"
+        ]
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 0,
+        "S03": 0,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 0,
+        "S07": 0,
+        "S08": 0,
+        "S09": 1,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M16",
+      "desc": "the K line must also mention K_HELD_BACKED_STRICT",
+      "rule": "rule 1: any SCORECARD line containing K_HELD_BACKED",
+      "replaced": "if \"K_HELD_BACKED\" in l]",
+      "replacement": "if \"K_HELD_BACKED\" in l and \"K_HELD_BACKED_STRICT\" in l]",
+      "killing_cases": [
+        "B01",
+        "B04",
+        "B06",
+        "B08",
+        "B10",
+        "R01",
+        "R02",
+        "R04",
+        "R07",
+        "R09"
+      ],
+      "real": 1,
+      "probe_fail": [
+        {
+          "probe": "S03",
+          "expect": 0,
+          "got": 1,
+          "baseline": 0,
+          "why": "rule 6: D counts `partial` rows too"
+        },
+        {
+          "probe": "S06",
+          "expect": 0,
+          "got": 1,
+          "baseline": 0,
+          "why": "rule 6: only the status column counts as held"
+        },
+        {
+          "probe": "S08",
+          "expect": 0,
+          "got": 1,
+          "baseline": 0,
+          "why": "threshold boundary: 3 visible columns are a table row (naive-split convention)"
+        }
+      ],
+      "status": "killed",
+      "heldout": {
+        "exit": 1,
+        "summary": "HELDOUT_MISCLASS=12/22",
+        "misclass": [
+          "H01",
+          "H03",
+          "H05",
+          "H06",
+          "H10",
+          "H12",
+          "H14",
+          "H15",
+          "H16",
+          "H18",
+          "H21",
+          "H22"
+        ]
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 1,
+        "S03": 1,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 1,
+        "S07": 1,
+        "S08": 1,
+        "S09": 1,
+        "S10": 1,
+        "S11": 1
+      }
+    },
+    {
+      "id": "M17",
+      "desc": "`held` counted as a substring anywhere on the map row",
+      "rule": "rule 6: N = rows whose status is held (status column only)",
+      "replaced": "if re.search(r\"\\|\\s*held\\s*\\|\\s*$\", l)",
+      "replacement": "if \"held\" in l",
+      "killing_cases": [],
+      "real": 0,
+      "probe_fail": [
+        {
+          "probe": "S06",
+          "expect": 0,
+          "got": 1,
+          "baseline": 0,
+          "why": "rule 6: only the status column counts as held"
+        },
+        {
+          "probe": "S10",
+          "expect": 1,
+          "got": 0,
+          "baseline": 1,
+          "why": "rule 6: a note-cell `held` must not count (false statement)"
+        }
+      ],
+      "status": "SURVIVED",
+      "heldout": {
+        "exit": 0,
+        "summary": "HELDOUT_MISCLASS=0/22",
+        "misclass": []
+      },
+      "probe_all": {
+        "S01": 1,
+        "S02": 1,
+        "S03": 0,
+        "S04": "EXC:FileNotFoundError",
+        "S05": "EXC:FileNotFoundError",
+        "S06": 1,
+        "S07": 1,
+        "S08": 0,
+        "S09": 1,
+        "S10": 0,
+        "S11": 1
+      }
+    }
+  ],
+  "survivors": [
+    "M03",
+    "M04",
+    "M06",
+    "M07",
+    "M09",
+    "M17"
+  ],
+  "SURVIVORS": 6
+}

@@ -1,0 +1,15 @@
+== K/F4 holds at base f6356ffb8b665bddc5ee2cfac81443c1300b59bf (2026-11-04) ==
+-- reports/round-73/measure.py .
+K_HELD_BACKED=8/15
+C10_STATUS=partial
+C10_CANDIDATE_PIN=1/1
+C10_SOURCES=1/1
+C10_Q_VOTES=0/16
+C10_HELD_BACKED=0/1
+HOLDS_C10=no
+exit=0
+-- reports/round-81/f_probe4.py corpus
+{"analyze_javascript_application": 6, "compare_application_versions": 1, "compare_javascript_export_shapes": 3, "decode_interface_builder": 1, "extract_artifact": 3, "inspect_analysis_view": 1, "inspect_android_package": 1, "inspect_artifact": 5, "inspect_evm_interface": 7, "inspect_firmware_regions": 1, "inspect_keyed_archive": 1, "inspect_managed_artifact": 2, "inspect_managed_members": 1, "inspect_managed_native_boundaries": 1, "inspect_pe_certificates": 1, "inspect_pe_resources": 30, "inspect_sqlite_database": 1, "inspect_web_page": 1, "list_browser_targets": 1, "trace_application_feature": 2, "trace_dylib_resolution": 1, "trace_javascript_semantics": 2}
+F4_COVERAGE=11/11 score=10.00
+F4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']
+exit=0

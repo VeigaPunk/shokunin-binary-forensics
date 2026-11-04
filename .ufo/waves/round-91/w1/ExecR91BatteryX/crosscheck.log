@@ -1,0 +1,276 @@
+# ExecR91BatteryX — independent cross-check: frozen SM6 battery v3 + 11 rule mutants
+
+Round 91, attempt 1 · lane /home/vgpnk/Projects/shokunin/revenger-shokunin
+Seat: ExecR91BatteryX (leaf, read-only over the frozen artefacts).
+Frozen base b13aac756ac33aa5245c13966c624de4370206d0; lane HEAD at read time d509e982844d31bd26f3cb96e1a663e7d36f2ca8.
+
+Frozen artefact hashes (sha256):
+  22ce984f693d4f31999212b4db804ebe7297ebd8677d0a3cf0a13e757698daf4  reports/round-91/sm6_battery_v3.py
+  bde07efc210853bc64d70c58f5085a143f9c1032dea7bc03cb0b2c9666f652ba  reports/round-91/mutants.py
+  fca9b5d397f75e83282a7b860fb1ef8153a1e9bf3c475783b52e7ed7c20f36cf  reports/round-91/claims.md
+
+Method. My own six-step implementation of claims.md §C1 (hand_derive in xcheck.py),
+written from the prose and NOT imported from mutants.py, re-derives every label from
+the fixture text. Separately the frozen modules are imported in-process
+(sm6_battery_v3.CASES, mutants.MUTANTS, mutants.reference) and each case's fixture tree
+is built with sm6_battery_v3.build() in a private scratch temp dir. `reference` is the
+rule in code; `reports/round-91/mutants.reference` does not exist as a separate file —
+the rule-in-code scored here is mutants.reference() (see §6b).
+
+Commands (read-only over the lane; fixtures under $HYAKU_SCRATCH/revenger-r91/ExecR91BatteryX):
+  python3 -B xcheck.py            # hand_derive + reference + 11 mutants, per-case matrix
+  python3 -B -c "import probes; probes.main()"   # 11 single-element probes
+  python3 -B gen_log.py           # this log
+
+## 1. 21 label derivations (hand, from the six-step rule)
+
+Columns: case · label · fixture shape · stated region · group read · vs repo counts · forcing substring.
+Step paths (rule step numbers from claims.md §C1; "4a" = token-adjacent group, "4b" = last group in region):
+  B01 steps=1,2else,4a,6      B02 steps=1,2else,4a,6      B03 steps=1,2else,4a,6
+  B04 steps=1,2else,4a+arrow  B05 steps=1,2else,4a+arrow  B06 steps=1,2else,4a,6
+  B07 steps=1,2else,4a+score+arrow                        B08 steps=1,2else,4a+skip+score+arrow
+  B09 steps=1->5              B10 steps=1,2else,4a+skip   B11 steps=1,2else,3,4a,6
+  B12 steps=1,2else,4a,6
+  R01 steps=1,2cell[2],4b,6   R02 steps=1,2cell[2],4a(first-after-token),6
+  R03 steps=1,2cell[2],4a,6   R04 steps=1,2cell[2],4a,6   R05 steps=1,2cell[2],4a,6
+  R06 steps=1,2cell[2],4b(no group)->5
+  R07 steps=1,2cell[2],4a,6   R08 steps=1,2cell[2],4a,6   R09 steps=1,2cell[2],4a,6
+
+CASE B01  label=0  forced=yes  shape=bare-line
+  region = 'K_HELD_BACKED 8/15'
+  read   = token-adjacent: ' 8/15'  ->  read (8, 15) vs held=8 rows=15 -> match
+  forcing substring = `K_HELD_BACKED 8/15`
+  rationale = bare line; token-adjacent pair is the only pair; equals (held,rows).
+CASE B02  label=1  forced=yes  shape=bare-line
+  region = 'K_HELD_BACKED 8/14'
+  read   = token-adjacent: ' 8/14'  ->  read (8, 14) vs held=8 rows=15 -> mismatch
+  forcing substring = `K_HELD_BACKED 8/14` (D=14, map rows=15)
+  rationale = bare line; token-adjacent pair; denominator disagrees with map rows.
+CASE B03  label=1  forced=yes  shape=bare-line
+  region = 'K_HELD_BACKED 9/15'
+  read   = token-adjacent: ' 9/15'  ->  read (9, 15) vs held=8 rows=15 -> mismatch
+  forcing substring = `K_HELD_BACKED 9/15` (N=9, held=8)
+  rationale = bare line; token-adjacent pair; numerator disagrees with held.
+CASE B04  label=0  forced=yes  shape=bare-line
+  region = 'K_HELD_BACKED 8/14 → 8/15'
+  read   = token-adjacent: ' 8/14 → 8/15'  ->  read (8, 15) vs held=8 rows=15 -> match
+  forcing substring = `8/14 → 8/15` (right side taken)
+  rationale = bare line; token-adjacent group carries an arrow, so the right side is read.
+CASE B05  label=1  forced=yes  shape=bare-line
+  region = 'K_HELD_BACKED 8/15 → 8/14'
+  read   = token-adjacent: ' 8/15 → 8/14'  ->  read (8, 14) vs held=8 rows=15 -> mismatch
+  forcing substring = `8/15 → 8/14` (right side taken)
+  rationale = bare line; right side of the arrow is 8/14, which disagrees with 15 rows.
+CASE B06  label=0  forced=yes  shape=bare-line
+  region = 'K_HELD_BACKED 8/14'
+  read   = token-adjacent: ' 8/14'  ->  read (8, 14) vs held=8 rows=14 -> match
+  forcing substring = `K_HELD_BACKED 8/14` (map rows=14)
+  rationale = bare line; same pair as B01 but the map has 14 rows, so it matches.
+CASE B07  label=1  forced=yes  shape=bare-line
+  region = 'K_HELD_BACKED 8/14 (5.7) → 8/15 (5.3)'
+  read   = token-adjacent: ' 8/14 (5.7) → 8/15'  ->  read (8, 15) vs held=8 rows=14 -> mismatch
+  forcing substring = `8/14 (5.7) → 8/15` (right side 15, map rows=14)
+  rationale = bare line; score sits between pair and arrow; right side 8/15 vs 14 rows.
+CASE B08  label=0  forced=yes  shape=bare-line
+  region = '`K_HELD_BACKED` 8/14 (5.7) → 8/15 (5.3)'
+  read   = token-adjacent: '` 8/14 (5.7) → 8/15'  ->  read (8, 15) vs held=8 rows=15 -> match
+  forcing substring = `8/14 (5.7) → 8/15` after `` `K_HELD_BACKED` ``
+  rationale = backticked token; non-digit backtick skipped; right side matches.
+CASE B09  label=1  forced=yes  shape=no-K-line
+  region = None (no K line)
+  read   = no group (step 5)  ->  no SCORECARD line contains K_HELD_BACKED -> step 5: SM6=1
+  forcing substring = absent: SCORECARD has `no statement` (no K line)
+  rationale = no line carries the token, so step 5 forces SM6=1.
+CASE B10  label=0  forced=yes  shape=bare-line
+  region = '(`K_HELD_BACKED=9/16`)'
+  read   = token-adjacent: '=9/16'  ->  read (9, 16) vs held=9 rows=16 -> match
+  forcing substring = `(`K_HELD_BACKED=9/16`)` ('=' skipped)
+  rationale = token followed by '=', skipped as a non-digit; pair matches 9/16.
+CASE B11  label=0  forced=yes  shape=bare-line
+  region = 'K_HELD_BACKED 8/15 · '
+  read   = token-adjacent: ' 8/15'  [region truncated at K_HELD_BACKED_STRICT]  ->  read (8, 15) vs held=8 rows=15 -> match
+  forcing substring = `K_HELD_BACKED 8/15` before `K_HELD_BACKED_STRICT 7/15`
+  rationale = region truncated at K_HELD_BACKED_STRICT; token-adjacent 8/15 matches.
+CASE B12  label=1  forced=yes  shape=bare-line
+  region = 'K_HELD_BACKED 8/15'
+  read   = token-adjacent: ' 8/15'  ->  read (8, 15) vs held=7 rows=15 -> mismatch
+  forcing substring = `K_HELD_BACKED 8/15` (held=7)
+  rationale = pair is 8/15 but only 7 rows are held.
+CASE R01  label=0  forced=yes  shape=table-row cells=7 cell[2]
+  region = ' 8/15 (5.3) → 8/15 (5.3); C05 uncovered, C10 partial (candidate rejected this round), C15 uncovered '
+  read   = last-group-in-region: '8/15 (5.3) → 8/15'  ->  read (8, 15) vs held=8 rows=15 -> match
+  forcing substring = cell[2] `8/15 (5.3) → 8/15 (5.3)`
+  rationale = table row; cell[2] has no token, so the last (only) pair is read, right side 8/15.
+CASE R02  label=0  forced=yes  shape=table-row cells=7 cell[2]
+  region = ' `K_HELD_BACKED` 8/14 (5.7) → 8/15 (5.3); `C15_HELD_BACKED` 0/1 → 0/1 '
+  read   = token-adjacent: '` 8/14 (5.7) → 8/15'  ->  read (8, 15) vs held=8 rows=15 -> match
+  forcing substring = cell[2] `` `K_HELD_BACKED` 8/14 (5.7) → 8/15 (5.3) ``
+  rationale = table row; cell[2] has the token; first following group's right side is 8/15; the later C15 0/1 is not read.
+CASE R03  label=1  forced=yes  shape=table-row cells=7 cell[2]
+  region = ' `K_HELD_BACKED` 8/15 (5.3) → 9/15 (5.3); C05 uncovered '
+  read   = token-adjacent: '` 8/15 (5.3) → 9/15'  ->  read (9, 15) vs held=8 rows=15 -> mismatch
+  forcing substring = cell[2] `8/15 (5.3) → 9/15 (5.3)`
+  rationale = table row; stated after-side 9/15 disagrees with 8 held (pointer cell is outside the region).
+CASE R04  label=0  forced=yes  shape=table-row cells=7 cell[2]
+  region = ' `K_HELD_BACKED` 8/15 (5.3) → 8/15 (5.3); C05 uncovered '
+  read   = token-adjacent: '` 8/15 (5.3) → 8/15'  ->  read (8, 15) vs held=8 rows=15 -> match
+  forcing substring = cell[2] `8/15 (5.3) → 8/15 (5.3)` (pointer cell says 9/15)
+  rationale = table row; stated after-side 8/15 matches; the pointer cell's 9/15 is outside cell[2].
+CASE R05  label=1  forced=yes  shape=table-row cells=7 cell[2]
+  region = ' `K_HELD_BACKED` 8/15 (5.3) → 8/14 (5.3); C05 uncovered '
+  read   = token-adjacent: '` 8/15 (5.3) → 8/14'  ->  read (8, 14) vs held=8 rows=15 -> mismatch
+  forcing substring = cell[2] `8/15 (5.3) → 8/14 (5.3)`
+  rationale = table row; stated after-side denominator 14 disagrees with 15 map rows.
+CASE R06  label=1  forced=yes  shape=table-row cells=7 cell[2]
+  region = ' 2.9 → **4.3** '
+  read   = no group (step 5)  ->  stated region carries no N/D group -> step 5: SM6=1
+  forcing substring = cell[2] `2.9 → **4.3**` (no N/D in cell[2])
+  rationale = table row; cell[2] carries scores only, no N/D, so step 5 forces SM6=1.
+CASE R07  label=0  forced=yes  shape=table-row cells=7 cell[2]
+  region = ' `K_HELD_BACKED` 4/14 (2.9) → 8/15 (5.3); C04 and C09 uncovered → held '
+  read   = token-adjacent: '` 4/14 (2.9) → 8/15'  ->  read (8, 15) vs held=8 rows=15 -> match
+  forcing substring = cell[2] `4/14 (2.9) → 8/15 (5.3)`
+  rationale = table row; token-adjacent group's right side 8/15 matches; 4/14 is the left side.
+CASE R08  label=1  forced=yes  shape=table-row cells=7 cell[2]
+  region = ' `K_HELD_BACKED` 9/15 (6.0) → 9/15 (6.0); C05 uncovered '
+  read   = token-adjacent: '` 9/15 (6.0) → 9/15'  ->  read (9, 15) vs held=8 rows=15 -> mismatch
+  forcing substring = cell[2] `9/15 (6.0) → 9/15 (6.0)`
+  rationale = table row; stated after-side 9/15 disagrees with 8 held.
+CASE R09  label=0  forced=yes  shape=table-row cells=7 cell[2]
+  region = ' `K_HELD_BACKED` 8/16 (5.0) → 9/16 (5.6); C16 proposed '
+  read   = token-adjacent: '` 8/16 (5.0) → 9/16'  ->  read (9, 16) vs held=9 rows=16 -> match
+  forcing substring = cell[2] `8/16 (5.0) → 9/16 (5.6)`
+  rationale = table row; 9/16 matches 9 held of 16 map rows.
+
+Re-derived as forced: 21/21.  Labels the rule does not force: 0.
+Independent re-derivation (hand_derive) agrees with the frozen labels on every case;
+mutants.reference agrees on every case; reference misclass = 0/21.
+
+## 2. Rule elements vs case coverage
+
+Probe runs (single-element deltas scored in-process against the same 21 cases; a probe
+with 0/21 mismatches identifies an element no case can see):
+
+  PROBE P_no_strict_split misclass=0/21 survivors_on=ALL
+  PROBE P_no_strict_split UNDISCRIMINATED (battery cannot see this element)
+  PROBE P_first_kline misclass=0/21 survivors_on=ALL
+  PROBE P_first_kline UNDISCRIMINATED (battery cannot see this element)
+  PROBE P_cells_thresh_3 misclass=0/21 survivors_on=ALL
+  PROBE P_cells_thresh_3 UNDISCRIMINATED (battery cannot see this element)
+  PROBE P_startswith_only misclass=0/21 survivors_on=ALL
+  PROBE P_startswith_only UNDISCRIMINATED (battery cannot see this element)
+  PROBE P_non_token_first_group misclass=0/21 survivors_on=ALL
+  PROBE P_non_token_first_group UNDISCRIMINATED (battery cannot see this element)
+  PROBE P_non_token_left_side misclass=0/21 survivors_on=ALL
+  PROBE P_non_token_left_side UNDISCRIMINATED (battery cannot see this element)
+  PROBE P_score_before_pair misclass=0/21 survivors_on=ALL
+  PROBE P_score_before_pair UNDISCRIMINATED (battery cannot see this element)
+  PROBE P_cell_index_3 misclass=7/21 survivors_on=R02,R03,R04,R05,R06,R07,R08
+  PROBE P_last_group_after_token misclass=1/21 survivors_on=R02
+  PROBE P_rows_any_table_line misclass=0/21 survivors_on=ALL
+  PROBE P_rows_any_table_line UNDISCRIMINATED (battery cannot see this element)
+  PROBE P_ws_only_skip misclass=1/21 survivors_on=R02
+  PROBE reference misclass=0/21
+
+| rule element (claims.md §C1) | exercised by | verdict |
+|---|---|---|
+| 1. last SCORECARD line containing the token | none — every fixture has at most one K line | NOT EXERCISED (P_first_kline survives 0/21) |
+| 2. table row (start+end `|`, >=5 split cells) -> cell[2] | R01–R09 | EXERCISED (P_cell_index_3 misclasses 7/21: R02–R08) |
+| 2a. `>=5` threshold | none — every table fixture splits into 7 parts | NOT EXERCISED (P_cells_thresh_3 survives) |
+| 2b. trailing-`|` requirement | none — every table fixture starts and ends with `|` | NOT EXERCISED (P_startswith_only survives) |
+| 2c. bare-line else branch | B01–B12 | EXERCISED |
+| 3. truncate region at first K_HELD_BACKED_STRICT | B11 only, and inert there (token-adjacent 8/15 is read either way); no table row carries STRICT, so region-vs-line truncation order is untested | NOT EXERCISED for outcome (P_no_strict_split survives 0/21) |
+| 4a. first N/D group immediately after the token | B01–B08, B10, B11, R02–R05, R07–R09 | EXERCISED; first-vs-last after the token is decided only by R02 (P_last_group_after_token killed by R02 alone) |
+| 4a-i. skip non-digits before the pair | R02 alone (backtick/`=` cases fall back to the same last group) | EXERCISED only via R02 (P_ws_only_skip killed by R02 alone) |
+| 4a-ii. optional parenthesised score between pair and arrow | B07, B08, R02–R05, R07–R09 | EXERCISED (mutant M11 killed by 7 cases) |
+| 4a-iii. parenthesised score *before* the pair (the prose's other reading) | none | AMBIGUITY NOT EXERCISED (P_score_before_pair survives) |
+| 4a-iv. right side of `→`/`->` | B04, B05, B07, B08, R02–R05, R07–R09 | EXERCISED (M02 killed by 9 cases) |
+| 4b. no token -> last N/D group in region | R01 only | BRANCH EXERCISED; `last` not discriminated (P_non_token_first_group survives — R01 has one group) |
+| 4b-i. right-side preference in the no-token branch | none — R01's only group is `8/15 → 8/15` | NOT EXERCISED (P_non_token_left_side survives) |
+| 5. no group -> SM6=1 | B09 (no K line), R06 (no N/D in cell[2]) | EXERCISED; sole killers of M08/M09 |
+| 6. N=held, D=`^| C<n> ` map rows | B02, B03, B06, B10, B12, R02, R03, R05, R08, R09 (M04–M07, M10) | EXERCISED |
+| 6a. coverage-map anchoring / held-position anchoring | none — fixture README has only `| C<n> |` rows | NOT EXERCISED (P_rows_any_table_line survives) |
+
+## 3. mutants.reference against the battery
+
+reference misclass = 0/21  (none)
+
+## 4. 11 frozen rule mutants
+
+| mutant | broken element (docstring) | declared kill case(s) | declared case kills? | actual kill set (n) | killed |
+|---|---|---|---|---|---|
+| M01 | last token-adjacent group on the whole LINE (v2 rule) | R03, R04 | yes | R03, R04, R05, R06, R08 (5) | yes |
+| M02 | prefers the LEFT side of an arrow | B04 | yes | B04, B05, B07, B08, R02, R03, R05, R07, R09 (9) | yes |
+| M03 | FIRST raw N/D in the stated region | R02, R07 | yes | B04, B05, B07, B08, R02, R03, R05, R07, R09 (9) | yes |
+| M04 | compares the numerator only | B02 | yes | B02, B05, B07, R02, R05 (5) | yes |
+| M05 | compares the denominator only | B03 | yes | B03, B12, R02, R03, R08 (5) | yes |
+| M06 | hard-codes the denominator 15 | B06 | yes | B02, B05, B06, B10, R02, R05, R09 (7) | yes |
+| M07 | hard-codes the numerator 8 | B10 | yes | B03, B10, R02, R03, R08, R09 (6) | yes |
+| M08 | passes when no K line exists | B09 | yes | B09 (1) | yes |
+| M09 | passes when the stated region carries no N/D | R06 | yes | R06 (1) | yes |
+| M10 | accepts N >= held instead of N == held | B12 | yes | B03, B12, R02, R03, R08 (5) | yes |
+| M11 | token-adjacent pattern without the parenthesised-score allowance | B07 | yes | B07, B08, R02, R03, R05, R07, R09 (7) | yes |
+
+MUTANTS_KILLED = 11/11. Every declared kill case does kill its mutant (11/11 declared-correct).
+Extra killers exist for 9 of 11 mutants (M08/M09 are single-case).
+
+## 5. Redundancy
+
+Kill-signature groups (identical set of mutants killed):
+  {B01, B11, R01} — all three kill nothing; {B08, R07} — both kill {M02, M03, M11}.
+
+- B01: no unique discrimination (B02–B12 all cover the bare-line token-adjacent path)
+  and no unique rule element. Redundant as a discriminator; it is the canonical
+  positive baseline (8/15) and removing it loses no mutant kill.
+- B11: no mutant or probe reacts to its only distinctive text
+  (K_HELD_BACKED_STRICT): P_no_strict_split survives 0/21, i.e. truncation changes no
+  outcome. Redundant for discrimination; it is the only case carrying the STRICT token,
+  so it is retained as the syntactic witness of step 3, but it forces nothing.
+- B08 and R07 have identical kill signatures. B08 is strictly dominated by B07; R07 is
+  dominated by B07/R02/R03/R05/R09. They differ only in text shape (bare backticked
+  line vs table row); one of the two is redundant as a discriminator.
+- Not redundant despite zero kills: R01 is the only case that reaches step 4b (no token
+  in cell[2] -> last group in region). B09 and R06 are indispensable (sole killers of
+  M08 and M09). R02 is the sole discriminator for first-vs-last-after-token and for
+  non-digit skipping (both probes killed by R02 alone).
+
+## 6. Disagreements / defects (frozen files — reported, not edited)
+
+a) Battery docstring provenance is false for R01 and R02. It says they are "the verbatim
+   SCORECARD lines 693 and 667 of the freeze base"; both are truncated copies:
+   - R02 omits `; `C15_TOOL_ROWS` 0/18 → 18/18; C15 `uncovered` → `uncovered`` from cell[2],
+     shortens the pointer cell, shortens both hashes to `dac9590`/`99911e8`, and truncates
+     the verdict cell.
+   - R01 omits `; the round-73 C10 claim is now falsified-closed, not carried` from the
+     verdict cell.
+   Effect on labels/kills: none measured. Scoring the full rows in-process:
+     R01: full verbatim row label=0 reference=0 kills=-
+     R02: full verbatim row label=0 reference=0 kills=M02,M03,M04,M05,M06,M07,M10,M11
+   The labels stay 0 and the mutant kill sets are unchanged, so this is a provenance
+   defect in a frozen comment, not a mislabel.
+
+b) `reports/round-91/mutants.reference` is not a file in the lane tree. The rule in code
+   is the `reference()` function inside reports/round-91/mutants.py; that function was
+   scored (0/21). Reported so the artefact name in the task is not mistaken for a file.
+
+c) M02 and M03 are indistinguishable on this battery: both kill exactly
+   {B04,B05,B07,B08,R02,R03,R05,R07,R09}. Both die, so the predicate holds, but the
+   battery does not separate "left side of arrow" from "first raw N/D in region".
+
+d) Rule elements with no discriminating case (measured in §2): step-1 last-line
+   selection; step-2 >=5-cell threshold and trailing-`|` condition; step-3 STRICT
+   truncation (inert); the score-before-pair reading of step 4a; step-4b `last` and its
+   right-side preference; step-6 coverage-map/held anchoring. Eight probe mutants survive
+   0/21 on these elements; none of the 11 frozen mutants depends on them, so C1's frozen
+   predicate is unaffected, but a v3 implementation could break any of them and still
+   score 0/21.
+
+e) Labels the rule does not force: none. 21/21 forced by the stated substrings above.
+
+## 7. Verdict for this seat
+
+Battery labels: 21/21 re-derived as forced, 0 unforced. reference: 0/21. Mutants: 11/11
+killed; declared kill cases 11/11 correct. Defects: §6a (provenance wording), §6b
+(missing file name), §6c (M02/M03 share a signature), §6d (eight undiscriminated rule
+elements). None of these makes a battery label wrong; §6a and §6d are the two that
+should be cited upstream.

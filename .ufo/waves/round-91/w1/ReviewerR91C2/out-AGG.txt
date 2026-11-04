@@ -1,0 +1,12 @@
+COMMIT 85dac9cab6329c68547ca797f681529836d28cad cited=1 misses=0
+COMMIT 1fda96c5330b99aab177ee3263af203cbd3a9f09 cited=0 misses=0
+COMMIT 1906bef92b3605b21902579bd055297ec2a2ed5d cited=1 misses=0
+COMMIT eceb9160c9125035cecd965296fc281f612f82f0 cited=2 misses=1 missing=corpus/old_name.py
+COMMIT 9d8fe9dbd6da1ad1e6c7e2c3a650e1ae1abab5d4 cited=1 misses=0
+COMMIT f8950158d0b1b6a2aa12e5f0d1af8658cd7d35ba cited=2 misses=0
+COMMIT 1f06217c0867a8cbcef6cf8be3319dcb37a8352e cited=1 misses=1 missing=case-d-receipt.log
+COMMIT 6b2c231eccafe3ec2e9564a83151cfcf3641b2a9 cited=1 misses=0
+COMMIT 8e3a432f49cbde770da54d88a1cb109377a024a1 cited=1 misses=0
+COMMIT aab26b59a2ff7b4b9a0cee2e9433e4a2902a4edc cited=1 misses=1 missing=missing/case-a.txt
+COMMIT 3273d67a4deff038c48d3730c4544e6915b1a01d cited=3 misses=0
+MESSAGE_TREE commits=11 cited=14 misses=3

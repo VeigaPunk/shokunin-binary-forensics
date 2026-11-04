@@ -1,0 +1,25 @@
+BIND_OK 87f80ceff resolves SKILL.md
+BIND_OK 45b27135d resolves LOG.md
+BIND_OK 45b27135d resolves SCORECARD.md
+BIND_OK 45b27135d resolves c1-only.log
+BIND_OK 45b27135d resolves mutant-kill-after.log
+BIND_OK 45b27135d resolves noharm-diff.txt
+BIND_OK 45b27135d resolves round-88.md
+BIND_OK 45b27135d resolves sweep-green.log
+BIND_OK 45b27135d resolves sweep-probe-after.log
+BIND_OK c84339c05 resolves census_reprobe.py
+BIND_OK c84339c05 resolves oracle_check.py
+BIND_OK 6ce41aabc resolves LEDGER.md
+BIND_OK 6ce41aabc resolves c1-after.log
+BIND_OK 6ce41aabc resolves c2-after.log
+BIND_OK 6ce41aabc resolves environment.log
+BIND_OK 6ce41aabc resolves inspection.json
+BIND_OK 6ce41aabc resolves receipt.json
+BIND_OK 5f7ecce6a resolves c1-after.log
+BIND_OK 5f7ecce6a resolves round-89.md
+BIND_OK 7f840eb6f resolves SKILL.md
+BIND_OK e0fbf2ea8 resolves truth.json
+BIND_OK b28071990 resolves w1-results.json
+BIND_OK b13aac756 resolves claims.md
+BIND_DEFECT d509e9828 names-unknown ufo-wave-policy.json -> no tree path with that name at that commit
+RECEIPT_COMMIT_BIND: commits=23 evidence=0 named=0 carried=0 spans=0 bare=24 findings=1

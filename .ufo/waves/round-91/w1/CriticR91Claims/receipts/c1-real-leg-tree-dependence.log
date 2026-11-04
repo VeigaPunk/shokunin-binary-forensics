@@ -1,0 +1,16 @@
+== clone of HEAD d509e98 (README at HEAD has no v3 index line; no untracked files)
+SM5=0
+SM6=0
+SELF_MISMATCH=0
+== same clone + untracked corpus/self_assessment_check3.py
+SM5=0
+SM6=0
+SELF_MISMATCH=1
+== v3 on the same clone (v3 present, README unindexed)
+SM5=0
+SM6=0
+SELF_MISMATCH=1
+== v3 on the same clone + README index line
+SM5=0
+SM6=0
+SELF_MISMATCH=0

@@ -1,0 +1,140 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r91-w1",
+  "createdAt": "2026-11-04T22:38:06.579Z",
+  "updatedAt": "2026-11-04T22:38:10.437Z",
+  "reportDir": ".ufo/waves/round-91/w1",
+  "members": {
+    "ExecR91Sm6V3": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+    },
+    "ExecR91BatteryX": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+    },
+    "ExecR91MsgTree": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "operability"
+      ],
+      "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+    },
+    "ExecR91RealRun": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "operability"
+      ],
+      "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+    },
+    "ScribeR91Sources": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "operability"
+      ],
+      "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+    },
+    "ScribeR91Skill": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+    },
+    "ScoutR91Surfaces": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+    },
+    "ConnectorR91Overlap": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "operability"
+      ],
+      "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+    },
+    "ReviewerR91C1": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+    },
+    "CriticR91Claims": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration",
+        "operability"
+      ],
+      "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+    },
+    "MutR91Sm6": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+    },
+    "SentinelR91Scope": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+    },
+    "ReviewerR91C2": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "operability"
+      ],
+      "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+    }
+  }
+}

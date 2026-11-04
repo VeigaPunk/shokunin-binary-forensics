@@ -1,0 +1,24 @@
+CASE H01 label=0 got=0 ok
+CASE H02 label=1 got=1 ok
+CASE H03 label=0 got=1 MISCLASS
+CASE H04 label=1 got=1 ok
+CASE H05 label=0 got=1 MISCLASS
+CASE H06 label=0 got=0 ok
+CASE H07 label=1 got=1 ok
+CASE H08 label=0 got=0 ok
+CASE H09 label=1 got=1 ok
+CASE H10 label=0 got=0 ok
+CASE H11 label=1 got=1 ok
+CASE H12 label=0 got=0 ok
+CASE H13 label=1 got=0 MISCLASS
+CASE H14 label=0 got=1 MISCLASS
+CASE H15 label=0 got=0 ok
+CASE H16 label=0 got=0 ok
+CASE H17 label=1 got=1 ok
+CASE H18 label=0 got=0 ok
+CASE H19 label=1AMBIG got=1 ok
+CASE H20 label=1AMBIG got=0 MISCLASS DIVERGES-AMBIGUOUS(rule-interpretation)
+CASE H21 label=0 got=0 ok
+CASE H22 label=0 got=0 ok
+HELDOUT_MISCLASS=5/22
+AMBIGUOUS_DIVERGENCE=1
