@@ -1,0 +1,239 @@
+{
+  "schema": "ufo-swarm-wave-dispatch-v1",
+  "wave": "revenger-r91-w1",
+  "policy": {
+    "source": "config",
+    "maxLanes": 256,
+    "minLanes": 8,
+    "waveMinLanes": 8,
+    "waveMaxLanes": 16,
+    "declaredMaxLanes": null,
+    "hardCeiling": 256,
+    "rampBatchSize": 5,
+    "rampIntervalMs": 700,
+    "globalRunnerCeiling": 1056
+  },
+  "counts": {
+    "spawn": 13,
+    "resume": 0,
+    "total": 13
+  },
+  "registry": {
+    "schema": "ufo-swarm-registry-v1",
+    "path": ".ufo/waves/round-91/w1/swarm-registry.json",
+    "reportDir": ".ufo/waves/round-91/w1",
+    "members": {
+      "ExecR91Sm6V3": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+      },
+      "ExecR91BatteryX": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+      },
+      "ExecR91MsgTree": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "operability"
+        ],
+        "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+      },
+      "ExecR91RealRun": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "operability"
+        ],
+        "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+      },
+      "ScribeR91Sources": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "operability"
+        ],
+        "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+      },
+      "ScribeR91Skill": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+      },
+      "ScoutR91Surfaces": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+      },
+      "ConnectorR91Overlap": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "connector",
+        "item": null,
+        "axes": [
+          "operability"
+        ],
+        "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+      },
+      "ReviewerR91C1": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+      },
+      "CriticR91Claims": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "operability"
+        ],
+        "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+      },
+      "MutR91Sm6": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+      },
+      "SentinelR91Scope": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "sentinel",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+      },
+      "ReviewerR91C2": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "operability"
+        ],
+        "milestone": "Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave."
+      }
+    }
+  },
+  "compaction": {
+    "applied": false,
+    "mechanism": null,
+    "reason": null,
+    "savedBytes": 0,
+    "payloadBytesBefore": 0,
+    "payloadBytesAfter": 0
+  },
+  "taskCall": {
+    "context": "# Goal\nrevenger round 91, attempt 1. Lane repo /home/vgpnk/Projects/shokunin/revenger-shokunin (every path in your task is absolute; the fleet root /home/vgpnk/Projects/shokunin is NOT your write surface).\nTwo claims are frozen at lane commit b13aac756ac33aa5245c13966c624de4370206d0 in /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-91/claims.md — read that file first, in full.\nC1 (calibration): /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/self_assessment_check3.py must make the lane's self-assessment gate read the K statement where the lane states it (the stated before→after cell of its own SCORECARD row, rule in claims.md §C1). Counter: `cd /home/vgpnk/Projects/shokunin/revenger-shokunin && PYTHONUTF8=1 python3 -B reports/round-91/c1_counter.py --impl corpus/self_assessment_check3.py --real . --lane .` must print SM6_MISCLASS=0/22, MUTANTS_KILLED=11/11, IMPL_SELFTEST exit=0, REAL_SELF_MISMATCH=0, C1_VERDICT=pass. Red-before: the current gate corpus/self_assessment_check2.py scores 5/22 (reports/round-91/c1-red-v2.log); v1 scores 11/22.\nC2 (operability, capability acquisition): /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-91/message_tree_check.py must measure commit-message↔tree conformance over the lane's own history. Counter: `cd /home/vgpnk/Projects/shokunin/revenger-shokunin && PYTHONUTF8=1 python3 -B reports/round-91/cap_probe.py --lane . --range 7fab03f..refs/heads/main` must print CAP_MESSAGE_TREE=pass, exit 0. Red-before: the instrument is absent (reports/round-91/c2-red-absent.log).\n\n# Contract\n- Write ONLY inside /home/vgpnk/Projects/shokunin/revenger-shokunin at the paths your task names. Never edit MANIFEST.json, /home/vgpnk/Projects/shokunin/.ufo/state/, .ufo/watchdog.log, /home/vgpnk/Projects/shokunin/templates/, /home/vgpnk/Projects/shokunin/scripts/, /home/vgpnk/Projects/shokunin/.scratch/, sibling lane repos, or the fleet root.\n- Never run a mutating git or jj command in the lane repo (no add/commit/stash/checkout/switch/reset/pull/push; no `jj commit/new/describe/squash/rebase/abandon/bookmark/undo`). Read-only git (log, show, diff, status, rev-parse, cat-file, ls-tree, rev-list, merge-base) is fine. The L1 commits; you do not.\n- Any fixture repo you create must be `D=$(mktemp -d)` + `git -C \"$D\" init -q`, every later git call must name `-C \"$D\"`, and you must check `git -C \"$D\" rev-parse --show-toplevel` equals `$D` before the first commit. Never commit with a throwaway identity anywhere else.\n- Scratch: your work dir, clones and fixtures live under $HYAKU_SCRATCH/revenger-r91/<your seat name>/ (HYAKU_SCRATCH defaults to /fast/scratch/hyaku). mkdir -p it, pass it explicitly, never rely on an inherited TMPDIR, and delete it before you yield (`trap 'rm -rf -- \"$S\"' EXIT`). /tmp only for files under 50 MB. Anything a report must cite lands in the lane tree or the wave dir, never /tmp.\n- Your `Report:` trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin — write it at /home/vgpnk/Projects/shokunin/revenger-shokunin/<that path>.\n- You are a leaf: spawn no subagents, run no swarm. Read-only unless your task says to write.\n- Tooling authorization (operator, 2026-10-19): you may install or upgrade tools that help the task; first read /home/vgpnk/.omp/agent/RULES.md (official channels only, never pipe an unverified remote script into a shell; record tool/version/channel/reason in your report). pacman is PAUSED host-wide (orchestrator ruling 2026-10-20): install via `uv tool`/`npx`/an official binary into ~/.local/bin, or install nothing; never `pacman -S`, `-Sy`, `-Syu`, `-U`, `-R`.\n- Honesty: an unrun check has not passed. Report a defect rather than hiding it; a claim you cannot support is reported as unsupported. The frozen files (reports/round-91/claims.md, sm6_battery_v3.py, mutants.py, c1_counter.py, cap_probe.py) are not yours to edit — report a defect instead.\n",
+    "tasks": [
+      {
+        "name": "ExecR91Sm6V3",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nWrite /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/self_assessment_check3.py — the v3 self-assessment checker that supersedes v2 (corpus/self_assessment_check2.py, whose bytes stay untouched). It must implement the frozen SM6 rule in /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-91/claims.md §C1 exactly (six numbered steps) and keep SM1–SM5 byte-identical to v2's implementations.\n\n# Change\nRead claims.md §C1 and corpus/self_assessment_check2.py. Copy v2 to v3 and change ONLY the SM6 docstring/rule, sm6(), and the SM6 self-test legs. Preserve the CLI: `--root TREE --lane LANE` prints SM1..SM6 and SELF_MISMATCH=<n>, exit 0 iff 0, 1 if >0, 2 on a missing file; `--self-test` builds synthetic trees, plants one defect per class, and must also plant the two real-format legs this round adds (a row whose stated cell is false while the pointer cell agrees, and a row whose stated cell is true while the pointer cell disagrees) so the self-test proves SM6 can fail in the lane's own row format. Then run, from the lane root, `PYTHONUTF8=1 python3 -B reports/round-91/c1_counter.py --impl corpus/self_assessment_check3.py --real . --lane .` and save the full output to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/ExecR91Sm6V3/counter.log. If a battery case disagrees with the rule, say which case and why — do not edit the frozen battery.\n\n# Acceptance\nC1_VERDICT=pass, exit 0, with SM6_MISCLASS=0/22 and MUTANTS_KILLED=11/11 in counter.log; `python3 -B corpus/self_assessment_check3.py --self-test` exit 0; v2's file byte-unchanged (`git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff --stat -- corpus/self_assessment_check2.py` empty). Report: the file path, the counter tail, and any case you could not satisfy.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration\nMilestone: Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave.\n\nReport: write your scoped findings to .ufo/waves/round-91/w1/ExecR91Sm6V3.md"
+      },
+      {
+        "name": "ExecR91BatteryX",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nIndependently cross-check the frozen battery /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-91/sm6_battery_v3.py (21 labelled cases) and the 11 rule mutants in /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-91/mutants.py against the frozen rule in claims.md §C1. Read-only over the frozen files; you may write only your report and receipts.\n\n# Change\nFor each of the 21 cases: re-derive the label by hand from the six-step rule and state the exact substring that forces it. Flag any case whose label the rule does not force, any case that is redundant, and any rule element that no case exercises. Then score `reports/round-91/mutants.reference` (the rule in code) against the battery in-process (import both modules) and score all 11 mutants; write the table to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/ExecR91BatteryX/crosscheck.log. Report the count of cases you re-derived as forced, the count you could not, and any mutant whose declared kill case in mutants.py's docstring is wrong.\n\n# Acceptance\ncrosscheck.log carries 21 label derivations plus 11 mutant rows; `reference` scores 0/21; every mutant scores at least one mismatch; any disagreement is named with the case id and the rule step. Report: the table path and the disagreements.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration\nMilestone: Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave.\n\nReport: write your scoped findings to .ufo/waves/round-91/w1/ExecR91BatteryX.md"
+      },
+      {
+        "name": "ExecR91MsgTree",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nWrite /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-91/message_tree_check.py — the commit-message↔tree conformance instrument claimed as C2 in reports/round-91/claims.md §C2. Frozen interface: `--lane REPO --range A..B` (rev-list A..B; an empty A means all history), `--selftest`, `--json` optional.\n\n# Change\nRules: for each commit, read its message (`git -C REPO log -1 --format=%B <c>`); extract every backticked token that looks like a repo-relative path (contains '/' or ends in .py/.md/.json/.log/.txt/.sh/.mjs/.yml/.yaml/.toml/.cfg/.ini, no whitespace); strip a leading './'. For each cited path check `git -C REPO cat-file -e <c>:<path>`; if the path has no '/' and does not resolve, try a unique suffix match against `git -C REPO ls-tree -r --name-only <c>` and count it resolved-bare only when exactly one match exists. Print per commit `COMMIT <hash> cited=<n> misses=<k> [missing=<p>,...]` and the summary `MESSAGE_TREE commits=<N> cited=<M> misses=<K>`; exit 0 iff K==0, 1 if K>0, 2 on usage error. `--selftest` builds its own throwaway fixture repo (mktemp under $HYAKU_SCRATCH/revenger-r91/ExecR91MsgTree, `git -C \"$D\"` on every call, toplevel checked) with a clean commit, a planted missing-path commit, and a `.log` leg, prints `MSG_TREE_SELFTEST=pass` and exits 0 only if the clean range exits 0 and the planted range exits 1 naming the absent path. Then run `PYTHONUTF8=1 python3 -B reports/round-91/cap_probe.py --lane . --range 7fab03f..refs/heads/main` from the lane root and save the output to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/ExecR91MsgTree/probe.log.\n\n# Acceptance\ncap_probe prints CAP_MESSAGE_TREE=pass and exits 0 with all four legs pass; the instrument's `--selftest` exits 0; no `/tmp` path is hardcoded (`grep -n '/tmp' <file>` empty). Report: file path, probe tail, and the real-range summary line.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: operability\nMilestone: Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave.\n\nReport: write your scoped findings to .ufo/waves/round-91/w1/ExecR91MsgTree.md"
+      },
+      {
+        "name": "ExecR91RealRun",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nProduce the real-history receipt for C2: run the C2 instrument over /home/vgpnk/Projects/shokunin/revenger-shokunin's own commit range `7fab03f..refs/heads/main` and classify every miss it reports. Read-only over the lane tree; write only your receipt.\n\n# Change\nAfter reports/round-91/message_tree_check.py exists (if it does not yet, wait for it by re-checking every ~60 s for up to 12 minutes, then report the absence), run `PYTHONUTF8=1 python3 -B reports/round-91/message_tree_check.py --lane /home/vgpnk/Projects/shokunin/revenger-shokunin --range 7fab03f..refs/heads/main --json` and save stdout+stderr+exit to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/ExecR91RealRun/real-run.log. Then, for every miss, determine with read-only git whether the cited path exists elsewhere in that commit's tree (a rename), in the commit's parent, or nowhere (a genuine message/tree mismatch), and tabulate: commit, cited path, verdict (renamed / added-later / genuine mismatch), evidence command. Also record the exact commit count and the number of commits with at least one miss.\n\n# Acceptance\nreal-run.log carries the `MESSAGE_TREE commits=<N> cited=<M> misses=<K>` line with N>=20; a table lists every miss with its verdict and the read-only command that proves it; no claim is made about commits outside the range. Report: the numbers, the genuine-mismatch count, and the table path.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: operability\nMilestone: Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave.\n\nReport: write your scoped findings to .ufo/waves/round-91/w1/ExecR91RealRun.md"
+      },
+      {
+        "name": "ScribeR91Sources",
+        "agent": "scribe",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nOpen the sources that ground C2's knowledge and write the `corpus/SOURCES.md` rows for this round, in the contract shape (`/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md`, contract v1: tier, id, source, anchor, scope, teaches, status, recheck, used-by).\n\n# Change\nOpen, read-only, at least: (a) the git documentation page for `git log` formatting (`https://git-scm.com/docs/git-log`, the `--format` / `%B` section), (b) the git documentation page for `git cat-file` (`https://git-scm.com/docs/git-cat-file`, the `-e` existence check), (c) the Conventional Commits 1.0.0 specification (`https://www.conventionalcommits.org/en/v1.0.0/`) for the message-shape convention, and (d) one more primary source you judge load-bearing for a commit-message↔tree check (name it and why). For each: record the URL, your access date (2026-11-04), and a located quote of at most 25 words that you copied from the fetched bytes. Draft the exact append block (rows continuing the lane's id sequence after its last S-id; `status: mined`; `used-by` naming the round-91 SKILL.md rows they support) into /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/ScribeR91Sources/rows.md, plus a per-source receipt with the fetched excerpt. Do NOT edit corpus/SOURCES.md itself — the L1 appends.\n\n# Acceptance\nrows.md holds 3–4 complete rows in the registry's 11-column shape with no literal `|` inside a cell, one access date, one located quote per row, and a receipt excerpt per source; every quoted phrase is verbatim in the fetched bytes (say how you checked). Report: the ids, the URLs, and any source you refused with the reason.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: operability\nMilestone: Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave.\n\nReport: write your scoped findings to .ufo/waves/round-91/w1/ScribeR91Sources.md"
+      },
+      {
+        "name": "ScribeR91Skill",
+        "agent": "scribe",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nDraft the prose the round lands: the SKILL.md gate-registry rows for the two instruments and the round-91 lesson at /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-91.md. Write both drafts into the wave dir; the L1 integrates.\n\n# Change\n1) Read /home/vgpnk/Projects/shokunin/revenger-shokunin/SKILL.md §Gate registry and copy its exact row shape. Draft one registry row for `corpus/self_assessment_check3.py` (SM6 v3: what it now reads, the two real-format legs its self-test plants, the frozen counter command and the 0/22 + 11/11 target, and the limits: the battery is 21 hand-labelled cases, so a fitted implementation is possible and the round's reviewer probe is the held-out check) and one for `reports/round-91/message_tree_check.py` (what it measures, its exit codes, its planted-miss self-test, its declared range, and the limit that a backticked path is the only citation shape it sees). 2) Draft corpus/lessons/round-91.md with the sections the lane's lessons use (`## Gate` with fixed inputs/controls, the source-opening table with the ScribeR91Sources ids, `## Mistakes`, `## Outside verification` left as a statement of what the closure must sample, `## Final measurements`). Mine one mistake for `## Mistakes`: candidates are (a) round 90's own freeze named the id-edited/stubbed controls in prose but built them only after the freeze (M-b), (b) the r90 report's wave pointers were lane-relative without the repo prefix, (c) this round's own first battery rule read the last `N/D` in the stated cell and mislabelled R02 — caught before the freeze. Choose one, give class · evidence pointer · captured-by · fix, and say whether the fix is shown able to fail.\n\n# Acceptance\nBoth drafts exist at /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/ScribeR91Skill/{skill-rows.md,lesson-draft.md}; every count and command in them is one you ran or one you copied from a committed receipt with its path named; the lesson's source table carries the ids ScribeR91Sources produced (coordinate with that seat if its ids are not yet on disk — leave a placeholder only if you say so explicitly). Report: paths, and the mistake you mined with its capture mechanism.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave.\n\nReport: write your scoped findings to .ufo/waves/round-91/w1/ScribeR91Skill.md"
+      },
+      {
+        "name": "ScoutR91Surfaces",
+        "agent": "scout",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nMap every lane surface that must change when the self-assessment gate moves to v3 and a new instrument enters the gate registry, so the L1's integration is complete on the first pass. Read-only.\n\n# Change\nEnumerate, with file:line evidence, every place in /home/vgpnk/Projects/shokunin/revenger-shokunin that names `self_assessment_check2.py`, `self_assessment_check.py`, `sm6`, `SELF_MISMATCH`, or the gate registry, and every place that must name the new v3 file and `message_tree_check.py`: SKILL.md (registry + decision rows), corpus/README.md (index line and any 'known gaps' sentence), SCORECARD.md (capabilities table row shape and where a row goes), SHONEN.md, corpus/QUALITY.md, LOG.md (the round-entry shape), and any script that imports or invokes the checker (grep the whole repo). Also report the exact current format of a `capabilities:` table row and of a SKILL.md gate-registry row, quoted from the file. Write the map to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/ScoutR91Surfaces/surfaces.md.\n\n# Acceptance\nsurfaces.md lists each required edit site as `path:line — what must change`, with a grep command per class that produced it, and quotes the two row formats verbatim. No edit is made. Report: the edit-site count by file and anything you found that would break if v3 simply replaced v2.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave.\n\nReport: write your scoped findings to .ufo/waves/round-91/w1/ScoutR91Surfaces.md"
+      },
+      {
+        "name": "ConnectorR91Overlap",
+        "agent": "connector",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nSibling-overlap scan: does any other shokunin lane already hold a commit-message↔tree conformance instrument, or a self-assessment gate that reads a stated cell, that this lane is about to duplicate? Read-only across repos; write only your report.\n\n# Change\nSearch /home/vgpnk/Projects/shokunin/*-shokunin/ (and the fleet root's scripts/ read-only) for instruments with the same job: commit-message vs tree checks, cited-path existence sweeps, orphan sweeps, receipt sweeps, self-assessment/mismatch gates. For each hit report the lane, the path, what it checks, and whether it is reusable or merely adjacent. Then state what this lane's two new instruments add that no existing sibling instrument covers, and name the cross-lane pattern the fleet should adopt (one paragraph). Do not edit any sibling repo. Write to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/ConnectorR91Overlap/overlap.md.\n\n# Acceptance\noverlap.md names every sibling hit with its path and a one-line scope, states reuse vs adjacency per hit, and gives the differentiator for both round-91 instruments. Report: hits, the closest sibling, and whether the lane is duplicating work.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: operability\nMilestone: Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave.\n\nReport: write your scoped findings to .ufo/waves/round-91/w1/ConnectorR91Overlap.md"
+      },
+      {
+        "name": "ReviewerR91C1",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack C1: build a HELD-OUT probe set for the v3 SM6 rule that is not in the frozen battery, and score the landed /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/self_assessment_check3.py against it.\n\n# Change\nConstruct at least 12 fresh real-format cases in the lane's own SCORECARD row shape, each with its label derived by hand from the frozen rule in reports/round-91/claims.md §C1 — deliberately include: a stated cell with two arrows, a stated cell with the token after the numbers, a row whose axis label itself contains an `N/D`, a row with an escaped pipe or a `K_HELD_BACKED_STRICT` mention, a row where the map has a `partial` status row, a row with `N/D` in a fenced code block inside the stated cell, and at least one case where the rule is genuinely ambiguous. Run them against the landed v3 (import it) and record every false green and false negative. Save the probe module and its receipt under /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/ReviewerR91C1/. Do not edit the frozen battery or the implementation.\n\n# Acceptance\nThe probe module runs standalone (`python3 -B <probe> --impl <checker.py>`), prints a labelled verdict per case and a `HELDOUT_MISCLASS=n/M` line, and its labels are hand-derived with the rule step named. Report: n/M, every mismatch with its cause, and the ambiguity you found.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave.\n\nReport: write your scoped findings to .ufo/waves/round-91/w1/ReviewerR91C1.md"
+      },
+      {
+        "name": "CriticR91Claims",
+        "agent": "critic",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nFalsify both round-91 claims against §9 of the round contract and the lane's own standards: control reachability, axis naming, freeze order, and fitting.\n\n# Change\nRead /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-91/claims.md, then run both counters yourself (`c1_counter.py` with the current v2 and, when it exists, v3; `cap_probe.py`). Attack, one numbered finding each: (1) is each target reachable by the cheapest control that skips the claimed work (build that control: e.g. a stub `message_tree_check.py` that prints a pass line and a plausible summary; a v3 that special-cases the battery's case ids; an implementation that hard-codes the map counts 8/15)? (2) is the axis name right by the surface the round changes, not by the number it produces? (3) was anything in the predicate, counter or kill rule changed after data existed? (4) does the C1 battery admit an implementation that is fitted to its 21 cases, and does the round disclose that? (5) does C2's instrument see citation shapes other than backticked paths (prose paths, `.log` names, `path:line` forms) — quantify what it misses on 5 sampled real commits. Write findings to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/CriticR91Claims/receipts/findings.md with the command and output behind each.\n\n# Acceptance\nEvery finding names the claim, the control or probe you built, its command, and its observed output; a finding you cannot reproduce is labelled as such. Report: the finding count, which findings would block admission, and the two strongest.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, operability\nMilestone: Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave.\n\nReport: write your scoped findings to .ufo/waves/round-91/w1/CriticR91Claims.md"
+      },
+      {
+        "name": "MutR91Sm6",
+        "agent": "mutation-tester",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nMutation-test the landed /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/self_assessment_check3.py: build attributed mutants of its own bytes and report which survive the frozen battery and the reviewer's held-out probe (when present).\n\n# Change\nGenerate at least 12 mutants by textual transformation of the v3 source (each mutant names the exact replaced text), e.g. off-by-one in the cell index, `>=` for `==`, stripping the `K_HELD_BACKED_STRICT` cut, using the pointer cell, taking the first instead of the last K line, ignoring the map's `partial` rows, reading `held` from a different column, accepting a missing README as 0 rows. Run every mutant against reports/round-91/sm6_battery_v3.py (import the battery, build each case in a temp dir) and record killed/survived per mutant with the killing case ids. Save the mutant generator, the mutants and the table under /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/MutR91Sm6/. Do not edit the implementation.\n\n# Acceptance\nA table of >=12 mutants with killed/survived, the killing case ids, and `SURVIVORS=<n>`; the generator is reproducible from the receipt. Report: survivors with the rule element each one breaks, and whether any survivor is a false green the battery cannot see.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave.\n\nReport: write your scoped findings to .ufo/waves/round-91/w1/MutR91Sm6.md"
+      },
+      {
+        "name": "SentinelR91Scope",
+        "agent": "sentinel",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAdversarial write-scope and no-harm audit of round 91 so far: prove the round touched only what it claims, and that no credential material, protected path or sibling repo was modified.\n\n# Change\nRun and record: `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin status --porcelain`; `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin log --oneline b13aac7..refs/heads/main` if further commits exist; `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff --name-status f6356ffb8b665bddc5ee2cfac81443c1300b59bf refs/heads/main`; `git -C /home/vgpnk/Projects/shokunin status --porcelain` (fleet root — report, never edit, anything another lane wrote); and a secret-shape scan over every file added in the round's range (`grep -nE '(api[_-]?key|secret|token|password|BEGIN [A-Z ]*PRIVATE KEY|ghp_|sk-)'` over the added lines, with judgement on each hit). Check that no path under /home/vgpnk/Projects/shokunin/{.ufo/state,scripts,templates,.scratch} and no sibling lane appears in the diff, and that the frozen artefacts are byte-unchanged since b13aac7 (`git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff --stat b13aac7..refs/heads/main -- reports/round-91/claims.md reports/round-91/sm6_battery_v3.py reports/round-91/mutants.py reports/round-91/c1_counter.py reports/round-91/cap_probe.py`). Write to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/SentinelR91Scope/audit.md.\n\n# Acceptance\naudit.md carries each command with its observed output and a verdict per check; every protected-path and secret-shape hit is named with its file:line and a ruling. Report: the check count, any violation with evidence, and whether the frozen artefacts are byte-unchanged.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave.\n\nReport: write your scoped findings to .ufo/waves/round-91/w1/SentinelR91Scope.md"
+      },
+      {
+        "name": "ReviewerR91C2",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack C2: the commit-message↔tree instrument /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-91/message_tree_check.py. Read reports/round-91/claims.md §C2 first; the probe that scores it is /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-91/cap_probe.py.\n\n# Change\nBuild a falsification set the probe does not contain, on your own throwaway fixture repo (mktemp under $HYAKU_SCRATCH/revenger-r91/ReviewerR91C2, `git -C \"$D\"` on every call, toplevel checked): (a) a message citing a path in prose without backticks; (b) a message citing `path:line`; (c) a message citing a directory (`corpus/`) rather than a file; (d) a message citing a `.log` name that exists only in a later commit; (e) a message citing a path with a leading `./` and with a trailing `,`; (f) a message citing a path that exists but was renamed in a later commit; (g) a message whose backticked token is a command (`git status`) not a path; (h) a merge commit. For each case state what a correct instrument should do, run the instrument, and record agree/disagree with the exit code. Then run it over 5 sampled real lane commits and compare its cited set with a hand count of the citations in each message (`git -C /home/vgpnk/Projects/shokunin/revenger-shokunin log -1 --format=%B <c>`). Save the fixture script and the receipt under /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-91/w1/ReviewerR91C2/.\n\n# Acceptance\nA table of the 8 fixture cases and the 5 real commits, each with the expected and observed behaviour and the exit code, plus `C2_DISAGREE=<n>/13`; every disagreement names the input and the instrument's output. Report: the disagreement count, the worst blind spot, and whether any blind spot makes CAP_MESSAGE_TREE=pass a false green.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: operability\nMilestone: Round 91: C1 calibration (SM6 v3 reads the stated cell; frozen battery 21 cases, 11 rule mutants; v2 red 5/22) and C2 operability capability (commit-message↔tree conformance instrument, absent -> CAP_MESSAGE_TREE=pass), 12-seat build+attack wave.\n\nReport: write your scoped findings to .ufo/waves/round-91/w1/ReviewerR91C2.md"
+      }
+    ]
+  },
+  "resumeSends": [],
+  "note": "Issue exactly one batched task call with taskCall ({context, tasks}); never split a wave into multiple task calls (one-swarm-per-wave). Then one hub send per resumeSends entry: hub send --to <entry.resume> --message <entry.message> (entry.name is bookkeeping, not a hub field)."
+}
