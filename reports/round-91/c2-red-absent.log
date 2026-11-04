@@ -1,0 +1,5 @@
+CAP_PRESENT=0 path=/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-91/message_tree_check.py
+CAP_SELFTEST=absent
+CAP_PLANTED_MISS=absent
+CAP_REAL=absent
+CAP_MESSAGE_TREE=fail
