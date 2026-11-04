@@ -1,0 +1,10 @@
+CASE D1-attlist-default-package oracle=v1 rc=0 ORACLE OK (19/19 checks)
+CASE D1-attlist-default-package oracle=v2 rc=0 ORACLE OK (22/22 checks)
+CASE D2-internal-entity-package oracle=v1 rc=0 ORACLE OK (19/19 checks)
+CASE D2-internal-entity-package oracle=v2 rc=0 ORACLE OK (22/22 checks)
+CASE D3-attlist-default-versionCode oracle=v1 rc=1 ORACLE FAIL (18/19 checks)
+CASE D3-attlist-default-versionCode oracle=v2 rc=0 ORACLE OK (22/22 checks)
+D1-attlist-default-package.json v3: ORACLE FAIL (24/25 checks)
+D2-internal-entity-package.json v3: ORACLE FAIL (24/25 checks)
+D3-attlist-default-versionCode.json v3: ORACLE FAIL (24/25 checks)
+88d49c9164084954d04bb22a4821a17bf8a4378b0e8c7feced603a250162d089  /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check3.py

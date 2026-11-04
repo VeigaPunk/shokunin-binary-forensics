@@ -1,0 +1,4 @@
+CASE FR1-comment-mentions-doctype oracle_check2.py rc=0 ORACLE OK (22/22 checks)
+CASE FR1-comment-mentions-doctype oracle_check3.py rc=1 ORACLE FAIL (24/25 checks)
+CASE FR0-unchanged-real oracle_check2.py rc=0 ORACLE OK (22/22 checks)
+CASE FR0-unchanged-real oracle_check3.py rc=0 ORACLE OK (25/25 checks)

@@ -1,0 +1,11 @@
+== tree rows_strict=15 rows_loose=15
+SM6=0
+SELF_MISMATCH=0
+== tree16 rows_strict=15 rows_loose=16
+SM6=0
+SELF_MISMATCH=0
+== tree16ok rows_strict=16 rows_loose=16
+SM6=1
+SELF_MISMATCH=1
+lane HEAD 5bdcd5a628c4063dabf0dc3858ecd41df46d1760
+0e73a90b2de99a1a8de40b59dfd75c48ce4a6bbb3243d4d93be78e31028d0227  /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/self_assessment_check2.py
