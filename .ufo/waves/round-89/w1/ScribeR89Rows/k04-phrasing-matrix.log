@@ -1,0 +1,31 @@
+K04 phrasing matrix under the FROZEN instrument (census_reprobe.py v1)
+live: ghidra -> present (forbidden 'absent'); ida -> absent (forbidden 'present')
+
+findings=2  landed truthful-literal row
+    text='ghidra present at /usr/bin/ghidra; ida absent'
+    -> ["presence:ghidra STATES-'absent'-against-live", "presence:ida STATES-'present'-against-live"]
+
+findings=1  truthful, one leg non-literal
+    text='ghidra present at /usr/bin/ghidra; ida not on PATH'
+    -> ['presence:ida DOES-NOT-STATE-live-value']
+
+findings=1  truthful, other leg non-literal
+    text='ghidra installed at /usr/bin/ghidra; ida absent'
+    -> ['presence:ghidra DOES-NOT-STATE-live-value']
+
+findings=2  both non-literal (prose only)
+    text='ghidra is installed; ida is not installed'
+    -> ['presence:ghidra DOES-NOT-STATE-live-value', 'presence:ida DOES-NOT-STATE-live-value']
+
+findings=1  drop ida fact entirely
+    text='ghidra present at /usr/bin/ghidra'
+    -> ['presence:ida DOES-NOT-STATE-live-value']
+
+findings=1  drop ghidra fact entirely
+    text='ida absent'
+    -> ['presence:ghidra DOES-NOT-STATE-live-value']
+
+findings=2  junk-control style (both tokens)
+    text='present absent present absent'
+    -> ["presence:ghidra STATES-'absent'-against-live", "presence:ida STATES-'present'-against-live"]
+

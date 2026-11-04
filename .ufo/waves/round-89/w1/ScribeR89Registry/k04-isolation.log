@@ -1,0 +1,9 @@
+### base_k04: exit=1 ['CENSUS_STALE_UNFLAGGED=5']
+    CENSUS_MISMATCH K04 presence:ghidra does not state live value 'present'
+### truthful_both: exit=1 ['CENSUS_STALE_UNFLAGGED=6']
+    CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
+    CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
+### present_only: exit=1 ['CENSUS_STALE_UNFLAGGED=5']
+    CENSUS_MISMATCH K04 presence:ida does not state live value 'absent'
+### absent_only: exit=1 ['CENSUS_STALE_UNFLAGGED=5']
+    CENSUS_MISMATCH K04 presence:ghidra does not state live value 'present'

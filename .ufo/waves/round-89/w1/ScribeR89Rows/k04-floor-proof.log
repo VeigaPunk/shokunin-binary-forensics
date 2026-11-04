@@ -1,0 +1,8 @@
+combinations checked: 24
+minimum K04 findings over all texts: 1  text=' present'
+  -> ['presence:ida does-not-state']
+K04 minimal-findings texts, by literal-token combination:
+  present=False absent=False: 2 finding(s) ['presence:ghidra does-not-state', 'presence:ida does-not-state']
+  present=True absent=False: 1 finding(s) ['presence:ida does-not-state']
+  present=False absent=True: 1 finding(s) ['presence:ghidra does-not-state']
+  present=True absent=True: 2 finding(s) ["presence:ghidra states-'absent'", "presence:ida states-'present'"]

@@ -1,0 +1,19 @@
+### F08 honest wording 'present' -> exit 1
+CENSUS_ROWS=18
+CENSUS_MISMATCH F06 version:node --version does not state live value '26.12.0'
+CENSUS_MISMATCH F06 version:npm --version does not state live value '11.20.0'
+CENSUS_MISMATCH K02 version:node --version does not state live value '26.12.0'
+CENSUS_MISMATCH K02 version:npm --version does not state live value '11.20.0'
+CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
+CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
+CENSUS_STALE_UNFLAGGED=6
+### F08 lying wording 'ghidra not present' -> exit 1
+CENSUS_ROWS=18
+CENSUS_MISMATCH F06 version:node --version does not state live value '26.12.0'
+CENSUS_MISMATCH F06 version:npm --version does not state live value '11.20.0'
+CENSUS_MISMATCH K02 version:node --version does not state live value '26.12.0'
+CENSUS_MISMATCH K02 version:npm --version does not state live value '11.20.0'
+CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
+CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
+CENSUS_STALE_UNFLAGGED=6
+BYTE_IDENTICAL_STDOUT=True

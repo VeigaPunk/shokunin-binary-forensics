@@ -1,0 +1,18 @@
+FALSE_HOLDS F02 skill:skill: live=['42', '207'], recorded numbers=['37', '170', '5']
+  recorded cell : SKILL.md version 37, tool_count 170 (`:5`)
+  observed cell : version 42, tool_count 207
+  verdict cell  : holds
+
+FALSE_HOLDS F05 pin:pin: live=rea-agents@6.7.0, recorded=['6.4.0']
+  recorded cell : acquisition pin `npx -y rea-agents@6.4.0` (`:8`)
+  observed cell : `rea-agents@6.7.0`
+  verdict cell  : holds
+
+verdict-'holds' rows whose recorded value contradicts the live host: 2
+  - F02 skill:skill
+  - F05 pin:pin
+
+checked 'holds' rows:
+  F02: recorded='SKILL.md version 37, tool_count 170 (`:5`)' -> observed='version 42, tool_count 207' verdict='holds'
+  F05: recorded='acquisition pin `npx -y rea-agents@6.4.0` (`:8`)' -> observed='`rea-agents@6.7.0`' verdict='holds'
+  K06: recorded='archive tools present' -> observed='UnZip 6.00, ZipInfo 3.00' verdict='holds'

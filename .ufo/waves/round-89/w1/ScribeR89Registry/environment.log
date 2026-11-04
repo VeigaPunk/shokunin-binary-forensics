@@ -1,0 +1,10 @@
+# environment for every count quoted in this report
+PATH=/home/vgpnk/.local/share/mise/installs/node/latest/bin:/home/vgpnk/.local/share/mise/shims:/home/vgpnk/.local/bin:/home/vgpnk/.local/bin:/run/user/1000/fnm_multishells/1978018_1793727434954/bin:/home/vgpnk/.local/share/fnm:/home/vgpnk/.local/share/omarchy/bin:/home/vgpnk/.opencode/bin:/home/vgpnk/.local/bin:/run/user/1000/fnm_multishells/1556_1793632040352/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/vgpnk/.minimax/bin:/home/vgpnk/.minimax-code/bin:/home/vgpnk/.grok/bin:/home/vgpnk/.kimi-code/bin
+HOME=/home/vgpnk
+LANG=en_US.UTF-8
+node --version -> v26.12.0
+npm --version -> 11.20.0
+rea -> /run/user/1000/fnm_multishells/131348_1793826507310/bin/rea
+ghidra -> /usr/bin/ghidra
+ida -> ABSENT
+date: 2026-11-04

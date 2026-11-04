@@ -1,0 +1,26 @@
+=== seed.md line -> ':N' citation map used by the census rows ===
+(the recorded cell cites a ':N' line; the 2026-10-19 table's own citations
+ resolve as file_line = N + 5, i.e. into the 2026-10-12 mint census block)
+  :1   -> seed.md line 6   | # revenger seed knowledge
+  :2   -> seed.md line 7   | 
+  :3   -> seed.md line 8   | ## REA toolset census (probed 2026-10-12, commands + outputs on record)
+  :4   -> seed.md line 9   | - Skill installed (instructions only): ~/.agents/skills/reverse-engineer-anything/
+  :5   -> seed.md line 10  |   SKILL.md (version 37, tool_count 170 declared) + references/
+  :6   -> seed.md line 11  |   (connection-and-recovery, native-and-artifacts, javascript-applications,
+  :7   -> seed.md line 12  |   android-applications, runtime-observation, evidence-workflows)
+  :8   -> seed.md line 13  | - NO `rea` CLI on PATH; acquisition path per skill: `npx -y rea-agents@6.4.0`
+  :9   -> seed.md line 14  |   (node v26.11.1, npm 11.20.0 present)
+  :10  -> seed.md line 15  | - NO MCP server registered by the skill install — REA tools arrive only
+  :11  -> seed.md line 16  |   after the agent connects the server or uses the CLI
+  :12  -> seed.md line 17  | - Host engines ABSENT at mint: ghidra, jadx, binwalk, unblob, pwntools
+  :13  -> seed.md line 18  |   (not on PATH; pwntools import fails). REA treats these as caller-supplied;
+
+=== the two defective rows, verbatim from the landed file ===
+  | F02 | SKILL.md version 37, tool_count 170 (`:5`) | `sed -n 1,8p …/SKILL.md` | version 42, tool_count 207; the backup keeps 37/170 | STALE → 42 / 207 |
+  | F05 | acquisition pin `npx -y rea-agents@6.4.0` (`:8`) | `npm view rea-agents version`; `grep -n 'rea-agents@' …/SKILL.md` | latest 6.7.0; skill now names `rea-agents@6.7.0`; 6.4.0 still published | STALE → 6.7.0 (6.4.0 remains the saved-record producer version) |
+  | F02 | SKILL.md version 37, tool_count 170 (`:5`) | `sed -n 1,8p …/SKILL.md` | version 42, tool_count 207 | holds |
+  | F05 | acquisition pin `npx -y rea-agents@6.4.0` (`:8`) | `grep -n 'rea-agents@' …/SKILL.md` | `rea-agents@6.7.0` | holds |
+
+=== same (recorded, observed) pair in the 2026-10-19 table got the opposite verdict ===
+  | F02 | SKILL.md version 37, tool_count 170 (`:5`) | `sed -n 1,8p …/SKILL.md` | version 42, tool_count 207; the backup keeps 37/170 | STALE → 42 / 207 |
+  | F05 | acquisition pin `npx -y rea-agents@6.4.0` (`:8`) | `npm view rea-agents version`; `grep -n 'rea-agents@' …/SKILL.md` | latest 6.7.0; skill now names `rea-agents@6.7.0`; 6.4.0 still published | STALE → 6.7.0 (6.4.0 remains the saved-record producer version) |

@@ -1,0 +1,13 @@
+=== NEGATION PROBE treeC (F08 says 'ghidra not present'; K04 states both states) ===
+CENSUS_ROWS=18
+CENSUS_MISMATCH F01 listing:skill_dir does not state live value 'HOST-CONTRACT.md'
+CENSUS_MISMATCH F03 listing:references does not state live value 'android-applications.md'
+CENSUS_MISMATCH F04 presence:rea does not state live value 'present'
+CENSUS_MISMATCH F07 mcp:rea does not state live value 'rea-agents@6.7.0'
+CENSUS_MISMATCH F12 import:pwn does not state live value 'imports'
+CENSUS_MISMATCH K01 presence:rea does not state live value 'present'
+CENSUS_MISMATCH K03 mcp:rea does not state live value 'rea-agents@6.7.0'
+CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
+CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
+CENSUS_MISMATCH K05 import:pwn does not state live value 'imports'
+CENSUS_STALE_UNFLAGGED=10

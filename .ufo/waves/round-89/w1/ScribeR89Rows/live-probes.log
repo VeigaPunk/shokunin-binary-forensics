@@ -1,0 +1,51 @@
+=== live host probes, revenger r89 seat ScribeR89Rows, 2026-11-04 ===
+--- presence (command -v) ---
+rea -> /run/user/1000/fnm_multishells/1981588_1793727763382/bin/rea
+ghidra -> /usr/bin/ghidra
+ida -> (no output, exit 1)
+jadx -> /usr/bin/jadx
+binwalk -> /usr/bin/binwalk
+unblob -> /home/vgpnk/.local/bin/unblob
+--- versions ---
+node: v24.21.0
+npm: 11.19.0
+rea: 6.7.0
+jadx: 1.5.6
+binwalk: binwalk 3.1.0
+unblob: 26.6.4
+unzip: UnZip 6.00 of 20 April 2009, by Info-ZIP.  Maintained by C. Spieler.  Send
+zipinfo: ZipInfo 3.00 of 20 April 2009, by Greg Roelofs and the Info-ZIP group.
+--- pwntools import ---
+imports -> /usr/lib/python3.14/site-packages/pwn/__init__.py
+--- skill dir *.md ---
+/home/vgpnk/.agents/skills/reverse-engineer-anything/HOST-CONTRACT.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/SKILL.md
+--- references/*.md ---
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/android-applications.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/cli-command-map.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/evidence-workflows.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/javascript-applications.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/native-and-artifacts.md
+/home/vgpnk/.agents/skills/reverse-engineer-anything/references/runtime-observation.md
+--- SKILL.md frontmatter ---
+---
+name: reverse-engineer-anything
+description: Reverse engineer native, managed, Electron/JavaScript, packaged, firmware, and browser targets with REA. Use shipped-artifact or requested runtime evidence to explain features, compare versions, decompile code, or guide a reconstruction. Skip REA for ordinary source-repository architecture analysis.
+metadata:
+  version: "42"
+  tool_count: 207
+---
+
+# REA
+
+--- SKILL.md rea-agents pin ---
+33:npx -y rea-agents@6.7.0 <command> [args] --json
+37:`npx -y rea-agents@6.7.0` is the invocation.
+82:is `npx -y rea-agents@6.7.0 --llms`; per-command arguments come from
+83:`npx -y rea-agents@6.7.0 <command> --schema`.
+102:npx -y rea-agents@6.7.0 doctor --json          # is the CLI ready
+103:npx -y rea-agents@6.7.0 capabilities --json    # providers and side effects
+104:npx -y rea-agents@6.7.0 providers --json       # configured analysis providers
+--- mcp.json rea entry args ---
+["-y", "rea-agents@6.7.0", "mcp"]

@@ -1,0 +1,49 @@
+# census_reprobe gate — seat ScribeR89Registry measurements (read-only; frozen bytes untouched)
+# instrument sha256: c3127ffc18a54f85f01e2fb88f50b5db694484588e5b7467ae5567ffdd3b648a
+# pin in reports/round-89/instrument-pins.log: c3127ffc18a54f85f01e2fb88f50b5db694484588e5b7467ae5567ffdd3b648a
+
+### L1 plain over lane tree: exit=1
+CENSUS_ROWS=18
+CENSUS_MISMATCH F06 version:node --version does not state live value '26.12.0'
+CENSUS_MISMATCH F06 version:npm --version does not state live value '11.20.0'
+CENSUS_MISMATCH K02 version:node --version does not state live value '26.12.0'
+CENSUS_MISMATCH K02 version:npm --version does not state live value '11.20.0'
+CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
+CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
+CENSUS_STALE_UNFLAGGED=6
+
+### L2 selftest: exit=0
+CENSUS_SELFTEST_clean=ok
+CENSUS_SELFTEST_presence-opposite=ok
+CENSUS_SELFTEST_presence-unstated=ok
+CENSUS_SELFTEST_version-missing=ok
+CENSUS_SELFTEST_import-opposite=ok
+CENSUS_SELFTEST_mcp-missing=ok
+CENSUS_SELFTEST_listing-phantom=ok
+CENSUS_SELFTEST_skill-missing=ok
+CENSUS_SELFTEST_pin-missing=ok
+CENSUS_SELFTEST=pass
+
+### L3 missing tree: exit=2
+missing /fast/scratch/hyaku/revenger-r89/ScribeR89Registry/nonexistent-tree/corpus/knowledge/seed.md
+CENSUS_STALE_UNFLAGGED=could-not-evaluate
+
+### L4 usage: exit=64
+STDERR: usage: census_reprobe.py --root TREE [--json] | --selftest
+
+### L5 same tree, fnm-first PATH: exit=1
+CENSUS_ROWS=18
+CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
+CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
+CENSUS_STALE_UNFLAGGED=2
+
+### L6 same tree, mise-first PATH (node v26.12.0): exit=1
+CENSUS_ROWS=18
+CENSUS_MISMATCH F06 version:node --version does not state live value '26.12.0'
+CENSUS_MISMATCH F06 version:npm --version does not state live value '11.20.0'
+CENSUS_MISMATCH K02 version:node --version does not state live value '26.12.0'
+CENSUS_MISMATCH K02 version:npm --version does not state live value '11.20.0'
+CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
+CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
+CENSUS_STALE_UNFLAGGED=6
+
