@@ -1,0 +1,12 @@
+LEG clean-resolves rc=0 want=0 ok
+LEG dead-row rc=1 want=1 ok
+LEG dead-superseded-by-resolving rc=0 want=0 ok
+LEG dead-superseded-by-dead rc=1 want=1 ok
+LEG prefix-id-no-excuse rc=1 want=1 ok
+LEG indented-row-parsed rc=1 want=1 ok
+LEG url-source-ignored rc=0 want=0 ok
+LEG source-cell-supersedes rc=0 want=0 ok
+LEG earlier-row-no-excuse rc=1 want=1 ok
+LEG missing-sources rc=2 want=2 ok
+SOURCE_PATH_SELFTEST=pass
+exit=0

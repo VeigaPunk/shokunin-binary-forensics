@@ -1,0 +1,9 @@
+# candidate tree = git archive c7767789 corpus reports + ExecR90Producer run1->corpus/live/runs/round-90/inspection.json, run2->reports/round-90/android-run2.json, receipt->reports/round-90/android-receipt.json
+K1=pass ['F4_COVERAGE=11/11 score=10.00']
+K2=pass ['ORACLE OK (22/22 checks)']
+K3=pass ['ORACLE_MISCLASS=0/9']
+K4=pass ['NORM_EQ=identical']
+K5=pass ['9d665ffbc8674d41', '214094fbe04883e1']
+K6=pass ['ev_affae0e5ae0fb1ef2', 'ev_d4a34332e3ca12df7']
+C2_CONJUNCTS=6/6
+EXIT=0

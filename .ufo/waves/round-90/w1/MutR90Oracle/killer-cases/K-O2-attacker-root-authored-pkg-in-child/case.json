@@ -1,0 +1,137 @@
+{
+  "evidence_id": "ev_387c9e9c410dc40fb6a19524fcdda49a3186c4597c20e9c4a9625b3b99a588e4",
+  "subject": {
+    "name": "fixture.apk",
+    "digest": {
+      "sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e"
+    },
+    "local_path": "/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/fixture.apk",
+    "format": "apk",
+    "architecture": null
+  },
+  "provider": {
+    "id": "jadx",
+    "name": "JADX headless",
+    "version": "0.7.1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_android_package",
+  "parameters": {
+    "path": "corpus/fixtures/apk-r65/fixture.apk"
+  },
+  "raw_result": {
+    "server": {
+      "name": "rea-jadx-bridge",
+      "version": "4"
+    },
+    "bridge_sha256": "a02b1ef0a4a40abd1ae310b9ee686ca163e0b59a3256df524c35b90ed17e9e63",
+    "jar_sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+    "loaded": {
+      "state": "LOADED",
+      "apk_path": "/fast/scratch/hyaku/revenger-r89/ExecR89Record/rea-android-ugg7mp/target.apk",
+      "class_count": 0,
+      "resource_count": 3,
+      "threads": 1,
+      "resources": "full"
+    },
+    "calls": [
+      {
+        "operation": "rea_jvm_status",
+        "input": {},
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"max_heap_bytes\":8124366848,\"metadata_scope\":\"parsed_members\",\"engine_reported_version\":\"0.7.1\",\"available_processors\":32,\"java_version\":\"21.0.13\"}"
+            }
+          ],
+          "isError": false
+        }
+      },
+      {
+        "operation": "load_apk",
+        "input": {
+          "path": "/fast/scratch/hyaku/revenger-r89/ExecR89Record/rea-android-ugg7mp/target.apk",
+          "threads": 1,
+          "resources": "full"
+        },
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"state\":\"LOADED\",\"apk_path\":\"/fast/scratch/hyaku/revenger-r89/ExecR89Record/rea-android-ugg7mp/target.apk\",\"class_count\":0,\"raw_class_count\":0,\"resource_count\":3,\"load_duration_ms\":175,\"decompile_timeout_ms\":90000,\"threads\":1,\"code_cache_size\":64,\"resources\":\"full\"}"
+            }
+          ],
+          "isError": false
+        }
+      },
+      {
+        "operation": "get_app_info",
+        "input": {},
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"package\":\"com.example.r65\",\"version_name\":\"\",\"version_code\":\"\",\"min_sdk\":\"\",\"target_sdk\":\"\",\"permissions\":[]}"
+            }
+          ]
+        }
+      },
+      {
+        "operation": "get_android_manifest",
+        "input": {},
+        "response": {
+          "content": [
+            {
+              "type": "text",
+              "text": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    package=\"com.example.r65\"\n    xmlns:ns1=\"android\" \n    ns1:versionCode=\"1\"\n    xmlns:ns2=\"android\" \n    ns2:versionName=\"1.0\"/>"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "normalized_result": {
+    "engine": {
+      "name": "jadx-headless-mcp",
+      "version": "0.7.1",
+      "artifact_sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+      "source_revision": "5844800a486d2248fa949b74c9896285f5b54de2",
+      "worker_count": 1,
+      "heap_limit_mib": 7748
+    },
+    "package_name": "com.example.r65",
+    "version_name": null,
+    "version_code": null,
+    "min_sdk": null,
+    "target_sdk": null,
+    "permissions": [],
+    "manifest": {
+      "status": "complete",
+      "text": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\" package=\"com.attacker.fabricated\" xmlns:ns1=\"android\" ns1:versionCode=\"1\" ns1:versionName=\"1.0\"><application package=\"com.example.r65\"/></manifest>",
+      "reported_total_bytes": null
+    },
+    "class_count": 0,
+    "resource_count": 3,
+    "signature_verification": "not_performed"
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+    "Method signatures use provider display types; DEX prototypes come from frozen JADX metadata. Display names may be aliases, and overload indices are local to this engine and artifact.",
+    "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+    "Incoming reference totals count JADX using nodes. Direct invoke entries within a using method report raw DEX code-unit offsets and method indexes, but coverage is limited to those nodes and directly matched invokes; it does not establish every possible dynamic or reflective call site.",
+    "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "AndroidManifest.xml"
+    }
+  ],
+  "evidence_links": []
+}

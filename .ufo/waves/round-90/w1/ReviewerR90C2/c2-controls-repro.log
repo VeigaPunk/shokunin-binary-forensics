@@ -1,0 +1,18 @@
+# reproduced control: no-record
+K1=FAIL ['F4_COVERAGE=10/11 score=9.09']
+K2=FAIL ['missing input: /fast/scratch/hyaku/revenger-r90/ReviewerR90C2/ctl-norecord/corpus/live/runs/round-90/inspection.json']
+K3=pass ['ORACLE_MISCLASS=0/9']
+K4=FAIL ["unreadable input: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r90/ReviewerR90C2/ctl-norecord/corpus/live/runs/round-90/inspection.json'"]
+K5=FAIL ["FileNotFoundError(2, 'No such file or directory')"]
+K6=FAIL ["FileNotFoundError(2, 'No such file or directory')"]
+C2_CONJUNCTS=1/6
+EXIT=1
+# reproduced control: copy89
+K1=pass ['F4_COVERAGE=11/11 score=10.00']
+K2=pass ['ORACLE OK (22/22 checks)']
+K3=pass ['ORACLE_MISCLASS=0/9']
+K4=pass ['NORM_EQ=identical']
+K5=pass ['01af3141d79027a3', '01af3141d79027a3']
+K6=FAIL ['ev_387c9e9c410dc40fb', 'ev_387c9e9c410dc40fb']
+C2_CONJUNCTS=5/6
+EXIT=1

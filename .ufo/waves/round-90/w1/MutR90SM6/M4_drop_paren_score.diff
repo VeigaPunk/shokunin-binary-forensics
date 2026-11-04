@@ -1,0 +1,11 @@
+--- a/corpus/self_assessment_check2.py
++++ b/corpus/self_assessment_check2.py
+@@ -190,7 +190,7 @@
+     head = last[-1].split("K_HELD_BACKED_STRICT")[0]
+     stmts = re.findall(
+         r"K_HELD_BACKED[^0-9]*(\d+)/(\d+)"
+-        r"(?:\s*(?:\(\s*[0-9.]+\s*\))?\s*(?:→|->)\s*(\d+)/(\d+))?", head)
++        r"(?:\s*(?:→|->)\s*(\d+)/(\d+))?", head)
+     if not stmts:
+         return 1
+     n0, d0, n1, d1 = stmts[-1]

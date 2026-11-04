@@ -1,0 +1,12 @@
+$ TMPDIR=/fast/scratch/hyaku/revenger-r90/ExecR90Replay python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-90/oracle_battery.py --oracle /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check2.py --write /fast/scratch/hyaku/revenger-r90/ExecR90Replay/regen
+CASE P1-real-r89-record label=accept verdict=accept ok
+CASE P2-hand-written-content-accurate label=accept verdict=accept ok
+CASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok
+CASE F2-fabricated-package-everywhere label=reject verdict=reject ok
+CASE F3-minimal-three-key label=reject verdict=reject ok
+CASE F4-versions-smuggled-into-child label=reject verdict=reject ok
+CASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok
+CASE F6-unparseable-text-with-fragments label=reject verdict=reject ok
+CASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok
+ORACLE_MISCLASS=0/9
+exit=0

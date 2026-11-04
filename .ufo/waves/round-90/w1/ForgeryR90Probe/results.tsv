@@ -1,0 +1,40 @@
+N01-doctype-entity-true-pkg	no	ACCEPT	ok	ORACLE OK (22/22 checks)		internal entity &p; expands to the true package
+N02-doctype-entity-fabricated-pkg	yes	REJECT	ok	ORACLE FAIL (20/22 checks)	root package attribute ['com.attacker.x'] != authored ['com.example.r65']; package_name 'com.example.r65' != parsed root ['com.attacker.x']	entity expands to com.attacker.x; package_name true
+N03-attlist-default-package-no-literal-attr	strict	ACCEPT	FALSE-GREEN(strict)	ORACLE OK (22/22 checks)		no package attribute in the tag; DTD ATTLIST default supplies it (Android/aapt does not process DTDs)
+N04-attlist-default-versions-unnamespaced	yes	ACCEPT	FALSE-GREEN	ORACLE OK (22/22 checks)		root declares no versions literally; DTD defaults inject unnamespaced versionCode/versionName
+N05-attlist-fixed-overrides-nothing-fabricated-literal	yes	REJECT	ok	ORACLE FAIL (20/22 checks)	root package attribute ['com.attacker.x'] != authored ['com.example.r65']; package_name 'com.example.r65' != parsed root ['com.attacker.x']	literal package fabricated; DTD #FIXED says true (expat reports literal)
+N06-external-entity-pkg	yes	REJECT	ok	ORACLE FAIL (17/22 checks)	manifest text does not parse to a root <manifest> element; root package attribute [] != authored ['com.example.r65']; package_name 'com.example.r65' != parsed r	package from an unresolvable SYSTEM entity
+N07-pkg-surrounding-spaces	yes	REJECT	ok	ORACLE FAIL (20/22 checks)	root package attribute [' com.example.r65 '] != authored ['com.example.r65']; package_name 'com.example.r65' != parsed root [' com.example.r65 ']	package=" com.example.r65 "
+N08-pkg-raw-newline	yes	REJECT	ok	ORACLE FAIL (20/22 checks)	root package attribute ['com.example.r65 '] != authored ['com.example.r65']; package_name 'com.example.r65' != parsed root ['com.example.r65 ']	package value with raw trailing newline (normalised to space)
+N09-pkg-charref-newline	yes	REJECT	ok	ORACLE FAIL (20/22 checks)	root package attribute ['com.example.r65\n'] != authored ['com.example.r65']; package_name 'com.example.r65' != parsed root ['com.example.r65\n']	package value with &#10; (kept as LF)
+N10-pkg-and-package_name-spaces	yes	REJECT	ok	ORACLE FAIL (20/22 checks)	package_name 'com.example.r65 ' != authored 'com.example.r65'; root package attribute ['com.example.r65 '] != authored ['com.example.r65']	both root package and package_name carry a trailing space
+N11-versionCode-surrounding-space	yes	REJECT	ok	ORACLE FAIL (21/22 checks)	root versionCode values [' 1'] != ['1']	ns1:versionCode=" 1"
+N12-charref-pkg	no	ACCEPT	ok	ORACLE OK (22/22 checks)		&#99;om.example.r65 decodes to the true package
+N13-charref-hex-versions	no	ACCEPT	ok	ORACLE OK (22/22 checks)		versionCode=&#x31; versionName=1&#46;0
+N14-pi-true-fabricated-root	yes	REJECT	ok	ORACLE FAIL (18/22 checks)	root package attribute ['com.attacker.x'] != authored ['com.example.r65']; package_name 'com.example.r65' != parsed root ['com.attacker.x']; root versionCode va	PI carries the true manifest, root fabricated
+N15-pi-fabricated-true-root	no	ACCEPT	ok	ORACLE OK (22/22 checks)		true root; PI after it states a fabricated manifest
+N16-second-root-element	yes	REJECT	ok	ORACLE FAIL (17/22 checks)	manifest text does not parse to a root <manifest> element; root package attribute [] != authored ['com.example.r65']; package_name 'com.example.r65' != parsed r	true root followed by a second root element (not well-formed)
+N17-x-package-only	yes	ACCEPT	FALSE-GREEN	ORACLE OK (22/22 checks)		package only as x:package in urn:evil; no unprefixed package attribute
+N18-android-package-only	yes	ACCEPT	FALSE-GREEN	ORACLE OK (22/22 checks)		package only as android:package (schema URI)
+N19-x-package-plus-fabricated	yes	REJECT	ok	ORACLE FAIL (20/22 checks)	root package attribute ['com.attacker.x', 'com.example.r65'] != authored ['com.example.r65']; package_name 'com.example.r65' != parsed root ['com.attacker.x', '	plain package fabricated + x:package true
+N20-bom-prefixed-text	no	ACCEPT	ok	ORACLE OK (22/22 checks)		U+FEFF before the XML declaration
+N21-bom-in-pkg-value	yes	REJECT	ok	ORACLE FAIL (20/22 checks)	package_name '\ufeffcom.example.r65' != authored 'com.example.r65'; root package attribute ['\ufeffcom.example.r65'] != authored ['com.example.r65']	package value prefixed with U+FEFF; package_name same
+N22-zwsp-in-pkg-value	yes	REJECT	ok	ORACLE FAIL (20/22 checks)	package_name 'com.example.r65\u200b' != authored 'com.example.r65'; root package attribute ['com.example.r65\u200b'] != authored ['com.example.r65']	package value with trailing U+200B, package_name same
+N23-cdata-true-fabricated-root	yes	REJECT	ok	ORACLE FAIL (18/22 checks)	root package attribute ['com.attacker.x'] != authored ['com.example.r65']; package_name 'com.example.r65' != parsed root ['com.attacker.x']; root versionCode va	CDATA child holds the true manifest; root fabricated
+N24-cdata-fabricated-true-root	no	ACCEPT	ok	ORACLE OK (22/22 checks)		true root; CDATA child text fabricated
+N25-manifest-prefixed-urn-evil	yes	ACCEPT	FALSE-GREEN	ORACLE OK (22/22 checks)		root element x:manifest in urn:evil (not the Android <manifest>)
+N26-manifest-default-ns-urn-evil	yes	ACCEPT	FALSE-GREEN	ORACLE OK (22/22 checks)		root manifest in default namespace urn:evil
+N27-manifest-in-android-ns	yes	ACCEPT	FALSE-GREEN	ORACLE OK (22/22 checks)		root android:manifest
+N28-versionCode-01	yes	REJECT	ok	ORACLE FAIL (21/22 checks)	root versionCode values ['01'] != ['1']	versionCode 01
+N29-versionCode-hex-0x1	yes	REJECT	ok	ORACLE FAIL (21/22 checks)	root versionCode values ['0x1'] != ['1']	versionCode 0x1
+N30-versions-unnamespaced	strict	ACCEPT	FALSE-GREEN(strict)	ORACLE OK (22/22 checks)		versionCode/versionName with no namespace (fixture AXML binds them to URI 'android'; Android ignores unnamespaced)
+N31-versions-urn-evil	yes	ACCEPT	FALSE-GREEN	ORACLE OK (22/22 checks)		versionCode/versionName bound to urn:evil
+N32-versions-android-schema-uri	strict	ACCEPT	FALSE-GREEN(strict)	ORACLE OK (22/22 checks)		android:versionCode with the schema URI (fixture binds literal 'android')
+N33-case-Manifest-tag	yes	REJECT	ok	ORACLE FAIL (21/22 checks)	manifest text does not parse to a root <manifest> element	<Manifest>
+N34-case-Package-attr	yes	REJECT	ok	ORACLE FAIL (20/22 checks)	root package attribute [] != authored ['com.example.r65']; package_name 'com.example.r65' != parsed root []	Package=
+N35-case-versioncode-attr	yes	REJECT	ok	ORACLE FAIL (21/22 checks)	root versionCode values [] != ['1']	ns1:versioncode
+N36-case-pkg-value	yes	REJECT	ok	ORACLE FAIL (20/22 checks)	package_name 'com.Example.r65' != authored 'com.example.r65'; root package attribute ['com.Example.r65'] != authored ['com.example.r65']	com.Example.r65 in root and package_name
+N37-nr-version-fields-fabricated	yes	ACCEPT	FALSE-GREEN	ORACLE OK (22/22 checks)		manifest text true; normalized_result.version_code='99', version_name='9.9'
+N38-raw-app-info-fabricated	yes	ACCEPT	FALSE-GREEN	ORACLE OK (22/22 checks)		manifest/normalized true; raw_result get_app_info states com.attacker.x 9.9/99
+N39-nested-manifest-child-fabricated	no	ACCEPT	ok	ORACLE OK (22/22 checks)		true root; nested child <manifest package=com.attacker.x versionCode=9>
+N40-xml-decl-utf16-label	no	REJECT	false-red	ORACLE FAIL (17/22 checks)	manifest text does not parse to a root <manifest> element; root package attribute [] != authored ['com.example.r65']; package_name 'com.example.r65' != parsed r	XML declaration says UTF-16 while bytes are UTF-8

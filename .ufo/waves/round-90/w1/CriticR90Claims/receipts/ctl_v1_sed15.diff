@@ -1,0 +1,20 @@
+23c23
+<   SM6  SCORECARD K statement: the last `N/14` on the last SCORECARD line that
+---
+>   SM6  SCORECARD K statement: the last `N/15` on the last SCORECARD line that
+183c183
+<     stmts = re.findall(r"K_HELD_BACKED[^0-9]*(\d+)/14(?:\s*(?:→|->)\s*(\d+)/14)?", head)
+---
+>     stmts = re.findall(r"K_HELD_BACKED[^0-9]*(\d+)/15(?:\s*(?:→|->)\s*(\d+)/15)?", head)
+216c216
+<         "## Round 61 x\nPre-registration `aaaaaaa` ok.\nK_HELD_BACKED 8/14 → 8/14\n", encoding="utf-8")
+---
+>         "## Round 61 x\nPre-registration `aaaaaaa` ok.\nK_HELD_BACKED 8/15 → 8/15\n", encoding="utf-8")
+240c240
+<                 txt(r / "SCORECARD.md").replace("8/14 → 8/14", "8/14 → 9/14"), encoding="utf-8"),
+---
+>                 txt(r / "SCORECARD.md").replace("8/15 → 8/15", "8/15 → 9/15"), encoding="utf-8"),
+286c286
+<                 txt(r / "SCORECARD.md").replace("K_HELD_BACKED 8/14 → 8/14", "K_HELD_BACKED 9/14 → 9/14 · K_HELD_BACKED_STRICT 8/14 → 8/14"), encoding="utf-8"), 1),
+---
+>                 txt(r / "SCORECARD.md").replace("K_HELD_BACKED 8/15 → 8/15", "K_HELD_BACKED 9/15 → 9/15 · K_HELD_BACKED_STRICT 8/15 → 8/15"), encoding="utf-8"), 1),

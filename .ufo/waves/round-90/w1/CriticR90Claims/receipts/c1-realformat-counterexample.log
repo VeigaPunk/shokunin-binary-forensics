@@ -1,0 +1,5 @@
+# last K line (SCORECARD.md line 693) as committed at freeze:
+| coverage — knowledge-map ground K (C05, C10, C15) | 8/15 (5.3) → 8/15 (5.3); C05 uncovered, C10 partial (candidate rejected this round), C15 uncovered | `reports/round-73/measure.py TREE` (`K_HELD_BACKED=8/15`) | same | **unchanged** (honest: no admission; the round-73 C10 claim is now falsified-closed, not carried) |
+# where the K_HELD_BACKED token sits: char 192 of 321 ; stated cell "8/15 (5.3) → 8/15 (5.3)" at char 54
+CX stated-after-cell-false-9/15: truth label=1 (self-assessment states a false K); v1 sm6=1 v2 sm6=0
+CX stated-after-cell-false-8/14: truth label=1 (self-assessment states a false K); v1 sm6=1 v2 sm6=0

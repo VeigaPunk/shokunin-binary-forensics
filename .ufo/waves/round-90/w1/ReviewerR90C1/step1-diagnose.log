@@ -1,0 +1,4 @@
+frozen-tree rows 15 held 8 sm2-approx-missing ['self_assessment_check2.py']
+ last K line: | coverage — knowledge-map ground K (C05, C10, C15) | 8/15 (5.3) → 8/15 (5.3); C05 uncovered, C10 partial (candidate rejected this round), C15 uncovered | `reports/round-73/measure.py TREE` (`K_HELD_BACKED=8/15`) | same | **unchanged** (honest: no admission; the round-73 C10 claim is now falsified-c
+lane-worktree rows 15 held 8 sm2-approx-missing []
+ last K line: | coverage — knowledge-map ground K (C05, C10, C15) | 8/15 (5.3) → 8/15 (5.3); C05 uncovered, C10 partial (candidate rejected this round), C15 uncovered | `reports/round-73/measure.py TREE` (`K_HELD_BACKED=8/15`) | same | **unchanged** (honest: no admission; the round-73 C10 claim is now falsified-c

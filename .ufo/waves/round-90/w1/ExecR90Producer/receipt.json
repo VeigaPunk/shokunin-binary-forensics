@@ -1,0 +1,38 @@
+{
+  "what": "round-90 C2 android family producer runs (inspect_android_package) on authored apk-r65 fixture, two independent runs",
+  "command_line": "rea inspect-android-package corpus/fixtures/apk-r65/fixture.apk --format json",
+  "cwd": "/home/vgpnk/Projects/shokunin/revenger-shokunin",
+  "rea_version": "6.7.0",
+  "provider_from_record": {
+    "id": "jadx",
+    "name": "JADX headless",
+    "version": "0.7.1"
+  },
+  "runs": [
+    {
+      "label": "run1",
+      "utc_start": "2026-11-04T22:02:20.690Z",
+      "utc_end": "2026-11-04T22:02:27.728Z",
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "wall_seconds": 7.038,
+      "stdout_bytes": 4309,
+      "stdout_sha256": "9d665ffbc8674d41675b164f8d4cc70457e00a0b94eee2de9ab4d6b010249e12"
+    },
+    {
+      "label": "run2",
+      "utc_start": "2026-11-04T22:02:27.728Z",
+      "utc_end": "2026-11-04T22:02:34.515Z",
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "wall_seconds": 6.786,
+      "stdout_bytes": 4309,
+      "stdout_sha256": "214094fbe04883e1f1879f5d314397899cdbf43a66d92607b9a0f560ec322f38"
+    }
+  ],
+  "record_evidence_ids": [
+    "ev_affae0e5ae0fb1ef295975485048faa4721ee620c99a0d72603dfaaedef1e6c5",
+    "ev_d4a34332e3ca12df700b7698de453f75066ec7bfcfc79c03c21e5e013de81b37"
+  ],
+  "environment_log": "/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-90/w1/ExecR90Producer/env.log"
+}

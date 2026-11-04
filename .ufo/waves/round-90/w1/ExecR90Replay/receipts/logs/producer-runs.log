@@ -1,0 +1,17 @@
+# observed 2026-11-04T22:04:26Z
+9d665ffbc8674d41675b164f8d4cc70457e00a0b94eee2de9ab4d6b010249e12  /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-90/w1/ExecR90Producer/run1.json
+214094fbe04883e1f1879f5d314397899cdbf43a66d92607b9a0f560ec322f38  /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-90/w1/ExecR90Producer/run2.json
+$ python3 -B /fast/scratch/hyaku/revenger-r90/ExecR90Replay/my_oracle.py /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-90/w1/ExecR90Producer/run1.json
+/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-90/w1/ExecR90Producer/run1.json accept ok
+$ python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check2.py /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-90/w1/ExecR90Producer/run1.json
+ORACLE OK (22/22 checks)
+rc=0
+$ python3 -B /fast/scratch/hyaku/revenger-r90/ExecR90Replay/my_oracle.py /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-90/w1/ExecR90Producer/run2.json
+/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-90/w1/ExecR90Producer/run2.json accept ok
+$ python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check2.py /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-90/w1/ExecR90Producer/run2.json
+ORACLE OK (22/22 checks)
+rc=0
+run1.json evidence_id ev_affae0e5ae0fb1ef295975485048faa4721ee620c99a0d72603dfaaedef1e6c5 version_code None version_name None
+'<?xml version="1.0" encoding="utf-8"?>\n<manifest xmlns:android="http://schemas.android.com/apk/res/android"\n    package="com.example.r65"\n    xmlns:ns1="android" \n    ns1:versionCode="1"\n    xmlns:ns2="android" \n    ns2:versionName="1.0"/>'
+run2.json evidence_id ev_d4a34332e3ca12df700b7698de453f75066ec7bfcfc79c03c21e5e013de81b37 version_code None version_name None
+'<?xml version="1.0" encoding="utf-8"?>\n<manifest xmlns:android="http://schemas.android.com/apk/res/android"\n    package="com.example.r65"\n    xmlns:ns1="android" \n    ns1:versionCode="1"\n    xmlns:ns2="android" \n    ns2:versionName="1.0"/>'

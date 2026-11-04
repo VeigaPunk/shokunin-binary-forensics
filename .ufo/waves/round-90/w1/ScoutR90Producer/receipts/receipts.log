@@ -1,0 +1,53 @@
+# sha256
+921bb39be8884b46404715656364e6450fcdd8103b1259c04731ee1a1f8d638c  run1.json
+881f9ccf1a4593483157add18fbbf596c2ca6fd3ceaa33bdcf2c6ce80a684ad1  run2.json
+5e05b0fe55a5fdc6bc6aefde804572b33ba0b321445cb81cf27d4f8d34a93ace  run3.json
+80565a59840e9bc0ce81f24cf97e36cb78c764ceef4c373cf4ad8ddaac255796  run4.json
+## norm_eq run1 run2
+NORM_EQ=identical
+exit=0
+## norm_eq run1 run3
+NORM_EQ=identical
+exit=0
+## norm_eq run1 run4
+NORM_EQ=identical
+exit=0
+## norm_eq run2 run3
+NORM_EQ=identical
+exit=0
+## norm_eq run2 run4
+NORM_EQ=identical
+exit=0
+## norm_eq run3 run4
+NORM_EQ=identical
+exit=0
+## norm_eq run1 vs r89 record
+NORM_EQ=DIFFER
+DIFF $.parameters.path
+exit=1
+## parseEvidence (rea 6.7.0 dist/domain/evidence.js)
+run1.json as-is ID_CONSISTENT
+run1.json forged-id REJECTED Evidence semantic identifier does not match its record
+run1.json load_duration_edited REJECTED Evidence semantic identifier does not match its record
+run1.json local_path_edited ID_CONSISTENT
+run2.json as-is ID_CONSISTENT
+run2.json forged-id REJECTED Evidence semantic identifier does not match its record
+run2.json load_duration_edited REJECTED Evidence semantic identifier does not match its record
+run2.json local_path_edited ID_CONSISTENT
+run3.json as-is ID_CONSISTENT
+run3.json forged-id REJECTED Evidence semantic identifier does not match its record
+run3.json load_duration_edited REJECTED Evidence semantic identifier does not match its record
+run3.json local_path_edited ID_CONSISTENT
+run4.json as-is ID_CONSISTENT
+run4.json forged-id REJECTED Evidence semantic identifier does not match its record
+run4.json load_duration_edited REJECTED Evidence semantic identifier does not match its record
+run4.json local_path_edited ID_CONSISTENT
+/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-89/rejected-android-record/inspection.json as-is ID_CONSISTENT
+/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-89/rejected-android-record/inspection.json forged-id REJECTED Evidence semantic identifier does not match its record
+/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-89/rejected-android-record/inspection.json load_duration_edited REJECTED Evidence semantic identifier does not match its record
+/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-89/rejected-android-record/inspection.json local_path_edited ID_CONSISTENT
+## stderr of runs (only /usr/bin/time lines)
+6.66 s
+5.26 s
+5.38 s
+5.60 s

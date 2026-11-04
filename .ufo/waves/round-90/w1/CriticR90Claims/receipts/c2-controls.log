@@ -1,0 +1,18 @@
+=== C2 counter on ctl-idedit
+K1=pass ['F4_COVERAGE=11/11 score=10.00']
+K2=pass ['ORACLE OK (22/22 checks)']
+K3=pass ['ORACLE_MISCLASS=0/9']
+K4=pass ['NORM_EQ=identical']
+K5=pass ['88aca5fb1c632616', 'a8fb9dc48f51ff8b']
+K6=pass ['ev_bf6e273dafe9c6c62', 'ev_7fbe94f5d0653740c']
+C2_CONJUNCTS=6/6
+EXIT=0
+=== C2 counter on ctl-stub
+K1=pass ['F4_COVERAGE=11/11 score=10.00']
+K2=pass ['ORACLE OK (stub)']
+K3=pass ['ORACLE_MISCLASS=0/9']
+K4=pass ['NORM_EQ=identical']
+K5=pass ['a744296bbcb9dca6', 'f9075a899c049b15']
+K6=pass ['ev_stub0', 'ev_stub1']
+C2_CONJUNCTS=6/6
+EXIT=0

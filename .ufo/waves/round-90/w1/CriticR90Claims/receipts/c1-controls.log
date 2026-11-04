@@ -1,0 +1,83 @@
+=== C1 battery, impl=ctl_v1_sed15.py (real=freeze)
+CASE B01 label=0 got=0 ok
+CASE B02 label=1 got=1 ok
+CASE B03 label=1 got=1 ok
+CASE B04 label=0 got=1 MISCLASS
+CASE B05 label=1 got=0 MISCLASS
+CASE B06 label=0 got=1 MISCLASS
+CASE B07 label=1 got=1 ok
+CASE B08 label=0 got=1 MISCLASS
+CASE B09 label=1 got=1 ok
+CASE B10 label=0 got=1 MISCLASS
+CASE B11 label=0 got=0 ok
+CASE B12 label=1 got=1 ok
+CASE R1-real-tree label=0 got=0 ok
+CASE R2-forged-8-of-14 label=1 got=1 ok
+SM6_MISCLASS=5/14
+EXIT=1
+=== C1 battery, impl=ctl_lastfrac.py (real=freeze)
+CASE B01 label=0 got=0 ok
+CASE B02 label=1 got=1 ok
+CASE B03 label=1 got=1 ok
+CASE B04 label=0 got=0 ok
+CASE B05 label=1 got=1 ok
+CASE B06 label=0 got=0 ok
+CASE B07 label=1 got=1 ok
+CASE B08 label=0 got=0 ok
+CASE B09 label=1 got=1 ok
+CASE B10 label=0 got=0 ok
+CASE B11 label=0 got=0 ok
+CASE B12 label=1 got=1 ok
+CASE R1-real-tree label=0 got=0 ok
+CASE R2-forged-8-of-14 label=1 got=1 ok
+SM6_MISCLASS=0/14
+EXIT=0
+=== C1 do-nothing-after-freeze: v2 over freeze tree
+SM6_MISCLASS=0/14
+=== separability: C1 counter (v2 battery) over C2-only tree ctl-c2only
+SM6_MISCLASS=0/14
+=== separability: C1 counter (v1 battery) over C2-only tree
+SM6_MISCLASS=7/14
+=== kill(b) v2 full over C2-only tree
+SM1=0
+SM2=1
+SM3=0
+SM4=0
+SM5=0
+SM6=0
+SELF_MISMATCH=1
+EXIT=1
+=== kill(b) v2 full over C1-only tree
+SM1=0
+SM2=0
+SM3=0
+SM4=0
+SM5=0
+SM6=0
+SELF_MISMATCH=0
+EXIT=0
+=== kill(b) v1 full over C1-only tree
+SM1=0
+SM2=0
+SM3=0
+SM4=0
+SM5=0
+SM6=1
+SELF_MISMATCH=1
+EXIT=1
+=== separability: C2 counter over C1-only tree
+K1=FAIL ['F4_COVERAGE=10/11 score=9.09']
+K2=FAIL ['missing input: /fast/scratch/hyaku/revenger-r90/CriticR90Claims/ctl-c1only/corpus/live/runs/round-90/inspection.json']
+K3=pass ['ORACLE_MISCLASS=0/9']
+K4=FAIL ["unreadable input: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r90/CriticR90Claims/ctl-c1only/corpus/live/runs/round-90/inspection.json'"]
+K5=FAIL ["FileNotFoundError(2, 'No such file or directory')"]
+K6=FAIL ["FileNotFoundError(2, 'No such file or directory')"]
+C2_CONJUNCTS=1/6
+EXIT=1
+=== separability: F4 on C1-only tree
+F4_COVERAGE=10/11 score=9.09
+F4_FAMILIES=['archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']
+=== R1 label is a CLI default: real tree with a FALSE last K line (9/15) as R1
+CASE R1-real-tree label=0 got=1 MISCLASS
+CASE R2-forged-8-of-14 label=1 got=1 ok
+SM6_MISCLASS=1/14

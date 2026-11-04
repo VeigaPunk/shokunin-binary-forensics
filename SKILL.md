@@ -313,6 +313,51 @@ a rejected candidate keeps every byte except its `admission-status:` line.
 
 | field | value |
 |---|---|
+| name | `self_assessment_check2` (round 90 C1; supersedes `self_assessment_check` above for SM6 only — v1 bytes stay as the r70 instrument) |
+| kind | gate (committed, re-runnable verdict script this lane owns) |
+| entry command | `python3 -B corpus/self_assessment_check2.py --root <tree> --lane <repo>` (same tree shape as v1) |
+| verdict map | `0` `SELF_MISMATCH=0` · `1` at least one of SM1-SM6 non-zero · `2` could-not-evaluate (a required file is missing) · `64` usage |
+| self-test | `python3 -B corpus/self_assessment_check2.py --self-test` — v1's legs plus six SM6 denominator legs (15-row map: stale `8/14` → 1, true `8/15` → 0, `(5.7)` score between sides → 0, reversed sides → 1, `K_HELD_BACKED=8/15` counter-output form → 0, wrong numerator → 1) |
+| measured-against | frozen battery `reports/round-90/sm6_battery.py` (14 hand-labelled cases incl. the real tree and an `8/14` forgery): v1 `SM6_MISCLASS=7/14` (`reports/round-90/c1-red-v1-battery.log`); v2 result in `reports/round-90/c1-after-v2-battery.log` |
+| what a green run does NOT establish | v1's limits stand for SM1–SM5; SM6 reads only the LAST line naming `K_HELD_BACKED` and its last `N/D` statement (text before `K_HELD_BACKED_STRICT`); a K statement elsewhere in SCORECARD is not checked |
+| write scope | read-only over TREE; runs `git cat-file -e` in the lane repo; writes nothing outside its own temp dirs |
+| owner | revenger |
+
+| field | value |
+|---|---|
+| name | `apk_identity_oracle2` — `corpus/fixtures/apk-r65/oracle_check2.py` (round 90 C2; supersedes the r89 `apk_identity_oracle` probe's manifest legs) |
+| kind | gate over one fixture (content accuracy of an `inspect_android_package` record for apk-r65 only) |
+| entry command | `python3 -B corpus/fixtures/apk-r65/oracle_check2.py corpus/fixtures/apk-r65/truth.json <record.json>` |
+| verdict map | `0` `ORACLE OK (n/n checks)` · `1` `ORACLE FAIL (k/n checks)` with each failing check printed · `2` missing input · `64` usage |
+| self-test | none in the script; attributed by the frozen 9-case battery `reports/round-90/oracle_battery.py` (v1 misjudges 5/9 — `reports/round-90/c2-red-v1-battery.log`) |
+| what a green run does NOT establish | provenance (a hand-written content-accurate record passes by design — battery P2; Q09); any fixture other than apk-r65; Android runtime behaviour. **Measured post-freeze limit:** v2 matches tag and attribute LOCAL names, so 12 of the 40 `ForgeryR90Probe` cases are false greens (namespaced root, `x:package`/`android:package`, versions bound to a foreign URI, internal-DTD attribute defaults, two adjacent record fields) — `reports/round-90/oracle2-vs-forgery-probe.log`; superseded for future claims by `apk_identity_oracle3` below |
+| write scope | read-only |
+| owner | revenger |
+
+| field | value |
+|---|---|
+| name | `apk_identity_oracle3` — `corpus/fixtures/apk-r65/oracle_check3.py` (round 90, UNCLAIMED post-freeze correction of v2; a candidate instrument for a future frozen predicate, not a round-90 counter) |
+| kind | gate over one fixture (content accuracy of an `inspect_android_package` record for apk-r65 only) |
+| entry command | `python3 -B corpus/fixtures/apk-r65/oracle_check3.py corpus/fixtures/apk-r65/truth.json <record.json>` |
+| verdict map | same as v2 (`0` OK · `1` FAIL · `2` missing input · `64` usage) |
+| self-test | none in the script; measured by the frozen 9-case battery (`reports/round-90/oracle3-battery.log`, 0/9) and the 40-case `ForgeryR90Probe` set (`reports/round-90/oracle3-vs-forgery-probe.log`: 0 false greens, 2 harmless false reds N01/N40) |
+| what a green run does NOT establish | provenance (Q09); v3 was designed AFTER reading the 40 probe cases, so its 0/40 false greens is fitted, not held-out — a fresh forgery set must attack it before any claim rests on it |
+| write scope | read-only |
+| owner | revenger |
+
+| field | value |
+|---|---|
+| name | `source_path_check` — `reports/round-90/source_path_check.py` (round 90; machine check named by QUALITY Q17; built by seat `ExecR90SourceCheck`) |
+| kind | gate (committed, re-runnable verdict script) |
+| entry command | `python3 -B reports/round-90/source_path_check.py --root <tree>` (tree = lane root or a `git archive` extraction) |
+| verdict map | `0` `SOURCE_PATH_DEAD=0` · `1` a SOURCES row's backticked repo path does not resolve and no later resolving row `supersedes` it · `2` SOURCES.md missing |
+| self-test | `python3 -B reports/round-90/source_path_check.py --selftest` (10 hermetic legs) |
+| what a green run does NOT establish | it reads only `source` cells of `corpus/SOURCES.md` Registry rows; knowledge-entry, LOG and lesson pointers are not checked (Q17's sweep clause stays a manual duty for those) |
+| write scope | read-only |
+| owner | revenger |
+
+| field | value |
+|---|---|
 | name | `lint_entry` |
 | kind | pre-flight lint (NOT a gate: a clean lint never substitutes a Q decision; round 70 C1) |
 | entry command | `python3 -B corpus/lint_entry.py --entry <knowledge.md> [--lane <repo>]` |

@@ -1,0 +1,15 @@
+# unclaimed post-freeze corroboration (round 90): rea-agents' own parseEvidence (dist/domain/evidence.js) re-derives evidence_id from the record content
+# command: node reports/round-90/verify_evidence_id.mjs <records>; ctl-idedit = r89 record with a random ev_ id (CriticR90Claims ctl-idedit class)
+corpus/live/runs/round-90/inspection.json as-is ID_CONSISTENT
+corpus/live/runs/round-90/inspection.json forged-id REJECTED Evidence semantic identifier does not match its record
+corpus/live/runs/round-90/inspection.json load_duration_edited REJECTED Evidence semantic identifier does not match its record
+corpus/live/runs/round-90/inspection.json local_path_edited ID_CONSISTENT
+reports/round-90/android-run2.json as-is ID_CONSISTENT
+reports/round-90/android-run2.json forged-id REJECTED Evidence semantic identifier does not match its record
+reports/round-90/android-run2.json load_duration_edited REJECTED Evidence semantic identifier does not match its record
+reports/round-90/android-run2.json local_path_edited ID_CONSISTENT
+<scratch>/ctl-idedit-run1.json as-is REJECTED Evidence semantic identifier does not match its record
+<scratch>/ctl-idedit-run1.json forged-id REJECTED Evidence semantic identifier does not match its record
+<scratch>/ctl-idedit-run1.json load_duration_edited REJECTED Evidence semantic identifier does not match its record
+<scratch>/ctl-idedit-run1.json local_path_edited REJECTED Evidence semantic identifier does not match its record
+EXIT=0

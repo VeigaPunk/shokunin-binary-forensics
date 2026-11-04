@@ -1,0 +1,23 @@
+GOOD_TEXT: '<?xml version="1.0" encoding="utf-8"?>\n<manifest xmlns:android="http://schemas.android.com/apk/res/android"\n    package="com.example.r65"\n    xmlns:ns1="android" \n    ns1:versionCode="1"\n    xmlns:ns2="android" \n    ns2:versionName="1.0"/>'
+A1-namespaced-package-only: v2=accept v1=accept
+A2-versions-in-foreign-namespace: v2=accept v1=accept
+A3-foreign-root-namespace: v2=accept v1=accept
+A4-fabricated-permission-child: v2=accept v1=accept
+A5-fabricated-component-child: v2=accept v1=accept
+A6-fabricated-root-attr-sharedUserId: v2=accept v1=accept
+A7-unnamespaced-versions: v2=accept v1=accept
+Q1-single-quoted-equivalent: v2=accept v1=reject
+N1-runtime-regex-eats-glued-prefix: NORM_EQ=identical
+N2-json-text-duplicate-key-collapse: NORM_EQ=identical
+N3-load_duration_ms-any-depth-any-type: NORM_EQ=identical
+N4-run2-arbitrary-id-string: NORM_EQ=identical
+### FORGE tree (r89 record, ids hand-edited, run2 id non-ev shape, 1-field receipt; no producer run):
+K1=pass ['F4_COVERAGE=11/11 score=10.00']
+K2=pass ['ORACLE OK (22/22 checks)']
+K3=pass ['ORACLE_MISCLASS=0/9']
+K4=pass ['NORM_EQ=identical']
+K5=pass ['38d17c6d691237d0', 'a49e52dbcc8bb58d']
+K6=pass ['ev_11111111111111111', 'run2-anything']
+C2_CONJUNCTS=6/6
+EXIT 0
+EXIT=0

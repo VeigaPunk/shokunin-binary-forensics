@@ -1,0 +1,23 @@
+check ok: fixture sha256 05d2280f847497cf
+check ok: fixture size 947 bytes
+check ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']
+check ok: member byte lengths match the build recipe
+check ok: member digests match truth.json
+check ok: operation inspect_android_package
+check ok: provider id jadx
+check ok: provider version present
+check ok: evidence_id shape ev_<64 hex>
+check ok: subject digest == fixture sha256
+check ok: subject format apk
+check FAIL: package_name 'com.attacker.x' != authored 'com.example.r65'
+check ok: manifest parses; root tag manifest
+check FAIL: root package attribute ['com.attacker.x'] != authored ['com.example.r65']
+check ok: package_name == parsed root package
+check ok: root declares versionCode='1'
+check ok: root declares versionName='1.0'
+check ok: manifest status complete
+check ok: class_count == DEX class_defs_size (0)
+check ok: resource_count == 3 members
+check ok: permissions empty
+check ok: signature_verification not_performed
+ORACLE FAIL (20/22 checks)

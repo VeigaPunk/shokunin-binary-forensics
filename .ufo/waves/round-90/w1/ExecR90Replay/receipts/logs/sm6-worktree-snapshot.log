@@ -1,0 +1,7 @@
+# working-tree (uncommitted, in-flight sibling edits) README+SCORECARD copy at 2026-11-04T22:03:58Z
+$ python3 -B /fast/scratch/hyaku/revenger-r90/ExecR90Replay/my_sm6.py /fast/scratch/hyaku/revenger-r90/ExecR90Replay/wt
+MY_LABEL=0 rows=15 held=8 k_line=693 current=(8, 15)
+$ sm6_battery.py --impl v2 --real /fast/scratch/hyaku/revenger-r90/ExecR90Replay/wt
+CASE R1-real-tree label=0 got=0 ok
+CASE R2-forged-8-of-14 label=1 got=1 ok
+SM6_MISCLASS=0/14

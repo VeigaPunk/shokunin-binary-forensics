@@ -65,3 +65,11 @@ the current answer.
 3.1.x and Unblob 26.6.x, which the host versions match; the firmware route is
 still unprobed. The Android route now has a recorded producer run
 (`corpus/live/runs/round-89/`, round 89) — a record, not an admitted finding.
+
+Correction (round 90, 2026-11-04): line 67 names `corpus/live/runs/round-89/`,
+which does not resolve after the round-89 adjudication `bd575ca` relocated the
+android record (`inspection.json`, `receipt.json`, `LEDGER.md`) to
+`reports/round-89/rejected-android-record/`. The record was rejected — preserved
+outside the counted surface, not admitted (`lessons/round-89-verifier-spotcheck.md`
+D1). Read line 67's path as `reports/round-89/rejected-android-record/`; the
+sentence's "a record, not an admitted finding" stands. Lines 1–67 are unchanged. Registry: S486 supersedes S481 for the relocated receipt.

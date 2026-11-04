@@ -1,0 +1,27 @@
+# D3 receipt — SM2 at r89 base and tip (ScribeR90Quality, round 90, 2026-11-04)
+# checker: /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/self_assessment_check.py sha256 82e59fce5647f27727644d121dd73641bc14a7bb3293d7e54f2070b0db0335cc (byte-equal to the copy inside both archives below)
+# python: Python 3.14.8
+## rev 2b017fa3c616a84b7b491e3312029fa8a8c076e6
+$ git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive 2b017fa3c616a84b7b491e3312029fa8a8c076e6 corpus SHONEN.md SCORECARD.md SKILL.md | tar -x -C TREE
+$ TMPDIR=/fast/scratch/hyaku/revenger-r90/ScribeR90Quality python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/self_assessment_check.py --root TREE --lane /home/vgpnk/Projects/shokunin/revenger-shokunin
+# TREE sha256 of in-tree checker: 82e59fce5647f27727644d121dd73641bc14a7bb3293d7e54f2070b0db0335cc
+SM1=0
+SM2=1
+SM3=0
+SM4=0
+SM5=0
+SM6=1
+SELF_MISMATCH=2
+EXIT=1
+## rev c8cc585c3d25c8aa30ca7fde8b7b95c6d40c3893
+$ git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive c8cc585c3d25c8aa30ca7fde8b7b95c6d40c3893 corpus SHONEN.md SCORECARD.md SKILL.md | tar -x -C TREE
+$ TMPDIR=/fast/scratch/hyaku/revenger-r90/ScribeR90Quality python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/self_assessment_check.py --root TREE --lane /home/vgpnk/Projects/shokunin/revenger-shokunin
+# TREE sha256 of in-tree checker: 82e59fce5647f27727644d121dd73641bc14a7bb3293d7e54f2070b0db0335cc
+SM1=0
+SM2=0
+SM3=0
+SM4=0
+SM5=0
+SM6=1
+SELF_MISMATCH=1
+EXIT=1

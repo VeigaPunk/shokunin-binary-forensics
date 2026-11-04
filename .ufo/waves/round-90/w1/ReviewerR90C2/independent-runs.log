@@ -1,0 +1,11 @@
+# independent rea 6.7.0 runs in scratch (cwd scratch/rea, argv fixture.apk)
+fbc2dec00c284f1e809633811d7ca93c1713d1f5f1b613ae92990b2b1a09fa46  rea/own1.json
+43c82ce8913de0ce10b591c6aac373792158a6421f0f814ffe8a6abf989b1e0c  rea/own2.json
+NORM_EQ=identical
+own1-vs-own2 EXIT=0
+NORM_EQ=DIFFER
+DIFF $.parameters.path
+DIFF $.subject.local_path
+producer-run1-vs-own1 EXIT=1
+NORM_EQ=identical
+producer-run1-vs-r89 EXIT=0

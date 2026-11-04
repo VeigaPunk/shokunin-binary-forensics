@@ -1,0 +1,11 @@
+--- a/corpus/self_assessment_check2.py
++++ b/corpus/self_assessment_check2.py
+@@ -186,7 +186,7 @@
+     held = sum(1 for l in rows if re.search(r"\|\s*held\s*\|\s*$", l))
+     last = [l for l in txt(root / "SCORECARD.md").splitlines() if "K_HELD_BACKED" in l]
+     if not last:
+-        return 1
++        return 0
+     head = last[-1].split("K_HELD_BACKED_STRICT")[0]
+     stmts = re.findall(
+         r"K_HELD_BACKED[^0-9]*(\d+)/(\d+)"

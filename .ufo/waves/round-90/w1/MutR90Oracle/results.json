@@ -1,0 +1,595 @@
+{
+  "oracle": {
+    "pristine_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+    "rc_pristine": 0,
+    "out_pristine": "CASE P1-real-r89-record label=accept verdict=accept ok\nCASE P2-hand-written-content-accurate label=accept verdict=accept ok\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=reject ok\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok\nCASE F6-unparseable-text-with-fragments label=reject verdict=reject ok\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=0/9\n",
+    "rows": [
+      {
+        "id": "O1",
+        "desc": "drop root-tag check",
+        "old": "if root is not None and local(root.tag) == \"manifest\"",
+        "new": "if root is not None",
+        "mutant_sha": "ac1a462259c8d33fc9bde32069876441d0ca148ca7c1313586697d5c1fbcc8ee",
+        "restored_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "CASE P1-real-r89-record label=accept verdict=accept ok\nCASE P2-hand-written-content-accurate label=accept verdict=accept ok\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=reject ok\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok\nCASE F6-unparseable-text-with-fragments label=reject verdict=reject ok\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=0/9\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      },
+      {
+        "id": "O2",
+        "desc": "accept a package attr equal to the authored one on ANY element",
+        "old": "root_pkg = [v for k, v in attrs if k == \"package\"]",
+        "new": "_any = [v for e in (root.iter() if root is not None else []) for k, v in e.attrib.items() if local(k) == \"package\"]; root_pkg = [pkg] if pkg in _any else _any",
+        "mutant_sha": "1d52c78a8228c8491823a353ee55782f83c85ff92da03ac19be07449aad9b399",
+        "restored_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "CASE P1-real-r89-record label=accept verdict=accept ok\nCASE P2-hand-written-content-accurate label=accept verdict=accept ok\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=reject ok\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok\nCASE F6-unparseable-text-with-fragments label=reject verdict=reject ok\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=0/9\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      },
+      {
+        "id": "O3",
+        "desc": "`in` instead of `== [val]` for versions",
+        "old": "if got == [val]",
+        "new": "if val in got",
+        "mutant_sha": "ebfa89c4e359fff1c900a4649014ea6b919e12ba7320b28d8096020821d3d97b",
+        "restored_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+        "restored_ok": true,
+        "rc_mutant": 1,
+        "out_mutant": "CASE P1-real-r89-record label=accept verdict=accept ok\nCASE P2-hand-written-content-accurate label=accept verdict=accept ok\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=reject ok\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=accept MISCLASS\nCASE F6-unparseable-text-with-fragments label=reject verdict=reject ok\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=1/9\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [
+          "CASE F5-conflicting-duplicate-versionCode label=reject verdict=accept MISCLASS"
+        ],
+        "verdict": "killed"
+      },
+      {
+        "id": "O4",
+        "desc": "skip package_name == parsed root package leg",
+        "old": "if root_pkg and nr.get(\"package_name\") == root_pkg[0]",
+        "new": "if True",
+        "mutant_sha": "1f0bec300d229fa1e6f90459e49ce06c927be189cece52515e37ee9c854998ad",
+        "restored_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "CASE P1-real-r89-record label=accept verdict=accept ok\nCASE P2-hand-written-content-accurate label=accept verdict=accept ok\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=reject ok\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok\nCASE F6-unparseable-text-with-fragments label=reject verdict=reject ok\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=0/9\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      },
+      {
+        "id": "O5",
+        "desc": "fall back to substring/regex attrs on parse error",
+        "old": "        root = None\n    local",
+        "new": "        root = ET.fromstring((\"<manifest \" + \" \".join(re.findall(r'\\w+=\"[^\"]*\"', text)) + \"/>\").encode())\n    local",
+        "mutant_sha": "c2362891d7d505780a00ce541081a6ede698f836689e421d67bff185fb42bb4a",
+        "restored_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+        "restored_ok": true,
+        "rc_mutant": 1,
+        "out_mutant": "CASE P1-real-r89-record label=accept verdict=accept ok\nCASE P2-hand-written-content-accurate label=accept verdict=accept ok\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=reject ok\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok\nCASE F6-unparseable-text-with-fragments label=reject verdict=accept MISCLASS\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=1/9\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [
+          "CASE F6-unparseable-text-with-fragments label=reject verdict=accept MISCLASS"
+        ],
+        "verdict": "killed"
+      },
+      {
+        "id": "O6",
+        "desc": "ignore namespace-local split (raw {uri}name keys)",
+        "old": "local = lambda k: k.rsplit(\"}\", 1)[-1]",
+        "new": "local = lambda k: k",
+        "mutant_sha": "fa144d73a9bb187721f4531bc7a34e16c77a4f9a84852ae414bb1f0375e0f4f6",
+        "restored_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+        "restored_ok": true,
+        "rc_mutant": 1,
+        "out_mutant": "CASE P1-real-r89-record label=accept verdict=reject MISCLASS\nCASE P2-hand-written-content-accurate label=accept verdict=reject MISCLASS\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=reject ok\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok\nCASE F6-unparseable-text-with-fragments label=reject verdict=reject ok\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=2/9\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [
+          "CASE P1-real-r89-record label=accept verdict=reject MISCLASS",
+          "CASE P2-hand-written-content-accurate label=accept verdict=reject MISCLASS"
+        ],
+        "verdict": "killed"
+      },
+      {
+        "id": "O7",
+        "desc": "versions read from any element (root.iter)",
+        "old": "got = [v for k, v in attrs if k == attr]",
+        "new": "got = [v for e in root.iter() for k, v in e.attrib.items() if local(k) == attr] if root is not None else []",
+        "mutant_sha": "ce5a7de0e3f353eb9f2b9a45e1f5bfe110d62238693add95fa6496d44f17e149",
+        "restored_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+        "restored_ok": true,
+        "rc_mutant": 1,
+        "out_mutant": "CASE P1-real-r89-record label=accept verdict=accept ok\nCASE P2-hand-written-content-accurate label=accept verdict=accept ok\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=accept MISCLASS\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok\nCASE F6-unparseable-text-with-fragments label=reject verdict=reject ok\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=1/9\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [
+          "CASE F4-versions-smuggled-into-child label=reject verdict=accept MISCLASS"
+        ],
+        "verdict": "killed"
+      },
+      {
+        "id": "O8",
+        "desc": "drop root package == [pkg] leg",
+        "old": "if root_pkg == [pkg]",
+        "new": "if True",
+        "mutant_sha": "df079e181d05d369eb4d392e9515692adcd6a58ea897426acb9e2e95744c0701",
+        "restored_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "CASE P1-real-r89-record label=accept verdict=accept ok\nCASE P2-hand-written-content-accurate label=accept verdict=accept ok\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=reject ok\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok\nCASE F6-unparseable-text-with-fragments label=reject verdict=reject ok\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=0/9\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      },
+      {
+        "id": "O9",
+        "desc": "drop record package_name == authored leg",
+        "old": "if nr.get(\"package_name\") == pkg",
+        "new": "if True",
+        "mutant_sha": "4ef7754f2c07b31706b63c20ad2fecf9e63859f2abeb6ae658272d2cdf4e333e",
+        "restored_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "CASE P1-real-r89-record label=accept verdict=accept ok\nCASE P2-hand-written-content-accurate label=accept verdict=accept ok\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=reject ok\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok\nCASE F6-unparseable-text-with-fragments label=reject verdict=reject ok\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=0/9\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      },
+      {
+        "id": "O10",
+        "desc": "first-match only for versions (got[:1])",
+        "old": "if got == [val]",
+        "new": "if got[:1] == [val]",
+        "mutant_sha": "f0ae9b1d4f77f5df27826a97d6035ae0324c25d37ace8e640bb290a78bffafde",
+        "restored_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+        "restored_ok": true,
+        "rc_mutant": 1,
+        "out_mutant": "CASE P1-real-r89-record label=accept verdict=accept ok\nCASE P2-hand-written-content-accurate label=accept verdict=accept ok\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=reject ok\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=accept MISCLASS\nCASE F6-unparseable-text-with-fragments label=reject verdict=reject ok\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=1/9\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [
+          "CASE F5-conflicting-duplicate-versionCode label=reject verdict=accept MISCLASS"
+        ],
+        "verdict": "killed"
+      },
+      {
+        "id": "O11",
+        "desc": "drop manifest status complete leg",
+        "old": "if (nr.get(\"manifest\") or {}).get(\"status\") == \"complete\"",
+        "new": "if True",
+        "mutant_sha": "debbfc228d9e75eb12f6b15bf8f4a2c4da310e0051865a7cfdc05684593a9251",
+        "restored_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "CASE P1-real-r89-record label=accept verdict=accept ok\nCASE P2-hand-written-content-accurate label=accept verdict=accept ok\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=reject ok\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok\nCASE F6-unparseable-text-with-fragments label=reject verdict=reject ok\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=0/9\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      },
+      {
+        "id": "O12",
+        "desc": "drop subject digest == fixture sha256 leg",
+        "old": "if (subj.get(\"digest\") or {}).get(\"sha256\") == truth[\"image\"][\"sha256\"]",
+        "new": "if True",
+        "mutant_sha": "eb7ce45f3e9f153eb0a9e010e563acd4a5808c667f41eccafbf0bd7e74cef05a",
+        "restored_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "CASE P1-real-r89-record label=accept verdict=accept ok\nCASE P2-hand-written-content-accurate label=accept verdict=accept ok\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=reject ok\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok\nCASE F6-unparseable-text-with-fragments label=reject verdict=reject ok\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=0/9\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      },
+      {
+        "id": "O13",
+        "desc": "drop BOTH package_name legs (O4+O9): record package_name never compared",
+        "old": [
+          "if nr.get(\"package_name\") == pkg",
+          "if root_pkg and nr.get(\"package_name\") == root_pkg[0]"
+        ],
+        "new": [
+          "if True",
+          "if True"
+        ],
+        "mutant_sha": "06b58f71941fbb57d8fa84ff7d30bbfaa7903b55b0ff48a5e7384f2867ebfcde",
+        "restored_sha": "de2b2ad2daf899ee87b1059ee0c378f5177dcd0f8608501ced190f71d71e666d",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "CASE P1-real-r89-record label=accept verdict=accept ok\nCASE P2-hand-written-content-accurate label=accept verdict=accept ok\nCASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok\nCASE F2-fabricated-package-everywhere label=reject verdict=reject ok\nCASE F3-minimal-three-key label=reject verdict=reject ok\nCASE F4-versions-smuggled-into-child label=reject verdict=reject ok\nCASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok\nCASE F6-unparseable-text-with-fragments label=reject verdict=reject ok\nCASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok\nORACLE_MISCLASS=0/9\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      }
+    ]
+  },
+  "norm": {
+    "pristine_sha": "06c7eac72ec81bc19e094323665159f36ed44ae7a5091639d3bb1520f263b918",
+    "rc_pristine": 0,
+    "out_pristine": "NORM_SELFTEST_volatile-only_twin=ok\nNORM_SELFTEST_non-volatile_leaf_changed=ok\nNORM_SELFTEST_non-volatile_text_payload_value=ok\nNORM_SELFTEST_extra_key=ok\nNORM_SELFTEST_evidence_id_leaks_into_a_non-whole_string=ok\nNORM_SELFTEST=pass\n",
+    "rows": [
+      {
+        "id": "N1",
+        "desc": "drop V3 canonicalisation of JSON-text strings",
+        "old": "if s[:1] in \"{[\":",
+        "new": "if False:",
+        "mutant_sha": "a7a04b5f91ff876476c5bcf23fcb1fada99f6fb279f14503208911c7e6104437",
+        "restored_sha": "06c7eac72ec81bc19e094323665159f36ed44ae7a5091639d3bb1520f263b918",
+        "restored_ok": true,
+        "rc_mutant": 1,
+        "out_mutant": "NORM_SELFTEST_volatile-only_twin=FAIL\nNORM_SELFTEST_non-volatile_leaf_changed=ok\nNORM_SELFTEST_non-volatile_text_payload_value=ok\nNORM_SELFTEST_extra_key=ok\nNORM_SELFTEST_evidence_id_leaks_into_a_non-whole_string=ok\nNORM_SELFTEST=FAIL\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [
+          "NORM_SELFTEST_volatile-only_twin=FAIL"
+        ],
+        "verdict": "killed"
+      },
+      {
+        "id": "N2",
+        "desc": "normalise every ev_<64hex> substring",
+        "old": "return RUNTIME.sub(\"<RUNTIME>/rea-android-X\", x)",
+        "new": "return re.sub(r\"ev_[0-9a-f]{64}\", \"<EVIDENCE_ID>\", RUNTIME.sub(\"<RUNTIME>/rea-android-X\", x))",
+        "mutant_sha": "472e718b11962ee73e9ed5172e45d09e1a9a3d26bcdb32dc78653882b0cc1407",
+        "restored_sha": "06c7eac72ec81bc19e094323665159f36ed44ae7a5091639d3bb1520f263b918",
+        "restored_ok": true,
+        "rc_mutant": 1,
+        "out_mutant": "NORM_SELFTEST_volatile-only_twin=ok\nNORM_SELFTEST_non-volatile_leaf_changed=ok\nNORM_SELFTEST_non-volatile_text_payload_value=ok\nNORM_SELFTEST_extra_key=ok\nNORM_SELFTEST_evidence_id_leaks_into_a_non-whole_string=FAIL\nNORM_SELFTEST=FAIL\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [
+          "NORM_SELFTEST_evidence_id_leaks_into_a_non-whole_string=FAIL"
+        ],
+        "verdict": "killed"
+      },
+      {
+        "id": "N3",
+        "desc": "drop every key ending _ms",
+        "old": "if k not in DROP_KEYS}",
+        "new": "if k not in DROP_KEYS and not k.endswith(\"_ms\")}",
+        "mutant_sha": "c5ed55d0deefef6daf535149ad7eb899a59a4ffda2e01abeb149c1c76466a77e",
+        "restored_sha": "06c7eac72ec81bc19e094323665159f36ed44ae7a5091639d3bb1520f263b918",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "NORM_SELFTEST_volatile-only_twin=ok\nNORM_SELFTEST_non-volatile_leaf_changed=ok\nNORM_SELFTEST_non-volatile_text_payload_value=ok\nNORM_SELFTEST_extra_key=ok\nNORM_SELFTEST_evidence_id_leaks_into_a_non-whole_string=ok\nNORM_SELFTEST=pass\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      },
+      {
+        "id": "N4",
+        "desc": "ignore list length",
+        "old": "if len(a) != len(b):",
+        "new": "if False:",
+        "mutant_sha": "c727c6f1a880c5b55a573fc59bbc6a73f0f2b6dc820ae6b7d9448ac448db6736",
+        "restored_sha": "06c7eac72ec81bc19e094323665159f36ed44ae7a5091639d3bb1520f263b918",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "NORM_SELFTEST_volatile-only_twin=ok\nNORM_SELFTEST_non-volatile_leaf_changed=ok\nNORM_SELFTEST_non-volatile_text_payload_value=ok\nNORM_SELFTEST_extra_key=ok\nNORM_SELFTEST_evidence_id_leaks_into_a_non-whole_string=ok\nNORM_SELFTEST=pass\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      },
+      {
+        "id": "N5",
+        "desc": "normalise run2 with run1's evidence id",
+        "old": "norm(r2, r2.get(\"evidence_id\"))",
+        "new": "norm(r2, r1.get(\"evidence_id\"))",
+        "mutant_sha": "33ccc7ca476c0872c08267646cf34ba392e22509021fa6a75be1ff0e09f72244",
+        "restored_sha": "06c7eac72ec81bc19e094323665159f36ed44ae7a5091639d3bb1520f263b918",
+        "restored_ok": true,
+        "rc_mutant": 1,
+        "out_mutant": "NORM_SELFTEST_volatile-only_twin=FAIL\nNORM_SELFTEST_non-volatile_leaf_changed=ok\nNORM_SELFTEST_non-volatile_text_payload_value=ok\nNORM_SELFTEST_extra_key=ok\nNORM_SELFTEST_evidence_id_leaks_into_a_non-whole_string=ok\nNORM_SELFTEST=FAIL\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [
+          "NORM_SELFTEST_volatile-only_twin=FAIL"
+        ],
+        "verdict": "killed"
+      },
+      {
+        "id": "N6",
+        "desc": "compare key intersection only (extra keys ignored)",
+        "old": "for k in sorted(set(a) | set(b)):",
+        "new": "for k in sorted(set(a) & set(b)):",
+        "mutant_sha": "d10604c854ff327996cfc6ad715cabff10ce8408daf6ab32e0cda157887b35cd",
+        "restored_sha": "06c7eac72ec81bc19e094323665159f36ed44ae7a5091639d3bb1520f263b918",
+        "restored_ok": true,
+        "rc_mutant": 1,
+        "out_mutant": "NORM_SELFTEST_volatile-only_twin=ok\nNORM_SELFTEST_non-volatile_leaf_changed=ok\nNORM_SELFTEST_non-volatile_text_payload_value=ok\nNORM_SELFTEST_extra_key=FAIL\nNORM_SELFTEST_evidence_id_leaks_into_a_non-whole_string=ok\nNORM_SELFTEST=FAIL\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [
+          "NORM_SELFTEST_extra_key=FAIL"
+        ],
+        "verdict": "killed"
+      },
+      {
+        "id": "N7",
+        "desc": "V1 widened to any string starting ev_",
+        "old": "if evid and x == evid:",
+        "new": "if evid and x.startswith(\"ev_\"):",
+        "mutant_sha": "0cc4d350f101f10f2da2f76a155e1f46a67df3630d8e608c94b179e6839f4fcd",
+        "restored_sha": "06c7eac72ec81bc19e094323665159f36ed44ae7a5091639d3bb1520f263b918",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "NORM_SELFTEST_volatile-only_twin=ok\nNORM_SELFTEST_non-volatile_leaf_changed=ok\nNORM_SELFTEST_non-volatile_text_payload_value=ok\nNORM_SELFTEST_extra_key=ok\nNORM_SELFTEST_evidence_id_leaks_into_a_non-whole_string=ok\nNORM_SELFTEST=pass\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      },
+      {
+        "id": "N8",
+        "desc": "V2 widened to any trailing path segment",
+        "old": "RUNTIME = re.compile(r\"[^\\\"\\s]*/rea-android-[A-Za-z0-9_]+\")",
+        "new": "RUNTIME = re.compile(r\"[^\\\"\\s]*/[A-Za-z0-9_-]+\")",
+        "mutant_sha": "285a2bf1bf9b602e03213aa51ac9a00e471e7f56dfb3f065e9d3385e0175b846",
+        "restored_sha": "06c7eac72ec81bc19e094323665159f36ed44ae7a5091639d3bb1520f263b918",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "NORM_SELFTEST_volatile-only_twin=ok\nNORM_SELFTEST_non-volatile_leaf_changed=ok\nNORM_SELFTEST_non-volatile_text_payload_value=ok\nNORM_SELFTEST_extra_key=ok\nNORM_SELFTEST_evidence_id_leaks_into_a_non-whole_string=ok\nNORM_SELFTEST=pass\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      },
+      {
+        "id": "N9",
+        "desc": "V3 keeps only keys of JSON-text payloads",
+        "old": "return {\"<json-text>\": norm(json.loads(s), evid)}",
+        "new": "return {\"<json-text>\": sorted(json.loads(s)) if isinstance(json.loads(s), dict) else None}",
+        "mutant_sha": "4952b9847ab2d1c2e2bc390881feff6430f2ba05d4f20af54eb150d6dcd92816",
+        "restored_sha": "06c7eac72ec81bc19e094323665159f36ed44ae7a5091639d3bb1520f263b918",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "NORM_SELFTEST_volatile-only_twin=ok\nNORM_SELFTEST_non-volatile_leaf_changed=ok\nNORM_SELFTEST_non-volatile_text_payload_value=ok\nNORM_SELFTEST_extra_key=ok\nNORM_SELFTEST_evidence_id_leaks_into_a_non-whole_string=ok\nNORM_SELFTEST=pass\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      },
+      {
+        "id": "N10",
+        "desc": "drop the type(a) is not type(b) check",
+        "old": "if type(a) is not type(b):",
+        "new": "if False:",
+        "mutant_sha": "903f4bc3745356a872f6023de009464a4726cec5782e60f989bb168e40580310",
+        "restored_sha": "06c7eac72ec81bc19e094323665159f36ed44ae7a5091639d3bb1520f263b918",
+        "restored_ok": true,
+        "rc_mutant": 0,
+        "out_mutant": "NORM_SELFTEST_volatile-only_twin=ok\nNORM_SELFTEST_non-volatile_leaf_changed=ok\nNORM_SELFTEST_non-volatile_text_payload_value=ok\nNORM_SELFTEST_extra_key=ok\nNORM_SELFTEST_evidence_id_leaks_into_a_non-whole_string=ok\nNORM_SELFTEST=pass\n",
+        "rc_restored": 0,
+        "out_restored_equals_pristine": true,
+        "killers": [],
+        "verdict": "survived"
+      }
+    ]
+  },
+  "oracle_killers": [
+    {
+      "mutant": "O1",
+      "case": "K-O1-root-is-application",
+      "label": "reject",
+      "rc_pristine": 1,
+      "rc_mutant": 0,
+      "rc_restored": 1,
+      "last_pristine": "ORACLE FAIL (21/22 checks)",
+      "last_mutant": "ORACLE OK (22/22 checks)",
+      "fail_lines_pristine": [
+        "check FAIL: manifest text does not parse to a root <manifest> element",
+        "ORACLE FAIL (21/22 checks)"
+      ],
+      "kills": true,
+      "restored_ok": true
+    },
+    {
+      "mutant": "O2",
+      "case": "K-O2-attacker-root-authored-pkg-in-child",
+      "label": "reject",
+      "rc_pristine": 1,
+      "rc_mutant": 0,
+      "rc_restored": 1,
+      "last_pristine": "ORACLE FAIL (20/22 checks)",
+      "last_mutant": "ORACLE OK (22/22 checks)",
+      "fail_lines_pristine": [
+        "check FAIL: root package attribute ['com.attacker.fabricated'] != authored ['com.example.r65']",
+        "check FAIL: package_name 'com.example.r65' != parsed root ['com.attacker.fabricated']",
+        "ORACLE FAIL (20/22 checks)"
+      ],
+      "kills": true,
+      "restored_ok": true
+    },
+    {
+      "mutant": "O4",
+      "case": "K-O4-none-possible (equivalence witness: battery F7)",
+      "label": "reject",
+      "rc_pristine": 1,
+      "rc_mutant": 1,
+      "rc_restored": 1,
+      "last_pristine": "ORACLE FAIL (20/22 checks)",
+      "last_mutant": "ORACLE FAIL (21/22 checks)",
+      "fail_lines_pristine": [
+        "check FAIL: root package attribute ['com.example.r66'] != authored ['com.example.r65']",
+        "check FAIL: package_name 'com.example.r65' != parsed root ['com.example.r66']",
+        "ORACLE FAIL (20/22 checks)"
+      ],
+      "kills": false,
+      "restored_ok": true
+    },
+    {
+      "mutant": "O8",
+      "case": "K-O8-second-namespaced-package-on-root",
+      "label": "reject",
+      "rc_pristine": 1,
+      "rc_mutant": 0,
+      "rc_restored": 1,
+      "last_pristine": "ORACLE FAIL (21/22 checks)",
+      "last_mutant": "ORACLE OK (22/22 checks)",
+      "fail_lines_pristine": [
+        "check FAIL: root package attribute ['com.example.r65', 'com.attacker.fabricated'] != authored ['com.example.r65']",
+        "ORACLE FAIL (21/22 checks)"
+      ],
+      "kills": true,
+      "restored_ok": true
+    },
+    {
+      "mutant": "O11",
+      "case": "K-O11-manifest-status-partial",
+      "label": "reject",
+      "rc_pristine": 1,
+      "rc_mutant": 0,
+      "rc_restored": 1,
+      "last_pristine": "ORACLE FAIL (21/22 checks)",
+      "last_mutant": "ORACLE OK (22/22 checks)",
+      "fail_lines_pristine": [
+        "check FAIL: manifest status 'partial'",
+        "ORACLE FAIL (21/22 checks)"
+      ],
+      "kills": true,
+      "restored_ok": true
+    },
+    {
+      "mutant": "O12",
+      "case": "K-O12-subject-digest-other-apk",
+      "label": "reject",
+      "rc_pristine": 1,
+      "rc_mutant": 0,
+      "rc_restored": 1,
+      "last_pristine": "ORACLE FAIL (21/22 checks)",
+      "last_mutant": "ORACLE OK (22/22 checks)",
+      "fail_lines_pristine": [
+        "check FAIL: subject digest != the fixture bytes",
+        "ORACLE FAIL (21/22 checks)"
+      ],
+      "kills": true,
+      "restored_ok": true
+    },
+    {
+      "mutant": "O13",
+      "case": "K-O13-package_name-forged-root-true",
+      "label": "reject",
+      "rc_pristine": 1,
+      "rc_mutant": 0,
+      "rc_restored": 1,
+      "last_pristine": "ORACLE FAIL (20/22 checks)",
+      "last_mutant": "ORACLE OK (22/22 checks)",
+      "fail_lines_pristine": [
+        "check FAIL: package_name 'com.attacker.fabricated' != authored 'com.example.r65'",
+        "check FAIL: package_name 'com.attacker.fabricated' != parsed root ['com.example.r65']",
+        "ORACLE FAIL (20/22 checks)"
+      ],
+      "kills": true,
+      "restored_ok": true
+    }
+  ],
+  "norm_killers": [
+    {
+      "mutant": "N3",
+      "case": "K-N3-nonvolatile-timeout_ms-differs",
+      "label": "DIFFER",
+      "rc_pristine": 1,
+      "rc_mutant": 0,
+      "rc_restored": 1,
+      "last_pristine": "DIFF $.timeout_ms",
+      "last_mutant": "NORM_EQ=identical",
+      "fail_lines_pristine": [
+        "DIFF $.timeout_ms"
+      ],
+      "kills": true,
+      "restored_ok": true
+    },
+    {
+      "mutant": "N4",
+      "case": "K-N4-list-gains-an-element",
+      "label": "DIFFER",
+      "rc_pristine": 1,
+      "rc_mutant": 0,
+      "rc_restored": 1,
+      "last_pristine": "DIFF $.permissions[len]",
+      "last_mutant": "NORM_EQ=identical",
+      "fail_lines_pristine": [
+        "DIFF $.permissions[len]"
+      ],
+      "kills": true,
+      "restored_ok": true
+    },
+    {
+      "mutant": "N7",
+      "case": "K-N7-foreign-ev-id-field-differs",
+      "label": "DIFFER",
+      "rc_pristine": 1,
+      "rc_mutant": 0,
+      "rc_restored": 1,
+      "last_pristine": "DIFF $.parent_evidence_id",
+      "last_mutant": "NORM_EQ=identical",
+      "fail_lines_pristine": [
+        "DIFF $.parent_evidence_id"
+      ],
+      "kills": true,
+      "restored_ok": true
+    },
+    {
+      "mutant": "N8",
+      "case": "K-N8-target-filename-differs-under-runtime",
+      "label": "DIFFER",
+      "rc_pristine": 1,
+      "rc_mutant": 0,
+      "rc_restored": 1,
+      "last_pristine": "DIFF $.p",
+      "last_mutant": "NORM_EQ=identical",
+      "fail_lines_pristine": [
+        "DIFF $.p"
+      ],
+      "kills": true,
+      "restored_ok": true
+    },
+    {
+      "mutant": "N9",
+      "case": "K-N9-text-payload-value-only-same-keys",
+      "label": "DIFFER",
+      "rc_pristine": 1,
+      "rc_mutant": 0,
+      "rc_restored": 1,
+      "last_pristine": "DIFF $.t.<json-text>.x",
+      "last_mutant": "NORM_EQ=identical",
+      "fail_lines_pristine": [
+        "DIFF $.t.<json-text>.x"
+      ],
+      "kills": true,
+      "restored_ok": true
+    },
+    {
+      "mutant": "N10",
+      "case": "K-N10-int-vs-bool-leaf",
+      "label": "DIFFER",
+      "rc_pristine": 1,
+      "rc_mutant": 0,
+      "rc_restored": 1,
+      "last_pristine": "DIFF $.class_count",
+      "last_mutant": "NORM_EQ=identical",
+      "fail_lines_pristine": [
+        "DIFF $.class_count"
+      ],
+      "kills": true,
+      "restored_ok": true
+    }
+  ]
+}

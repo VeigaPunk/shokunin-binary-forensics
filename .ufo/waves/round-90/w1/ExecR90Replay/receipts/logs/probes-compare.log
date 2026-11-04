@@ -1,0 +1,10 @@
+X01-structured-version-fields-forged v2rc=0 mine=accept ok label=reject
+X02-structured-version_code-int-forged v2rc=0 mine=accept ok label=reject
+X03-prefixed-root-package-attr v2rc=0 mine=accept ok label=accept
+X04-dtd-internal-entity-versionCode v2rc=0 mine=accept ok label=accept
+X05-dtd-entity-forges-package v2rc=1 mine=reject root-package=['com.attacker.x'] label=reject
+X06-whitespace-versionCode v2rc=1 mine=reject root-versionCode=[' 1'] label=reject
+X07-foreign-namespace-root-tag v2rc=0 mine=accept ok label=reject
+X08-permissions-forged v2rc=1 mine=accept ok label=reject
+X09-unprefixed-dup-plus-prefixed-versionName v2rc=1 mine=reject root-versionName=['1.0', '1.0'] label=reject
+X10-manifest-status-partial v2rc=1 mine=accept ok label=reject

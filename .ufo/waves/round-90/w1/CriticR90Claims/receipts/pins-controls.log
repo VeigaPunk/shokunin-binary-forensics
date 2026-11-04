@@ -1,0 +1,11 @@
+-- freeze
+PINS_EXIT=0
+-- ctl-idedit
+PINS_EXIT=0
+-- ctl-stub
+corpus/fixtures/apk-r65/oracle_check2.py: FAILED
+reports/round-90/norm_eq.py: FAILED
+reports/round-90/oracle_battery.py: FAILED
+reports/round-81/f_probe4.py: FAILED
+sha256sum: WARNING: 4 computed checksum(s) did NOT match
+PINS_EXIT=1

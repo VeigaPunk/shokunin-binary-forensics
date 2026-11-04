@@ -1,0 +1,62 @@
+2c2,3
+< """Self-assessment mismatch checker (round-70 C2, calibration).
+---
+> """Self-assessment mismatch checker v2 (round-90 C1, calibration; supersedes
+> v1 `corpus/self_assessment_check.py`, round-70 C2, whose bytes stay unchanged).
+3a5,8
+> v2 changes SM6 only: v1 hard-coded the `/14` denominator, so it flagged a true
+> `8/15` statement over the 15-row map and passed a stale `8/14` one. v2 reads
+> both numerator and denominator and checks each against the README map.
+> 
+23,24c28,32
+<   SM6  SCORECARD K statement: the last `N/14` on the last SCORECARD line that
+<        names `K_HELD_BACKED` must equal the README rows whose status is `held`.
+---
+>   SM6  SCORECARD K statement (v2): the current side (right of `→`/`->` when
+>        present) of the last `N/D` statement on the last SCORECARD line that
+>        names `K_HELD_BACKED` must state N = README rows whose status is
+>        `held` AND D = README coverage-map rows (`| C<n> ` lines). An optional
+>        parenthesised score such as `(5.7)` may sit between the two sides.
+27c35
+<     python3 -B corpus/self_assessment_check.py --root TREE [--lane LANE]
+---
+>     python3 -B corpus/self_assessment_check2.py --root TREE [--lane LANE]
+34c42
+<     python3 -B corpus/self_assessment_check.py --self-test
+---
+>     python3 -B corpus/self_assessment_check2.py --self-test
+183c191,193
+<     stmts = re.findall(r"K_HELD_BACKED[^0-9]*(\d+)/14(?:\s*(?:→|->)\s*(\d+)/14)?", head)
+---
+>     stmts = re.findall(
+>         r"K_HELD_BACKED[^0-9]*(\d+)/(\d+)"
+>         r"(?:\s*(?:\(\s*[0-9.]+\s*\))?\s*(?:→|->)\s*(\d+)/(\d+))?", head)
+186,187c196,198
+<     cur = stmts[-1][1] or stmts[-1][0]
+<     return 0 if int(cur) == held else 1
+---
+>     n0, d0, n1, d1 = stmts[-1]
+>     num, den = (n1, d1) if n1 else (n0, d0)
+>     return 0 if int(num) == held and int(den) == len(rows) else 1
+218a230,237
+> def _add_row(root, k_line):
+>     """Append a fifteenth (frontier) coverage-map row and set the K statement."""
+>     (root / "corpus/README.md").write_text(
+>         txt(root / "corpus/README.md") + "| C15 | s | k | w | frontier |\n", encoding="utf-8")
+>     (root / "SCORECARD.md").write_text(
+>         txt(root / "SCORECARD.md").replace("K_HELD_BACKED 8/14 → 8/14", k_line), encoding="utf-8")
+> 
+> 
+288a308,314
+>             # v2 denominator legs (round 90): a fifteenth map row makes `/14` stale
+>             ("SM6", "fifteen rows, stale 8/14 statement", lambda r: _add_row(r, "K_HELD_BACKED 8/14 → 8/14"), 1),
+>             ("SM6", "fifteen rows, true 8/15 statement", lambda r: _add_row(r, "K_HELD_BACKED 8/14 → 8/15"), 0),
+>             ("SM6", "fifteen rows, scores between sides", lambda r: _add_row(r, "`K_HELD_BACKED` 8/14 (5.7) → 8/15 (5.3)"), 0),
+>             ("SM6", "fifteen rows, reversed sides", lambda r: _add_row(r, "K_HELD_BACKED 8/15 → 8/14"), 1),
+>             ("SM6", "fifteen rows, counter-output form", lambda r: _add_row(r, "(`K_HELD_BACKED=8/15`)"), 0),
+>             ("SM6", "fifteen rows, wrong numerator", lambda r: _add_row(r, "K_HELD_BACKED 8/15 → 9/15"), 1),
+303c329
+<     print("SELFTEST OK: clean 0; six planted defects each scored exactly their class; fourteen tightened-class probes scored as declared; erratum excuses only a resolving, prefix-sharing correction")
+---
+>     print("SELFTEST OK: clean 0; six planted defects each scored exactly their class; twenty tightened-class probes (six v2 denominator legs) scored as declared; erratum excuses only a resolving, prefix-sharing correction")
+diff exit=1

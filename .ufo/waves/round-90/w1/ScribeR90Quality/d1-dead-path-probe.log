@@ -1,0 +1,23 @@
+# D1 red probe (ScribeR90Quality scratch probe, NOT the named instrument reports/round-90/source_path_check.py, which is absent at c7767789)
+$ python3 -B probe.py /home/vgpnk/Projects/shokunin/revenger-shokunin   # lane working tree at c7767789fe9e96bcc0d50656ad4bdce69ba3a3a9
+DEAD line=498 S481 source corpus/live/runs/round-89/receipt.json
+DEAD line=498 S481 anchor corpus/live/runs/round-89/receipt.json
+PATH_TOKENS_CHECKED=83
+SOURCE_PATH_DEAD_PROBE=2
+EXIT=0
+# probe source follows
+import re,sys,os
+L=sys.argv[1]
+n=0;dead=[]
+for i,line in enumerate(open(os.path.join(L,'corpus/SOURCES.md'),encoding='utf-8'),1):
+    if not re.match(r'^\|\s*S\d{3,}\s*\|',line): continue
+    c=[x.strip() for x in line.split('|')[1:-1]]
+    rid=c[0]
+    for col,name in ((1,'source'),(5,'anchor')):
+        for tok in re.findall(r'`([^`\s]+)`',c[col]):
+            p=re.sub(r'(:[0-9][0-9,\-]*)+$','',tok)
+            if not re.match(r'^(corpus|reports)/',p) or any(ch in p for ch in '*{}<>'): continue
+            n+=1
+            if not os.path.exists(os.path.join(L,p)): dead.append((i,rid,name,p))
+for d in dead: print('DEAD line=%d %s %s %s'%d)
+print('PATH_TOKENS_CHECKED=%d'%n); print('SOURCE_PATH_DEAD_PROBE=%d'%len(dead))

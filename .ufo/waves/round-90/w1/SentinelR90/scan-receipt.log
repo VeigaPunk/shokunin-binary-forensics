@@ -1,0 +1,38 @@
+9d665ffbc8674d41675b164f8d4cc70457e00a0b94eee2de9ab4d6b010249e12  run1.json
+214094fbe04883e1f1879f5d314397899cdbf43a66d92607b9a0f560ec322f38  run2.json
+
+== run1.json bytes=4309 nonascii=0 ctl=0
+HIT home-path $.subject.local_path :: '/home/vgpnk' 
+HIT username $.subject.local_path :: 'vgpnk' 
+PATH-outside-scratch $.subject.local_path :: '/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/fixture.apk'
+PATH-outside-scratch $.parameters.path :: '/fixtures/apk-r65/fixture.apk'
+HIT url-host $.raw_result.calls[3].response.content[0].text :: 'http://schemas.android.com' 
+PATH-outside-scratch $.raw_result.calls[3].response.content[0].text :: '//schemas.android.com/apk/res/android'
+HIT url-host $.normalized_result.manifest.text :: 'http://schemas.android.com' 
+PATH-outside-scratch $.normalized_result.manifest.text :: '//schemas.android.com/apk/res/android'
+TOTAL_HITS=8
+== run2.json bytes=4309 nonascii=0 ctl=0
+HIT home-path $.subject.local_path :: '/home/vgpnk' 
+HIT username $.subject.local_path :: 'vgpnk' 
+PATH-outside-scratch $.subject.local_path :: '/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/fixture.apk'
+PATH-outside-scratch $.parameters.path :: '/fixtures/apk-r65/fixture.apk'
+HIT url-host $.raw_result.calls[3].response.content[0].text :: 'http://schemas.android.com' 
+PATH-outside-scratch $.raw_result.calls[3].response.content[0].text :: '//schemas.android.com/apk/res/android'
+HIT url-host $.normalized_result.manifest.text :: 'http://schemas.android.com' 
+PATH-outside-scratch $.normalized_result.manifest.text :: '//schemas.android.com/apk/res/android'
+TOTAL_HITS=8
+== /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-89/rejected-android-record/inspection.json bytes=4303 nonascii=0 ctl=0
+HIT home-path $.subject.local_path :: '/home/vgpnk' 
+HIT username $.subject.local_path :: 'vgpnk' 
+PATH-outside-scratch $.subject.local_path :: '/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/fixture.apk'
+PATH-outside-scratch $.parameters.path :: '/fixtures/apk-r65/fixture.apk'
+PATH-outside-scratch $.raw_result.loaded.apk_path :: '/fast/scratch/hyaku/revenger-r89/ExecR89Record/rea-android-ugg7mp/target.apk'
+PATH-outside-scratch $.raw_result.calls[1].input.path :: '/fast/scratch/hyaku/revenger-r89/ExecR89Record/rea-android-ugg7mp/target.apk'
+PATH-outside-scratch $.raw_result.calls[1].response.content[0].text :: '/fast/scratch/hyaku/revenger-r89/ExecR89Record/rea-android-ugg7mp/target.apk'
+PATH-outside-scratch $.raw_result.calls[1].response.content[0].text<json>.apk_path :: '/fast/scratch/hyaku/revenger-r89/ExecR89Record/rea-android-ugg7mp/target.apk'
+HIT url-host $.raw_result.calls[3].response.content[0].text :: 'http://schemas.android.com' 
+PATH-outside-scratch $.raw_result.calls[3].response.content[0].text :: '//schemas.android.com/apk/res/android'
+HIT url-host $.normalized_result.manifest.text :: 'http://schemas.android.com' 
+PATH-outside-scratch $.normalized_result.manifest.text :: '//schemas.android.com/apk/res/android'
+TOTAL_HITS=12
+scan_exit=1

@@ -1,0 +1,10 @@
+$ python3 -B /fast/scratch/hyaku/revenger-r90/ExecR90Replay/sm6_probes.py /fast/scratch/hyaku/revenger-r90/ExecR90Replay/sm6probes
+PROBE S01-spaced-fraction truth=0 mine=0 cur=(8, 15) v1=1 v2=1
+PROBE S02-stale-later-prose-token truth=1 mine=1 cur=(8, 14) v1=0 v2=1
+PROBE S03-strict-only-last truth=0 mine=0 cur=(8, 15) v1=1 v2=1
+PROBE S04-two-arrows truth=0 mine=0 cur=(8, 15) v1=0 v2=1
+PROBE S05-arrow-then-other-metric truth=0 mine=0 cur=(8, 15) v1=0 v2=0
+PROBE S06-token-no-fraction truth=1 mine=1 cur=None v1=1 v2=1
+PROBE S07-ascii-arrow truth=0 mine=1 cur=(8, 14) v1=0 v2=0
+PROBE S08-held-in-other-column truth=0 mine=0 cur=(8, 15) v1=1 v2=0
+exit=0

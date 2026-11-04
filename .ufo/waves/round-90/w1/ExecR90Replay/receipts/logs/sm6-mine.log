@@ -1,0 +1,16 @@
+$ python3 -B /fast/scratch/hyaku/revenger-r90/ExecR90Replay/drive_sm6.py /fast/scratch/hyaku/revenger-r90/ExecR90Replay/tree /fast/scratch/hyaku/revenger-r90/ExecR90Replay/sm6work
+MINE B01 frozen=0 mine=0 rows=15 held=8 current=(8, 15) agree
+MINE B02 frozen=1 mine=1 rows=15 held=8 current=(8, 14) agree
+MINE B03 frozen=1 mine=1 rows=15 held=8 current=(9, 15) agree
+MINE B04 frozen=0 mine=0 rows=15 held=8 current=(8, 15) agree
+MINE B05 frozen=1 mine=1 rows=15 held=8 current=(8, 14) agree
+MINE B06 frozen=0 mine=0 rows=14 held=8 current=(8, 14) agree
+MINE B07 frozen=1 mine=1 rows=14 held=8 current=(8, 15) agree
+MINE B08 frozen=0 mine=0 rows=15 held=8 current=(8, 15) agree
+MINE B09 frozen=1 mine=1 rows=15 held=8 current=None agree
+MINE B10 frozen=0 mine=0 rows=16 held=9 current=(9, 16) agree
+MINE B11 frozen=0 mine=0 rows=15 held=8 current=(8, 15) agree
+MINE B12 frozen=1 mine=1 rows=15 held=7 current=(8, 15) agree
+MINE R1-real-tree frozen=0 mine=0 rows=15 held=8 k_line=693 current=(8, 15) agree
+MINE R2-forged-8-of-14 frozen=1 mine=1 rows=15 held=8 k_line=1647 current=(8, 14) agree
+exit=0

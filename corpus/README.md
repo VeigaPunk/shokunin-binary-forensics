@@ -6,7 +6,7 @@ frontier it is working toward. Province: `PROVINCE.md`. Admission bar:
 
 ## Index
 
-- `QUALITY.md` — admission criteria Q01–Q16 (Q11 supersedes Q08), each citing its mistake class.
+- `QUALITY.md` — admission criteria Q01–Q17 (Q11 supersedes Q08), each citing its mistake class.
 - `SOURCES.md` — where the lane learns: tiered, opened sources with study paths and search log (contract v1).
 - `knowledge/` — admitted domain entries (the map below names each one); also
   retains clearly marked rejected candidates (each carries an
@@ -26,6 +26,7 @@ frontier it is working toward. Province: `PROVINCE.md`. Admission bar:
 - `check_embedded_outputs.py` — embedded-output verbatim gate (`--entry`, `--self-test`); reads `embedded_output_pins.json`.
 - `derive_axml_anchors_r68.py` — byte-exact earlier revision of the derivation script (sha256 `bce497d6…`), pinned in `embedded_output_pins.json` so the retained round-68 candidate re-derives against the revision that printed it.
 - `self_assessment_check.py` — counts the lane's self-assessment mismatches against repo state (classes SM1–SM6; `--root`, `--self-test`).
+- `self_assessment_check2.py` — v2 of the above (round 90 C1): SM6 checks the K statement's numerator AND denominator against the map (v1 hard-coded `/14`); SM1–SM5 unchanged. v1 bytes stay as the frozen r70 instrument.
 - `lint_entry.py` — mechanical pre-flight lint for a knowledge entry (§Q-map completeness, Q14 byte-count heuristic, unresolved commit ids, header trio); not an admission gate.
 - `training/bounty-triage/` — instruction module for authorized, artifact-first bounty
   triage (`MODULE.md`), its package validator (`check_package.py`), and two offline

@@ -1,0 +1,4 @@
+WITNESS W1_header_row_C label=0 pristine=0 M5_count_all_pipe_C_rows=1 -> distinguishes (mutant wrong)
+WITNESS W2_two_stmts_one_line label=0 pristine=0 M6a_first_statement=1 -> distinguishes (mutant wrong)
+WITNESS W3_K_line_without_ratio label=1 pristine=1 M8a_no_statement_returns_0=0 -> distinguishes (mutant wrong)
+WITNESS W4_held_in_other_column label=1 pristine=1 M9_held_unanchored=0 -> distinguishes (mutant wrong)

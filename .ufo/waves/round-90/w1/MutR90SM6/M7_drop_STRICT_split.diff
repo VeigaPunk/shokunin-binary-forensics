@@ -1,0 +1,11 @@
+--- a/corpus/self_assessment_check2.py
++++ b/corpus/self_assessment_check2.py
+@@ -187,7 +187,7 @@
+     last = [l for l in txt(root / "SCORECARD.md").splitlines() if "K_HELD_BACKED" in l]
+     if not last:
+         return 1
+-    head = last[-1].split("K_HELD_BACKED_STRICT")[0]
++    head = last[-1]
+     stmts = re.findall(
+         r"K_HELD_BACKED[^0-9]*(\d+)/(\d+)"
+         r"(?:\s*(?:\(\s*[0-9.]+\s*\))?\s*(?:→|->)\s*(\d+)/(\d+))?", head)

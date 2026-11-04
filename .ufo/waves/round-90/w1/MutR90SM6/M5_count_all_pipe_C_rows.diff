@@ -1,0 +1,11 @@
+--- a/corpus/self_assessment_check2.py
++++ b/corpus/self_assessment_check2.py
+@@ -182,7 +182,7 @@
+ 
+ def sm6(root):
+     readme = txt(root / "corpus/README.md")
+-    rows = [l for l in readme.splitlines() if re.match(r"^\| C[0-9]+ ", l)]
++    rows = [l for l in readme.splitlines() if re.match(r"^\| C", l)]
+     held = sum(1 for l in rows if re.search(r"\|\s*held\s*\|\s*$", l))
+     last = [l for l in txt(root / "SCORECARD.md").splitlines() if "K_HELD_BACKED" in l]
+     if not last:

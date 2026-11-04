@@ -1,0 +1,24 @@
+# simulated landing = freeze archive + current worktree corpus/README.md + SKILL.md (uncommitted, not mine)
+af5bfb816aa322585a40bcf2a2d6178c165ec02d69a417c5d4532ddd7d493105  sim/corpus/README.md
+3a07391b8e82971b28ddbd2b0bb069cab429d977968544cd898078000ff5de83  sim/SKILL.md
+== self_assessment_check.py
+SM1=0
+SM2=0
+SM3=0
+SM4=0
+SM5=0
+SM6=1
+SELF_MISMATCH=1
+exit=1
+== self_assessment_check2.py
+SM1=0
+SM2=0
+SM3=0
+SM4=0
+SM5=0
+SM6=0
+SELF_MISMATCH=0
+exit=0
+CASE R1-real-tree label=0 got=0 ok
+CASE R2-forged-8-of-14 label=1 got=1 ok
+SM6_MISCLASS=0/14

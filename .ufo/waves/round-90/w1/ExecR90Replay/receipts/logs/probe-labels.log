@@ -1,0 +1,10 @@
+X01-structured-version-fields-forged reject
+X02-structured-version_code-int-forged reject
+X03-prefixed-root-package-attr accept
+X04-dtd-internal-entity-versionCode accept
+X05-dtd-entity-forges-package reject
+X06-whitespace-versionCode reject
+X07-foreign-namespace-root-tag reject
+X08-permissions-forged reject
+X09-unprefixed-dup-plus-prefixed-versionName reject
+X10-manifest-status-partial reject

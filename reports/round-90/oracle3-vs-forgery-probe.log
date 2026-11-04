@@ -1,0 +1,43 @@
+# oracle corpus/fixtures/apk-r65/oracle_check3.py over the 40 ForgeryR90Probe cases; columns: case | label | v2 verdict (seat) | verdict | class
+N01-doctype-entity-true-pkg | no | ACCEPT | REJECT | false-red
+N02-doctype-entity-fabricated-pkg | yes | REJECT | REJECT | ok
+N03-attlist-default-package-no-literal-attr | strict | ACCEPT | REJECT | ok
+N04-attlist-default-versions-unnamespaced | yes | ACCEPT | REJECT | ok
+N05-attlist-fixed-overrides-nothing-fabricated-literal | yes | REJECT | REJECT | ok
+N06-external-entity-pkg | yes | REJECT | REJECT | ok
+N07-pkg-surrounding-spaces | yes | REJECT | REJECT | ok
+N08-pkg-raw-newline | yes | REJECT | REJECT | ok
+N09-pkg-charref-newline | yes | REJECT | REJECT | ok
+N10-pkg-and-package_name-spaces | yes | REJECT | REJECT | ok
+N11-versionCode-surrounding-space | yes | REJECT | REJECT | ok
+N12-charref-pkg | no | ACCEPT | ACCEPT | ok
+N13-charref-hex-versions | no | ACCEPT | ACCEPT | ok
+N14-pi-true-fabricated-root | yes | REJECT | REJECT | ok
+N15-pi-fabricated-true-root | no | ACCEPT | ACCEPT | ok
+N16-second-root-element | yes | REJECT | REJECT | ok
+N17-x-package-only | yes | ACCEPT | REJECT | ok
+N18-android-package-only | yes | ACCEPT | REJECT | ok
+N19-x-package-plus-fabricated | yes | REJECT | REJECT | ok
+N20-bom-prefixed-text | no | ACCEPT | ACCEPT | ok
+N21-bom-in-pkg-value | yes | REJECT | REJECT | ok
+N22-zwsp-in-pkg-value | yes | REJECT | REJECT | ok
+N23-cdata-true-fabricated-root | yes | REJECT | REJECT | ok
+N24-cdata-fabricated-true-root | no | ACCEPT | ACCEPT | ok
+N25-manifest-prefixed-urn-evil | yes | ACCEPT | REJECT | ok
+N26-manifest-default-ns-urn-evil | yes | ACCEPT | REJECT | ok
+N27-manifest-in-android-ns | yes | ACCEPT | REJECT | ok
+N28-versionCode-01 | yes | REJECT | REJECT | ok
+N29-versionCode-hex-0x1 | yes | REJECT | REJECT | ok
+N30-versions-unnamespaced | strict | ACCEPT | REJECT | ok
+N31-versions-urn-evil | yes | ACCEPT | REJECT | ok
+N32-versions-android-schema-uri | strict | ACCEPT | REJECT | ok
+N33-case-Manifest-tag | yes | REJECT | REJECT | ok
+N34-case-Package-attr | yes | REJECT | REJECT | ok
+N35-case-versioncode-attr | yes | REJECT | REJECT | ok
+N36-case-pkg-value | yes | REJECT | REJECT | ok
+N37-nr-version-fields-fabricated | yes | ACCEPT | REJECT | ok
+N38-raw-app-info-fabricated | yes | ACCEPT | REJECT | ok
+N39-nested-manifest-child-fabricated | no | ACCEPT | ACCEPT | ok
+N40-xml-decl-utf16-label | no | REJECT | REJECT | false-red
+TOTALS {'false-red': 2, 'ok': 38}
+FALSE_GREEN=0

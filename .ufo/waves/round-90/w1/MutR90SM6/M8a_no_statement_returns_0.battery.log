@@ -1,0 +1,15 @@
+CASE B01 label=0 got=0 ok
+CASE B02 label=1 got=1 ok
+CASE B03 label=1 got=1 ok
+CASE B04 label=0 got=0 ok
+CASE B05 label=1 got=1 ok
+CASE B06 label=0 got=0 ok
+CASE B07 label=1 got=1 ok
+CASE B08 label=0 got=0 ok
+CASE B09 label=1 got=1 ok
+CASE B10 label=0 got=0 ok
+CASE B11 label=0 got=0 ok
+CASE B12 label=1 got=1 ok
+CASE R1-real-tree label=0 got=0 ok
+CASE R2-forged-8-of-14 label=1 got=1 ok
+SM6_MISCLASS=0/14

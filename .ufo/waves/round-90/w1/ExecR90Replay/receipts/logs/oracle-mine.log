@@ -1,0 +1,11 @@
+$ python3 -B /fast/scratch/hyaku/revenger-r90/ExecR90Replay/my_oracle.py /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-90/oracle-battery-cases/*.json
+/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-90/oracle-battery-cases/F1-xml-comment-fragments-fabricated-root.json reject root-package=['com.attacker.fabricated']
+/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-90/oracle-battery-cases/F2-fabricated-package-everywhere.json reject root-package=['com.attacker.fabricated']
+/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-90/oracle-battery-cases/F3-minimal-three-key.json reject no-manifest-text
+/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-90/oracle-battery-cases/F4-versions-smuggled-into-child.json reject root-versionCode=[]
+/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-90/oracle-battery-cases/F5-conflicting-duplicate-versionCode.json reject root-versionCode=['1', '2']
+/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-90/oracle-battery-cases/F6-unparseable-text-with-fragments.json reject unparseable:not well-formed (invalid token): line 1, column 7
+/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-90/oracle-battery-cases/F7-root-package-disagrees-with-package_name.json reject root-package=['com.example.r66']
+/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-90/oracle-battery-cases/P1-real-r89-record.json accept ok
+/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-90/oracle-battery-cases/P2-hand-written-content-accurate.json accept ok
+exit=0

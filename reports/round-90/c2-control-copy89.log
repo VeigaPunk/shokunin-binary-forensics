@@ -1,0 +1,9 @@
+# post-freeze control: copy-r89 = the r89 record copied as run1 (landed path) and run2, with a matching receipt, over git archive c7767789fe9e96bcc0d50656ad4bdce69ba3a3a9
+K1=pass ['F4_COVERAGE=11/11 score=10.00']
+K2=pass ['ORACLE OK (22/22 checks)']
+K3=pass ['ORACLE_MISCLASS=0/9']
+K4=pass ['NORM_EQ=identical']
+K5=pass ['01af3141d79027a3', '01af3141d79027a3']
+K6=FAIL ['ev_387c9e9c410dc40fb', 'ev_387c9e9c410dc40fb']
+C2_CONJUNCTS=5/6
+EXIT=1

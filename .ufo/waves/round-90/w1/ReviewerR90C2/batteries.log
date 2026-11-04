@@ -1,0 +1,50 @@
+## --oracle oracle_check
+CASE P1-real-r89-record label=accept verdict=accept ok
+CASE P2-hand-written-content-accurate label=accept verdict=accept ok
+CASE F1-xml-comment-fragments-fabricated-root label=reject verdict=accept MISCLASS
+CASE F2-fabricated-package-everywhere label=reject verdict=reject ok
+CASE F3-minimal-three-key label=reject verdict=reject ok
+CASE F4-versions-smuggled-into-child label=reject verdict=accept MISCLASS
+CASE F5-conflicting-duplicate-versionCode label=reject verdict=accept MISCLASS
+CASE F6-unparseable-text-with-fragments label=reject verdict=accept MISCLASS
+CASE F7-root-package-disagrees-with-package_name label=reject verdict=accept MISCLASS
+ORACLE_MISCLASS=5/9
+EXIT=1
+## --oracle oracle_check2
+CASE P1-real-r89-record label=accept verdict=accept ok
+CASE P2-hand-written-content-accurate label=accept verdict=accept ok
+CASE F1-xml-comment-fragments-fabricated-root label=reject verdict=reject ok
+CASE F2-fabricated-package-everywhere label=reject verdict=reject ok
+CASE F3-minimal-three-key label=reject verdict=reject ok
+CASE F4-versions-smuggled-into-child label=reject verdict=reject ok
+CASE F5-conflicting-duplicate-versionCode label=reject verdict=reject ok
+CASE F6-unparseable-text-with-fragments label=reject verdict=reject ok
+CASE F7-root-package-disagrees-with-package_name label=reject verdict=reject ok
+ORACLE_MISCLASS=0/9
+EXIT=0
+NORM_SELFTEST_volatile-only_twin=ok
+NORM_SELFTEST_non-volatile_leaf_changed=ok
+NORM_SELFTEST_non-volatile_text_payload_value=ok
+NORM_SELFTEST_extra_key=ok
+NORM_SELFTEST_evidence_id_leaks_into_a_non-whole_string=ok
+NORM_SELFTEST=pass
+EXIT=0
+## pins over candidate tree
+corpus/self_assessment_check2.py: OK
+corpus/fixtures/apk-r65/oracle_check2.py: OK
+reports/round-90/norm_eq.py: OK
+reports/round-90/oracle_battery.py: OK
+reports/round-90/sm6_battery.py: OK
+reports/round-90/c2_counter.py: OK
+corpus/self_assessment_check.py: OK
+corpus/fixtures/apk-r65/oracle_check.py: OK
+reports/round-81/f_probe4.py: OK
+reports/round-90/oracle-battery-cases/F1-xml-comment-fragments-fabricated-root.json: OK
+reports/round-90/oracle-battery-cases/F2-fabricated-package-everywhere.json: OK
+reports/round-90/oracle-battery-cases/F3-minimal-three-key.json: OK
+reports/round-90/oracle-battery-cases/F4-versions-smuggled-into-child.json: OK
+reports/round-90/oracle-battery-cases/F5-conflicting-duplicate-versionCode.json: OK
+reports/round-90/oracle-battery-cases/F6-unparseable-text-with-fragments.json: OK
+reports/round-90/oracle-battery-cases/F7-root-package-disagrees-with-package_name.json: OK
+reports/round-90/oracle-battery-cases/P1-real-r89-record.json: OK
+reports/round-90/oracle-battery-cases/P2-hand-written-content-accurate.json: OK
