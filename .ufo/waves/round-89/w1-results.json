@@ -1,0 +1,80 @@
+{
+ "lane": "revenger",
+ "round": 89,
+ "wave": "w1",
+ "seats": 12,
+ "results": [
+  {
+   "name": "ScoutR89Host",
+   "agent": "scout",
+   "output": null,
+   "note": "orchestrator kernel restarted mid-wave; seat output was delivered to the orchestrator session but not retained \u2014 read the seat report file in the wave dir"
+  },
+  {
+   "name": "ExecR89Record",
+   "agent": "executor",
+   "output": null,
+   "note": "orchestrator kernel restarted mid-wave; seat output was delivered to the orchestrator session but not retained \u2014 read the seat report file in the wave dir"
+  },
+  {
+   "name": "ScribeR89Rows",
+   "agent": "scribe",
+   "output": null,
+   "note": "orchestrator kernel restarted mid-wave; seat output was delivered to the orchestrator session but not retained \u2014 read the seat report file in the wave dir"
+  },
+  {
+   "name": "ScribeR89Registry",
+   "agent": "scribe",
+   "output": null,
+   "note": "orchestrator kernel restarted mid-wave; seat output was delivered to the orchestrator session but not retained \u2014 read the seat report file in the wave dir"
+  },
+  {
+   "name": "ScribeR89Sources",
+   "agent": "scribe",
+   "output": null,
+   "note": "orchestrator kernel restarted mid-wave; seat output was delivered to the orchestrator session but not retained \u2014 read the seat report file in the wave dir"
+  },
+  {
+   "name": "ReviewerR89C1",
+   "agent": "reviewer",
+   "output": null,
+   "note": "orchestrator kernel restarted mid-wave; seat output was delivered to the orchestrator session but not retained \u2014 read the seat report file in the wave dir"
+  },
+  {
+   "name": "ReviewerR89C2",
+   "agent": "reviewer",
+   "output": null,
+   "note": "orchestrator kernel restarted mid-wave; seat output was delivered to the orchestrator session but not retained \u2014 read the seat report file in the wave dir"
+  },
+  {
+   "name": "CriticR89Claims",
+   "agent": "critic",
+   "output": null,
+   "note": "orchestrator kernel restarted mid-wave; seat output was delivered to the orchestrator session but not retained \u2014 read the seat report file in the wave dir"
+  },
+  {
+   "name": "MutR89Census",
+   "agent": "mutation-tester",
+   "output": null,
+   "note": "orchestrator kernel restarted mid-wave; seat output was delivered to the orchestrator session but not retained \u2014 read the seat report file in the wave dir"
+  },
+  {
+   "name": "MutR89Oracle",
+   "agent": "mutation-tester",
+   "output": null,
+   "note": "orchestrator kernel restarted mid-wave; seat output was delivered to the orchestrator session but not retained \u2014 read the seat report file in the wave dir"
+  },
+  {
+   "name": "ConnectorR89",
+   "agent": "connector",
+   "output": null,
+   "note": "orchestrator kernel restarted mid-wave; seat output was delivered to the orchestrator session but not retained \u2014 read the seat report file in the wave dir"
+  },
+  {
+   "name": "SentinelR89",
+   "agent": "sentinel",
+   "output": null,
+   "note": "orchestrator kernel restarted mid-wave; seat output was delivered to the orchestrator session but not retained \u2014 read the seat report file in the wave dir"
+  }
+ ]
+}
