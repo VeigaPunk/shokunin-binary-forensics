@@ -1,0 +1,17 @@
+# base 77574c99845ab6662812bd6a88def1e72bf8d71b; command: python3 -B reports/round-90/sm6_battery.py --impl corpus/self_assessment_check.py --real <git archive 77574c99845ab6662812bd6a88def1e72bf8d71b corpus SHONEN.md SCORECARD.md SKILL.md>
+CASE B01 label=0 got=1 MISCLASS
+CASE B02 label=1 got=0 MISCLASS
+CASE B03 label=1 got=1 ok
+CASE B04 label=0 got=0 ok
+CASE B05 label=1 got=1 ok
+CASE B06 label=0 got=0 ok
+CASE B07 label=1 got=0 MISCLASS
+CASE B08 label=0 got=0 ok
+CASE B09 label=1 got=1 ok
+CASE B10 label=0 got=1 MISCLASS
+CASE B11 label=0 got=1 MISCLASS
+CASE B12 label=1 got=1 ok
+CASE R1-real-tree label=0 got=1 MISCLASS
+CASE R2-forged-8-of-14 label=1 got=0 MISCLASS
+SM6_MISCLASS=7/14
+EXIT=1

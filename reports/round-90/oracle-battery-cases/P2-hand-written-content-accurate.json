@@ -1,0 +1,65 @@
+{
+  "evidence_id": "ev_0000000000000000000000000000000000000000000000000000000000000000",
+  "subject": {
+    "name": "fixture.apk",
+    "digest": {
+      "sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e"
+    },
+    "local_path": "/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/fixture.apk",
+    "format": "apk",
+    "architecture": null
+  },
+  "provider": {
+    "id": "jadx",
+    "name": "JADX headless",
+    "version": "0.7.1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.analysis",
+  "operation": "inspect_android_package",
+  "parameters": {
+    "path": "corpus/fixtures/apk-r65/fixture.apk"
+  },
+  "normalized_result": {
+    "engine": {
+      "name": "jadx-headless-mcp",
+      "version": "0.7.1",
+      "artifact_sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+      "source_revision": "5844800a486d2248fa949b74c9896285f5b54de2",
+      "worker_count": 1,
+      "heap_limit_mib": 7748
+    },
+    "package_name": "com.example.r65",
+    "version_name": null,
+    "version_code": null,
+    "min_sdk": null,
+    "target_sdk": null,
+    "permissions": [],
+    "manifest": {
+      "status": "complete",
+      "text": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    package=\"com.example.r65\"\n    xmlns:ns1=\"android\" \n    ns1:versionCode=\"1\"\n    xmlns:ns2=\"android\" \n    ns2:versionName=\"1.0\"/>",
+      "reported_total_bytes": null
+    },
+    "class_count": 0,
+    "resource_count": 3,
+    "signature_verification": "not_performed"
+  },
+  "confidence": "observed",
+  "authority": "shipped-artifact",
+  "environment": null,
+  "limitations": [
+    "Static decompiler observations do not establish runtime behavior; the APK is never executed.",
+    "Method signatures use provider display types; DEX prototypes come from frozen JADX metadata. Display names may be aliases, and overload indices are local to this engine and artifact.",
+    "Class inventories use parsed metadata before code generation, including synthetic members that may be omitted from decompiled source. Source positions remain unknown.",
+    "Incoming reference totals count JADX using nodes. Direct invoke entries within a using method report raw DEX code-unit offsets and method indexes, but coverage is limited to those nodes and directly matched invokes; it does not establish every possible dynamic or reflective call site.",
+    "Manifest summary fields are extracted by the upstream engine; decoded XML is retained for verification. APK signatures, split APKs, native libraries and Android runtime capture are not verified by this provider."
+  ],
+  "relationship_coverage": null,
+  "locations": [
+    {
+      "kind": "artifact-path",
+      "path": "AndroidManifest.xml"
+    }
+  ],
+  "evidence_links": []
+}

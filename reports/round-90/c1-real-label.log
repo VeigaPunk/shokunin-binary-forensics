@@ -1,0 +1,4 @@
+# real-tree label inputs at 77574c99845ab6662812bd6a88def1e72bf8d71b (independent of either checker)
+map rows: 15
+held rows: 8
+last K_HELD_BACKED line: 693:| coverage — knowledge-map ground K (C05, C10, C15) | 8/15 (5.3) → 8/15 (5.3); C05 uncovered, C10 partial (candidate rejected this round), C15 uncovered | `reports/round-73/measure.py TREE` (`K_HELD_BACKED=8/15`) | same | **unchanged** (honest: no admission; the round-73 C10 claim is now falsified-closed, not carried) |

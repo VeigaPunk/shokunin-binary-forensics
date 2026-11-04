@@ -1,0 +1,9 @@
+# base 77574c99845ab6662812bd6a88def1e72bf8d71b; command: python3 -B corpus/self_assessment_check.py --root <archive 77574c99845ab6662812bd6a88def1e72bf8d71b> --lane .
+SM1=0
+SM2=0
+SM3=0
+SM4=0
+SM5=0
+SM6=1
+SELF_MISMATCH=1
+EXIT=1
