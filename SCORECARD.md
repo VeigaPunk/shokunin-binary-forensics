@@ -1636,3 +1636,10 @@ a 15-row map (SM2 fixed this round, 1 → 0) — a calibration claim of its own;
 (4) the census literal form now exits 0 on Linux (r74–r88 exit-2 lineage was
 Windows-layout); (5) `PROVINCE.md` still names rea 6.8.0 and a Windows ghidra
 path — a freshness correction for a later round, not absorbed here.
+
+erratum (round 89, appended): the C2 row's "a hand-written minimal record and
+an XML-comment manifest both pass 19/19" is superseded — a minimal 3-key record
+moves F4 11/11 but the oracle rejects it at 6/19; what passes 19/19 and moves
+F4 is a fully accurate hand-written record and the XML-comment manifest case
+(`corpus/lessons/round-89.md` §Erratum, `ReviewerR89C2` receipts). The C2
+verdict (KILLED) is unchanged.

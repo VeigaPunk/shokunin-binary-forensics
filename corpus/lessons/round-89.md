@@ -130,3 +130,20 @@ The mined mistake table above stays as written before the landing; the two
 later findings (K04 residual 2, producer non-determinism) were reported by
 `ReviewerR89C1`/`CriticR89Claims`/`ReviewerR89C2` and are recorded in the
 Gate section rather than retro-added as mistakes.
+
+## Erratum (appended after filing; names the text it supersedes)
+
+The Gate section's C2 line — "kill (a) fails: a hand-written minimal record and
+an XML-comment manifest both pass 19/19 and move F4" — is superseded by
+`ReviewerR89C2`'s measured precision. A *minimal* 3-key record (`evidence_id`,
+`operation`, `normalized_result: {}`) moves F4 to 11/11 but the oracle rejects
+it at **6/19**. What passes `ORACLE OK (19/19)` **and** moves F4 is (i) a
+hand-written record that is fully accurate against the fixture (the Q09
+non-provenance boundary — it falsifies "cannot be a fabrication") and (ii) a
+real producer record whose `manifest.text` is contradicted by
+`package="com.attacker.fabricated"` with the expected fragments hidden in an
+XML comment. A third variant (co-editing `truth.json` `axml_declared` together
+with the record) passes 19/19 but is a sourcing demonstration, not a
+fixed-truth falsifier. Kill (a) therefore rests on (i) and (ii); the minimal
+record alone falsifies only the F4 limb. No verdict changes: C2 is still
+KILLED, on kill (a) as restated and on kill (c) (two runs differ at byte 20).
