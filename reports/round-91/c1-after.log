@@ -1,0 +1,13 @@
+== round-91 after-runs over landing d3f4e6cfd393824705633dc60a44f0cde7f47681 (archive /fast/scratch/hyaku/revenger-r91/l1-after) ==
+-- C1 frozen counter (v3)
+MUTANTS_KILLED=11/11
+IMPL_SELFTEST exit=0 last=SELFTEST OK: clean 0; six planted defects each scored exactly their class; twenty-four tightened-class probes (six v2 denominator legs, four v3 real-format legs where the stated cell and the pointer cell disagree) scored as declared; erratum excuses only a resolving, prefix-sharing correction
+REAL_SELF_MISMATCH=0 exit=0
+LEGS battery=pass mutants=pass selftest=pass real=pass
+C1_VERDICT=pass
+exit=0
+-- C2 frozen probe (landed instrument)
+CAP_REAL=pass commits=24 cited=25 misses=9 exit=1
+LEGS present=pass selftest=pass planted=pass real=pass
+CAP_MESSAGE_TREE=pass
+exit=0

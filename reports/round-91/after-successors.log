@@ -1,0 +1,25 @@
+== successor counters over landing d3f4e6cfd393824705633dc60a44f0cde7f47681 (2026-11-04); each exit is the counter's own ==
+-- c1_counter2 landed v3 (exit=0)
+REAL_SELF_MISMATCH=0 exit=0
+LEGS battery=pass mutants=pass random=pass selftest=pass real=pass
+C1V2_VERDICT=pass
+-- c1_counter2 fitted lookup table (skip-work control) (exit=1)
+REAL_SELF_MISMATCH=0 exit=0
+LEGS battery=pass mutants=pass random=fail selftest=pass real=pass
+C1V2_VERDICT=fail
+-- cap_probe2 landed instrument (exit=0)
+CAP2_REAL=pass commits=24/24 cited=25 misses=9 exit=1
+LEGS present=pass selftest=pass planted=pass tree_scope=pass real=pass
+CAP2_VERDICT=pass
+-- cap_probe2 stubA (exit=1)
+CAP2_REAL=fail commits=21/24 cited=21 misses=0 exit=0
+LEGS present=pass selftest=pass planted=fail tree_scope=fail real=fail
+CAP2_VERDICT=fail
+-- cap_probe2 stubD (exit=1)
+CAP2_REAL=pass commits=24/24 cited=25 misses=99 exit=1
+LEGS present=pass selftest=pass planted=fail tree_scope=fail real=pass
+CAP2_VERDICT=fail
+-- cap_probe2 stubE (exit=1)
+CAP2_REAL=pass commits=24/24 cited=25 misses=1 exit=1
+LEGS present=pass selftest=pass planted=pass tree_scope=fail real=pass
+CAP2_VERDICT=fail
