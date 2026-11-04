@@ -1,0 +1,42 @@
+== F04/K01 command -v rea
+/run/user/1000/fnm_multishells/1981588_1793727763382/bin/rea
+rc=0
+6.7.0
+== F08/K04 command -v ghidra ida
+/usr/bin/ghidra
+ghidra_rc=0
+ida_rc=1
+== F07/K03 mcp rea entry args
+[
+ "-y",
+ "rea-agents@6.7.0",
+ "mcp"
+]
+== F12/K05 import pwn
+imports ok /usr/lib/python3.14/site-packages/pwn/__init__.py
+pwn_rc=0
+== F01 skill dir md listing
+HOST-CONTRACT.md
+SKILL.md
+== F03 references md listing
+android-applications.md
+cli-command-map.md
+connection-and-recovery.md
+evidence-workflows.md
+javascript-applications.md
+native-and-artifacts.md
+runtime-observation.md
+== F02/F05 SKILL.md head
+---
+name: reverse-engineer-anything
+description: Reverse engineer native, managed, Electron/JavaScript, packaged, firmware, and browser targets with REA. Use shipped-artifact or requested runtime evidence to explain features, compare versions, decompile code, or guide a reconstruction. Skip REA for ordinary source-repository architecture analysis.
+metadata:
+  version: "42"
+  tool_count: 207
+---
+
+# REA
+
+== F06/K02 versions
+v24.21.0
+11.19.0

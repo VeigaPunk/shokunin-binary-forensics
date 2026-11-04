@@ -1,0 +1,5 @@
+CENSUS_ROWS=18
+CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
+CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
+CENSUS_STALE_UNFLAGGED=2
+EXIT=1

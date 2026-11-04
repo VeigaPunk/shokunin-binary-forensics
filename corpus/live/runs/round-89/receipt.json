@@ -1,0 +1,53 @@
+{
+  "what": "C2 android-family producer record receipt: two independent producer invocations on the authored fixture, with byte-identity measurement",
+  "record_path": "corpus/live/runs/round-89/inspection.json",
+  "command_line": "rea inspect-android-package corpus/fixtures/apk-r65/fixture.apk --format json",
+  "cwd": "/home/vgpnk/Projects/shokunin/revenger-shokunin",
+  "rea_version": "6.7.0",
+  "provider_from_record": {
+    "id": "jadx",
+    "name": "JADX headless",
+    "version": "0.7.1",
+    "source": "the record's own provider field (exact stdout bytes)"
+  },
+  "runs": [
+    {
+      "label": "run1",
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "wall_seconds": 2.464,
+      "stdout_bytes": 4303,
+      "stdout_sha256": "01af3141d79027a3bae53b6482779d3e9c89446ab6ca09b408a6cb266f321c76"
+    },
+    {
+      "label": "run2",
+      "exit_code": 0,
+      "stderr_bytes": 0,
+      "wall_seconds": 2.276,
+      "stdout_bytes": 4303,
+      "stdout_sha256": "5bbdd189cd19dd1b181b4850b95fe07d077bc4031c70b25fec5006ca0d72ce00"
+    }
+  ],
+  "cmp_verdict": "DIFFER: the two stdouts are byte-non-identical; cmp differs at char 20, line 1 (per-run evidence_id)",
+  "byte_identical": false,
+  "volatile_field_set": [
+    "evidence_id (per run)",
+    "private runtime directory name rea-android-XXXXXX (mkdtemp-style, per run; appears in raw_result.calls[1].input.path, that run's apk_path, and raw_result.loaded.apk_path)",
+    "raw_result.calls[0] JVM map key ordering (same five system-fact keys, different order)",
+    "raw_result.calls[1] load_duration_ms (175 vs 170)"
+  ],
+  "normalized_result_identical_across_runs": true,
+  "record_evidence_id": "ev_387c9e9c410dc40fb6a19524fcdda49a3186c4597c20e9c4a9625b3b99a588e4",
+  "landed_bytes_exact": "inspection.json cmp-identical to run1 stdout (sha256 01af3141d79027a3bae53b6482779d3e9c89446ab6ca09b408a6cb266f321c76)",
+  "record_environment_field": "null (no environment-variable map/values; no key dropped). Narrow reading: the record still carries host-derived JVM facts in raw_result.calls[0] (max_heap_bytes 8124366848, available_processors 32, java_version 21.0.13) and normalized_result.engine.heap_limit_mib 7748 — disclosed, classified low-sensitivity by SentinelR89.",
+  "oracle": {
+    "command": "PYTHONUTF8=1 python3 -B corpus/fixtures/apk-r65/oracle_check.py corpus/fixtures/apk-r65/truth.json corpus/live/runs/round-89/inspection.json",
+    "result": "ORACLE OK (19/19 checks)",
+    "exit_code": 0
+  },
+  "c2_admission_status": "NOT ADMITTED: the frozen byte-identity kill rule is FAILED on measured evidence (cmp DIFFER); the oracle verdict and F4 count do not cure this. The retained record is kept as evidence of producer non-determinism, not as admitted coverage.",
+  "timestamps": {
+    "wall_seconds_only": true,
+    "absolute_start_end_utc": "not captured at run time and not recoverable: scratch files (the only mtime carriers) were deleted after retention per the seat contract, and the session transcript carries no timestamps. Recorded wall durations: run1 2.464 s, run2 2.276 s. No timestamp is reconstructed or estimated."
+  }
+}

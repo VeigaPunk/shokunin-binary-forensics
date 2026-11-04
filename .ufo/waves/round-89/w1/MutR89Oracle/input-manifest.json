@@ -1,0 +1,59 @@
+{
+  "record_source": "/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-89/inspection.json",
+  "record_sha256": "01af3141d79027a3bae53b6482779d3e9c89446ab6ca09b408a6cb266f321c76",
+  "record_bytes": 4303,
+  "clean_record_path": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/record-clean.json",
+  "controls": [
+    {
+      "name": "package_name",
+      "field": "normalized_result.package_name",
+      "before": "com.example.r65",
+      "after": "com.example.other",
+      "path": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/record-package_name.json",
+      "sha256": "478113b7529e61c0fad52ff90967335a8c69639a5f474f3ed50e6662e860cc15",
+      "truth_sha256": "27303baeab02e771264421cfe4bbc2f0ef0aade3a8732de43b22c0e15b4f8173",
+      "fixture_sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e"
+    },
+    {
+      "name": "subject_digest",
+      "field": "subject.digest.sha256",
+      "before": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e",
+      "after": "0000000000000000000000000000000000000000000000000000000000000000",
+      "path": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/record-subject_digest.json",
+      "sha256": "e747fcf222b24b808ed1420879676e882365ccda0e59822185410ab185a80518",
+      "truth_sha256": "27303baeab02e771264421cfe4bbc2f0ef0aade3a8732de43b22c0e15b4f8173",
+      "fixture_sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e"
+    },
+    {
+      "name": "class_count",
+      "field": "normalized_result.class_count",
+      "before": 0,
+      "after": 1,
+      "path": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/record-class_count.json",
+      "sha256": "cee771b80275f9f8fc99c91c4510654584d82092e7be7cb0cd1122ba11f96baf",
+      "truth_sha256": "27303baeab02e771264421cfe4bbc2f0ef0aade3a8732de43b22c0e15b4f8173",
+      "fixture_sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e"
+    },
+    {
+      "name": "evidence_id",
+      "field": "evidence_id",
+      "before": "ev_387c9e9c410dc40fb6a19524fcdda49a3186c4597c20e9c4a9625b3b99a588e4",
+      "after": "ev_",
+      "path": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/record-evidence_id.json",
+      "sha256": "e5d4c5c4e0420e15daf262a79755183fba61ee97a337dfba71dbdf425162cba9",
+      "truth_sha256": "27303baeab02e771264421cfe4bbc2f0ef0aade3a8732de43b22c0e15b4f8173",
+      "fixture_sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e"
+    },
+    {
+      "name": "member_digest_truth",
+      "field": "truth.members[0].sha256",
+      "member": "AndroidManifest.xml",
+      "before": "73d1e0f2e67c1b6210a8a2b5c741328adaf13ff31d5a21419ca36718afe9fae4",
+      "after": "0000000000000000000000000000000000000000000000000000000000000000",
+      "record": "UNCHANGED exact producer bytes",
+      "path": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/truth-member_digest.json",
+      "sha256": "4492d96df8ca30e4cf0eba0f38044217ba0878dc9afed239611bcbc92a55027f",
+      "fixture_sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+CENSUS_SELFTEST_clean=ok
+CENSUS_SELFTEST_presence-opposite=ok
+CENSUS_SELFTEST_presence-unstated=ok
+CENSUS_SELFTEST_version-missing=ok
+CENSUS_SELFTEST_import-opposite=ok
+CENSUS_SELFTEST_mcp-missing=ok
+CENSUS_SELFTEST_listing-phantom=FAIL
+  findings: []
+CENSUS_SELFTEST_skill-missing=ok
+CENSUS_SELFTEST_pin-missing=ok
+CENSUS_SELFTEST=fail
+EXIT=1

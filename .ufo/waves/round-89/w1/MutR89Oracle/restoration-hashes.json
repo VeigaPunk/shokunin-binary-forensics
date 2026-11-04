@@ -1,0 +1,11 @@
+{
+  "expected_sha256": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53",
+  "restored_sha256": {
+    "package_name": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53",
+    "subject_digest": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53",
+    "class_count": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53",
+    "evidence_id": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53",
+    "member_digest": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53"
+  },
+  "exact_bytes_restored": true
+}

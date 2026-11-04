@@ -1,0 +1,37 @@
+[
+  {
+    "mutant": "package_name",
+    "scratch_path": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/mutant-package_name.py",
+    "before_sha256": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53",
+    "mutated_sha256": "641516d61ebb7d526a5edb0f61d8f325ae5460642087b35d8172db11325319ba",
+    "diff": "--- /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py\n+++ /fast/scratch/hyaku/revenger-r89/MutR89Oracle/mutant-package_name.py\n@@ -105,8 +105,6 @@\n \n     # --- record declaration fields vs the authored AXML ---------------------\n     nr = rec.get(\"normalized_result\") or {}\n-    checks.append(ok(f\"package_name {pkg}\") if nr.get(\"package_name\") == pkg\n-                  else fail(f\"package_name {nr.get('package_name')!r} != authored {pkg!r}\"))\n     text = (nr.get(\"manifest\") or {}).get(\"text\") or \"\"\n     for attr, val in ((code_name, code_val), (name_name, name_val)):\n         frag = f'{attr}=\"{val}\"'\n"
+  },
+  {
+    "mutant": "subject_digest",
+    "scratch_path": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/mutant-subject_digest.py",
+    "before_sha256": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53",
+    "mutated_sha256": "72d3ded491e83f375810e308d6cb4513b9c68a859cd8c861bd4f13670e7dea1c",
+    "diff": "--- /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py\n+++ /fast/scratch/hyaku/revenger-r89/MutR89Oracle/mutant-subject_digest.py\n@@ -97,9 +97,6 @@\n                   if re.fullmatch(r\"ev_[0-9a-f]{64}\", str(rec.get(\"evidence_id\")))\n                   else fail(f\"evidence_id {rec.get('evidence_id')!r}\"))\n     subj = rec.get(\"subject\") or {}\n-    checks.append(ok(\"subject digest == fixture sha256\")\n-                  if (subj.get(\"digest\") or {}).get(\"sha256\") == truth[\"image\"][\"sha256\"]\n-                  else fail(\"subject digest != the fixture bytes\"))\n     checks.append(ok(\"subject format apk\") if subj.get(\"format\") == \"apk\"\n                   else fail(f\"subject format {subj.get('format')!r}\"))\n \n"
+  },
+  {
+    "mutant": "class_count",
+    "scratch_path": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/mutant-class_count.py",
+    "before_sha256": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53",
+    "mutated_sha256": "2d7bccdf9b6e78cab98f536b121eadb9dc9d477a84024028ca25906e4d6b8b50",
+    "diff": "--- /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py\n+++ /fast/scratch/hyaku/revenger-r89/MutR89Oracle/mutant-class_count.py\n@@ -115,9 +115,6 @@\n     checks.append(ok(\"manifest status complete\")\n                   if (nr.get(\"manifest\") or {}).get(\"status\") == \"complete\"\n                   else fail(f\"manifest status {(nr.get('manifest') or {}).get('status')!r}\"))\n-    checks.append(ok(\"class_count == DEX class_defs_size (0)\")\n-                  if class_defs is not None and nr.get(\"class_count\") == class_defs\n-                  else fail(f\"class_count {nr.get('class_count')!r} != DEX class_defs_size {class_defs!r}\"))\n     checks.append(ok(f\"resource_count == {len(authored)} members\")\n                   if nr.get(\"resource_count\") == len(authored)\n                   else fail(f\"resource_count {nr.get('resource_count')!r} != member count {len(authored)}\"))\n"
+  },
+  {
+    "mutant": "evidence_id",
+    "scratch_path": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/mutant-evidence_id.py",
+    "before_sha256": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53",
+    "mutated_sha256": "e1a92eac9a79f6b1cfc3bb3962310183c05c77645973ea9d41553c24ebf59db6",
+    "diff": "--- /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py\n+++ /fast/scratch/hyaku/revenger-r89/MutR89Oracle/mutant-evidence_id.py\n@@ -94,7 +94,7 @@\n     checks.append(ok(\"provider version present\") if re.fullmatch(r\"\\d+\\.\\d+\\.\\d+\", str(prov.get(\"version\")))\n                   else fail(f\"provider version {prov.get('version')!r}\"))\n     checks.append(ok(\"evidence_id shape ev_<64 hex>\")\n-                  if re.fullmatch(r\"ev_[0-9a-f]{64}\", str(rec.get(\"evidence_id\")))\n+                  if re.match(r\"ev_\", str(rec.get(\"evidence_id\")))\n                   else fail(f\"evidence_id {rec.get('evidence_id')!r}\"))\n     subj = rec.get(\"subject\") or {}\n     checks.append(ok(\"subject digest == fixture sha256\")\n"
+  },
+  {
+    "mutant": "member_digest",
+    "scratch_path": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/mutant-member_digest.py",
+    "before_sha256": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53",
+    "mutated_sha256": "3a28188a232855a3ac132c4af05931d9bd5805d8f3a7ec94fbdfb27f2f46b0e4",
+    "diff": "--- /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py\n+++ /fast/scratch/hyaku/revenger-r89/MutR89Oracle/mutant-member_digest.py\n@@ -72,8 +72,6 @@\n     dig_ok = all(n in members and digests.get(n)\n                  and hashlib.sha256(members[n]).hexdigest() == digests[n]\n                  for n in authored)\n-    checks.append(ok(\"member digests match truth.json\") if dig_ok\n-                  else fail(\"a member digest disagrees with truth.json or is unrecorded\"))\n \n     # --- expectations derived from the bytes, not from the record -----------\n     decl = truth[\"axml_declared\"]\n"
+  }
+]

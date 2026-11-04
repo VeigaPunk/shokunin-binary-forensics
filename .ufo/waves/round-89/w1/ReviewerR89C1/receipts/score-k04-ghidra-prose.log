@@ -1,0 +1,4 @@
+CENSUS_ROWS=18
+CENSUS_MISMATCH K04 presence:ghidra does not state live value 'present'
+CENSUS_STALE_UNFLAGGED=1
+EXIT=1

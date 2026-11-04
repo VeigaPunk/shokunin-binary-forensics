@@ -1,0 +1,203 @@
+{
+  "axes": [
+    "coverage",
+    "calibration"
+  ],
+  "base": "2b017fa3c616a84b7b491e3312029fa8a8c076e6",
+  "base_f4": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/base/corpus",
+    "exit": 0,
+    "name": "base-f4",
+    "stderr": "",
+    "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=10/11 score=9.09\nF4_FAMILIES=['archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+  },
+  "byte_derived_attributes": {
+    "package": "com.example.r65",
+    "versionCode": "1",
+    "versionName": "1.0"
+  },
+  "cases": [
+    {
+      "f4": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/handwritten/corpus",
+        "exit": 0,
+        "name": "handwritten-f4",
+        "stderr": "",
+        "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+      },
+      "name": "handwritten",
+      "oracle": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/handwritten/corpus/live/runs/round-89/reviewer-forgery.json",
+        "exit": 0,
+        "name": "handwritten-oracle",
+        "stderr": "",
+        "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n"
+      },
+      "record": "/fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/handwritten/corpus/live/runs/round-89/reviewer-forgery.json"
+    },
+    {
+      "f4": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/package-name/corpus",
+        "exit": 0,
+        "name": "package-name-f4",
+        "stderr": "",
+        "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+      },
+      "name": "package-name",
+      "oracle": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/package-name/corpus/live/runs/round-89/reviewer-forgery.json",
+        "exit": 1,
+        "name": "package-name-oracle",
+        "stderr": "",
+        "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck FAIL: package_name 'com.example.fabricated' != authored 'com.example.r65'\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE FAIL (18/19 checks)\n"
+      },
+      "record": "/fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/package-name/corpus/live/runs/round-89/reviewer-forgery.json"
+    },
+    {
+      "f4": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/class-count/corpus",
+        "exit": 0,
+        "name": "class-count-f4",
+        "stderr": "",
+        "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+      },
+      "name": "class-count",
+      "oracle": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/class-count/corpus/live/runs/round-89/reviewer-forgery.json",
+        "exit": 1,
+        "name": "class-count-oracle",
+        "stderr": "",
+        "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck FAIL: class_count 1 != DEX class_defs_size 0\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE FAIL (18/19 checks)\n"
+      },
+      "record": "/fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/class-count/corpus/live/runs/round-89/reviewer-forgery.json"
+    },
+    {
+      "f4": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/subject-digest/corpus",
+        "exit": 0,
+        "name": "subject-digest-f4",
+        "stderr": "",
+        "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+      },
+      "name": "subject-digest",
+      "oracle": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/subject-digest/corpus/live/runs/round-89/reviewer-forgery.json",
+        "exit": 1,
+        "name": "subject-digest-oracle",
+        "stderr": "",
+        "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck FAIL: subject digest != the fixture bytes\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE FAIL (18/19 checks)\n"
+      },
+      "record": "/fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/subject-digest/corpus/live/runs/round-89/reviewer-forgery.json"
+    },
+    {
+      "f4": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/provider-version/corpus",
+        "exit": 0,
+        "name": "provider-version-f4",
+        "stderr": "",
+        "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+      },
+      "name": "provider-version",
+      "oracle": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/provider-version/corpus/live/runs/round-89/reviewer-forgery.json",
+        "exit": 0,
+        "name": "provider-version-oracle",
+        "stderr": "",
+        "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n"
+      },
+      "record": "/fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/provider-version/corpus/live/runs/round-89/reviewer-forgery.json"
+    },
+    {
+      "f4": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/evidence-id/corpus",
+        "exit": 0,
+        "name": "evidence-id-f4",
+        "stderr": "",
+        "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+      },
+      "name": "evidence-id",
+      "oracle": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/evidence-id/corpus/live/runs/round-89/reviewer-forgery.json",
+        "exit": 0,
+        "name": "evidence-id-oracle",
+        "stderr": "",
+        "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n"
+      },
+      "record": "/fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/evidence-id/corpus/live/runs/round-89/reviewer-forgery.json"
+    },
+    {
+      "f4": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/manifest-contradiction/corpus",
+        "exit": 0,
+        "name": "manifest-contradiction-f4",
+        "stderr": "",
+        "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+      },
+      "name": "manifest-contradiction",
+      "oracle": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/manifest-contradiction/corpus/live/runs/round-89/reviewer-forgery.json",
+        "exit": 0,
+        "name": "manifest-contradiction-oracle",
+        "stderr": "",
+        "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n"
+      },
+      "record": "/fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/manifest-contradiction/corpus/live/runs/round-89/reviewer-forgery.json"
+    },
+    {
+      "f4": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/truth-metadata-mismatch/corpus",
+        "exit": 0,
+        "name": "truth-metadata-mismatch-f4",
+        "stderr": "",
+        "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+      },
+      "name": "truth-metadata-mismatch",
+      "oracle": {
+        "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/receipts/truth-metadata-only-mutated.json /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/truth-metadata-mismatch/corpus/live/runs/round-89/reviewer-forgery.json",
+        "exit": 0,
+        "name": "truth-metadata-mismatch-oracle",
+        "stderr": "",
+        "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.fabricated\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n"
+      },
+      "record": "/fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/truth-metadata-mismatch/corpus/live/runs/round-89/reviewer-forgery.json"
+    }
+  ],
+  "dex_class_defs_size": 0,
+  "freeze": "c84339c",
+  "lsp": "xd://lsp absent; read and status dispatch both returned No such tool. Text fallback is not semantic evidence.",
+  "pins": {
+    "corpus/fixtures/apk-r65/fixture.apk": {
+      "base_exists": true,
+      "base_sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e",
+      "freeze_sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e",
+      "working_equal_base": true,
+      "working_equal_freeze": true,
+      "working_sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e"
+    },
+    "corpus/fixtures/apk-r65/oracle_check.py": {
+      "base_exists": false,
+      "freeze_sha256": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53",
+      "working_equal_freeze": true,
+      "working_sha256": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53"
+    },
+    "corpus/fixtures/apk-r65/truth.json": {
+      "base_exists": true,
+      "base_sha256": "27303baeab02e771264421cfe4bbc2f0ef0aade3a8732de43b22c0e15b4f8173",
+      "freeze_sha256": "27303baeab02e771264421cfe4bbc2f0ef0aade3a8732de43b22c0e15b4f8173",
+      "working_equal_base": true,
+      "working_equal_freeze": true,
+      "working_sha256": "27303baeab02e771264421cfe4bbc2f0ef0aade3a8732de43b22c0e15b4f8173"
+    },
+    "reports/round-81/f_probe4.py": {
+      "base_exists": true,
+      "base_sha256": "4d871971fa49131f65e951bba1061a00b16c9eee8c3dc7df007fff434566a3c7",
+      "freeze_sha256": "4d871971fa49131f65e951bba1061a00b16c9eee8c3dc7df007fff434566a3c7",
+      "working_equal_base": true,
+      "working_equal_freeze": true,
+      "working_sha256": "4d871971fa49131f65e951bba1061a00b16c9eee8c3dc7df007fff434566a3c7"
+    }
+  },
+  "tools_installed_or_updated": [],
+  "truth_strings_equal_actual_bytes": true,
+  "zip_member_count": 3
+}

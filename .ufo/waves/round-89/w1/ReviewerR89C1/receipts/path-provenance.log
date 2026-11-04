@@ -1,0 +1,24 @@
+PATH=/run/user/1000/fnm_multishells/1981588_1793727763382/bin:/home/vgpnk/.local/share/fnm:/home/vgpnk/.opencode/bin:/home/vgpnk/.local/bin:/home/vgpnk/.local/share/mise/installs/node/latest/bin:/home/vgpnk/.local/share/mise/shims:/run/user/1000/fnm_multishells/1978018_1793727434954/bin:/home/vgpnk/.local/share/omarchy/bin:/run/user/1000/fnm_multishells/1556_1793632040352/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/vgpnk/.minimax/bin:/home/vgpnk/.minimax-code/bin:/home/vgpnk/.grok/bin:/home/vgpnk/.kimi-code/bin
+
+rea      -> /run/user/1000/fnm_multishells/1981588_1793727763382/bin/rea
+node     -> /run/user/1000/fnm_multishells/1981588_1793727763382/bin/node
+npm      -> /run/user/1000/fnm_multishells/1981588_1793727763382/bin/npm
+ghidra   -> /usr/bin/ghidra
+jadx     -> /usr/bin/jadx
+binwalk  -> /usr/bin/binwalk
+unblob   -> /home/vgpnk/.local/bin/unblob
+ida      -> (none)
+
+== /usr/bin/rea?
+ls: cannot access '/usr/bin/rea': No such file or directory
+== fnm dir
+total 123708
+lrwxrwxrwx 1 vgpnk vgpnk       123 Oct  3 21:16 agent-browser -> /home/vgpnk/.local/share/fnm/node-versions/v24.21.0/installation/lib/node_modules/agent-browser/bin/agent-browser-linux-x64
+lrwxrwxrwx 1 vgpnk vgpnk        46 Oct 16 23:53 codex -> ../lib/node_modules/@openai/codex/bin/codex.js
+lrwxrwxrwx 1 vgpnk vgpnk        45 Sep  7 20:56 corepack -> ../lib/node_modules/corepack/dist/corepack.js
+lrwxrwxrwx 1 vgpnk vgpnk        50 Oct 11 16:14 gltf-transform -> ../lib/node_modules/@gltf-transform/cli/bin/cli.js
+lrwxrwxrwx 1 vgpnk vgpnk        44 Oct 11 16:14 godot-mcp -> ../lib/node_modules/godot-mcp/build/index.js
+-rwxr-xr-x 1 vgpnk vgpnk 126595440 Sep  7 20:56 node
+lrwxrwxrwx 1 vgpnk vgpnk        38 Sep  7 20:56 npm -> ../lib/node_modules/npm/bin/npm-cli.js
+lrwxrwxrwx 1 vgpnk vgpnk        38 Sep  7 20:56 npx -> ../lib/node_modules/npm/bin/npx-cli.js
+lrwxrwxrwx 1 vgpnk vgpnk        45 Oct 11 16:14 pixelmatch -> ../lib/node_modules/pixelmatch/bin/pixelmatch

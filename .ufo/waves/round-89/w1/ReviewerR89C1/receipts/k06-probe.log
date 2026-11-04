@@ -1,0 +1,7 @@
+== unzip -v first line
+UnZip 6.00 of 20 April 2009, by Info-ZIP.  Maintained by C. Spieler.  Send
+== zipinfo -v first line
+ZipInfo 3.00 of 20 April 2009, by Greg Roelofs and the Info-ZIP group.
+== K06 regex-derived tokens
+unzip -v -> '6.00'
+zipinfo -v -> '3.00'

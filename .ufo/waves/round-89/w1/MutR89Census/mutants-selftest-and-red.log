@@ -1,0 +1,166 @@
+########## MUTANT a  sha256=479746b026b62094a79b2a395db02ec892f975d316a48a7acbc18abbb18949ff
+--- selftest ---
+CENSUS_SELFTEST_clean=ok
+CENSUS_SELFTEST_presence-opposite=ok
+CENSUS_SELFTEST_presence-unstated=ok
+CENSUS_SELFTEST_version-missing=ok
+CENSUS_SELFTEST_import-opposite=ok
+CENSUS_SELFTEST_mcp-missing=ok
+CENSUS_SELFTEST_listing-phantom=ok
+CENSUS_SELFTEST_skill-missing=ok
+CENSUS_SELFTEST_pin-missing=ok
+CENSUS_SELFTEST=pass
+selftest_exit=0
+--- base red ---
+CENSUS_ROWS=18
+CENSUS_MISMATCH F01 listing:skill_dir does not state live value 'HOST-CONTRACT.md'
+CENSUS_MISMATCH F03 listing:references does not state live value 'android-applications.md'
+CENSUS_MISMATCH F04 presence:rea does not state live value 'present'
+CENSUS_MISMATCH F07 mcp:rea does not state live value 'rea-agents@6.7.0'
+CENSUS_MISMATCH F08 presence:ghidra does not state live value 'present'
+CENSUS_MISMATCH F12 import:pwn does not state live value 'imports'
+CENSUS_MISMATCH K01 presence:rea does not state live value 'present'
+CENSUS_MISMATCH K03 mcp:rea does not state live value 'rea-agents@6.7.0'
+CENSUS_MISMATCH K04 presence:ghidra does not state live value 'present'
+CENSUS_MISMATCH K05 import:pwn does not state live value 'imports'
+CENSUS_STALE_UNFLAGGED=10
+red_exit=1
+########## MUTANT b  sha256=d51573b3bef3e1c557557d647f3f254d673074cd520cd15e643fcd5b9db9f527
+--- selftest ---
+CENSUS_SELFTEST_clean=ok
+CENSUS_SELFTEST_presence-opposite=ok
+CENSUS_SELFTEST_presence-unstated=ok
+CENSUS_SELFTEST_version-missing=ok
+CENSUS_SELFTEST_import-opposite=ok
+CENSUS_SELFTEST_mcp-missing=ok
+CENSUS_SELFTEST_listing-phantom=FAIL
+  findings: []
+CENSUS_SELFTEST_skill-missing=ok
+CENSUS_SELFTEST_pin-missing=ok
+CENSUS_SELFTEST=fail
+selftest_exit=1
+--- base red ---
+CENSUS_ROWS=18
+CENSUS_MISMATCH F01 listing:skill_dir does not state live value 'HOST-CONTRACT.md'
+CENSUS_MISMATCH F03 listing:references does not state live value 'android-applications.md'
+CENSUS_MISMATCH F04 presence:rea does not state live value 'present'
+CENSUS_MISMATCH F07 mcp:rea does not state live value 'rea-agents@6.7.0'
+CENSUS_MISMATCH F08 presence:ghidra does not state live value 'present'
+CENSUS_MISMATCH F12 import:pwn does not state live value 'imports'
+CENSUS_MISMATCH K01 presence:rea does not state live value 'present'
+CENSUS_MISMATCH K03 mcp:rea does not state live value 'rea-agents@6.7.0'
+CENSUS_MISMATCH K04 presence:ghidra does not state live value 'present'
+CENSUS_MISMATCH K05 import:pwn does not state live value 'imports'
+CENSUS_STALE_UNFLAGGED=10
+red_exit=1
+########## MUTANT c  sha256=94b0416461e2672fdc0a38c78b9f669aee6338b526e3576dcdce7bd69a4a9e58
+--- selftest ---
+CENSUS_SELFTEST_clean=ok
+CENSUS_SELFTEST_presence-opposite=ok
+CENSUS_SELFTEST_presence-unstated=ok
+CENSUS_SELFTEST_version-missing=ok
+CENSUS_SELFTEST_import-opposite=ok
+CENSUS_SELFTEST_mcp-missing=ok
+CENSUS_SELFTEST_listing-phantom=ok
+CENSUS_SELFTEST_skill-missing=ok
+CENSUS_SELFTEST_pin-missing=ok
+CENSUS_SELFTEST=pass
+selftest_exit=0
+--- base red ---
+CENSUS_ROWS=18
+CENSUS_MISMATCH F01 listing:skill_dir does not state live value 'HOST-CONTRACT.md'
+CENSUS_MISMATCH F03 listing:references does not state live value 'android-applications.md'
+CENSUS_MISMATCH F04 presence:rea does not state live value 'present'
+CENSUS_MISMATCH F07 mcp:rea does not state live value 'rea-agents@6.7.0'
+CENSUS_MISMATCH F08 presence:ghidra does not state live value 'present'
+CENSUS_MISMATCH F12 import:pwn does not state live value 'imports'
+CENSUS_MISMATCH K01 presence:rea does not state live value 'present'
+CENSUS_MISMATCH K03 mcp:rea does not state live value 'rea-agents@6.7.0'
+CENSUS_MISMATCH K04 presence:ghidra does not state live value 'present'
+CENSUS_MISMATCH K05 import:pwn does not state live value 'imports'
+CENSUS_STALE_UNFLAGGED=10
+red_exit=1
+########## MUTANT d  sha256=93779bf5b95b521b7a90896a8d4168b898b3cf975c5a8f73bf5f478e44b41be1
+--- selftest ---
+CENSUS_SELFTEST_clean=ok
+CENSUS_SELFTEST_presence-opposite=ok
+CENSUS_SELFTEST_presence-unstated=ok
+CENSUS_SELFTEST_version-missing=ok
+CENSUS_SELFTEST_import-opposite=ok
+CENSUS_SELFTEST_mcp-missing=ok
+CENSUS_SELFTEST_listing-phantom=ok
+CENSUS_SELFTEST_skill-missing=ok
+CENSUS_SELFTEST_pin-missing=ok
+CENSUS_SELFTEST=pass
+selftest_exit=0
+--- base red ---
+CENSUS_ROWS=18
+CENSUS_MISMATCH F01 listing:skill_dir does not state live value 'HOST-CONTRACT.md'
+CENSUS_MISMATCH F03 listing:references does not state live value 'android-applications.md'
+CENSUS_MISMATCH F04 presence:rea does not state live value 'present'
+CENSUS_MISMATCH F08 presence:ghidra does not state live value 'present'
+CENSUS_MISMATCH F12 import:pwn does not state live value 'imports'
+CENSUS_MISMATCH K01 presence:rea does not state live value 'present'
+CENSUS_MISMATCH K04 presence:ghidra does not state live value 'present'
+CENSUS_MISMATCH K05 import:pwn does not state live value 'imports'
+CENSUS_STALE_UNFLAGGED=8
+red_exit=1
+########## MUTANT e  sha256=18cc00ceebdd0c0d0f7f81ce357897345b91d09eb7187bdd4b13d6182a879887
+--- selftest ---
+CENSUS_SELFTEST_clean=ok
+CENSUS_SELFTEST_presence-opposite=ok
+CENSUS_SELFTEST_presence-unstated=ok
+CENSUS_SELFTEST_version-missing=ok
+CENSUS_SELFTEST_import-opposite=ok
+CENSUS_SELFTEST_mcp-missing=ok
+CENSUS_SELFTEST_listing-phantom=ok
+CENSUS_SELFTEST_skill-missing=ok
+CENSUS_SELFTEST_pin-missing=ok
+CENSUS_SELFTEST=pass
+selftest_exit=0
+--- base red ---
+CENSUS_ROWS=18
+CENSUS_MISMATCH F01 listing:skill_dir does not state live value 'HOST-CONTRACT.md'
+CENSUS_MISMATCH F03 listing:references does not state live value 'android-applications.md'
+CENSUS_MISMATCH F04 presence:rea does not state live value 'present'
+CENSUS_MISMATCH F07 mcp:rea does not state live value 'rea-agents@6.7.0'
+CENSUS_MISMATCH F08 presence:ghidra does not state live value 'present'
+CENSUS_MISMATCH K01 presence:rea does not state live value 'present'
+CENSUS_MISMATCH K03 mcp:rea does not state live value 'rea-agents@6.7.0'
+CENSUS_MISMATCH K04 presence:ghidra does not state live value 'present'
+CENSUS_STALE_UNFLAGGED=8
+red_exit=1
+########## MUTANT f  sha256=df662d717358293b47cb6bdae0c7e15e9fa57dfae871f0756e181dcfd950a472
+--- selftest ---
+CENSUS_SELFTEST_clean=FAIL
+  findings: ["CENSUS_MISMATCH K01 presence:jadx states 'absent' against the live value"]
+CENSUS_SELFTEST_presence-opposite=ok
+CENSUS_SELFTEST_presence-unstated=ok
+CENSUS_SELFTEST_version-missing=ok
+CENSUS_SELFTEST_import-opposite=ok
+CENSUS_SELFTEST_mcp-missing=ok
+CENSUS_SELFTEST_listing-phantom=ok
+CENSUS_SELFTEST_skill-missing=ok
+CENSUS_SELFTEST_pin-missing=ok
+CENSUS_SELFTEST=fail
+selftest_exit=1
+--- base red ---
+CENSUS_ROWS=18
+CENSUS_MISMATCH F01 listing:skill_dir does not state live value 'HOST-CONTRACT.md'
+CENSUS_MISMATCH F03 listing:references does not state live value 'android-applications.md'
+CENSUS_MISMATCH F04 presence:rea does not state live value 'present'
+CENSUS_MISMATCH F07 mcp:rea does not state live value 'rea-agents@6.7.0'
+CENSUS_MISMATCH F08 presence:ghidra does not state live value 'present'
+CENSUS_MISMATCH F09 presence:jadx states 'absent' against the live value
+CENSUS_MISMATCH F10 presence:binwalk states 'absent' against the live value
+CENSUS_MISMATCH F11 presence:unblob states 'absent' against the live value
+CENSUS_MISMATCH F12 import:pwn does not state live value 'imports'
+CENSUS_MISMATCH K01 presence:rea does not state live value 'present'
+CENSUS_MISMATCH K03 mcp:rea does not state live value 'rea-agents@6.7.0'
+CENSUS_MISMATCH K04 presence:ghidra does not state live value 'present'
+CENSUS_MISMATCH K05 presence:jadx states 'absent' against the live value
+CENSUS_MISMATCH K05 presence:binwalk states 'absent' against the live value
+CENSUS_MISMATCH K05 presence:unblob states 'absent' against the live value
+CENSUS_MISMATCH K05 import:pwn does not state live value 'imports'
+CENSUS_STALE_UNFLAGGED=16
+red_exit=1

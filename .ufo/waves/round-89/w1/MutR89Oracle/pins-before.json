@@ -1,0 +1,19 @@
+{
+  "freeze_commit": "c84339c",
+  "oracle": {
+    "path": "/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py",
+    "sha256": "44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53"
+  },
+  "fixture": {
+    "path": "/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/fixture.apk",
+    "sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e"
+  },
+  "truth": {
+    "path": "/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json",
+    "sha256": "27303baeab02e771264421cfe4bbc2f0ef0aade3a8732de43b22c0e15b4f8173"
+  },
+  "tmpdir": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle",
+  "runtime": "Python 3.14.8",
+  "tool_installs_or_updates": [],
+  "oracle_timeout_seconds": 10
+}

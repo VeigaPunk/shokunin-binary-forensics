@@ -1,0 +1,16 @@
+CENSUS_SELFTEST_clean=ok
+CENSUS_SELFTEST_presence-opposite=ok
+CENSUS_SELFTEST_presence-unstated=FAIL
+  findings: []
+CENSUS_SELFTEST_version-missing=FAIL
+  findings: []
+CENSUS_SELFTEST_import-opposite=ok
+CENSUS_SELFTEST_mcp-missing=FAIL
+  findings: []
+CENSUS_SELFTEST_listing-phantom=ok
+CENSUS_SELFTEST_skill-missing=FAIL
+  findings: []
+CENSUS_SELFTEST_pin-missing=FAIL
+  findings: []
+CENSUS_SELFTEST=fail
+EXIT=1

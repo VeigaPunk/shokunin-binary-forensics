@@ -1,0 +1,106 @@
+{
+  "added_files": [
+    {
+      "counted_record": false,
+      "path": "/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-89/LEDGER.md",
+      "sha256": "d5586e0fd640bd022d06a11d3d4a021f3b88fdc41ca7778b0c56f91aee173f05"
+    },
+    {
+      "counted_record": true,
+      "families": [
+        "android"
+      ],
+      "operation": "inspect_android_package",
+      "path": "/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-89/inspection.json",
+      "sha256": "01af3141d79027a3bae53b6482779d3e9c89446ab6ca09b408a6cb266f321c76"
+    },
+    {
+      "counted_record": false,
+      "path": "/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-89/receipt.json",
+      "sha256": "e0aec2f581257e0c965eb0933a57109d20a900f453dbf3cdc4495ff0c660099f"
+    }
+  ],
+  "land_f4": {
+    "exit": 0,
+    "name": "landing-f4",
+    "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+  },
+  "land_oracle": {
+    "exit": 0,
+    "name": "landing-oracle",
+    "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n"
+  },
+  "modified_old_files": [],
+  "mutations_from_actual_producer_record": [
+    {
+      "f4": {
+        "exit": 0,
+        "name": "producer-package-name-f4",
+        "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+      },
+      "name": "package-name",
+      "oracle": {
+        "exit": 1,
+        "name": "producer-package-name-oracle",
+        "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck FAIL: package_name 'com.example.fabricated' != authored 'com.example.r65'\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE FAIL (18/19 checks)\n"
+      }
+    },
+    {
+      "f4": {
+        "exit": 0,
+        "name": "producer-class-count-f4",
+        "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+      },
+      "name": "class-count",
+      "oracle": {
+        "exit": 1,
+        "name": "producer-class-count-oracle",
+        "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck FAIL: class_count 1 != DEX class_defs_size 0\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE FAIL (18/19 checks)\n"
+      }
+    },
+    {
+      "f4": {
+        "exit": 0,
+        "name": "producer-subject-digest-f4",
+        "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+      },
+      "name": "subject-digest",
+      "oracle": {
+        "exit": 1,
+        "name": "producer-subject-digest-oracle",
+        "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck FAIL: subject digest != the fixture bytes\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE FAIL (18/19 checks)\n"
+      }
+    },
+    {
+      "f4": {
+        "exit": 0,
+        "name": "producer-manifest-contradiction-f4",
+        "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n"
+      },
+      "name": "manifest-contradiction",
+      "oracle": {
+        "exit": 0,
+        "name": "producer-manifest-contradiction-oracle",
+        "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n"
+      },
+      "parsed_actual_attributes": {
+        "package": "com.attacker.fabricated",
+        "{http://schemas.android.com/apk/res/android}versionCode": "999",
+        "{http://schemas.android.com/apk/res/android}versionName": "999"
+      }
+    }
+  ],
+  "old_run_files": 406,
+  "producer_manifest_parsed": {
+    "attributes": {
+      "package": "com.example.r65",
+      "{android}versionCode": "1",
+      "{android}versionName": "1.0"
+    },
+    "tag": "manifest"
+  },
+  "record_path": "/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-89/inspection.json",
+  "record_sha256": "01af3141d79027a3bae53b6482779d3e9c89446ab6ca09b408a6cb266f321c76",
+  "removed_old_files": [],
+  "working_run_files": 409
+}

@@ -1,0 +1,523 @@
+{
+  "live_values": {
+    "F01": [
+      [
+        "listing",
+        "skill_dir",
+        [
+          "HOST-CONTRACT.md",
+          "SKILL.md"
+        ],
+        []
+      ]
+    ],
+    "F02": [
+      [
+        "skill",
+        "skill",
+        [
+          "42",
+          "207"
+        ],
+        []
+      ]
+    ],
+    "F03": [
+      [
+        "listing",
+        "references",
+        [
+          "android-applications.md",
+          "cli-command-map.md",
+          "connection-and-recovery.md",
+          "evidence-workflows.md",
+          "javascript-applications.md",
+          "native-and-artifacts.md",
+          "runtime-observation.md"
+        ],
+        []
+      ]
+    ],
+    "F04": [
+      [
+        "presence",
+        "rea",
+        [
+          "present"
+        ],
+        [
+          "absent"
+        ]
+      ]
+    ],
+    "F05": [
+      [
+        "pin",
+        "pin",
+        [
+          "rea-agents@6.7.0"
+        ],
+        []
+      ]
+    ],
+    "F06": [
+      [
+        "version",
+        "node --version",
+        [
+          "24.21.0"
+        ],
+        []
+      ],
+      [
+        "version",
+        "npm --version",
+        [
+          "11.19.0"
+        ],
+        []
+      ]
+    ],
+    "F07": [
+      [
+        "mcp",
+        "rea",
+        [
+          "rea-agents@6.7.0"
+        ],
+        []
+      ]
+    ],
+    "F08": [
+      [
+        "presence",
+        "ghidra",
+        [
+          "present"
+        ],
+        [
+          "absent"
+        ]
+      ]
+    ],
+    "F09": [
+      [
+        "presence",
+        "jadx",
+        [
+          "present"
+        ],
+        [
+          "absent"
+        ]
+      ]
+    ],
+    "F10": [
+      [
+        "presence",
+        "binwalk",
+        [
+          "present"
+        ],
+        [
+          "absent"
+        ]
+      ]
+    ],
+    "F11": [
+      [
+        "presence",
+        "unblob",
+        [
+          "present"
+        ],
+        [
+          "absent"
+        ]
+      ]
+    ],
+    "F12": [
+      [
+        "import",
+        "pwn",
+        [
+          "imports"
+        ],
+        [
+          "fails",
+          "ModuleNotFound"
+        ]
+      ]
+    ],
+    "K01": [
+      [
+        "presence",
+        "rea",
+        [
+          "present"
+        ],
+        [
+          "absent"
+        ]
+      ]
+    ],
+    "K02": [
+      [
+        "version",
+        "node --version",
+        [
+          "24.21.0"
+        ],
+        []
+      ],
+      [
+        "version",
+        "npm --version",
+        [
+          "11.19.0"
+        ],
+        []
+      ]
+    ],
+    "K03": [
+      [
+        "mcp",
+        "rea",
+        [
+          "rea-agents@6.7.0"
+        ],
+        []
+      ]
+    ],
+    "K04": [
+      [
+        "presence",
+        "ghidra",
+        [
+          "present"
+        ],
+        [
+          "absent"
+        ]
+      ],
+      [
+        "presence",
+        "ida",
+        [
+          "absent"
+        ],
+        [
+          "present"
+        ]
+      ]
+    ],
+    "K05": [
+      [
+        "presence",
+        "jadx",
+        [
+          "present"
+        ],
+        [
+          "absent"
+        ]
+      ],
+      [
+        "presence",
+        "binwalk",
+        [
+          "present"
+        ],
+        [
+          "absent"
+        ]
+      ],
+      [
+        "presence",
+        "unblob",
+        [
+          "present"
+        ],
+        [
+          "absent"
+        ]
+      ],
+      [
+        "import",
+        "pwn",
+        [
+          "imports"
+        ],
+        [
+          "fails",
+          "ModuleNotFound"
+        ]
+      ]
+    ],
+    "K06": [
+      [
+        "version",
+        "unzip -v",
+        [
+          "6.00"
+        ],
+        []
+      ],
+      [
+        "version",
+        "zipinfo -v",
+        [
+          "3.00"
+        ],
+        []
+      ]
+    ]
+  },
+  "candidate_sha256": "01af3141d79027a3bae53b6482779d3e9c89446ab6ca09b408a6cb266f321c76",
+  "forged_record": {
+    "operation": "inspect_android_package",
+    "evidence_id": "ev_0000000000000000000000000000000000000000000000000000000000000000",
+    "provider": {
+      "id": "jadx",
+      "version": "0.0.0"
+    },
+    "subject": {
+      "digest": {
+        "sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e"
+      },
+      "format": "apk"
+    },
+    "normalized_result": {
+      "package_name": "com.example.r65",
+      "manifest": {
+        "status": "complete",
+        "text": "versionCode=\"1\" versionName=\"1.0\""
+      },
+      "class_count": 0,
+      "resource_count": 3,
+      "permissions": [],
+      "signature_verification": "not_performed"
+    }
+  },
+  "truth_lie_apk_unchanged": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e",
+  "base_census": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/corpus/census_reprobe.py --root /fast/scratch/hyaku/revenger-r89/CriticR89Claims/base",
+    "stdout": "CENSUS_ROWS=18\nCENSUS_MISMATCH F01 listing:skill_dir does not state live value 'HOST-CONTRACT.md'\nCENSUS_MISMATCH F03 listing:references does not state live value 'android-applications.md'\nCENSUS_MISMATCH F04 presence:rea does not state live value 'present'\nCENSUS_MISMATCH F07 mcp:rea does not state live value 'rea-agents@6.7.0'\nCENSUS_MISMATCH F08 presence:ghidra does not state live value 'present'\nCENSUS_MISMATCH F12 import:pwn does not state live value 'imports'\nCENSUS_MISMATCH K01 presence:rea does not state live value 'present'\nCENSUS_MISMATCH K03 mcp:rea does not state live value 'rea-agents@6.7.0'\nCENSUS_MISMATCH K04 presence:ghidra does not state live value 'present'\nCENSUS_MISMATCH K05 import:pwn does not state live value 'imports'\nCENSUS_STALE_UNFLAGGED=10\n",
+    "stderr": "",
+    "exit": 1
+  },
+  "base_f4": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/CriticR89Claims/base/corpus",
+    "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=10/11 score=9.09\nF4_FAMILIES=['archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "c1_census": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/corpus/census_reprobe.py --root /fast/scratch/hyaku/revenger-r89/CriticR89Claims/c1-only",
+    "stdout": "CENSUS_ROWS=18\nCENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value\nCENSUS_MISMATCH K04 presence:ida states 'present' against the live value\nCENSUS_STALE_UNFLAGGED=2\n",
+    "stderr": "",
+    "exit": 1
+  },
+  "c1_f4": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/CriticR89Claims/c1-only/corpus",
+    "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=10/11 score=9.09\nF4_FAMILIES=['archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "c2_census": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/corpus/census_reprobe.py --root /fast/scratch/hyaku/revenger-r89/CriticR89Claims/c2-only",
+    "stdout": "CENSUS_ROWS=18\nCENSUS_MISMATCH F01 listing:skill_dir does not state live value 'HOST-CONTRACT.md'\nCENSUS_MISMATCH F03 listing:references does not state live value 'android-applications.md'\nCENSUS_MISMATCH F04 presence:rea does not state live value 'present'\nCENSUS_MISMATCH F07 mcp:rea does not state live value 'rea-agents@6.7.0'\nCENSUS_MISMATCH F08 presence:ghidra does not state live value 'present'\nCENSUS_MISMATCH F12 import:pwn does not state live value 'imports'\nCENSUS_MISMATCH K01 presence:rea does not state live value 'present'\nCENSUS_MISMATCH K03 mcp:rea does not state live value 'rea-agents@6.7.0'\nCENSUS_MISMATCH K04 presence:ghidra does not state live value 'present'\nCENSUS_MISMATCH K05 import:pwn does not state live value 'imports'\nCENSUS_STALE_UNFLAGGED=10\n",
+    "stderr": "",
+    "exit": 1
+  },
+  "c2_f4": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/CriticR89Claims/c2-only/corpus",
+    "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "c2_oracle": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/c2-only/corpus/fixtures/apk-r65/oracle_check.py /fast/scratch/hyaku/revenger-r89/CriticR89Claims/c2-only/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/CriticR89Claims/c2-only/corpus/live/runs/round-89/android.json",
+    "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "selftest": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/corpus/census_reprobe.py --selftest",
+    "stdout": "CENSUS_SELFTEST_clean=ok\nCENSUS_SELFTEST_presence-opposite=ok\nCENSUS_SELFTEST_presence-unstated=ok\nCENSUS_SELFTEST_version-missing=ok\nCENSUS_SELFTEST_import-opposite=ok\nCENSUS_SELFTEST_mcp-missing=ok\nCENSUS_SELFTEST_listing-phantom=ok\nCENSUS_SELFTEST_skill-missing=ok\nCENSUS_SELFTEST_pin-missing=ok\nCENSUS_SELFTEST=pass\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "deleted_rows_census": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/corpus/census_reprobe.py --root /fast/scratch/hyaku/revenger-r89/CriticR89Claims/deleted-rows",
+    "stdout": "CENSUS_ROWS=0\nCENSUS_MISMATCH F01 row-absent\nCENSUS_MISMATCH F02 row-absent\nCENSUS_MISMATCH F03 row-absent\nCENSUS_MISMATCH F04 row-absent\nCENSUS_MISMATCH F05 row-absent\nCENSUS_MISMATCH F06 row-absent\nCENSUS_MISMATCH F07 row-absent\nCENSUS_MISMATCH F08 row-absent\nCENSUS_MISMATCH F09 row-absent\nCENSUS_MISMATCH F10 row-absent\nCENSUS_MISMATCH F11 row-absent\nCENSUS_MISMATCH F12 row-absent\nCENSUS_MISMATCH K01 row-absent\nCENSUS_MISMATCH K02 row-absent\nCENSUS_MISMATCH K03 row-absent\nCENSUS_MISMATCH K04 row-absent\nCENSUS_MISMATCH K05 row-absent\nCENSUS_MISMATCH K06 row-absent\nCENSUS_STALE_UNFLAGGED=18\n",
+    "stderr": "",
+    "exit": 1
+  },
+  "missing_files_census": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/corpus/census_reprobe.py --root /fast/scratch/hyaku/revenger-r89/CriticR89Claims/missing-files",
+    "stdout": "missing /fast/scratch/hyaku/revenger-r89/CriticR89Claims/missing-files/corpus/knowledge/seed.md\nCENSUS_STALE_UNFLAGGED=could-not-evaluate\n",
+    "stderr": "",
+    "exit": 2
+  },
+  "forged_oracle": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/forged/corpus/fixtures/apk-r65/oracle_check.py /fast/scratch/hyaku/revenger-r89/CriticR89Claims/forged/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/CriticR89Claims/forged/corpus/live/runs/round-89/forged.json",
+    "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "forged_f4": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/CriticR89Claims/forged/corpus",
+    "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "truth_lie_oracle": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/truth-lie/corpus/fixtures/apk-r65/oracle_check.py /fast/scratch/hyaku/revenger-r89/CriticR89Claims/truth-lie/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/CriticR89Claims/truth-lie/corpus/live/runs/round-89/forged.json",
+    "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.not_in_apk\ncheck ok: manifest declares versionCode=\"999\"\ncheck ok: manifest declares versionName=\"9.9\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "comment_lie_oracle": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/comment-lie/corpus/fixtures/apk-r65/oracle_check.py /fast/scratch/hyaku/revenger-r89/CriticR89Claims/comment-lie/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/CriticR89Claims/comment-lie/corpus/live/runs/round-89/forged.json",
+    "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "weakened_oracle": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/weakened-current/corpus/fixtures/apk-r65/oracle_check.py /fast/scratch/hyaku/revenger-r89/CriticR89Claims/weakened-current/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/CriticR89Claims/weakened-current/corpus/live/runs/round-89/forged.json",
+    "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "k04_minimum": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/corpus/census_reprobe.py --root /fast/scratch/hyaku/revenger-r89/CriticR89Claims/k04-minimum",
+    "stdout": "CENSUS_ROWS=18\nCENSUS_MISMATCH K04 presence:ida does not state live value 'absent'\nCENSUS_STALE_UNFLAGGED=1\n",
+    "stderr": "",
+    "exit": 1
+  },
+  "negated_presence": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/corpus/census_reprobe.py --root /fast/scratch/hyaku/revenger-r89/CriticR89Claims/negated-presence",
+    "stdout": "CENSUS_ROWS=18\nCENSUS_MISMATCH K04 presence:ida does not state live value 'absent'\nCENSUS_STALE_UNFLAGGED=1\n",
+    "stderr": "",
+    "exit": 1
+  },
+  "relocated_rows": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/corpus/census_reprobe.py --root /fast/scratch/hyaku/revenger-r89/CriticR89Claims/relocated-rows",
+    "stdout": "CENSUS_ROWS=18\nCENSUS_MISMATCH K04 presence:ida does not state live value 'absent'\nCENSUS_STALE_UNFLAGGED=1\n",
+    "stderr": "",
+    "exit": 1
+  },
+  "comment_lie_strong_oracle": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/comment-lie/corpus/fixtures/apk-r65/oracle_check.py /fast/scratch/hyaku/revenger-r89/CriticR89Claims/comment-lie/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/CriticR89Claims/comment-lie/corpus/live/runs/round-89/forged.json",
+    "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "comment_lie_f4": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/freeze/reports/round-81/f_probe4.py /fast/scratch/hyaku/revenger-r89/CriticR89Claims/comment-lie/corpus",
+    "stdout": "{\"analyze_javascript_application\": 6, \"compare_application_versions\": 1, \"compare_javascript_export_shapes\": 3, \"decode_interface_builder\": 1, \"extract_artifact\": 3, \"inspect_analysis_view\": 1, \"inspect_android_package\": 1, \"inspect_artifact\": 5, \"inspect_evm_interface\": 7, \"inspect_firmware_regions\": 1, \"inspect_keyed_archive\": 1, \"inspect_managed_artifact\": 2, \"inspect_managed_members\": 1, \"inspect_managed_native_boundaries\": 1, \"inspect_pe_certificates\": 1, \"inspect_pe_resources\": 30, \"inspect_sqlite_database\": 1, \"inspect_web_page\": 1, \"list_browser_targets\": 1, \"trace_application_feature\": 2, \"trace_dylib_resolution\": 1, \"trace_javascript_semantics\": 2}\nF4_COVERAGE=11/11 score=10.00\nF4_FAMILIES=['android', 'archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "fixture_axml_bytes": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 python3 -B /fast/scratch/hyaku/revenger-r89/CriticR89Claims/base/corpus/fixtures/apk-r65/readout.py --fact axml_string_pool",
+    "stdout": "{\"fact\": \"axml_string_pool\", \"flags\": \"0x00000100\", \"offset\": 8, \"offsets\": [0, 10, 55, 66, 76, 94, 108, 122, 126], \"sorted_flag\": false, \"stringCount\": 9, \"strings\": [\"android\", \"http://schemas.android.com/apk/res/android\", \"manifest\", \"package\", \"com.example.r65\", \"versionCode\", \"versionName\", \"1\", \"1.0\"], \"stringsStart\": 64, \"styleCount\": 0, \"stylesStart\": 0, \"utf8\": true}\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "producer_cmp": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 cmp /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-89/w1/ExecR89Record/run1.json /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-89/w1/ExecR89Record/run2.json",
+    "stdout": "/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-89/w1/ExecR89Record/run1.json /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-89/w1/ExecR89Record/run2.json differ: byte 20, line 1\n",
+    "stderr": "",
+    "exit": 1
+  },
+  "producer_hashes": {
+    "command": "env TMPDIR=/fast/scratch/hyaku/revenger-r89/CriticR89Claims PYTHONUTF8=1 PYTHONDONTWRITEBYTECODE=1 sha256sum /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-89/w1/ExecR89Record/run1.json /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-89/w1/ExecR89Record/run2.json",
+    "stdout": "01af3141d79027a3bae53b6482779d3e9c89446ab6ca09b408a6cb266f321c76  /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-89/w1/ExecR89Record/run1.json\n5bbdd189cd19dd1b181b4850b95fe07d077bc4031c70b25fec5006ca0d72ce00  /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-89/w1/ExecR89Record/run2.json\n",
+    "stderr": "",
+    "exit": 0
+  },
+  "producer_receipt": {
+    "what": "C2 android-family producer record receipt: two independent producer invocations on the authored fixture, with byte-identity measurement",
+    "record_path": "corpus/live/runs/round-89/inspection.json",
+    "command_line": "rea inspect-android-package corpus/fixtures/apk-r65/fixture.apk --format json",
+    "cwd": "/home/vgpnk/Projects/shokunin/revenger-shokunin",
+    "rea_version": "6.7.0",
+    "provider_from_record": {
+      "id": "jadx",
+      "name": "JADX headless",
+      "version": "0.7.1",
+      "source": "the record's own provider field (exact stdout bytes)"
+    },
+    "runs": [
+      {
+        "label": "run1",
+        "exit_code": 0,
+        "stderr_bytes": 0,
+        "wall_seconds": 2.464,
+        "stdout_bytes": 4303,
+        "stdout_sha256": "01af3141d79027a3bae53b6482779d3e9c89446ab6ca09b408a6cb266f321c76"
+      },
+      {
+        "label": "run2",
+        "exit_code": 0,
+        "stderr_bytes": 0,
+        "wall_seconds": 2.276,
+        "stdout_bytes": 4303,
+        "stdout_sha256": "5bbdd189cd19dd1b181b4850b95fe07d077bc4031c70b25fec5006ca0d72ce00"
+      }
+    ],
+    "cmp_verdict": "DIFFER: the two stdouts are byte-non-identical; cmp differs at char 20, line 1 (per-run evidence_id)",
+    "byte_identical": false,
+    "volatile_field_set": [
+      "evidence_id (per run)",
+      "private runtime directory name rea-android-XXXXXX (mkdtemp-style, per run; appears in raw_result.calls[1].input.path, that run's apk_path, and raw_result.loaded.apk_path)",
+      "raw_result.calls[0] JVM map key ordering (same five system-fact keys, different order)",
+      "raw_result.calls[1] load_duration_ms (175 vs 170)"
+    ],
+    "normalized_result_identical_across_runs": true,
+    "record_evidence_id": "ev_387c9e9c410dc40fb6a19524fcdda49a3186c4597c20e9c4a9625b3b99a588e4",
+    "landed_bytes_exact": "inspection.json cmp-identical to run1 stdout (sha256 01af3141d79027a3bae53b6482779d3e9c89446ab6ca09b408a6cb266f321c76)",
+    "record_environment_field": "null (embeds no environment variable values; no key dropped)",
+    "oracle": {
+      "command": "PYTHONUTF8=1 python3 -B corpus/fixtures/apk-r65/oracle_check.py corpus/fixtures/apk-r65/truth.json corpus/live/runs/round-89/inspection.json",
+      "result": "ORACLE OK (19/19 checks)",
+      "exit_code": 0
+    },
+    "c2_admission_status": "NOT ADMITTED: the frozen byte-identity kill rule is FAILED on measured evidence (cmp DIFFER); the oracle verdict and F4 count do not cure this. The retained record is kept as evidence of producer non-determinism, not as admitted coverage.",
+    "timestamps": {
+      "wall_seconds_only": true,
+      "absolute_start_end_utc": "not captured at run time and not recoverable: scratch files (the only mtime carriers) were deleted after retention per the seat contract, and the session transcript carries no timestamps. Recorded wall durations: run1 2.464 s, run2 2.276 s. No timestamp is reconstructed or estimated."
+    }
+  },
+  "producer_raw_sha256": {
+    "run1.json": "01af3141d79027a3bae53b6482779d3e9c89446ab6ca09b408a6cb266f321c76",
+    "run2.json": "5bbdd189cd19dd1b181b4850b95fe07d077bc4031c70b25fec5006ca0d72ce00"
+  },
+  "strong_comment_record": {
+    "operation": "inspect_android_package",
+    "evidence_id": "ev_0000000000000000000000000000000000000000000000000000000000000000",
+    "provider": {
+      "id": "jadx",
+      "version": "0.0.0"
+    },
+    "subject": {
+      "digest": {
+        "sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e"
+      },
+      "format": "apk"
+    },
+    "normalized_result": {
+      "package_name": "com.example.r65",
+      "manifest": {
+        "status": "complete",
+        "text": "<manifest package=\"com.example.wrong\" versionCode=\"999\" versionName=\"999\"><!-- versionCode=\"1\" versionName=\"1.0\" --></manifest>"
+      },
+      "class_count": 0,
+      "resource_count": 3,
+      "permissions": [],
+      "signature_verification": "not_performed"
+    }
+  }
+}

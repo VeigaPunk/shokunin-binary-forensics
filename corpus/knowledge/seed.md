@@ -69,3 +69,31 @@ the same day. Verdict per recorded fact (`holds` / `STALE` → current value).
 Not re-verified here: the routes the new engines unblock. Presence is not
 capability (`corpus/QUALITY.md` Q05); no REA call was made. `dotnet` is on PATH
 but reports no installed .NET SDK, so it cannot yet build a managed fixture.
+
+## Re-verification 2026-11-04 (Linux host, this machine)
+
+The tables above are the unchanged 2026-10-12 record and its 2026-10-19
+correction. Every row below was re-probed on the Linux host on 2026-11-04;
+the probe column is the command actually run, the observed column is its
+output on this host, and the verdict states the current value. `holds` means
+the recorded value still matches. The re-probe gate is
+`corpus/census_reprobe.py` (round 89); its own rules are literal-token rules
+(presence rows must say `present`/`absent`, import rows `imports`/`fails`).
+
+| fact | recorded (line above) | probe | observed 2026-11-04 | verdict |
+|---|---|---|---|---|
+| F01 | skill installed, instructions only (`:4`) | `ls ~/.agents/skills/reverse-engineer-anything/*.md` | `SKILL.md` and `HOST-CONTRACT.md` (plus `references/` and backup/recovery copies) | STALE -> two `*.md` entries |
+| F02 | SKILL.md version 37, tool_count 170 (`:5`) | `sed -n 1,8p …/SKILL.md` | version 42, tool_count 207 | holds |
+| F03 | six references (`:5-7`) | `ls …/references/*.md` | seven names: android-applications.md, cli-command-map.md, connection-and-recovery.md, evidence-workflows.md, javascript-applications.md, native-and-artifacts.md, runtime-observation.md | STALE -> seven references |
+| F04 | no `rea` CLI on PATH (`:8`) | `command -v rea; rea --version` | rea present, 6.7.0 | STALE -> present |
+| F05 | acquisition pin `npx -y rea-agents@6.4.0` (`:8`) | `grep -n 'rea-agents@' …/SKILL.md` | `rea-agents@6.7.0` | holds |
+| F06 | node v26.11.1, npm 11.20.0 (`:9`) | `node --version; npm --version` | v24.21.0, 11.19.0 | STALE -> v24.21.0 / 11.19.0 |
+| F07 | no MCP server registered (`:10-11`) | `rea` entry args in `~/.omp/agent/mcp.json` (args only, never env) | key `rea`, `rea-agents@6.7.0` | STALE -> registered |
+| F08 | ghidra absent (`:12`) | `command -v ghidra` | ghidra present at /usr/bin/ghidra | STALE -> present |
+| F09 | jadx absent (`:12`) | `jadx --version` | 1.5.6 | STALE -> present |
+| F10 | binwalk absent (`:12`) | `binwalk --version` | binwalk 3.1.0 | STALE -> present |
+| F11 | unblob absent (`:12`) | `unblob --version` | 26.6.4 | STALE -> present |
+| F12 | pwntools import fails (`:12-13`) | `python3 -c 'import pwn'` | imports | STALE -> imports |
+
+Not re-verified here: the routes the new engines unblock. Presence is not
+capability (`corpus/QUALITY.md` Q05); no REA call is claimed by this table.

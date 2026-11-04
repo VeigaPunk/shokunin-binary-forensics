@@ -1,0 +1,21 @@
+# SOURCES.md append shape receipt, ScribeR89Sources, 2026-11-04
+rows appended inside Registry directly after S479 (lines 497-499)
+
+--- NF per new row (13 required):
+line 497 id= S480  NF=13
+line 498 id= S481  NF=13
+line 499 id= S482  NF=13
+
+--- pipe count inside cells (12 separators per row):
+line 497 separators=12
+line 498 separators=12
+line 499 separators=12
+
+--- escaped pipe occurrences in the three rows:
+0
+
+--- git diff numstat (corpus/SOURCES.md):
+3	0	corpus/SOURCES.md
+
+--- removed lines in diff:
+0

@@ -1,0 +1,26 @@
+=== honest tree under sanitized PATH ===
+CENSUS_ROWS=18
+CENSUS_MISMATCH F04 presence:rea does not state live value 'absent'
+CENSUS_MISMATCH F06 version:node --version does not state live value '26.12.0'
+CENSUS_MISMATCH F06 version:npm --version does not state live value '12.2.1'
+CENSUS_MISMATCH F11 presence:unblob does not state live value 'absent'
+CENSUS_MISMATCH K01 presence:rea does not state live value 'absent'
+CENSUS_MISMATCH K02 version:node --version does not state live value '26.12.0'
+CENSUS_MISMATCH K02 version:npm --version does not state live value '12.2.1'
+CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
+CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
+CENSUS_MISMATCH K05 presence:unblob does not state live value 'absent'
+CENSUS_STALE_UNFLAGGED=10
+EXIT=1
+
+=== exit-code semantics ===
+no --root -> EXIT=64 (expect 64)
+scratch path because it creates none.
+usage: census_reprobe.py --root TREE [--json] | --selftest
+missing /fast/scratch/hyaku/revenger-r89/ReviewerR89C1/nonexistent/corpus/knowledge/seed.md
+CENSUS_STALE_UNFLAGGED=could-not-evaluate
+missing input -> EXIT=2 (expect 2)
+
+=== --json on honest ===
+{"findings": ["CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value", "CENSUS_MISMATCH K04 presence:ida states 'present' against the live value"], "mismatches": 2, "rows": 18}
+EXIT=1

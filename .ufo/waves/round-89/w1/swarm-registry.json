@@ -1,0 +1,133 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r89-w1",
+  "createdAt": "2026-11-04T20:57:39.959Z",
+  "updatedAt": "2026-11-04T20:57:39.959Z",
+  "reportDir": ".ufo/waves/round-89/w1",
+  "members": {
+    "ScoutR89Host": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "freshness"
+      ],
+      "milestone": "Round 89: C1 freshness (host-readiness census re-probed, stale-unflagged 10 -> 0) and C2 coverage (android family record, F4 10/11 -> 11/11 with an identity oracle), with a 12-seat build+attack wave."
+    },
+    "ExecR89Record": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 89: C1 freshness (host-readiness census re-probed, stale-unflagged 10 -> 0) and C2 coverage (android family record, F4 10/11 -> 11/11 with an identity oracle), with a 12-seat build+attack wave."
+    },
+    "ScribeR89Rows": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "freshness"
+      ],
+      "milestone": "Round 89: C1 freshness (host-readiness census re-probed, stale-unflagged 10 -> 0) and C2 coverage (android family record, F4 10/11 -> 11/11 with an identity oracle), with a 12-seat build+attack wave."
+    },
+    "ScribeR89Registry": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "depth",
+        "operability"
+      ],
+      "milestone": "Round 89: C1 freshness (host-readiness census re-probed, stale-unflagged 10 -> 0) and C2 coverage (android family record, F4 10/11 -> 11/11 with an identity oracle), with a 12-seat build+attack wave."
+    },
+    "ScribeR89Sources": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "freshness"
+      ],
+      "milestone": "Round 89: C1 freshness (host-readiness census re-probed, stale-unflagged 10 -> 0) and C2 coverage (android family record, F4 10/11 -> 11/11 with an identity oracle), with a 12-seat build+attack wave."
+    },
+    "ReviewerR89C1": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "freshness",
+        "calibration"
+      ],
+      "milestone": "Round 89: C1 freshness (host-readiness census re-probed, stale-unflagged 10 -> 0) and C2 coverage (android family record, F4 10/11 -> 11/11 with an identity oracle), with a 12-seat build+attack wave."
+    },
+    "ReviewerR89C2": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Round 89: C1 freshness (host-readiness census re-probed, stale-unflagged 10 -> 0) and C2 coverage (android family record, F4 10/11 -> 11/11 with an identity oracle), with a 12-seat build+attack wave."
+    },
+    "CriticR89Claims": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 89: C1 freshness (host-readiness census re-probed, stale-unflagged 10 -> 0) and C2 coverage (android family record, F4 10/11 -> 11/11 with an identity oracle), with a 12-seat build+attack wave."
+    },
+    "MutR89Census": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 89: C1 freshness (host-readiness census re-probed, stale-unflagged 10 -> 0) and C2 coverage (android family record, F4 10/11 -> 11/11 with an identity oracle), with a 12-seat build+attack wave."
+    },
+    "MutR89Oracle": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Round 89: C1 freshness (host-readiness census re-probed, stale-unflagged 10 -> 0) and C2 coverage (android family record, F4 10/11 -> 11/11 with an identity oracle), with a 12-seat build+attack wave."
+    },
+    "ConnectorR89": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "adjacency"
+      ],
+      "milestone": "Round 89: C1 freshness (host-readiness census re-probed, stale-unflagged 10 -> 0) and C2 coverage (android family record, F4 10/11 -> 11/11 with an identity oracle), with a 12-seat build+attack wave."
+    },
+    "SentinelR89": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 89: C1 freshness (host-readiness census re-probed, stale-unflagged 10 -> 0) and C2 coverage (android family record, F4 10/11 -> 11/11 with an identity oracle), with a 12-seat build+attack wave."
+    }
+  }
+}

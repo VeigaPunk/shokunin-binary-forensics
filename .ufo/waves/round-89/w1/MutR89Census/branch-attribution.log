@@ -1,0 +1,35 @@
+## attr_legs pristine
+presence-opposite    rid=K01 caught=1 branch=token-presence
+    CENSUS_MISMATCH K01 presence:jadx does not state live value 'present'
+presence-unstated    rid=K01 caught=1 branch=token-presence
+    CENSUS_MISMATCH K01 presence:jadx does not state live value 'present'
+version-missing      rid=F05 caught=1 branch=token-presence
+    CENSUS_MISMATCH F05 version:npm --version does not state live value '4.5.6'
+import-opposite      rid=K02 caught=1 branch=token-presence
+    CENSUS_MISMATCH K02 import:pwn does not state live value 'imports'
+mcp-missing          rid=F06 caught=1 branch=token-presence
+    CENSUS_MISMATCH F06 mcp:None does not state live value 'rea-agents@9.9'
+listing-phantom      rid=F01 caught=1 branch=listing-phantom
+    CENSUS_MISMATCH F01 listing:skill_dir names absent entry gone.md
+skill-missing        rid=F02 caught=1 branch=token-presence
+    CENSUS_MISMATCH F02 skill:None does not state live value '7'
+pin-missing          rid=F04 caught=1 branch=token-presence
+    CENSUS_MISMATCH F04 pin:None does not state live value 'rea-agents@9.9'
+
+## attr_legs mutant d (mcp rule broken) — identical to pristine: live() bypassed
+presence-opposite    rid=K01 caught=1 branch=token-presence
+    CENSUS_MISMATCH K01 presence:jadx does not state live value 'present'
+presence-unstated    rid=K01 caught=1 branch=token-presence
+    CENSUS_MISMATCH K01 presence:jadx does not state live value 'present'
+version-missing      rid=F05 caught=1 branch=token-presence
+    CENSUS_MISMATCH F05 version:npm --version does not state live value '4.5.6'
+import-opposite      rid=K02 caught=1 branch=token-presence
+    CENSUS_MISMATCH K02 import:pwn does not state live value 'imports'
+mcp-missing          rid=F06 caught=1 branch=token-presence
+    CENSUS_MISMATCH F06 mcp:None does not state live value 'rea-agents@9.9'
+listing-phantom      rid=F01 caught=1 branch=listing-phantom
+    CENSUS_MISMATCH F01 listing:skill_dir names absent entry gone.md
+skill-missing        rid=F02 caught=1 branch=token-presence
+    CENSUS_MISMATCH F02 skill:None does not state live value '7'
+pin-missing          rid=F04 caught=1 branch=token-presence
+    CENSUS_MISMATCH F04 pin:None does not state live value 'rea-agents@9.9'

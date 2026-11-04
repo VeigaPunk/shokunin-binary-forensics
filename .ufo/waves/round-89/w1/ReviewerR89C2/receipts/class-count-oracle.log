@@ -1,0 +1,22 @@
+$ env TMPDIR=/fast/scratch/hyaku/revenger-r89/ReviewerR89C2 PYTHONUTF8=1 /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/oracle_check.py /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/apk-r65/truth.json /fast/scratch/hyaku/revenger-r89/ReviewerR89C2/cases/class-count/corpus/live/runs/round-89/reviewer-forgery.json
+check ok: fixture sha256 05d2280f847497cf
+check ok: fixture size 947 bytes
+check ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']
+check ok: member byte lengths match the build recipe
+check ok: member digests match truth.json
+check ok: operation inspect_android_package
+check ok: provider id jadx
+check ok: provider version present
+check ok: evidence_id shape ev_<64 hex>
+check ok: subject digest == fixture sha256
+check ok: subject format apk
+check ok: package_name com.example.r65
+check ok: manifest declares versionCode="1"
+check ok: manifest declares versionName="1.0"
+check ok: manifest status complete
+check FAIL: class_count 1 != DEX class_defs_size 0
+check ok: resource_count == 3 members
+check ok: permissions empty
+check ok: signature_verification not_performed
+ORACLE FAIL (18/19 checks)
+EXIT=1

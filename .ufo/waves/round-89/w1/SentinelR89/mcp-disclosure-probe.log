@@ -1,0 +1,12 @@
+INSTRUMENT_SHA256=c3127ffc18a54f85f01e2fb88f50b5db694484588e5b7467ae5567ffdd3b648a
+MCP_ISOLATION_wrapped-valid=pass
+MCP_ISOLATION_flat-valid=pass
+MCP_ISOLATION_env-only-pin=pass
+MCP_ISOLATION_other-entry-only-pin=pass
+MCP_ISOLATION_missing-rea=pass
+MCP_FIELD_ACCESS=document.mcpServers,servers.rea,rea.args
+MCP_OUTPUT_text=pass
+MCP_OUTPUT_json=pass
+LIVE_MCP_CONFIG_OPENED=no
+HOST_PROCESSES_STARTED=no
+RESULT=pass

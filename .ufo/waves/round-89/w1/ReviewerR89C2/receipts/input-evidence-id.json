@@ -1,0 +1,25 @@
+{
+  "evidence_id": "ev_ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "normalized_result": {
+    "class_count": 0,
+    "manifest": {
+      "status": "complete",
+      "text": "<manifest package=\"com.example.r65\" versionCode=\"1\" versionName=\"1.0\" />"
+    },
+    "package_name": "com.example.r65",
+    "permissions": [],
+    "resource_count": 3,
+    "signature_verification": "not_performed"
+  },
+  "operation": "inspect_android_package",
+  "provider": {
+    "id": "jadx",
+    "version": "0.7.1"
+  },
+  "subject": {
+    "digest": {
+      "sha256": "05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e"
+    },
+    "format": "apk"
+  }
+}

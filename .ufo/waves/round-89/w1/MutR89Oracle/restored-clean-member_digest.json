@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/mutant-member_digest.py",
+    "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/truth.json",
+    "/fast/scratch/hyaku/revenger-r89/MutR89Oracle/record-clean.json"
+  ],
+  "cwd": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle",
+  "TMPDIR": "/fast/scratch/hyaku/revenger-r89/MutR89Oracle",
+  "timeout_seconds": 10,
+  "exit_code": 0,
+  "stdout": "check ok: fixture sha256 05d2280f847497cf\ncheck ok: fixture size 947 bytes\ncheck ok: member set ['AndroidManifest.xml', 'META-INF/MANIFEST.MF', 'classes.dex']\ncheck ok: member byte lengths match the build recipe\ncheck ok: member digests match truth.json\ncheck ok: operation inspect_android_package\ncheck ok: provider id jadx\ncheck ok: provider version present\ncheck ok: evidence_id shape ev_<64 hex>\ncheck ok: subject digest == fixture sha256\ncheck ok: subject format apk\ncheck ok: package_name com.example.r65\ncheck ok: manifest declares versionCode=\"1\"\ncheck ok: manifest declares versionName=\"1.0\"\ncheck ok: manifest status complete\ncheck ok: class_count == DEX class_defs_size (0)\ncheck ok: resource_count == 3 members\ncheck ok: permissions empty\ncheck ok: signature_verification not_performed\nORACLE OK (19/19 checks)\n",
+  "stderr": "",
+  "timed_out": false,
+  "label": "restored-clean-member_digest"
+}

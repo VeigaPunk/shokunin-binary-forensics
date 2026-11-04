@@ -1,0 +1,12 @@
+=== honest tree with HOME=/fast/scratch/.../emptyhome ===
+CENSUS_ROWS=18
+CENSUS_MISMATCH F01 listing:skill_dir does not state live value 'absent'
+CENSUS_MISMATCH F02 skill:skill does not state live value 'absent'
+CENSUS_MISMATCH F03 listing:references does not state live value 'absent'
+CENSUS_MISMATCH F05 pin:pin does not state live value 'absent'
+CENSUS_MISMATCH F07 mcp:rea does not state live value 'not registered'
+CENSUS_MISMATCH K03 mcp:rea does not state live value 'not registered'
+CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
+CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
+CENSUS_STALE_UNFLAGGED=8
+EXIT=1

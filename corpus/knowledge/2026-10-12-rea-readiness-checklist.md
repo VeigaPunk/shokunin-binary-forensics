@@ -44,3 +44,24 @@ Appended correction (host change since mint). Probes and outputs:
 and Unblob 26.6.x, which the host versions match; the firmware route is
 unprobed. Per Q05, presence is not readiness until an REA call against a
 known-truth fixture returns Evidence.
+
+## Re-verification 2026-11-04 (Linux host, this machine)
+
+The tables above are the unchanged 2026-10-12 record and its 2026-10-19
+correction. Every question below was re-probed on the Linux host on
+2026-11-04; the observed column is this host's output and the verdict states
+the current answer.
+
+| question | mint row | observed 2026-11-04 | verdict |
+|---|---|---|---|
+| K01 | rea CLI ABSENT | rea present, 6.7.0 | STALE -> present |
+| K02 | node v26.11.1 / npm 11.20.0 PRESENT | v24.21.0 / 11.19.0; skill pin `rea-agents@6.7.0` | STALE -> v24.21.0 / 11.19.0 |
+| K03 | REA MCP NOT registered | key `rea`, `rea-agents@6.7.0` | STALE -> registered |
+| K04 | ghidra / ida ABSENT | ghidra present at /usr/bin/ghidra; ida absent | STALE -> ghidra present, ida absent |
+| K05 | jadx / binwalk / unblob / pwntools ABSENT | jadx 1.5.6, binwalk 3.1.0, unblob 26.6.4, pwntools imports | STALE -> all four present |
+| K06 | archive tools present | UnZip 6.00, ZipInfo 3.00 | holds |
+
+`unblocks`, updated by observation only: REA's firmware guide names Binwalk
+3.1.x and Unblob 26.6.x, which the host versions match; the firmware route is
+still unprobed. The Android route now has a recorded producer run
+(`corpus/live/runs/round-89/`, round 89) — a record, not an admitted finding.

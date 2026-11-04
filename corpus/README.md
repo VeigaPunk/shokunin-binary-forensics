@@ -16,6 +16,11 @@ frontier it is working toward. Province: `PROVINCE.md`. Admission bar:
 - `live/runs/` — saved REA outputs, receipts and non-author reviews per historical round.
 - `verify_*.py` — saved-ledger replay verifiers (`--self-test`); census command in `SCORECARD.md` (C).
 - `snapshots/` — byte-exact committed copies of the specifications the APK entries cite (`ResourceTypes.h`, `APPNOTE.TXT`, `dex-format.html`, `rea-android-applications.md`); each digest is printed by the entry that cites it.
+- `audit_source_quotes.py` — committed fetch-receipt quote audit (`verify` / `chains` / `self-test`);
+  read-only over committed bytes, no network.
+- `census_reprobe.py` — host-readiness census re-probe (round 89, experimental, NOT admitted:
+  see `SKILL.md` §Gate registry for its measured limits); re-derives the 18 census rows from
+  the live host and prints `CENSUS_STALE_UNFLAGGED`.
 - `q15_tree_id_check.py` — Q15 tree-identity sentence checker (`--self-test`, `--scan`).
 - `derive_axml_anchors.py` — prints the `ResourceTypes.h` line numbers and enum values an APK entry cites, from the pinned snapshot.
 - `check_embedded_outputs.py` — embedded-output verbatim gate (`--entry`, `--self-test`); reads `embedded_output_pins.json`.

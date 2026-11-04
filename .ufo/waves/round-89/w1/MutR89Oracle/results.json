@@ -1,0 +1,99 @@
+{
+  "baseline_detector_passed": true,
+  "clean_mutants_all_accept": true,
+  "restored_outputs_exactly_match_pristine": true,
+  "cases": [
+    {
+      "case": "package_name",
+      "mutant": "package_name",
+      "frozen_exit": 1,
+      "frozen_verdict": "ORACLE FAIL (18/19 checks)",
+      "frozen_fail_lines": [
+        "check FAIL: package_name 'com.example.other' != authored 'com.example.r65'"
+      ],
+      "mutant_exit": 0,
+      "mutant_verdict": "ORACLE OK (18/18 checks)",
+      "mutant_fail_lines": [],
+      "restored_exit": 1,
+      "restored_verdict": "ORACLE FAIL (18/19 checks)",
+      "verdict": "KILLED"
+    },
+    {
+      "case": "subject_digest",
+      "mutant": "subject_digest",
+      "frozen_exit": 1,
+      "frozen_verdict": "ORACLE FAIL (18/19 checks)",
+      "frozen_fail_lines": [
+        "check FAIL: subject digest != the fixture bytes"
+      ],
+      "mutant_exit": 0,
+      "mutant_verdict": "ORACLE OK (18/18 checks)",
+      "mutant_fail_lines": [],
+      "restored_exit": 1,
+      "restored_verdict": "ORACLE FAIL (18/19 checks)",
+      "verdict": "KILLED"
+    },
+    {
+      "case": "class_count",
+      "mutant": "class_count",
+      "frozen_exit": 1,
+      "frozen_verdict": "ORACLE FAIL (18/19 checks)",
+      "frozen_fail_lines": [
+        "check FAIL: class_count 1 != DEX class_defs_size 0"
+      ],
+      "mutant_exit": 0,
+      "mutant_verdict": "ORACLE OK (18/18 checks)",
+      "mutant_fail_lines": [],
+      "restored_exit": 1,
+      "restored_verdict": "ORACLE FAIL (18/19 checks)",
+      "verdict": "KILLED"
+    },
+    {
+      "case": "evidence_id",
+      "mutant": "evidence_id",
+      "frozen_exit": 1,
+      "frozen_verdict": "ORACLE FAIL (18/19 checks)",
+      "frozen_fail_lines": [
+        "check FAIL: evidence_id 'ev_'"
+      ],
+      "mutant_exit": 0,
+      "mutant_verdict": "ORACLE OK (19/19 checks)",
+      "mutant_fail_lines": [],
+      "restored_exit": 1,
+      "restored_verdict": "ORACLE FAIL (18/19 checks)",
+      "verdict": "KILLED"
+    },
+    {
+      "case": "member_digest_record",
+      "mutant": "member_digest",
+      "frozen_exit": 1,
+      "frozen_verdict": "ORACLE FAIL (18/19 checks)",
+      "frozen_fail_lines": [
+        "check FAIL: package_name 'com.example.other' != authored 'com.example.r65'"
+      ],
+      "mutant_exit": 1,
+      "mutant_verdict": "ORACLE FAIL (17/18 checks)",
+      "mutant_fail_lines": [
+        "check FAIL: package_name 'com.example.other' != authored 'com.example.r65'"
+      ],
+      "restored_exit": 1,
+      "restored_verdict": "ORACLE FAIL (18/19 checks)",
+      "verdict": "SURVIVED (record-only detector; deleted premise check is irrelevant to this record rejection)"
+    },
+    {
+      "case": "member_digest_truth",
+      "mutant": "member_digest",
+      "frozen_exit": 1,
+      "frozen_verdict": "ORACLE FAIL (18/19 checks)",
+      "frozen_fail_lines": [
+        "check FAIL: a member digest disagrees with truth.json or is unrecorded"
+      ],
+      "mutant_exit": 0,
+      "mutant_verdict": "ORACLE OK (18/18 checks)",
+      "mutant_fail_lines": [],
+      "restored_exit": 1,
+      "restored_verdict": "ORACLE FAIL (18/19 checks)",
+      "verdict": "KILLED"
+    }
+  ]
+}

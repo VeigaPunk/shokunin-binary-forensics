@@ -1,0 +1,17 @@
+# C1 after-run (2026-11-04). Environment: reports/round-89/environment.log (this lane shell, HOME=/home/vgpnk, fnm multishell PATH).
+$ PYTHONUTF8=1 python3 -B corpus/census_reprobe.py --root .   # lane tree, appended ## Re-verification 2026-11-04
+CENSUS_ROWS=18
+CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
+CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
+CENSUS_STALE_UNFLAGGED=2
+EXIT=1
+
+# Same gate over the base knowledge archive for the before/after pair:
+$ PYTHONUTF8=1 python3 -B corpus/census_reprobe.py --root /fast/scratch/hyaku/revenger-r89/l1-probe/base
+CENSUS_MISMATCH K05 import:pwn does not state live value 'imports'
+CENSUS_STALE_UNFLAGGED=10
+EXIT=1
+
+# sha256 of the two census files after the append:
+20578964b6d7ca701377369938e34751716c68a0316c66b37ee5f9d71953e5ce  corpus/knowledge/seed.md
+698d110bd47e9ec32a3d6b8b67e80389f5780e91eea80f8f89f7d33e4ed61820  corpus/knowledge/2026-10-12-rea-readiness-checklist.md
