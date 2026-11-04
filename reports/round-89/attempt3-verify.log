@@ -1,0 +1,93 @@
+# Round-89 attempt-3 verification receipt (2026-11-04)
+
+Attempt 3 inherits a landed round: attempts 1-2 froze the two claims at
+`c84339c`, landed them at `6ce41aa`, adjudicated (`bd575ca`, `5f7ecce`) and
+filed the report with three post-filing notes. This receipt re-derives the
+report's declared counters on the committed bytes, independently of the wave
+seat reports, and records how attempt 3 resolved the inherited uncommitted
+wave-2 spec.
+
+Lane tip measured before this receipt:
+`46c170d17ca5178a2b019d5e65947812635406f3` (`git ls-remote origin
+refs/heads/main` printed the same hash; `jj-lane.sh state` local=remote,
+ahead=0). Environment: same host as `reports/round-89/environment.log`
+(HOME `/home/vgpnk`). Scratch: `/fast/scratch/hyaku/revenger-r89/a3`
+(removed after this receipt was copied into the lane).
+
+## 1. C1 freshness counter — frozen instrument `c3127ffc…648b`
+
+    $ PYTHONUTF8=1 python3 -B corpus/census_reprobe.py --root .
+    CENSUS_ROWS=18
+    CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
+    CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
+    CENSUS_STALE_UNFLAGGED=2
+    EXIT=1
+
+The residual is K04 only: one scored cell for two probes whose live states
+are opposite (ghidra present, ida absent). Target was 0; measured 2.
+
+## 2. C2 coverage counter — frozen F4 mapping `reports/round-81/f_probe4.py`
+
+    $ PYTHONUTF8=1 python3 -B reports/round-81/f_probe4.py corpus
+    {"analyze_javascript_application": 6, "compare_application_versions": 1, "compare_javascript_export_shapes": 3, "decode_interface_builder": 1, "extract_artifact": 3, "inspect_analysis_view": 1, "inspect_artifact": 5, "inspect_evm_interface": 7, "inspect_firmware_regions": 1, "inspect_keyed_archive": 1, "inspect_managed_artifact": 2, "inspect_managed_members": 1, "inspect_managed_native_boundaries": 1, "inspect_pe_certificates": 1, "inspect_pe_resources": 30, "inspect_sqlite_database": 1, "inspect_web_page": 1, "list_browser_targets": 1, "trace_application_feature": 2, "trace_dylib_resolution": 1, "trace_javascript_semantics": 2}
+    F4_COVERAGE=10/11 score=9.09
+    F4_FAMILIES=['archives', 'artifact-graph', 'browser-runtime', 'evm', 'firmware', 'javascript', 'managed', 'native-authenticode', 'native-static', 'sqlite']
+    EXIT=0
+
+The rejected android record sits outside the counted surface
+(`reports/round-89/rejected-android-record/`), so F4 is unchanged from base.
+
+## 3. C2 oracle over the preserved rejected record
+
+    $ PYTHONUTF8=1 python3 -B corpus/fixtures/apk-r65/oracle_check.py \
+        corpus/fixtures/apk-r65/truth.json \
+        reports/round-89/rejected-android-record/inspection.json
+    ORACLE OK (19/19 checks)
+    EXIT=0
+
+Green over the preserved bytes confirms the report's point: the oracle checks
+the record against the fixture, not its provenance.
+
+## 4. Instrument and record pins
+
+    $ sha256sum corpus/fixtures/apk-r65/oracle_check.py corpus/census_reprobe.py
+    44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53  corpus/fixtures/apk-r65/oracle_check.py
+    c3127ffc18a54f85f01e2fb88f50b5db694484588e5b7467ae5567ffdd3b648a  corpus/census_reprobe.py
+    $ sha256sum reports/round-89/rejected-android-record/inspection.json
+    01af3141d79027a3bae53b6482779d3e9c89446ab6ca09b408a6cb266f321c76  reports/round-89/rejected-android-record/inspection.json
+
+Both digests equal the pins in `reports/round-89/claims.md`; the record digest
+equals `reports/round-89/c2-after.log` (d).
+
+## 5. Source-census conformance gate
+
+    $ /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate \
+        --root /home/vgpnk/Projects/shokunin revenger
+revenger	W04	S429 duplicate url github.com/mrexodia/ida-pro-mcp across scopes
+revenger	W04	S430 duplicate url github.com/skylot/jadx across scopes
+revenger	W01	S437 tierC mined used-by=corpus/lessons/round-74.md
+revenger	ok	/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md
+    EXIT=0
+
+## Verdict (attempt 3, no frozen value changed)
+
+| counter | attempt-3 re-derivation | report value | frozen target | verdict |
+|---|---|---|---|---|
+| `CENSUS_STALE_UNFLAGGED` (findings) | 2 (K04 only), exit 1 | 2 | 0 | MISS (unchanged) |
+| `F4_COVERAGE` | 10/11 score=9.09, exit 0 | 10/11 | 11/11 | MISS / KILLED (unchanged) |
+| `ORACLE OK` over the preserved record | 19/19, exit 0 | 19/19 | 19/19 | nominal only (unchanged) |
+| instrument pins | match `claims.md` | match | — | unchanged |
+| source census | exit 0 | exit 0 | exit 0 | conformant |
+
+No predicate, target, kill rule or verdict was reopened or re-scored.
+
+## Inherited attempt-2 wave-2 spec — resolved, not dispatched
+
+`.ufo/waves/round-89/w2-spec.json`, `w2-dispatch.json` (10 spawn lanes, a
+written `swarm-registry.json`, empty `w2-validate.err`) were authored by
+attempt 2 and never dispatched: no `w2.ready` exists and no seat ran. Attempt 3
+discards them (untracked files removed; nothing from the spec is committed or
+cited as evidence) because the run-15 round shape is ONE v1 wave of 8-16 seats
+and w1 already carries 12: a 10-seat second wave would put the round at 22
+seats, outside the band, and policy v1's wave floor (8 spawn lanes) refuses a
+<=4-seat residual. The round total therefore stays 12.
