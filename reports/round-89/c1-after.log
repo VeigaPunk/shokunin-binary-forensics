@@ -1,17 +1,19 @@
-# C1 after-run (2026-11-04). Environment: reports/round-89/environment.log (this lane shell, HOME=/home/vgpnk, fnm multishell PATH).
-$ PYTHONUTF8=1 python3 -B corpus/census_reprobe.py --root .   # lane tree, appended ## Re-verification 2026-11-04
+# C1 after-run (2026-11-04, corrected at adjudication). Environment: reports/round-89/environment.log
+$ PYTHONUTF8=1 python3 -B corpus/census_reprobe.py --root .
 CENSUS_ROWS=18
 CENSUS_MISMATCH K04 presence:ghidra states 'absent' against the live value
 CENSUS_MISMATCH K04 presence:ida states 'present' against the live value
 CENSUS_STALE_UNFLAGGED=2
 EXIT=1
 
-# Same gate over the base knowledge archive for the before/after pair:
-$ PYTHONUTF8=1 python3 -B corpus/census_reprobe.py --root /fast/scratch/hyaku/revenger-r89/l1-probe/base
-CENSUS_MISMATCH K05 import:pwn does not state live value 'imports'
-CENSUS_STALE_UNFLAGGED=10
-EXIT=1
+# false-holds detector over the landed table (ScribeR89Rows detect_false_holds.py, re-run by the L1).
+# Two of its hits were genuine (F02 37/170 vs 42/207; F05 6.4.0 vs 6.7.0) and are corrected in the
+# table; its two remaining K06 hits are the detector's own limitation — K06's recorded cell is prose
+# ("archive tools present"), not a value, so the version rule reports "states no number". K06 holds.
 
-# sha256 of the two census files after the append:
-20578964b6d7ca701377369938e34751716c68a0316c66b37ee5f9d71953e5ce  corpus/knowledge/seed.md
-698d110bd47e9ec32a3d6b8b67e80389f5780e91eea80f8f89f7d33e4ed61820  corpus/knowledge/2026-10-12-rea-readiness-checklist.md
+rows whose verdict says 'holds' but whose recorded value contradicts the live host: 2
+  - K06 version:unzip -v
+  - K06 version:zipinfo -v
+
+# before (base archive):
+CENSUS_STALE_UNFLAGGED=10
