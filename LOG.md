@@ -1379,3 +1379,39 @@ no row, supports no claim).
 - **Measured at `--rev 0723ebd0`.** C1 `C1_VERDICT=pass`, `C1_K_HELD_BACKED=10/15` (K 9/15 → 10/15); battery `V2_KILLS=9/9`, `BATTERY_VERDICT=pass`. Both met on the frozen predicates; both contested by the critic's findings (`.ufo/waves/round-93/w1/CriticR93/findings.md`), routed to round 94.
 - **Corrections.** r92 votes are lane-internal gate seats (LEARNING.md), not non-author; the round-92 entry revision applied; S136 "see LEADS" pointer superseded by S497; the wrong `dotnet/ecma-335` URL in the brief replaced by the verified `dotnet/runtime` pinned URL.
 - **Evidence.** `corpus/lessons/round-93.md` (Gate, Mistakes M1–M5, census); `reports/round-93/c1-after.log`, `c2-after.log`, `battery-after-full.log`, `census-round-end.log`.
+
+## Round 94 (hyaku run 15, attempt 1) — C15 admitted through the v3 gate (coverage K 10/15 → 11/15); the r93 critic's closes frozen as v3 legs and battery classes (calibration)
+
+- **Freeze `060a8e8`** (claims, the v3 counter `reports/round-94/c1_k_admit_counter3.py`, the battery
+  `forge_battery3.py`, the controls and the red-before, all committed before any seat ran), wave
+  `revenger-r94-w1` (13 seats, one v1 wave, band 8–16; `.ufo/waves/round-94/w1-results.json`, no dead
+  seats), **landing `60b5e8e3`** (admission flip, README C15 → held, SOURCES S498/S499, three
+  digest-bound gate votes, quote receipts, SKILL probe rows), adjudication = the commit carrying this entry.
+- **C1 (coverage K, the lowest non-retired axis):** C15 `uncovered` → `held`, backed by
+  `corpus/knowledge/round-72-tool-landscape.md` re-grounded with two drift-check rows opened this round
+  (S498 = REA README re-open, S499 = REA installation docs re-open; both **no drift**, two independent
+  byte-identical fetches). `C1_VERDICT=pass` on the landing tree, `C1_K_HELD_BACKED=11/15`
+  (`reports/round-94/c1-after.log`). Do-nothing base fails (`controls/c1v3-do-nothing-base.log`, `C1_C15_HELD=fail`).
+- **C2 (calibration):** the v3 counter kills the ten frozen classes plus F19 and the ONLY-C15 control
+  (`V3_KILLS=12/12`); positive honest fixture passes with the real lint and embedded checker; the r93
+  battery still holds (`HOLD_R93_BATTERY=pass`); `BATTERY3_VERDICT=pass` (`reports/round-94/battery3-after-full.log`).
+  Red-before: the committed r93 attack scripts vs the frozen v2 counter, `V2_REACH_NEW=8/8 runnable +
+  1 receipt-backed` (`controls/battery3-red-v2.log`).
+- **Votes are lane-internal** (ReviewerGate, ReviewerBlind, CriticR94 — dispatched by this lane; LEARNING.md).
+  C1 is met on the frozen counter and **pending the non-author closure**; C2 likewise.
+- **Critic (CriticR94, 27 attacks):** the frozen twelve reproduce 12/12; 17 forgeries outside the frozen set
+  pass v3 — the sharpest is an indented second status line (H1, column-0 anchor), the fabricated-body
+  receipt (H2, `C1_QUOTES` checks internal consistency only), and C15 path substitution (H3). All routed to
+  r95 with their closes; none amends the frozen counter (kumitate r42).
+- **Mistakes mined:** `corpus/lessons/round-94.md` `## Mistakes` M1–M7 (reaped-scratch dependency in the
+  committed r93 driver; helper-copy omission; supersession depth fixed pre-freeze; the column-0 anchor
+  false green (open); gitignored pycache from a seat; the claims' nonexistent `C1_REGISTRY` leg (open,
+  routed); the claims' census count 15 vs measured 13).
+- **Sources:** rows 497 → 499 (S498, S499, mined, tier A, opened 2026-11-05, `used-by` the entry);
+  tier A 448 → 450; B 21, C 28 unchanged. Census round start exit 0 (21 W01 + 13 W04, 0 E); round end exit 0
+  (21 W01 + 13 W04, 0 E).
+- **considerthese proposal 2 re-measured** (`.ufo/waves/round-94/w1/ConnectorOverlap/measurement-r94.tsv`):
+  r90–r93 → 0 of 8 clean. Baseline recorded; not adopted (needs its own frozen predicate).
+- **Assimilation: none** (155 staged-id collisions; L0 `revenger | round-91` unanswered).
+- **Lane hygiene:** one gitignored `corpus/__pycache__` from a seat's un-flagged Python run removed (sentinel F1);
+  no host sysctl, sudo or pacman touched by any seat (sentinel audit).

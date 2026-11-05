@@ -1788,3 +1788,41 @@ frozen counters stay frozen (kumitate r42 rule).
 Routed forward: successor counters (r94); the considerthese proposal-2 measurement (8/8 over r89–r92 —
 `ConnectorOverlap/measurement.tsv`), to be re-measured in r94; assimilation (L0 `revenger | round-91`
 unanswered; 155/155 id collisions).
+
+## Round 94 (hyaku run 15, attempt 1) — C15 admitted through the v3 gate (coverage K); the r93 critic's closes frozen as v3 legs and battery classes (calibration)
+
+Base `9876cb38c5415fbc86336a26a68e05680c397fd5`; freeze `060a8e87d6de6b31f91b58524ab0fcad88ae5431`
+(claims, counter, battery, controls, red-before — committed before any seat ran); landing
+`60b5e8e36325b3decdc8ce46041216cdafd1166e`; adjudication = the commit carrying this section. Claims and
+predicates: `reports/round-94/claims.md`, unchanged since the freeze. Votes are lane-internal (see
+`corpus/lessons/round-94.md` authorship note): both verdicts are **met on the frozen counter, pending the
+non-author closure**.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — knowledge-map ground K (C1; the lowest non-retired axis) | `K_HELD_BACKED` **10/15 (6.7) → 11/15 (7.3)**; C15 `uncovered` → `held` | `PYTHONUTF8=1 python3 -B reports/round-94/c1_k_admit_counter3.py --rev 60b5e8e36325b3decdc8ce46041216cdafd1166e` → `C1_VERDICT=pass`, `C1_K_HELD_BACKED=11/15`, exit 0 (`reports/round-94/c1-after.log`); do-nothing base `--rev 9876cb38…` → `C1_C15_HELD=fail`, exit 1 | `9876cb38` → `060a8e8` (freeze) → `60b5e8e3` (landing) | **met on frozen counter; pending non-author closure.** Contested: critic H2 (receipts' fetch honesty unchecked), H3 (C15 cell substring), W3/W12 wording routed to r95 |
+| calibration — the counters' reach over routed forgery classes (C2) | red: frozen v2 counter reaches 8/8 runnable classes + 1 receipt-backed (`V2_REACH_NEW=8/8`, `controls/battery3-red-v2.log`) → v3 `V3_KILLS` **12/12** | `PYTHONUTF8=1 python3 -B reports/round-94/forge_battery3.py --stage full` → `BATTERY3_VERDICT=pass`, exit 0 (`reports/round-94/battery3-after-full.log`); `HOLD_R93_BATTERY=pass` | same | **met on frozen predicate; pending non-author closure.** Contested: 17 residual critic vectors pass v3 (H1 indented status line; H2; H3; M1–M10 incl. M4 `\s*` anchor) — routed to r95, not admitted as closed |
+| coverage — other criteria (no claim) | F4 11/11, M 3/3, A1 3/3, A1v2 5/5 unchanged; map rows 15 | `reports/round-81/f_probe4.py corpus`, `reports/round-85/mg_probe.py`, `reports/round-84/ag_probe2.py` (base holds; not re-run at landing) | `9876cb38` | unchanged holds |
+| freshness | the two registered sources S054/S075 re-opened against live main (S498/S499): **no drift**, two byte-identical receipts | `sha256sum` of `reports/round-94/quote-receipts/raw/S498.body` and `S499.body`; `ExecReceipts/fetch-sha-compare.md` | `60b5e8e3` | improved (receipt-backed); fetch honesty is not machine-checked (critic H2) |
+| depth / operability / adjacency | no claim; `SKILL.md` gains two probe rows; `PROVINCE.md` and `corpus/QUALITY.md` byte-unchanged (`git diff --stat 9876cb38..60b5e8e3 -- PROVINCE.md corpus/QUALITY.md` empty) | the same diff command | `60b5e8e3` | unchanged (no harm observed) |
+
+**Learning trends (non-author-pending):** expansion **improved** (one admitted entry on
+previously uncovered ground, C15); quality **improved** (dated drift check of both registered sources,
+receipt-backed; contested as above); discernment **improved on the frozen predicate** (12/12 frozen
+classes killed against 8/8 runnable reach; contested by 17 residual vectors, routed). Verdicts pending
+the non-author closure per LEARNING.md.
+
+**Capabilities:** none added (both instruments are probes registered in `SKILL.md`, not gates).
+
+**Sources:** rows 497 → 499 (S498, S499; mined, tier A, opened 2026-11-05). Census round start exit 0
+(21 W01 + 13 W04, 0 E); round end exit 0 (21 W01 + 13 W04, 0 E) (`reports/round-94/controls/census-round-{start,end}.log`).
+
+**Routed to r95:** (1) the column-0 anchor false green (critic H1: `  admission-status:` indented) — close:
+`\s*admission-status\s*:` case-insensitive over the file; (2) C1_QUOTES checks internal consistency only
+(H2) — close: `fetched_at == 2026-11-05`, `http_status == 200`, host allowlist, committed fetch log re-hashed;
+(3) the C15 cell substring (H3) — close: exact file set; (4) the registry check is not its own leg
+(M6/W1) — split with a red-before and a battery class; (5) M2 `\s*` S-id regex and the n/a-reason
+vocabulary (M5, M6); (6) the `-B` spec-template fix for seat Python calls (M5); (7) the non-author closure.
+
+**planned:** r95 — C1 v4 successor counter with the routed closes above as frozen predicates (on a new
+round's freeze), and the non-author verifier path for C15 (outside the lane's wave).
