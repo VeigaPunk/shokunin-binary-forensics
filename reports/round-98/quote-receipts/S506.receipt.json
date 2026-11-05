@@ -1,0 +1,15 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S506",
+ "verdict": "verified",
+ "fetch_url": "https://raw.githubusercontent.com/morluto/rea/12f6e0974cc0db0b3a9b86246accc76556837222/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md",
+ "http_status": 200,
+ "fetched_at": "2026-11-05",
+ "fetch_sha256": "ce2d122b873fb84d98cdb56afd84a34ee8de362b65760855838dfb29c2282e50",
+ "length": 16650,
+ "quote": "Static JavaScript and ordinary ZIP inventory need neither Hopper nor Ghidra.",
+ "span": {
+  "start": 7126,
+  "end": 7202
+ }
+}

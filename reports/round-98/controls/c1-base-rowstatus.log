@@ -1,0 +1,20 @@
+# command: git -C /home/vgpnk/Projects/shokunin/revenger-shokunin show 34c56f9f324723cafd56fd57d718065b2ad2da66:corpus/README.md | grep -E '^\| C[0-9]{2} \|' | awk -F'|' '{s=$6; gsub(/ /,"",s); print $2, s}'
+ C01  held
+ C02  held
+ C03  held
+ C04  held
+ C05  uncovered
+ C06  held
+ C07  held
+ C08  held
+ C09  held
+ C10  held
+ C11  held
+ C12  held
+ C13  held
+ C14  partial
+ C15  held
+# held count:
+     13 held
+      1 partial
+      1 uncovered
