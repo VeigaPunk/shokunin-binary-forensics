@@ -1,0 +1,141 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r96-w1",
+  "createdAt": "2026-11-05T18:46:11.605Z",
+  "updatedAt": "2026-11-05T18:46:11.605Z",
+  "reportDir": ".ufo/waves/round-96/w1",
+  "members": {
+    "ScoutReopen": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Re-open the frozen S502/S503 receipts and the S504 record"
+    },
+    "ScribeLesson": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Draft the round-96 lesson Frontier section and S-row teaches"
+    },
+    "ExecSession": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Reproduce the native-session legs on this host"
+    },
+    "ExecReceipts": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Verify the committed quote-receipt chain"
+    },
+    "ExecBattery": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Reproduce the frozen counter5/battery5 from the freeze commit"
+    },
+    "ExecFrozen": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Hold legs: frozen r95 instruments and the held probes over the freeze archive"
+    },
+    "ReviewerGate": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Gate vote on the candidate entry"
+    },
+    "ReviewerBlind": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Blind derivation vote from record and sources"
+    },
+    "CriticR96": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Held-out attacks on the v5 counter and the C02 entry"
+    },
+    "MutationR96": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Mutate the v5 counter; each mutant must die on the frozen self-test"
+    },
+    "ConnectorOverlap": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Sibling overlap scan + assimilation collision re-check"
+    },
+    "SentinelScope": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Scope and hygiene audit of the wave and the freeze commit"
+    }
+  }
+}

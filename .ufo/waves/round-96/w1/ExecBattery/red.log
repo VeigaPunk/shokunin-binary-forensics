@@ -1,0 +1,7 @@
+V4_REACH_NEW=3/3
+  A4-shadow-admitted: v4 reach
+  A3-usedby-extra: v4 reach
+  M8-pycache-frozen-dir: v4 reach
+V4_SELFTEST_UNCOVERED_LEGS=C1_ROWS_TOTAL,C1_TRIO,C1_LINT,C1_EMBEDDED,C1_QUOTES,C1_K_HELD_BACKED
+V4_SELFTEST_UNCOVERED=6/6
+RED_V4_VERDICT=pass

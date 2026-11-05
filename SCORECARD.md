@@ -1861,3 +1861,46 @@ start `reports/round-95/controls/census-round-start.log` rc 0; round end: rc 0, 
 **Routed to r96:** (1) a leg that rejects any `corpus/knowledge/*.md` outside the coverage-row union whose bytes carry an admission-status match (critic A4); (2) strict used-by exclusivity for new rows (critic A3-both); (3) a per-delta receipt for each of the 22 self-test deltas and a stub-prints-the-pass-line control (connector finding); (4) legs C1_ROWS_TOTAL, C1_TRIO, C1_LINT, C1_EMBEDDED, C1_QUOTES, C1_K_HELD_BACKED given a discriminating forged delta each (MutationR95); (5) `C1_PYCACHE` covers every frozen round directory the counter reads (M8); (6) the non-author re-fetch and closure for S500/S501.
 
 **planned:** r96 — coverage K: the next admissible C-row through the v4 gate with a non-author vote path; calibration: the routed items (1)–(5) as frozen predicates on a new freeze.
+
+## Round 96 (hyaku run 15, attempt 1) — C1 NOT VERIFIED (honest miss: the frozen v5 counter's used-by exclusivity leg fails on the real tree; C02 admission withheld, K 12/15 unchanged); C2 met on its frozen predicate, contested (the v5 battery reaches the routed vectors and closes the self-test coverage gap)
+
+Base `2875b9c9fa4cc15fd5a8ff991f04cdd0417bec97`; freeze `ff767436feed32cf2f4074f05f938f8cea98e69a` (claims,
+counter, battery, controls, per-delta receipts, red-before, candidate entry, record, S502/S503 receipts); landing =
+the commit carrying this section (its hash in the report); measured at the landing with `--rev` and on the working tree
+before landing (`reports/round-96/c1-tree-flip-diagnostic.log`, `c1-tree-landed-state.log`). Wave: one v1 wave, 12 seats,
+all settled, no dead seats; the orchestrator kernel restarted mid-wave, so seat output was not retained — the seat report
+files under `.ufo/waves/round-96/w1/` are the evidence. Votes are lane-internal (ReviewerGate, ReviewerBlind, CriticR96);
+all three bind digest `2f7d4c1b…`. Claims and predicates: `reports/round-96/claims.md`, unchanged since the freeze.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — knowledge-map ground K (C1; the lowest owned criterion) | `K_HELD_BACKED` **12/15 (8.0) → 12/15 (8.0)**; C02 stays `partial` | `PYTHONUTF8=1 python3 -B reports/round-96/c1_k_admit_counter5.py --tree <landing tree>` → `C1_VERDICT=fail`, `C1_K_HELD_BACKED=12/15`, failing legs `C1_C02_HELD`, `C1_C02_CITES`, `C1_ONLY_C02`, `C1_ADMITTED`, `C1_SOURCES`, `C1_K_HELD_BACKED` (`reports/round-96/c1-tree-landed-state.log`, rc 1) | `2875b9c` → `ff76743` (freeze) → landing | **NOT VERIFIED (honest miss, §9).** With the admission flip applied the counter passes 17 of its 18 legs (`reports/round-96/c1-tree-flip-diagnostic.log`, `grep -E '^C1_[A-Z0-9_]+=(pass|fail)$'`); the single failure is `C1_SOURCES` usedby-exclusivity: the leg compares used-by to the fixture-form `knowledge/round-96-…md` while the census form is `corpus/knowledge/…` (lesson M5). Flip withheld; the frozen counter is not edited |
+| calibration — the counter's reach over routed vectors and the self-test coverage gap (C2) | red `reports/round-96/controls/battery5-red-v4.log`: frozen v4 `V4_REACH_NEW=3/3`, `V4_SELFTEST_UNCOVERED=6/6` → after `controls/battery5-full.log`: `V5_KILLS=3/3`, `DELTA_RECEIPTS=31/31`, `MUTANT_V5_REGISTRY_KILLED=pass`, `STUB_REJECTED=pass`, `HOLD_R95_BATTERY=pass`, `BATTERY5_VERDICT=pass` | `PYTHONUTF8=1 python3 -B reports/round-96/forge_battery5.py --stage full` → `BATTERY5_VERDICT=pass`, rc 0; red `--stage red-v4` → `RED_V4_VERDICT=pass` | red `battery5-red-v4.log`; after `battery5-full.log` (and the landing re-run in the adjudication commit) | **met on the frozen predicate; contested.** Post-landing, the critic (CriticR96, 19 forgeries) found 13 counter PASSES: F1 a decorated admitted line passes `C1_ADMITTED_UNION` (the leg's `$` anchor; lesson M6), F2–F4 union scan non-recursive/case-sensitive/undecodable-skipping, F5 a vote artifact that is an HTML comment, F6 symlink into a sibling dir, F7 sid spacing/case, F8 loose `.pyc`, F9 quote↔anchor unbound, F10 URL cell unread, F11 derivation table unverified, F13/F14 minor. MutationR96: `d-host` (host allowlist) SURVIVES (no delta covers it; not in the frozen predicate). The M5 real-tree defect is the new, larger finding: the fixture hid it. All routed to r97 with receipts (`.ufo/waves/round-96/w1/CriticR96/`, `MutationR96/mutants.md`); none amends the frozen predicate |
+| coverage / calibration — other criteria (no claim) | F4 11/11, M 3/3, A1v2 5/5, SELFTEST_C1V4=pass legs=24, BATTERY4_VERDICT=pass, HOLD_R94_BATTERY=pass | `ExecFrozen/holds.log` (freeze-archive probes; the frozen r95 instruments re-run green) | `ff76743` | unchanged holds |
+| freshness / depth / operability / adjacency | no claim; PROVINCE and QUALITY byte-unchanged; S502/S503 re-fetched with the pinned-body drift disclosed; no install | `git diff --stat 2875b9c..landing -- PROVINCE.md corpus/QUALITY.md` (empty) | landing | unchanged (no harm observed) |
+
+Trend verdicts (LEARNING.md; lane-internal votes, no non-author check yet): expansion **unchanged** (no admitted entry);
+quality **unchanged** (the candidate entry's two sources are opened and receipted, but nothing admitted moved); discernment
+**unchanged** (the gate caught its own defect — the honest miss is the gate working; the critic's forgeries show the counter's
+reach is narrower than its admission role, routed).
+
+Capabilities: none added (the v5 counter and battery are registered probes in `SKILL.md`; the C02 native-session route
+is demonstrated on this host by `ExecSession` — a post-freeze re-run, recorded in the lesson — but its row enters the
+capabilities table only through an admitted round).
+
+Sources: rows 501 → 504 (S502, S503, S504; mined, tier A, opened 2026-11-05, used-by the candidate entry exactly). Census
+round start exit 0; landing-tree exit 0 (`controls/census-landing-tree.log`).
+
+Mistakes mined (`corpus/lessons/round-96.md` `## Mistakes` M1–M6): fixture-constant drift, materialization blindness,
+parser self-disarm (each shown able to fail pre-freeze), the index gap (routed), the real-tree used-by mismatch (the
+miss), and the decorated-admitted-line evasion (routed).
+
+**Routed to r97:** (1) counter v6 on a new freeze — the used-by normalizer accepts the census form (M5) with a red-before on a
+corpus-prefixed fixture; the `$`-free union anchor and a decorated delta (M6); critic F2–F14; the `d-host` delta. (2) C02
+admission on v6 with the same entry bytes (digest `2f7d4c1b…`, so the three votes remain valid) and the non-author closure.
+(3) M4 index-or-reject `claude-red-re-bridge.md`. (4) `considerthese/`: the standing receipt practice (controls/per-delta) is
+kept; no new proposal adopted.
+
+**planned:** r97 — coverage K: C02 through the v6 gate (if v6 passes its red-before and the non-author closure is named); calibration: the routed critic closes as frozen v6 legs and vectors.
+
+**Stale-lane:** the driver launch for r96 is the L1's only open mission; progressing (lane commits and wave writes since launch).

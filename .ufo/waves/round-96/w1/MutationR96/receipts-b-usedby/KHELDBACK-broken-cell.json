@@ -1,0 +1,11 @@
+{
+ "delta": "KHELDBACK-broken-cell",
+ "expected_leg": "C1_K_HELD_BACKED",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_ONLY_C02",
+  "C1_K_HELD_BACKED",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

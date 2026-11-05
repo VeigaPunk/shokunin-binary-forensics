@@ -1,0 +1,7 @@
+{
+ "delta": "A3-usedby-extra",
+ "expected_leg": "C1_SOURCES",
+ "observed_rc": 0,
+ "failing_legs": [],
+ "decide": false
+}

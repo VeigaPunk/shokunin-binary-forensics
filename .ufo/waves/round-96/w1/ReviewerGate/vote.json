@@ -1,0 +1,34 @@
+{
+ "seat": "ReviewerGate",
+ "role": "reviewer",
+ "candidate_sha256": "2f7d4c1b754d812102563869b511a746c7c49750d8cc42859b2a6466d776d923",
+ "decisions": {
+  "Q01": "PASS",
+  "Q02": "PASS",
+  "Q03": "PASS",
+  "Q04": "PASS",
+  "Q05": "PASS",
+  "Q06": "PASS",
+  "Q07": "n/a",
+  "Q08": "n/a",
+  "Q09": "PASS",
+  "Q10": "PASS",
+  "Q11": "PASS",
+  "Q12": "n/a",
+  "Q13": "n/a",
+  "Q14": "PASS",
+  "Q15": "n/a",
+  "Q16": "PASS",
+  "Q17": "n/a"
+ },
+ "notes": {
+  "Q07": "No parser-behavior prediction or unreproduced cause is offered by this entry; the expected decompiled body is an authored-bytes premise covered under Q03 and Q06 rather than a Q07 hypothesis.",
+  "Q08": "Historical criterion superseded by Q11, which was applied in full during this audit; see Q11 in gate-evidence.md for the derivation-table re-run results.",
+  "Q12": "No rejected registry row is load-bearing for this entry's claims and no reject reason or flip is cited; see Q12 in corpus/QUALITY.md.",
+  "Q13": "No verifier command is credited as mutation-guarding any clause of this entry; the recheck lines name re-derivation targets only, per Q13 in corpus/QUALITY.md.",
+  "Q15": "No git object id or tree identity sentence is asserted anywhere in this entry, so the Q15 re-derivation duty has no object to apply to.",
+  "Q17": "No adjudication relocated a cited artifact for this entry, so no Q17 citation sweep or dated correction is owed; see Q17."
+ },
+ "artifact_path": ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+ "artifact_sha256": "fee94694022733df24c0a0d3713d5ce16a1431cddbd40b032ba789fb73ae761b"
+}

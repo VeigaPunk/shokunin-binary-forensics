@@ -1,0 +1,34 @@
+{
+  "seat": "ReviewerBlind",
+  "role": "reviewer",
+  "candidate_sha256": "2f7d4c1b754d812102563869b511a746c7c49750d8cc42859b2a6466d776d923",
+  "decisions": {
+    "Q01": "PASS",
+    "Q02": "PASS",
+    "Q03": "PASS",
+    "Q04": "PASS",
+    "Q05": "PASS",
+    "Q06": "PASS",
+    "Q07": "n/a",
+    "Q08": "n/a",
+    "Q09": "PASS",
+    "Q10": "PASS",
+    "Q11": "PASS",
+    "Q12": "n/a",
+    "Q13": "n/a",
+    "Q14": "PASS",
+    "Q15": "n/a",
+    "Q16": "PASS",
+    "Q17": "n/a"
+  },
+  "notes": {
+    "Q07": "No parser-behavior prediction or pre-registered hypothesis is offered in this entry; cross-reference Q07 in corpus/QUALITY.md for the criterion.",
+    "Q08": "Historical criterion superseded by Q11, which this review applied directly to the derivation table; cross-reference Q08 in corpus/QUALITY.md.",
+    "Q12": "No rejected registry row is load-bearing for the entry's coverage claims; cross-reference Q12 in corpus/QUALITY.md for the criterion.",
+    "Q13": "No verifier command is credited as mutation-guarding the entry's prose; cross-reference Q13 in corpus/QUALITY.md for the criterion.",
+    "Q15": "No lane-tree git identity sentence is asserted anywhere in this entry; cross-reference Q15 in corpus/QUALITY.md for the criterion.",
+    "Q17": "No adjudication relocated a cited artifact for this entry's claims; cross-reference Q17 in corpus/QUALITY.md for the criterion."
+  },
+  "artifact_path": ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+  "artifact_sha256": "020a2a7a805f850e98dd36a0974cd0df367ccfc4e4819973d378d8a1a9df20ca"
+}

@@ -1,0 +1,9 @@
+{
+ "delta": "FG03-shadow-uppercase-ext",
+ "expected": "pass",
+ "observed_verdict": "pass",
+ "observed_failing_legs": [],
+ "rc": 0,
+ "decided": true,
+ "digest": "2f7d4c1b754d812102563869b511a746c7c49750d8cc42859b2a6466d776d923"
+}

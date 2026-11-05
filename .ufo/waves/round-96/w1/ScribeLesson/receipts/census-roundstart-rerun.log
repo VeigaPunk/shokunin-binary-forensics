@@ -1,0 +1,24 @@
+# Receipt 1 — census round-start log vs a live re-run of the same driver command
+# date: 2026-11-05 ; lane: revenger-shokunin ; all python3 -B (no python needed here)
+
+$ sed -n '1p;35p' reports/round-96/controls/census-round-start.log
+revenger	W04	S024 duplicate url www.rfc-editor.org/rfc/rfc3227.txt across scopes
+revenger	ok	/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md
+
+$ awk -F'\t' '{print $2}' reports/round-96/controls/census-round-start.log | sort | uniq -c
+      1 ok
+     21 W01
+     13 W04
+
+$ grep -c 'rc=' reports/round-96/controls/census-round-start.log
+0
+0
+(0 => the r96 receipt carries NO literal rc= line; the r95 receipt does:)
+rc=0
+
+$ bash /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --today 2026-11-05 --root /home/vgpnk/Projects/shokunin revenger ; echo rc=$?
+rc=0
+      1 ok
+     21 W01
+     13 W04
+revenger	ok	/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md

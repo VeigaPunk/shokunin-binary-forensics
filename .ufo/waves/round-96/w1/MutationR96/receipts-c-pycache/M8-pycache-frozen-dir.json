@@ -1,0 +1,7 @@
+{
+ "delta": "M8-pycache-frozen-dir",
+ "expected_leg": "C1_PYCACHE",
+ "observed_rc": 0,
+ "failing_legs": [],
+ "decide": false
+}

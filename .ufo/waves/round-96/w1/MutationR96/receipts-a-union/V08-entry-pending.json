@@ -1,0 +1,10 @@
+{
+ "delta": "V08-entry-pending",
+ "expected_leg": "C1_C02_CITES",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_C02_CITES",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

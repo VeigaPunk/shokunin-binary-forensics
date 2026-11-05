@@ -1,0 +1,13 @@
+{
+ "delta": "FG14-trio-line-shift",
+ "expected": "fail:C1_TRIO",
+ "observed_verdict": "fail",
+ "observed_failing_legs": [
+  "C1_TRIO",
+  "C1_LINT",
+  "C1_VERDICT"
+ ],
+ "rc": 1,
+ "decided": true,
+ "digest": "2f7d4c1b754d812102563869b511a746c7c49750d8cc42859b2a6466d776d923"
+}

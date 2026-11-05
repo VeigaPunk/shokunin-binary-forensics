@@ -1,0 +1,38 @@
+# Receipt 3 — located quotes for the Gate sources block (char offsets are the receipts' own basis)
+# date 2026-11-05 ; python3 -B ; read-only over committed bytes
+
+## S502 — reports/round-96/quote-receipts/raw/S502.body (38167 B / 38165 chars; sha256 c818ee34…3cc24)
+$ python3 -B: locate the receipt quote and the two boundary sentences
+receipt quote  : chars 26309-26411 | body lines 425-425 | words 12
+   'rea decompile <path> --file-offset=0x... --provider ghidra` resolves the source byte offset internally'
+Native targets : chars 17777-17942 | body lines 290-292 | words 20
+   'Addresses and recovered pseudocode are analysis observations,\nnot original source. Provider unavailability and unsupported metadata remain\nunknown rather than false.'
+CLI decompile  : chars 26207-26269 | body lines 425-425 | words 6
+   'For Ghidra decompilation, `procedure_pseudo_code` also accepts'
+symbols win    : chars 26508-26589 | body lines 425-425 | words 11
+   'Existing symbols and analysis addresses win; multiple mappings fail as ambiguous.'
+
+## S503 — reports/round-96/quote-receipts/raw/S503.body (35095 B; sha256 b5f17fdf…96ccc)
+receipt quote: chars 257-389 | body line 3 | words 17
+   'Use shipped-artifact or requested runtime evidence to explain features, compare versions, decompile code, or guide a reconstruction.'
+
+## S504 — corpus/live/runs/round-96/codeable-decompiled.c (saved decompiled body; sha256 d717b491…afc9d)
+     1	program_name=fixture.exe
+     2	image_base=140000000
+     3	function_count=1
+     4	// ==== FUNC entry @ 140001000 ====
+     5	
+     6	undefined8 entry(void)
+     7	
+     8	{
+     9	  return 0x2a;
+    10	}
+    11	
+    12	
+    13	
+    14	// decompiled_ok=1 of 1
+
+## word counts under the lane's whitespace-split rule
+S502: 12 words (<=25: True)
+S503: 17 words (<=25: True)
+S504: 6 words (<=25: True)

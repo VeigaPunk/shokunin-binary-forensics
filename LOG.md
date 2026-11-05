@@ -1446,3 +1446,28 @@ no row, supports no claim).
 - **Lane hygiene:** an inline debug session wrote `reports/round-94/__pycache__/…pyc` without `-B` (gitignored); removed
   (M8). The fleet-root `evb.ts` the sentinel reported is absent at the sweep; no revenger-attributable fleet-root file.
 - **Assimilation: none** (155 staged-id collisions; L0 `revenger | round-91` unanswered).
+
+## Round 96 (hyaku run 15, attempt 1) — C1 NOT VERIFIED (honest miss; C02 admission withheld on the frozen v5 counter's used-by leg); C2 met on its frozen predicate, contested
+
+- **Freeze `ff76743`** (claims `reports/round-96/claims.md`, counter `reports/round-96/c1_k_admit_counter5.py`, battery
+  `reports/round-96/forge_battery5.py`, controls and 31 per-delta receipts, red-before, the C02 candidate
+  `corpus/knowledge/round-96-native-analysis-sessions.md`, the session record `corpus/live/runs/round-96/`, S502/S503 receipts).
+  Base `2875b9c`.
+- **Motivating evidence:** the round-95 non-author spot-check (`corpus/lessons/round-95-verifier-spotcheck.md`) routed §5
+  items 1–5; the frozen v4 counter passes the three NEW vectors (`V4_REACH_NEW=3/3`) and leaves six legs without a
+  discriminating delta (`V4_SELFTEST_UNCOVERED=6/6`). The v5 battery closes both (`BATTERY5_VERDICT=pass`, `V5_KILLS=3/3`,
+  `DELTA_RECEIPTS=31/31`).
+- **C1 miss:** with the C02 admission flip applied, the frozen counter fails one of its 18 legs, `C1_SOURCES`, because its
+  used-by exclusivity compares against the fixture-form path while the census form is `corpus/knowledge/…`
+  (`reports/round-96/c1-tree-flip-diagnostic.log`). The flip is withheld; the entry stays `candidate`; the C02 row stays
+  `partial`; K 12/15 unchanged. Lesson M5.
+- **Votes:** `reports/round-96/votes/{ReviewerGate,ReviewerBlind,CriticR96}.json` (lane-internal), digest `2f7d4c1b…`,
+  11 PASS each; they stay valid for a successor round because the entry bytes are unchanged.
+- **Critic (CriticR96):** 19 fresh forgeries against the frozen counter; 13 PASS (F1–F14 incl. the decorated admitted line F1,
+  F2–F4 union-scan gaps, F5 HTML-comment vote artifact); entry audit found no scope overreach (E-1/E-2/E-3 minor).
+- **Post-freeze:** `ExecSession` re-ran `rea decompile` on this host: the Evidence ID is identical to the frozen
+  `ev_cc0b9d88…` and the record is byte-identical (`.ufo/waves/round-96/w1/ExecSession/rea-diff.txt` empty). Recorded here;
+  the frozen entry bytes are not edited.
+- **Sources:** rows 501 → 504 (S502, S503, S504; mined, tier A, opened 2026-11-05, used-by the candidate entry). Census round
+  start exit 0; landing-tree exit 0.
+- **Assimilation: none** (155 staged-id collisions re-verified by ConnectorOverlap; L0 `revenger | round-91` unanswered).

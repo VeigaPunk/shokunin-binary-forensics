@@ -1,0 +1,9 @@
+2f7d4c1b754d812102563869b511a746c7c49750d8cc42859b2a6466d776d923
+command (from lane root /home/vgpnk/Projects/shokunin/revenger-shokunin):
+PYTHONUTF8=1 python3 -B -c "import hashlib,re;t=open('corpus/knowledge/round-96-native-analysis-sessions.md',encoding='utf-8').read();n=re.sub(r'(?im)^\s*admission-status\s*:.*$','admission-status: candidate',t);print(hashlib.sha256(n.encode('utf-8')).hexdigest())"
+output:
+2f7d4c1b754d812102563869b511a746c7c49750d8cc42859b2a6466d776d923
+working-tree bytes vs freeze commit bytes:
+sha256sum corpus/knowledge/round-96-native-analysis-sessions.md -> 2f7d4c1b754d812102563869b511a746c7c49750d8cc42859b2a6466d776d923
+git show ff767436feed32cf2f4074f05f938f8cea98e69a:corpus/knowledge/round-96-native-analysis-sessions.md | sha256sum -> 2f7d4c1b754d812102563869b511a746c7c49750d8cc42859b2a6466d776d923
+entry bytes sha256 == normalize-then-hash == frozen digest; working tree == freeze commit ff767436feed32cf2f4074f05f938f8cea98e69a

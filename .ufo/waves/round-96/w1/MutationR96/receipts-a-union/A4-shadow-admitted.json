@@ -1,0 +1,7 @@
+{
+ "delta": "A4-shadow-admitted",
+ "expected_leg": "C1_ADMITTED_UNION",
+ "observed_rc": 0,
+ "failing_legs": [],
+ "decide": false
+}

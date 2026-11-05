@@ -1,0 +1,99 @@
+openjdk version "21.0.13" 2026-10-20
+OpenJDK Runtime Environment (build 21.0.13+9)
+OpenJDK 64-Bit Server VM (build 21.0.13+9, mixed mode)
+INFO  Using log config file: jar:file:/home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: /home/vgpnk/.config/ghidra/ghidra_12.1.4_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: /home/vgpnk/.config/ghidra/ghidra_12.1.4_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (437 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (1076 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /fast/scratch/hyaku/revenger-r96/ExecSession
+    /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/vgpnk/.config/ghidra/ghidra_12.1.4_PUBLIC/Extensions/ghidra-emotionengine-reloaded/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating temporary project: /fast/scratch/hyaku/revenger-r96/ExecSession/ghidra-proj/rev96repro (HeadlessAnalyzer)  
+INFO  Creating project: /fast/scratch/hyaku/revenger-r96/ExecSession/ghidra-proj/rev96repro (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: /fast/scratch/hyaku/revenger-r96/ExecSession/ghidra-proj/rev96repro (HeadlessAnalyzer)  
+INFO  IMPORTING: file:///home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/pe-r75-headless-smoke/fixture.exe (HeadlessAnalyzer)  
+INFO  Using Loader: Portable Executable (PE) (ProgramLoader)  
+INFO  Using Language/Compiler: x86:LE:64:default:windows (ProgramLoader)  
+INFO  Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib64] (ProgramLoader)  
+INFO  Additional info:
+Loading file:///home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/pe-r75-headless-smoke/fixture.exe?MD5=080c2d7b7693d362d56f12d81fb63c8d...
+------------------------------------------------
+
+ (ProgramLoader)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: file:///home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/pe-r75-headless-smoke/fixture.exe (HeadlessAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___raise_securityfailure' specified in file: /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/Base/data/PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___report_rangecheckfailure' specified in file: /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/Ghidra/Features/Base/data/PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+INFO  Skipping PDB processing: missing PDB information in program metadata (PdbUniversalAnalyzer)  
+INFO  Packed database cache: /home/vgpnk/.cache/ghidra/packed-db-cache (PackedDatabaseCache)  
+INFO  Applied data type archive: windows_vs12_64 (ApplyDataArchiveAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              0.192 secs
+    Apply Data Archives                        0.354 secs
+    Call Convention ID                         0.001 secs
+    Call-Fixup Installer                       0.001 secs
+    Create Address Tables                      0.004 secs
+    Create Function                            0.000 secs
+    Data Reference                             0.001 secs
+    Decompiler Parameter ID                    0.225 secs
+    Decompiler Switch Analysis                 0.000 secs
+    Demangler Microsoft                        0.003 secs
+    Disassemble Entry Points                   0.014 secs
+    Embedded Media                             0.004 secs
+    External Entry References                  0.000 secs
+    Function ID                                0.014 secs
+    Function Start Search                      0.003 secs
+    Non-Returning Functions - Discovered       0.000 secs
+    Non-Returning Functions - Known            0.001 secs
+    PDB Universal                              0.001 secs
+    Reference                                  0.000 secs
+    Scalar Operand References                  0.000 secs
+    Shared Return Calls                        0.000 secs
+    Stack                                      0.001 secs
+    Subroutine References                      0.000 secs
+    WindowsResourceReference                   0.264 secs
+    x86 Constant Reference Analyzer            0.008 secs
+-----------------------------------------------------
+     Total Time   1 secs
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: file:///home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/pe-r75-headless-smoke/fixture.exe (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: rev75_dump.java  (HeadlessAnalyzer)  
+INFO  SCRIPT: /fast/scratch/hyaku/revenger-r96/ExecSession/rev75_dump.java (HeadlessAnalyzer)  
+INFO  rev75_dump.java> REV75_DUMP wrote /fast/scratch/hyaku/revenger-r96/ExecSession/codeable-decompiled.c: 1 functions, 1 decompiled (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: file:///home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/pe-r75-headless-smoke/fixture.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: file:///home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/fixtures/pe-r75-headless-smoke/fixture.exe (HeadlessAnalyzer)  
+INFO  /fixture.exe: file created (vgpnk) (LocalFileSystem)  
+INFO  REPORT: Save succeeded for: /fixture.exe (rev96repro:/fixture.exe) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  

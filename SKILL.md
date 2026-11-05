@@ -583,6 +583,24 @@ rows (entry command, verdict lines, pinned instrument sha, red/green logs) until
 | write scope | scratch only under `$HYAKU_SCRATCH/revenger-r95/battery4`; mutants are copies in scratch; writes nothing in the lane |
 | owner | revenger |
 
+| name | `c1_k_admit_counter5 (round 96 C1, coverage K; successor of `c1_k_admit_counter4`, base revision `2875b9c`; carries every v4 leg plus the r95 routed closes as legs: C1_ADMITTED_UNION (A4 shadow entry), used-by exclusivity in C1_SOURCES (A3), widened C1_PYCACHE (M8), and C1_C02_* rows for the C02 admission) |
+| kind | probe (measurement over a committed tree; `--self-test` asserts an honest-fixture pass (18 legs; its printed `legs=` value is deltas+2, a label, not the leg count) and 31 forged-delta kills on their frozen legs with one per-delta receipt each under `--receipts-dir`, plus the do-nothing base failing) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-96/c1_k_admit_counter5.py --rev <rev>` (cwd = lane root; `--tree <dir>` for a materialized tree) |
+| verdict map | `0` `C1_VERDICT=pass` · `1` `C1_VERDICT=fail` · `2` could-not-evaluate (archive failed) · `64` usage |
+| self-test | `--self-test [--receipts-dir DIR]` (isolated fixtures in `$HYAKU_SCRATCH/revenger-r96/c1v5`; expects `SELFTEST_C1V5=pass`; the printed `legs=33` is deltas+2, not the leg count, which is 18) |
+| pinned-value path | counter bytes `reports/round-96/c1_k_admit_counter5.py` (frozen with `reports/round-96/claims.md` at `ff76743`); controls `reports/round-96/controls/selftest-c1v5.log`, `c1v5-do-nothing.log`, `per-delta/` |
+| write scope | read-only over the committed tree (`git archive` into a scratch `t` dir, removed on exit); writes nothing in the lane |
+| owner | revenger |
+
+| name | `forge_battery5 (round 96 C2 calibration; the frozen battery of the three r95-routed NEW vectors (A4, A3, M8) run against the frozen v4 counter (red) and the v5 counter (full), plus the r95 M6 registry-leg mutant, a stub-prints-pass control, the per-delta receipt count, and the held r95 battery) |
+| kind | probe (measurement; imports the v4 and v5 counters; builds its own trees in scratch and mutants on scratch copies only) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-96/forge_battery5.py --stage full` (predicate; `--stage red-v4` is the committed red-before; `--receipts-out DIR` copies per-delta receipts) |
+| verdict map | `0` `BATTERY5_VERDICT=pass` · `1` otherwise · `64` usage |
+| self-test | the `full` stage runs the v5 `--self-test` first (expects `SELFTEST_C1V5=pass`), requires `DELTA_RECEIPTS=31/31`, and proves the registry-gate mutant dies (`MUTANT_V5_REGISTRY_KILLED=pass`) |
+| pinned-value path | `reports/round-96/controls/battery5-red-v4.log` and `battery5-full.log`; the r95 battery is held by `reports/round-95/forge_battery4.py --stage full` (`BATTERY4_VERDICT=pass`) |
+| write scope | scratch only under `$HYAKU_SCRATCH/revenger-r96/battery5`; mutants are copies in scratch; writes nothing in the lane |
+| owner | revenger |
+
 ## 7. Cited sources — existence-checked
 
 | citation | exists at | credited for |

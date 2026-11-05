@@ -1,0 +1,55 @@
+# Receipt 2 — the used-by CELL FORM conflict between two frozen instruments (measured, both directions)
+# date 2026-11-05 ; lane revenger-shokunin ; scratch /fast/scratch/hyaku/revanger-r96/ScribeLesson ; python3 -B throughout
+# nothing in the lane was written; the counter was imported read-only and run against scratch fixture trees
+
+## A. The frozen counter's rule (reports/round-96/c1_k_admit_counter5.py, FROZEN bytes)
+$ grep -n 'ENTRY_REL = ' reports/round-96/c1_k_admit_counter5.py
+35:ENTRY_REL = "knowledge/round-96-native-analysis-sessions.md"
+$ sed -n '374,383p' reports/round-96/c1_k_admit_counter5.py
+            fails.append(f"{sid}:new-opened:{r[8]}")
+        if r[3] != "A":
+            fails.append(f"{sid}:new-tier:{r[3]}")
+        if ENTRY_REL not in r[10]:
+            fails.append(f"{sid}:cite-back-missing")
+        ub = [x.strip() for x in r[10].split(",") if x.strip() and x.strip() != "\u2014"]
+        if set(ub) != {ENTRY_REL}:
+            fails.append(f"{sid}:usedby-exclusivity:{ub}")
+    return (not fails), ("ok" if not fails else "; ".join(fails))
+
+=> used-by cell must equal EXACTLY {knowledge/round-96-native-analysis-sessions.md} (corpus-relative).
+
+## B. The census's rule (fleet driver scripts/sources-census.sh, E11)
+$ sed -n '560,569p' /home/vgpnk/Projects/shokunin/scripts/sources-census.sh
+    usedby=$(trim_cell "${cells[11]}")
+    paths=()
+    IFS=',' read -r -a paths <<< "$usedby"
+    for path in "${paths[@]}"; do
+      path=$(trim_cell "$path")
+      [ -n "$path" ] && [ "$path" != "—" ] || continue
+      if [ ! -e "$dir/$path" ]; then
+        printf '%s\tE11\t%s missing used-by %s\n' "$lane" "$id" "$path"
+      fi
+    done
+$ grep -n 'dirs\[$lane\]=' /home/vgpnk/Projects/shokunin/scripts/sources-census.sh
+468:    dirs[$lane]="$ROOT${repo:+/$repo}"
+485:    dirs[$lane]="$d"
+=> used-by paths resolve relative to the LANE ROOT (revenger-shokunin/), so a bare 'knowledge/...' does not exist on disk.
+
+## C. Counter against the counter's OWN fixture, then with the used-by cell prefixed
+$ python3 -B (import the frozen counter, build its own _fixture tree in scratch, run --tree)
+  BASELINE (fixture's own used-by = bare):
+    C1_SOURCES=pass  C1_VERDICT=pass  rc=0
+  MUTATED (used-by -> corpus/knowledge/round-96-native-analysis-sessions.md, 3 rows):
+    C1_SOURCES_WHY=S502:usedby-exclusivity:['corpus/knowledge/round-96-native-analysis-sessions.md']; S503:...; S504:...
+    C1_SOURCES=fail  C1_VERDICT=fail  rc=1
+
+## D. Census against the same registry tree, both forms (validate mode, --today 2026-11-05)
+  bare    'knowledge/round-96-native-analysis-sessions.md' : rc=1, 3x E11 (S502/S503/S504 missing used-by)
+  prefixed 'corpus/knowledge/round-96-native-analysis-sessions.md' : rc=0, 0 E-codes
+
+## E. The lane's established convention (all 501 existing rows, census-clean today)
+$ bash scripts/sources-census.sh validate --today 2026-11-05 --root /home/vgpnk/Projects/shokunin revenger
+  rc=0 ; revenger ok .../corpus/SOURCES.md ; 21 W01 + 13 W04 ; 0 E-codes
+$ awk -F'|' '/^\| S[0-9]{3} /{gsub(/^ +| +$/,"",$12); if ($12 ~ /^knowledge\//) c++} END{print (c?c:0)+0}' corpus/SOURCES.md
+0
+=> 0 rows fleet-wide use a bare 'knowledge/...' used-by cell; every row uses the lane-root-relative 'corpus/...' form.
