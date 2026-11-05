@@ -1,0 +1,1 @@
+state branch=main local=dcb10b964e908d2d4872488dde8fd4437c518dcb remote=dcb10b964e908d2d4872488dde8fd4437c518dcb ahead=0 behind=0 head=detached tracked=0 untracked=2

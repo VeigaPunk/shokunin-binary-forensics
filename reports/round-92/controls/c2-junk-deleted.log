@@ -1,0 +1,11 @@
+# C2 junk B: C08 row deleted
+# counter exit=1
+C2_PROBE_EXIT=1 (probe exit is not the claim verdict)
+C2_LEGEND_MISMATCH=1 rows=['C03']
+C2_ROWS_COUNT=14
+C2_K_HELD=8/14 C2_K_HELD_BACKED=8/14
+C2_ROWS_TOTAL=fail
+C2_C08_CLEAR=pass
+C2_NO_NEW=pass
+C2_NO_UNBACKED=pass
+C2_VERDICT=fail

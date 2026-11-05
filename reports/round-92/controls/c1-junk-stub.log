@@ -1,0 +1,16 @@
+# C1 junk: stub entry, C03 held, no votes, S999
+# counter exit=1
+C1_K_HELD_BACKED=9/15
+C1_VOTE_SEATS=none digest=ccb5c18e8042e4a0f24defc7f4f35af4a889d6808094e201ef0194018eabb708
+C1_SOURCE_IDS=S999
+C1_ROWS_TOTAL=pass
+C1_C03_HELD=pass
+C1_C03_CITES=pass
+C1_ADMITTED=pass
+C1_TRIO=pass
+C1_VOTES=fail
+C1_LINT=fail
+C1_EMBEDDED=fail
+C1_SOURCES=fail
+C1_K_HELD_BACKED=pass
+C1_VERDICT=fail
