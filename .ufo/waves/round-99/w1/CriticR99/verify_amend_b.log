@@ -1,0 +1,32 @@
+ROWS 29
+ROW EXACT rc=0 :: host identity
+ROW EXACT rc=0 :: doctor verdict lines
+ROW EXACT rc=0 :: healthy scope checks
+ROW EXACT rc=0 :: failing scope checks
+ROW EXACT rc=0 :: scope-check classes
+ROW EXACT rc=0 :: registration states
+ROW EXACT rc=0 :: client registration count
+ROW EXACT rc=0 :: registration state split
+ROW EXACT rc=0 :: missing-or-stale registrations ("nine")
+ROW EXACT rc=0 :: ghidra-named scope checks
+ROW EXACT rc=0 :: ghidra scope checks healthy
+ROW EXACT rc=0 :: ghidra scope-check names
+ROW EXACT rc=0 :: ghidra headless launcher path
+ROW EXACT rc=0 :: doctor-printed ghidra and java versions
+ROW EXACT rc=0 :: engine and jadx classifications
+ROW EXACT rc=0 :: installed skill identity
+ROW EXACT rc=1 :: doctor binwalk or unblob checks
+ROW EXACT rc=0 :: installation paths ("three")
+ROW EXACT rc=0 :: installation state
+ROW EXACT rc=0 :: CLI package version
+ROW EXACT rc=0 :: inventory Evidence ID
+ROW EXACT rc=0 :: inventory substep status
+ROW EXACT rc=0 :: inventory members and sizes
+ROW EXACT rc=0 :: inventory root digest
+ROW EXACT rc=0 :: truth.json archive digest
+ROW EXACT rc=0 :: fixture digest
+ROW EXACT rc=0 :: record file digests :: got=['94eaa6ff', 'fb9a4824', 'c373f656'] exp=['94eaa6ff', 'fb9a4824', 'c373f656']
+ROW EXACT rc=0 :: S506 body digest
+ROW EXACT rc=0 :: S506 body length
+BAD_ROWS 0
+rc=0

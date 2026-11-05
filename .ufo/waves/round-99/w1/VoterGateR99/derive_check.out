@@ -1,0 +1,33 @@
+OK   doctor-verdict-lines
+OK   scope-ok-true=11
+OK   scope-ok-false=13
+FAIL scope-classes
+--- expected ---
+10 config_drift
+11 healthy
+3 missing_analysis_engine
+--- actual ---
+     10 classification: config_drift
+     11 classification: healthy
+      3 classification: missing_analysis_engine
+OK   client-count=14
+OK   state-split
+OK   reg-states
+OK   missing-or-stale=9
+OK   ghidra-healthy=8
+OK   ghidra-names
+OK   doctor-versions
+OK   engine-jadx
+OK   install-paths=3
+INFO install-paths raw line:     paths[3]: /run/user/1000/fnm_multishells/3146096_1793846990804/bin/rea,/run/user/1000/fnm_multishells/1978018_1793727434954/bin/rea,/run/user/1000/fnm_multishells/1556_1793632040352/bin/rea
+OK   install-state=1
+OK   cli-version
+OK   evidence-id
+OK   substep-status
+OK   member-sizes
+OK   fixture-digest
+OK   probes-digest-prefix
+OK   doctor-digest-prefix
+OK   inspect-digest-prefix
+OK   fixture-matches-truth-json
+SUMMARY pass=22 fail=1

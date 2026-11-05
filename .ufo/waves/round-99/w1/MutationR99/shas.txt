@@ -1,0 +1,7 @@
+51416a5456e64adf45f45bac045795d4020af1404033a1a661432db81dc90e05  reports/round-99/mutants/mutate8.py
+b70e75b23447141dedf55e33f42dafca224a2eb7dff5d6eaff5af643f06246e2  reports/round-99/mutants/mutants-r99.json
+d880cb1055e6862c94b2206f24847a1f9b1f08ba1c87f74eeffba4cd787d5efd  reports/round-99/mutants/mutants-r99.amend1.json
+620dfca9959572449638cab203485555c5d45f5a8e89c5b68121ffc2d3023581  reports/round-99/c1_k_admit_counter8.py
+5f03c73ce8462f1302fb72a25a3401a5c69f076955fac1bf19713672847cf0a1  reports/round-98/mutants/mutate7.py
+59c9930ae864ce826e9f468b4b76bdef33de7ae5e6760eda4d88db4eab2e8548  reports/round-98/c1_k_admit_counter7.py
+ac725bd69d5a020324eee9a866dd2166acb53a822b2e17cf2897bb4b9e680b07  /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-99/w1/MutationR99/v8/manifest-v8-final.json

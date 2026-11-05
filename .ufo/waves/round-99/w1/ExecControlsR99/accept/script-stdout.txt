@@ -1,0 +1,9 @@
+diff -r /fast/scratch/hyaku/revenger-r99/ExecControlsR99/accept/work/do-nothing/corpus/README.md /fast/scratch/hyaku/revenger-r99/ExecControlsR99/accept/work/junk-row/corpus/README.md
+61c61
+< | C14 | host readiness for REA routes | `knowledge/2026-10-12-rea-readiness-checklist.md` (re-verified 2026-10-19; pre-contract, not re-gated) | `.ufo/waves/kaika-r1/scout-freshness.md` | partial |
+---
+> | C14 | host readiness for REA routes | `knowledge/2026-10-12-rea-readiness-checklist.md` (re-verified 2026-10-19; pre-contract, not re-gated) | `.ufo/waves/kaika-r1/scout-freshness.md` | held |
+make_c1_controls_r99: exactly one changed cell (README line 61, C14 partial -> held)
+C1_CONTROL_DONOTHING=fail
+C1_CONTROL_JUNKROW=fail
+make_c1_controls_r99: control-ok (do-nothing rc=1, junk-row rc=1; both refused)

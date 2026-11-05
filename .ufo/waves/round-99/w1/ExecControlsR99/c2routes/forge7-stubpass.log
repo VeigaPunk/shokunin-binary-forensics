@@ -1,0 +1,17 @@
+VECTOR FR00 rc=0 verdict=pass failing=none
+VECTOR FR00b rc=0 verdict=pass failing=none
+VECTOR FR02 rc=0 verdict=pass failing=none
+VECTOR FR06 rc=0 verdict=pass failing=none
+VECTOR FR07 rc=0 verdict=pass failing=none
+VECTOR FR08 rc=0 verdict=pass failing=none
+VECTOR FR09 rc=0 verdict=pass failing=none
+VECTOR FR10 rc=0 verdict=pass failing=none
+VECTOR FR12 rc=0 verdict=pass failing=none
+C2_ACCEPTED=5/5
+C2_POSITIVE=pass
+C2_POSITIVE2=pass
+C2_STUB_SELFTEST=ok
+C2_ROWSET_FR06=none
+C2_ROWSET_FR07=none
+C2_VERDICT=not-met
+rc=0

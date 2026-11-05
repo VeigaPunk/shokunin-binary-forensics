@@ -1,0 +1,355 @@
+
+=== D host identity ===
+$ sed -n 1p corpus/live/runs/round-98/host-probes-r98.txt | grep -oE 'Linux [^ ]+ [^ ]+$'
+Linux 7.2.11-arch1-1 x86_64
+[rc=0]
+
+=== D doctor verdict lines ===
+$ sed -n 1,2p corpus/live/runs/round-98/rea-doctor-r98.txt
+healthy: false
+environment_healthy: false
+[rc=0]
+
+=== D healthy scope checks ===
+$ sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt | grep -c '    ok: true'
+11
+[rc=0]
+
+=== D failing scope checks ===
+$ sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt | grep -c '    ok: false'
+13
+[rc=0]
+
+=== D scope-check classes ===
+$ sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt | grep -oE 'classification: [a-z_]+' | sed 's/^classification: //' | sort | uniq -c | sed 's/^ *//'
+10 config_drift
+11 healthy
+3 missing_analysis_engine
+[rc=0]
+
+=== D registration states ===
+$ awk '/^    - client:/{c=$3} /^      state:/{print c, $2}' corpus/live/runs/round-98/rea-doctor-r98.txt
+antigravity missing
+claude_code missing
+codex aligned
+copilot_cli missing
+cursor missing
+devin aligned
+gemini_cli missing
+grok_bot manual
+grok_build aligned
+kimi missing
+omp stale
+opencode missing
+pi missing
+zcode aligned
+[rc=0]
+
+=== D client registration count ===
+$ grep -c '^    - client:' corpus/live/runs/round-98/rea-doctor-r98.txt
+14
+[rc=0]
+
+=== D registration state split ===
+$ awk '/^    - client:/{c=$3} /^      state:/{print $2}' corpus/live/runs/round-98/rea-doctor-r98.txt | sort | uniq -c | sed 's/^ *//'
+4 aligned
+1 manual
+8 missing
+1 stale
+[rc=0]
+
+=== D missing-or-stale registrations ===
+$ awk '/^    - client:/{c=$3} /^      state:/{print $2}' corpus/live/runs/round-98/rea-doctor-r98.txt | grep -cE '^(missing|stale)$'
+9
+[rc=0]
+
+=== D ghidra-named scope checks ===
+$ sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt | grep -c '^  - name: ghidra'
+8
+[rc=0]
+
+=== D ghidra scope checks healthy ===
+$ sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt | grep -A1 '^  - name: ghidra' | grep -c '    ok: true'
+8
+[rc=0]
+
+=== D ghidra scope-check names ===
+$ sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt | grep -oE '^  - name: ghidra[a-z_-]*' | sed 's/^  - name: //' | paste -sd' '
+ghidra ghidra-platform ghidra-architecture ghidra-installation ghidra-version ghidra-headless ghidra-native_decompiler ghidra-java
+[rc=0]
+
+=== D ghidra headless launcher path ===
+$ sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt | grep -A3 '^  - name: ghidra-headless$' | grep 'detail:' | sed 's/^ *//'
+detail: /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/support/analyzeHeadless
+[rc=0]
+
+=== D doctor-printed ghidra and java versions ===
+$ sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt | grep -A3 -E '^  - name: ghidra-(version|java)$' | grep 'detail:' | sed 's/^ *//'
+detail: 12.1.4
+detail: 21.0.13; 64-bit; JDK; /usr/lib/jvm/java-21-openjdk; accepted a 64-bit full JDK 21 or newer
+[rc=0]
+
+=== D engine and jadx classifications ===
+$ sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt | grep -A3 -E '^  - name: (hopper|ida-registration|kuna-installation|jadx)$' | grep -E 'name:|classification:' | paste - - | sed -E 's/^ *- name: //; s/	 *classification: / /'
+hopper missing_analysis_engine
+ida-registration missing_analysis_engine
+jadx healthy
+kuna-installation missing_analysis_engine
+[rc=0]
+
+=== D installed skill identity ===
+$ sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt | grep -A3 'name: "skill:identity"' | sed 's/^ *//'
+- name: "skill:identity"
+ok: false
+classification: config_drift
+detail: Installed REA skill identity is stale.
+[rc=0]
+
+=== D doctor binwalk or unblob checks ===
+$ grep -c -E 'binwalk|unblob' corpus/live/runs/round-98/rea-doctor-r98.txt
+0
+[rc=1]
+
+=== D installation paths (three) ===
+$ grep '^    paths\[3\]: ' corpus/live/runs/round-98/rea-doctor-r98.txt | sed 's/^    paths\[3\]: //' | tr ',' '\n' | grep -c .
+3
+[rc=0]
+
+=== D installation state ===
+$ grep '^    state: multiple' corpus/live/runs/round-98/rea-doctor-r98.txt | sed 's/^ *//'
+state: multiple
+[rc=0]
+
+=== D CLI package version ===
+$ grep cli_package_version corpus/live/runs/round-98/rea-doctor-r98.txt | sed 's/^ *//'
+cli_package_version: 6.7.0
+[rc=0]
+
+=== D inventory Evidence ID ===
+$ grep -m1 evidence_id corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt
+evidence_id: ev_0ef6c8cdbfe9836f2daa149d17269e355f98424d59ecb55398dbe271c6a87382
+[rc=0]
+
+=== D inventory substep status ===
+$ grep -m1 -A1 'operation: inventory_artifact' corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt | sed 's/^ *//'
+operation: inventory_artifact
+status: completed
+[rc=0]
+
+=== D inventory members and sizes ===
+$ awk '/logical_path:/{p=$2} /declared_size:/{print p, $2}' corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt
+. 2964
+README.txt 84
+bin/checksum 16160
+[rc=0]
+
+=== D inventory root digest ===
+$ grep -m1 root_sha256 corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt | sed 's/^ *//'
+root_sha256: 857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e
+[rc=0]
+
+=== D truth.json archive digest ===
+$ grep -oE '"archive_sha256": *"[0-9a-f]+"' corpus/fixtures/archive-r2/truth.json
+"archive_sha256": "857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e"
+[rc=0]
+
+=== D fixture digest ===
+$ sha256sum corpus/fixtures/archive-r2/fixture.zip | cut -d' ' -f1
+857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e
+[rc=0]
+
+=== D record file digests ===
+$ sha256sum corpus/live/runs/round-98/* | awk '{print substr($1,1,8) "… (" substr($2,27) ")"}'
+94eaa6ff… (host-probes-r98.txt)
+fb9a4824… (rea-doctor-r98.txt)
+c373f656… (rea-inspect-artifact-archive-r2.txt)
+[rc=0]
+
+=== D S506 body digest ===
+$ sha256sum reports/round-98/quote-receipts/raw/S506.body | cut -d' ' -f1
+ce2d122b873fb84d98cdb56afd84a34ee8de362b65760855838dfb29c2282e50
+[rc=0]
+
+=== D S506 body length ===
+$ wc -c < reports/round-98/quote-receipts/raw/S506.body
+16650
+[rc=0]
+
+=== P1 quote1 doctor-registration ===
+$ grep -nF "Doctor checks registration; it cannot establish the current agent's connection." reports/round-98/quote-receipts/raw/S506.body
+22:| Aligned registration, but no connected tools                    | Restart/reconnect the client. Doctor checks registration; it cannot establish the current agent's connection. Inspect the client's launch error if reconnection fails.                                                                                                                                                                                                                                                                                                                                                                                                                  |
+[rc=0]
+
+=== P2 quote2 static-js-zip ===
+$ grep -nF "Static JavaScript and ordinary ZIP inventory need neither Hopper nor Ghidra." reports/round-98/quote-receipts/raw/S506.body
+34:Static JavaScript and ordinary ZIP inventory need neither Hopper nor Ghidra.
+[rc=0]
+
+=== P3 quote4 shell-PATH ===
+$ grep -nF "Inspect the actual shell PATH and launcher/runtime." reports/round-98/quote-receipts/raw/S506.body
+26:| `rea` is missing in a child shell, or Node is incompatible      | Inspect the actual shell PATH and launcher/runtime. A prefix installation may be absent from a login shell's PATH; this does not establish a broken MCP registration.                                                                                                                                                                                                                                                                                                                                                                                                                   |
+[rc=0]
+
+=== P4 paraphrase lines 35-37 ===
+$ awk 'NR>=34 && NR<=38 {printf "%d|%s\n", NR, $0}' reports/round-98/quote-receipts/raw/S506.body
+34|Static JavaScript and ordinary ZIP inventory need neither Hopper nor Ghidra.
+35|HAR inspection is offline and does not require a live browser. Native
+36|decompilation, Android analysis and firmware extraction have their own
+37|bring-your-own prerequisites. Use supported inventory/static evidence when it
+38|answers part of the question, and name the unavailable evidence separately.
+[rc=0]
+
+=== P5 jadx detail quote ===
+$ grep -nF "This checks configuration, not whether a selected APK fits in the worker's memory." corpus/live/runs/round-98/rea-doctor-r98.txt
+65:    detail: "JADX MCP bridge JAR validated at /home/vgpnk/.local/opt/jadx-headless-mcp/jadx-headless-mcp-0.7.1-all.jar; its path is recorded for agent registrations. This checks configuration, not whether a selected APK fits in the worker's memory."
+161:        detail: "JADX MCP bridge JAR validated at /home/vgpnk/.local/opt/jadx-headless-mcp/jadx-headless-mcp-0.7.1-all.jar; its path is recorded for agent registrations. This checks configuration, not whether a selected APK fits in the worker's memory."
+236:    detail: "JADX MCP bridge JAR validated at /home/vgpnk/.local/opt/jadx-headless-mcp/jadx-headless-mcp-0.7.1-all.jar; its path is recorded for agent registrations. This checks configuration, not whether a selected APK fits in the worker's memory."
+[rc=0]
+
+=== P6 K05 2026-10-19 row ===
+$ sed -n '33,49p' corpus/knowledge/2026-10-12-rea-readiness-checklist.md | grep -n 'K05'
+8:| K05 | jadx / binwalk / unblob / pwntools ABSENT | jadx 1.5.6, binwalk 3.1.0, unblob 26.6.4 present; pwntools import fails | STALE → 3 of 4 present |
+[rc=0]
+
+=== P7 rc= absence in records ===
+$ grep -c 'rc=' corpus/live/runs/round-98/rea-doctor-r98.txt; grep -c 'rc=' corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt
+0
+0
+[rc=1]
+
+=== P8 SOURCES rows ===
+$ sed -n '523,524p' corpus/SOURCES.md | cut -c1-200
+| S506 | REA connection and task recovery reference — https://raw.githubusercontent.com/morluto/rea/12f6e0974cc0db0b3a9b86246accc76556837222/.agents/skills/reverse-engineer-anything/references/connect
+| S507 | Saved round-98 host-readiness record — `corpus/live/runs/round-98/` | own-work | A | what the saved 2026-11-05 record on this host contains: the `rea doctor` receipt (CLI 6.7.0; its exit code
+[rc=0]
+
+=== P9 README C14 row ===
+$ grep -n 'C14' corpus/README.md | cut -c1-200
+61:| C14 | host readiness for REA routes | `knowledge/2026-10-12-rea-readiness-checklist.md` (re-verified 2026-10-19; pre-contract, not re-gated) | `.ufo/waves/kaika-r1/scout-freshness.md` | partial |
+[rc=0]
+
+=== P10 probes transcript ===
+$ cat corpus/live/runs/round-98/host-probes-r98.txt
+# host probes — revenger round 98, 2026-11-05T17:46:13-03:00, host Linux 7.2.11-arch1-1 x86_64
+$ rea --version
+6.7.0
+rc=0
+$ command -v rea
+/run/user/1000/fnm_multishells/3146096_1793846990804/bin/rea
+rc=0
+$ node --version
+v24.21.0
+rc=0
+$ npm --version
+11.19.0
+rc=0
+$ binwalk --version
+binwalk 3.1.0
+rc=0
+$ unblob --version
+26.6.4
+rc=0
+$ jadx --version
+1.5.6
+rc=0
+$ java -version
+openjdk version "21.0.13" 2026-10-20
+OpenJDK Runtime Environment (build 21.0.13+9)
+OpenJDK 64-Bit Server VM (build 21.0.13+9, mixed mode, sharing)
+rc=0
+$ command -v analyzeHeadless
+
+rc=1
+$ command -v ghidra
+/usr/bin/ghidra
+rc=0
+$ command -v idat64
+
+rc=1
+$ command -v hopper
+
+rc=1
+$ python3 -c 'import pwn'
+
+rc=0
+[rc=0]
+
+=== P11 Q07/Q12/Q13 trigger greps ===
+$ grep -niE 'predict|pre-regist|will (accept|refuse)|reject|verifier|guard' corpus/knowledge/round-98-rea-host-readiness.md | cut -c1-160
+138:| Q07 | n/a | No parser accept, refuse or cause prediction is offered by this entry; see Q07 in corpus/QUALITY.md. |
+143:| Q12 | n/a | No rejected registry row is load-bearing for this entry; see Q12 in corpus/QUALITY.md. |
+144:| Q13 | n/a | No verifier is credited as guarding a clause. The recheck line names re-derivation procedures only; see Q13 in corpus/QUALITY.md. |
+[rc=0]
+
+=== P12 64-hex lines ===
+$ grep -nE '[0-9a-f]{32,}' corpus/knowledge/round-98-rea-host-readiness.md | cut -c1-120
+1:source: S506 — REA connection and task recovery reference, https://raw.githubusercontent.com/morluto/rea/12f6e0974cc0d
+100:| inventory Evidence ID | `grep -m1 evidence_id corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt` | `ev
+103:| inventory root digest | `grep -m1 root_sha256 corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt \| sed
+104:| truth.json archive digest | `grep -oE '"archive_sha256": *"[0-9a-f]+"' corpus/fixtures/archive-r2/truth.json` | `"
+105:| fixture digest | `sha256sum corpus/fixtures/archive-r2/fixture.zip \| cut -d' ' -f1` | `857989f5f2722fc00cd0013874
+107:| S506 body digest | `sha256sum reports/round-98/quote-receipts/raw/S506.body \| cut -d' ' -f1` | `ce2d122b873fb84d9
+[rc=0]
+
+=== P13 40-hex occurrences ===
+$ grep -noE '[0-9a-f]{40}' corpus/knowledge/round-98-rea-host-readiness.md
+1:12f6e0974cc0db0b3a9b86246accc76556837222
+1:12f6e0974cc0db0b3a9b86246accc76556837222
+100:0ef6c8cdbfe9836f2daa149d17269e355f98424d
+103:857989f5f2722fc00cd001387432b8bbcad55e3e
+104:857989f5f2722fc00cd001387432b8bbcad55e3e
+105:857989f5f2722fc00cd001387432b8bbcad55e3e
+107:ce2d122b873fb84d98cdb56afd84a34ee8de362b
+[rc=0]
+
+=== P14 cited-path sweep ===
+$ for p in $(grep -oE '(corpus|reports)/[A-Za-z0-9_./-]+|knowledge/[A-Za-z0-9_./-]+|fixtures/archive-r2/[A-Za-z0-9_./-]+' corpus/knowledge/round-98-rea-host-readiness.md | sed 's/[.,)]*$//' | sort -u); do if [ -e "$p" ]; then echo "OK $p"; elif [ -e "corpus/$p" ]; then echo "OK corpus/$p"; else echo "DEAD $p"; fi; done
+OK corpus/fixtures/archive-r2/fixture.zip
+OK corpus/fixtures/archive-r2/truth.json
+OK corpus/live/runs/round-98/
+OK corpus/live/runs/round-98/host-probes-r98.txt
+OK corpus/live/runs/round-98/rea-doctor-r98.txt
+OK corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt
+OK corpus/QUALITY.md
+OK corpus/fixtures/archive-r2/fixture.zip
+OK corpus/fixtures/archive-r2/truth.json
+OK corpus/knowledge/2026-10-12-rea-readiness-checklist.md
+OK corpus/knowledge/round-96-native-analysis-sessions.md
+OK reports/round-98/quote-receipts/fetch-log.md
+OK reports/round-98/quote-receipts/raw/S506.body
+OK reports/round-99/controls/deriv_check.py
+[rc=0]
+
+=== deriv_check.py (entry-cited control) ===
+$ python3 -B reports/round-99/controls/deriv_check.py --entry corpus/knowledge/round-98-rea-host-readiness.md --root .
+DERIV host identity MATCH
+DERIV doctor verdict lines MATCH
+DERIV healthy scope checks MATCH
+DERIV failing scope checks MATCH
+DERIV scope-check classes MATCH
+DERIV registration states MATCH
+DERIV client registration count MATCH
+DERIV registration state split MATCH
+DERIV missing-or-stale registrations ("nine") MATCH
+DERIV ghidra-named scope checks MATCH
+DERIV ghidra scope checks healthy MATCH
+DERIV ghidra scope-check names MATCH
+DERIV ghidra headless launcher path MATCH
+DERIV doctor-printed ghidra and java versions MATCH
+DERIV engine and jadx classifications MATCH
+DERIV installed skill identity MATCH
+DERIV doctor binwalk or unblob checks MATCH
+DERIV installation paths ("three") MATCH
+DERIV installation state MATCH
+DERIV CLI package version MATCH
+DERIV inventory Evidence ID MATCH
+DERIV inventory substep status MATCH
+DERIV inventory members and sizes MATCH
+DERIV inventory root digest MATCH
+DERIV truth.json archive digest MATCH
+DERIV fixture digest MATCH
+DERIV record file digests MATCH
+DERIV S506 body digest MATCH
+DERIV S506 body length MATCH
+DERIV_ROWS=29 DERIV_MISMATCH=0
+[rc=0]

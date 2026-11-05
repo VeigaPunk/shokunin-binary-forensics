@@ -1,0 +1,6 @@
+# S506 independent re-open — ScoutReopenR99, 2026-11-05
+url: https://raw.githubusercontent.com/morluto/rea/12f6e0974cc0db0b3a9b86246accc76556837222/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md
+curl_rc=0 http_status=200 bytes=16650
+sha256=ce2d122b873fb84d98cdb56afd84a34ee8de362b65760855838dfb29c2282e50
+cmp vs reports/round-98/quote-receipts/raw/S506.body: identical (exit 0)
+located quotes (grep -c -F, entry/body): 1/1 "Doctor checks registration; it cannot establish the current agent's connection."; 1/1 "Static JavaScript and ordinary ZIP inventory need neither Hopper nor Ghidra."; 1/1 "Inspect the actual shell PATH and launcher/runtime."

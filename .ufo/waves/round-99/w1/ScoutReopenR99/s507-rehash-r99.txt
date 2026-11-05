@@ -1,0 +1,7 @@
+# S507 independent re-hash — ScoutReopenR99, 2026-11-05
+94eaa6ff1137d0dd49ac3b88f25639e108c1d7692bdfacaa6fbec7232207a789  /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-98/host-probes-r98.txt
+fb9a48249a22501313f58978d2d716f4006096cc027d20160f86507323938e1d  /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-98/rea-doctor-r98.txt
+c373f656932a9c074f3405e61316b87ff395a48479e48bcd92650f6bece32ba4  /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt
+/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-98/host-probes-r98.txt 693 bytes mtime 2026-11-05 17:46:15.932681385 -0300
+/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-98/rea-doctor-r98.txt 16554 bytes mtime 2026-11-05 17:46:13.567674591 -0300
+/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt 8965 bytes mtime 2026-11-05 17:47:05.894465492 -0300

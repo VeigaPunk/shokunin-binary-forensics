@@ -1,0 +1,16 @@
+# collision check r99 — 0-3 leading-space table-row id pattern (read-only on shokuknow)
+
+$ grep -oE "^ {0,3}\| S[0-9]{3} " /home/vgpnk/Projects/shokuknow/merge/revenger/SOURCES.append.md | grep -oE "S[0-9]{3}" | sort > staged-ids-r99
+staged_count=155 staged_range=S047..S201
+
+$ grep -oE "^ {0,3}\| S[0-9]{3} " corpus/SOURCES.md | grep -oE "S[0-9]{3}" | sort > reg-ids-r99
+reg_count=507 reg_range=S001..S507
+
+$ comm -12 staged-ids-r99 reg-ids-r99 > collisions-r99
+collision_count=155
+
+diff vs r97 committed artifacts:
+STAGED_IDENTICAL_TO_R97
+COLLISIONS_IDENTICAL_TO_R97
+
+MERGE-REPORT.json accepted=155

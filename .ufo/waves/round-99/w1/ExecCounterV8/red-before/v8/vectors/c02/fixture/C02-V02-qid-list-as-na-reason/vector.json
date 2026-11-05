@@ -1,0 +1,12 @@
+{
+ "name": "C02-V02-qid-list-as-na-reason",
+ "profile": "c02",
+ "variant": "fixture",
+ "class": "n/a reason made of criterion ids only",
+ "mutation": "ReviewerGate Q07 n/a note 'see Q01 Q02 Q03 Q04 Q05 Q06 for the reason' (6+ tokens, names a Q id)",
+ "expected": "fail",
+ "changed": [
+  "reports/round-96/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

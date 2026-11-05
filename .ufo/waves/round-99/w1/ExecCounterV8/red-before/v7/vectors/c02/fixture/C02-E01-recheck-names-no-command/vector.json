@@ -1,0 +1,18 @@
+{
+ "name": "C02-E01-recheck-names-no-command",
+ "profile": "c02",
+ "variant": "fixture",
+ "class": "recheck header with no re-verifying command",
+ "mutation": "entry recheck line -> 'recheck: none'; votes re-bound to the new digest",
+ "expected": "fail",
+ "changed": [
+  ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+  "corpus/knowledge/round-96-native-analysis-sessions.md",
+  "reports/round-96/votes/CriticR96.json",
+  "reports/round-96/votes/ReviewerBlind.json",
+  "reports/round-96/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

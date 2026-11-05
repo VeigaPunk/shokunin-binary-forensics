@@ -1,0 +1,12 @@
+# M18 evidence: r98 seat-name collision — earlier-round seats sharing the r98 seat names
+# cmd: for f in .ufo/waves/round-9*/w1/swarm-registry.json; do python3 -c 'import json,sys;p=sys.argv[1];m=json.load(open(p)).get("members",{});h=[k for k in m if k in ("ReviewerGate","ReviewerBlind")];print(p+": "+",".join(h)) if h else None' $f; done
+.ufo/waves/round-93/w1/swarm-registry.json: ReviewerGate,ReviewerBlind
+.ufo/waves/round-94/w1/swarm-registry.json: ReviewerGate,ReviewerBlind
+.ufo/waves/round-95/w1/swarm-registry.json: ReviewerGate,ReviewerBlind
+.ufo/waves/round-96/w1/swarm-registry.json: ReviewerGate,ReviewerBlind
+.ufo/waves/round-97/w1/swarm-registry.json: ReviewerGate
+.ufo/waves/round-98/w1/swarm-registry.json: ReviewerGate,ReviewerBlind
+# r99 seat names (round-suffixed, no collision):
+ExecCounterV8, ExecHarness8, ExecControlsR99, ScoutReopenR99, ScribeLessonR99, ConnectorR99, ReviewerClaimsR99, VoterGateR99, VoterBlindR99, CriticR99, MutationR99, SentinelR99
+# r98 report line (fleet root, read-only): /home/vgpnk/Projects/shokunin/.ufo/reports/round-98/revenger.md:36
+Seat-name collision: my first re-vote messages reached the *round-93* seats `ReviewerGate` and `ReviewerBlind`. Both declined and wrote nothing. The real r98 instances were `ReviewerGate-6` and `ReviewerBlind-5`, and the re-votes went to them.

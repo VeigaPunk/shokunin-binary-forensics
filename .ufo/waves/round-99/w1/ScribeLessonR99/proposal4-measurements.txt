@@ -1,0 +1,22 @@
+# considerthese 2026-11-05 proposal 4 — producer-attribution census (scribe measurement, not a frozen claim)
+$ grep -rl 'rea 6\.8\.0' corpus/live/runs/ | wc -l
+15
+$ grep -rl 'cli_package_version: 6\.7\.0' corpus/live/runs/ | wc -l
+2
+$ grep -rl 'cli_commands: 153' corpus/live/runs/ | wc -l
+2
+$ grep -rl 'cli_commands: 175' corpus/live/runs/ | wc -l
+0
+$ rea --version
+6.7.0
+$ python3 -c 'print(json.load(...rea-agents/package.json)["version"])'  (fnm node v24.21.0)
+6.7.0
+$ grep -n 'installed on this host at 6.8.0' PROVINCE.md
+22:  installed on this host at 6.8.0 (`rea --version` exit 0, 2026-10-31)
+$ grep -n 'cli_commands: 175' corpus/SOURCES.md | cut -c1-60
+459:| S444 | rea CLI 6.8.0 command manifest — `rea --llms` a
+# declared commands in installed manifest (rea --llms, 6.7.0): 153
+# distinct recorded operation names in corpus/live/runs: 30
+# operations with a declared kebab twin: 22
+# operations with no declared twin in 6.7.0: 8 ['current_document', 'get_android_manifest', 'get_app_info', 'inspect_pe_certificates', 'inventory_artifact', 'load_apk', 'open_binary', 'rea_jvm_status']
+# declared commands with no recorded operation: 131

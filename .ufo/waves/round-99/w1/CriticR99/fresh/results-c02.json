@@ -1,0 +1,116 @@
+[
+ {
+  "name": "CONTROL-honest",
+  "class": "control",
+  "expected": "pass",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "control-ok",
+  "changed": [],
+  "removed": []
+ },
+ {
+  "name": "C02-N1-one-token-pass-note",
+  "class": "PASS decision carried by a one-token note",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   "reports/round-96/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C02-N2-pinned-reviewer-vote-omitted",
+  "class": "pinned reviewer vote file deleted, two votes remain",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [],
+  "removed": [
+   "reports/round-96/votes/ReviewerBlind.json"
+  ]
+ },
+ {
+  "name": "C02-N3-qmap-contradicts-votes",
+  "class": "entry Q-map claims PASS where every vote is n/a",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+   "corpus/knowledge/round-96-native-analysis-sessions.md",
+   "reports/round-96/votes/CriticR96.json",
+   "reports/round-96/votes/ReviewerBlind.json",
+   "reports/round-96/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C02-N4-evidence-id-edited",
+  "class": "identifier in a derivation row replaced",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+   "corpus/knowledge/round-96-native-analysis-sessions.md",
+   "reports/round-96/votes/CriticR96.json",
+   "reports/round-96/votes/ReviewerBlind.json",
+   "reports/round-96/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C02-N5-observation-limitations-cut",
+  "class": "observation/inference/unknown and limitations sections removed",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+   "corpus/knowledge/round-96-native-analysis-sessions.md",
+   "reports/round-96/votes/CriticR96.json",
+   "reports/round-96/votes/ReviewerBlind.json",
+   "reports/round-96/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C02-N6-surface-text-attests-replication",
+  "class": "README surface text asserts a replication no vote records",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   "corpus/README.md"
+  ],
+  "removed": []
+ }
+]

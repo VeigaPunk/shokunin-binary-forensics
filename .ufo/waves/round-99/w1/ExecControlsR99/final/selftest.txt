@@ -1,0 +1,1 @@
+SELFTEST_C1V8=OK legs=98

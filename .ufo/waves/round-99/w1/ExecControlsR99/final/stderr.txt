@@ -1,0 +1,2 @@
+make_c1_controls_r99: /fast/scratch/hyaku/revenger-r99/ExecControlsR99/final/work/do-nothing.log counter rc=1
+make_c1_controls_r99: /fast/scratch/hyaku/revenger-r99/ExecControlsR99/final/work/junk-row.log counter rc=1

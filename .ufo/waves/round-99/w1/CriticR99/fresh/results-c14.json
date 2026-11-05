@@ -1,0 +1,121 @@
+[
+ {
+  "name": "CONTROL-honest",
+  "class": "control",
+  "expected": "pass",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "14/15",
+  "failing_legs": [],
+  "outcome": "control-ok",
+  "changed": [],
+  "removed": []
+ },
+ {
+  "name": "C14-N1-na-inflation",
+  "class": "one seat marks ten PASS decisions n/a with Q-id reasons",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "14/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   "reports/round-98/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C14-N2-artifact-renamed-to-other-seat",
+  "class": "another seat's audit renamed into this seat's artifact",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "14/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   ".ufo/waves/round-98/w1/ReviewerBlind/blind-evidence.md",
+   "reports/round-98/votes/ReviewerBlind.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C14-N3-derivation-count-edited",
+  "class": "derivation count row prints 15 where the record prints 14",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "14/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   ".ufo/waves/round-98/w1/CriticR98/critic-audit.md",
+   ".ufo/waves/round-98/w1/ReviewerBlind/blind-evidence.md",
+   ".ufo/waves/round-98/w1/ReviewerGate/gate-evidence.md",
+   "corpus/knowledge/round-98-rea-host-readiness.md",
+   "reports/round-98/votes/CriticR98.json",
+   "reports/round-98/votes/ReviewerBlind.json",
+   "reports/round-98/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C14-N4-record-appended",
+  "class": "saved doctor record gains an appended rerun line",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "14/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   ".ufo/waves/round-98/w1/CriticR98/critic-audit.md",
+   ".ufo/waves/round-98/w1/ReviewerBlind/blind-evidence.md",
+   ".ufo/waves/round-98/w1/ReviewerGate/gate-evidence.md",
+   "corpus/knowledge/round-98-rea-host-readiness.md",
+   "corpus/live/runs/round-98/rea-doctor-r98.txt",
+   "reports/round-98/votes/CriticR98.json",
+   "reports/round-98/votes/ReviewerBlind.json",
+   "reports/round-98/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C14-N5-s506-body-rebuilt",
+  "class": "pinned S506 body replaced by a self-consistent body",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "14/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   ".ufo/waves/round-98/w1/CriticR98/critic-audit.md",
+   ".ufo/waves/round-98/w1/ReviewerBlind/blind-evidence.md",
+   ".ufo/waves/round-98/w1/ReviewerGate/gate-evidence.md",
+   "corpus/knowledge/round-98-rea-host-readiness.md",
+   "reports/round-98/quote-receipts/S506.receipt.json",
+   "reports/round-98/quote-receipts/fetch-log.md",
+   "reports/round-98/quote-receipts/raw/S506.body",
+   "reports/round-98/votes/CriticR98.json",
+   "reports/round-98/votes/ReviewerBlind.json",
+   "reports/round-98/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C14-N6-s507-anchor-relabelled",
+  "class": "S507 anchor re-pointed to a true line that does not carry the claim",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "14/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   "corpus/SOURCES.md"
+  ],
+  "removed": []
+ }
+]
