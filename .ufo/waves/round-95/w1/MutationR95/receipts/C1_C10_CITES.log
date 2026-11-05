@@ -1,0 +1,3 @@
+SELFTEST_C1V4=fail legs=24
+SELFTEST FAIL: V07-legacy-path: expected fail on C1_C10_CITES, got rc=1 failing=['C1_VERDICT']
+SELFTEST FAIL: V08-entry-pending: expected fail on C1_C10_CITES, got rc=0 failing=[]

@@ -54,7 +54,7 @@ and `live/runs/`.
 | C07 | firmware images | `knowledge/round-64-firmware-region-byte-evidence.md` (manual byte-derived readout of `fixtures/firmware-r63/firmware-r63.bin` only; no general firmware-format, extraction/execution, provider-completeness or authenticity claim) | — | held |
 | C08 | browser/Electron runtime evidence | `knowledge/round-93-browser-cdp-runtime-evidence.md` (round 93; one authored inert fixture and one saved round-77 CDP record, fixture-scoped, no general browser, Chrome, CDP or Electron claim) | `live/runs/round-77/` (CDP `inspect_web_page` over an authored loopback fixture, receipt exit 0, S447; S495 names this record) | held |
 | C09 | EVM bytecode interfaces | `knowledge/round-62-evm-dispatch-byte-evidence.md` (manual authored-byte/saved-field correspondence only) | `fixtures/evm-r19`, `evm-r21`…`evm-r26` (no `evm-r20`); `verify_evm_evidence.py`; retained rejected candidate `knowledge/evm-saved-interface-candidates.md` | held |
-| C10 | evidence-ledger discipline (Evidence IDs; observation/inference/unknown) | `knowledge/seed.md` §Verification discipline; candidate `knowledge/2026-10-29-rea-evidence-ledger-discipline.md` (S096–S109; not yet admitted) | `verify_saved_evidence.py`; `corpus/lessons/2026-10-29-evidence-ledger-curation.md`; `reports/evidence-ledger-2026-10-29/` | partial |
+| C10 | evidence-ledger discipline (Evidence IDs; observation/inference/unknown) | `knowledge/round-95-evidence-ledger-discipline.md` (round 95 admission, superseding the r74-rejected 2026-10-29 candidate; REA's Evidence record, session ledger, residual-unknown and completion-ledger contracts at pinned revision 12f6e09, drift-checked 2026-11-05 on S500/S501; scoped to REA's documented contracts, not a run receipt) | `corpus/SOURCES.md` (S096–S109, S500, S501); `reports/round-95/quote-receipts/`; `verify_saved_evidence.py`; `corpus/lessons/2026-10-29-evidence-ledger-curation.md` | held |
 | C11 | text encodings inside artifacts (UTF-16 names, surrogates) | `knowledge/utf16-unpaired-surrogates-in-resource-names.md` | `fixtures/pe-r34`, `pe-r51`…`pe-r57`, `pe-r59` | held |
 | C12 | tool and process validation against known truth | `knowledge/tool-validation-by-function-and-version.md`; `knowledge/seed.md` §Calibration strategy | authored fixtures carrying `truth.json` | held |
 | C13 | fixity and provenance (digest scope, receipts versus origin) | `knowledge/digest-scope-versus-provenance.md`; `knowledge/seed.md` §Calibration strategy (fixture provenance fields only) | `lessons/round-1.md` gate, `reports/round-1/` | held |
@@ -100,9 +100,10 @@ Ground being explored and not yet held, nearest first.
 - Evidence custody beyond fixity: collection and transfer records
   (SWGDE collection/acquisition guidance) — adjacent to this province; enter only
   as it bears on shipped-artifact evidence ledgers.
-- C10 admit gate for `knowledge/2026-10-29-rea-evidence-ledger-discipline.md`
-  (candidate; sourced REA EvidenceLedger/residual-unknown contracts at
-  `12f6e09` plus APU/Schum/Richards/ED/Frontiers method adjacency).
+- C10 — admitted in round 95 as `knowledge/round-95-evidence-ledger-discipline.md`
+  (superseding the r74-rejected 2026-10-29 candidate; row held in the coverage map).
+  Open follow-ups: a non-author re-fetch of S500/S501, and the residual-unknown
+  qualification rule exercised against a fixture-scoped REA run (not claimed here).
 - RE resource atlas (candidate `knowledge/round-73-re-resource-atlas.md`, sources S110–S426,
   gate `lessons/2026-10-29-re-resource-atlas.md`): breadth map of primary specs, papers,
   format tooling, framework extractors, firmware/provenance sources and practice corpora.

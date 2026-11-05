@@ -1,0 +1,8 @@
+SELFTEST_C1V4=fail legs=24
+SELFTEST FAIL: V04-dup-json-keys-vote: expected fail on C1_VOTES, got rc=0 failing=[]
+SELFTEST FAIL: V18-na-letter-flood: expected fail on C1_VOTES, got rc=0 failing=[]
+SELFTEST FAIL: F17-vacuous-na: expected fail on C1_VOTES, got rc=0 failing=[]
+SELFTEST FAIL: F20-foreign-artifact-dir: expected fail on C1_VOTES, got rc=0 failing=[]
+SELFTEST FAIL: F12-case-dup-seat: expected fail on C1_VOTES, got rc=0 failing=[]
+SELFTEST FAIL: F13-role-mismatch: expected fail on C1_VOTES, got rc=0 failing=[]
+SELFTEST FAIL: F15-traversal: expected fail on C1_VOTES, got rc=0 failing=[]

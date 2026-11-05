@@ -1,0 +1,137 @@
+{
+ "schema": "ufo-swarm-registry-v1",
+ "path": ".ufo/waves/round-95/w1/swarm-registry.json",
+ "reportDir": ".ufo/waves/round-95/w1",
+ "members": {
+  "ScoutReopen": {
+   "kind": "spawn",
+   "agentId": null,
+   "role": "scout",
+   "item": null,
+   "axes": [
+    "coverage"
+   ],
+   "milestone": "Round 95: C1 K 11/15->12/15 (C10 admission via the v4 gate); C2 v4 counter kills the r94-routed named vectors; 13 seats"
+  },
+  "ScoutCiteback": {
+   "kind": "spawn",
+   "agentId": null,
+   "role": "scout",
+   "item": null,
+   "axes": [
+    "coverage"
+   ],
+   "milestone": "Round 95: C1 K 11/15->12/15 (C10 admission via the v4 gate); C2 v4 counter kills the r94-routed named vectors; 13 seats"
+  },
+  "ScribeLesson": {
+   "kind": "spawn",
+   "agentId": null,
+   "role": "scribe",
+   "item": null,
+   "axes": [
+    "coverage"
+   ],
+   "milestone": "Round 95: C1 K 11/15->12/15 (C10 admission via the v4 gate); C2 v4 counter kills the r94-routed named vectors; 13 seats"
+  },
+  "ExecReceipts": {
+   "kind": "spawn",
+   "agentId": null,
+   "role": "executor",
+   "item": null,
+   "axes": [
+    "coverage"
+   ],
+   "milestone": "Round 95: C1 K 11/15->12/15 (C10 admission via the v4 gate); C2 v4 counter kills the r94-routed named vectors; 13 seats"
+  },
+  "ExecBattery": {
+   "kind": "spawn",
+   "agentId": null,
+   "role": "executor",
+   "item": null,
+   "axes": [
+    "calibration"
+   ],
+   "milestone": "Round 95: C1 K 11/15->12/15 (C10 admission via the v4 gate); C2 v4 counter kills the r94-routed named vectors; 13 seats"
+  },
+  "ExecCensus": {
+   "kind": "spawn",
+   "agentId": null,
+   "role": "executor",
+   "item": null,
+   "axes": [
+    "coverage"
+   ],
+   "milestone": "Round 95: C1 K 11/15->12/15 (C10 admission via the v4 gate); C2 v4 counter kills the r94-routed named vectors; 13 seats"
+  },
+  "ExecFrozen": {
+   "kind": "spawn",
+   "agentId": null,
+   "role": "executor",
+   "item": null,
+   "axes": [
+    "calibration"
+   ],
+   "milestone": "Round 95: C1 K 11/15->12/15 (C10 admission via the v4 gate); C2 v4 counter kills the r94-routed named vectors; 13 seats"
+  },
+  "ReviewerGate": {
+   "kind": "spawn",
+   "agentId": null,
+   "role": "reviewer",
+   "item": null,
+   "axes": [
+    "coverage"
+   ],
+   "milestone": "Round 95: C1 K 11/15->12/15 (C10 admission via the v4 gate); C2 v4 counter kills the r94-routed named vectors; 13 seats"
+  },
+  "ReviewerBlind": {
+   "kind": "spawn",
+   "agentId": null,
+   "role": "reviewer",
+   "item": null,
+   "axes": [
+    "coverage"
+   ],
+   "milestone": "Round 95: C1 K 11/15->12/15 (C10 admission via the v4 gate); C2 v4 counter kills the r94-routed named vectors; 13 seats"
+  },
+  "CriticR95": {
+   "kind": "spawn",
+   "agentId": null,
+   "role": "critic",
+   "item": null,
+   "axes": [
+    "calibration"
+   ],
+   "milestone": "Round 95: C1 K 11/15->12/15 (C10 admission via the v4 gate); C2 v4 counter kills the r94-routed named vectors; 13 seats"
+  },
+  "MutationR95": {
+   "kind": "spawn",
+   "agentId": null,
+   "role": "mutation-tester",
+   "item": null,
+   "axes": [
+    "calibration"
+   ],
+   "milestone": "Round 95: C1 K 11/15->12/15 (C10 admission via the v4 gate); C2 v4 counter kills the r94-routed named vectors; 13 seats"
+  },
+  "ConnectorOverlap": {
+   "kind": "spawn",
+   "agentId": null,
+   "role": "connector",
+   "item": null,
+   "axes": [
+    "coverage"
+   ],
+   "milestone": "Round 95: C1 K 11/15->12/15 (C10 admission via the v4 gate); C2 v4 counter kills the r94-routed named vectors; 13 seats"
+  },
+  "SentinelScope": {
+   "kind": "spawn",
+   "agentId": null,
+   "role": "sentinel",
+   "item": null,
+   "axes": [
+    "coverage"
+   ],
+   "milestone": "Round 95: C1 K 11/15->12/15 (C10 admission via the v4 gate); C2 v4 counter kills the r94-routed named vectors; 13 seats"
+  }
+ }
+}

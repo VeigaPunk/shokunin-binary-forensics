@@ -1,0 +1,3 @@
+SELFTEST_C1V4=fail legs=24
+SELFTEST FAIL: V03-dup-json-keys-registry: expected fail on C1_REGISTRY, got rc=0 failing=[]
+SELFTEST FAIL: M6-forged-registry-seat: expected fail on C1_REGISTRY, got rc=0 failing=[]

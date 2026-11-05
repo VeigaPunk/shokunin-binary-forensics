@@ -1415,3 +1415,34 @@ no row, supports no claim).
 - **Assimilation: none** (155 staged-id collisions; L0 `revenger | round-91` unanswered).
 - **Lane hygiene:** one gitignored `corpus/__pycache__` from a seat's un-flagged Python run removed (sentinel F1);
   no host sysctl, sudo or pacman touched by any seat (sentinel audit).
+
+## Round 95 (hyaku run 15, attempt 1) — C10 admitted through the v4 gate (coverage K 11/15 → 12/15); the r94 routed closes frozen as v4 legs and eleven named vectors (calibration)
+
+- **Freeze `6e0bf15`** (claims `reports/round-95/claims.md`, the v4 counter `reports/round-95/c1_k_admit_counter4.py`,
+  the battery `reports/round-95/forge_battery4.py`, controls, red-before, the superseding C10 candidate
+  `corpus/knowledge/round-95-evidence-ledger-discipline.md`, S500/S501 receipts). Base `cb5c26f`.
+- **Motivating evidence:** the round-94 non-author spot-check (`corpus/lessons/round-94-verifier-spotcheck.md`)
+  routed six defects (§6): the column-0 anchor false green (CriticR94 H1), the receipt honesty gap (H2), the
+  C15 cell substring (H3), the registry leg missing (M6), the S-id regex and n/a vocabulary (M5/M6), the
+  `-B` rule (M5), and the "classes" wording overreach. The frozen v3 counter still passed all ten TREE vectors
+  (`V3_REACH_NEW=10/10`) and the registry mutant survived (`MUTANT_V3_REGISTRY_SURVIVES=pass`).
+- **C10 coverage row:** `partial` → `held` on the admitted superseding entry (`K_HELD_BACKED` 11/15 → 12/15). The
+  r74-rejected candidate `knowledge/2026-10-29-rea-evidence-ledger-discipline.md` stays byte-preserved at `rejected`.
+- **Votes:** `reports/round-95/votes/{ReviewerGate,ReviewerBlind,CriticR95}.json` (copied byte-exact from the wave dir),
+  bound to the candidate digest `476edc36…79fb9`. The admission flip (`admission-status: admitted`) follows the votes
+  and does not change the normalized digest. Lane-internal; the non-author closure is the outside check.
+- **Measured:** `C1_VERDICT=pass` (24 legs, working-tree run `.ufo/waves/round-95/c1-tree-postvote.log`);
+  `BATTERY4_VERDICT=pass` (`controls/battery4-full-at-freeze.log`; `V4_KILLS=10/10`; `MUTANT_V4_REGISTRY_KILLED=pass`;
+  `HOLD_R94_BATTERY=pass` after the HOLD leg pre-creates the frozen battery's reaped scratch root).
+- **Routed (critic + mutation-tester + connector, `.ufo/waves/round-95/w1/`):** A4 shadow entry with an indented
+  admission-status line passes all legs (no leg enumerates `corpus/knowledge/`); A3-both used-by exclusivity
+  unenforced; six legs without a discriminating forged delta; the receipt set for the 22 self-test deltas is
+  aggregate-only; `C1_PYCACHE` coverage gap (M8).
+- **Sources:** rows 499 → 501 (S500, S501, tier A, `mined`, opened 2026-11-05, `used-by` the entry); 15 existing rows
+  gained the entry in `used-by` (S002, S096–S109; old→new in `corpus/lessons/round-95.md` §Frontier). Round-end census
+  exit 0.
+- **Corrections:** `corpus/lessons/round-94.md` appended C-r95-1 (S499 quote is 11 words, not 13). The r94 freshness
+  row re-graded `unchanged` by the SCORECARD erratum (C-d).
+- **Lane hygiene:** an inline debug session wrote `reports/round-94/__pycache__/…pyc` without `-B` (gitignored); removed
+  (M8). The fleet-root `evb.ts` the sentinel reported is absent at the sweep; no revenger-attributable fleet-root file.
+- **Assimilation: none** (155 staged-id collisions; L0 `revenger | round-91` unanswered).

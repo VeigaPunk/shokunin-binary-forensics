@@ -1,0 +1,38 @@
+{
+  "seat": "ReviewerBlind",
+  "role": "reviewer",
+  "candidate_sha256": "476edc36d89ffdcf8cdafabc9cac4fc5dd49f68efe307d05c7db79a919479fb9",
+  "decisions": {
+    "Q01": "PASS",
+    "Q02": "PASS",
+    "Q03": "n/a",
+    "Q04": "PASS",
+    "Q05": "n/a",
+    "Q06": "n/a",
+    "Q07": "n/a",
+    "Q08": "n/a",
+    "Q09": "PASS",
+    "Q10": "PASS",
+    "Q11": "PASS",
+    "Q12": "n/a",
+    "Q13": "n/a",
+    "Q14": "n/a",
+    "Q15": "n/a",
+    "Q16": "PASS",
+    "Q17": "n/a"
+  },
+  "notes": {
+    "Q03": "Q03 has no byte-oracle object in this documentation-only entry; see entry Q03 and Q11 rows",
+    "Q05": "Q05 has no host capability or readiness claim in scope; boundary sits in entry Q05 row and Scope",
+    "Q06": "Q06 covers authored fixtures and none exist or are claimed here; see entry Q06 row",
+    "Q07": "Q07 needs a parser-behavior prediction and the entry offers none; see entry Q07 row",
+    "Q08": "Q08 is the historical criterion superseded by Q11 which this vote marks PASS; see entry Q08 row",
+    "Q12": "Q12 concerns rejected registry rows and none is load-bearing for this entry; see entry Q12 row",
+    "Q13": "Q13 credits verifier commands guarding prose and no command guards this entry; see entry Q13 row",
+    "Q14": "Q14 checks hex strings carrying byte-length assertions and no such string exists; see entry Q14 row",
+    "Q15": "Q15 requires lane-tree git identity re-derivation and the entry asserts none; see entry Q15 row",
+    "Q17": "Q17 tracks adjudication-relocated artifacts and the superseded candidate stayed at its path; see entry Q17 row"
+  },
+  "artifact_path": ".ufo/waves/round-95/w1/ReviewerBlind/derivation.md",
+  "artifact_sha256": "62e125f38c898c82341f75964c6c60d4b1c296f5b1c5d319a371f9fa5dcd3a19"
+}

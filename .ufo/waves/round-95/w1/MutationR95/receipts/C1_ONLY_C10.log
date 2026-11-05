@@ -1,0 +1,2 @@
+SELFTEST_C1V4=fail legs=24
+SELFTEST FAIL: ONLY-C10-second-row: expected fail on C1_ONLY_C10, got rc=1 failing=['C1_VERDICT']

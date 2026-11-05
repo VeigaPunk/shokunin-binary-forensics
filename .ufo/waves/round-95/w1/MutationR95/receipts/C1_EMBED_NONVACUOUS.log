@@ -1,0 +1,3 @@
+SELFTEST_C1V4=fail legs=24
+SELFTEST FAIL: F18-ws-output: expected fail on C1_EMBED_NONVACUOUS, got rc=1 failing=['C1_VOTES', 'C1_EMBEDDED', 'C1_VERDICT']
+SELFTEST FAIL: F18b-tilde-fence: expected fail on C1_EMBED_NONVACUOUS, got rc=1 failing=['C1_VOTES', 'C1_EMBEDDED', 'C1_VERDICT']

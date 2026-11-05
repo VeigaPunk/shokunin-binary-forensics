@@ -1,0 +1,39 @@
+{
+  "seat": "ReviewerGate",
+  "role": "reviewer",
+  "candidate_sha256": "476edc36d89ffdcf8cdafabc9cac4fc5dd49f68efe307d05c7db79a919479fb9",
+  "decisions": {
+    "Q01": "PASS",
+    "Q02": "PASS",
+    "Q03": "n/a",
+    "Q04": "PASS",
+    "Q05": "n/a",
+    "Q06": "n/a",
+    "Q07": "n/a",
+    "Q08": "n/a",
+    "Q09": "PASS",
+    "Q10": "PASS",
+    "Q11": "PASS",
+    "Q12": "n/a",
+    "Q13": "n/a",
+    "Q14": "n/a",
+    "Q15": "PASS",
+    "Q16": "PASS",
+    "Q17": "n/a"
+  },
+  "notes": {
+    "Q01": "Tier-A rows S500 and S501 opened 2026-11-05 with committed receipts I refetched and re-hashed; no tier-C row is sole support; see the Q01 entry paragraph and cross-reference Q02.",
+    "Q03": "No byte oracle or expected fixture value exists in this documentation-only entry; nothing is compared against a record under test, per the Q03 and Q11 rows.",
+    "Q05": "No readiness, capability or installation claim against any real host surface; pins are source-scope boundaries, per Q05 in corpus/QUALITY.md.",
+    "Q06": "No authored fixture is built, edited or claimed; no producer call exists to premise-check, per Q06 in corpus/QUALITY.md.",
+    "Q07": "No predicted parser behavior, accept/refuse hypothesis or pre-registered claim appears; nothing supports a sentence via an unreproduced cause, per Q07.",
+    "Q08": "Historical criterion superseded by Q11 in corpus/QUALITY.md; nothing remains beyond the applied Q11 check recorded above.",
+    "Q12": "No rejected registry row is load-bearing; the superseded 2026-10-29 file is a knowledge entry under the r74 kill rule, not a Q12 SOURCES row.",
+    "Q13": "The entry credits no verifier or recheck command with guarding any clause value; its recheck lines name re-open commands only, per Q13.",
+    "Q14": "No hex string, byte-length assertion or ASCII byte rendering appears anywhere in the committed entry text, per Q14; lengths live in the receipts.",
+    "Q15": "External revision pin verified by non-author refetch re-hashing to the frozen receipt values; assertion about the lane tree none, per Q15 discussion.",
+    "Q17": "No adjudication relocates any cited artifact; the superseded candidate stays byte-preserved at its original rejected path, per Q17."
+  },
+  "artifact_path": ".ufo/waves/round-95/w1/ReviewerGate/evidence.md",
+  "artifact_sha256": "ce1f94eb3d037cc2555f265c6c1e37f8a25b600c59c9918c290cfe5a57133890"
+}

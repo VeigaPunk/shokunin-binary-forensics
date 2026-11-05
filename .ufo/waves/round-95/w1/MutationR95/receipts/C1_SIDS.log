@@ -1,0 +1,3 @@
+SELFTEST_C1V4=fail legs=24
+SELFTEST FAIL: V19-sid-suffix-spaced: expected fail on C1_SIDS, got rc=1 failing=['C1_VOTES', 'C1_SOURCES', 'C1_VERDICT']
+SELFTEST FAIL: F16-unresolved-body-sid: expected fail on C1_SIDS, got rc=1 failing=['C1_VOTES', 'C1_SOURCES', 'C1_VERDICT']

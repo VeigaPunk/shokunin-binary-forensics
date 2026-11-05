@@ -1,0 +1,11 @@
+rows:
+501
+malformed:
+2
+tier:
+A=452 B=21 C=28 
+status:
+mined=465 queued=16 rejected=20 
+dups:
+enum:
+missing used-by:

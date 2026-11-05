@@ -1,0 +1,2 @@
+SELFTEST_C1V4=fail legs=24
+SELFTEST FAIL: F19-stale-new-row: expected fail on C1_SOURCES, got rc=0 failing=[]

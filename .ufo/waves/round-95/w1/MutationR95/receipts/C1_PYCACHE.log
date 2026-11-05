@@ -1,0 +1,2 @@
+SELFTEST_C1V4=fail legs=24
+SELFTEST FAIL: M5-pycache-planted: expected fail on C1_PYCACHE, got rc=0 failing=[]

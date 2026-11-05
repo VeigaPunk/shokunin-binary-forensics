@@ -18,7 +18,7 @@ source: S501 — REA EvidenceLedger re-open (drift check of S096), https://raw.g
 verified-at: 2026-11-05 — superseding candidate derived byte-wise from the 2026-10-29 candidate (see Supersession); S500 and S501 re-opened the two primary schema sources at REA revision `12f6e09` on 2026-11-05 (bodies committed at `reports/round-95/quote-receipts/raw/`, fetch log `reports/round-95/quote-receipts/fetch-log.md`); issue and methodology sources carry their original 2026-10-29 openings. No REA MCP analysis run.
 recheck: `git -C ~/.local/share/rea rev-parse HEAD`; re-open the two raw.githubusercontent URLs of S500/S501 and compare `fetch_sha256` against the committed bodies; re-open issue pages and arXiv/DOI destinations if a claim moves.
 coverage-map: C10 — evidence-ledger discipline (Evidence IDs; observation/inference/unknown)
-admission-status: candidate
+admission-status: admitted
 
 # REA evidence-ledger discipline — observation, residual unknown, qualification
 

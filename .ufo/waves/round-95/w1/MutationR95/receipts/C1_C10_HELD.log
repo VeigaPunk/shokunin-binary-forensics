@@ -1,0 +1,2 @@
+SELFTEST_C1V4=fail legs=24
+SELFTEST FAIL: do-nothing base did not fail: rc=1

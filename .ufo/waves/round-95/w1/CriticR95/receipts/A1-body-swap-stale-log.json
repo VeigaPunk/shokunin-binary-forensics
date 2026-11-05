@@ -1,0 +1,20 @@
+{
+ "attack": "A1-body-swap-stale-log",
+ "shape": "(a) S500 body appended after fetch-log commit; receipt re-bound to new body; log line still names the old sha",
+ "old_body_sha256": "520b6207e4948981e6cd4de785155ce6e7e1bc95525f96d6a60539e49c055cfa",
+ "new_body_sha256": "e86a1efb27ba231e16f111c871853c88755f113dce22ddd4e60507474a167421",
+ "rc": 1,
+ "verdict": "killed",
+ "expected_leg": "C1_RECEIPTS",
+ "failing_legs": [
+  "C1_RECEIPTS",
+  "C1_VERDICT"
+ ],
+ "why": [
+  "C1_RECEIPTS_WHY=S500:fetch-log-line-missing",
+  "C1_QUOTES_WHY=ok"
+ ],
+ "counter_stdout": "C1_K_HELD_BACKED=12/15\nC1_VOTES=CriticR95,ReviewerBlind,ReviewerGate digest=476edc36d89ffdcf8cdafabc9cac4fc5dd49f68efe307d05c7db79a919479fb9\nC1_REGISTRY_WHY=ok\nC1_RECEIPTS_WHY=S500:fetch-log-line-missing\nC1_PYCACHE_WHY=ok\nC1_SOURCE_IDS=S002,S096,S097,S098,S099,S100,S101,S102,S103,S104,S105,S106,S107,S108,S109,S500,S501\nC1_SIDS_WHY=ok\nC1_SOURCES_WHY=ok\nC1_QUOTES_WHY=ok\nC1_ONLY_C10_DIFFS=none\nC1_ROWS_TOTAL=pass\nC1_C10_HELD=pass\nC1_C10_CITES=pass\nC1_ONLY_C10=pass\nC1_ADMITTED=pass\nC1_TRIO=pass\nC1_REGISTRY=pass\nC1_VOTES=pass\nC1_RECEIPTS=fail\nC1_PYCACHE=pass\nC1_LINT=pass\nC1_EMBEDDED=pass\nC1_EMBED_NONVACUOUS=pass\nC1_SIDS=pass\nC1_SOURCES=pass\nC1_QUOTES=pass\nC1_K_HELD_BACKED=pass\nC1_VERDICT=fail\n",
+ "counter_stderr": "",
+ "fixture_root": "/fast/scratch/hyaku/revenger-r95/CriticR95/wA1/fx-p3c13vwm/t"
+}

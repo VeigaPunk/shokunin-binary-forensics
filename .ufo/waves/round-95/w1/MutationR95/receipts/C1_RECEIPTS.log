@@ -1,0 +1,3 @@
+SELFTEST_C1V4=fail legs=24
+SELFTEST FAIL: V10-stale-fetched-at: expected fail on C1_RECEIPTS, got rc=0 failing=[]
+SELFTEST FAIL: V27-fabricated-body-foreign-host: expected fail on C1_RECEIPTS, got rc=0 failing=[]

@@ -565,6 +565,24 @@ rows (entry command, verdict lines, pinned instrument sha, red/green logs) until
 | write scope | scratch only under `/fast/scratch/hyaku/revenger-r94/battery3`; the `red-v2` stage pre-creates the bare `revenger-r93/CriticR93/{out,hs,trees}` dirs the committed attack driver hardcodes (reaper-swept); writes nothing in the lane |
 | owner | revenger |
 
+| name | `c1_k_admit_counter4 (round 95 C1, coverage K; successor of `c1_k_admit_counter3`, base revision `cb5c26f`; the routed r94 closes H1/H2/H3/M2/M4/M5/M6 are legs: C1_REGISTRY, C1_RECEIPTS, C1_SIDS, C1_PYCACHE, strict-JSON votes, widened status anchor, exact C10 fileset) |
+| kind | probe (measurement over a committed tree; `--self-test` asserts a 24-leg honest-fixture pass and 22 forged-delta kills on their frozen legs, plus the do-nothing base failing) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-95/c1_k_admit_counter4.py --rev <rev>` (cwd = lane root; `--tree <dir>` for a materialized tree) |
+| verdict map | `0` `C1_VERDICT=pass` · `1` `C1_VERDICT=fail` · `2` could-not-evaluate (archive failed) · `64` usage |
+| self-test | `--self-test` (isolated fixtures in `$HYAKU_SCRATCH/revenger-r95/c1v4`; expects `SELFTEST_C1V4=pass legs=24`) |
+| pinned-value path | counter bytes `reports/round-95/c1_k_admit_counter4.py` (frozen with `reports/round-95/claims.md` at `6e0bf15`); controls `reports/round-95/controls/selftest-c1v4.log`, `c1v4-do-nothing.log` |
+| write scope | read-only over the committed tree (`git archive` into a scratch `t` dir, removed on exit); writes nothing in the lane |
+| owner | revenger |
+
+| name | `forge_battery4 (round 95 C2 calibration; the frozen battery of eleven r94-routed named vectors, each run against the frozen v3 counter (red) and the v4 counter (full), plus the M6 code mutant that drops the registry gate, plus the held r94 battery) |
+| kind | probe (measurement; imports the v3 fixture generator and the v4 counter; builds its own trees in scratch and mutants on scratch copies only) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-95/forge_battery4.py --stage full` (predicate; `--stage red-v3` is the committed red-before) |
+| verdict map | `0` `BATTERY4_VERDICT=pass` · `1` otherwise · `64` usage |
+| self-test | the `full` stage runs the v4 `--self-test` first (expects `SELFTEST_C1V4=pass`) and proves the registry-gate mutant dies (`MUTANT_V4_REGISTRY_KILLED=pass`) |
+| pinned-value path | `reports/round-95/controls/battery4-red-v3.log` and `battery4-full-at-freeze.log`; the r94 battery is held by `reports/round-94/forge_battery3.py --stage full` (`BATTERY3_VERDICT=pass`, after the HOLD leg pre-creates its reaped scratch root) |
+| write scope | scratch only under `$HYAKU_SCRATCH/revenger-r95/battery4`; mutants are copies in scratch; writes nothing in the lane |
+| owner | revenger |
+
 ## 7. Cited sources — existence-checked
 
 | citation | exists at | credited for |

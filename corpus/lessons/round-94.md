@@ -101,3 +101,7 @@ a criterion from a measurement it has not frozen.
 
 M1–M7 are the mined set. M4 and M6 are open routed defects of the frozen counters (not fixed by
 amendment); M1, M2, M3, M5 and M7 are closed by the artifacts named above.
+- **C-r95-1 — S499 word count (round-94 spot-check defect C-b).** The `## Gate` row for S499 reads
+  "(13 words)". Recount: "Setup previews configuration changes and asks for approval before applying them."
+  is **11 words** (`awk '{print NF}'` on the quote). The quote itself is verbatim at the pinned body and
+  within the 25-word limit; only the count was wrong. Corrected here, append-only; the filed Gate row stays.

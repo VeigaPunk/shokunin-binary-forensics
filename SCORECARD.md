@@ -1826,3 +1826,38 @@ vocabulary (M5, M6); (6) the `-B` spec-template fix for seat Python calls (M5); 
 
 **planned:** r95 — C1 v4 successor counter with the routed closes above as frozen predicates (on a new
 round's freeze), and the non-author verifier path for C15 (outside the lane's wave).
+
+## Round 95 (hyaku run 15, attempt 1) — C10 admitted through the v4 gate (coverage K 11/15 → 12/15); the r94 routed closes frozen as v4 legs and eleven named vectors (calibration)
+
+Base `cb5c26f73c99af268bc71e9f7417bfd7e7738d83`; freeze `6e0bf15fed58f357b7fa0c881371ac7616a116f7`
+(claims, v4 counter, battery, controls, red-before, superseding candidate, S500/S501 receipts — committed
+before any seat ran); landing = the commit carrying this section (its hash is in the report). Claims and
+predicates: `reports/round-95/claims.md`, unchanged since the freeze. Wave: one v1 wave, 13 seats, all
+settled; no dead seats; seat final text was not retained by the orchestrator (kernel restart mid-wave), so
+the seat report files in `.ufo/waves/round-95/w1/` are the evidence. Votes are lane-internal (three reviewer/critic
+votes bound to the candidate digest `476edc36…79fb9`, copied byte-exact into `reports/round-95/votes/`);
+both verdicts are **met on the frozen counter, pending the non-author closure**.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — knowledge-map ground K (C1; the lowest non-retired axis) | `K_HELD_BACKED` **11/15 (7.3) → 12/15 (8.0)**; C10 `partial` → `held`, backed by `knowledge/round-95-evidence-ledger-discipline.md` (admitted) | `PYTHONUTF8=1 python3 -B reports/round-95/c1_k_admit_counter4.py --rev <landing>` → `C1_VERDICT=pass`, `C1_K_HELD_BACKED=12/15`, exit 0; working-tree run `.ufo/waves/round-95/c1-tree-postvote.log` (rc 0); do-nothing base `reports/round-95/controls/c1v4-do-nothing.log` → `C1_C10_HELD=fail`, rc 1 | `cb5c26f` → `6e0bf15` (freeze) → landing | **met on frozen counter; pending non-author closure.** Contested: the frozen counter cannot see a non-author re-fetch (disclosed limit); the critic's routed survivor A4 (an unreferenced shadow entry with an indented admission-status line passes all legs) is outside C1's frozen predicate and routed to r96 |
+| calibration — the counters' reach over routed named vectors (C2) | red: frozen v3 counter reaches **10/10** TREE vectors (`V3_REACH_NEW=10/10`) and the registry-gate code mutant SURVIVES v3's self-test (`MUTANT_V3_REGISTRY_SURVIVES=pass`) → v4 kills **10/10** TREE vectors on their frozen legs (`V4_KILLS=10/10`), the same mutant DIES on v4 (`MUTANT_V4_REGISTRY_KILLED=pass`) | `PYTHONUTF8=1 python3 -B reports/round-95/forge_battery4.py --stage full` → `BATTERY4_VERDICT=pass`, exit 0 (`reports/round-95/controls/battery4-full-at-freeze.log`); red `--stage red-v3` → `RED_V3_VERDICT=pass` (`controls/battery4-red-v3.log`); independent reproduction by ExecBattery matches every verdict line (`w1/ExecBattery/full.log`) | red `6e0bf15` (freeze, v3 frozen bytes) → landing (v4) | **met on frozen predicate; pending non-author closure.** Eleven named vectors (ten TREE vectors plus the registry-gate code mutant, the r94 routed set) are the predicate; the critic's seven NEW forged trees are not part of it: A1, A2, A3-old, A5 and A6 killed, A3-both and A4 survive (routed to r96). MutationR95: six v4 legs (`C1_ROWS_TOTAL`, `C1_TRIO`, `C1_LINT`, `C1_EMBEDDED`, `C1_QUOTES`, `C1_K_HELD_BACKED`) have no discriminating forged delta — routed |
+| coverage / calibration — others (no claim) | `C1_ONLY_C10=pass` (no other row moved); F4, M, A1, A1v2 holds not re-measured this round (no claim touches them) | `reports/round-95/controls/c1v4-do-nothing.log` (base); `scripts/sources-census.sh validate --root … revenger` | `6e0bf15` | unchanged holds |
+| freshness / depth / operability / adjacency | no claim; `SKILL.md` gains two registry rows (counter4, battery4); `PROVINCE.md` and `corpus/QUALITY.md` byte-unchanged (`git diff --stat cb5c26f..landing -- PROVINCE.md corpus/QUALITY.md` empty) | the same diff command | landing | unchanged (no harm observed) |
+
+Erratum to the round-94 freshness row (round-94 spot-check defect C-d, appended here; the r94 row stays as
+written): `freshness … improved` was not a declared round-94 claim. Re-graded **unchanged** (no declared
+freshness claim, no score move). The r94 entry's re-open of S054/S075 remains evidence of no drift, not a
+scored move.
+
+Capabilities: none added (both instruments are probes registered in `SKILL.md`, not gates).
+
+Sources: rows 499 → 501 (S500, S501; tier A, `mined`, opened 2026-11-05, used-by the entry); 15 existing rows
+(S002, S096–S109) gained the entry in `used-by` (old→new in `corpus/lessons/round-95.md` §Frontier). Census round
+start `reports/round-95/controls/census-round-start.log` rc 0; round end: rc 0, no E-codes (see report).
+
+**Stale-lane:** the driver relaunch for r95 (launched 13:58:31 -03:00) is the L1's only open mission; no other mission of this lane is open. Progressing (lane commits and file writes since launch; `find` evidence in the report).
+
+**Routed to r96:** (1) a leg that rejects any `corpus/knowledge/*.md` outside the coverage-row union whose bytes carry an admission-status match (critic A4); (2) strict used-by exclusivity for new rows (critic A3-both); (3) a per-delta receipt for each of the 22 self-test deltas and a stub-prints-the-pass-line control (connector finding); (4) legs C1_ROWS_TOTAL, C1_TRIO, C1_LINT, C1_EMBEDDED, C1_QUOTES, C1_K_HELD_BACKED given a discriminating forged delta each (MutationR95); (5) `C1_PYCACHE` covers every frozen round directory the counter reads (M8); (6) the non-author re-fetch and closure for S500/S501.
+
+**planned:** r96 — coverage K: the next admissible C-row through the v4 gate with a non-author vote path; calibration: the routed items (1)–(5) as frozen predicates on a new freeze.
