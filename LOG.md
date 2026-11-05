@@ -1371,3 +1371,11 @@ no row, supports no claim).
   matches results; r91's 12-vs-13 reconciled in the lesson), D5 (two stubs, not three), D8,
   D9.
 
+
+## Round 93 (hyaku run 15, attempt 1) — C08 admitted on the saved round-77 CDP record; successor counters and the forgery battery frozen
+
+- **Wave (one v1, 13 seats, no dead seats).** Scouts ×2 (record opening with S495/S496 + quote receipts; S136 addendum re-open → S497 `supersedes S136`), scribe (entry draft, READY digest), executors ×3 (oracle and embedded re-derivation; frozen-battery integrity; census/no-harm receipts), reviewers ×3 (Q-gate ReviewerGate; blind derivation ReviewerBlind; r92 errata drafting ReviewerErrata), critic (CriticR93: 12 ranked findings against the v2 counters), mutation-tester (21 mutants on the two counters), connector (sibling overlap; considerthese proposal 2 mined), sentinel (write-scope audit: found a gitignored `__pycache__` in the frozen tree and a 275 MiB scratch dir, both removed).
+- **Landing `0723ebd0`.** `corpus/knowledge/round-93-browser-cdp-runtime-evidence.md` (C08, admitted on three votes bound to digest `1304008c…`); `corpus/SOURCES.md` S495–S497; `corpus/README.md` C08 → held; `corpus/knowledge/round-92-…` next revision (`git apply` of the errata patch: recheck pointer, labelled beyond-quote statements); `reports/round-93/` frozen instruments and receipts plus `opens.json`, `quote-receipts/`, `votes/`; `.ufo/waves/round-93/` wave evidence; `SKILL.md` gate-registry rows for the two v2 counters and the battery.
+- **Measured at `--rev 0723ebd0`.** C1 `C1_VERDICT=pass`, `C1_K_HELD_BACKED=10/15` (K 9/15 → 10/15); battery `V2_KILLS=9/9`, `BATTERY_VERDICT=pass`. Both met on the frozen predicates; both contested by the critic's findings (`.ufo/waves/round-93/w1/CriticR93/findings.md`), routed to round 94.
+- **Corrections.** r92 votes are lane-internal gate seats (LEARNING.md), not non-author; the round-92 entry revision applied; S136 "see LEADS" pointer superseded by S497; the wrong `dotnet/ecma-335` URL in the brief replaced by the verified `dotnet/runtime` pinned URL.
+- **Evidence.** `corpus/lessons/round-93.md` (Gate, Mistakes M1–M5, census); `reports/round-93/c1-after.log`, `c2-after.log`, `battery-after-full.log`, `census-round-end.log`.

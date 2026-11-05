@@ -1745,3 +1745,46 @@ C2 v2 (`C2_C08_TOKEN` exact-uncovered leg; `C2_C08_RECORD` sha pin on
 with controls `c2-partial`, `c2-held-seed`, `c2-trailing-cell`, `c2-del-r77`, Demo A–D; (2)
 SM6 v4 battery (carried from r91, unworked this round); (3) the r90 routed C2 predicate
 (instrument pins + `parseEvidence` id consistency), still open.
+
+## Round 93 (hyaku run 15, attempt 1) — C08 admitted on the saved round-77 record (coverage K 9/15 → 10/15); successor counters and the nine-class forgery battery frozen (calibration)
+
+Base `281a5bad66e844190a570cb35d257c6974749993`; freeze `02050cb2a6758e3bd9cec696ff0e42df6f23511a`
+(claims, both v2 counters, battery, controls); landing `0723ebd0687291685fa231b9808bbb20b5e49c13`
+(counters measured here with `--rev`); adjudication = the commit carrying this section (its hash is
+in the report). Claims and predicates: `reports/round-93/claims.md`, unchanged since the freeze. Wave:
+one v1 wave, 13 seats, no dead seats (`.ufo/waves/round-93/w1-results.json`). Entry revision of the
+round-92 record applied (`corpus/knowledge/round-92-…`, spot-check defects 2–3). The round-93 votes
+bind the final entry digest `1304008c…` (three re-bindings during the round; `corpus/lessons/round-93.md`
+Mistakes M1).
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — knowledge-map ground K (C1; the lowest non-retired axis) | `K_HELD_BACKED` **9/15 (6.0) → 10/15 (6.7)**; C08 `uncovered` → `held`, backed by `corpus/knowledge/round-93-browser-cdp-runtime-evidence.md` | `PYTHONUTF8=1 python3 -B reports/round-93/c1_k_admit_counter2.py --rev 0723ebd0687291685fa231b9808bbb20b5e49c13` → `C1_VERDICT=pass`, exit 0 (`reports/round-93/c1-after.log`) | red `281a5bad` (`controls/c1v2-do-nothing.log`, `C1_C08_HELD=fail`) → landing `0723ebd0` | **MET on the frozen counter; contested.** Critic findings 1–7, 10–11 (`.ufo/waves/round-93/w1/CriticR93/findings.md`) name reachable C1 forgeries outside the frozen nine (duplicate `admission-status` line passes C1_ADMITTED on the real lint; self-attested registry; case-variant seats; author self-vote; shared artifact; unpinned oracle). The landed entry is not one of them: its votes are distinct registry seats, digest-bound, artifact-bound, and its oracle re-runs. Successor predicates routed to r94 |
+| calibration — the counters' reach over routed forgery classes (C2) | v1 counter reachable by **5/5** C2-side classes (F5–F9; `controls/battery-v1-only.log`, `V1_REACH_C2=5/5`); the r92 critic's C1-side receipts resolve `R92_RECEIPTS=4/4` | `PYTHONUTF8=1 python3 -B reports/round-93/forge_battery.py --stage full` → `V2_KILLS=9/9`, `POS_C1V2=pass`, `POS_C2V2=pass`, `DO_NOTHING_C2=fail`, `BATTERY_VERDICT=pass`, exit 0 (`reports/round-93/battery-after-full.log`) | red = `controls/battery-v1-only.log`; after = `c2-after.log`, `battery-after-full.log` | **MET on the frozen predicate; contested.** The nine frozen classes are killed; the critic built more than a dozen further passing attacks (findings 1–12), so the measured move is reach over nine named classes, not soundness of the v2 counters. No 0–10 score is claimed on calibration |
+| calibration — mutation coverage of the v2 counters (support, no claim) | 21 mutants: 20 KILLED, 1 EQUIVALENT (`C2_NO_NEW`), 0 survived | `.ufo/waves/round-93/w1/MutationR93/mutants.md` (per-leg deciding trees) | `0723ebd0` | recorded; no claim |
+| coverage — other criteria (no claim) | M 3/3, A1v2 5/5, F4 11/11 — unchanged at base (`holds.log` at base; not re-run at landing) | `reports/round-81/f_probe4.py`, `reports/round-85/mg_probe.py`, `reports/round-84/ag_probe2.py` over the base archive | `281a5bad` | unchanged holds (base-only measurement; see report) |
+| freshness / depth / operability / adjacency | no claim; SKILL gains three probe/gate rows; PROVINCE and QUALITY byte-unchanged; no tool installed | `git diff --stat 02050cb..0723ebd0 -- PROVINCE.md corpus/QUALITY.md` (empty) | `0723ebd0` | unchanged (no harm observed) |
+
+Capabilities: none added (the v2 counters are probes; no new analysis family).
+
+Sources: rows 494 → 497 (S495 own-work r77 record, S496 CDP docs, S497 ECMA-335 Augments addendum,
+`supersedes S136 —`); all opened 2026-11-05, all `mined`, all cited by the round-93 entry or lesson.
+Tier histogram A=445 → 448, B=21, C=28 unchanged elsewhere. Census: round start exit 0 (21 W01 + 12 W04,
+0 E); round end exit 0 (21 W01 + 13 W04, 0 E; `reports/round-93/census-round-end.log`). A round-end
+E11 on S497 (stray dash in the used-by cell) was fixed before the adjudication and is M5 in the lesson.
+
+Mistakes mined: `corpus/lessons/round-93.md` `## Mistakes` M1–M5 (stale vote binding; the wrong
+background URL in the r92 brief; the counters' reach beyond the frozen nine; the gitignored cache and a
+scratch tree in the frozen tree; the used-by cell arithmetic).
+
+**planned:** next round — (1) successor C1 v3 with the critic's closes as frozen predicates: exactly one
+`admission-status:` line in the file and in the header window; vote seats canonicalised (case-fold, trim)
+and checked against registry role and against the entry author; artifacts path-contained under
+`.ufo/waves/round-<N>/`, non-empty and distinct per seat; oracle script and truth pinned to the frozen
+sha; `$` fences require output lines and whitespace-only output is rejected; the registry itself is
+committed in the landing; (2) K candidates: C15 or C05 through the same gate; (3) the r92
+frozen counters stay frozen (kumitate r42 rule).
+
+Routed forward: successor counters (r94); the considerthese proposal-2 measurement (8/8 over r89–r92 —
+`ConnectorOverlap/measurement.tsv`), to be re-measured in r94; assimilation (L0 `revenger | round-91`
+unanswered; 155/155 id collisions).
