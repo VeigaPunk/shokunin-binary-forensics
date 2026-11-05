@@ -1326,3 +1326,48 @@ no row, supports no claim).
   155/155 with the lane registry (mass id drift) — nothing adopted, L0 question
   appended (`revenger | round-91`). `considerthese/2026-11-04.md` proposal 4
   (commit message↔tree check) is the C2 claim's ground.
+
+## Round 92 (hyaku run 15) — C03 admitted on three non-author votes (K 8/15 → 9/15); the C08 legend token corrected; both frozen counters pass with their forgery reachability named
+
+- **Correction of record for round 91 (spotcheck D2).** This entry supersedes the round-91
+  heading above: r91's C1 was **contested**, not "verified" (its frozen counter was reached by
+  a 21-entry lookup table), and r91's C2 was **NOT VERIFIED**, not "capability, verified"
+  (two stubs passed its frozen probe). The heading text above stays as filed; this is the
+  correction.
+- **Freeze `9402183a`.** Claims C1 coverage (C03 `frontier` → `held` on ONE admitted entry;
+  `K_HELD_BACKED` 8/15 → target 9/15; strict counter with votes/lint/embedded/sources legs)
+  and C2 calibration (C08 `frontier` → `uncovered`; legend mismatch `rows=['C03','C08']` →
+  `['C03']`) in `reports/round-92/claims.md`, both counters and six control receipts
+  (do-nothing ×2 fail, junk ×3 fail, positive pass) committed before any seat ran.
+- **Wave (one v1, 10 seats, no dead seats).** Scout ×2 (quarantine verdicts 26 rows:
+  24 candidate-present / 2 unverifiable / 0 refuse-absent; managed-format sources S491–S494
+  with byte-verified quotes), scribe (entry draft + SOURCES rows + READY digest), executor ×2
+  (producer trial under `npx rea-agents@6.8.0`: run1==run2 byte-identical, both differ from
+  the committed record only in `evidence_id` + local-path fields; legend cross-check:
+  round-77 record is work evidence, probe reproduced independently), reviewer ×2 (gate ADMIT
+  14 PASS/3 n/a/0 FAIL with re-fetched quotes and 11/11 re-run blocks; blind parser from
+  fixture bytes, zero mismatches), critic (counter forgeries named, findings 1–5; entry vote
+  14 PASS/3 n/a/0 FAIL), mutation-tester (C1 21 mutants/1 killed pre-READY with Demo A–D
+  kill-recipes; C2 7/4), connector (sibling overlap: C03/C08 separated from kaidoku/tabi by
+  artifact class; own-work share 55/490).
+- **Landing `2760f32b`.** Entry `corpus/knowledge/round-92-managed-assembly-metadata-evidence.md`
+  admitted (READY digest `2c96e633…` bound by all three votes; `admitted` flip preserves the
+  normalised digest); SOURCES S491–S494 appended inside the Registry after S490 (byte-identical
+  to the seat's block, NF=13 checked, 0 malformed, 494 rows); README C03 → held, C08 →
+  uncovered; SKILL registry rows for `c2_legend_counter` and `c1_k_admit_counter` (probes);
+  D9 pointer re-point (`c2-after.log` → `c1-after.log -- C2 frozen probe`), D8 `__pycache__`
+  removal + gitignore; wave evidence under `.ufo/waves/round-92/`.
+- **After (`--rev 2760f32b`).** C1 `C1_VERDICT=pass`, `C1_K_HELD_BACKED=9/15` (5.3 → 6.0);
+  C2 `C2_VERDICT=pass`, `rows=[]`, `K_HELD==K_HELD_BACKED==9/15` (`reports/round-92/
+  c{1,2}-after.log`). **Both MET on their frozen counters; both contested** — the critic's
+  forgeries also pass them (full C1 forgery 12/12 legs; all-`n/a` votes; C2 accepts
+  `partial`/`held`-with-seed/trailing-cell/record-deletion; probe shadow vector), kill-recipes
+  demo-verified; successor counters routed to r93 with the frozen files untouched
+  (kumitate r42 rule).
+- **Mistakes mined:** `corpus/lessons/round-92.md` `## Mistakes` (M36 recurrence — the legend
+  probe had run in no standing battery since round 66, now registered as the `c2_legend_counter`
+  probe; the r91 quarantine-first skip, now performed with 26 verdicts; the counter-forgery
+  reachability, routed with recipes). Corrections carried: D2 (this entry), D4 (10-seat shape
+  matches results; r91's 12-vs-13 reconciled in the lesson), D5 (two stubs, not three), D8,
+  D9.
+

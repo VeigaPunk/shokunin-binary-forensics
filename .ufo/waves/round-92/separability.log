@@ -1,0 +1,14 @@
+# C1-only tree (landing corpus, C08 reverted to frontier)
+C1_K_HELD_BACKED=9/15
+C1_K_HELD_BACKED=pass
+C1_VERDICT=pass
+# C2 over the same tree:
+C2_LEGEND_MISMATCH=1 rows=['C08']
+C2_VERDICT=fail
+# C2-only tree (base corpus 9402183a + C08 uncovered, C1 absent)
+C2_LEGEND_MISMATCH=1 rows=['C03']
+C2_VERDICT=pass
+# C1 over the same tree:
+C1_K_HELD_BACKED=8/15
+C1_K_HELD_BACKED=fail
+C1_VERDICT=fail

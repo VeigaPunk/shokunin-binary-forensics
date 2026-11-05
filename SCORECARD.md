@@ -1701,3 +1701,47 @@ citations into noise — r92 should report them as `ambiguous` and exclude them 
 exit code, with a frozen predicate that distinguishes the three classes; (3) the r90 routed
 C2 predicate (instrument pins + `parseEvidence` id consistency) is still open and unworked
 this round.
+
+## Round 92 (hyaku run 15) — C03 admitted on three non-author votes (coverage K 8/15 → 9/15, 5.3 → 6.0); the C08 legend token corrected; both frozen counters MET with their forgery reachability disclosed
+
+Freeze `9402183a9492428fa0064d250746c62a0a2d9ca5` (claims, both counters, six control receipts
+— do-nothing ×2 fail, junk ×3 fail, positive pass — committed before any seat ran); landing
+`2760f32ba2a855a3919d7d93f962754bccd81b7b`; adjudication = this section. Wave: one v1 wave,
+10 seats, no dead seats (`.ufo/waves/round-92/w1-results.json`). Claims and predicates:
+`reports/round-92/claims.md`, unchanged since the freeze. **Correction row (r91 D2):** the
+round-91 heading and `LOG.md` r91 heading say "(C1 verified)"/"(C2 capability, verified)";
+the verdicts of record were C1 contested and C2 NOT VERIFIED — this row and the r92 LOG entry
+are the correction of record; the filed bytes stay.
+
+| axis / criterion | before → after | counting command | measured commits | verdict |
+|---|---|---|---|---|
+| coverage — knowledge-map ground K (C1; the lowest non-retired axis) | `K_HELD_BACKED` **8/15 (5.3) → 9/15 (6.0)**; C03 `frontier` → `held`, backed by one admitted entry | `python3 -B reports/round-92/c1_k_admit_counter.py --rev <rev>` → `C1_VERDICT=pass`, `C1_K_HELD_BACKED=9/15` (`reports/round-92/c1-after.log`) | red `9402183a` (controls/c1-do-nothing.log) → landing `2760f32b` | **MET on its frozen counter; contested (§9).** Three non-author votes (Gate ADMIT; blind derivation zero mismatches; critic) bind the voted digest `2c96e633…`; lint 0/0/0/0; embedded 11 blocks 0 problems. CriticR92Claims finding 3: a full forgery (stub entry + fabricated votes + invented `mined` row) also passes 12/12 legs; finding 4: all-`n/a` votes pass. Successor counter routed (r93) with recipes; the vote files are wave-transcript-backed |
+| calibration — coverage token vs saved records (C2; M36 class) | `README_TOKEN_LEGEND_MISMATCH` **2 `['C03','C08']` → 0 `[]`**; C08 `frontier` → `uncovered` (the round-77 CDP record is work evidence, no rejection marker — `ExecR92Legend`) | `python3 -B reports/round-92/c2_legend_counter.py --rev <rev>` → `C2_VERDICT=pass`, `rows=[]`, `K_HELD==K_HELD_BACKED==9/15` (`reports/round-92/c2-after.log`) | same | **MET on its frozen counter; contested (§9).** The positive control proves the intended move alone passes; the critic's cheaper moves (`partial`, `held`+seed, trailing-cell, record deletion) and the probe-shadow vector also pass (findings 1–2, 5); successor counter routed (r93) |
+| coverage — other criteria (no claim) | F4 11/11, M 3/3, A1 3/3, A1v2 5/5 unchanged; map rows 15 | `reports/round-81/f_probe4.py corpus`, `reports/round-85/mg_probe.py`, `reports/round-84/ag_probe2.py` over the landing archive | `2760f32b` | unchanged holds |
+| freshness / depth / operability / adjacency | no claim; SKILL.md gains two probe registry rows and the D9 re-point; PROVINCE/QUALITY byte-unchanged | `git diff --stat 9402183a..2760f32b -- PROVINCE.md corpus/QUALITY.md` (empty) | `2760f32b` | unchanged (no harm observed) |
+| separability | C1-only tree (C08 token edit reverted): C1 counter passes, C2 counter fails C08_CLEAR; C2-only tree (entry absent, C03 frontier): C2 passes `rows=['C03']`, C1 fails | control receipts + the two after logs | `2760f32b` | claims separable as frozen |
+
+Capabilities: none added (the two counters are registered **probes**, not gates; no new
+analysis family).
+
+Sources: rows 490 → 494 (S491 ECMA-335 6th ed, S492 ECMA-335 5th ed, S493 PE Format CLR
+row, S494 MetadataRootBuilder — all opened 2026-11-05, mined, used-by the entry; S491/S493
+are disclosed narrower re-opens of S136/S009's sources, W04 class). Census: round start exit 0
+(31 W01/W04, 0 E; `reports/round-92/census-round-start.log`); round end
+`reports/round-92/census-round-end.log`. Mistakes mined (`corpus/lessons/round-92.md`):
+the M36 recurrence (legend probe unrun since r66 — now registered as the `c2_legend_counter`
+probe, red-before = do-nothing control), the r91 quarantine-first skip (26 verdicts landed),
+and the counters' forgery reachability (routed with demo-verified kill-recipes). Corrections
+carried: D2 (above), D4 (r91 12-vs-13 seats reconciled; this round's 10-seat shape matches
+results), D5 (two stubs, not three), D8 (`__pycache__` removed, gitignored), D9 (SKILL
+pointer re-point; filed r91 bytes untouched). Assimilation: none (155/155 id collisions, L0
+unanswered); the wave-4 quarantine-first duty was performed this round (26/26 verdicts).
+
+**planned:** next round — (1) the two successor counters with the critic's closes as their
+frozen predicates: C1 v2 (votes must name a wave artifact whose sha matches; seats checked
+against the wave registry; no all-`n/a`; `audit_source_quotes.py verify` on cited rows) and
+C2 v2 (`C2_C08_TOKEN` exact-uncovered leg; `C2_C08_RECORD` sha pin on
+`corpus/live/runs/round-77/inspection.json`; probe via `git archive` + `python3 -I`), each
+with controls `c2-partial`, `c2-held-seed`, `c2-trailing-cell`, `c2-del-r77`, Demo A–D; (2)
+SM6 v4 battery (carried from r91, unworked this round); (3) the r90 routed C2 predicate
+(instrument pins + `parseEvidence` id consistency), still open.
