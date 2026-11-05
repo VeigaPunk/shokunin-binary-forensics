@@ -1,0 +1,13 @@
+# cmd: PYTHONUTF8=1 python3 -B <scratch copy of build_fresh98.py, same patch> --counter reports/round-98/c1_k_admit_counter7.py --profile c14 --work <scratch> --lane <lane>  (v7 frozen 5d9b087; lane base 3d054a98; run 2026-11-05 L1 RevengerR99)
+C14_LANDING_BUILT variant=candidate entry_digest=6d27c129e6ec3bbd3699c84c0a06301d7aea88140e54a1ff8d8b34d5c0c5330f
+CONTROL-honest | control | rc=0 | pass | K=14/15 | - | pass | control-ok
+C14-R01-suffix-row-outside-count | coverage row id with a letter suffix, invisible to the count | rc=0 | pass | K=14/15 | - | fail | ACCEPTED
+C14-V01-placeholder-pass-note | PASS decision with a one-word placeholder note | rc=1 | fail | K=14/15 | C1_VOTE_NOTES,C1_VERDICT | fail | refused
+C14-V02-fail-under-extra-key | FAIL recorded under an out-of-range decision key | rc=0 | pass | K=14/15 | - | fail | ACCEPTED
+C14-Q01-receipt-span-shift | receipt span names bytes beside the quote | rc=1 | fail | K=14/15 | C1_QUOTES,C1_VERDICT | fail | refused
+C14-O01-ownwork-pointer-foreign-round | own-work pointer names an existing record of another round | rc=0 | pass | K=14/15 | - | fail | ACCEPTED
+C14-L01-fetchlog-date-vs-receipt | fetch-log header date disagrees with the receipt fetched_at | rc=0 | pass | K=14/15 | - | fail | ACCEPTED
+HOLDOUT98_PROFILE=c14 variant=candidate counter=c1_k_admit_counter7.py build_only=False
+HOLDOUT98_CONTROL=control-ok
+HOLDOUT98 accepted=4/6
+# rc=0

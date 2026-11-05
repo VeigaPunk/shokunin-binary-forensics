@@ -1,0 +1,6 @@
+LINT_QMAP=0
+LINT_Q14=0
+LINT_Q15=0
+LINT_HEADER=0
+# rc=0
+# digest(v7 rule)=36cc6ac2cd37d6866fe4ce0ad06c20d67d19fd2c7f0da08a2b63d277b948fce5

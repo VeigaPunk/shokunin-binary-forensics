@@ -1,0 +1,7 @@
+# old r98 derivation command (Q11 FAIL):
+$ grep -c '^    paths\[3\]: ' corpus/live/runs/round-98/rea-doctor-r98.txt
+1
+# new r99 derivation command:
+$ grep '^    paths\[3\]: ' corpus/live/runs/round-98/rea-doctor-r98.txt | sed 's/^    paths\[3\]: //' | tr ',' '\n' | grep -c .
+3
+# entry claims: three installation paths -> old prints 1 (mismatch), new prints 3 (match)

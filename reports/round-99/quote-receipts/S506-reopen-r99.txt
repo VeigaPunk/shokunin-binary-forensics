@@ -1,0 +1,9 @@
+url=https://raw.githubusercontent.com/morluto/rea/12f6e0974cc0db0b3a9b86246accc76556837222/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md
+fetched_at=2026-11-05T18:43:20-03:00
+http=200
+bytes=16650
+sha256=ce2d122b873fb84d98cdb56afd84a34ee8de362b65760855838dfb29c2282e50
+committed_r98_sha256=ce2d122b873fb84d98cdb56afd84a34ee8de362b65760855838dfb29c2282e50
+cmp=identical
+quote_count=1
+quote2_count=1

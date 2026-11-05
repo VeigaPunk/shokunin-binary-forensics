@@ -1,0 +1,7 @@
+6.7.0 host-probes=1 doctor=11
+1.5.6 host-probes=1 doctor=0
+21.0.13 host-probes=3 doctor=3
+3.1.0 host-probes=1 doctor=0
+26.6.4 host-probes=1 doctor=0
+12.1.4 host-probes=0 doctor=17
+# cmd: grep -c -F <version> <record>; 12.1.4 is printed only by the doctor record, so the r99 entry credits it to the doctor record

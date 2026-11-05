@@ -61,14 +61,17 @@ this round and its output was compared with an expected value fixed before the r
 
 ### Derivation table
 
-Every count, identifier and digest stated above is derived below from the saved record by the
-command shown, and the outputs are those commands' actual stdout. The commands run from the lane
-root. In a table cell, `\|` is the markdown escape of a shell pipe or a regex alternation bar.
-Version strings and exit codes are not derived here. Each comes from the probe transcript
+Every count, identifier, digest and doctor-printed version stated above is derived below from the
+saved record by the command shown, and the outputs are those commands' actual stdout. The commands
+run from the lane root. In a table cell, `\|` is the markdown escape of a shell pipe or a regex
+alternation bar. Two version strings come from the doctor record and are derived below
+(`ghidra-version` detail `12.1.4`, `ghidra-java` detail `21.0.13`). The other version strings
+(`rea --version`, `jadx --version`, `java -version`, `binwalk --version`, `unblob --version`) and
+the probe exit codes are not derived here: each comes from the probe transcript
 `corpus/live/runs/round-98/host-probes-r98.txt`, where every command line (`$ …`) is followed by
-its printed output and an `rc=` line. That transcript is the record for those values. The doctor
-exit code (1) and the `rea inspect-artifact` exit code (0) were observed in the L1 session and are
-not lines of any record.
+its printed output and an `rc=` line, and that transcript is the record for those values. The
+doctor exit code (1) and the `rea inspect-artifact` exit code (0) were observed in the L1 session
+and are not lines of any record.
 
 | Value | Deriving command | Recorded output |
 |---|---|---|
@@ -80,7 +83,11 @@ not lines of any record.
 | registration state split | `awk '/^    - client:/{c=$3} /^      state:/{print $2}' corpus/live/runs/round-98/rea-doctor-r98.txt \| sort \| uniq -c` | `4 aligned` / `1 manual` / `8 missing` / `1 stale` |
 | missing-or-stale registrations ("nine") | `awk '/^    - client:/{c=$3} /^      state:/{print $2}' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -cE '^(missing\|stale)$'` | `9` |
 | ghidra scope checks healthy | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -A1 '^  - name: ghidra' \| grep -c '    ok: true'` | `8` (of 8 ghidra-named scope checks) |
-| installation paths | `grep -c '^    paths\[3\]: ' corpus/live/runs/round-98/rea-doctor-r98.txt` and `grep -c '^    state: multiple' corpus/live/runs/round-98/rea-doctor-r98.txt` | `1` and `1` |
+| ghidra scope-check names | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -oE '^  - name: ghidra[a-z_-]*' \| sed 's/^  - name: //' \| paste -sd' '` | `ghidra ghidra-platform ghidra-architecture ghidra-installation ghidra-version ghidra-headless ghidra-native_decompiler ghidra-java` |
+| doctor-printed ghidra and java versions | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -A3 -E '^  - name: ghidra-(version\|java)$' \| grep 'detail:'` | `    detail: 12.1.4` / `    detail: 21.0.13; 64-bit; JDK; /usr/lib/jvm/java-21-openjdk; accepted a 64-bit full JDK 21 or newer` |
+| engine and jadx classifications | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -A3 -E '^  - name: (hopper\|ida-registration\|kuna-installation\|jadx)$' \| grep -E 'name:\|classification:' \| paste - - \| sed -E 's/^ *- name: //; s/\t *classification: / /'` | `hopper missing_analysis_engine` / `ida-registration missing_analysis_engine` / `jadx healthy` / `kuna-installation missing_analysis_engine` (one pair per line) |
+| installation paths ("three") | `grep '^    paths\[3\]: ' corpus/live/runs/round-98/rea-doctor-r98.txt \| sed 's/^    paths\[3\]: //' \| tr ',' '\n' \| grep -c .` | `3` (the record prints the three comma-separated paths on one line) |
+| installation state | `grep -c '^    state: multiple' corpus/live/runs/round-98/rea-doctor-r98.txt` | `1` |
 | CLI package version | `grep cli_package_version corpus/live/runs/round-98/rea-doctor-r98.txt` | `  cli_package_version: 6.7.0` |
 | inventory Evidence ID | `grep -m1 evidence_id corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt` | `evidence_id: ev_0ef6c8cdbfe9836f2daa149d17269e355f98424d59ecb55398dbe271c6a87382` |
 | inventory substep status | `grep -m1 'status: completed' corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt` | `      status: completed` |
@@ -122,10 +129,10 @@ revision (S506 is the pinned revision, not the installed copy).
 | Q08 | n/a | Historical criterion superseded by Q11, which is applied below. |
 | Q09 | PASS | The digests bind exact committed bytes only (fixture, record files, S506 body). None is offered as origin, completeness or authenticity. |
 | Q10 | PASS | Scoped to one host, one date, REA 6.7.0 and the routes named. Unprobed routes are labelled unprobed, and the absent engines are recorded as absent. |
-| Q11 | PASS | Every count, identifier and digest in the route table is in the derivation table with its deriving command and that command's recorded output. |
+| Q11 | PASS | Every count, identifier, digest and doctor-printed version in the route table is in the derivation table with its deriving command and that command's recorded output; the "three installation paths" row counts paths, not lines, and prints `3`. |
 | Q12 | n/a | No rejected registry row is load-bearing for this entry; see Q12 in corpus/QUALITY.md. |
 | Q13 | n/a | No verifier is credited as guarding a clause. The recheck line names re-derivation procedures only; see Q13 in corpus/QUALITY.md. |
 | Q14 | n/a | No hex string is quoted with a byte count in the same clause, and no truncated run carries a length; see Q14 in corpus/QUALITY.md. |
 | Q15 | n/a | No lane-tree git identity sentence is asserted. The pinned REA revision is part of a fetched URL; see Q15 in corpus/QUALITY.md. |
-| Q16 | PASS | Each sentence that credits a command with output was checked against that command's stdout, row by row in the derivation table. "Doctor has no binwalk or unblob check" refers to the record bytes. |
+| Q16 | PASS | Each sentence that credits a command or record with output was checked against that command's stdout, row by row in the derivation table. The two doctor-printed versions (12.1.4, 21.0.13) are credited to the doctor record and derived; the remaining version strings are credited to the probe transcript, which prints each of them. "Doctor has no binwalk or unblob check" refers to the record bytes. |
 | Q17 | n/a | No adjudication relocated a cited artifact for this entry; see Q17 in corpus/QUALITY.md. |
