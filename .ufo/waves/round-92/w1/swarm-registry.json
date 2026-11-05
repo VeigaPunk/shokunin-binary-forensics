@@ -1,0 +1,109 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r92-w1",
+  "createdAt": "2026-11-05T12:53:46.700Z",
+  "updatedAt": "2026-11-05T12:53:46.700Z",
+  "reportDir": ".ufo/waves/round-92/w1",
+  "members": {
+    "ScoutR92Quarantine": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 92: C1 K 8/15->9/15 (C03 entry, strict gate); C2 C08 legend frontier->uncovered; quarantine verdicts; 10 seats"
+    },
+    "ScoutR92Managed": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 92: C1 K 8/15->9/15 (C03 entry, strict gate); C2 C08 legend frontier->uncovered; quarantine verdicts; 10 seats"
+    },
+    "ScribeR92Entry": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 92: C1 K 8/15->9/15 (C03 entry, strict gate); C2 C08 legend frontier->uncovered; quarantine verdicts; 10 seats"
+    },
+    "ExecR92Producer": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 92: C1 K 8/15->9/15 (C03 entry, strict gate); C2 C08 legend frontier->uncovered; quarantine verdicts; 10 seats"
+    },
+    "ExecR92Legend": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 92: C1 K 8/15->9/15 (C03 entry, strict gate); C2 C08 legend frontier->uncovered; quarantine verdicts; 10 seats"
+    },
+    "ReviewerR92Blind": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 92: C1 K 8/15->9/15 (C03 entry, strict gate); C2 C08 legend frontier->uncovered; quarantine verdicts; 10 seats"
+    },
+    "ReviewerR92Gate": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 92: C1 K 8/15->9/15 (C03 entry, strict gate); C2 C08 legend frontier->uncovered; quarantine verdicts; 10 seats"
+    },
+    "CriticR92Claims": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 92: C1 K 8/15->9/15 (C03 entry, strict gate); C2 C08 legend frontier->uncovered; quarantine verdicts; 10 seats"
+    },
+    "MutationR92Counters": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 92: C1 K 8/15->9/15 (C03 entry, strict gate); C2 C08 legend frontier->uncovered; quarantine verdicts; 10 seats"
+    },
+    "ConnectorR92Overlap": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "adjacency"
+      ],
+      "milestone": "Round 92: C1 K 8/15->9/15 (C03 entry, strict gate); C2 C08 legend frontier->uncovered; quarantine verdicts; 10 seats"
+    }
+  }
+}

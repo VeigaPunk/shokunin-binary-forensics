@@ -1,0 +1,6 @@
+self-check OK: managed PE/CLI premises re-derived from built bytes
+wrote regen-check.dll bytes=924 sha256=25ece37da2e0effbe313662d81469371d59a1de4c610ed081b8a68bcdd75733c
+gen76_rc=0
+cmp76_rc=0
+25ece37da2e0effbe313662d81469371d59a1de4c610ed081b8a68bcdd75733c  fixture.dll
+25ece37da2e0effbe313662d81469371d59a1de4c610ed081b8a68bcdd75733c  regen-check.dll

@@ -1,0 +1,18 @@
+# Quote-location evidence — ReviewerR92Gate 2026-11-05T13:36:28Z
+
+Fetch receipts (curl -sSL):
+S491 200 4982145B https://ecma-international.org/wp-content/uploads/ECMA-335_6th_edition_june_2012.pdf
+S492 200 7238968B https://ecma-international.org/wp-content/uploads/ECMA-335_5th_edition_december_2010.pdf
+S493 200 281747B https://learn.microsoft.com/en-us/windows/win32/debug/pe-format
+S494 200 63589B https://learn.microsoft.com/en-us/dotnet/api/system.reflection.metadata.ecma335.metadatarootbuilder?view=net-10.0
+
+sha256:
+8c1decf6d482f020776a12dd601537e024d5d5f30df130a3ea3bbf3c51adb1d6  ecma335-6.pdf
+f51034d1feb3de7026c1e4710f2330ac7de346d09c97b340a092a694fa71dfd4  ecma335-5.pdf
+7a3bba593caa94e39c3f2475fea58ab20d28ed03cdba2760594b92e3ed2e1d28  pe-format.html
+cdbb4789255f5545b3c240d7792106f6b7f0e2a542884b2191999e2ef8a79ae2  metarootbuilder.html
+
+S491 ecma335-6.txt:25726: Magic signature for physical metadata : 0x424A5342.
+S492 ecma335-5.txt:24679: Magic signature for physical metadata : 0x424A5342.
+S493 pe-format.html (tag-stripped, whitespace-normalised) offset 27023: "208/224 8 CLR Runtime Header The CLR runtime header address and size."
+S494 metarootbuilder.html (tag-stripped, whitespace-normalised) offset 3781: "Metadata root constitutes of a metadata header followed by metadata streams ( #~ , #Strings , #US , #Guid and #Blob )."

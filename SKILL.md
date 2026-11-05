@@ -343,7 +343,7 @@ a rejected candidate keeps every byte except its `admission-status:` line.
 | entry command | `python3 -B reports/round-91/message_tree_check.py --lane <repo> --range <A>..<B>` (`--json` for the machine table) |
 | verdict map | `0` every cited path exists in the citing commit's tree · `1` at least one miss, each printed with its commit · `2` usage error |
 | self-test | `python3 -B reports/round-91/message_tree_check.py --selftest` — throwaway fixture repo: clean commit → exit 0, planted absent path → exit 1 naming it, `.log` leg; prints `MSG_TREE_SELFTEST=pass` |
-| measured-against | frozen probe `reports/round-91/cap_probe.py` (four legs incl. a planted-miss kill that a stub cannot pass); real run `7fab03f..refs/heads/main` → `MESSAGE_TREE commits=23 cited=25 misses=9`, one genuine mismatch (`reports/round-91/c2-after.log`; `.ufo/waves/round-91/w1/ExecR91RealRun/real-run-table.md`) |
+| measured-against | frozen probe `reports/round-91/cap_probe.py` (four legs incl. a planted-miss kill that a stub cannot pass); real run `7fab03f..refs/heads/main` → `MESSAGE_TREE commits=23 cited=25 misses=9`, one genuine mismatch (`reports/round-91/c1-after.log` `-- C2 frozen probe` section — the r91 landing wrote the C2 after-run into the C1 receipt and cited a `c2-after.log` path that never existed; corrected in round 92, old→new logged in `corpus/lessons/round-92.md`; `.ufo/waves/round-91/w1/ExecR91RealRun/real-run-table.md`) |
 | grounded-on | S488 (git-log `--format` `%B`), S489 (`git cat-file -e` existence test) and S490 (Conventional Commits message shape) — all opened 2026-11-04 in `corpus/SOURCES.md`; `considerthese/2026-11-04.md` proposal 4 named the check |
 | what a green run does NOT establish | it sees only path-shaped tokens (a token containing `/` or ending in a known extension, backticked or bare); prose paths, `path:line` forms and directory tokens are invisible; a bare name needs a unique suffix match, so 8 of the 9 misses on this range are ambiguous bare names rather than defects (`.ufo/waves/round-91/w1/ReviewerR91C2.md` H2); and a message may cite a path it does not touch and still pass |
 | write scope | read-only over the repo (`rev-list`, `log`, `cat-file`, `ls-tree`); writes nothing outside its own temp dirs |
@@ -481,6 +481,27 @@ a rejected candidate keeps every byte except its `admission-status:` line.
 | self-test | none (registered as a probe for this reason) |
 | pinned-value path | oracle bytes sha256 `44fd1505d171c4e37d5d36ecd4a8aa5aff30229538840692bd0dc9cffde68a53`; green over the round-89 record `reports/round-89/c2-after.log` (19/19, exit 0); package_name tamper control `reports/round-89/oracle-tamper-control.log` (18/19, exit 1); named limits: expectations for package/version come from `truth.json` `axml_declared` (not from decoding the AXML), and the manifest legs are substring tests, so `<manifest package="com.attacker.fabricated" …><!-- versionCode="1" --></manifest>` passes 19/19 (`ReviewerR89C2`) |
 | write scope | read-only: reads the fixture bytes, `truth.json` and the record; writes nothing |
+| owner | revenger |
+| field | value |
+|---|---|
+| name | `c2_legend_counter` (round 92 C2, calibration; registers the frozen round-66 legend probe `reports/round-66/measure.py` as a standing check — the M36 token-vs-record class had run in no standing battery since round 66) |
+| kind | probe (measurement over a committed tree; it can fail, but it has no `--selftest` mode, so it is registered as a probe, not a gate; its two evidences are the do-nothing, junk and positive receipts `reports/round-92/controls/c2-*.log`) |
+| entry command | `python3 -B reports/round-92/c2_legend_counter.py --rev <rev>` (cwd = lane root; `--tree DIR` for controls) |
+| verdict map | `0` `C2_VERDICT=pass` · `1` `C2_VERDICT=fail` · `64` usage; the probe's own exit is printed as `C2_PROBE_EXIT` and is not the claim verdict |
+| self-test | none (probe); attributed by the three round-92 controls: do-nothing `rows=['C03','C08']` fails, junk-held and junk-deleted fail, positive (C08 frontier→uncovered only) passes |
+| pinned-value path | probe bytes `reports/round-66/measure.py` (frozen since round 66, unchanged); counter bytes `reports/round-92/c2_legend_counter.py` (frozen at `9402183`) |
+| write scope | read-only over the committed tree (`git archive` into scratch under `$HYAKU_SCRATCH`, removed on exit); writes nothing in the lane |
+| owner | revenger |
+
+| field | value |
+|---|---|
+| name | `c1_k_admit_counter` (round 92 C1, coverage K; strict admission legs for a `corpus/knowledge/` entry that backs a `held` row — the legacy `measure.py`-style existence count is one leg, not the whole admission) |
+| kind | probe (measurement over a committed tree; admission legs call `corpus/lint_entry.py` and `corpus/check_embedded_outputs.py`; not a gate under §Gate standard — no self-test mode) |
+| entry command | `python3 -B reports/round-92/c1_k_admit_counter.py --rev <rev>` (cwd = lane root; `--tree DIR` for controls) |
+| verdict map | `0` `C1_VERDICT=pass` · `1` `C1_VERDICT=fail` · `64` usage |
+| self-test | none (probe); attributed by the round-92 controls: do-nothing and stub-entry junk fail (`reports/round-92/controls/c1-*.log`) |
+| pinned-value path | counter bytes `reports/round-92/c1_k_admit_counter.py` (frozen at `9402183`); vote files `reports/round-92/votes/*.json` (candidate sha256 must equal the entry's normalised digest) |
+| write scope | read-only over the committed tree (`git archive` into scratch, removed on exit); writes nothing in the lane |
 | owner | revenger |
 
 Registry note (round 78): the criterion-P instrument `reports/round-75/province_probe2.sh`

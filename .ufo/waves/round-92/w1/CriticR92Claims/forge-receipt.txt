@@ -1,0 +1,123 @@
+== C1 (frozen counter, --tree)
+-- c1-forge-full exit=0
+C1_K_HELD_BACKED=9/15
+C1_VOTE_SEATS=ForgerA,ForgerB digest=3e6ef7796bae82f950aa62aee9dbb31a24c9ee2488f22dc2caf43622283b11fd
+C1_SOURCE_IDS=S491
+C1_ROWS_TOTAL=pass
+C1_C03_HELD=pass
+C1_C03_CITES=pass
+C1_ADMITTED=pass
+C1_TRIO=pass
+C1_VOTES=pass
+C1_LINT=pass
+C1_EMBEDDED=pass
+C1_SOURCES=pass
+C1_K_HELD_BACKED=pass
+C1_VERDICT=pass
+-- c1-forge-badsha exit=1
+C1_K_HELD_BACKED=9/15
+C1_VOTE_SEATS=none digest=3e6ef7796bae82f950aa62aee9dbb31a24c9ee2488f22dc2caf43622283b11fd
+C1_SOURCE_IDS=S491
+C1_ROWS_TOTAL=pass
+C1_C03_HELD=pass
+C1_C03_CITES=pass
+C1_ADMITTED=pass
+C1_TRIO=pass
+C1_VOTES=fail
+C1_LINT=pass
+C1_EMBEDDED=pass
+C1_SOURCES=pass
+C1_K_HELD_BACKED=pass
+C1_VERDICT=fail
+-- c1-forge-noembed exit=1
+C1_K_HELD_BACKED=9/15
+C1_VOTE_SEATS=ForgerA,ForgerB digest=ba40a565cc88cc9c2b1882e5256d27e4b5328833953b2b79c331d882d4099205
+C1_SOURCE_IDS=S491
+C1_ROWS_TOTAL=pass
+C1_C03_HELD=pass
+C1_C03_CITES=pass
+C1_ADMITTED=pass
+C1_TRIO=pass
+C1_VOTES=pass
+C1_LINT=pass
+C1_EMBEDDED=fail
+C1_SOURCES=pass
+C1_K_HELD_BACKED=pass
+C1_VERDICT=fail
+-- c1-forge-allna exit=0
+C1_K_HELD_BACKED=9/15
+C1_VOTE_SEATS=ForgerA,ForgerB digest=5c2d21a802638cdfb8b8514347d4927477e280a97d551d15f94564f27c56c33f
+C1_SOURCE_IDS=S491
+C1_ROWS_TOTAL=pass
+C1_C03_HELD=pass
+C1_C03_CITES=pass
+C1_ADMITTED=pass
+C1_TRIO=pass
+C1_VOTES=pass
+C1_LINT=pass
+C1_EMBEDDED=pass
+C1_SOURCES=pass
+C1_K_HELD_BACKED=pass
+C1_VERDICT=pass
+== C2 (frozen counter, --tree)
+-- c2-partial exit=0
+C2_PROBE_EXIT=1 (probe exit is not the claim verdict)
+C2_LEGEND_MISMATCH=1 rows=['C03']
+C2_ROWS_COUNT=15
+C2_K_HELD=8/15 C2_K_HELD_BACKED=8/15
+C2_ROWS_TOTAL=pass
+C2_C08_CLEAR=pass
+C2_NO_NEW=pass
+C2_NO_UNBACKED=pass
+C2_VERDICT=pass
+-- c2-held-seed exit=0
+C2_PROBE_EXIT=1 (probe exit is not the claim verdict)
+C2_LEGEND_MISMATCH=1 rows=['C03']
+C2_ROWS_COUNT=15
+C2_K_HELD=9/15 C2_K_HELD_BACKED=9/15
+C2_ROWS_TOTAL=pass
+C2_C08_CLEAR=pass
+C2_NO_NEW=pass
+C2_NO_UNBACKED=pass
+C2_VERDICT=pass
+-- c2-trailing-cell exit=0
+C2_PROBE_EXIT=1 (probe exit is not the claim verdict)
+C2_LEGEND_MISMATCH=1 rows=['C03']
+C2_ROWS_COUNT=15
+C2_K_HELD=8/15 C2_K_HELD_BACKED=8/15
+C2_ROWS_TOTAL=pass
+C2_C08_CLEAR=pass
+C2_NO_NEW=pass
+C2_NO_UNBACKED=pass
+C2_VERDICT=pass
+-- c2-del-r77 exit=0
+C2_PROBE_EXIT=1 (probe exit is not the claim verdict)
+C2_LEGEND_MISMATCH=1 rows=['C03']
+C2_ROWS_COUNT=15
+C2_K_HELD=8/15 C2_K_HELD_BACKED=8/15
+C2_ROWS_TOTAL=pass
+C2_C08_CLEAR=pass
+C2_NO_NEW=pass
+C2_NO_UNBACKED=pass
+C2_VERDICT=pass
+-- c2-uncovered-intended exit=0
+C2_PROBE_EXIT=1 (probe exit is not the claim verdict)
+C2_LEGEND_MISMATCH=1 rows=['C03']
+C2_ROWS_COUNT=15
+C2_K_HELD=8/15 C2_K_HELD_BACKED=8/15
+C2_ROWS_TOTAL=pass
+C2_C08_CLEAR=pass
+C2_NO_NEW=pass
+C2_NO_UNBACKED=pass
+C2_VERDICT=pass
+== C2 probe shadowing (scratch copy; the lane is not touched)
+-- shadow-probe exit=0
+C2_PROBE_EXIT=0 (probe exit is not the claim verdict)
+C2_LEGEND_MISMATCH=0 rows=[]
+C2_ROWS_COUNT=15
+C2_K_HELD=9/15 C2_K_HELD_BACKED=9/15
+C2_ROWS_TOTAL=pass
+C2_C08_CLEAR=pass
+C2_NO_NEW=pass
+C2_NO_UNBACKED=pass
+C2_VERDICT=pass

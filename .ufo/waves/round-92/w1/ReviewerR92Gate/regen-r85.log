@@ -1,0 +1,9 @@
+self-check OK: managed PE/CLI premises re-derived from built bytes
+  method_rows@file=0x342 il_rva=0x1210 body_foff=0x410 ldstr_tok=0x70000001
+  implmap mapping=0x0102 fwd=5 import='RunNative' module='native.dll'
+  us[1]='Fixture Hello' (27)  tables=(1, 2, 2, 1, 1, 1)
+wrote regen-check.dll bytes=1048 sha256=94429fa428893dd78ed4b7f26a919232d5f05cc9cdc84d256954db5b0a286760
+gen85_rc=0
+cmp85_rc=0
+94429fa428893dd78ed4b7f26a919232d5f05cc9cdc84d256954db5b0a286760  fixture.dll
+94429fa428893dd78ed4b7f26a919232d5f05cc9cdc84d256954db5b0a286760  regen-check.dll

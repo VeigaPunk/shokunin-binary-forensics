@@ -1,0 +1,13 @@
+blocks=11
+line 50: rc=0 embedded=21 stdout_lines=21 missing=0 OK :: python3 -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.j
+line 87: rc=0 embedded=11 stdout_lines=11 missing=0 OK :: python3 -B corpus/fixtures/managed-r76/oracle_check.py corpus/fixtures/managed-r76/truth.j
+line 113: rc=0 embedded=48 stdout_lines=48 missing=0 OK :: python3 -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.j
+line 175: rc=0 embedded=40 stdout_lines=40 missing=0 OK :: python3 -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.j
+line 230: rc=0 embedded=21 stdout_lines=21 missing=0 OK :: python3 -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.j
+line 280: rc=0 embedded=21 stdout_lines=21 missing=0 OK :: python3 -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.j
+line 460: rc=0 embedded=21 stdout_lines=21 missing=0 OK :: python3 -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.j
+line 570: rc=0 embedded=11 stdout_lines=11 missing=0 OK :: python3 -B corpus/fixtures/managed-r76/oracle_check.py corpus/fixtures/managed-r76/truth.j
+line 585: rc=0 embedded=21 stdout_lines=21 missing=0 OK :: python3 -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.j
+line 610: rc=0 embedded=48 stdout_lines=48 missing=0 OK :: python3 -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.j
+line 662: rc=0 embedded=40 stdout_lines=40 missing=0 OK :: python3 -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.j
+ALL_VERBATIM

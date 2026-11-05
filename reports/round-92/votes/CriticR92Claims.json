@@ -1,0 +1,46 @@
+{
+  "seat": "CriticR92Claims",
+  "role": "critic",
+  "candidate_sha256": "2c96e633fc730d218560b9693b881ffdeb1244cad5ac77f5fb6626f494306fb6",
+  "decisions": {
+    "Q01": "PASS",
+    "Q02": "PASS",
+    "Q03": "PASS",
+    "Q04": "PASS",
+    "Q05": "n/a",
+    "Q06": "PASS",
+    "Q07": "PASS",
+    "Q08": "n/a",
+    "Q09": "PASS",
+    "Q10": "PASS",
+    "Q11": "PASS",
+    "Q12": "n/a",
+    "Q13": "PASS",
+    "Q14": "PASS",
+    "Q15": "PASS",
+    "Q16": "PASS",
+    "Q17": "PASS"
+  },
+  "notes": {
+    "n/a": {
+      "Q05": "entry makes no readiness or capability claim (items 22-23, lines 397-406); receipt fields are labelled recorded",
+      "Q08": "superseded by Q11 (QUALITY.md; entry Q-map row Q08 says so)",
+      "Q12": "entry cites no rejected source row and makes no reject/flip claim"
+    },
+    "verified": [
+      "candidate digest recomputed from entry bytes with admission-status line normalised: matches READY sha256",
+      "lint_entry.py exit 0 (QMAP/Q14/Q15/HEADER all 0); check_embedded_outputs.py exit 0, checked_blocks=11 problems=0",
+      "all four oracle commands re-run from lane root: exit 0, stdout line counts 11/21/48/40, summaries ORACLE OK (10/10|20/20|47/47|39/39 checks)",
+      "sha256sum of managed-r76/managed-r85 fixture.dll matches entry values 25ece37d... / 94429fa4...",
+      "git rev-parse 9402183a^{commit} matches verified-at line; oracle_check.py:28 and :33 locator claims exact",
+      "all located quotes verified verbatim (whitespace-normalised) against ScoutR92Managed/snapshots: ecma335-6th-edition.txt:14205,14221,14247-14253,14317,14484,14761,14779; pe-format.txt:618-620; api-metadatarootbuilder.txt (S494 both quotes)"
+    ],
+    "caveats": [
+      "lines 224-226 and 354: the five-name stream list with #GUID casing rests on the anchor section body (snapshot 14247-14253), not on the carried quote; verified true in the snapshot",
+      "lines 399-400: receipt details (rea 6.8.0, exit 0, stderr 0 bytes) are prose-recorded; item 25's recorded label covers only the digests",
+      "lines 378/523: S491 version-string quote ends at the PDF line wrap; entry reports the v4.0.30319 divergence as unknown (376-379), honest handling"
+    ],
+    "scope": "this vote judges the entry only; the counter-forgery findings are in .ufo/waves/round-92/w1/CriticR92Claims/findings.md findings 1-8"
+  },
+  "evidence": ".ufo/waves/round-92/w1/CriticR92Claims"
+}

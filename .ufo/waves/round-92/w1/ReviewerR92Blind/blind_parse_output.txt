@@ -1,0 +1,127 @@
+file: /fast/scratch/hyaku/revenger-r92/ReviewerR92Blind/fixtures/managed-r85.dll
+file_size: 1048 bytes
+file_sha256: 94429fa428893dd78ed4b7f26a919232d5f05cc9cdc84d256954db5b0a286760
+dos_e_lfanew: 0x40 (64)
+coff_machine: I386 (0x014c)
+coff_number_of_sections: 1
+coff_size_of_optional_header: 224
+coff_characteristics: 0x2102
+optional_header_magic: PE32 (0x10b)
+number_of_rva_and_sizes: 16
+data_dir[14] CLR: rva=0x1000 size=0x48
+section[0] '.text': va=0x1000 vsize=0x218 raw=0x200 rawsize=0x218
+cli_header_present: yes
+cli_header_rva: 0x1000
+cli_header_file_offset: 0x200 (512)
+cli_directory_size: 0x48 (72)
+cli_header_cb: 0x48 (72)
+cli_runtime_version: 4.0
+cli_flags: 0x00000001
+cli_entrypoint_token: 0x00000000
+metadata_rva: 0x1080
+metadata_file_offset: 0x280 (640)
+metadata_size: 0x190 (400)
+metadata_root_signature: 0x424a5342 (b'BSJB')
+metadata_version: 1.1
+metadata_version_string_len: 12
+metadata_version_string: 'v4.0.30319'
+metadata_flags: 0x0000
+metadata_stream_count: 5
+stream[0] '#~': offset_from_metadata_root=0x6c (108) size=0x92 (146)
+stream[1] '#Strings': offset_from_metadata_root=0x100 (256) size=0x54 (84)
+stream[2] '#US': offset_from_metadata_root=0x154 (340) size=0x1d (29)
+stream[3] '#GUID': offset_from_metadata_root=0x174 (372) size=0x10 (16)
+stream[4] '#Blob': offset_from_metadata_root=0x184 (388) size=0x9 (9)
+table_stream: #~ at file offset 0x2ec
+table_stream_version: 2.0
+heap_sizes_byte: 0x00 (strings4=False guid4=False blob4=False)
+valid_mask: 0x0000000114000045
+sorted_mask: 0x0000000000000000
+rowcount[Module (0x00)]: 1
+rowcount[TypeDef (0x02)]: 2
+rowcount[MethodDef (0x06)]: 2
+rowcount[ModuleRef (0x1a)]: 1
+rowcount[ImplMap (0x1c)]: 1
+rowcount[Assembly (0x20)]: 1
+table_row_sizes:
+  Module (0x00): 10 bytes/row at 0x31c
+  TypeDef (0x02): 14 bytes/row at 0x326
+  MethodDef (0x06): 14 bytes/row at 0x342
+  ModuleRef (0x1a): 2 bytes/row at 0x35e
+  ImplMap (0x1c): 8 bytes/row at 0x360
+  Assembly (0x20): 22 bytes/row at 0x368
+module[1]: generation=0 name='r85-managed.dll' mvid_index=1 mvid_guid=101112131415161718191a1b1c1d1e1f
+assembly[1]: hash_alg_id=0x00008004 version=2.0.1.5 flags=0x00000001
+assembly_name: 'r85-managed'
+assembly_culture: ''
+typedef[1]: '<Module>' flags=0x00000000 field_list=1 method_list=1
+typedef[2]: 'R85Probe.Probe' flags=0x00000001 field_list=1 method_list=1
+methoddef[1]: rva=0x1210 name='SayHello' implflags=0x0000 flags=0x0091
+methoddef[2]: rva=0x0 name='RunNative' implflags=0x0005 flags=0x1091
+moduleref[1]: name='native.dll'
+implmap[1]: mapping_flags=0x0102 member_forwarded=(MethodDef,2) import_name='RunNative' import_scope=moduleref[1]
+========================================================================
+file: /fast/scratch/hyaku/revenger-r92/ReviewerR92Blind/fixtures/managed-r76.dll
+file_size: 924 bytes
+file_sha256: 25ece37da2e0effbe313662d81469371d59a1de4c610ed081b8a68bcdd75733c
+dos_e_lfanew: 0x40 (64)
+coff_machine: I386 (0x014c)
+coff_number_of_sections: 1
+coff_size_of_optional_header: 224
+coff_characteristics: 0x2102
+optional_header_magic: PE32 (0x10b)
+number_of_rva_and_sizes: 16
+data_dir[14] CLR: rva=0x1000 size=0x48
+section[0] '.text': va=0x1000 vsize=0x19c raw=0x200 rawsize=0x19c
+cli_header_present: yes
+cli_header_rva: 0x1000
+cli_header_file_offset: 0x200 (512)
+cli_directory_size: 0x48 (72)
+cli_header_cb: 0x48 (72)
+cli_runtime_version: 4.0
+cli_flags: 0x00000001
+cli_entrypoint_token: 0x00000000
+metadata_rva: 0x1080
+metadata_file_offset: 0x280 (640)
+metadata_size: 0x11c (284)
+metadata_root_signature: 0x424a5342 (b'BSJB')
+metadata_version: 1.1
+metadata_version_string_len: 12
+metadata_version_string: 'v4.0.30319'
+metadata_flags: 0x0000
+metadata_stream_count: 5
+stream[0] '#~': offset_from_metadata_root=0x6c (108) size=0x60 (96)
+stream[1] '#Strings': offset_from_metadata_root=0xcc (204) size=0x36 (54)
+stream[2] '#US': offset_from_metadata_root=0x104 (260) size=0x1 (1)
+stream[3] '#GUID': offset_from_metadata_root=0x108 (264) size=0x10 (16)
+stream[4] '#Blob': offset_from_metadata_root=0x118 (280) size=0x1 (1)
+table_stream: #~ at file offset 0x2ec
+table_stream_version: 2.0
+heap_sizes_byte: 0x00 (strings4=False guid4=False blob4=False)
+valid_mask: 0x0000000100000005
+sorted_mask: 0x0000000000000000
+rowcount[Module (0x00)]: 1
+rowcount[TypeDef (0x02)]: 2
+rowcount[Assembly (0x20)]: 1
+table_row_sizes:
+  Module (0x00): 10 bytes/row at 0x310
+  TypeDef (0x02): 14 bytes/row at 0x31a
+  Assembly (0x20): 22 bytes/row at 0x336
+module[1]: generation=0 name='r76-managed.dll' mvid_index=1 mvid_guid=000102030405060708090a0b0c0d0e0f
+assembly[1]: hash_alg_id=0x00008004 version=1.2.3.4 flags=0x00000001
+assembly_name: 'r76-managed'
+assembly_culture: ''
+typedef[1]: '<Module>' flags=0x00000000 field_list=1 method_list=1
+typedef[2]: 'R76Probe.Probe' flags=0x00000001 field_list=1 method_list=1
+========================================================================
+detail pass over /tmp/r85check.dll
+m0.body: rva=0x1210 file_offset=1040 format=tiny il_size=6
+m0.body.il_bytes: 72010000702a
+m0.body.il_sha256: f8205533128770ef09040d0056a7758b86ae252af6e307cae5dd06dc6e989346
+m0.body.ops: [(0, 'ldstr', '0x70000001'), (5, 'ret', None)]
+m0.sig: blob_index=1 heap_file_offset=1029 raw_length=3
+m0.sig.raw_bytes: 00000e
+m0.sig.raw_sha256: 7654e92fcd606089e218382991601eea77b70226c9ee308320f38cd03c6297eb
+m0.sig.decode: conv=default params=0 return=string
+#US heap file offset: 980 (heap byte 0 = 0x00)
+us.lit: heap_offset=981 compressed_len_bytes=27 value='Fixture Hello' flag_byte=0x00

@@ -1,0 +1,20 @@
+sha256: committed=90440ec14937849b60fe11d4eda26a51a504529ac31d6678da0be592a586dfc4  run1=7a722d3ab93eb003d204b414bc521a07e9502d8b8e5fdb8c8c85365f2dbf9878  run2=7a722d3ab93eb003d204b414bc521a07e9502d8b8e5fdb8c8c85365f2dbf9878
+bytes: committed=3190  run1=3064  run2=3064
+byte_equal run1==run2: True
+byte_equal run1==committed: False
+byte_equal run2==committed: False
+normalized_equal run1==run2: True
+normalized_equal run1==committed: False
+normalized_equal run2==committed: False
+volatile fields scrubbed: subject.local_path, normalized_result.artifact.path
+
+## field diffs run1 vs run2 (raw values)
+(none)
+
+## field diffs run1 vs committed (raw values)
+evidence_id: committed/raw A='ev_0eea92d75cd2bb0d69be542825a96f9f2a98ea359ffdf607fd7cb910dbf796e2' B='ev_3991d5a7b5aa1c629135d07e11068a963b7517e9a551462580d0ecc39f4245a6'
+normalized_result.artifact.path: committed/raw A='C:\\Users\\jpvei\\.zcode\\workspace\\95b1ba4d-5089-47a4-9fd8-54adebbce2ae\\flee B='/fast/scratch/hyaku/revenger-r92/ExecR92Producer/corpus/fixtures/managed-r85/fi
+subject.local_path: committed/raw A='C:\\Users\\jpvei\\.zcode\\workspace\\95b1ba4d-5089-47a4-9fd8-54adebbce2ae\\flee B='/fast/scratch/hyaku/revenger-r92/ExecR92Producer/corpus/fixtures/managed-r85/fi
+
+## field diffs run1 vs committed (volatile-scrubbed)
+evidence_id: committed/raw A='ev_0eea92d75cd2bb0d69be542825a96f9f2a98ea359ffdf607fd7cb910dbf796e2' B='ev_3991d5a7b5aa1c629135d07e11068a963b7517e9a551462580d0ecc39f4245a6'
