@@ -1,0 +1,9 @@
+# C2 do-nothing control, pre-freeze, base 0350014d30e91da411ee624025d8d1bb7afc6ccf
+$ git show 0350014d:SCORECARD.md | awk '/^## Capabilities/{f=1;next} /^## /{f=0} f && /^\| / && !/^\| Capability/ && !/^\|---/' | wc -l
+4
+$ git cat-file -e 0350014d:reports/round-100/cap_apk_probe.py
+fatal: path 'reports/round-100/cap_apk_probe.py' does not exist in '0350014d'
+rc=128
+$ git show 0350014d:SCORECARD.md | grep -ci 'apk-manifest-cross-decode'
+0
+C2_DO_NOTHING rows=4 probe=absent verdict=fail
