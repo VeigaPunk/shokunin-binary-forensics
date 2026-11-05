@@ -1,0 +1,3 @@
+# run on a git clone --shared of the lane detached at 01266760d9918b868f7cd8a25dd5cf6e1052d193 (v8 freeze), HYAKU_SCRATCH under /fast/scratch/hyaku/revenger-r99/L1/post
+SELFTEST_C1V8=OK legs=98
+# rc=0

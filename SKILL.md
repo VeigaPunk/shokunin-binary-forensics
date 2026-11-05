@@ -637,6 +637,30 @@ rows (entry command, verdict lines, pinned instrument sha, red/green logs) until
 | pinned-value path | `reports/round-98/mutants/mutate7.py` (sha256 `5f03c73c…`, frozen at `af91e9d`); `reports/round-98/controls/mutate7-v7-{c02,c14}.out` (tree kill 173/249 and 127/249; the self-test stage exits 3, open) |
 | owner | revenger |
 
+| name | `c1_k_admit_counter8 (round 99; successor of `c1_k_admit_counter7`: `--profile c02` and `--profile c14` keep the v7 constants, `--profile c14r99` targets C14 with the round-99 votes, wave registry, pinned seats and `FREEZE_REV` `61e27feb`; nine new legs C1_VOTES_GLOB, C1_NA_REASON, C1_RECHECK_CMD, C1_HEX_CLAUSES, C1_COVMAP_ROW, C1_ROW_IDS, C1_DECISION_KEYS, C1_OWNWORK_ROUND, C1_FETCHLOG_DATE)` |
+| kind | probe (measurement over a committed tree; `--self-test` prints `SELFTEST_C1V8=OK legs=98`; missing `--profile` exits 2) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-99/c1_k_admit_counter8.py --profile c02\|c14\|c14r99 --tree <dir> --work <scratch>` (cwd = a git checkout of the lane) |
+| pinned-value path | counter bytes `reports/round-99/c1_k_admit_counter8.py` (sha256 `620dfca9…`, frozen at `01266760`); claims `reports/round-99/claims.md` (Amendments A, B); `reports/round-99/controls/post-freeze/` |
+| owner | revenger |
+
+| name | `forge_reach8 (round 99 C2; one run prints a C2_VECTOR line per round-98 holdout vector, C2_ACCEPTED=n/12, both builder control lines, C2_STUB_SELFTEST and C2_VERDICT; builder and parity patch pinned by sha256, fails closed with rc 2)` |
+| kind | probe (instrument; `C2_VERDICT=met\|not-met`) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-99/forge_reach8.py --counter <counter> --work <scratch>` |
+| pinned-value path | `reports/round-99/forge_reach8.py` (sha256 `0a393136…`); `reports/round-99/controls/post-freeze/c2-v8-frozen.log` (met, 0/12); `reports/round-99/controls/c2-do-nothing-v7-holdout98-{c02,c14}.log` (v7 9/12) |
+| owner | revenger |
+
+| name | `deriv_check (round 99; re-runs every row of an entry's `### Derivation table` and compares stdout with the output cell under the entry's cell rule)` |
+| kind | probe (lint over an entry; prints `DERIV <value> MATCH\|MISMATCH` and `DERIV_ROWS=n DERIV_MISMATCH=m`; exit 0 iff m = 0 and n > 0) |
+| entry command | `python3 -B reports/round-99/controls/deriv_check.py --entry <entry.md> --root <lane checkout>` |
+| pinned-value path | `reports/round-99/controls/deriv_check.py` (sha256 `bffffbae…`); `reports/round-99/controls/amendB-deriv-check.log` (7 mismatches on the claims-freeze entry, 0 on the amended entry) |
+| owner | revenger |
+
+| name | `mutate8 (round 99 port of mutate7 for v8; baseline accepts `SELFTEST_C1V<n>=OK\|pass`, pre-registered mutants with fail-closed find strings)` |
+| kind | probe (instrument check; denominator-specific) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-99/mutants/mutate8.py --counter reports/round-99/c1_k_admit_counter8.py --out <scratch> --kill-tree <archive 61e27feb> --selftest --prereg reports/round-99/mutants/mutants-r99.json --profile c14r99` |
+| pinned-value path | `reports/round-99/mutants/mutate8.py` (sha256 `51416a54…`); `.ufo/waves/round-99/w1/MutationR99.md` (`MUTANT_KILL_V8=154/309`, `MUTANT_SELFTEST_V8=285/309` on counter `620dfca9…`) |
+| owner | revenger |
+
 ## 7. Cited sources — existence-checked
 
 | citation | exists at | credited for |

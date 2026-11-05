@@ -3,7 +3,7 @@ source: S507 — saved round-98 host-readiness record, `corpus/live/runs/round-9
 verified-at: 2026-11-05 — S506 fetched this round at REA revision `12f6e09` (body committed at `reports/round-98/quote-receipts/raw/S506.body`, fetch log `reports/round-98/quote-receipts/fetch-log.md`); the S507 record was produced and saved this round on this host
 recheck: re-open the S506 raw URL and compare `fetch_sha256` against the committed body; re-run `rea doctor`, the probe commands in `corpus/live/runs/round-98/host-probes-r98.txt` and `rea inspect-artifact corpus/fixtures/archive-r2/fixture.zip`, then re-derive every row of the derivation table below
 coverage-map: C14 — host readiness for REA routes
-admission-status: candidate
+admission-status: admitted
 
 # Host readiness for REA routes — one host, one date, route by route
 

@@ -1,0 +1,13 @@
+# run on a git clone --shared of the lane detached at 01266760d9918b868f7cd8a25dd5cf6e1052d193 (v8 freeze), HYAKU_SCRATCH under /fast/scratch/hyaku/revenger-r99/L1/post
+C02_FIXTURE_BUILT source=frozen-v6 _fixture
+CONTROL-honest | control | rc=0 | pass | K=13/15 | - | pass | control-ok
+C02-N1-one-token-pass-note | PASS decision carried by a one-token note | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+C02-N2-pinned-reviewer-vote-omitted | pinned reviewer vote file deleted, two votes remain | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+C02-N3-qmap-contradicts-votes | entry Q-map claims PASS where every vote is n/a | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+C02-N4-evidence-id-edited | identifier in a derivation row replaced | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+C02-N5-observation-limitations-cut | observation/inference/unknown and limitations sections removed | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+C02-N6-surface-text-attests-replication | README surface text asserts a replication no vote records | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+HOLDOUT99_PROFILE=c02 counter=c1_k_admit_counter8.py build_only=False
+HOLDOUT99_CONTROL=control-ok
+HOLDOUT99 accepted=6/6
+# rc=0

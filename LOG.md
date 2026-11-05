@@ -1487,3 +1487,11 @@ no row, supports no claim).
 - Claims frozen at `9d49002`. Amendments A (`cf8a9d4`), B (`0146c0a`, §Q-map added after the lint) and C (`1b76b4d`, critic Q11/Q16 fixes) were all recorded before scoring. v7 was frozen at `5d9b087`.
 - Result: C1 not verified (`reports/round-98/controls/c1-v7/diag-landing.log`: `C1_VOTES`, `C1_VOTE_NOTES` fail). C2 met (`reports/round-98/controls/c2-v7-frozen.log`). Fresh holdout: `.ufo/waves/round-98/w1/L1-holdout-v7/`.
 - Wave: `.ufo/waves/round-98/w1/` (12 seats, `w1-results.json`).
+
+## Round 99 (hyaku run 15, attempt 1) — C14 held on the frozen v8 counter (admission pending the non-author closure); v8 refuses the nine r98 holdout survivors (9/12 → 0/12)
+
+- Motivating evidence: the r98 non-author spot-check (`corpus/lessons/round-98-verifier-spotcheck.md` §5) routed the C14 candidate's Q11/Q16 defects, the PASS-note rule, S505 grounding, the r98 holdout survivors, the mutate7 baseline exit 3 and `d-host`.
+- Domain work: S506 re-fetched at its pinned revision (byte-identical, `reports/round-99/quote-receipts/S506-reopen-r99.txt`); `rea doctor` and `rea inspect-artifact` on `fixtures/archive-r2/fixture.zip` re-run live by ScoutReopenR99, byte-identical to the r98 record (`.ufo/waves/round-99/w1/ScoutReopenR99.md` §5). The entry's 29 derivation rows re-run by `reports/round-99/controls/deriv_check.py` (0 mismatches).
+- Claims frozen at `7e6edd4`; Amendment A (`61e27feb`, S505 used-by grounded by citation) and Amendment B (`9ddd38ac`, the single candidate amendment after VoterGateR99's Q16 FAIL) recorded before scoring; v8 frozen at `01266760`.
+- Result: C1 verified on the frozen counter (`reports/round-99/controls/post-freeze/landing-worktree-c14r99.log`); C2 met (`post-freeze/c2-v8-frozen.log`). Fresh r99 holdout 12/12 accepted by v8 (`post-freeze/holdout99-v8-*.log`).
+- Wave: `.ufo/waves/round-99/w1/` (12 seats, `w1-results.json`).
