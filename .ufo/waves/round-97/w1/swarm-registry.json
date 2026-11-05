@@ -1,0 +1,116 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r97-w1",
+  "createdAt": "2026-11-05T19:38:43.235Z",
+  "updatedAt": "2026-11-05T19:38:43.235Z",
+  "reportDir": ".ufo/waves/round-97/w1",
+  "members": {
+    "ExecCounterV6": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Build the v6 admission counter and its red-before fixtures (no candidate scoring)"
+    },
+    "ExecForgeryHarness": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Port the 19 routed forgery vectors into a named harness; reproduce the frozen v5 reach"
+    },
+    "ExecControls": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "Build the skip-work controls and the paper control table for both claims"
+    },
+    "ScoutReopen": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Re-open the S502/S503 pinned sources and the S504 own-work record this round"
+    },
+    "ScribeLesson": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Draft the round-97 lesson, the S505 superseding row and the SCORECARD section for the L1 to paste"
+    },
+    "ConnectorOverlap": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Sibling-overlap scan for the round's surfaces (read-only)"
+    },
+    "ReviewerClaims": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Falsify the frozen claims before any v6 exists"
+    },
+    "ReviewerGate": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Advisory Q01-Q17 gate audit of the C02 candidate (not a vote)"
+    },
+    "CriticR97": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "Falsify the C1 flip and the C2 battery with fresh, unseen forgeries"
+    },
+    "MutationR97": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Mutation harness for the admission counter (instrument check for C2)"
+    }
+  }
+}

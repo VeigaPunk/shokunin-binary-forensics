@@ -88,3 +88,19 @@ scored with the committed v6 bytes.
 One v1 wave, 10 seats (policy band 8–16): executor 3, scout 1, scribe 1, connector 1, reviewer 2, critic 1,
 mutation-tester 1. Attack share 4/10 (reviewer ×2, critic, mutation-tester) ≥ 25 %. Connector seats 1 (≤2).
 The planner seat is held by the L1 (the validator rejects `planner`). Godspeed leads every L2 prompt.
+
+---
+
+## Amendment A — recorded before the v6 freeze and before any landing-tree scoring (2026-11-05)
+
+Appended, not substituted: the frozen sentences above are unchanged. Amendment A clarifies or tightens; it does not widen any target. It is in force only because it is recorded here before the v6 freeze commit and before any scoring of a landing tree.
+
+**A1 — C1 predicate, as implemented by v6.** v6 (`reports/round-97/c1_k_admit_counter6.py`) prints `C1_VERDICT=pass` only when every leg it prints passes. It prints the 18 v5 legs (with the used-by normalizer of claims §C1 and the decorated-admitted rule) plus two new legs, `C1_DERIV_TABLE` and `C1_ADMITTED_WS`, and tightened checks in `C1_SIDS`, `C1_SOURCES` (URL and receipt-quote pinning), `C1_PYCACHE` (loose `*.pyc`) and `C1_RECEIPTS` (per-sid fetch-log line). The tightenings were developed against the 19 frozen C2 vectors (see A5). A stricter counter can only fail the claim, never create a pass, so the kill rule is unchanged.
+
+**A2 — C2 counting output.** C2 is met only when all three hold, in one recorded run: `C2_ACCEPTED=0/19` (forge_reach6 on v6); `C2_POSITIVE=pass` (v6 accepts the landing tree); `C2_STUB_SELFTEST=ok` (forge_reach6 `--self-test`: an always-pass stub scores 19/19 and an always-fail stub 0/19). A refuse-everything counter fails `C2_POSITIVE`, so it cannot score a gain.
+
+**A3 — text corrections (ReviewerClaims findings 2 and 3).** (i) The round-96 mismatch is in the SCORECARD only: SCORECARD round-96 states 13 accepted; `corpus/lessons/round-96.md` states no accepted-vector count. The committed `summary.json` holds 14. (ii) "exactly once across the S502/S503/S504 rows" means per row: each of the three used-by cells names the admitted entry exactly once and nothing else (the v5 semantics, `c1_k_admit_counter5.py` exclusivity leg).
+
+**A4 — holdout.** The CriticR97 fresh vectors (`.ufo/waves/round-97/w1/CriticR97/fresh/`: 12 named-class forgeries plus 3 unsigned variants) are a holdout. They are run once against the committed v6 after the freeze and reported separately. They are not part of the C2 target. No counter change is made in response to a holdout result in this round; any such result routes to round 98.
+
+**A5 — development set (disclosed).** The 19 C2 vectors were used during v6 development (ExecCounterV6 scored v6 against them before the freeze). C2's 0/19 is therefore a development-set measurement. Its discrimination evidence is the A4 holdout, and the C2 verdict must say so.

@@ -1,0 +1,11 @@
+{
+ "delta": "LINT-qmap-missing-row",
+ "expected_leg": "C1_LINT",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_VOTES",
+  "C1_LINT",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

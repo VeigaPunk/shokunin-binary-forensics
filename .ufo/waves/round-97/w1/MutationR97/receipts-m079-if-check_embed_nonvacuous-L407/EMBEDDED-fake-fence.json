@@ -1,0 +1,12 @@
+{
+ "delta": "EMBEDDED-fake-fence",
+ "expected_leg": "C1_EMBEDDED",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_VOTES",
+  "C1_EMBEDDED",
+  "C1_EMBED_NONVACUOUS",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

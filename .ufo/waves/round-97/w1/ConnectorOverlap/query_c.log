@@ -1,0 +1,46 @@
+=== Query (c): skip-work or do-nothing ===
+
+Fleet waves (/home/vgpnk/Projects/shokunin/.ufo/waves): 14 hits (exit code 0)
+Fleet waves hits:
+  /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin12h-20261014-p1-audit/members/KengakuIdentityAndTree.md:18:| Working tree clean apart from untracked `plans/` | **Agree** | `git status --porcelain=v1 -uall` exit 0, sole line `?? plans/wwkd-round-16-recensus.md`. `git diff --quiet HEAD` exit 0. `git diff --quiet --cached` exit 0. `git ls-files --others --exclude-standard` is that one file. `--ignored` adds no `!!` lines. No assume-unchanged / skip-worktree. |
+  /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin12h-20261014-p1-audit/members/FleetIdentityAudit.md:38:| Working tree clean apart from untracked `plans/` | agree, all six | `git diff --exit-code` exit 0; `git diff --cached --exit-code` exit 0; `git status --porcelain=v1 -uall` is exactly one `?? plans/wwkd-round-<N>-recensus.md`; `git ls-files -v` has no skip-worktree (`S`) and no assume-unchanged (lowercase) flag; `core.sparseCheckout` unset (exit 1) |
+  /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin12h-20261014-p1-audit/members/KakeIdentityAndTree.md:29:| `git -C kake-shokunin ls-files -v` filtered to assume-unchanged / skip-worktree | 0 | empty |
+  /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin12h-20261014-p1-audit/members/KakeIdentityAndTree.md:79:One worktree: `/home/vgpnk/Projects/shokunin/kake-shokunin 5994831 [master]`. Porcelain, ignored-matching, and `ls-files --others` agree: the only dirt is untracked `plans/wwkd-round-19-recensus.md`. `find plans` shows that one file. Index matches HEAD. No assume-unchanged or skip-worktree bits. No ignored untracked residue.
+  /home/vgpnk/Projects/shokunin/.ufo/waves/hyaku/jj-w1/reports/JjDocGitIndex.md:115:state (staged blobs, stage entries, assume-unchanged/skip-worktree flags) is discarded.
+  /home/vgpnk/Projects/shokunin/.ufo/waves/hyaku/jj-w1/reports/JjDocGitIndex.md:193:- **Index flags are lost**: `git update-index --skip-worktree b.txt` (`S b.txt`) becomes `H b.txt`
+  /home/vgpnk/Projects/shokunin/.ufo/waves/hyaku/jj-w1/reports/JjDocGitIndex.md:235:6. **Do not use index flags or sparse checkout in lanes.** skip-worktree / assume-unchanged are
+  /home/vgpnk/Projects/shokunin/.ufo/waves/hyaku/PHASE4.md:68:| 2026-10-22T21:55:27Z | Addendum §9 amended; advance kake; dispatch kake r35 (repair-first) | `lane-addendum.md` §9 now states: a target must be one a do-nothing control cannot reach (score the cheapest control with the frozen counter before building and commit the receipt); no counter or kill-rule change after data without an independent attack. Heading label "phases 3–4". Fleet `dc05427`. Prompts rendered from now on carry it (kake r35 prompt: 1 match). `advance` → `kake r34 rejected -> next 35`; driver streak 1. Dispatch r35 attempt 1: base `16a6b8b8`, evidence `65016da`, L1 `KakeR35`; freeze 23:56Z, hard stop 00:56Z. Gate cap now 90 in every new L1 context. |
+  /home/vgpnk/Projects/shokunin/.ufo/waves/hyaku/PHASE4.md:77:| 2026-10-22T22:36:00Z | Sentinel scout result | `HyakuP4SentinelCauses` (2m29s, read-only): decisive causes over the five rejections — target reachable by a do-nothing control: kake r34, tsukuroi r30 (plus kumitate's proxy); rule changed after data: kumitate r42; axis misfit: kaidoku r29; honest miss on a frozen counter: mori r29 (not a defect). All five prompts predate the 21:55Z §9 amendment; prompts rendered after it carry it (kake r35, kumitate r43: 2 matches each). Uncovered by §9: axis fit; and the clause "without an independent attack" could be read as licensing a post-data rule change. |
+  /home/vgpnk/Projects/shokunin/.ufo/waves/hyaku/PHASE4.md:89:| 2026-10-22T23:18:49Z | Kumitate r43 landed (after the early freeze); verify; closure | `KumitateR43` (1h14m): lane `b01ded32` (measured `84cb1d5d`), report `4a2d914`. Author: C1 operability `gate-mutants` re-claimed under one frozen kill rule K43 (do-nothing control at round open `SURVIVED 34/41`, exit 1, committed before building; frozen counter at measured `CLEAN 43/43, 41/41`, exit 0; junk J1–J3 ERROR); disclosed: A1 added two failure checks after wave-1 junk read CLEAN, some self-inspecting junk suites read CLEAN, one earlier trial under load read ERROR, a critic rated C1 weaker. Routed D1–D8 handled (D5 retracted, D6 not deepened). Shape: 34 + 35 = 69; 0 dead; MutCiteWitness and SentinelReaper cancelled at the 23:12Z deadline. No `kumitate-r43` processes remain on the host. Verify: `OK kumitate r43 landed: report 4a2d914 lane tip b01ded326`. Depth 0.93/1.17. Fresh closure `HyakuCloseKumitate43`. Seat misaddress: KotobaR55.FixCorpusIndependent messaged Main; forwarded to KotobaR55 and redirected. |
+  /home/vgpnk/Projects/shokunin/.ufo/waves/hyaku/PHASE4.md:97:| 2026-10-22T23:47:30Z | Kake r35 landed; verify; closure | `KakeR35` (1h51m): lane `133a3a1f`, report `a970e6ba`. Author: C1 operability (link-preview audit repair: 14/24 → 24/24 sealed cases, target ≥ 22; do-nothing controls 7–14; 22 reachable while skipping one repair); C2 freshness (`security-txt-publishing` entry, 12/12 probes; counter v2 set before any build measurement, after wave-1 data; two cheap entries also meet it, recorded as mistake 5 with a QUALITY check that fails on both). Shape: 36 + 35 = 71; 0 dead. New hold `KakeR35.CriticSealedDesign` (automatic switch after a safety filter). Tool fixed after measurement for a quadratic hostile-page path (counts toward no claim). Sources 77 → 87. Verify: `OK kake r35 landed: report a970e6b lane tip 133a3a1f3`. Depth 1.34/1.02. Gate `live_estimate=68 cap=256`. Fresh closure `HyakuCloseKake35`. |
+  /home/vgpnk/Projects/shokunin/.ufo/waves/hyaku/PHASE4.md:125:| 2026-10-23T02:02:03Z | Kumitate r44 landed; verify; closure | `KumitateR44` (58m19s, 83 seats in 2 waves plus a residual call; one wave refused at the 100-job limit and resent): lane `37e8f669`, report `23ed786`. Author: C1 operability (`omp-census` gate) does NOT verify (3 skip-work programs meet the frozen counter `p44d` 207/207 after the counted run; third counter replacement not data-free). 2 cyber_policy holds, 19 seats cancelled at the deadline. Closure `HyakuCloseKumitate44` spawned. |
+  /home/vgpnk/Projects/shokunin/.ufo/waves/hyaku/PHASE4.md:127:| 2026-10-23T02:14:02Z | Closure kumitate r44: REJECTED (honest stop); DRIVER-BLOCKED | `HyakuCloseKumitate44` (11m55s): MANIFEST `rounds[497]` at fleet `9bc8cfb`; spot-check `3632602c`. C1 operability unprovable: p44b met by label-keyed controls (87/87); p44c and p44d replaced after seats scored; p44d met after data by 3 skip-work programs (kill rule 2). No axis harmed; Q29 passes for r44 and fails for r43. Third consecutive rejection (r42, r43, r44): the driver blocked the lane; it stays blocked for the leg (the operator release was for one fix-first round). Routed R44-1 through R44-6. |
+  /home/vgpnk/Projects/shokunin/.ufo/waves/round-41/w1/swarm-registry.legacy-wave-v1.json:213:   "item": "/skill:godspeed\n\nAttack the do-nothing control in /home/vgpnk/Projects/shokunin/chousa-shokunin: controls/base-gate-r41."
+
+=== Per-lane breakdown across 20 sibling lanes ===
+Lane                      skip-work    do-nothing   combined    
+-----------------------------------------------------------------
+audio-shokunin            0            1            1           
+chousa-shokunin           10           1762         1770        
+game-dev-2d-shokunin      0            0            0           
+game-dev-3d-shokunin      3            0            3           
+kagi-shokunin             6            205          211         
+kaidoku-shokunin          520          9410         9926        
+kake-shokunin             67           2236         2303        
+kama-shokunin             17           2342         2355        
+kasegi-shokunin           66           4014         4080        
+kengaku-shokunin          7            1544         1547        
+kotoba-shokunin           3            1025         1028        
+kotodama-shokunin         3            1549         1552        
+kumitate-shokunin         345          1437         1778        
+lore-shokunin             0            0            0           
+mado-shokunin             22           1728         1748        
+mori-shokunin             68           1924         1973        
+souji-shokunin            5312         4426         9704        
+tabi-shokunin             489          2242         2719        
+tameshi-shokunin          34           1252         1286        
+tsukuroi-shokunin         127          1173         1280        
+-----------------------------------------------------------------
+TOTAL SIBLING LANES       7099         38270        45264       
+FLEET .ufo/waves          6            8            14          
+GRAND TOTAL               7105         38278        45278       

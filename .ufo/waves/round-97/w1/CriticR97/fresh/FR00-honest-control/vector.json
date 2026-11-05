@@ -1,0 +1,8 @@
+{
+ "name": "FR00-honest-control",
+ "class": "control",
+ "mutation": "none: honest v5 _fixture() tree",
+ "expected": "pass",
+ "changed": [],
+ "removed": []
+}

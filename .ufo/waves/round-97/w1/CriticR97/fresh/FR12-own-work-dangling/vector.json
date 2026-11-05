@@ -1,0 +1,10 @@
+{
+ "name": "FR12-own-work-dangling",
+ "class": "own-work record pointer",
+ "mutation": "S504 SOURCES pointer corpus/live/runs/round-96/ -> corpus/live/runs/round-96-r97-missing/",
+ "expected": "FAIL",
+ "changed": [
+  "corpus/SOURCES.md"
+ ],
+ "removed": []
+}

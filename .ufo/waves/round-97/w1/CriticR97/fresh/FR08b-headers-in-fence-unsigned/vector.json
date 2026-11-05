@@ -1,0 +1,10 @@
+{
+ "name": "FR08b-headers-in-fence-unsigned",
+ "class": "provenance header, stale vote binding",
+ "mutation": "as FR08 but the entry changed after the votes and votes not re-signed",
+ "expected": "FAIL",
+ "changed": [
+  "corpus/knowledge/round-96-native-analysis-sessions.md"
+ ],
+ "removed": []
+}

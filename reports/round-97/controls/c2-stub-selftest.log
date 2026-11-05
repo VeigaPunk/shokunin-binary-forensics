@@ -1,0 +1,74 @@
+C1_VERDICT=pass
+DELTA FG01-shadow-decorated-admitted verdict=pass legs=none
+DELTA FG02-shadow-nested-dir verdict=pass legs=none
+DELTA FG03-shadow-uppercase-ext verdict=pass legs=none
+DELTA FG04-shadow-non-utf8 verdict=pass legs=none
+builder note FG05-vote-html-comment-artifact: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-v_awja4_/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG05-vote-html-comment-artifact verdict=pass legs=none
+builder note FG06-vote-symlink-alias: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-kelxqyad/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG06-vote-symlink-alias verdict=pass legs=none
+builder note FG07-sid-double-space-evade: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-55bd2k8v/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG07-sid-double-space-evade verdict=pass legs=none
+DELTA FG08-loose-pyc-file verdict=pass legs=none
+builder note FG09-receipt-quote-irrelevant: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-t1tf6i0x/reports/round-96/quote-receipts/S502.receipt.json'
+DELTA FG09-receipt-quote-irrelevant verdict=pass legs=none
+builder note FG10-sources-url-drift: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-c_5ixylx/corpus/SOURCES.md'
+DELTA FG10-sources-url-drift verdict=pass legs=none
+builder note FG11-table-lie-fixture-swap: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-3fnpvjb7/corpus/fixtures/pe-r75-headless-smoke/fixture.exe'
+DELTA FG11-table-lie-fixture-swap verdict=pass legs=none
+builder note FG12-tab-status-digest-invariant: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-2a3kvh5m/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG12-tab-status-digest-invariant verdict=pass legs=none
+builder note FG13-status-below-window: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-cjba_fhm/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG13-status-below-window verdict=pass legs=none
+builder note FG14-trio-line-shift: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-za4iqwi6/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG14-trio-line-shift verdict=pass legs=none
+builder note FG15-qmap-extra-row: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-vci2_gyw/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG15-qmap-extra-row verdict=pass legs=none
+builder note FG16-nbsp-status-fork: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-8ahn9bkd/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG16-nbsp-status-fork verdict=pass legs=none
+builder note FG18-usedby-dot-slash-alias: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-xssmtr7d/corpus/SOURCES.md'
+DELTA FG18-usedby-dot-slash-alias verdict=pass legs=none
+builder note FG19-merged-fetch-log-line: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-_suo7cnb/reports/round-96/quote-receipts/fetch-log.md'
+DELTA FG19-merged-fetch-log-line verdict=pass legs=none
+builder note FG20-prose-status-mention: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-pass/fixtures/fx-1ha3bfm0/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG20-prose-status-mention verdict=pass legs=none
+C2_ACCEPTED=19/19
+C1_VERDICT=fail
+C1_ADMITTED=fail
+DELTA FG01-shadow-decorated-admitted verdict=fail legs=C1_VERDICT,C1_ADMITTED
+DELTA FG02-shadow-nested-dir verdict=fail legs=C1_VERDICT,C1_ADMITTED
+DELTA FG03-shadow-uppercase-ext verdict=fail legs=C1_VERDICT,C1_ADMITTED
+DELTA FG04-shadow-non-utf8 verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG05-vote-html-comment-artifact: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-uij6k7az/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG05-vote-html-comment-artifact verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG06-vote-symlink-alias: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-wypn3zif/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG06-vote-symlink-alias verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG07-sid-double-space-evade: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-v5s561ya/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG07-sid-double-space-evade verdict=fail legs=C1_VERDICT,C1_ADMITTED
+DELTA FG08-loose-pyc-file verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG09-receipt-quote-irrelevant: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-710om8wt/reports/round-96/quote-receipts/S502.receipt.json'
+DELTA FG09-receipt-quote-irrelevant verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG10-sources-url-drift: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-z7871_fw/corpus/SOURCES.md'
+DELTA FG10-sources-url-drift verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG11-table-lie-fixture-swap: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-8kl4wk9m/corpus/fixtures/pe-r75-headless-smoke/fixture.exe'
+DELTA FG11-table-lie-fixture-swap verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG12-tab-status-digest-invariant: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-j0j_0l23/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG12-tab-status-digest-invariant verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG13-status-below-window: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-fzj0gf6q/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG13-status-below-window verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG14-trio-line-shift: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-s4_o3cti/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG14-trio-line-shift verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG15-qmap-extra-row: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-h24lqo_v/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG15-qmap-extra-row verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG16-nbsp-status-fork: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-1j_mq26h/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG16-nbsp-status-fork verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG18-usedby-dot-slash-alias: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-4jqmtbxe/corpus/SOURCES.md'
+DELTA FG18-usedby-dot-slash-alias verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG19-merged-fetch-log-line: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-tvgs687b/reports/round-96/quote-receipts/fetch-log.md'
+DELTA FG19-merged-fetch-log-line verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG20-prose-status-mention: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/ExecForgeryHarness/selftest/stub-fail/fixtures/fx-m7a1nwn0/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG20-prose-status-mention verdict=fail legs=C1_VERDICT,C1_ADMITTED
+C2_ACCEPTED=0/19
+SELFTEST stub-pass accepted=19/19 stub-fail accepted=0/19
+SELFTEST verdict=OK
+rc=0

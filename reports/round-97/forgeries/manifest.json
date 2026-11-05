@@ -1,0 +1,21 @@
+[
+ "FG01-shadow-decorated-admitted",
+ "FG02-shadow-nested-dir",
+ "FG03-shadow-uppercase-ext",
+ "FG04-shadow-non-utf8",
+ "FG05-vote-html-comment-artifact",
+ "FG06-vote-symlink-alias",
+ "FG07-sid-double-space-evade",
+ "FG08-loose-pyc-file",
+ "FG09-receipt-quote-irrelevant",
+ "FG10-sources-url-drift",
+ "FG11-table-lie-fixture-swap",
+ "FG12-tab-status-digest-invariant",
+ "FG13-status-below-window",
+ "FG14-trio-line-shift",
+ "FG15-qmap-extra-row",
+ "FG16-nbsp-status-fork",
+ "FG18-usedby-dot-slash-alias",
+ "FG19-merged-fetch-log-line",
+ "FG20-prose-status-mention"
+]

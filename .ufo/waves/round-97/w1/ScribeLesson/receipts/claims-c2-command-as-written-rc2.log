@@ -1,0 +1,3 @@
+usage: forge_reach6.py [-h] [--counter COUNTER] [--deltas DELTAS]
+                       [--work WORK] [--self-test]
+forge_reach6.py: error: --counter, --deltas and --work are required (or use --self-test)

@@ -1,0 +1,10 @@
+{
+ "delta": "F12-case-dup-seat",
+ "expected_leg": "C1_VOTES",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_VOTES",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

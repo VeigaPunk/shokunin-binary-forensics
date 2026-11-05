@@ -1,0 +1,10 @@
+{
+ "name": "FR11-receipt-owner-swap",
+ "class": "receipt fetch identity",
+ "mutation": "S502 receipt fetch_url owner morluto -> attacker-fork (allowlisted host), body and hash intact",
+ "expected": "FAIL",
+ "changed": [
+  "reports/round-96/quote-receipts/S502.receipt.json"
+ ],
+ "removed": []
+}

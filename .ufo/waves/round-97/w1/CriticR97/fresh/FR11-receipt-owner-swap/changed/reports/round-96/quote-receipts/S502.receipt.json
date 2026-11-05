@@ -1,0 +1,15 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S502",
+ "verdict": "verified",
+ "fetch_url": "https://raw.githubusercontent.com/attacker-fork/rea/fixture/S502.md",
+ "http_status": 200,
+ "fetched_at": "2026-11-05",
+ "fetch_sha256": "109943847406841cb6c2abc9d0a27e231b9ef9b2adf5c119a4f5b63084e22e49",
+ "length": 190,
+ "quote": "rea decompile <path> --file-offset=0x... --provider ghidra` resolves the source byte offset internally",
+ "span": {
+  "start": 86,
+  "end": 188
+ }
+}

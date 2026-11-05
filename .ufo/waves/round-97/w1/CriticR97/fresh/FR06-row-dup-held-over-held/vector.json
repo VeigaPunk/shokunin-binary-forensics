@@ -1,0 +1,10 @@
+{
+ "name": "FR06-row-dup-held-over-held",
+ "class": "coverage row set",
+ "mutation": "held C06 row replaced by a copy of held C01 row (C02 held; K computed 13/15)",
+ "expected": "FAIL",
+ "changed": [
+  "corpus/README.md"
+ ],
+ "removed": []
+}

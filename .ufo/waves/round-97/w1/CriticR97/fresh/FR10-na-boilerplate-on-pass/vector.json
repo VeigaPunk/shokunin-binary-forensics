@@ -1,0 +1,10 @@
+{
+ "name": "FR10-na-boilerplate-on-pass",
+ "class": "vote decision",
+ "mutation": "ReviewerGate Q09 PASS -> n/a with the shared NA_NOTE boilerplate reason",
+ "expected": "FAIL",
+ "changed": [
+  "reports/round-96/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

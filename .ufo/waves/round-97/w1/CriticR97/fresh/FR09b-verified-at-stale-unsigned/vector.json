@@ -1,0 +1,10 @@
+{
+ "name": "FR09b-verified-at-stale-unsigned",
+ "class": "provenance date, stale vote binding",
+ "mutation": "as FR09 but the entry changed after the votes and votes not re-signed",
+ "expected": "FAIL",
+ "changed": [
+  "corpus/knowledge/round-96-native-analysis-sessions.md"
+ ],
+ "removed": []
+}

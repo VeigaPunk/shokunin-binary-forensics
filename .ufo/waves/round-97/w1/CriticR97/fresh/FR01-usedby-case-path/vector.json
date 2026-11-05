@@ -1,0 +1,10 @@
+{
+ "name": "FR01-usedby-case-path",
+ "class": "used-by path-form (case-only)",
+ "mutation": "S502 used-by cell knowledge/round-96-... -> knowledge/Round-96-... (one letter case)",
+ "expected": "FAIL",
+ "changed": [
+  "corpus/SOURCES.md"
+ ],
+ "removed": []
+}

@@ -1,0 +1,12 @@
+{
+ "delta": "F10-dup-status-fenced",
+ "expected_leg": "C1_ADMITTED",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_ADMITTED",
+  "C1_VOTES",
+  "C1_EMBED_NONVACUOUS",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

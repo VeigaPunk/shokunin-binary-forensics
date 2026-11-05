@@ -1,0 +1,10 @@
+{
+ "name": "FR02b-entry-bom-unsigned",
+ "class": "entry bytes (BOM), stale vote binding",
+ "mutation": "as FR02 but the entry changed after the votes and votes not re-signed",
+ "expected": "FAIL",
+ "changed": [
+  "corpus/knowledge/round-96-native-analysis-sessions.md"
+ ],
+ "removed": []
+}

@@ -1,0 +1,1213 @@
+{
+ "counter": "reports/round-96/c1_k_admit_counter5.py",
+ "counter_sha256": "805ffb8aabbdbd451781dd831afce7ab41258979489d29ae789ae9fc1a23ad19",
+ "lane_pin": "/home/vgpnk/Projects/shokunin/revenger-shokunin",
+ "mutants": [
+  {
+   "name": "m001-cmp-strict_json-L77",
+   "kind": "cmp",
+   "fn": "strict_json",
+   "line": 77,
+   "legs": [
+    "C1_RECEIPTS",
+    "C1_REGISTRY",
+    "C1_VOTES"
+   ],
+   "desc": "in -> not in"
+  },
+  {
+   "name": "m002-cmp-base_readme-L144",
+   "kind": "cmp",
+   "fn": "base_readme",
+   "line": 144,
+   "legs": [
+    "C1_ONLY_C02"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m003-if-base_readme-L153",
+   "kind": "if",
+   "fn": "base_readme",
+   "line": 153,
+   "legs": [
+    "C1_ONLY_C02"
+   ],
+   "desc": "negate BoolOp test"
+  },
+  {
+   "name": "m004-cmp-base_readme-L153",
+   "kind": "cmp",
+   "fn": "base_readme",
+   "line": 153,
+   "legs": [
+    "C1_ONLY_C02"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m005-not-parse_sources-L162",
+   "kind": "not",
+   "fn": "parse_sources",
+   "line": 162,
+   "legs": [
+    "C1_SIDS",
+    "C1_SOURCES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m006-if-parse_sources-L165",
+   "kind": "if",
+   "fn": "parse_sources",
+   "line": 165,
+   "legs": [
+    "C1_SIDS",
+    "C1_SOURCES"
+   ],
+   "desc": "negate if test"
+  },
+  {
+   "name": "m007-cmp-parse_sources-L167",
+   "kind": "cmp",
+   "fn": "parse_sources",
+   "line": 167,
+   "legs": [
+    "C1_SIDS",
+    "C1_SOURCES"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m008-cmp-parse_sources-L168",
+   "kind": "cmp",
+   "fn": "parse_sources",
+   "line": 168,
+   "legs": [
+    "C1_SIDS",
+    "C1_SOURCES"
+   ],
+   "desc": "in -> not in"
+  },
+  {
+   "name": "m009-not-check_registry-L182",
+   "kind": "not",
+   "fn": "check_registry",
+   "line": 182,
+   "legs": [
+    "C1_REGISTRY"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m010-cmp-check_registry-L187",
+   "kind": "cmp",
+   "fn": "check_registry",
+   "line": 187,
+   "legs": [
+    "C1_REGISTRY"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m011-cmp-check_registry-L190",
+   "kind": "cmp",
+   "fn": "check_registry",
+   "line": 190,
+   "legs": [
+    "C1_REGISTRY"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m012-cmp-na_reason_ok-L197",
+   "kind": "cmp",
+   "fn": "na_reason_ok",
+   "line": 197,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": ">= -> <"
+  },
+  {
+   "name": "m013-cmp-na_reason_ok-L197",
+   "kind": "cmp",
+   "fn": "na_reason_ok",
+   "line": 197,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "is not -> is"
+  },
+  {
+   "name": "m014-not-check_votes-L203",
+   "kind": "not",
+   "fn": "check_votes",
+   "line": 203,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m015-not-check_votes-L211",
+   "kind": "not",
+   "fn": "check_votes",
+   "line": 211,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m016-not-check_votes-L214",
+   "kind": "not",
+   "fn": "check_votes",
+   "line": 214,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m017-if-check_votes-L214",
+   "kind": "if",
+   "fn": "check_votes",
+   "line": 214,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "negate BoolOp test"
+  },
+  {
+   "name": "m018-cmp-check_votes-L214",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 214,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "not in -> in"
+  },
+  {
+   "name": "m019-cmp-check_votes-L217",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 217,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "in -> not in"
+  },
+  {
+   "name": "m020-cmp-check_votes-L220",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 220,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m021-cmp-check_votes-L222",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 222,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "not in -> in"
+  },
+  {
+   "name": "m022-cmp-check_votes-L224",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 224,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m023-not-check_votes-L228",
+   "kind": "not",
+   "fn": "check_votes",
+   "line": 228,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m024-cmp-check_votes-L228",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 228,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": ">= -> <"
+  },
+  {
+   "name": "m025-cmp-check_votes-L232",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 232,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m026-cmp-check_votes-L234",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 234,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m027-not-check_votes-L237",
+   "kind": "not",
+   "fn": "check_votes",
+   "line": 237,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m028-not-check_votes-L240",
+   "kind": "not",
+   "fn": "check_votes",
+   "line": 240,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m029-cmp-check_votes-L240",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 240,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m030-not-check_votes-L245",
+   "kind": "not",
+   "fn": "check_votes",
+   "line": 245,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m031-cmp-check_votes-L247",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 247,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "in -> not in"
+  },
+  {
+   "name": "m032-not-check_votes-L252",
+   "kind": "not",
+   "fn": "check_votes",
+   "line": 252,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m033-not-check_votes-L254",
+   "kind": "not",
+   "fn": "check_votes",
+   "line": 254,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m034-if-check_votes-L257",
+   "kind": "if",
+   "fn": "check_votes",
+   "line": 257,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "negate BoolOp test"
+  },
+  {
+   "name": "m035-cmp-check_votes-L257",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 257,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m036-not-check_votes-L257",
+   "kind": "not",
+   "fn": "check_votes",
+   "line": 257,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m037-not-check_votes-L259",
+   "kind": "not",
+   "fn": "check_votes",
+   "line": 259,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m038-cmp-check_votes-L259",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 259,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m039-cmp-check_votes-L262",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 262,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "not in -> in"
+  },
+  {
+   "name": "m040-cmp-check_votes-L264",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 264,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "not in -> in"
+  },
+  {
+   "name": "m041-if-check_votes-L266",
+   "kind": "if",
+   "fn": "check_votes",
+   "line": 266,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "negate BoolOp test"
+  },
+  {
+   "name": "m042-cmp-check_votes-L266",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 266,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "in -> not in"
+  },
+  {
+   "name": "m043-cmp-check_votes-L266",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 266,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "in -> not in"
+  },
+  {
+   "name": "m044-cmp-check_votes-L271",
+   "kind": "cmp",
+   "fn": "check_votes",
+   "line": 271,
+   "legs": [
+    "C1_VOTES"
+   ],
+   "desc": "< -> >="
+  },
+  {
+   "name": "m045-if-check_receipts-L280",
+   "kind": "if",
+   "fn": "check_receipts",
+   "line": 280,
+   "legs": [
+    "C1_RECEIPTS"
+   ],
+   "desc": "negate if test"
+  },
+  {
+   "name": "m046-cmp-check_receipts-L290",
+   "kind": "cmp",
+   "fn": "check_receipts",
+   "line": 290,
+   "legs": [
+    "C1_RECEIPTS"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m047-cmp-check_receipts-L292",
+   "kind": "cmp",
+   "fn": "check_receipts",
+   "line": 292,
+   "legs": [
+    "C1_RECEIPTS"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "d-host",
+   "kind": "d-host",
+   "fn": "check_receipts",
+   "line": 295,
+   "legs": [
+    "C1_RECEIPTS"
+   ],
+   "desc": "host allowlist sub-check removed (MutationR96 d-host)"
+  },
+  {
+   "name": "m049-cmp-check_receipts-L295",
+   "kind": "cmp",
+   "fn": "check_receipts",
+   "line": 295,
+   "legs": [
+    "C1_RECEIPTS"
+   ],
+   "desc": "not in -> in"
+  },
+  {
+   "name": "m050-not-check_receipts-L298",
+   "kind": "not",
+   "fn": "check_receipts",
+   "line": 298,
+   "legs": [
+    "C1_RECEIPTS"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m051-cmp-check_receipts-L301",
+   "kind": "cmp",
+   "fn": "check_receipts",
+   "line": 301,
+   "legs": [
+    "C1_RECEIPTS"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m052-cmp-check_receipts-L303",
+   "kind": "cmp",
+   "fn": "check_receipts",
+   "line": 303,
+   "legs": [
+    "C1_RECEIPTS"
+   ],
+   "desc": "in -> not in"
+  },
+  {
+   "name": "m053-cmp-check_receipts-L303",
+   "kind": "cmp",
+   "fn": "check_receipts",
+   "line": 303,
+   "legs": [
+    "C1_RECEIPTS"
+   ],
+   "desc": "in -> not in"
+  },
+  {
+   "name": "m054-not-check_receipts-L305",
+   "kind": "not",
+   "fn": "check_receipts",
+   "line": 305,
+   "legs": [
+    "C1_RECEIPTS"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m055-not-check_receipts-L307",
+   "kind": "not",
+   "fn": "check_receipts",
+   "line": 307,
+   "legs": [
+    "C1_RECEIPTS"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m056-cmp-check_sids-L328",
+   "kind": "cmp",
+   "fn": "check_sids",
+   "line": 328,
+   "legs": [
+    "C1_SIDS"
+   ],
+   "desc": "not in -> in"
+  },
+  {
+   "name": "m057-not-check_sids-L330",
+   "kind": "not",
+   "fn": "check_sids",
+   "line": 330,
+   "legs": [
+    "C1_SIDS"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m058-if-check_sources-L341",
+   "kind": "if",
+   "fn": "check_sources",
+   "line": 341,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "negate BoolOp test"
+  },
+  {
+   "name": "m059-cmp-check_sources-L341",
+   "kind": "cmp",
+   "fn": "check_sources",
+   "line": 341,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "not in -> in"
+  },
+  {
+   "name": "m060-cmp-check_sources-L345",
+   "kind": "cmp",
+   "fn": "check_sources",
+   "line": 345,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "in -> not in"
+  },
+  {
+   "name": "m061-cmp-check_sources-L345",
+   "kind": "cmp",
+   "fn": "check_sources",
+   "line": 345,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "< -> >="
+  },
+  {
+   "name": "m062-not-check_sources-L353",
+   "kind": "not",
+   "fn": "check_sources",
+   "line": 353,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m063-cmp-check_sources-L356",
+   "kind": "cmp",
+   "fn": "check_sources",
+   "line": 356,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "in -> not in"
+  },
+  {
+   "name": "m064-cmp-check_sources-L357",
+   "kind": "cmp",
+   "fn": "check_sources",
+   "line": 357,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m065-cmp-check_sources-L362",
+   "kind": "cmp",
+   "fn": "check_sources",
+   "line": 362,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "is -> is not"
+  },
+  {
+   "name": "m066-cmp-check_sources-L364",
+   "kind": "cmp",
+   "fn": "check_sources",
+   "line": 364,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m067-not-check_sources-L368",
+   "kind": "not",
+   "fn": "check_sources",
+   "line": 368,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m068-cmp-check_sources-L371",
+   "kind": "cmp",
+   "fn": "check_sources",
+   "line": 371,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m069-cmp-check_sources-L373",
+   "kind": "cmp",
+   "fn": "check_sources",
+   "line": 373,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m070-cmp-check_sources-L375",
+   "kind": "cmp",
+   "fn": "check_sources",
+   "line": 375,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m071-cmp-check_sources-L377",
+   "kind": "cmp",
+   "fn": "check_sources",
+   "line": 377,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "not in -> in"
+  },
+  {
+   "name": "m072-cmp-check_sources-L379",
+   "kind": "cmp",
+   "fn": "check_sources",
+   "line": 379,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m073-cmp-check_sources-L380",
+   "kind": "cmp",
+   "fn": "check_sources",
+   "line": 380,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m074-not-check_sources-L382",
+   "kind": "not",
+   "fn": "check_sources",
+   "line": 382,
+   "legs": [
+    "C1_SOURCES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m075-cmp-check_quotes-L386",
+   "kind": "cmp",
+   "fn": "check_quotes",
+   "line": 386,
+   "legs": [
+    "C1_QUOTES"
+   ],
+   "desc": "in -> not in"
+  },
+  {
+   "name": "m076-not-check_quotes-L387",
+   "kind": "not",
+   "fn": "check_quotes",
+   "line": 387,
+   "legs": [
+    "C1_QUOTES"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m077-cmp-check_quotes-L392",
+   "kind": "cmp",
+   "fn": "check_quotes",
+   "line": 392,
+   "legs": [
+    "C1_QUOTES"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m078-cmp-check_quotes-L395",
+   "kind": "cmp",
+   "fn": "check_quotes",
+   "line": 395,
+   "legs": [
+    "C1_QUOTES"
+   ],
+   "desc": "not in -> in"
+  },
+  {
+   "name": "m079-if-check_embed_nonvacuous-L407",
+   "kind": "if",
+   "fn": "check_embed_nonvacuous",
+   "line": 407,
+   "legs": [
+    "C1_EMBED_NONVACUOUS"
+   ],
+   "desc": "negate BoolOp test"
+  },
+  {
+   "name": "m080-not-check_embed_nonvacuous-L407",
+   "kind": "not",
+   "fn": "check_embed_nonvacuous",
+   "line": 407,
+   "legs": [
+    "C1_EMBED_NONVACUOUS"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m081-if-check_embed_nonvacuous-L411",
+   "kind": "if",
+   "fn": "check_embed_nonvacuous",
+   "line": 411,
+   "legs": [
+    "C1_EMBED_NONVACUOUS"
+   ],
+   "desc": "negate if test"
+  },
+  {
+   "name": "m082-not-check_embed_nonvacuous-L413",
+   "kind": "not",
+   "fn": "check_embed_nonvacuous",
+   "line": 413,
+   "legs": [
+    "C1_EMBED_NONVACUOUS"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m083-not-check_pycache-L422",
+   "kind": "not",
+   "fn": "check_pycache",
+   "line": 422,
+   "legs": [
+    "C1_PYCACHE"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m084-not-check_pycache-L426",
+   "kind": "not",
+   "fn": "check_pycache",
+   "line": 426,
+   "legs": [
+    "C1_PYCACHE"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m085-if-check_admitted_union-L437",
+   "kind": "if",
+   "fn": "check_admitted_union",
+   "line": 437,
+   "legs": [
+    "C1_ADMITTED_UNION"
+   ],
+   "desc": "negate BoolOp test"
+  },
+  {
+   "name": "m086-cmp-check_admitted_union-L437",
+   "kind": "cmp",
+   "fn": "check_admitted_union",
+   "line": 437,
+   "legs": [
+    "C1_ADMITTED_UNION"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m087-if-check_admitted_union-L443",
+   "kind": "if",
+   "fn": "check_admitted_union",
+   "line": 443,
+   "legs": [
+    "C1_ADMITTED_UNION"
+   ],
+   "desc": "negate if test"
+  },
+  {
+   "name": "m088-if-check_admitted_union-L450",
+   "kind": "if",
+   "fn": "check_admitted_union",
+   "line": 450,
+   "legs": [
+    "C1_ADMITTED_UNION"
+   ],
+   "desc": "negate if test"
+  },
+  {
+   "name": "m089-cmp-check_admitted_union-L452",
+   "kind": "cmp",
+   "fn": "check_admitted_union",
+   "line": 452,
+   "legs": [
+    "C1_ADMITTED_UNION"
+   ],
+   "desc": "not in -> in"
+  },
+  {
+   "name": "m090-not-check_admitted_union-L455",
+   "kind": "not",
+   "fn": "check_admitted_union",
+   "line": 455,
+   "legs": [
+    "C1_ADMITTED_UNION"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m091-cmp-evaluate-L465",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 465,
+   "legs": [
+    "C1_ROWS_TOTAL"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m092-cmp-evaluate-L466",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 466,
+   "legs": [
+    "C1_ROWS_TOTAL"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m093-cmp-evaluate-L467",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 467,
+   "legs": [
+    "C1_C02_HELD"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m094-cmp-evaluate-L468",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 468,
+   "legs": [
+    "C1_C02_HELD"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m095-cmp-evaluate-L470",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 470,
+   "legs": [
+    "C1_C02_CITES"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m096-if-evaluate-L476",
+   "kind": "if",
+   "fn": "evaluate",
+   "line": 476,
+   "legs": [
+    "C1_ONLY_C02"
+   ],
+   "desc": "negate if test"
+  },
+  {
+   "name": "m097-if-evaluate-L478",
+   "kind": "if",
+   "fn": "evaluate",
+   "line": 478,
+   "legs": [
+    "C1_ONLY_C02"
+   ],
+   "desc": "negate BoolOp test"
+  },
+  {
+   "name": "m098-cmp-evaluate-L478",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 478,
+   "legs": [
+    "C1_ONLY_C02"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m099-cmp-evaluate-L478",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 478,
+   "legs": [
+    "C1_ONLY_C02"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m100-not-evaluate-L480",
+   "kind": "not",
+   "fn": "evaluate",
+   "line": 480,
+   "legs": [
+    "C1_ONLY_C02"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m101-cmp-evaluate-L480",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 480,
+   "legs": [
+    "C1_ONLY_C02"
+   ],
+   "desc": "is not -> is"
+  },
+  {
+   "name": "m102-cmp-evaluate-L481",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 481,
+   "legs": [
+    "C1_ONLY_C02"
+   ],
+   "desc": "!= -> =="
+  },
+  {
+   "name": "m103-cmp-evaluate-L489",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 489,
+   "legs": [
+    "C1_ADMITTED"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m104-cmp-evaluate-L489",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 489,
+   "legs": [
+    "C1_ADMITTED"
+   ],
+   "desc": "< -> >="
+  },
+  {
+   "name": "m105-cmp-evaluate-L490",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 490,
+   "legs": [
+    "C1_ADMITTED"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m106-if-evaluate-L506",
+   "kind": "if",
+   "fn": "evaluate",
+   "line": 506,
+   "legs": [
+    "C1_LINT"
+   ],
+   "desc": "negate if test"
+  },
+  {
+   "name": "m107-cmp-evaluate-L511",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 511,
+   "legs": [
+    "C1_LINT"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m108-cmp-evaluate-L513",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 513,
+   "legs": [
+    "C1_EMBEDDED"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m109-cmp-evaluate-L513",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 513,
+   "legs": [
+    "C1_EMBEDDED"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m110-cmp-evaluate-L514",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 514,
+   "legs": [
+    "C1_EMBEDDED"
+   ],
+   "desc": "in -> not in"
+  },
+  {
+   "name": "m111-not-evaluate-L515",
+   "kind": "not",
+   "fn": "evaluate",
+   "line": 515,
+   "legs": [
+    "C1_EMBEDDED"
+   ],
+   "desc": "delete `not`"
+  },
+  {
+   "name": "m112-if-evaluate-L534",
+   "kind": "if",
+   "fn": "evaluate",
+   "line": 534,
+   "legs": [
+    "C1_K_HELD_BACKED"
+   ],
+   "desc": "negate BoolOp test"
+  },
+  {
+   "name": "m113-cmp-evaluate-L534",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 534,
+   "legs": [
+    "C1_K_HELD_BACKED"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m114-cmp-evaluate-L536",
+   "kind": "cmp",
+   "fn": "evaluate",
+   "line": 536,
+   "legs": [
+    "C1_K_HELD_BACKED"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m115-if-_raw_line-L559",
+   "kind": "if",
+   "fn": "_raw_line",
+   "line": 559,
+   "legs": [
+    "C1_ONLY_C02"
+   ],
+   "desc": "negate BoolOp test"
+  },
+  {
+   "name": "m116-cmp-_raw_line-L559",
+   "kind": "cmp",
+   "fn": "_raw_line",
+   "line": 559,
+   "legs": [
+    "C1_ONLY_C02"
+   ],
+   "desc": "== -> !="
+  },
+  {
+   "name": "m117-cmp-_raw_line-L559",
+   "kind": "cmp",
+   "fn": "_raw_line",
+   "line": 559,
+   "legs": [
+    "C1_ONLY_C02"
+   ],
+   "desc": "== -> !="
+  }
+ ],
+ "excluded_msg": [
+  {
+   "line": 307,
+   "fn": "check_receipts"
+  },
+  {
+   "line": 330,
+   "fn": "check_sids"
+  },
+  {
+   "line": 382,
+   "fn": "check_sources"
+  },
+  {
+   "line": 394,
+   "fn": "check_quotes"
+  },
+  {
+   "line": 413,
+   "fn": "check_embed_nonvacuous"
+  },
+  {
+   "line": 426,
+   "fn": "check_pycache"
+  },
+  {
+   "line": 455,
+   "fn": "check_admitted_union"
+  }
+ ]
+}

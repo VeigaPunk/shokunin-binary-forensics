@@ -1,0 +1,16 @@
+{
+ "name": "FR02-entry-leading-bom",
+ "class": "entry bytes (BOM)",
+ "mutation": "UTF-8 BOM prepended to the admitted entry; votes re-signed to the new digest",
+ "expected": "FAIL",
+ "changed": [
+  ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+  "corpus/knowledge/round-96-native-analysis-sessions.md",
+  "reports/round-96/votes/CriticR96.json",
+  "reports/round-96/votes/ReviewerBlind.json",
+  "reports/round-96/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

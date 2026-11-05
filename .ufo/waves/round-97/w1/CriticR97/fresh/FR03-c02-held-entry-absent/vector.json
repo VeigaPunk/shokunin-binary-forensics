@@ -1,0 +1,10 @@
+{
+ "name": "FR03-c02-held-entry-absent",
+ "class": "README vs tree",
+ "mutation": "C02 flipped held (fixture), candidate entry file deleted from the tree",
+ "expected": "FAIL",
+ "changed": [],
+ "removed": [
+  "corpus/knowledge/round-96-native-analysis-sessions.md"
+ ]
+}

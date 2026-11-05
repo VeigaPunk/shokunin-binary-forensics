@@ -1,0 +1,32 @@
+# rc=1
+# command: python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-96/c1_k_admit_counter5.py --tree <tree>
+C1_K_HELD_BACKED=12/15
+C1_VOTES=vote digest mismatch for CriticR96 digest=None
+C1_REGISTRY_WHY=ok
+C1_RECEIPTS_WHY=ok
+C1_PYCACHE_WHY=ok
+C1_SOURCE_IDS=none
+C1_SIDS_WHY=ok
+C1_SOURCES_WHY=ok
+C1_QUOTES_WHY=no new-row sids cited by the entry
+C1_ADMITTED_UNION_WHY=ok
+C1_ONLY_C02_DIFFS=none
+C1_ROWS_TOTAL=pass
+C1_C02_HELD=pass
+C1_C02_CITES=fail
+C1_ONLY_C02=pass
+C1_ADMITTED=fail
+C1_TRIO=fail
+C1_REGISTRY=pass
+C1_VOTES=fail
+C1_RECEIPTS=pass
+C1_PYCACHE=pass
+C1_ADMITTED_UNION=pass
+C1_LINT=fail
+C1_EMBEDDED=fail
+C1_EMBED_NONVACUOUS=fail
+C1_SIDS=pass
+C1_SOURCES=pass
+C1_QUOTES=fail
+C1_K_HELD_BACKED=fail
+C1_VERDICT=fail

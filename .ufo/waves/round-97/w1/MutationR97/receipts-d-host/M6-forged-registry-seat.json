@@ -1,0 +1,10 @@
+{
+ "delta": "M6-forged-registry-seat",
+ "expected_leg": "C1_REGISTRY",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_REGISTRY",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

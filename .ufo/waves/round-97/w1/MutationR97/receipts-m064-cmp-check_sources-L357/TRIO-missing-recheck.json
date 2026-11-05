@@ -1,0 +1,12 @@
+{
+ "delta": "TRIO-missing-recheck",
+ "expected_leg": "C1_TRIO",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_TRIO",
+  "C1_VOTES",
+  "C1_LINT",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

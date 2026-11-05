@@ -1,0 +1,10 @@
+{
+ "name": "FR07-row-dup-target-over-held",
+ "class": "coverage row set",
+ "mutation": "held C06 row replaced by a copy of the flipped C02 row (K computed 13/15)",
+ "expected": "FAIL",
+ "changed": [
+  "corpus/README.md"
+ ],
+ "removed": []
+}

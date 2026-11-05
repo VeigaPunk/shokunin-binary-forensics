@@ -1,0 +1,10 @@
+{
+ "name": "FR04-c02-held-plus-other-row",
+ "class": "README one-row-only",
+ "mutation": "C02 flipped held AND C14 evidence cell re-worded in the same change",
+ "expected": "FAIL",
+ "changed": [
+  "corpus/README.md"
+ ],
+ "removed": []
+}

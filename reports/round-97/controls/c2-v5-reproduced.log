@@ -1,0 +1,21 @@
+DELTA FG01-shadow-decorated-admitted verdict=pass legs=none
+DELTA FG02-shadow-nested-dir verdict=pass legs=none
+DELTA FG03-shadow-uppercase-ext verdict=pass legs=none
+DELTA FG04-shadow-non-utf8 verdict=pass legs=none
+DELTA FG05-vote-html-comment-artifact verdict=pass legs=none
+DELTA FG06-vote-symlink-alias verdict=pass legs=none
+DELTA FG07-sid-double-space-evade verdict=pass legs=none
+DELTA FG08-loose-pyc-file verdict=pass legs=none
+DELTA FG09-receipt-quote-irrelevant verdict=pass legs=none
+DELTA FG10-sources-url-drift verdict=pass legs=none
+DELTA FG11-table-lie-fixture-swap verdict=pass legs=none
+DELTA FG12-tab-status-digest-invariant verdict=pass legs=none
+DELTA FG13-status-below-window verdict=fail legs=C1_ADMITTED,C1_VERDICT
+DELTA FG14-trio-line-shift verdict=fail legs=C1_TRIO,C1_LINT,C1_VERDICT
+DELTA FG15-qmap-extra-row verdict=pass legs=none
+DELTA FG16-nbsp-status-fork verdict=fail legs=C1_ADMITTED,C1_VERDICT
+DELTA FG18-usedby-dot-slash-alias verdict=fail legs=C1_SOURCES,C1_VERDICT
+DELTA FG19-merged-fetch-log-line verdict=pass legs=none
+DELTA FG20-prose-status-mention verdict=fail legs=C1_ADMITTED,C1_VERDICT
+C2_ACCEPTED=14/19
+rc=0

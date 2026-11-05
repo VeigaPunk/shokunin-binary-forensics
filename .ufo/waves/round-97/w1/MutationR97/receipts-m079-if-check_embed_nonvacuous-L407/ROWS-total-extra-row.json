@@ -1,0 +1,11 @@
+{
+ "delta": "ROWS-total-extra-row",
+ "expected_leg": "C1_ROWS_TOTAL",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_ROWS_TOTAL",
+  "C1_ONLY_C02",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

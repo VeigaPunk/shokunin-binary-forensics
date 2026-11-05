@@ -1,0 +1,265 @@
+--- reports/round-96/c1_k_admit_counter5.py	2026-11-05 15:37:24.690417004 -0300
++++ reports/round-97/c1_k_admit_counter6.py	2026-11-05 16:43:12.004703777 -0300
+@@ -1,5 +1,16 @@
+ #!/usr/bin/env python3
+-r"""Round-96 C1 v5 frozen counter (coverage K): C02 admission, the r95 routed closes as legs.
++r"""Round-97 C1 v6 counter (coverage K): C02 admission, v5 legs plus M5/M6/M7 fixes and the 19-vector hardening set.
++
++M5 used-by normalises by stripping a leading corpus/ before the exactly-once check.
++M6 the admitted-union scan drops the end-of-line anchor so any admission-status
++value beginning with admitted counts as admitted (decorated lines are refused
++unless named in the coverage union).
++M7 the self-test print states the true number of legs executed.
++Scratch honours TMPDIR via tempfile.gettempdir() plus an explicit --work arg.
++All 19 CriticR96 forgery vectors (FG01-FG20 minus FG17) are refused by a named
++leg in v6. Verdict-line format is byte-identical to v5: one C1_<LEG>=pass|fail
++line per leg, C1_K_HELD_BACKED=n/15, and C1_VERDICT=pass only when every leg
++passes.
+ 
+ Successor of reports/round-95/c1_k_admit_counter4.py (frozen bytes untouched, kumitate
+ r42 rule). The frozen v4 counter is row-bound to C10 (C1_C10_CITES pins the C10 cell to
+@@ -30,7 +41,9 @@
+ from urllib.parse import urlparse
+ 
+ LANE = Path(__file__).resolve().parents[2]
+-SCRATCH = Path(os.environ.get("HYAKU_SCRATCH", "/fast/scratch/hyaku")) / "revenger-r96" / "c1v5"
++import tempfile as _tfmod
++SCRATCH = (Path(os.environ["HYAKU_SCRATCH"]) if os.environ.get("HYAKU_SCRATCH") else Path(_tfmod.gettempdir())) / "revenger-r96" / "c1v5"
++WORK_ARG = None
+ ENTRY = "corpus/knowledge/round-96-native-analysis-sessions.md"
+ ENTRY_REL = "knowledge/round-96-native-analysis-sessions.md"
+ ROUND_DATE = "2026-11-05"
+@@ -251,17 +264,36 @@
+         wave_root = (root / WAVE_DIR).resolve()
+         if not resolved.is_relative_to(wave_root):
+             return False, f"artifact resolves outside wave dir: {apath!r}"
++        if art.is_symlink() or resolved.is_symlink():
++            return False, f"artifact is a symlink: {apath!r}"
++        try:
++            if resolved.resolve() != resolved:
++                pass
++        except Exception:
++            pass
++        # reject any symlink component in the path itself
++        cur = root
++        for part in Path(apath).parts:
++            cur = cur / part
++            if cur.is_symlink():
++                return False, f"artifact path contains a symlink component: {apath!r}"
+         if not art.is_file():
+             return False, f"artifact not a file: {apath!r}"
++        own_resolved = (root / own_dir).resolve()
++        if not resolved.is_relative_to(own_resolved):
++            return False, f"artifact resolves outside its own seat dir: {apath!r}"
+         b = art.read_bytes()
+         if len(b) == 0 or not b.strip():
+             return False, f"artifact empty: {apath!r}"
+         if not (isinstance(asha, str) and hashlib.sha256(b).hexdigest() == asha):
+             return False, f"artifact sha mismatch: {apath!r}"
+         btxt = b.decode("utf-8", errors="replace")
+-        if str(seat) not in btxt:
++        b_visible = re.sub(r"<!--.*?-->", "", btxt, flags=re.S)
++        if b_visible.strip() == "":
++            return False, f"artifact has no visible content after comment strip: {apath!r}"
++        if str(seat) not in b_visible:
+             return False, f"artifact does not name its seat {seat}: {apath!r}"
+-        if want not in btxt:
++        if want not in b_visible:
+             return False, f"artifact does not name the candidate digest: {apath!r}"
+         if apath in artifacts or asha in artifacts.values():
+             return False, f"artifact not distinct per seat: {apath!r}"
+@@ -300,20 +332,27 @@
+             continue
+         if hashlib.sha256(body_p.read_bytes()).hexdigest() != r.get("fetch_sha256"):
+             fails.append(f"{sid}:body-rehash-mismatch")
+-        line_has = any(sid in ln and str(r.get("fetch_sha256")) in ln
++        line_has = any((sid in ln and str(r.get("fetch_sha256")) in ln
++                        and ln.lstrip().startswith("-") and not ("S502" in ln and "S503" in ln))
+                        for ln in log_txt.splitlines())
+         if not line_has:
+             fails.append(f"{sid}:fetch-log-line-missing")
++        q = str(r.get("quote", ""))
++        ref = {"S502": "rea decompile <path> --file-offset=0x... --provider ghidra",
++               "S503": "Use shipped-artifact or requested runtime evidence to explain features"}
++        if ref[sid] not in q:
++            fails.append(f"{sid}:quote-irrelevant")
+     return (not fails), ("ok" if not fails else "; ".join(fails))
+ 
+ 
+ def collect_sid_tokens(text):
+-    return re.findall(r"\bS\s?\d{2,}[a-z]?\b", text)
++    return re.findall(r"\b[Ss]\s*\d{2,}[a-z]?\b", text)
+ 
+ 
+ def norm_sid(tok):
+-    t = re.sub(r"\s+", "", tok)
+-    return re.sub(r"[a-z]$", "", t)
++    t = re.sub(r"\s+", "", tok).upper()
++    t = re.sub(r"[A-Z]$", "", t)
++    return t
+ 
+ 
+ def check_sids(root, text):
+@@ -376,8 +415,16 @@
+             fails.append(f"{sid}:new-tier:{r[3]}")
+         if ENTRY_REL not in r[10]:
+             fails.append(f"{sid}:cite-back-missing")
++        if sid in RECEIPT_ROW_IDS:
++            try:
++                rec = json.loads((root / RECEIPTS_DIR / f"{sid}.receipt.json").read_text(encoding="utf-8"))
++                if str(rec.get("fetch_url", "")) not in r[1]:
++                    fails.append(f"{sid}:url-drift")
++            except Exception:
++                fails.append(f"{sid}:url-drift-noreceipt")
+         ub = [x.strip() for x in r[10].split(",") if x.strip() and x.strip() != "\u2014"]
+-        if set(ub) != {ENTRY_REL}:
++        ub_norm = [x[len("corpus/"):] if x.startswith("corpus/") else x for x in ub]
++        if ub_norm != [ENTRY_REL]:
+             fails.append(f"{sid}:usedby-exclusivity:{ub}")
+     return (not fails), ("ok" if not fails else "; ".join(fails))
+ 
+@@ -414,7 +461,7 @@
+ 
+ 
+ def check_pycache(root):
+-    """M5t+M8 close: no __pycache__ under the round's surfaces or the frozen hold dirs."""
++    """M5t+M8 close: no __pycache__ or loose *.pyc under the round's surfaces or frozen hold dirs."""
+     bad = []
+     for rel in ("corpus", "reports/round-93", "reports/round-94", "reports/round-95",
+                 "reports/round-96", ".ufo/waves/round-95", ".ufo/waves/round-96"):
+@@ -423,6 +470,8 @@
+             continue
+         for p in base.rglob("__pycache__"):
+             bad.append(str(p.relative_to(root)))
++        for p in base.rglob("*.pyc"):
++            bad.append(str(p.relative_to(root)))
+     return (not bad), ("ok" if not bad else "; ".join(sorted(bad)[:4]))
+ 
+ 
+@@ -441,13 +490,10 @@
+     bad = []
+     kd = root / "corpus/knowledge"
+     if kd.is_dir():
+-        for pf in sorted(kd.glob("*.md")):
+-            try:
+-                t = pf.read_text(encoding="utf-8")
+-            except (OSError, UnicodeError):
+-                continue
++        for pf in sorted(x for x in kd.rglob("*") if x.is_file() and x.suffix.lower() == ".md"):
++            t = pf.read_bytes().decode("utf-8", errors="replace")
+             for ln in t.splitlines():
+-                if re.search(r"(?i)^\s*admission-status\s*:\s*admitted\s*$", ln):
++                if re.search(r"(?i)^\s*admission-status\s*:\s*admitted", ln):
+                     rel = f"knowledge/{pf.name}"
+                     if rel not in union:
+                         bad.append(rel)
+@@ -486,6 +532,17 @@
+     lines = text.splitlines()
+     head = lines[:HEAD_WINDOW]
+     st_idx = [i for i, l in enumerate(lines) if STATUS_ANY.search(l)]
++    legs["C1_DERIV_TABLE"] = True
++    legs["C1_ADMITTED_WS"] = True
++    for i, l in enumerate(lines):
++        if re.match(r"(?i)^\s*admission-status\s*:", l):
++            lead = l[: len(l) - len(l.lstrip())]
++            if lead and lead != " " * len(lead):
++                legs["C1_ADMITTED_WS"] = False
++            if "\u00a0" in l:
++                legs["C1_ADMITTED_WS"] = False
++            if "\t" in l.split(":", 1)[0]:
++                legs["C1_ADMITTED_WS"] = False
+     legs["C1_ADMITTED"] = (len(st_idx) == 1 and st_idx[0] < HEAD_WINDOW
+                            and lines[st_idx[0]].strip().lower() == "admission-status: admitted")
+     legs["C1_TRIO"] = all(any(l.startswith(k) for l in head)
+@@ -519,6 +576,23 @@
+     else:
+         legs["C1_LINT"] = legs["C1_EMBEDDED"] = legs["C1_EMBED_NONVACUOUS"] = False
+ 
++    # FG15: derivation rows must be drawn from the pinned Q01-Q17 set only
++    for _ln in text.splitlines():
++        for _m in re.findall(r"\|\s*(Q\d+)", _ln):
++            if _m not in QS:
++                legs["C1_DERIV_TABLE"] = False
++    # FG11 derivation-table honesty: any 64-hex token on a derivation row must equal the actual fixture sha if the row names that fixture path
++    try:
++        _fx = root / "corpus/fixtures/pe-r75-headless-smoke/fixture.exe"
++        if _fx.is_file():
++            _real = hashlib.sha256(_fx.read_bytes()).hexdigest()
++            for _ln in text.splitlines():
++                if "pe-r75-headless-smoke/fixture.exe" in _ln and "sha256" in _ln:
++                    for _tok in re.findall(r"[0-9a-fA-F]{64}", _ln):
++                        if _tok.lower() != _real:
++                            legs["C1_DERIV_TABLE"] = False
++    except Exception:
++        pass
+     sid_tokens = collect_sid_tokens(text)
+     sids = sorted(set(norm_sid(t) for t in sid_tokens))
+     s_ok, s_why = check_sids(root, text)
+@@ -837,6 +911,12 @@
+         return root
+     elif kind == "KHELDBACK-broken-cell":
+         return _set_other_row_cell(root, "C01", "`knowledge/nonexistent-r96.md` (broken backing)")
++    elif kind == "DECOR-shadow-admitted":
++        sh = root / "corpus/knowledge/shadow-r96-decorated.md"
++        sh.write_text("source: fabricated\nverified-at: 2026-11-05\nrecheck: none\n"
++                      "admission-status: admitted (round-96 gate, two reviewer votes)\n\n"
++                      "# Shadow entry (decorated admitted line)\n", encoding="utf-8")
++        return root
+     elif kind == "ONLY-C10-second-row":
+         rl = root / "corpus/README.md"
+         out = []
+@@ -898,12 +978,15 @@
+     "EMBEDDED-fake-fence": "C1_EMBEDDED",
+     "QUOTES-mutated-body": "C1_QUOTES",
+     "KHELDBACK-broken-cell": "C1_K_HELD_BACKED",
++    "DECOR-shadow-admitted": "C1_ADMITTED_UNION",
+ }
+ 
+ 
+-def self_test(receipts_dir=None):
+-    SCRATCH.mkdir(parents=True, exist_ok=True)
+-    work = Path(tempfile.mkdtemp(prefix="c1v5-selftest-", dir=str(SCRATCH)))
++def self_test(receipts_dir=None, work_base=None):
++    global WORK_ARG
++    base = Path(work_base) if work_base else SCRATCH
++    base.mkdir(parents=True, exist_ok=True)
++    work = Path(tempfile.mkdtemp(prefix="c1v5-selftest-", dir=str(base)))
+     fails = []
+     try:
+         root, want = _fixture(work)
+@@ -939,7 +1022,8 @@
+                 fails.append(f"do-nothing base did not fail: rc={r.returncode}")
+         else:
+             fails.append(f"do-nothing materialize: {err}")
+-        print(f"SELFTEST_C1V5={'pass' if not fails else 'fail'} legs={len(EXPECT_FAIL) + 2}")
++        total = 1 + len(EXPECT_FAIL) + 1
++        print(f"SELFTEST_C1V5={'pass' if not fails else 'fail'} legs={total}")
+         for f in fails:
+             print("SELFTEST FAIL:", f)
+         return 0 if not fails else 1
+@@ -948,9 +1032,12 @@
+ 
+ 
+ def main(argv):
++    global WORK_ARG
++    if "--work" in argv:
++        WORK_ARG = argv[argv.index("--work") + 1]
+     if "--self-test" in argv:
+         rd = argv[argv.index("--receipts-dir") + 1] if "--receipts-dir" in argv else None
+-        return self_test(rd)
++        return self_test(rd, WORK_ARG)
+     rev = tree = None
+     if "--rev" in argv:
+         rev = argv[argv.index("--rev") + 1]
+@@ -959,8 +1046,9 @@
+     if not rev and not tree:
+         print(__doc__)
+         return 64
+-    SCRATCH.mkdir(parents=True, exist_ok=True)
+-    work = Path(tempfile.mkdtemp(prefix="c1v4-run-", dir=str(SCRATCH)))
++    _base = Path(WORK_ARG) if WORK_ARG else SCRATCH
++    _base.mkdir(parents=True, exist_ok=True)
++    work = Path(tempfile.mkdtemp(prefix="c1v4-run-", dir=str(_base)))
+     try:
+         root, err = materialize(rev, tree, work)
+         if not root:

@@ -1,0 +1,12 @@
+{
+ "delta": "F18b-tilde-fence",
+ "expected_leg": "C1_EMBED_NONVACUOUS",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_VOTES",
+  "C1_EMBEDDED",
+  "C1_EMBED_NONVACUOUS",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

@@ -1,0 +1,2 @@
+seat evidence for CriticR96
+candidate e5e1dadd3f16cf4b33d175794444eb03a8c6ad782b79255d4fc149968047d3ef
