@@ -1,0 +1,7 @@
+# C2 do-nothing control: frozen v5 counter verdicts recorded in committed CriticR96 receipts (summary.json)
+# command: python3 -c 'import json;d=json.load(open(".ufo/waves/round-96/w1/CriticR96/receipts/summary.json"));print(sum(x["observed_verdict"]=="pass" for x in d),len(d))'
+vectors 19
+C2_V5_ACCEPTED 14 / 19
+accepted: FG01-shadow-decorated-admitted FG02-shadow-nested-dir FG03-shadow-uppercase-ext FG04-shadow-non-utf8 FG05-vote-html-comment-artifact FG06-vote-symlink-alias FG07-sid-double-space-evade FG08-loose-pyc-file FG09-receipt-quote-irrelevant FG10-sources-url-drift FG11-table-lie-fixture-swap FG12-tab-status-digest-invariant FG15-qmap-extra-row FG19-merged-fetch-log-line
+rejected: FG13-status-below-window FG14-trio-line-shift FG16-nbsp-status-fork FG18-usedby-dot-slash-alias FG20-prose-status-mention
+NOTE: r96 SCORECARD/lesson state 13 accepted; this count of the committed summary is 14
