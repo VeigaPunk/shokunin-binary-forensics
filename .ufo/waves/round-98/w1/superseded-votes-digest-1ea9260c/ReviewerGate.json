@@ -1,0 +1,36 @@
+{
+ "seat": "ReviewerGate",
+ "role": "reviewer",
+ "candidate_sha256": "1ea9260c812947d3e2c61161c22a1e143df432168e7b9b5bc4c1a90c0b1527b8",
+ "decisions": {
+  "Q01": "PASS",
+  "Q02": "PASS",
+  "Q03": "PASS",
+  "Q04": "PASS",
+  "Q05": "PASS",
+  "Q06": "n/a",
+  "Q07": "n/a",
+  "Q08": "n/a",
+  "Q09": "PASS",
+  "Q10": "PASS",
+  "Q11": "PASS",
+  "Q12": "n/a",
+  "Q13": "n/a",
+  "Q14": "n/a",
+  "Q15": "n/a",
+  "Q16": "PASS",
+  "Q17": "n/a"
+ },
+ "notes": {
+  "Q06": "No fixture was authored or edited this round; the entry's ZIP fixture premise bytes built in round 2 are byte-verified in place against truth.json and the live inspection record, a duty outside Q06's edit-time premise rule.",
+  "Q07": "No parser accept/refuse/cause prediction exists in the entry; the only hypothesis-shaped statement is the already-executed truth.json comparison, so Q07 has nothing to govern. Q05 capability demotion covers the claims that could drift.",
+  "Q08": "Historical criterion superseded by Q11, applied in full: every derivation-table row and all digest, count and identifier values re-run from the entry's own commands against the committed bytes, all byte-equal; see Q11 in .ufo/waves/round-98/w1/ReviewerGate/gate-audit.md.",
+  "Q12": "No rejected source row is load-bearing and no reject reason or flip column value is cited by the entry; its only registry rows S506 and S507 are tier A with status mined. See Q12 in gate-audit.md.",
+  "Q13": "No verifier command is credited with mutation-guarding any clause; the recheck line names re-open, re-run and re-derive procedures rather than deletion-detection coverage, so Q13 has no credited coverage sentence to check. See Q13.",
+  "Q14": "No quoted hex string carries a stated byte count, no ellipsis-truncated hex run and no ASCII rendering exists in the entry; the digests carry full 64-character values each derived by sha256sum, so Q14 has no clause of the shape it governs.",
+  "Q15": "No git object or tree identity sentence exists; the pinned revision 12f6e0974... is a commit id asserted in a fetched URL whose served bytes were re-fetched byte-identically on 2026-11-05, not an X:path tree identity, so Q15 has no sentence of the shape it governs.",
+  "Q17": "No adjudication relocated a cited artifact; every path the entry cites resolves in the claims-freeze archive extracted for this audit, so no SOURCE_PATH_DEAD duty applies. See Q17 in gate-audit.md."
+ },
+ "artifact_path": ".ufo/waves/round-98/w1/ReviewerGate/gate-audit.md",
+ "artifact_sha256": "00b6a9935c0e52024fbd4453d81cf69e7744e685a9d4ebb2dd6139334fb3b4cc"
+}

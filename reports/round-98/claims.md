@@ -150,3 +150,30 @@ under v5 it yields `accepted=8`. ReviewerClaims reproduced both numbers
 `.ufo/waves/round-98/w1-spec.json` is normative for leg names and profile constants. In the c14
 profile, `C1_DERIV_TABLE` recomputes the entry's recorded digests from the tree: the archive-r2
 fixture, the S506 body, and the record-file prefixes.
+
+## Amendment B — candidate entry gains its `## §Q-map` (recorded before the v7 freeze and before any landing-tree scoring, 2026-11-05)
+
+ExecCounterV7 ran the lane's own pre-flight lint, `corpus/lint_entry.py`, which v6 runs as
+`C1_LINT`, on the frozen candidate. It reported `LINT_QMAP=17`: the entry had no `## §Q-map`
+section, and the lane's admission procedure requires one. This is an authoring defect of the L1, who
+did not run the lint before the claims freeze (lesson M14). It was found before any landing-tree
+scoring.
+
+Change to the candidate (author's edit, before scoring):
+- a `## §Q-map` section is appended, with 17 rows (Q01–Q17);
+- in the derivation table, the S506 digest row no longer carries a byte count in the same clause
+  (Q14 hygiene), and a separate `S506 body length` row is added;
+- two derivation rows are added for counts the route table states (the 8 ghidra scope checks and
+  the doctor installation-path lines);
+- one clause moves from "Hopper was absent during this run" to "Doctor reported Hopper missing the
+  same day", and the matching observation sentence changes the same way, because a doctor run and the
+  inventory run are separate runs.
+
+`python3 -B corpus/lint_entry.py --entry corpus/knowledge/round-98-rea-host-readiness.md --lane .`
+→ `LINT_QMAP=0 LINT_Q14=0 LINT_Q15=0 LINT_HEADER=0`, rc 0.
+
+**New vote-binding digest:** `73f1d7e044df04373a36c1f94f7e7216a7a513043ef769d5567a98cb53dd80e7`. It
+supersedes `1ea9260c…27b8`. The votes already cast on the old digest are kept as evidence in
+`.ufo/waves/round-98/w1/superseded-votes-digest-1ea9260c/`. They no longer count, and the same
+pinned voting seats re-vote on the new digest. The predicate, counter, target and kill rule are
+unchanged. The candidate stays `admission-status: candidate` until landing.
