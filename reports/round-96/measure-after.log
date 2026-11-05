@@ -1,0 +1,22 @@
+# round-96 landed-revision measurement — revision 8d456c58e3625f0b4cf8e29bb810b47e82963b7b
+## K (plain count over committed corpus/README.md)
+total=15 partial=2 held=12 uncovered=1 
+## C1 counter at revision (exit code follows)
+C1_REV_RC=1
+C1_K_HELD_BACKED=12/15
+C1_K_HELD_BACKED=fail
+C1_VERDICT=fail
+## C2 battery5 full at landing working tree (exit code follows)
+BATTERY_RC=0
+SELFTEST_C1V5=pass (POS + 31 deltas + do-nothing)
+DELTA_RECEIPTS=31/31
+V5_KILLS=3/3
+MUTANT_V5_REGISTRY_KILLED=pass
+POS_C1V5=pass
+DO_NOTHING_C1V5=fail-as-required
+STUB_REJECTED=pass (stub prints pass; no discriminating leg line, so the kill check fails)
+HOLD_R95_BATTERY=pass
+BATTERY5_VERDICT=pass
+## census round-end
+CENSUS_RC=0
+34

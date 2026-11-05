@@ -1,0 +1,12 @@
+SELFTEST_C1V5=pass (POS + 31 deltas + do-nothing)
+DELTA_RECEIPTS=31/31
+A4-shadow-admitted: v5 KILLED on C1_ADMITTED_UNION
+A3-usedby-extra: v5 KILLED on C1_SOURCES
+M8-pycache-frozen-dir: v5 KILLED on C1_PYCACHE
+V5_KILLS=3/3
+MUTANT_V5_REGISTRY_KILLED=pass
+POS_C1V5=pass
+DO_NOTHING_C1V5=fail-as-required
+STUB_REJECTED=pass (stub prints pass; no discriminating leg line, so the kill check fails)
+HOLD_R95_BATTERY=pass
+BATTERY5_VERDICT=pass
