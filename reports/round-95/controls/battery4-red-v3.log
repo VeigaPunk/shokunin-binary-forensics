@@ -1,0 +1,14 @@
+V3_REACH_NEW=10/10
+  H1-indent-dup-status: v3 reach
+  V10-stale-fetched-at: v3 reach
+  V27-fabricated-body-foreign-host: v3 reach
+  V07-legacy-path: v3 reach
+  V08-entry-pending: v3 reach
+  V03-dup-json-keys-registry: v3 reach
+  V04-dup-json-keys-vote: v3 reach
+  V19-sid-suffix-spaced: v3 reach
+  V18-na-letter-flood: v3 reach
+  M5-pycache-planted: v3 reach
+MUTANT_V3_REGISTRY_SURVIVES=pass (the committed MutationR94 C1_REGISTRY SURVIVED finding)
+RED_V3_VERDICT=pass
+rc=0

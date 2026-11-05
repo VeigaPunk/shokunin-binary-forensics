@@ -1,0 +1,18 @@
+SELFTEST_C1V4=pass (POS + 22 deltas + do-nothing)
+H1-indent-dup-status: v4 KILLED on C1_ADMITTED
+V10-stale-fetched-at: v4 KILLED on C1_RECEIPTS
+V27-fabricated-body-foreign-host: v4 KILLED on C1_RECEIPTS
+V07-legacy-path: v4 KILLED on C1_C10_CITES
+V08-entry-pending: v4 KILLED on C1_C10_CITES
+V03-dup-json-keys-registry: v4 KILLED on C1_REGISTRY
+V04-dup-json-keys-vote: v4 KILLED on C1_VOTES
+V19-sid-suffix-spaced: v4 KILLED on C1_SIDS
+V18-na-letter-flood: v4 KILLED on C1_VOTES
+M5-pycache-planted: v4 KILLED on C1_PYCACHE
+V4_KILLS=10/10
+MUTANT_V4_REGISTRY_KILLED=pass
+POS_C1V4=pass
+DO_NOTHING_C1V4=fail-as-required
+HOLD_R94_BATTERY=pass
+BATTERY4_VERDICT=pass
+rc=0

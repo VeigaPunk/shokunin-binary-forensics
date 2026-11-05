@@ -1,0 +1,15 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S501",
+ "verdict": "verified",
+ "fetch_url": "https://raw.githubusercontent.com/morluto/rea/12f6e0974cc0db0b3a9b86246accc76556837222/src/application/investigation/EvidenceLedger.ts",
+ "http_status": 200,
+ "fetched_at": "2026-11-05",
+ "fetch_sha256": "f7add697322f37d7a7d69fde5e8e2c3d625344b67fb1ca32dc52dbe6bb103dac",
+ "length": 18784,
+ "quote": "Record evidence idempotently; conflicting content is rejected.",
+ "span": {
+  "start": 2136,
+  "end": 2198
+ }
+}
