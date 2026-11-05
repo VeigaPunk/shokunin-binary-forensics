@@ -1,0 +1,21 @@
+# command: PYTHONUTF8=1 python3 -B reports/round-98/forge_reach7.py --counter reports/round-97/c1_k_admit_counter6.py --work <scratch>
+# (no --profile: frozen v6)
+# cwd: lane root /home/vgpnk/Projects/shokunin/revenger-shokunin
+# scratch: TMPDIR=/fast/scratch/hyaku/revenger-r98/ExecHarness7/tmp HYAKU_SCRATCH=/fast/scratch/hyaku/revenger-r98/ExecHarness7/hyaku --work /fast/scratch/hyaku/revenger-r98/ExecHarness7/run-v6
+VECTOR FR00 rc=0 verdict=pass failing=none
+VECTOR FR00b rc=0 verdict=pass failing=none
+VECTOR FR02 rc=0 verdict=pass failing=none
+VECTOR FR06 rc=1 verdict=fail failing=C1_ADMITTED_UNION,C1_VERDICT
+VECTOR FR07 rc=1 verdict=fail failing=C1_ADMITTED_UNION,C1_VERDICT
+VECTOR FR08 rc=0 verdict=pass failing=none
+VECTOR FR09 rc=0 verdict=pass failing=none
+VECTOR FR10 rc=0 verdict=pass failing=none
+VECTOR FR12 rc=0 verdict=pass failing=none
+C2_ACCEPTED=5/5
+C2_POSITIVE=pass
+C2_POSITIVE2=pass
+C2_STUB_SELFTEST=ok
+C2_ROWSET_FR06=C1_ADMITTED_UNION,C1_VERDICT
+C2_ROWSET_FR07=C1_ADMITTED_UNION,C1_VERDICT
+C2_VERDICT=not-met
+rc=0

@@ -1,0 +1,4 @@
+COMMAND=['python3', '-B', '/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/c1_k_admit_counter7.py', '--self-test', '--work', '/fast/scratch/hyaku/revenger-r98/ExecCounterV7', '--receipts-dir', '/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/controls/v7-dev/selftest-cases']
+SELFTEST_C1V7=OK legs=55
+
+EXIT_CODE=0

@@ -1,0 +1,49 @@
+C1_K_HELD_BACKED=12/15
+C1_VOTES_WHY=votes dir missing digest=None
+C1_REGISTRY_WHY=registry missing/strict-JSON-fail: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r98/ExecCounterV7/c1v7-selftest-5_qs8l2u/dn-3pv98klq/t/.ufo/waves/round-96/w1/swarm-registry.json'
+C1_RECEIPTS_WHY=S502:receipt:[Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r98/ExecCounterV7/c1v7-selftest-5_qs8l2u/dn-3pv98klq/t/reports/round-96/quote-receipts/S502.receipt.json'; S503:receipt:[Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r98/ExecCounterV7/c1v7-selftest-5_qs8l2u/dn-3pv98klq/t/reports/round-96/quote-receipts/S503.receipt.json'
+C1_PYCACHE_WHY=ok
+C1_SOURCE_IDS=none
+C1_SIDS_WHY=ok
+C1_SOURCES_WHY=S502:new-row-missing; S503:new-row-missing; S504:new-row-missing
+C1_QUOTES_WHY=no new-row sids cited by the entry
+C1_ADMITTED_UNION_WHY=ok
+C1_ONLY_TARGET_DIFFS=none
+C1_ROWSET_WHY=ordered ids=C01,C02,C03,C04,C05,C06,C07,C08,C09,C10,C11,C12,C13,C14,C15
+C1_ENTRY_BYTES_WHY=entry unreadable/strict UTF-8: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r98/ExecCounterV7/c1v7-selftest-5_qs8l2u/dn-3pv98klq/t/corpus/knowledge/round-96-native-analysis-sessions.md'
+C1_HEADER_POSITION_WHY=missing leading source; missing leading verified-at; missing leading recheck; missing leading coverage-map; missing leading admission-status
+C1_VERIFIED_AT_WHY=verified-at=[], expected 2026-11-05; S502:opened differs from verified-at/ROUND_DATE; S503:opened differs from verified-at/ROUND_DATE; S504:opened differs from verified-at/ROUND_DATE; S502:receipt:[Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r98/ExecCounterV7/c1v7-selftest-5_qs8l2u/dn-3pv98klq/t/reports/round-96/quote-receipts/S502.receipt.json'; S503:receipt:[Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r98/ExecCounterV7/c1v7-selftest-5_qs8l2u/dn-3pv98klq/t/reports/round-96/quote-receipts/S503.receipt.json'
+C1_VOTE_NOTES_WHY=no votes
+C1_OWNWORK_PATHS_WHY=S502:missing row; S503:missing row; S504:missing row
+C1_QUOTE_BYTES_WHY=ok; checked byte anchors=none
+C1_USEDBY_GROUNDED_WHY=S502:missing row; S503:missing row; S504:missing row
+C1_ROWS_TOTAL=pass
+C1_TARGET_HELD=fail
+C1_TARGET_CITES=fail
+C1_ONLY_TARGET=fail
+C1_DERIV_TABLE=pass
+C1_ADMITTED_WS=pass
+C1_ADMITTED=fail
+C1_TRIO=fail
+C1_REGISTRY=fail
+C1_VOTES=fail
+C1_RECEIPTS=fail
+C1_PYCACHE=pass
+C1_ADMITTED_UNION=pass
+C1_LINT=fail
+C1_EMBEDDED=fail
+C1_EMBED_NONVACUOUS=fail
+C1_SIDS=pass
+C1_SOURCES=fail
+C1_QUOTES=fail
+C1_K_HELD_BACKED=fail
+C1_ROWSET=pass
+C1_ENTRY_BYTES=fail
+C1_HEADER_POSITION=fail
+C1_VERIFIED_AT=fail
+C1_VOTE_NOTES=fail
+C1_OWNWORK_PATHS=fail
+C1_QUOTE_BYTES=pass
+C1_USEDBY_GROUNDED=fail
+C1_VERDICT=fail
+SELFTEST_CASE_RC=1

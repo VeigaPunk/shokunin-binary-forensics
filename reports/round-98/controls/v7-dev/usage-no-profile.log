@@ -1,0 +1,6 @@
+usage: c1_k_admit_counter7.py [-h] [--profile {c02,c14}] [--self-test]
+                              [--tree TREE] [--rev REV] [--work WORK]
+                              [--receipts-dir RECEIPTS_DIR]
+c1_k_admit_counter7.py: error: --profile is required unless --self-test is given
+
+EXIT_CODE=2

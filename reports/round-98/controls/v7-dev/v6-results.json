@@ -1,0 +1,296 @@
+[
+ {
+  "name": "FR00-honest-control",
+  "class": "control",
+  "mutation": "none: honest v5 _fixture() tree",
+  "expected": "pass",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "control-ok",
+  "changed": [],
+  "removed": []
+ },
+ {
+  "name": "FR01-usedby-case-path",
+  "class": "used-by path-form (case-only)",
+  "mutation": "S502 used-by cell knowledge/round-96-... -> knowledge/Round-96-... (one letter case)",
+  "expected": "FAIL",
+  "rc": 1,
+  "verdict": "fail",
+  "k_held": "13/15",
+  "failing_legs": [
+   "C1_SOURCES",
+   "C1_VERDICT"
+  ],
+  "outcome": "refused",
+  "changed": [
+   "corpus/SOURCES.md"
+  ],
+  "removed": []
+ },
+ {
+  "name": "FR02-entry-leading-bom",
+  "class": "entry bytes (BOM)",
+  "mutation": "UTF-8 BOM prepended to the admitted entry; votes re-signed to the new digest",
+  "expected": "FAIL",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED-by-v5",
+  "changed": [
+   ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+   "corpus/knowledge/round-96-native-analysis-sessions.md",
+   "reports/round-96/votes/CriticR96.json",
+   "reports/round-96/votes/ReviewerBlind.json",
+   "reports/round-96/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "FR03-c02-held-entry-absent",
+  "class": "README vs tree",
+  "mutation": "C02 flipped held (fixture), candidate entry file deleted from the tree",
+  "expected": "FAIL",
+  "rc": 1,
+  "verdict": "fail",
+  "k_held": "12/15",
+  "failing_legs": [
+   "C1_C02_CITES",
+   "C1_ADMITTED",
+   "C1_TRIO",
+   "C1_VOTES",
+   "C1_LINT",
+   "C1_EMBEDDED",
+   "C1_EMBED_NONVACUOUS",
+   "C1_QUOTES",
+   "C1_K_HELD_BACKED",
+   "C1_VERDICT"
+  ],
+  "outcome": "refused",
+  "changed": [],
+  "removed": [
+   "corpus/knowledge/round-96-native-analysis-sessions.md"
+  ]
+ },
+ {
+  "name": "FR04-c02-held-plus-other-row",
+  "class": "README one-row-only",
+  "mutation": "C02 flipped held AND C14 evidence cell re-worded in the same change",
+  "expected": "FAIL",
+  "rc": 1,
+  "verdict": "fail",
+  "k_held": "13/15",
+  "failing_legs": [
+   "C1_ONLY_C02",
+   "C1_VERDICT"
+  ],
+  "outcome": "refused",
+  "changed": [
+   "corpus/README.md"
+  ],
+  "removed": []
+ },
+ {
+  "name": "FR05-vote-foreign-artifact-sha",
+  "class": "vote artifact binding",
+  "mutation": "CriticR96 candidate digest correct; artifact_sha256 = sha of ReviewerGate's artifact",
+  "expected": "FAIL",
+  "rc": 1,
+  "verdict": "fail",
+  "k_held": "13/15",
+  "failing_legs": [
+   "C1_VOTES",
+   "C1_VERDICT"
+  ],
+  "outcome": "refused",
+  "changed": [
+   "reports/round-96/votes/CriticR96.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "FR06-row-dup-held-over-held",
+  "class": "coverage row set",
+  "mutation": "held C06 row replaced by a copy of held C01 row (C02 held; K computed 13/15)",
+  "expected": "FAIL",
+  "rc": 1,
+  "verdict": "fail",
+  "k_held": "13/15",
+  "failing_legs": [
+   "C1_ADMITTED_UNION",
+   "C1_VERDICT"
+  ],
+  "outcome": "refused",
+  "changed": [
+   "corpus/README.md"
+  ],
+  "removed": []
+ },
+ {
+  "name": "FR07-row-dup-target-over-held",
+  "class": "coverage row set",
+  "mutation": "held C06 row replaced by a copy of the flipped C02 row (K computed 13/15)",
+  "expected": "FAIL",
+  "rc": 1,
+  "verdict": "fail",
+  "k_held": "13/15",
+  "failing_legs": [
+   "C1_ADMITTED_UNION",
+   "C1_VERDICT"
+  ],
+  "outcome": "refused",
+  "changed": [
+   "corpus/README.md"
+  ],
+  "removed": []
+ },
+ {
+  "name": "FR08-headers-in-fence",
+  "class": "provenance header",
+  "mutation": "source/verified-at/recheck/coverage-map headers wrapped in a ```text fence; votes re-signed",
+  "expected": "FAIL",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED-by-v5",
+  "changed": [
+   ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+   "corpus/knowledge/round-96-native-analysis-sessions.md",
+   "reports/round-96/votes/CriticR96.json",
+   "reports/round-96/votes/ReviewerBlind.json",
+   "reports/round-96/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "FR09-verified-at-stale",
+  "class": "provenance date",
+  "mutation": "verified-at 2026-11-05 -> 2026-10-01 while receipts say fetched 2026-11-05; votes re-signed",
+  "expected": "FAIL",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED-by-v5",
+  "changed": [
+   ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+   "corpus/knowledge/round-96-native-analysis-sessions.md",
+   "reports/round-96/votes/CriticR96.json",
+   "reports/round-96/votes/ReviewerBlind.json",
+   "reports/round-96/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "FR10-na-boilerplate-on-pass",
+  "class": "vote decision",
+  "mutation": "ReviewerGate Q09 PASS -> n/a with the shared NA_NOTE boilerplate reason",
+  "expected": "FAIL",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED-by-v5",
+  "changed": [
+   "reports/round-96/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "FR11-receipt-owner-swap",
+  "class": "receipt fetch identity",
+  "mutation": "S502 receipt fetch_url owner morluto -> attacker-fork (allowlisted host), body and hash intact",
+  "expected": "FAIL",
+  "rc": 1,
+  "verdict": "fail",
+  "k_held": "13/15",
+  "failing_legs": [
+   "C1_SOURCES",
+   "C1_VERDICT"
+  ],
+  "outcome": "refused",
+  "changed": [
+   "reports/round-96/quote-receipts/S502.receipt.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "FR12-own-work-dangling",
+  "class": "own-work record pointer",
+  "mutation": "S504 SOURCES pointer corpus/live/runs/round-96/ -> corpus/live/runs/round-96-r97-missing/",
+  "expected": "FAIL",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED-by-v5",
+  "changed": [
+   "corpus/SOURCES.md"
+  ],
+  "removed": []
+ },
+ {
+  "name": "FR02b-entry-bom-unsigned",
+  "class": "entry bytes (BOM), stale vote binding",
+  "mutation": "as FR02 but the entry changed after the votes and votes not re-signed",
+  "expected": "FAIL",
+  "rc": 1,
+  "verdict": "fail",
+  "k_held": "13/15",
+  "failing_legs": [
+   "C1_VOTES",
+   "C1_VERDICT"
+  ],
+  "outcome": "refused",
+  "changed": [
+   "corpus/knowledge/round-96-native-analysis-sessions.md"
+  ],
+  "removed": []
+ },
+ {
+  "name": "FR08b-headers-in-fence-unsigned",
+  "class": "provenance header, stale vote binding",
+  "mutation": "as FR08 but the entry changed after the votes and votes not re-signed",
+  "expected": "FAIL",
+  "rc": 1,
+  "verdict": "fail",
+  "k_held": "13/15",
+  "failing_legs": [
+   "C1_VOTES",
+   "C1_VERDICT"
+  ],
+  "outcome": "refused",
+  "changed": [
+   "corpus/knowledge/round-96-native-analysis-sessions.md"
+  ],
+  "removed": []
+ },
+ {
+  "name": "FR09b-verified-at-stale-unsigned",
+  "class": "provenance date, stale vote binding",
+  "mutation": "as FR09 but the entry changed after the votes and votes not re-signed",
+  "expected": "FAIL",
+  "rc": 1,
+  "verdict": "fail",
+  "k_held": "13/15",
+  "failing_legs": [
+   "C1_VOTES",
+   "C1_VERDICT"
+  ],
+  "outcome": "refused",
+  "changed": [
+   "corpus/knowledge/round-96-native-analysis-sessions.md"
+  ],
+  "removed": []
+ }
+]

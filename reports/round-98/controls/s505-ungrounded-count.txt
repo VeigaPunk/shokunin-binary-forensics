@@ -1,0 +1,4 @@
+registry rows parsed (## Registry): 507
+mined-with-usedby rows: 471 (grounded 470, ungrounded 1)
+rows with no citation in any used-by file:
+  S505 used-by=['corpus/knowledge/round-96-native-analysis-sessions.md']
