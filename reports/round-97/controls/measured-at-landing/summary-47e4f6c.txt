@@ -1,0 +1,8 @@
+# measured on git archive 47e4f6c (landing); files byte-identical to the scratch full mirror
+cmp_ok corpus/README.md
+cmp_ok corpus/SOURCES.md
+cmp_ok corpus/knowledge/round-96-native-analysis-sessions.md
+province_quality_diff_lines=0
+S5xx rows: 7d380ce=5 47e4f6c=6
+census_file_rc=0 (validate --file corpus/SOURCES.md on landing archive)
+census_round_end_rc=0 (validate --root /home/vgpnk/Projects/shokunin revenger; controls/census-round-end.log)
