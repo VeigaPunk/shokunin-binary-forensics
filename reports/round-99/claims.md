@@ -114,3 +114,37 @@ Ordering contract, enforced by the L1:
 One v1 wave, 12 seats (policy band 8–16): executor 3, scout 1, scribe 1, connector 1, reviewer 3,
 critic 1, mutation-tester 1, sentinel 1. Attack share 5/12. Connector seats 1. The L1 holds the
 planner seat (the validator rejects `planner`). Godspeed leads every L2 prompt.
+
+---
+
+## Amendment A — recorded before the v8 freeze and before any landing-tree scoring (2026-11-05)
+
+Appended; no frozen sentence above is replaced. Source: ReviewerClaimsR99 F1–F4
+(`.ufo/waves/round-99/w1/ReviewerClaimsR99.md`), received before any v8 bytes were frozen.
+
+**A1 — S505 grounding (F1, blocker).** v7 `c14` (and therefore v8 `c14r99`) checks
+`C1_USEDBY_GROUNDED` over S505, S506, S507. S505's `used-by` names
+`corpus/knowledge/round-96-native-analysis-sessions.md`, which never cites S505, so C1 was unreachable
+through the declared surface. The r98 correction (`mined → queued`, used-by `—`) harms C02 (v7 `c02`
+`C1_SOURCES`: `S504:terminal-mined-expected:S505:queued`, r98 lesson). This amendment grounds S505 by
+citation instead: its `used-by` cell becomes `corpus/lessons/round-97.md`, the document that
+introduced S505 and cites it (`grep -cw S505 corpus/lessons/round-97.md` ≥ 1); status stays `mined`,
+so the S504 → S505 chain stays terminal-mined. Landed in this amendment's commit, logged old → new in
+the round-99 lesson. Scratch evidence before landing (claims-freeze archive + this one cell): v7
+`--profile c02` → `C1_VERDICT=pass`, K 13/15, rc 0 (no harm to C02); v7 `--profile c14` →
+`C1_USEDBY_GROUNDED=pass`; `sources-census.sh validate --file` → ok
+(`controls/amendA-s505-scratch.log`). The C1 surface therefore also moves this one registry cell. The
+entry bytes are untouched, so the vote digest `36cc6ac2…` is unchanged and no re-vote is needed.
+**`FREEZE_REV` for `c14r99` becomes this amendment's commit** (README is byte-identical to `7e6edd4`),
+and the C1 do-nothing and junk-row controls are built from this amendment's commit.
+
+**A2 — new legs keep r98 controls honest (F2).** v8 legs visible in `c02`/`c14` must key on surfaces
+the r98 honest fixture trees carry; round-99-surface checks go in `c14r99`-only legs. A leg that breaks
+either r98 control yields `control-BROKEN`, which the C2 kill rule already counts as not met.
+
+**A3 — invocation evidence (F3, tightening).** The recorded C2 run must also print one
+`C2_VECTOR <profile>-<id> accepted|refused legs=<…>` line for each of the twelve vectors; fewer than
+twelve such lines means C2 is not met.
+
+**A4 — receipts (F4, info).** Under `c14r99`, `RECEIPTS_DIR` stays `reports/round-98/quote-receipts`;
+the round-99 S506 re-open receipt is claims-side evidence for the sourced-claim duty only.

@@ -1,0 +1,135 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r99-w1",
+  "createdAt": "2026-11-05T21:46:44.814Z",
+  "updatedAt": "2026-11-05T21:46:44.814Z",
+  "reportDir": ".ufo/waves/round-99/w1",
+  "members": {
+    "ExecCounterV8": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Build the v8 admission counter (v7 + c14r99 profile + legs killing the nine r98 holdout survivors) with self-test; no landing-tree scoring"
+    },
+    "ExecHarness8": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Build forge_reach8.py: one run prints C2_ACCEPTED=n/12, both control lines, stub self-test and verdict over the twelve r98 holdout vectors"
+    },
+    "ExecControlsR99": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Build the C1 do-nothing and junk-row control recipe for c14r99 plus a skip-work table; no landing scoring"
+    },
+    "ScoutReopenR99": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Independently re-open S506 and S507, re-derive every derivation-table row of the edited candidate, live drift check, package presence"
+    },
+    "ScribeLessonR99": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Draft corpus/lessons/round-99.md (Gate, Mistakes, Frontier, considerthese) for the L1 to integrate"
+    },
+    "ConnectorR99": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Sibling-overlap scan for host-readiness / doctor knowledge and counter-leg patterns"
+    },
+    "ReviewerClaimsR99": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Attack the frozen claims for do-nothing reachability, predicate/counter mismatch and causal coupling before the v8 freeze"
+    },
+    "VoterGateR99": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Q01–Q17 gate audit and vote on the C14 candidate (digest-bound)"
+    },
+    "VoterBlindR99": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Independent blind Q01–Q17 vote on the C14 candidate (do not read other votes or r98 audits)"
+    },
+    "CriticR99": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "Critic vote on the candidate plus a fresh round-99 holdout builder (12 new forgery classes, not run on v8)"
+    },
+    "MutationR99": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Port the mutation harness to v8, reconcile the r98 self-test baseline exit 3, pre-register mutants for the new legs"
+    },
+    "SentinelR99": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Scope and safety sweep: credential material, write-scope adherence, registry hygiene, misroots"
+    }
+  }
+}
