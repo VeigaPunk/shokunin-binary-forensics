@@ -1,0 +1,56 @@
+# deriv_check on the claims-freeze entry (git show 7e6edd4:corpus/knowledge/round-98-rea-host-readiness.md, digest 36cc6ac2) — shown able to fail
+DERIV doctor verdict lines MATCH
+DERIV scope-check count MISMATCH got=[] want=['11', '13']
+DERIV scope-check classes MISMATCH got=['     10 classification: config_drift', '     11 classification: healthy', '      3 classification: missing_analysis_engine'] want=['10 config_drift', '11 healthy', '3 missing_analysis_engine']
+DERIV registration states MISMATCH got=['antigravity missing', 'claude_code missing', 'codex aligned', 'copilot_cli missing', 'cursor missing', 'devin aligned', 'gemini_cli missing', 'grok_bot manual', 'grok_build aligned', 'kimi missing', 'omp stale', 'opencode missing', 'pi missing', 'zcode aligned'] want=['antigravity missing claude_code missing codex aligned copilot_cli missing cursor missing devin aligned gemini_cli missing grok_bot manual grok_build aligned kimi missing omp stale opencode missing pi missing zcode aligned']
+DERIV client registration count MATCH
+DERIV registration state split MISMATCH got=['      4 aligned', '      1 manual', '      8 missing', '      1 stale'] want=['4 aligned', '1 manual', '8 missing', '1 stale']
+DERIV missing-or-stale registrations ("nine") MATCH
+DERIV ghidra scope checks healthy MATCH
+DERIV ghidra scope-check names MATCH
+DERIV doctor-printed ghidra and java versions MATCH
+DERIV engine and jadx classifications MATCH
+DERIV installation paths ("three") MATCH
+DERIV installation state MATCH
+DERIV CLI package version MATCH
+DERIV inventory Evidence ID MATCH
+DERIV inventory substep status MATCH
+DERIV inventory member sizes MATCH
+DERIV fixture digest MISMATCH got=['857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e  corpus/fixtures/archive-r2/fixture.zip'] want=['857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e']
+DERIV record file digests MISMATCH got=['94eaa6ff1137d0dd49ac3b88f25639e108c1d7692bdfacaa6fbec7232207a789  corpus/live/runs/round-98/host-probes-r98.txt', 'fb9a48249a22501313f58978d2d716f4006096cc027d20160f86507323938e1d  corpus/live/runs/round-98/rea-doctor-r98.txt', 'c373f656932a9c074f3405e61316b87ff395a48479e48bcd92650f6bece32ba4  corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt'] want=['94eaa6ff… (host-probes-r98.txt)', 'fb9a4824… (rea-doctor-r98.txt)', 'c373f656… (rea-inspect-artifact-archive-r2.txt)']
+DERIV S506 body digest MISMATCH got=['ce2d122b873fb84d98cdb56afd84a34ee8de362b65760855838dfb29c2282e50  reports/round-98/quote-receipts/raw/S506.body'] want=['ce2d122b873fb84d98cdb56afd84a34ee8de362b65760855838dfb29c2282e50']
+DERIV S506 body length MATCH
+DERIV_ROWS=21 DERIV_MISMATCH=7
+# rc=1
+# deriv_check on the Amendment-B entry (working tree)
+DERIV host identity MATCH
+DERIV doctor verdict lines MATCH
+DERIV healthy scope checks MATCH
+DERIV failing scope checks MATCH
+DERIV scope-check classes MATCH
+DERIV registration states MATCH
+DERIV client registration count MATCH
+DERIV registration state split MATCH
+DERIV missing-or-stale registrations ("nine") MATCH
+DERIV ghidra-named scope checks MATCH
+DERIV ghidra scope checks healthy MATCH
+DERIV ghidra scope-check names MATCH
+DERIV ghidra headless launcher path MATCH
+DERIV doctor-printed ghidra and java versions MATCH
+DERIV engine and jadx classifications MATCH
+DERIV installed skill identity MATCH
+DERIV doctor binwalk or unblob checks MATCH
+DERIV installation paths ("three") MATCH
+DERIV installation state MATCH
+DERIV CLI package version MATCH
+DERIV inventory Evidence ID MATCH
+DERIV inventory substep status MATCH
+DERIV inventory members and sizes MATCH
+DERIV inventory root digest MATCH
+DERIV truth.json archive digest MATCH
+DERIV fixture digest MATCH
+DERIV record file digests MATCH
+DERIV S506 body digest MATCH
+DERIV S506 body length MATCH
+DERIV_ROWS=29 DERIV_MISMATCH=0
+# rc=0

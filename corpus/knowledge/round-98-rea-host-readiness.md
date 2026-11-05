@@ -51,7 +51,7 @@ this round and its output was compared with an expected value fixed before the r
 | Route | Observation on 2026-11-05 | Probe class | Readiness verdict |
 |---|---|---|---|
 | ZIP inventory (`inspect_artifact` → `inventory_artifact`) | `rea inspect-artifact` on `fixtures/archive-r2/fixture.zip` exited 0. Its substep `inventory_artifact` has `status: completed`. The members `README.txt` (84 bytes) and `bin/checksum` (16160 bytes) and the root digest match `fixtures/archive-r2/truth.json`, which round 2 fixed before this run. Doctor reported Hopper missing the same day (record 1). | capability | ready on this host for this fixture |
-| Native decompile (Ghidra provider) | Doctor reports the eight ghidra scope checks healthy: ghidra, ghidra-platform, ghidra-architecture, ghidra-installation, ghidra-version 12.1.4, ghidra-headless, ghidra-native_decompiler, ghidra-java 21.0.13. `command -v analyzeHeadless` exited 1, because the headless launcher is not on PATH; doctor finds it under the install directory. | configuration | configured. Not re-run this round. The capability record is the round-96 session (`knowledge/round-96-native-analysis-sessions.md`), which is not re-derived here. |
+| Native decompile (Ghidra provider) | Doctor reports the eight ghidra scope checks healthy: ghidra, ghidra-platform, ghidra-architecture, ghidra-installation, ghidra-version 12.1.4, ghidra-headless, ghidra-native_decompiler, ghidra-java 21.0.13. `command -v analyzeHeadless` exited 1 (probe transcript). Doctor's `ghidra-headless` check reports the launcher at a path under the Ghidra install directory (derivation table). | configuration | configured. Not re-run this round. The capability record is the round-96 session (`knowledge/round-96-native-analysis-sessions.md`), which is not re-derived here. |
 | Native analysis (Hopper, IDA, Kuna engines) | Doctor reports `hopper`, `ida-registration` and `kuna-installation` as `missing_analysis_engine`. `command -v hopper` and `command -v idat64` each exited 1. | absent | not ready |
 | Android (JADX provider) | Doctor reports `jadx` healthy, and its own detail says "This checks configuration, not whether a selected APK fits in the worker's memory." `jadx --version` printed `1.5.6` and `java -version` printed `openjdk version "21.0.13"`. | configuration | configured, capability unprobed |
 | Firmware regions and extraction | `binwalk --version` printed `binwalk 3.1.0` and `unblob --version` printed `26.6.4`, both exit 0. Doctor has no binwalk or unblob check. | configuration (version only) | present, capability unprobed |
@@ -61,40 +61,50 @@ this round and its output was compared with an expected value fixed before the r
 
 ### Derivation table
 
-Every count, identifier, digest and doctor-printed version stated above is derived below from the
-saved record by the command shown, and the outputs are those commands' actual stdout. The commands
-run from the lane root. In a table cell, `\|` is the markdown escape of a shell pipe or a regex
-alternation bar. Two version strings come from the doctor record and are derived below
-(`ghidra-version` detail `12.1.4`, `ghidra-java` detail `21.0.13`). The other version strings
-(`rea --version`, `jadx --version`, `java -version`, `binwalk --version`, `unblob --version`) and
-the probe exit codes are not derived here: each comes from the probe transcript
-`corpus/live/runs/round-98/host-probes-r98.txt`, where every command line (`$ …`) is followed by
-its printed output and an `rc=` line, and that transcript is the record for those values. The
-doctor exit code (1) and the `rea inspect-artifact` exit code (0) were observed in the L1 session
-and are not lines of any record.
+Every count, identifier, digest and doctor-printed version stated above is derived below from a
+saved record by the command shown. The commands run from the lane root. Each output cell gives the
+command's stdout verbatim, one code span per stdout line, lines joined by ` / `; in the
+record-digest row the code span covers the digest prefix and the file name in parentheses is the rest
+of the same stdout line. Text after an em dash (` — `) in an output cell is annotation, not output.
+In a table cell, `\|` is the markdown escape of a shell pipe or a regex alternation bar. Two version
+strings come from the doctor record and are derived below (`ghidra-version` detail `12.1.4`,
+`ghidra-java` detail `21.0.13`). The other version strings (`rea --version`, `jadx --version`,
+`java -version`, `binwalk --version`, `unblob --version`) and the probe exit codes are not derived
+here: each comes from the probe transcript `corpus/live/runs/round-98/host-probes-r98.txt`, where
+every command line (`$ …`) is followed by its printed output and an `rc=` line, and that transcript
+is the record for those values. The doctor exit code (1) and the `rea inspect-artifact` exit code (0)
+were observed in the L1 session and are not lines of any record.
 
 | Value | Deriving command | Recorded output |
 |---|---|---|
+| host identity | `sed -n 1p corpus/live/runs/round-98/host-probes-r98.txt \| grep -oE 'Linux [^ ]+ [^ ]+$'` | `Linux 7.2.11-arch1-1 x86_64` |
 | doctor verdict lines | `sed -n 1,2p corpus/live/runs/round-98/rea-doctor-r98.txt` | `healthy: false` / `environment_healthy: false` |
-| scope-check count | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -c '    ok: true'` and the same with `ok: false` | `11` and `13` (24 scope checks) |
-| scope-check classes | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -oE 'classification: [a-z_]+' \| sort \| uniq -c` | `10 config_drift` / `11 healthy` / `3 missing_analysis_engine` |
-| registration states | `awk '/^    - client:/{c=$3} /^      state:/{print c, $2}' corpus/live/runs/round-98/rea-doctor-r98.txt` | `antigravity missing claude_code missing codex aligned copilot_cli missing cursor missing devin aligned gemini_cli missing grok_bot manual grok_build aligned kimi missing omp stale opencode missing pi missing zcode aligned` (one pair per line) |
+| healthy scope checks | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -c '    ok: true'` | `11` |
+| failing scope checks | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -c '    ok: false'` | `13` |
+| scope-check classes | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -oE 'classification: [a-z_]+' \| sed 's/^classification: //' \| sort \| uniq -c \| sed 's/^ *//'` | `10 config_drift` / `11 healthy` / `3 missing_analysis_engine` |
+| registration states | `awk '/^    - client:/{c=$3} /^      state:/{print c, $2}' corpus/live/runs/round-98/rea-doctor-r98.txt` | `antigravity missing` / `claude_code missing` / `codex aligned` / `copilot_cli missing` / `cursor missing` / `devin aligned` / `gemini_cli missing` / `grok_bot manual` / `grok_build aligned` / `kimi missing` / `omp stale` / `opencode missing` / `pi missing` / `zcode aligned` |
 | client registration count | `grep -c '^    - client:' corpus/live/runs/round-98/rea-doctor-r98.txt` | `14` |
-| registration state split | `awk '/^    - client:/{c=$3} /^      state:/{print $2}' corpus/live/runs/round-98/rea-doctor-r98.txt \| sort \| uniq -c` | `4 aligned` / `1 manual` / `8 missing` / `1 stale` |
+| registration state split | `awk '/^    - client:/{c=$3} /^      state:/{print $2}' corpus/live/runs/round-98/rea-doctor-r98.txt \| sort \| uniq -c \| sed 's/^ *//'` | `4 aligned` / `1 manual` / `8 missing` / `1 stale` |
 | missing-or-stale registrations ("nine") | `awk '/^    - client:/{c=$3} /^      state:/{print $2}' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -cE '^(missing\|stale)$'` | `9` |
-| ghidra scope checks healthy | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -A1 '^  - name: ghidra' \| grep -c '    ok: true'` | `8` (of 8 ghidra-named scope checks) |
+| ghidra-named scope checks | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -c '^  - name: ghidra'` | `8` |
+| ghidra scope checks healthy | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -A1 '^  - name: ghidra' \| grep -c '    ok: true'` | `8` |
 | ghidra scope-check names | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -oE '^  - name: ghidra[a-z_-]*' \| sed 's/^  - name: //' \| paste -sd' '` | `ghidra ghidra-platform ghidra-architecture ghidra-installation ghidra-version ghidra-headless ghidra-native_decompiler ghidra-java` |
-| doctor-printed ghidra and java versions | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -A3 -E '^  - name: ghidra-(version\|java)$' \| grep 'detail:'` | `    detail: 12.1.4` / `    detail: 21.0.13; 64-bit; JDK; /usr/lib/jvm/java-21-openjdk; accepted a 64-bit full JDK 21 or newer` |
-| engine and jadx classifications | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -A3 -E '^  - name: (hopper\|ida-registration\|kuna-installation\|jadx)$' \| grep -E 'name:\|classification:' \| paste - - \| sed -E 's/^ *- name: //; s/\t *classification: / /'` | `hopper missing_analysis_engine` / `ida-registration missing_analysis_engine` / `jadx healthy` / `kuna-installation missing_analysis_engine` (one pair per line) |
-| installation paths ("three") | `grep '^    paths\[3\]: ' corpus/live/runs/round-98/rea-doctor-r98.txt \| sed 's/^    paths\[3\]: //' \| tr ',' '\n' \| grep -c .` | `3` (the record prints the three comma-separated paths on one line) |
-| installation state | `grep -c '^    state: multiple' corpus/live/runs/round-98/rea-doctor-r98.txt` | `1` |
-| CLI package version | `grep cli_package_version corpus/live/runs/round-98/rea-doctor-r98.txt` | `  cli_package_version: 6.7.0` |
+| ghidra headless launcher path | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -A3 '^  - name: ghidra-headless$' \| grep 'detail:' \| sed 's/^ *//'` | `detail: /home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC/support/analyzeHeadless` |
+| doctor-printed ghidra and java versions | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -A3 -E '^  - name: ghidra-(version\|java)$' \| grep 'detail:' \| sed 's/^ *//'` | `detail: 12.1.4` / `detail: 21.0.13; 64-bit; JDK; /usr/lib/jvm/java-21-openjdk; accepted a 64-bit full JDK 21 or newer` |
+| engine and jadx classifications | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -A3 -E '^  - name: (hopper\|ida-registration\|kuna-installation\|jadx)$' \| grep -E 'name:\|classification:' \| paste - - \| sed -E 's/^ *- name: //; s/\t *classification: / /'` | `hopper missing_analysis_engine` / `ida-registration missing_analysis_engine` / `jadx healthy` / `kuna-installation missing_analysis_engine` |
+| installed skill identity | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -A3 'name: "skill:identity"' \| sed 's/^ *//'` | `- name: "skill:identity"` / `ok: false` / `classification: config_drift` / `detail: Installed REA skill identity is stale.` |
+| doctor binwalk or unblob checks | `grep -c -E 'binwalk\|unblob' corpus/live/runs/round-98/rea-doctor-r98.txt` | `0` — the record has no binwalk or unblob check; grep exits 1 on zero matches |
+| installation paths ("three") | `grep '^    paths\[3\]: ' corpus/live/runs/round-98/rea-doctor-r98.txt \| sed 's/^    paths\[3\]: //' \| tr ',' '\n' \| grep -c .` | `3` — the record prints the three comma-separated paths on one line |
+| installation state | `grep '^    state: multiple' corpus/live/runs/round-98/rea-doctor-r98.txt \| sed 's/^ *//'` | `state: multiple` |
+| CLI package version | `grep cli_package_version corpus/live/runs/round-98/rea-doctor-r98.txt \| sed 's/^ *//'` | `cli_package_version: 6.7.0` |
 | inventory Evidence ID | `grep -m1 evidence_id corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt` | `evidence_id: ev_0ef6c8cdbfe9836f2daa149d17269e355f98424d59ecb55398dbe271c6a87382` |
-| inventory substep status | `grep -m1 'status: completed' corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt` | `      status: completed` |
-| inventory member sizes | `grep -E 'declared_size: ' corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt \| sed 's/^ *//'` | `declared_size: 2964` / `declared_size: 84` / `declared_size: 16160` (root, README.txt, bin/checksum in record order) |
-| fixture digest | `sha256sum corpus/fixtures/archive-r2/fixture.zip` | `857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e` |
-| record file digests | `sha256sum corpus/live/runs/round-98/*` | `94eaa6ff…` (host-probes-r98.txt), `fb9a4824…` (rea-doctor-r98.txt), `c373f656…` (rea-inspect-artifact-archive-r2.txt) |
-| S506 body digest | `sha256sum reports/round-98/quote-receipts/raw/S506.body` | `ce2d122b873fb84d98cdb56afd84a34ee8de362b65760855838dfb29c2282e50` |
+| inventory substep status | `grep -m1 -A1 'operation: inventory_artifact' corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt \| sed 's/^ *//'` | `operation: inventory_artifact` / `status: completed` |
+| inventory members and sizes | `awk '/logical_path:/{p=$2} /declared_size:/{print p, $2}' corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt` | `. 2964` / `README.txt 84` / `bin/checksum 16160` |
+| inventory root digest | `grep -m1 root_sha256 corpus/live/runs/round-98/rea-inspect-artifact-archive-r2.txt \| sed 's/^ *//'` | `root_sha256: 857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e` |
+| truth.json archive digest | `grep -oE '"archive_sha256": *"[0-9a-f]+"' corpus/fixtures/archive-r2/truth.json` | `"archive_sha256": "857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e"` |
+| fixture digest | `sha256sum corpus/fixtures/archive-r2/fixture.zip \| cut -d' ' -f1` | `857989f5f2722fc00cd001387432b8bbcad55e3ed7d135fe1930df1e933be27e` |
+| record file digests | `sha256sum corpus/live/runs/round-98/* \| awk '{print substr($1,1,8) "… (" substr($2,27) ")"}'` | `94eaa6ff…` (host-probes-r98.txt) / `fb9a4824…` (rea-doctor-r98.txt) / `c373f656…` (rea-inspect-artifact-archive-r2.txt) |
+| S506 body digest | `sha256sum reports/round-98/quote-receipts/raw/S506.body \| cut -d' ' -f1` | `ce2d122b873fb84d98cdb56afd84a34ee8de362b65760855838dfb29c2282e50` |
 | S506 body length | `wc -c < reports/round-98/quote-receipts/raw/S506.body` | `16650` |
 
 ## Observation, inference, unknown
@@ -129,10 +139,10 @@ revision (S506 is the pinned revision, not the installed copy).
 | Q08 | n/a | Historical criterion superseded by Q11, which is applied below. |
 | Q09 | PASS | The digests bind exact committed bytes only (fixture, record files, S506 body). None is offered as origin, completeness or authenticity. |
 | Q10 | PASS | Scoped to one host, one date, REA 6.7.0 and the routes named. Unprobed routes are labelled unprobed, and the absent engines are recorded as absent. |
-| Q11 | PASS | Every count, identifier, digest and doctor-printed version in the route table is in the derivation table with its deriving command and that command's recorded output; the "three installation paths" row counts paths, not lines, and prints `3`. |
+| Q11 | PASS | Every count, identifier, digest, path and doctor-printed version in the scope paragraph, route table and observation is in the derivation table with its deriving command and that command's verbatim stdout; the "three installation paths" row counts paths, not lines, and prints `3`; `reports/round-99/controls/deriv_check.py` re-runs every row and compares it with its output cell. |
 | Q12 | n/a | No rejected registry row is load-bearing for this entry; see Q12 in corpus/QUALITY.md. |
 | Q13 | n/a | No verifier is credited as guarding a clause. The recheck line names re-derivation procedures only; see Q13 in corpus/QUALITY.md. |
 | Q14 | n/a | No hex string is quoted with a byte count in the same clause, and no truncated run carries a length; see Q14 in corpus/QUALITY.md. |
 | Q15 | n/a | No lane-tree git identity sentence is asserted. The pinned REA revision is part of a fetched URL; see Q15 in corpus/QUALITY.md. |
-| Q16 | PASS | Each sentence that credits a command or record with output was checked against that command's stdout, row by row in the derivation table. The two doctor-printed versions (12.1.4, 21.0.13) are credited to the doctor record and derived; the remaining version strings are credited to the probe transcript, which prints each of them. "Doctor has no binwalk or unblob check" refers to the record bytes. |
+| Q16 | PASS | Each output cell is the command's stdout verbatim under the stated cell rule (one code span per line, annotation only after an em dash), and `reports/round-99/controls/deriv_check.py` reports 0 mismatches. The two doctor-printed versions (12.1.4, 21.0.13) are credited to the doctor record and derived; the remaining version strings are credited to the probe transcript, which prints each of them; the doctor and inspect exit codes are credited to the session, not to a record. |
 | Q17 | n/a | No adjudication relocated a cited artifact for this entry; see Q17 in corpus/QUALITY.md. |

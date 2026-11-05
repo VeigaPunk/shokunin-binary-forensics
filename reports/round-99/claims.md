@@ -148,3 +148,39 @@ twelve such lines means C2 is not met.
 
 **A4 — receipts (F4, info).** Under `c14r99`, `RECEIPTS_DIR` stays `reports/round-98/quote-receipts`;
 the round-99 S506 re-open receipt is claims-side evidence for the sourced-claim duty only.
+
+## Amendment B — the single candidate amendment (recorded before the v8 freeze and before any landing-tree scoring, 2026-11-05)
+
+This is the one candidate amendment the C1 kill rule allows. After it, any FAIL vote kills C1.
+
+Trigger: VoterGateR99 voted Q16 FAIL on digest `36cc6ac2…` (`reports/round-99/votes/VoterGateR99.json`): the
+"scope-check classes" row's recorded output was not the command's stdout. CriticR99 (before casting
+any vote) reported the same row, the S507 `teaches` cell's "exit 1" (the doctor record has no exit
+line), the "of 8" denominator not printed, the substep status not tied to the operation, member
+labels and the root digest not derived, and "because … not on PATH" stated as an observation.
+
+The author's edits, made before any scoring:
+- the derivation table is regenerated so that every output cell is the command's stdout verbatim,
+  under a cell rule stated in the preamble (one code span per stdout line, joined by ` / `;
+  annotation only after an em dash). Padding and prefixes are removed in the commands (`sed`, `cut`),
+  not in the cells. Rows were added for the host identity, the ghidra-named scope-check count, the
+  ghidra-headless launcher path, the installed skill identity, the absent binwalk/unblob checks,
+  members with sizes, the inventory root digest and the truth.json archive digest. The scope-check
+  count row is split into two rows;
+- the route table's analyzeHeadless clause no longer states a cause;
+- §Q-map Q11 and Q16 rows are restated for the new table;
+- the S507 registry row's `teaches` cell drops "exit 1" as a record fact: "its exit code 1 was
+  observed in the L1 session and is not a line of the record" (logged old → new in the lesson).
+
+A new instrument, `reports/round-99/controls/deriv_check.py`, re-runs every derivation row and
+compares stdout with its cell. Shown able to fail: on the claims-freeze entry it reports
+`DERIV_MISMATCH=7`, rc 1; on this amendment's entry `DERIV_ROWS=29 DERIV_MISMATCH=0`, rc 0
+(`controls/amendB-deriv-check.log`). Lint rc 0, all counts 0. v7 `--profile c14` on a copy of this
+tree: `C1_DERIV_TABLE`, `C1_SOURCES`, `C1_QUOTE_BYTES`, `C1_OWNWORK_PATHS`, `C1_LINT` pass. Census
+exit 0.
+
+**New vote-binding digest:** `246d09a8cf6523ab380f88f7945f220338c27e31f8b43ba876bbd0a9a8d746da`. It
+supersedes `36cc6ac2…`. The votes cast on `36cc6ac2…` are moved to
+`.ufo/waves/round-99/w1/superseded-votes-digest-36cc6ac2/` as evidence and no longer count; the three
+pinned voters (VoterGateR99, VoterBlindR99, CriticR99) vote on the new digest. `FREEZE_REV` for
+`c14r99` stays `61e27feb…` (README unchanged). Predicate, counter, target and kill rule are unchanged.
