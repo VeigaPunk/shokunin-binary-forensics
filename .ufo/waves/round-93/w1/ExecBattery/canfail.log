@@ -1,0 +1,56 @@
+canfail.log — ExecBattery, round 93 w1, pre-registered mutation probe
+date: 2026-11-05; lane HEAD: 02050cb2a6758e3bd9cec696ff0e42df6f23511a
+
+Recipe (pre-registered in the seat spec): copy reports/round-93/c2_legend_counter2.py,
+flip ONE comparison constant (RECORD_SHA last char), run it over a
+`git archive 281a5bad66e844190a570cb35d257c6974749993 corpus` copy in scratch,
+confirm the record leg fails; delete the mutated copy. Read-only over the lane.
+
+Corpus copy (identical bytes for both runs below):
+  git -C <lane> archive 281a5bad66e844190a570cb35d257c6974749993 corpus | tar -x -C $S/canfail/tree
+  $S = /fast/scratch/hyaku/revenger-r93/ExecBattery
+  record present: corpus/live/runs/round-77/inspection.json
+  sha256 = b045a4eecf2d77cfdee5de83e5864fcadbd6fd54e749f6985a04ecbeebaae868
+  (equals the frozen RECORD_SHA pin and the sha in claims.md)
+
+Attempt 1 — mutant staged at $S/canfail/mutated_c2.py:
+  rc=1; output: C2_VERDICT=fail reason=probe-archive-failed fatal: not a git
+  repository (or any parent up to mount point /)
+  CAUSE: the counter resolves LANE as parents[2] of its own script path; run
+  from scratch, its `git -C LANE archive` of the frozen probe
+  (reports/round-66/measure.py at PROBE_REV) fails BEFORE the record leg is
+  evaluated. This is the counter's archive-isolation design doing its job;
+  the record leg was NOT exercised in this attempt. Mutant deleted.
+
+Corrected execution — same single-constant mutant, script staged at
+<scratch clone>/reports/round-93/mutated_c2.py where the clone is a
+scratch-local `git clone --local --no-hardlinks` of the lane, so LANE resolves
+to a repo that contains PROBE_REV. No mutating git command was run anywhere;
+the clone's `status --porcelain` was 0 lines after the run. Mutation applied
+by one edit:
+  RECORD_SHA = "b045a4eecf2d77cfdee5de83e5864fcadbd6fd54e749f6985a04ecbeebaae868"
+  -> RECORD_SHA = "b045a4eecf2d77cfdee5de83e5864fcadbd6fd54e749f6985a04ecbeebaae869"
+Invocation both runs:
+  PYTHONUTF8=1 HYAKU_SCRATCH=$S/canfail/env python3 -B <counter> --tree $S/canfail/tree
+
+Frozen counter over the SAME tree:
+  rc=1
+  C2_PROBE_EXIT=1 (probe exit is not the claim verdict)
+  C2_LEGEND_MISMATCH=0 rows=[]
+  C2_C08_TOKEN=fail C2_C08_RECORD=pass        <- record leg PASSES on the honest pin
+  C2_VERDICT=fail                              (fails only the token leg: base C08 uncovered)
+
+Mutated counter over the SAME tree:
+  rc=1
+  C2_PROBE_EXIT=1 (probe exit is not the claim verdict)
+  C2_LEGEND_MISMATCH=0 rows=[]
+  C2_C08_TOKEN=fail C2_C08_RECORD=fail        <- record leg FAILS
+  C2_VERDICT=fail
+
+Conclusion: with tree bytes identical on both sides and the ONLY difference
+being the last character of the pinned record sha, the C2_C08_RECORD leg flips
+pass -> fail. The instrument can fail; it does not blanket-pass.
+Single variable: RECORD_SHA last char (…868 -> …869).
+
+Cleanup: mutated copy deleted (rm; verified absent). The first-attempt mutant
+was likewise deleted before the corrected run.

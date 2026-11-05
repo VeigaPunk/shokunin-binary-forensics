@@ -1,0 +1,19 @@
+check ok: fixture index.html sha256+len match truth.json
+check ok: fixture app.js sha256+len match truth.json
+check ok: authored anchors derived from index.html bytes
+check ok: operation == inspect_web_page
+check ok: provider.id == rea-cdp-browser
+check ok: evidence_id shape ev_<64hex>
+check ok: target.url == http://127.0.0.1:8477/index.html
+check ok: target.origin == http://127.0.0.1:8477
+check ok: target.title == derived 'r77 probe page [loaded]'
+check ok: target.type page and frames[0].url == page_url
+check ok: metadata.dom_urls == exactly the app.js src
+check ok: scripts.items count == 2 with page + app.js urls
+check ok: app.js script length == 101 and reconciliation exact
+check ok: inline script length == 46 (from index.html bytes)
+check ok: app.js cdp_hash == sha256(committed app.js bytes)
+check ok: inline script cdp_hash == sha256(inline text from index.html bytes)
+check ok: resources == 1 app.js entry, content_size 101, text/javascript
+ORACLE OK (17/17 checks)
+oracle_exit=0

@@ -514,6 +514,39 @@ is a lane disposition left **routed to a future registering round**, not an exem
 claimed here. Those instruments' verdict contracts live in their SCORECARD criterion
 rows (entry command, verdict lines, pinned instrument sha, red/green logs) until then.
 
+| field | value |
+|---|---|
+| name | `c1_k_admit_counter2` (round 93 C1, coverage K; successor of `c1_k_admit_counter`, v1 bytes frozen at `9402183`; adds registry-bound, artifact-sha-bound votes, reasoned-`n/a` rule, `audit_source_quotes.py verify` quote leg, opens re-derivation, and the non-vacuous embedded-block leg) |
+| kind | probe (measurement over a committed tree; `--self-test` exists and asserts four vote-forgery kills; not a gate under §Gate standard because the admission legs call lane tools) |
+| entry command | `python3 -B reports/round-93/c1_k_admit_counter2.py --rev <rev>` (cwd = lane root; `--tree DIR` for controls; `--self-test`) |
+| verdict map | `0` `C1_VERDICT=pass` · `1` `C1_VERDICT=fail` · `64` usage |
+| self-test | `--self-test` (isolated fixtures in `$HYAKU_SCRATCH`; expects `SELFTEST_C1V2=pass`, exit 0) |
+| pinned-value path | counter bytes `reports/round-93/c1_k_admit_counter2.py` (frozen at `02050cb`); fixture pins inside the counter (record sha `b045a4ee…`, `index.html` `46e51761…`, `app.js` `fb079fa2…`); vote files `reports/round-93/votes/*.json` bound to `.ufo/waves/round-93/w1/swarm-registry.json` |
+| write scope | read-only over the committed tree (`git archive` into `$HYAKU_SCRATCH/revenger-r93/c1v2`, removed on exit); writes nothing in the lane |
+| owner | revenger |
+
+| field | value |
+|---|---|
+| name | `c2_legend_counter2` (round 93 C2, calibration; successor of `c2_legend_counter`, v1 bytes frozen at `9402183`; runs the frozen round-66 probe from an archive at `281a5ba` under `python3 -I` so a working-tree shadow module cannot be imported; adds exact-token, record-sha-pin, five-cell-row and only-C08-moved legs) |
+| kind | probe (`--self-test` asserts record-sha and trailing-cell kills; not a gate, since the probe it runs is a measurement script) |
+| entry command | `python3 -B reports/round-93/c2_legend_counter2.py --rev <rev>` (cwd = lane root; `--tree DIR`; `--self-test`) |
+| verdict map | `0` `C2_VERDICT=pass` · `1` `C2_VERDICT=fail` · `64` usage; the probe exit is printed as `C2_PROBE_EXIT` and is not the claim verdict |
+| self-test | `--self-test` (expects `SELFTEST_C2V2=pass`, exit 0) |
+| pinned-value path | probe bytes `reports/round-66/measure.py` at `281a5ba` (extracted by `git archive`); counter bytes `reports/round-93/c2_legend_counter2.py` (frozen at `02050cb`); record sha `b045a4ee…` |
+| write scope | read-only over the committed tree; scratch under `$HYAKU_SCRATCH/revenger-r93/c2v2`, removed on exit |
+| owner | revenger |
+
+| field | value |
+|---|---|
+| name | `forge_battery` (round 93 C2 support; the frozen forgery-class battery: nine classes F1–F9 from the round-92 critic and mutation receipts, run against the v1 and v2 counters) |
+| kind | probe (drives the two counters over generated trees; its `--stage v1-only` documents the red-before, `--stage full` the kills and positives) |
+| entry command | `python3 -B reports/round-93/forge_battery.py --stage full` (or `--stage v1-only`; cwd = lane root) |
+| verdict map | `0` `BATTERY_VERDICT=pass` · `1` `BATTERY_VERDICT=fail` · `64` usage |
+| self-test | none (its checks are the cases; the instruments it drives carry their own self-tests) |
+| pinned-value path | counter bytes `reports/round-92/c1_k_admit_counter.py`, `reports/round-92/c2_legend_counter.py` (v1, frozen at `9402183`), `reports/round-93/c1_k_admit_counter2.py`, `reports/round-93/c2_legend_counter2.py` (v2, frozen at `02050cb`); committed receipts `.ufo/waves/round-92/w1/CriticR92Claims/*`, `MutationR92Counters.md` |
+| write scope | read-only over the committed tree; trees built under `$HYAKU_SCRATCH/revenger-r93/battery`, removed on exit |
+| owner | revenger |
+
 ## 7. Cited sources — existence-checked
 
 | citation | exists at | credited for |

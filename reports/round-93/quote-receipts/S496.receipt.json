@@ -1,0 +1,23 @@
+{
+  "schema": "revenger-quote-audit-v1",
+  "sid": "S496",
+  "row_url": "https://chromedevtools.github.io/devtools-protocol/",
+  "fetch_url": "https://chromedevtools.github.io/devtools-protocol/",
+  "final_url": "https://chromedevtools.github.io/devtools-protocol/",
+  "http_status": 200,
+  "fetched_at": "2026-11-05T14:51:21Z",
+  "fetch_sha256": "ba8018bb02f360686cbff23304da8b6e21923a2e012ade273e3f9a2ce1e2fd64",
+  "length": 35462,
+  "anchor": "landing-hero intro paragraph, second sentence (CDP self-description); HTTP Last-Modified: Wed, 04 Nov 2026 04:38:14 GMT, etag `6aeab6b6-8a86`; page carries no ms.date/revision marker \u2014 \"It allows tools to instrument, inspect, debug, and profile Chromium, Chrome, and other Blink-based browsers.\"",
+  "quote": "It allows tools to instrument, inspect, debug, and profile Chromium, Chrome, and other Blink-based browsers.",
+  "span": {
+    "start": 3408,
+    "end": 3526
+  },
+  "verdict": "verified",
+  "body_derivation": "raw response bytes",
+  "normalization": "",
+  "attempts": [],
+  "seat": "ScoutRecord",
+  "notes": "Fetched with curl -sS -L on 2026-11-05; HTTP/2 200, content-length 35462. Two independent fetches in the same session returned byte-identical bodies (sha256 ba8018bb02f360686cbff23304da8b6e21923a2e012ade273e3f9a2ce1e2fd64). The span is the byte-exact raw-HTML substring; the quoted sentence starts after the `</b>` that closes the CDP expansion, so it is tag-free and matches the body after whitespace normalisation."
+}

@@ -1,0 +1,20 @@
+# noharm.log — seat ExecCensus, round 93 w1, no-harm diff receipt
+# checked at 2026-11-05T14:52:50Z (UTC), mid-round. Read-only git only.
+
+$ git -C /home/vgpnk/Projects/shokunin/revenger-shokunin rev-parse HEAD
+02050cb2a6758e3bd9cec696ff0e42df6f23511a
+# HEAD is exactly the round-93 freeze commit ("round-93: freeze claims C1 ... and C2 ...", merge-base --is-ancestor exit 0).
+
+$ git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff --stat 02050cb2a6758e3bd9cec696ff0e42df6f23511a
+(no output)
+DIFF_EXIT=0
+
+$ git -C /home/vgpnk/Projects/shokunin/revenger-shokunin status --porcelain
+?? .ufo/waves/round-93/
+STATUS_EXIT=0
+
+VERDICT: no-harm HOLDS at check time — diff vs the freeze commit is empty; the only
+dirty entry is the untracked round-93 wave dir (.ufo/waves/round-93/). No tracked
+path outside .ufo/waves/round-93/** and reports/round-93/** is modified (in fact
+neither appears as a tracked modification). No defect.
+# Note: reports/round-93/** is committed and frozen; its absence from the diff confirms the frozen bytes are untouched.

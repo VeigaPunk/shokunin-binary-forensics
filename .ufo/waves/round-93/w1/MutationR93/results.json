@@ -1,0 +1,371 @@
+[
+ {
+  "mutant": "c1leg-rows-total",
+  "counter": "c1",
+  "old": "legs[\"C1_ROWS_TOTAL\"] = len(cov) == 15",
+  "new": "legs[\"C1_ROWS_TOTAL\"] = True",
+  "tree": "c1-rows",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_ROWS_TOTAL",
+   "C1_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c1leg-c08-held",
+  "counter": "c1",
+  "old": "legs[\"C1_C08_HELD\"] = bool(c08) and c08[4] == \"held\"",
+  "new": "legs[\"C1_C08_HELD\"] = True",
+  "tree": "c1-c08held",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_C08_HELD",
+   "C1_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c1leg-c08-cites",
+  "counter": "c1",
+  "old": "legs[\"C1_C08_CITES\"] = bool(c08) and ENTRY_REL in c08[2] and (root / ENTRY).is_file()",
+  "new": "legs[\"C1_C08_CITES\"] = True",
+  "tree": "c1-c08cites",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_C08_CITES",
+   "C1_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c1leg-admitted",
+  "counter": "c1",
+  "old": "legs[\"C1_ADMITTED\"] = bool(re.search(r\"^admission-status: admitted$\", text, re.M))",
+  "new": "legs[\"C1_ADMITTED\"] = True",
+  "tree": "c1-admitted",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_ADMITTED",
+   "C1_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c1leg-trio",
+  "counter": "c1",
+  "old": "legs[\"C1_TRIO\"] = all(any(l.startswith(k) for l in head) for k in (\"source:\", \"verified-at:\", \"recheck:\"))",
+  "new": "legs[\"C1_TRIO\"] = True",
+  "tree": "c1-trio",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_TRIO",
+   "C1_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c1leg-votes",
+  "counter": "c1",
+  "old": "legs[\"C1_VOTES\"] = len(votes_ok) >= 2",
+  "new": "legs[\"C1_VOTES\"] = True",
+  "tree": "c1-votes",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_VERDICT",
+   "C1_VOTES"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c1leg-lint",
+  "counter": "c1",
+  "old": "legs[\"C1_LINT\"] = lint.returncode == 0",
+  "new": "legs[\"C1_LINT\"] = True",
+  "tree": "c1-lint",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_LINT",
+   "C1_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c1leg-embedded",
+  "counter": "c1",
+  "old": "legs[\"C1_EMBEDDED\"] = emb.returncode == 0",
+  "new": "legs[\"C1_EMBEDDED\"] = True",
+  "tree": "c1-embedded",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_EMBEDDED",
+   "C1_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c1leg-embed-nonvacuous",
+  "counter": "c1",
+  "old": "legs[\"C1_EMBED_NONVACUOUS\"] = not vacuous",
+  "new": "legs[\"C1_EMBED_NONVACUOUS\"] = True",
+  "tree": "c1-nonvac",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_EMBED_NONVACUOUS",
+   "C1_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c1leg-sources",
+  "counter": "c1",
+  "old": "legs[\"C1_SOURCES\"] = src_ok",
+  "new": "legs[\"C1_SOURCES\"] = True",
+  "tree": "c1-sources",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_SOURCES",
+   "C1_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c1leg-quotes",
+  "counter": "c1",
+  "old": "legs[\"C1_QUOTES\"] = q_ok",
+  "new": "legs[\"C1_QUOTES\"] = True",
+  "tree": "c1-quotes",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_QUOTES",
+   "C1_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c1leg-opens",
+  "counter": "c1",
+  "old": "legs[\"C1_OPENS\"] = o_ok",
+  "new": "legs[\"C1_OPENS\"] = True",
+  "tree": "c1-opens",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_OPENS",
+   "C1_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c1leg-k-held-backed",
+  "counter": "c1",
+  "old": "legs[\"C1_K_HELD_BACKED\"] = held_backed == 10",
+  "new": "legs[\"C1_K_HELD_BACKED\"] = True",
+  "tree": "c1-khb",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_K_HELD_BACKED",
+   "C1_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c1gate-all",
+  "counter": "c1",
+  "old": "ok = all(legs.values())",
+  "new": "ok = True",
+  "tree": "c1-base(do-nothing)",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C1_ADMITTED",
+   "C1_C08_CITES",
+   "C1_C08_HELD",
+   "C1_EMBEDDED",
+   "C1_EMBED_NONVACUOUS",
+   "C1_K_HELD_BACKED",
+   "C1_LINT",
+   "C1_OPENS",
+   "C1_SOURCES",
+   "C1_TRIO",
+   "C1_VERDICT",
+   "C1_VOTES"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "n/a",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c2leg-rows-total",
+  "counter": "c2",
+  "old": "legs[\"C2_ROWS_TOTAL\"] = len(five) == 15 and len(rows) == 15",
+  "new": "legs[\"C2_ROWS_TOTAL\"] = True",
+  "tree": "c2-rowskill(rowskill)",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C2_ROWS_TOTAL",
+   "C2_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c2leg-c08-token",
+  "counter": "c2",
+  "old": "legs[\"C2_C08_TOKEN\"] = bool(c08) and c08[4] == \"held\" and entry_ok",
+  "new": "legs[\"C2_C08_TOKEN\"] = True",
+  "tree": "c2-seedtok(seedtok)",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C2_C08_TOKEN",
+   "C2_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c2leg-c08-record",
+  "counter": "c2",
+  "old": "legs[\"C2_C08_RECORD\"] = rec.is_file() and hashlib.sha256(rec.read_bytes()).hexdigest() == RECORD_SHA",
+  "new": "legs[\"C2_C08_RECORD\"] = True",
+  "tree": "c2-recmut(recmut)",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C2_C08_RECORD",
+   "C2_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c2leg-no-unbacked",
+  "counter": "c2",
+  "old": "legs[\"C2_NO_UNBACKED\"] = labels[\"held\"] == labels[\"backed\"]",
+  "new": "legs[\"C2_NO_UNBACKED\"] = True",
+  "tree": "c2-unbacked(unbacked)",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C2_NO_UNBACKED",
+   "C2_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c2leg-only-c08",
+  "counter": "c2",
+  "old": "legs[\"C2_ONLY_C08\"] = moved <= {\"C08\"}",
+  "new": "legs[\"C2_ONLY_C08\"] = True",
+  "tree": "c2-c15held(c15held)",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C2_ONLY_C08",
+   "C2_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "pass",
+  "class": "KILLED"
+ },
+ {
+  "mutant": "c2leg-no-new",
+  "counter": "c2",
+  "old": "legs[\"C2_NO_NEW\"] = labels[\"rows\"] == []",
+  "new": "legs[\"C2_NO_NEW\"] = True",
+  "tree": "c2-frontier(c07frontier)",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C2_NO_NEW",
+   "C2_ONLY_C08",
+   "C2_VERDICT"
+  ],
+  "mut_verdict": "fail",
+  "mut_failing": [
+   "C2_ONLY_C08",
+   "C2_VERDICT"
+  ],
+  "mut_on_positive": "n/a",
+  "class": "EQUIVALENT-candidate"
+ },
+ {
+  "mutant": "c2leg-no-new",
+  "counter": "c2",
+  "old": "legs[\"C2_NO_NEW\"] = labels[\"rows\"] == []",
+  "new": "legs[\"C2_NO_NEW\"] = True",
+  "tree": "c2-posfrontier(posfrontier)",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C2_NO_NEW",
+   "C2_ONLY_C08",
+   "C2_VERDICT"
+  ],
+  "mut_verdict": "fail",
+  "mut_failing": [
+   "C2_ONLY_C08",
+   "C2_VERDICT"
+  ],
+  "mut_on_positive": "n/a",
+  "class": "EQUIVALENT-candidate"
+ },
+ {
+  "mutant": "c2leg-no-new",
+  "counter": "c2",
+  "old": "legs[\"C2_NO_NEW\"] = labels[\"rows\"] == []",
+  "new": "legs[\"C2_NO_NEW\"] = True",
+  "tree": "c2-f5partial(f5partial)",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C2_C08_TOKEN",
+   "C2_VERDICT"
+  ],
+  "mut_verdict": "fail",
+  "mut_failing": [
+   "C2_C08_TOKEN",
+   "C2_VERDICT"
+  ],
+  "mut_on_positive": "n/a",
+  "class": "EQUIVALENT-candidate"
+ },
+ {
+  "mutant": "c2gate-all",
+  "counter": "c2",
+  "old": "ok = all(legs.values())",
+  "new": "ok = True",
+  "tree": "c2-base(do-nothing)",
+  "orig_verdict": "fail",
+  "orig_failing": [
+   "C2_C08_TOKEN",
+   "C2_VERDICT"
+  ],
+  "mut_verdict": "pass",
+  "mut_on_positive": "n/a",
+  "class": "KILLED"
+ }
+]

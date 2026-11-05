@@ -1,0 +1,8 @@
+{
+  "record_sha256": "b045a4eecf2d77cfdee5de83e5864fcadbd6fd54e749f6985a04ecbeebaae868",
+  "oracle_tail": "ORACLE OK (17/17 checks)",
+  "fixture_shas": {
+    "index.html": "46e51761af28b05c4c382c8ee72f9d77fee6f20d0b904f69b1c7f9a2214deb45",
+    "app.js": "fb079fa20d08a1309bed44c80743293d37ec8cd51c7ef7f9ee465e0d0d5aa593"
+  }
+}

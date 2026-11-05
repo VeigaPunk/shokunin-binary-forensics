@@ -1,0 +1,11 @@
+# counts.txt — seat ExecCensus, round 93 w1, manual census per fleet CORPUS.md census block
+# lane root: /home/vgpnk/Projects/shokunin/revenger-shokunin ; run 2026-11-05T14:52:50Z
+
+$ grep -cE '^\|[[:space:]]*S[0-9]{3,}[[:space:]]*\|' corpus/SOURCES.md
+494
+
+$ awk -F'|' '/^\|[[:space:]]*S[0-9][0-9][0-9]+[[:space:]]*\|/ && NF!=13 {n++} END{print n+0}' corpus/SOURCES.md
+0
+
+# rows = 494 (mid-round; L1 re-runs the census at round end for the before->after).
+# malformed = 0 (the CORPUS.md census block requires this to print 0 — passes).

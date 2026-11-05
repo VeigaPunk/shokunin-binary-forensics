@@ -1,0 +1,142 @@
+derivations.txt — ExecOracle (round-93 w1) independent re-derivation
+lane: /home/vgpnk/Projects/shokunin/revenger-shokunin
+freeze rev: 02050cb2a6758e3bd9cec696ff0e42df6f23511a (== lane HEAD at run time)
+generated: 2026-11-05T15:08:58Z
+method: each `$ python3 -c <code>` line below was executed verbatim with
+cwd = lane root; printed output captured verbatim; exit status checked 0.
+No oracle_check.py code is imported or reused; every value is derived
+directly from the saved record JSON and the committed fixture bytes.
+
+## D01
+$ python3 -c 'import hashlib;d=open("corpus/fixtures/browser-r77/index.html","rb").read();print("sha256",hashlib.sha256(d).hexdigest());print("bytes",len(d))'
+sha256 46e51761af28b05c4c382c8ee72f9d77fee6f20d0b904f69b1c7f9a2214deb45
+bytes 316
+
+## D02
+$ python3 -c 'import hashlib;d=open("corpus/fixtures/browser-r77/app.js","rb").read();print("sha256",hashlib.sha256(d).hexdigest());print("bytes",len(d))'
+sha256 fb079fa20d08a1309bed44c80743293d37ec8cd51c7ef7f9ee465e0d0d5aa593
+bytes 101
+
+## D03
+$ python3 -c 'import json;r=json.load(open("corpus/live/runs/round-77/inspection.json"));print("operation",r["operation"])'
+operation inspect_web_page
+
+## D04
+$ python3 -c 'import json;r=json.load(open("corpus/live/runs/round-77/inspection.json"));print("provider.id",r["provider"]["id"]);print("provider.name",r["provider"]["name"]);print("predicate_type",r["predicate_type"])'
+provider.id rea-cdp-browser
+provider.name REA Chrome DevTools Protocol observation provider
+predicate_type rea.web-page-inspection
+
+## D05
+$ python3 -c 'import json,re;r=json.load(open("corpus/live/runs/round-77/inspection.json"));e=r["evidence_id"];print("evidence_id",e);print("shape_ev_64hex",bool(re.fullmatch("ev_[0-9a-f]{64}",e)))'
+evidence_id ev_a0134e6f482424baa278ec374f9bf0e984738a113106556b9933d2fd403918fd
+shape_ev_64hex True
+
+## D06
+$ python3 -c 'import json;r=json.load(open("corpus/live/runs/round-77/inspection.json"));t=r["normalized_result"]["target"];tr=json.load(open("corpus/fixtures/browser-r77/truth.json"))["run_pin"];print("target.url",t["url"]);print("target.origin",t["origin"]);print("url==run_pin.page_url",t["url"]==tr["page_url"]);print("origin==run_pin.http_origin",t["origin"]==tr["http_origin"]);print("parameters.cdp_endpoint",r["parameters"]["cdp_endpoint"]);print("parameters.allowed_origins",r["parameters"]["allowed_origins"])'
+target.url http://127.0.0.1:8477/index.html
+target.origin http://127.0.0.1:8477
+url==run_pin.page_url True
+origin==run_pin.http_origin True
+parameters.cdp_endpoint http://127.0.0.1:9333
+parameters.allowed_origins ['http://127.0.0.1:8477']
+
+## D07
+$ python3 -c 'import json,re;b=open("corpus/fixtures/browser-r77/index.html",encoding="utf-8").read();t=re.search("<title>(.*?)</title>",b,re.S).group(1);ins=re.search("<script>(.*?)</script>",b,re.S).group(1);lit=re.findall("\x22([^\x22]+)\x22",ins);exp=t+"".join(lit);rt=json.load(open("corpus/live/runs/round-77/inspection.json"))["normalized_result"]["target"]["title"];print("static_title",repr(t));print("inline_literals",lit);print("expected_title",repr(exp));print("record_title",repr(rt));print("equal",exp==rt)'
+static_title 'r77 probe page'
+inline_literals [' [loaded]']
+expected_title 'r77 probe page [loaded]'
+record_title 'r77 probe page [loaded]'
+equal True
+
+## D08
+$ python3 -c 'import json;r=json.load(open("corpus/live/runs/round-77/inspection.json"));s=r["normalized_result"]["scripts"];print("scripts.total",s["total"]);print("scripts.items",len(s["items"]));print("urls",[i["url"] for i in s["items"]])'
+scripts.total 2
+scripts.items 2
+urls ['http://127.0.0.1:8477/index.html', 'http://127.0.0.1:8477/app.js']
+
+## D09
+$ python3 -c 'import json;d=open("corpus/fixtures/browser-r77/app.js","rb").read();r=json.load(open("corpus/live/runs/round-77/inspection.json"));it=[i for i in r["normalized_result"]["scripts"]["items"] if i["url"].endswith("/app.js")][0];print("record_length",it["length"]);print("file_bytes",len(d));print("length==file_bytes",it["length"]==len(d));print("reconciliation",it["resource_reconciliation"]["status"]);print("reconciliation_resource_key",it["resource_reconciliation"].get("resource_key"))'
+record_length 101
+file_bytes 101
+length==file_bytes True
+reconciliation exact
+reconciliation_resource_key res_0948976cb8f3ecdc1bafa5111ba86f55744db2803a8f1fc2a03cd66ee1b69548
+
+## D10
+$ python3 -c 'import json,re;b=open("corpus/fixtures/browser-r77/index.html",encoding="utf-8").read();ins=re.search("<script>(.*?)</script>",b,re.S).group(1);r=json.load(open("corpus/live/runs/round-77/inspection.json"));it=[i for i in r["normalized_result"]["scripts"]["items"] if i["url"].endswith("/index.html")][0];print("record_length",it["length"]);print("inline_text_chars",len(ins));print("inline_text",repr(ins));print("length==inline_chars",it["length"]==len(ins));print("reconciliation",it["resource_reconciliation"]["status"],it["resource_reconciliation"].get("reason"))'
+record_length 46
+inline_text_chars 46
+inline_text 'document.title = document.title + " [loaded]";'
+length==inline_chars True
+reconciliation unmatched no_exact_sanitized_url
+
+## D11
+$ python3 -c 'import json,hashlib;d=open("corpus/fixtures/browser-r77/app.js","rb").read();h=hashlib.sha256(d).hexdigest();r=json.load(open("corpus/live/runs/round-77/inspection.json"));it=[i for i in r["normalized_result"]["scripts"]["items"] if i["url"].endswith("/app.js")][0];print("cdp_hash",it["cdp_hash"]);print("file_sha256",h);print("cdp_hash==file_sha256",it["cdp_hash"]==h)'
+cdp_hash fb079fa20d08a1309bed44c80743293d37ec8cd51c7ef7f9ee465e0d0d5aa593
+file_sha256 fb079fa20d08a1309bed44c80743293d37ec8cd51c7ef7f9ee465e0d0d5aa593
+cdp_hash==file_sha256 True
+
+## D12
+$ python3 -c 'import json,re,hashlib;b=open("corpus/fixtures/browser-r77/index.html",encoding="utf-8").read();ins=re.search("<script>(.*?)</script>",b,re.S).group(1);h=hashlib.sha256(ins.encode("utf-8")).hexdigest();r=json.load(open("corpus/live/runs/round-77/inspection.json"));it=[i for i in r["normalized_result"]["scripts"]["items"] if i["url"].endswith("/index.html")][0];print("cdp_hash",it["cdp_hash"]);print("inline_text_sha256",h);print("cdp_hash==inline_text_sha256",it["cdp_hash"]==h)'
+cdp_hash ee8e9624a274382bf825525637e2db30823eda881461276f6eed7e990b157783
+inline_text_sha256 ee8e9624a274382bf825525637e2db30823eda881461276f6eed7e990b157783
+cdp_hash==inline_text_sha256 True
+
+## D13
+$ python3 -c 'import json;r=json.load(open("corpus/live/runs/round-77/inspection.json"));rs=r["normalized_result"]["resources"];print("resource_count",len(rs));x=rs[0];print("url",x["url"]);print("type",x["type"]);print("mime_type",x["mime_type"]);print("content_size",x["content_size"]);n=len(open("corpus/fixtures/browser-r77/app.js","rb").read());print("content_size==app.js_bytes",x["content_size"]==n);rk=x["resource_key"];ait=[i for i in r["normalized_result"]["scripts"]["items"] if i["url"].endswith("/app.js")][0];print("script_reconciliation_exact",ait["resource_reconciliation"]["status"]=="exact" and ait["resource_reconciliation"]["resource_key"]==rk)'
+resource_count 1
+url http://127.0.0.1:8477/app.js
+type Script
+mime_type text/javascript
+content_size 101
+content_size==app.js_bytes True
+script_reconciliation_exact True
+
+## D14
+$ python3 -c 'import json;r=json.load(open("corpus/live/runs/round-77/inspection.json"));m=r["normalized_result"]["metadata"]["dom_urls"];print("dom_urls_count",len(m));print("entries",[(e["node_index"],e["attribute"],e["url"]) for e in m]);b=open("corpus/fixtures/browser-r77/index.html",encoding="utf-8").read();print("index_html_has_src_app.js","src=\x22app.js\x22" in b)'
+dom_urls_count 1
+entries [(10, 'src', 'http://127.0.0.1:8477/app.js')]
+index_html_has_src_app.js True
+
+## D15
+$ python3 -c 'import json,hashlib;tl=json.load(open("corpus/live/runs/round-77/target-listing.json"));ts=tl["normalized_result"]["targets"];print("operation",tl["operation"]);print("provider.id",tl["provider"]["id"]);print("evidence_id",tl["evidence_id"]);print("targets_count",len(ts));print("target_types",[t.get("type") for t in ts]);print("target_id",ts[0]["target_id"]);r=json.load(open("corpus/live/runs/round-77/inspection.json"));print("==record.parameters.target_id",ts[0]["target_id"]==r["parameters"]["target_id"]);print("==record.target.target_id",ts[0]["target_id"]==r["normalized_result"]["target"]["target_id"]);print("==record.frames[0].frame_id",ts[0]["target_id"]==r["normalized_result"]["frames"][0]["frame_id"]);h=hashlib.sha256(open("corpus/live/runs/round-77/target-listing.json","rb").read()).hexdigest();rc=json.load(open("corpus/live/runs/round-77/receipt.json"));print("listing_sha256",h);print("==receipt.target_listing_stdout_sha256",h==rc["target_listing_stdout_sha256"])'
+operation list_browser_targets
+provider.id rea-cdp-browser
+evidence_id ev_4f9928e1e8a2417cc88e02cce7408a3da066e9b79da883c640b26f8bdae664e2
+targets_count 1
+target_types ['page']
+target_id F6A6B5C8E48625523BCEA0CE47F68B42
+==record.parameters.target_id True
+==record.target.target_id True
+==record.frames[0].frame_id True
+listing_sha256 6954848b4850c94fa946e41f50bf0a044316c123d7541d6a6141af85e5eebbb8
+==receipt.target_listing_stdout_sha256 True
+
+## D16
+$ python3 -c 'import json,hashlib;d=open("corpus/live/runs/round-77/inspection.json","rb").read();h=hashlib.sha256(d).hexdigest();rc=json.load(open("corpus/live/runs/round-77/receipt.json"));print("record_sha256",h);print("receipt.stdout_sha256",rc["stdout_sha256"]);print("==receipt.stdout_sha256",h==rc["stdout_sha256"]);print("receipt.exit_code",rc["exit_code"]);print("receipt.duration_seconds",rc["duration_seconds"]);print("receipt.stderr_bytes",rc["stderr_bytes"]);print("receipt.producer",rc["producer"][:60]);rid=json.load(open("corpus/live/runs/round-77/inspection.json"))["evidence_id"];print("record.evidence_id==receipt.evidence_id",rid==rc["evidence_id"])'
+record_sha256 b045a4eecf2d77cfdee5de83e5864fcadbd6fd54e749f6985a04ecbeebaae868
+receipt.stdout_sha256 b045a4eecf2d77cfdee5de83e5864fcadbd6fd54e749f6985a04ecbeebaae868
+==receipt.stdout_sha256 True
+receipt.exit_code 0
+receipt.duration_seconds 3.498
+receipt.stderr_bytes 0
+receipt.producer rea 6.8.0 (installed CLI; provider rea-cdp-browser, built-in
+record.evidence_id==receipt.evidence_id True
+
+## D17
+$ python3 -c 'import json,hashlib;a=json.load(open("corpus/live/runs/round-77/provider-gates/android-gate.json"));f=json.load(open("corpus/live/runs/round-77/provider-gates/firmware-gate.json"));print("android.details.operation",a["details"]["operation"]);print("android.details.provider_id",a["details"]["provider_id"]);print("android.code",a["code"]);print("firmware.details.operation",f["details"]["operation"]);print("firmware.details.provider_id",f["details"]["provider_id"]);print("firmware.code",f["code"]);pg=json.load(open("corpus/live/runs/round-77/provider-gates/receipt.json"));ah=hashlib.sha256(open("corpus/live/runs/round-77/provider-gates/android-gate.json","rb").read()).hexdigest();fh=hashlib.sha256(open("corpus/live/runs/round-77/provider-gates/firmware-gate.json","rb").read()).hexdigest();print("android_payload_sha==receipt_leg",ah==pg["legs"][0]["stdout_sha256"]);print("firmware_payload_sha==receipt_leg",fh==pg["legs"][1]["stdout_sha256"])'
+android.details.operation inspect_android_package
+android.details.provider_id jadx
+android.code capability_unavailable
+firmware.details.operation inspect_firmware_regions
+firmware.details.provider_id binwalk
+firmware.code capability_unavailable
+android_payload_sha==receipt_leg True
+firmware_payload_sha==receipt_leg True
+
+## D18
+$ python3 -c 'import json;r=json.load(open("corpus/live/runs/round-77/inspection.json"));b=r["normalized_result"]["browser"];tr=json.load(open("corpus/fixtures/browser-r77/truth.json"))["run_pin"];print("browser.product",b["product"]);print("product_in_run_pin.browser",b["product"] in tr["browser"])'
+browser.product Chrome/156.0.8078.74
+product_in_run_pin.browser True
+

@@ -1,0 +1,96 @@
+# revision-checks.log — ReviewerErrata (round-93 w1)
+
+Entry revision verification for routed defects 2+3
+(entry: corpus/knowledge/round-92-managed-assembly-metadata-evidence.md;
+revision bytes: $HYAKU_SCRATCH/revenger-r93/ReviewerErrata/entry-revised.md;
+deliverable: .ufo/waves/round-93/w1/ReviewerErrata/entry-r92-revision.patch).
+All commands run from the lane root /home/vgpnk/Projects/shokunin/revenger-shokunin.
+No frozen file touched; the living entry was never edited (revision made on a scratch copy).
+
+## Gate 1 — corpus/lint_entry.py on the REVISED copy
+
+Command:
+  python3 -B corpus/lint_entry.py --entry /fast/scratch/hyaku/revenger-r93/ReviewerErrata/entry-revised.md
+
+Output:
+  LINT_QMAP=0
+  LINT_Q14=0
+  LINT_Q15=0
+  LINT_HEADER=0
+
+Exit code: 0  (REQUIRED 0 — met)
+
+## Gate 2 — corpus/check_embedded_outputs.py on the REVISED copy
+
+Command:
+  python3 -B corpus/check_embedded_outputs.py --entry /fast/scratch/hyaku/revenger-r93/ReviewerErrata/entry-revised.md
+
+Output:
+  checked_blocks=11 problems=0
+
+Exit code: 0  (REQUIRED 0 — met)
+
+## Baseline (unchanged-behaviour control): the same two gates on the ORIGINAL bytes
+
+  LINT_QMAP=0 / LINT_Q14=0 / LINT_Q15=0 / LINT_HEADER=0  -> exit 0
+  checked_blocks=11 problems=0                            -> exit 0
+
+So the revision is gate-neutral: both gates were already green on the landed r92 bytes
+and remain green on the revised bytes.
+
+## Digest re-derivation (counter binding rule)
+
+Normalisation (identical to the frozen counters' rule, reports/round-92/c1_k_admit_counter.py
+and reports/round-93/c1_k_admit_counter2.py, `digest()`):
+  re.sub(r"^admission-status: (candidate|admitted|rejected)$", "admission-status: candidate",
+         text, flags=re.M)  -> sha256 over the UTF-8 bytes of the result.
+
+  ORIGINAL normalised: 2c96e633fc730d218560b9693b881ffdeb1244cad5ac77f5fb6626f494306fb6
+                       (recomputed by me from the living entry; equals candidate_sha256 in
+                       all three reports/round-92/votes/*.json)
+  ORIGINAL raw:        4123a7d8275b8631e8225d7442e77096181a8fa2169b0b7cfa998ab0cdfefdc8
+  REVISED  normalised: faa872ebab84e11387aa2733eaea04f1e873a17aa16cb80f915f97757599460c
+  REVISED  raw:        7d157de2c71c0a3c7aae5df30470f9ac652d0e877e457a2c9d28a884f0973be1
+
+The revised normalised digest DIFFERS from the round-92-voted 2c96e633... — expected and
+intended: the r92 votes bind the ORIGINAL bytes; this revision is the entry's NEXT revision
+of record (stated in the patch header X-Revision/X-Digest-Note lines), its landing is a
+correction-of-record to be logged by the L1 in the round-93 lesson, not a silent swap of the
+voted bytes. No vote file is touched.
+
+## Patch integrity
+
+  git diff --no-index original revised (scratch), header paths normalised to
+  a/corpus/knowledge/round-92-managed-assembly-metadata-evidence.md and b/...;
+  7 hunks, one per correction:
+    @@ -4,7    recheck: header line: "in §8" -> "in the unnumbered `## Reproduce` section" (defect 2)
+    @@ -222,8  item 5 lead: name-list claim labelled as resting on the §II.24.2.2 section
+               body (anchor section), not a carried quote (defect 3 / finding 9 :224-226)
+    @@ -256,8  item 5 tail: "ECMA-335 ... spell it `#GUID`" labelled per the §II.24.2.2
+               section body, not a carried quote (defect 3 / finding 9 family)
+    @@ -350,9  item 12: name-list basis labelled as the §II.24.2.2 / §24.2.2 section bodies
+               (anchor sections), not a carried quote (defect 3 / finding 9 :354)
+    @@ -375,8  item 17: version-string quote labelled a partial sentence cut at the source
+               PDF's line wrap, remainder not quoted (defect 3 / finding 9 :378)
+    @@ -397,7  item 22: `rea` 6.8.0 / provider / exit 0 / stderr 0 bytes / stdout digest
+               labelled recorded fields per receipt.json, cited as saved, not re-derived
+               (defect 3 / finding 9 :399-400)
+    @@ -521,7  Sources S491 bullet: the (20 words) quote inventory line labelled a partial
+               sentence cut at the source PDF's line wrap (defect 3 / finding 9 :523)
+
+Apply verification on a pristine copy of the original (scratch applytest/):
+  git apply --check  -> ok
+  git apply          -> ok
+  cmp(applied, revised-copy) -> identical (APPLIED_EQ_REVISED=yes)
+
+Untouched by construction and by diff inspection: the `## §Q-map` table, every fenced
+(embedded) block, the scope paragraph, the admission-status line, the coverage-map line.
+
+## Residual notes
+
+- The lint/embedded gates are the two gates named in the routed defect; they are the only
+  checks this log claims.
+- grep for `§8` in the revised copy: 0 hits. Remaining `§<digit>` pointers in prose are
+  `§1` and `§5`, which resolve to the numbered sections `## 1. Observation` and
+  `## 5. Provenance (Q11)`; `§II.*`/`§24.*`/`§25.*` hits are ECMA-335 section numbers, not
+  entry-section pointers.

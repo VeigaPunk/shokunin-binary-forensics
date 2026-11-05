@@ -1,0 +1,10 @@
+block_no	opens_draft_line	exit_code	embedded_lines	actual_lines	match
+1	37	0	18	18	yes
+2	64	0	6	6	yes
+3	83	0	11	11	yes
+4	105	0	5	5	yes
+5	122	0	6	6	yes
+6	139	0	7	7	yes
+7	156	0	7	7	yes
+8	173	0	4	4	yes
+9	351	0	18	18	yes

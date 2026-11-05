@@ -1,0 +1,27 @@
+k-arithmetic.txt — ExecOracle (round-93 w1)
+freeze rev: 02050cb2a6758e3bd9cec696ff0e42df6f23511a
+generated: 2026-11-05T15:08:58Z
+
+# KA01 rows/cells over corpus/README.md at the freeze rev (same parse as the
+# frozen counter: cells = strip('|').split('|') trimmed; row iff ^\|\s*C[0-9]+ and 5 cells)
+$ python3 -c 'import re;lines=open("/fast/scratch/hyaku/revenger-r93/ExecOracle/readme-base.md",encoding="utf-8").read().splitlines();cells=lambda l:[x.strip() for x in l.strip().strip("|").split("|")];cov=[cells(l) for l in lines if re.match(r"^\|[ \t]*C[0-9]+ ",l) and len(cells(l))==5];held=[r[0] for r in cov if r[4]=="held"];c08=[r for r in cov if r[0]=="C08"][0];uncov=[r[0] for r in cov if r[4]=="uncovered"];print("rows",len(cov));print("ids",",".join(r[0] for r in cov));print("held",len(held),",".join(held));print("uncovered",len(uncov),",".join(uncov));print("C08cells",c08)'
+rows 15
+ids C01,C02,C03,C04,C05,C06,C07,C08,C09,C10,C11,C12,C13,C14,C15
+held 9 C01,C03,C04,C06,C07,C09,C11,C12,C13
+uncovered 3 C05,C08,C15
+C08cells ['C08', 'browser/Electron runtime evidence', '—', '`live/runs/round-77/` (CDP `inspect_web_page` over an authored loopback fixture, receipt exit 0, S447; no admitted knowledge entry)', 'uncovered']
+
+# KA02 working computation: flip C08 uncovered -> held with the knowledge cell
+# citing corpus/knowledge/round-93-browser-cdp-runtime-evidence.md (the counter
+# counts held_backed = rows with r[4]==held AND every knowledge/....md named in
+# cell 2 existing under corpus/)
+rows_total=15 (claim needs 15); held_at_base=9 (claim needs 9); C08_at_base=['C08', 'browser/Electron runtime evidence', '—', '`live/runs/round-77/` (CDP `inspect_web_page` over an authored loopback fixture, receipt exit 0, S447; no admitted knowledge entry)', 'uncovered']
+flip: held 9 -> 10 (C08 uncovered -> held, entry exists at landing)
+K_HELD_BACKED working value after flip: 10/15 == claim after 10/15: True
+
+# KA03 worktree corpus/README.md vs the frozen blob (byte equality)
+worktree==freeze_blob: True
+
+# KA04 entry path at the freeze rev and in the worktree now
+entry at 02050cb2a6758e3bd9cec696ff0e42df6f23511a: present=False (expected False at freeze)
+entry in worktree now: present=False (expected False pre-landing)

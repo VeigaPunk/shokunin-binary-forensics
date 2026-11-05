@@ -1,0 +1,2 @@
+could-not-evaluate: no `$ cmd` blocks or unsupported command
+check_embedded_outputs_exit=2

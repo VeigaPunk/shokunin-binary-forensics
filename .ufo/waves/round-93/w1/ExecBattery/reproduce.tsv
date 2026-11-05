@@ -1,0 +1,21 @@
+# reproduce.tsv — ExecBattery, round 93 w1, lane revenger-shokunin
+# date: 2026-11-05; lane HEAD at run time: 02050cb2a6758e3bd9cec696ff0e42df6f23511a (== freeze commit)
+# commands (all from lane root, HYAKU_SCRATCH=/fast/scratch/hyaku/revenger-r93/ExecBattery, PYTHONUTF8=1):
+#   python3 -B reports/round-93/forge_battery.py --stage v1-only    rc=0
+#   python3 -B reports/round-93/forge_battery.py --stage full       rc=0
+#   python3 -B reports/round-93/c1_k_admit_counter2.py --self-test  rc=0
+#   python3 -B reports/round-93/c2_legend_counter2.py --self-test   rc=0
+# line	committed	re-run	equal
+v1-only:V1_REACH_C2	V1_REACH_C2=5/5	V1_REACH_C2=5/5	yes
+v1-only:BATTERY_VERDICT	BATTERY_VERDICT=pass	BATTERY_VERDICT=pass	yes
+full:V2_KILLS	V2_KILLS=9/9	V2_KILLS=9/9	yes
+full:BATTERY_VERDICT	BATTERY_VERDICT=pass	BATTERY_VERDICT=pass	yes
+selftest-c1v2:SELFTEST_C1V2	SELFTEST_C1V2=pass kills=registry,artifact-sha,all-na,na-reason cases=none	SELFTEST_C1V2=pass kills=registry,artifact-sha,all-na,na-reason cases=none	yes
+selftest-c2v2:SELFTEST_C2V2	SELFTEST_C2V2=pass kills=record-sha,trailing-cell cases=0open	SELFTEST_C2V2=pass kills=record-sha,trailing-cell cases=0open	yes
+full:POS_C1V2	POS_C1V2=pass	POS_C1V2=pass	yes
+full:POS_C2V2	POS_C2V2=pass	POS_C2V2=pass	yes
+full:DO_NOTHING_C2	DO_NOTHING_C2=fail	DO_NOTHING_C2=fail	yes
+diff:battery-v1-only.log	vs v1-only.rerun.log: identical (diff -u empty)	same	yes
+diff:battery-full.log	vs full.rerun.log: identical (diff -u empty)	same	yes
+diff:selftest-c1v2.log	vs selftest-c1v2.rerun.log: identical (diff -u empty)	same	yes
+diff:selftest-c2v2.log	vs selftest-c2v2.rerun.log: identical (diff -u empty)	same	yes

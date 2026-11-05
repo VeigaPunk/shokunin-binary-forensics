@@ -1,0 +1,13 @@
+# ScribeEntry (round-93, C08 entry) — source rows used by the draft
+
+Both rows are quoted from the round-93 scout's own draft
+`.ufo/waves/round-93/w1/ScoutRecord/sources-draft.md` (seat ScoutRecord, opened 2026-11-05).
+The L1 lands them in `corpus/SOURCES.md`; this seat does not.
+
+## S495
+
+| S495 | Saved r77 CDP browser-runtime record and its authored fixture — `corpus/live/runs/round-77/` and `corpus/fixtures/browser-r77/` (opened 2026-11-05) | own-work | A | what the lane's own saved round-77 CDP inspection record states for the authored browser-r77 fixture only — the producer stdout bytes, its receipt and its fixture digests — and no general claim about Chrome, CDP, Electron or any other browser | `corpus/live/runs/round-77/inspection.json` stdout sha256 b045a4eecf2d77cfdee5de83e5864fcadbd6fd54e749f6985a04ecbeebaae868; `corpus/live/runs/round-77/receipt.json` exit_code 0; `corpus/live/runs/round-77/LEDGER.md` record entry; fixture `corpus/fixtures/browser-r77/index.html` sha256 46e51761af28b05c4c382c8ee72f9d77fee6f20d0b904f69b1c7f9a2214deb45 and `corpus/fixtures/browser-r77/app.js` sha256 fb079fa20d08a1309bed44c80743293d37ec8cd51c7ef7f9ee465e0d0d5aa593; oracle re-run on 2026-11-05 ends ORACLE OK (17/17 checks) | How to open a saved browser-runtime record as evidence: re-run the fixture oracle over the committed record bytes and let its 17 byte-derived checks confirm that the record's identity fields still bind to the committed fixture | mined | 2026-11-05 | 180d | corpus/knowledge/round-93-browser-cdp-runtime-evidence.md |
+
+## S496
+
+| S496 | Chrome DevTools Protocol — https://chromedevtools.github.io/devtools-protocol/ (opened 2026-11-05) | docs | A | the protocol's own self-description only — that CDP is the JSON-based protocol Chrome exposes so that clients can instrument, inspect, debug and profile pages; not a compatibility guarantee, not a third-party support commitment, and not a statement about the lane's own fixture | landing-hero intro paragraph, second sentence; the page carries no ms.date marker, HTTP Last-Modified 2026-11-04, ETag 6aeab6b6-8a86 — "It allows tools to instrument, inspect, debug, and profile Chromium, Chrome, and other Blink-based browsers." | That CDP is the protocol Chrome exposes for inspecting and debugging pages, so a saved CDP inspection record can be described as browser-runtime evidence with the protocol named instead of left as an unnamed page observation | mined | 2026-11-05 | 180d | corpus/knowledge/round-93-browser-cdp-runtime-evidence.md |

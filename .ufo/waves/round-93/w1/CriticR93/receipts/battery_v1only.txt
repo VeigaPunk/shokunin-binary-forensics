@@ -1,0 +1,7 @@
+BATTERY F5 v1=pass rc=0 reach=yes
+BATTERY F6 v1=pass rc=0 reach=yes
+BATTERY F7 v1=pass rc=0 reach=yes
+BATTERY F8 v1=pass rc=0 reach=yes
+BATTERY F9 v1=pass rc=0 reach=yes
+V1_REACH_C2=5/5
+BATTERY_VERDICT=pass

@@ -1,0 +1,140 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r93-w1",
+  "createdAt": "2026-11-05T14:47:42.798Z",
+  "updatedAt": "2026-11-05T14:47:42.798Z",
+  "reportDir": ".ufo/waves/round-93/w1",
+  "members": {
+    "ScoutRecord": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 93: C1 K 9/15->10/15 (C08 entry from the saved r77 CDP record, provenance gate); C2 successor counters kill 9 routed forgery classes; 13 seats"
+    },
+    "ScoutS136": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 93: C1 K 9/15->10/15 (C08 entry from the saved r77 CDP record, provenance gate); C2 successor counters kill 9 routed forgery classes; 13 seats"
+    },
+    "ScribeEntry": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 93: C1 K 9/15->10/15 (C08 entry from the saved r77 CDP record, provenance gate); C2 successor counters kill 9 routed forgery classes; 13 seats"
+    },
+    "ExecOracle": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 93: C1 K 9/15->10/15 (C08 entry from the saved r77 CDP record, provenance gate); C2 successor counters kill 9 routed forgery classes; 13 seats"
+    },
+    "ExecBattery": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 93: C1 K 9/15->10/15 (C08 entry from the saved r77 CDP record, provenance gate); C2 successor counters kill 9 routed forgery classes; 13 seats"
+    },
+    "ExecCensus": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 93: C1 K 9/15->10/15 (C08 entry from the saved r77 CDP record, provenance gate); C2 successor counters kill 9 routed forgery classes; 13 seats"
+    },
+    "ReviewerGate": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 93: C1 K 9/15->10/15 (C08 entry from the saved r77 CDP record, provenance gate); C2 successor counters kill 9 routed forgery classes; 13 seats"
+    },
+    "ReviewerBlind": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 93: C1 K 9/15->10/15 (C08 entry from the saved r77 CDP record, provenance gate); C2 successor counters kill 9 routed forgery classes; 13 seats"
+    },
+    "ReviewerErrata": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 93: C1 K 9/15->10/15 (C08 entry from the saved r77 CDP record, provenance gate); C2 successor counters kill 9 routed forgery classes; 13 seats"
+    },
+    "CriticR93": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "Round 93: C1 K 9/15->10/15 (C08 entry from the saved r77 CDP record, provenance gate); C2 successor counters kill 9 routed forgery classes; 13 seats"
+    },
+    "MutationR93": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 93: C1 K 9/15->10/15 (C08 entry from the saved r77 CDP record, provenance gate); C2 successor counters kill 9 routed forgery classes; 13 seats"
+    },
+    "ConnectorOverlap": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "adjacency"
+      ],
+      "milestone": "Round 93: C1 K 9/15->10/15 (C08 entry from the saved r77 CDP record, provenance gate); C2 successor counters kill 9 routed forgery classes; 13 seats"
+    },
+    "SentinelScope": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 93: C1 K 9/15->10/15 (C08 entry from the saved r77 CDP record, provenance gate); C2 successor counters kill 9 routed forgery classes; 13 seats"
+    }
+  }
+}

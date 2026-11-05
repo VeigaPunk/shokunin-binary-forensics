@@ -4,7 +4,7 @@ source: S493 — PE Format (Microsoft Learn) — https://learn.microsoft.com/en-
 source: S494 — System.Reflection.Metadata.Ecma335.MetadataRootBuilder (Microsoft Learn) — https://learn.microsoft.com/en-us/dotnet/api/system.reflection.metadata.ecma335.metadatarootbuilder?view=net-10.0 (docs, tier A, opened 2026-11-05) — anchor: Remarks — grounds the .NET implementation's own statement of the metadata root's stream set
 source: own-work records (not registry rows) — `corpus/live/runs/round-76/{inspection.json,receipt.json,LEDGER.md}`; `corpus/live/runs/round-85/inspect-managed-artifact/{inspection.json,receipt.json,oracle.log,LEDGER.md}`; `corpus/live/runs/round-85/inspect-managed-members/{inspection.json,receipt.json,oracle.log,LEDGER.md}`; `corpus/live/runs/round-85/inspect-managed-native-boundaries/{inspection.json,receipt.json,oracle.log,LEDGER.md}`; fixtures `corpus/fixtures/managed-r76/{fixture.dll,truth.json,oracle_check.py}` and `corpus/fixtures/managed-r85/{fixture.dll,truth.json,oracle_check.py}`
 verified-at: 2026-11-05 at lane commit `9402183a` (`git rev-parse 9402183a^{commit}` prints `9402183a9492428fa0064d250746c62a0a2d9ca5`; `git diff --quiet 9402183a -- corpus` is silent, so the corpus tree read here is byte-identical at that commit)
-recheck: `python3 -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.json corpus/live/runs/round-85/inspect-managed-members/inspection.json corpus/fixtures/managed-r85/fixture.dll` from the lane root — exit 0 with `ORACLE OK (47/47 checks)` as its last stdout line; the three sibling commands in §8 re-derive the rest of this entry's numbers the same way
+recheck: `python3 -B corpus/fixtures/managed-r85/oracle_check.py corpus/fixtures/managed-r85/truth.json corpus/live/runs/round-85/inspect-managed-members/inspection.json corpus/fixtures/managed-r85/fixture.dll` from the lane root — exit 0 with `ORACLE OK (47/47 checks)` as its last stdout line; the three sibling commands in the unnumbered `## Reproduce` section re-derive the rest of this entry's numbers the same way
 coverage-map: C03 (`corpus/README.md`, managed (.NET/CLI) assemblies) — the ground this entry covers is the two authored inert fixtures `corpus/fixtures/managed-r76/fixture.dll` and `corpus/fixtures/managed-r85/fixture.dll` and the four saved producer records named above; no other managed surface is claimed
 admission-status: admitted
 
@@ -222,8 +222,10 @@ with the two decodings the script made from the bits of that same value. The `pi
 from the `#Strings` heap at the indices the row gave it.
 
 **5. The metadata root's five streams.** The artifact record names five streams, and ECMA-335
-§II.24.2.2 names exactly five kinds of streams and lists the same five names; the .NET
-implementation's own API page states the same set for a metadata root.
+§II.24.2.2 names exactly five kinds of streams (the count is the item's carried quote below; the
+name list is read from the §II.24.2.2 section body — the anchor section, not a carried quote) and
+lists the same five names; the .NET implementation's own API page states the same set for a
+metadata root.
 
 
 ```
@@ -256,8 +258,9 @@ this are S491's "Both logical tables and heaps are stored in streams. There are 
 (§II.24.2.2), the same sentence located independently in the previous edition (S492, §24.2.2), and
 the implementation's own statement is S494's "Metadata root constitutes of a metadata header followed
 by metadata streams ( #~ , #Strings , #US , #Guid and #Blob )." — note that the .NET page spells the
-GUID heap `#Guid` while ECMA-335 and the records spell it `#GUID`; this entry does not normalise the
-two spellings and reports the records' spelling as it stands.
+GUID heap `#Guid` while ECMA-335 (per its §II.24.2.2 section body — not a carried quote) and the
+records spell it `#GUID`; this entry does not normalise the two spellings and reports the records'
+spelling as it stands.
 
 **6. The metadata root's magic signature.** S491's "Magic signature for physical metadata : 0x424A5342."
 (§II.24.2.1) fixes the four bytes at the start of the metadata root, and the same sentence is located
@@ -350,9 +353,11 @@ there (item 6), and the record's own `pe.cli` block gives the header size 72 and
 value 1 that §II.25.3.3 and §II.25.3.3.1 fix. Basis: items 1, 4, 6 and 8 with S491 and S493.
 
 12. [INFERENCE, scoped to these two fixtures] The five stream names the records print are the five
-stream kinds the specification names, and the same set the .NET implementation states for a metadata
-root; the records' `#GUID` spelling is the specification's spelling and differs only in letter case
-from the implementation page's `#Guid`. Basis: item 5, S491 §II.24.2.2, S492 §24.2.2 and S494.
+stream kinds the specification names — the name list rests on the §II.24.2.2 and §24.2.2 section
+bodies (the anchor sections, not a carried quote) — and the same set the .NET implementation states
+for a metadata root; the records' `#GUID` spelling is the specification's own spelling as its
+section body spells it, and differs only in letter case from the implementation page's `#Guid`.
+Basis: item 5, S491 §II.24.2.2, S492 §24.2.2 and S494.
 
 13. [INFERENCE, scoped to the r85 fixture] The P/Invoke row is a declaration and nothing more: the
 record's own `verification` value says `managed-declaration-only`, the imported name `native.dll` is a
@@ -375,8 +380,9 @@ two authored fixtures is **unknown**. This entry examines two inert images and f
 
 17. Why the metadata root's version string is `v4.0.30319` — a **recorded** field of the r85 record,
 also the value the .NET API page calls "The metadata version." (S494) — while ECMA-335 §II.24.2.1
-requires the version string of a conforming file to be "The Version string shall be “Standard CLI 2005” for any file that is intended to be executed on any conforming"
-(S491) is **unknown**. This entry reports the divergence and does not explain it.
+states a version-string requirement for a conforming file, carried here only as the partial sentence "The Version string shall be “Standard CLI 2005” for any file that is intended to be executed on any conforming"
+(S491; cut at the source PDF's line wrap, the requirement's remainder not quoted) is **unknown**.
+This entry reports the divergence and does not explain it.
 
 18. Whether `native.dll`, the module the P/Invoke row names, exists as a library anywhere is
 **unknown**. Nothing was built, resolved or loaded.
@@ -397,7 +403,9 @@ here.
 
 22. **No producer readiness claim.** No producer was invoked for this entry, on this host or at this
 time. The four records are saved files whose `receipt.json` files record the producer runs that wrote
-them (`rea` 6.8.0, provider `rea-dotnet-static`, exit 0, stderr 0 bytes, with the stdout digest);
+them — recorded per `receipt.json`: `rea` 6.8.0, provider `rea-dotnet-static`, exit 0, stderr 0
+bytes and the stdout digest are recorded fields of those receipt files, cited as saved and not
+re-derived by any command in this entry;
 this entry makes no claim that the producer is installed, available or usable now.
 
 23. **No execution, no loading, no decompilation, no dependency resolution, no network.** The fixture
@@ -521,7 +529,7 @@ ORACLE OK (20/20 checks)
   - §II.25.3.3.1: "COMIMAGE_FLAGS_ILONLY 0x00000001 Shall be 1." (5 words) — item 8.
   - §II.25.3.3: "16 4 Flags Flags describing this runtime image." (8 words) — item 8.
   - §II.24.2.1: "The Version string shall be “Standard CLI 2005” for any file that is intended to be executed on any conforming"
-    (20 words) — item 17.
+    (20 words; a partial sentence cut at the source PDF's line wrap, not the full requirement) — item 17.
   Scope: the CLI metadata physical layout and the CLI-header location and runtime-flag rules, for the
   facts this entry states. Not cited for ZIP, PE resource layouts, CIL semantics, or any provider's
   behaviour.

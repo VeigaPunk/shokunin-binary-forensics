@@ -1,0 +1,33 @@
+PASS	operation	inspect_web_page	inspect_web_page
+PASS	predicate_type	rea.web-page-inspection	rea.web-page-inspection
+PASS	provider.id	rea-cdp-browser	rea-cdp-browser
+PASS	provider.version	2	2
+PASS	evidence_id.value	ev_a0134e6f482424baa278ec374f9bf0e984738a113106556b9933d2fd403918fd	same
+PASS	evidence_id.shape	ev_ + 64 lowercase hex (67 chars), well-formed	shape only checked; regex ev_[0-9a-f]{64} visible
+PASS	target.url	http://127.0.0.1:8477/index.html	same
+PASS	target.origin	http://127.0.0.1:8477	same
+PASS	target.title	r77 probe page [loaded]	same
+PASS	derived.title	r77 probe page [loaded] = static <title> + inline literal ' [loaded]'	same; oracle derives from committed index.html bytes
+PASS	dom_urls	[{"node_index": 10, "attribute": "src", "url": "http://127.0.0.1:8477/app.js", "destination_scope": "approved"}]	same
+PASS	scripts.count	2 (total and items)	2
+PASS	script.lengths	46 (inline), 101 (app.js)	[46, 101]
+PASS	script.length.source	inline measured from index.html bytes (46); app.js bytes = 101	same (transcript item 3)
+PASS	cdp_hash.inline	ee8e9624a274382bf825525637e2db30823eda881461276f6eed7e990b157783 == sha256(inline text 46ch from index.html)	same, stated True in item 4
+PASS	cdp_hash.appjs	fb079fa20d08a1309bed44c80743293d37ec8cd51c7ef7f9ee465e0d0d5aa593 == sha256(committed app.js bytes)	same, stated True in item 4
+PASS	resources.count	1	1
+PASS	resource.content_size	101	101
+PASS	resource.type	Script	Script
+PASS	resource.mime	text/javascript	text/javascript
+PASS	resource.reconciliation	app.js exact; inline unmatched	app.js exact; inline unmatched
+PASS	fixture.digests	index.html 46e51761af28b05c4c382c8ee72f9d77fee6f20d0b904f69b1c7f9a2214deb45 (316B); app.js fb079fa20d08a1309bed44c80743293d37ec8cd51c7ef7f9ee465e0d0d5aa593 (101B)	same
+PASS	record.sha256	b045a4eecf2d77cfdee5de83e5864fcadbd6fd54e749f6985a04ecbeebaae868 (10816 bytes)	same + receipt.stdout_sha256 byte-identity
+PASS	receipt.exit_code	0 (from receipt.json)	0
+PASS	volatile.list	[evidence_id shape-only; target_id/frame_id; script_key/cdp_hash; capture timestamps; completeness counters]	verbatim truth.json volatile_not_compared (5 items)
+PASS	completeness.status	policy_filtered	policy_filtered (recorded, not compared)
+PASS	browser.product	Chrome/156.0.8078.74	Chrome/156.0.8078.74 (recorded)
+PASS	capture_window	started 2026-11-01T06:59:28.999Z ended 06:59:29.701Z obs 500ms	same (recorded)
+PASS	confidence/authority	observed / external-service	observed / external-service (recorded)
+PASS	S496.quote	15 words: "It allows tools to instrument, inspect, debug, and profile Chromium, Chrome, and other Blink-based browsers."	same, located 2nd sentence intro, norm-offset 2733 in my refetch
+PASS	S496.url	https://chromedevtools.github.io/devtools-protocol/	same
+PASS	coverage.row	C08 browser/Electron runtime evidence	coverage-map: C08
+# summary: {'PASS': 32} total=32

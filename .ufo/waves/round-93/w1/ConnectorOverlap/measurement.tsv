@@ -1,0 +1,23 @@
+# Frozen-counter validity rate — proposal 2 of considerthese/2026-11-05.md, measured on committed bytes at lane rev 02050cb2a6758e3bd9cec696ff0e42df6f23511a (round-93 freeze), 2026-11-05, seat ConnectorOverlap
+# Denominator: every frozen claim of the round (2 per round in r89-r92). A claim counts invalid when its committed verdict is failed/killed, met-contested, or not-verified — anything short of a clean verified pass.
+# Sources of record per round: reports/round-9X/claims.md + corpus/lessons/round-9X.md final-measurements table + corpus/lessons/round-9X-verifier-spotcheck.md + SCORECARD.md round sections. Where a first-pass SCORECARD heading disagrees with a later correction row, the correction row is authoritative (see caveat lines).
+# round	claim	axis	frozen target	committed verdict	verdict class	counted	evidence path	evidence lines
+r89	C1	freshness (host-readiness census re-probe)	CENSUS_STALE_UNFLAGGED 10 findings -> 2, target 0	MISS (frozen target unmet; truthful-literal floor is 2, zero reachable only by faking PATH or editing frozen bytes)	failed	1	SCORECARD.md; corpus/lessons/round-89-verifier-spotcheck.md	1588-1591; 116-117
+r89	C2	coverage (selected-family record presence F4)	F4 10/11 -> 11/11 AND ORACLE OK 19/19	KILLED (a fully accurate hand-written record and an XML-comment manifest pass 19/19 and move F4; two producer runs differ at byte 20)	failed-killed	1	corpus/lessons/round-89.md	111-114, 148-149
+r90	C1	calibration (SM6 reads the denominator)	SM6_MISCLASS 7/14 -> 0/14	MET on the frozen counter; axis label and real-format blind spot contested (M-c, CriticR90Claims)	met-contested	1	corpus/lessons/round-90.md	76-78
+r90	C2	coverage (android family first producer record)	C2_CONJUNCTS 6/6	met; NOT VERIFIED — ctl-idedit and ctl-stub also 6/6 (M-b)	met-not-verified	1	corpus/lessons/round-90.md	78-79
+r91	C1	calibration (SM6 v3 reads the stated cell)	SM6_MISCLASS 5/22 -> 0/22 AND MUTANTS_KILLED 11/11	MET on the frozen counter; contested — a 21-entry lookup table also passes it; spot-check re-measured NOT VERIFIED	met-contested	1	corpus/lessons/round-91.md; corpus/lessons/round-91-verifier-spotcheck.md	89; 71-91
+r91	C2	operability (commit-message<->tree capability)	CAP_MESSAGE_TREE fail -> pass	NOT VERIFIED — stubD/stubE also pass; spot-check re-measured NOT VERIFIED	met-not-verified	1	corpus/lessons/round-91.md; corpus/lessons/round-91-verifier-spotcheck.md	92; 145-208
+r92	C1	coverage (knowledge-map ground K)	K_HELD_BACKED 8/15 -> 9/15 via admitted C03	MET on the frozen counter; contested — critic finding 3: a full forgery (stub entry + fabricated votes + invented mined row) passes 12/12 legs; finding 4: all-n/a votes pass	met-contested	1	corpus/lessons/round-92.md; SCORECARD.md	138; 1705-1741
+r92	C2	calibration (coverage token vs saved records)	README_TOKEN_LEGEND_MISMATCH 2 -> 0	MET on the frozen counter; contested — partial / held+seed / trailing-cell / record-deletion moves and the probe-shadow vector also pass (findings 1-2, 5)	met-contested	1	corpus/lessons/round-92.md; SCORECARD.md	139; 1705-1741
+# r89	2 of 2 failed/killed
+# r90	2 of 2 (1 met-contested, 1 met-not-verified)
+# r91	2 of 2 (1 met-contested, 1 met-not-verified)
+# r92	2 of 2 met-contested (round admitted on independent non-author re-derivation, spot-check §2; counter forgery routed to r93 as §6 item 5)
+# total	8 of 8 claims invalid; running rate 8/8 = 100%
+# met-on-the-counter subset (r90-r92): 6 of 6 contested or not-verified = 100%
+# round admissions: r89 not admitted (honest stop); r90 not admitted (rejected-honest-stop); r91 not admitted (rejected-honest-stop); r92 admitted
+# sub-class split: 2 outright counter-failures (r89 C1 MISS, r89 C2 KILLED); 4 met-but-contested (r90 C1, r91 C1, r92 C1, r92 C2); 2 met-but-not-verified (r90 C2, r91 C2)
+# caveat 1: SCORECARD.md:1674 (r91 section heading) still reads "(C1 verified)"/"(C2 capability, verified)"; the correction of record is the r92 SCORECARD correction row (r91 D2) plus the round-91 lesson/spot-check — the rate must be computed from corrections, never first-pass headings
+# caveat 2: r92's contest is in-round (critic findings recorded at adjudication), not "later" as the proposal's first phrasing has it; the sub-class split keeps the two readings separable
+# caveat 3: r93 is self-referential for this metric — r93's claims ARE the anti-reachability instruments (successor counters + forge battery), so the first post-fix reading of the rate is r93's own adjudication, ideally appended by a later round, not by this round's own gate

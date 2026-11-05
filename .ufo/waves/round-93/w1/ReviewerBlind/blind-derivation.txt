@@ -1,0 +1,63 @@
+=== BLIND DERIVATION — authored fixture bytes ===
+index.html bytes=316 sha256=46e51761af28b05c4c382c8ee72f9d77fee6f20d0b904f69b1c7f9a2214deb45
+app.js     bytes=101 sha256=fb079fa20d08a1309bed44c80743293d37ec8cd51c7ef7f9ee465e0d0d5aa593
+[derive] static <title> literal: 'r77 probe page'
+[derive] external script src attr: 'app.js'
+[derive] inline script block bytes (raw, incl. surrounding newlines): 'document.title = document.title + " [loaded]";'
+[derive] inline suffix string literal: ' [loaded]'
+[derive] #marker text: 'inert static fixture for revenger round 77'
+[derive] app.js __r77probe marker literal: 'r77-inert' answer literal: '42'
+[DERIVED] final document title = static_title + inline suffix = 'r77 probe page [loaded]'
+
+=== BLIND DERIVATION — record JSON (corpus/live/runs/round-77/inspection.json) ===
+record bytes=10816 sha256=b045a4eecf2d77cfdee5de83e5864fcadbd6fd54e749f6985a04ecbeebaae868
+operation                = 'inspect_web_page'
+predicate_type           = 'rea.web-page-inspection'
+provider.id              = 'rea-cdp-browser'
+provider.name            = 'REA Chrome DevTools Protocol observation provider'
+provider.version         = '2'
+evidence_id              = 'ev_a0134e6f482424baa278ec374f9bf0e984738a113106556b9933d2fd403918fd'
+evidence_id shape        = prefix 'ev_' + 64 lowercase hex, total 67 chars, well-formed=True
+parameters.cdp_endpoint  = 'http://127.0.0.1:9333'
+parameters.allowed_origins = ['http://127.0.0.1:8477']
+target.type              = 'page'
+target.title (record)    = 'r77 probe page [loaded]'
+target.url               = 'http://127.0.0.1:8477/index.html'
+target.origin            = 'http://127.0.0.1:8477'
+target.target_id         = 'F6A6B5C8E48625523BCEA0CE47F68B42'
+metadata.dom_urls        = [{'node_index': 10, 'attribute': 'src', 'url': 'http://127.0.0.1:8477/app.js', 'destination_scope': 'approved'}]
+metadata.excluded_dom_urls = 0
+[CHECK] derived title 'r77 probe page [loaded]' == record target.title 'r77 probe page [loaded]': True
+browser.product          = 'Chrome/156.0.8078.74'
+scripts.total            = 2 ; len(items) = 2
+[CHECK] cdp_hash vs sha256 of authored texts:
+  script item keys: ['cdp_hash', 'frame_id', 'is_module', 'language', 'length', 'origin', 'resource_reconciliation', 'script_key', 'source', 'source_map_url', 'url']
+  script: url='http://127.0.0.1:8477/index.html' length=46 cdp_hash='ee8e9624a274382bf825525637e2db30823eda881461276f6eed7e990b157783' has_source=None
+    sha256(inline index.html script text :: inner-bytes-exact) = ee8e9624a274382bf825525637e2db30823eda881461276f6eed7e990b157783 match=True
+    sha256(inline index.html script text :: inner-strip) = ee8e9624a274382bf825525637e2db30823eda881461276f6eed7e990b157783 match=True
+    sha256(inline index.html script text :: inner-strip-newlines) = ee8e9624a274382bf825525637e2db30823eda881461276f6eed7e990b157783 match=True
+  script item keys: ['cdp_hash', 'frame_id', 'is_module', 'language', 'length', 'origin', 'resource_reconciliation', 'script_key', 'source', 'source_map_url', 'url']
+  script: url='http://127.0.0.1:8477/app.js' length=101 cdp_hash='fb079fa20d08a1309bed44c80743293d37ec8cd51c7ef7f9ee465e0d0d5aa593' has_source=None
+    sha256(app.js file bytes :: app.js-file-bytes) = fb079fa20d08a1309bed44c80743293d37ec8cd51c7ef7f9ee465e0d0d5aa593 match=True
+[CHECK] authored app.js byte length = 101
+[CHECK] authored inline strip-newlines char length = 46, inner-strip = 46
+resources count          = 1
+  resource keys: ['content_size', 'mime_type', 'origin', 'resource_key', 'type', 'url']
+  resource.content_size = 101
+  resource.mime_type = 'text/javascript'
+  resource.origin = 'http://127.0.0.1:8477'
+  resource.resource_key = 'res_0948976cb8f3ecdc1bafa5111ba86f55744db2803a8f1fc2a03cd66ee1b69548'
+  resource.type = 'Script'
+  resource.url = 'http://127.0.0.1:8477/app.js'
+frames count             = 1
+  frame: {'frame_id': 'F6A6B5C8E48625523BCEA0CE47F68B42', 'parent_frame_id': None, 'url': 'http://127.0.0.1:8477/index.html', 'origin': 'http://127.0.0.1:8477'}
+completeness.status      = 'policy_filtered'
+completeness.policy_filtered_sections = ['accessibility', 'console_text', 'json_body_shapes', 'resources', 'script_sources', 'scripts', 'storage_keys', 'websocket_shapes']
+network.requests count   = 0
+storage.origin           = 'http://127.0.0.1:8477' usage_bytes=0
+dom.total_nodes          = 24
+confidence='observed' authority='external-service'
+=== ADDENDUM: script item reconciliation fields ===
+  url='http://127.0.0.1:8477/index.html' script_key='scr_2997de7882ae91b92cedeba26ad7deca82f539db8892c7fc36f60fc8a1b075f9' origin='http://127.0.0.1:8477' language='JavaScript' is_module=False length=46 resource_reconciliation={'status': 'unmatched', 'reason': 'no_exact_sanitized_url'} source_map_url=None
+  url='http://127.0.0.1:8477/app.js' script_key='scr_b7325a1ff73303f426dc0feb516163df2aab7e85696ae57a2a40e065f108e985' origin='http://127.0.0.1:8477' language='JavaScript' is_module=False length=101 resource_reconciliation={'status': 'exact', 'resource_key': 'res_0948976cb8f3ecdc1bafa5111ba86f55744db2803a8f1fc2a03cd66ee1b69548'} source_map_url=None
+  script items with source text present: [True, True]

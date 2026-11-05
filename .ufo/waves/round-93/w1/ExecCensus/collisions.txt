@@ -1,0 +1,22 @@
+# collisions.txt — seat ExecCensus, round 93 w1, assimilation id-collision receipt
+# run 2026-11-05T14:52:50Z. /home/vgpnk/Projects/shokuknow was accessed READ-ONLY (file reads + grep only; no script of that tree executed, nothing written there).
+# method = frozen round-contract precedent (r67 CriticAssim / r70 W2Quarantine / r91 assimilation guard):
+#   registry ids = row-shaped ids of the lane registry; staged ids = row-shaped ids of the merge package; collisions = comm -12 of the sorted unique id lists.
+
+command (two grep extracts + comm -12):
+  comm -12 \
+    <(grep -oE '^\|[[:space:]]*S[0-9]{3,}[[:space:]]*\|' /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md        | grep -oE 'S[0-9]{3,}' | sort -u) \
+    <(grep -oE '^\|[[:space:]]*S[0-9]{3,}[[:space:]]*\|' /home/vgpnk/Projects/shokuknow/merge/revenger/SOURCES.append.md          | grep -oE 'S[0-9]{3,}' | sort -u) \
+    | wc -l
+
+results:
+  lane_rows   = 494   (grep -cE '^\|[[:space:]]*S[0-9]{3,}[[:space:]]*\|' corpus/SOURCES.md)
+  staged_rows = 155   (same pattern over SOURCES.append.md)
+  COLLISION_COUNT = 155   (expected 155 — MATCHES)
+
+collision ids: S047 through S201, contiguous (first=S047, last=S201; 155 ids; every staged id collides — mass id drift, not a per-row collision).
+
+# reading: the staged package is wholly un-adoptable by id under CORPUS.md rule 2 /
+# the drift rule; supports claims.md's "Assimilation: expected none ... verified fresh
+# at round end with the frozen collision check" and the still-open L0 r91 question
+# (l0-questions.md:304). Nothing adopted; nothing written outside this wave dir.

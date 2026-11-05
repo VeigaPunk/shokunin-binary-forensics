@@ -1,0 +1,20 @@
+{
+  "schema": "revenger-quote-audit-v1",
+  "sid": "S497",
+  "row_url": "https://raw.githubusercontent.com/dotnet/runtime/b22bfee2010118c58ae143c3b8a1aaee3d0c8c4c4/docs/design/specs/Ecma-335-Augments.md",
+  "fetch_url": "https://raw.githubusercontent.com/dotnet/runtime/b22bfee2010118c58ae143c3b8a1aaee3d0c8c4c4/docs/design/specs/Ecma-335-Augments.md",
+  "final_url": "https://raw.githubusercontent.com/dotnet/runtime/b22bfee2010118c58ae143c3b8a1aaee3d0c8c4c4/docs/design/specs/Ecma-335-Augments.md",
+  "http_status": 200,
+  "fetched_at": "2026-11-05",
+  "fetch_sha256": "1e6e225aa41cd1ccf957b3c13ec4682fc6be2265327c3632f2e8fa01279b0828",
+  "length": 69577,
+  "anchor": "\"ECMA-335 CLI Specification Addendum\" title and preamble paragraph, line 3; commit b22bfee2010118c58ae143c3b8a1aaee3d0c8c4c4 (2026-10-18) — \"This is a list of additions and edits to be made in ECMA-335 specifications.\"",
+  "quote": "This is a list of additions and edits to be made in ECMA-335 specifications.",
+  "span": {"start": 39, "end": 115},
+  "verdict": "verified",
+  "body_derivation": "raw response bytes of the pinned-commit raw URL",
+  "normalization": "",
+  "attempts": [],
+  "seat": "ScoutS136",
+  "notes": "Blob sha at the pinned commit is 6a929a15f286e5c0f95e92050d7eece7e819fddf (GitHub trees API, docs/design/specs/Ecma-335-Augments.md). Span offsets are character offsets into the UTF-8 decoded body (corpus/audit_source_quotes.py indexes decoded text). The byte-identical body was also fetched from the main branch URL this round (same sha256), and matches the r92 snapshot corpus/live snapshot .ufo/waves/round-92/w1/ScoutR92Managed/snapshots/Ecma-335-Augments.md."
+}
