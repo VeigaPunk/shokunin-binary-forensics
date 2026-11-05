@@ -1,0 +1,15 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S503",
+ "verdict": "verified",
+ "fetch_url": "https://raw.githubusercontent.com/morluto/rea/12f6e0974cc0db0b3a9b86246accc76556837222/.agents/skills/reverse-engineer-anything/SKILL.md",
+ "http_status": 200,
+ "fetched_at": "2026-11-05",
+ "fetch_sha256": "b5f17fdff254804c723c8fa34a5b51180569e117437cddc7305dba2c59796ccc",
+ "length": 35095,
+ "quote": "Use shipped-artifact or requested runtime evidence to explain features, compare versions, decompile code, or guide a reconstruction.",
+ "span": {
+  "start": 257,
+  "end": 389
+ }
+}

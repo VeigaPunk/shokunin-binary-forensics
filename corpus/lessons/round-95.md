@@ -95,3 +95,17 @@ Found-none sweep: not needed — nine mined (M1–M9).
 
 - Adopted as practice, receipt set PARTIAL: proposal 1 of `considerthese/2026-11-05.md` ("Counter-reachability review of each new `claims.md`, written before the round lands"). Evidence: `reports/round-95/controls/` (do-nothing base rc 1, selftest pass, red-v3 10/10 reach + the mutant survives on v3, full battery kills) and this round's M2 (a self-test caught a helper-only delta before the freeze). ConnectorOverlap's receipt check (`.ufo/waves/round-95/w1/ConnectorOverlap/connector.md`) finds the receipt set does NOT yet cover every named class: no stub-that-prints-the-pass-line control exists, and twelve of the twenty-two self-test deltas are receipted only by the aggregate `SELFTEST_C1V4=pass` line. Recorded as a gap, not a verdict; routed to r96 (receipt each delta individually).
 - Not adopted: proposal 2 (frozen-counter validity rate) — re-measured by the connector seat over the r94 window in its wave dir (`measurement-r95.tsv`); reported, not a criterion.
+
+## Correction (round 96, appended 2026-11-05 — the spot-check's §5 item 1)
+
+The Gate line "The non-author votes (ReviewerGate, ReviewerBlind, CriticR95) decide the
+admission under the frozen counter" mislabels the vote seats: all three were lane-dispatched
+wave seats (`.ufo/waves/round-95/w1/`), and `LEARNING.md` (§Discernment is checked from
+outside) holds that "a subagent the lane dispatched is still the lane". Corrected of record:
+those three votes are LANE-INTERNAL votes bound to the candidate digest; they did not decide
+the admission. The outside check that decided it is the non-author closure
+(`corpus/lessons/round-95-verifier-spotcheck.md`, admission: true, with its own re-open of
+S500/S501). The filed bytes above stay as written; this appended correction supersedes the
+quoted sentence (CORPUS.md corrections rule). Round 96 keeps the same disclosed structure:
+lane-internal votes, verdicts stated as "met on the frozen counter, pending the non-author
+closure".

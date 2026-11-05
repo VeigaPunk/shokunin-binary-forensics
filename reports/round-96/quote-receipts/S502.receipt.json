@@ -1,0 +1,15 @@
+{
+ "schema": "revenger-quote-audit-v1",
+ "sid": "S502",
+ "verdict": "verified",
+ "fetch_url": "https://raw.githubusercontent.com/morluto/rea/12f6e0974cc0db0b3a9b86246accc76556837222/.agents/skills/reverse-engineer-anything/references/native-and-artifacts.md",
+ "http_status": 200,
+ "fetched_at": "2026-11-05",
+ "fetch_sha256": "c818ee342477a2b1bf613f8b2074f284298edd5ab989ac15f97f728de563cc24",
+ "length": 38167,
+ "quote": "rea decompile <path> --file-offset=0x... --provider ghidra` resolves the source byte offset internally",
+ "span": {
+  "start": 26309,
+  "end": 26411
+ }
+}
