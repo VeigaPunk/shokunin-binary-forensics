@@ -5,7 +5,7 @@ source: S002 — installed REA skill, `~/.agents/skills/reverse-engineer-anythin
 verified-at: 2026-11-05 — S502 and S503 fetched this round at REA revision `12f6e09` (bodies committed at `reports/round-96/quote-receipts/raw/`, fetch log `reports/round-96/quote-receipts/fetch-log.md`); the session record was produced and saved this round on this host
 recheck: re-open the two S502/S503 raw URLs and compare `fetch_sha256` against the committed bodies; re-run `rea decompile` on the committed fixture and `sha256sum` the record files against the digests in the derivation table; re-run `rea doctor` and compare the ghidra-scope lines
 coverage-map: C02 — native analysis sessions (decompile/disassemble providers)
-admission-status: candidate
+admission-status: admitted
 
 # Native analysis sessions — the documented routes and one demonstrated session on this host
 

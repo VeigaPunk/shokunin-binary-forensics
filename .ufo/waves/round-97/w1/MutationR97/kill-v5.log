@@ -1,0 +1,20 @@
+# MutationR97 kill log, round 97 wave 1: C1 admission counter v5 (frozen)
+# counter: reports/round-96/c1_k_admit_counter5.py sha256 805ffb8aabbdbd451781dd831afce7ab41258979489d29ae789ae9fc1a23ad19
+# harness: reports/round-97/mutants/mutate.py sha256 9867a3c4fa2f7626575d9d7c35e88066e46a6ecc1ef3b19b89af8a542e566095
+# run (cwd = lane, python3 -B, PYTHONUTF8=1, HYAKU_SCRATCH=<scratch>/hyaku):
+#   python3 -B reports/round-97/mutants/mutate.py --counter reports/round-96/c1_k_admit_counter5.py --out <scratch>/v5f --kill-tree <scratch>/base --selftest --jobs 8 --label V5
+# base archive: git -C <lane> archive --format=tar 7d380ce corpus reports .ufo | tar -x -C <scratch>/base
+# unmutated v5 on base: rc=1, 20 verdict lines; diff vs reports/round-97/controls/c1-do-nothing-v5.log: none
+# unmutated v5 self-test: SELFTEST_C1V5=pass legs=33 rc=0
+
+NO_SITE leg=C1_TRIO (no comparison, if or not decides it)
+EXCLUDED_MSG=7 (WHY-text-only decisions; not leg sites): L307,L330,L382,L394,L413,L426,L455
+MUTANTS_WRITTEN=117 counter=c1_k_admit_counter5.py label=V5
+BASE_TREE rc=1 verdicts=20
+MUTANT_KILL_V5=81/117
+MUTANT_SELFTEST_V5=110/117
+MUTANT_KILL_V5_UNION=110/117
+rc=0 (mutate.py exit)
+
+SURVIVORS_TREE (36 of 117, base archive): m002-cmp-base_readme-L144,m003-if-base_readme-L153,m004-cmp-base_readme-L153,m011-cmp-check_registry-L190,m029-cmp-check_votes-L240,d-host,m059-cmp-check_sources-L341,m061-cmp-check_sources-L345,m062-not-check_sources-L353,m063-cmp-check_sources-L356,m064-cmp-check_sources-L357,m065-cmp-check_sources-L362,m066-cmp-check_sources-L364,m067-not-check_sources-L368,m068-cmp-check_sources-L371,m069-cmp-check_sources-L373,m070-cmp-check_sources-L375,m071-cmp-check_sources-L377,m072-cmp-check_sources-L379,m079-if-check_embed_nonvacuous-L407,m080-not-check_embed_nonvacuous-L407,m081-if-check_embed_nonvacuous-L411,m083-not-check_pycache-L422,m087-if-check_admitted_union-L443,m096-if-evaluate-L476,m097-if-evaluate-L478,m098-cmp-evaluate-L478,m099-cmp-evaluate-L478,m100-not-evaluate-L480,m101-cmp-evaluate-L480,m103-cmp-evaluate-L489,m104-cmp-evaluate-L489,m108-cmp-evaluate-L513,m115-if-_raw_line-L559,m116-cmp-_raw_line-L559,m117-cmp-_raw_line-L559
+SURVIVORS_SELFTEST (7, frozen self-test; union survivors = self-test survivors): m011-cmp-check_registry-L190,m029-cmp-check_votes-L240,d-host,m059-cmp-check_sources-L341,m061-cmp-check_sources-L345,m064-cmp-check_sources-L357,m079-if-check_embed_nonvacuous-L407

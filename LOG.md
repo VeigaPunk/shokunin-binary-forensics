@@ -1471,3 +1471,11 @@ no row, supports no claim).
 - **Sources:** rows 501 → 504 (S502, S503, S504; mined, tier A, opened 2026-11-05, used-by the candidate entry). Census round
   start exit 0; landing-tree exit 0.
 - **Assimilation: none** (155 staged-id collisions re-verified by ConnectorOverlap; L0 `revenger | round-91` unanswered).
+
+## Round 97 (hyaku run 15, attempt 1) — C02 held on the frozen v6 counter (admission pending the non-author closure); the counter's fresh-holdout reach measured (8/12 → 5/12 accepted)
+
+- Motivating evidence: round 96 `C1 NOT VERIFIED` (v5 used-by path-form leg fails on the real tree; `reports/round-96/c1-tree-flip-diagnostic.log`), and the routed critic vectors (`.ufo/waves/round-96/w1/CriticR96/receipts/summary.json`, 14 accepted, not 13).
+- Claims and controls frozen at `3b4b4e5` (`reports/round-97/claims.md`, `controls/c1-do-nothing-v5.log`, `controls/c2-v5-reach-from-r96-receipts.txt`); v6 counter frozen at `85a2c7e` with Amendment A recorded before the freeze.
+- Wave: `.ufo/waves/round-97/w1/` (10 seats, `w1-results.json`); fresh holdout `.ufo/waves/round-97/w1/CriticR97/holdout-v6.log`; mutation evidence `.ufo/waves/round-97/w1/MutationR97/`.
+- Corrections and findings: M5 (used-by path form), M8 (14 accepted, not 13), M9 (own-work quote not byte-verbatim; S505), M10 (holdout forgeries accepted by v5; v6 accepts 5 of 12).
+- Landing: `corpus/README.md` (C02 `partial → held`, knowledge cell = the entry), `corpus/knowledge/round-96-native-analysis-sessions.md` (`admission-status: admitted`), `corpus/SOURCES.md` (S505), `corpus/lessons/round-97.md`, `SCORECARD.md`, `SKILL.md` (three probes), `reports/round-97/`.

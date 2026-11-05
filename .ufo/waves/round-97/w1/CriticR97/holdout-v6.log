@@ -1,0 +1,17 @@
+FR00-honest-control | control | rc=0 | pass | K=13/15 | - | pass | control-ok
+FR01-usedby-case-path | used-by path-form (case-only) | rc=1 | fail | K=13/15 | C1_SOURCES,C1_VERDICT | FAIL | refused
+FR02-entry-leading-bom | entry bytes (BOM) | rc=0 | pass | K=13/15 | - | FAIL | ACCEPTED-by-v5
+FR03-c02-held-entry-absent | README vs tree | rc=1 | fail | K=12/15 | C1_C02_CITES,C1_ADMITTED,C1_TRIO,C1_VOTES,C1_LINT,C1_EMBEDDED,C1_EMBED_NONVACUOUS,C1_QUOTES,C1_K_HELD_BACKED,C1_VERDICT | FAIL | refused
+FR04-c02-held-plus-other-row | README one-row-only | rc=1 | fail | K=13/15 | C1_ONLY_C02,C1_VERDICT | FAIL | refused
+FR05-vote-foreign-artifact-sha | vote artifact binding | rc=1 | fail | K=13/15 | C1_VOTES,C1_VERDICT | FAIL | refused
+FR06-row-dup-held-over-held | coverage row set | rc=1 | fail | K=13/15 | C1_ADMITTED_UNION,C1_VERDICT | FAIL | refused
+FR07-row-dup-target-over-held | coverage row set | rc=1 | fail | K=13/15 | C1_ADMITTED_UNION,C1_VERDICT | FAIL | refused
+FR08-headers-in-fence | provenance header | rc=0 | pass | K=13/15 | - | FAIL | ACCEPTED-by-v5
+FR09-verified-at-stale | provenance date | rc=0 | pass | K=13/15 | - | FAIL | ACCEPTED-by-v5
+FR10-na-boilerplate-on-pass | vote decision | rc=0 | pass | K=13/15 | - | FAIL | ACCEPTED-by-v5
+FR11-receipt-owner-swap | receipt fetch identity | rc=1 | fail | K=13/15 | C1_SOURCES,C1_VERDICT | FAIL | refused
+FR12-own-work-dangling | own-work record pointer | rc=0 | pass | K=13/15 | - | FAIL | ACCEPTED-by-v5
+FR02b-entry-bom-unsigned | entry bytes (BOM), stale vote binding | rc=1 | fail | K=13/15 | C1_VOTES,C1_VERDICT | FAIL | refused
+FR08b-headers-in-fence-unsigned | provenance header, stale vote binding | rc=1 | fail | K=13/15 | C1_VOTES,C1_VERDICT | FAIL | refused
+FR09b-verified-at-stale-unsigned | provenance date, stale vote binding | rc=1 | fail | K=13/15 | C1_VOTES,C1_VERDICT | FAIL | refused
+BUILD_OK=True vectors=15 accepted=5

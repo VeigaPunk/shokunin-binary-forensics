@@ -1,0 +1,73 @@
+C1_VERDICT=pass
+DELTA FG01-shadow-decorated-admitted verdict=pass legs=none
+DELTA FG02-shadow-nested-dir verdict=pass legs=none
+DELTA FG03-shadow-uppercase-ext verdict=pass legs=none
+DELTA FG04-shadow-non-utf8 verdict=pass legs=none
+builder note FG05-vote-html-comment-artifact: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-foibgj5j/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG05-vote-html-comment-artifact verdict=pass legs=none
+builder note FG06-vote-symlink-alias: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-wql2lo7v/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG06-vote-symlink-alias verdict=pass legs=none
+builder note FG07-sid-double-space-evade: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-clmn0rui/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG07-sid-double-space-evade verdict=pass legs=none
+DELTA FG08-loose-pyc-file verdict=pass legs=none
+builder note FG09-receipt-quote-irrelevant: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-fw_cko3w/reports/round-96/quote-receipts/S502.receipt.json'
+DELTA FG09-receipt-quote-irrelevant verdict=pass legs=none
+builder note FG10-sources-url-drift: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-6tgxj7ko/corpus/SOURCES.md'
+DELTA FG10-sources-url-drift verdict=pass legs=none
+builder note FG11-table-lie-fixture-swap: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-mdufg6z3/corpus/fixtures/pe-r75-headless-smoke/fixture.exe'
+DELTA FG11-table-lie-fixture-swap verdict=pass legs=none
+builder note FG12-tab-status-digest-invariant: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-mj58k2ou/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG12-tab-status-digest-invariant verdict=pass legs=none
+builder note FG13-status-below-window: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-eycwgbna/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG13-status-below-window verdict=pass legs=none
+builder note FG14-trio-line-shift: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-b0yt850o/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG14-trio-line-shift verdict=pass legs=none
+builder note FG15-qmap-extra-row: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-4g4d4qw3/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG15-qmap-extra-row verdict=pass legs=none
+builder note FG16-nbsp-status-fork: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-i2o99a29/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG16-nbsp-status-fork verdict=pass legs=none
+builder note FG18-usedby-dot-slash-alias: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-925oactx/corpus/SOURCES.md'
+DELTA FG18-usedby-dot-slash-alias verdict=pass legs=none
+builder note FG19-merged-fetch-log-line: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-dbbe5h_b/reports/round-96/quote-receipts/fetch-log.md'
+DELTA FG19-merged-fetch-log-line verdict=pass legs=none
+builder note FG20-prose-status-mention: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-pass/fixtures/fx-a19a845k/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG20-prose-status-mention verdict=pass legs=none
+C2_ACCEPTED=19/19
+C1_VERDICT=fail
+C1_ADMITTED=fail
+DELTA FG01-shadow-decorated-admitted verdict=fail legs=C1_VERDICT,C1_ADMITTED
+DELTA FG02-shadow-nested-dir verdict=fail legs=C1_VERDICT,C1_ADMITTED
+DELTA FG03-shadow-uppercase-ext verdict=fail legs=C1_VERDICT,C1_ADMITTED
+DELTA FG04-shadow-non-utf8 verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG05-vote-html-comment-artifact: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-r7wzh0r0/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG05-vote-html-comment-artifact verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG06-vote-symlink-alias: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-iwbx368w/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG06-vote-symlink-alias verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG07-sid-double-space-evade: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-mq6yq6bq/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG07-sid-double-space-evade verdict=fail legs=C1_VERDICT,C1_ADMITTED
+DELTA FG08-loose-pyc-file verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG09-receipt-quote-irrelevant: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-tsgv37uz/reports/round-96/quote-receipts/S502.receipt.json'
+DELTA FG09-receipt-quote-irrelevant verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG10-sources-url-drift: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-4vujuyue/corpus/SOURCES.md'
+DELTA FG10-sources-url-drift verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG11-table-lie-fixture-swap: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-ttu1iebn/corpus/fixtures/pe-r75-headless-smoke/fixture.exe'
+DELTA FG11-table-lie-fixture-swap verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG12-tab-status-digest-invariant: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-rpm43lk4/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG12-tab-status-digest-invariant verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG13-status-below-window: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-j98exhz_/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG13-status-below-window verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG14-trio-line-shift: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-lsudt1x8/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG14-trio-line-shift verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG15-qmap-extra-row: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-y40ufm6m/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG15-qmap-extra-row verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG16-nbsp-status-fork: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-p2we_brh/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG16-nbsp-status-fork verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG18-usedby-dot-slash-alias: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-fe8_dyrw/corpus/SOURCES.md'
+DELTA FG18-usedby-dot-slash-alias verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG19-merged-fetch-log-line: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-8f56d83a/reports/round-96/quote-receipts/fetch-log.md'
+DELTA FG19-merged-fetch-log-line verdict=fail legs=C1_VERDICT,C1_ADMITTED
+builder note FG20-prose-status-mention: [Errno 2] No such file or directory: '/fast/scratch/hyaku/revenger-r97/L1/c2v6/st/stub-fail/fixtures/fx-256qv970/corpus/knowledge/round-96-native-analysis-sessions.md'
+DELTA FG20-prose-status-mention verdict=fail legs=C1_VERDICT,C1_ADMITTED
+C2_ACCEPTED=0/19
+SELFTEST stub-pass accepted=19/19 stub-fail accepted=0/19
+SELFTEST verdict=OK

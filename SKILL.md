@@ -601,6 +601,24 @@ rows (entry command, verdict lines, pinned instrument sha, red/green logs) until
 | write scope | scratch only under `$HYAKU_SCRATCH/revenger-r96/battery5`; mutants are copies in scratch; writes nothing in the lane |
 | owner | revenger |
 
+| name | `c1_k_admit_counter6 (round 97 C1, coverage K; successor of `c1_k_admit_counter5`: used-by normalizer accepts census and fixture form (M5), decorated admitted lines count as admitted (M6), self-test leg count is the executed count (M7); adds C1_DERIV_TABLE and C1_ADMITTED_WS and tightens C1_SIDS, C1_SOURCES (URL and receipt-quote pinning), C1_PYCACHE and C1_RECEIPTS per the round-97 Amendment A) |
+| kind | probe (measurement over a committed tree; `--self-test` asserts an honest-fixture pass and the executed leg count, `--work` / `TMPDIR` honoured, no `/tmp` writes) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-97/c1_k_admit_counter6.py --tree <dir>` (cwd = lane root; `--rev <rev>` for a committed revision) |
+| pinned-value path | counter bytes `reports/round-97/c1_k_admit_counter6.py` (frozen at `85a2c7e`, claims `reports/round-97/claims.md` at `3b4b4e5`); controls `reports/round-97/controls/` (`red-v5-*`, `green-v6-*`, `base-v6.log`, `selftest-v6.log`) |
+| owner | revenger |
+
+| name | `forge_reach6 (round 97 C2 calibration; counts accepted forgery vectors for any counter path over `reports/round-97/forgeries/` (19 vectors, FG17 absent) and reproduces the frozen v5 reach 14/19; `--self-test` shows an always-pass stub 19/19 and an always-fail stub 0/19) |
+| kind | probe (instrument; the C2 counting line is `C2_ACCEPTED=<n>/19`) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-97/forge_reach6.py --counter <counter> --deltas reports/round-97/forgeries --work <scratch>` (`--self-test --work <scratch>` for the stub check) |
+| pinned-value path | `reports/round-97/forge_reach6.py`, `reports/round-97/forgeries/manifest.json`; `reports/round-97/controls/c2-v6-frozen.log`, `c2-v5-reproduced.log`, `c2-selftest-v6.log` |
+| owner | revenger |
+
+| name | `mutate (round 97 mutation harness for the admission counter; one mutant per leg decision (single-token inversion), `--kill-tree` and `--selftest` modes, prints `MUTANT_KILL_<label>=k/n` and the survivor list) |
+| kind | probe (instrument check; kill counts are denominator-specific, so compare only within one mutant set) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-97/mutants/mutate.py --counter <counter> --out <scratch> --kill-tree <base archive> --selftest --label V6 --jobs 6` |
+| pinned-value path | `reports/round-97/mutants/mutate.py`; `reports/round-97/controls/mutate-v6-kill.out` (`MUTANT_KILL_V6=107/140`, `MUTANT_SELFTEST_V6=137/140`) |
+| owner | revenger |
+
 ## 7. Cited sources — existence-checked
 
 | citation | exists at | credited for |
