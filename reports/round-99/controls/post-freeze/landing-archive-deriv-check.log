@@ -1,0 +1,32 @@
+# deriv_check on the landed entry
+DERIV host identity MATCH
+DERIV doctor verdict lines MATCH
+DERIV healthy scope checks MATCH
+DERIV failing scope checks MATCH
+DERIV scope-check classes MATCH
+DERIV registration states MATCH
+DERIV client registration count MATCH
+DERIV registration state split MATCH
+DERIV missing-or-stale registrations ("nine") MATCH
+DERIV ghidra-named scope checks MATCH
+DERIV ghidra scope checks healthy MATCH
+DERIV ghidra scope-check names MATCH
+DERIV ghidra headless launcher path MATCH
+DERIV doctor-printed ghidra and java versions MATCH
+DERIV engine and jadx classifications MATCH
+DERIV installed skill identity MATCH
+DERIV doctor binwalk or unblob checks MATCH
+DERIV installation paths ("three") MATCH
+DERIV installation state MATCH
+DERIV CLI package version MATCH
+DERIV inventory Evidence ID MATCH
+DERIV inventory substep status MATCH
+DERIV inventory members and sizes MATCH
+DERIV inventory root digest MATCH
+DERIV truth.json archive digest MATCH
+DERIV fixture digest MATCH
+DERIV record file digests MATCH
+DERIV S506 body digest MATCH
+DERIV S506 body length MATCH
+DERIV_ROWS=29 DERIV_MISMATCH=0
+# rc=0
