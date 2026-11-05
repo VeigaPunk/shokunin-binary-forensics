@@ -177,3 +177,24 @@ supersedes `1ea9260c…27b8`. The votes already cast on the old digest are kept 
 `.ufo/waves/round-98/w1/superseded-votes-digest-1ea9260c/`. They no longer count, and the same
 pinned voting seats re-vote on the new digest. The predicate, counter, target and kill rule are
 unchanged. The candidate stays `admission-status: candidate` until landing.
+
+## Amendment C — the critic's Q11 and Q16 FAILs are fixed in the candidate (recorded before the v7 freeze and before any landing-tree scoring, 2026-11-05)
+
+CriticR98 voted FAIL on Q11 and Q16 on digest `73f1d7e0…` (`.ufo/waves/round-98/w1/CriticR98/critic-audit-73f1d7e0.md`):
+- Q11: the registration counts (14 in total; the 4/8/1/1 split; the "nine") had no deriving command.
+- Q16: the derivation preamble ("Every value above was derived…") credited the table with values it
+  does not print, namely the version strings and exit codes.
+
+The author's edits, made before any scoring:
+- three derivation rows were added (client count 14, state split, missing-or-stale 9);
+- the preamble is rescoped to counts, identifiers and digests. Version strings and exit codes are
+  credited to the probe transcript, and the two exit codes observed in the session are disclosed as
+  such;
+- the Q06 Q-map row is corrected from n/a to PASS. The ZIP route is a producer call, and its premise
+  was digest-checked. CriticR98 made this finding.
+
+Lint: rc 0, all counts 0. **New vote-binding digest:**
+`6d27c129e6ec3bbd3699c84c0a06301d7aea88140e54a1ff8d8b34d5c0c5330f`. It supersedes `73f1d7e0…`.
+The votes cast on `73f1d7e0…` are kept in `.ufo/waves/round-98/w1/superseded-votes-digest-73f1d7e0/`,
+and the three pinned voting seats re-vote. If any re-vote records a FAIL, C1 is not verified.
+There is no further amendment loop this round.

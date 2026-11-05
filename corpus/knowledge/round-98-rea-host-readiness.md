@@ -61,8 +61,14 @@ this round and its output was compared with an expected value fixed before the r
 
 ### Derivation table
 
-Every value above was derived from the saved record by the command shown. The outputs are the
-commands' actual stdout. The commands run from the lane root.
+Every count, identifier and digest stated above is derived below from the saved record by the
+command shown, and the outputs are those commands' actual stdout. The commands run from the lane
+root. In a table cell, `\|` is the markdown escape of a shell pipe or a regex alternation bar.
+Version strings and exit codes are not derived here. Each comes from the probe transcript
+`corpus/live/runs/round-98/host-probes-r98.txt`, where every command line (`$ …`) is followed by
+its printed output and an `rc=` line. That transcript is the record for those values. The doctor
+exit code (1) and the `rea inspect-artifact` exit code (0) were observed in the L1 session and are
+not lines of any record.
 
 | Value | Deriving command | Recorded output |
 |---|---|---|
@@ -70,6 +76,9 @@ commands' actual stdout. The commands run from the lane root.
 | scope-check count | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -c '    ok: true'` and the same with `ok: false` | `11` and `13` (24 scope checks) |
 | scope-check classes | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -oE 'classification: [a-z_]+' \| sort \| uniq -c` | `10 config_drift` / `11 healthy` / `3 missing_analysis_engine` |
 | registration states | `awk '/^    - client:/{c=$3} /^      state:/{print c, $2}' corpus/live/runs/round-98/rea-doctor-r98.txt` | `antigravity missing claude_code missing codex aligned copilot_cli missing cursor missing devin aligned gemini_cli missing grok_bot manual grok_build aligned kimi missing omp stale opencode missing pi missing zcode aligned` (one pair per line) |
+| client registration count | `grep -c '^    - client:' corpus/live/runs/round-98/rea-doctor-r98.txt` | `14` |
+| registration state split | `awk '/^    - client:/{c=$3} /^      state:/{print $2}' corpus/live/runs/round-98/rea-doctor-r98.txt \| sort \| uniq -c` | `4 aligned` / `1 manual` / `8 missing` / `1 stale` |
+| missing-or-stale registrations ("nine") | `awk '/^    - client:/{c=$3} /^      state:/{print $2}' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -cE '^(missing\|stale)$'` | `9` |
 | ghidra scope checks healthy | `sed -n '/^scope_checks/,/^informational_checks/p' corpus/live/runs/round-98/rea-doctor-r98.txt \| grep -A1 '^  - name: ghidra' \| grep -c '    ok: true'` | `8` (of 8 ghidra-named scope checks) |
 | installation paths | `grep -c '^    paths\[3\]: ' corpus/live/runs/round-98/rea-doctor-r98.txt` and `grep -c '^    state: multiple' corpus/live/runs/round-98/rea-doctor-r98.txt` | `1` and `1` |
 | CLI package version | `grep cli_package_version corpus/live/runs/round-98/rea-doctor-r98.txt` | `  cli_package_version: 6.7.0` |
@@ -108,7 +117,7 @@ revision (S506 is the pinned revision, not the installed copy).
 | Q03 | PASS | The ZIP-inventory expectations (member paths, sizes, archive digest) come from `fixtures/archive-r2/truth.json`, fixed in round 2 before this run. The record under test does not supply them. |
 | Q04 | PASS | Each tool claim names the tool, version and function (`rea` CLI 6.7.0 `doctor` and `inspect-artifact`, provider `rea-artifact-graph`) and scores only what that tool printed. Version lines are probe outputs, not capability. |
 | Q05 | PASS | Each readiness verdict carries its probe class. Only the ZIP-inventory row is a capability probe (command, date, exit 0, Evidence ID). Doctor and version rows are labelled configuration, and no presence is called capability. |
-| Q06 | n/a | No fixture was authored or edited this round. The archive-r2 fixture's premise is its round-2 truth file, cross-checked by digest in the derivation table; see Q03. |
+| Q06 | PASS | The ZIP-inventory producer call ran on `fixtures/archive-r2/fixture.zip`. Its premise, the archive digest and members in round 2's `truth.json`, matches the fixture bytes: `sha256sum` gives `857989f5…`, which equals truth.json `archive_sha256`, as the derivation table shows. No fixture was authored or edited this round. |
 | Q07 | n/a | No parser accept, refuse or cause prediction is offered by this entry; see Q07 in corpus/QUALITY.md. |
 | Q08 | n/a | Historical criterion superseded by Q11, which is applied below. |
 | Q09 | PASS | The digests bind exact committed bytes only (fixture, record files, S506 body). None is offered as origin, completeness or authenticity. |

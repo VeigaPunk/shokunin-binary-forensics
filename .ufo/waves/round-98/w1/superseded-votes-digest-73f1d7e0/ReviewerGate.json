@@ -1,0 +1,36 @@
+{
+ "seat": "ReviewerGate",
+ "role": "reviewer",
+ "candidate_sha256": "73f1d7e044df04373a36c1f94f7e7216a7a513043ef769d5567a98cb53dd80e7",
+ "decisions": {
+  "Q01": "PASS",
+  "Q02": "PASS",
+  "Q03": "PASS",
+  "Q04": "PASS",
+  "Q05": "PASS",
+  "Q06": "n/a",
+  "Q07": "n/a",
+  "Q08": "n/a",
+  "Q09": "PASS",
+  "Q10": "PASS",
+  "Q11": "PASS",
+  "Q12": "n/a",
+  "Q13": "n/a",
+  "Q14": "n/a",
+  "Q15": "n/a",
+  "Q16": "PASS",
+  "Q17": "n/a"
+ },
+ "notes": {
+  "Q06": "Amendment B keeps the no-fixture-authored premise; the archive-r2 truth cross-check stays in the derivation table (Q03). Digest of the amended entry recomputed by me: 73f1d7e044df04373a36c1f94f7e7216a7a513043ef769d5567a98cb53dd80e7; see gate-audit-amendment-b.md.",
+  "Q07": "No parser accept/refuse/cause prediction exists in the amended entry either; the reworded Hopper clauses assert only same-day doctor state, not run-time ordering.",
+  "Q08": "Superseded by Q11, applied in full including the three derivation rows Amendment B added (ghidra healthy count 8, installation paths 1/1, S506 body length 16650), all re-run byte-equal; see gate-audit-amendment-b.md.",
+  "Q12": "No rejected registry row is load-bearing and no flip is cited by the amended entry; S506/S507 remain tier A, status mined. See Q12 in gate-audit-amendment-b.md.",
+  "Q13": "No verifier is credited as mutation-guarding any clause of the amended entry; the recheck line names re-open, re-run and re-derive procedures only. See Q13.",
+  "Q14": "Amendment B split the byte count out of the S506 digest row into its own wc -c derivation row, so the entry still contains no hex string quoted with a byte count and no truncated run carrying a length.",
+  "Q15": "No lane-tree git identity sentence exists in the amended entry; the pinned REA revision remains part of a fetched URL whose served bytes I re-fetched byte-identically on 2026-11-05.",
+  "Q17": "No adjudication relocated a cited artifact for this entry; every cited path resolves at commit 0146c0a. See Q17 in gate-audit-amendment-b.md."
+ },
+ "artifact_path": ".ufo/waves/round-98/w1/ReviewerGate/gate-audit-amendment-b.md",
+ "artifact_sha256": "33c234373fe11a850c39b749fdce72b4c01349de5b99c0c5e1a495df9d9004be"
+}
