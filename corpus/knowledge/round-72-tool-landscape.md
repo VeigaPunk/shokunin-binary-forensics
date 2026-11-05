@@ -3,6 +3,8 @@ source: S075 — REA setup documentation, https://github.com/morluto/rea, `docs/
 source: S076 — REA MCP prompts documentation, https://github.com/morluto/rea, `docs/mcp-prompts.md`, last file revision 2026-10-26; scope is prompt/data boundaries and generated workflow semantics.
 source: S077 — REA feature spec and repository verification record, https://github.com/morluto/rea, `docs/specs/2356-wasm-interface-comparison/spec.md` and `verification.md`, feature spec dated 2026-10-13; scope is a feature-specific WebAssembly Evidence comparison workflow, not a general clean-room process.
 source: S095 — REA agent-environment implementation index, https://github.com/morluto/rea, `docs/specs/agent-environments/README.md` “Agent environment implementation index”, last file revision 2026-10-25; scope is that index's named feature-spec and verification links, not a generic clean-room protocol.
+source: S498 — REA root README, https://github.com/morluto/rea, re-opened 2026-11-05 at the then-current main revision as a drift check of S054's declared scope; fetch receipt `reports/round-94/quote-receipts/S498.receipt.json`.
+source: S499 — REA setup documentation, https://github.com/morluto/rea `docs/installation.md`, re-opened 2026-11-05 as a drift check of S075's approval-boundary scope; fetch receipt `reports/round-94/quote-receipts/S499.receipt.json`.
 verified-at: 2026-10-27; all linked content was opened read-only from the sources in `corpus/SOURCES.md` and the short-link screen at `reports/round-72/shortlink-dispositions.md`. No tool was installed or executed.
 recheck: Re-open the exact URLs, headings and pinned revisions in the `S###` rows in `corpus/SOURCES.md`; a newer README, release, case page or paper revision requires a new source check. This entry is documentation-only and has no executable tool-recheck command.
 coverage-map: C15 — selected reverse-engineering tool repositories and their declared boundaries; this is a source-map, not a tool installation/readiness map and not a claim of complete tool coverage.
@@ -68,6 +70,7 @@ The publisher page for *Practical Malware Analysis* S091 was rejected as a sourc
 | Q14 | n/a | No hex string or byte count appears. |
 | Q15 | PASS | No Git object or tree identity is asserted in the prose; revision locators are kept in the SOURCES registry. |
 | Q16 | PASS | Each tool claim is restricted to the cited project's own documented output/scope; no claim reaches beyond the cited text. |
+| Q17 | n/a | No sentence credits a script, table or command with covering a set: every table cell states only what its cited source's own text states, and no command output is embedded or re-derived in this entry. |
 
 ## Observation, inference, unknown
 

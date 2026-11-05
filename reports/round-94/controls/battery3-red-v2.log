@@ -1,0 +1,33 @@
+== red-v2: frozen v2 counter reach over the committed r93 critic vectors ==
+F10-dup-status R1-dup-status-real: verdict=pass
+F10-dup-status: v2_reach=yes (1/1)
+F11-forged-registry A3-forged-registry: verdict=pass
+F11-forged-registry: v2_reach=yes (1/1)
+F12-case-dup-seat A21a-case-dup-seat: verdict=pass
+F12-case-dup-seat A21b-space-dup-seat: verdict=pass
+F12-case-dup-seat R3-case-dup-seat-real: verdict=pass
+F12-case-dup-seat: v2_reach=yes (3/3)
+F14-artifact-binding A1-shared-artifact: verdict=pass
+F14-artifact-binding A4-empty-artifact: verdict=pass
+F14-artifact-binding A5-registry-as-artifact: verdict=pass
+F14-artifact-binding: v2_reach=yes (3/3)
+F15-traversal A2-traversal: verdict=pass
+F15-traversal R7-traversal-real: verdict=pass
+F15-traversal: v2_reach=yes (2/2)
+F16-body-source A9-body-source: verdict=pass
+F16-body-source R2-body-source-real: verdict=pass
+F16-body-source: v2_reach=yes (2/2)
+F17-vacuous-na A17-vacuous-na: verdict=pass
+F17-vacuous-na R8-vacuous-na-real: verdict=pass
+F17-vacuous-na: v2_reach=yes (2/2)
+F18-ws-mixed-fence A27-ws-output: verdict=pass
+F18-ws-mixed-fence A14b-mixed-fence: verdict=pass
+F18-ws-mixed-fence R5-ws-output-real: verdict=pass
+F18-ws-mixed-fence R4-mixed-fence-real: verdict=pass
+F18-ws-mixed-fence: v2_reach=yes (4/4)
+supplementary A6-forged-oracle: verdict=pass
+supplementary A6b-truth-json-touched: verdict=pass
+supplementary R6-forged-oracle-real: verdict=pass
+F13-role-mismatch: v2_reach=receipt-backed (.ufo/waves/round-93/w1/CriticR93/findings.md finding 3 (A28-author-self-vote, A29-role-mismatch: verdict=pass))
+V2_REACH_NEW=8/8 runnable + 1 receipt-backed
+RED_V2_VERDICT=pass
