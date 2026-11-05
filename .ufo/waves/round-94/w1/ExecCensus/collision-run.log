@@ -1,0 +1,8 @@
+=== assimilation id-collision check ===
+run: 2026-11-05T13:16:45-03:00
+S=/home/vgpnk/Projects/shokuknow
+A=/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ExecCensus (cwd for the relative redirect targets)
+
+reg-ids lines:    497
+staged-ids lines: 155
+collision count:  155

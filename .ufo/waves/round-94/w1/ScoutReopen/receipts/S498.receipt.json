@@ -1,0 +1,23 @@
+{
+  "schema": "revenger-quote-audit-v1",
+  "sid": "S498",
+  "row_url": "https://raw.githubusercontent.com/morluto/rea/main/README.md",
+  "fetch_url": "https://raw.githubusercontent.com/morluto/rea/main/README.md",
+  "final_url": "https://raw.githubusercontent.com/morluto/rea/main/README.md",
+  "http_status": 200,
+  "fetched_at": "2026-11-05",
+  "fetch_sha256": "cb5b40c5752a403fbe20be9af2c08b5ca915c033af142f6f57af227cbaa2b6ba",
+  "length": 30064,
+  "anchor": "README.md overview paragraph, line 65 at main (commit fe677f6cf9853fb12490dfb8ef23ccae3a551049, 2026-11-05); \"REA connects your agent to tools for inspecting native binaries, JavaScript and Electron apps, .NET assemblies, and websites.\"",
+  "quote": "REA connects your agent to tools for inspecting native binaries, JavaScript and Electron apps, .NET assemblies, and websites.",
+  "span": {
+    "start": 3954,
+    "end": 4079
+  },
+  "verdict": "verified",
+  "body_derivation": "raw response bytes of the main-branch raw URL",
+  "normalization": "",
+  "attempts": [],
+  "seat": "ScoutReopen",
+  "notes": "Re-open of S054 (same repository, main branch). Body sha256 differs from the r93-pinned 0cd7ef45 body because main advanced; the located sentence is byte-identical to the S054 anchor quote. Span offsets are character offsets into the UTF-8 decoded body (corpus/audit_source_quotes.py indexes decoded text). Commit sha for main at fetch time: fe677f6cf9853fb12490dfb8ef23ccae3a551049 (GitHub commits API)."
+}

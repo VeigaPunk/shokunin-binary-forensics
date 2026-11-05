@@ -1,0 +1,23 @@
+{
+  "schema": "revenger-quote-audit-v1",
+  "sid": "S499",
+  "row_url": "https://raw.githubusercontent.com/morluto/rea/main/docs/installation.md",
+  "fetch_url": "https://raw.githubusercontent.com/morluto/rea/main/docs/installation.md",
+  "final_url": "https://raw.githubusercontent.com/morluto/rea/main/docs/installation.md",
+  "http_status": 200,
+  "fetched_at": "2026-11-05",
+  "fetch_sha256": "f05249e642a40562e8f2f1eee8ec23d56401f4b5884ba665c02f9730d8de2267",
+  "length": 115812,
+  "anchor": "docs/installation.md lead paragraph, line 4 at main (commit fe677f6cf9853fb12490dfb8ef23ccae3a551049, 2026-11-05); \"Setup previews configuration changes and asks for approval before applying them.\"",
+  "quote": "Setup previews configuration changes and asks for approval before applying them.",
+  "span": {
+    "start": 107,
+    "end": 187
+  },
+  "verdict": "verified",
+  "body_derivation": "raw response bytes of the main-branch raw URL",
+  "normalization": "",
+  "attempts": [],
+  "seat": "ScoutReopen",
+  "notes": "Re-open of S075 (same document, main branch). Body sha256 differs from the r93-pinned 0cd7ef45 body because main advanced; the located approval statement is byte-identical to the S075 anchor quote. Span offsets are character offsets into the UTF-8 decoded body (corpus/audit_source_quotes.py indexes decoded text). Commit sha for main at fetch time: fe677f6cf9853fb12490dfb8ef23ccae3a551049 (GitHub commits API)."
+}

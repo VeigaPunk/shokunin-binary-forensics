@@ -1,0 +1,238 @@
+{
+  "schema": "ufo-swarm-wave-dispatch-v1",
+  "wave": "revenger-r94-w1",
+  "policy": {
+    "source": "config",
+    "maxLanes": 256,
+    "minLanes": 8,
+    "waveMinLanes": 8,
+    "waveMaxLanes": 16,
+    "declaredMaxLanes": null,
+    "hardCeiling": 256,
+    "rampBatchSize": 5,
+    "rampIntervalMs": 700,
+    "globalRunnerCeiling": 1056
+  },
+  "counts": {
+    "spawn": 13,
+    "resume": 0,
+    "total": 13
+  },
+  "registry": {
+    "schema": "ufo-swarm-registry-v1",
+    "path": ".ufo/waves/round-94/w1/swarm-registry.json",
+    "reportDir": ".ufo/waves/round-94/w1",
+    "members": {
+      "ScoutReopen": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+      },
+      "ScoutErrata": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+      },
+      "ScribeLesson": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+      },
+      "ExecReceipts": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+      },
+      "ExecBattery": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+      },
+      "ExecCensus": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+      },
+      "ExecFrozen": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+      },
+      "ReviewerGate": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+      },
+      "ReviewerBlind": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+      },
+      "CriticR94": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+      },
+      "MutationR94": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+      },
+      "ConnectorOverlap": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "connector",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+      },
+      "SentinelScope": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "sentinel",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+      }
+    }
+  },
+  "compaction": {
+    "applied": false,
+    "mechanism": null,
+    "reason": null,
+    "savedBytes": 0,
+    "payloadBytesBefore": 0,
+    "payloadBytesAfter": 0
+  },
+  "taskCall": {
+    "context": "# Goal\nrevenger round 94, attempt 1, lane repo /home/vgpnk/Projects/shokunin/revenger-shokunin (every path in your task is absolute; the fleet root /home/vgpnk/Projects/shokunin is NOT your write surface).\nTwo claims are FROZEN at lane commit 060a8e87d6de6b31f91b58524ab0fcad88ae5431 in /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-94/claims.md. Read that file in full first; its predicates, counters, kill rules and controls are frozen bytes — never edit them.\nC1 (coverage, K 10/15 -> 11/15): coverage-map row C15 moves uncovered -> held, backed by the re-grounded entry /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-72-tool-landscape.md (r72 candidate + Q17 row + S498/S499 drift-check rows opened 2026-11-05). Counter: reports/round-94/c1_k_admit_counter3.py.\nC2 (calibration): the v3 counter kills the routed forgery classes (r93 CriticR93 findings 1-12) that the FROZEN r93 v2 counter still passes. Battery: reports/round-94/forge_battery3.py.\n\n# Digest recipe (vote binding)\nThe votes bind sha256 over the entry bytes with every line matching `^admission-status: (candidate|admitted|rejected)$` replaced by `admission-status: candidate`. Get the exact value from `PYTHONUTF8=1 python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-94/c1_k_admit_counter3.py --rev 060a8e87d6de6b31f91b58524ab0fcad88ae5431` — it prints `C1_VOTES=... digest=<64 hex>` even though the vote leg fails at the freeze tip; that printed digest is the value your candidate_sha256 must carry. It is also in /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ExecFrozen/freeze-state-digest.txt once ExecFrozen lands.\n\n# Vote file shape (ReviewerGate / ReviewerBlind / CriticR94 only)\nWrite JSON in YOUR wave dir (e.g. /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ReviewerGate/vote.json):\n{\"seat\": \"<your exact registry seat name>\", \"role\": \"<your registry role>\", \"candidate_sha256\": \"<digest>\", \"decisions\": {\"Q01\": \"PASS\"|\"n/a\", ..., \"Q17\": ...}, \"notes\": {\"Q01\": \"<>=20 chars for every n/a\", ...}, \"artifact_path\": \".ufo/waves/round-94/w1/<YourSeat>/<file>\", \"artifact_sha256\": \"<sha256 of that file>\"}\nRules the frozen counter enforces: >=2 accepted votes; seat must be your pinned registry name (no case/space variants); role must equal the pinned registry role (reviewer|critic); >=1 PASS decision; every n/a note >=20 chars; the artifact is non-empty, distinct per seat, inside .ufo/waves/round-94/ after resolution, and its bytes contain the 64-hex digest string.\n\n# Bounds (hard; the sentinel audits this wave)\n- Write ONLY inside your own wave dir /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/<YourSeat>/ and your scratch. Seats NEVER edit lane files (corpus/, reports/, SCORECARD, LOG, SKILL, README, PROVINCE, QUALITY), never run git/jj write commands anywhere, never touch the fleet repo, sibling lanes, .ufo/state, .ufo/watchdog.log, or /home/vgpnk/Projects/shokuknow. Read-only seats return findings in their wave dir.\n- Scratch: /fast/scratch/hyaku/revenger-r94/<YourSeat>/ — create with mkdir -p, pass explicitly, DELETE it before you yield (copy receipts into the wave dir first). /tmp only for files under 50 MB; nothing committed may hardcode /tmp. A scratch tree left behind is a self-reported defect.\n- Never mutate host sysctls; never sudo; pacman is PAUSED host-wide (install tools only via uv tool / npx / an official binary into ~/.local/bin; you are authorized, record anything you install).\n- No `agent://all`; you are a leaf (an executor may spawn ONE read-only labrat probe; no other spawns; no swarm).\n- Every `Report:` trailer path in your rendered task is RELATIVE TO /home/vgpnk/Projects/shokunin/revenger-shokunin — write it at /home/vgpnk/Projects/shokunin/revenger-shokunin/<that path>. Network use is limited to the URLs your task names (github.com/morluto/rea raw files; the two pinned r73 erratum URLs). No other network.\n- Provider errors: report the last error text in your output and stop; do not re-route or retry through other providers.\n\n# Wave facts\nRound shape: ONE v1 wave, 13 seats (band 8-16), attack share 4/13 (>=25%), 1 connector, no residual call. Routing is the operator's task.agentModelOverrides — no model is ever passed. The wave settles when all 13 seats report; the L1 integrates and lands.\n",
+    "tasks": [
+      {
+        "name": "ScoutReopen",
+        "agent": "scout",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nProduce the two drift-check source openings the frozen C1 claim rests on (claim C1 in /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-94/claims.md).\n1. Fetch TODAY (2026-11-05) the exact raw bytes of: (a) https://raw.githubusercontent.com/morluto/rea/main/README.md (if that 404s, try the repo's default-branch raw path via the GitHub API or the github.com README page and record what you used); (b) https://raw.githubusercontent.com/morluto/rea/main/docs/installation.md (same fallback rule). Save bodies byte-exact to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ScoutReopen/receipts/raw/S498.body and S499.body.\n2. Write receipts /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ScoutReopen/receipts/S498.receipt.json and S499.receipt.json, schema \"revenger-quote-audit-v1\", fields exactly: sid, verdict \"verified\", fetch_url, http_status, fetched_at \"2026-11-05\", fetch_sha256 (sha256 of the body bytes), length (body byte length), quote (a <=25-word sentence LOCATED in that body — for S498 a sentence stating REA's declared inspection scope/families, for S499 the approval-before-applying statement), span {\"start\": s, \"end\": e} such that norm(text[s:e]) == norm(quote) where norm collapses whitespace (this is what corpus/audit_source_quotes.py check_verified enforces).\n3. Drift verdict file /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ScoutReopen/drift-verdicts.md: compare the current README's declared tool-family scope with the S054 row's scope cell in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md, and the installation docs' approval statements with the S075 row's scope cell. Verdict per row: `no-drift` or `drifted(<what changed>)`, each with the located evidence line.\nDelete your scratch (/fast/scratch/hyaku/revenger-r94/ScoutReopen) before yielding; the receipts live in the wave dir. Never edit lane files.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats\n\nReport: write your scoped findings to .ufo/waves/round-94/w1/ScoutReopen.md"
+      },
+      {
+        "name": "ScoutErrata",
+        "agent": "scout",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nCite-back and erratum-pin sweep for the frozen C1 claim (read-only).\n1. Extract every S-id cited in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-72-tool-landscape.md (46 expected). For each, read its `used-by` cell in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md and check cite-back truth at the current tip: the pointed-at committed file actually names that sid (word-bounded). Per-sid verdict OK | drift(<pointer>) — the census only checks existence, so a pointer whose bytes never cite the sid is drift (r86 sweep class M42); drift is REPORTED for a possible r95 rule-2 pointer drop, never edited.\n2. Verify the two erratum rows' quotes still locate: S427 (github.com/zhuyansen/awesome-ai-reverse-engineering README at its pinned commit) and S428 (arxiv.org/abs/2403.05286v3 abstract) — fetch the pinned URL/revision named in each row's anchor cell and confirm the row's quote text is still there; record located yes/no with the line.\nWrite /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ScoutErrata/cite-back-sweep.md (table of 46 verdicts + 2 erratum verdicts). Scratch /fast/scratch/hyaku/revenger-r94/ScoutErrata, deleted on exit. No lane edits.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats\n\nReport: write your scoped findings to .ufo/waves/round-94/w1/ScoutErrata.md"
+      },
+      {
+        "name": "ScribeLesson",
+        "agent": "scribe",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nDraft (in YOUR wave dir only — the L1 lands them) the round-94 lesson and the SOURCES append block for the frozen C1 claim.\n1. /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ScribeLesson/lesson-draft.md: a `## Gate` section with (a) the admission block skeleton for corpus/knowledge/round-72-tool-landscape.md (C15; placeholders marked TODO for the final digest, vote seats, lint/embedded receipts — the L1 fills them), (b) a source-openings table with rows S498 and S499: URL/path, access date 2026-11-05, disposition line; the <=25-word located quote goes in from .ufo/waves/round-94/w1/ScoutReopen/receipts/*.receipt.json (read them; if absent, write `quote: TODO-scout` placeholders); (c) a `## Frontier and census` skeleton (rows 497 -> 499, C15 uncovered -> held).\n2. /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ScribeLesson/sources-append.md: the two registry rows exactly as they should be appended to corpus/SOURCES.md — 11 cells, NF=13 (the census parses 11 columns), no literal or escaped `|` in any cell, kind `docs`, tier `A`, status `mined`, opened `2026-11-05`, recheck a symbolic cadence, used-by `knowledge/round-72-tool-landscape.md`, teaches stating the drift-check result (write BOTH variants, no-drift and drifted, clearly marked, if the scout verdicts are not yet in). Model the shape on the real S497 row (`grep '^| S497' /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md`). Validate your draft rows: `awk -F'|' 'NF!=13 {print NR}'` over just those lines must print nothing.\nScratch /fast/scratch/hyaku/revenger-r94/ScribeLesson, deleted on exit.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats\n\nReport: write your scoped findings to .ufo/waves/round-94/w1/ScribeLesson.md"
+      },
+      {
+        "name": "ExecReceipts",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nIndependent second fetch + receipt self-verification for the frozen C1 claim (cross-checks ScoutReopen).\n1. Independently fetch the same two raw URLs as ScoutReopen (README.md and docs/installation.md at morluto/rea) and write your own receipts + raw bodies under /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ExecReceipts/receipts/ (same revenger-quote-audit-v1 schema, same rules).\n2. Verify your receipts with the lane's own tool on a SCRATCH copy: copy /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md to your scratch, append two synthetic rows for S498/S499 (11 cells, any teaches text, status mined, opened 2026-11-05, used-by knowledge/round-72-tool-landscape.md), then run `PYTHONUTF8=1 python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/audit_source_quotes.py verify --sources <scratch copy> --receipts <your receipts dir> --sid S498 --sid S499`; require exit 0 and `SUMMARY rows=2 verified=2 unreachable=0 unresolved=0`. Save the full stdout to your wave dir receipts-verify.log.\n3. Compare your fetch_sha256 values with ScoutReopen's receipt files when they exist (they may land after you — if present, record equal/unequal; unequal is a drift finding, not an error). Save comparison to fetch-sha-compare.md.\nScratch /fast/scratch/hyaku/revenger-r94/ExecReceipts, deleted on exit. Never edit lane files.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage\nMilestone: Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats\n\nReport: write your scoped findings to .ufo/waves/round-94/w1/ExecReceipts.md"
+      },
+      {
+        "name": "ExecBattery",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nFrozen-instrument integrity + re-run for the frozen C2 claim.\n1. Immutability receipt: for reports/round-93/c1_k_admit_counter2.py, c2_legend_counter2.py, forge_battery.py and reports/round-94/c1_k_admit_counter3.py, forge_battery3.py — compare `git show 060a8e87d6de6b31f91b58524ab0fcad88ae5431:<path>` bytes' sha256 with the working tree files; all five must be identical; write /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ExecBattery/freeze-integrity.txt.\n2. Re-run and record full stdout in /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ExecBattery/ (one log each): `PYTHONUTF8=1 python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-93/forge_battery.py --stage full` (expect BATTERY_VERDICT=pass, V2_KILLS=9/9, POS_C1V2=pass, POS_C2V2=pass, DO_NOTHING_C2=fail), `... --stage v1-only` (expect V1_REACH_C2=5/5), `PYTHONUTF8=1 python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-94/forge_battery3.py --stage full` (expect BATTERY3_VERDICT=pass, V3_KILLS=12/12, POS_C1V3=pass, DO_NOTHING_C1V3=fail-as-required, HOLD_R93_BATTERY=pass), `PYTHONUTF8=1 python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-94/c1_k_admit_counter3.py --self-test` (expect SELFTEST_C1V3=pass legs=14). Any deviation: record it verbatim, do not fix anything.\n3. Note: the battery pre-creates /fast/scratch/hyaku/revenger-r93/CriticR93 subdirs (the committed r93 attack scripts hardcode that root; the reaper had swept it). Do not delete anything outside /fast/scratch/hyaku/revenger-r94/.\nScratch /fast/scratch/hyaku/revenger-r94/ExecBattery, deleted on exit.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration\nMilestone: Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats\n\nReport: write your scoped findings to .ufo/waves/round-94/w1/ExecBattery.md"
+      },
+      {
+        "name": "ExecCensus",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nCensus, collision and no-harm receipts for the round-94 frontier step.\n1. From /home/vgpnk/Projects/shokunin/revenger-shokunin run the seven census commands in SKILL.md section 6.2 verbatim (grep -cE rows; awk NF!=13 malformed; tier histogram; status histogram; duplicate ids; enum/tier-inflation; mined used-by missing-path check) and save all output to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ExecCensus/census-seven.log.\n2. Run /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin revenger; record output + exit code (expected exit 0, warnings only: 21 W01 + 15 W04, 0 E) in census-driver.log.\n3. Assimilation id-collision check, exactly: S=/home/vgpnk/Projects/shokuknow; A=/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ExecCensus; mkdir -p \"$A\"; grep -oE '^ {0,3}\\|[[:space:]]*S[0-9]{3,}' /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md | grep -oE 'S[0-9]+' | sort > \"$A/reg-ids\"; same for \"$S/merge/revenger/SOURCES.append.md\" > \"$A/staged-ids\"; comm -12 reg-ids staged-ids > \"$A/collisions\". Record the collision count (expected 155, report the real number) + the three files. Do NOT read more of shokuknow; never write there.\n4. No-harm: `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff --stat 060a8e87d6de6b31f91b58524ab0fcad88ae5431 refs/heads/main -- PROVINCE.md corpus/QUALITY.md` (expect empty) and `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff --stat 9876cb38c5415fbc86336a26a68e05680c397fd5 refs/heads/main -- corpus/live corpus/fixtures` (expect empty); save no-harm.txt.\nScratch /fast/scratch/hyaku/revenger-r94/ExecCensus, deleted on exit.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration\nMilestone: Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats\n\nReport: write your scoped findings to .ufo/waves/round-94/w1/ExecCensus.md"
+      },
+      {
+        "name": "ExecFrozen",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nDo-nothing + freeze-tip counter runs and the vote-digest receipt for the frozen claims.\n1. `PYTHONUTF8=1 python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-94/c1_k_admit_counter3.py --rev 9876cb38c5415fbc86336a26a68e05680c397fd5` — must fail: C1_C15_HELD=fail, C1_VERDICT=fail, exit 1. Save to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ExecFrozen/do-nothing-rerun.log.\n2. `PYTHONUTF8=1 python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-94/c1_k_admit_counter3.py --rev 060a8e87d6de6b31f91b58524ab0fcad88ae5431` — must fail the same way at the freeze tip (C15 still uncovered there) AND print `digest=<64 hex>` on the C1_VOTES line. Save the full stdout to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ExecFrozen/freeze-state-digest.txt (this is the value every wave vote binds).\n3. Registry pre-check: extract PINNED_SEATS from the counter source (python: import reports/round-94/c1_k_admit_counter3.py as a module in scratch and print its PINNED_SEATS dict) and print it to registry-pin.txt; the wave registry must equal exactly this 13-name map.\nScratch /fast/scratch/hyaku/revenger-r94/ExecFrozen, deleted on exit. Never edit lane files.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration\nMilestone: Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats\n\nReport: write your scoped findings to .ufo/waves/round-94/w1/ExecFrozen.md"
+      },
+      {
+        "name": "ReviewerGate",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nQ-gate vote on the frozen C15 entry (claim C1).\nEntry: /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-72-tool-landscape.md at commit 060a8e87d6de6b31f91b58524ab0fcad88ae5431 (read the COMMITTED bytes: `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin show 060a8e87d6de6b31f91b58524ab0fcad88ae5431:corpus/knowledge/round-72-tool-landscape.md`). It is a documentation-only tool-source map with a `## §Q-map` (Q01-Q17). Apply EVERY criterion Q01-Q17 from /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/QUALITY.md; PASS where the entry's own evidence carries it, `n/a` only with a >=20-char reason. Expected load-bearing PASS cells: Q02 (headers + anchors), Q10 (per-project scoping), Q12 (rejected rows carry reasons + flips), Q16 (no claim beyond the cited text); Q17 is a fresh n/a row added at the freeze. Verify the two NEW header rows S498/S499 are receipt-backed: the receipt files must exist under /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ScoutReopen/receipts/ (if they are not there yet when you vote, note that in your evidence file and mark Q01 n/a with that reason — do not wait, do not fabricate).\nWrite your full per-Q adjudication to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ReviewerGate/evidence.md; it MUST contain the 64-hex digest string (see Digest recipe). Then write vote.json in the same dir per the Vote file shape. Do NOT edit the entry.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats\n\nReport: write your scoped findings to .ufo/waves/round-94/w1/ReviewerGate.md"
+      },
+      {
+        "name": "ReviewerBlind",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nBlind-derivation vote on the frozen C15 entry (claim C1).\n1. BEFORE reading the entry: from the SOURCES registry scope cells only (S054-S095 rows in /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md) plus the S498/S499 receipt bodies under .ufo/waves/round-94/w1/ScoutReopen/receipts/ (if present), independently derive what the tool-role table SHOULD say for 5 sampled tools — Ghidra (S055), radare2 (S062), JADX (S058), ILSpy (S061), Frida (S060): the declared role, the stated limitation, and the boundary each row carries. Write your derivation first.\n2. THEN read the entry at 060a8e87d6de6b31f91b58524ab0fcad88ae5431 (`git -C /home/vgpnk/Projects/shokunin/revenger-shokunin show 060a8e87d6de6b31f91b58524ab0fcad88ae5431:corpus/knowledge/round-72-tool-landscape.md`) and diff your derivation against its table rows for those 5 tools; record mismatches (expected: none beyond wording).\n3. Write derivation + diff + per-Q spot-check (Q03/Q11 angle: does the table credit any output the sources do not state?) to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ReviewerBlind/evidence.md — it MUST contain the 64-hex digest string. Then vote.json per the Vote file shape. Do NOT edit the entry.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats\n\nReport: write your scoped findings to .ufo/waves/round-94/w1/ReviewerBlind.md"
+      },
+      {
+        "name": "CriticR94",
+        "agent": "critic",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nAttack pass on both frozen round-94 claims and the v3 instruments. Lane tip 060a8e87d6de6b31f91b58524ab0fcad88ae5431.\nInstruments: /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-94/c1_k_admit_counter3.py (the v3 counter; its PINNED_SEATS/EXPECT_FAIL/leg code is the claim's rule) and reports/round-94/forge_battery3.py. The r93 critic's findings (/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-93/w1/CriticR93/findings.md) are the routed classes the v3 counter claims to close.\n1. Build fresh forgeries BEYOND the frozen twelve and run the v3 counter with --tree on trees built from the freeze archive in YOUR scratch (mirror the r93 critic's method; import the counter's _fixture/_fixture_delta for an honest base then diverge). Vector ideas (pick >=8, invent more): a vote whose artifact is a symlink to another seat's file; a registry JSON with a duplicate seat key; an entry whose Q-map decisions cell is empty for a row; the C15 knowledge cell naming a different file; a receipt whose span end < span start; a vote seat in PINNED_SEATS but role `scout`; TWO votes with the same canonical seat but different cases in the registry; an entry where admission-status sits on line 16; a body that cites S427 with its REJECTED status renamed mined; an artifact whose bytes contain only whitespace + the digest.\n2. For each attempt print one line `NAME: rc=<rc> verdict=<pass|fail> failing=<legs>` to your stdout AND a full construction note. Verdicts of record go to /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/CriticR94/findings.md (ranked HIGH/MEDIUM/LOW) + receipts/ (per-attempt stdout).\n3. Wording audit (W-class): does claims.md state more than the counters read? Check C1's `C1_ONLY_C15` (base pinned at FREEZE_REV — does the leg actually re-derive base rows?), `C1_REGISTRY` (registry == pinned map: is a registry the SAME wave wrote still self-attested in a weaker sense? name the residual), and C2's F13 receipt-backed reach honesty.\n4. Vote: full per-Q adjudication in /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/CriticR94/evidence.md (MUST contain the 64-hex digest string) + vote.json per the Vote file shape.\nScratch /fast/scratch/hyaku/revenger-r94/CriticR94 ONLY (never revenger-r93), deleted on exit. No lane edits.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats\n\nReport: write your scoped findings to .ufo/waves/round-94/w1/CriticR94.md"
+      },
+      {
+        "name": "MutationR94",
+        "agent": "mutation-tester",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nOne-per-leg mutants of the frozen v3 counter (claim C2 support).\nInstrument: /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-94/c1_k_admit_counter3.py — legs C1_ROWS_TOTAL, C1_C15_HELD, C1_C15_CITES, C1_ONLY_C15, C1_ADMITTED, C1_TRIO, C1_VOTES, C1_REGISTRY, C1_LINT, C1_EMBEDDED, C1_EMBED_NONVACUOUS, C1_SOURCES, C1_QUOTES, C1_K_HELD_BACKED. Copy the counter to your scratch; for each leg, mutate ONLY that leg's check (e.g. invert its boolean or drop its comparison) and run the mutated copy's --self-test plus a full --tree run over an honest fixture built by importing the ORIGINAL module's _fixture into your scratch driver. A mutant is KILLED when the honest fixture fails (verdict flips) or the relevant forged class now passes; EQUIVALENT when no observable run changes; SURVIVED (defect) when the honest fixture still passes with the leg disabled.\nDeliverables: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/MutationR94/mutants.md (per-leg: mutant diff line, deciding run, verdict KILLED/EQUIVALENT/SURVIVED) + per-mutant logs. Never edit the frozen files; mutants live only in your scratch. Scratch /fast/scratch/hyaku/revenger-r94/MutationR94, deleted on exit.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats\n\nReport: write your scoped findings to .ufo/waves/round-94/w1/MutationR94.md"
+      },
+      {
+        "name": "ConnectorOverlap",
+        "agent": "connector",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nSibling overlap + the routed considerthese re-measurement.\n1. Overlap scan: read the newest lane reports under /home/vgpnk/Projects/shokunin/.ufo/reports/round-93/*.md and round-94/*.md (all lanes present), plus the fleet MANIFEST.json's newest closure entries. Name lanes whose recent work overlaps revenger's province (saved-ledger evidence craft, source-registry discipline, admission gates) with a one-line overlap note each; flag anything revenger should REPORT (not absorb). Write /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ConnectorOverlap/overlap.md.\n2. considerthese proposal-2 re-measurement (routed from r93): read /home/vgpnk/Projects/shokunin/revenger-shokunin/considerthese/2026-11-05.md proposal 2 and the r93 baseline /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-93/w1/ConnectorOverlap/measurement.tsv. Extend the same measurement over the r93 closure (and r94 state if visible in MANIFEST.json): per round, claims met/contested/not-verified from the scorecard sections in the lane repo (read-only) — write /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/ConnectorOverlap/measurement-r94.tsv with a methodology line. Report only; the lane decides separately whether to adopt a criterion (it needs its own frozen predicate).\n3. Check /home/vgpnk/Projects/shokuknow/merge/revenger/MERGE-REPORT.md exists (read the summary only) and record one line on adoption state (the lane's adoption is closed on the 155/155 collisions + unanswered L0; do not adopt anything).\nScratch /fast/scratch/hyaku/revenger-r94/ConnectorOverlap, deleted on exit. No lane edits, no writes outside your wave dir.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats\n\nReport: write your scoped findings to .ufo/waves/round-94/w1/ConnectorOverlap.md"
+      },
+      {
+        "name": "SentinelScope",
+        "agent": "sentinel",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nWrite-scope and safety audit of this wave (read-only).\n1. Scope: every seat writes only /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/<seat>/ and scratch under /fast/scratch/hyaku/revenger-r94/<seat>/. Check `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin status --porcelain` for tracked-file modifications beyond your own dir (report, never revert); the freeze bytes reports/round-94/ + corpus/knowledge/round-72-tool-landscape.md at 060a8e87d6de6b31f91b58524ab0fcad88ae5431 must be untouched in the working tree (`git -C /home/vgpnk/Projects/shokunin/revenger-shokunin diff 060a8e87d6de6b31f91b58524ab0fcad88ae5431 -- reports/round-94 corpus/knowledge/round-72-tool-landscape.md` expect empty).\n2. Host safety: no seat may sudo, mutate sysctls, run pacman, kill services, or write outside its dirs (check for stray files at the fleet root /home/vgpnk/Projects/shokunin — name anything found with its content's lane/round provenance; never delete other lanes' files).\n3. Scratch discipline spot-check: list /fast/scratch/hyaku/revenger-r94/ entries and their sizes at audit time; flag any seat tree over 500 MB.\n4. Network discipline: seat tasks authorize only github.com/morluto/rea raw fetches and the two pinned erratum URLs (zhuyansen/awesome-ai-reverse-engineering README, arxiv.org/abs/2403.05286v3). Nothing else.\nWrite /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-94/w1/SentinelScope/audit.md with per-check PASS/FAIL and evidence. Scratch /fast/scratch/hyaku/revenger-r94/SentinelScope, deleted on exit. Never edit lane files.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats\n\nReport: write your scoped findings to .ufo/waves/round-94/w1/SentinelScope.md"
+      }
+    ]
+  },
+  "resumeSends": [],
+  "note": "Issue exactly one batched task call with taskCall ({context, tasks}); never split a wave into multiple task calls (one-swarm-per-wave). Then one hub send per resumeSends entry: hub send --to <entry.resume> --message <entry.message> (entry.name is bookkeeping, not a hub field)."
+}

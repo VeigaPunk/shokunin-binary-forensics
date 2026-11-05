@@ -1,0 +1,31 @@
+# cmd: PYTHONUTF8=1 python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-94/forge_battery3.py --stage full
+# cwd: /fast/scratch/hyaku/revenger-r94/ExecBattery
+# exit: 0
+
+--- stdout ---
+== full: v3 kills over frozen classes ==
+F10-dup-status: KILLED expected=C1_ADMITTED failing=C1_ADMITTED,C1_VOTES,C1_VERDICT
+F11-forged-registry: KILLED expected=C1_VOTES failing=C1_VOTES,C1_VERDICT
+F12-case-dup-seat: KILLED expected=C1_VOTES failing=C1_VOTES,C1_VERDICT
+F13-role-mismatch: KILLED expected=C1_VOTES failing=C1_VOTES,C1_VERDICT
+F14-empty-artifact: KILLED expected=C1_VOTES failing=C1_VOTES,C1_VERDICT
+F15-traversal: KILLED expected=C1_VOTES failing=C1_VOTES,C1_VERDICT
+F16-body-rejected-sid: KILLED expected=C1_SOURCES failing=C1_VOTES,C1_SOURCES,C1_VERDICT
+F17-vacuous-na: KILLED expected=C1_VOTES failing=C1_VOTES,C1_VERDICT
+F18-ws-output: KILLED expected=C1_EMBED_NONVACUOUS failing=C1_VOTES,C1_EMBEDDED,C1_EMBED_NONVACUOUS,C1_VERDICT
+F18b-tilde-fence: KILLED expected=C1_EMBED_NONVACUOUS failing=C1_VOTES,C1_EMBEDDED,C1_EMBED_NONVACUOUS,C1_VERDICT
+F19-stale-new-row: KILLED expected=C1_SOURCES failing=C1_SOURCES,C1_VERDICT
+ONLY-C15-second-row: KILLED expected=C1_ONLY_C15 failing=C1_ONLY_C15,C1_VERDICT
+V3_KILLS=12/12
+POS_C1V3=pass (real lint + real embedded checker, no stubs)
+DO_NOTHING_C1V3=fail-as-required
+R93_HOLD V2_KILLS=9/9
+R93_HOLD POS_C1V2=pass
+R93_HOLD POS_C2V2=pass
+R93_HOLD DO_NOTHING_C2=fail
+R93_HOLD BATTERY_VERDICT=pass
+HOLD_R93_BATTERY=pass
+BATTERY3_VERDICT=pass
+
+--- stderr ---
+

@@ -8,7 +8,7 @@ source: S499 — REA setup documentation, https://github.com/morluto/rea `docs/i
 verified-at: 2026-10-27; all linked content was opened read-only from the sources in `corpus/SOURCES.md` and the short-link screen at `reports/round-72/shortlink-dispositions.md`. No tool was installed or executed.
 recheck: Re-open the exact URLs, headings and pinned revisions in the `S###` rows in `corpus/SOURCES.md`; a newer README, release, case page or paper revision requires a new source check. This entry is documentation-only and has no executable tool-recheck command.
 coverage-map: C15 — selected reverse-engineering tool repositories and their declared boundaries; this is a source-map, not a tool installation/readiness map and not a claim of complete tool coverage.
-admission-status: candidate
+admission-status: admitted
 
 # Selected reverse-engineering tool repositories: declared roles and limits
 

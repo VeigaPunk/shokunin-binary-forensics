@@ -1,0 +1,37 @@
+{
+  "seat": "ReviewerGate",
+  "role": "reviewer",
+  "candidate_sha256": "01d51059fb29a5184342b2815e643695aa269b384c04d005f69556816f291bd3",
+  "decisions": {
+    "Q01": "PASS",
+    "Q02": "PASS",
+    "Q03": "n/a",
+    "Q04": "PASS",
+    "Q05": "n/a",
+    "Q06": "n/a",
+    "Q07": "n/a",
+    "Q08": "n/a",
+    "Q09": "PASS",
+    "Q10": "PASS",
+    "Q11": "PASS",
+    "Q12": "PASS",
+    "Q13": "n/a",
+    "Q14": "n/a",
+    "Q15": "PASS",
+    "Q16": "PASS",
+    "Q17": "n/a"
+  },
+  "notes": {
+    "Q01": "S498 and S499 tier-A drift-check receipts landed under .ufo/waves/round-94/w1/ScoutReopen/receipts/ and both verify with corpus/audit_source_quotes.py; every load-bearing scope carries tier-A primary project or paper rows opened and quoted in the round that wrote them, and no tier-C catalog row is sole support for any load-bearing sentence.",
+    "Q03": "No expected byte, semantic or derived value exists in this documentation-only source map; nothing is compared against a record under test, so the independent-derivation criterion has no object to apply to.",
+    "Q05": "The entry makes no readiness, capability or installation claim against any real surface; sources S075 and S076 are scoped by their own SOURCES rows to the documented approval boundary and prompt-data contract, explicitly not this lane's configuration.",
+    "Q06": "No fixture build or producer analysis is claimed anywhere in the entry; the scope and coverage-map headers disclaim installation, execution and fixture-level activity for the whole document.",
+    "Q07": "No predicted parser behavior, accept/refuse/cause hypothesis or pre-registration appears in the entry; no prediction is used as support for any sentence.",
+    "Q08": "Historical criterion superseded by Q11 per corpus/QUALITY.md; the entry's own Q-map row records the same supersession, so nothing remains for Q08 to check.",
+    "Q13": "The entry credits no verifier or recheck command for guarding any clause; its recheck header explicitly says the entry is documentation-only and has no executable tool-recheck command.",
+    "Q14": "No hex string, byte count or ASCII rendering of bytes appears anywhere in the committed entry text; the criterion has no quoted hex run to length-check.",
+    "Q17": "No sentence credits a script, table or command with covering a set, and no command output is embedded or re-derived in this entry; its only table states solely what each cited source's own text states."
+  },
+  "artifact_path": ".ufo/waves/round-94/w1/ReviewerGate/evidence.md",
+  "artifact_sha256": "b21a12c22906d0f54d7725a47932f22cecc61b47edbda705286d1276db583b37"
+}

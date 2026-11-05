@@ -1,0 +1,9 @@
+=== no-harm receipts (git diff --stat, read-only) ===
+run: 2026-11-05T13:16:45-03:00
+cwd: /home/vgpnk/Projects/shokunin/revenger-shokunin
+
+--- diff 060a8e87d6de6b31f91b58524ab0fcad88ae5431..refs/heads/main -- PROVINCE.md corpus/QUALITY.md (expect empty) ---
+exit=0
+
+--- diff 9876cb38c5415fbc86336a26a68e05680c397fd5..refs/heads/main -- corpus/live corpus/fixtures (expect empty) ---
+exit=0

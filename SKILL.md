@@ -547,6 +547,24 @@ rows (entry command, verdict lines, pinned instrument sha, red/green logs) until
 | write scope | read-only over the committed tree; trees built under `$HYAKU_SCRATCH/revenger-r93/battery`, removed on exit |
 | owner | revenger |
 
+| name | `c1_k_admit_counter3 (round 94 C1, coverage K; successor of `c1_k_admit_counter2`, frozen at `060a8e8`; adds seat-set pinned to the wave registry map, canonical-seat uniqueness, vote role==pinned role, >=20-char n/a reasons, artifact containment and distinctness with digest naming, whole-entry sid collection with supersession-terminal resolution, C15-only ONLY leg against the frozen base, single-line admission-status leg, and the real lint and embedded checker)` |
+| kind | probe (measurement over a committed tree; `--self-test` asserts 12 forged-class kills and one honest pass; not a gate under §Gate standard because the admission legs call lane tools; the critic's residual vectors, `reports/round-94/` and `.ufo/waves/round-94/w1/CriticR94/findings.md`, are routed to r95) |
+| entry command | `python3 -B reports/round-94/c1_k_admit_counter3.py --rev <rev>` (cwd = lane root; `--tree DIR` for controls; `--self-test`) |
+| verdict map | `0` `C1_VERDICT=pass` · `1` `C1_VERDICT=fail` · `64` usage |
+| self-test | `--self-test` (isolated fixtures in `$HYAKU_SCRATCH/revenger-r94/c1v3`; expects `SELFTEST_C1V3=pass legs=14`, exit 0) |
+| pinned-value path | counter bytes `reports/round-94/c1_k_admit_counter3.py` (frozen at `060a8e8`); PINNED_SEATS map inside the counter; vote files `reports/round-94/votes/*.json` bound to the wave artifacts under `.ufo/waves/round-94/w1/`; quote receipts `reports/round-94/quote-receipts/` |
+| write scope | read-only over the committed tree (`git archive` into a scratch `t` dir, removed on exit); writes nothing in the lane |
+| owner | revenger |
+
+| name | `forge_battery3 (round 94 C2 calibration; the frozen forgery battery: ten frozen classes F10–F18b plus F19 and the ONLY-C15 second-row control, each run against the v3 counter; `--stage red-v2` re-runs the committed r93 critic attack scripts against the frozen v2 counter as the red-before)` |
+| kind | probe (measurement; the battery imports `c1_k_admit_counter3` and builds its own synthetic trees from `FREEZE_REV`; not a gate) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-94/forge_battery3.py --stage full` (predicate) and `--stage red-v2` (committed red-before) |
+| verdict map | `0` `BATTERY3_VERDICT=pass` · `1` otherwise · `64` usage |
+| self-test | the `full` stage is its own self-check: expects `V3_KILLS=12/12`, `POS_C1V3=pass`, `DO_NOTHING_C1V3=fail-as-required`, `HOLD_R93_BATTERY=pass` |
+| pinned-value path | `reports/round-94/controls/battery3-red-v2.log` and `battery3-full-at-freeze.log`; the r93 battery is held by `reports/round-93/forge_battery.py --stage full` (`BATTERY_VERDICT=pass`) |
+| write scope | scratch only under `/fast/scratch/hyaku/revenger-r94/battery3`; the `red-v2` stage pre-creates the bare `revenger-r93/CriticR93/{out,hs,trees}` dirs the committed attack driver hardcodes (reaper-swept); writes nothing in the lane |
+| owner | revenger |
+
 ## 7. Cited sources — existence-checked
 
 | citation | exists at | credited for |

@@ -1,0 +1,19 @@
+PINNED_SEATS = {
+  "ScoutReopen": "scout",
+  "ScoutErrata": "scout",
+  "ScribeLesson": "scribe",
+  "ExecReceipts": "executor",
+  "ExecBattery": "executor",
+  "ExecCensus": "executor",
+  "ExecFrozen": "executor",
+  "ReviewerGate": "reviewer",
+  "ReviewerBlind": "reviewer",
+  "CriticR94": "critic",
+  "MutationR94": "mutation-tester",
+  "ConnectorOverlap": "connector",
+  "SentinelScope": "sentinel"
+}
+count: 13
+VOTE_ROLES = ('reviewer', 'critic')
+FREEZE_REV = 9876cb38c5415fbc86336a26a68e05680c397fd5
+REGISTRY_REL = .ufo/waves/round-94/w1/swarm-registry.json

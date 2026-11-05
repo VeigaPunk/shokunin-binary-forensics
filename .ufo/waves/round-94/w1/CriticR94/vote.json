@@ -1,0 +1,37 @@
+{
+  "seat": "CriticR94",
+  "role": "critic",
+  "candidate_sha256": "01d51059fb29a5184342b2815e643695aa269b384c04d005f69556816f291bd3",
+  "decisions": {
+    "Q01": "PASS",
+    "Q02": "PASS",
+    "Q03": "n/a",
+    "Q04": "PASS",
+    "Q05": "n/a",
+    "Q06": "n/a",
+    "Q07": "n/a",
+    "Q08": "n/a",
+    "Q09": "PASS",
+    "Q10": "PASS",
+    "Q11": "n/a",
+    "Q12": "PASS",
+    "Q13": "n/a",
+    "Q14": "n/a",
+    "Q15": "PASS",
+    "Q16": "PASS",
+    "Q17": "n/a"
+  },
+  "notes": {
+    "Q03": "The entry derives no expected byte or semantic value; its tables state project-declared roles only.",
+    "Q05": "The entry makes no readiness or capability claim; its boundary sentences say so explicitly.",
+    "Q06": "The entry describes no fixture and no producer call, and carries no offset, operand or size.",
+    "Q07": "The entry makes no parser prediction; only bounded not-reproduced statements appear.",
+    "Q08": "The entry carries no count, offset or identifier that needs re-derivation; S-IDs are registry names.",
+    "Q11": "Supersedes Q08; the entry derives no counts, offsets or digests, so no value needs a deriving command.",
+    "Q13": "No verifier or recheck command is credited; the S077 first-party report is stated as not rerun by the lane.",
+    "Q14": "The entry contains no hex run and no byte count; lint Q14 reports zero.",
+    "Q17": "The entry relocates no cited artifact and performs no path rename in this admission."
+  },
+  "artifact_path": ".ufo/waves/round-94/w1/CriticR94/evidence.md",
+  "artifact_sha256": "a6dd0816aae891af545400690fa1d568c325527e375043524f1849fc90f54d9e"
+}

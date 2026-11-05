@@ -1,0 +1,30 @@
+{
+ "real_selftest": "SELFTEST_C1V3=pass legs=14",
+ "real_selftest_rc": 0,
+ "inproc_selftest_fails": [],
+ "honest_ok": true,
+ "want": "01d51059fb29a5184342b2815e643695aa269b384c04d005f69556816f291bd3",
+ "rev_rc": 1,
+ "rev_stdout": [
+  "C1_K_HELD_BACKED=10/15",
+  "C1_VOTES=votes dir missing digest=01d51059fb29a5184342b2815e643695aa269b384c04d005f69556816f291bd3",
+  "C1_SOURCE_IDS=S050,S051,S054,S055,S056,S057,S058,S059,S060,S061,S062,S063,S064,S065,S066,S067,S068,S069,S070,S071,S072,S073,S074,S075,S076,S077,S078,S079,S080,S081,S082,S083,S084,S085,S086,S087,S088,S089,S090,S091,S092,S093,S094,S095,S427,S428,S498,S499",
+  "C1_SOURCES_WHY=S498:unresolved; S499:unresolved; S498:new-row-missing; S499:new-row-missing",
+  "C1_QUOTES_WHY=SUMMARY rows=2 verified=0 unreachable=0 unresolved=2",
+  "C1_ONLY_C15_DIFFS=none",
+  "C1_ROWS_TOTAL=pass",
+  "C1_C15_HELD=fail",
+  "C1_C15_CITES=pass",
+  "C1_ONLY_C15=fail",
+  "C1_ADMITTED=fail",
+  "C1_TRIO=pass",
+  "C1_VOTES=fail",
+  "C1_LINT=pass",
+  "C1_EMBEDDED=pass",
+  "C1_EMBED_NONVACUOUS=pass",
+  "C1_SOURCES=fail",
+  "C1_QUOTES=fail",
+  "C1_K_HELD_BACKED=fail",
+  "C1_VERDICT=fail"
+ ]
+}

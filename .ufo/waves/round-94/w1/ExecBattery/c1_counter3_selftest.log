@@ -1,0 +1,9 @@
+# cmd: PYTHONUTF8=1 python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-94/c1_k_admit_counter3.py --self-test
+# cwd: /fast/scratch/hyaku/revenger-r94/ExecBattery
+# exit: 0
+
+--- stdout ---
+SELFTEST_C1V3=pass legs=14
+
+--- stderr ---
+

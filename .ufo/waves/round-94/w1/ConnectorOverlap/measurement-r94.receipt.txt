@@ -1,0 +1,31 @@
+## 1 drift 02050cb..060a8e8 (deleted lines in r89-r93 evidence paths)
+files=3 insertions=233 deletions=0
+## 2 r93 SCORECARD verdict cells at 28b5f99b90c1da91ac85d2e6d6aa6ec49efa42e6
+1661:| calibration — SM6 gate fidelity (C1) | `SM6_MISCLASS` **7/14 (v1) → 0/14 (v2)**; v2 full run `SELF_MISMATCH=0` (v1 over the same tree
+1691:| calibration — SM6 reads the stated cell (C1) | `SM6_MISCLASS` **5/22 (v2) → 0/22 (v3)**; `MUTANTS_KILLED` 11/11; impl `--self-test` e
+1718:| coverage — knowledge-map ground K (C1; the lowest non-retired axis) | `K_HELD_BACKED` **8/15 (5.3) → 9/15 (6.0)**; C03 `frontier` → `
+1719:| calibration — coverage token vs saved records (C2; M36 class) | `README_TOKEN_LEGEND_MISMATCH` **2 `['C03','C08']` → 0 `[]`**; C08 `f
+1762:| coverage — knowledge-map ground K (C1; the lowest non-retired axis) | `K_HELD_BACKED` **9/15 (6.0) → 10/15 (6.7)**; C08 `uncovered` →
+1763:| calibration — the counters' reach over routed forgery classes (C2) | v1 counter reachable by **5/5** C2-side classes (F5–F9; `control
+1749:## Round 93 (hyaku run 15, attempt 1) — C08 admitted on the saved round-77 record (coverage K 9/15 → 10/15); succes
+## 3 r93 lesson anchors at 28b5f99b90c1da91ac85d2e6d6aa6ec49efa42e6
+40:Frozen predicate and kill rule are in `claims.md`. Result: `BATTERY_VERDICT=pass`, `V2_KILLS=9/9`,
+50:| **M3 — the r92 successor counters are still reachable by named forgeries outside the nine frozen classes.** Critic 
+## 4 r93 spot-check verdict lines at 9876cb38c5415fbc86336a26a68e05680c397fd5
+47:**C1 verdict: met — re-measured.**
+60:**C2 verdict: met on the frozen predicate — evidence-verified.** Contested-but-scoped, honestly reported by the lane:
+## 5 r94 state at 060a8e87d6de6b31f91b58524ab0fcad88ae5431
+claims.md present
+lesson round-94 absent
+SCORECARD '## Round 94' headings: 0
+commits after freeze on main: 0
+## 6 MANIFEST revenger closures
+revenger closures: [(90, False, 'rejected-honest-stop'), (91, False, 'rejected-honest-stop'), (92, True, 'admitted'), (93, True, 'admitted')]
+round-94 revenger closures: 0
+## 7 adoption state
+5:- proposed rows accepted: **155**
+6:- proposed rows refused: **0**
+7:- proposed knowledge entries: **87**
+8:collision count:  155
+304:revenger | round-91 | Assimilation id-collision guard: the staged package /h
+scratch removed: /fast/scratch/hyaku/revenger-r94/ConnectorOverlap

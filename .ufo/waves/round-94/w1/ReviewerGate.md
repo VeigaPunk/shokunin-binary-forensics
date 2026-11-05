@@ -1,0 +1,28 @@
+# ReviewerGate — scoped findings (round 94, wave 1, C1 vote)
+
+Seat `ReviewerGate` (registry role `reviewer`), tip/freeze `060a8e87d6de6b31f91b58524ab0fcad88ae5431`.
+Scope: Q-gate vote file + evidence on the frozen C15 candidate; v2/v3 battery observation; no lane file edited; no scratch tree kept.
+
+**Decisions:** Q01,Q02,Q04,Q09,Q10,Q11,Q12,Q15,Q16 = PASS (9); Q03,Q05,Q06,Q07,Q08,Q13,Q14,Q17 = n/a with ≥20-char reasons (8). Candidate digest (normalized-entry SHA-256), reproduced independently of the counter: `01d51059fb29a5184342b2815e643695aa269b384c04d005f69556816f291bd3`. Vote: `.ufo/waves/round-94/w1/ReviewerGate/vote.json`; evidence (contains the digest): `.ufo/waves/round-94/w1/ReviewerGate/evidence.md` (artifact sha256 `b21a12c22906d0f54d7725a47932f22cecc61b47edbda705286d1276db583b37`).
+
+## Positive verification performed (read-only; all at the freeze tip)
+
+1. **Digest recipe executed and independently reproduced** — counter run prints `C1_VOTES=votes dir missing digest=01d51059fb29a5184342b2815e643695aa269b384c04d005f69556816f291bd3` (the vote leg correctly fails at the freeze tip: votes dir and the C15 flip live in the landing tree); my own `git show | sed normalize | sha256sum` (the frozen recipe) gives the identical value; exactly one `admission-status:` line exists in the entry.
+2. **Frozen low-level state confirmed** — base branch tip `9876cb38c5415fbc86336a26a68e05680c397fd5`; committed `corpus/README.md` at the freeze: 15 C-rows, C15 `uncovered`; coverage-map census at hand pre-round: 71/200 measured rows `OK`, C15 `UNCOVERED_NO_ENTRY`; committed entry `admission-status: candidate`.
+3. **C2 battery leg of my bounds** —`--stage full`: `V3_KILLS=12/12`, `POS_C1V3=pass` (real lint+embedded checker), `DO_NOTHING_C1V3=fail-as-required`, `HOLD_R93_BATTERY=pass`, `BATTERY3_VERDICT=pass`, exit 0; `--stage red-v2`: `RED_V2_VERDICT=pass`, `V2_REACH_NEW=8/8 runnable + 1 receipt-backed`. Battery runs were scratch-only (built fixture trees; counters run in temp copies), lane files untouched, nothing left in tree.
+4. **Real-checker legs on the committed entry** — `corpus/lint_entry.py` exit 0; `corpus/check_embedded_outputs.py` exit 2 (no-`$`-blocks reason) with `has_cmd_block=False` (entry has zero fenced blocks, confirmed by grep), so the docs-only embedded pass condition (`returncode==2 and "could-not-evaluate" and not has_cmd_block`) is satisfied under the frozen v3 rule.
+5. **S498/S499 receipts (Q01 load-bearing)** — receipts and raw bodies landed in `ScoutReopen/receipts/` mid-wave and both verify with the REAL `corpus/audit_source_quotes.py` (verify mode, sources `corpus/SOURCES.md`): `verified=2, exit 0`. Body sha256s match receipts (`cb5b40c5…b6ba`, 30064 B; `f05249e6…2267`, 115812 B); located quotes at receipt spans extract exactly, ≤25 words. Committed SOURCES.md at the tip does NOT yet contain S498/S499 rows (opening evidence is append-only landing work — ScoutErrata's report confirms `ROW-ABSENT` is the pre-landing expected state); the frozen `C1_QUOTES` leg runs over `reports/round-94/quote-receipts/` in the LANDING tree, not over wave-dir bytes, so its green/red is the L1's landing receipt, not mine.
+6. **Q17 machine leg context** — `reports/round-90/source_path_check.py --selftest` passes (its lane-root mode only supports the landing tree). The entry names no relocated paths to sweep. `C1_EMBED_NONVACUOUS` vacuously passes on zero fenced blocks; battery F18/F18b/positive tests exercise the leg shape independently.
+7. **In-map errors don't void the Q-map** — S062/S068/S094/S095/S379/S380/S381/S400 carry in-map errata (`REJECTED (r74 audit)` with named superseding rows S431/S434/S438, and the registry rows are append-only corrections). The r73 erratum section is byte-identical to the pre-freeze version (diff vs parent = exactly the two S498/S499 source headers + the Q17 row; kills rule: the frozen r73 erratum section is not altered). The Q-map's in-map error cells cite rows whose corrections are also in the frozen bytes; the frozen-only Q01/Q02/Q16 cells for the erratum-named sources remain as historical cells, exactly as the erratum text itself instructs. No finding.
+
+## Findings (informational, no defect blocks the vote)
+
+- F-1 (context): the §Q-map Q01 mode-value is embedded but in-map source-cols cannot correct mid-seat — ScoutErrata's honest sweep S071 cross-check (old phrase absent from pinned README; new located phrase present) lets my Q12 stay PASS without surfacing additional unrelated in-map error class.
+- F-2 (context): battery runs; scratch cleanup self-disclose — the v3 battery used `/fast/scratch/hyaku/revenger-r94/{battery3,c1v3}` already-created by my observation; my own seat scratch (`ReviewerGate/` under revenger-r94) held only the frozen-SOURCES dump for reading and was deleted before yield.
+- F-3 (no-defect record): committed entry and pre-freeze entry differ by exactly the two S498/S499 header lines and the Q17 Q-map row; the r73 erratum section is untouched; this matches the frozen claims' separation sentence exactly ("no tool execution, host readiness, accuracy or market-coverage claim (Q10); the r73 erratum section stays byte-identical").
+
+## Bounds honored
+
+Wrote only `.ufo/waves/round-94/w1/ReviewerGate/{evidence.md,vote.json}` and `ReviewerGate.md`; no git/jj mutation (read-only `git show`/`git diff`/`grep -c`/`git ls-tree` only); no lane corpus/report/registry/LOG/SCORECARD file touched; no unlisted URL fetched; no subagent spawned; no scratch left; no sudo/pacman; scratch prior usage self-disclosed above; the seat is a leaf — no swarm.
+
+— ReviewerGate, 2026-11-05.

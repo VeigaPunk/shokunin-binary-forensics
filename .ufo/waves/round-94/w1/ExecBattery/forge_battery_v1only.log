@@ -1,0 +1,15 @@
+# cmd: PYTHONUTF8=1 python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-93/forge_battery.py --stage v1-only
+# cwd: /fast/scratch/hyaku/revenger-r94/ExecBattery
+# exit: 0
+
+--- stdout ---
+BATTERY F5 v1=pass rc=0 reach=yes
+BATTERY F6 v1=pass rc=0 reach=yes
+BATTERY F7 v1=pass rc=0 reach=yes
+BATTERY F8 v1=pass rc=0 reach=yes
+BATTERY F9 v1=pass rc=0 reach=yes
+V1_REACH_C2=5/5
+BATTERY_VERDICT=pass
+
+--- stderr ---
+

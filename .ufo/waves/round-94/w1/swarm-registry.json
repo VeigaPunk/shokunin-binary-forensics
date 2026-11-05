@@ -1,0 +1,139 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r94-w1",
+  "createdAt": "2026-11-05T16:15:05.083Z",
+  "updatedAt": "2026-11-05T16:15:05.083Z",
+  "reportDir": ".ufo/waves/round-94/w1",
+  "members": {
+    "ScoutReopen": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+    },
+    "ScoutErrata": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+    },
+    "ScribeLesson": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+    },
+    "ExecReceipts": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+    },
+    "ExecBattery": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+    },
+    "ExecCensus": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+    },
+    "ExecFrozen": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+    },
+    "ReviewerGate": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+    },
+    "ReviewerBlind": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+    },
+    "CriticR94": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+    },
+    "MutationR94": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+    },
+    "ConnectorOverlap": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+    },
+    "SentinelScope": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Round 94: C1 K 10/15->11/15 (C15 admission via the v3 gate); C2 v3 counter kills the routed forgery classes; 13 seats"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+=== census-seven — SKILL.md §6.2 verbatim ===
+run: 2026-11-05T13:16:45-03:00
+cwd: /home/vgpnk/Projects/shokunin/revenger-shokunin
+lane HEAD: 060a8e87d6de6b31f91b58524ab0fcad88ae5431
+
+--- 1) rows (spacing-tolerant) ---
+497
+exit=0
+
+--- 2) malformed rows — 11 columns means NF=13; must print 0 ---
+0
+exit=0
+
+--- 3) tier histogram ---
+A=448 B=21 C=28 
+exit=0
+
+--- 4) status histogram ---
+mined=461 queued=16 rejected=20 
+exit=0
+
+--- 5) duplicate ids — must print nothing ---
+exit=0
+
+--- 6) enum violations and tier inflation — must print nothing ---
+exit=0
+
+--- 7) mined rows whose used-by paths do not exist — must print nothing ---
+exit=0
+
+=== end census-seven ===

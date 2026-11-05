@@ -1,0 +1,20 @@
+{
+  "schema": "revenger-quote-audit-v1",
+  "sid": "S498",
+  "row_url": "https://github.com/morluto/rea",
+  "fetch_url": "https://raw.githubusercontent.com/morluto/rea/main/README.md",
+  "final_url": "https://raw.githubusercontent.com/morluto/rea/main/README.md",
+  "http_status": 200,
+  "fetched_at": "2026-11-05",
+  "fetch_sha256": "cb5b40c5752a403fbe20be9af2c08b5ca915c033af142f6f57af227cbaa2b6ba",
+  "length": 30064,
+  "anchor": "README.md \"How REA works\", accessed 2026-11-05; \"Your agent calls REA through MCP to inspect the target and trace relevant code.\"",
+  "quote": "Your agent calls REA through MCP to inspect the target and trace relevant code.",
+  "span": { "start": 8469, "end": 8548 },
+  "verdict": "verified",
+  "body_derivation": "raw response bytes",
+  "normalization": "",
+  "attempts": [],
+  "seat": "ExecReceipts",
+  "notes": "Independent ExecReceipts drift-check fetch of the REA root README at the then-current main revision, 2026-11-05; cross-checks ScoutReopen."
+}

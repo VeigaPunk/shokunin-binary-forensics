@@ -1,0 +1,32 @@
+# cmd: PYTHONUTF8=1 python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-93/forge_battery.py --stage full
+# cwd: /fast/scratch/hyaku/revenger-r94/ExecBattery
+# exit: 0
+
+--- stdout ---
+BATTERY F5 v1=pass reach=yes
+BATTERY F6 v1=pass reach=yes
+BATTERY F7 v1=pass reach=yes
+BATTERY F8 v1=pass reach=yes
+BATTERY F9 v1=pass reach=yes
+V1_REACH_C2=5/5
+BATTERY F1 v2c1=fail kill=yes
+BATTERY F2 v2c1=fail kill=yes
+BATTERY F3 v2c1=fail kill=yes
+BATTERY F4 v2c1=fail kill=yes
+BATTERY F5 v2c2=fail kill=yes
+BATTERY F6 v2c2=fail kill=yes
+BATTERY F7 v2c2=fail kill=yes
+BATTERY F8 v2c2=fail kill=yes
+BATTERY F9 v2c2=fail kill=yes
+V2_KILLS=9/9
+POS_C1V2=pass
+POS_C2V2=pass
+DO_NOTHING_C2=fail
+R92_RECEIPT .ufo/waves/round-92/w1/CriticR92Claims/findings.md present=True marker=yes ('passes 12/12 legs')
+R92_RECEIPT .ufo/waves/round-92/w1/CriticR92Claims/findings.md present=True marker=yes ('`C1_VOTES=pass`, `C1_VERDICT=pass`')
+R92_RECEIPT .ufo/waves/round-92/w1/CriticR92Claims/findings.md present=True marker=yes ('shadow')
+R92_RECEIPT .ufo/waves/round-92/w1/CriticR92Claims/findings.md present=True marker=yes ('round-77')
+BATTERY_VERDICT=pass
+
+--- stderr ---
+

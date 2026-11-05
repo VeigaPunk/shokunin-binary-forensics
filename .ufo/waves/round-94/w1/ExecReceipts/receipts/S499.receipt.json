@@ -1,0 +1,20 @@
+{
+  "schema": "revenger-quote-audit-v1",
+  "sid": "S499",
+  "row_url": "https://github.com/morluto/rea/blob/main/docs/installation.md",
+  "fetch_url": "https://raw.githubusercontent.com/morluto/rea/main/docs/installation.md",
+  "final_url": "https://raw.githubusercontent.com/morluto/rea/main/docs/installation.md",
+  "http_status": 200,
+  "fetched_at": "2026-11-05",
+  "fetch_sha256": "f05249e642a40562e8f2f1eee8ec23d56401f4b5884ba665c02f9730d8de2267",
+  "length": 115812,
+  "anchor": "docs/installation.md \"Review setup changes\", accessed 2026-11-05; \"Setup previews configuration changes and asks for approval before applying them.\"",
+  "quote": "Setup previews configuration changes and asks for approval before applying them.",
+  "span": { "start": 107, "end": 187 },
+  "verdict": "verified",
+  "body_derivation": "raw response bytes",
+  "normalization": "",
+  "attempts": [],
+  "seat": "ExecReceipts",
+  "notes": "Independent ExecReceipts drift-check fetch of the REA installation docs at the then-current main revision, 2026-11-05; cross-checks ScoutReopen."
+}
