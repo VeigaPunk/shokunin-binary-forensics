@@ -106,3 +106,47 @@ One v1 wave, 12 seats (policy band 8–16): executor 3, scout 1, scribe 1, conne
 critic 1, mutation-tester 1, sentinel 1. Attack share 5/12 (reviewer ×3, critic, mutation-tester), which
 is ≥ 25 %. Connector seats 1 (≤ 2). The L1 holds the planner seat, because the validator rejects
 `planner`. Godspeed leads every L2 prompt.
+
+---
+
+## Amendment A — recorded before the v7 freeze and before any landing-tree scoring (2026-11-05)
+
+This amendment is appended. It does not replace any frozen sentence above. It comes from
+ReviewerClaims findings F1–F7 (`.ufo/waves/round-98/w1/ReviewerClaims.md`). It clarifies or tightens
+the claims and widens no target. It was sent to ExecCounterV7 and ExecHarness7 before any v7 bytes
+were frozen.
+
+**A1 — C2 real-tree positive control (F1).** The c02 profile compares the README with its own
+`FREEZE_REV` and accepts a difference in C02 only (`C1_ONLY_TARGET`). The round-98 landing changes
+C14, so v7 `--profile c02` on the landing archive cannot pass by construction. That run is therefore
+reported as a diagnostic only, under this rule: **no harm to C02** when (i) the C02 README row on the
+landing tree is byte-identical to the row at `34c56f9`, and (ii) every failing c02 leg on the landing
+tree is `C1_ONLY_TARGET`, with its diff list naming only C14. A failing leg other than that one is
+reported as harm.
+
+**A2 — `C1_USEDBY_GROUNDED` scope (F2).** The leg checks only the profile's row set: c14 checks
+S505, S506 and S507; c02 checks S502, S503 and S504. A row is grounded when every knowledge path in
+its used-by cell exists and cites the row id as a whole word. A used-by cell of `—` is grounded. The
+S505 correction is fixed at status `mined → queued` and used-by
+`corpus/knowledge/round-96-native-analysis-sessions.md → —`, logged old→new in the lesson.
+
+**A3 — FR10 mechanism (F3).** The PASS-note rule of `C1_VOTE_NOTES` applies only in the c14
+profile. The c02 honest fixture uses boilerplate notes on its PASS rows. In both profiles the leg also
+refuses a vote that marks Q09 `n/a` when the entry contains a 64-hex digest token, because Q09
+governs digest claims. That applicability rule is what refuses FR10.
+
+**A4 — second positive (F4).** The harness also builds `FR00b-benign-extra-file`: FR00 plus one new
+file, `reports/round-98/benign-r98.txt`, holding one plain sentence. It prints `C2_POSITIVE2`. C2 is
+met only if `C2_POSITIVE=pass` and `C2_POSITIVE2=pass` both hold, in addition to the frozen
+conditions. This makes C2 stricter.
+
+**A5 — do-nothing receipt recipe (F5).** `controls/c2-do-nothing-v6-holdout.log` was produced with
+a scratch copy of the r97 builder whose `COUNTER` line points at
+`reports/round-97/c1_k_admit_counter6.py`. The committed builder still drives v5 by default, and
+under v5 it yields `accepted=8`. ReviewerClaims reproduced both numbers
+(`ReviewerClaims/rb5-table.txt`, `rb6-table.txt`).
+
+**A6 — normative contract (F6, F7).** The v7 interface contract in the wave context of
+`.ufo/waves/round-98/w1-spec.json` is normative for leg names and profile constants. In the c14
+profile, `C1_DERIV_TABLE` recomputes the entry's recorded digests from the tree: the archive-r2
+fixture, the S506 body, and the record-file prefixes.

@@ -1,0 +1,229 @@
+{
+  "schema": "ufo-swarm-wave-dispatch-v1",
+  "wave": "revenger-r98-w1",
+  "policy": {
+    "source": "config",
+    "maxLanes": 256,
+    "minLanes": 8,
+    "waveMinLanes": 8,
+    "waveMaxLanes": 16,
+    "declaredMaxLanes": null,
+    "hardCeiling": 256,
+    "rampBatchSize": 5,
+    "rampIntervalMs": 700,
+    "globalRunnerCeiling": 1056
+  },
+  "counts": {
+    "spawn": 12,
+    "resume": 0,
+    "total": 12
+  },
+  "registry": {
+    "schema": "ufo-swarm-registry-v1",
+    "path": ".ufo/waves/round-98/w1/swarm-registry.json",
+    "reportDir": ".ufo/waves/round-98/w1",
+    "members": {
+      "ExecCounterV7": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "Build the v7 admission counter (profiles c02/c14, eight new legs, self-test) and red-before receipts; no landing-tree scoring"
+      },
+      "ExecHarness7": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Build forge_reach7.py: one run prints C2_ACCEPTED, C2_POSITIVE, C2_STUB_SELFTEST and the row-set leg lines on fully built trees"
+      },
+      "ExecControls": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "Build the C1 do-nothing and junk-row control recipes and the S505 correction mirror check; skip-work table"
+      },
+      "ScoutReopen": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "Independently re-open S506 and S507, re-derive every derivation-table row of the candidate entry, and check package presence"
+      },
+      "ScribeLesson": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "Draft corpus/lessons/round-98.md (Gate, Mistakes, Frontier, considerthese) for the L1 to integrate"
+      },
+      "ConnectorOverlap": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "connector",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "Sibling-overlap scan for host-readiness / doctor knowledge and admission-counter legs"
+      },
+      "ReviewerClaims": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "Attack the frozen claims for do-nothing reachability, predicate/counter mismatch and causal coupling"
+      },
+      "ReviewerGate": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "Q01–Q17 gate audit and vote on the C14 candidate entry"
+      },
+      "ReviewerBlind": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": null,
+        "axes": [
+          "coverage"
+        ],
+        "milestone": "Independent blind Q01–Q17 vote on the C14 candidate (do not read other votes)"
+      },
+      "CriticR98": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": null,
+        "axes": [
+          "calibration",
+          "coverage"
+        ],
+        "milestone": "Critic vote on the candidate plus a fresh round-98 holdout builder (12 new forgeries, not run on v7)"
+      },
+      "MutationR98": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "mutation-tester",
+        "item": null,
+        "axes": [
+          "calibration"
+        ],
+        "milestone": "Port the mutation harness to v7 and pre-register mutants for the eight new legs"
+      },
+      "SentinelScope": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "sentinel",
+        "item": null,
+        "axes": [
+          "coverage",
+          "calibration"
+        ],
+        "milestone": "Scope and safety sweep: credential material in new records, write-scope adherence, registry row hygiene"
+      }
+    }
+  },
+  "compaction": {
+    "applied": false,
+    "mechanism": null,
+    "reason": null,
+    "savedBytes": 0,
+    "payloadBytesBefore": 0,
+    "payloadBytesAfter": 0
+  },
+  "taskCall": {
+    "context": "# Goal\nrevenger round 98, attempt 1, wave w1 (one v1 wave, 12 seats). Lane repo: /home/vgpnk/Projects/shokunin/revenger-shokunin. Every path you read, write or cite is ABSOLUTE under that repo; the fleet root /home/vgpnk/Projects/shokunin is NOT your write surface. Every `Report:` trailer path is relative to /home/vgpnk/Projects/shokunin/revenger-shokunin — write it at /home/vgpnk/Projects/shokunin/revenger-shokunin/<that path>.\n\nClaims are FROZEN at lane commit 9d49002a3804de48d365b7d32849ada06745d64f in /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/claims.md. Read that file in full first. Its predicates, targets, counting commands, kill rules and controls are frozen: never edit them, never re-declare them. Findings against them go in your findings file; the L1 (agent id RevengerR98) decides any amendment before the v7 freeze.\n\nC1 (coverage, K 13/15 -> 14/15): row C14 partial -> held through a NEW v7 admission counter `/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/c1_k_admit_counter7.py` run as `--profile c14`. Candidate entry: /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-98-rea-host-readiness.md (admission-status: candidate), sources S506 (REA connection-and-recovery reference at pinned revision 12f6e09) and S507 (own-work record /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-98/). Vote-binding digest (v6 `digest()` rule: sha256 of the entry text with every admission-status line normalized to `admission-status: candidate`): 1ea9260c812947d3e2c61161c22a1e143df432168e7b9b5bc4c1a90c0b1527b8.\nC2 (calibration): frozen v6 (`reports/round-97/c1_k_admit_counter6.py`) accepts 5/5 of the round-97 routed holdout forgeries FR02, FR08, FR09, FR10, FR12 (control receipt `reports/round-98/controls/c2-do-nothing-v6-holdout.log`; builder `.ufo/waves/round-97/w1/CriticR97/fresh/build_fresh.py`). Target: v7 `--profile c02` accepts 0/5, with C2_POSITIVE=pass, C2_STUB_SELFTEST=ok and both row-set forgeries FR06/FR07 refused by the named leg C1_ROWSET, all printed by one run of `reports/round-98/forge_reach7.py`.\n\nFreeze order (binding): the L1 commits the v7 bytes and only then scores. Seats build and check. Seats do NOT build or score any landing tree, do NOT flip corpus/README.md or the entry's admission-status, and do NOT run any counter on a tree with C14 held. Running frozen v6, the r97 builder and work-in-progress v7 on fixtures, the claims-freeze archive and copies is allowed (development set, disclosed). \n\nv7 interface contract (shared by ExecCounterV7, ExecHarness7, ExecControls, MutationR98, CriticR98): `python3 -B reports/round-98/c1_k_admit_counter7.py --profile {c02|c14} --tree <dir> [--work <scratch>]` and `--self-test`; prints one `C1_<LEG>=pass|fail` line per leg, `C1_K_HELD_BACKED=<n>/15`, `<LEG>_WHY=` lines, and last `C1_VERDICT=pass|fail`; exit 0 iff pass, 1 if fail, 2 on usage error. The c14 profile pins seats {\"ExecCounterV7\": \"executor\", \"ExecHarness7\": \"executor\", \"ExecControls\": \"executor\", \"ScoutReopen\": \"scout\", \"ScribeLesson\": \"scribe\", \"ConnectorOverlap\": \"connector\", \"ReviewerClaims\": \"reviewer\", \"ReviewerGate\": \"reviewer\", \"ReviewerBlind\": \"reviewer\", \"CriticR98\": \"critic\", \"MutationR98\": \"mutation-tester\", \"SentinelScope\": \"sentinel\"}; votes dir reports/round-98/votes; wave dir .ufo/waves/round-98; receipts reports/round-98/quote-receipts; FREEZE_REV 9d49002a3804de48d365b7d32849ada06745d64f; HELD_TARGET 14; NEW_ROW_IDS S506,S507; RECEIPT_ROW_IDS S506. The c02 profile keeps every v6 constant. New legs (both profiles): C1_ROWSET, C1_ENTRY_BYTES, C1_HEADER_POSITION, C1_VERIFIED_AT, C1_VOTE_NOTES, C1_OWNWORK_PATHS, C1_QUOTE_BYTES, C1_USEDBY_GROUNDED; C1_ONLY_C02 is renamed C1_ONLY_TARGET.\n\nVote file contract (ReviewerGate, ReviewerBlind, CriticR98): `/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/votes/<Seat>.json`, strict JSON, same keys as `/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-96/votes/ReviewerGate.json`: seat, role (your role), candidate_sha256 = the digest above, decisions Q01..Q17 each \"PASS\", \"FAIL\" or \"n/a\", notes per Q (an n/a note: >=6 tokens and names a Q id; a PASS note: your own specific evidence, never boilerplate), artifact_path = `.ufo/waves/round-98/w1/<Seat>/<file>.md` (your own audit file, naming your seat and the digest), artifact_sha256 = sha256 of that file's bytes. Record FAIL honestly when a criterion fails; never soften a FAIL to pass a counter.\n\n# Write scope\n- Your assigned artifacts under /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/ (only the paths your task names).\n- Your wave dir: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-98/w1/<YourSeatName>/ (any files you create).\n- Your final findings file: /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-98/w1/<YourSeatName>.md\n- Frozen bytes you must NOT edit: reports/round-9[0-7]/, corpus/ (all of it: SOURCES.md, README.md, QUALITY.md, knowledge/, lessons/, live/, fixtures/), SCORECARD.md, LOG.md, SKILL.md, PROVINCE.md, considerthese/, reports/round-98/claims.md, reports/round-98/controls/ files that exist at 9d49002a3804de48d365b7d32849ada06745d64f, reports/round-98/quote-receipts/; the fleet root and any sibling lane. /home/vgpnk/Projects/shokuknow is READ-ONLY (never write, commit, fetch, push, or run its campaign tools).\n- Never commit, push, stage, stash, reset, checkout, or run any mutating git/jj command anywhere. Read-only git (log, show, diff, status, rev-parse, archive) is fine. Freeze snapshot recipe: `git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive --format=tar 9d49002a3804de48d365b7d32849ada06745d64f | tar -x -C <scratch>/freeze`.\n- Never edit another seat's files. Never message agent://all. Never call task. Never spawn anything (an executor may spawn at most one read-only labrat probe). Message only RevengerR98 or a seat named above, by id, and only for an interface question.\n\n# Scratch (binding)\nYour scratch root: /fast/scratch/hyaku/revenger-r98/<YourSeatName>/ (create with mkdir -p; pass TMPDIR and --work explicitly). Do not write under /tmp except files under 50 MB; never hardcode /tmp or older round scratch paths in committed tools (tools must honour TMPDIR / HYAKU_SCRATCH / --work). Delete your scratch dir before you yield (`trap 'rm -rf -- \"$S\"' EXIT` in shell), copying receipts into your wave dir first. Git fixtures, if any: `D=$(mktemp -d -p \"$S\") && git -C \"$D\" init -q`, name `-C \"$D\"` on every call, and verify `git -C \"$D\" rev-parse --show-toplevel` equals `$D` before any commit.\n\n# Tooling (operator 2026-10-19)\nYou and every seat may install or upgrade tools that help the task — read /home/vgpnk/.omp/agent/RULES.md first (official channels, update-safety gate); record tool, version, channel and reason in your findings. pacman guard: all pacman transactions are PAUSED host-wide — never `pacman -Syu`, `-Sy`, `-U`, `-R`, downgrades, or restart host services; install only via uv tool / npx / an official binary in ~/.local/bin; before any `pacman -S`, run `pacman -Sp --print-format '%n %v' <pkgs>` and proceed only if none are installed. Never mutate host sysctls (e.g. user.max_user_namespaces) or REA/client configuration (`rea setup` is forbidden; `rea doctor` and read-only `rea` analysis commands are allowed).\n\n# Discipline\n- Run only the counters, probes and fixtures your task names. Do not run the lane's full build, lint or test suite. Do not sleep-loop or poll for other seats.\n- An unrun check has not passed. Report the exit codes you observed. Never fabricate evidence or verdicts.\n- Final yield: short. Files written, exact counting-command outputs, exit codes, verdict, open questions. No progress narration.\n",
+    "tasks": [
+      {
+        "name": "ExecCounterV7",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nWrite /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/c1_k_admit_counter7.py as a NEW file, starting from a copy of the frozen v6 /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-97/c1_k_admit_counter6.py (read it in full first, including its self-test, `_fixture()` and `_fixture_delta()`). v6 stays byte-unchanged.\n\n# Change\n1. Profiles: `--profile c02` keeps every v6 constant (ENTRY, TARGET_ROW C02, HELD_TARGET 13, NEW_ROW_IDS, RECEIPTS/VOTES/WAVE dirs, PINNED_SEATS, FREEZE_REV 2875b9c…). `--profile c14` sets ENTRY corpus/knowledge/round-98-rea-host-readiness.md, TARGET_ROW C14, HELD_TARGET 14, NEW_ROW_IDS (S506,S507), RECEIPT_ROW_IDS (S506,), VOTES_DIR reports/round-98/votes, RECEIPTS_DIR reports/round-98/quote-receipts, WAVE_DIR .ufo/waves/round-98, PINNED_SEATS = the 12 seats in the context, FREEZE_REV 9d49002a3804de48d365b7d32849ada06745d64f, ARCHIVE_PATHS extended with reports/round-97, reports/round-98, .ufo/waves/round-97, .ufo/waves/round-98. Remove C02-only hardcoding from legs (e.g. the pe-r75 fixture-sha check in C1_DERIV_TABLE becomes profile data; for c14 bind `corpus/fixtures/archive-r2/fixture.zip`). Rename C1_ONLY_C02 / C1_C02_HELD / C1_C02_CITES to C1_ONLY_TARGET / C1_TARGET_HELD / C1_TARGET_CITES. No `--profile` → exit 2.\n2. New legs, each in both profiles, each with a `_WHY=` line:\n   - C1_ROWSET: coverage table ids are exactly C01..C15, each once, in order (refuses r97 FR06/FR07 by design).\n   - C1_ENTRY_BYTES: entry decodes strict UTF-8, no BOM, no CR, no NUL (refuses FR02).\n   - C1_HEADER_POSITION: the provenance headers (source:, verified-at:, recheck:, coverage-map:, admission-status:) are the file's leading lines, before any blank line, heading or fence; any header line inside a fenced block fails (refuses FR08).\n   - C1_VERIFIED_AT: the entry's verified-at date equals every RECEIPT_ROW_IDS receipt `fetched_at`, every NEW_ROW_IDS row `opened` date and ROUND_DATE (refuses FR09).\n   - C1_VOTE_NOTES: every PASS decision's note is >=6 tokens, is not an n/a-style reason and is not shared verbatim with another Q in the same vote or with another seat's vote (refuses FR10; read the FR10 mutator in the r97 builder to match its class, not its literal bytes).\n   - C1_OWNWORK_PATHS: for each own-work NEW_ROW_IDS row, the backticked path in its source cell exists in the tree and is non-empty; every `corpus/live/runs/...` and `corpus/fixtures/...` path the entry cites exists (refuses FR12).\n   - C1_QUOTE_BYTES: for each own-work NEW_ROW_IDS row whose anchor carries `(1-based bytes a-b)`, bytes a..b of the named file, split on newline with empty lines dropped, equal the anchor's backticked segments separated by ` / ` (M9; S505's anchor and S507's anchor are the positive cases).\n   - C1_USEDBY_GROUNDED: registry-wide, every knowledge path in a used-by cell exists and that entry's text contains the row id as a whole word. At base 34c56f9 exactly one pair fails (S505 → round-96-native-analysis-sessions.md); show that.\n3. Self-test: `--self-test` prints `SELFTEST_C1V7=OK|FAIL legs=<n>` (r97 routed defect 6.3: no stale v5/v6 label) and builds its honest fixture for BOTH profiles plus one failing delta per new leg.\n4. Red-before receipts into /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/controls/v7-dev/ (new dir): for each of FR02, FR06, FR07, FR08, FR09, FR10, FR12 built by the r97 builder (copy it into your scratch and point its COUNTER at v6 then at v7 with `--profile c02`; do not edit the original), the v6 log (accepted or incidental leg) and the v7 log naming the refusing new leg; FR00 honest control passes under v7 c02; `C1_USEDBY_GROUNDED` on the base archive 34c56f9 fails naming S505, and on a scratch copy with S505's used-by set to `—` and status `queued` passes. Also `--self-test` log.\nNever run v7 with `--profile c14` on any tree where C14 is held (the L1 does that after the freeze). Running `--profile c14` on the claims-freeze archive 9d49002a3804de48d365b7d32849ada06745d64f is allowed only to confirm it fails (record the failing legs).\n\n# Acceptance\nThe file exists; `--self-test` exit 0 with SELFTEST_C1V7=OK; the v7-dev receipts show each new leg failing its vector and FR00 passing; findings file lists every leg, every receipt path and every exit code.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage, calibration\nMilestone: Build the v7 admission counter (profiles c02/c14, eight new legs, self-test) and red-before receipts; no landing-tree scoring\n\nReport: write your scoped findings to .ufo/waves/round-98/w1/ExecCounterV7.md"
+      },
+      {
+        "name": "ExecHarness7",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nWrite /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/forge_reach7.py as a NEW file (read /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-97/forge_reach6.py and /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-97/w1/CriticR97/fresh/build_fresh.py in full first; both stay byte-unchanged).\n\n# Change\n1. `forge_reach7.py --counter <path> [--profile c02] --work <scratch>` rebuilds, in <scratch>, the round-97 honest control FR00 and the vectors FR02, FR06, FR07, FR08, FR09, FR10, FR12 as FULL trees, reusing the r97 builder's mutators (import the builder module from its committed path or vendor the mutator functions verbatim into reports/round-98/forgeries7/ with a sha256 manifest of the copied source). Each tree gets the complete honest fixture plus its delta: no stub tree may skip a delta (r97 routed defect 6.4: 28 `builder note … No such file` lines).\n2. One run prints, in order: one `VECTOR <name> rc=<n> verdict=<pass|fail> failing=<legs>` line per vector; `C2_ACCEPTED=<n>/5` over FR02,FR08,FR09,FR10,FR12; `C2_POSITIVE=pass|fail` (FR00 accepted); `C2_STUB_SELFTEST=ok|fail` (an always-pass stub counter scores 5/5 and an always-fail stub 0/5 on the same fully built trees, and every delta reports applied); `C2_ROWSET_FR06=<failing legs>`, `C2_ROWSET_FR07=<failing legs>`; `C2_VERDICT=met|not-met` = ACCEPTED 0/5 AND POSITIVE pass AND STUB ok AND C1_ROWSET in both row-set lines. Pass `--profile c02` to the counter only when given; for v6 pass no profile. Exit 0 when every tree was evaluated (verdicts are data), 2 on harness error.\n3. Red-before into /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/controls/v7-dev/: the harness run against frozen v6 (expect C2_ACCEPTED=5/5, C2_POSITIVE=pass, C2_STUB_SELFTEST=ok, C2_ROWSET lines without C1_ROWSET, C2_VERDICT=not-met), saved as `harness-v6.log` with its command and exit code. You MAY run it against ExecCounterV7's work-in-progress v7 to check the interface (development set, disclosed) but the L1 records the frozen run.\nHonour TMPDIR/HYAKU_SCRATCH/--work; never hardcode /tmp.\n\n# Acceptance\nThe file exists; `harness-v6.log` shows the v6 numbers above with exit 0; findings list the exact output lines and the copied-mutator manifest.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: calibration\nMilestone: Build forge_reach7.py: one run prints C2_ACCEPTED, C2_POSITIVE, C2_STUB_SELFTEST and the row-set leg lines on fully built trees\n\nReport: write your scoped findings to .ufo/waves/round-98/w1/ExecHarness7.md"
+      },
+      {
+        "name": "ExecControls",
+        "agent": "executor",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nWrite /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/controls/make_c1_controls.sh (new) and /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/controls/skip-work-table-r98.md (new); receipts into /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-98/w1/ExecControls/.\n\n# Change\n1. `make_c1_controls.sh <out-dir>` builds, from `git archive 9d49002a3804de48d365b7d32849ada06745d64f`, two trees: `do-nothing/` (the claims-freeze tree unchanged) and `junk-row/` (identical, except corpus/README.md row C14's status cell `partial` → `held`, nothing else). It prints the `diff -r` of the two trees (must be exactly that one cell) and exits 0. It must not run any counter; the L1 runs v7 on them after the v7 freeze.\n2. S505 correction mirror check (r97 routed defect 6.1): in scratch, copy the freeze tree, change ONLY S505's status `mined` → `queued` and used-by `corpus/knowledge/round-96-native-analysis-sessions.md` → `—`, then run `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --file <copy>/corpus/SOURCES.md` and the frozen v6 counter `python3 -B reports/round-97/c1_k_admit_counter6.py --tree <copy>` (must still pass: S505 is not among v6's NEW_ROW_IDS). Save the exact one-line diff as /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/controls/s505-usedby-fix.diff and both logs with exit codes. Also count registry-wide ungrounded used-by pairs on the freeze tree with a stdlib Python one-off (expect 1: S505) and save the command and output.\n3. Skip-work table (considerthese/2026-11-05.md proposal 1, standing practice): for C1 and C2, list each cheapest skip-work path (flip the README only; flip the entry only; copy r96 votes; re-bind a stale digest; stub counter; refuse-everything counter) and the leg or control that must refuse it. Paper table only, no scoring.\n\n# Acceptance\nScript runs on the freeze archive and its diff shows exactly one changed cell; census and v6 logs saved with exit codes; table written.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: coverage, calibration\nMilestone: Build the C1 do-nothing and junk-row control recipes and the S505 correction mirror check; skip-work table\n\nReport: write your scoped findings to .ufo/waves/round-98/w1/ExecControls.md"
+      },
+      {
+        "name": "ScoutReopen",
+        "agent": "scout",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nRead-only reconnaissance of the C14 candidate /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-98-rea-host-readiness.md and its rows S506/S507 (/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md lines 523-524).\n\n# Change\n1. Fetch the S506 URL yourself (curl, into your scratch): HTTP status, byte length, sha256; `cmp` against /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/quote-receipts/raw/S506.body; for each quoted sentence in the entry and in S506's anchor, `grep -cF` count in the fetched body; verify the receipt span bytes 7126-7202.\n2. S507: `head -c 41 corpus/live/runs/round-98/rea-doctor-r98.txt | od -c`; run every command in the entry's derivation table from /home/vgpnk/Projects/shokunin/revenger-shokunin and compare output with the recorded column, row by row (MATCH/MISMATCH with the actual output).\n3. Live drift: run `rea doctor` (read-only) and `rea inspect-artifact corpus/fixtures/archive-r2/fixture.zip` into your scratch and diff the classes/statuses against the committed record (wall-clock and path-only differences are drift notes, not mismatches). Never run `rea setup`.\n4. Assimilation status: `ls /home/vgpnk/Projects/shokuknow/merge/revenger` (read-only) and report whether the package exists now; if it does, run the prompt's id-collision recipe into your scratch only and report counts.\n\n# Acceptance\nFindings file with one line per checked value (expected, observed, MATCH/MISMATCH, command).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: Independently re-open S506 and S507, re-derive every derivation-table row of the candidate entry, and check package presence\n\nReport: write your scoped findings to .ufo/waves/round-98/w1/ScoutReopen.md"
+      },
+      {
+        "name": "ScribeLesson",
+        "agent": "scribe",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nWrite the draft at /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-98/w1/ScribeLesson/round-98.md (the L1 copies it into corpus/lessons/; you do not write corpus/).\n\n# Change\nRead /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/lessons/round-97.md and round-97-verifier-spotcheck.md for the format and the routed defects (§6). Draft:\n- `## Gate`: rows S506 and S507 — URL/path, access date 2026-11-05, a <=25-word located quote each (S506: the body bytes 7126-7202 sentence; S507: bytes 1-41 of rea-doctor-r98.txt), tier, scope, and the S505 status/used-by change logged old→new (`mined` → `queued`; `corpus/knowledge/round-96-native-analysis-sessions.md` → `—`), reason: the entry never cites S505 (r97 spot-check §6.1).\n- `## Mistakes`: M11 S505 used-by ungrounded (class: registry/used-by drift; evidence: r97 spot-check §6.1 and `grep -c S505 corpus/knowledge/round-96-native-analysis-sessions.md` → 0; captured-by: none — v6 checks used-by only for S502-S504; fix: v7 C1_USEDBY_GROUNDED, shown able to fail on base 34c56f9). M12 admission-status flipped to admitted before the non-author closure in r97 (evidence: spot-check §6.5; captured-by: none; fix: this round records the flip as pending closure in the entry and SCORECARD). M13 the r97 holdout forgeries accepted by v6 (FR02/08/09/10/12; captured-by: the A4 holdout; fix: v7 legs). Fill the exact r98 receipt paths as `<to be filled by L1>` only where the receipt does not exist yet.\n- `## Frontier`: C14 route table → next probes (Android capability on an authored APK; firmware capability on fixtures/firmware-r63).\n- `## considerthese`: open /home/vgpnk/Projects/shokunin/revenger-shokunin/considerthese/2026-11-05.md and earlier files; pick ONE still-unimplemented proposal (not proposal 1 of 2026-11-05, already mined in r97); quote it, and state how the lane's own bar grounds or refuses it.\nEvery count you write carries the command that produced it.\n\n# Acceptance\nDraft file written; every claim in it has a command or a path:line pointer.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: Draft corpus/lessons/round-98.md (Gate, Mistakes, Frontier, considerthese) for the L1 to integrate\n\nReport: write your scoped findings to .ufo/waves/round-98/w1/ScribeLesson.md"
+      },
+      {
+        "name": "ConnectorOverlap",
+        "agent": "connector",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nRead-only scan of sibling lanes under /home/vgpnk/Projects/shokunin/*-shokunin (not revenger) for overlap with (a) the C14 subject (REA or tool host readiness, `rea doctor`, per-route prerequisites) and (b) the v7 new-leg classes (BOM/header-position/verified-at/used-by grounding checks in admission counters).\n\n# Change\nUse grep over corpus/knowledge, corpus/SOURCES.md and reports of each sibling; report hit counts per lane with the exact commands, and for each genuine overlap the path:line and whether it is contested scope (Q10: reported, not absorbed). Note any sibling knowledge that contradicts the candidate entry's route table.\n\n# Acceptance\nFindings file with commands, counts per lane and a verdict: overlap / adjacency / none.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: Sibling-overlap scan for host-readiness / doctor knowledge and admission-counter legs\n\nReport: write your scoped findings to .ufo/waves/round-98/w1/ConnectorOverlap.md"
+      },
+      {
+        "name": "ReviewerClaims",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\n/home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/claims.md at 9d49002a3804de48d365b7d32849ada06745d64f, and its controls in /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/controls/.\n\n# Change\nAttack: (1) can a do-nothing or junk-row tree reach C1's target under the predicate as written? (2) is C2's 0/5 reachable by a refuse-everything counter (is C2_POSITIVE sufficient)? (3) are C1 and C2 causally separable as claimed (does the c02 profile read anything C1 changes, e.g. S505's fix or README)? (4) does the predicate sentence match the interface contract in the wave context? (5) recount the do-nothing receipt (`grep -c 'ACCEPTED-by-v5' reports/round-98/controls/c2-do-nothing-v6-holdout.log` and the per-vector rc lines) and the base row-status log. (6) universal clauses, narrowing risk, any wording a closure could not re-derive with one command. Write numbered findings with a proposed amendment text for each; mark which are binding before the v7 freeze.\n\n# Acceptance\nFindings file with numbered findings, each with the command you ran and its output.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: Attack the frozen claims for do-nothing reachability, predicate/counter mismatch and causal coupling\n\nReport: write your scoped findings to .ufo/waves/round-98/w1/ReviewerClaims.md"
+      },
+      {
+        "name": "ReviewerGate",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nThe candidate /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/knowledge/round-98-rea-host-readiness.md (digest 1ea9260c812947d3e2c61161c22a1e143df432168e7b9b5bc4c1a90c0b1527b8), against /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/QUALITY.md Q01–Q17 (read the full criteria and the admission procedure).\n\n# Change\nAudit each Q with your own commands over committed bytes (re-derive every derivation-table row, grep every quote in reports/round-98/quote-receipts/raw/S506.body, check S506/S507 rows at corpus/SOURCES.md:523-524, check the records under corpus/live/runs/round-98/). Write your audit file .ufo/waves/round-98/w1/ReviewerGate/gate-audit.md (name your seat and the digest in it), then the vote file reports/round-98/votes/ReviewerGate.json per the vote contract. Use FAIL where a criterion fails and say exactly why; never soften. Compute the digest yourself and confirm it equals 1ea9260c812947d3e2c61161c22a1e143df432168e7b9b5bc4c1a90c0b1527b8 before voting.\n\n# Acceptance\nAudit file and strict-JSON vote exist; artifact_sha256 matches the audit file bytes; findings file lists each Q decision with its command.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: Q01–Q17 gate audit and vote on the C14 candidate entry\n\nReport: write your scoped findings to .ufo/waves/round-98/w1/ReviewerGate.md"
+      },
+      {
+        "name": "ReviewerBlind",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nSame candidate and criteria as the gate audit, independently: do NOT read reports/round-98/votes/ReviewerGate.json, CriticR98.json or other seats' audit files before writing your vote.\n\n# Change\nPick your own checks (start from the entry's Observation/Inference/Unknown section and the route decision table: does each verdict follow from the cited probe class? is any configuration observation stated as capability (Q05)? is any count without its command (Q11)?). Write .ufo/waves/round-98/w1/ReviewerBlind/blind-audit.md (seat name + digest 1ea9260c812947d3e2c61161c22a1e143df432168e7b9b5bc4c1a90c0b1527b8) and reports/round-98/votes/ReviewerBlind.json per the vote contract. FAIL honestly.\n\n# Acceptance\nAudit file and strict-JSON vote exist; artifact_sha256 matches; findings file lists each Q decision with its evidence.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage\nMilestone: Independent blind Q01–Q17 vote on the C14 candidate (do not read other votes)\n\nReport: write your scoped findings to .ufo/waves/round-98/w1/ReviewerBlind.md"
+      },
+      {
+        "name": "CriticR98",
+        "agent": "critic",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\n(a) Critic vote on the C14 candidate (digest 1ea9260c812947d3e2c61161c22a1e143df432168e7b9b5bc4c1a90c0b1527b8): audit file .ufo/waves/round-98/w1/CriticR98/critic-audit.md and reports/round-98/votes/CriticR98.json per the vote contract. (b) A fresh holdout builder .ufo/waves/round-98/w1/CriticR98/fresh/build_fresh98.py.\n\n# Change\n(b) Design 12 NEW named-class forgeries, none equal in class to r97 FR01–FR12 or r96 FG01–FG20 (read their names in .ufo/waves/round-97/w1/CriticR97/fresh/ and .ufo/waves/round-96/w1/CriticR96/), at least 6 aimed at the c14 profile (a tree with C14 held and the entry admitted, built from the claims-freeze archive plus the honest landing edits the claims describe: README C14 row knowledge cell `knowledge/round-98-rea-host-readiness.md` and status held, entry admission-status admitted, S505 status queued / used-by `—`) and the rest at the c02 profile fixture. Include an honest control per profile. The builder takes `--counter <path> --profile <p> --work <scratch>`, builds every tree fully, and prints one line per vector with rc, verdict and failing legs, then `HOLDOUT98 accepted=<n>/<named>`. You MAY run it against frozen v6 (c02 vectors only, no profile flag) to record v6 outcomes; you must NOT run it against v7 — the L1 runs it once after the v7 freeze. Commit nothing; write a sha256 MANIFEST of the builder and vector specs.\n\n# Acceptance\nVote + audit exist; builder exists with manifest; findings list the 12 classes and why each is new.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration, coverage\nMilestone: Critic vote on the candidate plus a fresh round-98 holdout builder (12 new forgeries, not run on v7)\n\nReport: write your scoped findings to .ufo/waves/round-98/w1/CriticR98.md"
+      },
+      {
+        "name": "MutationR98",
+        "agent": "mutation-tester",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nWrite /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/mutants/mutate7.py (new), starting from /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-97/mutants/mutate.py (read-only).\n\n# Change\nSame CLI as mutate.py (`--counter --out --kill-tree --selftest --label --jobs`), plus `--profile`. Add operators that target each new v7 leg (delete the leg, invert its comparison, widen its regex, drop its WHY) and keep the v6 operator set, including the `d-host` class the r97 run left surviving (`controls/mutate-v6-kill.out` in reports/round-97/). Pre-register in .ufo/waves/round-98/w1/MutationR98/preregistered.md which vector or self-test delta should kill each new-leg mutant. Run the port against frozen v6 (`--label V6R98`) to show it reproduces the r97 v6 numbers within the same operator set (report the totals and any difference). The L1 runs it on frozen v7 after the freeze; you may dry-run it on work-in-progress v7 to check it executes (disclose).\n\n# Acceptance\nmutate7.py exists; the v6 reproduction log with exit code is in your wave dir; pre-registration written.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: calibration\nMilestone: Port the mutation harness to v7 and pre-register mutants for the eight new legs\n\nReport: write your scoped findings to .ufo/waves/round-98/w1/MutationR98.md"
+      },
+      {
+        "name": "SentinelScope",
+        "agent": "sentinel",
+        "task": "/skill:godspeed\nYou are a Godspeed-enabled subagent.\n\n1. **Name the axes.**\n2. **Iterate cheap, in parallel.**\n3. **Keep moves that improve any axis and harm none.**\n4. **Don't aim — let the frontier walk itself.**\n\n## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.\n\n# Target\nRead-only sweep of the round-98 committed and pending bytes.\n\n# Change\n1. Credential/secret scan of /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/live/runs/round-98/ and /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-98/ (tokens, keys, auth headers, cookies, private paths beyond home-directory config paths): exact grep commands and hit lines. Home-directory config paths printed by `rea doctor` are expected; say whether any is sensitive.\n2. Rows S506/S507 (corpus/SOURCES.md:523-524): 11 columns, no literal or escaped `|` in a cell, census `scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin revenger` exit code.\n3. Near the end of your run: `git -C /home/vgpnk/Projects/shokunin status --porcelain` and list any untracked fleet-root file whose content names revenger round 98 (a misroot by a seat of this wave); do not move or delete anything — report it.\n4. Check the candidate's scope sentences against PROVINCE.md: is any sentence a general host claim (Q10)?\n\n# Acceptance\nFindings file with commands, hit counts and verdicts per item.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: coverage, calibration\nMilestone: Scope and safety sweep: credential material in new records, write-scope adherence, registry row hygiene\n\nReport: write your scoped findings to .ufo/waves/round-98/w1/SentinelScope.md"
+      }
+    ]
+  },
+  "resumeSends": [],
+  "note": "Issue exactly one batched task call with taskCall ({context, tasks}); never split a wave into multiple task calls (one-swarm-per-wave). Then one hub send per resumeSends entry: hub send --to <entry.resume> --message <entry.message> (entry.name is bookkeeping, not a hub field)."
+}
