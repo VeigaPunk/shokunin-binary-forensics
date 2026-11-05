@@ -1,0 +1,11 @@
+# v6 with the same parity patch (no profile)
+C02-V01-hidden-dissent-uppercase-vote | vote file outside the *.json glob hides a FAIL vote | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+C02-V02-qid-list-as-na-reason | n/a reason made of criterion ids only | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+C02-E01-recheck-names-no-command | recheck header with no re-verifying command | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+C02-E02-two-run-clause-count | Q14 count wrong in a clause carrying two hex runs | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+C02-E03-coverage-map-other-row | coverage-map header names a row other than the citing row | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+C02-R01-held-row-backed-by-candidate | held row backed by an unadmitted entry of another round | rc=1 | fail | K=13/15 | C1_ONLY_C02,C1_ADMITTED_UNION,C1_VERDICT | fail | refused
+HOLDOUT98_PROFILE=c02 variant=fixture counter=c1_k_admit_counter6.py build_only=False
+HOLDOUT98_CONTROL=control-ok
+HOLDOUT98 accepted=5/6
+# rc=0

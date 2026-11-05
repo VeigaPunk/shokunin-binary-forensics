@@ -1,0 +1,1136 @@
+MUTANT m001-cmp-strict_json-L90 line=90 class=cmp fn=strict_json legs=C1_RECEIPTS,C1_REGISTRY,C1_VOTES edit=in -> not in
+--- unmutated
++++ m001-cmp-strict_json-L90
+@@ -90 +90 @@
+-            if k in seen:
++            if k not in seen:
+MUTANT m002-cmp-base_readme-L157 line=157 class=cmp fn=base_readme legs=C1_ONLY_C02 edit=!= -> ==
+--- unmutated
++++ m002-cmp-base_readme-L157
+@@ -157 +157 @@
+-    if ar.returncode != 0:
++    if ar.returncode == 0:
+MUTANT m003-if-base_readme-L166 line=166 class=if fn=base_readme legs=C1_ONLY_C02 edit=negate BoolOp test
+--- unmutated
++++ m003-if-base_readme-L166
+@@ -166 +166 @@
+-        if len(c) == 5 and re.fullmatch(r"C\d{2}", c[0]):
++        if not (len(c) == 5 and re.fullmatch(r"C\d{2}", c[0])):
+MUTANT m004-cmp-base_readme-L166 line=166 class=cmp fn=base_readme legs=C1_ONLY_C02 edit=== -> !=
+--- unmutated
++++ m004-cmp-base_readme-L166
+@@ -166 +166 @@
+-        if len(c) == 5 and re.fullmatch(r"C\d{2}", c[0]):
++        if len(c) != 5 and re.fullmatch(r"C\d{2}", c[0]):
+MUTANT m005-not-parse_sources-L175 line=175 class=not fn=parse_sources legs=C1_SIDS,C1_SOURCES edit=delete `not`
+--- unmutated
++++ m005-not-parse_sources-L175
+@@ -175 +175 @@
+-    if not src.is_file():
++    if src.is_file():
+MUTANT m006-if-parse_sources-L178 line=178 class=if fn=parse_sources legs=C1_SIDS,C1_SOURCES edit=negate if test
+--- unmutated
++++ m006-if-parse_sources-L178
+@@ -178 +178 @@
+-        if re.match(r"^ {0,3}\|[ \t]*S[0-9]{3,}[ \t]*\|", ln):
++        if not re.match(r"^ {0,3}\|[ \t]*S[0-9]{3,}[ \t]*\|", ln):
+MUTANT m007-cmp-parse_sources-L180 line=180 class=cmp fn=parse_sources legs=C1_SIDS,C1_SOURCES edit=== -> !=
+--- unmutated
++++ m007-cmp-parse_sources-L180
+@@ -180 +180 @@
+-            if len(c) == 11:
++            if len(c) != 11:
+MUTANT m008-cmp-parse_sources-L181 line=181 class=cmp fn=parse_sources legs=C1_SIDS,C1_SOURCES edit=in -> not in
+--- unmutated
++++ m008-cmp-parse_sources-L181
+@@ -181 +181 @@
+-                if c[0] in rows:
++                if c[0] not in rows:
+MUTANT m009-not-check_registry-L195 line=195 class=not fn=check_registry legs=C1_REGISTRY edit=delete `not`
+--- unmutated
++++ m009-not-check_registry-L195
+@@ -195 +195 @@
+-    if not isinstance(m, dict):
++    if isinstance(m, dict):
+MUTANT m010-cmp-check_registry-L200 line=200 class=cmp fn=check_registry legs=C1_REGISTRY edit=!= -> ==
+--- unmutated
++++ m010-cmp-check_registry-L200
+@@ -200 +200 @@
+-    if got != {k: v for k, v in PINNED_SEATS.items()}:
++    if got == {k: v for k, v in PINNED_SEATS.items()}:
+MUTANT m011-cmp-check_registry-L203 line=203 class=cmp fn=check_registry legs=C1_REGISTRY edit=!= -> ==
+--- unmutated
++++ m011-cmp-check_registry-L203
+@@ -203 +203 @@
+-        roled = sorted(k for k in set(got) & set(PINNED_SEATS) if got[k] != PINNED_SEATS[k])
++        roled = sorted(k for k in set(got) & set(PINNED_SEATS) if got[k] == PINNED_SEATS[k])
+MUTANT m012-cmp-na_reason_ok-L210 line=210 class=cmp fn=na_reason_ok legs=C1_VOTES edit=>= -> <
+--- unmutated
++++ m012-cmp-na_reason_ok-L210
+@@ -210 +210 @@
+-    return len(tokens) >= 6 and re.search(r"Q\d{2}", reason) is not None
++    return len(tokens) < 6 and re.search(r"Q\d{2}", reason) is not None
+MUTANT m013-cmp-na_reason_ok-L210 line=210 class=cmp fn=na_reason_ok legs=C1_VOTES edit=is not -> is
+--- unmutated
++++ m013-cmp-na_reason_ok-L210
+@@ -210 +210 @@
+-    return len(tokens) >= 6 and re.search(r"Q\d{2}", reason) is not None
++    return len(tokens) >= 6 and re.search(r"Q\d{2}", reason) is None
+MUTANT m014-not-check_votes-L216 line=216 class=not fn=check_votes legs=C1_VOTES edit=delete `not`
+--- unmutated
++++ m014-not-check_votes-L216
+@@ -216 +216 @@
+-    if not votes_dir.is_dir():
++    if votes_dir.is_dir():
+MUTANT m015-not-check_votes-L224 line=224 class=not fn=check_votes legs=C1_VOTES edit=delete `not`
+--- unmutated
++++ m015-not-check_votes-L224
+@@ -224 +224 @@
+-        if not isinstance(v, dict):
++        if isinstance(v, dict):
+MUTANT m016-not-check_votes-L227 line=227 class=not fn=check_votes legs=C1_VOTES edit=delete `not`
+--- unmutated
++++ m016-not-check_votes-L227
+@@ -227 +227 @@
+-        if not seat or str(seat) not in PINNED_SEATS:
++        if seat or str(seat) not in PINNED_SEATS:
+MUTANT m017-if-check_votes-L227 line=227 class=if fn=check_votes legs=C1_VOTES edit=negate BoolOp test
+--- unmutated
++++ m017-if-check_votes-L227
+@@ -227 +227 @@
+-        if not seat or str(seat) not in PINNED_SEATS:
++        if not (not seat or str(seat) not in PINNED_SEATS):
+MUTANT m018-cmp-check_votes-L227 line=227 class=cmp fn=check_votes legs=C1_VOTES edit=not in -> in
+--- unmutated
++++ m018-cmp-check_votes-L227
+@@ -227 +227 @@
+-        if not seat or str(seat) not in PINNED_SEATS:
++        if not seat or str(seat) in PINNED_SEATS:
+MUTANT m019-cmp-check_votes-L230 line=230 class=cmp fn=check_votes legs=C1_VOTES edit=in -> not in
+--- unmutated
++++ m019-cmp-check_votes-L230
+@@ -230 +230 @@
+-        if cs in canonical:
++        if cs not in canonical:
+MUTANT m020-cmp-check_votes-L233 line=233 class=cmp fn=check_votes legs=C1_VOTES edit=!= -> ==
+--- unmutated
++++ m020-cmp-check_votes-L233
+@@ -233 +233 @@
+-        if role != PINNED_SEATS[str(seat)]:
++        if role == PINNED_SEATS[str(seat)]:
+MUTANT m021-cmp-check_votes-L235 line=235 class=cmp fn=check_votes legs=C1_VOTES edit=not in -> in
+--- unmutated
++++ m021-cmp-check_votes-L235
+@@ -235 +235 @@
+-        if role not in VOTE_ROLES:
++        if role in VOTE_ROLES:
+MUTANT m022-cmp-check_votes-L237 line=237 class=cmp fn=check_votes legs=C1_VOTES edit=!= -> ==
+--- unmutated
++++ m022-cmp-check_votes-L237
+@@ -237 +237 @@
+-        if v.get("candidate_sha256") != want:
++        if v.get("candidate_sha256") == want:
+MUTANT m023-not-check_votes-L241 line=241 class=not fn=check_votes legs=C1_VOTES edit=delete `not`
+--- unmutated
++++ m023-not-check_votes-L241
+@@ -241 +241 @@
+-        if not (isinstance(ds, dict) and set(ds) >= set(QS)):
++        if (isinstance(ds, dict) and set(ds) >= set(QS)):
+MUTANT m024-cmp-check_votes-L241 line=241 class=cmp fn=check_votes legs=C1_VOTES edit=>= -> <
+--- unmutated
++++ m024-cmp-check_votes-L241
+@@ -241 +241 @@
+-        if not (isinstance(ds, dict) and set(ds) >= set(QS)):
++        if not (isinstance(ds, dict) and set(ds) < set(QS)):
+MUTANT m025-cmp-check_votes-L245 line=245 class=cmp fn=check_votes legs=C1_VOTES edit=== -> !=
+--- unmutated
++++ m025-cmp-check_votes-L245
+@@ -245 +245 @@
+-            if d == "PASS":
++            if d != "PASS":
+MUTANT m026-cmp-check_votes-L247 line=247 class=cmp fn=check_votes legs=C1_VOTES edit=!= -> ==
+--- unmutated
++++ m026-cmp-check_votes-L247
+@@ -247 +247 @@
+-            if d != "n/a":
++            if d == "n/a":
+MUTANT m027-not-check_votes-L250 line=250 class=not fn=check_votes legs=C1_VOTES edit=delete `not`
+--- unmutated
++++ m027-not-check_votes-L250
+@@ -250 +250 @@
+-            if not na_reason_ok(reason):
++            if na_reason_ok(reason):
+MUTANT m028-not-check_votes-L253 line=253 class=not fn=check_votes legs=C1_VOTES edit=delete `not`
+--- unmutated
++++ m028-not-check_votes-L253
+@@ -253 +253 @@
+-        if not any(ds[q] == "PASS" for q in QS):
++        if any(ds[q] == "PASS" for q in QS):
+MUTANT m029-cmp-check_votes-L253 line=253 class=cmp fn=check_votes legs=C1_VOTES edit=== -> !=
+--- unmutated
++++ m029-cmp-check_votes-L253
+@@ -253 +253 @@
+-        if not any(ds[q] == "PASS" for q in QS):
++        if not any(ds[q] != "PASS" for q in QS):
+MUTANT m030-not-check_votes-L258 line=258 class=not fn=check_votes legs=C1_VOTES edit=delete `not`
+--- unmutated
++++ m030-not-check_votes-L258
+@@ -258 +258 @@
+-        if not (isinstance(apath, str) and apath.startswith(own_dir)):
++        if (isinstance(apath, str) and apath.startswith(own_dir)):
+MUTANT m031-cmp-check_votes-L260 line=260 class=cmp fn=check_votes legs=C1_VOTES edit=in -> not in
+--- unmutated
++++ m031-cmp-check_votes-L260
+@@ -260 +260 @@
+-        if ".." in Path(apath).parts:
++        if ".." not in Path(apath).parts:
+MUTANT m032-not-check_votes-L265 line=265 class=not fn=check_votes legs=C1_VOTES edit=delete `not`
+--- unmutated
++++ m032-not-check_votes-L265
+@@ -265 +265 @@
+-        if not resolved.is_relative_to(wave_root):
++        if resolved.is_relative_to(wave_root):
+MUTANT m033-if-check_votes-L267 line=267 class=if fn=check_votes legs=C1_VOTES edit=negate BoolOp test
+--- unmutated
++++ m033-if-check_votes-L267
+@@ -267 +267 @@
+-        if art.is_symlink() or resolved.is_symlink():
++        if not (art.is_symlink() or resolved.is_symlink()):
+MUTANT m034-cmp-check_votes-L270 line=270 class=cmp fn=check_votes legs=C1_VOTES edit=!= -> ==
+--- unmutated
++++ m034-cmp-check_votes-L270
+@@ -270 +270 @@
+-            if resolved.resolve() != resolved:
++            if resolved.resolve() == resolved:
+MUTANT m035-if-check_votes-L278 line=278 class=if fn=check_votes legs=C1_VOTES edit=negate if test
+--- unmutated
++++ m035-if-check_votes-L278
+@@ -278 +278 @@
+-            if cur.is_symlink():
++            if not cur.is_symlink():
+MUTANT m036-not-check_votes-L280 line=280 class=not fn=check_votes legs=C1_VOTES edit=delete `not`
+--- unmutated
++++ m036-not-check_votes-L280
+@@ -280 +280 @@
+-        if not art.is_file():
++        if art.is_file():
+MUTANT m037-not-check_votes-L283 line=283 class=not fn=check_votes legs=C1_VOTES edit=delete `not`
+--- unmutated
++++ m037-not-check_votes-L283
+@@ -283 +283 @@
+-        if not resolved.is_relative_to(own_resolved):
++        if resolved.is_relative_to(own_resolved):
+MUTANT m038-if-check_votes-L286 line=286 class=if fn=check_votes legs=C1_VOTES edit=negate BoolOp test
+--- unmutated
++++ m038-if-check_votes-L286
+@@ -286 +286 @@
+-        if len(b) == 0 or not b.strip():
++        if not (len(b) == 0 or not b.strip()):
+MUTANT m039-cmp-check_votes-L286 line=286 class=cmp fn=check_votes legs=C1_VOTES edit=== -> !=
+--- unmutated
++++ m039-cmp-check_votes-L286
+@@ -286 +286 @@
+-        if len(b) == 0 or not b.strip():
++        if len(b) != 0 or not b.strip():
+MUTANT m040-not-check_votes-L286 line=286 class=not fn=check_votes legs=C1_VOTES edit=delete `not`
+--- unmutated
++++ m040-not-check_votes-L286
+@@ -286 +286 @@
+-        if len(b) == 0 or not b.strip():
++        if len(b) == 0 or b.strip():
+MUTANT m041-not-check_votes-L288 line=288 class=not fn=check_votes legs=C1_VOTES edit=delete `not`
+--- unmutated
++++ m041-not-check_votes-L288
+@@ -288 +288 @@
+-        if not (isinstance(asha, str) and hashlib.sha256(b).hexdigest() == asha):
++        if (isinstance(asha, str) and hashlib.sha256(b).hexdigest() == asha):
+MUTANT m042-cmp-check_votes-L288 line=288 class=cmp fn=check_votes legs=C1_VOTES edit=== -> !=
+--- unmutated
++++ m042-cmp-check_votes-L288
+@@ -288 +288 @@
+-        if not (isinstance(asha, str) and hashlib.sha256(b).hexdigest() == asha):
++        if not (isinstance(asha, str) and hashlib.sha256(b).hexdigest() != asha):
+MUTANT m043-cmp-check_votes-L292 line=292 class=cmp fn=check_votes legs=C1_VOTES edit=== -> !=
+--- unmutated
++++ m043-cmp-check_votes-L292
+@@ -292 +292 @@
+-        if b_visible.strip() == "":
++        if b_visible.strip() != "":
+MUTANT m044-cmp-check_votes-L294 line=294 class=cmp fn=check_votes legs=C1_VOTES edit=not in -> in
+--- unmutated
++++ m044-cmp-check_votes-L294
+@@ -294 +294 @@
+-        if str(seat) not in b_visible:
++        if str(seat) in b_visible:
+MUTANT m045-cmp-check_votes-L296 line=296 class=cmp fn=check_votes legs=C1_VOTES edit=not in -> in
+--- unmutated
++++ m045-cmp-check_votes-L296
+@@ -296 +296 @@
+-        if want not in b_visible:
++        if want in b_visible:
+MUTANT m046-if-check_votes-L298 line=298 class=if fn=check_votes legs=C1_VOTES edit=negate BoolOp test
+--- unmutated
++++ m046-if-check_votes-L298
+@@ -298 +298 @@
+-        if apath in artifacts or asha in artifacts.values():
++        if not (apath in artifacts or asha in artifacts.values()):
+MUTANT m047-cmp-check_votes-L298 line=298 class=cmp fn=check_votes legs=C1_VOTES edit=in -> not in
+--- unmutated
++++ m047-cmp-check_votes-L298
+@@ -298 +298 @@
+-        if apath in artifacts or asha in artifacts.values():
++        if apath not in artifacts or asha in artifacts.values():
+MUTANT m048-cmp-check_votes-L298 line=298 class=cmp fn=check_votes legs=C1_VOTES edit=in -> not in
+--- unmutated
++++ m048-cmp-check_votes-L298
+@@ -298 +298 @@
+-        if apath in artifacts or asha in artifacts.values():
++        if apath in artifacts or asha not in artifacts.values():
+MUTANT m049-cmp-check_votes-L303 line=303 class=cmp fn=check_votes legs=C1_VOTES edit=< -> >=
+--- unmutated
++++ m049-cmp-check_votes-L303
+@@ -303 +303 @@
+-    if len(accepted) < 2:
++    if len(accepted) >= 2:
+MUTANT m050-if-check_receipts-L312 line=312 class=if fn=check_receipts legs=C1_RECEIPTS edit=negate if test
+--- unmutated
++++ m050-if-check_receipts-L312
+@@ -312 +312 @@
+-    if fl.is_file():
++    if not fl.is_file():
+MUTANT m051-cmp-check_receipts-L322 line=322 class=cmp fn=check_receipts legs=C1_RECEIPTS edit=!= -> ==
+--- unmutated
++++ m051-cmp-check_receipts-L322
+@@ -322 +322 @@
+-        if r.get("fetched_at") != ROUND_DATE:
++        if r.get("fetched_at") == ROUND_DATE:
+MUTANT m052-cmp-check_receipts-L324 line=324 class=cmp fn=check_receipts legs=C1_RECEIPTS edit=!= -> ==
+--- unmutated
++++ m052-cmp-check_receipts-L324
+@@ -324 +324 @@
+-        if r.get("http_status") != 200:
++        if r.get("http_status") == 200:
+MUTANT d-host line=327 class=d-host fn=check_receipts legs=C1_RECEIPTS edit=host allowlist sub-check removed (MutationR96 d-host)
+--- unmutated
++++ d-host
+@@ -327,2 +326,0 @@
+-        if host not in HOST_ALLOWLIST:
+-            fails.append(f"{sid}:host:{host!r}")
+MUTANT m054-cmp-check_receipts-L327 line=327 class=cmp fn=check_receipts legs=C1_RECEIPTS edit=not in -> in
+--- unmutated
++++ m054-cmp-check_receipts-L327
+@@ -327 +327 @@
+-        if host not in HOST_ALLOWLIST:
++        if host in HOST_ALLOWLIST:
+MUTANT m055-not-check_receipts-L330 line=330 class=not fn=check_receipts legs=C1_RECEIPTS edit=delete `not`
+--- unmutated
++++ m055-not-check_receipts-L330
+@@ -330 +330 @@
+-        if not body_p.is_file():
++        if body_p.is_file():
+MUTANT m056-cmp-check_receipts-L333 line=333 class=cmp fn=check_receipts legs=C1_RECEIPTS edit=!= -> ==
+--- unmutated
++++ m056-cmp-check_receipts-L333
+@@ -333 +333 @@
+-        if hashlib.sha256(body_p.read_bytes()).hexdigest() != r.get("fetch_sha256"):
++        if hashlib.sha256(body_p.read_bytes()).hexdigest() == r.get("fetch_sha256"):
+MUTANT m057-cmp-check_receipts-L335 line=335 class=cmp fn=check_receipts legs=C1_RECEIPTS edit=in -> not in
+--- unmutated
++++ m057-cmp-check_receipts-L335
+@@ -335 +335 @@
+-        line_has = any((sid in ln and str(r.get("fetch_sha256")) in ln
++        line_has = any((sid not in ln and str(r.get("fetch_sha256")) in ln
+MUTANT m058-cmp-check_receipts-L335 line=335 class=cmp fn=check_receipts legs=C1_RECEIPTS edit=in -> not in
+--- unmutated
++++ m058-cmp-check_receipts-L335
+@@ -335 +335 @@
+-        line_has = any((sid in ln and str(r.get("fetch_sha256")) in ln
++        line_has = any((sid in ln and str(r.get("fetch_sha256")) not in ln
+MUTANT m059-not-check_receipts-L336 line=336 class=not fn=check_receipts legs=C1_RECEIPTS edit=delete `not`
+--- unmutated
++++ m059-not-check_receipts-L336
+@@ -336 +336 @@
+-                        and ln.lstrip().startswith("-") and not ("S502" in ln and "S503" in ln))
++                        and ln.lstrip().startswith("-") and ("S502" in ln and "S503" in ln))
+MUTANT m060-cmp-check_receipts-L336 line=336 class=cmp fn=check_receipts legs=C1_RECEIPTS edit=in -> not in
+--- unmutated
++++ m060-cmp-check_receipts-L336
+@@ -336 +336 @@
+-                        and ln.lstrip().startswith("-") and not ("S502" in ln and "S503" in ln))
++                        and ln.lstrip().startswith("-") and not ("S502" not in ln and "S503" in ln))
+MUTANT m061-cmp-check_receipts-L336 line=336 class=cmp fn=check_receipts legs=C1_RECEIPTS edit=in -> not in
+--- unmutated
++++ m061-cmp-check_receipts-L336
+@@ -336 +336 @@
+-                        and ln.lstrip().startswith("-") and not ("S502" in ln and "S503" in ln))
++                        and ln.lstrip().startswith("-") and not ("S502" in ln and "S503" not in ln))
+MUTANT m062-not-check_receipts-L338 line=338 class=not fn=check_receipts legs=C1_RECEIPTS edit=delete `not`
+--- unmutated
++++ m062-not-check_receipts-L338
+@@ -338 +338 @@
+-        if not line_has:
++        if line_has:
+MUTANT m063-cmp-check_receipts-L343 line=343 class=cmp fn=check_receipts legs=C1_RECEIPTS edit=not in -> in
+--- unmutated
++++ m063-cmp-check_receipts-L343
+@@ -343 +343 @@
+-        if ref[sid] not in q:
++        if ref[sid] in q:
+MUTANT m064-not-check_receipts-L345 line=345 class=not fn=check_receipts legs=C1_RECEIPTS edit=delete `not`
+--- unmutated
++++ m064-not-check_receipts-L345
+@@ -345 +345 @@
+-    return (not fails), ("ok" if not fails else "; ".join(fails))
++    return (fails), ("ok" if not fails else "; ".join(fails))
+MUTANT m065-cmp-check_sids-L367 line=367 class=cmp fn=check_sids legs=C1_SIDS edit=not in -> in
+--- unmutated
++++ m065-cmp-check_sids-L367
+@@ -367 +367 @@
+-        if sid not in rows:
++        if sid in rows:
+MUTANT m066-not-check_sids-L369 line=369 class=not fn=check_sids legs=C1_SIDS edit=delete `not`
+--- unmutated
++++ m066-not-check_sids-L369
+@@ -369 +369 @@
+-    return (not fails), ("ok" if not fails else "; ".join(fails))
++    return (fails), ("ok" if not fails else "; ".join(fails))
+MUTANT m067-if-check_sources-L380 line=380 class=if fn=check_sources legs=C1_SOURCES edit=negate BoolOp test
+--- unmutated
++++ m067-if-check_sources-L380
+@@ -380 +380 @@
+-        if m and m.group(1) not in sup:
++        if not (m and m.group(1) not in sup):
+MUTANT m068-cmp-check_sources-L380 line=380 class=cmp fn=check_sources legs=C1_SOURCES edit=not in -> in
+--- unmutated
++++ m068-cmp-check_sources-L380
+@@ -380 +380 @@
+-        if m and m.group(1) not in sup:
++        if m and m.group(1) in sup:
+MUTANT m069-cmp-check_sources-L384 line=384 class=cmp fn=check_sources legs=C1_SOURCES edit=in -> not in
+--- unmutated
++++ m069-cmp-check_sources-L384
+@@ -384 +384 @@
+-        while sid in sup and d < 10:
++        while sid not in sup and d < 10:
+MUTANT m070-cmp-check_sources-L384 line=384 class=cmp fn=check_sources legs=C1_SOURCES edit=< -> >=
+--- unmutated
++++ m070-cmp-check_sources-L384
+@@ -384 +384 @@
+-        while sid in sup and d < 10:
++        while sid in sup and d >= 10:
+MUTANT m071-not-check_sources-L392 line=392 class=not fn=check_sources legs=C1_SOURCES edit=delete `not`
+--- unmutated
++++ m071-not-check_sources-L392
+@@ -392 +392 @@
+-        if not r:
++        if r:
+MUTANT m072-cmp-check_sources-L395 line=395 class=cmp fn=check_sources legs=C1_SOURCES edit=in -> not in
+--- unmutated
++++ m072-cmp-check_sources-L395
+@@ -395 +395 @@
+-        if sid in REJECTED_OK:
++        if sid not in REJECTED_OK:
+MUTANT m073-cmp-check_sources-L396 line=396 class=cmp fn=check_sources legs=C1_SOURCES edit=!= -> ==
+--- unmutated
++++ m073-cmp-check_sources-L396
+@@ -396 +396 @@
+-            if r[7] != "rejected":
++            if r[7] == "rejected":
+MUTANT m074-cmp-check_sources-L401 line=401 class=cmp fn=check_sources legs=C1_SOURCES edit=is -> is not
+--- unmutated
++++ m074-cmp-check_sources-L401
+@@ -401 +401 @@
+-        if rt is None:
++        if rt is not None:
+MUTANT m075-cmp-check_sources-L403 line=403 class=cmp fn=check_sources legs=C1_SOURCES edit=!= -> ==
+--- unmutated
++++ m075-cmp-check_sources-L403
+@@ -403 +403 @@
+-        elif rt[7] != "mined":
++        elif rt[7] == "mined":
+MUTANT m076-not-check_sources-L407 line=407 class=not fn=check_sources legs=C1_SOURCES edit=delete `not`
+--- unmutated
++++ m076-not-check_sources-L407
+@@ -407 +407 @@
+-        if not r:
++        if r:
+MUTANT m077-cmp-check_sources-L410 line=410 class=cmp fn=check_sources legs=C1_SOURCES edit=!= -> ==
+--- unmutated
++++ m077-cmp-check_sources-L410
+@@ -410 +410 @@
+-        if r[7] != "mined":
++        if r[7] == "mined":
+MUTANT m078-cmp-check_sources-L412 line=412 class=cmp fn=check_sources legs=C1_SOURCES edit=!= -> ==
+--- unmutated
++++ m078-cmp-check_sources-L412
+@@ -412 +412 @@
+-        if r[8] != ROUND_DATE:
++        if r[8] == ROUND_DATE:
+MUTANT m079-cmp-check_sources-L414 line=414 class=cmp fn=check_sources legs=C1_SOURCES edit=!= -> ==
+--- unmutated
++++ m079-cmp-check_sources-L414
+@@ -414 +414 @@
+-        if r[3] != "A":
++        if r[3] == "A":
+MUTANT m080-cmp-check_sources-L416 line=416 class=cmp fn=check_sources legs=C1_SOURCES edit=not in -> in
+--- unmutated
++++ m080-cmp-check_sources-L416
+@@ -416 +416 @@
+-        if ENTRY_REL not in r[10]:
++        if ENTRY_REL in r[10]:
+MUTANT m081-cmp-check_sources-L418 line=418 class=cmp fn=check_sources legs=C1_SOURCES edit=in -> not in
+--- unmutated
++++ m081-cmp-check_sources-L418
+@@ -418 +418 @@
+-        if sid in RECEIPT_ROW_IDS:
++        if sid not in RECEIPT_ROW_IDS:
+MUTANT m082-cmp-check_sources-L421 line=421 class=cmp fn=check_sources legs=C1_SOURCES edit=not in -> in
+--- unmutated
++++ m082-cmp-check_sources-L421
+@@ -421 +421 @@
+-                if str(rec.get("fetch_url", "")) not in r[1]:
++                if str(rec.get("fetch_url", "")) in r[1]:
+MUTANT m083-cmp-check_sources-L425 line=425 class=cmp fn=check_sources legs=C1_SOURCES edit=!= -> ==
+--- unmutated
++++ m083-cmp-check_sources-L425
+@@ -425 +425 @@
+-        ub = [x.strip() for x in r[10].split(",") if x.strip() and x.strip() != "\u2014"]
++        ub = [x.strip() for x in r[10].split(",") if x.strip() and x.strip() == "\u2014"]
+MUTANT m084-cmp-check_sources-L427 line=427 class=cmp fn=check_sources legs=C1_SOURCES edit=!= -> ==
+--- unmutated
++++ m084-cmp-check_sources-L427
+@@ -427 +427 @@
+-        if ub_norm != [ENTRY_REL]:
++        if ub_norm == [ENTRY_REL]:
+MUTANT m085-not-check_sources-L429 line=429 class=not fn=check_sources legs=C1_SOURCES edit=delete `not`
+--- unmutated
++++ m085-not-check_sources-L429
+@@ -429 +429 @@
+-    return (not fails), ("ok" if not fails else "; ".join(fails))
++    return (fails), ("ok" if not fails else "; ".join(fails))
+MUTANT m086-cmp-check_quotes-L433 line=433 class=cmp fn=check_quotes legs=C1_QUOTES edit=in -> not in
+--- unmutated
++++ m086-cmp-check_quotes-L433
+@@ -433 +433 @@
+-    need = [s for s in RECEIPT_ROW_IDS if s in sids]
++    need = [s for s in RECEIPT_ROW_IDS if s not in sids]
+MUTANT m087-not-check_quotes-L434 line=434 class=not fn=check_quotes legs=C1_QUOTES edit=delete `not`
+--- unmutated
++++ m087-not-check_quotes-L434
+@@ -434 +434 @@
+-    if not need:
++    if need:
+MUTANT m088-cmp-check_quotes-L439 line=439 class=cmp fn=check_quotes legs=C1_QUOTES edit=!= -> ==
+--- unmutated
++++ m088-cmp-check_quotes-L439
+@@ -439 +439 @@
+-    if r.returncode != 0:
++    if r.returncode == 0:
+MUTANT m089-cmp-check_quotes-L442 line=442 class=cmp fn=check_quotes legs=C1_QUOTES edit=not in -> in
+--- unmutated
++++ m089-cmp-check_quotes-L442
+@@ -442 +442 @@
+-    if f"verified={len(need)}" not in r.stdout:
++    if f"verified={len(need)}" in r.stdout:
+MUTANT m090-if-check_embed_nonvacuous-L454 line=454 class=if fn=check_embed_nonvacuous legs=C1_EMBED_NONVACUOUS edit=negate BoolOp test
+--- unmutated
++++ m090-if-check_embed_nonvacuous-L454
+@@ -454 +454 @@
+-            if l.lstrip().startswith("$") and not any(x.strip() for x in lines[i + 1:]):
++            if not (l.lstrip().startswith("$") and not any(x.strip() for x in lines[i + 1:])):
+MUTANT m091-not-check_embed_nonvacuous-L454 line=454 class=not fn=check_embed_nonvacuous legs=C1_EMBED_NONVACUOUS edit=delete `not`
+--- unmutated
++++ m091-not-check_embed_nonvacuous-L454
+@@ -454 +454 @@
+-            if l.lstrip().startswith("$") and not any(x.strip() for x in lines[i + 1:]):
++            if l.lstrip().startswith("$") and any(x.strip() for x in lines[i + 1:]):
+MUTANT m092-if-check_embed_nonvacuous-L458 line=458 class=if fn=check_embed_nonvacuous legs=C1_EMBED_NONVACUOUS edit=negate if test
+--- unmutated
++++ m092-if-check_embed_nonvacuous-L458
+@@ -458 +458 @@
+-        if any(l.lstrip().startswith("$") for l in lines):
++        if not any(l.lstrip().startswith("$") for l in lines):
+MUTANT m093-not-check_embed_nonvacuous-L460 line=460 class=not fn=check_embed_nonvacuous legs=C1_EMBED_NONVACUOUS edit=delete `not`
+--- unmutated
++++ m093-not-check_embed_nonvacuous-L460
+@@ -460 +460 @@
+-    return (not bad), ("ok" if not bad else "; ".join(bad))
++    return (bad), ("ok" if not bad else "; ".join(bad))
+MUTANT m094-not-check_pycache-L469 line=469 class=not fn=check_pycache legs=C1_PYCACHE edit=delete `not`
+--- unmutated
++++ m094-not-check_pycache-L469
+@@ -469 +469 @@
+-        if not base.is_dir():
++        if base.is_dir():
+MUTANT m095-not-check_pycache-L475 line=475 class=not fn=check_pycache legs=C1_PYCACHE edit=delete `not`
+--- unmutated
++++ m095-not-check_pycache-L475
+@@ -475 +475 @@
+-    return (not bad), ("ok" if not bad else "; ".join(sorted(bad)[:4]))
++    return (bad), ("ok" if not bad else "; ".join(sorted(bad)[:4]))
+MUTANT m096-if-check_admitted_union-L486 line=486 class=if fn=check_admitted_union legs=C1_ADMITTED_UNION edit=negate BoolOp test
+--- unmutated
++++ m096-if-check_admitted_union-L486
+@@ -486 +486 @@
+-        if len(c) == 5 and re.fullmatch(r"C\d{2}", c[0]):
++        if not (len(c) == 5 and re.fullmatch(r"C\d{2}", c[0])):
+MUTANT m097-cmp-check_admitted_union-L486 line=486 class=cmp fn=check_admitted_union legs=C1_ADMITTED_UNION edit=== -> !=
+--- unmutated
++++ m097-cmp-check_admitted_union-L486
+@@ -486 +486 @@
+-        if len(c) == 5 and re.fullmatch(r"C\d{2}", c[0]):
++        if len(c) != 5 and re.fullmatch(r"C\d{2}", c[0]):
+MUTANT m098-if-check_admitted_union-L492 line=492 class=if fn=check_admitted_union legs=C1_ADMITTED_UNION edit=negate if test
+--- unmutated
++++ m098-if-check_admitted_union-L492
+@@ -492 +492 @@
+-    if kd.is_dir():
++    if not kd.is_dir():
+MUTANT m099-cmp-check_admitted_union-L493 line=493 class=cmp fn=check_admitted_union legs=C1_ADMITTED_UNION edit=== -> !=
+--- unmutated
++++ m099-cmp-check_admitted_union-L493
+@@ -493 +493 @@
+-        for pf in sorted(x for x in kd.rglob("*") if x.is_file() and x.suffix.lower() == ".md"):
++        for pf in sorted(x for x in kd.rglob("*") if x.is_file() and x.suffix.lower() != ".md"):
+MUTANT m100-if-check_admitted_union-L496 line=496 class=if fn=check_admitted_union legs=C1_ADMITTED_UNION edit=negate if test
+--- unmutated
++++ m100-if-check_admitted_union-L496
+@@ -496 +496 @@
+-                if re.search(r"(?i)^\s*admission-status\s*:\s*admitted", ln):
++                if not re.search(r"(?i)^\s*admission-status\s*:\s*admitted", ln):
+MUTANT m101-cmp-check_admitted_union-L498 line=498 class=cmp fn=check_admitted_union legs=C1_ADMITTED_UNION edit=not in -> in
+--- unmutated
++++ m101-cmp-check_admitted_union-L498
+@@ -498 +498 @@
+-                    if rel not in union:
++                    if rel in union:
+MUTANT m102-not-check_admitted_union-L501 line=501 class=not fn=check_admitted_union legs=C1_ADMITTED_UNION edit=delete `not`
+--- unmutated
++++ m102-not-check_admitted_union-L501
+@@ -501 +501 @@
+-    return (not bad), ("ok" if not bad else "; ".join(sorted(bad)[:4]))
++    return (bad), ("ok" if not bad else "; ".join(sorted(bad)[:4]))
+MUTANT m103-cmp-evaluate-L511 line=511 class=cmp fn=evaluate legs=C1_ROWS_TOTAL edit=== -> !=
+--- unmutated
++++ m103-cmp-evaluate-L511
+@@ -511 +511 @@
+-    cov = [cells(l) for l in readme if re.match(r"^\|[ \t]*C[0-9]+ ", l) and len(cells(l)) == 5]
++    cov = [cells(l) for l in readme if re.match(r"^\|[ \t]*C[0-9]+ ", l) and len(cells(l)) != 5]
+MUTANT m104-cmp-evaluate-L512 line=512 class=cmp fn=evaluate legs=C1_ROWS_TOTAL edit=== -> !=
+--- unmutated
++++ m104-cmp-evaluate-L512
+@@ -512 +512 @@
+-    legs["C1_ROWS_TOTAL"] = len(cov) == 15
++    legs["C1_ROWS_TOTAL"] = len(cov) != 15
+MUTANT m105-cmp-evaluate-L513 line=513 class=cmp fn=evaluate legs=C1_C02_HELD edit=== -> !=
+--- unmutated
++++ m105-cmp-evaluate-L513
+@@ -513 +513 @@
+-    crow = next((r for r in cov if r[0] == TARGET_ROW), None)
++    crow = next((r for r in cov if r[0] != TARGET_ROW), None)
+MUTANT m106-cmp-evaluate-L514 line=514 class=cmp fn=evaluate legs=C1_C02_HELD edit=== -> !=
+--- unmutated
++++ m106-cmp-evaluate-L514
+@@ -514 +514 @@
+-    legs["C1_C02_HELD"] = bool(crow) and crow[4] == "held"
++    legs["C1_C02_HELD"] = bool(crow) and crow[4] != "held"
+MUTANT m107-cmp-evaluate-L516 line=516 class=cmp fn=evaluate legs=C1_C02_CITES edit=== -> !=
+--- unmutated
++++ m107-cmp-evaluate-L516
+@@ -516 +516 @@
+-    legs["C1_C02_CITES"] = (bool(crow) and fileset == [ENTRY_REL]
++    legs["C1_C02_CITES"] = (bool(crow) and fileset != [ENTRY_REL]
+MUTANT m108-if-evaluate-L522 line=522 class=if fn=evaluate legs=C1_ONLY_C02 edit=negate if test
+--- unmutated
++++ m108-if-evaluate-L522
+@@ -522 +522 @@
+-    if baserows:
++    if not baserows:
+MUTANT m109-if-evaluate-L524 line=524 class=if fn=evaluate legs=C1_ONLY_C02 edit=negate BoolOp test
+--- unmutated
++++ m109-if-evaluate-L524
+@@ -524 +524 @@
+-            if r[0] != TARGET_ROW and baserows.get(r[0]) != _raw_line(readme, r[0]):
++            if not (r[0] != TARGET_ROW and baserows.get(r[0]) != _raw_line(readme, r[0])):
+MUTANT m110-cmp-evaluate-L524 line=524 class=cmp fn=evaluate legs=C1_ONLY_C02 edit=!= -> ==
+--- unmutated
++++ m110-cmp-evaluate-L524
+@@ -524 +524 @@
+-            if r[0] != TARGET_ROW and baserows.get(r[0]) != _raw_line(readme, r[0]):
++            if r[0] == TARGET_ROW and baserows.get(r[0]) != _raw_line(readme, r[0]):
+MUTANT m111-cmp-evaluate-L524 line=524 class=cmp fn=evaluate legs=C1_ONLY_C02 edit=!= -> ==
+--- unmutated
++++ m111-cmp-evaluate-L524
+@@ -524 +524 @@
+-            if r[0] != TARGET_ROW and baserows.get(r[0]) != _raw_line(readme, r[0]):
++            if r[0] != TARGET_ROW and baserows.get(r[0]) == _raw_line(readme, r[0]):
+MUTANT m112-not-evaluate-L526 line=526 class=not fn=evaluate legs=C1_ONLY_C02 edit=delete `not`
+--- unmutated
++++ m112-not-evaluate-L526
+@@ -526 +526 @@
+-        legs["C1_ONLY_C02"] = (not diffs and crow is not None
++        legs["C1_ONLY_C02"] = (diffs and crow is not None
+MUTANT m113-cmp-evaluate-L526 line=526 class=cmp fn=evaluate legs=C1_ONLY_C02 edit=is not -> is
+--- unmutated
++++ m113-cmp-evaluate-L526
+@@ -526 +526 @@
+-        legs["C1_ONLY_C02"] = (not diffs and crow is not None
++        legs["C1_ONLY_C02"] = (not diffs and crow is None
+MUTANT m114-cmp-evaluate-L527 line=527 class=cmp fn=evaluate legs=C1_ONLY_C02 edit=!= -> ==
+--- unmutated
++++ m114-cmp-evaluate-L527
+@@ -527 +527 @@
+-                               and baserows.get(TARGET_ROW) != _raw_line(readme, TARGET_ROW))
++                               and baserows.get(TARGET_ROW) == _raw_line(readme, TARGET_ROW))
+MUTANT m115-if-evaluate-L538 line=538 class=if fn=evaluate legs=C1_ADMITTED_WS edit=negate if test
+--- unmutated
++++ m115-if-evaluate-L538
+@@ -538 +538 @@
+-        if re.match(r"(?i)^\s*admission-status\s*:", l):
++        if not re.match(r"(?i)^\s*admission-status\s*:", l):
+MUTANT m116-if-evaluate-L540 line=540 class=if fn=evaluate legs=C1_ADMITTED_WS edit=negate BoolOp test
+--- unmutated
++++ m116-if-evaluate-L540
+@@ -540 +540 @@
+-            if lead and lead != " " * len(lead):
++            if not (lead and lead != " " * len(lead)):
+MUTANT m117-cmp-evaluate-L540 line=540 class=cmp fn=evaluate legs=C1_ADMITTED_WS edit=!= -> ==
+--- unmutated
++++ m117-cmp-evaluate-L540
+@@ -540 +540 @@
+-            if lead and lead != " " * len(lead):
++            if lead and lead == " " * len(lead):
+MUTANT m118-cmp-evaluate-L542 line=542 class=cmp fn=evaluate legs=C1_ADMITTED_WS edit=in -> not in
+--- unmutated
++++ m118-cmp-evaluate-L542
+@@ -542 +542 @@
+-            if "\u00a0" in l:
++            if "\u00a0" not in l:
+MUTANT m119-cmp-evaluate-L544 line=544 class=cmp fn=evaluate legs=C1_ADMITTED_WS edit=in -> not in
+--- unmutated
++++ m119-cmp-evaluate-L544
+@@ -544 +544 @@
+-            if "\t" in l.split(":", 1)[0]:
++            if "\t" not in l.split(":", 1)[0]:
+MUTANT m120-cmp-evaluate-L546 line=546 class=cmp fn=evaluate legs=C1_ADMITTED edit=== -> !=
+--- unmutated
++++ m120-cmp-evaluate-L546
+@@ -546 +546 @@
+-    legs["C1_ADMITTED"] = (len(st_idx) == 1 and st_idx[0] < HEAD_WINDOW
++    legs["C1_ADMITTED"] = (len(st_idx) != 1 and st_idx[0] < HEAD_WINDOW
+MUTANT m121-cmp-evaluate-L546 line=546 class=cmp fn=evaluate legs=C1_ADMITTED edit=< -> >=
+--- unmutated
++++ m121-cmp-evaluate-L546
+@@ -546 +546 @@
+-    legs["C1_ADMITTED"] = (len(st_idx) == 1 and st_idx[0] < HEAD_WINDOW
++    legs["C1_ADMITTED"] = (len(st_idx) == 1 and st_idx[0] >= HEAD_WINDOW
+MUTANT m122-cmp-evaluate-L547 line=547 class=cmp fn=evaluate legs=C1_ADMITTED edit=== -> !=
+--- unmutated
++++ m122-cmp-evaluate-L547
+@@ -547 +547 @@
+-                           and lines[st_idx[0]].strip().lower() == "admission-status: admitted")
++                           and lines[st_idx[0]].strip().lower() != "admission-status: admitted")
+MUTANT m123-if-evaluate-L563 line=563 class=if fn=evaluate legs=C1_LINT edit=negate if test
+--- unmutated
++++ m123-if-evaluate-L563
+@@ -563 +563 @@
+-    if (root / ENTRY).is_file():
++    if not (root / ENTRY).is_file():
+MUTANT m124-cmp-evaluate-L568 line=568 class=cmp fn=evaluate legs=C1_LINT edit=== -> !=
+--- unmutated
++++ m124-cmp-evaluate-L568
+@@ -568 +568 @@
+-        legs["C1_LINT"] = lint.returncode == 0
++        legs["C1_LINT"] = lint.returncode != 0
+MUTANT m125-cmp-evaluate-L570 line=570 class=cmp fn=evaluate legs=C1_EMBEDDED edit=== -> !=
+--- unmutated
++++ m125-cmp-evaluate-L570
+@@ -570 +570 @@
+-        emb_ok = emb.returncode == 0 or (emb.returncode == 2
++        emb_ok = emb.returncode != 0 or (emb.returncode == 2
+MUTANT m126-cmp-evaluate-L570 line=570 class=cmp fn=evaluate legs=C1_EMBEDDED edit=== -> !=
+--- unmutated
++++ m126-cmp-evaluate-L570
+@@ -570 +570 @@
+-        emb_ok = emb.returncode == 0 or (emb.returncode == 2
++        emb_ok = emb.returncode == 0 or (emb.returncode != 2
+MUTANT m127-cmp-evaluate-L571 line=571 class=cmp fn=evaluate legs=C1_EMBEDDED edit=in -> not in
+--- unmutated
++++ m127-cmp-evaluate-L571
+@@ -571 +571 @@
+-                                         and "could-not-evaluate" in (emb.stdout + emb.stderr)
++                                         and "could-not-evaluate" not in (emb.stdout + emb.stderr)
+MUTANT m128-not-evaluate-L572 line=572 class=not fn=evaluate legs=C1_EMBEDDED edit=delete `not`
+--- unmutated
++++ m128-not-evaluate-L572
+@@ -572 +572 @@
+-                                         and not has_cmd_block)
++                                         and has_cmd_block)
+MUTANT m129-cmp-evaluate-L582 line=582 class=cmp fn=evaluate legs=C1_DERIV_TABLE edit=not in -> in
+--- unmutated
++++ m129-cmp-evaluate-L582
+@@ -582 +582 @@
+-            if _m not in QS:
++            if _m in QS:
+MUTANT m130-if-evaluate-L587 line=587 class=if fn=evaluate legs=C1_DERIV_TABLE edit=negate if test
+--- unmutated
++++ m130-if-evaluate-L587
+@@ -587 +587 @@
+-        if _fx.is_file():
++        if not _fx.is_file():
+MUTANT m131-if-evaluate-L590 line=590 class=if fn=evaluate legs=C1_DERIV_TABLE edit=negate BoolOp test
+--- unmutated
++++ m131-if-evaluate-L590
+@@ -590 +590 @@
+-                if "pe-r75-headless-smoke/fixture.exe" in _ln and "sha256" in _ln:
++                if not ("pe-r75-headless-smoke/fixture.exe" in _ln and "sha256" in _ln):
+MUTANT m132-cmp-evaluate-L590 line=590 class=cmp fn=evaluate legs=C1_DERIV_TABLE edit=in -> not in
+--- unmutated
++++ m132-cmp-evaluate-L590
+@@ -590 +590 @@
+-                if "pe-r75-headless-smoke/fixture.exe" in _ln and "sha256" in _ln:
++                if "pe-r75-headless-smoke/fixture.exe" not in _ln and "sha256" in _ln:
+MUTANT m133-cmp-evaluate-L590 line=590 class=cmp fn=evaluate legs=C1_DERIV_TABLE edit=in -> not in
+--- unmutated
++++ m133-cmp-evaluate-L590
+@@ -590 +590 @@
+-                if "pe-r75-headless-smoke/fixture.exe" in _ln and "sha256" in _ln:
++                if "pe-r75-headless-smoke/fixture.exe" in _ln and "sha256" not in _ln:
+MUTANT m134-cmp-evaluate-L592 line=592 class=cmp fn=evaluate legs=C1_DERIV_TABLE edit=!= -> ==
+--- unmutated
++++ m134-cmp-evaluate-L592
+@@ -592 +592 @@
+-                        if _tok.lower() != _real:
++                        if _tok.lower() == _real:
+MUTANT m135-if-evaluate-L608 line=608 class=if fn=evaluate legs=C1_K_HELD_BACKED edit=negate BoolOp test
+--- unmutated
++++ m135-if-evaluate-L608
+@@ -608 +608 @@
+-        if r[4] == "held" and files and all((root / "corpus" / f).is_file() for f in files):
++        if not (r[4] == "held" and files and all((root / "corpus" / f).is_file() for f in files)):
+MUTANT m136-cmp-evaluate-L608 line=608 class=cmp fn=evaluate legs=C1_K_HELD_BACKED edit=== -> !=
+--- unmutated
++++ m136-cmp-evaluate-L608
+@@ -608 +608 @@
+-        if r[4] == "held" and files and all((root / "corpus" / f).is_file() for f in files):
++        if r[4] != "held" and files and all((root / "corpus" / f).is_file() for f in files):
+MUTANT m137-cmp-evaluate-L610 line=610 class=cmp fn=evaluate legs=C1_K_HELD_BACKED edit=== -> !=
+--- unmutated
++++ m137-cmp-evaluate-L610
+@@ -610 +610 @@
+-    legs["C1_K_HELD_BACKED"] = held_backed == HELD_TARGET
++    legs["C1_K_HELD_BACKED"] = held_backed != HELD_TARGET
+MUTANT m138-if-_raw_line-L633 line=633 class=if fn=_raw_line legs=C1_ONLY_C02 edit=negate BoolOp test
+--- unmutated
++++ m138-if-_raw_line-L633
+@@ -633 +633 @@
+-        if len(c) == 5 and c[0] == cid:
++        if not (len(c) == 5 and c[0] == cid):
+MUTANT m139-cmp-_raw_line-L633 line=633 class=cmp fn=_raw_line legs=C1_ONLY_C02 edit=== -> !=
+--- unmutated
++++ m139-cmp-_raw_line-L633
+@@ -633 +633 @@
+-        if len(c) == 5 and c[0] == cid:
++        if len(c) != 5 and c[0] == cid:
+MUTANT m140-cmp-_raw_line-L633 line=633 class=cmp fn=_raw_line legs=C1_ONLY_C02 edit=== -> !=
+--- unmutated
++++ m140-cmp-_raw_line-L633
+@@ -633 +633 @@
+-        if len(c) == 5 and c[0] == cid:
++        if len(c) == 5 and c[0] != cid:
+NO_SITE leg=C1_TRIO (no comparison, if or not decides it)
+NEWLEG C1_ROWSET absent-from-counter
+NEWLEG C1_ENTRY_BYTES absent-from-counter
+NEWLEG C1_HEADER_POSITION absent-from-counter
+NEWLEG C1_VERIFIED_AT absent-from-counter
+NEWLEG C1_VOTE_NOTES absent-from-counter
+NEWLEG C1_OWNWORK_PATHS absent-from-counter
+NEWLEG C1_QUOTE_BYTES absent-from-counter
+NEWLEG C1_USEDBY_GROUNDED absent-from-counter
+EXCLUDED_MSG=7 (WHY-text-only decisions; not leg sites): L345,L369,L429,L441,L460,L475,L501
+MUTANTS_WRITTEN=140 counter=c1_k_admit_counter6.py label=V6R98
+KILL_TREE m001-cmp-strict_json-L90 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass,C1_REGISTRY=fail,C1_REGISTRY=pass,C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m002-cmp-base_readme-L157 rc=1 killed=False why=survived diff=-
+KILL_TREE m003-if-base_readme-L166 rc=1 killed=False why=message-only diff=-
+KILL_TREE m004-cmp-base_readme-L166 rc=1 killed=False why=survived diff=-
+KILL_TREE m005-not-parse_sources-L175 rc=1 killed=True why=verdict-set diff=C1_SIDS=fail,C1_SIDS=pass,C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m006-if-parse_sources-L178 rc=1 killed=True why=verdict-set diff=C1_SIDS=fail,C1_SIDS=pass,C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m007-cmp-parse_sources-L180 rc=1 killed=True why=verdict-set diff=C1_SIDS=fail,C1_SIDS=pass,C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m008-cmp-parse_sources-L181 rc=1 killed=True why=verdict-set diff=C1_SIDS=fail,C1_SIDS=pass,C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m009-not-check_registry-L195 rc=1 killed=True why=verdict-set diff=C1_REGISTRY=fail,C1_REGISTRY=pass
+KILL_TREE m010-cmp-check_registry-L200 rc=1 killed=True why=verdict-set diff=C1_REGISTRY=fail,C1_REGISTRY=pass
+KILL_TREE m011-cmp-check_registry-L203 rc=1 killed=False why=survived diff=-
+KILL_TREE m012-cmp-na_reason_ok-L210 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m013-cmp-na_reason_ok-L210 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m014-not-check_votes-L216 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m015-not-check_votes-L224 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m016-not-check_votes-L227 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m017-if-check_votes-L227 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m018-cmp-check_votes-L227 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m019-cmp-check_votes-L230 rc=1 killed=True why=verdict-set diff=C1_ADMITTED=fail,C1_ADMITTED_UNION=pass,C1_ADMITTED_WS=pass,C1_C02_CITES=fail,C1_C02_HELD=fail,C1_DERIV_TABLE=pass,C1_EMBEDDED=pass,C1_EMBED_NONVACUOUS=pass,C1_K_HELD_BACKED=12/15,C1_K_HELD_BACKED=fail,C1_LINT=pass,C1_ONLY_C02=fail,C1_PYCACHE=pass,C1_QUOTES=pass,C1_RECEIPTS=pass,C1_REGISTRY=pass,C1_ROWS_TOTAL=pass,C1_SIDS=pass,C1_SOURCES=pass,C1_TRIO=pass,C1_VERDICT=fail,C1_VOTES=pass
+KILL_TREE m020-cmp-check_votes-L233 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m021-cmp-check_votes-L235 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m022-cmp-check_votes-L237 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m023-not-check_votes-L241 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m024-cmp-check_votes-L241 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m025-cmp-check_votes-L245 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m026-cmp-check_votes-L247 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m027-not-check_votes-L250 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m028-not-check_votes-L253 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m029-cmp-check_votes-L253 rc=1 killed=False why=survived diff=-
+KILL_TREE m030-not-check_votes-L258 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m031-cmp-check_votes-L260 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m032-not-check_votes-L265 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m033-if-check_votes-L267 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m034-cmp-check_votes-L270 rc=1 killed=False why=survived diff=-
+KILL_TREE m035-if-check_votes-L278 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m036-not-check_votes-L280 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m037-not-check_votes-L283 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m038-if-check_votes-L286 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m039-cmp-check_votes-L286 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m040-not-check_votes-L286 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m041-not-check_votes-L288 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m042-cmp-check_votes-L288 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m043-cmp-check_votes-L292 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m044-cmp-check_votes-L294 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m045-cmp-check_votes-L296 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m046-if-check_votes-L298 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m047-cmp-check_votes-L298 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m048-cmp-check_votes-L298 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m049-cmp-check_votes-L303 rc=1 killed=True why=verdict-set diff=C1_VOTES=fail,C1_VOTES=pass
+KILL_TREE m050-if-check_receipts-L312 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE m051-cmp-check_receipts-L322 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE m052-cmp-check_receipts-L324 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE d-host rc=1 killed=False why=survived diff=-
+KILL_TREE m054-cmp-check_receipts-L327 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE m055-not-check_receipts-L330 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE m056-cmp-check_receipts-L333 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE m057-cmp-check_receipts-L335 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE m058-cmp-check_receipts-L335 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE m059-not-check_receipts-L336 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE m060-cmp-check_receipts-L336 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE m061-cmp-check_receipts-L336 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE m062-not-check_receipts-L338 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE m063-cmp-check_receipts-L343 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE m064-not-check_receipts-L345 rc=1 killed=True why=verdict-set diff=C1_RECEIPTS=fail,C1_RECEIPTS=pass
+KILL_TREE m065-cmp-check_sids-L367 rc=1 killed=True why=verdict-set diff=C1_SIDS=fail,C1_SIDS=pass
+KILL_TREE m066-not-check_sids-L369 rc=1 killed=True why=verdict-set diff=C1_SIDS=fail,C1_SIDS=pass
+KILL_TREE m067-if-check_sources-L380 rc=1 killed=True why=verdict-set diff=C1_ADMITTED=fail,C1_ADMITTED_UNION=pass,C1_ADMITTED_WS=pass,C1_C02_CITES=fail,C1_C02_HELD=fail,C1_DERIV_TABLE=pass,C1_EMBEDDED=pass,C1_EMBED_NONVACUOUS=pass,C1_K_HELD_BACKED=12/15,C1_K_HELD_BACKED=fail,C1_LINT=pass,C1_ONLY_C02=fail,C1_PYCACHE=pass,C1_QUOTES=pass,C1_RECEIPTS=pass,C1_REGISTRY=pass,C1_ROWS_TOTAL=pass,C1_SIDS=pass,C1_SOURCES=pass,C1_TRIO=pass,C1_VERDICT=fail,C1_VOTES=pass
+KILL_TREE m068-cmp-check_sources-L380 rc=1 killed=False why=survived diff=-
+KILL_TREE m069-cmp-check_sources-L384 rc=1 killed=True why=verdict-set diff=C1_ADMITTED=fail,C1_ADMITTED_UNION=pass,C1_ADMITTED_WS=pass,C1_C02_CITES=fail,C1_C02_HELD=fail,C1_DERIV_TABLE=pass,C1_EMBEDDED=pass,C1_EMBED_NONVACUOUS=pass,C1_K_HELD_BACKED=12/15,C1_K_HELD_BACKED=fail,C1_LINT=pass,C1_ONLY_C02=fail,C1_PYCACHE=pass,C1_QUOTES=pass,C1_RECEIPTS=pass,C1_REGISTRY=pass,C1_ROWS_TOTAL=pass,C1_SIDS=pass,C1_SOURCES=pass,C1_TRIO=pass,C1_VERDICT=fail,C1_VOTES=pass
+KILL_TREE m070-cmp-check_sources-L384 rc=1 killed=False why=survived diff=-
+KILL_TREE m071-not-check_sources-L392 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m072-cmp-check_sources-L395 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m073-cmp-check_sources-L396 rc=1 killed=False why=survived diff=-
+KILL_TREE m074-cmp-check_sources-L401 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m075-cmp-check_sources-L403 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m076-not-check_sources-L407 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m077-cmp-check_sources-L410 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m078-cmp-check_sources-L412 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m079-cmp-check_sources-L414 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m080-cmp-check_sources-L416 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m081-cmp-check_sources-L418 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m082-cmp-check_sources-L421 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m083-cmp-check_sources-L425 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m084-cmp-check_sources-L427 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m085-not-check_sources-L429 rc=1 killed=True why=verdict-set diff=C1_SOURCES=fail,C1_SOURCES=pass
+KILL_TREE m086-cmp-check_quotes-L433 rc=1 killed=True why=verdict-set diff=C1_QUOTES=fail,C1_QUOTES=pass
+KILL_TREE m087-not-check_quotes-L434 rc=1 killed=True why=verdict-set diff=C1_QUOTES=fail,C1_QUOTES=pass
+KILL_TREE m088-cmp-check_quotes-L439 rc=1 killed=True why=verdict-set diff=C1_QUOTES=fail,C1_QUOTES=pass
+KILL_TREE m089-cmp-check_quotes-L442 rc=1 killed=True why=verdict-set diff=C1_QUOTES=fail,C1_QUOTES=pass
+KILL_TREE m090-if-check_embed_nonvacuous-L454 rc=1 killed=False why=survived diff=-
+KILL_TREE m091-not-check_embed_nonvacuous-L454 rc=1 killed=False why=survived diff=-
+KILL_TREE m092-if-check_embed_nonvacuous-L458 rc=1 killed=False why=survived diff=-
+KILL_TREE m093-not-check_embed_nonvacuous-L460 rc=1 killed=True why=verdict-set diff=C1_EMBED_NONVACUOUS=fail,C1_EMBED_NONVACUOUS=pass
+KILL_TREE m094-not-check_pycache-L469 rc=1 killed=False why=survived diff=-
+KILL_TREE m095-not-check_pycache-L475 rc=1 killed=True why=verdict-set diff=C1_PYCACHE=fail,C1_PYCACHE=pass
+KILL_TREE m096-if-check_admitted_union-L486 rc=1 killed=True why=verdict-set diff=C1_ADMITTED=fail,C1_ADMITTED_UNION=pass,C1_ADMITTED_WS=pass,C1_C02_CITES=fail,C1_C02_HELD=fail,C1_DERIV_TABLE=pass,C1_EMBEDDED=pass,C1_EMBED_NONVACUOUS=pass,C1_K_HELD_BACKED=12/15,C1_K_HELD_BACKED=fail,C1_LINT=pass,C1_ONLY_C02=fail,C1_PYCACHE=pass,C1_QUOTES=pass,C1_RECEIPTS=pass,C1_REGISTRY=pass,C1_ROWS_TOTAL=pass,C1_SIDS=pass,C1_SOURCES=pass,C1_TRIO=pass,C1_VERDICT=fail,C1_VOTES=pass
+KILL_TREE m097-cmp-check_admitted_union-L486 rc=1 killed=True why=verdict-set diff=C1_ADMITTED_UNION=fail,C1_ADMITTED_UNION=pass
+KILL_TREE m098-if-check_admitted_union-L492 rc=1 killed=False why=survived diff=-
+KILL_TREE m099-cmp-check_admitted_union-L493 rc=1 killed=False why=survived diff=-
+KILL_TREE m100-if-check_admitted_union-L496 rc=1 killed=True why=verdict-set diff=C1_ADMITTED_UNION=fail,C1_ADMITTED_UNION=pass
+KILL_TREE m101-cmp-check_admitted_union-L498 rc=1 killed=True why=verdict-set diff=C1_ADMITTED_UNION=fail,C1_ADMITTED_UNION=pass
+KILL_TREE m102-not-check_admitted_union-L501 rc=1 killed=True why=verdict-set diff=C1_ADMITTED_UNION=fail,C1_ADMITTED_UNION=pass
+KILL_TREE m103-cmp-evaluate-L511 rc=1 killed=True why=verdict-set diff=C1_K_HELD_BACKED=0/0,C1_K_HELD_BACKED=12/15,C1_ROWS_TOTAL=fail,C1_ROWS_TOTAL=pass
+KILL_TREE m104-cmp-evaluate-L512 rc=1 killed=True why=verdict-set diff=C1_ROWS_TOTAL=fail,C1_ROWS_TOTAL=pass
+KILL_TREE m105-cmp-evaluate-L513 rc=1 killed=True why=verdict-set diff=C1_C02_HELD=fail,C1_C02_HELD=pass
+KILL_TREE m106-cmp-evaluate-L514 rc=1 killed=True why=verdict-set diff=C1_C02_HELD=fail,C1_C02_HELD=pass
+KILL_TREE m107-cmp-evaluate-L516 rc=1 killed=True why=verdict-set diff=C1_C02_CITES=fail,C1_C02_CITES=pass
+KILL_TREE m108-if-evaluate-L522 rc=1 killed=False why=survived diff=-
+KILL_TREE m109-if-evaluate-L524 rc=1 killed=False why=message-only diff=-
+KILL_TREE m110-cmp-evaluate-L524 rc=1 killed=False why=survived diff=-
+KILL_TREE m111-cmp-evaluate-L524 rc=1 killed=False why=message-only diff=-
+KILL_TREE m112-not-evaluate-L526 rc=1 killed=False why=survived diff=-
+KILL_TREE m113-cmp-evaluate-L526 rc=1 killed=False why=survived diff=-
+KILL_TREE m114-cmp-evaluate-L527 rc=1 killed=True why=verdict-set diff=C1_ONLY_C02=fail,C1_ONLY_C02=pass
+KILL_TREE m115-if-evaluate-L538 rc=1 killed=False why=survived diff=-
+KILL_TREE m116-if-evaluate-L540 rc=1 killed=True why=verdict-set diff=C1_ADMITTED_WS=fail,C1_ADMITTED_WS=pass
+KILL_TREE m117-cmp-evaluate-L540 rc=1 killed=False why=survived diff=-
+KILL_TREE m118-cmp-evaluate-L542 rc=1 killed=True why=verdict-set diff=C1_ADMITTED_WS=fail,C1_ADMITTED_WS=pass
+KILL_TREE m119-cmp-evaluate-L544 rc=1 killed=True why=verdict-set diff=C1_ADMITTED_WS=fail,C1_ADMITTED_WS=pass
+KILL_TREE m120-cmp-evaluate-L546 rc=1 killed=False why=survived diff=-
+KILL_TREE m121-cmp-evaluate-L546 rc=1 killed=False why=survived diff=-
+KILL_TREE m122-cmp-evaluate-L547 rc=1 killed=True why=verdict-set diff=C1_ADMITTED=fail,C1_ADMITTED=pass
+KILL_TREE m123-if-evaluate-L563 rc=1 killed=True why=verdict-set diff=C1_EMBEDDED=fail,C1_EMBEDDED=pass,C1_EMBED_NONVACUOUS=fail,C1_EMBED_NONVACUOUS=pass,C1_LINT=fail,C1_LINT=pass
+KILL_TREE m124-cmp-evaluate-L568 rc=1 killed=True why=verdict-set diff=C1_LINT=fail,C1_LINT=pass
+KILL_TREE m125-cmp-evaluate-L570 rc=1 killed=False why=survived diff=-
+KILL_TREE m126-cmp-evaluate-L570 rc=1 killed=True why=verdict-set diff=C1_EMBEDDED=fail,C1_EMBEDDED=pass
+KILL_TREE m127-cmp-evaluate-L571 rc=1 killed=True why=verdict-set diff=C1_EMBEDDED=fail,C1_EMBEDDED=pass
+KILL_TREE m128-not-evaluate-L572 rc=1 killed=True why=verdict-set diff=C1_EMBEDDED=fail,C1_EMBEDDED=pass
+KILL_TREE m129-cmp-evaluate-L582 rc=1 killed=True why=verdict-set diff=C1_DERIV_TABLE=fail,C1_DERIV_TABLE=pass
+KILL_TREE m130-if-evaluate-L587 rc=1 killed=False why=survived diff=-
+KILL_TREE m131-if-evaluate-L590 rc=1 killed=True why=verdict-set diff=C1_DERIV_TABLE=fail,C1_DERIV_TABLE=pass
+KILL_TREE m132-cmp-evaluate-L590 rc=1 killed=False why=survived diff=-
+KILL_TREE m133-cmp-evaluate-L590 rc=1 killed=False why=survived diff=-
+KILL_TREE m134-cmp-evaluate-L592 rc=1 killed=True why=verdict-set diff=C1_DERIV_TABLE=fail,C1_DERIV_TABLE=pass
+KILL_TREE m135-if-evaluate-L608 rc=1 killed=True why=verdict-set diff=C1_K_HELD_BACKED=12/15,C1_K_HELD_BACKED=3/15
+KILL_TREE m136-cmp-evaluate-L608 rc=1 killed=True why=verdict-set diff=C1_K_HELD_BACKED=12/15,C1_K_HELD_BACKED=2/15
+KILL_TREE m137-cmp-evaluate-L610 rc=1 killed=True why=verdict-set diff=C1_K_HELD_BACKED=fail,C1_K_HELD_BACKED=pass
+KILL_TREE m138-if-_raw_line-L633 rc=1 killed=False why=message-only diff=-
+KILL_TREE m139-cmp-_raw_line-L633 rc=1 killed=False why=message-only diff=-
+KILL_TREE m140-cmp-_raw_line-L633 rc=1 killed=False why=message-only diff=-
+BASE_TREE rc=1 verdicts=22
+MUTANT_KILL_V6R98=107/140
+SURVIVORS_TREE=m002-cmp-base_readme-L157,m003-if-base_readme-L166,m004-cmp-base_readme-L166,m011-cmp-check_registry-L203,m029-cmp-check_votes-L253,m034-cmp-check_votes-L270,d-host,m068-cmp-check_sources-L380,m070-cmp-check_sources-L384,m073-cmp-check_sources-L396,m090-if-check_embed_nonvacuous-L454,m091-not-check_embed_nonvacuous-L454,m092-if-check_embed_nonvacuous-L458,m094-not-check_pycache-L469,m098-if-check_admitted_union-L492,m099-cmp-check_admitted_union-L493,m108-if-evaluate-L522,m109-if-evaluate-L524,m110-cmp-evaluate-L524,m111-cmp-evaluate-L524,m112-not-evaluate-L526,m113-cmp-evaluate-L526,m115-if-evaluate-L538,m117-cmp-evaluate-L540,m120-cmp-evaluate-L546,m121-cmp-evaluate-L546,m125-cmp-evaluate-L570,m130-if-evaluate-L587,m132-cmp-evaluate-L590,m133-cmp-evaluate-L590,m138-if-_raw_line-L633,m139-cmp-_raw_line-L633,m140-cmp-_raw_line-L633
+KILL_SELFTEST m001-cmp-strict_json-L90 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m002-cmp-base_readme-L157 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m003-if-base_readme-L166 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m004-cmp-base_readme-L166 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m005-not-parse_sources-L175 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m006-if-parse_sources-L178 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m007-cmp-parse_sources-L180 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m008-cmp-parse_sources-L181 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m009-not-check_registry-L195 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m010-cmp-check_registry-L200 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: M6-forged-registry-seat: expected fail on C1_REGISTRY, got rc=0 failing=[]
+KILL_SELFTEST m011-cmp-check_registry-L203 rc=0 killed=False timeout=False first=-
+KILL_SELFTEST m012-cmp-na_reason_ok-L210 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m013-cmp-na_reason_ok-L210 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m014-not-check_votes-L216 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m015-not-check_votes-L224 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m016-not-check_votes-L227 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m017-if-check_votes-L227 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m018-cmp-check_votes-L227 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m019-cmp-check_votes-L230 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=[] | SELFTEST FAIL: H1-indent-dup-status: expected fail on C1_ADMITTED, got rc=1 failing=[] | SELFTEST FAIL: F10-dup-status-fenced: expected fail on C1_ADMITTED, got rc=1 failing=[]
+KILL_SELFTEST m020-cmp-check_votes-L233 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m021-cmp-check_votes-L235 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m022-cmp-check_votes-L237 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m023-not-check_votes-L241 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m024-cmp-check_votes-L241 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m025-cmp-check_votes-L245 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m026-cmp-check_votes-L247 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m027-not-check_votes-L250 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: V18-na-letter-flood: expected fail on C1_VOTES, got rc=0 failing=[]
+KILL_SELFTEST m028-not-check_votes-L253 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m029-cmp-check_votes-L253 rc=0 killed=False timeout=False first=-
+KILL_SELFTEST m030-not-check_votes-L258 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m031-cmp-check_votes-L260 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m032-not-check_votes-L265 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m033-if-check_votes-L267 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m034-cmp-check_votes-L270 rc=0 killed=False timeout=False first=-
+KILL_SELFTEST m035-if-check_votes-L278 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m036-not-check_votes-L280 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m037-not-check_votes-L283 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m038-if-check_votes-L286 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m039-cmp-check_votes-L286 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m040-not-check_votes-L286 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m041-not-check_votes-L288 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m042-cmp-check_votes-L288 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m043-cmp-check_votes-L292 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m044-cmp-check_votes-L294 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m045-cmp-check_votes-L296 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m046-if-check_votes-L298 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m047-cmp-check_votes-L298 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m048-cmp-check_votes-L298 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m049-cmp-check_votes-L303 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m050-if-check_receipts-L312 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: do-nothing base did not fail: rc=1
+KILL_SELFTEST m051-cmp-check_receipts-L322 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: V10-stale-fetched-at: expected fail on C1_RECEIPTS, got rc=0 failing=[]
+KILL_SELFTEST m052-cmp-check_receipts-L324 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST d-host rc=0 killed=False timeout=False first=-
+KILL_SELFTEST m054-cmp-check_receipts-L327 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m055-not-check_receipts-L330 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m056-cmp-check_receipts-L333 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m057-cmp-check_receipts-L335 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m058-cmp-check_receipts-L335 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m059-not-check_receipts-L336 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m060-cmp-check_receipts-L336 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m061-cmp-check_receipts-L336 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m062-not-check_receipts-L338 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m063-cmp-check_receipts-L343 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m064-not-check_receipts-L345 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: V10-stale-fetched-at: expected fail on C1_RECEIPTS, got rc=0 failing=[] | SELFTEST FAIL: V27-fabricated-body-foreign-host: expected fail on C1_RECEIPTS, got rc=1 failing=['C1_SOURCES', 'C1_VERDICT']
+KILL_SELFTEST m065-cmp-check_sids-L367 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m066-not-check_sids-L369 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: V19-sid-suffix-spaced: expected fail on C1_SIDS, got rc=1 failing=['C1_VOTES', 'C1_SOURCES', 'C1_VERDICT'] | SELFTEST FAIL: F16-unresolved-body-sid: expected fail on C1_SIDS, got rc=1 failing=['C1_VOTES', 'C1_SOURCES', 'C1_VERDICT']
+KILL_SELFTEST m067-if-check_sources-L380 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=[] | SELFTEST FAIL: H1-indent-dup-status: expected fail on C1_ADMITTED, got rc=1 failing=[] | SELFTEST FAIL: F10-dup-status-fenced: expected fail on C1_ADMITTED, got rc=1 failing=[]
+KILL_SELFTEST m068-cmp-check_sources-L380 rc=0 killed=False timeout=False first=-
+KILL_SELFTEST m069-cmp-check_sources-L384 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=[] | SELFTEST FAIL: H1-indent-dup-status: expected fail on C1_ADMITTED, got rc=1 failing=[] | SELFTEST FAIL: F10-dup-status-fenced: expected fail on C1_ADMITTED, got rc=1 failing=[]
+KILL_SELFTEST m070-cmp-check_sources-L384 rc=0 killed=False timeout=False first=-
+KILL_SELFTEST m071-not-check_sources-L392 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m072-cmp-check_sources-L395 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m073-cmp-check_sources-L396 rc=0 killed=False timeout=False first=-
+KILL_SELFTEST m074-cmp-check_sources-L401 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m075-cmp-check_sources-L403 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m076-not-check_sources-L407 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: do-nothing base did not fail: rc=1
+KILL_SELFTEST m077-cmp-check_sources-L410 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m078-cmp-check_sources-L412 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m079-cmp-check_sources-L414 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m080-cmp-check_sources-L416 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m081-cmp-check_sources-L418 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m082-cmp-check_sources-L421 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m083-cmp-check_sources-L425 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m084-cmp-check_sources-L427 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m085-not-check_sources-L429 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: F19-stale-new-row: expected fail on C1_SOURCES, got rc=0 failing=[] | SELFTEST FAIL: A3-usedby-extra: expected fail on C1_SOURCES, got rc=0 failing=[]
+KILL_SELFTEST m086-cmp-check_quotes-L433 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=fail', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m087-not-check_quotes-L434 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=fail', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m088-cmp-check_quotes-L439 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=fail', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m089-cmp-check_quotes-L442 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=fail', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m090-if-check_embed_nonvacuous-L454 rc=0 killed=False timeout=False first=-
+KILL_SELFTEST m091-not-check_embed_nonvacuous-L454 rc=1 killed=True timeout=False first=SELFTEST FAIL: F18-ws-output: expected fail on C1_EMBED_NONVACUOUS, got rc=1 failing=['C1_VOTES', 'C1_EMBEDDED', 'C1_VERDICT']
+KILL_SELFTEST m092-if-check_embed_nonvacuous-L458 rc=1 killed=True timeout=False first=SELFTEST FAIL: F18b-tilde-fence: expected fail on C1_EMBED_NONVACUOUS, got rc=1 failing=['C1_VOTES', 'C1_EMBEDDED', 'C1_VERDICT']
+KILL_SELFTEST m093-not-check_embed_nonvacuous-L460 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: F18-ws-output: expected fail on C1_EMBED_NONVACUOUS, got rc=1 failing=['C1_VOTES', 'C1_EMBEDDED', 'C1_VERDICT'] | SELFTEST FAIL: F18b-tilde-fence: expected fail on C1_EMBED_NONVACUOUS, got rc=1 failing=['C1_VOTES', 'C1_EMBEDDED', 'C1_VERDICT']
+KILL_SELFTEST m094-not-check_pycache-L469 rc=1 killed=True timeout=False first=SELFTEST FAIL: M5-pycache-planted: expected fail on C1_PYCACHE, got rc=0 failing=[] | SELFTEST FAIL: M8-pycache-frozen-dir: expected fail on C1_PYCACHE, got rc=0 failing=[]
+KILL_SELFTEST m095-not-check_pycache-L475 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: M5-pycache-planted: expected fail on C1_PYCACHE, got rc=0 failing=[] | SELFTEST FAIL: M8-pycache-frozen-dir: expected fail on C1_PYCACHE, got rc=0 failing=[]
+KILL_SELFTEST m096-if-check_admitted_union-L486 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=[] | SELFTEST FAIL: H1-indent-dup-status: expected fail on C1_ADMITTED, got rc=1 failing=[] | SELFTEST FAIL: F10-dup-status-fenced: expected fail on C1_ADMITTED, got rc=1 failing=[]
+KILL_SELFTEST m097-cmp-check_admitted_union-L486 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m098-if-check_admitted_union-L492 rc=1 killed=True timeout=False first=SELFTEST FAIL: A4-shadow-admitted: expected fail on C1_ADMITTED_UNION, got rc=0 failing=[] | SELFTEST FAIL: DECOR-shadow-admitted: expected fail on C1_ADMITTED_UNION, got rc=0 failing=[]
+KILL_SELFTEST m099-cmp-check_admitted_union-L493 rc=1 killed=True timeout=False first=SELFTEST FAIL: A4-shadow-admitted: expected fail on C1_ADMITTED_UNION, got rc=0 failing=[] | SELFTEST FAIL: DECOR-shadow-admitted: expected fail on C1_ADMITTED_UNION, got rc=0 failing=[]
+KILL_SELFTEST m100-if-check_admitted_union-L496 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m101-cmp-check_admitted_union-L498 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m102-not-check_admitted_union-L501 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: A4-shadow-admitted: expected fail on C1_ADMITTED_UNION, got rc=0 failing=[] | SELFTEST FAIL: DECOR-shadow-admitted: expected fail on C1_ADMITTED_UNION, got rc=0 failing=[]
+KILL_SELFTEST m103-cmp-evaluate-L511 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=fail', 'C1_VERDICT=fail']
+KILL_SELFTEST m104-cmp-evaluate-L512 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: ROWS-total-extra-row: expected fail on C1_ROWS_TOTAL, got rc=1 failing=['C1_ONLY_C02', 'C1_VERDICT']
+KILL_SELFTEST m105-cmp-evaluate-L513 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: do-nothing base did not fail: rc=1
+KILL_SELFTEST m106-cmp-evaluate-L514 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: do-nothing base did not fail: rc=1
+KILL_SELFTEST m107-cmp-evaluate-L516 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: V07-legacy-path: expected fail on C1_C02_CITES, got rc=1 failing=['C1_ADMITTED_UNION', 'C1_K_HELD_BACKED', 'C1_VERDICT'] | SELFTEST FAIL: V08-entry-pending: expected fail on C1_C02_CITES, got rc=0 failing=[]
+KILL_SELFTEST m108-if-evaluate-L522 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m109-if-evaluate-L524 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m110-cmp-evaluate-L524 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m111-cmp-evaluate-L524 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m112-not-evaluate-L526 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: ONLY-C10-second-row: expected fail on C1_ONLY_C02, got rc=1 failing=['C1_K_HELD_BACKED', 'C1_VERDICT']
+KILL_SELFTEST m113-cmp-evaluate-L526 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m114-cmp-evaluate-L527 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m115-if-evaluate-L538 rc=0 killed=False timeout=False first=-
+KILL_SELFTEST m116-if-evaluate-L540 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m117-cmp-evaluate-L540 rc=0 killed=False timeout=False first=-
+KILL_SELFTEST m118-cmp-evaluate-L542 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m119-cmp-evaluate-L544 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m120-cmp-evaluate-L546 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: F10-dup-status-fenced: expected fail on C1_ADMITTED, got rc=1 failing=['C1_VOTES', 'C1_VERDICT'] | SELFTEST FAIL: do-nothing base did not fail: rc=1
+KILL_SELFTEST m121-cmp-evaluate-L546 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m122-cmp-evaluate-L547 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m123-if-evaluate-L563 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m124-cmp-evaluate-L568 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail'] | SELFTEST FAIL: LINT-qmap-missing-row: expected fail on C1_LINT, got rc=1 failing=['C1_VOTES', 'C1_VERDICT']
+KILL_SELFTEST m125-cmp-evaluate-L570 rc=1 killed=True timeout=False first=SELFTEST FAIL: EMBEDDED-fake-fence: expected fail on C1_EMBEDDED, got rc=1 failing=['C1_VOTES', 'C1_VERDICT']
+KILL_SELFTEST m126-cmp-evaluate-L570 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m127-cmp-evaluate-L571 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m128-not-evaluate-L572 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m129-cmp-evaluate-L582 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m130-if-evaluate-L587 rc=0 killed=False timeout=False first=-
+KILL_SELFTEST m131-if-evaluate-L590 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m132-cmp-evaluate-L590 rc=0 killed=False timeout=False first=-
+KILL_SELFTEST m133-cmp-evaluate-L590 rc=0 killed=False timeout=False first=-
+KILL_SELFTEST m134-cmp-evaluate-L592 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m135-if-evaluate-L608 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=fail', 'C1_VERDICT=fail']
+KILL_SELFTEST m136-cmp-evaluate-L608 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=fail', 'C1_VERDICT=fail']
+KILL_SELFTEST m137-cmp-evaluate-L610 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=fail', 'C1_VERDICT=fail'] | SELFTEST FAIL: KHELDBACK-broken-cell: expected fail on C1_K_HELD_BACKED, got rc=1 failing=['C1_ONLY_C02', 'C1_VERDICT']
+KILL_SELFTEST m138-if-_raw_line-L633 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m139-cmp-_raw_line-L633 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+KILL_SELFTEST m140-cmp-_raw_line-L633 rc=1 killed=True timeout=False first=SELFTEST FAIL: POS honest fixture did not pass: rc=1 tail=['C1_QUOTES=pass', 'C1_K_HELD_BACKED=pass', 'C1_VERDICT=fail']
+MUTANT_SELFTEST_V6R98=127/140
+SURVIVORS_SELFTEST=m011-cmp-check_registry-L203,m029-cmp-check_votes-L253,m034-cmp-check_votes-L270,d-host,m068-cmp-check_sources-L380,m070-cmp-check_sources-L384,m073-cmp-check_sources-L396,m090-if-check_embed_nonvacuous-L454,m115-if-evaluate-L538,m117-cmp-evaluate-L540,m130-if-evaluate-L587,m132-cmp-evaluate-L590,m133-cmp-evaluate-L590

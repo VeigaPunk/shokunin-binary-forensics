@@ -1,0 +1,27 @@
+# Receipt: query_6_v7_new_legs — v7 new leg names in knowledge, SOURCES, reports
+# Pattern: (C1_ROWSET|C1_ENTRY_BYTES|C1_HEADER_POSITION|C1_VERIFIED_AT|C1_VOTE_NOTES|C1_OWNWORK_PATHS|C1_QUOTE_BYTES|C1_USEDBY_GROUNDED|C1_ONLY_TARGET)
+# Total hits: 0
+
+## Per-lane hit counts:
+- audio-shokunin: 0
+- chousa-shokunin: 0
+- game-dev-2d-shokunin: 0
+- game-dev-3d-shokunin: 0
+- kagi-shokunin: 0
+- kaidoku-shokunin: 0
+- kake-shokunin: 0
+- kama-shokunin: 0
+- kasegi-shokunin: 0
+- kengaku-shokunin: 0
+- kotoba-shokunin: 0
+- kotodama-shokunin: 0
+- kumitate-shokunin: 0
+- lore-shokunin: 0
+- mado-shokunin: 0
+- mori-shokunin: 0
+- souji-shokunin: 0
+- tabi-shokunin: 0
+- tameshi-shokunin: 0
+- tsukuroi-shokunin: 0
+
+## Hits (path:line:content):

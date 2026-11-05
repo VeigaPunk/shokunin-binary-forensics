@@ -1,0 +1,11 @@
+{
+ "delta": "QUOTES-mutated-body",
+ "expected_leg": "C1_QUOTES",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_RECEIPTS",
+  "C1_QUOTES",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

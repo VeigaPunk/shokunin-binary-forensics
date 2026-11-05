@@ -1,0 +1,12 @@
+{
+ "delta": "V19-sid-suffix-spaced",
+ "expected_leg": "C1_SIDS",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_VOTES",
+  "C1_SIDS",
+  "C1_SOURCES",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

@@ -1,0 +1,38 @@
+{
+ "seat": "ReviewerGate",
+ "role": "reviewer",
+ "candidate_sha256": "6d27c129e6ec3bbd3699c84c0a06301d7aea88140e54a1ff8d8b34d5c0c5330f",
+ "decisions": {
+  "Q01": "PASS",
+  "Q02": "PASS",
+  "Q03": "PASS",
+  "Q04": "PASS",
+  "Q05": "PASS",
+  "Q06": "PASS",
+  "Q07": "n/a",
+  "Q08": "n/a",
+  "Q09": "PASS",
+  "Q10": "PASS",
+  "Q11": "PASS",
+  "Q12": "n/a",
+  "Q13": "n/a",
+  "Q14": "n/a",
+  "Q15": "n/a",
+  "Q16": "PASS",
+  "Q17": "n/a"
+ },
+ "notes": {
+  "Q06": "Amendment C flips this to PASS and I confirm it independently: sha256sum corpus/fixtures/archive-r2/fixture.zip = 857989f5...be27e equals truth.json archive_sha256; member sizes 84/16160 and archive size 2964 match the record's declared_size order; the premise is round 2's committed truth file (5c9fb20), fixture bytes unchanged since, no failed input. Nothing is stated from intent. See gate-audit-amendment-c.md.",
+  "Q07": "No parser accept/refuse/cause prediction exists in the amended entry; the reworded clauses assert only same-day doctor state, not run-time ordering.",
+  "Q08": "Superseded by Q11, applied in full across all 21 derivation rows including Amendment C's three count rows, every one re-run byte-equal: client count 14, state split 4 aligned/1 manual/8 missing/1 stale, missing-or-stale 9.",
+  "Q11": "Amendment C repairs the critic's defect: every count, identifier and digest stated in the route table now has an in-entry deriving command and recorded output; version strings are sourced to the probe transcript (13 $-commands each with output and rc=) and the doctor (1) and inspect-artifact (0) exit codes are explicitly labeled session-observed, not lines of any record (verified: no exit/rc lines in either record).",
+  "Q12": "No rejected registry row is load-bearing and no flip is cited by the amended entry; S506/S507 remain tier A, status mined. See Q12 in gate-audit-amendment-c.md.",
+  "Q13": "No verifier is credited as mutation-guarding any clause of the amended entry; the recheck line names re-open, re-run and re-derive procedures only.",
+  "Q14": "The entry still contains no hex string quoted with a byte count in the same clause, no truncated run carrying a length and no ASCII rendering; the digest row stays length-free after Amendment B's split.",
+  "Q15": "No lane-tree git identity sentence exists; the pinned REA revision remains part of a fetched URL whose served bytes I re-fetched byte-identically on 2026-11-05.",
+  "Q16": "Amendment C repairs the critic's second defect: the preamble no longer credits the table with version strings or exit codes, and every sentence saying what a command prints was checked against that command's stdout, including the new nine-row whose unescaped grep -cE command I executed and whose 9 matches the Observation's 'nine stale or missing client registrations'.",
+  "Q17": "No adjudication relocated a cited artifact for this entry; every cited path resolves at commit 1b76b4d."
+ },
+ "artifact_path": ".ufo/waves/round-98/w1/ReviewerGate/gate-audit-amendment-c.md",
+ "artifact_sha256": "ea71f559963136d85b3ca8dbd1cae0e444d88b420c6320766fe88dfadcd9b1eb"
+}

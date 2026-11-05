@@ -1,0 +1,3 @@
+# command: PYTHONUTF8=1 python3 -B reports/round-98/c1_k_admit_counter7.py --self-test --work <scratch>  (cwd = clone at 5d9b087)
+SELFTEST_C1V7=OK legs=55
+# rc=0

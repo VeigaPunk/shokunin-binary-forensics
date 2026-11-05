@@ -1,0 +1,11 @@
+{
+ "delta": "H1-indent-dup-status",
+ "expected_leg": "C1_ADMITTED",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_ADMITTED",
+  "C1_VOTES",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

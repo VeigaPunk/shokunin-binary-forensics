@@ -1479,3 +1479,11 @@ no row, supports no claim).
 - Wave: `.ufo/waves/round-97/w1/` (10 seats, `w1-results.json`); fresh holdout `.ufo/waves/round-97/w1/CriticR97/holdout-v6.log`; mutation evidence `.ufo/waves/round-97/w1/MutationR97/`.
 - Corrections and findings: M5 (used-by path form), M8 (14 accepted, not 13), M9 (own-work quote not byte-verbatim; S505), M10 (holdout forgeries accepted by v5; v6 accepts 5 of 12).
 - Landing: `corpus/README.md` (C02 `partial → held`, knowledge cell = the entry), `corpus/knowledge/round-96-native-analysis-sessions.md` (`admission-status: admitted`), `corpus/SOURCES.md` (S505), `corpus/lessons/round-97.md`, `SCORECARD.md`, `SKILL.md` (three probes), `reports/round-97/`.
+
+## Round 98 (hyaku run 15, attempt 1) — C14 candidate refused by its own gate (honest miss); v7 refuses the five routed r97 holdout forgeries
+
+- Motivating evidence: the r97 non-author spot-check (`corpus/lessons/round-97-verifier-spotcheck.md` §6) routed the holdout forgeries FR02/08/09/10/12, the row-set leg, the S505 used-by drift and admission-before-closure. Coverage was lowest at C14 `partial` (pre-contract checklist).
+- Domain work: `rea doctor`, host probes and `rea inspect-artifact` on `fixtures/archive-r2/fixture.zip` on this host on 2026-11-05, saved at `corpus/live/runs/round-98/` (S507). The REA connection-and-recovery reference was fetched at `12f6e09` (S506, `reports/round-98/quote-receipts/`). C14 candidate entry: `corpus/knowledge/round-98-rea-host-readiness.md`.
+- Claims frozen at `9d49002`. Amendments A (`cf8a9d4`), B (`0146c0a`, §Q-map added after the lint) and C (`1b76b4d`, critic Q11/Q16 fixes) were all recorded before scoring. v7 was frozen at `5d9b087`.
+- Result: C1 not verified (`reports/round-98/controls/c1-v7/diag-landing.log`: `C1_VOTES`, `C1_VOTE_NOTES` fail). C2 met (`reports/round-98/controls/c2-v7-frozen.log`). Fresh holdout: `.ufo/waves/round-98/w1/L1-holdout-v7/`.
+- Wave: `.ufo/waves/round-98/w1/` (12 seats, `w1-results.json`).

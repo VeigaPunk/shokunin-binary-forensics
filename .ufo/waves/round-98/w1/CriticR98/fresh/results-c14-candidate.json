@@ -1,0 +1,98 @@
+[
+ {
+  "name": "CONTROL-honest",
+  "class": "control",
+  "expected": "pass",
+  "rc": null,
+  "verdict": "not-run",
+  "k_held": "-",
+  "failing_legs": [],
+  "outcome": "built",
+  "changed": [],
+  "removed": []
+ },
+ {
+  "name": "C14-R01-suffix-row-outside-count",
+  "class": "coverage row id with a letter suffix, invisible to the count",
+  "expected": "fail",
+  "rc": null,
+  "verdict": "not-run",
+  "k_held": "-",
+  "failing_legs": [],
+  "outcome": "built",
+  "changed": [
+   "corpus/README.md"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C14-V01-placeholder-pass-note",
+  "class": "PASS decision with a one-word placeholder note",
+  "expected": "fail",
+  "rc": null,
+  "verdict": "not-run",
+  "k_held": "-",
+  "failing_legs": [],
+  "outcome": "built",
+  "changed": [
+   "reports/round-98/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C14-V02-fail-under-extra-key",
+  "class": "FAIL recorded under an out-of-range decision key",
+  "expected": "fail",
+  "rc": null,
+  "verdict": "not-run",
+  "k_held": "-",
+  "failing_legs": [],
+  "outcome": "built",
+  "changed": [
+   "reports/round-98/votes/ReviewerBlind.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C14-Q01-receipt-span-shift",
+  "class": "receipt span names bytes beside the quote",
+  "expected": "fail",
+  "rc": null,
+  "verdict": "not-run",
+  "k_held": "-",
+  "failing_legs": [],
+  "outcome": "built",
+  "changed": [
+   "reports/round-98/quote-receipts/S506.receipt.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C14-O01-ownwork-pointer-foreign-round",
+  "class": "own-work pointer names an existing record of another round",
+  "expected": "fail",
+  "rc": null,
+  "verdict": "not-run",
+  "k_held": "-",
+  "failing_legs": [],
+  "outcome": "built",
+  "changed": [
+   "corpus/SOURCES.md"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C14-L01-fetchlog-date-vs-receipt",
+  "class": "fetch-log header date disagrees with the receipt fetched_at",
+  "expected": "fail",
+  "rc": null,
+  "verdict": "not-run",
+  "k_held": "-",
+  "failing_legs": [],
+  "outcome": "built",
+  "changed": [
+   "reports/round-98/quote-receipts/fetch-log.md"
+  ],
+  "removed": []
+ }
+]

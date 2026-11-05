@@ -1,0 +1,59 @@
+# Receipt: query_1_rea_doctor — rea doctor in knowledge, SOURCES, reports
+# Pattern: rea doctor
+# Total hits: 32
+
+## Per-lane hit counts:
+- audio-shokunin: 0
+- chousa-shokunin: 0
+- game-dev-2d-shokunin: 0
+- game-dev-3d-shokunin: 0
+- kagi-shokunin: 0
+- kaidoku-shokunin: 32
+- kake-shokunin: 0
+- kama-shokunin: 0
+- kasegi-shokunin: 0
+- kengaku-shokunin: 0
+- kotoba-shokunin: 0
+- kotodama-shokunin: 0
+- kumitate-shokunin: 0
+- lore-shokunin: 0
+- mado-shokunin: 0
+- mori-shokunin: 0
+- souji-shokunin: 0
+- tabi-shokunin: 0
+- tameshi-shokunin: 0
+- tsukuroi-shokunin: 0
+
+## Hits (path:line:content):
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-rea-cli-surface.md:73:- claim: `rea setup` configures agent integrations (`--client`, `--all-detected`, `--skill-client`, `--skill`) and providers, supports `--dry-run` (prints resolved plan), `-y/--yes`, `--install-hopper`, `--accessible`; `rea doctor` checks readiness with optional `--target`, `--client`, `--provider` requirements and `--skill` identity alignment; `rea update` self-updates and verifies the release; `rea uninstall` removes REA-owned agent config/skill files, `--purge-data` also removes caches/state.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-rea-self-documentation.md:15:| Live self-report | `rea doctor`, `rea capabilities`, `rea providers` | Host-scoped readiness and per-operation availability/effects matrices. |
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-rea-self-documentation.md:61:## Candidate: `rea doctor` and `rea capabilities`/`rea providers` are live self-documentation of the provider/substrate model
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-doctor-taxonomy.md:3:# kaidoku-r1 — `rea doctor` taxonomy and host health state (rea-agents@6.4.0)
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-doctor-taxonomy.md:10:`rea` binary is the npx cache entry the doctor itself reports. The `rea doctor`
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-doctor-taxonomy.md:14:- claim: `which rea` finds nothing in this host's PATH; `doctor` reports `identity.installations.paths = ["/home/vgpnk/.npm/_npx/dea9475797100b20/node_modules/.bin/rea"]` with `state: "single"` — i.e., the only installed `rea` executable is the npx cache shim, so `rea doctor` cannot be run directly and `npx -y rea-agents@6.4.0 doctor` is the canonical equivalent.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-doctor-taxonomy.md:105:- claim: `rea doctor` is runnable on this host because the doctor reports an installation path.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-doctor-taxonomy.md:119:`rea doctor` on this host: healthy=false / environment_healthy=false (exit 1), driven solely by 6 core `config_drift` checks — a stale-flagged skill identity (actually a missing `~/.claude/skills` destination; the shared `~/.agents/skills` copy is byte-identical v37/170) and 5 missing client registrations — while Ghidra 12.1.4 + JDK 21 passes all 8 provider inspections as the sole ready analysis engine, Hopper and IDA are absent-but-unconfigured, and devin/omp registrations are aligned.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-mcp-registrations.md:72:## Candidate: Supported repair path is per-client `rea doctor`/`rea setup` with dry-run + backup — not hand-editing
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-mcp-registrations.md:73:- claim: connection-and-recovery.md prescribes `rea doctor --client <id> --json` then `rea setup --client <id> --dry-run --json` (apply with `--yes`), showing exact paths/backups first; a skill install alone never registers MCP (SKILL.md line 19); codex additionally supports per-tool approval tables like `[mcp_servers.rea.tools.open_binary] approval_mode = "approve"`.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-rea-live-jq-e2e.md:117:- claim: `rea doctor` reports `healthy:false` overall yet the native-binary pipeline is fully
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-rea-live-jq-e2e.md:120:- source: `rea doctor` scope_checks (18 rows), saved `/tmp/rea-doctor.json`; env `GHIDRA_INSTALL_DIR=/home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC`.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-asar-surface.md:50:- claim: `npx -y rea-agents@6.4.0` runs (150-line help). `rea doctor` reports `healthy: false` / `environment_healthy: false` at top level, yet `ghidra` + `ghidra-platform` + `ghidra-architecture` + `ghidra-installation` checks are all healthy (`/home/vgpnk/.local/opt/ghidra_12.1.4_PUBLIC`, x64, JDK path per MINT.md), `node` healthy (24.21.0); `hopper` fails `missing_analysis_engine`; `skill: false` in scope. Doctor-unhealthy ≠ surface-blind: the JS/Electron tool surface is still listed.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-asar-surface.md:58:- source: `rea --help` command table; `rea doctor` surface list (`surface: electron-provider`); SKILL.md:48, references/javascript-applications.md:3
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-version-diff-compare.md:7:Provider: Ghidra 12.1.4 at `~/.local/opt/ghidra_12.1.4_PUBLIC` (`rea doctor` healthy;
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-firmware-probe.md:60:## Candidate: firmware providers are invisible to `rea doctor` and `rea providers` — the gate is only discoverable by calling the verb
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-firmware-probe.md:61:- claim: `rea doctor --format json` `providerInspections` lists exactly `["ghidra","ida"]`
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-firmware-probe.md:90:- `rea doctor --format json` → providerInspections = ghidra + ida only. `rea providers --format json` → 18 caps, zero firmware ops.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-firmware-probe.md:105:surface's readiness is invisible to `rea doctor`; it must stay tracked in PROVINCE.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:86:- claim: Six mapped observations: no REA tools in session → `rea doctor --client <id> --json` (skill install alone does not register MCP); missing/malformed/stale registration → scoped setup plan with backups; aligned registration but no connected tools → restart/reconnect client because doctor cannot establish the current agent's connection; `MCP tool call requires approval, but approval policy is never` → client-policy rejection, do not install engines or repeat setup; `provider_unavailable`/unavailable tool entry → that operation's provider diagnostics or `binary_session.result.tool_availability`, resolving only the needed prerequisite (a complete catalog does not imply every operation is available); `rea` missing in a child shell/Node incompatible → inspect actual PATH/launcher — a prefix install absent from a login shell's PATH does not establish broken MCP registration. Supported client IDs: `claude_code`, `claude_desktop`, `codex`, `cursor`, `gemini_cli`, `windsurf`, `devin`, `opencode`, `antigravity`, `copilot_cli`, `commandcode`, `qwen_code`, `vscode`, `grok_build`, `omp`, `pi`, `hermes`, `grok_bot` (chat registration, not local `mcp.json`); unsupported clients get version-pinned manual stdio registration or CLI.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:93:- claim: Repair sequence: `rea doctor --client <id> --json`, `rea setup --client <id> --dry-run --json`; show the plan's exact paths, backups, changes, and bundled-skill replacement; obtain approval for writes not already authorized; apply the same scope with `rea setup --client <id> --yes`; `--install-hopper` only when separately needed and explicitly approved; then restart/reconnect and verify tools actually appear — if still absent, inspect the launch failure instead of looping through setup.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r3-appimage.md:69:- verify: `rea inspect-binary-layout ~/Applications/Grok_Bot_0.68.1.AppImage` → `provider_unavailable`; `rea doctor` reports the same env gap.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r4-12-godot-arm64-scale.md:126:| 4 | probe: same `analyze` with `REA_GHIDRA_STARTUP_TIMEOUT_MS=90000`, unfiltered | real 1m32.891s | EXIT 1 — verbatim `{"error":"Analysis failed","code":"provider_timeout","category":"timeout","message":"Analysis took too long. Try a smaller request, then run \`rea doctor\` if it continues.","retryable":true,"remediation":{"action":"Analysis took too long…"},"details":{"operation":"list_documents","timeout_ms":90000}}` |
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r4-13-pwntools-persist.md:14:Note: `rea doctor` does NOT surface this requirement — its
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r4-13-pwntools-persist.md:178:touched). `rea doctor` remains blind to the pwntools-elf aux provider; the
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r4-16-frontier-rescan.md:31:## Candidate: `rea doctor` re-verify — zero drift; 4th consecutive identical verdict
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r4u-01-firmware-deep.md:79:## Candidate: the doctor/providers blind spot persists WITH working env — `rea doctor` still inspects only ghidra+ida; `rea providers` names the firmware *operations* but never binwalk/unblob readiness
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r4u-01-firmware-deep.md:81:- claim: with both `REA_*_COMMAND` vars exported and both verbs verified working, `rea doctor --format json` `providerInspections` remains `["ghidra","ida"]` only; `rea providers --format json` lists `extract_firmware`/`inspect_firmware_regions` in the tool catalog (`surface:"firmware-provider"`) but contains zero occurrences of `binwalk`/`unblob` — provider *readiness* for the firmware surface stays invisible to both inventory verbs.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r4u-01-firmware-deep.md:108:| 18 | `rea doctor`/`rea providers` with env exported | providerInspections still ghidra+ida only; catalog names ops not providers |
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r4u-06-adb-surface.md:135:  `rea doctor` never inspects adb: `providerInspections` covers only the
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r4u-06-adb-surface.md:173:- `rea doctor --format json` → providerInspections = ghidra+ida only; adb
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r4u-06-adb-surface.md:196:notices moved to stderr, parser reads stdout), and `rea doctor` does not

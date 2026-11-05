@@ -1,0 +1,48 @@
+# Receipt: query_3_connection_recovery — connection-and-recovery in knowledge, SOURCES, reports
+# Pattern: connection-and-recovery
+# Total hits: 21
+
+## Per-lane hit counts:
+- audio-shokunin: 0
+- chousa-shokunin: 0
+- game-dev-2d-shokunin: 0
+- game-dev-3d-shokunin: 0
+- kagi-shokunin: 0
+- kaidoku-shokunin: 20
+- kake-shokunin: 0
+- kama-shokunin: 0
+- kasegi-shokunin: 0
+- kengaku-shokunin: 0
+- kotoba-shokunin: 0
+- kotodama-shokunin: 0
+- kumitate-shokunin: 1
+- lore-shokunin: 0
+- mado-shokunin: 0
+- mori-shokunin: 0
+- souji-shokunin: 0
+- tabi-shokunin: 0
+- tameshi-shokunin: 0
+- tsukuroi-shokunin: 0
+
+## Hits (path:line:content):
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-rea-self-documentation.md:48:- source: `~/.npm/_npx/af752b90495482d7/node_modules/rea-agents/skills/reverse-engineer-anything/SKILL.md` (221 lines); sibling guides `references/{connection-and-recovery,native-and-artifacts,javascript-applications,android-applications,runtime-observation,evidence-workflows}.md` — all shipped in the tarball.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-mcp-registrations.md:46:- source: registration files above + ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md lines 46-51
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-mcp-registrations.md:47:- verify: `grep -n 'grok_bot\|client.*ID\|claude_code' ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md`
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-mcp-registrations.md:70:- suggested: admit — names the one host-specific fragility in an otherwise uniform registration; matches the skill's warning that a missing `rea`/Node in a child shell does not imply broken registration (connection-and-recovery.md line 21).
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-mcp-registrations.md:73:- claim: connection-and-recovery.md prescribes `rea doctor --client <id> --json` then `rea setup --client <id> --dry-run --json` (apply with `--yes`), showing exact paths/backups first; a skill install alone never registers MCP (SKILL.md line 19); codex additionally supports per-tool approval tables like `[mcp_servers.rea.tools.open_binary] approval_mode = "approve"`.
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-mcp-registrations.md:74:- source: ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md lines 16-17, 39-59, 80-89; SKILL.md line 19
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-mcp-registrations.md:75:- verify: `sed -n '39,59p' ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md`
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-rea-skill-contract.md:6:Tree: `SKILL.md` plus six references — `android-applications.md`, `connection-and-recovery.md`,
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:3:<!-- kaidoku-shokunin round 2 — REA skill references sweep. Round 1 corpus: corpus/knowledge/2026-10-13-rea-skill-contract.md (SKILL.md + native-and-artifacts.md + evidence-workflows.md fully read). This file curates only NEW knowledge from the four references round 1 did not read: android-applications.md, javascript-applications.md, runtime-observation.md, connection-and-recovery.md. -->
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:11:- `~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md` (127 lines)
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:87:- source: ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md lines 12-22, 46-51
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:88:- verify: `sed -n '14,21p;46,51p' ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md`
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:94:- source: ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md lines 37-59
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:95:- verify: `sed -n '37,59p' ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md`
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:101:- source: ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md lines 61-94
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:102:- verify: `sed -n '61,94p' ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md`
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:108:- source: ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md lines 23-35
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:109:- verify: `sed -n '23,35p' ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md`
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:115:- source: ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md lines 96-127
+/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/knowledge/2026-10-13-r2-skill-references-deep.md:116:- verify: `sed -n '96,127p' ~/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md`
+/home/vgpnk/Projects/shokunin/kumitate-shokunin/corpus/knowledge/kimi-skills-plugins.md:70:  `~/.kimi-code/skills/reverse-engineer-anything/references/connection-and-recovery.md`,

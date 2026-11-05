@@ -1,0 +1,11 @@
+{
+ "delta": "V27-fabricated-body-foreign-host",
+ "expected_leg": "C1_RECEIPTS",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_RECEIPTS",
+  "C1_SOURCES",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

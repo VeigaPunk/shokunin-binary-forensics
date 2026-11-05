@@ -1,0 +1,13 @@
+{
+ "name": "C02-R01-held-row-backed-by-candidate",
+ "profile": "c02",
+ "variant": "fixture",
+ "class": "held row backed by an unadmitted entry of another round",
+ "mutation": "README C06 knowledge cell -> the round-98 candidate (copied into the tree); K counts existence only",
+ "expected": "fail",
+ "changed": [
+  "corpus/README.md",
+  "corpus/knowledge/round-98-rea-host-readiness.md"
+ ],
+ "removed": []
+}

@@ -1,0 +1,6 @@
+189a190,194
+>     import shutil as _sh
+>     _src = LANE / 'corpus/live/runs/round-96'
+>     _dst = Path(root) / 'corpus/live/runs/round-96'
+>     if _src.is_dir() and not _dst.exists():
+>         _sh.copytree(_src, _dst)  # L1 parity patch: same round-96 record supplement as v7/forge_reach7

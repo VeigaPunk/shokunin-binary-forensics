@@ -1,0 +1,10 @@
+{
+ "delta": "DECOR-shadow-admitted",
+ "expected_leg": "C1_ADMITTED_UNION",
+ "observed_rc": 1,
+ "failing_legs": [
+  "C1_ADMITTED_UNION",
+  "C1_VERDICT"
+ ],
+ "decide": true
+}

@@ -619,6 +619,24 @@ rows (entry command, verdict lines, pinned instrument sha, red/green logs) until
 | pinned-value path | `reports/round-97/mutants/mutate.py`; `reports/round-97/controls/mutate-v6-kill.out` (`MUTANT_KILL_V6=107/140`, `MUTANT_SELFTEST_V6=137/140`) |
 | owner | revenger |
 
+| name | `c1_k_admit_counter7 (round 98; successor of `c1_k_admit_counter6`: `--profile c02` keeps the v6 constants, `--profile c14` targets C14; new legs C1_ROWSET, C1_ENTRY_BYTES, C1_HEADER_POSITION, C1_VERIFIED_AT, C1_VOTE_NOTES, C1_OWNWORK_PATHS, C1_QUOTE_BYTES, C1_USEDBY_GROUNDED; renames C1_ONLY_C02 to C1_ONLY_TARGET) |
+| kind | probe (measurement over a committed tree; `--self-test` prints `SELFTEST_C1V7=OK legs=55`; missing `--profile` exits 2) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-98/c1_k_admit_counter7.py --profile c02\|c14 --tree <dir> --work <scratch>` (cwd = a git checkout of the lane; the self-test archives a revision) |
+| pinned-value path | counter bytes `reports/round-98/c1_k_admit_counter7.py` (sha256 `59c9930a…`, frozen at `5d9b087`); claims `reports/round-98/claims.md` (Amendments A–C); `reports/round-98/controls/selftest-v7-frozen.log`, `controls/c1-v7/`, `controls/v7-dev/` |
+| owner | revenger |
+
+| name | `forge_reach7 (round 98 C2; one run prints C2_ACCEPTED over FR02/08/09/10/12, C2_POSITIVE and C2_POSITIVE2 (honest and benign-extra trees), C2_STUB_SELFTEST on fully built trees, and the C2_ROWSET lines for FR06/FR07) |
+| kind | probe (instrument; `C2_VERDICT=met\|not-met`; exit 0 when every tree was evaluated) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-98/forge_reach7.py --counter <counter> [--profile c02] --work <scratch>` |
+| pinned-value path | `reports/round-98/forge_reach7.py` (sha256 `a62f05ea…`), `reports/round-98/forgeries7/MANIFEST.sha256`; `reports/round-98/controls/c2-v7-frozen.log` (met), `controls/v7-dev/harness-v6.log` (not-met) |
+| owner | revenger |
+
+| name | `mutate7 (round 98 port of mutate with `--profile` and operators for the eight new v7 legs) |
+| kind | probe (instrument check; denominator-specific) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-98/mutants/mutate7.py --counter reports/round-98/c1_k_admit_counter7.py --out <scratch> --kill-tree <archive 9d49002> --selftest --jobs 8 --label V7 --profile c02\|c14` |
+| pinned-value path | `reports/round-98/mutants/mutate7.py` (sha256 `5f03c73c…`, frozen at `af91e9d`); `reports/round-98/controls/mutate7-v7-{c02,c14}.out` (tree kill 173/249 and 127/249; the self-test stage exits 3, open) |
+| owner | revenger |
+
 ## 7. Cited sources — existence-checked
 
 | citation | exists at | credited for |
