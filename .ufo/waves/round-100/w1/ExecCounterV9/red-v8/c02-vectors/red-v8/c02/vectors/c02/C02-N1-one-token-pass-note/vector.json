@@ -1,0 +1,11 @@
+{
+ "name": "C02-N1-one-token-pass-note",
+ "profile": "c02",
+ "class": "PASS decision carried by a one-token note",
+ "mutation": "ReviewerGate Q01 PASS note replaced by 'ok'; the c02 profile does not read PASS notes",
+ "expected": "fail",
+ "changed": [
+  "reports/round-96/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+# CriticR100 attack shim: lookup table keyed on the input file's sha256. Decodes nothing.
+import hashlib, os, sys
+FIXTURE_SHA = '05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e'
+TAMPER_SHA = 'd01df086b51d18cf65ee8b127ab9b03e4ce7e21677561215ca32998cee4ca528'
+TRUTH_XML = '<?xml version="1.0" encoding="utf-8"?>\n<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.r65" android:versionCode="1" android:versionName="1.0" />\n'
+TAMPER_XML = '<?xml version="1.0" encoding="utf-8"?>\n<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.r65" android:versionCode="1" android:versionName="1.1" />\n'
+def digest(p):
+    return hashlib.sha256(open(p, "rb").read()).hexdigest()
+def xml_for(p):
+    d = digest(p)
+    if d == FIXTURE_SHA:
+        return TRUTH_XML
+    if d == TAMPER_SHA:
+        return TAMPER_XML
+    return None
+args = sys.argv[1:]
+if args == ["--version"]:
+    print("androguard lookup-shim 0.0 (attack)" if "androguard" == "androguard" else "apktool lookup-shim 0.0 (attack)")
+    sys.exit(0)
+if "androguard" == "androguard":
+    if len(args) == 2 and args[0] == "axml":
+        x = xml_for(args[1])
+        if x is None:
+            sys.stderr.write("unknown input\n"); sys.exit(1)
+        sys.stdout.write(x); sys.exit(0)
+    sys.exit(2)
+# apktool d -f -s -o <outdir> <apk>
+if len(args) >= 5 and args[0] == "d":
+    outdir = args[args.index("-o") + 1]
+    apk = args[-1]
+    x = xml_for(apk)
+    if x is None:
+        sys.stderr.write("unknown input\n"); sys.exit(1)
+    os.makedirs(outdir, exist_ok=True)
+    open(os.path.join(outdir, "AndroidManifest.xml"), "w", encoding="utf-8").write(x)
+    sys.exit(0)
+sys.exit(2)

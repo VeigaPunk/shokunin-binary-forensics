@@ -1,0 +1,11 @@
+{
+ "name": "C02-P4-record-overwritten-digest-stale",
+ "profile": "c02",
+ "class": "saved decompiled output changed after the entry was written",
+ "mutation": "codeable-decompiled.c `return 0x2a;` -> `return 0x2b;`; entry and digest rows untouched",
+ "expected": "fail",
+ "changed": [
+  "corpus/live/runs/round-96/codeable-decompiled.c"
+ ],
+ "removed": []
+}

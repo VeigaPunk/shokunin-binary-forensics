@@ -1,0 +1,2 @@
+CENSUS_LINE_CHECK=fail missing=W04
+rc=1

@@ -1,0 +1,86 @@
+[
+ {
+  "name": "CONTROL-honest",
+  "class": "control",
+  "desc": "none: honest tree, no delta",
+  "expected": "pass",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "14/15",
+  "failing_legs": [],
+  "outcome": "control-ok",
+  "changed": [],
+  "removed": []
+ },
+ {
+  "name": "C14-P1-templated-pass-notes",
+  "class": "three seats' PASS notes are one template with name and Q id swapped",
+  "desc": "every PASS note of ReviewerGate, ReviewerBlind, CriticR98 rewritten to one template; votes unchanged otherwise",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "14/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   "reports/round-98/votes/CriticR98.json",
+   "reports/round-98/votes/ReviewerBlind.json",
+   "reports/round-98/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C14-P2-pass-note-out-of-scope",
+  "class": "PASS decision whose note says the criterion is out of scope",
+  "desc": "ReviewerGate Q14 stays PASS; note replaced by an out-of-scope, nothing-checked sentence",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "14/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   "reports/round-98/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C14-P3-pass-note-other-criterion",
+  "class": "PASS note under Q05 names Q06 (copy-paste)",
+  "desc": "ReviewerBlind Q05 note replaced by the Q06 decision text; Q05 stays PASS",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "14/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   "reports/round-98/votes/ReviewerBlind.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C14-P4-record-digest-prefixes-transposed",
+  "class": "two record-file digest prefixes swapped in the derivation row",
+  "desc": "host-probes and rea-doctor prefixes swapped in the record digest row; votes re-bound",
+  "expected": "fail",
+  "rc": 1,
+  "verdict": "fail",
+  "k_held": "14/15",
+  "failing_legs": [
+   "C1_DERIV_TABLE",
+   "C1_DERIV_RERUN"
+  ],
+  "outcome": "refused",
+  "changed": [
+   ".ufo/waves/round-98/w1/CriticR98/critic-audit.md",
+   ".ufo/waves/round-98/w1/ReviewerBlind/blind-evidence.md",
+   ".ufo/waves/round-98/w1/ReviewerGate/gate-evidence.md",
+   "corpus/knowledge/round-98-rea-host-readiness.md",
+   "reports/round-98/votes/CriticR98.json",
+   "reports/round-98/votes/ReviewerBlind.json",
+   "reports/round-98/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ }
+]

@@ -1,0 +1,20 @@
+# ScribeLessonR100 — census dry-run over a scratch copy of corpus/SOURCES.md with rows S508 and S509 appended (mined variant, as proposed)
+# scratch root: /fast/scratch/hyaku/revenger-r100/ScribeLessonR100/root  (lane tree NOT modified; scratch deleted at yield)
+
+$ grep -cE '^\|[[:space:]]*S[0-9]{3,}[[:space:]]*\|' <scratch>/corpus/SOURCES.md
+509
+
+$ awk -F'|' '... && NF!=13 {n++} END{print n+0}'   # malformed rows
+0
+
+$ scripts/sources-census.sh validate --root <scratch> <scratch>/revenger-shokunin | grep -E 'S508|S509'
+(no output above = 0 findings for the two new rows; grep rc=1)
+
+$ tier histogram (scratch, after append)
+A=460 B=21 C=28 
+$ status histogram (scratch, after append)
+mined=473 queued=16 rejected=20 
+
+# The lane's real registry is untouched by this seat:
+$ sha256sum /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md
+af0acc09c56c38b9f00b18286cb9140160b533060e6fc52d2e9d5011e068745b  /home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md

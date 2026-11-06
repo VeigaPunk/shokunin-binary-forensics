@@ -1,0 +1,18 @@
+{
+ "name": "C14-N4-record-appended",
+ "profile": "c14",
+ "class": "saved doctor record gains an appended rerun line",
+ "mutation": "rea-doctor-r98.txt appended with 'rerun ... healthy: true'; prefix row re-derived; votes re-bound",
+ "expected": "fail",
+ "changed": [
+  ".ufo/waves/round-98/w1/CriticR98/critic-audit.md",
+  ".ufo/waves/round-98/w1/ReviewerBlind/blind-evidence.md",
+  ".ufo/waves/round-98/w1/ReviewerGate/gate-evidence.md",
+  "corpus/knowledge/round-98-rea-host-readiness.md",
+  "corpus/live/runs/round-98/rea-doctor-r98.txt",
+  "reports/round-98/votes/CriticR98.json",
+  "reports/round-98/votes/ReviewerBlind.json",
+  "reports/round-98/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

@@ -1,0 +1,77 @@
+diff --git i/LOG.md w/LOG.md
+index 7678458..1af7678 100644
+--- i/LOG.md
++++ w/LOG.md
+@@ -1495,3 +1495,11 @@ no row, supports no claim).
+ - Claims frozen at `7e6edd4`; Amendment A (`61e27feb`, S505 used-by grounded by citation) and Amendment B (`9ddd38ac`, the single candidate amendment after VoterGateR99's Q16 FAIL) recorded before scoring; v8 frozen at `01266760`.
+ - Result: C1 verified on the frozen counter (`reports/round-99/controls/post-freeze/landing-worktree-c14r99.log`); C2 met (`post-freeze/c2-v8-frozen.log`). Fresh r99 holdout 12/12 accepted by v8 (`post-freeze/holdout99-v8-*.log`).
+ - Wave: `.ufo/waves/round-99/w1/` (12 seats, `w1-results.json`).
++
++## Round 100 (hyaku run 15, attempt 1) — v9 refuses the twelve r99 holdout forgeries (12/12 → 0/12, development set); capability `apk-manifest-cross-decode` enters the table (4 → 5 rows)
++
++- Motivating evidence: the r99 non-author spot-check (`corpus/lessons/round-99-verifier-spotcheck.md` §5) routed the fresh r99 holdout (v8 accepts 12/12), the census-line omission and the do-nothing commit naming; every owned criterion sits above the 7.0 saturation line and no capability had entered since round 91, so the stagnation nudge applies (claims.md §Axis choice; ReviewerClaimsR100 §2 recomputed it).
++- Domain work: two third-party decoders (androguard 4.1.4, apktool 3.0.3) decode the authored APK `corpus/fixtures/apk-r65/fixture.apk` and agree with its `truth.json`; a same-length CRC-fixed tamper is reported by both (`reports/round-100/controls/post-freeze/c2-probe-landing.log`). Sources opened this round: S508 (androguard `axml` docs), S509 (Apktool wiki), receipts `.ufo/waves/round-100/w1/ScoutSourcesR100/`.
++- Claims frozen at `05e854ce` with the pre-freeze do-nothing controls; instruments frozen at `173abe91` (after the L1's pre-freeze ruling that `C1_DERIV_RERUN` applies only when an entry declares a verbatim-stdout cell rule; lesson Gate).
++- Result: C1 met (`post-freeze/c1-v9-frozen.log`, `R100_ACCEPTED=0/12`, controls ok, stub ok; no-regression `noreg1..3` logs all rc 0). C2 met (`c2-probe-landing.log`, `c2-controls.log`); surface miss M23 (the probe does not cite S508/S509).
++- Wave: `.ufo/waves/round-100/w1/` (12 seats, `w1-results.json`).
+diff --git i/SCORECARD.md w/SCORECARD.md
+index 10d56ac..27ad094 100644
+--- i/SCORECARD.md
++++ w/SCORECARD.md
+@@ -170,6 +170,8 @@ retired: none.
+ 
+ | message-tree-conformance | Measure commit-message↔tree conformance over the lane's own history: extract every path-shaped token a commit message cites, resolve it in that commit's tree (bare names by unique suffix match), and exit 1 naming each miss; a planted-miss self-test proves it can fail | `reports/round-91/message_tree_check.py`; `PYTHONUTF8=1 python3 -B reports/round-91/cap_probe.py --lane <lane> --range 7fab03f..refs/heads/main` → `CAP_MESSAGE_TREE=pass` (`reports/round-91/c2-after.log`); real run `MESSAGE_TREE commits=23 cited=25 misses=9` (`.ufo/waves/round-91/w1/ExecR91RealRun/real-run-table.md`); discriminating probe `reports/round-91/cap_probe2.py` (`CAP2_VERDICT=pass`, stubA/stubD/stubE fail) | round-91 — the run is demonstrated; the round's C2 claim is **NOT VERIFIED** because its frozen probe was not discriminating (see the round-91 row) |
+ 
++| apk-manifest-cross-decode | Decode an authored APK's binary `AndroidManifest.xml` with two independent third-party decoders (androguard 4.1.4 `axml`, S508; apktool 3.0.3 `d -s`, S509), compare package/versionCode/versionName against the fixture's `truth.json` string pool and attribute records, and prove the decoders read the bytes: a same-length tamper of `versionName` (CRC fixed) must be reported by both; truth-echoing decoder shims and a byte-flipped fixture are refused | `PYTHONUTF8=1 python3 -B reports/round-100/cap_apk_probe.py --fixture corpus/fixtures/apk-r65 --work <scratch>` → `CAP_APK_VERDICT=pass`, rc 0 (`reports/round-100/controls/post-freeze/c2-probe-landing.log`); controls `bash reports/round-100/controls_c2.sh reports/round-100/cap_apk_probe.py <scratch>` → `C2_CTRL_STUB=refused`, `C2_CTRL_FLIP=refused`, `C2_CONTROLS=control-ok` (`reports/round-100/controls/post-freeze/c2-controls.log`); one authored inert fixture only — no C05 knowledge admission, no real-world APK, DEX or REA `inspect_android_package` claim | round-100 |
++
+ Rows enter only through a round that demonstrates the capability running (`AXES.md` §Capabilities).
+ 
+ ## Saturation
+diff --git i/SKILL.md w/SKILL.md
+index d16f64f..a827cee 100644
+--- i/SKILL.md
++++ w/SKILL.md
+@@ -661,6 +661,30 @@ rows (entry command, verdict lines, pinned instrument sha, red/green logs) until
+ | pinned-value path | `reports/round-99/mutants/mutate8.py` (sha256 `51416a54…`); `.ufo/waves/round-99/w1/MutationR99.md` (`MUTANT_KILL_V8=154/309`, `MUTANT_SELFTEST_V8=285/309` on counter `620dfca9…`) |
+ | owner | revenger |
+ 
++| name | `c1_k_admit_counter9 (round 100; successor of `c1_k_admit_counter8`: every v8 leg and constant kept; twelve new legs C1_PASS_NOTE_FLOOR, C1_VOTER_PRESENT, C1_QMAP_POINTER, C1_EVIDENCE_RESOLVES, C1_SECTIONS, C1_SURFACE_TEXT, C1_NA_SHARE, C1_ARTIFACT_COPY, C1_DERIV_RERUN (only when the entry declares a verbatim-stdout cell rule), C1_RECORD_PINNED, C1_BODY_DIGEST, C1_ANCHOR_VERBATIM)` |
++| kind | probe (measurement over a committed tree; `--self-test` prints `SELFTEST_C1V9=OK legs=128`; missing `--profile` exits 2) |
++| entry command | `PYTHONUTF8=1 python3 -B reports/round-100/c1_k_admit_counter9.py --profile c02\|c14\|c14r99 --tree <dir> --work <scratch>` (cwd = a git checkout of the lane) |
++| pinned-value path | counter bytes `reports/round-100/c1_k_admit_counter9.py` (sha256 `8e2eafc8…`, frozen at `173abe91`); claims `reports/round-100/claims.md`; `reports/round-100/controls/post-freeze/` |
++| owner | revenger |
++
++| name | `forge_reach9 (round 100 C1; one run prints an R100_VECTOR line per round-99 holdout vector, R100_ACCEPTED=n/12, both builder control lines, R100_STUB_SELFTEST and R100_VERDICT; builder pinned by sha256, fails closed with rc 2)` |
++| kind | probe (instrument; `R100_VERDICT=met\|not-met`) |
++| entry command | `PYTHONUTF8=1 python3 -B reports/round-100/forge_reach9.py --counter <counter> --work <scratch>` |
++| pinned-value path | `reports/round-100/forge_reach9.py` (sha256 `3acdd3a9…`); `reports/round-100/controls/post-freeze/c1-v9-frozen.log` (met, 0/12); `reports/round-100/controls/c1-do-nothing-v8.log` (v8 12/12) |
++| owner | revenger |
++
++| name | `cap_apk_probe (round 100 C2; androguard + apktool cross-decode of an authored APK manifest against truth.json, with an in-probe same-length tamper leg)` |
++| kind | probe (capability demonstration; prints `CAP_APK_VERDICT=pass\|fail`; rc 0 pass, 1 fail, 2 usage or missing decoder) |
++| entry command | `PYTHONUTF8=1 python3 -B reports/round-100/cap_apk_probe.py --fixture corpus/fixtures/apk-r65 --work <scratch>`; controls `bash reports/round-100/controls_c2.sh reports/round-100/cap_apk_probe.py <scratch>` |
++| pinned-value path | `reports/round-100/cap_apk_probe.py` (sha256 `b2c9d189…`), `reports/round-100/controls_c2.sh` (sha256 `479f690e…`); `reports/round-100/controls/post-freeze/c2-probe-landing.log`, `c2-controls.log`. Known limit: the tamper value is deterministic, so a shim keyed on the tampered digest passes (ReviewerCapR100 attack 3) |
++| owner | revenger |
++
++| name | `census_line_check (round 100, M21; a report's census line must name every warning/error class the cited census log prints, with its count)` |
++| kind | probe (lint over a report; prints `CENSUS_LINE_CHECK=pass\|fail missing=<classes>`; rc 0/1/2) |
++| entry command | `python3 -B reports/round-100/census_line_check.py --report <report.md> --log <census log>` |
++| pinned-value path | `reports/round-100/census_line_check.py` (sha256 `c3b754aa…`); `.ufo/waves/round-100/w1/ExecControlsR100/census-r99-fail.log` (`fail missing=W04` on the r99 report) |
++| owner | revenger |
++
+ ## 7. Cited sources — existence-checked
+ 
+ | citation | exists at | credited for |
+diff --git i/corpus/SOURCES.md w/corpus/SOURCES.md
+index 54a8abb..ff0d027 100644
+--- i/corpus/SOURCES.md
++++ w/corpus/SOURCES.md
+@@ -522,6 +522,8 @@ date by the round that wrote it; access dates and ≤25-word quotes are in
+ | S505 | Saved round-96 native-session record, byte-verbatim quote re-open — `corpus/live/runs/round-96/` | own-work | A | what the saved 2026-11-05 record contains, re-opened to carry a byte-verbatim located quote for the decompiled entry function: the `rea decompile` Evidence (ev_cc0b9d88200afef1e7bf90e77f4d52faa20a049f85f1db1a7bf4a531282ffefe, operation procedure_pseudo_code, provider ghidra 12.1.4), the ghidra-headless receipt and decompiled output, and the rea doctor receipt; not provider execution on this host, not the fixture bytes | the saved decompiled body's entry function, `corpus/live/runs/round-96/codeable-decompiled.c` lines 6-10 (1-based bytes 101-142): `undefined8 entry(void)` / `{` / `  return 0x2a;` / `}`; Evidence ev_cc0b9d88200afef1e7bf90e77f4d52faa20a049f85f1db1a7bf4a531282ffefe; fixture sha256 fe060de1bc5106f30dec532270fc634426484e4e2ef186e5b7617443950afd72; record file digests printed in the citing entry's derivation table | supersedes S504 — the r96 lesson's one-line quote for this record was a whitespace-reflowed rendering that is absent from the saved bytes; the located quote is the byte-verbatim five-line span, so a quote check compares bytes and not words | mined | 2026-11-05 | on-release | corpus/lessons/round-97.md |
+ | S506 | REA connection and task recovery reference — https://raw.githubusercontent.com/morluto/rea/12f6e0974cc0db0b3a9b86246accc76556837222/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md | docs | A | what the recovery reference states a readiness check can and cannot establish (doctor checks registration, not the agent's connection; per-route prerequisites; per-shell PATH); not provider execution or route correctness on any host | commit 12f6e0974cc0db0b3a9b86246accc76556837222; paragraph after the remedy table, sentence "Static JavaScript and ordinary ZIP inventory need neither Hopper nor Ghidra." (body bytes 7126-7202); body 16650 bytes sha256 ce2d122b873fb84d98cdb56afd84a34ee8de362b65760855838dfb29c2282e50 committed at reports/round-98/quote-receipts/raw/S506.body | A doctor verdict is a configuration observation, and a missing native engine does not block ZIP or static JavaScript routes, so readiness is judged route by route. | mined | 2026-11-05 | on-release | corpus/knowledge/round-98-rea-host-readiness.md |
+ | S507 | Saved round-98 host-readiness record — `corpus/live/runs/round-98/` | own-work | A | what the saved 2026-11-05 record on this host contains: the `rea doctor` receipt (CLI 6.7.0; its exit code 1 was observed in the L1 session and is not a line of the record), the host probe transcript, and one `rea inspect-artifact` Evidence (ev_0ef6c8cdbfe9836f2daa149d17269e355f98424d59ecb55398dbe271c6a87382) on `corpus/fixtures/archive-r2/fixture.zip`; not other hosts, dates or routes | `corpus/live/runs/round-98/rea-doctor-r98.txt` lines 1-2 (1-based bytes 1-41): `healthy: false` / `environment_healthy: false`; record file digests printed in the citing entry's derivation table | On this host an unhealthy overall doctor verdict coexists with a working ZIP-inventory route, so the overall verdict is not a route verdict. | mined | 2026-11-05 | on-release | corpus/knowledge/round-98-rea-host-readiness.md |
++| S508 | androguard `axml` — AndroidManifest.xml parser — https://androguard.readthedocs.io/en/latest/tools/androaxml.html | docs | A | the `androguard axml` CLI's own stated function at docs build `eef97351` (parse AndroidManifest.xml from an APK and show/save the decoded XML); not output fidelity, resource-table completeness or AXML spec conformance | docs page heading `androguard axml - AndroidManifest.xml parser`, paragraph "Parse the AndroidManifest.xml from an APK and show/save the XML file." at body line 203 (8751 bytes, sha256 `6507e7607f8c6d9b149d6a2f76079508b44e1a701510a49939008d855cbc2efc`); pinned RST `docs/tools/androaxml.rst` at commit `eef97351` line 4 (205 bytes, sha256 `a091672b7cb4de483657affb7add0290845bd884cefd4308832d2a3e5717c707`); accessed 2026-11-05 | The `androguard axml` tool's own documentation states it parses an APK's AndroidManifest.xml and shows or saves the decoded XML, which is the behaviour the round-100 capability probe compares against `truth.json`. | mined | 2026-11-05 | on-release | corpus/lessons/round-100.md |
++| S509 | Apktool wiki, The Basics: Introduction — https://apktool.org/wiki/the-basics/intro | docs | A | the official wiki's `apktool d` decode demonstration (a compiled AndroidManifest.xml is malformed when merely inflated; after `apktool d` it is human-readable XML); not output fidelity to pre-compile form, not rebuild validity | wiki console block after "That is where Apktool comes into play", line "I: Decoding AndroidManifest.xml with resources" at body line 9 (23480 bytes, sha256 `7e1c418b4572e4bc7738799677a52c848919ba4592c24046a79cce764727cf4f`); source mdx `wiki/the-basics/intro.mdx` @ `main` line 28 (1626 bytes, sha256 `f640bbffc53506ffcb4cad53e2f131b7acc5c8a0fc1b34411bbf409a43e6cad8`); installed version pinned by the v3.0.3 release page (tag `v3.0.3`, released 2026-07-20); accessed 2026-11-05 | The project's own wiki shows `apktool d` decoding a compiled AndroidManifest.xml into readable XML, which is the second decoder the round-100 capability probe compares against `truth.json`. | mined | 2026-11-05 | on-release | corpus/lessons/round-100.md |
+ 
+ ## Paths
+ 

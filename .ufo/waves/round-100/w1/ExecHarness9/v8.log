@@ -1,0 +1,24 @@
+R100_VECTOR C02-N1-one-token-pass-note accepted legs=
+R100_VECTOR C02-N2-pinned-reviewer-vote-omitted accepted legs=
+R100_VECTOR C02-N3-qmap-contradicts-votes accepted legs=
+R100_VECTOR C02-N4-evidence-id-edited accepted legs=
+R100_VECTOR C02-N5-observation-limitations-cut accepted legs=
+R100_VECTOR C02-N6-surface-text-attests-replication accepted legs=
+R100_VECTOR C14-N1-na-inflation accepted legs=
+R100_VECTOR C14-N2-artifact-renamed-to-other-seat accepted legs=
+R100_VECTOR C14-N3-derivation-count-edited accepted legs=
+R100_VECTOR C14-N4-record-appended accepted legs=
+R100_VECTOR C14-N5-s506-body-rebuilt accepted legs=
+R100_VECTOR C14-N6-s507-anchor-relabelled accepted legs=
+R100_ACCEPTED=12/12
+R100_CONTROL_C02=control-ok
+R100_CONTROL_C14=control-ok
+R100_STUB_SELFTEST=ok
+R100_REASON=counter accepts 12 of 12 vectors: C02-N1-one-token-pass-note, C02-N2-pinned-reviewer-vote-omitted, C02-N3-qmap-contradicts-votes, C02-N4-evidence-id-edited, C02-N5-observation-limitations-cut, C02-N6-surface-text-attests-replication, C14-N1-na-inflation, C14-N2-artifact-renamed-to-other-seat, C14-N3-derivation-count-edited, C14-N4-record-appended, C14-N5-s506-body-rebuilt, C14-N6-s507-anchor-relabelled
+R100_REASON=[stub-fail] c02: control row verdict=fail outcome=control-BROKEN line='control-BROKEN'
+R100_REASON=[stub-fail] c14: control row verdict=fail outcome=control-BROKEN line='control-BROKEN'
+R100_VERDICT=not-met
+harness_rc=1
+3acdd3a98b5dcdbdc3534f32c9be52f990da7f2994b498f6a107cc5678bdd362  /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-100/forge_reach9.py
+620dfca9959572449638cab203485555c5d45f5a8e89c5b68121ffc2d3023581  /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-99/c1_k_admit_counter8.py
+22dddf3d683719c38772f7f65716196f2eabd641e8368791e9575430e79984ec  /home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-99/w1/CriticR99/fresh/build_fresh99.py

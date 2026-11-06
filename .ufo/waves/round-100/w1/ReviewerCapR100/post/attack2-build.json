@@ -1,0 +1,12 @@
+/usr/lib/python3.14/zipfile/__init__.py:1755: UserWarning: Duplicate name: 'AndroidManifest.xml'
+  return self._open_to_write(zinfo, force_zip64=force_zip64)
+{
+ "attack2_sha256": "0022cc25bf224484cdf1e26cd17b05168eb690082c688c196018a65337610df7",
+ "attack2_size": 1477,
+ "members": [
+  "AndroidManifest.xml",
+  "classes.dex",
+  "META-INF/MANIFEST.MF",
+  "AndroidManifest.xml"
+ ]
+}

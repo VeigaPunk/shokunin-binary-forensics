@@ -1,0 +1,18 @@
+{
+ "name": "C02-E03-coverage-map-other-row",
+ "profile": "c02",
+ "variant": "fixture",
+ "class": "coverage-map header names a row other than the citing row",
+ "mutation": "entry coverage-map C02 -> C05 while README C02 cites the entry; re-bound",
+ "expected": "fail",
+ "changed": [
+  ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+  "corpus/knowledge/round-96-native-analysis-sessions.md",
+  "reports/round-96/votes/CriticR96.json",
+  "reports/round-96/votes/ReviewerBlind.json",
+  "reports/round-96/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

@@ -1,0 +1,6 @@
+v8 c02 builder_rc=0
+v8 c14 builder_rc=0
+v9 c02 builder_rc=0
+v9 c14 builder_rc=0
+forge_reach9_v9_rc=0
+attack_rc0_forge_reach9_rc=0

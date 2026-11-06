@@ -1,0 +1,9 @@
+{
+ "name": "CONTROL-honest",
+ "profile": "c02",
+ "class": "control",
+ "mutation": "none: honest tree, no delta",
+ "expected": "pass",
+ "changed": [],
+ "removed": []
+}

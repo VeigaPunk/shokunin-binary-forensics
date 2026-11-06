@@ -1,0 +1,11 @@
+{
+ "name": "C14-P2-pass-note-out-of-scope",
+ "profile": "c14",
+ "class": "PASS decision whose note says the criterion is out of scope",
+ "mutation": "ReviewerGate Q14 stays PASS; note replaced by an out-of-scope, nothing-checked sentence",
+ "expected": "fail",
+ "changed": [
+  "reports/round-98/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

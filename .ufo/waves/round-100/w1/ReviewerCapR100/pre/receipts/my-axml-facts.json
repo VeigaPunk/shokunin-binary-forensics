@@ -1,0 +1,73 @@
+{
+ "MATCH": true,
+ "element": {
+  "attrs": [
+   {
+    "data": 4,
+    "data_type": 3,
+    "name": "package",
+    "name_idx": 3,
+    "ns": null,
+    "ns_idx": 4294967295,
+    "raw_value_idx": 4,
+    "res_id": 0,
+    "value": "com.example.r65"
+   },
+   {
+    "data": 1,
+    "data_type": 16,
+    "name": "versionCode",
+    "name_idx": 5,
+    "ns": "android",
+    "ns_idx": 0,
+    "raw_value_idx": 7,
+    "res_id": 16843291,
+    "value": "1"
+   },
+   {
+    "data": 8,
+    "data_type": 3,
+    "name": "versionName",
+    "name_idx": 6,
+    "ns": "android",
+    "ns_idx": 0,
+    "raw_value_idx": 8,
+    "res_id": 16843292,
+    "value": "1.0"
+   }
+  ],
+  "name": "manifest",
+  "ns_idx": 4294967295
+ },
+ "extracted": {
+  "package": "com.example.r65",
+  "versionCode": "1",
+  "versionName": "1.0"
+ },
+ "member_len": 416,
+ "pool": {
+  "flags": 256,
+  "string_count": 9,
+  "strings": [
+   "android",
+   "http://schemas.android.com/apk/res/android",
+   "manifest",
+   "package",
+   "com.example.r65",
+   "versionCode",
+   "versionName",
+   "1",
+   "1.0"
+  ],
+  "style_count": 0,
+  "utf8": true
+ },
+ "resmap_nonzero": {
+  "versionCode": "0x101021b",
+  "versionName": "0x101021c"
+ },
+ "start_namespace": {
+  "prefix": "android",
+  "uri": "http://schemas.android.com/apk/res/android"
+ }
+}

@@ -1,0 +1,7 @@
+revenger	W01	S001 tierC mined used-by=corpus/x.md
+revenger	W01	S002 tierC mined used-by=corpus/y.md
+revenger	W04	S003 duplicate url example.com/a across scopes
+revenger	W04	S004 duplicate url example.org/b across scopes
+revenger	W04	S005 duplicate url example.net/c across scopes
+ok	/fast/scratch/SOURCES.md
+# rc=0 cmd=scripts/sources-census.sh validate --root /fast/scratch/hyaku/revenger-r100/ExecControlsR100/synth revenger

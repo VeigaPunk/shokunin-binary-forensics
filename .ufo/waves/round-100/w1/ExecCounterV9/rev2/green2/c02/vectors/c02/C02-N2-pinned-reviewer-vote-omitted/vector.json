@@ -1,0 +1,11 @@
+{
+ "name": "C02-N2-pinned-reviewer-vote-omitted",
+ "profile": "c02",
+ "class": "pinned reviewer vote file deleted, two votes remain",
+ "mutation": "ReviewerBlind.json removed; registry still pins ReviewerBlind; the floor is two votes",
+ "expected": "fail",
+ "changed": [],
+ "removed": [
+  "reports/round-96/votes/ReviewerBlind.json"
+ ]
+}

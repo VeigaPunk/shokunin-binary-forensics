@@ -1,0 +1,11 @@
+C14_LANDING_BUILT rev=9ddd38ac8bae entry_digest=246d09a8cf6523ab380f88f7945f220338c27e31f8b43ba876bbd0a9a8d746da
+CONTROL-honest | control | rc=0 | pass | K=14/15 | - | pass | control-ok
+C14-N1-na-inflation | one seat marks ten PASS decisions n/a with Q-id reasons | rc=1 | fail | K=14/15 | C1_NA_SHARE,C1_VERDICT | fail | refused
+C14-N2-artifact-renamed-to-other-seat | another seat's audit renamed into this seat's artifact | rc=1 | fail | K=14/15 | C1_ARTIFACT_COPY,C1_VERDICT | fail | refused
+C14-N3-derivation-count-edited | derivation count row prints 15 where the record prints 14 | rc=1 | fail | K=14/15 | C1_DERIV_RERUN,C1_VERDICT | fail | refused
+C14-N4-record-appended | saved doctor record gains an appended rerun line | rc=1 | fail | K=14/15 | C1_RECORD_PINNED,C1_VERDICT | fail | refused
+C14-N5-s506-body-rebuilt | pinned S506 body replaced by a self-consistent body | rc=1 | fail | K=14/15 | C1_BODY_DIGEST,C1_VERDICT | fail | refused
+C14-N6-s507-anchor-relabelled | S507 anchor re-pointed to a true line that does not carry the claim | rc=1 | fail | K=14/15 | C1_ANCHOR_VERBATIM,C1_VERDICT | fail | refused
+HOLDOUT99_PROFILE=c14 counter=c1_k_admit_counter9.py build_only=False
+HOLDOUT99_CONTROL=control-ok
+HOLDOUT99 accepted=0/6

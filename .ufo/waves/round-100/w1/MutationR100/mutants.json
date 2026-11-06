@@ -1,0 +1,67 @@
+{
+  "schema": "revenger-r100-mutants-prereg-v1",
+  "registered_by": "MutationR100",
+  "registered_before": "any mutant application or detector run by MutationR100. Prior seat activity: reads of claims.md, r99 mutants, builder final bytes; builder self-checks only (their wave dirs). PREREG_CLOCK=2026-11-05T22:46:37Z precedes this file; first detector run happens only after .ufo/waves/round-100/w1/FROZEN appears.",
+  "sha256_at_prereg": {
+    "reports/round-100/c1_k_admit_counter9.py": "5ea82db0653b99ac62251b3914bda1746bb556b9a24dfd673e24c1cd8ffaa536",
+    "reports/round-100/cap_apk_probe.py": "b2c9d189e75c582b06ce5636af17267869e70965c13d33ced10f501a03f2c71a"
+  },
+  "note_byte_drift": "ExecCounterV9 flagged a possible pre-freeze change to the derivation leg. If the FROZEN counter bytes differ from sha256_at_prereg, the del-leg entries below are unaffected (they name legs, not find-strings); sites are re-derived from the FROZEN bytes by mutate8 with fail-closed prereg validation, and the drift is disclosed in the findings. Probe find-strings are anchored to the final probe bytes above.",
+  "kill_rules": {
+    "v9_mutants": "killed iff forge_reach9.py on the mutant reports the mutant's corresponding vector accepted (vs baseline refusal), OR the mutant's own `--self-test` fails (rc!=0 or no SELFTEST_C1V9=OK label). Flips of non-corresponding vectors are recorded but do not alone constitute a kill under this rule.",
+    "probe_mutants": "killed iff controls_c2.sh reports control-bad, OR the mutated probe's verdict on the genuine fixture changes from the unmutated probe's verdict on the same fixture/decoders."
+  },
+  "new_legs_expected": [
+    {"leg": "C1_PASS_NOTE_FLOOR",   "vector": "C02-N1-one-token-pass-note",              "profile": "c02"},
+    {"leg": "C1_VOTER_PRESENT",     "vector": "C02-N2-pinned-reviewer-vote-omitted",     "profile": "all"},
+    {"leg": "C1_QMAP_POINTER",      "vector": "C02-N3-qmap-contradicts-votes",           "profile": "all"},
+    {"leg": "C1_EVIDENCE_RESOLVES", "vector": "C02-N4-evidence-id-edited",               "profile": "all"},
+    {"leg": "C1_SECTIONS",          "vector": "C02-N5-observation-limitations-cut",      "profile": "c02"},
+    {"leg": "C1_SURFACE_TEXT",      "vector": "C02-N6-surface-text-attests-replication", "profile": "all"},
+    {"leg": "C1_NA_SHARE",          "vector": "C14-N1-na-inflation",                     "profile": "c14"},
+    {"leg": "C1_ARTIFACT_COPY",     "vector": "C14-N2-artifact-renamed-to-other-seat",   "profile": "c14"},
+    {"leg": "C1_DERIV_RERUN",       "vector": "C14-N3-derivation-count-edited",          "profile": "c14"},
+    {"leg": "C1_RECORD_PINNED",     "vector": "C14-N4-record-appended",                  "profile": "c14"},
+    {"leg": "C1_BODY_DIGEST",       "vector": "C14-N5-s506-body-rebuilt",                "profile": "c14"},
+    {"leg": "C1_ANCHOR_VERBATIM",   "vector": "C14-N6-s507-anchor-relabelled",           "profile": "c14"}
+  ],
+  "notes": [
+    "del-leg entries delete the new leg's decision (the legs[...] = assignment in evaluate, or pass-ification when it is the sole statement of an if arm; checks-dict entries deleted physically) using reports/round-99/mutants/mutate8.py in generate mode with --base-counter reports/round-99/c1_k_admit_counter8.py, so sites are derived from the bytes under test and prereg coverage is fail-closed (PREREG_OK / exit 2).",
+    "probe-m1..m4 are explicit find/replace edits of reports/round-100/cap_apk_probe.py (each find string verified to occur exactly once in the bytes above). probe-m2/m4 are pre-registered as EXPECTED SURVIVORS of both assigned detectors unless controls_c2.sh exercises a decoder that reports wrong versionCode/versionName (m2) or a failing/erroring decoder (m4); their genuine-fixture verdict is predicted unchanged. probe-m3 kill depends on whether controls_c2.sh requires CAP_FIXTURE_SHA=fail on the byte-flipped fixture control (killed) or only the final verdict (survivor). probe-m1 is predicted killed by the stub-decoder control (tamper leg dropped => truth-echoing stubs pass).",
+    "vectors' legs= field and exact R100_VECTOR names are taken from the first real forge_reach9 run (baseline), not assumed; the mapping above is the builder's declaration."
+  ],
+  "mutants": [
+    {"id": "del-C1_PASS_NOTE_FLOOR",   "class": "del-leg", "leg": "C1_PASS_NOTE_FLOOR",   "corresponding_vector": "C02-N1-one-token-pass-note"},
+    {"id": "del-C1_VOTER_PRESENT",     "class": "del-leg", "leg": "C1_VOTER_PRESENT",     "corresponding_vector": "C02-N2-pinned-reviewer-vote-omitted"},
+    {"id": "del-C1_QMAP_POINTER",      "class": "del-leg", "leg": "C1_QMAP_POINTER",      "corresponding_vector": "C02-N3-qmap-contradicts-votes"},
+    {"id": "del-C1_EVIDENCE_RESOLVES", "class": "del-leg", "leg": "C1_EVIDENCE_RESOLVES", "corresponding_vector": "C02-N4-evidence-id-edited"},
+    {"id": "del-C1_SECTIONS",          "class": "del-leg", "leg": "C1_SECTIONS",          "corresponding_vector": "C02-N5-observation-limitations-cut"},
+    {"id": "del-C1_SURFACE_TEXT",      "class": "del-leg", "leg": "C1_SURFACE_TEXT",      "corresponding_vector": "C02-N6-surface-text-attests-replication"},
+    {"id": "del-C1_NA_SHARE",          "class": "del-leg", "leg": "C1_NA_SHARE",          "corresponding_vector": "C14-N1-na-inflation"},
+    {"id": "del-C1_ARTIFACT_COPY",     "class": "del-leg", "leg": "C1_ARTIFACT_COPY",     "corresponding_vector": "C14-N2-artifact-renamed-to-other-seat"},
+    {"id": "del-C1_DERIV_RERUN",       "class": "del-leg", "leg": "C1_DERIV_RERUN",       "corresponding_vector": "C14-N3-derivation-count-edited"},
+    {"id": "del-C1_RECORD_PINNED",     "class": "del-leg", "leg": "C1_RECORD_PINNED",     "corresponding_vector": "C14-N4-record-appended"},
+    {"id": "del-C1_BODY_DIGEST",       "class": "del-leg", "leg": "C1_BODY_DIGEST",       "corresponding_vector": "C14-N5-s506-body-rebuilt"},
+    {"id": "del-C1_ANCHOR_VERBATIM",   "class": "del-leg", "leg": "C1_ANCHOR_VERBATIM",   "corresponding_vector": "C14-N6-s507-anchor-relabelled"},
+    {"id": "probe-drop-tamper-leg", "class": "probe-edit", "target": "reports/round-100/cap_apk_probe.py",
+     "find": "    tamper_ok, why = tamper_leg(apk_bytes, expected, scratch, decoders)",
+     "replace": "    tamper_ok, why = True, \"\"",
+     "desc": "tamper leg never run; CAP_TAMPER_DETECTED always pass; verdict ignores tamper",
+     "prediction": "killed by controls_c2.sh stub-decoder control (truth-echoing stubs now pass; control-bad)"},
+    {"id": "probe-compare-only-package", "class": "probe-edit", "target": "reports/round-100/cap_apk_probe.py",
+     "find": "FIELDS = (\"package\", \"versionCode\", \"versionName\")",
+     "replace": "FIELDS = (\"package\",)",
+     "desc": "per-decoder comparison (c) checks package only; tamper_leg untouched (it reads versionName directly)",
+     "prediction": "expected survivor of both detectors unless a control stub keeps package correct but corrupts versionCode/versionName"},
+    {"id": "probe-skip-fixture-sha", "class": "probe-edit", "target": "reports/round-100/cap_apk_probe.py",
+     "find": "    sha_ok = bool(want) and digest == want",
+     "replace": "    sha_ok = True",
+     "desc": "fixture digest never checked; CAP_FIXTURE_SHA always pass",
+     "prediction": "killed iff controls_c2.sh byte-flip control requires CAP_FIXTURE_SHA=fail; survivor if it checks only CAP_APK_VERDICT (decode legs still fail on the flipped versionCode)"},
+    {"id": "probe-swallow-decoder-failure", "class": "probe-edit", "target": "reports/round-100/cap_apk_probe.py",
+     "find": "        xml, err = decode(apk)\n        ok = False\n        detail = err",
+     "replace": "        xml, err = decode(apk)\n        ok = True\n        detail = err",
+     "desc": "decoder failure (xml is None) or XML parse error in the per-decoder loop defaults the leg to pass; successful decodes still compared",
+     "prediction": "expected survivor of both detectors unless a control exercises a failing/erroring decoder"}
+  ]
+}

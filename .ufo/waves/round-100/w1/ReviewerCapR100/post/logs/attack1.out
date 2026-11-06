@@ -1,0 +1,7 @@
+CAP_FIXTURE_SHA=pass
+CAP_DECODER androguard version=androguard, version 4.1.4
+CAP_DECODER apktool version=3.0.3
+CAP_ANDROGUARD=pass
+CAP_APKTOOL=pass
+CAP_TAMPER_DETECTED=fail
+CAP_APK_VERDICT=fail

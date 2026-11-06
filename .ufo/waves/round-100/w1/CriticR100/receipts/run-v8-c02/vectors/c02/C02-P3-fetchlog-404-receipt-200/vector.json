@@ -1,0 +1,11 @@
+{
+ "name": "C02-P3-fetchlog-404-receipt-200",
+ "profile": "c02",
+ "class": "fetch log says HTTP 404 for S502, receipt says 200",
+ "mutation": "fetch-log S502 line HTTP 200 -> HTTP 404; receipt and body untouched",
+ "expected": "fail",
+ "changed": [
+  "reports/round-96/quote-receipts/fetch-log.md"
+ ],
+ "removed": []
+}

@@ -1,0 +1,17 @@
+{
+ "name": "C14-N3-derivation-count-edited",
+ "profile": "c14",
+ "class": "derivation count row prints 15 where the record prints 14",
+ "mutation": "client registration count output cell 14 -> 15; no digest row touched; votes re-bound",
+ "expected": "fail",
+ "changed": [
+  ".ufo/waves/round-98/w1/CriticR98/critic-audit.md",
+  ".ufo/waves/round-98/w1/ReviewerBlind/blind-evidence.md",
+  ".ufo/waves/round-98/w1/ReviewerGate/gate-evidence.md",
+  "corpus/knowledge/round-98-rea-host-readiness.md",
+  "reports/round-98/votes/CriticR98.json",
+  "reports/round-98/votes/ReviewerBlind.json",
+  "reports/round-98/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

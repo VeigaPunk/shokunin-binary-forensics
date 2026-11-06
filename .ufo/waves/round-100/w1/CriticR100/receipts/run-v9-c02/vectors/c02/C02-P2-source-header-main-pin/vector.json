@@ -1,0 +1,17 @@
+{
+ "name": "C02-P2-source-header-main-pin",
+ "profile": "c02",
+ "class": "source header URL pins a moving branch, SOURCES row keeps the commit",
+ "mutation": "S502 header URL commit replaced by `main`; trailing commit text, SOURCES row and receipt untouched",
+ "expected": "fail",
+ "changed": [
+  ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+  "corpus/knowledge/round-96-native-analysis-sessions.md",
+  "reports/round-96/votes/CriticR96.json",
+  "reports/round-96/votes/ReviewerBlind.json",
+  "reports/round-96/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

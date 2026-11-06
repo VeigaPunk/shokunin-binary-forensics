@@ -1,0 +1,12 @@
+Predictions written before any counter run (CriticR100, pre-FROZEN). Expected design verdict = FAIL for all vectors.
+v8 predicted (from reading the frozen counter legs only, not from running it):
+ c02 CONTROL-honest           pass
+ c02 C02-P1 recheck-listing   ACCEPTED (RECHECK_CMD_RE matches any backticked command)
+ c02 C02-P2 source-main-pin   ACCEPTED (no leg compares entry source-header URL with SOURCES row/receipt)
+ c02 C02-P3 fetchlog-404      ACCEPTED (receipt http_status 200; log line checked only for sid+sha)  [uncertain: audit_source_quotes verify]
+ c02 C02-P4 record-stale      ACCEPTED (no c02 leg reads record file digests)
+ c14 CONTROL-honest           pass
+ c14 C14-P1 templated notes   ACCEPTED (verbatim distinct, >=6 tokens, no n/a-style token)
+ c14 C14-P2 out-of-scope PASS ACCEPTED (regex misses 'outside scope' / 'nothing was checked')
+ c14 C14-P3 note names Q06 under Q05  ACCEPTED (no Q-id cross-check on PASS notes)
+ c14 C14-P4 digest prefixes swapped   REFUSED (check_c14_digests pairs names with prefixes)

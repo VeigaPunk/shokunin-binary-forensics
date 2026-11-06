@@ -1,0 +1,17 @@
+{
+ "name": "C02-N5-observation-limitations-cut",
+ "profile": "c02",
+ "class": "observation/inference/unknown and limitations sections removed",
+ "mutation": "the two sections cut from the entry (admission procedure step 3); votes re-bound",
+ "expected": "fail",
+ "changed": [
+  ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+  "corpus/knowledge/round-96-native-analysis-sessions.md",
+  "reports/round-96/votes/CriticR96.json",
+  "reports/round-96/votes/ReviewerBlind.json",
+  "reports/round-96/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

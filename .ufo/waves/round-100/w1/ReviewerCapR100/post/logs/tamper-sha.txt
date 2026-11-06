@@ -1,0 +1,2 @@
+tamper_ok_before_decode False decoders did not report tampered versionName '1.1' (truth '1.0'): cap decode failed: stop
+TAMPER_SHA d01df086b51d18cf65ee8b127ab9b03e4ce7e21677561215ca32998cee4ca528 947

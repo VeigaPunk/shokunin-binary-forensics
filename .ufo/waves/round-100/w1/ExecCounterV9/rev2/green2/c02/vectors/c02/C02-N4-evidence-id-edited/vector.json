@@ -1,0 +1,17 @@
+{
+ "name": "C02-N4-evidence-id-edited",
+ "profile": "c02",
+ "class": "identifier in a derivation row replaced",
+ "mutation": "Evidence ID in the grep -m1 evidence_id row replaced by another 64-hex id; votes re-bound",
+ "expected": "fail",
+ "changed": [
+  ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+  "corpus/knowledge/round-96-native-analysis-sessions.md",
+  "reports/round-96/votes/CriticR96.json",
+  "reports/round-96/votes/ReviewerBlind.json",
+  "reports/round-96/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

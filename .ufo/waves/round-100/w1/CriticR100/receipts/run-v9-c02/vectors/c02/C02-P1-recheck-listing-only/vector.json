@@ -1,0 +1,17 @@
+{
+ "name": "C02-P1-recheck-listing-only",
+ "profile": "c02",
+ "class": "recheck header names a directory listing, not a re-verification",
+ "mutation": "recheck line replaced by `ls corpus/live/runs/round-96/`; votes re-bound to the new digest",
+ "expected": "fail",
+ "changed": [
+  ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+  "corpus/knowledge/round-96-native-analysis-sessions.md",
+  "reports/round-96/votes/CriticR96.json",
+  "reports/round-96/votes/ReviewerBlind.json",
+  "reports/round-96/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

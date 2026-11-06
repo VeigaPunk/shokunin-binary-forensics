@@ -1,0 +1,87 @@
+[
+ {
+  "name": "CONTROL-honest",
+  "class": "control",
+  "desc": "none: honest tree, no delta",
+  "expected": "pass",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "control-ok",
+  "changed": [],
+  "removed": []
+ },
+ {
+  "name": "C02-P1-recheck-listing-only",
+  "class": "recheck header names a directory listing, not a re-verification",
+  "desc": "recheck line replaced by `ls corpus/live/runs/round-96/`; votes re-bound to the new digest",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+   "corpus/knowledge/round-96-native-analysis-sessions.md",
+   "reports/round-96/votes/CriticR96.json",
+   "reports/round-96/votes/ReviewerBlind.json",
+   "reports/round-96/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C02-P2-source-header-main-pin",
+  "class": "source header URL pins a moving branch, SOURCES row keeps the commit",
+  "desc": "S502 header URL commit replaced by `main`; trailing commit text, SOURCES row and receipt untouched",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+   ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+   "corpus/knowledge/round-96-native-analysis-sessions.md",
+   "reports/round-96/votes/CriticR96.json",
+   "reports/round-96/votes/ReviewerBlind.json",
+   "reports/round-96/votes/ReviewerGate.json"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C02-P3-fetchlog-404-receipt-200",
+  "class": "fetch log says HTTP 404 for S502, receipt says 200",
+  "desc": "fetch-log S502 line HTTP 200 -> HTTP 404; receipt and body untouched",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   "reports/round-96/quote-receipts/fetch-log.md"
+  ],
+  "removed": []
+ },
+ {
+  "name": "C02-P4-record-overwritten-digest-stale",
+  "class": "saved decompiled output changed after the entry was written",
+  "desc": "codeable-decompiled.c `return 0x2a;` -> `return 0x2b;`; entry and digest rows untouched",
+  "expected": "fail",
+  "rc": 0,
+  "verdict": "pass",
+  "k_held": "13/15",
+  "failing_legs": [],
+  "outcome": "ACCEPTED",
+  "changed": [
+   "corpus/live/runs/round-96/codeable-decompiled.c"
+  ],
+  "removed": []
+ }
+]

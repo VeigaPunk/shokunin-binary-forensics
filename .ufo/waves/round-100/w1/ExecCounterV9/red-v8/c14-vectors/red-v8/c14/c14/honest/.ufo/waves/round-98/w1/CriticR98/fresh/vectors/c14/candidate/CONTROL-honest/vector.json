@@ -1,0 +1,10 @@
+{
+ "name": "CONTROL-honest",
+ "profile": "c14",
+ "variant": "candidate",
+ "class": "control",
+ "mutation": "none: honest tree, no delta",
+ "expected": "pass",
+ "changed": [],
+ "removed": []
+}

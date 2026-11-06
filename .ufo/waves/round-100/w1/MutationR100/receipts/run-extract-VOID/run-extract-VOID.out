@@ -1,0 +1,37 @@
+GEN counter_sha=8e2eafc80726789aafa2ee491123de8b46ac63945692edaed6c474540e9885e8 probe_sha=b2c9d189e75c582b06ce5636af17267869e70965c13d33ced10f501a03f2c71a v9_mutants=12 probe_mutants=4
+MUT del-C1_PASS_NOTE_FLOOR line=1946 vector=C02-N1-one-token-pass-note edit=checks-dict entry 'C1_PASS_NOTE_FLOOR' deleted (leg never decided)
+MUT del-C1_VOTER_PRESENT line=1947 vector=C02-N2-pinned-reviewer-vote-omitted edit=checks-dict entry 'C1_VOTER_PRESENT' deleted (leg never decided)
+MUT del-C1_QMAP_POINTER line=1948 vector=C02-N3-qmap-contradicts-votes edit=checks-dict entry 'C1_QMAP_POINTER' deleted (leg never decided)
+MUT del-C1_EVIDENCE_RESOLVES line=1949 vector=C02-N4-evidence-id-edited edit=checks-dict entry 'C1_EVIDENCE_RESOLVES' deleted (leg never decided)
+MUT del-C1_SECTIONS line=1950 vector=C02-N5-observation-limitations-cut edit=checks-dict entry 'C1_SECTIONS' deleted (leg never decided)
+MUT del-C1_SURFACE_TEXT line=1951 vector=C02-N6-surface-text-attests-replication edit=checks-dict entry 'C1_SURFACE_TEXT' deleted (leg never decided)
+MUT del-C1_NA_SHARE line=1952 vector=C14-N1-na-inflation edit=checks-dict entry 'C1_NA_SHARE' deleted (leg never decided)
+MUT del-C1_ARTIFACT_COPY line=1953 vector=C14-N2-artifact-renamed-to-other-seat edit=checks-dict entry 'C1_ARTIFACT_COPY' deleted (leg never decided)
+MUT del-C1_DERIV_RERUN line=1954 vector=C14-N3-derivation-count-edited edit=checks-dict entry 'C1_DERIV_RERUN' deleted (leg never decided)
+MUT del-C1_RECORD_PINNED line=1955 vector=C14-N4-record-appended edit=checks-dict entry 'C1_RECORD_PINNED' deleted (leg never decided)
+MUT del-C1_BODY_DIGEST line=1956 vector=C14-N5-s506-body-rebuilt edit=checks-dict entry 'C1_BODY_DIGEST' deleted (leg never decided)
+MUT del-C1_ANCHOR_VERBATIM line=1957 vector=C14-N6-s507-anchor-relabelled edit=checks-dict entry 'C1_ANCHOR_VERBATIM' deleted (leg never decided)
+PMUT probe-drop-tamper-leg
+PMUT probe-compare-only-package
+PMUT probe-skip-fixture-sha
+PMUT probe-swallow-decoder-failure
+BASE_FORGE rc=1 accepted=12/12 selftest_rc=1 selftest_ok=False
+V9 del-C1_PASS_NOTE_FLOOR killed=True vector=C02-N1-one-token-pass-note accepted=True forge_rc=1 selftest_rc=1 selftest_ok=False
+V9 del-C1_VOTER_PRESENT killed=True vector=C02-N2-pinned-reviewer-vote-omitted accepted=True forge_rc=1 selftest_rc=1 selftest_ok=False
+V9 del-C1_QMAP_POINTER killed=True vector=C02-N3-qmap-contradicts-votes accepted=True forge_rc=1 selftest_rc=1 selftest_ok=False
+V9 del-C1_EVIDENCE_RESOLVES killed=True vector=C02-N4-evidence-id-edited accepted=True forge_rc=1 selftest_rc=1 selftest_ok=False
+V9 del-C1_SECTIONS killed=True vector=C02-N5-observation-limitations-cut accepted=True forge_rc=1 selftest_rc=1 selftest_ok=False
+V9 del-C1_SURFACE_TEXT killed=True vector=C02-N6-surface-text-attests-replication accepted=True forge_rc=1 selftest_rc=1 selftest_ok=False
+V9 del-C1_NA_SHARE killed=True vector=C14-N1-na-inflation accepted=True forge_rc=1 selftest_rc=1 selftest_ok=False
+V9 del-C1_ARTIFACT_COPY killed=True vector=C14-N2-artifact-renamed-to-other-seat accepted=True forge_rc=1 selftest_rc=1 selftest_ok=False
+V9 del-C1_DERIV_RERUN killed=True vector=C14-N3-derivation-count-edited accepted=True forge_rc=1 selftest_rc=1 selftest_ok=False
+V9 del-C1_RECORD_PINNED killed=True vector=C14-N4-record-appended accepted=True forge_rc=1 selftest_rc=1 selftest_ok=False
+V9 del-C1_BODY_DIGEST killed=True vector=C14-N5-s506-body-rebuilt accepted=True forge_rc=1 selftest_rc=1 selftest_ok=False
+V9 del-C1_ANCHOR_VERBATIM killed=True vector=C14-N6-s507-anchor-relabelled accepted=True forge_rc=1 selftest_rc=1 selftest_ok=False
+BASE_PROBE rc=0 verdict=pass
+BASE_CONTROLS rc=0 last=['C2_CONTROLS=control-ok']
+PROBE probe-drop-tamper-leg rc=0 verdict=pass genuine_changed=False controls=C2_CONTROLS=control-bad ctl_rc=1 killed=True
+PROBE probe-compare-only-package rc=0 verdict=pass genuine_changed=False controls=C2_CONTROLS=control-ok ctl_rc=0 killed=False
+PROBE probe-skip-fixture-sha rc=0 verdict=pass genuine_changed=False controls=C2_CONTROLS=control-ok ctl_rc=0 killed=False
+PROBE probe-swallow-decoder-failure rc=0 verdict=pass genuine_changed=False controls=C2_CONTROLS=control-ok ctl_rc=0 killed=False
+RUN_RC=0

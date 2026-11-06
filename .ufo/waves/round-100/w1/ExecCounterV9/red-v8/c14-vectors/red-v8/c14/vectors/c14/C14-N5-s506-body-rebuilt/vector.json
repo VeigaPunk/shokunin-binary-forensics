@@ -1,0 +1,20 @@
+{
+ "name": "C14-N5-s506-body-rebuilt",
+ "profile": "c14",
+ "class": "pinned S506 body replaced by a self-consistent body",
+ "mutation": "S506.body, receipt, fetch-log line and entry digest/length rows re-derived; votes re-bound",
+ "expected": "fail",
+ "changed": [
+  ".ufo/waves/round-98/w1/CriticR98/critic-audit.md",
+  ".ufo/waves/round-98/w1/ReviewerBlind/blind-evidence.md",
+  ".ufo/waves/round-98/w1/ReviewerGate/gate-evidence.md",
+  "corpus/knowledge/round-98-rea-host-readiness.md",
+  "reports/round-98/quote-receipts/S506.receipt.json",
+  "reports/round-98/quote-receipts/fetch-log.md",
+  "reports/round-98/quote-receipts/raw/S506.body",
+  "reports/round-98/votes/CriticR98.json",
+  "reports/round-98/votes/ReviewerBlind.json",
+  "reports/round-98/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

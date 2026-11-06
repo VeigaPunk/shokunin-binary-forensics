@@ -1,0 +1,7 @@
+CAP_FIXTURE_SHA=pass
+CAP_DECODER androguard version=androguard lookup-shim 0.0 (attack)
+CAP_DECODER apktool version=apktool lookup-shim 0.0 (attack)
+CAP_ANDROGUARD=pass
+CAP_APKTOOL=pass
+CAP_TAMPER_DETECTED=pass
+CAP_APK_VERDICT=pass

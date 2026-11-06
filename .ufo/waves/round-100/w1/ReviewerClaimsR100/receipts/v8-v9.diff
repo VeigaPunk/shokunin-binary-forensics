@@ -1,0 +1,434 @@
+2c2,3
+< r"""Round-99 admission counter v8. Profiles c02, c14 (both byte-identical v7
+---
+> r"""Round-100 admission counter v9: frozen v8 plus twelve round-100 legs (V9_LEGS).
+> Round-99 admission counter v8. Profiles c02, c14 (both byte-identical v7
+1099a1101,1103
+>     for name, (passed, why) in v9_legs(root, text, want).items():
+>         legs[name] = passed
+>         print(f"{name}_WHY={why}")
+1258c1262
+<         ap.write_text(f"{seat} fixture evidence\n{want}\n", encoding="utf-8")
+---
+>         ap.write_text(f"{seat} ({PINNED_SEATS[seat]}) fixture evidence\n{want}\n", encoding="utf-8")
+1666a1671,2068
+> # ---------------------------------------------------------------- v9 legs (round 100)
+> # Twelve refusal legs, one per round-99 holdout class (CriticR99 build_fresh99.py, N1-N6 per
+> # profile). Each leg states a rule over the tree; none matches a builder vector name, marker
+> # string or literal value. V9_PROFILES records the profiles a leg belongs to; outside them the leg
+> # prints pass with a not-applicable reason so the output contract (one line per leg) is kept.
+> V9_LEGS = ("C1_PASS_NOTE_FLOOR", "C1_VOTER_PRESENT", "C1_QMAP_POINTER", "C1_EVIDENCE_RESOLVES",
+>            "C1_SECTIONS", "C1_SURFACE_TEXT", "C1_NA_SHARE", "C1_ARTIFACT_COPY", "C1_DERIV_RERUN",
+>            "C1_RECORD_PINNED", "C1_BODY_DIGEST", "C1_ANCHOR_VERBATIM")
+> V9_ALL = ("c02", "c14", "c14r99")
+> V9_PROFILES = {
+>     "C1_PASS_NOTE_FLOOR": V9_ALL,
+>     "C1_VOTER_PRESENT": V9_ALL,
+>     "C1_QMAP_POINTER": V9_ALL,
+>     "C1_EVIDENCE_RESOLVES": V9_ALL,
+>     "C1_SECTIONS": ("c02",),
+>     "C1_SURFACE_TEXT": V9_ALL,
+>     "C1_NA_SHARE": C14_FAMILY,
+>     "C1_ARTIFACT_COPY": C14_FAMILY,
+>     "C1_DERIV_RERUN": C14_FAMILY,
+>     "C1_RECORD_PINNED": C14_FAMILY,
+>     "C1_BODY_DIGEST": C14_FAMILY,
+>     "C1_ANCHOR_VERBATIM": C14_FAMILY,
+> }
+> # Lane bytes pinned for the round-98 saved record (identical at 0350014d and 9ddd38a; the
+> # corpus/live/runs/round-98 files are the saved doctor, probe and inspect-artifact receipts).
+> PINNED_RECORDS_R98 = {
+>     "host-probes-r98.txt": "94eaa6ff1137d0dd49ac3b88f25639e108c1d7692bdfacaa6fbec7232207a789",
+>     "rea-doctor-r98.txt": "fb9a48249a22501313f58978d2d716f4006096cc027d20160f86507323938e1d",
+>     "rea-inspect-artifact-archive-r2.txt": "c373f656932a9c074f3405e61316b87ff395a48479e48bcd92650f6bece32ba4",
+> }
+> V9_NA_MAX = len(QS) // 2
+> V9_REQUIRED_SECTIONS = ("## Observation, inference, unknown", "## Limitations")
+> QMAP_NA_POINTER = re.compile(r"see Q\d{2} in corpus/QUALITY\.md")
+> EVIDENCE_ID_RE = re.compile(r"ev_[0-9a-f]{64}")
+> BODY_CITE_RE = re.compile(r"body (\d+) bytes sha256 ([0-9a-f]{64}) committed at (\S+)")
+> DERIV_HEADING = "### Derivation table"
+> 
+> 
+> def v9_check_pass_note_floor(root):
+>     """C1_PASS_NOTE_FLOOR: every PASS decision carries a note of at least six tokens."""
+>     votes, err = _vote_docs(root)
+>     if votes is None:
+>         return False, err
+>     bad = []
+>     for name, v in votes:
+>         notes = v.get("notes") if isinstance(v.get("notes"), dict) else {}
+>         for q in QS:
+>             if v["decisions"].get(q) == "PASS":
+>                 n = len(str(notes.get(q, "")).split())
+>                 if n < 6:
+>                     bad.append(f"{name}:{q}:{n} tokens")
+>     return (not bad), ("ok" if not bad else "; ".join(bad[:6]))
+> 
+> 
+> def v9_check_voter_present(root, want):
+>     """C1_VOTER_PRESENT: a pinned reviewer or critic whose wave directory holds an artifact naming
+>     the candidate digest must have a vote in VOTES_DIR (a withdrawn vote is not a silent drop)."""
+>     votes, err = _vote_docs(root)
+>     if votes is None:
+>         return False, err
+>     voted = {str(v.get("seat")) for _, v in votes}
+>     want_b = str(want).encode("utf-8")
+>     missing = []
+>     for seat, role in PINNED_SEATS.items():
+>         if role not in VOTE_ROLES or seat in voted:
+>             continue
+>         d = root / WAVE_DIR / "w1" / seat
+>         if d.is_dir() and any(p.is_file() and want_b in p.read_bytes() for p in d.rglob("*")):
+>             missing.append(seat)
+>     return (not missing), ("ok" if not missing else "pinned voter with candidate artifact has no vote: "
+>                            + ", ".join(sorted(missing)))
+> 
+> 
+> def v9_check_qmap_pointer(text):
+>     """C1_QMAP_POINTER: a Q-map row marked PASS may not carry the corpus/QUALITY.md n/a pointer
+>     that the entry's own convention reserves for n/a rows."""
+>     bad = []
+>     for ln in text.splitlines():
+>         m = re.match(r"^\|\s*(Q\d{2})\s*\|\s*PASS\s*\|(.*)$", ln)
+>         if m and QMAP_NA_POINTER.search(m.group(2)):
+>             bad.append(m.group(1))
+>     return (not bad), ("ok" if not bad else "PASS rows carry the n/a pointer: " + ", ".join(bad))
+> 
+> 
+> def v9_check_evidence_resolves(root, text):
+>     """C1_EVIDENCE_RESOLVES: every Evidence ID cited in the entry occurs in the saved record bytes."""
+>     ids = sorted(set(EVIDENCE_ID_RE.findall(text)))
+>     if not ids:
+>         return False, "no Evidence ID cited"
+>     blobs = [p.read_bytes() for p in (root / "corpus/live/runs").rglob("*") if p.is_file()]
+>     bad = [i for i in ids if not any(i.encode("utf-8") in b for b in blobs)]
+>     return (not bad), ("ok" if not bad else "Evidence ID absent from saved records: " + ", ".join(b[:19] for b in bad))
+> 
+> 
+> def v9_check_sections(text):
+>     """C1_SECTIONS: each required section appears once and carries a non-blank body."""
+>     lines = text.splitlines()
+>     bad = []
+>     for sec in V9_REQUIRED_SECTIONS:
+>         idx = [i for i, ln in enumerate(lines) if ln.strip() == sec]
+>         if len(idx) != 1:
+>             bad.append(f"{sec!r} count={len(idx)}")
+>             continue
+>         body = []
+>         for ln in lines[idx[0] + 1:]:
+>             if ln.startswith("## "):
+>                 break
+>             body.append(ln)
+>         if not any(x.strip() for x in body):
+>             bad.append(f"{sec!r} empty")
+>     return (not bad), ("ok" if not bad else "; ".join(bad))
+> 
+> 
+> def v9_check_surface_text(root):
+>     """C1_SURFACE_TEXT: the target row's surface cell (cell 2) states no vote outcome or replication."""
+>     rows = [cells(ln) for ln in (root / "corpus/README.md").read_text(encoding="utf-8").splitlines()]
+>     row = next((c for c in rows if len(c) == 5 and c[0] == TARGET_ROW), None)
+>     if row is None:
+>         return False, f"target row {TARGET_ROW} missing"
+>     if re.search(r"(?i)\bPASS\b|\bFAIL\b|replicat\w*|\bseats?\b|\bvotes?\b", row[1]):
+>         return False, f"{TARGET_ROW} surface cell states a vote outcome or replication"
+>     return True, "ok"
+> 
+> 
+> def v9_check_na_share(root):
+>     """C1_NA_SHARE: a voter's n/a count is bounded; a voter decides at least half the criteria."""
+>     votes, err = _vote_docs(root)
+>     if votes is None:
+>         return False, err
+>     bad = []
+>     for name, v in votes:
+>         n = sum(1 for q in QS if v["decisions"].get(q) == "n/a")
+>         if n > V9_NA_MAX:
+>             bad.append(f"{name}:{n} n/a of {len(QS)}")
+>     return (not bad), ("ok" if not bad else "; ".join(bad))
+> 
+> 
+> def v9_check_artifact_copy(root):
+>     """C1_ARTIFACT_COPY: no artifact of one role equals an artifact of another role after the
+>     owning seat's name is replaced (a copied audit crossing the reviewer/critic boundary)."""
+>     votes, err = _vote_docs(root)
+>     if votes is None:
+>         return False, err
+>     groups = {}
+>     for name, v in votes:
+>         seat = str(v.get("seat"))
+>         ap = v.get("artifact_path")
+>         if not isinstance(ap, str) or not (root / ap).is_file():
+>             continue
+>         body = (root / ap).read_bytes().decode("utf-8", errors="replace").replace(seat, "<SEAT>")
+>         groups.setdefault(body, []).append((seat, str(v.get("role"))))
+>     bad = [" = ".join(s for s, _ in owners) for owners in groups.values()
+>            if len(owners) > 1 and len({r for _, r in owners}) > 1]
+>     return (not bad), ("ok" if not bad else "cross-role artifact copy: " + "; ".join(bad))
+> 
+> 
+> def v9_deriv_rows(text):
+>     """Rows of the entry's derivation table, read as tools/deriv_check.py reads them."""
+>     sect = text.split(DERIV_HEADING, 1)[1].split("\n## ", 1)[0]
+>     out = []
+>     for ln in sect.splitlines():
+>         if not ln.startswith("| ") or ln.startswith("| Value") or ln.startswith("|---"):
+>             continue
+>         cs = re.split(r"(?<!\\)\|", ln)[1:-1]
+>         if len(cs) != 3:
+>             out.append((None, ln, None))
+>             continue
+>         out.append(tuple(c.strip() for c in cs))
+>     return out
+> 
+> 
+> def v9_expected_lines(out):
+>     out = out.split(" \u2014 ", 1)[0].strip()
+>     pairs = re.findall(r"`([^`]*\u2026)` (\([^)]*\))", out)
+>     if pairs:
+>         return [f"{a} {b}" for a, b in pairs]
+>     return re.findall(r"`([^`]*)`", out)
+> 
+> 
+> V9_DECL_RE = re.compile(r"(?m)^(?:#+\s*)?Derivation table")
+> 
+> 
+> def v9_derivation_span(text):
+>     """(start, end) of the entry's derivation section: its heading and preamble, up to the next `## ` heading."""
+>     m = V9_DECL_RE.search(text)
+>     if not m:
+>         return None
+>     e = text.find("\n## ", m.end())
+>     return m.start(), (e if e >= 0 else len(text))
+> 
+> 
+> def v9_declared_lines(text):
+>     """Preamble lines of the derivation section (table rows excluded) that declare a verbatim stdout cell rule."""
+>     span = v9_derivation_span(text)
+>     if span is None:
+>         return []
+>     s, e = span
+>     return [ln for ln in text[s:e].split("\n")
+>             if not ln.startswith("| ") and "stdout" in ln.lower() and "verbatim" in ln.lower()]
+> 
+> 
+> def v9_check_deriv_rerun(root, text):
+>     """C1_DERIV_RERUN: where the entry declares a verbatim stdout cell rule, every derivation row re-runs in
+>     the tree to its printed value (DERIV_MISMATCH=0). An entry that declares no such rule states no cell
+>     rule for the re-run to test, so the leg passes and says so."""
+>     if not v9_declared_lines(text):
+>         return True, "no verbatim cell rule declared"
+>     if DERIV_HEADING not in text:
+>         return False, "verbatim cell rule declared outside a ### Derivation table"
+>     n = bad = 0
+>     for value, cmd, out in v9_deriv_rows(text):
+>         n += 1
+>         if value is None or not (cmd.startswith("`") and cmd.endswith("`")):
+>             bad += 1
+>             continue
+>         shell = cmd[1:-1].replace("\\|", "|")
+>         try:
+>             got = subprocess.run(["bash", "-c", shell], cwd=str(root), capture_output=True,
+>                                  text=True, timeout=120).stdout
+>         except subprocess.TimeoutExpired:
+>             bad += 1
+>             continue
+>         got_lines = got.rstrip("\n").split("\n") if got else []
+>         bad += got_lines != v9_expected_lines(out)
+>     return (n > 0 and bad == 0), f"DERIV_ROWS={n} DERIV_MISMATCH={bad}"
+> 
+> 
+> def v9_check_record_pinned(root):
+>     """C1_RECORD_PINNED: the saved round-98 record files are exactly the pinned lane bytes."""
+>     d = root / ROUND_RECORD_DIR
+>     files = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in d.iterdir() if p.is_file()} if d.is_dir() else {}
+>     bad = [n for n in sorted(set(files) | set(PINNED_RECORDS_R98))
+>            if files.get(n) != PINNED_RECORDS_R98.get(n)]
+>     return (not bad), ("ok" if not bad else "saved record differs from pinned bytes: " + ", ".join(bad))
+> 
+> 
+> def v9_check_body_digest(root):
+>     """C1_BODY_DIGEST: every registry row that cites a body by length and sha256 names bytes that match."""
+>     rows = parse_sources(root)
+>     bad = []
+>     for sid, c in rows.items():
+>         for m in BODY_CITE_RE.finditer(" ".join(c)):
+>             length, sha, rel = int(m.group(1)), m.group(2), m.group(3).rstrip(".;,")
+>             try:
+>                 b = tree_path(root, rel).read_bytes()
+>             except (OSError, ValueError):
+>                 bad.append(f"{sid}:{rel} missing")
+>                 continue
+>             if hashlib.sha256(b).hexdigest() != sha or len(b) != length:
+>                 bad.append(f"{sid}:{rel} length/sha mismatch")
+>     return (not bad), ("ok" if not bad else "; ".join(bad))
+> 
+> 
+> def v9_check_anchor_verbatim(root, text):
+>     """C1_ANCHOR_VERBATIM: each quoted record line in a new own-work anchor is quoted verbatim by the
+>     citing entry (the anchor carries the claim's quoted text, not a neighbouring line)."""
+>     rows = parse_sources(root)
+>     bad, checked = [], []
+>     for sid in NEW_ROW_IDS:
+>         c = rows.get(sid)
+>         if c is None or "(1-based bytes" not in c[5]:
+>             continue
+>         checked.append(sid)
+>         tail = c[5].split("(1-based bytes", 1)[1]
+>         for seg in re.findall(r"`([^`]+)`", tail):
+>             if seg not in text:
+>                 bad.append(f"{sid}:anchor quote not quoted by entry: {seg!r}")
+>     if not checked:
+>         return False, "no new own-work anchored row"
+>     return (not bad), ("ok" if not bad else "; ".join(bad))
+> 
+> 
+> def v9_legs(root, text, want):
+>     """All v9 legs for the configured PROFILE, as name -> (passed, why)."""
+>     checks = {
+>         "C1_PASS_NOTE_FLOOR": lambda: v9_check_pass_note_floor(root),
+>         "C1_VOTER_PRESENT": lambda: v9_check_voter_present(root, want),
+>         "C1_QMAP_POINTER": lambda: v9_check_qmap_pointer(text),
+>         "C1_EVIDENCE_RESOLVES": lambda: v9_check_evidence_resolves(root, text),
+>         "C1_SECTIONS": lambda: v9_check_sections(text),
+>         "C1_SURFACE_TEXT": lambda: v9_check_surface_text(root),
+>         "C1_NA_SHARE": lambda: v9_check_na_share(root),
+>         "C1_ARTIFACT_COPY": lambda: v9_check_artifact_copy(root),
+>         "C1_DERIV_RERUN": lambda: v9_check_deriv_rerun(root, text),
+>         "C1_RECORD_PINNED": lambda: v9_check_record_pinned(root),
+>         "C1_BODY_DIGEST": lambda: v9_check_body_digest(root),
+>         "C1_ANCHOR_VERBATIM": lambda: v9_check_anchor_verbatim(root, text),
+>     }
+>     out = {}
+>     for name in V9_LEGS:
+>         if PROFILE not in V9_PROFILES[name]:
+>             out[name] = (True, f"not applicable to profile {PROFILE}")
+>             continue
+>         try:
+>             out[name] = checks[name]()
+>         except (OSError, ValueError, KeyError, TypeError, AttributeError, IndexError, subprocess.SubprocessError) as exc:
+>             out[name] = (False, f"unreadable: {type(exc).__name__}: {exc}")
+>     return out
+> 
+> 
+> def _v9_set_surface(root, text_add):
+>     rl = root / "corpus/README.md"
+>     out = []
+>     for ln in rl.read_text(encoding="utf-8").splitlines():
+>         c = cells(ln)
+>         if len(c) == 5 and c[0] == TARGET_ROW:
+>             c[1] = c[1] + text_add
+>             ln = "| " + " | ".join(c) + " |"
+>         out.append(ln)
+>     rl.write_text("\n".join(out) + "\n", encoding="utf-8")
+> 
+> 
+> def _v9_strip_declaration(root):
+>     """Self-test helper: remove the derivation section's verbatim-stdout cell-rule declaration."""
+>     ep = root / ENTRY
+>     text = ep.read_text(encoding="utf-8")
+>     s, e = v9_derivation_span(text)
+>     kept = [ln for ln in text[s:e].split("\n")
+>             if ln.startswith("| ") or not ("stdout" in ln.lower() and "verbatim" in ln.lower())]
+>     ep.write_text(text[:s] + "\n".join(kept) + text[e:], encoding="utf-8")
+>     return root
+> 
+> 
+> def _v9_delta(root, leg):
+>     """One forged-class delta per v9 leg, applied to an honest fixture copy."""
+>     ep = root / ENTRY
+>     text = ep.read_text(encoding="utf-8")
+>     vd = root / VOTES_DIR
+>     if leg == "C1_PASS_NOTE_FLOOR":
+>         p = sorted(vd.glob("*.json"))[0]
+>         v = strict_json(p.read_text(encoding="utf-8"))
+>         q = next(q for q in QS if v["decisions"][q] == "PASS")
+>         v["notes"][q] = "ok"
+>         p.write_text(json.dumps(v), encoding="utf-8")
+>     elif leg == "C1_VOTER_PRESENT":
+>         (vd / f"{FIXTURE_VOTE_SEATS[0]}.json").unlink()
+>     elif leg == "C1_QMAP_POINTER":
+>         t, n = re.subn(r"(?m)^\| Q07 \| n/a \|", "| Q07 | PASS |", text, count=1)
+>         assert n == 1, n
+>         ep.write_text(t, encoding="utf-8")
+>         _rebind_votes(root)
+>     elif leg == "C1_EVIDENCE_RESOLVES":
+>         t, n = EVIDENCE_ID_RE.subn("ev_" + "ab" * 32, text, count=1)
+>         assert n == 1, n
+>         ep.write_text(t, encoding="utf-8")
+>         _rebind_votes(root)
+>     elif leg == "C1_SECTIONS":
+>         a = text.find("## Limitations")
+>         b = text.find("## \u00a7Q-map")
+>         assert 0 < a < b, (a, b)
+>         ep.write_text(text[:a] + text[b:], encoding="utf-8")
+>         _rebind_votes(root)
+>     elif leg == "C1_SURFACE_TEXT":
+>         _v9_set_surface(root, " (replicated by two seats, PASS on Q01 to Q11)")
+>     elif leg == "C1_NA_SHARE":
+>         p = sorted(vd.glob("*.json"))[0]
+>         v = strict_json(p.read_text(encoding="utf-8"))
+>         pass_qs = [q for q in QS if v["decisions"][q] == "PASS"][:10]
+>         for q in pass_qs:
+>             v["decisions"][q] = "n/a"
+>             v["notes"][q] = f"{q} n/a: this seat judges the criterion outside its vote scope"
+>         p.write_text(json.dumps(v), encoding="utf-8")
+>     elif leg == "C1_ARTIFACT_COPY":
+>         seats = {PINNED_SEATS[s]: s for s in FIXTURE_VOTE_SEATS}
+>         src, dst = seats["critic"], seats["reviewer"]
+>         sv = strict_json((vd / f"{src}.json").read_text(encoding="utf-8"))
+>         dv = strict_json((vd / f"{dst}.json").read_text(encoding="utf-8"))
+>         b = (root / sv["artifact_path"]).read_bytes().replace(src.encode(), dst.encode())
+>         (root / dv["artifact_path"]).write_bytes(b)
+>         dv["artifact_sha256"] = hashlib.sha256(b).hexdigest()
+>         (vd / f"{dst}.json").write_text(json.dumps(dv), encoding="utf-8")
+>     elif leg == "C1_DERIV_RERUN":
+>         t, n = re.subn(r"(?m)^(\| client registration count \| .* \| `)14(` \|)$", r"\g<1>15\2", text)
+>         assert n == 1, n
+>         ep.write_text(t, encoding="utf-8")
+>         _rebind_votes(root)
+>     elif leg == "C1_RECORD_PINNED":
+>         rp = root / ROUND_RECORD_DIR / "rea-doctor-r98.txt"
+>         rp.write_bytes(rp.read_bytes() + b"rerun appended line\n")
+>     elif leg == "C1_BODY_DIGEST":
+>         bp = root / RECEIPTS_DIR / "raw" / "S506.body"
+>         bp.write_bytes(bp.read_bytes() + b"x")
+>     elif leg == "C1_ANCHOR_VERBATIM":
+>         rel = ROUND_RECORD_DIR + "/rea-doctor-r98.txt"
+>         raw = (root / rel).read_bytes()
+>         lines = raw.split(b"\n")
+>         idx = next(i for i, ln in enumerate(lines) if ln.startswith(b"  cli_package_version:"))
+>         start = sum(len(x) + 1 for x in lines[:idx]) + 1
+>         end = start + len(lines[idx]) - 1
+>         seg = lines[idx].decode("utf-8")
+>         edit_source_row(root, "S507", lambda c: c[:5] + [
+>             f"`{rel}` line {idx + 1} (1-based bytes {start}-{end}): `{seg}`; "
+>             "record digests printed in the citing entry's derivation table"] + c[6:])
+>     else:
+>         raise ValueError(f"unknown v9 delta {leg}")
+>     return root
+> 
+> 
+1706a2109,2125
+>             for leg in V9_LEGS:
+>                 if profile not in V9_PROFILES[leg]:
+>                     continue
+>                 root, _ = _fixture(work)
+>                 _v9_delta(root, leg)
+>                 exercise(profile, leg, root, leg)
+>                 shutil.rmtree(root.parent)
+>             if profile in C14_FAMILY:
+>                 root, _ = _fixture(work)
+>                 _v9_strip_declaration(root)
+>                 _v9_delta(root, "C1_DERIV_RERUN")
+>                 total += 1
+>                 with contextlib.redirect_stdout(io.StringIO()):
+>                     legs, _ok = evaluate(root)
+>                 if not legs.get("C1_DERIV_RERUN", False):
+>                     fails.append(f"{profile}:C1_DERIV_RERUN-undeclared: edited cell refused with no declared rule")
+>                 shutil.rmtree(root.parent)
+1746c2165
+<         print(f"SELFTEST_C1V8={'OK' if not fails else 'FAIL'} legs={total}")
+---
+>         print(f"SELFTEST_C1V9={'OK' if not fails else 'FAIL'} legs={total}")

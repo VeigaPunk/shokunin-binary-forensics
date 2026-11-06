@@ -1,0 +1,91 @@
+# probe-dev.log — ExecApkProbe builder self-checks for cap_apk_probe.py
+
+All runs are builder development self-checks in scratch
+(/fast/scratch/hyaku/revenger-r100/ExecApkProbe); none is a scoring run and
+none ran before FROZEN as a scored result (C2 target runs belong to the L1
+after freeze). Genuine runs use the contract argv from the lane root:
+`PYTHONUTF8=1 python3 -B reports/round-100/cap_apk_probe.py --fixture
+corpus/fixtures/apk-r65 --work <scratch>`.
+
+Environment: androguard 4.1.4 (~/.local/bin/androguard, `androguard --version`
+-> "androguard, version 4.1.4"), apktool 3.0.3 (~/.local/bin/apktool,
+`apktool --version` -> "3.0.3"), python3 3.14.8 (/usr/bin/python3). No tools
+installed or upgraded this session.
+
+## Dev history (bugs found and fixed before final bytes)
+
+- Run A (initial): genuine tamper leg failed "pool pattern occurs 0 times" —
+  pool_encoding() read the string-pool flags at pool+20 (stringsStart) instead
+  of pool+16 (flags). Fixed; flags now read at manifest offset 8+16=24,
+  UTF8_FLAG 0x100 detected.
+- Run B: flipped-fixture control crashed the probe with an uncaught
+  `zipfile.BadZipFile: Bad CRC-32 for file 'AndroidManifest.xml'` when
+  tamper_leg() read the corrupt member (empty stdout, rc=1 from the traceback,
+  contract lines lost). Fixed: zip reads in tamper_leg() guarded
+  (BadZipFile/OSError/ValueError -> leg fail), and all contract lines now
+  print incrementally as computed.
+- Run C (L1-requested pre-freeze fix, sha bbd3b801… -> b2c9d189…): androguard
+  writes `androguard.log` into its cwd, so decoder subprocesses now run with
+  cwd=<probe scratch dir>. First attempt broke a relative --fixture (decoders
+  resolved the APK against their new cwd: "File … does not exist"); fixed by
+  resolving the fixture path to absolute in probe() (`Path(args.fixture).resolve()`).
+  Verified lane cleanliness: `git -C <lane> status --porcelain` identical
+  before/after the genuine lane-root run and after the whole battery; no
+  androguard.log in the lane; scratch (with any androguard.log) removed on
+  exit. The pre-existing lane-root androguard.log was left untouched.
+
+## Final battery (bytes sha256
+b2c9d189e75c582b06ce5636af17267869e70965c13d33ced10f501a03f2c71a)
+
+### 1. Genuine fixture, relative --fixture from lane root — rc=0
+
+stdout:
+CAP_FIXTURE_SHA=pass
+CAP_DECODER androguard version=androguard, version 4.1.4
+CAP_DECODER apktool version=3.0.3
+CAP_ANDROGUARD=pass
+CAP_APKTOOL=pass
+CAP_TAMPER_DETECTED=pass
+CAP_APK_VERDICT=pass
+
+Lane status identical before/after. Genuine with absolute --fixture run from
+the fleet root also rc=0.
+
+### 2. Truth-echoing PATH shims (control ii shape) — rc=1
+
+Scratch shims: androguard prints the genuine-decode XML for any argv,
+apktool writes the same XML to its -o dir; both answer --version.
+stdout: CAP_FIXTURE_SHA=pass / CAP_ANDROGUARD=pass / CAP_APKTOOL=pass /
+CAP_TAMPER_DETECTED=fail / CAP_APK_VERDICT=fail
+stderr: tamper: decoders did not report tampered versionName '1.1' (truth
+'1.0'): androguard echoed the truth value
+
+### 3. Flipped fixture copy (control iii shape) — rc=1
+
+Scratch dir with original truth.json + fixture.apk whose versionCode
+Res_value data u32 LSB is flipped 1->2 (attr record ns=0 name=5 raw=7,
+size=8(u16) res0=0 type=16 data=1, pattern located, data at pattern+15).
+stdout: CAP_FIXTURE_SHA=fail / CAP_ANDROGUARD=fail / CAP_APKTOOL=pass /
+CAP_TAMPER_DETECTED=fail / CAP_APK_VERDICT=fail
+stderr:
+sha256(fixture.apk)=e180a3171e3f78223db65590c027f40091f7985e5386c6eea1e980c36b80be13
+truth.image.sha256=05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e
+androguard: decoded={'package': 'com.example.r65', 'versionCode': '?00000001', 'versionName': '1.0'}
+tamper: cannot read manifest from fixture zip: Bad CRC-32 for file 'AndroidManifest.xml'
+No probe-side traceback (grep -c '^Traceback' = 0). The tamper leg fails on
+the corrupt source zip by design (the guard added in Run B).
+
+Observation: on the corrupted member the two real decoders disagree —
+apktool still reported all three truth values (evidently preferring the raw
+string-pool value "1" over the flipped typed data), while androguard rendered
+the flipped INT_DEC as '?00000001'. The control verdict still fails on
+CAP_FIXTURE_SHA=fail + tamper/sha conjunction, per claims control (iii).
+
+### 4. Missing decoder (PATH=empty scratch dir) — rc=2
+
+stdout: CAP_FIXTURE_SHA=pass / version lines "missing" / CAP_ANDROGUARD=fail /
+CAP_APKTOOL=fail / CAP_TAMPER_DETECTED=fail / CAP_APK_VERDICT=fail
+
+Determinism: genuine run repeated after the battery — rc=0 again, identical
+stdout. `python3 -m py_compile` clean.
+

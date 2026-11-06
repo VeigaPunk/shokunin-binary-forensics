@@ -1,0 +1,11 @@
+{
+ "name": "C02-N6-surface-text-attests-replication",
+ "profile": "c02",
+ "class": "README surface text asserts a replication no vote records",
+ "mutation": "README C02 surface cell gains '(replicated by two seats, both PASS on Q01 to Q11)'",
+ "expected": "fail",
+ "changed": [
+  "corpus/README.md"
+ ],
+ "removed": []
+}

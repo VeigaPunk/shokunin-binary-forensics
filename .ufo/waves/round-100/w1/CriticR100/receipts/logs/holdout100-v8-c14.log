@@ -1,0 +1,10 @@
+C14_LANDING_BUILT rev=9ddd38ac8bae entry_digest=246d09a8cf6523ab380f88f7945f220338c27e31f8b43ba876bbd0a9a8d746da
+CONTROL-honest | control | rc=0 | pass | K=14/15 | - | pass | control-ok
+C14-P1-templated-pass-notes | three seats' PASS notes are one template with name and Q id swapped | rc=0 | pass | K=14/15 | - | fail | ACCEPTED
+C14-P2-pass-note-out-of-scope | PASS decision whose note says the criterion is out of scope | rc=0 | pass | K=14/15 | - | fail | ACCEPTED
+C14-P3-pass-note-other-criterion | PASS note under Q05 names Q06 (copy-paste) | rc=0 | pass | K=14/15 | - | fail | ACCEPTED
+C14-P4-record-digest-prefixes-transposed | two record-file digest prefixes swapped in the derivation row | rc=1 | fail | K=14/15 | C1_DERIV_TABLE | fail | refused
+HOLDOUT100_PROFILE=c14 counter=c1_k_admit_counter8.py build_only=False
+HOLDOUT100_CONTROL=control-ok
+HOLDOUT100 accepted=3/4
+HOLDOUT100_NO_VERDICT=0

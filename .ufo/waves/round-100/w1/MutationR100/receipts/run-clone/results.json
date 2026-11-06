@@ -1,0 +1,210 @@
+{
+ "base": {
+  "forge_rc": 0,
+  "accepted": [],
+  "selftest_rc": 0,
+  "selftest_ok": true
+ },
+ "v9": [
+  {
+   "name": "del-C1_PASS_NOTE_FLOOR",
+   "leg": "C1_PASS_NOTE_FLOOR",
+   "vector": "C02-N1-one-token-pass-note",
+   "vector_accepted": false,
+   "accepted_all": [],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true
+  },
+  {
+   "name": "del-C1_VOTER_PRESENT",
+   "leg": "C1_VOTER_PRESENT",
+   "vector": "C02-N2-pinned-reviewer-vote-omitted",
+   "vector_accepted": false,
+   "accepted_all": [],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true
+  },
+  {
+   "name": "del-C1_QMAP_POINTER",
+   "leg": "C1_QMAP_POINTER",
+   "vector": "C02-N3-qmap-contradicts-votes",
+   "vector_accepted": false,
+   "accepted_all": [],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true
+  },
+  {
+   "name": "del-C1_EVIDENCE_RESOLVES",
+   "leg": "C1_EVIDENCE_RESOLVES",
+   "vector": "C02-N4-evidence-id-edited",
+   "vector_accepted": false,
+   "accepted_all": [],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true
+  },
+  {
+   "name": "del-C1_SECTIONS",
+   "leg": "C1_SECTIONS",
+   "vector": "C02-N5-observation-limitations-cut",
+   "vector_accepted": false,
+   "accepted_all": [],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true
+  },
+  {
+   "name": "del-C1_SURFACE_TEXT",
+   "leg": "C1_SURFACE_TEXT",
+   "vector": "C02-N6-surface-text-attests-replication",
+   "vector_accepted": false,
+   "accepted_all": [],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true
+  },
+  {
+   "name": "del-C1_NA_SHARE",
+   "leg": "C1_NA_SHARE",
+   "vector": "C14-N1-na-inflation",
+   "vector_accepted": false,
+   "accepted_all": [],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true
+  },
+  {
+   "name": "del-C1_ARTIFACT_COPY",
+   "leg": "C1_ARTIFACT_COPY",
+   "vector": "C14-N2-artifact-renamed-to-other-seat",
+   "vector_accepted": false,
+   "accepted_all": [],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true
+  },
+  {
+   "name": "del-C1_DERIV_RERUN",
+   "leg": "C1_DERIV_RERUN",
+   "vector": "C14-N3-derivation-count-edited",
+   "vector_accepted": false,
+   "accepted_all": [],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true
+  },
+  {
+   "name": "del-C1_RECORD_PINNED",
+   "leg": "C1_RECORD_PINNED",
+   "vector": "C14-N4-record-appended",
+   "vector_accepted": false,
+   "accepted_all": [],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true
+  },
+  {
+   "name": "del-C1_BODY_DIGEST",
+   "leg": "C1_BODY_DIGEST",
+   "vector": "C14-N5-s506-body-rebuilt",
+   "vector_accepted": false,
+   "accepted_all": [],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true
+  },
+  {
+   "name": "del-C1_ANCHOR_VERBATIM",
+   "leg": "C1_ANCHOR_VERBATIM",
+   "vector": "C14-N6-s507-anchor-relabelled",
+   "vector_accepted": false,
+   "accepted_all": [],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true
+  }
+ ],
+ "probe": [
+  {
+   "name": "probe-drop-tamper-leg",
+   "rc": 0,
+   "verdict": "pass",
+   "genuine_changed": false,
+   "stdout": "CAP_FIXTURE_SHA=pass\nCAP_DECODER androguard version=androguard, version 4.1.4\nCAP_DECODER apktool version=3.0.3\nCAP_ANDROGUARD=pass\nCAP_APKTOOL=pass\nCAP_TAMPER_DETECTED=pass\nCAP_APK_VERDICT=pass\n",
+   "stderr_tail": "",
+   "controls_rc": 1,
+   "controls": "C2_CONTROLS=control-bad",
+   "killed": true
+  },
+  {
+   "name": "probe-compare-only-package",
+   "rc": 0,
+   "verdict": "pass",
+   "genuine_changed": false,
+   "stdout": "CAP_FIXTURE_SHA=pass\nCAP_DECODER androguard version=androguard, version 4.1.4\nCAP_DECODER apktool version=3.0.3\nCAP_ANDROGUARD=pass\nCAP_APKTOOL=pass\nCAP_TAMPER_DETECTED=pass\nCAP_APK_VERDICT=pass\n",
+   "stderr_tail": "",
+   "controls_rc": 0,
+   "controls": "C2_CONTROLS=control-ok",
+   "killed": false
+  },
+  {
+   "name": "probe-skip-fixture-sha",
+   "rc": 0,
+   "verdict": "pass",
+   "genuine_changed": false,
+   "stdout": "CAP_FIXTURE_SHA=pass\nCAP_DECODER androguard version=androguard, version 4.1.4\nCAP_DECODER apktool version=3.0.3\nCAP_ANDROGUARD=pass\nCAP_APKTOOL=pass\nCAP_TAMPER_DETECTED=pass\nCAP_APK_VERDICT=pass\n",
+   "stderr_tail": "",
+   "controls_rc": 0,
+   "controls": "C2_CONTROLS=control-ok",
+   "killed": false
+  },
+  {
+   "name": "probe-swallow-decoder-failure",
+   "rc": 0,
+   "verdict": "pass",
+   "genuine_changed": false,
+   "stdout": "CAP_FIXTURE_SHA=pass\nCAP_DECODER androguard version=androguard, version 4.1.4\nCAP_DECODER apktool version=3.0.3\nCAP_ANDROGUARD=pass\nCAP_APKTOOL=pass\nCAP_TAMPER_DETECTED=pass\nCAP_APK_VERDICT=pass\n",
+   "stderr_tail": "",
+   "controls_rc": 0,
+   "controls": "C2_CONTROLS=control-ok",
+   "killed": false
+  }
+ ],
+ "probe_base": {
+  "rc": 0,
+  "verdict": "pass"
+ },
+ "controls_base": {
+  "rc": 0,
+  "out": [
+   "C2_CONTROLS=control-ok"
+  ]
+ }
+}

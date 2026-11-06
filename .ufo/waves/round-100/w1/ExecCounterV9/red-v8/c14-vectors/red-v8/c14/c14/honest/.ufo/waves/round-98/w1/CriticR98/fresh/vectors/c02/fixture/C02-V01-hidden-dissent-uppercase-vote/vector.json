@@ -1,0 +1,12 @@
+{
+ "name": "C02-V01-hidden-dissent-uppercase-vote",
+ "profile": "c02",
+ "variant": "fixture",
+ "class": "vote file outside the *.json glob hides a FAIL vote",
+ "mutation": "ReviewerBlind.JSON (upper-case extension) copies ReviewerBlind with Q05 FAIL; canonical file unchanged",
+ "expected": "fail",
+ "changed": [
+  "reports/round-96/votes/ReviewerBlind.JSON"
+ ],
+ "removed": []
+}

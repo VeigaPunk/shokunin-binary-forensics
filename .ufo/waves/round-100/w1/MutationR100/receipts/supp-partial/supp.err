@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-100/w1/MutationR100/supplement_r100.py", line 140, in <module>
+    sys.exit(main(sys.argv[1:]))
+             ~~~~^^^^^^^^^^^^^^
+  File "/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-100/w1/MutationR100/supplement_r100.py", line 79, in main
+    for r in ex.map(do_fp, fps):
+             ~~~~~~^^^^^^^^^^^^
+  File "/usr/lib/python3.14/concurrent/futures/_base.py", line 645, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/lib/python3.14/concurrent/futures/_base.py", line 312, in _result_or_cancel
+    return fut.result(timeout)
+           ~~~~~~~~~~^^^^^^^^^
+  File "/usr/lib/python3.14/concurrent/futures/_base.py", line 454, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.14/concurrent/futures/_base.py", line 396, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.14/concurrent/futures/thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "/usr/lib/python3.14/concurrent/futures/thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-100/w1/MutationR100/supplement_r100.py", line 63, in do_fp
+    r = M.v9_checks(fdir / f"{mu['name']}.py", scratch, tree, mu["name"], env)
+  File "/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-100/w1/MutationR100/mutate_r100.py", line 126, in v9_checks
+    st_work.mkdir(parents=True, exist_ok=True)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/pathlib/__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+OSError: [Errno 28] No space left on device: '/fast/scratch/hyaku/revenger-r100/MutationR100/supp/st/fp-C1_EVIDENCE_RESOLVES'

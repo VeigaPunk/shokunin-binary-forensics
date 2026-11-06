@@ -1,0 +1,11 @@
+{
+ "name": "C14-N6-s507-anchor-relabelled",
+ "profile": "c14",
+ "class": "S507 anchor re-pointed to a true line that does not carry the claim",
+ "mutation": "S507 anchor -> the cli_package_version line with correct byte offsets",
+ "expected": "fail",
+ "changed": [
+  "corpus/SOURCES.md"
+ ],
+ "removed": []
+}

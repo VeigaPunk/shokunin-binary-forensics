@@ -1,0 +1,439 @@
+{
+ "force_pass": [
+  {
+   "name": "fp-C1_PASS_NOTE_FLOOR",
+   "vector": "C02-N1-one-token-pass-note",
+   "vector_accepted": true,
+   "accepted_all": [
+    "C02-N1-one-token-pass-note"
+   ],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true,
+   "kill_kind": "vector"
+  },
+  {
+   "name": "fp-C1_VOTER_PRESENT",
+   "vector": "C02-N2-pinned-reviewer-vote-omitted",
+   "vector_accepted": true,
+   "accepted_all": [
+    "C02-N2-pinned-reviewer-vote-omitted"
+   ],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true,
+   "kill_kind": "vector"
+  },
+  {
+   "name": "fp-C1_QMAP_POINTER",
+   "vector": "C02-N3-qmap-contradicts-votes",
+   "vector_accepted": true,
+   "accepted_all": [
+    "C02-N3-qmap-contradicts-votes"
+   ],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true,
+   "kill_kind": "vector"
+  },
+  {
+   "name": "fp-C1_EVIDENCE_RESOLVES",
+   "vector": "C02-N4-evidence-id-edited",
+   "vector_accepted": true,
+   "accepted_all": [
+    "C02-N4-evidence-id-edited"
+   ],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true,
+   "kill_kind": "vector"
+  },
+  {
+   "name": "fp-C1_SECTIONS",
+   "vector": "C02-N5-observation-limitations-cut",
+   "vector_accepted": true,
+   "accepted_all": [
+    "C02-N5-observation-limitations-cut"
+   ],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true,
+   "kill_kind": "vector"
+  },
+  {
+   "name": "fp-C1_SURFACE_TEXT",
+   "vector": "C02-N6-surface-text-attests-replication",
+   "vector_accepted": true,
+   "accepted_all": [
+    "C02-N6-surface-text-attests-replication"
+   ],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true,
+   "kill_kind": "vector"
+  },
+  {
+   "name": "fp-C1_NA_SHARE",
+   "vector": "C14-N1-na-inflation",
+   "vector_accepted": true,
+   "accepted_all": [
+    "C14-N1-na-inflation"
+   ],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true,
+   "kill_kind": "vector"
+  },
+  {
+   "name": "fp-C1_ARTIFACT_COPY",
+   "vector": "C14-N2-artifact-renamed-to-other-seat",
+   "vector_accepted": true,
+   "accepted_all": [
+    "C14-N2-artifact-renamed-to-other-seat"
+   ],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true,
+   "kill_kind": "vector"
+  },
+  {
+   "name": "fp-C1_DERIV_RERUN",
+   "vector": "C14-N3-derivation-count-edited",
+   "vector_accepted": true,
+   "accepted_all": [
+    "C14-N3-derivation-count-edited"
+   ],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true,
+   "kill_kind": "vector"
+  },
+  {
+   "name": "fp-C1_RECORD_PINNED",
+   "vector": "C14-N4-record-appended",
+   "vector_accepted": true,
+   "accepted_all": [
+    "C14-N4-record-appended"
+   ],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true,
+   "kill_kind": "vector"
+  },
+  {
+   "name": "fp-C1_BODY_DIGEST",
+   "vector": "C14-N5-s506-body-rebuilt",
+   "vector_accepted": true,
+   "accepted_all": [
+    "C14-N5-s506-body-rebuilt"
+   ],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true,
+   "kill_kind": "vector"
+  },
+  {
+   "name": "fp-C1_ANCHOR_VERBATIM",
+   "vector": "C14-N6-s507-anchor-relabelled",
+   "vector_accepted": true,
+   "accepted_all": [
+    "C14-N6-s507-anchor-relabelled"
+   ],
+   "forge_rc": 1,
+   "selftest_rc": 1,
+   "selftest_ok": false,
+   "selftest_line": "SELFTEST_C1V9=FAIL legs=128",
+   "killed": true,
+   "kill_kind": "vector"
+  }
+ ],
+ "attacks": [
+  {
+   "attack": "A1-androguard-lies-versionCode",
+   "probe": "unmutated",
+   "rc": 1,
+   "verdict": "fail",
+   "lines": {
+    "CAP_FIXTURE_SHA": "pass",
+    "CAP_DECODER androguard version": "androguard, version 4.1.4",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "fail",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "pass",
+    "CAP_APK_VERDICT": "fail"
+   },
+   "stderr_tail": "androguard: decoded={'package': 'com.example.r65', 'versionCode': '2', 'versionName': '1.0'} expected={'package': 'com.example.r65', 'versionCode': '1', 'versionName': '1.0'}\n"
+  },
+  {
+   "attack": "A1-androguard-lies-versionCode",
+   "probe": "probe-drop-tamper-leg",
+   "rc": 1,
+   "verdict": "fail",
+   "lines": {
+    "CAP_FIXTURE_SHA": "pass",
+    "CAP_DECODER androguard version": "androguard, version 4.1.4",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "fail",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "pass",
+    "CAP_APK_VERDICT": "fail"
+   },
+   "stderr_tail": "androguard: decoded={'package': 'com.example.r65', 'versionCode': '2', 'versionName': '1.0'} expected={'package': 'com.example.r65', 'versionCode': '1', 'versionName': '1.0'}\n"
+  },
+  {
+   "attack": "A1-androguard-lies-versionCode",
+   "probe": "probe-compare-only-package",
+   "rc": 0,
+   "verdict": "pass",
+   "lines": {
+    "CAP_FIXTURE_SHA": "pass",
+    "CAP_DECODER androguard version": "androguard, version 4.1.4",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "pass",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "pass",
+    "CAP_APK_VERDICT": "pass"
+   },
+   "stderr_tail": ""
+  },
+  {
+   "attack": "A1-androguard-lies-versionCode",
+   "probe": "probe-skip-fixture-sha",
+   "rc": 1,
+   "verdict": "fail",
+   "lines": {
+    "CAP_FIXTURE_SHA": "pass",
+    "CAP_DECODER androguard version": "androguard, version 4.1.4",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "fail",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "pass",
+    "CAP_APK_VERDICT": "fail"
+   },
+   "stderr_tail": "androguard: decoded={'package': 'com.example.r65', 'versionCode': '2', 'versionName': '1.0'} expected={'package': 'com.example.r65', 'versionCode': '1', 'versionName': '1.0'}\n"
+  },
+  {
+   "attack": "A1-androguard-lies-versionCode",
+   "probe": "probe-swallow-decoder-failure",
+   "rc": 1,
+   "verdict": "fail",
+   "lines": {
+    "CAP_FIXTURE_SHA": "pass",
+    "CAP_DECODER androguard version": "androguard, version 4.1.4",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "fail",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "pass",
+    "CAP_APK_VERDICT": "fail"
+   },
+   "stderr_tail": "androguard: decoded={'package': 'com.example.r65', 'versionCode': '2', 'versionName': '1.0'} expected={'package': 'com.example.r65', 'versionCode': '1', 'versionName': '1.0'}\n"
+  },
+  {
+   "attack": "A2-fixture-digest-wrong",
+   "probe": "unmutated",
+   "rc": 1,
+   "verdict": "fail",
+   "lines": {
+    "CAP_FIXTURE_SHA": "fail",
+    "CAP_DECODER androguard version": "androguard, version 4.1.4",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "pass",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "pass",
+    "CAP_APK_VERDICT": "fail"
+   },
+   "stderr_tail": "sha256(fixture.apk)=05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e truth.image.sha256=0000000000000000000000000000000000000000000000000000000000000000\n"
+  },
+  {
+   "attack": "A2-fixture-digest-wrong",
+   "probe": "probe-drop-tamper-leg",
+   "rc": 1,
+   "verdict": "fail",
+   "lines": {
+    "CAP_FIXTURE_SHA": "fail",
+    "CAP_DECODER androguard version": "androguard, version 4.1.4",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "pass",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "pass",
+    "CAP_APK_VERDICT": "fail"
+   },
+   "stderr_tail": "sha256(fixture.apk)=05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e truth.image.sha256=0000000000000000000000000000000000000000000000000000000000000000\n"
+  },
+  {
+   "attack": "A2-fixture-digest-wrong",
+   "probe": "probe-compare-only-package",
+   "rc": 1,
+   "verdict": "fail",
+   "lines": {
+    "CAP_FIXTURE_SHA": "fail",
+    "CAP_DECODER androguard version": "androguard, version 4.1.4",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "pass",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "pass",
+    "CAP_APK_VERDICT": "fail"
+   },
+   "stderr_tail": "sha256(fixture.apk)=05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e truth.image.sha256=0000000000000000000000000000000000000000000000000000000000000000\n"
+  },
+  {
+   "attack": "A2-fixture-digest-wrong",
+   "probe": "probe-skip-fixture-sha",
+   "rc": 0,
+   "verdict": "pass",
+   "lines": {
+    "CAP_FIXTURE_SHA": "pass",
+    "CAP_DECODER androguard version": "androguard, version 4.1.4",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "pass",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "pass",
+    "CAP_APK_VERDICT": "pass"
+   },
+   "stderr_tail": ""
+  },
+  {
+   "attack": "A2-fixture-digest-wrong",
+   "probe": "probe-swallow-decoder-failure",
+   "rc": 1,
+   "verdict": "fail",
+   "lines": {
+    "CAP_FIXTURE_SHA": "fail",
+    "CAP_DECODER androguard version": "androguard, version 4.1.4",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "pass",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "pass",
+    "CAP_APK_VERDICT": "fail"
+   },
+   "stderr_tail": "sha256(fixture.apk)=05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e truth.image.sha256=0000000000000000000000000000000000000000000000000000000000000000\n"
+  },
+  {
+   "attack": "A3-androguard-fails-genuine",
+   "probe": "unmutated",
+   "rc": 1,
+   "verdict": "fail",
+   "lines": {
+    "CAP_FIXTURE_SHA": "pass",
+    "CAP_DECODER androguard version": "androguard: simulated failure",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "fail",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "fail",
+    "CAP_APK_VERDICT": "fail"
+   },
+   "stderr_tail": "androguard: androguard axml rc=1: androguard: simulated failure\ntamper: decoders did not report tampered versionName '1.1' (truth '1.0'): androguard decode failed: androguard axml rc=1: androguard: simulated failure\n"
+  },
+  {
+   "attack": "A3-androguard-fails-genuine",
+   "probe": "probe-drop-tamper-leg",
+   "rc": 1,
+   "verdict": "fail",
+   "lines": {
+    "CAP_FIXTURE_SHA": "pass",
+    "CAP_DECODER androguard version": "androguard: simulated failure",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "fail",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "pass",
+    "CAP_APK_VERDICT": "fail"
+   },
+   "stderr_tail": "androguard: androguard axml rc=1: androguard: simulated failure\n"
+  },
+  {
+   "attack": "A3-androguard-fails-genuine",
+   "probe": "probe-compare-only-package",
+   "rc": 1,
+   "verdict": "fail",
+   "lines": {
+    "CAP_FIXTURE_SHA": "pass",
+    "CAP_DECODER androguard version": "androguard: simulated failure",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "fail",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "fail",
+    "CAP_APK_VERDICT": "fail"
+   },
+   "stderr_tail": "androguard: androguard axml rc=1: androguard: simulated failure\ntamper: decoders did not report tampered versionName '1.1' (truth '1.0'): androguard decode failed: androguard axml rc=1: androguard: simulated failure\n"
+  },
+  {
+   "attack": "A3-androguard-fails-genuine",
+   "probe": "probe-skip-fixture-sha",
+   "rc": 1,
+   "verdict": "fail",
+   "lines": {
+    "CAP_FIXTURE_SHA": "pass",
+    "CAP_DECODER androguard version": "androguard: simulated failure",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "fail",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "fail",
+    "CAP_APK_VERDICT": "fail"
+   },
+   "stderr_tail": "androguard: androguard axml rc=1: androguard: simulated failure\ntamper: decoders did not report tampered versionName '1.1' (truth '1.0'): androguard decode failed: androguard axml rc=1: androguard: simulated failure\n"
+  },
+  {
+   "attack": "A3-androguard-fails-genuine",
+   "probe": "probe-swallow-decoder-failure",
+   "rc": 1,
+   "verdict": "fail",
+   "lines": {
+    "CAP_FIXTURE_SHA": "pass",
+    "CAP_DECODER androguard version": "androguard: simulated failure",
+    "CAP_DECODER apktool version": "3.0.3",
+    "CAP_ANDROGUARD": "pass",
+    "CAP_APKTOOL": "pass",
+    "CAP_TAMPER_DETECTED": "fail",
+    "CAP_APK_VERDICT": "fail"
+   },
+   "stderr_tail": "tamper: decoders did not report tampered versionName '1.1' (truth '1.0'): androguard decode failed: androguard axml rc=1: androguard: simulated failure\n"
+  }
+ ],
+ "base": {
+  "forge_rc": 0,
+  "accepted": [],
+  "selftest_rc": 0,
+  "selftest_ok": true
+ },
+ "base_forge_vectors": [
+  "R100_VECTOR C02-N1-one-token-pass-note refused legs=C1_PASS_NOTE_FLOOR",
+  "R100_VECTOR C02-N2-pinned-reviewer-vote-omitted refused legs=C1_VOTER_PRESENT",
+  "R100_VECTOR C02-N3-qmap-contradicts-votes refused legs=C1_QMAP_POINTER",
+  "R100_VECTOR C02-N4-evidence-id-edited refused legs=C1_EVIDENCE_RESOLVES",
+  "R100_VECTOR C02-N5-observation-limitations-cut refused legs=C1_SECTIONS",
+  "R100_VECTOR C02-N6-surface-text-attests-replication refused legs=C1_SURFACE_TEXT",
+  "R100_VECTOR C14-N1-na-inflation refused legs=C1_NA_SHARE",
+  "R100_VECTOR C14-N2-artifact-renamed-to-other-seat refused legs=C1_ARTIFACT_COPY",
+  "R100_VECTOR C14-N3-derivation-count-edited refused legs=C1_DERIV_RERUN",
+  "R100_VECTOR C14-N4-record-appended refused legs=C1_RECORD_PINNED",
+  "R100_VECTOR C14-N5-s506-body-rebuilt refused legs=C1_BODY_DIGEST",
+  "R100_VECTOR C14-N6-s507-anchor-relabelled refused legs=C1_ANCHOR_VERBATIM",
+  "R100_ACCEPTED=0/12",
+  "R100_CONTROL_C02=control-ok",
+  "R100_CONTROL_C14=control-ok",
+  "R100_STUB_SELFTEST=ok",
+  "R100_VERDICT=met"
+ ]
+}

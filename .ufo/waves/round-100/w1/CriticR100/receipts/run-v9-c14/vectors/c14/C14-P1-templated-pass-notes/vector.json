@@ -1,0 +1,13 @@
+{
+ "name": "C14-P1-templated-pass-notes",
+ "profile": "c14",
+ "class": "three seats' PASS notes are one template with name and Q id swapped",
+ "mutation": "every PASS note of ReviewerGate, ReviewerBlind, CriticR98 rewritten to one template; votes unchanged otherwise",
+ "expected": "fail",
+ "changed": [
+  "reports/round-98/votes/CriticR98.json",
+  "reports/round-98/votes/ReviewerBlind.json",
+  "reports/round-98/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

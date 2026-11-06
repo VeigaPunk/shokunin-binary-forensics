@@ -1,0 +1,12 @@
+strings_match_truth: True
+resmap_nonzero_match_truth: True
+attr_records_match_truth_declared: True
+  attr: ('package', 4294967295, 3, 3, 4, 'com.example.r65')
+  attr: ('versionCode', 0, 5, 16, 7, '1')
+  attr: ('versionName', 0, 6, 3, 8, '1.0')
+start_ns: {'prefix': 'android', 'uri': 'http://schemas.android.com/apk/res/android'}
+member_sha256_match_truth: {'AndroidManifest.xml': True, 'classes.dex': True, 'META-INF/MANIFEST.MF': True} True
+androguard_vals_match_truth: True {'versionCode': '1', 'versionName': '1.0', 'package': 'com.example.r65'}
+apktool_vals_match_truth: True {'versionCode': '1', 'versionName': '1.0', 'package': 'com.example.r65'}
+ns_quirk_androguard: True
+ns_quirk_apktool: True

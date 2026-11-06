@@ -1,0 +1,17 @@
+{
+ "name": "C02-N3-qmap-contradicts-votes",
+ "profile": "c02",
+ "class": "entry Q-map claims PASS where every vote is n/a",
+ "mutation": "entry row Q07 n/a -> PASS; votes re-bound to the new digest; no vote changed",
+ "expected": "fail",
+ "changed": [
+  ".ufo/waves/round-96/w1/CriticR96/critic-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerBlind/blind-evidence.md",
+  ".ufo/waves/round-96/w1/ReviewerGate/gate-evidence.md",
+  "corpus/knowledge/round-96-native-analysis-sessions.md",
+  "reports/round-96/votes/CriticR96.json",
+  "reports/round-96/votes/ReviewerBlind.json",
+  "reports/round-96/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

@@ -1,0 +1,4 @@
+C2_CTRL_STUB=refused
+# flipped versionCode data byte at apk offset 393 (1 -> 2)
+C2_CTRL_FLIP=refused
+C2_CONTROLS=control-ok

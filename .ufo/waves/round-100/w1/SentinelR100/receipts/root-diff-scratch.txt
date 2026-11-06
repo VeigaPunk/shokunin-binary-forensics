@@ -1,0 +1,217 @@
+diff --git i/.scratch/run15-kernel.py w/.scratch/run15-kernel.py
+index 267bbc7d..e0b8b7db 100644
+--- i/.scratch/run15-kernel.py
++++ w/.scratch/run15-kernel.py
+@@ -6,6 +6,11 @@ import subprocess, json, os, re, time, asyncio
+ from concurrent.futures import ThreadPoolExecutor
+ SEAT_CEILING = 60          # operator ruling 2026-11-03: 32-64 concurrent workers (was 32-40 / 36)
+ MAX_LIVE_LANES = 9
++FOCUS_MIN = 90            # operator 2026-11-05: "focus on the ones that are close to 100" — only lanes with next >= 90 get rounds
++
++def next_round(lane):
++    try: return int(open(f'{HS}/next/{lane}').read())
++    except (OSError, ValueError): return 0
+ IN = f'{FLEET}/scripts/hyaku/inline.sh'
+ ST = f'{FLEET}/.scratch/run15-state.json'
+ HS = os.path.expanduser('~/.local/state/shokunin-hyaku')
+@@ -56,7 +61,7 @@ def fill_slots(log):
+     while len(live) < MAX_LIVE_LANES:
+         # A lane whose L1 (any attempt) is still running must not get a second L1 (mori r89 incident).
+         busy = {lane_of(x) for x in L1S} | set(CLOS)
+-        cand = [l for l in queue() if l not in live and l not in busy]
++        cand = [l for l in queue() if l not in live and l not in busy and next_round(l) >= FOCUS_MIN]
+         if not cand: break
+         l = cand[0]; d['lanes'][l]['block_start'] = None; d['lanes'][l]['block_done'] = 0; st_save(d)
+         log.append(launch(l)); d = st_load(); live = list(d['live'])
+@@ -81,7 +86,7 @@ def on_closure_end(lane, log):
+     L['block_done'] += 1; d['live'].pop(lane, None); st_save(d)
+     nxt = int(open(f'{HS}/next/{lane}').read())
+     blocked = os.path.exists(f'{HS}/blocked/{lane}')
+-    if not draining() and L['block_done'] < 10 and nxt <= 100 and not blocked:
++    if not draining() and nxt >= FOCUS_MIN and nxt <= 100 and not blocked:
+         log.append(launch(lane))
+     else:
+         log.append(f'{lane} parked (drain={draining()}, block_done={L["block_done"]}, next={nxt}, blocked={blocked})')
+diff --git i/.scratch/run15-state.json w/.scratch/run15-state.json
+index 184d44b1..bf28adc0 100644
+--- i/.scratch/run15-state.json
++++ w/.scratch/run15-state.json
+@@ -2,14 +2,14 @@
+  "run": 15,
+  "date": "2026-11-03",
+  "target": 100,
+- "trained": 265,
+- "admitted": 164,
+- "rejected": 101,
++ "trained": 326,
++ "admitted": 204,
++ "rejected": 122,
+  "lanes": {
+   "revenger": {
+    "start_next": 89,
+-   "block_start": 89,
+-   "block_done": 3
++   "block_start": 92,
++   "block_done": 8
+   },
+   "tsukuroi": {
+    "start_next": 64,
+@@ -29,7 +29,7 @@
+   "tabi": {
+    "start_next": 56,
+    "block_start": 65,
+-   "block_done": 3
++   "block_done": 4
+   },
+   "mado": {
+    "start_next": 65,
+@@ -38,33 +38,33 @@
+   },
+   "mori": {
+    "start_next": 79,
+-   "block_start": 90,
+-   "block_done": 5
++   "block_start": 97,
++   "block_done": 3
+   },
+   "souji": {
+    "start_next": 52,
+    "block_start": 61,
+-   "block_done": 3
++   "block_done": 9
+   },
+   "kaidoku": {
+    "start_next": 64,
+    "block_start": 91,
+-   "block_done": 0
++   "block_done": 9
+   },
+   "kake": {
+    "start_next": 68,
+-   "block_start": 93,
+-   "block_done": 0
++   "block_start": 97,
++   "block_done": 2
+   },
+   "kagi": {
+    "start_next": 30,
+    "block_start": 37,
+-   "block_done": 2
++   "block_done": 9
+   },
+   "kasegi": {
+    "start_next": 57,
+    "block_start": 73,
+-   "block_done": 3
++   "block_done": 6
+   },
+   "chousa": {
+    "start_next": 73,
+@@ -73,79 +73,67 @@
+   },
+   "kengaku": {
+    "start_next": 63,
+-   "block_start": 86,
+-   "block_done": 5
++   "block_start": 93,
++   "block_done": 2
+   },
+   "kumitate": {
+    "start_next": 74,
+-   "block_start": 90,
++   "block_start": 91,
+    "block_done": 1
+   },
+   "kotoba": {
+    "start_next": 85,
+-   "block_start": 88,
++   "block_start": 93,
+    "block_done": 1
+   },
+   "kotodama": {
+    "start_next": 82,
+    "block_start": 91,
+-   "block_done": 0
++   "block_done": 6
+   }
+  },
+  "live": {
+   "kotodama": {
+-   "round": 91,
++   "round": 97,
+    "attempt": 1,
+-   "label": "KotodamaR91",
++   "label": "KotodamaR97",
+    "phase": "l1"
+   },
+-  "kotoba": {
+-   "round": 89,
++  "kengaku": {
++   "round": 95,
+    "attempt": 1,
+-   "label": "KotobaR89",
++   "label": "KengakuR95",
+    "phase": "l1"
+   },
+   "kaidoku": {
+-   "round": 91,
++   "round": 100,
+    "attempt": 1,
+-   "label": "CloseKaidokuR91",
+-   "phase": "closure"
+-  },
+-  "kengaku": {
+-   "round": 91,
+-   "attempt": 1,
+-   "label": "KengakuR91",
++   "label": "KaidokuR100",
+    "phase": "l1"
+   },
+-  "souji": {
+-   "round": 64,
++  "revenger": {
++   "round": 100,
+    "attempt": 1,
+-   "label": "SoujiR64",
++   "label": "RevengerR100",
+    "phase": "l1"
+   },
+-  "tabi": {
+-   "round": 68,
+-   "attempt": 2,
+-   "label": "TabiR68a2",
++  "kake": {
++   "round": 99,
++   "attempt": 1,
++   "label": "KakeR99",
++   "phase": "l1"
++  },
++  "kotoba": {
++   "round": 94,
++   "attempt": 1,
++   "label": "KotobaR94",
+    "phase": "l1"
+   },
+   "mori": {
+-   "round": 95,
+-   "attempt": 2,
+-   "label": "CloseMoriR95",
+-   "phase": "closure"
+-  },
+-  "kagi": {
+-   "round": 39,
+-   "attempt": 2,
+-   "label": "KagiR39a2",
++   "round": 100,
++   "attempt": 1,
++   "label": "MoriR100",
+    "phase": "l1"
+-  },
+-  "kasegi": {
+-   "round": 76,
+-   "attempt": 2,
+-   "label": "CloseKasegiR76",
+-   "phase": "closure"
+   }
+  },
+  "notes": [

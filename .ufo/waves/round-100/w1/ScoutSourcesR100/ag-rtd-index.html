@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to Androguard’s documentation! &mdash; Androguard 3.4.0 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/androguard.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="intro/index.html" /> 
+
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="https://androguard.readthedocs.io/en/latest/" />
+
+
+
+<script type="text/javascript" src="_static/readthedocs-data.js"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = "index"
+READTHEDOCS_DATA['source_suffix'] = ".rst"
+</script>
+
+
+
+<!-- end RTD <extrahead> -->
+<script async type="text/javascript" src="/_/static/javascript/readthedocs-addons.js"></script><meta name="readthedocs-project-slug" content="androguard" /><meta name="readthedocs-version-slug" content="latest" /><meta name="readthedocs-resolver-filename" content="/" /><meta name="readthedocs-http-status" content="200" /></head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> Androguard
+          
+
+          
+            
+            <img src="_static/androguard.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="intro/index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools/tools.html">Tools</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/androguard.html">androguard package</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Androguard</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Welcome to Androguard’s documentation!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/androguard/androguard/blob/master/docs/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-androguard-s-documentation">
+<h1>Welcome to Androguard’s documentation!<a class="headerlink" href="#welcome-to-androguard-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Androguard is a full python tool to play with Android files.
+It is designed to work with Python 3 only.</p>
+<ul class="simple">
+<li><p>DEX, ODEX</p></li>
+<li><p>APK</p></li>
+<li><p>Android’s binary xml</p></li>
+<li><p>Android resources</p></li>
+<li><p>Disassemble DEX/ODEX bytecodes</p></li>
+<li><p>Decompiler for DEX/ODEX files</p></li>
+</ul>
+<p>You can either use the cli or graphical frontend for androguard,
+or use androguard purely as a library for your own tools and scripts.</p>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro/index.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro/installation.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/xrefs.html">Crossreferences (XREFs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/basicblocks.html">Basic Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/instructions.html">Parsing Instructions and Bytecode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/sessions.html">Working with Sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/use_jadx.html">Use JADX as a Decompiler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/certificates.html">Android Signing Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/axml.html">Android Binary XML Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/bulk.html">Bulk Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/debugging.html">Debugging Broken APKs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools/tools.html">Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/androguard.html">androguard - The swiss army knife</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/androlyze.html">androguard analyze - Androguard Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/androcg.html">androguard cg - Create Call Graph from APK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/androgui.html">androguard gui - Androguard GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/androsign.html">androguard sign - Print Certificate Fingerprints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/androaxml.html">androguard axml - AndroidManifest.xml parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/androarsc.html">androguard arsc - resources.arsc parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/androdd.html">androguard decompile - Decompile APKs and create CFG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools/androdis.html">androguard dissassemble - Disassembler for DEX</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="commonly-used-apis">
+<h2>Commonly used APIs<a class="headerlink" href="#commonly-used-apis" title="Permalink to this headline">¶</a></h2>
+<p>This is a just a selection of the most important top level API classes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">APK parser</dt>
+<dd class="field-odd"><p><a class="reference internal" href="api/androguard.core.bytecodes.html#androguard.core.bytecodes.apk.APK" title="androguard.core.bytecodes.apk.APK"><code class="xref py py-class docutils literal notranslate"><span class="pre">androguard.core.bytecodes.apk.APK</span></code></a></p>
+</dd>
+<dt class="field-even">DEX parser</dt>
+<dd class="field-even"><p><a class="reference internal" href="api/androguard.core.bytecodes.html#androguard.core.bytecodes.dvm.DalvikVMFormat" title="androguard.core.bytecodes.dvm.DalvikVMFormat"><code class="xref py py-class docutils literal notranslate"><span class="pre">androguard.core.bytecodes.dvm.DalvikVMFormat</span></code></a></p>
+</dd>
+<dt class="field-odd">AXML parser</dt>
+<dd class="field-odd"><p><a class="reference internal" href="api/androguard.core.bytecodes.html#androguard.core.bytecodes.axml.AXMLPrinter" title="androguard.core.bytecodes.axml.AXMLPrinter"><code class="xref py py-class docutils literal notranslate"><span class="pre">androguard.core.bytecodes.axml.AXMLPrinter</span></code></a></p>
+</dd>
+<dt class="field-even">ARSC parser</dt>
+<dd class="field-even"><p><a class="reference internal" href="api/androguard.core.bytecodes.html#androguard.core.bytecodes.axml.ARSCParser" title="androguard.core.bytecodes.axml.ARSCParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">androguard.core.bytecodes.axml.ARSCParser</span></code></a></p>
+</dd>
+<dt class="field-odd">Analysis</dt>
+<dd class="field-odd"><p><a class="reference internal" href="api/androguard.core.analysis.html#androguard.core.analysis.analysis.Analysis" title="androguard.core.analysis.analysis.Analysis"><code class="xref py py-class docutils literal notranslate"><span class="pre">androguard.core.analysis.analysis.Analysis</span></code></a></p>
+</dd>
+<dt class="field-even">Session</dt>
+<dd class="field-even"><p><a class="reference internal" href="api/androguard.html#androguard.session.Session" title="androguard.session.Session"><code class="xref py py-class docutils literal notranslate"><span class="pre">androguard.session.Session</span></code></a></p>
+</dd>
+<dt class="field-odd">Automated Analysis</dt>
+<dd class="field-odd"><p><a class="reference internal" href="api/androguard.core.analysis.html#androguard.core.analysis.auto.AndroAuto" title="androguard.core.analysis.auto.AndroAuto"><code class="xref py py-class docutils literal notranslate"><span class="pre">androguard.core.analysis.auto.AndroAuto</span></code></a></p>
+</dd>
+<dt class="field-even">Decompilers</dt>
+<dd class="field-even"><p><a class="reference internal" href="api/androguard.decompiler.html#module-androguard.decompiler.decompiler" title="androguard.decompiler.decompiler"><code class="xref py py-class docutils literal notranslate"><span class="pre">androguard.decompiler.decompiler</span></code></a></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="complete-python-api">
+<h2>Complete Python API<a class="headerlink" href="#complete-python-api" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/androguard.html">androguard package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/androguard.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/androguard.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/androguard.html#module-androguard.misc">androguard.misc module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/androguard.html#module-androguard.session">androguard.session module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/androguard.html#module-androguard.util">androguard.util module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/androguard.html#module-androguard">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="intro/index.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2012-2018, Anthony Desnos, Geoffroy Gueguen, Sebastian Bachmann
+      
+        <span class="commit">
+          Revision <code>eef97351</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+</body>
+</html>

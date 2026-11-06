@@ -1,0 +1,134 @@
+{
+  "schema": "ufo-swarm-registry-v1",
+  "wave": "revenger-r100-w1",
+  "createdAt": "2026-11-05T22:43:48.624Z",
+  "updatedAt": "2026-11-05T22:43:48.624Z",
+  "reportDir": ".ufo/waves/round-100/w1",
+  "members": {
+    "ExecCounterV9": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Build v9 admission counter: v8 + legs refusing the twelve r99 holdout classes (incl. a deriv_check leg), self-test, red-before receipts"
+    },
+    "ExecHarness9": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Build forge_reach9.py: one run prints R100_ACCEPTED=n/12, both controls, stub self-test and verdict over the twelve r99 holdout vectors"
+    },
+    "ExecApkProbe": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Build cap_apk_probe.py: androguard + apktool cross-decode of fixtures/apk-r65 against truth.json with in-probe tamper leg"
+    },
+    "ExecControlsR100": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "executor",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Build the C2 control recipe (stub decoders, byte-flipped fixture) and the M21 census-line check tool shown able to fail"
+    },
+    "ScoutSourcesR100": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scout",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Open the androguard and apktool official sources this round: located quotes, versions, receipts for SOURCES rows"
+    },
+    "ScribeLessonR100": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "scribe",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Draft corpus/lessons/round-100.md (Gate, Mistakes, Frontier) and the two SOURCES rows for the L1 to integrate"
+    },
+    "ConnectorR100": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "connector",
+      "item": null,
+      "axes": [
+        "coverage",
+        "calibration"
+      ],
+      "milestone": "Sibling-overlap scan for APK decoding capability and admission-counter leg patterns; adjacency report"
+    },
+    "ReviewerClaimsR100": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "Attack the frozen claims: do-nothing reachability, predicate/instrument mismatch, coupling, sourced-claim validity"
+    },
+    "ReviewerCapR100": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "reviewer",
+      "item": null,
+      "axes": [
+        "coverage"
+      ],
+      "milestone": "Independent re-decode of apk-r65 and, after FROZEN, independent re-run of the frozen probe and its controls"
+    },
+    "CriticR100": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "critic",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Fresh round-100 holdout (new forgery classes, not seen by v9's builders) run on the FROZEN v9 — reported, not a target"
+    },
+    "MutationR100": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "mutation-tester",
+      "item": null,
+      "axes": [
+        "calibration",
+        "coverage"
+      ],
+      "milestone": "After FROZEN: mutate v9's new legs and cap_apk_probe; report kills/survivors per mutant"
+    },
+    "SentinelR100": {
+      "kind": "spawn",
+      "agentId": null,
+      "role": "sentinel",
+      "item": null,
+      "axes": [
+        "calibration"
+      ],
+      "milestone": "Scope and safety sweep: credential material, write-scope adherence, misroots, scratch hygiene"
+    }
+  }
+}

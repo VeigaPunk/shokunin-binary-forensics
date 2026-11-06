@@ -1,0 +1,22 @@
+[
+ {
+  "RuleID": "generic-api-key",
+  "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+  "StartLine": 272,
+  "EndLine": 272,
+  "StartColumn": 901,
+  "EndColumn": 989,
+  "Match": "auth_hydro_click_hmac\":\"REDACTED\"",
+  "Secret": "REDACTED",
+  "File": "/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-100/w1/ScoutSourcesR100/apktool-release-v303.html",
+  "SymlinkFile": "",
+  "Commit": "",
+  "Entropy": 3.8703642,
+  "Author": "",
+  "Email": "",
+  "Date": "",
+  "Message": "",
+  "Tags": [],
+  "Fingerprint": "/home/vgpnk/Projects/shokunin/revenger-shokunin/.ufo/waves/round-100/w1/ScoutSourcesR100/apktool-release-v303.html:generic-api-key:272"
+ }
+]

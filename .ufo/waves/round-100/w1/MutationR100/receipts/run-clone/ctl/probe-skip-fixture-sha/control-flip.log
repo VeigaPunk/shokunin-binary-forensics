@@ -1,0 +1,11 @@
+CAP_FIXTURE_SHA=pass
+CAP_DECODER androguard version=androguard, version 4.1.4
+CAP_DECODER apktool version=3.0.3
+CAP_ANDROGUARD=fail
+androguard: decoded={'package': 'com.example.r65', 'versionCode': '2', 'versionName': '1.0'} expected={'package': 'com.example.r65', 'versionCode': '1', 'versionName': '1.0'}
+CAP_APKTOOL=pass
+CAP_TAMPER_DETECTED=fail
+tamper: cannot read manifest from fixture zip: Bad CRC-32 for file 'AndroidManifest.xml'
+CAP_APK_VERDICT=fail
+# probe_rc=1
+# CAP_FIXTURE_SHA=fail ABSENT

@@ -1,0 +1,10 @@
+C02_FIXTURE_BUILT source=frozen-v6 _fixture + round-96 record from rev
+CONTROL-honest | control | rc=0 | pass | K=13/15 | - | pass | control-ok
+C02-P1-recheck-listing-only | recheck header names a directory listing, not a re-verification | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+C02-P2-source-header-main-pin | source header URL pins a moving branch, SOURCES row keeps the commit | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+C02-P3-fetchlog-404-receipt-200 | fetch log says HTTP 404 for S502, receipt says 200 | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+C02-P4-record-overwritten-digest-stale | saved decompiled output changed after the entry was written | rc=0 | pass | K=13/15 | - | fail | ACCEPTED
+HOLDOUT100_PROFILE=c02 counter=c1_k_admit_counter9.py build_only=False
+HOLDOUT100_CONTROL=control-ok
+HOLDOUT100 accepted=4/4
+HOLDOUT100_NO_VERDICT=0

@@ -1,0 +1,4 @@
+reports/round-100/claims.md
+reports/round-100/controls/c1-do-nothing-v8.log
+reports/round-100/controls/c2-base-capability-rows.log
+reports/round-100/controls/census-round-start.log

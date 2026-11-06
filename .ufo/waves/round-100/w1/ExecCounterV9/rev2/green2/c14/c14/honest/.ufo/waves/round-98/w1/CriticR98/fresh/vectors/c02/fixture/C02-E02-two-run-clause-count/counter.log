@@ -1,0 +1,34 @@
+# rc=0
+# command: /usr/bin/python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-97/c1_k_admit_counter6.py --tree /fast/scratch/hyaku/revenger-r98/CriticR98/build-v6/c02/trees/C02-E02-two-run-clause-count --tree <tree>
+C1_K_HELD_BACKED=13/15
+C1_VOTES=CriticR96,ReviewerBlind,ReviewerGate digest=385efd1db9b227e906bb9de7f0f1c37ad443c7b66c322bfc2b89c5461deca017
+C1_REGISTRY_WHY=ok
+C1_RECEIPTS_WHY=ok
+C1_PYCACHE_WHY=ok
+C1_SOURCE_IDS=S002,S502,S503,S504
+C1_SIDS_WHY=ok
+C1_SOURCES_WHY=ok
+C1_QUOTES_WHY=ok
+C1_ADMITTED_UNION_WHY=ok
+C1_ONLY_C02_DIFFS=none
+C1_ROWS_TOTAL=pass
+C1_C02_HELD=pass
+C1_C02_CITES=pass
+C1_ONLY_C02=pass
+C1_DERIV_TABLE=pass
+C1_ADMITTED_WS=pass
+C1_ADMITTED=pass
+C1_TRIO=pass
+C1_REGISTRY=pass
+C1_VOTES=pass
+C1_RECEIPTS=pass
+C1_PYCACHE=pass
+C1_ADMITTED_UNION=pass
+C1_LINT=pass
+C1_EMBEDDED=pass
+C1_EMBED_NONVACUOUS=pass
+C1_SIDS=pass
+C1_SOURCES=pass
+C1_QUOTES=pass
+C1_K_HELD_BACKED=pass
+C1_VERDICT=pass

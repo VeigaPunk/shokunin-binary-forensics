@@ -1,0 +1,11 @@
+CAP_FIXTURE_SHA=fail
+sha256(fixture.apk)=67111db9d4220a6289eeb8a95721cc9fe0dde65f9efe228c47f21d28189f5510 truth.image.sha256=05d2280f847497cf4dc9f5dbf9237721fedf1c928d8e7abe67cbe007afe7d03e
+CAP_DECODER androguard version=androguard, version 4.1.4
+CAP_DECODER apktool version=3.0.3
+CAP_ANDROGUARD=pass
+CAP_APKTOOL=pass
+CAP_TAMPER_DETECTED=fail
+tamper: cannot read manifest from fixture zip: Bad CRC-32 for file 'AndroidManifest.xml'
+CAP_APK_VERDICT=fail
+# probe_rc=1
+# CAP_FIXTURE_SHA=fail present

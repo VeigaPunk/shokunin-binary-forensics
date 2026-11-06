@@ -1,0 +1,5 @@
+ LOG.md            |  8 ++++++++
+ SCORECARD.md      |  2 ++
+ SKILL.md          | 24 ++++++++++++++++++++++++
+ corpus/SOURCES.md |  2 ++
+ 4 files changed, 36 insertions(+)

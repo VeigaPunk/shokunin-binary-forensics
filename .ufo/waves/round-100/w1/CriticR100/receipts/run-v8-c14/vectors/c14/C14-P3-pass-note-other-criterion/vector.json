@@ -1,0 +1,11 @@
+{
+ "name": "C14-P3-pass-note-other-criterion",
+ "profile": "c14",
+ "class": "PASS note under Q05 names Q06 (copy-paste)",
+ "mutation": "ReviewerBlind Q05 note replaced by the Q06 decision text; Q05 stays PASS",
+ "expected": "fail",
+ "changed": [
+  "reports/round-98/votes/ReviewerBlind.json"
+ ],
+ "removed": []
+}

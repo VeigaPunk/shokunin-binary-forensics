@@ -1,0 +1,4 @@
+SELFTEST_C1V9=FAIL legs=128
+SELFTEST FAIL: c02:honest: expected pass; failing=C1_PASS_NOTE_FLOOR
+SELFTEST FAIL: c14:honest: expected pass; failing=C1_PASS_NOTE_FLOOR
+SELFTEST FAIL: c14r99:honest: expected pass; failing=C1_PASS_NOTE_FLOOR

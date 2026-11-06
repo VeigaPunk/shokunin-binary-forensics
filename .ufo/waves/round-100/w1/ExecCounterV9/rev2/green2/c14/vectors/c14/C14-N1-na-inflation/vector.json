@@ -1,0 +1,11 @@
+{
+ "name": "C14-N1-na-inflation",
+ "profile": "c14",
+ "class": "one seat marks ten PASS decisions n/a with Q-id reasons",
+ "mutation": "ReviewerGate Q01-Q06, Q10, Q11, Q14, Q16 -> n/a, each reason names its Q id; Q09 stays PASS",
+ "expected": "fail",
+ "changed": [
+  "reports/round-98/votes/ReviewerGate.json"
+ ],
+ "removed": []
+}

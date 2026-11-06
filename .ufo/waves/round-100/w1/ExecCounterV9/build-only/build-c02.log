@@ -1,0 +1,10 @@
+C02_FIXTURE_BUILT source=frozen-v6 _fixture
+CONTROL-honest | control | rc=None | not-run | K=- | - | pass | built
+C02-N1-one-token-pass-note | PASS decision carried by a one-token note | rc=None | not-run | K=- | - | fail | built
+C02-N2-pinned-reviewer-vote-omitted | pinned reviewer vote file deleted, two votes remain | rc=None | not-run | K=- | - | fail | built
+C02-N3-qmap-contradicts-votes | entry Q-map claims PASS where every vote is n/a | rc=None | not-run | K=- | - | fail | built
+C02-N4-evidence-id-edited | identifier in a derivation row replaced | rc=None | not-run | K=- | - | fail | built
+C02-N5-observation-limitations-cut | observation/inference/unknown and limitations sections removed | rc=None | not-run | K=- | - | fail | built
+C02-N6-surface-text-attests-replication | README surface text asserts a replication no vote records | rc=None | not-run | K=- | - | fail | built
+HOLDOUT99_PROFILE=c02 counter=none build_only=True
+HOLDOUT99_BUILD=ok vectors=6
