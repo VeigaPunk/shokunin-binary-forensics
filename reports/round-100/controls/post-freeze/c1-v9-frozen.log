@@ -1,0 +1,20 @@
+# run on git clone --shared of the lane detached at 173abe91a80d79336ca9228643c63d41e0e7635c (instrument freeze); cwd=clone; 2026-11-05T20:20:58-03:00
+$ python3 -B reports/round-100/forge_reach9.py --counter reports/round-100/c1_k_admit_counter9.py --work <scratch>
+R100_VECTOR C02-N1-one-token-pass-note refused legs=C1_PASS_NOTE_FLOOR
+R100_VECTOR C02-N2-pinned-reviewer-vote-omitted refused legs=C1_VOTER_PRESENT
+R100_VECTOR C02-N3-qmap-contradicts-votes refused legs=C1_QMAP_POINTER
+R100_VECTOR C02-N4-evidence-id-edited refused legs=C1_EVIDENCE_RESOLVES
+R100_VECTOR C02-N5-observation-limitations-cut refused legs=C1_SECTIONS
+R100_VECTOR C02-N6-surface-text-attests-replication refused legs=C1_SURFACE_TEXT
+R100_VECTOR C14-N1-na-inflation refused legs=C1_NA_SHARE
+R100_VECTOR C14-N2-artifact-renamed-to-other-seat refused legs=C1_ARTIFACT_COPY
+R100_VECTOR C14-N3-derivation-count-edited refused legs=C1_DERIV_RERUN
+R100_VECTOR C14-N4-record-appended refused legs=C1_RECORD_PINNED
+R100_VECTOR C14-N5-s506-body-rebuilt refused legs=C1_BODY_DIGEST
+R100_VECTOR C14-N6-s507-anchor-relabelled refused legs=C1_ANCHOR_VERBATIM
+R100_ACCEPTED=0/12
+R100_CONTROL_C02=control-ok
+R100_CONTROL_C14=control-ok
+R100_STUB_SELFTEST=ok
+R100_VERDICT=met
+# rc=0

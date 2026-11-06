@@ -1,0 +1,15 @@
+# per-vector counter rc vs verdict in the scored C1 run (post-freeze/c1-v9-frozen.log; scratch run-main-<profile>/vectors); answers CriticR100 A1 (the harness reads the verdict line, not rc): every vector's rc agrees with its C1_VERDICT
+run-main-c02/vectors/c02/C02-N1-one-token-pass-note/counter.log # rc=1 C1_VERDICT=fail 
+run-main-c02/vectors/c02/C02-N2-pinned-reviewer-vote-omitted/counter.log # rc=1 C1_VERDICT=fail 
+run-main-c02/vectors/c02/C02-N3-qmap-contradicts-votes/counter.log # rc=1 C1_VERDICT=fail 
+run-main-c02/vectors/c02/C02-N4-evidence-id-edited/counter.log # rc=1 C1_VERDICT=fail 
+run-main-c02/vectors/c02/C02-N5-observation-limitations-cut/counter.log # rc=1 C1_VERDICT=fail 
+run-main-c02/vectors/c02/C02-N6-surface-text-attests-replication/counter.log # rc=1 C1_VERDICT=fail 
+run-main-c02/vectors/c02/CONTROL-honest/counter.log # rc=0 C1_VERDICT=pass 
+run-main-c14/vectors/c14/C14-N1-na-inflation/counter.log # rc=1 C1_VERDICT=fail 
+run-main-c14/vectors/c14/C14-N2-artifact-renamed-to-other-seat/counter.log # rc=1 C1_VERDICT=fail 
+run-main-c14/vectors/c14/C14-N3-derivation-count-edited/counter.log # rc=1 C1_VERDICT=fail 
+run-main-c14/vectors/c14/C14-N4-record-appended/counter.log # rc=1 C1_VERDICT=fail 
+run-main-c14/vectors/c14/C14-N5-s506-body-rebuilt/counter.log # rc=1 C1_VERDICT=fail 
+run-main-c14/vectors/c14/C14-N6-s507-anchor-relabelled/counter.log # rc=1 C1_VERDICT=fail 
+run-main-c14/vectors/c14/CONTROL-honest/counter.log # rc=0 C1_VERDICT=pass 

@@ -1,0 +1,7 @@
+# run on git clone --shared of the lane detached at 173abe91a80d79336ca9228643c63d41e0e7635c (instrument freeze); cwd=clone; 2026-11-05T20:20:33-03:00
+$ bash reports/round-100/controls_c2.sh reports/round-100/cap_apk_probe.py <work>
+C2_CTRL_STUB=refused
+# flipped versionCode data byte at apk offset 393 (1 -> 2)
+C2_CTRL_FLIP=refused
+C2_CONTROLS=control-ok
+# rc=0

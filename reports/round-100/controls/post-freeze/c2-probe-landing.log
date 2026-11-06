@@ -1,0 +1,16 @@
+# C2 probe on the landing working tree (lane checkout, cwd=lane; capability row added, fixture bytes unchanged since 0350014d); 2026-11-05T20:27:42-03:00
+$ PYTHONUTF8=1 python3 -B reports/round-100/cap_apk_probe.py --fixture corpus/fixtures/apk-r65 --work <scratch>
+CAP_FIXTURE_SHA=pass
+CAP_DECODER androguard version=androguard, version 4.1.4
+CAP_DECODER apktool version=3.0.3
+CAP_ANDROGUARD=pass
+CAP_APKTOOL=pass
+CAP_TAMPER_DETECTED=pass
+CAP_APK_VERDICT=pass
+# rc=0
+$ awk ... SCORECARD.md | wc -l
+5
+$ awk ... | grep -c apk-manifest-cross-decode
+1
+$ ... | grep -cE S508.*S509
+1

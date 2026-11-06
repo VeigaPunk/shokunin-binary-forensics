@@ -661,6 +661,30 @@ rows (entry command, verdict lines, pinned instrument sha, red/green logs) until
 | pinned-value path | `reports/round-99/mutants/mutate8.py` (sha256 `51416a54…`); `.ufo/waves/round-99/w1/MutationR99.md` (`MUTANT_KILL_V8=154/309`, `MUTANT_SELFTEST_V8=285/309` on counter `620dfca9…`) |
 | owner | revenger |
 
+| name | `c1_k_admit_counter9 (round 100; successor of `c1_k_admit_counter8`: every v8 leg and constant kept; twelve new legs C1_PASS_NOTE_FLOOR, C1_VOTER_PRESENT, C1_QMAP_POINTER, C1_EVIDENCE_RESOLVES, C1_SECTIONS, C1_SURFACE_TEXT, C1_NA_SHARE, C1_ARTIFACT_COPY, C1_DERIV_RERUN (only when the entry declares a verbatim-stdout cell rule), C1_RECORD_PINNED, C1_BODY_DIGEST, C1_ANCHOR_VERBATIM)` |
+| kind | probe (measurement over a committed tree; `--self-test` prints `SELFTEST_C1V9=OK legs=128`; missing `--profile` exits 2) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-100/c1_k_admit_counter9.py --profile c02\|c14\|c14r99 --tree <dir> --work <scratch>` (cwd = a git checkout of the lane) |
+| pinned-value path | counter bytes `reports/round-100/c1_k_admit_counter9.py` (sha256 `8e2eafc8…`, frozen at `173abe91`); claims `reports/round-100/claims.md`; `reports/round-100/controls/post-freeze/` |
+| owner | revenger |
+
+| name | `forge_reach9 (round 100 C1; one run prints an R100_VECTOR line per round-99 holdout vector, R100_ACCEPTED=n/12, both builder control lines, R100_STUB_SELFTEST and R100_VERDICT; builder pinned by sha256, fails closed with rc 2)` |
+| kind | probe (instrument; `R100_VERDICT=met\|not-met`) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-100/forge_reach9.py --counter <counter> --work <scratch>` |
+| pinned-value path | `reports/round-100/forge_reach9.py` (sha256 `3acdd3a9…`); `reports/round-100/controls/post-freeze/c1-v9-frozen.log` (met, 0/12); `reports/round-100/controls/c1-do-nothing-v8.log` (v8 12/12) |
+| owner | revenger |
+
+| name | `cap_apk_probe (round 100 C2; androguard + apktool cross-decode of an authored APK manifest against truth.json, with an in-probe same-length tamper leg)` |
+| kind | probe (capability demonstration; prints `CAP_APK_VERDICT=pass\|fail`; rc 0 pass, 1 fail, 2 usage or missing decoder) |
+| entry command | `PYTHONUTF8=1 python3 -B reports/round-100/cap_apk_probe.py --fixture corpus/fixtures/apk-r65 --work <scratch>`; controls `bash reports/round-100/controls_c2.sh reports/round-100/cap_apk_probe.py <scratch>` |
+| pinned-value path | `reports/round-100/cap_apk_probe.py` (sha256 `b2c9d189…`), `reports/round-100/controls_c2.sh` (sha256 `479f690e…`); `reports/round-100/controls/post-freeze/c2-probe-landing.log`, `c2-controls.log`. Known limit: the tamper value is deterministic, so a shim keyed on the tampered digest passes (ReviewerCapR100 attack 3) |
+| owner | revenger |
+
+| name | `census_line_check (round 100, M21; a report's census line must name every warning/error class the cited census log prints, with its count)` |
+| kind | probe (lint over a report; prints `CENSUS_LINE_CHECK=pass\|fail missing=<classes>`; rc 0/1/2) |
+| entry command | `python3 -B reports/round-100/census_line_check.py --report <report.md> --log <census log>` |
+| pinned-value path | `reports/round-100/census_line_check.py` (sha256 `c3b754aa…`); `.ufo/waves/round-100/w1/ExecControlsR100/census-r99-fail.log` (`fail missing=W04` on the r99 report) |
+| owner | revenger |
+
 ## 7. Cited sources — existence-checked
 
 | citation | exists at | credited for |

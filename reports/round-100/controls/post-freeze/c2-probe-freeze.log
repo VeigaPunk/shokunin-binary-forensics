@@ -1,0 +1,10 @@
+# C2 target-shape run on the instrument-freeze clone 173abe91 (the landing run repeats it on the landing archive); 2026-11-05T20:20:43-03:00
+$ PYTHONUTF8=1 python3 -B reports/round-100/cap_apk_probe.py --fixture corpus/fixtures/apk-r65 --work <scratch>
+CAP_FIXTURE_SHA=pass
+CAP_DECODER androguard version=androguard, version 4.1.4
+CAP_DECODER apktool version=3.0.3
+CAP_ANDROGUARD=pass
+CAP_APKTOOL=pass
+CAP_TAMPER_DETECTED=pass
+CAP_APK_VERDICT=pass
+# rc=0

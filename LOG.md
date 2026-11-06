@@ -1495,3 +1495,11 @@ no row, supports no claim).
 - Claims frozen at `7e6edd4`; Amendment A (`61e27feb`, S505 used-by grounded by citation) and Amendment B (`9ddd38ac`, the single candidate amendment after VoterGateR99's Q16 FAIL) recorded before scoring; v8 frozen at `01266760`.
 - Result: C1 verified on the frozen counter (`reports/round-99/controls/post-freeze/landing-worktree-c14r99.log`); C2 met (`post-freeze/c2-v8-frozen.log`). Fresh r99 holdout 12/12 accepted by v8 (`post-freeze/holdout99-v8-*.log`).
 - Wave: `.ufo/waves/round-99/w1/` (12 seats, `w1-results.json`).
+
+## Round 100 (hyaku run 15, attempt 1) — v9 refuses the twelve r99 holdout forgeries (12/12 → 0/12, development set); capability `apk-manifest-cross-decode` enters the table (4 → 5 rows)
+
+- Motivating evidence: the r99 non-author spot-check (`corpus/lessons/round-99-verifier-spotcheck.md` §5) routed the fresh r99 holdout (v8 accepts 12/12), the census-line omission and the do-nothing commit naming; every owned criterion sits above the 7.0 saturation line and no capability had entered since round 91, so the stagnation nudge applies (claims.md §Axis choice; ReviewerClaimsR100 §2 recomputed it).
+- Domain work: two third-party decoders (androguard 4.1.4, apktool 3.0.3) decode the authored APK `corpus/fixtures/apk-r65/fixture.apk` and agree with its `truth.json`; a same-length CRC-fixed tamper is reported by both (`reports/round-100/controls/post-freeze/c2-probe-landing.log`). Sources opened this round: S508 (androguard `axml` docs), S509 (Apktool wiki), receipts `.ufo/waves/round-100/w1/ScoutSourcesR100/`.
+- Claims frozen at `05e854ce` with the pre-freeze do-nothing controls; instruments frozen at `173abe91` (after the L1's pre-freeze ruling that `C1_DERIV_RERUN` applies only when an entry declares a verbatim-stdout cell rule; lesson Gate).
+- Result: C1 met (`post-freeze/c1-v9-frozen.log`, `R100_ACCEPTED=0/12`, controls ok, stub ok; no-regression `noreg1..3` logs all rc 0). C2 met (`c2-probe-landing.log`, `c2-controls.log`); surface miss M23 (the probe does not cite S508/S509).
+- Wave: `.ufo/waves/round-100/w1/` (12 seats, `w1-results.json`).

@@ -1,0 +1,5 @@
+# run on git clone --shared of the lane detached at 173abe91a80d79336ca9228643c63d41e0e7635c (instrument freeze); cwd=clone; 2026-11-05T20:20:58-03:00
+$ python3 -B reports/round-100/c1_k_admit_counter9.py --self-test
+SELFTEST_C1V9=OK legs=128
+SELFTEST_C1V9=OK legs=128
+# rc=0
