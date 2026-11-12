@@ -1503,3 +1503,13 @@ no row, supports no claim).
 - Claims frozen at `05e854ce` with the pre-freeze do-nothing controls; instruments frozen at `173abe91` (after the L1's pre-freeze ruling that `C1_DERIV_RERUN` applies only when an entry declares a verbatim-stdout cell rule; lesson Gate).
 - Result: C1 met (`post-freeze/c1-v9-frozen.log`, `R100_ACCEPTED=0/12`, controls ok, stub ok; no-regression `noreg1..3` logs all rc 0). C2 met (`c2-probe-landing.log`, `c2-controls.log`); surface miss M23 (the probe does not cite S508/S509).
 - Wave: `.ufo/waves/round-100/w1/` (12 seats, `w1-results.json`).
+
+
+## 2026-11-12: publish reviewed curation notes
+
+Published 4 independently reviewed original reading note(s) from the saved curation copies. The note text and source/rights boundaries are preserved exactly. Notes carrying publication holds were excluded. This entry records publication only, not source-code reuse, capability admission, training, or assimilation. No private receipts or source captures are included.
+
+- `considerthese/2026-11-11-inline-value-threshold.md`: source `Shokunin-Revenger-Inline-Value-Threshold-2026-11-11.md`; SHA-256 `7adcdb80fc9446eeb484776b3d90f4904e454da3148deb9b0584cb79920e891f`.
+- `considerthese/2026-11-11-memory-address-width.md`: source `Shokunin-Revenger-Memory-Address-Width-2026-11-11.md`; SHA-256 `7b15389557b822878db557a8b7c7c8062b83e24704d3e6b2a31ce97e65171c85`.
+- `considerthese/2026-11-12-container-interpretation.md`: source `Shokunin-Revenger-Container-Interpretation-2026-11-12.md`; SHA-256 `715e5d0c92ac695046e26d7e756944eac521c9bc7b4735fcaddeeb970cf8a6b1`.
+- `considerthese/2026-11-11-dictionary-dependency-binding.md`: source `Shokunin-Revenger-Dictionary-Dependency-Binding-2026-11-11.md`; SHA-256 `8159edf4324ebe0d3d9cf88052d89e3400554ef84cf87ec27a0278d8381e09e8`.
